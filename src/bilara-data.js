@@ -9,6 +9,7 @@
     const {
         execSync,
     } = require('child_process');
+    const Translation = require('./translation');
 
     const BILARA_DATA_GIT = 'https://github.com/sc-voice/bilara-data.git';
 
@@ -24,58 +25,75 @@
                 writable: true,
                 value: null,
             });
+            this.initialized = false;
         }
 
-        syncGit(root=this.root, repo=BILARA_DATA_GIT, repoDir=this.name) {
-            this.log(`root:${root}`);
-            if (fs.existsSync(root)) {
-                var cmd = `cd ${root}; git pull`;
-            } else {
-                var cmd = `git clone ${repo} ${repoDir}`;
+        syncGit(repoPath=this.root, repo=BILARA_DATA_GIT) {
+            var that = this;
+            return new Promise((resolve, reject) => {
+                (async function() { try {
+                    if (fs.existsSync(repoPath)) {
+                        var cmd = `cd ${repoPath}; git pull`;
+                    } else {
+                        var repoDir = path.basename(repoPath);
+                        var cmd = `git clone ${repo} ${repoDir}`;
+                    }
+                    that.log(cmd);
+                    var execOpts = {
+                        cwd: LOCAL_DIR,
+                    };
+                    var res = execSync(cmd, execOpts).toString();
+                    that.log(res);
+                    resolve(that);
+                } catch(e) {reject(e);} })();
+            });
+        }
+
+        initialize() {
+            if (this.initialized) {
+                return Promise.resolve(this);
             }
-            this.log(cmd);
-            var execOpts = {
-                cwd: LOCAL_DIR,
-            };
-            var res = execSync(cmd, execOpts).toString();
-            this.log(res);
+            return new Promise((resolve, reject) => {
+                var that = this;
+                (async function() { try {
+                    var map = that.suttaMap = {};
+                    var transRoot = path.join(that.root, 'translation');
+                    that.translations = that.dirFiles(transRoot)
+                        .filter(f => that.isSuttaPath(f));
+                    that.translations.forEach((f,i) => {
+                        var file = f.replace(/.*\/translation\//,'translation/');
+                        var parts = file.split('/');
+                        var lang = parts[1];
+                        var author = parts[2];
+                        var nikaya = parts[3];
+                        var suid = parts[parts.length-1].split('_')[0].toLowerCase();
+                        map[suid] = map[suid] || [];
+                        map[suid].push({
+                            suid,
+                            lang,
+                            nikaya,
+                            author,
+                            translation: file,
+                        });
+                    });
+
+                    await that.syncGit();
+
+                    that.initialized = true;
+                    resolve(that);
+                } catch(e) {reject(e);} })();
+            });
         }
 
         isSuttaPath(fpath) {
             return this.reNikayas.test(fpath);
         }
 
-        suttaMap() {
-            var map = this._suttaMap;
-            if (map) {
-                return map;
+        suttaInfo(suid) {
+            if (!this.initialized) {
+                throw new Error('Expected preceding call to initialize()');
             }
-            this._sutta_Map = map = {};
-            var transRoot = path.join(this.root, 'translation');
-            this.translations = this.dirFiles(transRoot)
-                .filter(f => this.isSuttaPath(f));
-            this.translations.forEach((f,i) => {
-                var file = f.replace(/.*\/translation\//,'translation/');
-                var parts = file.split('/');
-                var lang = parts[1];
-                var author = parts[2];
-                var nikaya = parts[3];
-                var suid = parts[parts.length-1].split('_')[0];
-                map[suid] = map[suid] || {};
-                map[suid][lang] = map[suid][lang] || [];
-                map[suid][lang].push({
-                    suid,
-                    lang,
-                    nikaya,
-                    author,
-                    translation: file,
-                });
-            });
-            console.log(`dbg suttaMap[0]`, map['dn33']);
-            console.log(`dbg suttaMap[0]`, map['sn12.3']);
-            console.log(`dbg suttaMap[0]`, map['an2.1-10']);
-
-            return map;
+            return this.suttaMap[suid];
         }
 
         dirFiles(root) {
@@ -88,15 +106,29 @@
             return res.split('\n');
         }
 
-        suttaPaths(...args) {
-            if (args.length == 0) {
-                throw new Error(`Expected {suid,lang,author}`);
+        loadTranslation(opts={}) {
+            if (!this.initialized) {
+                throw new Error('Expected preceding call to initialize()');
             }
-            var lang = args.lang || 'en';
-            var author = args.author || 'author';
-            var suid = args.suid;
-            //var map = this.suttaMap[lang] || []};
-            //this.suttaMap[lang] = map;
+            var {
+                suid,
+                lang,
+                author,
+            } = opts;
+            var info = this.suttaInfo(suid);
+            if (info == null) {
+                return new Error(`no suttaInfo({suid:${suid})`);
+            }
+            info.sort((a,b) => {
+                var cmp = a.lang.compare(b.lang);
+                if (cmp === 0) {
+                    cmp = a.author.compare(b.author);
+                }
+            });
+            lang = lang || info[0].lang;
+            author = author || info[0].author;
+            var si = info.filter(i => i.lang === lang && i.author === author)[0];
+            return new Translation(si).load(this.root);
         }
 
     }
