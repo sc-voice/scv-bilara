@@ -4,17 +4,18 @@
     const {
         js,
         logger,
+        LOCAL_DIR,
     } = require('just-simple').JustSimple;
     const {
         execSync,
     } = require('child_process');
 
-    const LOCAL = path.join(__dirname, '..', 'local');
-    const cwd = LOCAL;
+    const BILARA_DATA_GIT = 'https://github.com/sc-voice/bilara-data.git';
 
     class BilaraData {
         constructor(opts={}) {
-            this.root = opts.root || path.join(LOCAL, 'bilara-data');
+            this.name = opts.name || 'bilara-data';
+            this.root = opts.root || path.join(LOCAL_DIR, 'bilara-data');
             logger.logInstance(this, opts);
             this.nikayas = opts.nikayas || ['an','mn','dn','sn', 'kn'];
             this.reNikayas = new RegExp(
@@ -25,15 +26,18 @@
             });
         }
 
-        syncGit(root, repo, gitRoot='') {
+        syncGit(root=this.root, repo=BILARA_DATA_GIT, repoDir=this.name) {
             this.log(`root:${root}`);
             if (fs.existsSync(root)) {
                 var cmd = `cd ${root}; git pull`;
             } else {
-                var cmd = `git clone ${repo} ${gitRoot}`;
+                var cmd = `git clone ${repo} ${repoDir}`;
             }
             this.log(cmd);
-            var res = execSync(cmd, { cwd }).toString();
+            var execOpts = {
+                cwd: LOCAL_DIR,
+            };
+            var res = execSync(cmd, execOpts).toString();
             this.log(res);
         }
 
@@ -77,7 +81,10 @@
         dirFiles(root) {
             var files = [];
             var cmd = `find ${root} -path '*.git*' -prune -o -type f -print`;
-            var res = execSync(cmd, { cwd }).toString();
+            var execOpts = {
+                cwd: LOCAL_DIR,
+            };
+            var res = execSync(cmd, execOpts).toString();
             return res.split('\n');
         }
 
