@@ -14,9 +14,9 @@
     it("TESTTESTdefault ctor", () => {
         var trans = new DETranslation();
         should(trans).properties({
-            author: undefined,
-            lang: undefined,
-            logLevel: 'debug',
+            author: 'sabbamitta',
+            lang: 'de',
+            logLevel: 'info',
             segMap: {},
             suid: undefined,
             translation: undefined,
@@ -25,8 +25,8 @@
     });
     it("TESTTESTcustom ctor", () => {
         var suid = 'an1.1-10';
-        var lang = 'de';
-        var author = 'sabbamitta';
+        var lang = 'de-sl';
+        var author = 'geiger';
         var translation = 'data/AN 1.1-10';
         var logLevel = false;
         var trans = new DETranslation({
@@ -52,7 +52,7 @@
         });
         should(det.load(__dirname)).equal(det);
         should(det.suid).equal('an1.1-10');
-        should(det.text.length).equal(36);
+        should(det.text.length).equal(35);
         should(det.nikaya).equal('Nummerierte Lehrreden 1');
         should(det.vagga).equal('1. Bilder usw.');
         should(det.bemerkung).match(/Bemerkung/);
@@ -63,10 +63,23 @@
             translation: 'data/sn1.1',
         });
         should(det.load(__dirname)).equal(det);
-        should(det.text.length).equal(17);
+        should(det.suid).equal('sn1.1');
+        should(det.text.length).equal(16);
         should(det.nikaya).equal('Verbundene Lehrreden 1');
         should(det.vagga).equal('1. Ein Schilfrohr');
         should(det.bemerkung).match(/Bemerkung/);
         should(det.blurb).match(/Der Buddha überquerte die Flut des Leidens/);
+    });
+    it("TESTTESTapplySegments(...) applies source segmentation", ()=>{
+        var en_sn1_1 = new Translation({
+            suid: 'sn1.1',
+            lang: 'en',
+            author: 'sujato',
+            translation: 'data/en/sujato/sn/sn1/sn1.1_translation-en-sujato.json',
+        }).load(__dirname);
+        var det = new DETranslation({
+            translation: 'data/sn1.1',
+        }).load(__dirname);
+        det.applySegments(en_sn1_1);
     });
 })

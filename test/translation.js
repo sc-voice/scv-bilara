@@ -108,5 +108,29 @@
         testCompare('dn33:1.1', 'dn33:1.1.0', -1);
         testCompare('dn33:1.10.1', 'dn33:1.2.0', 8);
     });
+    it("TESTTESTsegments() returns segment array", ()=>{
+        var sutta = new Translation({
+            suid: 'sn1.1',
+            lang: 'en',
+            translation: 'data/en_sn1.1.json',
+        }).load(__dirname);
+        var segments = sutta.segments();
+        should.deepEqual(segments[0],{
+            scid: 'sn1.1:0.1',
+            en: 'Linked Discourses 1 ',
+        });
+        should.deepEqual(segments[1],{
+            scid: 'sn1.1:0.2',
+            en: '1. A Reed ',
+        });
+        should.deepEqual(segments[11],{
+            scid: 'sn1.1:1.9',
+            en: 'That’s how I crossed the flood neither standing nor swimming.” ',
+        });
+        should.deepEqual(segments[12],{
+            scid: 'sn1.1:2.1',
+            en: '“After a long time I see ',
+        });
+    });
 
 })

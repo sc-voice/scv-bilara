@@ -55,11 +55,15 @@
             this.author = opts.author;
             this.translation = opts.translation;
             this.segMap = opts.segMap || {};
-            logger.logInstance(this, opts);
+            logger.logInstance(this, {
+                logLevel: opts.logLevel === undefined ? 'info' : opts.logLevel,
+            });
         }
 
         scids() {
-            return Object.keys(this.segMap).sort(Translation.compareScid);
+            var result = Object.keys(this.segMap);
+            result.sort(Translation.compareScid);
+            return result;
         }
 
         load(root) {
@@ -84,6 +88,13 @@
             var json = JSON.stringify(this.segMap, null, 2);
             fs.writeFileSync(spath, json);
             return this;
+        }
+
+        segments() {
+            return this.scids().map(scid => ({
+                scid,
+                [this.lang]: this.segMap[scid] || '',
+            }));
         }
 
     }

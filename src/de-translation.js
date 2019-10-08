@@ -5,18 +5,17 @@
         js,
         logger,
     } = require('just-simple').JustSimple;
+    const Translation = require('./translation');
     const RE_TAG = /^:[^:]+:/i;
 
-    class DETranslation {
+    class DETranslation extends Translation {
         constructor(opts={}) {
+            super(opts);
             this.suid = opts.suid;
-            this.lang = opts.lang;
-            this.author = opts.author;
+            this.lang = opts.lang || 'de';
+            this.author = opts.author || 'sabbamitta';
             this.translation = opts.translation;
             this.segMap = opts.segMap || {};
-            logger.logInstance(this, {
-                logLevel: opts.logLevel === undefined ? 'debug' : opts.logLevel,
-            });
         }
 
         load(root) {
@@ -32,34 +31,31 @@
             var segStart = true;
             this.text = lines.reduce((acc,l,i) => {
                 if (i === 0) {
-                    this.suid = l.toLowerCase().replace(/ ([0-9])/,'$1');
-                    this.log('dbg suid', this.suid);
+                    this.suid = l.toLowerCase()
+                        .replace(/ ([0-9])/,'$1')
+                        .replace(/ .*/,'');
                 } else if (/^:?bemerkung:/ui.test(l)) {
                     this.bemerkung = l.replace(RE_TAG,'');
-                    this.log('dbg bemerkung', this.bemerkung);
                 } else if (/^:blurb:/ui.test(l)) {
                     this.blurb = l.replace(RE_TAG,'');
-                    this.log('dbg blurb', this.blurb);
                 } else if (/^:vagga:/ui.test(l)) {
                     this.vagga = l.replace(RE_TAG,'');
-                    this.log('dbg vagga', this.vagga);
                 } else if (/^:copyright:/ui.test(l)) {
                     this.copyright = l.replace(RE_TAG,'');
-                    this.log('dbg copyright', this.copyright);
                 } else if (/^:nikaya:/ui.test(l)) {
                     this.nikaya = l.replace(RE_TAG,'');
-                    this.log('dbg nikaya', this.nikaya);
                 } else if (/^:title:/ui.test(l)) {
                     var title = l.replace(RE_TAG,'');
-                    acc.push(title);
-                    this.log('dbg title', title);
+                    if (this.title) {
+                        acc.push(title);
+                    } else {
+                        this.title = title;
+                    }
                 } else if (/^$/.test(l)) {
                     segStart = true;
-                    this.log('dbg ---EOL---');
                 } else if (/^:/.test(l)) {
                     throw new Error(`unknown tag:${l}`);
                 } else {
-                    this.log(`dbg line`, l);
                     if (segStart) {
                         acc.push(l);
                     } else {
@@ -70,6 +66,30 @@
                 return acc;
             }, []);
             return this;
+        }
+
+        applySegments(srcTrans) {
+            var {
+                suid,
+            } = this;
+            if (srcTrans.suid !== suid) {
+                throw new Error(
+                    `Sutta mismatch src:${srcTrans.suid} dst:${suid}`);
+            }
+            var srcSegs = srcTrans.segments();
+            var deOffset = 0;
+            srcSegs.forEach((seg,i) => {
+                if (/:0/.test(seg.scid)) {
+                    deOffset++;
+                    this.log(`dbg seg0`, js.simpleString(seg), deOffset);
+                } else if (/^ ?$/.test(seg[srcTrans.lang])) {
+                    deOffset++;
+                } else {
+                    seg[this.lang] = this.text[i-deOffset];
+                    this.log(js.simpleString(seg));
+                }
+            });
+
         }
 
     }
