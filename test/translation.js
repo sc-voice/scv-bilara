@@ -10,7 +10,7 @@
         logger,
     } = require("just-simple").JustSimple;
 
-    it("TESTTESTdefault ctor", () => {
+    it("default ctor", () => {
         var trans = new Translation();
         should(trans).properties({
             author: undefined,
@@ -22,7 +22,7 @@
 
         });
     });
-    it("TESTTESTcustom ctor", () => {
+    it("custom ctor", () => {
         var suid = 'dn33';
         var lang = 'en';
         var author = 'sujato';
@@ -49,7 +49,7 @@
 
         });
     });
-    it("TESTTESTload(...) loads translation file", ()=>{
+    it("load(...) loads translation file", ()=>{
         var dn33 = new Translation({
             translation: 'data/dn33.json',
         });
@@ -69,7 +69,7 @@
             'dn33:1.2.5',
         ]);
     });
-    it("TESTTESTsave(...) saves translation file", ()=>{
+    it("save(...) saves translation file", ()=>{
         var tmpObj = tmp.dirSync();
         var dn33 = new Translation({
             translation: 'data/dn33.json',
@@ -89,7 +89,7 @@
         fs.unlinkSync(dn33path);
         tmpObj.removeCallback();
     });
-    it("TESTTESTcompareScid(a,b) compares segment ids", ()=>{
+    it("compareScid(a,b) compares segment ids", ()=>{
         var testCompare = (a,b,expected) => {
             should(Translation.compareScid(a,b)).equal(expected);
             if (expected === 0) {

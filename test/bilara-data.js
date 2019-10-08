@@ -73,7 +73,7 @@
             translation: 'translation/en/sujato/an/an2/an2.1-10_translation-en-sujato.json',
         }]);
     });
-    it("TESTTESTloadTranslation(...) loads translation JSON", ()=>{
+    it("loadTranslation(...) loads translation JSON", ()=>{
         should(bd.initialized).equal(true);
         var dn33 = bd.loadTranslation({
             suid: 'dn33',

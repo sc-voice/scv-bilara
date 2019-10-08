@@ -70,7 +70,7 @@
                 translation,
             } = this;
             var spath = path.join(root, translation);
-            this.log(`Translation.load(${spath})`);
+            this.log(`${this.constructor.name}.load(${spath})`);
             this.segMap = JSON.parse(fs.readFileSync(spath));
             return this;
         }
