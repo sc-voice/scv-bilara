@@ -19,7 +19,7 @@
             logLevel: 'info',
             segMap: {},
             suid: undefined,
-            translation: undefined,
+            source: undefined,
 
         });
     });
@@ -27,14 +27,14 @@
         var suid = 'an1.1-10';
         var lang = 'de-sl';
         var author = 'geiger';
-        var translation = 'data/AN 1.1-10';
+        var source = 'data/AN 1.1-10';
         var logLevel = false;
         var trans = new DETranslation({
             author,
             lang,
             logLevel,
             suid,
-            translation,
+            source,
 
         });
         should(trans).properties({
@@ -42,13 +42,13 @@
             lang,
             logLevel,
             suid,
-            translation,
+            source,
 
         });
     });
     it("TESTTESTload(...) loads an1.1-10",()=>{
         var det = new DETranslation({
-            translation: 'data/AN 1.1-10',
+            source: 'data/AN 1.1-10',
         });
         should(det.load(__dirname)).equal(det);
         should(det.suid).equal('an1.1-10');
@@ -60,7 +60,7 @@
     });
     it("TESTTESTload(...) loads sn1.1",()=>{
         var det = new DETranslation({
-            translation: 'data/sn1.1',
+            source: 'data/sn1.1',
         });
         should(det.load(__dirname)).equal(det);
         should(det.suid).equal('sn1.1');
@@ -75,11 +75,37 @@
             suid: 'sn1.1',
             lang: 'en',
             author: 'sujato',
-            translation: 'data/en/sujato/sn/sn1/sn1.1_translation-en-sujato.json',
+            translation: 'data/en/sujato/sn/sn1/'+
+                'sn1.1_translation-en-sujato.json',
         }).load(__dirname);
         var det = new DETranslation({
-            translation: 'data/sn1.1',
+            source: 'data/sn1.1',
         }).load(__dirname);
-        det.applySegments(en_sn1_1);
+        var segments = det.applySegments(en_sn1_1).segments();
+        should(det.translation).equal('data/de/sabbamitta/sn/sn1/'+
+            'sn1.1_translation-de-sabbamitta.json');
+        var i = 0;
+        should.deepEqual(segments[i++], {
+            scid: 'sn1.1:0.1',
+            de: 'Verbundene Lehrreden 1',
+        });
+        should.deepEqual(segments[i++], {
+            scid: 'sn1.1:0.2',
+            de: '1. Ein Schilfrohr',
+        });
+        should.deepEqual(segments[i++], {
+            scid: 'sn1.1:0.3',
+            de: '1. Die Flut überqueren',
+        });
+        should.deepEqual(segments[i++], {
+            scid: 'sn1.1:0.4',
+            de: 'Bemerkung: Diese Übersetzung ist vorläufig '+
+                'und unterliegt weiterer Bearbeitung.',
+        });
+        should.deepEqual(segments[i++], {
+            scid: 'sn1.1:0.5',
+            de: 'Der Buddha überquerte die Flut des Leidens, '+
+                'indem er weder stand noch schwamm.',
+        });
     });
 })

@@ -14,7 +14,7 @@
             this.suid = opts.suid;
             this.lang = opts.lang || 'de';
             this.author = opts.author || 'sabbamitta';
-            this.translation = opts.translation;
+            this.source = opts.source;
             this.segMap = opts.segMap || {};
         }
 
@@ -23,9 +23,9 @@
                 suid,
                 lang,
                 author,
-                translation,
+                source,
             } = this;
-            var spath = path.join(root, translation);
+            var spath = path.join(root, source);
             this.log(`${this.constructor.name}.load(${spath})`);
             var lines = fs.readFileSync(spath).toString().split('\n');
             var segStart = true;
@@ -71,6 +71,8 @@
         applySegments(srcTrans) {
             var {
                 suid,
+                lang,
+                author,
             } = this;
             if (srcTrans.suid !== suid) {
                 throw new Error(
@@ -78,18 +80,48 @@
             }
             var srcSegs = srcTrans.segments();
             var deOffset = 0;
+            var segMap = this.segMap = {};
+            this.translation = srcTrans.translation.split('/').map(p => {
+                if (p === srcTrans.lang) {
+                    return lang;
+                }
+                if (p === srcTrans.author) {
+                    return author;
+                }
+                if (/\.json$/.test(p)) {
+                    var reAuthor = new RegExp(`-${srcTrans.author}.json`); 
+                    var reLang = new RegExp(`-${srcTrans.lang}-`);
+                    return p.replace(reAuthor, `-${author}.json`)
+                        .replace(reLang, `-${lang}-`);
+                }
+                return p;
+            }).join('/');
+            var iMeta = 4;
+            if (this.bemerkung) {
+                var scid = `${suid}:0.${iMeta++}`;
+                segMap[scid] = this.bemerkung;
+            }
+            if (this.blurb) {
+                var scid = `${suid}:0.${iMeta++}`;
+                segMap[scid] = this.blurb;
+            }
             srcSegs.forEach((seg,i) => {
                 if (/:0/.test(seg.scid)) {
                     deOffset++;
-                    this.log(`dbg seg0`, js.simpleString(seg), deOffset);
+                    if (i === 0) {
+                        segMap[seg.scid] = this.nikaya;
+                    } else if (i === 1) {
+                        segMap[seg.scid] = this.vagga;
+                    } else if (i === 2) {
+                        segMap[seg.scid] = this.title;
+                    }
                 } else if (/^ ?$/.test(seg[srcTrans.lang])) {
                     deOffset++;
                 } else {
-                    seg[this.lang] = this.text[i-deOffset];
-                    this.log(js.simpleString(seg));
+                    segMap[seg.scid] = this.text[i-deOffset];
                 }
             });
-
+            return this;
         }
 
     }
