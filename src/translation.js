@@ -7,6 +7,31 @@
     } = require('just-simple').JustSimple;
 
     class Translation {
+        static compareParts(aparts,bparts) {
+            var cmp = 0;
+            for (var i = 0; i < aparts.length; i++) {
+                let api = aparts[i];
+                let bpi = bparts[i];
+                if (api === bpi) {
+                    continue;
+                }
+                if (api == null) {
+                    return -1;
+                }
+                if (bpi == null) {
+                    return 1;
+                }
+                cmp = Number(aparts[i]) - Number(bparts[i]);
+                if (cmp) {
+                    return cmp;
+                }
+            }
+            if (i < bparts.length) {
+                return -1;
+            }
+            return cmp;
+        }
+
         static compareScid(a,b) {
             if (a === b) {
                 return 0;
@@ -19,13 +44,26 @@
             }
             var acolon_parts = a.split(':');
             var bcolon_parts = b.split(':');
-            var cmp = acolon_parts[0].localeCompare(bcolon_parts[0]);
+            var anikaya = acolon_parts[0].replace(/[-0-9.]+/,'');
+            var bnikaya = bcolon_parts[0].replace(/[-0-9.]+/,'');
+            var cmp = anikaya.localeCompare(bnikaya);
+            if (cmp) {
+                return cmp;
+            }
+            var adotcolon_parts = acolon_parts[0].replace(/[a-z]+/iu,'')
+                .split('.');
+            var bdotcolon_parts = bcolon_parts[0].replace(/[a-z]+/iu,'')
+                .split('.');
+            var cmp = Translation
+                .compareParts(adotcolon_parts, bdotcolon_parts);
+            //console.log(`dbg dotcolon`, adotcolon_parts, bdotcolon_parts, cmp);
             if (cmp) {
                 return cmp;
             }
 
             var adot_parts = acolon_parts[1].split('.');
             var bdot_parts = bcolon_parts[1].split('.');
+            return Translation.compareParts(adot_parts, bdot_parts);
             for (var i = 0; i < adot_parts.length; i++) {
                 let api = adot_parts[i];
                 let bpi = bdot_parts[i];
@@ -84,6 +122,16 @@
                 translation,
             } = this;
             var spath = path.join(root, translation);
+            var parts = translation.split('/');
+            parts.reduce((acc,p,i) => {
+                if (i < parts.length-1) {
+                    acc = path.join(acc, p);
+                    if (!fs.existsSync(acc)) {
+                        fs.mkdirSync(acc);
+                    }
+                }
+                return acc;
+            }, root);
             this.log(`Translation.save(${spath})`);
             var json = JSON.stringify(this.segMap, null, 2);
             fs.writeFileSync(spath, json);

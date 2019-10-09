@@ -98,6 +98,8 @@
                 should(Translation.compareScid(b,a)).equal(-expected);
             }
         };
+        testCompare('an1.2:2.3', 'an1.10:0.1', -8);
+        testCompare('an1.2:0.1', 'an1.10:0.1', -8);
         testCompare('dn33', 'dn33', 0);
         testCompare('sn2.1', 'dn33', 1);
         testCompare('dn33:1.10.31', 'dn33:1.10.31', 0);
@@ -108,7 +110,7 @@
         testCompare('dn33:1.1', 'dn33:1.1.0', -1);
         testCompare('dn33:1.10.1', 'dn33:1.2.0', 8);
     });
-    it("TESTTESTsegments() returns segment array", ()=>{
+    it("segments() returns sn1.1 segment array", ()=>{
         var sutta = new Translation({
             suid: 'sn1.1',
             lang: 'en',
@@ -130,6 +132,48 @@
         should.deepEqual(segments[12],{
             scid: 'sn1.1:2.1',
             en: '“After a long time I see ',
+        });
+    });
+    it("TESTTESTsegments() returns an1.1-10 segment array", ()=>{
+        var sutta = new Translation({
+            suid: 'an1.1-10',
+            lang: 'en',
+            translation: 'data/en_an1.1-10.json',
+        }).load(__dirname);
+        var scids = sutta.scids();
+        should.deepEqual(scids.slice(0,15), [
+            "an1.1:0.1",
+            "an1.1:0.2",
+            "an1.1:0.3",
+            "an1.1:1.1",
+            "an1.1:1.2",
+            "an1.1:1.3",
+            "an1.1:1.4",
+            "an1.1:1.5",
+            "an1.1:1.6",
+            "an1.1:2.1",
+            "an1.1:2.2",
+            "an1.1:2.3",
+            "an1.2:0.1",
+            "an1.2:1.1",
+            "an1.2:1.2",
+        ]);
+        var segments = sutta.segments();
+        should.deepEqual(segments[0],{
+            scid: 'an1.1:0.1',
+            en: 'Numbered Discourses 1 ',
+        });
+        should.deepEqual(segments[1],{
+            scid: 'an1.1:0.2',
+            en: '1. Sights, Etc. ',
+        });
+        should.deepEqual(segments[11],{
+            scid: 'an1.1:2.3',
+            en: ' ',
+        });
+        should.deepEqual(segments[12],{
+            scid: 'an1.2:0.1',
+            en: '2 ',
         });
     });
 

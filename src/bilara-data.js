@@ -120,9 +120,15 @@
                 return new Error(`no suttaInfo({suid:${suid})`);
             }
             info.sort((a,b) => {
-                var cmp = a.lang.compare(b.lang);
-                if (cmp === 0) {
-                    cmp = a.author.compare(b.author);
+                try {
+                    var cmp = a.lang.localeCompare(b.lang);
+                    if (cmp === 0) {
+                        cmp = a.author.localeCompare(b.author);
+                    }
+                } catch(e) {
+                    logger.error(`a:${js.simpleString(a)} `);
+                    logger.error(`b:${js.simpleString(b)} `);
+                    throw e;
                 }
             });
             lang = lang || info[0].lang;

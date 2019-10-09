@@ -15,7 +15,7 @@
             this.lang = opts.lang || 'de';
             this.author = opts.author || 'sabbamitta';
             this.source = opts.source;
-            this.segMap = opts.segMap || {};
+            this.segMap = Object.assign({}, opts.segMap);
         }
 
         load(root) {
@@ -26,14 +26,20 @@
                 source,
             } = this;
             var spath = path.join(root, source);
-            this.log(`${this.constructor.name}.load(${spath})`);
+            var name = this.constructor.name;
+            this.log(`${name}.load(${root}) source:"${source}"`);
             var lines = fs.readFileSync(spath).toString().split('\n');
             var segStart = true;
+            this.ready = true;
             this.text = lines.reduce((acc,l,i) => {
                 if (i === 0) {
                     this.suid = l.toLowerCase()
+                        .replace(/^:not ready yet: */,'')
                         .replace(/ ([0-9])/,'$1')
                         .replace(/ .*/,'');
+                    if (/^:not ready yet:/ui.test(l)) {
+                        this.ready = false;
+                    }
                 } else if (/^:?bemerkung:/ui.test(l)) {
                     this.bemerkung = l.replace(RE_TAG,'');
                 } else if (/^:blurb:/ui.test(l)) {
@@ -74,13 +80,13 @@
                 lang,
                 author,
             } = this;
+            var segMap = this.segMap = {};
             if (srcTrans.suid !== suid) {
                 throw new Error(
                     `Sutta mismatch src:${srcTrans.suid} dst:${suid}`);
             }
             var srcSegs = srcTrans.segments();
             var deOffset = 0;
-            var segMap = this.segMap = {};
             this.translation = srcTrans.translation.split('/').map(p => {
                 if (p === srcTrans.lang) {
                     return lang;
@@ -96,15 +102,15 @@
                 }
                 return p;
             }).join('/');
-            var iMeta = 4;
-            if (this.bemerkung) {
-                var scid = `${suid}:0.${iMeta++}`;
-                segMap[scid] = this.bemerkung;
-            }
-            if (this.blurb) {
-                var scid = `${suid}:0.${iMeta++}`;
-                segMap[scid] = this.blurb;
-            }
+
+            // TODO bemerkung, blurb and copyright
+            //if (this.bemerkung) {
+                //segMap.notice = this.bemerkung;
+            //}
+            //if (this.blurb) {
+                //segMap.blurb = this.blurb;
+            //}
+
             srcSegs.forEach((seg,i) => {
                 if (/:0/.test(seg.scid)) {
                     deOffset++;
@@ -117,9 +123,11 @@
                     }
                 } else if (/^ ?$/.test(seg[srcTrans.lang])) {
                     deOffset++;
+                    segMap[seg.scid] = ' ';
                 } else {
                     segMap[seg.scid] = this.text[i-deOffset];
                 }
+                console.log(`dbg scid`, seg.scid, segMap[seg.scid]);
             });
             return this;
         }
