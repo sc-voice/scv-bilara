@@ -64,27 +64,6 @@
             var adot_parts = acolon_parts[1].split('.');
             var bdot_parts = bcolon_parts[1].split('.');
             return Translation.compareParts(adot_parts, bdot_parts);
-            for (var i = 0; i < adot_parts.length; i++) {
-                let api = adot_parts[i];
-                let bpi = bdot_parts[i];
-                if (api === bpi) {
-                    continue;
-                }
-                if (api == null) {
-                    return -1;
-                }
-                if (bpi == null) {
-                    return 1;
-                }
-                cmp = Number(adot_parts[i]) - Number(bdot_parts[i]);
-                if (cmp) {
-                    return cmp;
-                }
-            }
-            if (i < bdot_parts.length) {
-                return -1;
-            }
-            return cmp;
         }
 
         constructor(opts={}) {

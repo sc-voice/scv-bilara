@@ -89,7 +89,7 @@
         fs.unlinkSync(dn33path);
         tmpObj.removeCallback();
     });
-    it("compareScid(a,b) compares segment ids", ()=>{
+    it("TESTTESTcompareScid(a,b) compares segment ids", ()=>{
         var testCompare = (a,b,expected) => {
             should(Translation.compareScid(a,b)).equal(expected);
             if (expected === 0) {
@@ -102,6 +102,7 @@
         testCompare('an1.2:0.1', 'an1.10:0.1', -8);
         testCompare('dn33', 'dn33', 0);
         testCompare('sn2.1', 'dn33', 1);
+        testCompare('dn33:1.2.31', 'dn33:1.10.1', -8);
         testCompare('dn33:1.10.31', 'dn33:1.10.31', 0);
         testCompare('dn33:1.10.31', 'dn33:2.10.31', -1);
         testCompare('dn33:1.1.31', 'dn33:1.10.31', -9);
