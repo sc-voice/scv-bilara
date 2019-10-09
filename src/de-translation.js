@@ -16,6 +16,7 @@
             this.author = opts.author || 'sabbamitta';
             this.source = opts.source;
             this.segMap = Object.assign({}, opts.segMap);
+            this.excerptSize = opts.excerptSize || 25;
         }
 
         load(root) {
@@ -28,10 +29,10 @@
             var spath = path.join(root, source);
             var name = this.constructor.name;
             this.log(`${name}.load(${root}) source:"${source}"`);
-            var lines = fs.readFileSync(spath).toString().split('\n');
+            this.lines = fs.readFileSync(spath).toString().split('\n');
             var segStart = true;
             this.ready = true;
-            this.text = lines.reduce((acc,l,i) => {
+            this.text = this.lines.reduce((acc,l,i) => {
                 if (i === 0) {
                     this.suid = l.toLowerCase()
                         .replace(/^:not ready yet: */,'')
@@ -74,6 +75,11 @@
             return this;
         }
 
+        excerpt(s, n=this.excerptSize) {
+            s = s.trim().length === 0 ? `"${s}"` : s;
+            return s.length <= n ? s : `${s.substring(0,n)}...`;
+        }
+
         applySegments(srcTrans) {
             var {
                 suid,
@@ -112,22 +118,30 @@
             //}
 
             srcSegs.forEach((seg,i) => {
-                if (/:0/.test(seg.scid)) {
-                    deOffset++;
+                var scid = seg.scid;
+                var srcText = seg[srcTrans.lang];
+                var dstText = this.text[i+deOffset];
+                dstText = dstText == null ? ' ' : dstText;
+                if (i < 3 && /:0/.test(scid)) {
+                    deOffset--;
                     if (i === 0) {
-                        segMap[seg.scid] = this.nikaya;
+                        segMap[scid] = this.nikaya || ' ';
                     } else if (i === 1) {
-                        segMap[seg.scid] = this.vagga;
+                        segMap[scid] = this.vagga || ' ';
                     } else if (i === 2) {
-                        segMap[seg.scid] = this.title;
+                        segMap[scid] = this.title || ' ';
                     }
-                } else if (/^ ?$/.test(seg[srcTrans.lang])) {
-                    deOffset++;
-                    segMap[seg.scid] = ' ';
+                } else if (/^ ?$/.test(srcText)) {
+                    segMap[scid] = ' ';
+                    if (dstText.trim() !== '') {
+                        deOffset--;
+                    }
                 } else {
-                    segMap[seg.scid] = this.text[i-deOffset];
+                    segMap[scid] = dstText;
                 }
-                console.log(`dbg scid`, seg.scid, segMap[seg.scid]);
+                this.log(`${scid} `+
+                    `${this.excerpt(srcText)}`+ 
+                    ` => ${this.excerpt(segMap[scid])}`);
             });
             return this;
         }

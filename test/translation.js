@@ -89,7 +89,7 @@
         fs.unlinkSync(dn33path);
         tmpObj.removeCallback();
     });
-    it("TESTTESTcompareScid(a,b) compares segment ids", ()=>{
+    it("compareScid(a,b) compares segment ids", ()=>{
         var testCompare = (a,b,expected) => {
             should(Translation.compareScid(a,b)).equal(expected);
             if (expected === 0) {
@@ -135,7 +135,7 @@
             en: '“After a long time I see ',
         });
     });
-    it("TESTTESTsegments() returns an1.1-10 segment array", ()=>{
+    it("segments() returns an1.1-10 segment array", ()=>{
         var sutta = new Translation({
             suid: 'an1.1-10',
             lang: 'en',
