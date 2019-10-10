@@ -7,8 +7,9 @@
     "test": "test"
   },
   "dependencies": {
-    "just-simple": "^0.1.3",
+    "just-simple": "^0.1.4",
     "merkle-json": "^1.1.4",
+    "nodegit": "^0.26.2",
     "tmp": "^0.1.0",
     "winston": "^3.0.0"
   },

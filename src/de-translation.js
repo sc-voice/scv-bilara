@@ -16,7 +16,7 @@
             this.author = opts.author || 'sabbamitta';
             this.source = opts.source;
             this.segMap = Object.assign({}, opts.segMap);
-            this.excerptSize = opts.excerptSize || 25;
+            this.excerptSize = opts.excerptSize || 0;
         }
 
         load(root) {
@@ -27,8 +27,7 @@
                 source,
             } = this;
             var spath = path.join(root, source);
-            var name = this.constructor.name;
-            this.log(`${name}.load(${root}) source:"${source}"`);
+            this.log(`load(${root}) source:"${source}"`);
             this.lines = fs.readFileSync(spath).toString().split('\n');
             var segStart = true;
             this.ready = true;
@@ -139,7 +138,7 @@
                 } else {
                     segMap[scid] = dstText;
                 }
-                this.log(`${scid} `+
+                this.excertpSize && this.log(`${scid} `+
                     `${this.excerpt(srcText)}`+ 
                     ` => ${this.excerpt(segMap[scid])}`);
             });

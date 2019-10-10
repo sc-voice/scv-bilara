@@ -10,6 +10,7 @@
         execSync,
     } = require('child_process');
     const Translation = require('./translation');
+    const ExecGit = require('./exec-git');
 
     const BILARA_DATA_GIT = 'https://github.com/sc-voice/bilara-data.git';
 
@@ -19,6 +20,7 @@
             this.root = opts.root || path.join(LOCAL_DIR, 'bilara-data');
             logger.logInstance(this, opts);
             this.nikayas = opts.nikayas || ['an','mn','dn','sn', 'kn'];
+            this.execGit = opts.execGit || new ExecGit(BILARA_DATA_GIT);
             this.reNikayas = new RegExp(
                 `/(${this.nikayas.join('|')})/`, 'ui');
             Object.defineProperty(this, "_suttaMap", {
@@ -26,27 +28,6 @@
                 value: null,
             });
             this.initialized = false;
-        }
-
-        syncGit(repoPath=this.root, repo=BILARA_DATA_GIT) {
-            var that = this;
-            return new Promise((resolve, reject) => {
-                (async function() { try {
-                    if (fs.existsSync(repoPath)) {
-                        var cmd = `cd ${repoPath}; git pull`;
-                    } else {
-                        var repoDir = path.basename(repoPath);
-                        var cmd = `git clone ${repo} ${repoDir}`;
-                    }
-                    that.log(cmd);
-                    var execOpts = {
-                        cwd: LOCAL_DIR,
-                    };
-                    var res = execSync(cmd, execOpts).toString();
-                    that.log(res);
-                    resolve(that);
-                } catch(e) {reject(e);} })();
-            });
         }
 
         initialize() {
@@ -77,7 +58,7 @@
                         });
                     });
 
-                    await that.syncGit();
+                    await that.execGit.sync();
 
                     that.initialized = true;
                     resolve(that);

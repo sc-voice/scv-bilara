@@ -38,17 +38,6 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("syncGit(...) syncs sabbamitta/sutta-translation", (done)=>{
-        (async function() { try {
-            await bd.initialize();
-            var gitDE = 'https://github.com/sabbamitta/sutta-translation';
-            var dePath = path.join(LOCAL_DIR, 'de-suttas');
-            var res = await bd.syncGit(dePath, gitDE);
-            should(fs.existsSync(dePath)).equal(true);
-            should(res).equal(bd);
-            done();
-        } catch(e) {done(e);} })();
-    });
     it("suttaInfo(...) returns sutta metadata", done=>{
         (async function() { try {
             await bd.initialize();

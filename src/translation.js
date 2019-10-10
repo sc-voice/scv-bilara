@@ -91,7 +91,7 @@
                 translation,
             } = this;
             var spath = path.join(root, translation);
-            this.log(`${this.constructor.name}.load(${spath})`);
+            this.log(`load(${spath})`);
             this.segMap = JSON.parse(fs.readFileSync(spath));
             return this;
         }
@@ -111,7 +111,7 @@
                 }
                 return acc;
             }, root);
-            this.log(`Translation.save(${spath})`);
+            this.log(`save(${spath})`);
             var json = JSON.stringify(this.segMap, null, 2);
             fs.writeFileSync(spath, json);
             return this;

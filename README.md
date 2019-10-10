@@ -17,3 +17,7 @@ git clone https://github.com/sc-voice/scv-bilara
 cd scv-bilara
 ./scripts/install.sh
 ```
+
+### Scripts
+
+#### de-suttas.sh

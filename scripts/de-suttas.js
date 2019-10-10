@@ -5,6 +5,7 @@ const {
     Translation,
     DETranslation,
     BilaraData,
+    ExecGit,
 } = require('../index');
 const {
     js,
@@ -16,18 +17,15 @@ const {
     var bd = await new BilaraData().initialize();
     var gitDE = 'https://github.com/sabbamitta/sutta-translation';
     var dePath = path.join(LOCAL_DIR, 'de-suttas');
-    var res = await bd.syncGit(dePath, gitDE);
+    var deGit = new ExecGit({
+        repo: gitDE,
+        repoPath: dePath,
+    });
+    var res = await deGit.sync();
     var deFiles = await bd.dirFiles(dePath);
-    var deFiles = deFiles.map(f => 
-        f.replace(new RegExp(`${dePath}/`),''));
-    var suids = [ 'sn45.8', 'an1.1-10' ];
-    suids.forEach( suid => {
-        var def = deFiles.filter(f => {
-            f = f.toLowerCase().replace(/ /g,'');
-            return f.indexOf(suid) >= 0;
-        });
+    deFiles.filter(f => /AN\/1\//.test(f)).forEach(def => {
         var det = new DETranslation({
-            source: def[0],
+            source: def.replace(dePath,''),
         });
         det.load(dePath);
         var suid = det.suid;
@@ -36,10 +34,11 @@ const {
             lang: 'en',
         });
         det.applySegments(srcTrans);
-        console.log(`Converting ${suid}`, det.segments());
         logger.info(`Saving ${suid} to ${det.translation}`);
         det.save(bd.root);
     });
+    var bilGit = new ExecGit();
+    await bilGit.commit("de-suttas.js auto-conversion");
     
 } catch(e) {
     logger.warn(e.stack);

@@ -111,7 +111,7 @@
             de: '1. Die Flut überqueren',
         });
     });
-    it("TESTTESTapplySegments(...) applies AN1.1-10 segmentation", ()=>{
+    it("applySegments(...) applies AN1.1-10 segmentation", ()=>{
         var ent = new Translation({
             suid: 'an1.1-10',
             lang: 'en',
