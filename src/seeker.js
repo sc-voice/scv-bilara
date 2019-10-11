@@ -20,8 +20,10 @@
             this.root = opts.root || TRANSLATION_PATH;
             logger.logInstance(this, opts);
             this.lang = opts.lang || 'en';
-            this.translationFilter = opts.translationFilter ||
+            this.grepAllow = opts.grepAllow ||
                 new RegExp("^[^/]+/(an|sn|mn|kn|dn)/","iu");
+            this.grepDeny = opts.grepDeny ||
+                new RegExp("/(dhp)/","iu");
         }
 
         grep(opts) {
@@ -33,7 +35,8 @@
                 searchMetadata, // TODO
             } = opts;
             var {
-                translationFilter,
+                grepAllow,
+                grepDeny,
             } = this;
             lang = lang || language || this.lang;
             if (searchMetadata) {
@@ -42,7 +45,7 @@
             }
             var grex = pattern;
             var cmd = `grep -rciE '${grex}' `+
-                //`--exclude-dir=.git `+
+                `--exclude-dir=.git `+
                 `--exclude='*.md' `+
                 `|grep -v ':0'`+
                 `|sort -g -r -k 2,2 -k 1,1 -t ':'`;
@@ -61,7 +64,9 @@
                         reject(err);
                     } else {
                         var raw = stdout && stdout.trim().split('\n') || [];
-                        resolve(raw.filter(f=>translationFilter.test(f)));
+                        resolve(raw.filter(f=>
+                            grepAllow.test(f) && !grepDeny.test(f)
+                        ));
                     }
                 });
             });

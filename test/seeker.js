@@ -56,6 +56,38 @@
             done();
         } catch(e) { done(e); }})();
     });
+    it("TESTTESTgrep(...) finds maxResults things", done=>{
+        (async function() { try {
+            var skr = new Seeker();
+            var res = await skr.grep({
+                pattern: "root of suffering",
+                maxResults: 3,
+            });
+            should.deepEqual(res, [
+                'sujato/sn/sn42/sn42.11_translation-en-sujato.json:5',
+                'sujato/mn/mn105_translation-en-sujato.json:3',
+                'sujato/mn/mn1_translation-en-sujato.json:2',
+            ]);
+
+            done();
+        } catch(e) { done(e); }})();
+    });
+    it("TESTTESTgrep(...) skips grepDeny things", done=>{
+        (async function() { try {
+            var skr = new Seeker();
+            var res = await skr.grep({
+                pattern: "a single day",
+                grepDeny: new RegExp("/(dhp)/","iu"),
+            });
+            should.deepEqual(res, [
+                // 'sujato/kn/dhp/dhp100-115_translation-en-sujato.json:6', // Disallow
+                'sujato/dn/dn9_translation-en-sujato.json:1',
+                'sujato/an/an10/an10.46_translation-en-sujato.json:1'
+            ]);
+
+            done();
+        } catch(e) { done(e); }})();
+    });
     it("TESTTESTgrep(...) finds de things", done=>{
         (async function() { try {
             var skr = new Seeker();

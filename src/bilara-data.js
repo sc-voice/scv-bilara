@@ -118,8 +118,14 @@
             });
             lang = lang || info[0].lang;
             author = author || info[0].author;
-            var si = info.filter(i => i.lang === lang && i.author === author)[0];
-            return new Translation(si).load(this.root);
+            var suttaInfo = info.filter(
+                i => i.lang === lang && i.author === author)[0];
+            if (suttaInfo == null || suttaInfo.translation == null) {
+                this.log(`loadTranslation(${suid}) info:${info}`);
+                throw new Error(
+                    `No information for ${suid}/${lang}/${author}`);
+            }
+            return new Translation(suttaInfo).load(this.root);
         }
 
     }
