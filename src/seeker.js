@@ -10,14 +10,18 @@
         exec,
     } = require('child_process');
 
+    const APP_DIR = path.join(__dirname, '..');
     const BILARA_PATH = path.join(LOCAL_DIR, 'bilara-data');
     const TRANSLATION_PATH = path.join(BILARA_PATH, 'translation');
+    const MAXBUFFER = 10 * 1024 * 1024;
 
     class Seeker {
         constructor(opts={}) {
             this.root = opts.root || TRANSLATION_PATH;
             logger.logInstance(this, opts);
             this.lang = opts.lang || 'en';
+            this.translationFilter = opts.translationFilter ||
+                new RegExp("^[^/]+/(an|sn|mn|kn|dn)/","iu");
         }
 
         grep(opts) {
@@ -28,31 +32,36 @@
                 language, // DEPRECATED
                 searchMetadata, // TODO
             } = opts;
+            var {
+                translationFilter,
+            } = this;
             lang = lang || language || this.lang;
-            var grex = searchMetadata
-                ? pattern
-                : `"(blurb|title|${lang}|pli)":.*${pattern}`;
-            var root = this.root.replace(ROOT, '');
+            if (searchMetadata) {
+                return Promise.reject(new Error(
+                    `searchMetadata not supported`));
+            }
+            var grex = pattern;
             var cmd = `grep -rciE '${grex}' `+
-                `--exclude-dir=examples `+
-                `--exclude-dir=.git `+
+                //`--exclude-dir=.git `+
                 `--exclude='*.md' `+
                 `|grep -v ':0'`+
                 `|sort -g -r -k 2,2 -k 1,1 -t ':'`;
             maxResults && (cmd += `|head -${maxResults}`);
-            logger.info(`SuttaStore.search() ${cmd}`);
-            var opts = {
-                cwd: this.root,
+            var cwd = `${this.root}/${lang}`;
+            this.log(`grep(${lang}) ${cmd}`);
+            var execOpts = {
+                cwd,
                 shell: '/bin/bash',
-                maxBuffer,
+                maxBuffer: MAXBUFFER,
             };
             return new Promise((resolve,reject) => {
-                exec(cmd, opts, (err,stdout,stderr) => {
+                exec(cmd, execOpts, (err,stdout,stderr) => {
                     if (err) {
-                        logger.log(stderr);
+                        stderr && this.log(stderr);
                         reject(err);
                     } else {
-                        resolve(stdout && stdout.trim().split('\n') || []);
+                        var raw = stdout && stdout.trim().split('\n') || [];
+                        resolve(raw.filter(f=>translationFilter.test(f)));
                     }
                 });
             });

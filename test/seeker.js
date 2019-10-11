@@ -36,8 +36,39 @@
             lang,
         });
     });
-    it("TESTTESTgrep(...) finds things", done=>{
+    it("TESTTESTgrep(...) finds en things", done=>{
         (async function() { try {
+            var skr = new Seeker();
+            var res = await skr.grep({
+                pattern: "root of suffering",
+            });
+            should.deepEqual(res, [
+                'sujato/sn/sn42/sn42.11_translation-en-sujato.json:5',
+                'sujato/mn/mn105_translation-en-sujato.json:3',
+                'sujato/mn/mn1_translation-en-sujato.json:2',
+                'sujato/sn/sn56/sn56.21_translation-en-sujato.json:1',
+                'sujato/mn/mn66_translation-en-sujato.json:1',
+                'sujato/mn/mn116_translation-en-sujato.json:1',
+                'sujato/dn/dn16_translation-en-sujato.json:1',
+                // 'brahmali/pli-tv/pli-tv-kd/pli-tv-kd6_translation-en-brahmali.json:1', // TODO: Enable Vinaya later
+            ]);
+
+            done();
+        } catch(e) { done(e); }})();
+    });
+    it("TESTTESTgrep(...) finds de things", done=>{
+        (async function() { try {
+            var skr = new Seeker();
+            var res = await skr.grep({
+                pattern: "wie der geist",
+                lang: 'de',
+            });
+            should.deepEqual(res, [
+              'sabbamitta/an/an1/an1.31-40_translation-de-sabbamitta.json:10',
+              'sabbamitta/an/an1/an1.21-30_translation-de-sabbamitta.json:10',
+              'sabbamitta/an/an1/an1.41-50_translation-de-sabbamitta.json:2',
+            ]);
+
             done();
         } catch(e) { done(e); }})();
     });

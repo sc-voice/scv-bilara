@@ -41,6 +41,10 @@
 
                     var map = that.suttaMap = {};
                     var transRoot = path.join(that.root, 'translation');
+                    if (!fs.existsSync(transRoot)) {
+                        throw new Error(
+                            `Directory "transRoot" not found:${transRoot}`); 
+                    }
                     that.translations = that.dirFiles(transRoot)
                         .filter(f => that.isSuttaPath(f));
                     that.translations.forEach((f,i) => {
