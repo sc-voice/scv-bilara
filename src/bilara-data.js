@@ -37,6 +37,8 @@
             return new Promise((resolve, reject) => {
                 var that = this;
                 (async function() { try {
+                    await that.execGit.sync();
+
                     var map = that.suttaMap = {};
                     var transRoot = path.join(that.root, 'translation');
                     that.translations = that.dirFiles(transRoot)
@@ -57,8 +59,6 @@
                             translation: file,
                         });
                     });
-
-                    await that.execGit.sync();
 
                     that.initialized = true;
                     resolve(that);

@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Hello Anagarika Sabbamita!"
+npm install

@@ -25,6 +25,7 @@
         });
     });
     it("initialize() must be called", (done) => {
+        this.timeout(5*1000);
         (async function() { try {
             var newbd = new BilaraData();
             should(newbd.initialized).equal(false);
@@ -61,6 +62,12 @@
                 nikaya: 'an',
                 suid: 'an2.1-10',
                 translation: 'translation/en/sujato/an/an2/an2.1-10_translation-en-sujato.json',
+            },{
+                author: 'sabbamitta',
+                lang: 'de',
+                nikaya: 'an',
+                suid: 'an2.1-10',
+                translation: 'translation/de/sabbamitta/an/an2/an2.1-10_translation-de-sabbamitta.json',
             }]);
             done();
         } catch(e) {done(e);} })();

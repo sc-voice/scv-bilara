@@ -13,8 +13,11 @@ const {
     LOCAL_DIR,
 } = require('just-simple').JustSimple;
 
+logger.info('de-suttas.js');
+
 (async function() { try {
     var bd = await new BilaraData().initialize();
+    logger.info(`OK: Retrieved latest from ${bd.execGit.repo}`);
     var gitDE = 'https://github.com/sabbamitta/sutta-translation';
     var dePath = path.join(LOCAL_DIR, 'de-suttas');
     var deGit = new ExecGit({
@@ -22,6 +25,7 @@ const {
         repoPath: dePath,
     });
     var res = await deGit.sync();
+    logger.info(`OK: Updating latest from ${gitDE}`);
     var deFiles = await bd.dirFiles(dePath);
     deFiles.filter(f => /AN\/[12]\//.test(f)).forEach(def => {
         var det = new DETranslation({

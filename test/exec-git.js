@@ -27,7 +27,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTadd(...) git add", (done)=>{
+    it("add(...) git add", (done)=>{
         (async function() { try {
             var execGit = new ExecGit();
             var res = await execGit.add();
@@ -35,7 +35,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESThasChanges() true if git has changes", (done)=>{
+    it("hasChanges() true if git has changes", (done)=>{
         (async function() { try {
             var execGit = new ExecGit();
             var res = await execGit.hasChanges();
@@ -43,7 +43,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTcommit(...) git commit", (done)=>{
+    it("commit(...) git commit", (done)=>{
         (async function() { try {
             var execGit = new ExecGit();
             var res = await execGit.commit("new translations");
