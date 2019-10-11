@@ -23,7 +23,7 @@ const {
     });
     var res = await deGit.sync();
     var deFiles = await bd.dirFiles(dePath);
-    deFiles.filter(f => /AN\/1\//.test(f)).forEach(def => {
+    deFiles.filter(f => /AN\/[12]\//.test(f)).forEach(def => {
         var det = new DETranslation({
             source: def.replace(dePath,''),
         });

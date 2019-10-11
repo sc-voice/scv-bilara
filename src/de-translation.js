@@ -121,6 +121,7 @@
                 var srcText = seg[srcTrans.lang];
                 var dstText = this.text[i+deOffset];
                 dstText = dstText == null ? ' ' : dstText;
+                dstText = dstText.trim() + ' ';
                 if (i < 3 && /:0/.test(scid)) {
                     deOffset--;
                     if (i === 0) {

@@ -21,3 +21,11 @@ cd scv-bilara
 ### Scripts
 
 #### de-suttas.sh
+Enter the following in the `scv-bilara` terminal window. As the script
+runs, you may be prompted for your Github username and/or password
+unless you have previously set up an [ssh-agent](https://www.ssh.com/ssh/agent) 
+authentication for Github.
+
+```bash
+./scripts/de-scripts.sh
+```
