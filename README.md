@@ -27,5 +27,5 @@ unless you have previously set up an [ssh-agent](https://www.ssh.com/ssh/agent)
 authentication for Github.
 
 ```bash
-./scripts/de-scripts.sh
+./scripts/de-suttas.sh
 ```
