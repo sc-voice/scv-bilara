@@ -116,12 +116,16 @@
                     throw e;
                 }
             });
-            lang = lang || info[0].lang;
-            author = author || info[0].author;
-            var suttaInfo = info.filter(
-                i => i.lang === lang && i.author === author)[0];
+            if (lang == null && author == null) {
+                lang = info[0].lang;
+                author = info[0].author;
+            }
+            var suttaInfo = info.filter( i => 
+                (!lang || i.lang === lang) && 
+                (!author || i.author === author)
+            )[0];
             if (suttaInfo == null || suttaInfo.translation == null) {
-                this.log(`loadTranslation(${suid}) info:${info}`);
+                this.log(`loadTranslation(${suid}) info:${js.simpleString(info)}`);
                 throw new Error(
                     `No information for ${suid}/${lang}/${author}`);
             }
