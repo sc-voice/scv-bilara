@@ -55,6 +55,12 @@
                 nikaya: 'sn',
                 suid: 'sn12.3',
                 translation: 'translation/en/sujato/sn/sn12/sn12.3_translation-en-sujato.json',
+            },{
+                author: 'sabbamitta',
+                lang: 'de',
+                nikaya: 'sn',
+                suid: 'sn12.3',
+                translation: 'translation/de/sabbamitta/sn/sn12/sn12.3_translation-de-sabbamitta.json',
             }]);
             should.deepEqual(bd.suttaInfo('an2.1-10'), [{
                 author: 'sujato',

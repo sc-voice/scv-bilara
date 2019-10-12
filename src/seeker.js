@@ -26,6 +26,34 @@
                 new RegExp("/(dhp)/","iu");
         }
 
+        static sanitizePattern(pattern) {
+            if (!pattern) {
+                throw new Error("search pattern is required");
+            }
+            const MAX_PATTERN = 1024;
+            var excess = pattern.length - MAX_PATTERN;
+            if (excess > 0) {
+                throw new Error(`Search text too long by ${excess} characters.`);
+            }
+            // replace quotes (code injection on grep argument)
+            pattern = pattern.replace(/["']/g,'.'); 
+            // eliminate tabs, newlines and carriage returns
+            pattern = pattern.replace(/\s/g,' '); 
+            // remove control characters
+            pattern = pattern.replace(/[\u0000-\u001f\u007f]+/g,''); 
+            // must be valid
+            new RegExp(pattern);
+
+            return pattern;
+        }
+
+        static normalizePattern(pattern) {
+            // normalize white space to space
+            pattern = pattern.replace(/[\s]+/g,' +'); 
+            
+            return pattern;
+        }
+
         grep(opts) {
             var {
                 pattern,
@@ -314,35 +342,6 @@
             }, true);
         }
 
-        static sanitizePattern(pattern) {
-            if (!pattern) {
-                throw new Error("SuttaStore.search() pattern is required");
-            }
-            const MAX_PATTERN = 1024;
-            var excess = pattern.length - MAX_PATTERN;
-            if (excess > 0) {
-                throw new Error(`Search text too long by ${excess} characters.`);
-            }
-            // replace quotes (code injection on grep argument)
-            pattern = pattern.replace(/["']/g,'.'); 
-            // eliminate tabs, newlines and carriage returns
-            pattern = pattern.replace(/\s/g,' '); 
-            // remove control characters
-            pattern = pattern.replace(/[\u0000-\u001f\u007f]+/g,''); 
-            // must be valid
-            new RegExp(pattern);
-
-            return pattern;
-        }
-
-        static normalizePattern(pattern) {
-            // normalize white space to space
-            pattern = pattern.replace(/[\s]+/g,' +'); 
-            
-            return pattern;
-        }
-
-        
         static paliPattern(pattern) {
             return /^[a-z]+$/i.test(pattern) 
                 ? pattern
@@ -357,41 +356,6 @@
                 : pattern;
         }
 
-        grep(args) {
-            var {
-                pattern,
-                maxResults,
-                language,
-                searchMetadata,
-            } = args;
-            var grex = searchMetadata
-                ? pattern
-                : `"(blurb|title|${language}|pli)":.*${pattern}`;
-            var root = this.root.replace(ROOT, '');
-            var cmd = `grep -rciE '${grex}' `+
-                `--exclude-dir=examples `+
-                `--exclude-dir=.git `+
-                `--exclude='*.md' `+
-                `|grep -v ':0'`+
-                `|sort -g -r -k 2,2 -k 1,1 -t ':'`;
-            maxResults && (cmd += `|head -${maxResults}`);
-            logger.info(`SuttaStore.search() ${cmd}`);
-            var opts = {
-                cwd: this.root,
-                shell: '/bin/bash',
-                maxBuffer,
-            };
-            return new Promise((resolve,reject) => {
-                exec(cmd, opts, (err,stdout,stderr) => {
-                    if (err) {
-                        logger.log(stderr);
-                        reject(err);
-                    } else {
-                        resolve(stdout && stdout.trim().split('\n') || []);
-                    }
-                });
-            });
-        }
 
         static grepComparator(a,b) {
             var cmp = b.count - a.count;

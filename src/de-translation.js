@@ -46,7 +46,7 @@
                     this.blurb = l.replace(RE_TAG,'');
                 } else if (/^:vagga:/ui.test(l)) {
                     this.vagga = l.replace(RE_TAG,'');
-                } else if (/^:copyright:/ui.test(l)) {
+                } else if (/^:co[^:]*ight:/ui.test(l)) {
                     this.copyright = l.replace(RE_TAG,'');
                 } else if (/^:nikaya:/ui.test(l)) {
                     this.nikaya = l.replace(RE_TAG,'');

@@ -104,4 +104,33 @@
             done();
         } catch(e) { done(e); }})();
     });
+    it("TESTTESTsanitizePattern(pattern) prevents code injection attacks", ()=>{
+        var testPattern = (pattern,expected) => {
+            should(Seeker.sanitizePattern(pattern)).equal(expected);
+        }
+        testPattern('"doublequote"', '.doublequote.');
+        testPattern("'singlequote'", '.singlequote.');
+        testPattern("a$b", 'a$b');
+        testPattern("a.b", 'a.b');
+        testPattern("a.*b", 'a.*b');
+        testPattern("a\\'b", 'a\\.b');
+        testPattern("a\u0000b", 'ab');
+        testPattern("a\u0001b", 'ab');
+        testPattern("a\u007Fb", 'ab');
+        testPattern("sattānaṃ", "sattānaṃ");
+        should.throws(() => SuttaStore.sanitizePattern("not [good"));
+    });
+    it("TESTTESTnormalizePattern(pattern) prevents code injection attacks", ()=>{
+        var testPattern = (pattern,expected) => {
+            should(Seeker.normalizePattern(pattern)).equal(expected);
+        }
+        testPattern('root of suffering', 'root +of +suffering');
+        testPattern("a\nb\n\r\n\rc", 'a +b +c');
+        testPattern("a\tb\t\t\rc", 'a +b +c');
+        testPattern("a$b", 'a$b');
+        testPattern("a.b", 'a.b');
+        testPattern("a.*b", 'a.*b');
+        testPattern("a.+b", 'a.+b');
+        testPattern("sattānaṃ", "sattānaṃ");
+    });
 })

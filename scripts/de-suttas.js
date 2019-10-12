@@ -15,7 +15,7 @@ const {
 
 logger.info('de-suttas.js');
 
-var patAllow = "/./";
+var patAllow = ".*/(AN|DN|MN|KN|SN)/.*";
 
 (async function() { try {
     var bd = await new BilaraData().initialize();
@@ -30,7 +30,10 @@ var patAllow = "/./";
     logger.info(`OK: Updating latest from ${gitDE}`);
     var deFiles = await bd.dirFiles(dePath);
     var reAllow = new RegExp(patAllow,"u");
-    deFiles.filter(f => reAllow.test(f)).forEach(def => {
+    console.log(deFiles.slice(0,10));
+    var deAllowedFiles = deFiles.filter(f => reAllow.test(f));
+    console.log(deAllowedFiles);
+    deAllowedFiles.forEach(def => {
         var det = new DETranslation({
             source: def.replace(dePath,''),
         });
