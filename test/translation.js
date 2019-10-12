@@ -69,7 +69,7 @@
             'dn33:1.2.5',
         ]);
     });
-    it("save(...) saves translation file", ()=>{
+    it("import(...) imports translation file", ()=>{
         var tmpObj = tmp.dirSync();
         var dn33 = new Translation({
             translation: 'data/dn33.json',
@@ -78,12 +78,12 @@
         dn33.translation = 'dn33.json';
 
         // add a new segment and save the translation
-        dn33.segMap['dn33:0.0'] = 'save-test';
-        dn33.save(tmpObj.name);
+        dn33.segMap['dn33:0.0'] = 'import-test';
+        dn33.import(tmpObj.name);
         var dn33path = path.join(tmpObj.name, dn33.translation);
         should(fs.existsSync(dn33path)).equal(true);
         var json = JSON.parse(fs.readFileSync(dn33path));
-        should(json['dn33:0.0']).equal('save-test');
+        should(json['dn33:0.0']).equal('import-test');
         should(json['dn33:1.10.31'])
             .equal('form, formlessness, and cessation. '); 
         fs.unlinkSync(dn33path);

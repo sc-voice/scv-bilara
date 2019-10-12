@@ -96,7 +96,7 @@
             return this;
         }
 
-        save(root) {
+        import(root) {
             var {
                 translation,
             } = this;
@@ -111,7 +111,7 @@
                 }
                 return acc;
             }, root);
-            this.log(`save(${spath})`);
+            this.log(`import(${spath})`);
             var json = JSON.stringify(this.segMap, null, 2);
             fs.writeFileSync(spath, json);
             return this;
