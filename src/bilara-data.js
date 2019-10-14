@@ -10,6 +10,7 @@
         execSync,
     } = require('child_process');
     const Translation = require('./translation');
+    const SuttaCentralId = require('./sutta-central-id');
     const ExecGit = require('./exec-git');
 
     const BILARA_DATA_GIT = 'https://github.com/sc-voice/bilara-data.git';
@@ -63,6 +64,9 @@
                             translation: file,
                         });
                     });
+                    var uidExpPath = path.join(that.root, 
+                        '.voice', 'uid_expansion.json');
+                    that.uid_expansion = JSON.parse(fs.readFileSync(uidExpPath));
 
                     that.initialized = true;
                     resolve(that);
@@ -135,6 +139,72 @@
             }
             return new Translation(suttaInfo).load(this.root);
         }
+
+        normalizeSuttaId(id) {
+            if (!this.initialized) {
+                throw new Error(`${this.constructor.name}.initialize() required`);
+            }
+            var {
+                suttaMap,
+                uid_expansion,
+            } = this;
+            var suttaIds = Object.keys(suttaMap);
+            if (typeof id !== 'string') {
+                if (id.scid) {
+                    id = id.scid;
+                } else {
+                    throw new Error(`expected string:${JSON.stringify(id)}`);
+                }
+            }
+            id = id.trim();
+            var sutta_uid = null;
+            if (/[^0-9][1-9]/.test(id)) {
+                var tokens = id.toLowerCase().split(' ');
+                if (tokens.length > 1) {
+                    var matches = uid_expansion.filter(ue => 
+                        0 === ue.acro.toLowerCase().localeCompare(tokens[0]));
+                    if (matches.length > 0) {
+                        sutta_uid = `${matches[0].uid}${tokens.slice(1).join('')}`;
+                    }
+                }
+                sutta_uid = sutta_uid || id;
+            }
+            sutta_uid = sutta_uid && suttaIds.filter(sid => {
+                return SuttaCentralId.compareLow(sid, sutta_uid) <= 0 &&
+                    0 <= SuttaCentralId.compareHigh(sid, sutta_uid);
+            })[0] || sutta_uid;
+            return sutta_uid;
+        }
+
+        translationPath(...args) {
+            if (!this.initialized) {
+                throw new Error(`${this.constructor.name}.initialize() is required`);
+            }
+            var opts = args[0];
+            if (typeof opts === 'string') {
+                var opts = {
+                    scid: args[0],
+                    lang: args[1],
+                    //language: args[1], // DEPRECATED
+                    author_uid: args[2],
+                }
+            }
+            // TODO mn1/en/sujato sutta_uid
+            var scid = new SuttaCentralId(opts.scid || opts.sutta_uid);
+            var sutta_uid = this.normalizeSuttaId(scid.sutta);
+            if (!sutta_uid) {
+                throw new Error('sutta_uid is required');
+            }
+            var lang = opts.lang || 'en';
+            var author = opts.author_uid;
+            var translations = this.suttaMap[sutta_uid]
+                .filter(t => t.lang === lang && !author || author === t.author);
+            if (translations.length === 0) {
+                return null;
+            }
+            return path.join(this.root, translations[0].translation);
+        }
+
 
     }
 

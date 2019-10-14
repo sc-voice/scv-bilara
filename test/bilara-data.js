@@ -4,6 +4,7 @@
     const path = require('path');
     const {
         BilaraData,
+        SuttaCentralId,
     } = require("../index");
     const {
         js,
@@ -104,6 +105,64 @@
                 'dn33:1.2.5',
             ]);
             done();
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTnormalizeSuttaId(id) returns normalized sutta_uid", function(done) {
+        this.timeout(5*1000);
+        (async function() { try {
+            await bd.initialize();
+            should(bd.normalizeSuttaId('an2.12')).equal('an2.11-20');
+            should(bd.normalizeSuttaId('an1.21-30')).equal('an1.21-30');
+            should(bd.normalizeSuttaId('AN 1.21-30')).equal('an1.21-30');
+            should(bd.normalizeSuttaId(' AN  1.21-30 ')).equal('an1.21-30');
+            should(bd.normalizeSuttaId('An 1.21-30')).equal('an1.21-30');
+            should(bd.normalizeSuttaId('Ds 1.1')).equal('ds1.1');
+            should(bd.normalizeSuttaId('fear')).equal(null);
+            should(bd.normalizeSuttaId('root of suffering')).equal(null);
+            should(bd.normalizeSuttaId('1986')).equal(null);
+            should(bd.normalizeSuttaId(' 1986')).equal(null);
+            done();
+        } catch(e) { done(e); } })();
+    });
+    it("TESTTESTtranslationPath(opts) filepath for scid", function(done) {
+        (async function() { try {
+            await bd.initialize();
+
+            // Object args
+            var lang = 'en';
+            var sutta_uid = 'mn1';
+            var spath = bd.translationPath({
+                sutta_uid,
+                lang,
+            });
+            should(spath).equal(path.join(bd.root,
+                'translation/en/sujato/mn/mn1_translation-en-sujato.json'));
+            should(fs.existsSync(spath)).equal(true);
+            
+            // argument list
+            var root = 'test';
+            var author = 'sujato';
+            var spath = bd.translationPath(sutta_uid, lang, author);
+            should(spath).equal(path.join(bd.root, 'translation/'+
+                'en/sujato/mn/mn1_translation-en-sujato.json'));
+
+            // By language
+            var spath = bd.translationPath('an1.2','de');
+            should(spath).equal(path.join(bd.root, 'translation/'+
+                'de/sabbamitta/an/an1/an1.1-10_translation-de-sabbamitta.json'));
+            should(fs.existsSync(spath)).equal(true);
+
+            // By SuttaCentralId
+            var spath = bd.translationPath('an1.2:0.3','de');
+            should(spath).equal(path.join(bd.root, 'translation/'+
+                'de/sabbamitta/an/an1/an1.1-10_translation-de-sabbamitta.json'));
+            should(fs.existsSync(spath)).equal(true);
+
+            // No file
+            var spath = bd.translationPath('mn1','en','no-author');
+            should(spath).equal(null);
+
+            done(); 
         } catch(e) {done(e);} })();
     });
 
