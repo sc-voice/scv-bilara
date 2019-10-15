@@ -19,7 +19,7 @@
         should(bd).instanceOf(BilaraData);
         should(bd.root).equal(`${LOCAL}/bilara-data`);
         should.deepEqual(bd.nikayas.sort(), [
-            'mn', 'sn', 'dn', 'an', 'kn',
+            'mn', 'sn', 'dn', 'an', 'kn/thag', 'kn/thig'
         ].sort());
         should(bd).properties({
             logLevel: 'info',
@@ -40,52 +40,131 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("suttaInfo(...) returns sutta metadata", done=>{
+    it("TESTTESTisSuttaPath(f) filters supported suttas", ()=>{
+        should(bd.isSuttaPath(
+            'translation/en/sujato/mn/mn1_translation-en-sujato.json'))
+            .equal(true);
+        should(bd.isSuttaPath(
+            'translation/en/sujato/kn/thig/thig2.4_translation-en-sujato.json'))
+            .equal(true);
+        should(bd.isSuttaPath(
+            'translation/en/sujato/kn/dhp/dhp21-32_translation-en-sujato.json'))
+            .equal(false);
+    });
+    it("TESTTESTsuttaInfo(...) returns sutta metadata", done=>{
         this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
-            should.deepEqual(bd.suttaInfo('dn33'), [{
+            var dn33Pli = {
+                author: 'ms',
+                lang: 'pli',
+                nikaya: 'dn',
+                suid: 'dn33',
+                bilaraPath: 'root/pli/ms/dn/dn33_root-pli-ms.json',
+            };
+            var dn33En = {
                 author: 'sujato',
                 lang: 'en',
                 nikaya: 'dn',
                 suid: 'dn33',
-                translation: 'translation/en/sujato/dn/dn33_translation-en-sujato.json',
-            }]);
-            should.deepEqual(bd.suttaInfo('sn12.3'), [{
+                bilaraPath: 'translation/'+
+                    'en/sujato/dn/dn33_translation-en-sujato.json',
+            }
+            should.deepEqual(bd.suttaInfo('dn33'), [dn33Pli, dn33En]);
+            var sn12_3pli = {
+                author: 'ms',
+                lang: 'pli',
+                nikaya: 'sn',
+                suid: 'sn12.3',
+                bilaraPath: 'root/pli/ms/sn/sn12/sn12.3_root-pli-ms.json',
+            }
+            var sn12_3en = {
                 author: 'sujato',
                 lang: 'en',
                 nikaya: 'sn',
                 suid: 'sn12.3',
-                translation: 'translation/en/sujato/sn/sn12/sn12.3_translation-en-sujato.json',
-            },{
+                bilaraPath: 'translation/'+
+                    'en/sujato/sn/sn12/sn12.3_translation-en-sujato.json',
+            };
+            var sn12_3de = {
                 author: 'sabbamitta',
                 lang: 'de',
                 nikaya: 'sn',
                 suid: 'sn12.3',
-                translation: 'translation/de/sabbamitta/sn/sn12/sn12.3_translation-de-sabbamitta.json',
-            }]);
-            should.deepEqual(bd.suttaInfo('an2.1-10'), [{
+                bilaraPath: 'translation/'+
+                    'de/sabbamitta/sn/sn12/sn12.3_translation-de-sabbamitta.json',
+            };
+            should.deepEqual(bd.suttaInfo('sn12.3'), 
+                [sn12_3pli, sn12_3en, sn12_3de]);
+            var an2_1_10pli = {
+                author: 'ms',
+                lang: 'pli',
+                nikaya: 'an',
+                suid: 'an2.1-10',
+                bilaraPath: 'root/pli/ms/an/an2/an2.1-10_root-pli-ms.json',
+            };
+            var an2_1_10en = {
                 author: 'sujato',
                 lang: 'en',
                 nikaya: 'an',
                 suid: 'an2.1-10',
-                translation: 'translation/en/sujato/an/an2/an2.1-10_translation-en-sujato.json',
-            },{
+                bilaraPath: 'translation/'+
+                    'en/sujato/an/an2/an2.1-10_translation-en-sujato.json',
+            };
+            var an2_1_10de = {
                 author: 'sabbamitta',
                 lang: 'de',
                 nikaya: 'an',
                 suid: 'an2.1-10',
-                translation: 'translation/de/sabbamitta/an/an2/an2.1-10_translation-de-sabbamitta.json',
-            }]);
+                bilaraPath: 'translation/'+
+                    'de/sabbamitta/an/an2/an2.1-10_translation-de-sabbamitta.json',
+            };
+            should.deepEqual(bd.suttaInfo('an2.1-10'), 
+                [ an2_1_10pli, an2_1_10en, an2_1_10de ]);
             done();
         } catch(e) {done(e);} })();
     });
-    it("loadTranslation(...) loads translation JSON", done=>{
+    it("TESTTESTloadTranslation(...) loads translation document", done=>{
         this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
+            var expectedProps = {
+                suid: 'dn33',
+                author: 'sujato',
+                lang: 'en',
+            };
+
+            // string form
+            var an1_1_10 = bd.loadTranslation("an1.1-10");
+            should(an1_1_10).properties({
+                suid: 'an1.1-10',
+                author: 'sujato',
+                lang: 'en',
+            });
+            var an1_1_10 = bd.loadTranslation("an1.1-10","de");
+            should(an1_1_10).properties({
+                suid: 'an1.1-10',
+                author: 'sabbamitta',
+                lang: 'de',
+            });
+
+            // full form
             var dn33 = bd.loadTranslation({
                 suid: 'dn33',
+            });
+            should(dn33).properties(expectedProps);
+            should(dn33.segMap['dn33:1.10.31'])
+                .equal('form, formlessness, and cessation. '); 
+            done();
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTloadSegDoc(...) loads segmented document", done=>{
+        this.timeout(5*1000);
+        (async function() { try {
+            await bd.initialize();
+            var dn33 = bd.loadSegDoc({
+                suid: 'dn33',
+                lang: 'en',
             });
             should(dn33).properties({
                 suid: 'dn33',
@@ -109,7 +188,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTnormalizeSuttaId(id) returns normalized sutta_uid", function(done) {
+    it("normalizeSuttaId(id) returns normalized sutta_uid", function(done) {
         this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
@@ -126,7 +205,7 @@
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTtranslationPaths(...) filepath for scid", function(done) {
+    it("translationPaths(...) filepath for scid", function(done) {
         (async function() { try {
             await bd.initialize();
 
@@ -173,7 +252,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTtranslationPaths(...) bad input", function(done) {
+    it("translationPaths(...) bad input", function(done) {
         (async function() { try {
             // No file
             var spath = bd.translationPaths('mn1','en','no-author')[0];
@@ -191,7 +270,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTsuttaPath(...) deprecated", function(done) {
+    it("suttaPath(...) deprecated", function(done) {
         (async function() { try {
             await bd.initialize();
 
@@ -206,6 +285,51 @@
             });
             var mn1 = 'translation/en/sujato/mn/mn1_translation-en-sujato.json';
             should(spath).equal(path.join(bd.root, mn1));
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTnikayaSuttaIds(...) returns sutta_uids", done=>{
+        this.timeout(5*1000);
+        (async function() { try {
+            var language = 'en';
+            const KNSTART = [
+                'thag1.1', 'thag1.2', 'thag1.3',
+            ];
+            const KNEND = [
+                'thig14.1', 'thig15.1', 'thig16.1',
+            ];
+
+            // Root nikaya kn
+            var ids = await bd.nikayaSuttaIds('kn');
+            should(ids).instanceOf(Array);
+            should.deepEqual(ids.slice(0,3), KNSTART);
+            should.deepEqual(ids.slice(ids.length-3,ids.length), KNEND);
+            should(ids.length).equal(335);
+
+            // Root nikaya an
+            var ids = await bd.nikayaSuttaIds('an');
+            should(ids.length).equal(1407);
+
+            // Root nikaya sn
+            var ids = await bd.nikayaSuttaIds('sn');
+            should(ids.length).equal(1819);
+
+            // Root nikaya dn
+            var ids = await bd.nikayaSuttaIds('dn');
+            should(ids.length).equal(34);
+
+            // nikaya mn
+            var ids = await bd.nikayaSuttaIds('mn');
+            should(ids.length).equal(152);
+
+            // nikaya, language
+            var ids = await bd.nikayaSuttaIds('sn', 'de');
+            should(ids.length).below(1819);
+
+            // Bad input
+            var ids = await bd.nikayaSuttaIds('nonikaya', 'yiddish', 'nobody');
+            should.deepEqual(ids, []);
+
             done(); 
         } catch(e) {done(e);} })();
     });

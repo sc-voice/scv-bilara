@@ -26,6 +26,28 @@
                 new RegExp("/(dhp)/","iu");
         }
 
+        static isUidPattern(pattern) {
+            var commaParts = pattern.toLowerCase().split(',').map(p=>p.trim());
+            return commaParts.reduce((acc,part) => {
+                return acc && /^[a-z]+ ?[0-9]+[-0-9a-z.:\/]*$/i.test(part);
+            }, true);
+        }
+
+        static paliPattern(pattern) {
+            return /^[a-z]+$/i.test(pattern) 
+                ? pattern
+                    .replace(/a/iug, '(a|ā)')
+                    .replace(/i/iug, '(i|ī)')
+                    .replace(/u/iug, '(u|ū)')
+                    .replace(/m/iug, '(m|ṁ|ṃ)')
+                    .replace(/d/iug, '(d|ḍ)')
+                    .replace(/n/iug, '(n|ṅ|ñ|ṇ)')
+                    .replace(/l/iug, '(l|ḷ)')
+                    .replace(/t/iug, '(t|ṭ)')
+                : pattern;
+        }
+
+
         static sanitizePattern(pattern) {
             if (!pattern) {
                 throw new Error("search pattern is required");
@@ -99,6 +121,7 @@
                 });
             });
         }
+
 
     }
 
@@ -298,64 +321,6 @@
             }
             return fpath;
         }
-
-        suttaPath(...args) {
-            if (!this.isInitialized) {
-                throw new Error("SuttaStore.initialize() is required");
-            }
-            var opts = args[0];
-            if (typeof opts === 'string') {
-                var opts = {
-                    sutta_uid: args[0],
-                    language: args[1],
-                    author_uid: args[2],
-                }
-            }
-            var sutta_uid = SuttaCentralId.normalizeSuttaId(opts.sutta_uid);
-            if (!sutta_uid) {
-                throw new Error('sutta_uid is required');
-            }
-            var folder = this.suttaFolder(sutta_uid);
-            var language = opts.language || 'en';
-            var langPath = path.join(folder, language);
-            if (!fs.existsSync(langPath)) {
-                fs.mkdirSync(langPath);
-            }
-            var author_uid = opts.author_uid;
-            if (!author_uid) {
-                throw new Error(`author_uid is required for: ${sutta_uid}`);
-            }
-            var authorPath = path.join(langPath, author_uid);
-            if (!fs.existsSync(authorPath)) {
-                fs.mkdirSync(authorPath);
-            }
-            var fname = this.suttaIds.filter(id => {
-                return 0 === SuttaCentralId.compareLow(sutta_uid, id);
-            })[0] || sutta_uid;
-            return path.join(authorPath, `${fname}.json`);
-        }
-
-        static isUidPattern(pattern) {
-            var commaParts = pattern.toLowerCase().split(',').map(p=>p.trim());
-            return commaParts.reduce((acc,part) => {
-                return acc && /^[a-z]+ ?[0-9]+[-0-9a-z.:\/]*$/i.test(part);
-            }, true);
-        }
-
-        static paliPattern(pattern) {
-            return /^[a-z]+$/i.test(pattern) 
-                ? pattern
-                    .replace(/a/iug, '(a|ā)')
-                    .replace(/i/iug, '(i|ī)')
-                    .replace(/u/iug, '(u|ū)')
-                    .replace(/m/iug, '(m|ṁ|ṃ)')
-                    .replace(/d/iug, '(d|ḍ)')
-                    .replace(/n/iug, '(n|ṅ|ñ|ṇ)')
-                    .replace(/l/iug, '(l|ḷ)')
-                    .replace(/t/iug, '(t|ṭ)')
-                : pattern;
-        }
-
 
         static grepComparator(a,b) {
             var cmp = b.count - a.count;
@@ -989,36 +954,6 @@
                         method,
                         results,
                         resultPattern,
-                    });
-                } catch(e) {reject(e);} })();
-            });
-        }
-
-        nikayaSuttaIds(nikaya, language='en', author='sujato') {
-            var that = this;
-            if (nikaya == null) {
-                return Promise.reject(new Error(
-                    `nikayaSuttaIds() nikaya is required`));
-            }
-            return new Promise((resolve, reject) => {
-                (async function() { try {
-                    var nikayaPath = path.join(that.root, nikaya);
-                    var lang = language === 'pli' ? 'en' : language;
-                    var langPath = path.join(nikayaPath, lang, author);
-                    fs.readdir(langPath, null, (err, files) => {
-                        if (err) {
-                            logger.info(`nikayaSuttaIds(${nikaya}) ${err.message}`);
-                            resolve([]);
-                        } else {
-                            var sutta_uids = files.reduce((acc,f) => {
-                                if (f.endsWith('.json')) {
-                                    acc.push(f.replace(/\.json/u, ''));
-                                }
-                                return acc;
-                            }, []);
-                            var cmp = SuttaCentralId.compareLow;
-                            resolve(sutta_uids.sort(cmp));
-                        }
                     });
                 } catch(e) {reject(e);} })();
             });

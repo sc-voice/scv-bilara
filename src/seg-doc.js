@@ -6,12 +6,12 @@
         logger,
     } = require('just-simple').JustSimple;
 
-    class Translation {
+    class SegDoc {
         constructor(opts={}) {
             this.suid = opts.suid;
             this.lang = opts.lang;
             this.author = opts.author;
-            this.translation = opts.translation;
+            this.bilaraPath = opts.bilaraPath;
             this.segMap = opts.segMap || {};
             logger.logInstance(this, {
                 logLevel: opts.logLevel === undefined ? 'info' : opts.logLevel,
@@ -65,8 +65,7 @@
                 .split('.');
             var bdotcolon_parts = bcolon_parts[0].replace(/[a-z]+/iu,'')
                 .split('.');
-            var cmp = Translation
-                .compareParts(adotcolon_parts, bdotcolon_parts);
+            var cmp = SegDoc.compareParts(adotcolon_parts, bdotcolon_parts);
             //console.log(`dbg dotcolon`, adotcolon_parts, bdotcolon_parts, cmp);
             if (cmp) {
                 return cmp;
@@ -74,12 +73,12 @@
 
             var adot_parts = acolon_parts[1].split('.');
             var bdot_parts = bcolon_parts[1].split('.');
-            return Translation.compareParts(adot_parts, bdot_parts);
+            return SegDoc.compareParts(adot_parts, bdot_parts);
         }
 
         scids() {
             var result = Object.keys(this.segMap);
-            result.sort(Translation.compareScid);
+            result.sort(SegDoc.compareScid);
             return result;
         }
 
@@ -88,9 +87,9 @@
                 suid,
                 lang,
                 author,
-                translation,
+                bilaraPath,
             } = this;
-            var spath = path.join(root, translation);
+            var spath = path.join(root, bilaraPath);
             this.log(`load(${spath})`);
             this.segMap = JSON.parse(fs.readFileSync(spath));
             return this;
@@ -98,10 +97,10 @@
 
         import(root) {
             var {
-                translation,
+                bilaraPath,
             } = this;
-            var spath = path.join(root, translation);
-            var parts = translation.split('/');
+            var spath = path.join(root, bilaraPath);
+            var parts = bilaraPath.split('/');
             parts.reduce((acc,p,i) => {
                 if (i < parts.length-1) {
                     acc = path.join(acc, p);
@@ -126,5 +125,5 @@
 
     }
 
-    module.exports = exports.Translation = Translation;
+    module.exports = exports.SegDoc = SegDoc;
 })(typeof exports === "object" ? exports : (exports = {}));

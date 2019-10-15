@@ -10,7 +10,6 @@
         exec,
         execSync,
     } = require('child_process');
-    const Translation = require('./translation');
 
     const BILARA_DATA_GIT = 'https://github.com/sc-voice/bilara-data.git';
 

@@ -5,7 +5,7 @@
     const tmp = require('tmp');
     const {
         DETranslation,
-        Translation,
+        SegDoc,
     } = require("../index");
     const {
         logger,
@@ -84,18 +84,18 @@
         should(det.ready).equal(false);
     });
     it("applySegments(...) applies SN1.1 segmentation", ()=>{
-        var en_sn1_1 = new Translation({
+        var en_sn1_1 = new SegDoc({
             suid: 'sn1.1',
             lang: 'en',
             author: 'sujato',
-            translation: 'data/en/sujato/sn/sn1/'+
+            bilaraPath: 'data/en/sujato/sn/sn1/'+
                 'sn1.1_translation-en-sujato.json',
         }).load(__dirname);
         var det = new DETranslation({
             source: 'data/sn1.1',
         }).load(__dirname);
         var segments = det.applySegments(en_sn1_1).segments();
-        should(det.translation).equal('data/de/sabbamitta/sn/sn1/'+
+        should(det.bilaraPath).equal('data/de/sabbamitta/sn/sn1/'+
             'sn1.1_translation-de-sabbamitta.json');
         var i = 0;
         should.deepEqual(segments[i++], {
@@ -112,18 +112,18 @@
         });
     });
     it("applySegments(...) applies AN1.1-10 segmentation", ()=>{
-        var ent = new Translation({
+        var ent = new SegDoc({
             suid: 'an1.1-10',
             lang: 'en',
             author: 'sujato',
-            translation: 'data/en/sujato/an/an1/'+
+            bilaraPath: 'data/en/sujato/an/an1/'+
                 'an1.1-10_translation-en-sujato.json',
         }).load(__dirname);
         var det = new DETranslation({
             source: 'data/de_an1.1-10',
         }).load(__dirname);
         var segments = det.applySegments(ent).segments();
-        should(det.translation).equal('data/de/sabbamitta/an/an1/'+
+        should(det.bilaraPath).equal('data/de/sabbamitta/an/an1/'+
             'an1.1-10_translation-de-sabbamitta.json');
         var i = 0;
         should.deepEqual(segments[i++], {

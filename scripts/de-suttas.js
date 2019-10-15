@@ -2,7 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const {
-    Translation,
+    SegDoc,
     DETranslation,
     BilaraData,
     ExecGit,
@@ -45,7 +45,7 @@ var patAllow = ".*/(AN|DN|MN|KN|SN)/.*";
                 lang: 'en',
             });
             det.applySegments(srcTrans);
-            logger.info(`Saving ${suid} to ${det.translation}`);
+            logger.info(`Saving ${suid} to ${det.bilaraPath}`);
             det.import(bd.root);
         } else {
             logger.info(`Skipping ${det.source} (NOT READY YET)`);

@@ -3,7 +3,7 @@ module.exports = {
     DETranslation: require("./src/de-translation"),
     ExecGit: require("./src/exec-git"),
     Seeker: require("./src/seeker"),
+    SegDoc: require("./src/seg-doc"),
     SuttaCentralId: require("./src/sutta-central-id"),
-    Translation: require("./src/translation"),
 
 "" : ""};

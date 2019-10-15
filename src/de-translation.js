@@ -5,10 +5,10 @@
         js,
         logger,
     } = require('just-simple').JustSimple;
-    const Translation = require('./translation');
+    const SegDoc = require('./seg-doc');
     const RE_TAG = /^:[^:]+:/i;
 
-    class DETranslation extends Translation {
+    class DETranslation extends SegDoc {
         constructor(opts={}) {
             super(opts);
             this.suid = opts.suid;
@@ -92,7 +92,7 @@
             }
             var srcSegs = srcTrans.segments();
             var deOffset = 0;
-            this.translation = srcTrans.translation.split('/').map(p => {
+            this.bilaraPath = srcTrans.bilaraPath.split('/').map(p => {
                 if (p === srcTrans.lang) {
                     return lang;
                 }

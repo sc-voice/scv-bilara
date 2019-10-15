@@ -14,7 +14,7 @@
 
     const BILARA_PATH = path.join(LOCAL_DIR, 'bilara-data');
 
-    it("TESTTEST default ctor", ()=>{
+    it(" default ctor", ()=>{
         var skr = new Seeker();
         should(skr.root).equal(path.join(BILARA_PATH, 'translation'));
         should(skr).properties({
@@ -22,7 +22,7 @@
             lang: 'en',
         });
     });
-    it("TESTTEST custom ctor", ()=>{
+    it(" custom ctor", ()=>{
         var logLevel = 'warn';
         var lang = 'de';
         var skr = new Seeker({
@@ -36,7 +36,7 @@
             lang,
         });
     });
-    it("TESTTESTgrep(...) finds en things", done=>{
+    it("grep(...) finds en things", done=>{
         (async function() { try {
             var skr = new Seeker();
             var res = await skr.grep({
@@ -56,7 +56,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTgrep(...) finds maxResults things", done=>{
+    it("grep(...) finds maxResults things", done=>{
         (async function() { try {
             var skr = new Seeker();
             var res = await skr.grep({
@@ -72,7 +72,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTgrep(...) skips grepDeny things", done=>{
+    it("grep(...) skips grepDeny things", done=>{
         (async function() { try {
             var skr = new Seeker();
             var res = await skr.grep({
@@ -88,7 +88,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTgrep(...) finds de things", done=>{
+    it("grep(...) finds de things", done=>{
         (async function() { try {
             var skr = new Seeker();
             var res = await skr.grep({
@@ -104,7 +104,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTsanitizePattern(pattern) prevents code injection attacks", ()=>{
+    it("sanitizePattern(pattern) prevents code injection attacks", ()=>{
         var testPattern = (pattern,expected) => {
             should(Seeker.sanitizePattern(pattern)).equal(expected);
         }
@@ -120,7 +120,7 @@
         testPattern("sattānaṃ", "sattānaṃ");
         should.throws(() => SuttaStore.sanitizePattern("not [good"));
     });
-    it("TESTTESTnormalizePattern(pattern) prevents code injection attacks", ()=>{
+    it("normalizePattern(pattern) prevents code injection attacks", ()=>{
         var testPattern = (pattern,expected) => {
             should(Seeker.normalizePattern(pattern)).equal(expected);
         }
@@ -132,5 +132,52 @@
         testPattern("a.*b", 'a.*b');
         testPattern("a.+b", 'a.+b');
         testPattern("sattānaṃ", "sattānaṃ");
+    });
+    it("paliPattern(pattern) should return the Pali pattern", function(){
+        should(Seeker.paliPattern("jhana")).equal('jh(a|ā)(n|ṅ|ñ|ṇ)(a|ā)');
+        should(Seeker.paliPattern("abcdefghijklmn"))
+        .equal('(a|ā)bc(d|ḍ)efgh(i|ī)jk(l|ḷ)(m|ṁ|ṃ)(n|ṅ|ñ|ṇ)')
+        should(Seeker.paliPattern("nopqrstuvwxyz"))
+        .equal('(n|ṅ|ñ|ṇ)opqrs(t|ṭ)(u|ū)vwxyz');
+        should(Seeker.paliPattern("[abcdefghijklmnopqrstuvwxyz]"))
+        .equal('[abcdefghijklmnopqrstuvwxyz]');
+    });
+    it("TESTTESTisUidPattern(pattern) is true for sutta_uid patterns", function() {
+        // unsupported sutta
+        should(Seeker.isUidPattern('t1670b2.8')).equal(true);
+
+        // fully specified sutta
+        should(Seeker.isUidPattern('mn1/en/sujato')).equal(true);
+        should(Seeker.isUidPattern(
+            'mn1/en/sujato,mn1/en/bodhi')).equal(true);
+        should(Seeker.isUidPattern(
+            'dn7/de/kusalagnana-maitrimurti-traetow')).equal(true);
+
+        // valid collection with a number
+        should(Seeker.isUidPattern('mn2000')).equal(true);
+        should(Seeker.isUidPattern('an1')).equal(true);
+        should(Seeker.isUidPattern('sn22.1')).equal(true);
+        should(Seeker.isUidPattern('sn22.1-20')).equal(true);
+        should(Seeker.isUidPattern('mn8-11')).equal(true);
+        should(Seeker.isUidPattern('mn8-11,mn9-12')).equal(true);
+
+        // unknown but valid sutta 
+        should(Seeker.isUidPattern('a1')).equal(true);
+        should(Seeker.isUidPattern('mn01')).equal(true);
+
+        // not a sutta_uid pattern
+        should(Seeker.isUidPattern('red')).equal(false);
+        should(Seeker.isUidPattern('thig')).equal(false);
+        should(Seeker.isUidPattern('mn')).equal(false);
+
+        // lists
+        should(Seeker.isUidPattern('mn1, mn2')).equal(true);
+        should(Seeker.isUidPattern('sn22-25')).equal(true);
+        should(Seeker.isUidPattern('sn22.1-20,mn1')).equal(true);
+        should(Seeker.isUidPattern('sn22.1-20   ,   mn1')).equal(true);
+        should(Seeker.isUidPattern('sn22.1-20,red')).equal(false);
+        should(Seeker.isUidPattern('red,sn22.1-20,mn1')).equal(false);
+        should(Seeker.isUidPattern('sn22.1-20    ,   red')).equal(false);
+        should(Seeker.isUidPattern('red,sn22.1-20')).equal(false);
     });
 })

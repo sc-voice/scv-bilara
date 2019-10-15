@@ -9,7 +9,7 @@
     const {
         execSync,
     } = require('child_process');
-    const Translation = require('./translation');
+    const SegDoc = require('./seg-doc');
     const SuttaCentralId = require('./sutta-central-id');
     const ExecGit = require('./exec-git');
 
@@ -20,7 +20,9 @@
             this.name = opts.name || 'bilara-data';
             this.root = opts.root || path.join(LOCAL_DIR, 'bilara-data');
             logger.logInstance(this, opts);
-            this.nikayas = opts.nikayas || ['an','mn','dn','sn', 'kn'];
+            this.nikayas = opts.nikayas || [
+                'an','mn','dn','sn', 'kn/thig', 'kn/thag'
+            ];
             this.execGit = opts.execGit || new ExecGit(BILARA_DATA_GIT);
             this.reNikayas = new RegExp(
                 `/(${this.nikayas.join('|')})/`, 'ui');
@@ -41,12 +43,36 @@
                     await that.sync();
 
                     var map = that.suttaMap = {};
-                    var transRoot = path.join(that.root, 'translation');
-                    if (!fs.existsSync(transRoot)) {
+                    var rootPath = path.join(that.root, 'root');
+                    if (!fs.existsSync(rootPath)) {
                         throw new Error(
-                            `Directory "transRoot" not found:${transRoot}`); 
+                            `Root document directory not found:${rootPath}`); 
                     }
-                    that.translations = that.dirFiles(transRoot)
+                    that.rootFiles = that.dirFiles(rootPath)
+                        .filter(f => that.isSuttaPath(f));
+                    that.rootFiles.forEach((f,i) => {
+                        var file = f.replace(/.*\/root\//,'root/');
+                        var parts = file.split('/');
+                        var lang = parts[1];
+                        var author = parts[2];
+                        var nikaya = parts[3];
+                        var suid = parts[parts.length-1].split('_')[0].toLowerCase();
+                        map[suid] = map[suid] || [];
+                        map[suid].push({
+                            suid,
+                            lang,
+                            nikaya,
+                            author,
+                            bilaraPath: file,
+                        });
+                    });
+
+                    var transPath = path.join(that.root, 'translation');
+                    if (!fs.existsSync(transPath)) {
+                        throw new Error(
+                            `Translation directory not found:${transPath}`); 
+                    }
+                    that.translations = that.dirFiles(transPath)
                         .filter(f => that.isSuttaPath(f));
                     that.translations.forEach((f,i) => {
                         var file = f.replace(/.*\/translation\//,'translation/');
@@ -61,7 +87,7 @@
                             lang,
                             nikaya,
                             author,
-                            translation: file,
+                            bilaraPath: file,
                         });
                     });
                     var uidExpPath = path.join(that.root, 
@@ -99,7 +125,21 @@
             return res.split('\n');
         }
 
-        loadTranslation(opts={}) {
+        loadTranslation(...args) {
+            if (typeof args[0] === 'string') {
+                var opts = {
+                    suid: args[0],
+                    lang: args[1] || 'en',
+                    author: args[2],
+                }
+            } else {
+                var opts = args[0] || {};
+            }
+            opts.lang = opts.lang || 'en';
+            return this.loadSegDoc(opts);
+        }
+
+        loadSegDoc(opts={}) {
             if (!this.initialized) {
                 throw new Error('Expected preceding call to initialize()');
             }
@@ -108,6 +148,7 @@
                 lang,
                 author,
             } = opts;
+            lang = lang || 'pli';
             var info = this.suttaInfo(suid);
             if (info == null) {
                 return new Error(`no suttaInfo({suid:${suid})`);
@@ -132,12 +173,12 @@
                 (!lang || i.lang === lang) && 
                 (!author || i.author === author)
             )[0];
-            if (suttaInfo == null || suttaInfo.translation == null) {
-                this.log(`loadTranslation(${suid}) info:${js.simpleString(info)}`);
+            if (suttaInfo == null || suttaInfo.bilaraPath == null) {
+                this.log(`loadSegDoc(${suid}) info:${js.simpleString(info)}`);
                 throw new Error(
                     `No information for ${suid}/${lang}/${author}`);
             }
-            return new Translation(suttaInfo).load(this.root);
+            return new SegDoc(suttaInfo).load(this.root);
         }
 
         normalizeSuttaId(id) {
@@ -205,9 +246,38 @@
             var translations = this.suttaMap[sutta_uid] || [];
             return translations
                 .filter(t => t.lang === lang && !author || author === t.author)
-                .map(t => path.join(this.root, t.translation));
+                .map(t => path.join(this.root, t.bilaraPath));
         }
 
+        nikayaSuttaIds(nikaya, lang='pli', author) {
+            var that = this;
+            if (nikaya == null) {
+                return Promise.reject(new Error(
+                    `nikayaSuttaIds() nikaya is required`));
+            }
+            var reNikaya = author
+                ? new RegExp(`.*/${lang}/${author}/.*${nikaya}/`)
+                : new RegExp(`.*/${lang}/.*/${nikaya}/`);
+            return new Promise((resolve, reject) => {
+                (async function() { try {
+                    await that.initialize();
+                    var srcFiles = lang === 'pli' 
+                        ? that.rootFiles 
+                        : that.translations;
+                    var sutta_uids = srcFiles.reduce((a,t) => {
+                        if (reNikaya.test(t)) {
+                            var f = path.basename(t, '.json');
+                            var sutta_uid = f.replace(/_.*$/,'');
+                            a.push(sutta_uid);
+                        }
+                        return a;
+                    }, []);
+                    var cmp = SuttaCentralId.compareLow;
+                    sutta_uids.sort(cmp);
+                    resolve(sutta_uids);
+                } catch(e) {reject(e);} })();
+            });
+        }
     }
 
     module.exports = exports.BilaraData = BilaraData;

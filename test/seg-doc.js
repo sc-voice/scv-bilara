@@ -1,24 +1,24 @@
-(typeof describe === 'function') && describe("translation", function() {
+(typeof describe === 'function') && describe("SegDoc", function() {
     const should = require("should");
     const fs = require('fs');
     const path = require('path');
     const tmp = require('tmp');
     const {
-        Translation,
+        SegDoc,
     } = require("../index");
     const {
         logger,
     } = require("just-simple").JustSimple;
 
     it("default ctor", () => {
-        var trans = new Translation();
+        var trans = new SegDoc();
         should(trans).properties({
             author: undefined,
             lang: undefined,
             logLevel: 'info',
             segMap: {},
             suid: undefined,
-            translation: undefined,
+            bilaraPath: undefined,
 
         });
     });
@@ -29,14 +29,14 @@
         var segMap = {
             'dn33:0.1': "test dn33",
         };
-        var translation = 'test-path';
-        var trans = new Translation({
+        var bilaraPath = 'test-path';
+        var trans = new SegDoc({
             author,
             lang,
             logLevel: false,
             segMap,
             suid,
-            translation,
+            bilaraPath,
 
         });
         should(trans).properties({
@@ -45,13 +45,13 @@
             logLevel: false,
             segMap,
             suid: 'dn33',
-            translation,
+            bilaraPath,
 
         });
     });
-    it("load(...) loads translation file", ()=>{
-        var dn33 = new Translation({
-            translation: 'data/dn33.json',
+    it("load(...) loads SegDoc file", ()=>{
+        var dn33 = new SegDoc({
+            bilaraPath: 'data/dn33.json',
         });
         should(dn33.load(__dirname)).equal(dn33);
         should(dn33.segMap['dn33:1.10.31'])
@@ -69,18 +69,18 @@
             'dn33:1.2.5',
         ]);
     });
-    it("import(...) imports translation file", ()=>{
+    it("import(...) imports SegDoc file", ()=>{
         var tmpObj = tmp.dirSync();
-        var dn33 = new Translation({
-            translation: 'data/dn33.json',
+        var dn33 = new SegDoc({
+            bilaraPath: 'data/dn33.json',
         });
         dn33.load(__dirname);
-        dn33.translation = 'dn33.json';
+        dn33.bilaraPath = 'dn33.json';
 
-        // add a new segment and save the translation
+        // add a new segment and save the SegDoc
         dn33.segMap['dn33:0.0'] = 'import-test';
         dn33.import(tmpObj.name);
-        var dn33path = path.join(tmpObj.name, dn33.translation);
+        var dn33path = path.join(tmpObj.name, dn33.bilaraPath);
         should(fs.existsSync(dn33path)).equal(true);
         var json = JSON.parse(fs.readFileSync(dn33path));
         should(json['dn33:0.0']).equal('import-test');
@@ -91,11 +91,11 @@
     });
     it("compareScid(a,b) compares segment ids", ()=>{
         var testCompare = (a,b,expected) => {
-            should(Translation.compareScid(a,b)).equal(expected);
+            should(SegDoc.compareScid(a,b)).equal(expected);
             if (expected === 0) {
-                should(Translation.compareScid(b,a)).equal(expected);
+                should(SegDoc.compareScid(b,a)).equal(expected);
             } else {
-                should(Translation.compareScid(b,a)).equal(-expected);
+                should(SegDoc.compareScid(b,a)).equal(-expected);
             }
         };
         testCompare('an1.2:2.3', 'an1.10:0.1', -8);
@@ -112,10 +112,10 @@
         testCompare('dn33:1.10.1', 'dn33:1.2.0', 8);
     });
     it("segments() returns sn1.1 segment array", ()=>{
-        var sutta = new Translation({
+        var sutta = new SegDoc({
             suid: 'sn1.1',
             lang: 'en',
-            translation: 'data/en_sn1.1.json',
+            bilaraPath: 'data/en_sn1.1.json',
         }).load(__dirname);
         var segments = sutta.segments();
         should.deepEqual(segments[0],{
@@ -135,11 +135,11 @@
             en: '“After a long time I see ',
         });
     });
-    it("segments() returns an1.1-10 segment array", ()=>{
-        var sutta = new Translation({
+    it("TESTTESTsegments() returns an1.1-10 segment array", ()=>{
+        var sutta = new SegDoc({
             suid: 'an1.1-10',
             lang: 'en',
-            translation: 'data/en_an1.1-10.json',
+            bilaraPath: 'data/en_an1.1-10.json',
         }).load(__dirname);
         var scids = sutta.scids();
         should.deepEqual(scids.slice(0,15), [
