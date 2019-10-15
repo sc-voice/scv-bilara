@@ -41,6 +41,7 @@
         } catch(e) {done(e);} })();
     });
     it("suttaInfo(...) returns sutta metadata", done=>{
+        this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
             should.deepEqual(bd.suttaInfo('dn33'), [{
@@ -80,6 +81,7 @@
         } catch(e) {done(e);} })();
     });
     it("loadTranslation(...) loads translation JSON", done=>{
+        this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
             var dn33 = bd.loadTranslation({
@@ -124,44 +126,86 @@
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTtranslationPath(opts) filepath for scid", function(done) {
+    it("TESTTESTtranslationPaths(...) filepath for scid", function(done) {
         (async function() { try {
             await bd.initialize();
 
             // Object args
-            var lang = 'en';
             var sutta_uid = 'mn1';
-            var spath = bd.translationPath({
+            var lang = 'en';
+            var author = 'sujato';
+            var spath = bd.translationPaths({
                 sutta_uid,
                 lang,
-            });
-            should(spath).equal(path.join(bd.root,
-                'translation/en/sujato/mn/mn1_translation-en-sujato.json'));
+                author,
+            })[0];
+            var mn1 = 'translation/en/sujato/mn/mn1_translation-en-sujato.json';
+            should(spath).equal(path.join(bd.root, mn1));
             should(fs.existsSync(spath)).equal(true);
             
             // argument list
-            var root = 'test';
-            var author = 'sujato';
-            var spath = bd.translationPath(sutta_uid, lang, author);
-            should(spath).equal(path.join(bd.root, 'translation/'+
-                'en/sujato/mn/mn1_translation-en-sujato.json'));
+            var spath = bd.translationPaths(sutta_uid, lang, author)[0];
+            should(spath).equal(path.join(bd.root, mn1));
+
+            // default args
+            var spath = bd.translationPaths(sutta_uid, lang)[0];
+            should(spath).equal(path.join(bd.root, mn1));
+            var spath = bd.translationPaths(sutta_uid)[0];
+            should(spath).equal(path.join(bd.root, mn1));
+
+            // variants
+            var spath = bd.translationPaths('MN 1')[0];
+            should(spath).equal(path.join(bd.root, mn1));
 
             // By language
-            var spath = bd.translationPath('an1.2','de');
+            var spath = bd.translationPaths('an1.2','de')[0];
             should(spath).equal(path.join(bd.root, 'translation/'+
                 'de/sabbamitta/an/an1/an1.1-10_translation-de-sabbamitta.json'));
             should(fs.existsSync(spath)).equal(true);
 
             // By SuttaCentralId
-            var spath = bd.translationPath('an1.2:0.3','de');
-            should(spath).equal(path.join(bd.root, 'translation/'+
-                'de/sabbamitta/an/an1/an1.1-10_translation-de-sabbamitta.json'));
+            var an1_1 = 'translation/'+
+                'de/sabbamitta/an/an1/an1.1-10_translation-de-sabbamitta.json';
+            var spath = bd.translationPaths('an1.2:0.3','de')[0];
+            should(spath).equal(path.join(bd.root,an1_1));
             should(fs.existsSync(spath)).equal(true);
 
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTtranslationPaths(...) bad input", function(done) {
+        (async function() { try {
             // No file
-            var spath = bd.translationPath('mn1','en','no-author');
-            should(spath).equal(null);
+            var spath = bd.translationPaths('mn1','en','no-author')[0];
+            should(spath).equal(undefined);
 
+            // Errors
+            should.throws(() => bd.translationPaths()); 
+            should.throws(() => bd.translationPaths({
+                // sutta_uid: 'MN 1',
+                language: 'en',
+                author_id: 'sujato',
+            })); 
+            var badId = 'abc';
+            should.throws(() => bd.translationPaths(badId,'en','sujato')); 
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTsuttaPath(...) deprecated", function(done) {
+        (async function() { try {
+            await bd.initialize();
+
+            // Object args
+            var sutta_uid = 'mn1';
+            var lang = 'en';
+            var author = 'sujato';
+            var spath = bd.suttaPath({
+                sutta_uid,
+                lang,
+                author,
+            });
+            var mn1 = 'translation/en/sujato/mn/mn1_translation-en-sujato.json';
+            should(spath).equal(path.join(bd.root, mn1));
             done(); 
         } catch(e) {done(e);} })();
     });

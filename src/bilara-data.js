@@ -176,7 +176,12 @@
             return sutta_uid;
         }
 
-        translationPath(...args) {
+        suttaPath(...args) { // DEPRECATED: use translationPaths
+            this.log(`DEPRECATED: suttaPath => translationPaths`);
+            return this.translationPaths.apply(this, args)[0];
+        }
+
+        translationPaths(...args) {
             if (!this.initialized) {
                 throw new Error(`${this.constructor.name}.initialize() is required`);
             }
@@ -197,14 +202,11 @@
             }
             var lang = opts.lang || 'en';
             var author = opts.author_uid;
-            var translations = this.suttaMap[sutta_uid]
-                .filter(t => t.lang === lang && !author || author === t.author);
-            if (translations.length === 0) {
-                return null;
-            }
-            return path.join(this.root, translations[0].translation);
+            var translations = this.suttaMap[sutta_uid] || [];
+            return translations
+                .filter(t => t.lang === lang && !author || author === t.author)
+                .map(t => path.join(this.root, t.translation));
         }
-
 
     }
 

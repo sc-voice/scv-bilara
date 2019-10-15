@@ -7,6 +7,17 @@
     } = require('just-simple').JustSimple;
 
     class Translation {
+        constructor(opts={}) {
+            this.suid = opts.suid;
+            this.lang = opts.lang;
+            this.author = opts.author;
+            this.translation = opts.translation;
+            this.segMap = opts.segMap || {};
+            logger.logInstance(this, {
+                logLevel: opts.logLevel === undefined ? 'info' : opts.logLevel,
+            });
+        }
+
         static compareParts(aparts,bparts) {
             var cmp = 0;
             for (var i = 0; i < aparts.length; i++) {
@@ -64,17 +75,6 @@
             var adot_parts = acolon_parts[1].split('.');
             var bdot_parts = bcolon_parts[1].split('.');
             return Translation.compareParts(adot_parts, bdot_parts);
-        }
-
-        constructor(opts={}) {
-            this.suid = opts.suid;
-            this.lang = opts.lang;
-            this.author = opts.author;
-            this.translation = opts.translation;
-            this.segMap = opts.segMap || {};
-            logger.logInstance(this, {
-                logLevel: opts.logLevel === undefined ? 'info' : opts.logLevel,
-            });
         }
 
         scids() {
