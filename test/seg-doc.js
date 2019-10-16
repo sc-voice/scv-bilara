@@ -4,6 +4,7 @@
     const path = require('path');
     const tmp = require('tmp');
     const {
+        FuzzyWordSet,
         SegDoc,
     } = require("../index");
     const {
@@ -176,6 +177,39 @@
             scid: 'an1.2:0.1',
             en: '2 ',
         });
+    });
+    it("TESTTESTfillWordMap(...) can train a FuzzyWordSet", ()=>{
+        var fws = new FuzzyWordSet();
+        var dn33 = new SegDoc({
+            bilaraPath: 'data/dn33.json',
+        });
+        dn33.load(__dirname);
+        var dn33pli = new SegDoc({
+            bilaraPath: 'data/dn33_pli.json',
+        });
+        dn33pli.load(__dirname);
+
+        // Build wordmap 
+        var wordMap = {};
+        var wm = dn33.fillWordMap(wordMap, false); // English includes Pali
+        // Pali has no English, so that must come last
+        var wm = dn33pli.fillWordMap(wordMap, true, true); 
+        should(wm).equal(wordMap);
+
+        // train fws 
+        var iterations = fws.train(wordMap, true);
+        should(fws.contains('bhante')).equal(true);
+        should(fws.contains('sariputta')).equal(true);
+        should(fws.contains('ekaṃ')).equal(true);
+        should(fws.contains('ekam')).equal(true);
+        should(fws.contains('33')).equal(false);
+        should(fws.contains('an')).equal(false);
+        should(fws.contains('anicca')).equal(true);
+        should(fws.contains('radiance')).equal(false);
+        should(fws.contains('ratti')).equal(true);
+        should(JSON.stringify(wordMap).length).equal(89346); // fat
+        should(JSON.stringify(fws).length).equal(19573); // skinny
+        should(iterations).equal(4);
     });
 
 })

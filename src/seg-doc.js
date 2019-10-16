@@ -124,6 +124,18 @@
             }));
         }
 
+        fillWordMap(wordMap={}, isMember=true) {
+            var segMap = this.segMap;
+            var scids = this.scids();
+            scids.forEach(scid => {
+                var text = segMap[scid];
+                text.split(' ').forEach(t => {
+                    wordMap[t.toLowerCase()] = isMember;
+                });
+            });
+            return wordMap;
+        }
+
     }
 
     module.exports = exports.SegDoc = SegDoc;

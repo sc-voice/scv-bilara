@@ -1,4 +1,34 @@
 {
+    "0": {
+        "name": "digit"
+    },
+    "1": {
+        "name": "digit"
+    },
+    "2": {
+        "name": "digit"
+    },
+    "3": {
+        "name": "digit"
+    },
+    "4": {
+        "name": "digit"
+    },
+    "5": {
+        "name": "digit"
+    },
+    "6": {
+        "name": "digit"
+    },
+    "7": {
+        "name": "digit"
+    },
+    "8": {
+        "name": "digit"
+    },
+    "9": {
+        "name": "digit"
+    },
     "\n": {
         "name": "end of line",
         "eol": true

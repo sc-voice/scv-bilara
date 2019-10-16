@@ -11,12 +11,20 @@
     const TRUE = 1;
     const FALSE = 0;
 
-    var SYMBOLS;
+    var SYMBOLS = null;
+    var ROMANIZE_MAP = null;
 
     class FuzzyWordSet {
         constructor(opts={}) {
             this.states = opts.states || {};
             this.maxTrain = opts.maxTrain || 10;
+            if (opts.romanizeMap == null) {
+                Object.defineProperty(this, 'romanizeMap', {
+                    value: FuzzyWordSet.ROMANIZE_MAP,
+                });
+            } else {
+                this.romanizeMap = opts.romanizeMap;
+            }
             if (opts.symbols == null) {
                 Object.defineProperty(this, 'symbols', {
                     value: FuzzyWordSet.SYMBOLS,
@@ -36,6 +44,14 @@
             Object.defineProperty(this, 'reSymbols', {
                 value: new RegExp(`[${syms}]`, "ugm"),
             });
+        }
+
+        static get ROMANIZE_MAP() {
+            if (ROMANIZE_MAP == null) {
+                var spath = path.join(__dirname, 'assets/romanize-map.json');
+                ROMANIZE_MAP = JSON.parse(fs.readFileSync(spath));
+            }
+            return ROMANIZE_MAP;
         }
 
         static get SYMBOLS() {
@@ -99,15 +115,17 @@
             }
         }
 
-        train(wordMap) {
+        train(wordMap, romanize=false) {
             var words = Object.keys(wordMap);
 
             for (var i = 0; i < this.maxTrain; i++) {
                 var trained = true;
                 words.forEach(w => {
                     var isMember = wordMap[w];
-                    if (this.include(w, wordMap[w])) {
-                        trained = false;
+                    this.include(w, wordMap[w]) && (trained = false);
+                    if (isMember && romanize) {
+                        var rw = this.romanize(w);
+                        this.include(rw, wordMap[rw]) && (trained = false);
                     }
                 });
                 if (trained) {
@@ -115,6 +133,25 @@
                 }
             } 
             return i;
+        }
+
+        romanize(text) {
+            if (this.romanizePats == null) {
+                var srcChars = Object.keys(this.romanizeMap);
+                Object.defineProperty(this, 'romanizePats', {
+                    value: srcChars.map(c => {
+                        return {
+                            rep: this.romanizeMap[c],
+                            pat: new RegExp(c, "gui"),
+                        };
+                    }),
+                });
+            }
+            var result = text.toLowerCase();
+            this.romanizePats.forEach((pat,i) => {
+                result = result.replace(pat.pat, pat.rep);
+            });
+            return result;
         }
 
     }
