@@ -1,0 +1,138 @@
+{
+    "\n": {
+        "name": "end of line",
+        "eol": true
+    },
+    "!": {
+        "name": "exclamation mark",
+        "isWordTrim": true,
+        "cuddle": "left",
+        "endSegment": true
+    },
+    "\"": {
+        "name": "quotation mark"
+    },
+    "#": {
+        "name": "number sign"
+    },
+    "$": {
+        "name": "dollar sign"
+    },
+    "%": {
+        "name": "percent"
+    },
+    "&": {
+        "name": "ampersand"
+    },
+    "'": {
+        "name": "apostrophe",
+        "isWordTrim": true,
+        "isWord": false
+    },
+    "(": {
+        "name": "left parenthesis",
+        "cuddle": "right"
+    },
+    ")": {
+        "name": "right parenthesis",
+        "cuddle": "left"
+    },
+    "*": {
+        "name": "asterisk"
+    },
+    "+": {
+        "name": "plus sign"
+    },
+    ",": {
+        "name": "comma",
+        "isWordTrim": true,
+        "cuddle": "left"
+    },
+    "-": {
+        "name": "hyphen minus",
+        "isWord": true
+    },
+    "{": {
+        "name": "left brace"
+    },
+    "}": {
+        "name": "right brace"
+    },
+    ".": {
+        "name": "full stop",
+        "isWordTrim": true,
+        "endSegment": true,
+        "cuddle": "left"
+    },
+    "/": {
+        "name": "solidus"
+    },
+
+
+    ":": {
+        "name": "colon"
+    },
+    ";": {
+        "isWordTrim": true,
+        "name": "semicolon"
+    },
+    "<": {
+        "name": "less-than sign"
+    },
+    "=": {
+        "name": "equals sign"
+    },
+    ">": {
+        "name": "greater-than sign"
+    },
+    "?": {
+        "name": "question mark",
+        "isWordTrim": true,
+        "endSegment": true,
+        "cuddle": "left"
+    },
+    "@": {
+        "name": "commercial at"
+    },
+
+    "[": {
+        "name": "left square bracket",
+        "cuddle": "right"
+    },
+    "]": {
+        "name": "right square bracket"
+    },
+
+    "\u2014": {
+        "name": "em dash",
+        "cuddle": "both"
+    },
+    "\u2018": {
+        "name": "left single quote",
+        "cuddle": "right"
+    },
+    "\u2019": {
+        "name": "right single quote",
+        "isWordTrim": true,
+        "cuddle": "left",
+        "isWord": true
+    },
+    "\u02bc": {
+        "name": "apostrophe",
+        "cuddle": "left",
+        "isWord": true
+    },
+    "\u201C": {
+        "name": "left double quote",
+        "cuddle": "right"
+    },
+    "\u201D": { 
+        "name": "right double quote",
+        "cuddle": "left"
+    },
+    "\u2026": { 
+        "name": "ellipsis",
+        "ellipsisBreak": true,
+        "cuddle": "left"
+    }
+}

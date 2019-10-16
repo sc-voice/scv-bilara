@@ -11,13 +11,43 @@
     const TRUE = 1;
     const FALSE = 0;
 
+    var SYMBOLS;
+
     class FuzzyWordSet {
         constructor(opts={}) {
             this.states = opts.states || {};
             this.maxTrain = opts.maxTrain || 10;
+            if (opts.symbols == null) {
+                Object.defineProperty(this, 'symbols', {
+                    value: FuzzyWordSet.SYMBOLS,
+                });
+            } else {
+                this.symbols = opts.symbols; // enumerable
+            }
+            var syms = Object.keys(this.symbols)
+                .sort((a,b) => {
+                    if (a === b) { return 0; }
+                    if (a === '-') { return -1; }
+                    if (b === '-') { return 1; }
+                    return a.localeCompare(b);
+                })
+                .join('')
+                .replace(']','\\]');
+            Object.defineProperty(this, 'reSymbols', {
+                value: new RegExp(`[${syms}]`, "ugm"),
+            });
+        }
+
+        static get SYMBOLS() {
+            if (SYMBOLS == null) {
+                var spath = path.join(__dirname, 'assets/symbols.json');
+                SYMBOLS = JSON.parse(fs.readFileSync(spath));
+            }
+            return SYMBOLS;
         }
 
         contains(word) {
+            word = word.replace(this.reSymbols, '');
             var states = this.states;
             for (var i = 0; i < word.length; i++) {
                 var c = word.charAt(i);
@@ -38,6 +68,7 @@
         }
 
         include(word, isMember=true) {
+            word = word.replace(this.reSymbols, '');
             var m = isMember ? TRUE : FALSE;
             if (this.contains(word) === isMember) {
                 return false; // no change

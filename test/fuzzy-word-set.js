@@ -65,11 +65,25 @@
             howdy: false,
             hell: false,
         });
+        should(fws.reSymbols.test('?')).equal(true);
+        should(fws.reSymbols.test('a')).equal(false);
+
         var json = JSON.stringify(fws);
         var fws = new FuzzyWordSet(JSON.parse(json));
         should(fws.contains('hello')).equal(true);
         should(fws.contains('hell')).equal(false);
         should(fws.contains('howdy')).equal(false);
+        should(fws.reSymbols.test('?')).equal(true);
+        should(fws.reSymbols.test('a')).equal(false);
+    });
+    it("TESTTESTignores symbols", ()=>{
+        var fws = new FuzzyWordSet();
+        fws.include('"red"');
+        should(fws.contains('red')).equal(true);
+        should(fws.contains('"red?"')).equal(true);
+        should(fws.contains('red, ')).equal(true);
+        should(fws.contains('blue!')).equal(false);
+        should(fws.contains('blue?')).equal(false);
     });
 
 })

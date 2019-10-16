@@ -5,6 +5,7 @@
         js,
         logger,
     } = require('just-simple').JustSimple;
+    const FuzzyWordSet = require('./fuzzy-word-set');
 
     class SegDoc {
         constructor(opts={}) {
