@@ -333,5 +333,83 @@
             done(); 
         } catch(e) {done(e);} })();
     });
+    it("TESTTESTsuttaList(pattern) finds listed suttas", function(done) {
+        this.timeout(5*1000);
+        (async function() { try {
+            await bd.initialize();
+            should.deepEqual( bd.suttaList(
+                ['sn 45.161']), // spaces
+                ['sn45.161']);
+            should.deepEqual( bd.suttaList(
+                ['MN 1-3/en/sujato']), // spaces
+                ['mn1/en/sujato', 'mn2/en/sujato', 'mn3/en/sujato']);
+            should.deepEqual( bd.suttaList(
+                ['AN 5.179', 'sn29.1']), // spaces
+                ['an5.179', 'sn29.1']);
+
+            should.deepEqual(bd.suttaList( 
+                ['an10.1-3']),
+                ['an10.1', 'an10.2', 'an10.3']);
+
+            should.deepEqual( bd.suttaList(
+                ['an2.3']), // sub-chapter embedded 
+                ['an2.1-10']);
+            should.deepEqual( bd.suttaList(
+                ['sn29']), // implied sub-chapters
+                ['sn29.1', 'sn29.2', 'sn29.3', 'sn29.4', 'sn29.5',
+                    'sn29.6', 'sn29.7', 'sn29.8', 'sn29.9', 'sn29.10',
+                    'sn29.11-20', 'sn29.21-50', ]);
+            should.deepEqual( bd.suttaList(
+                ['SN28.8-10']), // sub-chapter range (exact)
+                ['sn28.8', 'sn28.9', 'sn28.10']);
+            should.deepEqual( bd.suttaList(
+                ['sn28.8-999']), // sub-chapter range (right over)
+                ['sn28.8', 'sn28.9', 'sn28.10']);
+            should.deepEqual( bd.suttaList(
+                ['sn29.1', 'mn33', 'SN29.2']), // order as entered
+                ['sn29.1', 'mn33', 'sn29.2']);
+            should.deepEqual( bd.suttaList(
+                ['sn29.1', 'sn29.12', 'sn29.2']), // within range
+                ['sn29.1', 'sn29.11-20', 'sn29.2']);
+            should.deepEqual( bd.suttaList(
+                'sn29.1, sn29.12, sn29.2'), // String
+                ['sn29.1', 'sn29.11-20', 'sn29.2']);
+            should.deepEqual( bd.suttaList(
+                ['sn29.9-11']), // expand sub-chapter range
+                ['sn29.9', 'sn29.10', 'sn29.11-20']);
+            should.deepEqual( bd.suttaList(
+                ['sn29.1', 'sn29.1', 'sn29.2']), // duplicates
+                ['sn29.1', 'sn29.1', 'sn29.2']);
+            should.deepEqual( bd.suttaList(
+                ['AN5.179', 'sn29.1']), // spaces
+                ['an5.179', 'sn29.1']);
+
+            should.deepEqual(bd.suttaList(
+                ['MN9-11']), // major number range
+                ['mn9','mn10','mn11']); 
+            should.deepEqual(bd.suttaList(
+                ['mn9-11', 'mn10-12']), // major number range
+                ['mn9','mn10','mn11','mn10','mn11','mn12']); 
+
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTsutta_uidSuccessor(sutta_uid) returns following sutta_uid", done=>{
+        this.timeout(5*1000);
+        (async function() { try {
+            await bd.initialize();
+
+            // logical
+            should(bd.sutta_uidSuccessor('mn33',true)).equal('mn34');
+            should(bd.sutta_uidSuccessor('sn29.10-21',true)).equal('sn29.22');
+            should(bd.sutta_uidSuccessor('sn29.10-21')).equal('sn30.1');
+
+            should(bd.sutta_uidSuccessor('mn33',false)).equal('mn34');
+            should(bd.sutta_uidSuccessor('sn29.10-21',false)).equal('sn30.1');
+            should(bd.sutta_uidSuccessor('thag16.1')).equal('thag16.2');
+            should(bd.sutta_uidSuccessor('thag16.1-10')).equal('thag17.1');
+            done(); 
+        } catch(e) {done(e);} })();
+    });
 
 })

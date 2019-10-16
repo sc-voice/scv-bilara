@@ -14,6 +14,8 @@
     const ExecGit = require('./exec-git');
 
     const BILARA_DATA_GIT = 'https://github.com/sc-voice/bilara-data.git';
+    const NIKAYAS_PATH = path.join(__dirname, '../src/assets/nikayas.json');
+    const NIKAYAS = JSON.parse(fs.readFileSync(NIKAYAS_PATH));
 
     class BilaraData {
         constructor(opts={}) {
@@ -27,6 +29,10 @@
             this.reNikayas = new RegExp(
                 `/(${this.nikayas.join('|')})/`, 'ui');
             Object.defineProperty(this, "_suttaMap", {
+                writable: true,
+                value: null,
+            });
+            Object.defineProperty(this, "_suttaIds", {
                 writable: true,
                 value: null,
             });
@@ -98,6 +104,15 @@
                     resolve(that);
                 } catch(e) {reject(e);} })();
             });
+        }
+
+        get suttaIds() {
+            if (this._suttaIds == null) {
+                this._suttaIds = Object.keys(this.suttaMap)
+                    .sort(SuttaCentralId.compareLow);
+            }
+
+            return this._suttaIds;
         }
 
         sync() {
@@ -278,6 +293,168 @@
                 } catch(e) {reject(e);} })();
             });
         }
+
+        suttaIndex(suttaRef, strict=true) {
+            if (!this.initialized) {
+                throw new Error("initialize() is required");
+            }
+            if (suttaRef == null) {
+                throw new Error("suttaIndex(suttaRef?)");
+            }
+            var sutta_uid = suttaRef.split('/')[0];
+            var iEnd = this.suttaIds.length;
+            var i1 = 0;
+            var i2 = iEnd;
+            var cmp;
+            while (i1 <= i2) {
+                var i = Math.trunc((i1+i2)/2);
+                var sf = this.suttaIds[i];
+                cmp = SuttaCentralId.compareLow(sutta_uid, sf);
+
+                if (cmp === 0) {
+                    return i;
+                }
+                if (cmp < 0) {
+                    if (i < i2) {
+                        i2 = i;
+                    } else {
+                        break;
+                    }
+                } else if (i1 < i) { // cmp > 0
+                    i1 = i;
+                } else {
+                    break;
+                }
+            }
+            if (cmp < 0) {
+                return i === 0 ? null : i;
+            } 
+            if (strict) {
+                var uidNext = this.sutta_uidSuccessor(this.suttaIds[i], true);
+                var cmpNext = SuttaCentralId.compareLow(sutta_uid, uidNext);
+                if (cmpNext < 0) {
+                    return i;
+                }
+                return null;
+            }
+            return i;
+        }
+
+        sutta_uidSuccessor(sutta_uid, logical) {
+            var prefix = sutta_uid.replace(/[-0-9.:]*$/u, '');
+            var dotParts = sutta_uid.substring(prefix.length).split(".");
+            var dotLast = dotParts.length-1;
+            var rangeParts = sutta_uid.split("-");
+            var rangeLast = rangeParts.length - 1;
+            if (logical) { // logical
+                dotParts[dotParts.length-1] = (rangeParts.length < 2) 
+                    ? `${Number(dotParts[dotLast])+1}`
+                    : `${Number(rangeParts[rangeLast])+1}`;
+                var uidEnd = prefix+dotParts.join(".");
+                return uidEnd;
+            } else { // physical
+                dotParts[dotParts.length-1] = (rangeParts.length < 2) 
+                    ? `${Number(dotParts[dotLast])}`
+                    : `${Number(rangeParts[rangeLast])}`;
+                var uidLast = prefix+dotParts.join(".");
+                var iLast = this.suttaIndex(uidLast, false);
+                var uidNext = this.suttaIds[iLast+1];
+                return uidNext;
+            }
+        }
+
+        suttaList(list) {
+            if (typeof list === 'string') {
+                list = list.split(',');
+            }
+            try {
+                return list.reduce((acc, item) => {
+                    var suttaRef = item.toLowerCase().replace(/ /gu, '');
+                    this.expandRange(suttaRef).forEach(item => acc.push(item));
+                    return acc;
+                }, []);
+            } catch (e) {
+                throw e;
+            }
+        }
+
+        expandRange(suttaRef) {
+            var reCname = new RegExp("[-.:0-9.].*", "u");
+            var cname = suttaRef.replace(reCname, '');
+            var suffix = suttaRef.replace(/[^/]*([a-z\/]*)$/iu, '$1');
+            var sref = suttaRef.replace(suffix, '');
+            var range = sref.substring(cname.length);
+            if (/^[-a-z]+$/.test(range)) { 
+                // e.g., kusalagnana-maitrimurti-traetow
+                return [ suttaRef ];
+            }
+            var coll = Object.keys(NIKAYAS).reduce((acc,ck) => {
+                var c = NIKAYAS[ck];
+                return acc || cname === c.name && c;
+            }, false);
+            var result = [];
+            if (!coll) { // no collection
+                throw new Error(`Unrecognized sutta collection: ${suttaRef} [E4]`);
+            }
+            var rangeParts = range.split('-');
+            var dotParts = rangeParts[0].split('.');
+            if (dotParts.length > 2) {
+                throw new Error(`Invalid sutta reference: ${suttaRef} [E3]`);
+            }
+            if (coll.subchapters) { // e.g., SN, AN, KN
+                if (dotParts.length === 1) { // e.g. SN50
+                    var prefix = `${sref}.`;
+                    var first = rangeParts.length === 1 ? 1 : Number(rangeParts[0]);
+                    var last = rangeParts.length === 1 ? 999 : Number(rangeParts[1]);
+                } else if (rangeParts.length === 1) {
+                    var prefix = `${cname}${dotParts[0]}.`;
+                    rangeParts[0] = dotParts[1];
+                    var first = Number(rangeParts[0]);
+                    var last = first;
+                } else { // e.g., SN50.1
+                    var prefix = `${cname}${dotParts[0]}.`;
+                    var first = Number(dotParts[1]);
+                    var last = Number(rangeParts[1]);
+                }
+                if (isNaN(first) || isNaN(last)) {
+                    throw new Error(`Invalid sutta reference: ${suttaRef} [E1]`);
+                }
+                var firstItem = `${prefix}${first}`;
+                var iCur = this.suttaIndex(firstItem, false);
+                if (iCur == null) {
+                    throw new Error(`Sutta ${firstItem} not found`);
+                }
+                var endUid = this.sutta_uidSuccessor(`${prefix}${last}`);
+                var iEnd = endUid && this.suttaIndex(endUid) || (iCur+1);
+                for (var i = iCur; i < iEnd; i++) {
+                    result.push(`${this.suttaIds[i]}${suffix}`);
+                }
+            } else { // e.g., MN, DN
+                if (rangeParts.length === 1) {
+                    var first = Number(rangeParts[0]);
+                    var last = first;
+                } else {
+                    var first = Number(rangeParts[0]);
+                    var last = Number(rangeParts[1]);
+                }
+                if (isNaN(first) || isNaN(last)) {
+                    throw new Error(`Invalid sutta reference: ${suttaRef} [E2]`);
+                }
+                var firstItem = `${cname}${first}`;
+                var iCur = this.suttaIndex(firstItem, false);
+                if (iCur == null) {
+                    throw new Error(`Sutta ${firstItem} not found`);
+                }
+                var lastItem = `${cname}${last}`;
+                var endUid = this.sutta_uidSuccessor(lastItem);
+                var iEnd = this.suttaIndex(endUid);
+                for (var i = iCur; i < iEnd; i++) {
+                    result.push(`${this.suttaIds[i]}${suffix}`);
+                }
+            }
+            return result;
+        }
+
     }
 
     module.exports = exports.BilaraData = BilaraData;
