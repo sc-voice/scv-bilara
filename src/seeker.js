@@ -145,38 +145,6 @@
     const ROOT = path.join(__dirname, '..', '..', 'local', 'suttas');
     const maxBuffer = 10 * 1024 * 1024;
     const SUTTAIDS_PATH = path.join(__dirname, '..', '..', 'src', 'node', 'sutta-ids.json');
-    const COLLECTIONS = {
-        an: {
-            name: 'an',
-            folder: 'an',
-            subchapters: true,
-        },
-        mn: {
-            name: 'mn',
-            folder: 'mn',
-            subchapters: false,
-        },
-        dn: {
-            name: 'dn',
-            folder: 'dn',
-            subchapters: false,
-        },
-        sn: {
-            name: 'sn',
-            folder: 'sn',
-            subchapters: true,
-        },
-        thig: {
-            name: 'thig',
-            folder: 'kn',
-            subchapters: true,
-        },
-        thag: {
-            name: 'thag',
-            folder: 'kn',
-            subchapters: true,
-        }
-    }
 
     var suttaPaths = {};
     var supportedSuttas = {}; // from https://github.com/sc-voice/scv-suttas
@@ -302,24 +270,6 @@
                     resolve(suttaIds);
                 } catch(e) {reject(e);} })();
             });
-        }
-
-        suttaFolder(sutta_uid) {
-            var reGroup = new RegExp("^[a-z]*", 'gu');
-            var group = sutta_uid.replace(reGroup,'');
-            var folder = Object.keys(COLLECTIONS).reduce((acc,key) => {
-                var c = COLLECTIONS[key];
-                return acc || key===group && c.folder;
-            }, null);
-            if (!folder) {
-                throw new Error(`unsupported sutta:${sutta_uid} group:${group}`);
-            }
-            var fpath = path.join(this.root, folder);
-            if (!fs.existsSync(fpath)) {
-                logger.info(`SuttaStore.suttaFolder() mkdir:${fpath}`);
-                fs.mkdirSync(fpath);
-            }
-            return fpath;
         }
 
         static grepComparator(a,b) {
@@ -618,31 +568,6 @@
                     resolve(playlist);
                 } catch(e) {reject(e);} })();
             });
-        }
-
-        sutta_uidSearch(pattern, maxResults=5, language='en') {
-            var method = 'sutta_uid';
-            var uids = this.suttaList(pattern).slice(0, maxResults);
-            var suttaRefs = uids.map(ref => {
-                var refParts = ref.split('/');
-                var uid = refParts[0];
-                var refLang = refParts[1] || language;
-                var refTranslator = refParts[2];
-                if (refTranslator == null) {
-                    var localPath = suttaPaths[this.root]
-                        .filter(sp => sp.indexOf(uid) >= 0)[0];
-                    var suttaPath = path.join(this.root, localPath);
-                    var spParts = suttaPath.split('/');
-                    refTranslator = spParts[spParts.length-2];
-                }
-                return `${uid}/${refLang}/${refTranslator}`;
-            });
-
-            return {
-                method,
-                uids,
-                suttaRefs,
-            }
         }
 
         findSuttas(...args) {

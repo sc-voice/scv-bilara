@@ -333,10 +333,19 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTsuttaList(pattern) finds listed suttas", function(done) {
+    it("TESTTESTsuttaList(pattern) => [normalized-sutta-reference]", done=>{
         this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
+
+            // Expand ranges an normalize sutta references
+            should.deepEqual( bd.suttaList(
+                ['MN 1-3/de/sabbamitta','mn4/en']), // spaces
+                ['mn1/de/sabbamitta', 'mn2/de/sabbamitta', 'mn3/de/sabbamitta', 
+                    'mn4/en']);
+            should.deepEqual( bd.suttaList(['an1.2-11']),
+                ['an1.1-10', 'an1.11-20']);
+
             should.deepEqual( bd.suttaList(
                 ['sn 45.161']), // spaces
                 ['sn45.161']);
@@ -408,6 +417,68 @@
             should(bd.sutta_uidSuccessor('sn29.10-21',false)).equal('sn30.1');
             should(bd.sutta_uidSuccessor('thag16.1')).equal('thag16.2');
             should(bd.sutta_uidSuccessor('thag16.1-10')).equal('thag17.1');
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTsutta_uidSearch(...) finds suttas by sutta_uid", function(done) {
+        this.timeout(5*1000);
+        (async function() { try {
+            await bd.initialize();
+            var maxResults = 4;
+
+            // minor id range AN10.1-10
+            var res = bd.sutta_uidSearch("an10.1-10");
+            should.deepEqual(res.uids, [
+                "an10.1", "an10.2", "an10.3", "an10.4", "an10.5",
+            ]);
+            should.deepEqual(res.suttaRefs, [
+                "an10.1/en", 
+                "an10.2/en", 
+                "an10.3/en", 
+                "an10.4/en", 
+                "an10.5/en",
+            ]);
+
+            // major id range MN2-11
+            var res = bd.sutta_uidSearch("mn2-11", maxResults);
+            should.deepEqual(res.uids, [
+                "mn2", "mn3", "mn4", "mn5", 
+            ]);
+
+            // minor id range of ranged suttas
+            var res = bd.sutta_uidSearch("an1.2-11");
+            should.deepEqual(res.uids, [
+                "an1.1-10", "an1.11-20",
+            ]);
+
+            // language
+            var res = bd.sutta_uidSearch("an1.2-11", maxResults, 'de');
+            should.deepEqual(res.uids, [
+                "an1.1-10", "an1.11-20",
+            ]);
+            should.deepEqual(res.suttaRefs, [
+                "an1.1-10/de", 
+                "an1.11-20/de", 
+            ]);
+
+            // language
+            var res = bd.sutta_uidSearch("an1.2-11", maxResults, 'de');
+            should.deepEqual(res.uids, [
+                "an1.1-10", "an1.11-20",
+            ]);
+            should.deepEqual(res.suttaRefs, [
+                "an1.1-10/de", 
+                "an1.11-20/de", 
+            ]);
+            var res = bd.sutta_uidSearch("an1.2-11/de", maxResults, 'de');
+            should.deepEqual(res.uids, [
+                "an1.1-10/de", "an1.11-20/de",
+            ]);
+            should.deepEqual(res.suttaRefs, [
+                "an1.1-10/de", 
+                "an1.11-20/de", 
+            ]);
+
             done(); 
         } catch(e) {done(e);} })();
     });

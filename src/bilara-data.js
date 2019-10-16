@@ -455,6 +455,26 @@
             return result;
         }
 
+        sutta_uidSearch(pattern, maxResults=5, lang='en') {
+            var method = 'sutta_uid';
+            var uids = this.suttaList(pattern).slice(0, maxResults);
+            var suttaRefs = uids.map(ref => {
+                var refParts = ref.split('/');
+                var uid = refParts[0];
+                var refLang = refParts[1] || lang;
+                var refTranslator = refParts[2];
+                return refTranslator 
+                    ? `${uid}/${refLang}/${refTranslator}`
+                    : `${uid}/${refLang}`;
+            });
+
+            return {
+                method,
+                uids,
+                suttaRefs,
+            }
+        }
+
     }
 
     module.exports = exports.BilaraData = BilaraData;
