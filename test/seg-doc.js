@@ -135,7 +135,7 @@
             en: '“After a long time I see ',
         });
     });
-    it("TESTTESTsegments() returns an1.1-10 segment array", ()=>{
+    it("segments() returns an1.1-10 segment array", ()=>{
         var sutta = new SegDoc({
             suid: 'an1.1-10',
             lang: 'en',

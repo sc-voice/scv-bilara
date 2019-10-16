@@ -142,7 +142,7 @@
         should(Seeker.paliPattern("[abcdefghijklmnopqrstuvwxyz]"))
         .equal('[abcdefghijklmnopqrstuvwxyz]');
     });
-    it("TESTTESTisUidPattern(pattern) is true for sutta_uid patterns", function() {
+    it("isUidPattern(pattern) is true for sutta_uid patterns", function() {
         // unsupported sutta
         should(Seeker.isUidPattern('t1670b2.8')).equal(true);
 

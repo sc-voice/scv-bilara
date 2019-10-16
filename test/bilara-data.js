@@ -40,7 +40,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTisSuttaPath(f) filters supported suttas", ()=>{
+    it("isSuttaPath(f) filters supported suttas", ()=>{
         should(bd.isSuttaPath(
             'translation/en/sujato/mn/mn1_translation-en-sujato.json'))
             .equal(true);
@@ -51,7 +51,7 @@
             'translation/en/sujato/kn/dhp/dhp21-32_translation-en-sujato.json'))
             .equal(false);
     });
-    it("TESTTESTsuttaInfo(...) returns sutta metadata", done=>{
+    it("suttaInfo(...) returns sutta metadata", done=>{
         this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
@@ -124,7 +124,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTloadTranslation(...) loads translation document", done=>{
+    it("loadTranslation(...) loads translation document", done=>{
         this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
@@ -158,7 +158,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTloadSegDoc(...) loads segmented document", done=>{
+    it("loadSegDoc(...) loads segmented document", done=>{
         this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
@@ -288,7 +288,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTnikayaSuttaIds(...) returns sutta_uids", done=>{
+    it("nikayaSuttaIds(...) returns sutta_uids", done=>{
         this.timeout(5*1000);
         (async function() { try {
             var language = 'en';
@@ -333,7 +333,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTsuttaList(pattern) => [normalized-sutta-reference]", done=>{
+    it("suttaList(pattern) => [normalized-sutta-reference]", done=>{
         this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
@@ -403,7 +403,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTsutta_uidSuccessor(sutta_uid) returns following sutta_uid", done=>{
+    it("sutta_uidSuccessor(sutta_uid) returns following sutta_uid", done=>{
         this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
@@ -420,7 +420,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTsutta_uidSearch(...) finds suttas by sutta_uid", function(done) {
+    it("sutta_uidSearch(...) finds suttas by sutta_uid", function(done) {
         this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
