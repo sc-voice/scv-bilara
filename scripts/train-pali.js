@@ -13,51 +13,45 @@ const {
     LOCAL_DIR,
 } = require('just-simple').JustSimple;
 
-logger.info('train-pali.js');
-
-function suttaWordMap(bd, suid, wordMap) {
-    var wordMap = {};
-    return wordMap;
-}
 
 (async function() { try {
+    logger.info('train-pali.js initializing...');
     var bd = await new BilaraData({
         logLevel: false,
     }).initialize();
-    var paliEnPath = path.join(__dirname, '../src/assets/fws-pali-en.json');
-    var paliEnJson = JSON.parse(fs.readFileSync(paliEnPath));
-    var paliPath = path.join(__dirname, '../src/assets/fws-pali.json');
-    var fws = new FuzzyWordSet();
+    logger.info(`Scanning English translations for words`);
     var enWords = {};
     bd.suttaIds.forEach(suid => {
         var sden = bd.loadSegDoc({suid, lang:'en'});
         sden.fillWordMap(enWords, false);
     });
-    logger.info(`English enWords:${JSON.stringify(enWords).length}`);
-    logger.info(`English enWords.ananda:${enWords.ananda} ${enWords['ānanda']}`);
+    logger.info(`English words:${Object.keys(enWords).length}`);
 
-    var pliWords = Object.assign({}, paliEnJson.states);
+    var pliWords = {};
     bd.suttaIds.forEach(suid => {
         var sdpli = bd.loadSegDoc({suid, lang:'pli'});
         sdpli.fillWordMap(pliWords, true);
     });
-    logger.info(`Pali pliWords:${JSON.stringify(pliWords).length}`);
-    logger.info(`Pali pliWords.ananda:${pliWords.ananda} ${pliWords['ānanda']}`);
+    logger.info(`Pali words:${Object.keys(pliWords).length}`);
     
     // Some english words appear in root text
     var enExceptions = {
         an: false, // English acronym for Anguttara Nikaya
     };
     var wordMap = Object.assign({}, enWords, pliWords, enExceptions);
-    fs.writeFileSync('/tmp/foo.json', JSON.stringify(wordMap, null, 2));
+
+    logger.info(`Training Pali FuzzyWordSet...`);
+    var fws = new FuzzyWordSet({
+        maxTrain: 50,
+    });
     var iterations = fws.train(wordMap, true);
     logger.info([
-        `wordMap[ananda]:${wordMap.ananda} ${wordMap['ānanda']}`,
         `iterations:${iterations}`,
-        `fws:${JSON.stringify(fws).length}`,
+        `fws:${JSON.stringify(fws).length}C`,
     ].join(' '));
+    var paliPath = path.join(__dirname, '../src/assets/fws-pali.json');
     fs.writeFileSync(paliPath, JSON.stringify(fws, null, 2));
-    logger.info(`training completed: ${JSON.stringify(fws).length}`);
+    logger.info(`training completed: ${JSON.stringify(fws).length}C`);
 } catch(e) {
     logger.warn(e.stack);
 }})();
