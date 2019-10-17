@@ -6,6 +6,7 @@
         logger,
     } = require('just-simple').JustSimple;
     const FuzzyWordSet = require('./fuzzy-word-set');
+    const Unicode = require('./unicode');
 
     class SegDoc {
         constructor(opts={}) {
@@ -124,13 +125,16 @@
             }));
         }
 
-        fillWordMap(wordMap={}, isMember=true) {
+        fillWordMap(wordMap={}, isMember=true, romanize=true) {
+            var unicode = new Unicode();
             var segMap = this.segMap;
             var scids = this.scids();
             scids.forEach(scid => {
                 var text = segMap[scid];
                 text.split(' ').forEach(t => {
-                    wordMap[t.toLowerCase()] = isMember;
+                    var w = unicode.stripSymbols(t.toLowerCase());
+                    wordMap[w] = isMember;
+                    romanize && (wordMap[unicode.romanize(w)] = isMember);
                 });
             });
             return wordMap;

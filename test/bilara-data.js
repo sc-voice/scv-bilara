@@ -206,6 +206,7 @@
         } catch(e) { done(e); } })();
     });
     it("translationPaths(...) filepath for scid", function(done) {
+        this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
 
@@ -271,6 +272,7 @@
         } catch(e) {done(e);} })();
     });
     it("suttaPath(...) deprecated", function(done) {
+        this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
 
@@ -479,6 +481,24 @@
                 "an1.11-20/de", 
             ]);
 
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTrecognizes Pali words", done=>{
+        (async function() { try {
+            await bd.initialize();
+            should.deepEqual(bd.paliWords.trace('ananda'), {
+                trace: 'ananda~',
+                member: true,
+            });
+            should.deepEqual(bd.paliWords.trace('an'), {
+                trace: 'an',
+                member: false,
+            });
+            should.deepEqual(bd.paliWords.trace('bhante'), {
+                trace: 'bhante',
+                member: true,
+            });
             done(); 
         } catch(e) {done(e);} })();
     });

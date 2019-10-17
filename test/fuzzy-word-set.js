@@ -1,4 +1,4 @@
-(typeof describe === 'function') && describe("word-fuzzy-set", function() {
+(typeof describe === 'function') && describe("fuzzy-word-set", function() {
     const should = require("should");
     const fs = require('fs');
     const path = require('path');
@@ -25,7 +25,7 @@
             maxTrain: 10,
         });
     });
-    it("TESTTESTcontains(word) => set membership", ()=>{
+    it("contains(word) => set membership", ()=>{
         var fws = new FuzzyWordSet();
         should(fws.contains('hello')).equal(false);
         should(fws.contains('goodbye')).equal(false);
@@ -38,7 +38,7 @@
         // it's a fuzzy set!
         should(fws.contains('howdy')).equal(true); 
     });
-    it("TESTTESTinclude(...) clarifies set membership", ()=>{
+    it("include(...) clarifies set membership", ()=>{
         var fws = new FuzzyWordSet();
         should(fws.contains('hello')).equal(false);
         should(fws.contains('howdy')).equal(false);
@@ -61,7 +61,39 @@
         should(fws.contains('hello')).equal(true);
         should(fws.contains('hell')).equal(false);
         should(fws.contains('howdy')).equal(false);
-        should(iterations).equal(2);
+        should(iterations).equal(3);
+        console.log(fws);
+    });
+    it("trace(...) shows detail", ()=>{
+        var fws = new FuzzyWordSet();
+        for (var i = 0; i < 3; i++) {
+            fws.train({
+                "ānanda": true,
+                ananda: true,
+                andhakavinde: true,
+                andhakar: true,
+                andhakāre: true,
+                andhakavinda: false,
+                and: false,
+                an: false,
+            }, true);
+        }
+        should.deepEqual(fws.trace('ananda'), {
+            trace: 'ana',
+            member: true,
+        });
+        should.deepEqual(fws.trace('ānanda'), {
+            trace: 'ā',
+            member: true,
+        });
+        should.deepEqual(fws.trace('an'), {
+            trace: 'an~',
+            member: false,
+        });
+        should.deepEqual(fws.trace('and'), {
+            trace: 'and~',
+            member: false,
+        });
     });
     it("TESTTESTcan be serialized", ()=>{
         var fws = new FuzzyWordSet();
@@ -70,8 +102,6 @@
             howdy: false,
             hell: false,
         });
-        should(fws.reSymbols.test('?')).equal(true);
-        should(fws.reSymbols.test('a')).equal(false);
 
         // serialize and test deserialized copy
         var json = JSON.stringify(fws);
@@ -79,8 +109,7 @@
         should(fws.contains('hello')).equal(true);
         should(fws.contains('hell')).equal(false);
         should(fws.contains('howdy')).equal(false);
-        should(fws.reSymbols.test('?')).equal(true);
-        should(fws.reSymbols.test('a')).equal(false);
+        should(fws.unicode.reSymbols.test('a')).equal(false);
     });
     it("TESTTESTignores symbols", ()=>{
         var fws = new FuzzyWordSet();
@@ -90,27 +119,6 @@
         should(fws.contains('red, ')).equal(true);
         should(fws.contains('blue!')).equal(false);
         should(fws.contains('blue?')).equal(false);
-    });
-    it("TESTTESTromanize(text) returns romanized text", function() {
-        var fws = new FuzzyWordSet();
-        should(fws.romanize("abc")).equal('abc');
-        should(fws.romanize("Abc")).equal('abc');
-        should(fws.romanize("Tath\u0101gata")).equal('tathagata');
-        should(fws.romanize("Ukkaṭṭhā")).equal('ukkattha');
-        should(fws.romanize("Bhikkhū")).equal('bhikkhu');
-        should(fws.romanize("tassā’ti")).equal(`tassa${Unicode.RSQUOTE}ti`);
-        should(fws.romanize("saññatvā")).equal(`sannatva`);
-        should(fws.romanize("pathaviṃ")).equal(`pathavim`);
-        should(fws.romanize("viññāṇañcāyatanato")).equal(`vinnanancayatanato`);
-        should(fws.romanize("diṭṭhato")).equal(`ditthato`);
-        should(fws.romanize("khīṇāsavo")).equal(`khinasavo`);
-        should(fws.romanize("pavaḍḍhanti")).equal(`pavaddhanti`);
-        should(fws.romanize("ĀḌḤĪḶḸṂṆÑṄṚṜṢŚṬŪṁ")).equal(`adhillmnnnrrsstum`);
-        should(fws.romanize("‘Nandī dukkhassa mūlan’ti—"))
-            .equal(`${Unicode.LSQUOTE}`+
-                `nandi dukkhassa mulan`+
-                `${Unicode.RSQUOTE}ti${Unicode.EMDASH}`);
-
     });
 
 })

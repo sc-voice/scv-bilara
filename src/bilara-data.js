@@ -11,6 +11,7 @@
     } = require('child_process');
     const SegDoc = require('./seg-doc');
     const SuttaCentralId = require('./sutta-central-id');
+    const FuzzyWordSet = require('./fuzzy-word-set');
     const ExecGit = require('./exec-git');
 
     const BILARA_DATA_GIT = 'https://github.com/sc-voice/bilara-data.git';
@@ -25,7 +26,10 @@
             this.nikayas = opts.nikayas || [
                 'an','mn','dn','sn', 'kn/thig', 'kn/thag'
             ];
-            this.execGit = opts.execGit || new ExecGit(BILARA_DATA_GIT);
+            this.execGit = opts.execGit || new ExecGit({
+                repo: BILARA_DATA_GIT,
+                logLevel: this.logLevel,
+            });
             this.reNikayas = new RegExp(
                 `/(${this.nikayas.join('|')})/`, 'ui');
             Object.defineProperty(this, "_suttaMap", {
@@ -100,6 +104,11 @@
                         '.voice', 'uid_expansion.json');
                     that.uid_expansion = JSON.parse(fs.readFileSync(uidExpPath));
 
+                    var paliPath = path.join(__dirname, 'assets/fws-pali.json');
+                    var paliJson = fs.existsSync(paliPath)
+                        ? JSON.parse(fs.readFileSync(paliPath)) : {};
+                    that.paliWords = new FuzzyWordSet(paliJson);
+
                     that.initialized = true;
                     resolve(that);
                 } catch(e) {reject(e);} })();
@@ -162,6 +171,7 @@
                 suid,
                 lang,
                 author,
+                logLevel,
             } = opts;
             lang = lang || 'pli';
             var info = this.suttaInfo(suid);
@@ -193,6 +203,8 @@
                 throw new Error(
                     `No information for ${suid}/${lang}/${author}`);
             }
+            suttaInfo.logLevel = logLevel === undefined
+                ? this.logLevel : logLevel;
             return new SegDoc(suttaInfo).load(this.root);
         }
 

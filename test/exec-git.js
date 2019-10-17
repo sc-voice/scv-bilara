@@ -17,6 +17,7 @@
         should(egit.repoPath).equal(path.join(LOCAL_DIR, 'bilara-data'));
     });
     it("sync(...) syncs sabbamitta/sutta-translation", (done)=>{
+        this.timeout(5*1000);
         (async function() { try {
             var gitDE = 'https://github.com/sabbamitta/sutta-translation';
             var dePath = path.join(LOCAL_DIR, 'de-suttas');

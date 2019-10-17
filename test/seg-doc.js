@@ -195,6 +195,10 @@
         // Pali has no English, so that must come last
         var wm = dn33pli.fillWordMap(wordMap, true, true); 
         should(wm).equal(wordMap);
+        should(wm).properties({
+            'ekam': true,
+            'ekaṃ': true,
+        });
 
         // train fws 
         var iterations = fws.train(wordMap, true);
@@ -202,14 +206,13 @@
         should(fws.contains('sariputta')).equal(true);
         should(fws.contains('ekaṃ')).equal(true);
         should(fws.contains('ekam')).equal(true);
-        should(fws.contains('33')).equal(false);
         should(fws.contains('an')).equal(false);
         should(fws.contains('anicca')).equal(true);
         should(fws.contains('radiance')).equal(false);
         should(fws.contains('ratti')).equal(true);
-        should(JSON.stringify(wordMap).length).equal(89346); // fat
-        should(JSON.stringify(fws).length).equal(19573); // skinny
-        should(iterations).equal(4);
+        should(JSON.stringify(wordMap).length).equal(109070); // fat
+        should(JSON.stringify(fws).length).equal(18656); // skinny
+        should(iterations).equal(6);
     });
 
 })

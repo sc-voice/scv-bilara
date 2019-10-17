@@ -6,92 +6,67 @@
         logger,
         LOCAL_DIR,
     } = require('just-simple').JustSimple;
+    const Unicode = require('./unicode');
 
-    const OTHER = '--';
+    const OTHER = '~';
     const TRUE = 1;
     const FALSE = 0;
-
-    var SYMBOLS = null;
-    var ROMANIZE_MAP = null;
 
     class FuzzyWordSet {
         constructor(opts={}) {
             this.states = opts.states || {};
             this.maxTrain = opts.maxTrain || 10;
-            if (opts.romanizeMap == null) {
-                Object.defineProperty(this, 'romanizeMap', {
-                    value: FuzzyWordSet.ROMANIZE_MAP,
-                });
-            } else {
-                this.romanizeMap = opts.romanizeMap;
-            }
-            if (opts.symbols == null) {
-                Object.defineProperty(this, 'symbols', {
-                    value: FuzzyWordSet.SYMBOLS,
-                });
-            } else {
-                this.symbols = opts.symbols; // enumerable
-            }
-            var syms = Object.keys(this.symbols)
-                .sort((a,b) => {
-                    if (a === b) { return 0; }
-                    if (a === '-') { return -1; }
-                    if (b === '-') { return 1; }
-                    return a.localeCompare(b);
-                })
-                .join('')
-                .replace(']','\\]');
-            Object.defineProperty(this, 'reSymbols', {
-                value: new RegExp(`[${syms}]`, "ugm"),
-            });
-        }
-
-        static get ROMANIZE_MAP() {
-            if (ROMANIZE_MAP == null) {
-                var spath = path.join(__dirname, 'assets/romanize-map.json');
-                ROMANIZE_MAP = JSON.parse(fs.readFileSync(spath));
-            }
-            return ROMANIZE_MAP;
-        }
-
-        static get SYMBOLS() {
-            if (SYMBOLS == null) {
-                var spath = path.join(__dirname, 'assets/symbols.json');
-                SYMBOLS = JSON.parse(fs.readFileSync(spath));
-            }
-            return SYMBOLS;
+            this.unicode = new Unicode(opts.unicode);
         }
 
         contains(word) {
-            word = word.replace(this.reSymbols, '');
-            var states = this.states;
-            for (var i = 0; i < word.length; i++) {
+            return this.trace(word).member;
+        }
+
+        trace(word) {
+            var {
+                unicode,
+                states,
+            } = this;
+            var result = {
+                trace: "",
+                member: false,
+            }
+            word = unicode.stripSymbols(word);
+            for (var i = 0; i <= word.length; i++) {
                 var c = word.charAt(i);
+                result.trace += c;
                 var s = states[c];
                 if (s === undefined) {
                     s = states[OTHER];
+                    result.trace += OTHER;
                 }
                 if (s == undefined) {
-                    return false;
+                    result.member = false;
+                    return result;
                 }
                 if ( s === TRUE || s === FALSE) {
-                    return s === TRUE;
+                    result.member = s === TRUE;
+                    return result;
                 }
                 states = s;
             }
 
-            return false;
+            return result;
         }
 
         include(word, isMember=true) {
-            word = word.replace(this.reSymbols, '');
+            var {
+                unicode,
+            } = this;
+            word = unicode.stripSymbols(word);
             var m = isMember ? TRUE : FALSE;
             if (this.contains(word) === isMember) {
                 return false; // no change
             }
 
             var states = this.states;
-            for (var i = 0; i < word.length; i++) {
+            for (var i = 0; i <= word.length; i++) {
                 var c = word.charAt(i);
                 var s = states[c];
                 if (s === undefined) {
@@ -115,43 +90,23 @@
             }
         }
 
-        train(wordMap, romanize=false) {
-            var words = Object.keys(wordMap);
-
+        train(wordMap) {
             for (var i = 0; i < this.maxTrain; i++) {
                 var trained = true;
+                var words = Object.keys(wordMap);
                 words.forEach(w => {
                     var isMember = wordMap[w];
-                    this.include(w, wordMap[w]) && (trained = false);
-                    if (isMember && romanize) {
-                        var rw = this.romanize(w);
-                        this.include(rw, wordMap[rw]) && (trained = false);
-                    }
+                    !isMember && this.include(w, false) && (trained = false);
+                });
+                words.forEach(w => {
+                    var isMember = wordMap[w];
+                    isMember && this.include(w, true) && (trained = false);
                 });
                 if (trained) {
                     break;
                 }
             } 
             return i;
-        }
-
-        romanize(text) {
-            if (this.romanizePats == null) {
-                var srcChars = Object.keys(this.romanizeMap);
-                Object.defineProperty(this, 'romanizePats', {
-                    value: srcChars.map(c => {
-                        return {
-                            rep: this.romanizeMap[c],
-                            pat: new RegExp(c, "gui"),
-                        };
-                    }),
-                });
-            }
-            var result = text.toLowerCase();
-            this.romanizePats.forEach((pat,i) => {
-                result = result.replace(pat.pat, pat.rep);
-            });
-            return result;
         }
 
     }
