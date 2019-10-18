@@ -57,7 +57,7 @@ const {
         `fws:${JSON.stringify(fws).length}C`,
     ].join(' '));
     var paliPath = path.join(__dirname, '../src/assets/fws-pali.json');
-    fs.writeFileSync(paliPath, JSON.stringify(fws, null, 2));
+    fs.writeFileSync(paliPath, JSON.stringify(fws, null, 1));
     logger.info(`training completed: ${JSON.stringify(fws).length}C`);
 } catch(e) {
     logger.warn(e.stack);
