@@ -211,8 +211,8 @@
         should(fws.contains('radiance')).equal(false);
         should(fws.contains('ratti')).equal(true);
         should(JSON.stringify(wordMap).length).equal(109070); // fat
-        should(JSON.stringify(fws).length).equal(18656); // skinny
-        should(iterations).equal(6);
+        should(JSON.stringify(fws).length).equal(17221); // skinny
+        should(iterations).equal(5);
     });
 
 })

@@ -9,6 +9,7 @@
     const {
         exec,
     } = require('child_process');
+    const FuzzyWordSet = require('./fuzzy-word-set');
 
     const APP_DIR = path.join(__dirname, '..');
     const BILARA_PATH = path.join(LOCAL_DIR, 'bilara-data');
@@ -17,13 +18,14 @@
 
     class Seeker {
         constructor(opts={}) {
-            this.root = opts.root || TRANSLATION_PATH;
+            var root = this.root = opts.root || BILARA_PATH;
             logger.logInstance(this, opts);
             this.lang = opts.lang || 'en';
             this.grepAllow = opts.grepAllow ||
                 new RegExp("^[^/]+/(an|sn|mn|kn|dn)/","iu");
             this.grepDeny = opts.grepDeny ||
                 new RegExp("/(dhp)/","iu");
+            this.paliWords = opts.paliWords;
         }
 
         static isUidPattern(pattern) {
@@ -31,20 +33,6 @@
             return commaParts.reduce((acc,part) => {
                 return acc && /^[a-z]+ ?[0-9]+[-0-9a-z.:\/]*$/i.test(part);
             }, true);
-        }
-
-        static paliPattern(pattern) {
-            return /^[a-z]+$/i.test(pattern) 
-                ? pattern
-                    .replace(/a/iug, '(a|ā)')
-                    .replace(/i/iug, '(i|ī)')
-                    .replace(/u/iug, '(u|ū)')
-                    .replace(/m/iug, '(m|ṁ|ṃ)')
-                    .replace(/d/iug, '(d|ḍ)')
-                    .replace(/n/iug, '(n|ṅ|ñ|ṇ)')
-                    .replace(/l/iug, '(l|ḷ)')
-                    .replace(/t/iug, '(t|ṭ)')
-                : pattern;
         }
 
 
@@ -69,11 +57,78 @@
             return pattern;
         }
 
+        static paliPattern(pattern) {
+            return pattern
+                .replace(/a/iug, '(a|ā)')
+                .replace(/i/iug, '(i|ī)')
+                .replace(/u/iug, '(u|ū)')
+                .replace(/m/iug, '(m|ṁ|ṃ)')
+                .replace(/d/iug, '(d|ḍ)')
+                .replace(/n/iug, '(n|ṅ|ñ|ṇ)')
+                .replace(/l/iug, '(l|ḷ)')
+                .replace(/t/iug, '(t|ṭ)')
+                ;
+        }
+
         static normalizePattern(pattern) {
             // normalize white space to space
             pattern = pattern.replace(/[\s]+/g,' +'); 
             
             return pattern;
+        }
+
+        get initialized() {
+            return this.paliWords != null;
+        }
+
+        initialize() {
+            var that = this;
+            return new Promise((resolve, reject) => {
+                (async function() { try {
+                    if (that.paliWords == null) {
+                        var fwsPath = path.join(__dirname, 'assets/fws-pali.json');
+                        var json = JSON.parse(fs.readFileSync(fwsPath));
+                        that.paliWords = new FuzzyWordSet(json);
+                    }
+                    resolve(that);
+                } catch(e) { reject(e); }})();
+            });
+        }
+
+        langPath(lang) {
+            return lang === 'pli' 
+                ? path.join(this.root, 'root/pli/ms')
+                : path.join(this.root, `translation/${lang}`);
+        }
+
+        validate() {
+            if (!this.initialized) {
+                throw new Error(`initialize() is required`);
+            }
+            return this;
+        }
+
+        grepComparator(a,b) {
+            var cmp = b.count - a.count;
+            if (cmp === 0) {
+                cmp = a.fpath.localeCompare(b.fpath);
+            }
+            return cmp;
+        }
+
+        paliPattern(pattern) {
+            return Seeker.paliPattern(pattern);
+        }
+
+        patternKeywords(pattern) {
+            var {
+                paliWords,
+            } = this.validate();
+            var keywords = pattern
+                .split(' +'); // + was inserted by normalizePattern()
+            return keywords.map(w => paliWords.contains(w)
+                    ? `\\b${this.paliPattern(w)}`
+                    : `\\b${w}\\b`);
         }
 
         grep(opts) {
@@ -100,7 +155,7 @@
                 `|grep -v ':0'`+
                 `|sort -g -r -k 2,2 -k 1,1 -t ':'`;
             maxResults && (cmd += `|head -${maxResults}`);
-            var cwd = `${this.root}/${lang}`;
+            var cwd = this.langPath(lang);
             this.log(`grep(${lang}) ${cmd}`);
             var execOpts = {
                 cwd,
@@ -121,6 +176,78 @@
                 });
             });
         }
+
+        keywordSearch(args) {
+            var {
+                pattern,
+                maxResults,
+                lang,
+                language, // DEPRECATED
+                searchMetadata,
+                comparator,
+            } = args;
+            comparator = comparator || this.grepComparator;
+            lang = lang || language || 'en';
+            var that = this;
+            var keywords = this.patternKeywords(pattern);
+            this.log(`keywordSearch(${keywords})`);
+            var wordArgs = Object.assign({
+                lang,
+                maxResults: 0,
+            }, args);
+            return new Promise((resolve,reject) => {
+                (async function() { try {
+                    var mrgOut = [];
+                    var mrgIn = [];
+                    for (var i=0; i< keywords.length; i++) {
+                        var keyword = keywords[i];
+                        var wordlines = await that.grep(
+                            Object.assign({}, wordArgs, {
+                                pattern: keyword,
+                        }));
+                        wordlines.sort();
+                        mrgOut = [];
+                        for (var iw = 0; iw < wordlines.length; iw++) {
+                            var lineparts = wordlines[iw].split(':');
+                            var fpath = lineparts[0];
+                            var count = Number(lineparts[1]);
+                            if (i === 0) {
+                                mrgOut.push({
+                                    fpath,
+                                    count,
+                                });
+                            } else if (mrgIn.length) {
+                                var cmp = mrgIn[0].fpath.localeCompare(fpath);
+                                if (cmp === 0) {
+                                    var newItem = {
+                                        fpath,
+                                        count: Math.min(mrgIn[0].count, count),
+                                    };
+                                    mrgOut.push(newItem);
+                                    mrgIn.shift();
+                                } else if (cmp < 0) {
+                                    mrgIn.shift(); // discard left
+                                    if (mrgIn.length === 0) {
+                                        break;
+                                    }
+                                    iw--; // re-compare
+                                } else {
+                                    // discard right
+                                }
+                            }
+                        }
+                        mrgIn = mrgOut;
+                    }
+                    resolve({
+                        resultPattern: keywords.join('|'),
+                        lines: mrgOut.sort(comparator)
+                            .map(v => `${v.fpath}:${v.count}`)
+                            .slice(0, maxResults),
+                    });
+                } catch(e) {reject(e);} })();
+            });
+        }
+
 
 
     }
@@ -268,89 +395,6 @@
                         }
                     };
                     resolve(suttaIds);
-                } catch(e) {reject(e);} })();
-            });
-        }
-
-        static grepComparator(a,b) {
-            var cmp = b.count - a.count;
-            if (cmp === 0) {
-                cmp = a.fpath.localeCompare(b.fpath);
-            }
-            return cmp;
-        }
-
-        patternKeywords(pattern) {
-            var keywords = pattern.split(' +'); // + was inserted by normalizePattern();
-            return keywords.map(w => 
-                /^[a-z]+$/iu.test(w) && this.words.isForeignWord(w)
-                ? `\\b${SuttaStore.paliPattern(w)}`
-                : `\\b${w}\\b`);
-        }
-
-        keywordSearch(args) {
-            var {
-                pattern,
-                maxResults,
-                language,
-                searchMetadata,
-                comparator,
-            } = args;
-            comparator = comparator || SuttaStore.grepComparator;
-            var that = this;
-            var keywords = this.patternKeywords(pattern);
-            logger.info(`SuttaStore.keywordSearch(${keywords})`);
-            var wordArgs = Object.assign({}, args, {
-                maxResults: 0,
-            });
-            return new Promise((resolve,reject) => {
-                (async function() { try {
-                    var mrgOut = [];
-                    var mrgIn = [];
-                    for (var i=0; i< keywords.length; i++) {
-                        var keyword = keywords[i];
-                        var wordlines = await that.grep(Object.assign({}, wordArgs, {
-                            pattern: keyword,
-                        }));
-                        wordlines.sort();
-                        mrgOut = [];
-                        for (var iw = 0; iw < wordlines.length; iw++) {
-                            var lineparts = wordlines[iw].split(':');
-                            var fpath = lineparts[0];
-                            var count = Number(lineparts[1]);
-                            if (i === 0) {
-                                mrgOut.push({
-                                    fpath,
-                                    count,
-                                });
-                            } else if (mrgIn.length) {
-                                var cmp = mrgIn[0].fpath.localeCompare(fpath);
-                                if (cmp === 0) {
-                                    var newItem = {
-                                        fpath,
-                                        count: Math.min(mrgIn[0].count, count),
-                                    };
-                                    mrgOut.push(newItem);
-                                    mrgIn.shift();
-                                } else if (cmp < 0) {
-                                    mrgIn.shift(); // discard left
-                                    if (mrgIn.length === 0) {
-                                        break;
-                                    }
-                                    iw--; // re-compare
-                                } else {
-                                    // discard right
-                                }
-                            }
-                        }
-                        mrgIn = mrgOut;
-                    }
-                    resolve({
-                        resultPattern: keywords.join('|'),
-                        lines: mrgOut.sort(comparator)
-                            .map(v => `${v.fpath}:${v.count}`)
-                            .slice(0, maxResults),
-                    });
                 } catch(e) {reject(e);} })();
             });
         }

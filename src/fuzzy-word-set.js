@@ -80,27 +80,35 @@
                     }
                 }
                 if (s === TRUE || s === FALSE) {
-                    states[c] = {
-                        [word.charAt(i+1)]: m,
-                        [OTHER]: s,
-                    };
+                    if (s === m) {
+                        return false;
+                    }
+                    var c1 = word.charAt(i+1);
+                    if (c) {
+                        states[c] = {
+                            [word.charAt(i+1)]: m,
+                            [OTHER]: s,
+                        };
+                    } else {
+                        states[c] = m;
+                    }
                     return true;
                 }
                 states = s;
             }
+            return false;
         }
 
         train(wordMap) {
+            var words = Object.keys(wordMap);
             for (var i = 0; i < this.maxTrain; i++) {
                 var trained = true;
-                var words = Object.keys(wordMap);
+                var notify = true;
                 words.forEach(w => {
                     var isMember = wordMap[w];
-                    !isMember && this.include(w, false) && (trained = false);
-                });
-                words.forEach(w => {
-                    var isMember = wordMap[w];
-                    isMember && this.include(w, true) && (trained = false);
+                    if (this.include(w, isMember)) {
+                        trained = false;
+                    }
                 });
                 if (trained) {
                     break;

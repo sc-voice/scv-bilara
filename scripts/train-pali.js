@@ -16,29 +16,36 @@ const {
 
 (async function() { try {
     logger.info('train-pali.js initializing...');
+    var wordsEnPath = path.join(__dirname, '../src/assets/words-en.txt');
+    var enList = fs.readFileSync(wordsEnPath).toString().split('\n');
+    var enWords = {};
+    enList.forEach(w => enWords[w] = false);
+    logger.info(`English words:${Object.keys(enWords).length}`);
+
     var bd = await new BilaraData({
         logLevel: false,
     }).initialize();
-    logger.info(`Scanning English translations for words`);
-    var enWords = {};
-    bd.suttaIds.forEach(suid => {
-        var sden = bd.loadSegDoc({suid, lang:'en'});
-        sden.fillWordMap(enWords, false);
-    });
-    logger.info(`English words:${Object.keys(enWords).length}`);
-
     var pliWords = {};
     bd.suttaIds.forEach(suid => {
         var sdpli = bd.loadSegDoc({suid, lang:'pli'});
         sdpli.fillWordMap(pliWords, true);
     });
+    pliWords.an = false, // SuttaCentral abbreviation
+    pliWords.mn = false, // SuttaCentral abbreviation
+    pliWords.sn = false, // SuttaCentral abbreviation
+    pliWords.kn = false, // SuttaCentral abbreviation
+    pliWords.dn = false, // SuttaCentral abbreviation
+    pliWords.thig = false, // SuttaCentral abbreviation
+    pliWords.thag = false, // SuttaCentral abbreviation
     logger.info(`Pali words:${Object.keys(pliWords).length}`);
     
-    // Some english words appear in root text
-    var enExceptions = {
-        an: false, // English acronym for Anguttara Nikaya
-    };
-    var wordMap = Object.assign({}, enWords, pliWords, enExceptions);
+    var wordMap = Object.assign({}, enWords, pliWords);
+    logger.info([`wordMap`,
+        `and:${wordMap['and']}`,
+        `an:${wordMap['an']}`,
+        `ananda:${wordMap['ananda']}`,
+        `anal:${wordMap['anal']}`,
+    ].join(' '));
 
     logger.info(`Training Pali FuzzyWordSet...`);
     var fws = new FuzzyWordSet({

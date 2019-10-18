@@ -38,7 +38,7 @@
         // it's a fuzzy set!
         should(fws.contains('howdy')).equal(true); 
     });
-    it("include(...) clarifies set membership", ()=>{
+    it("TESTTESTinclude(...) clarifies set membership", ()=>{
         var fws = new FuzzyWordSet();
         should(fws.contains('hello')).equal(false);
         should(fws.contains('howdy')).equal(false);
@@ -51,7 +51,7 @@
         should(fws.contains('hello')).equal(true);
         should(fws.contains('howdy')).equal(false); 
     });
-    it("TESTTESTtrain(...) handles prefixes", ()=>{
+    it("train(...) handles prefixes", ()=>{
         var fws = new FuzzyWordSet();
         var iterations = fws.train({
             hello: true,
@@ -61,8 +61,7 @@
         should(fws.contains('hello')).equal(true);
         should(fws.contains('hell')).equal(false);
         should(fws.contains('howdy')).equal(false);
-        should(iterations).equal(3);
-        console.log(fws);
+        should(iterations).equal(2);
     });
     it("trace(...) shows detail", ()=>{
         var fws = new FuzzyWordSet();
@@ -95,7 +94,7 @@
             member: false,
         });
     });
-    it("TESTTESTcan be serialized", ()=>{
+    it("can be serialized", ()=>{
         var fws = new FuzzyWordSet();
         var iterations = fws.train({
             hello: true,
@@ -111,7 +110,7 @@
         should(fws.contains('howdy')).equal(false);
         should(fws.unicode.reSymbols.test('a')).equal(false);
     });
-    it("TESTTESTignores symbols", ()=>{
+    it("ignores symbols", ()=>{
         var fws = new FuzzyWordSet();
         fws.include('"red"');
         should(fws.contains('red')).equal(true);

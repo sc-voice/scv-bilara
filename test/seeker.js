@@ -4,6 +4,7 @@
     const path = require('path');
     const {
         BilaraData,
+        FuzzyWordSet,
         Seeker,
     } = require("../index");
     const {
@@ -14,27 +15,31 @@
 
     const BILARA_PATH = path.join(LOCAL_DIR, 'bilara-data');
 
-    it(" default ctor", ()=>{
+    it("TESTTESTdefault ctor", ()=>{
         var skr = new Seeker();
-        should(skr.root).equal(path.join(BILARA_PATH, 'translation'));
         should(skr).properties({
             logLevel: 'info',
             lang: 'en',
+            root: BILARA_PATH,
+            paliWords: undefined,
         });
     });
     it(" custom ctor", ()=>{
         var logLevel = 'warn';
         var lang = 'de';
+        var paliWords = new FuzzyWordSet();
         var skr = new Seeker({
             root: '/tmp/test',
             logLevel,
             lang,
+            paliWords,
         });
         should(skr.root).equal('/tmp/test');
         should(skr).properties({
             logLevel,
             lang,
         });
+        should(skr.paliWords).instanceOf(FuzzyWordSet);
     });
     it("grep(...) finds en things", done=>{
         (async function() { try {
@@ -139,8 +144,6 @@
         .equal('(a|ā)bc(d|ḍ)efgh(i|ī)jk(l|ḷ)(m|ṁ|ṃ)(n|ṅ|ñ|ṇ)')
         should(Seeker.paliPattern("nopqrstuvwxyz"))
         .equal('(n|ṅ|ñ|ṇ)opqrs(t|ṭ)(u|ū)vwxyz');
-        should(Seeker.paliPattern("[abcdefghijklmnopqrstuvwxyz]"))
-        .equal('[abcdefghijklmnopqrstuvwxyz]');
     });
     it("isUidPattern(pattern) is true for sutta_uid patterns", function() {
         // unsupported sutta
@@ -179,5 +182,63 @@
         should(Seeker.isUidPattern('red,sn22.1-20,mn1')).equal(false);
         should(Seeker.isUidPattern('sn22.1-20    ,   red')).equal(false);
         should(Seeker.isUidPattern('red,sn22.1-20')).equal(false);
+    });
+    it("TESTTESTpaliPattern(pattern) returns Pali pattern", done=>{
+        (async function() { try {
+            var skr = await new Seeker().initialize();
+            should(skr.paliPattern("jhana")).equal('jh(a|ā)(n|ṅ|ñ|ṇ)(a|ā)');
+            should(skr.paliPattern("abcdefghijklmn"))
+            .equal('(a|ā)bc(d|ḍ)efgh(i|ī)jk(l|ḷ)(m|ṁ|ṃ)(n|ṅ|ñ|ṇ)')
+            should(skr.paliPattern("nopqrstuvwxyz"))
+            .equal('(n|ṅ|ñ|ṇ)opqrs(t|ṭ)(u|ū)vwxyz');
+            done();
+        } catch(e) { done(e); } })();
+    });
+    it("TESTTESTkeywordSearch(...) finds suttas by keywords", done=>{
+        (async function() { try {
+            var skr = await new Seeker().initialize();
+            var expected = [ 
+                'sujato/mn/mn143_translation-en-sujato.json:16',
+                'sujato/an/an10/an10.93_translation-en-sujato.json:11',
+                'sujato/sn/sn55/sn55.26_translation-en-sujato.json:9',
+                'sujato/sn/sn10/sn10.8_translation-en-sujato.json:8',
+                'sujato/sn/sn2/sn2.20_translation-en-sujato.json:7',
+                'sujato/sn/sn55/sn55.27_translation-en-sujato.json:5',
+                'sujato/an/an7/an7.63_translation-en-sujato.json:3',
+                'sujato/an/an10/an10.91_translation-en-sujato.json:2',
+                'sujato/an/an2/an2.32-41_translation-en-sujato.json:2',
+                'sujato/an/an5/an5.41_translation-en-sujato.json:2',
+            ];
+
+            // Search Pali in English
+            var lang = 'en';
+            var pattern = skr.patternKeywords('Anāthapiṇḍika')[0]; 
+            should(pattern).equal( '\\bAnāthapiṇḍika\\b');
+            var data = await skr.keywordSearch({ pattern, lang, });
+            should.deepEqual(data.lines.slice(0,10), expected);
+            should(data.lines.length).equal(223);
+
+            // Search romanized Pali in English
+            var lang = 'en';
+            var pattern = skr.patternKeywords('anathapindika')[0]; 
+            should(pattern).equal( '\\b(a|ā)(n|ṅ|ñ|ṇ)(a|ā)'+
+                '(t|ṭ)h(a|ā)p(i|ī)(n|ṅ|ñ|ṇ)(d|ḍ)(i|ī)k(a|ā)');
+            var data = await skr.keywordSearch({ pattern, lang, });
+            should.deepEqual(data.lines.slice(0,10), expected);
+            should(data.lines.length).equal(223); // sn55.30: anāthapiṇḍikā 
+
+            if (0) { // TODO
+            // Search romanized Pali in Pali
+            var lang = 'pli';
+            var pattern = skr.patternKeywords('anathapindika')[0]; 
+            should(pattern).equal( '\\b(a|ā)(n|ṅ|ñ|ṇ)(a|ā)'+
+                '(t|ṭ)h(a|ā)p(i|ī)(n|ṅ|ñ|ṇ)(d|ḍ)(i|ī)k(a|ā)');
+            var data = await skr.keywordSearch({ pattern, lang, });
+            should.deepEqual(data.lines.slice(0,10), expected);
+            should(data.lines.length).equal(223); // sn55.30: anāthapiṇḍikā 
+            }
+
+            done(); 
+        } catch(e) {done(e);} })();
     });
 })
