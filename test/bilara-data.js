@@ -503,6 +503,18 @@
                 trace: 'anal',
                 member: false,
             });
+            should.deepEqual(bd.paliWords.trace('analyse'), {
+                trace: 'analys',
+                member: false,
+            });
+            should.deepEqual(bd.paliWords.trace('analyze'), {
+                trace: 'analyze',
+                member: false,
+            });
+            should.deepEqual(bd.paliWords.trace('analayo'), {
+                trace: 'anala~',
+                member: true,
+            });
             should.deepEqual(bd.paliWords.trace('bhante'), {
                 trace: 'bh~',
                 member: true,

@@ -97,7 +97,7 @@
 
         langPath(lang) {
             return lang === 'pli' 
-                ? path.join(this.root, 'root/pli/ms')
+                ? path.join(this.root, 'root/pli')
                 : path.join(this.root, `translation/${lang}`);
         }
 
@@ -121,14 +121,17 @@
         }
 
         patternKeywords(pattern) {
-            var {
-                paliWords,
-            } = this.validate();
-            var keywords = pattern
-                .split(' +'); // + was inserted by normalizePattern()
-            return keywords.map(w => paliWords.contains(w)
-                    ? `\\b${this.paliPattern(w)}`
-                    : `\\b${w}\\b`);
+            // + was inserted by normalizePattern()
+            return pattern.split(' +'); 
+        }
+
+        keywordPattern(keyword, lang) {
+            if (this.paliWords.contains(keyword)) {
+                keyword = this.paliPattern(keyword);
+            }
+            return lang === 'pli'
+                ? `\\b${keyword}`
+                : `\\b${keyword}\\b`
         }
 
         grep(opts) {
@@ -156,7 +159,8 @@
                 `|sort -g -r -k 2,2 -k 1,1 -t ':'`;
             maxResults && (cmd += `|head -${maxResults}`);
             var cwd = this.langPath(lang);
-            this.log(`grep(${lang}) ${cmd}`);
+            var cwdMsg = cwd.replace(`${this.root}/`,'');
+            this.log(`grep(${cwdMsg}) ${cmd}`);
             var execOpts = {
                 cwd,
                 shell: '/bin/bash',
@@ -169,9 +173,9 @@
                         reject(err);
                     } else {
                         var raw = stdout && stdout.trim().split('\n') || [];
-                        resolve(raw.filter(f=>
-                            grepAllow.test(f) && !grepDeny.test(f)
-                        ));
+                        var rawFiltered = raw.filter(f=>
+                            grepAllow.test(f) && !grepDeny.test(f));
+                        resolve(rawFiltered);
                     }
                 });
             });
@@ -203,7 +207,7 @@
                         var keyword = keywords[i];
                         var wordlines = await that.grep(
                             Object.assign({}, wordArgs, {
-                                pattern: keyword,
+                                pattern: that.keywordPattern(keyword, lang),
                         }));
                         wordlines.sort();
                         mrgOut = [];
