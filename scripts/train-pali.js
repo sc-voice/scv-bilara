@@ -40,12 +40,6 @@ const {
     logger.info(`Pali words:${Object.keys(pliWords).length}`);
     
     var wordMap = Object.assign({}, enWords, pliWords);
-    logger.info([`wordMap`,
-        `and:${wordMap['and']}`,
-        `an:${wordMap['an']}`,
-        `ananda:${wordMap['ananda']}`,
-        `anal:${wordMap['anal']}`,
-    ].join(' '));
 
     logger.info(`Training Pali FuzzyWordSet...`);
     var fws = new FuzzyWordSet({
