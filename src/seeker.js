@@ -26,6 +26,7 @@
             this.grepDeny = opts.grepDeny ||
                 new RegExp("/(dhp)/","iu");
             this.paliWords = opts.paliWords;
+            this.maxResults = opts.maxResults || 5;
         }
 
         static isUidPattern(pattern) {
@@ -191,14 +192,17 @@
                 comparator,
             } = args;
             comparator = comparator || this.grepComparator;
-            lang = lang || language || 'en';
+            lang = lang || language || this.lang;
             var that = this;
+            maxResults = maxResults || this.maxResults;
             var keywords = this.patternKeywords(pattern);
             this.log(`keywordSearch(${keywords})`);
             var wordArgs = Object.assign({
                 lang,
-                maxResults: 0,
-            }, args);
+            }, args, {
+                maxResults: 0, // don't clip prematurely
+            });
+            var keywordsFound = {};
             return new Promise((resolve,reject) => {
                 (async function() { try {
                     var mrgOut = [];
@@ -209,6 +213,7 @@
                             Object.assign({}, wordArgs, {
                                 pattern: that.keywordPattern(keyword, lang),
                         }));
+                        keywordsFound[keyword] = wordlines.length;
                         wordlines.sort();
                         mrgOut = [];
                         for (var iw = 0; iw < wordlines.length; iw++) {
@@ -243,7 +248,10 @@
                         mrgIn = mrgOut;
                     }
                     resolve({
-                        resultPattern: keywords.join('|'),
+                        method: 'keywords',
+                        keywordsFound,
+                        lang,
+                        maxResults,
                         lines: mrgOut.sort(comparator)
                             .map(v => `${v.fpath}:${v.count}`)
                             .slice(0, maxResults),

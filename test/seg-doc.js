@@ -178,7 +178,7 @@
             en: '2 ',
         });
     });
-    it("TESTTESTfillWordMap(...) can train a FuzzyWordSet", ()=>{
+    it("fillWordMap(...) can train a FuzzyWordSet", ()=>{
         var fws = new FuzzyWordSet();
         var dn33 = new SegDoc({
             bilaraPath: 'data/dn33.json',

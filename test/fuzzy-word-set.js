@@ -38,7 +38,7 @@
         // it's a fuzzy set!
         should(fws.contains('howdy')).equal(true); 
     });
-    it("TESTTESTinclude(...) clarifies set membership", ()=>{
+    it("include(...) clarifies set membership", ()=>{
         var fws = new FuzzyWordSet();
         should(fws.contains('hello')).equal(false);
         should(fws.contains('howdy')).equal(false);

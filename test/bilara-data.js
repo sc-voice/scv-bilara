@@ -484,7 +484,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTrecognizes Pali words", done=>{
+    it("recognizes Pali words", done=>{
         (async function() { try {
             await bd.initialize();
             should.deepEqual(bd.paliWords.trace('ananda'), {

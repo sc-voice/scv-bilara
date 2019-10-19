@@ -9,11 +9,11 @@
         LOCAL_DIR,
     } = require("just-simple").JustSimple;
 
-    it("TESTTESTdefault ctor", () => {
+    it("default ctor", () => {
         var u = new Unicode();
         should.deepEqual(Object.keys(u), []);
     });
-    it("TESTTESTromanize(text) returns romanized text", function() {
+    it("romanize(text) returns romanized text", function() {
         var u = new Unicode();
         should(u.LSQUOTE).equal(Unicode.LSQUOTE);
         should(u.LSQUOTE).equal( '\u2018' );
@@ -29,7 +29,7 @@
         should(u.a_MACRON).equal( '\u0101' );
         should(u.u_MACRON).equal( '\u016d' ); 
     });
-    it("TESTTESTromanize(text) returns romanized text", function() {
+    it("romanize(text) returns romanized text", function() {
         var u = new Unicode();
         should(u.romanize("abc")).equal('abc');
         should(u.romanize("Abc")).equal('abc');
@@ -50,7 +50,7 @@
                 `${Unicode.RSQUOTE}ti${Unicode.EMDASH}`);
 
     });
-    it("TESTTESTstripSymbols(text) strips non word chars", ()=>{
+    it("stripSymbols(text) strips non word chars", ()=>{
         var u = new Unicode();
         should(u.stripSymbols(`happy`)).equal(`happy`);
         should(u.stripSymbols(`"happy!"`)).equal(`happy`);

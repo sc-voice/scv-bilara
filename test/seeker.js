@@ -19,7 +19,7 @@
 
     const BILARA_PATH = path.join(LOCAL_DIR, 'bilara-data');
 
-    it("TESTTESTdefault ctor", ()=>{
+    it("default ctor", ()=>{
         var skr = new Seeker();
         should(skr).properties({
             logLevel: 'info',
@@ -187,7 +187,7 @@
         should(Seeker.isUidPattern('sn22.1-20    ,   red')).equal(false);
         should(Seeker.isUidPattern('red,sn22.1-20')).equal(false);
     });
-    it("TESTTESTpaliPattern(pattern) returns Pali pattern", done=>{
+    it("paliPattern(pattern) returns Pali pattern", done=>{
         (async function() { try {
             var skr = await new Seeker(SEEKEROPTS);
             should(skr.paliPattern("jhana")).equal('jh(a|ā)(n|ṅ|ñ|ṇ)(a|ā)');
@@ -198,7 +198,7 @@
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTkeywordPattern(...) returns grep pattern", done=> {
+    it("keywordPattern(...) returns grep pattern", done=> {
         (async function() { try {
             var skr = await new Seeker(SEEKEROPTS).initialize();
             should(skr.keywordPattern('anathapindika', 'en')).equal(
@@ -210,43 +210,173 @@
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTkeywordSearch(...) finds English suttas", done=>{
+    it("keywordSearch(...) limits results", done=>{
         (async function() { try {
             var lang = 'en';
-            var skr = await new Seeker(SEEKEROPTS).initialize();
+            var pattern = Seeker.normalizePattern('suffering joy faith');
+            var maxResults = 3;
+            var skr = await new Seeker({
+                logLevel,
+                maxResults,
+                lang,
+            }).initialize();
             var expected = [ 
-                'sujato/mn/mn143_translation-en-sujato.json:16',
-                'sujato/an/an10/an10.93_translation-en-sujato.json:11',
-                'sujato/sn/sn55/sn55.26_translation-en-sujato.json:9',
-                'sujato/sn/sn10/sn10.8_translation-en-sujato.json:8',
-                'sujato/sn/sn2/sn2.20_translation-en-sujato.json:7',
-                'sujato/sn/sn55/sn55.27_translation-en-sujato.json:5',
-                'sujato/an/an7/an7.63_translation-en-sujato.json:3',
-                'sujato/an/an10/an10.91_translation-en-sujato.json:2',
-                'sujato/an/an2/an2.32-41_translation-en-sujato.json:2',
-                'sujato/an/an5/an5.41_translation-en-sujato.json:2',
+                'sujato/sn/sn12/sn12.23_translation-en-sujato.json:4',
+                'sujato/dn/dn33_translation-en-sujato.json:3',
+                'sujato/dn/dn34_translation-en-sujato.json:3',
             ];
 
-            // Search Pali in English
             var data = await skr.keywordSearch({ 
-                pattern: 'Anāthapiṇḍika',
-                lang,
+                pattern,
+                // maxResults taken from Seeker.maxResults
             });
-            should.deepEqual(data.lines.slice(0,10), expected);
-            should(data.lines.length).equal(223);
+            should.deepEqual(data.lines, expected);
 
-            // Search romanized Pali in English
+            skr.maxResults = 100; // keywordSearch will override
+            should(skr.maxResults).equal(100);
             var data = await skr.keywordSearch({ 
-                pattern: 'anathapindika',
-                lang,
+                pattern,
+                maxResults, // explicit specification
             });
-            should.deepEqual(data.lines.slice(0,10), expected);
-            should(data.lines.length).equal(223); // sn55.30: anāthapiṇḍikā 
+            should.deepEqual(data.lines, expected);
 
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTkeywordSearch(...) finds Pali suttas", done=>{
+    it("keywordSearch(...) searches English", done=>{
+        (async function() { try {
+            var maxResults = 15;
+            var pattern = Seeker.normalizePattern('suffering joy faith');
+            var skr = await new Seeker({
+                logLevel,
+                lang: 'de', // Deutsch
+            }).initialize();
+            var expected = [ 
+                'sujato/sn/sn12/sn12.23_translation-en-sujato.json:4',
+                'sujato/dn/dn33_translation-en-sujato.json:3',
+                'sujato/dn/dn34_translation-en-sujato.json:3',
+                'sujato/dn/dn10_translation-en-sujato.json:2',
+                'sujato/mn/mn68_translation-en-sujato.json:2',
+                'sujato/an/an10/an10.50_translation-en-sujato.json:1',
+                'sujato/an/an3/an3.70_translation-en-sujato.json:1',
+                'sujato/dn/dn19_translation-en-sujato.json:1',
+                'sujato/dn/dn30_translation-en-sujato.json:1',
+                'sujato/mn/mn34_translation-en-sujato.json:1',
+                "sujato/mn/mn90_translation-en-sujato.json:1",
+            ];
+
+            var data = await skr.keywordSearch({ 
+                pattern,
+                lang: 'en', // overrides Seeker default lang
+                maxResults,
+            });
+            var enExpected = {
+                lang: 'en',
+                method: 'keywords',
+                keywordsFound: {
+                    suffering: 736,
+                    joy: 80,
+                    faith: 310,
+                },
+                maxResults,
+                lines: expected,
+            };
+            should(data).properties(enExpected);
+
+            // Using Seeker default lang returns nothing 
+            var data = await skr.keywordSearch({ 
+                pattern,
+                maxResults,
+            });
+            should(data).properties({
+                lang: 'de',
+                method: 'keywords',
+                keywordsFound: {
+                    suffering: 0,
+                    joy: 0,
+                    faith: 0,
+                },
+                maxResults,
+                lines: [],
+            });
+
+            // Change Seeker default language to English
+            skr.lang = 'en'; // Not advisable for multiple users
+            should(skr.lang).equal('en');
+            var data = await skr.keywordSearch({ 
+                pattern,
+                maxResults,
+            });
+            should(data).properties(enExpected);
+
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTkeywordSearch(...) searches Pali in English", done=>{
+        (async function() { try {
+            var lang = 'en';
+            var skr = await new Seeker({
+                logLevel,
+                lang,
+            }).initialize();
+            var expected = {
+                method: 'keywords',
+                maxResults: 5,
+                lang: 'en', // searching bilara-data/translations/en
+                lines: [ 
+                    'sujato/mn/mn143_translation-en-sujato.json:16',
+                    'sujato/an/an10/an10.93_translation-en-sujato.json:11',
+                    'sujato/sn/sn55/sn55.26_translation-en-sujato.json:9',
+                    'sujato/sn/sn10/sn10.8_translation-en-sujato.json:8',
+                    'sujato/sn/sn2/sn2.20_translation-en-sujato.json:7',
+                ],
+            };
+
+            // Single Pali keyword searches English
+            var data = await skr.keywordSearch({ 
+                pattern: 'Anāthapiṇḍika',
+            });
+            should(data).properties(expected);
+            should.deepEqual(data.keywordsFound, {
+                    'Anāthapiṇḍika': 223,
+            });
+
+            // Single romanized Pali searches English
+            var data = await skr.keywordSearch({ 
+                pattern: 'anathapindika',
+            });
+            should(data).properties(expected);
+            should.deepEqual(data.keywordsFound, {
+                    'anathapindika': 223,
+            });
+
+            // Mixed Pali/English keywords 
+            var data = await skr.keywordSearch({ 
+                pattern: Seeker.normalizePattern('anathapindika run back'),
+                maxResults: 10,
+            });
+            should.deepEqual(data, {
+                lang: 'en',
+                maxResults: 10,
+                method: 'keywords',
+                keywordsFound: {
+                    anathapindika: 223,
+                    back: 203,
+                    run: 26,
+                },
+                lines: [
+                    'sujato/mn/mn119_translation-en-sujato.json:1',
+                    'sujato/mn/mn129_translation-en-sujato.json:1',
+                    'sujato/mn/mn130_translation-en-sujato.json:1',
+                    'sujato/mn/mn131_translation-en-sujato.json:1',
+                    'sujato/mn/mn134_translation-en-sujato.json:1'
+                ],
+            });
+
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTkeywordSearch(...) searches Pali", done=>{
         (async function() { try {
             var skr = await new Seeker(SEEKEROPTS).initialize();
             var lang = 'pli';
@@ -257,38 +387,26 @@
                 pattern: 'anathapindika',
                 lang,
             });
-            should.deepEqual(data.lines.slice(0,10), [
+            should.deepEqual(data.lines, [
                 'ms/an/an10/an10.93_root-pli-ms.json:9',
                 'ms/sn/sn10/sn10.8_root-pli-ms.json:9',
                 'ms/mn/mn143_root-pli-ms.json:7',
                 'ms/sn/sn55/sn55.26_root-pli-ms.json:7',
                 'ms/sn/sn55/sn55.27_root-pli-ms.json:4',
-                'ms/an/an7/an7.63_root-pli-ms.json:3',
-                'ms/mn/mn24_root-pli-ms.json:3',
-                'ms/sn/sn2/sn2.20_root-pli-ms.json:3',
-                'ms/an/an10/an10.91_root-pli-ms.json:2',
-                'ms/an/an5/an5.41_root-pli-ms.json:2'
             ]);
-            should(data.lines.length).equal(221); // sn55.30: anāthapiṇḍikā 
 
             // With shorter keywords, more is returned
             var data = await skr.keywordSearch({ 
                 pattern: 'anathapindik',
                 lang,
             });
-            should.deepEqual(data.lines.slice(0,10), [
+            should.deepEqual(data.lines, [
                 'ms/mn/mn143_root-pli-ms.json:24',
                 'ms/an/an10/an10.93_root-pli-ms.json:19',
                 'ms/sn/sn10/sn10.8_root-pli-ms.json:14',
                 'ms/sn/sn55/sn55.26_root-pli-ms.json:14',
                 'ms/sn/sn2/sn2.20_root-pli-ms.json:9',
-                'ms/sn/sn55/sn55.27_root-pli-ms.json:8',
-                'ms/an/an7/an7.63_root-pli-ms.json:3',
-                'ms/mn/mn24_root-pli-ms.json:3',
-                'ms/an/an10/an10.91_root-pli-ms.json:2',
-                'ms/an/an2/an2.32-41_root-pli-ms.json:2',
             ]);
-            should(data.lines.length).equal(225); // sn55.30: anāthapiṇḍikā 
 
             done(); 
         } catch(e) {done(e);} })();
