@@ -73,7 +73,7 @@
 
         static normalizePattern(pattern) {
             // normalize white space to space
-            pattern = pattern.replace(/[\s]+/g,' +'); 
+            pattern = pattern.replace(/[\s]+/g,' +').toLowerCase(); 
             
             return pattern;
         }
@@ -192,16 +192,21 @@
                 comparator,
             } = args;
             comparator = comparator || this.grepComparator;
-            lang = lang || language || this.lang;
             var that = this;
             maxResults = maxResults || this.maxResults;
             var keywords = this.patternKeywords(pattern);
-            this.log(`keywordSearch(${keywords})`);
-            var wordArgs = Object.assign({
-                lang,
-            }, args, {
+            var isPali = keywords.reduce((a,k) => {
+                var pali = this.paliWords.contains(k);
+                return a && pali;
+            }, true);
+            lang = isPali 
+                ? 'pli'
+                : (lang || language || this.lang);
+            var wordArgs = Object.assign({}, args, {
                 maxResults: 0, // don't clip prematurely
+                lang,
             });
+            this.log(`keywordSearch(${keywords}) lang:${lang}`);
             var keywordsFound = {};
             return new Promise((resolve,reject) => {
                 (async function() { try {

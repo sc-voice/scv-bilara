@@ -16,10 +16,12 @@
         constructor(opts={}) {
             this.states = opts.states || {};
             this.maxTrain = opts.maxTrain || 10;
+            this.ignoreCase = opts.ignoreCase !== false;
             this.unicode = new Unicode(opts.unicode);
         }
 
         contains(word) {
+            this.ignoreCase && (word = word.toLowerCase());
             return this.trace(word).member;
         }
 

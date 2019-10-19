@@ -23,6 +23,7 @@
         var fws = new FuzzyWordSet();
         should(fws).properties({
             maxTrain: 10,
+            ignoreCase: true,
         });
     });
     it("contains(word) => set membership", ()=>{

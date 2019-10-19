@@ -312,101 +312,122 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTkeywordSearch(...) searches Pali in English", done=>{
+    it("TESTTESTkeywordSearch(...) searches Pali, not English", done=>{
         (async function() { try {
-            var lang = 'en';
             var skr = await new Seeker({
                 logLevel,
-                lang,
             }).initialize();
             var expected = {
                 method: 'keywords',
                 maxResults: 5,
-                lang: 'en', // searching bilara-data/translations/en
+                lang: 'pli', // searching bilara-data/root/pli
                 lines: [ 
-                    'sujato/mn/mn143_translation-en-sujato.json:16',
-                    'sujato/an/an10/an10.93_translation-en-sujato.json:11',
-                    'sujato/sn/sn55/sn55.26_translation-en-sujato.json:9',
-                    'sujato/sn/sn10/sn10.8_translation-en-sujato.json:8',
-                    'sujato/sn/sn2/sn2.20_translation-en-sujato.json:7',
+                    'ms/an/an10/an10.93_root-pli-ms.json:9',
+                    'ms/sn/sn10/sn10.8_root-pli-ms.json:9',
+                    'ms/mn/mn143_root-pli-ms.json:7',
+                    'ms/sn/sn55/sn55.26_root-pli-ms.json:7',
+                    'ms/sn/sn55/sn55.27_root-pli-ms.json:4'
                 ],
             };
 
-            // Single Pali keyword searches English
+            // Single Pali keyword searches Pali
             var data = await skr.keywordSearch({ 
                 pattern: 'Anāthapiṇḍika',
+                lang: 'en', // will be ignored
             });
             should(data).properties(expected);
             should.deepEqual(data.keywordsFound, {
-                    'Anāthapiṇḍika': 223,
+                    'Anāthapiṇḍika': 221,
             });
 
-            // Single romanized Pali searches English
+            // Single romanized Pali searches Pali
             var data = await skr.keywordSearch({ 
                 pattern: 'anathapindika',
             });
             should(data).properties(expected);
             should.deepEqual(data.keywordsFound, {
-                    'anathapindika': 223,
-            });
-
-            // Mixed Pali/English keywords 
-            var data = await skr.keywordSearch({ 
-                pattern: Seeker.normalizePattern('anathapindika run back'),
-                maxResults: 10,
-            });
-            should.deepEqual(data, {
-                lang: 'en',
-                maxResults: 10,
-                method: 'keywords',
-                keywordsFound: {
-                    anathapindika: 223,
-                    back: 203,
-                    run: 26,
-                },
-                lines: [
-                    'sujato/mn/mn119_translation-en-sujato.json:1',
-                    'sujato/mn/mn129_translation-en-sujato.json:1',
-                    'sujato/mn/mn130_translation-en-sujato.json:1',
-                    'sujato/mn/mn131_translation-en-sujato.json:1',
-                    'sujato/mn/mn134_translation-en-sujato.json:1'
-                ],
+                    'anathapindika': 221,
             });
 
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTkeywordSearch(...) searches Pali", done=>{
+    it("TESTTESTkeywordSearch(...) searches Pali, not Deutsch", done=>{
         (async function() { try {
-            var skr = await new Seeker(SEEKEROPTS).initialize();
-            var lang = 'pli';
+            var skr = await new Seeker({
+                lang: 'de',
+                logLevel,
+            }).initialize();
+            var expected = {
+                method: 'keywords',
+                maxResults: 5,
+                lang: 'pli', // searching bilara-data/root/pli
+                lines: [ 
+                    'ms/an/an10/an10.93_root-pli-ms.json:9',
+                    'ms/sn/sn10/sn10.8_root-pli-ms.json:9',
+                    'ms/mn/mn143_root-pli-ms.json:7',
+                    'ms/sn/sn55/sn55.26_root-pli-ms.json:7',
+                    'ms/sn/sn55/sn55.27_root-pli-ms.json:4'
+                ],
+            };
 
-            // Search romanized Pali in Pali suttas
-            // Notice that endings change in Pali, and less is returned
+            // Single Pali keyword searches Pali
+            var data = await skr.keywordSearch({ 
+                pattern: 'Anāthapiṇḍika',
+                lang: 'de', // will be ignored
+            });
+            should(data).properties(expected);
+
+            // Single romanized Pali searches Pali
+            expected.keywordsFound = {
+                'anathapindika': 221,
+            };
             var data = await skr.keywordSearch({ 
                 pattern: 'anathapindika',
-                lang,
+                lang: 'de', // will be ignored
             });
-            should.deepEqual(data.lines, [
-                'ms/an/an10/an10.93_root-pli-ms.json:9',
-                'ms/sn/sn10/sn10.8_root-pli-ms.json:9',
-                'ms/mn/mn143_root-pli-ms.json:7',
-                'ms/sn/sn55/sn55.26_root-pli-ms.json:7',
-                'ms/sn/sn55/sn55.27_root-pli-ms.json:4',
-            ]);
+            should(data).properties(expected);
 
-            // With shorter keywords, more is returned
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTkeywordSearch(...) searches Deutsch, not Pali", done=>{
+        (async function() { try {
+            var skr = await new Seeker({
+                logLevel,
+                lang: 'en', // English default
+            }).initialize();
+            var expected = {
+                lang: 'de',
+                maxResults: 10,
+                method: 'keywords',
+                keywordsFound: {
+                    hausherr: 2,
+                    anathapindika: 9,
+                },
+                lines: [
+                    'sabbamitta/sn/sn10/sn10.8_translation-de-sabbamitta.json:4',
+                    'sabbamitta/an/an1/an1.248-257_translation-de-sabbamitta.json:1',
+                ],
+            };
+
+            // Mixed Pali/Deutsch keywords initial cap
             var data = await skr.keywordSearch({ 
-                pattern: 'anathapindik',
-                lang,
+                pattern: Seeker.normalizePattern(
+                    'Anathapindika Hausherr'),
+                maxResults: 10,
+                lang: 'de', // Requesting Deutsch search
             });
-            should.deepEqual(data.lines, [
-                'ms/mn/mn143_root-pli-ms.json:24',
-                'ms/an/an10/an10.93_root-pli-ms.json:19',
-                'ms/sn/sn10/sn10.8_root-pli-ms.json:14',
-                'ms/sn/sn55/sn55.26_root-pli-ms.json:14',
-                'ms/sn/sn2/sn2.20_root-pli-ms.json:9',
-            ]);
+            should.deepEqual(data, expected);
+
+            // Mixed Pali/Deutsch keywords lowercase
+            var data = await skr.keywordSearch({ 
+                pattern: Seeker.normalizePattern(
+                    'anathapindika hausherr'),
+                maxResults: 10,
+                lang: 'de', // Requesting Deutsch search
+            });
+            should.deepEqual(data, expected);
 
             done(); 
         } catch(e) {done(e);} })();
