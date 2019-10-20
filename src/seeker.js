@@ -96,6 +96,14 @@
             });
         }
 
+        patternLanguage(pattern, lang=this.lang) {
+            this.validate();
+            var keywords = pattern.split(/ +\+?/);
+            return keywords.reduce((a,k) => {
+                return this.paliWords.contains(k) ? a : lang;
+            }, 'pli');
+        }
+
         langPath(lang) {
             return lang === 'pli' 
                 ? path.join(this.root, 'root/pli')

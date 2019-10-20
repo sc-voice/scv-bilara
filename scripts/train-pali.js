@@ -16,11 +16,15 @@ const {
 
 (async function() { try {
     logger.info('train-pali.js initializing...');
-    var wordsEnPath = path.join(__dirname, '../src/assets/words-en.txt');
-    var enList = fs.readFileSync(wordsEnPath).toString().split('\n');
-    var enWords = {};
-    enList.forEach(w => enWords[w] = false);
-    logger.info(`English words:${Object.keys(enWords).length}`);
+
+    var langs = ['en','de'];
+    var langWords = {};
+    langs.forEach(lang => {
+        var wordsPath = path.join(__dirname, `../src/assets/words-${lang}.txt`);
+        var wordList = fs.readFileSync(wordsPath).toString().split('\n');
+        wordList.forEach(w => langWords[w] = false);
+        logger.info(`${lang} words:${Object.keys(langWords).length}`);
+    });
 
     var bd = await new BilaraData({
         logLevel: false,
@@ -39,7 +43,7 @@ const {
     pliWords.thag = false, // SuttaCentral abbreviation
     logger.info(`Pali words:${Object.keys(pliWords).length}`);
     
-    var wordMap = Object.assign({}, enWords, pliWords);
+    var wordMap = Object.assign({}, langWords, pliWords);
 
     logger.info(`Training Pali FuzzyWordSet...`);
     var fws = new FuzzyWordSet({

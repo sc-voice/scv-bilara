@@ -432,4 +432,22 @@
             done(); 
         } catch(e) {done(e);} })();
     });
+    it("TESTTESTpatternLanguage(...) => search language context",done=>{
+        (async function() { try {
+            var skr = await new Seeker().initialize();
+            should(skr.patternLanguage('anathema')).equal('en');
+            should(skr.patternLanguage('anathema', 'en')).equal('en');
+            should(skr.patternLanguage('anath')).equal('en');
+            should(skr.patternLanguage('anath', 'en')).equal('en');
+            should(skr.patternLanguage('anatha')).equal('pli');
+            should(skr.patternLanguage('anatha', 'en')).equal('pli');
+            should(skr.patternLanguage('anathapindika')).equal('pli');
+            should(skr.patternLanguage('anathapindika', 'en')).equal('pli');
+            should(skr.patternLanguage('anathapindika monastery')).equal('en');
+            should(skr.patternLanguage('anathapindika monastery', 'en')).equal('en');
+            should(skr.patternLanguage('anathapindika kloster', 'de')).equal('de');
+            should(skr.patternLanguage('anathapindika kloster')).equal('en');
+            done(); 
+        } catch(e) {done(e);} })();
+    });
 })
