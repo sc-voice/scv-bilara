@@ -1,4 +1,3 @@
-bechützen
 bedenken
 bedenkt
 bedeuten
@@ -110,8 +109,6 @@ bezug
 bezähmen
 bezähmt
 bezüglich
-bhedo
-biblio
 bild
 bilder
 bildern
@@ -162,7 +159,6 @@ derer
 derjenige
 des
 deswegen
-deutsch
 dich
 dichter
 diensten
@@ -254,7 +250,6 @@ empfundene
 empfänger
 empfängerin
 empfängnis
-emtstehen
 ende
 enden
 endet
@@ -536,7 +531,6 @@ götter
 göttern
 güter
 gütern
-he
 hegt
 heilige
 heiter
@@ -804,15 +798,12 @@ nichtwiederkehrer
 nichtwiederkehrerin
 nie
 nieder
-nikkhepo
 nimm
 nimmt
-nirodho
 noch
 nonne
 nonnen
 nonnenschülerinnen
-num
 nummerierte
 nur
 nutzen
@@ -833,7 +824,6 @@ ohr
 ohren
 ohrringen
 ohrs
-only
 opfer
 opfern
 ordenszugehörigkeit
@@ -854,7 +844,6 @@ pferde
 pflegen
 pflegt
 pfählen
-pli
 plätze
 prinzip
 prinzipien
@@ -863,7 +852,6 @@ probiert
 prüft
 punkt
 punkten
-pure
 recht
 rechte
 rechtem
@@ -968,7 +956,6 @@ sechs
 sechstes
 sechzehnten
 sechzig
-section
 segen
 segensreich
 sehe
@@ -1010,7 +997,6 @@ sittlichen
 sitz
 sitze
 sitzt
-snp
 so
 sogleich
 solch
@@ -1081,13 +1067,11 @@ subtile
 suche
 suchten
 süßen
-te
 teiche
 teil
 tendiert
 teufelsmund
 texte
-there
 tief
 tiefes
 tiefgründig
@@ -1095,7 +1079,6 @@ tiefgründige
 tiefgründiger
 tiere
 tierreich
-title
 tod
 todes
 tor
@@ -1115,7 +1098,6 @@ törichte
 töten
 tür
 ufer
-uid
 um
 umgestellt
 umgestürzte

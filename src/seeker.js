@@ -190,6 +190,25 @@
             });
         }
 
+        phraseSearch(args) {
+            var {
+                lang,
+                language,
+                pattern,
+            } = args;
+            if (pattern == null) {
+                throw new Error(`phraseSearch() requires pattern`);
+            }
+            lang = this.patternLanguage(pattern, lang || language);
+            this.log(`phraseSearch(${pattern},lang)`);
+            return this.grep(Object.assign({}, args, {
+                pattern: lang === 'pli' 
+                    ? `\\b${pattern}`
+                    : `\\b${pattern}\\b`,
+                lang,
+            }));
+        }
+
         keywordSearch(args) {
             var {
                 pattern,
@@ -416,27 +435,6 @@
             });
         }
 
-        static compareSuttaUids(a,b) {
-            var aprefix = a.substring(0,a.search(/[0-9]/));
-            var bprefix = b.substring(0,b.search(/[0-9]/));
-            var cmp = aprefix.localeCompare(bprefix);
-            if (cmp === 0) {
-                reDig = new RegExp("[^0-9]*([0-9]*.?[0-9]*).*");
-                var adig = a.replace(reDig,"$1").split('.');
-                var bdig = b.replace(reDig,"$1").split('.');
-                var cmp = Number(adig[0]) - Number(bdig[0]);
-                if (cmp === 0 && adig.length>1 && bdig.length>1) {
-                    cmp = Number(adig[1]) - Number(bdig[1]);
-                }
-            }
-            return cmp;
-        }
-
-        supportedSutta(sutta_uid) {
-            var i = this.suttaIndex(sutta_uid);
-            return this.suttaIds[i] || null;
-        }
-
         grepSearchResults(args) {
             var {
                 lines,
@@ -581,14 +579,6 @@
                     resolve(grepSearchResults);
                 } catch(e) {reject(e);} })();
             });
-        }
-
-        phraseSearch(args) {
-            var pattern = `\\b${args.pattern}\\b`;
-            logger.info(`SuttaStore.phraseSearch(${pattern})`);
-            return this.grep(Object.assign({}, args, {
-                pattern,
-            }));
         }
 
         createPlaylist(...args) {

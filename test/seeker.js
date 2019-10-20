@@ -199,6 +199,7 @@
         } catch(e) { done(e); } })();
     });
     it("keywordPattern(...) returns grep pattern", done=> {
+        this.timeout(4*1000);
         (async function() { try {
             var skr = await new Seeker(SEEKEROPTS).initialize();
             should(skr.keywordPattern('anathapindika', 'en')).equal(
@@ -210,7 +211,8 @@
             done();
         } catch(e) { done(e); } })();
     });
-    it("keywordSearch(...) limits results", done=>{
+    it("TESTTESTkeywordSearch(...) limits results", done=>{
+        this.timeout(5*1000);
         (async function() { try {
             var lang = 'en';
             var pattern = Seeker.normalizePattern('suffering joy faith');
@@ -220,17 +222,26 @@
                 maxResults,
                 lang,
             }).initialize();
-            var expected = [ 
-                'sujato/sn/sn12/sn12.23_translation-en-sujato.json:4',
-                'sujato/dn/dn33_translation-en-sujato.json:3',
-                'sujato/dn/dn34_translation-en-sujato.json:3',
-            ];
+            var expected = {
+                method: "keywords",
+                lang: 'en',
+                keywordsFound: {
+                    faith: 310,
+                    joy: 80,
+                    suffering: 736,
+                },
+                lines: [ 
+                    'sujato/sn/sn12/sn12.23_translation-en-sujato.json:4',
+                    'sujato/dn/dn33_translation-en-sujato.json:3',
+                    'sujato/dn/dn34_translation-en-sujato.json:3',
+                ],
+            };
 
             var data = await skr.keywordSearch({ 
                 pattern,
                 // maxResults taken from Seeker.maxResults
             });
-            should.deepEqual(data.lines, expected);
+            should(data).properties(expected);
 
             skr.maxResults = 100; // keywordSearch will override
             should(skr.maxResults).equal(100);
@@ -238,12 +249,13 @@
                 pattern,
                 maxResults, // explicit specification
             });
-            should.deepEqual(data.lines, expected);
+            should(data).properties(expected);
 
             done(); 
         } catch(e) {done(e);} })();
     });
     it("keywordSearch(...) searches English", done=>{
+        this.timeout(5*1000);
         (async function() { try {
             var maxResults = 15;
             var pattern = Seeker.normalizePattern('suffering joy faith');
@@ -313,6 +325,7 @@
         } catch(e) {done(e);} })();
     });
     it("TESTTESTkeywordSearch(...) searches Pali, not English", done=>{
+        this.timeout(4*1000);
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,
@@ -353,6 +366,7 @@
         } catch(e) {done(e);} })();
     });
     it("TESTTESTkeywordSearch(...) searches Pali, not Deutsch", done=>{
+        this.timeout(4*1000);
         (async function() { try {
             var skr = await new Seeker({
                 lang: 'de',
@@ -392,6 +406,7 @@
         } catch(e) {done(e);} })();
     });
     it("TESTTESTkeywordSearch(...) searches Deutsch, not Pali", done=>{
+        this.timeout(4*1000);
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,
@@ -433,6 +448,7 @@
         } catch(e) {done(e);} })();
     });
     it("TESTTESTpatternLanguage(...) => search language context",done=>{
+        this.timeout(4*1000);
         (async function() { try {
             var skr = await new Seeker().initialize();
             should(skr.patternLanguage('anathema')).equal('en');
@@ -447,6 +463,41 @@
             should(skr.patternLanguage('anathapindika monastery', 'en')).equal('en');
             should(skr.patternLanguage('anathapindika kloster', 'de')).equal('de');
             should(skr.patternLanguage('anathapindika kloster')).equal('en');
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTphraseSearch(...) limits results", done=>{
+    done(); return; // TODO
+        (async function() { try {
+            var lang = 'en';
+            var pattern = Seeker.normalizePattern('root of suffering');
+            console.log(`dbg pattern`, pattern);
+            var maxResults = 3;
+            var skr = await new Seeker({
+                logLevel,
+                maxResults,
+                lang,
+            }).initialize();
+            var expected = [ 
+                'sujato/sn/sn12/sn12.23_translation-en-sujato.json:4',
+                'sujato/dn/dn33_translation-en-sujato.json:3',
+                'sujato/dn/dn34_translation-en-sujato.json:3',
+            ];
+
+            var data = await skr.phraseSearch({ 
+                pattern,
+                // maxResults taken from Seeker.maxResults
+            });
+            should.deepEqual(data, expected);
+
+            skr.maxResults = 100; // phraseSearch will override
+            should(skr.maxResults).equal(100);
+            var data = await skr.phraseSearch({ 
+                pattern,
+                maxResults, // explicit specification
+            });
+            should.deepEqual(data.lines, expected);
+
             done(); 
         } catch(e) {done(e);} })();
     });
