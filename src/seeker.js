@@ -203,13 +203,7 @@
             var that = this;
             maxResults = maxResults || this.maxResults;
             var keywords = this.patternKeywords(pattern);
-            var isPali = keywords.reduce((a,k) => {
-                var pali = this.paliWords.contains(k);
-                return a && pali;
-            }, true);
-            lang = isPali 
-                ? 'pli'
-                : (lang || language || this.lang);
+            lang = this.patternLanguage(pattern, lang || language);
             var wordArgs = Object.assign({}, args, {
                 maxResults: 0, // don't clip prematurely
                 lang,
@@ -222,10 +216,8 @@
                     var mrgIn = [];
                     for (var i=0; i< keywords.length; i++) {
                         var keyword = keywords[i];
-                        var wordlines = await that.grep(
-                            Object.assign({}, wordArgs, {
-                                pattern: that.keywordPattern(keyword, lang),
-                        }));
+                        wordArgs.pattern = that.keywordPattern(keyword, lang);
+                        var wordlines = await that.grep(wordArgs);
                         keywordsFound[keyword] = wordlines.length;
                         wordlines.sort();
                         mrgOut = [];
