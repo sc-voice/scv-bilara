@@ -17,16 +17,51 @@ const {
 const logLevel = false;
 const BILARA_DATA = path.join(__dirname, '../local/bilara-data');
 
+function help() {
+    console.log(`
+NAME
+        search.js - seach bilara-data root text and translations
+
+SYNOPSIS
+        search.js [OPTIONS] PATTERN_KEYWORDS
+
+DESCRIPTION
+    -l, --lang ISO_LANG_2
+        Specify ISO 2-letter language code for primary translation language.
+        Default is "de" for German.
+
+    -ml, --minLang NUMBER
+        Filters results to segments with at least 'minLang' languages.
+        By default, minLang is set to 2, requiring at least two languages 
+        to be present in any segment shown.
+`);
+    process.exit(0);
+}
+
 var pattern;
 var lang = 'de';
 var maxResults = 5;
-for (var i = 0; i < process.argv.length; i++) {
+var minLang = 2;
+
+var nargs = process.argv.length;
+if (nargs < 3) {
+    help();
+}
+for (var i = 0; i < nargs; i++) {
     var arg = process.argv[i];
     if (i<2) { continue; }
-    pattern = pattern ? `${pattern} ${arg}` : arg;
+    if (arg === '-?' || arg === '--help') {
+        help();
+    } else if (arg === '-ml' || arg === '--minLang') {
+        minLang = Number(process.argv[++i]);
+    } else if (arg === '-l' || arg === '--lang') {
+        lang = process.argv[++i];
+    } else {
+        pattern = pattern ? `${pattern} ${arg}` : arg;
+    }
 }
 pattern = pattern || `wurzel des leidens`;
-logger.info(`search(${lang}): "${pattern}"...`);
+logger.info(`search(${lang},ml${minLang}): "${pattern}"...`);
 
 (async function() { try {
     var bd = await new BilaraData({
@@ -58,14 +93,22 @@ logger.info(`search(${lang}): "${pattern}"...`);
         : new RegExp(pattern, 'ui');
     files.forEach(f=>{
         var suid = path.basename(f, '.json').split('_')[0];
-        var sdpli = bd.loadSegDoc({
-            suid,
-            lang: 'pli',
-        });
-        var sden = bd.loadSegDoc({
-            suid,
-            lang: 'en',
-        });
+        try {
+            var sdpli = bd.loadSegDoc({
+                suid,
+                lang: 'pli',
+            });
+        } catch(e) {
+            var sdpli = null;
+        }
+        try {
+            var sden = bd.loadSegDoc({
+                suid,
+                lang: 'en',
+            });
+        } catch(e) {
+            var sden = null;
+        }
         try {
             var sdlang = bd.loadSegDoc({
                 suid,
@@ -80,11 +123,22 @@ logger.info(`search(${lang}): "${pattern}"...`);
             : sdlang;
 
         sdsearch.segments().forEach(seg => {
-            if (!rex.test(seg[data.lang])) {return;}
             seg.pli = sdpli.segMap[seg.scid];
             seg.en = sden.segMap[seg.scid];
             sdlang && (seg[lang] = sdlang.segMap[seg.scid]);
-            console.log(seg);
+
+            var actLang = [];
+            seg.pli && actLang.push('pli');
+            seg.en && actLang.push('en');
+            lang !== 'en' && seg[lang] && actLang.push(lang);
+
+            if (rex.test(seg[data.lang])) {
+                if (actLang.length >= minLang) {
+                    console.log(seg);
+                } else {
+                    console.log(`${seg.scid} matched ${actLang}`);
+                }
+            }
         });
     }, []);
 } catch(e) { logger.warn(e.stack); }})();
