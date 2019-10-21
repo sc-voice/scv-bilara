@@ -469,23 +469,27 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTphraseSearch(...) limits results", done=>{
-    done(); return; // TODO
+    it("TESTTESTphraseSearch(...) limits English results", done=>{
+        this.timeout(5*1000);
         (async function() { try {
             var lang = 'en';
-            var pattern = Seeker.normalizePattern('root of suffering');
-            console.log(`dbg pattern`, pattern);
+            var pattern = 'root of suffering';
             var maxResults = 3;
             var skr = await new Seeker({
                 logLevel,
                 maxResults,
                 lang,
             }).initialize();
-            var expected = [ 
-                'sujato/sn/sn12/sn12.23_translation-en-sujato.json:4',
-                'sujato/dn/dn33_translation-en-sujato.json:3',
-                'sujato/dn/dn34_translation-en-sujato.json:3',
-            ];
+            var expected = {
+                method: 'phrase',
+                lang: 'en',
+                pattern: `\\broot of suffering\\b`,
+                lines: [ 
+                    'sujato/sn/sn42/sn42.11_translation-en-sujato.json:5',
+                    'sujato/mn/mn105_translation-en-sujato.json:3',
+                    'sujato/mn/mn1_translation-en-sujato.json:2',
+                ],
+            };
 
             var data = await skr.phraseSearch({ 
                 pattern,
@@ -499,7 +503,38 @@
                 pattern,
                 maxResults, // explicit specification
             });
-            should.deepEqual(data.lines, expected);
+            should(data).properties(expected);
+            should.deepEqual(data.lines.slice(0,3), expected.lines);
+            should(data.lines.length).equal(maxResults);
+
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTphraseSearch(...) finds Deutsch results", done=>{
+        this.timeout(5*1000);
+        var lines = [
+            'sabbamitta/sn/sn42/sn42.11_translation-de-sabbamitta.json:5',
+        ];
+        (async function() { try {
+            var lang = 'de';
+            var pattern = `wurzel des leidens`;
+            var maxResults = 3;
+            var skr = await new Seeker({
+                lang,
+                maxResults,
+                logLevel,
+            }).initialize();
+
+            var data = await skr.phraseSearch({ 
+                pattern,
+                lang,
+            });
+            should.deepEqual(data, {
+                method: 'phrase',
+                lang,
+                pattern: `\\bwurzel des leidens\\b`,
+                lines,
+            });
 
             done(); 
         } catch(e) {done(e);} })();

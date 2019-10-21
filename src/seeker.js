@@ -191,22 +191,36 @@
         }
 
         phraseSearch(args) {
+            var that = this;
             var {
                 lang,
                 language,
                 pattern,
+                maxResults,
             } = args;
-            if (pattern == null) {
-                throw new Error(`phraseSearch() requires pattern`);
-            }
-            lang = this.patternLanguage(pattern, lang || language);
-            this.log(`phraseSearch(${pattern},lang)`);
-            return this.grep(Object.assign({}, args, {
-                pattern: lang === 'pli' 
-                    ? `\\b${pattern}`
-                    : `\\b${pattern}\\b`,
-                lang,
-            }));
+            maxResults = maxResults || this.maxResults;
+            return new Promise((resolve, reject) => {
+                (async function() { try {
+                    if (pattern == null) {
+                        throw new Error(`phraseSearch() requires pattern`);
+                    }
+                    lang = that.patternLanguage(pattern, lang || language);
+                    pattern = lang === 'pli' ? `\\b${pattern}` : `\\b${pattern}\\b`;
+                    that.log(`phraseSearch(${pattern},${lang})`);
+                    var grepArgs = Object.assign({}, args, {
+                        pattern,
+                        lang,
+                        maxResults,
+                    });
+                    var lines = await that.grep(grepArgs);
+                    resolve({
+                        method: 'phrase',
+                        lang,
+                        pattern,
+                        lines,
+                    });
+                } catch(e) { reject(e); }})();
+            });
         }
 
         keywordSearch(args) {

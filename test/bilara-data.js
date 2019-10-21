@@ -485,6 +485,7 @@
         } catch(e) {done(e);} })();
     });
     it("recognizes Pali words", done=>{
+        this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
             should.deepEqual(bd.paliWords.trace('ananda'), {
