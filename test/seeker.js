@@ -463,6 +463,9 @@
             should(skr.patternLanguage('anathapindika monastery', 'en')).equal('en');
             should(skr.patternLanguage('anathapindika kloster', 'de')).equal('de');
             should(skr.patternLanguage('anathapindika kloster')).equal('en');
+
+            // "gehe" and "so" are both German and Pali
+            should(skr.patternLanguage('anathapindika gehe so', 'de')).equal('pli');
             done(); 
         } catch(e) {done(e);} })();
     });
