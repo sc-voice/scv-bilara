@@ -11,6 +11,7 @@
     } = require('child_process');
     const FuzzyWordSet = require('./fuzzy-word-set');
     const Pali = require('./pali');
+    const English = require('./english');
 
     const APP_DIR = path.join(__dirname, '..');
     const BILARA_PATH = path.join(LOCAL_DIR, 'bilara-data');
@@ -29,6 +30,7 @@
             this.grepDeny = opts.grepDeny ||
                 new RegExp("/(dhp)/","iu");
             this.paliWords = opts.paliWords;
+            this.enWords = opts.enWords;
             this.maxResults = opts.maxResults || 5;
         }
 
@@ -69,19 +71,33 @@
         }
 
         get initialized() {
-            return this.paliWords != null;
+            return this.paliWords != null && this.enWords != null;
         }
 
-        initialize() {
+        initialize(msg='') {
             var that = this;
-            if (that.paliWords) {
+            var {
+                paliWords,
+                enWords,
+            } = this;
+            if (paliWords && enWords) {
                 return Promise.resolve(that);
+            }
+            paliWords = paliWords || Pali.wordSet();
+            enWords = enWords || English.wordSet();
+            if (paliWords instanceof FuzzyWordSet &&
+                enWords instanceof FuzzyWordSet) {
+                return that;
             }
             return new Promise((resolve, reject) => {
                 (async function() { try {
-                    if (that.paliWords == null) {
-                        that.paliWords = await Pali.wordSet();
+                    if (paliWords instanceof Promise) {
+                        that.paliWords = await paliWords;
                     }
+                    if (enWords instanceof Promise) {
+                        that.enWords = await enWords;
+                    }
+                    logger.info(`Seeker.initialize resolve ${msg}`); 
                     resolve(that);
                 } catch(e) { reject(e); }})();
             });
@@ -90,9 +106,15 @@
         patternLanguage(pattern, lang=this.lang) {
             this.validate();
             var keywords = pattern.split(/ +\+?/);
-            return keywords.reduce((a,k) => {
-                return this.paliWords.contains(k) ? a : lang;
-            }, 'pli');
+            var patLang = keywords.reduce((a,k) => {
+                return this.enWords.contains(k) ? a : 'other';
+            }, 'en');
+            if (patLang === 'other') {
+                patLang = keywords.reduce((a,k) => {
+                    return this.paliWords.contains(k) ? a : lang;
+                }, 'pli');
+            }
+            return patLang;
         }
 
         langPath(lang) {

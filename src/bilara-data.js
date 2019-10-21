@@ -13,6 +13,7 @@
     const SuttaCentralId = require('./sutta-central-id');
     const FuzzyWordSet = require('./fuzzy-word-set');
     const Pali = require('./pali');
+    const English = require('./english');
     const ExecGit = require('./exec-git');
 
     const BILARA_DATA_GIT = 'https://github.com/sc-voice/bilara-data.git';
@@ -104,8 +105,6 @@
                     var uidExpPath = path.join(that.root, 
                         '.voice', 'uid_expansion.json');
                     that.uid_expansion = JSON.parse(fs.readFileSync(uidExpPath));
-
-                    that.paliWords = await Pali.wordSet();
 
                     that.initialized = true;
                     resolve(that);

@@ -4,6 +4,8 @@
     const path = require('path');
     const {
         BilaraData,
+        Pali,
+        English,
         FuzzyWordSet,
         Seeker,
     } = require("../index");
@@ -16,6 +18,7 @@
     const SEEKEROPTS = {
         logLevel,
     };
+    this.timeout(5*1000);
 
     const BILARA_PATH = path.join(LOCAL_DIR, 'bilara-data');
 
@@ -181,7 +184,6 @@
         should(Seeker.isUidPattern('red,sn22.1-20')).equal(false);
     });
     it("keywordPattern(...) returns grep pattern", done=> {
-        this.timeout(4*1000);
         (async function() { try {
             var skr = await new Seeker(SEEKEROPTS).initialize();
             should(skr.keywordPattern('anathapindika', 'en')).equal(
@@ -194,7 +196,6 @@
         } catch(e) { done(e); } })();
     });
     it("TESTTESTkeywordSearch(...) limits results", done=>{
-        this.timeout(5*1000);
         (async function() { try {
             var lang = 'en';
             var pattern = Seeker.normalizePattern('suffering joy faith');
@@ -203,7 +204,7 @@
                 logLevel,
                 maxResults,
                 lang,
-            }).initialize();
+            }).initialize(`dbg 1`);
             var expected = {
                 method: "keywords",
                 lang: 'en',
@@ -236,15 +237,14 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("keywordSearch(...) searches English", done=>{
-        this.timeout(5*1000);
+    it("TESTTESTkeywordSearch(...) searches English", done=>{
         (async function() { try {
             var maxResults = 15;
             var pattern = Seeker.normalizePattern('suffering joy faith');
             var skr = await new Seeker({
                 logLevel,
                 lang: 'de', // Deutsch
-            }).initialize();
+            }).initialize(`dbg 2`);
             var expected = [ 
                 'sujato/sn/sn12/sn12.23_translation-en-sujato.json:4',
                 'sujato/dn/dn33_translation-en-sujato.json:3',
@@ -277,22 +277,12 @@
             };
             should(data).properties(enExpected);
 
-            // Using Seeker default lang returns nothing 
+            // Using Seeker default lang still returns English
             var data = await skr.keywordSearch({ 
                 pattern,
                 maxResults,
             });
-            should(data).properties({
-                lang: 'de',
-                method: 'keywords',
-                keywordsFound: {
-                    suffering: 0,
-                    joy: 0,
-                    faith: 0,
-                },
-                maxResults,
-                lines: [],
-            });
+            should(data).properties(enExpected);
 
             // Change Seeker default language to English
             skr.lang = 'en'; // Not advisable for multiple users
@@ -306,8 +296,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTkeywordSearch(...) searches Pali, not English", done=>{
-        this.timeout(4*1000);
+    it("keywordSearch(...) searches Pali, not English", done=>{
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,
@@ -347,8 +336,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTkeywordSearch(...) searches Pali, not Deutsch", done=>{
-        this.timeout(4*1000);
+    it("keywordSearch(...) searches Pali, not Deutsch", done=>{
         (async function() { try {
             var skr = await new Seeker({
                 lang: 'de',
@@ -387,8 +375,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTkeywordSearch(...) searches Deutsch, not Pali", done=>{
-        this.timeout(4*1000);
+    it("keywordSearch(...) searches Deutsch, not Pali", done=>{
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,
@@ -429,8 +416,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTpatternLanguage(...) => search language context",done=>{
-        this.timeout(4*1000);
+    it("patternLanguage(...) => search language context",done=>{
         (async function() { try {
             var skr = await new Seeker().initialize();
             should(skr.patternLanguage('anathema')).equal('en');
@@ -451,8 +437,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTphraseSearch(...) limits English results", done=>{
-        this.timeout(5*1000);
+    it("phraseSearch(...) limits English results", done=>{
         (async function() { try {
             var lang = 'en';
             var pattern = 'root of suffering';
@@ -492,8 +477,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTphraseSearch(...) finds Deutsch results", done=>{
-        this.timeout(5*1000);
+    it("phraseSearch(...) finds Deutsch results", done=>{
         var lines = [
             'sabbamitta/sn/sn42/sn42.11_translation-de-sabbamitta.json:5',
         ];

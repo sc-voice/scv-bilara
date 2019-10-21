@@ -484,48 +484,5 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("recognizes Pali words", done=>{
-        this.timeout(5*1000);
-        (async function() { try {
-            await bd.initialize();
-            should.deepEqual(bd.paliWords.trace('ananda'), {
-                trace: 'anand~',
-                member: true,
-            });
-            should.deepEqual(bd.paliWords.trace('an'), {
-                trace: 'an', // Anguttara Nikaya English abbreviation
-                member: false,
-            });
-            should.deepEqual(bd.paliWords.trace('mn'), {
-                trace: 'mn', // Majjhima Nikaya English abbreviation
-                member: false,
-            });
-            should.deepEqual(bd.paliWords.trace('anal'), {
-                trace: 'anal',
-                member: false,
-            });
-            should.deepEqual(bd.paliWords.trace('analyse'), {
-                trace: 'analys',
-                member: false,
-            });
-            should.deepEqual(bd.paliWords.trace('analyze'), {
-                trace: 'analyze',
-                member: false,
-            });
-            should.deepEqual(bd.paliWords.trace('analayo'), {
-                trace: 'anala~',
-                member: true,
-            });
-            should.deepEqual(bd.paliWords.trace('bhante'), {
-                trace: 'bh~',
-                member: true,
-            });
-            should.deepEqual(bd.paliWords.trace('anataph'), {
-                trace: 'anata~',
-                member: true,
-            });
-            done(); 
-        } catch(e) {done(e);} })();
-    });
 
 })
