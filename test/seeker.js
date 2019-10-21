@@ -142,13 +142,6 @@
         testPattern("a.+b", 'a.+b');
         testPattern("sattānaṃ", "sattānaṃ");
     });
-    it("paliPattern(pattern) should return the Pali pattern", function(){
-        should(Seeker.paliPattern("jhana")).equal('jh(a|ā)(n|ṅ|ñ|ṇ)(a|ā)');
-        should(Seeker.paliPattern("abcdefghijklmn"))
-        .equal('(a|ā)bc(d|ḍ)efgh(i|ī)jk(l|ḷ)(m|ṁ|ṃ)(n|ṅ|ñ|ṇ)')
-        should(Seeker.paliPattern("nopqrstuvwxyz"))
-        .equal('(n|ṅ|ñ|ṇ)opqrs(t|ṭ)(u|ū)vwxyz');
-    });
     it("isUidPattern(pattern) is true for sutta_uid patterns", function() {
         // unsupported sutta
         should(Seeker.isUidPattern('t1670b2.8')).equal(true);
@@ -186,17 +179,6 @@
         should(Seeker.isUidPattern('red,sn22.1-20,mn1')).equal(false);
         should(Seeker.isUidPattern('sn22.1-20    ,   red')).equal(false);
         should(Seeker.isUidPattern('red,sn22.1-20')).equal(false);
-    });
-    it("paliPattern(pattern) returns Pali pattern", done=>{
-        (async function() { try {
-            var skr = await new Seeker(SEEKEROPTS);
-            should(skr.paliPattern("jhana")).equal('jh(a|ā)(n|ṅ|ñ|ṇ)(a|ā)');
-            should(skr.paliPattern("abcdefghijklmn"))
-            .equal('(a|ā)bc(d|ḍ)efgh(i|ī)jk(l|ḷ)(m|ṁ|ṃ)(n|ṅ|ñ|ṇ)')
-            should(skr.paliPattern("nopqrstuvwxyz"))
-            .equal('(n|ṅ|ñ|ṇ)opqrs(t|ṭ)(u|ū)vwxyz');
-            done();
-        } catch(e) { done(e); } })();
     });
     it("keywordPattern(...) returns grep pattern", done=> {
         this.timeout(4*1000);

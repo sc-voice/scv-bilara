@@ -12,6 +12,7 @@
     const SegDoc = require('./seg-doc');
     const SuttaCentralId = require('./sutta-central-id');
     const FuzzyWordSet = require('./fuzzy-word-set');
+    const Pali = require('./pali');
     const ExecGit = require('./exec-git');
 
     const BILARA_DATA_GIT = 'https://github.com/sc-voice/bilara-data.git';
@@ -104,10 +105,7 @@
                         '.voice', 'uid_expansion.json');
                     that.uid_expansion = JSON.parse(fs.readFileSync(uidExpPath));
 
-                    var paliPath = path.join(__dirname, 'assets/fws-pali.json');
-                    var paliJson = fs.existsSync(paliPath)
-                        ? JSON.parse(fs.readFileSync(paliPath)) : {};
-                    that.paliWords = new FuzzyWordSet(paliJson);
+                    that.paliWords = await Pali.wordSet();
 
                     that.initialized = true;
                     resolve(that);

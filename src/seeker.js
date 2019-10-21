@@ -10,11 +10,14 @@
         exec,
     } = require('child_process');
     const FuzzyWordSet = require('./fuzzy-word-set');
+    const Pali = require('./pali');
 
     const APP_DIR = path.join(__dirname, '..');
     const BILARA_PATH = path.join(LOCAL_DIR, 'bilara-data');
     const TRANSLATION_PATH = path.join(BILARA_PATH, 'translation');
     const MAXBUFFER = 10 * 1024 * 1024;
+
+    var wscount = 0;
 
     class Seeker {
         constructor(opts={}) {
@@ -58,19 +61,6 @@
             return pattern;
         }
 
-        static paliPattern(pattern) {
-            return pattern
-                .replace(/a/iug, '(a|ā)')
-                .replace(/i/iug, '(i|ī)')
-                .replace(/u/iug, '(u|ū)')
-                .replace(/m/iug, '(m|ṁ|ṃ)')
-                .replace(/d/iug, '(d|ḍ)')
-                .replace(/n/iug, '(n|ṅ|ñ|ṇ)')
-                .replace(/l/iug, '(l|ḷ)')
-                .replace(/t/iug, '(t|ṭ)')
-                ;
-        }
-
         static normalizePattern(pattern) {
             // normalize white space to space
             pattern = pattern.replace(/[\s]+/g,' +').toLowerCase(); 
@@ -84,12 +74,13 @@
 
         initialize() {
             var that = this;
+            if (that.paliWords) {
+                return Promise.resolve(that);
+            }
             return new Promise((resolve, reject) => {
                 (async function() { try {
                     if (that.paliWords == null) {
-                        var fwsPath = path.join(__dirname, 'assets/fws-pali.json');
-                        var json = JSON.parse(fs.readFileSync(fwsPath));
-                        that.paliWords = new FuzzyWordSet(json);
+                        that.paliWords = await Pali.wordSet();
                     }
                     resolve(that);
                 } catch(e) { reject(e); }})();
@@ -125,10 +116,6 @@
             return cmp;
         }
 
-        paliPattern(pattern) {
-            return Seeker.paliPattern(pattern);
-        }
-
         patternKeywords(pattern) {
             // + was inserted by normalizePattern()
             return pattern.split(' +'); 
@@ -136,7 +123,7 @@
 
         keywordPattern(keyword, lang) {
             if (this.paliWords.contains(keyword)) {
-                keyword = this.paliPattern(keyword);
+                keyword = Pali.romanizePattern(keyword);
             }
             return lang === 'pli'
                 ? `\\b${keyword}`
@@ -191,6 +178,7 @@
         }
 
         phraseSearch(args) {
+            this.validate();
             var that = this;
             var {
                 lang,
