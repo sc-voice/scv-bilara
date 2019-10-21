@@ -17,7 +17,6 @@
             if (FWS_ENGLISH == null) {
                 // Do this now, not async
                 var fwsPath = path.join(__dirname, 'assets/fws-en.json');
-                logger.info(`Loading English FuzzyWordSet`);
                 var json = JSON.parse(fs.readFileSync(fwsPath));
                 FWS_ENGLISH = new FuzzyWordSet(json);
             }

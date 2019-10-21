@@ -97,7 +97,7 @@
                     if (enWords instanceof Promise) {
                         that.enWords = await enWords;
                     }
-                    logger.info(`Seeker.initialize resolve ${msg}`); 
+                    that.log(`Seeker.initialize resolve ${msg}`); 
                     resolve(that);
                 } catch(e) { reject(e); }})();
             });
@@ -215,7 +215,9 @@
                         throw new Error(`phraseSearch() requires pattern`);
                     }
                     lang = that.patternLanguage(pattern, lang || language);
-                    pattern = lang === 'pli' ? `\\b${pattern}` : `\\b${pattern}\\b`;
+                    pattern = lang === 'pli' 
+                        ? `\\b${Pali.romanizePattern(pattern)}` 
+                        : `\\b${pattern}\\b`;
                     that.log(`phraseSearch(${pattern},${lang})`);
                     var grepArgs = Object.assign({}, args, {
                         pattern,

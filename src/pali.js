@@ -26,7 +26,6 @@
             if (FWS_PALI == null) {
                 // Do this now, not async
                 var fwsPath = path.join(__dirname, 'assets/fws-pali.json');
-                logger.info(`Loading Pali FuzzyWordSet`);
                 var json = JSON.parse(fs.readFileSync(fwsPath));
                 FWS_PALI = new FuzzyWordSet(json);
             }

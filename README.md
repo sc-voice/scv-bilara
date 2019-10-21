@@ -29,3 +29,13 @@ authentication for Github.
 ```bash
 ./scripts/de-suttas.sh
 ```
+
+#### search.js
+Search bilara for Pali, English or German segments, returning all
+three languages as found.
+
+```bash
+./scripts/search.js wurzel des leidens
+./scripts/search.js root of suffering
+./scripts/search.js nandi dukkhassa
+```
