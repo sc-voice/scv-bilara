@@ -35,7 +35,7 @@
         var f = 'translation/en/sujato/sn/sn22/sn22.10_translation-en-sujato.json';
         should(SuttaCentralId.fromPath(f)).equal('sn22.10');
     });
-    it("compareLow(a,b) compares sutta file names", function(){
+    it("TESTTESTcompareLow(a,b) compares sutta file names", function(){
         this.timeout(3*1000);
         var cmp = SuttaCentralId.compareLow;
 
@@ -44,6 +44,13 @@
         //assertEqual(SuttaCentralId.compareLow,
             //'sn22.11',
             //'translation/en/sujato/sn/sn22/sn22.11-20_translation-en-sujato.json');
+        assertLess(SuttaCentralId.compareLow,
+            "an1.150:0.2", "an1.152-159:0.1");
+        assertLess(SuttaCentralId.compareLow,
+            "an1.152-159:0.1", "an1.162-169:0.1"); 
+        assertLess(SuttaCentralId.compareLow,
+            "an1.150:0.1", "an1.162-169:0.1");
+
         assertEqual(SuttaCentralId.compareLow,
             'translation/en/sujato/sn/sn22/sn22.11_translation-en-sujato.json',
             'translation/en/sujato/sn/sn22/sn22.11-20_translation-en-sujato.json');
@@ -113,6 +120,34 @@
         should(cmp("an1.1", "an1.1-10")).equal(0);
         should(cmp("an1.10", "an1.1-10")).equal(9);
 
+    });
+    it("TESTTESTcompareLow(a,b) compares segment ids", ()=>{
+        var testCompare = (a,b,expected) => {
+            should(SuttaCentralId.compareLow(a,b)).equal(expected);
+            if (expected === 0) {
+                should(SuttaCentralId.compareLow(b,a)).equal(expected);
+            } else {
+                should(SuttaCentralId.compareLow(b,a)).equal(-expected);
+            }
+        };
+        testCompare('dn33:1.2.31', 'dn33:1.10.1', -8);
+
+        testCompare("an1.150:0.2", "an1.152-159:0.1", -2);
+        testCompare("an1.152-159:0.1", "an1.162-169:0.1", -10); 
+        testCompare("an1.150:0.1", "an1.162-169:0.1", -12);
+
+        testCompare('an1.2:2.3', 'an1.10:0.1', -8);
+        testCompare('an1.2:0.1', 'an1.10:0.1', -8);
+        testCompare('dn33', 'dn33', 0);
+        testCompare('sn2.1', 'dn33', 1);
+        testCompare('dn33:1.2.31', 'dn33:1.10.1', -8);
+        testCompare('dn33:1.10.31', 'dn33:1.10.31', 0);
+        testCompare('dn33:1.10.31', 'dn33:2.10.31', -1);
+        testCompare('dn33:1.1.31', 'dn33:1.10.31', -9);
+        testCompare('dn33:1.1', 'dn33:1.1', 0);
+        testCompare('dn33:1.1', 'dn33:1.11', -10);
+        testCompare('dn33:1.1', 'dn33:1.1.0', -1);
+        testCompare('dn33:1.10.1', 'dn33:1.2.0', 8);
     });
     it("compareHigh(a,b) compares sutta file names", function(){
         var cmp = SuttaCentralId.compareHigh;

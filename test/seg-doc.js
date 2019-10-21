@@ -10,6 +10,7 @@
     const {
         logger,
     } = require("just-simple").JustSimple;
+    this.timeout(5*1000);
 
     it("default ctor", () => {
         var trans = new SegDoc();
@@ -90,28 +91,6 @@
         fs.unlinkSync(dn33path);
         tmpObj.removeCallback();
     });
-    it("compareScid(a,b) compares segment ids", ()=>{
-        var testCompare = (a,b,expected) => {
-            should(SegDoc.compareScid(a,b)).equal(expected);
-            if (expected === 0) {
-                should(SegDoc.compareScid(b,a)).equal(expected);
-            } else {
-                should(SegDoc.compareScid(b,a)).equal(-expected);
-            }
-        };
-        testCompare('an1.2:2.3', 'an1.10:0.1', -8);
-        testCompare('an1.2:0.1', 'an1.10:0.1', -8);
-        testCompare('dn33', 'dn33', 0);
-        testCompare('sn2.1', 'dn33', 1);
-        testCompare('dn33:1.2.31', 'dn33:1.10.1', -8);
-        testCompare('dn33:1.10.31', 'dn33:1.10.31', 0);
-        testCompare('dn33:1.10.31', 'dn33:2.10.31', -1);
-        testCompare('dn33:1.1.31', 'dn33:1.10.31', -9);
-        testCompare('dn33:1.1', 'dn33:1.1', 0);
-        testCompare('dn33:1.1', 'dn33:1.11', -10);
-        testCompare('dn33:1.1', 'dn33:1.1.0', -1);
-        testCompare('dn33:1.10.1', 'dn33:1.2.0', 8);
-    });
     it("segments() returns sn1.1 segment array", ()=>{
         var sutta = new SegDoc({
             suid: 'sn1.1',
@@ -179,7 +158,6 @@
         });
     });
     it("fillWordMap(...) can train a FuzzyWordSet", ()=>{
-        this.timeout(5*1000);
         var fws = new FuzzyWordSet();
         var dn33 = new SegDoc({
             bilaraPath: 'data/dn33.json',

@@ -195,7 +195,7 @@
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTkeywordSearch(...) limits results", done=>{
+    it("keywordSearch(...) limits results", done=>{
         (async function() { try {
             var lang = 'en';
             var pattern = Seeker.normalizePattern('suffering joy faith');
@@ -237,7 +237,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTkeywordSearch(...) searches English", done=>{
+    it("keywordSearch(...) searches English", done=>{
         (async function() { try {
             var maxResults = 15;
             var pattern = Seeker.normalizePattern('suffering joy faith');

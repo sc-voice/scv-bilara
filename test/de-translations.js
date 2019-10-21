@@ -152,4 +152,34 @@
             de: '3',
         });
     });
+    it("TESTTESTapplySegments(...) applies AN1.150-169 segmentation", ()=>{
+        var ent = new SegDoc({
+            suid: 'an1.150-169',
+            lang: 'en',
+            author: 'sujato',
+            bilaraPath: 'data/an1.150-169-en.json',
+        }).load(__dirname);
+        var det = new DETranslation({
+            source: 'data/an1.150-169-de.txt',
+            logLevel: 'info',
+        }).load(__dirname);
+        var segments = det.applySegments(ent).segments();
+        var i = 0;
+        should.deepEqual(segments[i++], {
+            scid: 'an1.150:0.1',
+            de: 'Nummerierte Lehrreden 1',
+        });
+        should.deepEqual(segments[i++], {
+            scid: 'an1.150:0.2',
+            de: '12. Kein Vergehen',
+        });
+        should.deepEqual(segments[i++], {
+            scid: 'an1.150:0.3',
+            de: '150',
+        });
+        should(segments[i++]).properties({ scid: 'an1.150:1.1', });
+        should(segments[i++]).properties({ scid: 'an1.150:1.2', });
+        should(segments[i++]).properties({ scid: 'an1.150:1.3', de: ' '});
+        should(segments[i++]).properties({ scid: 'an1.151:0.1', de: '151 '});
+    });
 })

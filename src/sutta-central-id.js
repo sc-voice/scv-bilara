@@ -55,23 +55,24 @@
             return fname.replace(/_.*$/,'');
         }
 
-        static compareLow(a,b) {
-            var aprefix = a.substring(0,a.search(/[0-9]/));
-            var bprefix = b.substring(0,b.search(/[0-9]/));
-            var cmp = aprefix.localeCompare(bprefix);
-            if (cmp === 0) {
-                var adig = a.replace(/[^0-9]*([0-9]*.?[0-9]*).*/,"$1").split('.');
-                var adig = SuttaCentralId.fromPath(a)
-                    .replace(/[^0-9]*([0-9]*.?[0-9]*).*/,"$1").split('.');
-                var bdig = b.replace(/[^0-9]*([0-9]*.?[0-9]*).*/,"$1").split('.');
-                var bdig = SuttaCentralId.fromPath(b)
-                    .replace(/[^0-9]*([0-9]*.?[0-9]*).*/,"$1").split('.');
-                var cmp = Number(adig[0]) - Number(bdig[0]);
-                if (cmp === 0 && adig.length>1 && bdig.length>1) {
-                    cmp = Number(adig[1]) - Number(bdig[1]);
-                }
-            }
-            return cmp;
+        static scidNumbersLow(id_or_path) {
+            var scid = SuttaCentralId.fromPath(id_or_path);
+            var colonParts = scid.replace(/^[a-z]*/,'').split(':');
+            var dotParts = colonParts.reduce((a,c) => 
+                a.concat(c.split('.')), []);
+            var nums = dotParts.map(n => Number(n.split('-')[0]));
+            //console.log(`dbg scidNumberLow ${scid}`, nums);
+            return nums;
+        }
+
+        static scidNumbersHigh(id_or_path) {
+            var scid = SuttaCentralId.fromPath(id_or_path);
+            var colonParts = scid.replace(/^[a-z]*/,'').split(':');
+            var dotParts = colonParts.reduce((a,c) => 
+                a.concat(c.split('.')), []);
+            var nums = dotParts.map(n => Number(n.split('-').pop()));
+            //console.log(`dbg scidNumberLow ${scid}`, nums);
+            return nums;
         }
 
         static compareHigh(a,b) {
@@ -79,17 +80,36 @@
             var bprefix = b.substring(0,b.search(/[0-9]/));
             var cmp = aprefix.localeCompare(bprefix);
             if (cmp === 0) {
-                var adig = SuttaCentralId.fromPath(a).replace(/[0-9]+-/ug,'')
-                    .replace(/[^0-9]*([0-9]+)/,"$1")
-                    .split('.');
-                var bdig = SuttaCentralId.fromPath(b).replace(/[0-9]+-/ug,'')
-                    .replace(/[^0-9]*([0-9]+)/,"$1")
-                    .split('.');
-                var cmp = Number(adig[0]) - Number(bdig[0]);
-                if (cmp === 0) {
-                    var alast = Number(adig[adig.length-1]);
-                    var blast = Number(bdig[bdig.length-1]);
-                    cmp = alast - blast;
+                var adig = SuttaCentralId.scidNumbersHigh(a);
+                var bdig = SuttaCentralId.scidNumbersHigh(b);
+                var n = Math.max(adig.length, bdig.length);
+                for (var i = 0; i < n; i++) {
+                    var ai = adig[i];
+                    var bi = bdig[i];
+                    if (ai === bi) { continue; }
+                    if (ai === undefined ) { return -1; }
+                    if (bi === undefined ) { return 1; }
+                    return ai - bi;
+                }
+            }
+            return cmp;
+        }
+
+        static compareLow(a,b) {
+            var aprefix = a.substring(0,a.search(/[0-9]/));
+            var bprefix = b.substring(0,b.search(/[0-9]/));
+            var cmp = aprefix.localeCompare(bprefix);
+            if (cmp === 0) {
+                var adig = SuttaCentralId.scidNumbersLow(a);
+                var bdig = SuttaCentralId.scidNumbersLow(b);
+                var n = Math.max(adig.length, bdig.length);
+                for (var i = 0; i < n; i++) {
+                    var ai = adig[i];
+                    var bi = bdig[i];
+                    if (ai === bi) { continue; }
+                    if (ai === undefined ) { return -1; }
+                    if (bi === undefined ) { return 1; }
+                    return ai - bi;
                 }
             }
             return cmp;

@@ -11,6 +11,7 @@
         logger,
         LOCAL_DIR,
     } = require("just-simple").JustSimple;
+    this.timeout(5*1000);
 
     var bd = new BilaraData(); 
 
@@ -26,7 +27,6 @@
         });
     });
     it("initialize() must be called", (done) => {
-        this.timeout(5*1000);
         (async function() { try {
             var newbd = new BilaraData();
             should(newbd.initialized).equal(false);
@@ -52,7 +52,6 @@
             .equal(false);
     });
     it("suttaInfo(...) returns sutta metadata", done=>{
-        this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
             var dn33Pli = {
@@ -125,7 +124,6 @@
         } catch(e) {done(e);} })();
     });
     it("loadTranslation(...) loads translation document", done=>{
-        this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
             var expectedProps = {
@@ -159,7 +157,6 @@
         } catch(e) {done(e);} })();
     });
     it("loadSegDoc(...) loads segmented document", done=>{
-        this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
             var dn33 = bd.loadSegDoc({
@@ -189,7 +186,6 @@
         } catch(e) {done(e);} })();
     });
     it("normalizeSuttaId(id) returns normalized sutta_uid", function(done) {
-        this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
             should(bd.normalizeSuttaId('an2.12')).equal('an2.11-20');
@@ -206,7 +202,6 @@
         } catch(e) { done(e); } })();
     });
     it("translationPaths(...) filepath for scid", function(done) {
-        this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
 
@@ -272,7 +267,6 @@
         } catch(e) {done(e);} })();
     });
     it("suttaPath(...) deprecated", function(done) {
-        this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
 
@@ -291,7 +285,6 @@
         } catch(e) {done(e);} })();
     });
     it("nikayaSuttaIds(...) returns sutta_uids", done=>{
-        this.timeout(5*1000);
         (async function() { try {
             var language = 'en';
             const KNSTART = [
@@ -336,7 +329,6 @@
         } catch(e) {done(e);} })();
     });
     it("suttaList(pattern) => [normalized-sutta-reference]", done=>{
-        this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
 
@@ -406,7 +398,6 @@
         } catch(e) {done(e);} })();
     });
     it("sutta_uidSuccessor(sutta_uid) returns following sutta_uid", done=>{
-        this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
 
@@ -423,7 +414,6 @@
         } catch(e) {done(e);} })();
     });
     it("sutta_uidSearch(...) finds suttas by sutta_uid", function(done) {
-        this.timeout(5*1000);
         (async function() { try {
             await bd.initialize();
             var maxResults = 4;
