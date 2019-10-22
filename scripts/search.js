@@ -15,7 +15,6 @@ const {
     logger,
     LOCAL_DIR,
 } = require('just-simple').JustSimple;
-const logLevel = false;
 const BILARA_DATA = path.join(__dirname, '../local/bilara-data');
 
 function help() {
@@ -37,6 +36,10 @@ DESCRIPTION
         Specify ISO 2-letter language code for primary translation language.
         Default is "de" for German.
 
+    -ll, --logLevel LOGLEVEL
+        Logging is normally turned off, but you can specificy a LOGLEVEL:
+        debug, warn, info, error. The most useful will be "info".
+
     -ml, --minLang NUMBER
         Only show segments from documents having at least minLang languages. 
         Default is 3 unless lang is 'en', in which case it is 2.
@@ -48,6 +51,7 @@ var pattern;
 var lang = 'de';
 var maxDoc = 10;
 var minLang = 0;
+var logLevel = false;
 
 var nargs = process.argv.length;
 if (nargs < 3) {
@@ -60,6 +64,8 @@ for (var i = 0; i < nargs; i++) {
         help();
     } else if (arg === '-d' || arg === '--maxDoc') {
         maxDoc = Number(process.argv[++i]);
+    } else if (arg === '-ll' || arg === '--logLevel') {
+        logLevel = process.argv[++i];
     } else if (arg === '-ml' || arg === '--minLang') {
         minLang = Number(process.argv[++i]);
     } else if (arg === '-l' || arg === '--lang') {
@@ -78,7 +84,7 @@ console.error(`search(${lang},ml${minLang},d${maxDoc}): "${pattern}"...`);
     }).initialize();
     var skr = await new Seeker({
         lang,
-        maxResults: 100,
+        maxResults: 0,
         logLevel,
     }).initialize();
 

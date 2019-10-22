@@ -31,7 +31,7 @@
                 new RegExp("/(dhp)/","iu");
             this.paliWords = opts.paliWords;
             this.enWords = opts.enWords;
-            this.maxResults = opts.maxResults || 5;
+            this.maxResults = opts.maxResults == null ? 5 : opts.maxResults;
         }
 
         static isUidPattern(pattern) {
