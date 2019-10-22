@@ -52,12 +52,12 @@
                     this.nikaya = l.replace(RE_TAG,'');
                 } else if (/^:title:/ui.test(l)) {
                     var title = l.replace(RE_TAG,'');
-                    if (this.title) {
+                    if (!this.title) { // first title
+                        this.title = title.trim() + ' ';
+                    } else { // all other titles
                         acc.push(title);
-                    } else {
-                        this.title = title;
                     }
-                } else if (/^$/.test(l)) {
+                } else if (/^ *$/.test(l)) {
                     segStart = true;
                 } else if (/^:/.test(l)) {
                     throw new Error(`unknown tag:${l}`);
@@ -71,6 +71,7 @@
                 }
                 return acc;
             }, []);
+            this.text = this.text.map(t => t.trim() + ' ');
             return this;
         }
 

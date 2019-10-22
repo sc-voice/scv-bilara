@@ -108,7 +108,7 @@
         });
         should.deepEqual(segments[i++], {
             scid: 'sn1.1:0.3',
-            de: '1. Die Flut überqueren',
+            de: '1. Die Flut überqueren ',
         });
     });
     it("applySegments(...) applies AN1.1-10 segmentation", ()=>{
@@ -136,23 +136,10 @@
         });
         should.deepEqual(segments[i++], {
             scid: 'an1.1:0.3',
-            de: '1',
-        });
-        return; //TODO
-        should.deepEqual(segments[i++], {
-            scid: 'an1.1:1.1',
-            de: 'So habe ich gehört.',
-        });
-        should.deepEqual(segments[15], {
-            scid: 'an1.2:1.3',
-            de: ' ',
-        });
-        should.deepEqual(segments[16], {
-            scid: 'an1.3:0.1',
-            de: '3',
+            de: '1 ',
         });
     });
-    it("TESTTESTapplySegments(...) applies AN1.150-169 segmentation", ()=>{
+    it("applySegments(...) applies AN1.150-169 segmentation", ()=>{
         var ent = new SegDoc({
             suid: 'an1.150-169',
             lang: 'en',
@@ -175,11 +162,46 @@
         });
         should.deepEqual(segments[i++], {
             scid: 'an1.150:0.3',
-            de: '150',
+            de: '150 ',
         });
         should(segments[i++]).properties({ scid: 'an1.150:1.1', });
         should(segments[i++]).properties({ scid: 'an1.150:1.2', });
         should(segments[i++]).properties({ scid: 'an1.150:1.3', de: ' '});
         should(segments[i++]).properties({ scid: 'an1.151:0.1', de: '151 '});
+    });
+    it("TESTTESTapplySegments(...) applies an2.32-41 segmentation", ()=>{
+        var ent = new SegDoc({
+            suid: 'an2.32-41',
+            lang: 'en',
+            author: 'sujato',
+            bilaraPath: 'data/an2.32-41-en.json',
+        }).load(__dirname);
+        var det = new DETranslation({
+            source: 'data/an2.32-41-de.txt',
+            logLevel: 'info',
+        }).load(__dirname);
+        var segs = det.applySegments(ent).segments();
+        var i = 0;
+        should(segs[i++]).properties({ scid: 'an2.32:0.1',
+            de: 'Nummerierte Lehrreden 2'});
+        should(segs[i++]).properties({ scid: 'an2.32:0.2' });
+        should(segs[i++]).properties({ scid: 'an2.32:0.3',de:'32 ' });
+        should(segs[i++]).properties({ scid: 'an2.32:1.1' });
+        should(segs[i++]).properties({ scid: 'an2.32:1.2' });
+        should(segs[i++]).properties({ scid: 'an2.32:1.3' });
+        should(segs[i++]).properties({ scid: 'an2.32:1.4' });
+        should(segs[i++]).properties({ scid: 'an2.32:2.1' });
+        should(segs[i++]).properties({ scid: 'an2.32:2.2' });
+        should(segs[i++]).properties({ scid: 'an2.32:2.3' });
+        should(segs[i++]).properties({ scid: 'an2.32:2.4' });
+        should(segs[i++]).properties({ scid: 'an2.32:2.5',
+            de:'Der gute Mensch ist dankbar und erkenntlich, ' });
+        should(segs[i++]).properties({ scid: 'an2.32:2.6',
+            de:'denn rechtschaffene Menschen wissen nur, '+
+                'wie man dankbar und erkenntlich ist. ' });
+        should(segs[i++]).properties({ scid: 'an2.32:2.7' });
+        should(segs[i++]).properties({ scid: 'an2.33:0.1',de:'33 ' });
+        should(segs[i++]).properties({ scid: 'an2.33:1.1' });
+        should(segs[i++]).properties({ scid: 'an2.33:1.2' });
     });
 })

@@ -97,6 +97,7 @@ console.error(`search(${lang},ml${minLang},d${maxDoc}): "${pattern}"...`);
         : new RegExp(pattern, 'ui');
     var output = {
         lang,
+        searchLang: data.lang,
         message: '',
         maxDoc,
         minLang,
@@ -106,7 +107,7 @@ console.error(`search(${lang},ml${minLang},d${maxDoc}): "${pattern}"...`);
         segments: [],
     };
     if (data.lines.length === 0) {
-        output = data;
+        output.data = data;
     }
     var pliRoot = path.join(BILARA_DATA, `root/${data.lang}`);
     var enRoot = path.join(BILARA_DATA, `translation/en`);
