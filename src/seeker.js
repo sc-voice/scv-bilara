@@ -208,7 +208,7 @@
                 pattern,
                 maxResults,
             } = args;
-            maxResults = maxResults || this.maxResults;
+            maxResults = maxResults == null ? this.maxResults : maxResults;
             return new Promise((resolve, reject) => {
                 (async function() { try {
                     if (pattern == null) {
@@ -246,7 +246,7 @@
             } = args;
             comparator = comparator || this.grepComparator;
             var that = this;
-            maxResults = maxResults || this.maxResults;
+            maxResults = maxResults == null ? this.maxResults : maxResults;
             var keywords = this.patternKeywords(pattern);
             lang = this.patternLanguage(pattern, lang || language);
             var wordArgs = Object.assign({}, args, {
@@ -297,14 +297,17 @@
                         }
                         mrgIn = mrgOut;
                     }
+                    var lines =  mrgOut.sort(comparator)
+                        .map(v => `${v.fpath}:${v.count}`);
+                    if (maxResults) {
+                        lines = lines.slice(0,maxResults);
+                    }
                     resolve({
                         method: 'keywords',
                         keywordsFound,
                         lang,
                         maxResults,
-                        lines: mrgOut.sort(comparator)
-                            .map(v => `${v.fpath}:${v.count}`)
-                            .slice(0, maxResults),
+                        lines,
                     });
                 } catch(e) {reject(e);} })();
             });

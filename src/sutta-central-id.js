@@ -76,8 +76,10 @@
         }
 
         static compareHigh(a,b) {
-            var aprefix = a.substring(0,a.search(/[0-9]/));
-            var bprefix = b.substring(0,b.search(/[0-9]/));
+            var abase = path.basename(a);
+            var bbase = path.basename(b);
+            var aprefix = abase.substring(0,abase.search(/[0-9]/));
+            var bprefix = bbase.substring(0,bbase.search(/[0-9]/));
             var cmp = aprefix.localeCompare(bprefix);
             if (cmp === 0) {
                 var adig = SuttaCentralId.scidNumbersHigh(a);
@@ -96,12 +98,14 @@
         }
 
         static compareLow(a,b) {
-            var aprefix = a.substring(0,a.search(/[0-9]/));
-            var bprefix = b.substring(0,b.search(/[0-9]/));
+            var abase = path.basename(a);
+            var bbase = path.basename(b);
+            var aprefix = abase.substring(0,abase.search(/[0-9]/));
+            var bprefix = bbase.substring(0,bbase.search(/[0-9]/));
             var cmp = aprefix.localeCompare(bprefix);
             if (cmp === 0) {
-                var adig = SuttaCentralId.scidNumbersLow(a);
-                var bdig = SuttaCentralId.scidNumbersLow(b);
+                var adig = SuttaCentralId.scidNumbersLow(abase);
+                var bdig = SuttaCentralId.scidNumbersLow(bbase);
                 var n = Math.max(adig.length, bdig.length);
                 for (var i = 0; i < n; i++) {
                     var ai = adig[i];

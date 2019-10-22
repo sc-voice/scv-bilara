@@ -169,11 +169,15 @@
                 lang,
                 author,
                 logLevel,
+                returnNull,
             } = opts;
             lang = lang || 'pli';
             var info = this.suttaInfo(suid);
             if (info == null) {
-                return new Error(`no suttaInfo({suid:${suid})`);
+                if (returnNull) {
+                    return null;
+                }
+                throw new Error(`no suttaInfo({suid:${suid})`);
             }
             info.sort((a,b) => {
                 try {
@@ -197,8 +201,12 @@
             )[0];
             if (suttaInfo == null || suttaInfo.bilaraPath == null) {
                 this.log(`loadSegDoc(${suid}) info:${js.simpleString(info)}`);
-                throw new Error(
-                    `No information for ${suid}/${lang}/${author}`);
+                if (returnNull) {
+                    return null;
+                }
+                throw new Error(author 
+                    ? `No information for ${suid}/${lang}`
+                    : `No information for ${suid}/${lang}/${author}`);
             }
             suttaInfo.logLevel = logLevel === undefined
                 ? this.logLevel : logLevel;
