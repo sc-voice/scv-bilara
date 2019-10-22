@@ -671,6 +671,7 @@ konntest
 kopf
 kopieren
 korn
+kraft
 kritisiert
 kräfte
 kräften
