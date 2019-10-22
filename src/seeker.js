@@ -31,6 +31,7 @@
                 new RegExp("/(dhp)/","iu");
             this.paliWords = opts.paliWords;
             this.enWords = opts.enWords;
+            this.matchWordEnd = opts.matchWordEnd;
             this.maxResults = opts.maxResults == null ? 5 : opts.maxResults;
         }
 
@@ -147,9 +148,13 @@
             if (this.paliWords.contains(keyword)) {
                 keyword = Pali.romanizePattern(keyword);
             }
-            return lang === 'pli'
-                ? `\\b${keyword}`
-                : `\\b${keyword}\\b`
+            var pat = `\\b${keyword}`;
+            if (this.matchWordEnd === undefined && lang === 'en') {
+                pat += '\\b';
+            } else if (this.matchWordEnd === true) {
+                pat += '\\b';
+            }
+            return pat;
         }
 
         grep(opts) {
@@ -217,7 +222,7 @@
                     lang = that.patternLanguage(pattern, lang || language);
                     pattern = lang === 'pli' 
                         ? `\\b${Pali.romanizePattern(pattern)}` 
-                        : `\\b${pattern}\\b`;
+                        : `\\b${pattern}`;
                     that.log(`phraseSearch(${pattern},${lang})`);
                     var grepArgs = Object.assign({}, args, {
                         pattern,

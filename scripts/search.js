@@ -29,6 +29,10 @@ DESCRIPTION
         Searches bilara-data for root text or translations. Writes
         output results in JSON to stdout.
 
+    -c, --color COLORNUMBER
+        Display matches with colors. Default is 201.
+        See https://misc.flogisoft.com/bash/tip_colors_and_formatting
+
     -d, --maxDoc NUMBER
         specify maximum number of documents to display. Default is 10.
 
@@ -52,6 +56,7 @@ var lang = 'de';
 var maxDoc = 10;
 var minLang = 0;
 var logLevel = false;
+var color = 201;
 
 var nargs = process.argv.length;
 if (nargs < 3) {
@@ -66,6 +71,8 @@ for (var i = 0; i < nargs; i++) {
         maxDoc = Number(process.argv[++i]);
     } else if (arg === '-ll' || arg === '--logLevel') {
         logLevel = process.argv[++i];
+    } else if (arg === '-c' || arg === '--color') {
+        color = Number(process.argv[++i]);
     } else if (arg === '-ml' || arg === '--minLang') {
         minLang = Number(process.argv[++i]);
     } else if (arg === '-l' || arg === '--lang') {
@@ -93,8 +100,8 @@ console.error(`search(${lang},ml${minLang},d${maxDoc}): "${pattern}"...`);
         lang,
     });
     var rex = data.lang === 'pli'
-        ? new RegExp(Pali.romanizePattern(pattern), 'ui')
-        : new RegExp(pattern, 'ui');
+        ? new RegExp("\\b"+Pali.romanizePattern(pattern), 'uig')
+        : new RegExp("\\b"+pattern, 'uig');
     var output = {
         lang,
         searchLang: data.lang,
@@ -171,5 +178,10 @@ console.error(`search(${lang},ml${minLang},d${maxDoc}): "${pattern}"...`);
     } else {
         output.message = `Showing ${maxDoc}/${found.length} documents`;
     }
-    console.log(JSON.stringify(output, null, 2));
+    var outText = JSON.stringify(output, null, 2);
+    if (color) {
+        outText = outText.replace(rex, 
+            `\u001b[38;5;${color}m$&\u001b[0m`);
+    }
+    console.log(outText);
 } catch(e) { logger.warn(e.stack); }})();

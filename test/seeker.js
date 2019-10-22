@@ -386,7 +386,7 @@
                 maxResults: 10,
                 method: 'keywords',
                 keywordsFound: {
-                    hausherr: 3,
+                    hausherr: 4,
                     anathapindika: 10,
                 },
                 lines: [
@@ -451,7 +451,7 @@
             var expected = {
                 method: 'phrase',
                 lang: 'en',
-                pattern: `\\broot of suffering\\b`,
+                pattern: `\\broot of suffering`,
                 lines: [ 
                     'sujato/sn/sn42/sn42.11_translation-en-sujato.json:5',
                     'sujato/mn/mn105_translation-en-sujato.json:3',
@@ -499,7 +499,7 @@
             should.deepEqual(data, {
                 method: 'phrase',
                 lang,
-                pattern: `\\bwurzel des leidens\\b`,
+                pattern: `\\bwurzel des leidens`,
                 lines,
             });
 
