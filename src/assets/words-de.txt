@@ -262,6 +262,7 @@ empfängnis
 ende
 enden
 endet
+energie
 entbehrungen
 entgegneten
 enthüllen
@@ -1325,3 +1326,5 @@ väter
 vätern
 völlig
 völligen
+weckt
+wecken
