@@ -2,6 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const {
+    Pali,
     SegDoc,
     Seeker,
     DETranslation,
@@ -20,12 +21,17 @@ var patAllow = ".*/(AN|DN|MN|KN|SN)/.*";
 var reAllow = new RegExp(patAllow);
 
 (async function() { try {
+    var wordMap = {};
     var deWordPath = path.join(LOCAL_DIR, '../src/assets/words-de.txt');
-    fs.writeFileSync(deWordPath, ''); // clear out currrent file 
+    if (fs.existsSync(deWordPath)) {
+        var deLines = fs.readFileSync(deWordPath).toString().split('\n');
+        deLines.forEach(w => (wordMap[w.trim()] = true));
+    }
+    //fs.writeFileSync(deWordPath, ''); // clear out currrent file 
     var dePath = path.join(LOCAL_DIR, 'de-suttas');
     var bd = await new BilaraData().initialize();
     var skr = await new Seeker().initialize();
-    var wordMap = {};
+    var paliWords = await Pali.wordSet();
     var deFiles = await bd.dirFiles(dePath);
     deFiles.forEach(f => {
         if (!reAllow.test(f)) {
@@ -39,7 +45,7 @@ var reAllow = new RegExp(patAllow);
                 .replace(/[-–”’„‚’”!?…<>0-9—.,:;"'‚‘““{}()[\]]/ug,' ')
                 .split(/ +/);
             words.forEach(w => {
-                if (bd.paliWords.contains(w) && 
+                if (paliWords.contains(w) && 
                     !/[āāīūṁṃḍṅñṇḷṭ]/.test(w) &&
                     !/ti$/.test(w) &&
                     !/cc/.test(w) &&
