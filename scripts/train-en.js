@@ -22,10 +22,11 @@ const {
         logLevel: false,
     }).initialize();
     var pliWords = {};
-    bd.suttaIds.forEach(suid => {
+    for (var i = 0; i < bd.suttaIds.length; i++) {
+        suid = bd.suttaIds[i];
         var sdpli = await bd.loadSegDoc({suid, lang:'pli'});
         sdpli.fillWordMap(pliWords, false);
-    });
+    }
     logger.info(`Pali words:${Object.keys(pliWords).length}`);
     
     var langs = ['de'];

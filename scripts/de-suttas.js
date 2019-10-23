@@ -32,7 +32,8 @@ var patAllow = ".*/(AN|DN|MN|KN|SN)/.*";
     console.log(deFiles.slice(0,10));
     var deAllowedFiles = deFiles.filter(f => reAllow.test(f));
     console.log(deAllowedFiles);
-    deAllowedFiles.forEach(def => {
+    for (var i = 0; i < deAllowedFiles.length; i++) {
+        var def = deAllowedFiles[i];
         var det = new DETranslation({
             source: def.replace(dePath,''),
         });
@@ -49,7 +50,7 @@ var patAllow = ".*/(AN|DN|MN|KN|SN)/.*";
         } else {
             logger.info(`Skipping ${det.source} (NOT READY YET)`);
         }
-    });
+    }
     var bilGit = new ExecGit();
     await bilGit.commit("de-suttas.js auto-conversion");
     

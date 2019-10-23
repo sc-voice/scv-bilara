@@ -125,7 +125,8 @@ console.error(`search(${lang},ml${minLang},d${maxDoc}): "${pattern}"...`);
         path.join(searchRoot, line.split(':')[0]))
         .sort(SuttaCentralId.compareLow);
     var found = [];
-    files.forEach(f=>{
+    for (var iFile = 0; iFile < files.length; iFile++) {
+        var f = files[iFile];
         var suid = path.basename(f, '.json').split('_')[0];
         found.push(suid);
         var actLang = 0;
@@ -148,11 +149,11 @@ console.error(`search(${lang},ml${minLang},d${maxDoc}): "${pattern}"...`);
         sdlang && actLang++;
 
         if (actLang < minLang) { 
-            return; 
+            continue; 
         }
         output.shown.push(suid);
         if (output.shown.length >= maxDoc) {
-            return;
+            continue;
         }
 
         sdsearch = data.lang === 'pli' ? sdpli
@@ -168,7 +169,7 @@ console.error(`search(${lang},ml${minLang},d${maxDoc}): "${pattern}"...`);
                 output.segments.push(seg);
             }
         });
-    }, []);
+    }
     if (output.shown.length === 0) {
         output.message = `All ${found.length} documents found `+
             `have less than ${minLang} languages: `+

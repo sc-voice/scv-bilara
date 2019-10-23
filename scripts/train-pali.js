@@ -30,10 +30,11 @@ const {
         logLevel: false,
     }).initialize();
     var pliWords = {};
-    bd.suttaIds.forEach(suid => {
+    for (var i = 0; i < bd.suttaIds.length; i++) {
+        suid = bd.suttaIds[i];
         var sdpli = await bd.loadSegDoc({suid, lang:'pli'});
         sdpli.fillWordMap(pliWords, true);
-    });
+    }
     pliWords.an = false, // SuttaCentral abbreviation
     pliWords.mn = false, // SuttaCentral abbreviation
     pliWords.sn = false, // SuttaCentral abbreviation
