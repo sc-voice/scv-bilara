@@ -132,7 +132,7 @@
         testPattern("sattānaṃ", "sattānaṃ");
         should.throws(() => SuttaStore.sanitizePattern("not [good"));
     });
-    it("TESTTESTnormalizePattern(pattern) prevents code injection attacks", ()=>{
+    it("normalizePattern(pattern) prevents code injection attacks", ()=>{
         var testPattern = (pattern,expected) => {
             should(Seeker.normalizePattern(pattern)).equal(expected);
         }
