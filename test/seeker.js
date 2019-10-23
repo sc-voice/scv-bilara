@@ -18,7 +18,7 @@
     const SEEKEROPTS = {
         logLevel,
     };
-    this.timeout(5*1000);
+    this.timeout(20*1000);
 
     const BILARA_PATH = path.join(LOCAL_DIR, 'bilara-data');
 
@@ -238,7 +238,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("keywordSearch(...) searches English", done=>{
+    it("TESTTESTkeywordSearch(...) searches English", done=>{
         (async function() { try {
             var maxResults = 15;
             var pattern = Seeker.normalizePattern('suffering joy faith');
@@ -297,10 +297,10 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("keywordSearch(...) searches Pali, not English", done=>{
+    it("TESTTESTkeywordSearch(...) searches Pali, not English", done=>{
         (async function() { try {
             var skr = await new Seeker({
-                logLevel,
+                logLevel: 'info',
             }).initialize();
             var expected = {
                 method: 'keywords',
@@ -341,7 +341,7 @@
         (async function() { try {
             var skr = await new Seeker({
                 lang: 'de',
-                logLevel,
+                logLevel: 'info',
             }).initialize();
             var expected = {
                 method: 'keywords',

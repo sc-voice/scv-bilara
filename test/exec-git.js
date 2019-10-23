@@ -16,12 +16,15 @@
         should(egit.repo).equal('https://github.com/sc-voice/bilara-data.git');
         should(egit.repoPath).equal(path.join(LOCAL_DIR, 'bilara-data'));
     });
-    it("sync(...) syncs sabbamitta/sutta-translation", (done)=>{
+    it("TESTTESTsync(...) syncs sabbamitta/sutta-translation", (done)=>{
         this.timeout(5*1000);
         (async function() { try {
             var gitDE = 'https://github.com/sabbamitta/sutta-translation';
             var dePath = path.join(LOCAL_DIR, 'de-suttas');
-            var execGit = new ExecGit(gitDE, dePath);
+            var execGit = new ExecGit({
+                repo: gitDE, 
+                repoPath: dePath,
+            });
             var res = await execGit.sync();
             should(fs.existsSync(dePath)).equal(true);
             should(res).equal(execGit);
