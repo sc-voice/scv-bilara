@@ -507,4 +507,15 @@
             done(); 
         } catch(e) {done(e);} })();
     });
+    it("TESTTESTfind(...) delegates search", done=>{
+        (async function() { try {
+            var maxResults = 3;
+            var skr = await new Seeker({
+                maxResults,
+                logLevel,
+            }).initialize();
+            var pattern = `wurzel des leidens`;
+            done(); 
+        } catch(e) {done(e);} })();
+    });
 })

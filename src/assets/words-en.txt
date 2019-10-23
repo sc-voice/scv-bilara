@@ -29353,9 +29353,7 @@ koreans
 kosher
 kraal
 kraals
-kraft
 kremlin
-kriegspiel
 krill
 krypton
 kudu
@@ -29364,7 +29362,6 @@ kungfu
 kuwait
 kwacha
 kwachas
-laager
 lab
 label
 labelled
