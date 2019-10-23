@@ -262,6 +262,7 @@ empfängnis
 ende
 enden
 endet
+energie
 entbehrungen
 entgegneten
 enthüllen
@@ -671,6 +672,7 @@ konntest
 kopf
 kopieren
 korn
+kraft
 kritisiert
 kräfte
 kräften
@@ -1007,7 +1009,10 @@ silber
 sind
 sinn
 sinne
+sinnen
 sinnesfelder
+sinneskräfte
+sinnesreizen
 sinnlich
 sinnliche
 sinnlichem
@@ -1321,3 +1326,5 @@ väter
 vätern
 völlig
 völligen
+weckt
+wecken
