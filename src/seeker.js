@@ -66,7 +66,7 @@
 
         static normalizePattern(pattern) {
             // normalize white space to space
-            pattern = pattern.replace(/[\s]+/g,' +').toLowerCase(); 
+            pattern = pattern.trim().replace(/[\s]+/g,' ').toLowerCase(); 
             
             return pattern;
         }
@@ -106,7 +106,7 @@
 
         patternLanguage(pattern, lang=this.lang) {
             this.validate();
-            var keywords = pattern.split(/ +\+?/);
+            var keywords = pattern.split(/ +/);
             var patLang = keywords.reduce((a,k) => {
                 return this.enWords.contains(k) ? a : 'other';
             }, 'en');
@@ -141,7 +141,7 @@
 
         patternKeywords(pattern) {
             // + was inserted by normalizePattern()
-            return pattern.split(' +'); 
+            return pattern.split(/ \+?/); 
         }
 
         keywordPattern(keyword, lang) {

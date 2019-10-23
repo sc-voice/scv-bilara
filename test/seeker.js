@@ -132,13 +132,14 @@
         testPattern("sattānaṃ", "sattānaṃ");
         should.throws(() => SuttaStore.sanitizePattern("not [good"));
     });
-    it("normalizePattern(pattern) prevents code injection attacks", ()=>{
+    it("TESTTESTnormalizePattern(pattern) prevents code injection attacks", ()=>{
         var testPattern = (pattern,expected) => {
             should(Seeker.normalizePattern(pattern)).equal(expected);
         }
-        testPattern('root of suffering', 'root +of +suffering');
-        testPattern("a\nb\n\r\n\rc", 'a +b +c');
-        testPattern("a\tb\t\t\rc", 'a +b +c');
+        testPattern('root of suffering', 'root of suffering');
+        testPattern(' root  of  suffering ', 'root of suffering');
+        testPattern("a\nb\n\r\n\rc", 'a b c');
+        testPattern("a\tb\t\t\rc", 'a b c');
         testPattern("a$b", 'a$b');
         testPattern("a.b", 'a.b');
         testPattern("a.*b", 'a.*b');
