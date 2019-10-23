@@ -51,22 +51,22 @@
 
         });
     });
-    it("loadAsync(...) loads SegDoc file", done=>{
+    it("load(...) loads SegDoc file", done=>{
         (async function() { try {
             var dn33 = new SegDoc({
                 bilaraPath: 'data/dn33.json',
             });
-            var res = await dn33.loadAsync(__dirname);
+            var res = await dn33.load(__dirname);
             should(dn33.segMap['dn33:1.10.31'])
                 .equal('form, formlessness, and cessation. '); 
             done();
         } catch(e) { done(e); } })();
     });
-    it("load(...) loads SegDoc file", ()=>{
+    it("loadSync(...) loads SegDoc file", ()=>{
         var dn33 = new SegDoc({
             bilaraPath: 'data/dn33.json',
         });
-        should(dn33.load(__dirname)).equal(dn33);
+        should(dn33.loadSync(__dirname)).equal(dn33);
         should(dn33.segMap['dn33:1.10.31'])
             .equal('form, formlessness, and cessation. '); 
         should.deepEqual(dn33.scids().slice(0,10), [
@@ -87,7 +87,7 @@
         var dn33 = new SegDoc({
             bilaraPath: 'data/dn33.json',
         });
-        dn33.load(__dirname);
+        dn33.loadSync(__dirname);
         dn33.bilaraPath = 'dn33.json';
 
         // add a new segment and save the SegDoc
@@ -107,7 +107,7 @@
             suid: 'sn1.1',
             lang: 'en',
             bilaraPath: 'data/en_sn1.1.json',
-        }).load(__dirname);
+        }).loadSync(__dirname);
         var segments = sutta.segments();
         should.deepEqual(segments[0],{
             scid: 'sn1.1:0.1',
@@ -131,7 +131,7 @@
             suid: 'an1.1-10',
             lang: 'en',
             bilaraPath: 'data/en_an1.1-10.json',
-        }).load(__dirname);
+        }).loadSync(__dirname);
         var scids = sutta.scids();
         should.deepEqual(scids.slice(0,15), [
             "an1.1:0.1",
@@ -173,11 +173,11 @@
         var dn33 = new SegDoc({
             bilaraPath: 'data/dn33.json',
         });
-        dn33.load(__dirname);
+        dn33.loadSync(__dirname);
         var dn33pli = new SegDoc({
             bilaraPath: 'data/dn33_pli.json',
         });
-        dn33pli.load(__dirname);
+        dn33pli.loadSync(__dirname);
 
         // Build wordmap 
         var wordMap = {};

@@ -37,7 +37,7 @@ var patAllow = ".*/(AN|DN|MN|KN|SN)/.*";
         var det = new DETranslation({
             source: def.replace(dePath,''),
         });
-        det.load(dePath);
+        det.loadSync(dePath);
         var suid = det.suid;
         if (det.ready) {
             var srcTrans = await bd.loadSegDoc({

@@ -19,7 +19,7 @@
             this.excerptSize = opts.excerptSize || 0;
         }
 
-        load(root) {
+        loadSync(root) {
             var {
                 suid,
                 lang,
@@ -27,7 +27,7 @@
                 source,
             } = this;
             var spath = path.join(root, source);
-            this.log(`load(${root}) source:"${source}"`);
+            this.log(`loadSync(${root}) source:"${source}"`);
             this.lines = fs.readFileSync(spath).toString().split('\n');
             var segStart = true;
             this.ready = true;

@@ -222,7 +222,7 @@
             }
             suttaInfo.logLevel = logLevel === undefined
                 ? this.logLevel : logLevel;
-            return new SegDoc(suttaInfo).loadAsync(this.root);
+            return new SegDoc(suttaInfo).load(this.root);
         }
 
         normalizeSuttaId(id) {

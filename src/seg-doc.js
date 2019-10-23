@@ -27,7 +27,7 @@
             return result;
         }
 
-        load(root) {
+        loadSync(root) {
             var {
                 suid,
                 lang,
@@ -35,12 +35,12 @@
                 bilaraPath,
             } = this;
             var spath = path.join(root, bilaraPath);
-            this.log(`load(${spath})`);
+            this.log(`loadSync(${spath})`);
             this.segMap = JSON.parse(fs.readFileSync(spath));
             return this;
         }
 
-        loadAsync(root) {
+        load(root) {
             var {
                 suid,
                 lang,
@@ -51,7 +51,7 @@
             var that = this;
             return new Promise((resolve, reject) => {
                 fs.readFile(spath, (err, data) => {
-                    this.log(`loadAsync(${spath})`);
+                    this.log(`load(${spath})`);
                     if (err) {
                         reject(err);
                         return;

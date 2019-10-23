@@ -46,11 +46,11 @@
 
         });
     });
-    it("load(...) loads an1.1-10",()=>{
+    it("loadSync(...) loads an1.1-10",()=>{
         var det = new DETranslation({
             source: 'data/de_an1.1-10',
         });
-        should(det.load(__dirname)).equal(det);
+        should(det.loadSync(__dirname)).equal(det);
         should(det.suid).equal('an1.1-10');
         should(det.text.length).equal(35);
         should(det.nikaya).equal('Nummerierte Lehrreden 1');
@@ -59,11 +59,11 @@
         should(det.blurb).equal(undefined);
         should(det.ready).equal(true);
     });
-    it("load(...) loads sn1.1",()=>{
+    it("loadSync(...) loads sn1.1",()=>{
         var det = new DETranslation({
             source: 'data/sn1.1',
         });
-        should(det.load(__dirname)).equal(det);
+        should(det.loadSync(__dirname)).equal(det);
         should(det.suid).equal('sn1.1');
         should(det.text.length).equal(16);
         should(det.nikaya).equal('Verbundene Lehrreden 1');
@@ -73,11 +73,11 @@
             /Der Buddha überquerte die Flut des Leidens/);
         should(det.ready).equal(true);
     });
-    it("load(...) loads notreadyyet",()=>{
+    it("loadSync(...) loads notreadyyet",()=>{
         var det = new DETranslation({
             source: 'data/notreadyyet',
         });
-        should(det.load(__dirname)).equal(det);
+        should(det.loadSync(__dirname)).equal(det);
         should(det.suid).equal('an1.140-149');
         should(det.text.length).equal(9);
         should(det.nikaya).equal('Nummerierte Lehrreden 1');
@@ -90,10 +90,10 @@
             author: 'sujato',
             bilaraPath: 'data/en/sujato/sn/sn1/'+
                 'sn1.1_translation-en-sujato.json',
-        }).load(__dirname);
+        }).loadSync(__dirname);
         var det = new DETranslation({
             source: 'data/sn1.1',
-        }).load(__dirname);
+        }).loadSync(__dirname);
         var segments = det.applySegments(en_sn1_1).segments();
         should(det.bilaraPath).equal('data/de/sabbamitta/sn/sn1/'+
             'sn1.1_translation-de-sabbamitta.json');
@@ -118,10 +118,10 @@
             author: 'sujato',
             bilaraPath: 'data/en/sujato/an/an1/'+
                 'an1.1-10_translation-en-sujato.json',
-        }).load(__dirname);
+        }).loadSync(__dirname);
         var det = new DETranslation({
             source: 'data/de_an1.1-10',
-        }).load(__dirname);
+        }).loadSync(__dirname);
         var segments = det.applySegments(ent).segments();
         should(det.bilaraPath).equal('data/de/sabbamitta/an/an1/'+
             'an1.1-10_translation-de-sabbamitta.json');
@@ -145,11 +145,11 @@
             lang: 'en',
             author: 'sujato',
             bilaraPath: 'data/an1.150-169-en.json',
-        }).load(__dirname);
+        }).loadSync(__dirname);
         var det = new DETranslation({
             source: 'data/an1.150-169-de.txt',
             logLevel: 'info',
-        }).load(__dirname);
+        }).loadSync(__dirname);
         var segments = det.applySegments(ent).segments();
         var i = 0;
         should.deepEqual(segments[i++], {
@@ -175,11 +175,11 @@
             lang: 'en',
             author: 'sujato',
             bilaraPath: 'data/an2.32-41-en.json',
-        }).load(__dirname);
+        }).loadSync(__dirname);
         var det = new DETranslation({
             source: 'data/an2.32-41-de.txt',
             logLevel: 'info',
-        }).load(__dirname);
+        }).loadSync(__dirname);
         var segs = det.applySegments(ent).segments();
         var i = 0;
         should(segs[i++]).properties({ scid: 'an2.32:0.1',
