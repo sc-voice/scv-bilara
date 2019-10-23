@@ -135,15 +135,16 @@ console.error(`search(${lang},ml${minLang},d${maxDoc}): "${pattern}"...`);
         };
 
         loadOpts.lang = 'pli';
-        var sdpli = bd.loadSegDoc(loadOpts);
+        var sdpli = await bd.loadSegDoc(loadOpts);
         sdpli && actLang++;
 
         loadOpts.lang = 'en';
-        var sden = bd.loadSegDoc(loadOpts);
+        var sden = await bd.loadSegDoc(loadOpts);
         sden && actLang++;
 
         loadOpts.lang = lang;
-        sdlang = lang !== 'en' && lang !== 'pli' && bd.loadSegDoc(loadOpts);
+        sdlang = lang !== 'en' && lang !== 'pli' && 
+            await bd.loadSegDoc(loadOpts);
         sdlang && actLang++;
 
         if (actLang < minLang) { 

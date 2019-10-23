@@ -31,7 +31,7 @@ const {
     }).initialize();
     var pliWords = {};
     bd.suttaIds.forEach(suid => {
-        var sdpli = bd.loadSegDoc({suid, lang:'pli'});
+        var sdpli = await bd.loadSegDoc({suid, lang:'pli'});
         sdpli.fillWordMap(pliWords, true);
     });
     pliWords.an = false, // SuttaCentral abbreviation

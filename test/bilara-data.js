@@ -26,14 +26,16 @@
             logLevel: 'info',
         });
     });
-    it("initialize() must be called", (done) => {
+    it("initialize(...) must be called", (done) => {
         (async function() { try {
             var newbd = new BilaraData();
             should(newbd.initialized).equal(false);
             should.throws(() => {
                 newbd.suttaInfo('dn33');
             });
-            var res = await bd.initialize();
+
+            var sync = false; // true => git clone or git pull
+            var res = await bd.initialize(sync);
             should(res).equal(bd);
             should(bd.initialized).equal(true);
 
@@ -123,7 +125,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("loadTranslation(...) loads translation document", done=>{
+    it("TESTTESTloadSegDoc(...) loads translation document", done=>{
         (async function() { try {
             await bd.initialize();
             var expectedProps = {
@@ -133,13 +135,13 @@
             };
 
             // string form
-            var an1_1_10 = bd.loadTranslation("an1.1-10");
+            var an1_1_10 = await bd.loadSegDoc("an1.1-10/en");
             should(an1_1_10).properties({
                 suid: 'an1.1-10',
                 author: 'sujato',
                 lang: 'en',
             });
-            var an1_1_10 = bd.loadTranslation("an1.1-10","de");
+            var an1_1_10 = await bd.loadSegDoc("an1.1-10/de");
             should(an1_1_10).properties({
                 suid: 'an1.1-10',
                 author: 'sabbamitta',
@@ -147,8 +149,9 @@
             });
 
             // full form
-            var dn33 = bd.loadTranslation({
+            var dn33 = await bd.loadSegDoc({
                 suid: 'dn33',
+                lang: 'en',
             });
             should(dn33).properties(expectedProps);
             should(dn33.segMap['dn33:1.10.31'])
@@ -156,10 +159,12 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("loadSegDoc(...) loads segmented document", done=>{
+    it("TESTTESTloadSegDoc(...) loads segmented document", done=>{
         (async function() { try {
             await bd.initialize();
-            var dn33 = bd.loadSegDoc({
+
+            // Object args
+            var dn33 = await bd.loadSegDoc({
                 suid: 'dn33',
                 lang: 'en',
             });
@@ -168,6 +173,10 @@
                 author: 'sujato',
                 lang: 'en',
             });
+
+            // String args
+            should.deepEqual(await bd.loadSegDoc('dn33/en/sujato'), dn33);
+
             should(dn33.segMap['dn33:1.10.31'])
                 .equal('form, formlessness, and cessation. '); 
             should.deepEqual(dn33.scids().slice(0,10), [

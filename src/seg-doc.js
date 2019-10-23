@@ -40,6 +40,30 @@
             return this;
         }
 
+        loadAsync(root) {
+            var {
+                suid,
+                lang,
+                author,
+                bilaraPath,
+            } = this;
+            var spath = path.join(root, bilaraPath);
+            var that = this;
+            return new Promise((resolve, reject) => {
+                fs.readFile(spath, (err, data) => {
+                    this.log(`loadAsync(${spath})`);
+                    if (err) {
+                        reject(err);
+                        return;
+                    }
+                    try {
+                        that.segMap = JSON.parse(data);
+                        resolve(this);
+                    } catch(e) { reject(e); }
+                });
+            });
+        }
+
         import(root) {
             var {
                 bilaraPath,

@@ -12,6 +12,7 @@
     const FuzzyWordSet = require('./fuzzy-word-set');
     const Pali = require('./pali');
     const English = require('./english');
+    const BilaraData = require('./bilara-data');
 
     const APP_DIR = path.join(__dirname, '..');
     const BILARA_PATH = path.join(LOCAL_DIR, 'bilara-data');
@@ -30,6 +31,7 @@
             this.grepDeny = opts.grepDeny ||
                 new RegExp("/(dhp)/","iu");
             this.paliWords = opts.paliWords;
+            this.bilaraData = opts.bilaraData || new BilaraData(opts);
             this.enWords = opts.enWords;
             this.matchWordEnd = opts.matchWordEnd;
             this.maxResults = opts.maxResults == null ? 5 : opts.maxResults;
@@ -98,6 +100,7 @@
                     if (enWords instanceof Promise) {
                         that.enWords = await enWords;
                     }
+                    await that.bilaraData.initialize();
                     that.log(`Seeker.initialize resolve ${msg}`); 
                     resolve(that);
                 } catch(e) { reject(e); }})();
@@ -313,6 +316,114 @@
                         lang,
                         maxResults,
                         lines,
+                    });
+                } catch(e) {reject(e);} })();
+            });
+        }
+
+        findSuttas(...args) { // DEPRECATED
+            return this.find.apply(this, args);
+        }
+
+        findArgs(args) {
+            var {
+                pattern,
+                lang,
+                language, // DEPRECATED
+                maxResults,
+                sortLines,
+            } = typeof opts !== 'string' 
+                ? args[0]
+                : {
+                    pattern: args[0],
+                    maxResults: args[1],
+                };
+            if (pattern == null) {
+                throw new Error(`pattern is required`);
+            }
+            pattern = Seeker.sanitizePattern(pattern);
+            pattern = Seeker.normalizePattern(pattern);
+            lang = lang || language || 'en';
+            var maxResults = Number(
+                maxResults==null ? this.maxResults : maxResults);
+            if (isNaN(maxResults)) {
+                throw new Error("maxResults must be a number");
+            }
+            return {
+                pattern,
+                lang,
+                maxResults,
+                sortLines,
+            }
+        }
+
+        find(...args) {
+            var {
+                pattern,
+                lang,
+                sortLines,
+                maxResults,
+            } = this.findArgs(args);
+            var that = this;
+            return new Promise((resolve, reject) => {
+                (async function() { try {
+                    var resultPattern = pattern;
+                    if (Seeker.isUidPattern(pattern)) {
+                        var {
+                            method,
+                            uids,
+                            suttaRefs,
+                        } = that.bilaraData
+                            .sutta_uidSearch(pattern, maxResults, lang);
+                    } else {
+                        var method = 'phrase';
+                        var lines = [];
+                        var searchOpts = {
+                            pattern, 
+                            maxResults, 
+                            lang, 
+                        };
+
+                        if (!lines.length && !/^[a-z]+$/iu.test(pattern)) {
+                            lines = await that.phraseSearch(searchOpts);
+                        }
+                        var resultPattern = pattern;
+                        if (!lines.length) {
+                            var method = 'keywords';
+                            var data = await that.keywordSearch(searchOpts);
+                            lines = data.lines;
+                            resultPattern = data.resultPattern;
+                        }
+                        sortLines && lines.sort(sortLines);
+                        var suttaRefs = lines.map(line => {
+                            var iColon = line.indexOf(':');
+                            var pathParts = line.substring(0,iColon).split('/');
+                            var suttaRef = 
+                                pathParts[3].replace(/.json/,'') + '/' +
+                                pathParts[1] + '/' +
+                                pathParts[2];
+                            return suttaRef;
+                        });
+                    }
+                    var suttas = [];
+                    for (var i = 0; i < suttaRefs.length; i++) {
+                        console.trace(suttaRefs[i]);
+                        continue; // TODO
+                        var refParts = suttaRefs[i].split('/');
+                        var sutta = await that.suttaFactory.loadSutta({
+                            scid: refParts[0],
+                            lang: refParts[1],
+                            translator: refParts[2],
+                            expand: true,
+                        });
+                        suttas.push(sutta);
+                    }
+                    resolve({
+                        method,
+                        suttaRefs,
+                        suttas,
+                        resultPattern,
+                        lang,
                     });
                 } catch(e) {reject(e);} })();
             });

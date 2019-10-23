@@ -18,7 +18,7 @@ logger.info('de-suttas.js');
 var patAllow = ".*/(AN|DN|MN|KN|SN)/.*";
 
 (async function() { try {
-    var bd = await new BilaraData().initialize();
+    var bd = await new BilaraData().initialize(true);
     logger.info(`OK: Retrieved latest from ${bd.execGit.repo}`);
     var gitDE = 'https://github.com/sabbamitta/sutta-translation';
     var dePath = path.join(LOCAL_DIR, 'de-suttas');
@@ -26,7 +26,6 @@ var patAllow = ".*/(AN|DN|MN|KN|SN)/.*";
         repo: gitDE,
         repoPath: dePath,
     });
-    var res = await deGit.sync();
     logger.info(`OK: Updating latest from ${gitDE}`);
     var deFiles = await bd.dirFiles(dePath);
     var reAllow = new RegExp(patAllow,"u");
@@ -40,7 +39,7 @@ var patAllow = ".*/(AN|DN|MN|KN|SN)/.*";
         det.load(dePath);
         var suid = det.suid;
         if (det.ready) {
-            var srcTrans = bd.loadTranslation({
+            var srcTrans = await bd.loadSegDoc({
                 suid,
                 lang: 'en',
             });

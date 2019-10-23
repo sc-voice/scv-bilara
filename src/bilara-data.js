@@ -45,14 +45,14 @@
             this.initialized = false;
         }
 
-        initialize() {
+        initialize(sync=false) {
             if (this.initialized) {
                 return Promise.resolve(this);
             }
             return new Promise((resolve, reject) => {
                 var that = this;
                 (async function() { try {
-                    await that.sync();
+                    sync && await that.sync();
 
                     var map = that.suttaMap = {};
                     var rootPath = path.join(that.root, 'root');
@@ -146,38 +146,50 @@
             return res.split('\n');
         }
 
-        loadTranslation(...args) {
-            if (typeof args[0] === 'string') {
-                var opts = {
-                    suid: args[0],
-                    lang: args[1] || 'en',
-                    author: args[2],
-                }
-            } else {
-                var opts = args[0] || {};
-            }
-            opts.lang = opts.lang || 'en';
-            return this.loadSegDoc(opts);
-        }
-
-        loadSegDoc(opts={}) {
+        loadSegDocArgs(args) {
             if (!this.initialized) {
                 throw new Error('Expected preceding call to initialize()');
             }
+            var opts = typeof args[0] !== 'string'
+                ? args[0]
+                : {
+                    suid: args[0].split('/')[0],
+                    lang: args[0].split('/')[1],
+                    author: args[0].split('/')[2],
+                };
+            var {
+                suid,
+                lang,
+                language,
+                author,
+                logLevel,
+                returnNull,
+            } = opts;
+            lang = lang || language || 'pli';
+            return {
+                suid,
+                lang,
+                author,
+                logLevel,
+                returnNull,
+            }
+        }
+
+        loadSegDoc(...args) {
             var {
                 suid,
                 lang,
                 author,
                 logLevel,
                 returnNull,
-            } = opts;
-            lang = lang || 'pli';
+            } = this.loadSegDocArgs(args);
+
             var info = this.suttaInfo(suid);
             if (info == null) {
                 if (returnNull) {
                     return null;
                 }
-                throw new Error(`no suttaInfo({suid:${suid})`);
+                throw new Error(`no suttaInfo(suid:${suid})`);
             }
             info.sort((a,b) => {
                 try {
@@ -210,7 +222,7 @@
             }
             suttaInfo.logLevel = logLevel === undefined
                 ? this.logLevel : logLevel;
-            return new SegDoc(suttaInfo).load(this.root);
+            return new SegDoc(suttaInfo).loadAsync(this.root);
         }
 
         normalizeSuttaId(id) {

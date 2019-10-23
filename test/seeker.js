@@ -514,6 +514,13 @@
                 maxResults,
                 logLevel,
             }).initialize();
+            var lang = 'de';
+            var pattern = "an1.1-15, sn12.23";
+            var res = await skr.find({
+                pattern,
+                lang,
+            });
+            console.trace(res);
             var pattern = `wurzel des leidens`;
             done(); 
         } catch(e) {done(e);} })();

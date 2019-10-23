@@ -169,7 +169,7 @@
         should(segments[i++]).properties({ scid: 'an1.150:1.3', de: ' '});
         should(segments[i++]).properties({ scid: 'an1.151:0.1', de: '151 '});
     });
-    it("TESTTESTapplySegments(...) applies an2.32-41 segmentation", ()=>{
+    it("applySegments(...) applies an2.32-41 segmentation", ()=>{
         var ent = new SegDoc({
             suid: 'an2.32-41',
             lang: 'en',

@@ -51,6 +51,17 @@
 
         });
     });
+    it("loadAsync(...) loads SegDoc file", done=>{
+        (async function() { try {
+            var dn33 = new SegDoc({
+                bilaraPath: 'data/dn33.json',
+            });
+            var res = await dn33.loadAsync(__dirname);
+            should(dn33.segMap['dn33:1.10.31'])
+                .equal('form, formlessness, and cessation. '); 
+            done();
+        } catch(e) { done(e); } })();
+    });
     it("load(...) loads SegDoc file", ()=>{
         var dn33 = new SegDoc({
             bilaraPath: 'data/dn33.json',

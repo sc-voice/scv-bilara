@@ -35,7 +35,7 @@
         var f = 'translation/en/sujato/sn/sn22/sn22.10_translation-en-sujato.json';
         should(SuttaCentralId.fromPath(f)).equal('sn22.10');
     });
-    it("TESTTESTcompareLow(a,b) compares sutta file names", function(){
+    it("compareLow(a,b) compares sutta file names", function(){
         this.timeout(3*1000);
         var cmp = SuttaCentralId.compareLow;
 
@@ -121,7 +121,7 @@
         should(cmp("an1.10", "an1.1-10")).equal(9);
 
     });
-    it("TESTTESTcompareLow(a,b) compares segment ids", ()=>{
+    it("compareLow(a,b) compares segment ids", ()=>{
         var testCompare = (a,b,expected) => {
             should(SuttaCentralId.compareLow(a,b)).equal(expected);
             if (expected === 0) {
