@@ -166,6 +166,7 @@
                 returnNull,
             } = opts;
             lang = lang || language || 'pli';
+            logLevel = logLevel === undefined ? this.logLevel : logLevel;
             return {
                 suid,
                 lang,
@@ -220,14 +221,14 @@
                     ? `No information for ${suid}/${lang}`
                     : `No information for ${suid}/${lang}/${author}`);
             }
-            suttaInfo.logLevel = logLevel === undefined
-                ? this.logLevel : logLevel;
+            suttaInfo.logLevel = logLevel;
             return new SegDoc(suttaInfo).load(this.root);
         }
 
         normalizeSuttaId(id) {
             if (!this.initialized) {
-                throw new Error(`${this.constructor.name}.initialize() required`);
+                throw new Error(`${this.constructor.name}.`+
+                    `initialize() required`);
             }
             var {
                 suttaMap,

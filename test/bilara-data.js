@@ -12,17 +12,19 @@
         LOCAL_DIR,
     } = require("just-simple").JustSimple;
     this.timeout(5*1000);
+    var logLevel = false;
 
-    var bd = new BilaraData(); 
+    var bd = new BilaraData({ logLevel }); 
 
-    it("default ctor", () => {
+    it("TESTTESTdefault ctor", () => {
         const LOCAL = path.join(__dirname, '..', 'local');
-        should(bd).instanceOf(BilaraData);
-        should(bd.root).equal(`${LOCAL}/bilara-data`);
-        should.deepEqual(bd.nikayas.sort(), [
+        var bdDefault = new BilaraData(); 
+        should(bdDefault).instanceOf(BilaraData);
+        should(bdDefault.root).equal(`${LOCAL}/bilara-data`);
+        should.deepEqual(bdDefault.nikayas.sort(), [
             'mn', 'sn', 'dn', 'an', 'kn/thag', 'kn/thig'
         ].sort());
-        should(bd).properties({
+        should(bdDefault).properties({
             logLevel: 'info',
         });
     });

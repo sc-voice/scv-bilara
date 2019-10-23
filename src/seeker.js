@@ -365,6 +365,7 @@
                 maxResults,
             } = this.findArgs(args);
             var that = this;
+            var bd = that.bilaraData;
             return new Promise((resolve, reject) => {
                 (async function() { try {
                     var resultPattern = pattern;
@@ -373,8 +374,7 @@
                             method,
                             uids,
                             suttaRefs,
-                        } = that.bilaraData
-                            .sutta_uidSearch(pattern, maxResults, lang);
+                        } = bd.sutta_uidSearch(pattern, maxResults, lang);
                     } else {
                         var method = 'phrase';
                         var lines = [];
@@ -405,23 +405,15 @@
                             return suttaRef;
                         });
                     }
-                    var suttas = [];
+                    var segDocs = [];
                     for (var i = 0; i < suttaRefs.length; i++) {
-                        console.trace(suttaRefs[i]);
-                        continue; // TODO
-                        var refParts = suttaRefs[i].split('/');
-                        var sutta = await that.suttaFactory.loadSutta({
-                            scid: refParts[0],
-                            lang: refParts[1],
-                            translator: refParts[2],
-                            expand: true,
-                        });
-                        suttas.push(sutta);
+                        var sd = await bd.loadSegDoc(suttaRefs[i]);
+                        segDocs.push(sd);
                     }
                     resolve({
                         method,
                         suttaRefs,
-                        suttas,
+                        segDocs,
                         resultPattern,
                         lang,
                     });

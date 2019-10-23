@@ -507,7 +507,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) delegates search", done=>{
+    it("TESTTESTfind(...) finds sutta references", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
@@ -520,8 +520,23 @@
                 pattern,
                 lang,
             });
-            console.trace(res);
-            var pattern = `wurzel des leidens`;
+            should(res).properties({
+                method: 'sutta_uid',
+                suttaRefs: ['an1.1-10/de', 'an1.11-20/de', 'sn12.23/de'],
+                resultPattern: pattern,
+                lang: 'de',
+            });
+            should(res.segDocs.length).equal(3);
+            var sd0 = res.segDocs[0];
+            should(sd0).properties({
+                suid: 'an1.1-10',
+                lang: 'de',
+                author: 'sabbamitta',
+                logLevel,
+                bilaraPath: 'translation/de/sabbamitta/'+
+                    'an/an1/an1.1-10_translation-de-sabbamitta.json',
+            });
+            should(sd0.segMap['an1.10:0.1']).equal('10 ');
             done(); 
         } catch(e) {done(e);} })();
     });
