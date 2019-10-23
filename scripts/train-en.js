@@ -5,6 +5,7 @@ const {
     BilaraData,
     FuzzyWordSet,
     SegDoc,
+    ExecGit,
 
 } = require('../index');
 const {
