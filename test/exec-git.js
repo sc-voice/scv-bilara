@@ -11,6 +11,7 @@
         LOCAL_DIR,
     } = require("just-simple").JustSimple;
     this.timeout(10*1000);
+    var logLevel = false;
 
     it("default ctor", () => {
         var egit = new ExecGit();
@@ -24,6 +25,7 @@
             var execGit = new ExecGit({
                 repo: gitDE, 
                 repoPath: dePath,
+                logLevel,
             });
             var res = await execGit.sync();
             should(fs.existsSync(dePath)).equal(true);
@@ -33,7 +35,9 @@
     });
     it("add(...) git add", (done)=>{
         (async function() { try {
-            var execGit = new ExecGit();
+            var execGit = new ExecGit({
+                logLevel,
+            });
             var res = await execGit.add();
             should(res).equal(execGit);
             done();
@@ -41,7 +45,9 @@
     });
     it("hasChanges() true if git has changes", (done)=>{
         (async function() { try {
-            var execGit = new ExecGit();
+            var execGit = new ExecGit({
+                logLevel,
+            });
             var res = await execGit.hasChanges();
             should(res).equal(false);
             done();
@@ -49,7 +55,9 @@
     });
     it("commit(...) git commit", (done)=>{
         (async function() { try {
-            var execGit = new ExecGit();
+            var execGit = new ExecGit({
+                logLevel,
+            });
             var res = await execGit.commit("new translations");
             should(res).equal(execGit);
             done();

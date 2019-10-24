@@ -420,7 +420,9 @@
     });
     it("patternLanguage(...) => search language context",done=>{
         (async function() { try {
-            var skr = await new Seeker().initialize();
+            var skr = await new Seeker({
+                logLevel,
+            }).initialize();
             should(skr.patternLanguage('anathema')).equal('en');
             should(skr.patternLanguage('anathema', 'en')).equal('en');
             should(skr.patternLanguage('anath')).equal('en');
