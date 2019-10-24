@@ -11,10 +11,18 @@
         should(Pali.romanizePattern("nopqrstuvwxyz"))
         .equal('(n|ṅ|ñ|ṇ)opqrs(t|ṭ)(u|ū)vwxyz');
     });
-    it("recognizes Pali words", done=>{
+    it("TESTTESTrecognizes Pali words", done=>{
         this.timeout(5*1000);
         (async function() { try {
             paliWords = await Pali.wordSet();
+            should.deepEqual(paliWords.trace('kloster'), {
+                trace: 'klost',
+                member: false,
+            });
+            should.deepEqual(paliWords.trace('buddha'), {
+                trace: 'buddha~',
+                member: true,
+            });
             should.deepEqual(paliWords.trace('ananda'), {
                 trace: 'anand~',
                 member: true,

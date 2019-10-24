@@ -86,20 +86,14 @@
             if (paliWords && enWords) {
                 return Promise.resolve(that);
             }
-            paliWords = paliWords || Pali.wordSet();
-            enWords = enWords || English.wordSet();
-            if (paliWords instanceof FuzzyWordSet &&
-                enWords instanceof FuzzyWordSet) {
-                return that;
-            }
             return new Promise((resolve, reject) => {
                 (async function() { try {
-                    if (paliWords instanceof Promise) {
-                        that.paliWords = await paliWords;
-                    }
-                    if (enWords instanceof Promise) {
-                        that.enWords = await enWords;
-                    }
+                    var p_pali = !paliWords && Pali.wordSet();
+                    var p_en = !enWords && English.wordSet();
+                    p_pali && (paliWords = await p_pali);
+                    p_en && (enWords = await p_en);
+                    that.paliWords = paliWords;
+                    that.enWords = enWords;
                     await that.bilaraData.initialize();
                     that.log(`Seeker.initialize resolve ${msg}`); 
                     resolve(that);
@@ -110,15 +104,16 @@
         patternLanguage(pattern, lang=this.lang) {
             this.validate();
             var keywords = pattern.split(/ +/);
-            var patLang = keywords.reduce((a,k) => {
-                return this.enWords.contains(k) ? a : 'other';
-            }, 'en');
-            if (patLang === 'other') {
-                patLang = keywords.reduce((a,k) => {
-                    return this.paliWords.contains(k) ? a : lang;
-                }, 'pli');
-            }
-            return patLang;
+            return keywords.reduce((a,k) => {
+                if (this.enWords.contains(k)) {
+                    (!a || a === 'pli') && (a = 'en');
+                } else if (this.paliWords.contains(k)) {
+                    a = a || 'pli';
+                } else {
+                    a = lang;
+                }
+                return a;
+            }, null) || lang;
         }
 
         langPath(lang) {

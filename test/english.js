@@ -9,10 +9,14 @@
         should(English.romanizePattern("abcdefghijklmnnopqrstuvwxyz"))
         .equal('abcdefghijklmnnopqrstuvwxyz');
     });
-    it("recognizes English words", done=>{
+    it("TESTTESTrecognizes English words", done=>{
         this.timeout(5*1000);
         (async function() { try {
             enWords = await English.wordSet();
+            should.deepEqual(enWords.trace('wurzel'), {
+                trace: 'wur',
+                member: false,
+            });
             should.deepEqual(enWords.trace('ananda'), {
                 trace: 'ananda',
                 member: false,

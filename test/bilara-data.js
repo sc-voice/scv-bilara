@@ -16,7 +16,7 @@
 
     var bd = new BilaraData({ logLevel }); 
 
-    it("TESTTESTdefault ctor", () => {
+    it("default ctor", () => {
         const LOCAL = path.join(__dirname, '..', 'local');
         var bdDefault = new BilaraData(); 
         should(bdDefault).instanceOf(BilaraData);
@@ -55,7 +55,7 @@
             'translation/en/sujato/kn/dhp/dhp21-32_translation-en-sujato.json'))
             .equal(false);
     });
-    it("TESTTESTsuttaInfo(...) returns sutta metadata", done=>{
+    it("suttaInfo(...) returns sutta metadata", done=>{
         (async function() { try {
             await bd.initialize();
             var dn33Pli = {
@@ -127,7 +127,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTloadSegDoc(...) loads translation document", done=>{
+    it("loadSegDoc(...) loads translation document", done=>{
         (async function() { try {
             await bd.initialize();
             var expectedProps = {
@@ -161,7 +161,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTloadSegDoc(...) loads segmented document", done=>{
+    it("loadSegDoc(...) loads segmented document", done=>{
         (async function() { try {
             await bd.initialize();
 

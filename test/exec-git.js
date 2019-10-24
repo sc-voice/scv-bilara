@@ -18,7 +18,7 @@
         should(egit.repo).equal('https://github.com/sc-voice/bilara-data.git');
         should(egit.repoPath).equal(path.join(LOCAL_DIR, 'bilara-data'));
     });
-    it("TESTTESTsync(...) syncs sabbamitta/sutta-translation", (done)=>{
+    it("sync(...) syncs sabbamitta/sutta-translation", (done)=>{
         (async function() { try {
             var gitDE = 'https://github.com/sabbamitta/sutta-translation';
             var dePath = path.join(LOCAL_DIR, 'de-suttas');

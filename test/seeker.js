@@ -238,7 +238,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTkeywordSearch(...) searches English", done=>{
+    it("keywordSearch(...) searches English", done=>{
         (async function() { try {
             var maxResults = 15;
             var pattern = Seeker.normalizePattern('suffering joy faith');
@@ -297,7 +297,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTkeywordSearch(...) searches Pali, not English", done=>{
+    it("keywordSearch(...) searches Pali, not English", done=>{
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,
@@ -418,11 +418,15 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("patternLanguage(...) => search language context",done=>{
+    it("TESTTESTpatternLanguage(...) => search language context",done=>{
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,
             }).initialize();
+            should(skr.patternLanguage('wurzel des leidens','de'))
+                .equal('de');
+            should(skr.patternLanguage('awakened buddha','de'))
+                .equal('en');
             should(skr.patternLanguage('anathema')).equal('en');
             should(skr.patternLanguage('anathema', 'en')).equal('en');
             should(skr.patternLanguage('anath')).equal('en');
@@ -431,13 +435,18 @@
             should(skr.patternLanguage('anatha', 'en')).equal('pli');
             should(skr.patternLanguage('anathapindika')).equal('pli');
             should(skr.patternLanguage('anathapindika', 'en')).equal('pli');
-            should(skr.patternLanguage('anathapindika monastery')).equal('en');
-            should(skr.patternLanguage('anathapindika monastery', 'en')).equal('en');
-            should(skr.patternLanguage('anathapindika kloster', 'de')).equal('de');
-            should(skr.patternLanguage('anathapindika kloster')).equal('en');
+            should(skr.patternLanguage('anathapindika monastery'))
+                .equal('en');
+            should(skr.patternLanguage('anathapindika monastery', 'en'))
+                .equal('en');
+            should(skr.patternLanguage('anathapindika kloster', 'de'))
+                .equal('de');
+            should(skr.patternLanguage('anathapindika kloster'))
+                .equal('en');
 
             // "gehe" and "so" are both German and Pali
-            should(skr.patternLanguage('anathapindika gehe so', 'de')).equal('pli');
+            should(skr.patternLanguage('anathapindika gehe so', 'de'))
+                .equal('en');
             done(); 
         } catch(e) {done(e);} })();
     });
@@ -509,7 +518,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) finds sutta references", done=>{
+    it("find(...) finds sutta references", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
