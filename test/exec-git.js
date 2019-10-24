@@ -10,6 +10,7 @@
         logger,
         LOCAL_DIR,
     } = require("just-simple").JustSimple;
+    this.timeout(10*1000);
 
     it("default ctor", () => {
         var egit = new ExecGit();
@@ -17,7 +18,6 @@
         should(egit.repoPath).equal(path.join(LOCAL_DIR, 'bilara-data'));
     });
     it("TESTTESTsync(...) syncs sabbamitta/sutta-translation", (done)=>{
-        this.timeout(5*1000);
         (async function() { try {
             var gitDE = 'https://github.com/sabbamitta/sutta-translation';
             var dePath = path.join(LOCAL_DIR, 'de-suttas');

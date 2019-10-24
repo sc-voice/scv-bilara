@@ -300,7 +300,7 @@
     it("TESTTESTkeywordSearch(...) searches Pali, not English", done=>{
         (async function() { try {
             var skr = await new Seeker({
-                logLevel: 'info',
+                logLevel,
             }).initialize();
             var expected = {
                 method: 'keywords',
@@ -341,7 +341,7 @@
         (async function() { try {
             var skr = await new Seeker({
                 lang: 'de',
-                logLevel: 'info',
+                logLevel,
             }).initialize();
             var expected = {
                 method: 'keywords',

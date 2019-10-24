@@ -11,6 +11,7 @@
         logger,
     } = require("just-simple").JustSimple;
     this.timeout(5*1000);
+    var logLevel = false;
 
     it("default ctor", () => {
         var trans = new SegDoc();
@@ -35,7 +36,7 @@
         var trans = new SegDoc({
             author,
             lang,
-            logLevel: false,
+            logLevel,
             segMap,
             suid,
             bilaraPath,
@@ -44,7 +45,7 @@
         should(trans).properties({
             author: 'sujato',
             lang: 'en',
-            logLevel: false,
+            logLevel,
             segMap,
             suid: 'dn33',
             bilaraPath,
@@ -55,6 +56,7 @@
         (async function() { try {
             var dn33 = new SegDoc({
                 bilaraPath: 'data/dn33.json',
+                logLevel,
             });
             var res = await dn33.load(__dirname);
             should(dn33.segMap['dn33:1.10.31'])
@@ -65,6 +67,7 @@
     it("loadSync(...) loads SegDoc file", ()=>{
         var dn33 = new SegDoc({
             bilaraPath: 'data/dn33.json',
+            logLevel,
         });
         should(dn33.loadSync(__dirname)).equal(dn33);
         should(dn33.segMap['dn33:1.10.31'])
@@ -86,6 +89,7 @@
         var tmpObj = tmp.dirSync();
         var dn33 = new SegDoc({
             bilaraPath: 'data/dn33.json',
+            logLevel,
         });
         dn33.loadSync(__dirname);
         dn33.bilaraPath = 'dn33.json';
@@ -107,6 +111,7 @@
             suid: 'sn1.1',
             lang: 'en',
             bilaraPath: 'data/en_sn1.1.json',
+            logLevel,
         }).loadSync(__dirname);
         var segments = sutta.segments();
         should.deepEqual(segments[0],{
@@ -131,6 +136,7 @@
             suid: 'an1.1-10',
             lang: 'en',
             bilaraPath: 'data/en_an1.1-10.json',
+            logLevel,
         }).loadSync(__dirname);
         var scids = sutta.scids();
         should.deepEqual(scids.slice(0,15), [
@@ -172,10 +178,12 @@
         var fws = new FuzzyWordSet();
         var dn33 = new SegDoc({
             bilaraPath: 'data/dn33.json',
+            logLevel,
         });
         dn33.loadSync(__dirname);
         var dn33pli = new SegDoc({
             bilaraPath: 'data/dn33_pli.json',
+            logLevel,
         });
         dn33pli.loadSync(__dirname);
 

@@ -10,6 +10,7 @@
     const {
         logger,
     } = require("just-simple").JustSimple;
+    const logLevel = false;
 
     it("default ctor", () => {
         var trans = new DETranslation();
@@ -28,7 +29,6 @@
         var lang = 'de-sl';
         var author = 'geiger';
         var source = 'data/de_an1.1-10';
-        var logLevel = false;
         var trans = new DETranslation({
             author,
             lang,
@@ -49,6 +49,7 @@
     it("loadSync(...) loads an1.1-10",()=>{
         var det = new DETranslation({
             source: 'data/de_an1.1-10',
+            logLevel,
         });
         should(det.loadSync(__dirname)).equal(det);
         should(det.suid).equal('an1.1-10');
@@ -62,6 +63,7 @@
     it("loadSync(...) loads sn1.1",()=>{
         var det = new DETranslation({
             source: 'data/sn1.1',
+            logLevel,
         });
         should(det.loadSync(__dirname)).equal(det);
         should(det.suid).equal('sn1.1');
@@ -76,6 +78,7 @@
     it("loadSync(...) loads notreadyyet",()=>{
         var det = new DETranslation({
             source: 'data/notreadyyet',
+            logLevel,
         });
         should(det.loadSync(__dirname)).equal(det);
         should(det.suid).equal('an1.140-149');
@@ -90,9 +93,11 @@
             author: 'sujato',
             bilaraPath: 'data/en/sujato/sn/sn1/'+
                 'sn1.1_translation-en-sujato.json',
+            logLevel,
         }).loadSync(__dirname);
         var det = new DETranslation({
             source: 'data/sn1.1',
+            logLevel,
         }).loadSync(__dirname);
         var segments = det.applySegments(en_sn1_1).segments();
         should(det.bilaraPath).equal('data/de/sabbamitta/sn/sn1/'+
@@ -118,9 +123,11 @@
             author: 'sujato',
             bilaraPath: 'data/en/sujato/an/an1/'+
                 'an1.1-10_translation-en-sujato.json',
+            logLevel,
         }).loadSync(__dirname);
         var det = new DETranslation({
             source: 'data/de_an1.1-10',
+            logLevel,
         }).loadSync(__dirname);
         var segments = det.applySegments(ent).segments();
         should(det.bilaraPath).equal('data/de/sabbamitta/an/an1/'+
@@ -145,10 +152,11 @@
             lang: 'en',
             author: 'sujato',
             bilaraPath: 'data/an1.150-169-en.json',
+            logLevel,
         }).loadSync(__dirname);
         var det = new DETranslation({
             source: 'data/an1.150-169-de.txt',
-            logLevel: 'info',
+            logLevel,
         }).loadSync(__dirname);
         var segments = det.applySegments(ent).segments();
         var i = 0;
@@ -175,10 +183,11 @@
             lang: 'en',
             author: 'sujato',
             bilaraPath: 'data/an2.32-41-en.json',
+            logLevel,
         }).loadSync(__dirname);
         var det = new DETranslation({
             source: 'data/an2.32-41-de.txt',
-            logLevel: 'info',
+            logLevel,
         }).loadSync(__dirname);
         var segs = det.applySegments(ent).segments();
         var i = 0;

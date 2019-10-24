@@ -61,7 +61,7 @@
                             `Root document directory not found:${rootPath}`); 
                     }
                     that.rootFiles = that.dirFiles(rootPath)
-                        .filter(f => that.isSuttaPath(f));
+                        .filter(f => that.isSuttaPath(f))
                     that.rootFiles.forEach((f,i) => {
                         var file = f.replace(/.*\/root\//,'root/');
                         var parts = file.split('/');
@@ -85,7 +85,8 @@
                             `Translation directory not found:${transPath}`); 
                     }
                     that.translations = that.dirFiles(transPath)
-                        .filter(f => that.isSuttaPath(f));
+                        .filter(f => that.isSuttaPath(f))
+                        .sort();
                     that.translations.forEach((f,i) => {
                         var file = f.replace(/.*\/translation\//,'translation/');
                         var parts = file.split('/');
@@ -262,12 +263,12 @@
             return sutta_uid;
         }
 
-        suttaPath(...args) { // DEPRECATED: use translationPaths
-            this.log(`DEPRECATED: suttaPath => translationPaths`);
-            return this.translationPaths.apply(this, args)[0];
+        suttaPath(...args) { // DEPRECATED: use docPaths
+            this.log(`DEPRECATED: suttaPath => docPaths`);
+            return this.docPaths.apply(this, args)[0];
         }
 
-        translationPaths(...args) {
+        docPaths(...args) {
             if (!this.initialized) {
                 throw new Error(`${this.constructor.name}.initialize() is required`);
             }
@@ -288,8 +289,8 @@
             }
             var lang = opts.lang || 'en';
             var author = opts.author_uid;
-            var translations = this.suttaMap[sutta_uid] || [];
-            return translations
+            var docs = this.suttaMap[sutta_uid] || []
+            return docs
                 .filter(t => t.lang === lang && !author || author === t.author)
                 .map(t => path.join(this.root, t.bilaraPath));
         }

@@ -17,8 +17,9 @@
         constructor(opts={}) {
             this.cwd = opts.cwd || LOCAL_DIR;
             this.repo = opts.repo || BILARA_DATA_GIT;
-            var repoDir = path.basename(this.repo).replace(/\.git/,'');
-            this.repoPath = opts.repoPath || path.join(LOCAL_DIR, repoDir);
+            this.repoDir = path.basename(this.repo).replace(/\.git/,'');
+            this.repoPath = opts.repoPath || 
+                path.join(LOCAL_DIR, this.repoDir);
             logger.logInstance(this, opts);
         }
 
