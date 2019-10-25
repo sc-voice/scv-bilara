@@ -5,6 +5,7 @@
         js,
         logger,
     } = require('just-simple').JustSimple;
+    const BilaraPath = require('./bilara-path');
     const FuzzyWordSet = require('./fuzzy-word-set');
     const SuttaCentralId = require('./sutta-central-id');
     const Unicode = require('./unicode');
@@ -29,14 +30,14 @@
                 root_text,
             } = this;
             return translations.reduce((a,t) => {
-                var suid = SuttaCentralId.fromPath(t.bilaraPath);
+                var suid = BilaraPath.pathParts(t.bilaraPath).suid;
                 if (a && suid !== a) {
                     throw new Error(`uid mismatch `+
                         `expected:${a} `+
                         `actual:${suid} `);
                 }
                 return a || t.uid;
-            }, SuttaCentralId.fromPath(this.root_text.bilaraPath));
+            }, BilaraPath.pathParts(this.root_text.bilaraPath).suid);
         }
 
         scids() {

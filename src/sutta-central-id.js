@@ -7,6 +7,7 @@
         js,
         LOCAL_DIR,
     } = require('just-simple').JustSimple;
+    const BilaraPath = require("./bilara-path");
 
     const SRC_PATH = path.join(__dirname, '..', '..', 'src', 'node');
     const SUTTAIDS_PATH = path.join(SRC_PATH, 'sutta-ids.json');
@@ -35,8 +36,7 @@
         }
 
         static fromPath(f) {
-            var fname = f.split('/').pop();
-            return fname.replace(/_.*$/,'');
+            return BilaraPath.pathParts(f).suid;
         }
 
         static scidNumbersLow(id_or_path) {
