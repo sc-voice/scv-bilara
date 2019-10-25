@@ -14,24 +14,30 @@
             // SuttaCentral fields
             var {
                 root_text,
-                suttaplex,
-                segmented,
-                translation,
                 translations,
             } = opts;
             this.root_text = Object.assign({}, root_text);
-            this.segmented = segmented !== false;
-            this.suttaplex = Object.assign({}, suttaplex);
-            this.translations = (translations || []).reduce((a,t) => 
-                (!translation || translation.author_uid !== t.author_uid)
-                    ? a = [...a, t] : a
-            , translation ? [ translation ] : []);
+            this.translations = translations || [];
             this.segMap = {};
 
             logger.logInstance(this);
         }
 
-        get suid() { return this.suttaplex.uid; }
+        get suid() { 
+            var {
+                translations,
+                root_text,
+            } = this;
+            return translations.reduce((a,t) => {
+                var suid = SuttaCentralId.fromPath(t.bilaraPath);
+                if (a && suid !== a) {
+                    throw new Error(`uid mismatch `+
+                        `expected:${a} `+
+                        `actual:${suid} `);
+                }
+                return a || t.uid;
+            }, SuttaCentralId.fromPath(this.root_text.bilaraPath));
+        }
 
         scids() {
             var result = Object.keys(this.segMap);
@@ -49,26 +55,21 @@
             return new Promise((resolve, reject) => {
                 (async function() { try {
                     // initiate file reads
-                    var bproot = root_text && root_text.bilaraPath &&
+                    var bpr = root_text && root_text.bilaraPath &&
                         path.join(root, root_text.bilaraPath);
-                    var p_root;
-                    console.log({bproot});
-                    if (bproot) {
-                        var fhroot = await fs.promises.open(bproot);
-                        p_root = fhroot.readFile();
-                    }
+                    var fhroot = bpr && await fs.promises.open(bpr);
+                    var p_root = fhroot && fhroot.readFile();
                     var p_trans = [];
                     for (var iT = 0; iT < translations.length; iT++) {
                         var t = translations[iT];
-                        if (t.bilaraPath) {
-                            var bpt = path.join(root, t.bilaraPath);
-                            var fh = await fs.promises.open(bpt);
-                            p_trans.push({
-                                fh,
-                                p: fh.readFile(),
-                                lang: t.lang,
-                            });
-                        }
+                        var bpt = t.bilaraPath && 
+                            path.join(root, t.bilaraPath);
+                        var fh = bpt && await fs.promises.open(bpt);
+                        fh && p_trans.push({
+                            fh,
+                            p_read: fh.readFile(),
+                            lang: t.lang,
+                        });
                     }
 
                     // assemble content
@@ -82,12 +83,8 @@
                         fhroot.close();
                     }
                     for (var ip = 0; ip < p_trans.length; ip++) {
-                        var {
-                            fh,
-                            p,
-                            lang,
-                        } = p_trans[ip];
-                        var strings = JSON.parse(await p);
+                        var { fh, p_read, lang, } = p_trans[ip];
+                        var strings = JSON.parse(await p_read);
                         Object.keys(strings).forEach(k => {
                             var m = (segMap[k] = segMap[k] || {});
                             m[lang] = strings[k];

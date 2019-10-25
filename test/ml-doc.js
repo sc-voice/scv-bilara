@@ -16,30 +16,22 @@
     var logLevel = false;
     var t1 = {
         author_uid: "sujato",
+        uid: 'an1.1-10',
         lang: 'en',
         bilaraPath: "translation/en/sujato/"+
             "an/an1/an1.1-10_translation-en-sujato.json",
     };
     var t2 = {
-        author_uid: "sabbamitta",
         lang: 'de',
         bilaraPath: "translation/de/sabbamitta/"+
             "an/an1/an1.1-10_translation-de-sabbamitta.json",
     };
     var t3 = {
-        author_uid: "gabriel_l",
         lang: 'pt',
         bilaraPath: "translation/pt/gabriel_l/"+
             "an/an1/an1.1-10_translation-pt-gabriel_l.json",
     };
-    var suttaplex = {
-        uid: 'an1.1-10',
-        translations: [t1, t2, t3],
-    };
     var root_text = {
-        uid: 'an1.2',
-        author_uid: 'ms',
-        lang: 'pli',
         bilaraPath: "root/pli/ms/an/an1/an1.1-10_root-pli-ms.json",
     };
 
@@ -48,8 +40,6 @@
         should(mld).properties({
             logLevel: 'info',
             root_text: {},
-            suttaplex: {},
-            segmented: true,
             translations: [],
         });
     });
@@ -57,33 +47,17 @@
         // primary customization properties
         var mld = new MLDoc({
             root_text,
-            suttaplex,
             translations: [t1, t2],
         });
         should(mld).properties({
             root_text,
-            suttaplex,
             translations: [t1, t2],
-        });
-
-        // allow SuttaCentral API translation option
-        should(new MLDoc({
-            translation: t1,
-        })).properties({
-            translations: [ t1 ],
-        });
-        should(new MLDoc({
-            translations: [ t1, t2 ],
-            translation: t2,
-        })).properties({
-            translations: [ t2, t1 ],
         });
     });
     it("TESTTESTload(...) loads MLDoc", done=>{
         (async function() { try {
             var mld = new MLDoc({
                 root_text,
-                suttaplex,
                 translations: [t1, t2],
             });
             var res = await mld.load(BILARA_PATH);
