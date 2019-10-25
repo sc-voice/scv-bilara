@@ -6,38 +6,48 @@
         logger,
     } = require('just-simple').JustSimple;
     const BilaraPath = require('./bilara-path');
-    const FuzzyWordSet = require('./fuzzy-word-set');
     const SuttaCentralId = require('./sutta-central-id');
-    const Unicode = require('./unicode');
 
     class MLDoc {
         constructor(opts={}) {
-            // SuttaCentral fields
             var {
-                root_text,
-                translations,
+                bilaraPaths,
             } = opts;
-            this.root_text = Object.assign({}, root_text);
-            this.translations = translations || [];
+            if (bilaraPaths == null) {
+                throw new Error(`bilaraPaths is required`);
+            }
+            this.bilaraPaths = bilaraPaths;
             this.segMap = {};
 
-            logger.logInstance(this);
+            logger.logInstance(this, opts);
         }
 
         get suid() { 
             var {
-                translations,
-                root_text,
+                bilaraPaths,
             } = this;
-            return translations.reduce((a,t) => {
-                var suid = BilaraPath.pathParts(t.bilaraPath).suid;
+            return bilaraPaths.reduce((a,bp) => {
+                var suid = BilaraPath.pathParts(bp).suid;
                 if (a && suid !== a) {
                     throw new Error(`uid mismatch `+
                         `expected:${a} `+
                         `actual:${suid} `);
                 }
-                return a || t.uid;
-            }, BilaraPath.pathParts(this.root_text.bilaraPath).suid);
+                return a || suid;
+            }, null);
+        }
+
+        get root_text() {
+            return this.bilaraPaths.reduce((a,bp) => {
+                var parts = BilaraPath.pathParts(bp);
+                return parts.type === 'root' ? parts : a;
+            }, undefined);
+        }
+
+        get translations() {
+            return this.bilaraPaths
+                .map(bp => BilaraPath.pathParts(bp))
+                .filter(t => t.type === 'translation');
         }
 
         scids() {
@@ -49,42 +59,27 @@
         load(root) {
             var {
                 segMap,
-                root_text,
-                translations,
+                bilaraPaths,
             } = this;
             var that = this;
             return new Promise((resolve, reject) => {
                 (async function() { try {
                     // initiate file reads
-                    var bpr = root_text && root_text.bilaraPath &&
-                        path.join(root, root_text.bilaraPath);
-                    var fhroot = bpr && await fs.promises.open(bpr);
-                    var p_root = fhroot && fhroot.readFile();
-                    var p_trans = [];
-                    for (var iT = 0; iT < translations.length; iT++) {
-                        var t = translations[iT];
-                        var bpt = t.bilaraPath && 
-                            path.join(root, t.bilaraPath);
-                        var fh = bpt && await fs.promises.open(bpt);
-                        fh && p_trans.push({
+                    var p_bp = [];
+                    for (var ip = 0; ip < bilaraPaths.length; ip++) {
+                        var parts = BilaraPath.pathParts(bilaraPaths[ip]);
+                        var bp = path.join(root, parts.bilaraPath);
+                        var fh = await fs.promises.open(bp);
+                        fh && p_bp.push({
                             fh,
                             p_read: fh.readFile(),
-                            lang: t.lang,
+                            lang: parts.lang,
                         });
                     }
 
                     // assemble content
-                    var rootBuf = p_root && await p_root;
-                    if (rootBuf) {
-                        var strings = JSON.parse(rootBuf);
-                        Object.keys(strings).forEach(k => {
-                            var m = (segMap[k] = segMap[k] || {});
-                            m.pli = strings[k];
-                        });
-                        fhroot.close();
-                    }
-                    for (var ip = 0; ip < p_trans.length; ip++) {
-                        var { fh, p_read, lang, } = p_trans[ip];
+                    for (var ip = 0; ip < p_bp.length; ip++) {
+                        var { fh, p_read, lang, } = p_bp[ip];
                         var strings = JSON.parse(await p_read);
                         Object.keys(strings).forEach(k => {
                             var m = (segMap[k] = segMap[k] || {});

@@ -29,12 +29,6 @@
         should(scid).instanceOf(SuttaCentralId);
         should(scid.toString()).equal('mn1:2.3.4');
     });
-    it("scifOfFile(f) returns scid from bilara filename",()=>{
-        var f = 'translation/en/sujato/sn/sn22/sn22.2_translation-en-sujato.json';
-        should(SuttaCentralId.fromPath(f)).equal('sn22.2');
-        var f = 'translation/en/sujato/sn/sn22/sn22.10_translation-en-sujato.json';
-        should(SuttaCentralId.fromPath(f)).equal('sn22.10');
-    });
     it("compareLow(a,b) compares sutta file names", function(){
         this.timeout(3*1000);
         var cmp = SuttaCentralId.compareLow;

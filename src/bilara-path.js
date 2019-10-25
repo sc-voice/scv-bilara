@@ -14,6 +14,7 @@
                 type: bpParts[0],
                 lang: bpParts[1],
                 author_uid: bpParts[2],
+                bilaraPath,
             };
         }
     }

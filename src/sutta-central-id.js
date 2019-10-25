@@ -35,12 +35,8 @@
             return new RegExp(pat);
         }
 
-        static fromPath(f) {
-            return BilaraPath.pathParts(f).suid;
-        }
-
         static scidNumbersLow(id_or_path) {
-            var scid = SuttaCentralId.fromPath(id_or_path);
+            var scid = BilaraPath.pathParts(id_or_path).suid;
             var colonParts = scid.replace(/^[a-z]*/,'').split(':');
             var dotParts = colonParts.reduce((a,c) => 
                 a.concat(c.split('.')), []);
@@ -50,7 +46,7 @@
         }
 
         static scidNumbersHigh(id_or_path) {
-            var scid = SuttaCentralId.fromPath(id_or_path);
+            var scid = BilaraPath.pathParts(id_or_path).suid;
             var colonParts = scid.replace(/^[a-z]*/,'').split(':');
             var dotParts = colonParts.reduce((a,c) => 
                 a.concat(c.split('.')), []);

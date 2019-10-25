@@ -31,7 +31,7 @@
             paliWords: undefined,
         });
     });
-    it(" custom ctor", ()=>{
+    it("custom ctor", ()=>{
         var logLevel = 'warn';
         var lang = 'de';
         var paliWords = new FuzzyWordSet();
