@@ -18,7 +18,7 @@
             var scid = new SuttaCentralId();
         });
     });
-    it(" custom ctor", function() {
+    it("custom ctor", function() {
         // sutta id
         var scid = new SuttaCentralId('mn1');
         should(scid).instanceOf(SuttaCentralId);
