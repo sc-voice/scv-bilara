@@ -11,7 +11,7 @@
         logger,
         LOCAL_DIR,
     } = require("just-simple").JustSimple;
-    this.timeout(5*1000);
+    this.timeout(8*1000);
     var logLevel = false;
 
     var bd = new BilaraData({ logLevel }); 
@@ -25,6 +25,8 @@
             'mn', 'sn', 'dn', 'an', 'kn/thag', 'kn/thig'
         ].sort());
         should(bdDefault).properties({
+            lang: 'en',
+            languages: ['pli', 'en'],
             logLevel: 'info',
         });
     });
@@ -55,7 +57,7 @@
             'translation/en/sujato/kn/dhp/dhp21-32_translation-en-sujato.json'))
             .equal(false);
     });
-    it("suttaInfo(...) returns sutta metadata", done=>{
+    it("TESTTESTsuttaInfo(...) returns sutta metadata", done=>{
         (async function() { try {
             await bd.initialize();
             var dn33Pli = {
@@ -123,6 +125,8 @@
                     'de/sabbamitta/an/an2/an2.1-10_translation-de-sabbamitta.json',
             };
             should.deepEqual(bd.suttaInfo('an2.1-10'), 
+                [ an2_1_10pli, an2_1_10de, an2_1_10en ]);
+            should.deepEqual(bd.suttaInfo('an2.3'), 
                 [ an2_1_10pli, an2_1_10de, an2_1_10en ]);
             done();
         } catch(e) {done(e);} })();
@@ -484,6 +488,82 @@
 
             done(); 
         } catch(e) {done(e);} })();
+    });
+    it("TESTTESTloadMLDoc(...) loads bilingual doc", done=>{
+        (async function() { try {
+            await bd.initialize();
+            var an1_9_en = {
+                pli: '9 ',
+                en: '9 ',
+            };
+            var an1_9_de = {
+                pli: '9 ',
+                de: '9 ',
+            };
+
+            // implicit
+            var mld = await bd.loadMLDoc({
+                suid: 'an1.2',
+            });
+            should.deepEqual(mld.segMap['an1.9:0.1'], an1_9_en);
+            var mld = await bd.loadMLDoc({
+                suid: 'an1.2',
+                lang: 'en',
+            });
+            should.deepEqual(mld.segMap['an1.9:0.1'], an1_9_en);
+
+            // explicit
+            var mld = await bd.loadMLDoc("an1.2/en");
+            should.deepEqual(mld.segMap['an1.9:0.1'], an1_9_en);
+            var mld = await bd.loadMLDoc("an1.2/en/sujato");
+            should.deepEqual(mld.segMap['an1.9:0.1'], an1_9_en);
+            var mld = await bd.loadMLDoc({
+                suid: 'an1.2/en',
+            });
+            should.deepEqual(mld.segMap['an1.9:0.1'], an1_9_en);
+            var mld = await bd.loadMLDoc({
+                suid: 'an1.10',
+                languages: ['en', 'pli'],
+            });
+            should.deepEqual(mld.segMap['an1.9:0.1'], an1_9_en);
+            var mld = await bd.loadMLDoc({
+                suid: 'an1.10',
+                languages: ['de', 'pli'],
+            });
+            should.deepEqual(mld.segMap['an1.9:0.1'], an1_9_de);
+            var mld = await bd.loadMLDoc("an1.9/de/sabbamitta");
+            should.deepEqual(mld.segMap['an1.9:0.1'], an1_9_de);
+
+            done();
+        } catch(e) { done(e); }})();
+    });
+    it("TESTTESTloadMLDoc(...) loads trilingual doc", done=>{
+        (async function() { try {
+            await bd.initialize();
+            var an1_9 = {
+                pli: '9 ',
+                en: '9 ',
+                de: '9 ',
+            };
+
+            // explicit
+            var mld = await bd.loadMLDoc({
+                suid: 'an1.10',
+                languages: ['de', 'pli', 'en'],
+            });
+            should.deepEqual(mld.segMap['an1.9:0.1'], an1_9);
+
+            // implicit
+            var mld = await bd.loadMLDoc({
+                suid: 'an1.10',
+                lang: 'de',
+            });
+            should.deepEqual(mld.segMap['an1.9:0.1'], an1_9);
+            var mld = await bd.loadMLDoc("an1.9/de");
+            should.deepEqual(mld.segMap['an1.9:0.1'], an1_9);
+
+            done();
+        } catch(e) { done(e); }})();
     });
 
 })

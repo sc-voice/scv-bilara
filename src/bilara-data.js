@@ -10,6 +10,7 @@
         execSync,
     } = require('child_process');
     const SegDoc = require('./seg-doc');
+    const MLDoc = require('./ml-doc');
     const SuttaCentralId = require('./sutta-central-id');
     const FuzzyWordSet = require('./fuzzy-word-set');
     const Pali = require('./pali');
@@ -24,6 +25,7 @@
         constructor(opts={}) {
             this.name = opts.name || 'bilara-data';
             this.root = opts.root || path.join(LOCAL_DIR, 'bilara-data');
+            this.lang = opts.lang || 'en';
             logger.logInstance(this, opts);
             this.nikayas = opts.nikayas || [
                 'an','mn','dn','sn', 'kn/thig', 'kn/thag'
@@ -32,6 +34,7 @@
                 repo: BILARA_DATA_GIT,
                 logLevel: this.logLevel,
             });
+            this.languages = opts.languages || [ 'pli', this.lang ];
             this.reNikayas = new RegExp(
                 `/(${this.nikayas.join('|')})/`, 'ui');
             Object.defineProperty(this, "_suttaMap", {
@@ -134,7 +137,35 @@
             if (!this.initialized) {
                 throw new Error('Expected preceding call to initialize()');
             }
-            return this.suttaMap[suid];
+            var info = this.suttaMap[suid];
+            if (!info) {
+                var parts = suid.split('/');
+                var suid = parts[0];
+                var lang = parts[1];
+                var author = parts[2];
+                info = this.suttaMap[suid];
+            }
+            if (!info) { // binary search
+                var suttaIds = this.suttaIds;
+                var j = suttaIds.length-1;
+                for (var i = 0; i<j; ) {
+                    var k = Math.floor((i+j)/2);
+                    var sk = suttaIds[k];
+                    var cmp = SuttaCentralId.compareLow(suid, sk);
+                    if (cmp <= 0) {
+                        //console.log(`dbg ikj ${i} ${k} ${j} *${sk}`);
+                        j = k;
+                    } else if (i !== k) {
+                        //console.log(`dbg ikj ${i} ${k} ${j} ${sk}*`);
+                        i = k;
+                    } else {
+                        break;
+                    }
+                }
+                info = this.suttaMap[suttaIds[i]];
+                //console.log(`dbg suid ${suid} => ${suttaIds[i]}`);
+            }
+            return info;
         }
 
         dirFiles(root) {
@@ -147,7 +178,7 @@
             return res.split('\n');
         }
 
-        loadSegDocArgs(args) {
+        loadArgs(args) {
             if (!this.initialized) {
                 throw new Error('Expected preceding call to initialize()');
             }
@@ -165,14 +196,19 @@
                 author,
                 logLevel,
                 returnNull,
+                languages,
             } = opts;
-            lang = lang || language || 'pli';
+            lang = lang || language || this.lang;
+            languages = languages || (this.languages.indexOf(lang) <= 0
+                ? [...this.languages, lang]
+                : this.languages);
             logLevel = logLevel === undefined ? this.logLevel : logLevel;
             return {
                 suid,
                 lang,
                 author,
                 logLevel,
+                languages,
                 returnNull,
             }
         }
@@ -184,7 +220,7 @@
                 author,
                 logLevel,
                 returnNull,
-            } = this.loadSegDocArgs(args);
+            } = this.loadArgs(args);
 
             var info = this.suttaInfo(suid);
             if (info == null) {
@@ -224,6 +260,43 @@
             }
             suttaInfo.logLevel = logLevel;
             return new SegDoc(suttaInfo).load(this.root);
+        }
+
+        loadMLDoc(...args) {
+            var {
+                suid,
+                author,
+                logLevel,
+                returnNull,
+                languages,
+            } = this.loadArgs(args);
+
+            var info = this.suttaInfo(suid);
+            if (info == null) {
+                if (returnNull) {
+                    return null;
+                }
+                throw new Error(`no suttaInfo(suid:${suid})`);
+            }
+            var langMap = languages.reduce((a,l) => (a[l] = true, a), {});
+            var bilaraPaths = info
+                .filter(i=>langMap[i.lang])
+                .filter(i=> !author || i.author === author 
+                    || i.author === 'ms') // always include Pali
+                .map(i=>i.bilaraPath);
+            if (bilaraPaths.length === 0) {
+                if (returnNull) {
+                    this.log(`loadMLDoc(${suid}) no info:${languages}`);
+                    return null;
+                }
+                throw new Error(author 
+                    ? `No information for ${suid}/${lang}`
+                    : `No information for ${suid}/${lang}/${author}`);
+            }
+            return new MLDoc({
+                logLevel,
+                bilaraPaths,
+            }).load(this.root);
         }
 
         normalizeSuttaId(id) {

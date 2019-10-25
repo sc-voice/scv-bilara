@@ -418,7 +418,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTpatternLanguage(...) => search language context",done=>{
+    it("patternLanguage(...) => search language context",done=>{
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,

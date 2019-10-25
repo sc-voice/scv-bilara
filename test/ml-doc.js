@@ -22,12 +22,12 @@
             "an/an1/an1.1-10_translation-de-sabbamitta.json",
     ];
 
-    it("TESTTESTdefault ctor", () => {
+    it("default ctor", () => {
         should.throws(() => {
             var mld = new MLDoc();
         });
     });
-    it("TESTTESTcustom ctor", () => {
+    it("custom ctor", () => {
         var mld = new MLDoc({
             bilaraPaths,
         });
@@ -39,7 +39,7 @@
             bilaraPath: bilaraPaths[0],
         });
     });
-    it("TESTTESTload(...) loads MLDoc", done=>{
+    it("load(...) loads MLDoc", done=>{
         (async function() { try {
             var mld = new MLDoc({
                 bilaraPaths,
