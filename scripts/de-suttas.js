@@ -26,6 +26,7 @@ var patAllow = ".*/(AN|DN|MN|KN|SN)/.*";
         repo: gitDE,
         repoPath: dePath,
     });
+    await deGit.sync();
     logger.info(`OK: Updating latest from ${gitDE}`);
     var deFiles = await bd.dirFiles(dePath);
     var reAllow = new RegExp(patAllow,"u");
