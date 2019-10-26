@@ -1,6 +1,6 @@
 {
   "name": "sc-voice",
-  "version": "0.1.30",
+  "version": "0.1.31",
   "description": "SuttaCentral Voice adapter for SuttaCentral bilara-data",
   "main": "index.js",
   "directories": {
