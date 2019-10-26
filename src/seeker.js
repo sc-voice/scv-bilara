@@ -401,14 +401,17 @@
                         });
                     }
                     var segDocs = [];
-                    for (var i = 0; i < suttaRefs.length; i++) {
-                        var sd = await bd.loadSegDoc(suttaRefs[i]);
-                        segDocs.push(sd);
+                    var mlDocs = [];
+                    var nResults = Math.min(maxResults, suttaRefs.length);
+                    for (var i = 0; i < nResults; i++) {
+                        var mld = await bd.loadMLDoc(suttaRefs[i]);
+                        mlDocs.push(mld);
                     }
                     resolve({
                         method,
                         suttaRefs,
-                        segDocs,
+                        maxResults,
+                        mlDocs,
                         resultPattern,
                         lang,
                     });

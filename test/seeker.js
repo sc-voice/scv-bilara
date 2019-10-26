@@ -528,28 +528,41 @@
 
             // lists of suttas with ranges
             var lang = 'de';
-            var pattern = "an1.2-15, sn12.23";
+            // The pattern resolves to 4 suttas, of which 3 are returned
+            var pattern = "sn12.23, an1.2-25"; 
             var res = await skr.find({
                 pattern,
                 lang,
             });
-            should(res).properties({
-                method: 'sutta_uid',
-                suttaRefs: ['an1.1-10/de', 'an1.11-20/de', 'sn12.23/de'],
-                resultPattern: pattern,
-                lang: 'de',
-            });
-            should(res.segDocs.length).equal(3);
-            var sd0 = res.segDocs[0];
-            should(sd0).properties({
-                suid: 'an1.1-10',
-                lang: 'de',
-                author: 'sabbamitta',
+            should(res.method).equal('sutta_uid');
+            should(res.maxResults).equal(maxResults);
+            should.deepEqual(res.suttaRefs,
+                ['sn12.23/de', 'an1.1-10/de', 'an1.11-20/de', ]);
+            should(res.resultPattern).equal(pattern);
+            should(res.lang).equal('de');
+            should(res.mlDocs.length).equal(3);
+            var [mld0, mld1] = res.mlDocs;
+            should(mld0).properties({
+                suid: 'sn12.23',
                 logLevel,
-                bilaraPath: 'translation/de/sabbamitta/'+
-                    'an/an1/an1.1-10_translation-de-sabbamitta.json',
             });
-            should(sd0.segMap['an1.10:0.1']).equal('10 ');
+            should(mld1).properties({
+                suid: 'an1.1-10',
+                logLevel,
+            });
+            should.deepEqual(mld1.bilaraPaths.sort(), [
+                'root/pli/ms/'+
+                    'an/an1/an1.1-10_root-pli-ms.json',
+                'translation/en/sujato/'+
+                    'an/an1/an1.1-10_translation-en-sujato.json',
+                'translation/de/sabbamitta/'+
+                    'an/an1/an1.1-10_translation-de-sabbamitta.json',
+            ].sort());
+            should.deepEqual(mld1.segMap['an1.10:0.1'], {
+                en: '10 ',
+                de: '10 ',
+                pli: '10 ',
+            });
             done(); 
         } catch(e) {done(e);} })();
     });
