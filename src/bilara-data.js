@@ -60,8 +60,8 @@
                     var map = that.suttaMap = {};
                     var rootPath = path.join(that.root, 'root');
                     if (!fs.existsSync(rootPath)) {
-                        throw new Error(
-                            `Root document directory not found:${rootPath}`); 
+                        throw new Error(`Root document directory `+
+                            `not found:${rootPath}`); 
                     }
                     that.rootFiles = that.dirFiles(rootPath)
                         .filter(f => that.isSuttaPath(f))
@@ -71,7 +71,8 @@
                         var lang = parts[1];
                         var author = parts[2];
                         var nikaya = parts[3];
-                        var suid = parts[parts.length-1].split('_')[0].toLowerCase();
+                        var suid = parts[parts.length-1]
+                            .split('_')[0].toLowerCase();
                         map[suid] = map[suid] || [];
                         map[suid].push({
                             suid,
@@ -91,12 +92,14 @@
                         .filter(f => that.isSuttaPath(f))
                         .sort();
                     that.translations.forEach((f,i) => {
-                        var file = f.replace(/.*\/translation\//,'translation/');
+                        var file = f.replace(/.*\/translation\//,
+                            'translation/');
                         var parts = file.split('/');
                         var lang = parts[1];
                         var author = parts[2];
                         var nikaya = parts[3];
-                        var suid = parts[parts.length-1].split('_')[0].toLowerCase();
+                        var suid = parts[parts.length-1]
+                            .split('_')[0].toLowerCase();
                         map[suid] = map[suid] || [];
                         map[suid].push({
                             suid,
@@ -108,7 +111,8 @@
                     });
                     var uidExpPath = path.join(that.root, 
                         '.voice', 'uid_expansion.json');
-                    that.uid_expansion = JSON.parse(fs.readFileSync(uidExpPath));
+                    that.uid_expansion = 
+                        JSON.parse(fs.readFileSync(uidExpPath));
 
                     that.initialized = true;
                     resolve(that);
@@ -561,6 +565,9 @@
 
         sutta_uidSearch(pattern, maxResults=5, lang='en') {
             var method = 'sutta_uid';
+            var {
+                languages,
+            } = this;
             var uids = this.suttaList(pattern).slice(0, maxResults);
             var suttaRefs = uids.map(ref => {
                 var refParts = ref.split('/');

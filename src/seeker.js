@@ -26,6 +26,7 @@
             var root = this.root = opts.root || BILARA_PATH;
             logger.logInstance(this, opts);
             this.lang = opts.lang || 'en';
+            this.languages = opts.languages || ['pli', 'en'];
             this.grepAllow = opts.grepAllow ||
                 new RegExp("^[^/]+/(an|sn|mn|kn|dn)/","iu");
             this.grepDeny = opts.grepDeny ||
@@ -35,6 +36,7 @@
             this.enWords = opts.enWords;
             this.matchWordEnd = opts.matchWordEnd;
             this.maxResults = opts.maxResults == null ? 5 : opts.maxResults;
+            this.minLang = opts.minLang || 2;
         }
 
         static isUidPattern(pattern) {
@@ -325,6 +327,8 @@
                 pattern,
                 lang,
                 language, // DEPRECATED
+                languages,
+                minLang,    // minimum number of languages
                 maxResults,
                 sortLines,
             } = typeof opts !== 'string' 
@@ -338,7 +342,10 @@
             }
             pattern = Seeker.sanitizePattern(pattern);
             pattern = Seeker.normalizePattern(pattern);
+            minLang = minLang || this.minLang;
             lang = lang || language || 'en';
+            languages = languages || this.languages || [];
+            (lang && languages.indexOf(lang)<0) && languages.push(lang);
             var maxResults = Number(
                 maxResults==null ? this.maxResults : maxResults);
             if (isNaN(maxResults)) {
@@ -346,9 +353,11 @@
             }
             return {
                 pattern,
-                lang,
+                languages,
                 maxResults,
+                minLang,
                 sortLines,
+                lang,
             }
         }
 
@@ -356,6 +365,8 @@
             var {
                 pattern,
                 lang,
+                minLang,
+                languages,
                 sortLines,
                 maxResults,
             } = this.findArgs(args);
@@ -400,17 +411,20 @@
                             return suttaRef;
                         });
                     }
-                    var segDocs = [];
+
                     var mlDocs = [];
                     var nResults = Math.min(maxResults, suttaRefs.length);
                     for (var i = 0; i < nResults; i++) {
                         var mld = await bd.loadMLDoc(suttaRefs[i]);
-                        mlDocs.push(mld);
+                        if (mld.bilaraPaths.length >= minLang) {
+                            mlDocs.push(mld);
+                        }
                     }
                     resolve({
                         method,
                         suttaRefs,
                         maxResults,
+                        minLang,
                         mlDocs,
                         resultPattern,
                         lang,

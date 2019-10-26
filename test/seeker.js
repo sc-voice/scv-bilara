@@ -566,4 +566,34 @@
             done(); 
         } catch(e) {done(e);} })();
     });
+    it("TESTTESTfind({minLang}) => minimum language count", done=>{
+        (async function() { try {
+            var maxResults = 3;
+            var skr = await new Seeker({
+                maxResults,
+                logLevel,
+            }).initialize();
+
+            var pattern = "dn33"; 
+            var res = await skr.find({
+                pattern,
+                lang: 'de',
+                minLang: 2,
+            });
+            should.deepEqual(res.suttaRefs, ['dn33/de']);
+            should(res.mlDocs.length).equal(1);
+            should(res.minLang).equal(2);
+
+            // DN33 currently has no Deutsch translation
+            var res = await skr.find({
+                pattern,
+                lang: 'de',
+                minLang: 3,
+            });
+            should.deepEqual(res.suttaRefs, ['dn33/de']);
+            should(res.mlDocs.length).equal(0);
+
+            done(); 
+        } catch(e) {done(e);} })();
+    });
 })
