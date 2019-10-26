@@ -56,4 +56,46 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
             done();
         } catch(e) { done(e); } })();
     });
+    it("TESTTESTroot_text(...) => root info", done=>{
+        (async function() { try {
+            var mld = new MLDoc({
+                bilaraPaths,
+            });
+            var res = await mld.load(BILARA_PATH);
+            should.deepEqual(mld.root_text,{
+                type: 'root',
+                lang: 'pli',
+                author_uid: 'ms',
+                bilaraPath: 'root/pli/ms/an/an1/an1.1-10_root-pli-ms.json',
+                suid: 'an1.1-10',
+            });
+
+            done();
+        } catch(e) { done(e); } })();
+    });
+    it("TESTTESTtranslations(...) => translations info", done=>{
+        (async function() { try {
+            var mld = new MLDoc({
+                bilaraPaths,
+            });
+            var res = await mld.load(BILARA_PATH);
+            should.deepEqual(mld.translations,[{
+                type: 'translation',
+                lang: 'en',
+                author_uid: 'sujato',
+                bilaraPath: 'translation/en/sujato/'+
+                    'an/an1/an1.1-10_translation-en-sujato.json',
+                suid: 'an1.1-10',
+            },{
+                type: 'translation',
+                lang: 'de',
+                author_uid: 'sabbamitta',
+                bilaraPath: 'translation/de/sabbamitta/'+
+                    'an/an1/an1.1-10_translation-de-sabbamitta.json',
+                suid: 'an1.1-10',
+            }]);
+
+            done();
+        } catch(e) { done(e); } })();
+    });
 })
