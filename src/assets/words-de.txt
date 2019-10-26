@@ -1,3 +1,4 @@
+
 aufmerksam
 aufmerksamkeit
 bäche
@@ -385,6 +386,7 @@ geborgenheit
 gebrüllt
 gebt
 gebunden
+geburten
 gedächtnis
 gedrehten
 geeignete
@@ -529,6 +531,7 @@ gottheiten
 greifen
 grob
 grobe
+grollend
 große
 großem
 großen
@@ -594,6 +597,8 @@ hinblick
 hinein
 hinscheiden
 hinsichtlich
+hochgefühl
+hochgefühls
 höchste
 höchsten
 hoffe
@@ -630,6 +635,7 @@ insgeheim
 irgendein
 irgendeine
 irgendeinem
+isn
 ist
 jägern
 jeden
@@ -650,6 +656,8 @@ jung
 junge
 jungen
 junger
+jünger
+jüngere
 jungfern
 juwelen
 käme
@@ -760,6 +768,7 @@ lohnt
 los
 löwengebrüll
 luft
+lügen
 mängel
 mängeln
 mannhafter
@@ -996,6 +1005,8 @@ sechs
 sechstes
 sechzehnten
 sechzig
+seelische
+seelisches
 segen
 segensreich
 sehe
@@ -1141,6 +1152,7 @@ trägen
 träger
 trägheit
 treffend
+treten
 tritt
 trocken
 trüb
@@ -1165,6 +1177,7 @@ unbewusst
 und
 undiszipliniertes
 unedle
+unedles
 unendlich
 unendlichen
 unerreicht
@@ -1326,6 +1339,7 @@ viertes
 vierundvierzig
 vierzig
 voll
+vollblutpferd
 völlig
 völligen
 vollkommen

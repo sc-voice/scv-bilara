@@ -57,7 +57,7 @@
             'translation/en/sujato/kn/dhp/dhp21-32_translation-en-sujato.json'))
             .equal(false);
     });
-    it("TESTTESTsuttaInfo(...) returns sutta metadata", done=>{
+    it("suttaInfo(...) returns sutta metadata", done=>{
         (async function() { try {
             await bd.initialize();
             var dn33Pli = {
@@ -489,7 +489,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTloadMLDoc(...) loads bilingual doc", done=>{
+    it("loadMLDoc(...) loads bilingual doc", done=>{
         (async function() { try {
             await bd.initialize();
             var an1_9_en = {
@@ -537,7 +537,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTloadMLDoc(...) loads trilingual doc", done=>{
+    it("loadMLDoc(...) loads trilingual doc", done=>{
         (async function() { try {
             await bd.initialize();
             var an1_9 = {

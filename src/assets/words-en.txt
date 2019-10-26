@@ -28404,6 +28404,7 @@ isles
 islet
 islets
 isms
+isn
 isnt
 isn’t
 isobar

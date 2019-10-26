@@ -518,15 +518,17 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("find(...) finds sutta references", done=>{
+    it("TESTTESTfind(...) finds sutta references", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
                 maxResults,
                 logLevel,
             }).initialize();
+
+            // lists of suttas with ranges
             var lang = 'de';
-            var pattern = "an1.1-15, sn12.23";
+            var pattern = "an1.2-15, sn12.23";
             var res = await skr.find({
                 pattern,
                 lang,
