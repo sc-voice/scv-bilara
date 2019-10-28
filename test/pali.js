@@ -11,52 +11,52 @@
         should(Pali.romanizePattern("nopqrstuvwxyz"))
         .equal('(n|ṅ|ñ|ṇ)opqrs(t|ṭ)(u|ū)vwxyz');
     });
-    it("recognizes Pali words", done=>{
+    it("TESTTESTrecognizes Pali words", done=>{
         this.timeout(5*1000);
         (async function() { try {
             paliWords = await Pali.wordSet();
             should.deepEqual(paliWords.trace('kloster'), {
-                trace: 'klost',
+                trace: 'klo~',
                 member: false,
             });
             should.deepEqual(paliWords.trace('buddha'), {
-                trace: 'buddha~',
+                trace: 'buddha',
                 member: true,
             });
             should.deepEqual(paliWords.trace('ananda'), {
-                trace: 'anand~',
+                trace: 'ananda',
                 member: true,
             });
             should.deepEqual(paliWords.trace('an'), {
-                trace: 'an', // Anguttara Nikaya English abbreviation
+                trace: 'an~', // Anguttara Nikaya English abbreviation
                 member: false,
             });
             should.deepEqual(paliWords.trace('mn'), {
-                trace: 'mn', // Majjhima Nikaya English abbreviation
+                trace: 'mn~', // Majjhima Nikaya English abbreviation
                 member: false,
             });
             should.deepEqual(paliWords.trace('anal'), {
-                trace: 'anal',
+                trace: 'anal~',
                 member: false,
             });
             should.deepEqual(paliWords.trace('analyse'), {
-                trace: 'analys',
+                trace: 'analy~',
                 member: false,
             });
             should.deepEqual(paliWords.trace('analyze'), {
-                trace: 'analyze',
+                trace: 'analy~',
                 member: false,
             });
             should.deepEqual(paliWords.trace('analayo'), {
-                trace: 'anala~',
+                trace: 'anala',
                 member: true,
             });
             should.deepEqual(paliWords.trace('bhante'), {
-                trace: 'bh~',
+                trace: 'bha',
                 member: true,
             });
             should.deepEqual(paliWords.trace('anataph'), {
-                trace: 'anata~',
+                trace: 'anatap',
                 member: true,
             });
             done(); 

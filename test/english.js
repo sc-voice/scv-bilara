@@ -9,48 +9,48 @@
         should(English.romanizePattern("abcdefghijklmnnopqrstuvwxyz"))
         .equal('abcdefghijklmnnopqrstuvwxyz');
     });
-    it("recognizes English words", done=>{
+    it("TESTTESTrecognizes English words", done=>{
         this.timeout(5*1000);
         (async function() { try {
             enWords = await English.wordSet();
             should.deepEqual(enWords.trace('wurzel'), {
-                trace: 'wur',
+                trace: 'wu~',
                 member: false,
             });
             should.deepEqual(enWords.trace('ananda'), {
-                trace: 'ananda',
+                trace: 'anand~',
                 member: false,
             });
             should.deepEqual(enWords.trace('an'), {
-                trace: 'an~', // Anguttara Nikaya English abbreviation
+                trace: 'an', // Anguttara Nikaya English abbreviation
                 member: true,
             });
             should.deepEqual(enWords.trace('mn'), {
-                trace: 'mn~', // Majjhima Nikaya English abbreviation
+                trace: 'mn', // Majjhima Nikaya English abbreviation
                 member: true,
             });
             should.deepEqual(enWords.trace('anal'), {
-                trace: 'anal~',
+                trace: 'anal',
                 member: true,
             });
             should.deepEqual(enWords.trace('analyse'), {
-                trace: 'analy~',
+                trace: 'analys',
                 member: true,
             });
             should.deepEqual(enWords.trace('analyze'), {
-                trace: 'analy~',
+                trace: 'analyze',
                 member: true,
             });
             should.deepEqual(enWords.trace('analayo'), {
-                trace: 'anala',
+                trace: 'anala~',
                 member: false,
             });
             should.deepEqual(enWords.trace('bhante'), {
-                trace: 'bha',
+                trace: 'bh~',
                 member: false,
             });
             should.deepEqual(enWords.trace('anataph'), {
-                trace: 'anatap',
+                trace: 'anata~',
                 member: false,
             });
             done(); 

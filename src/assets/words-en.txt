@@ -29249,6 +29249,7 @@ kleptomaniac
 kleptomaniacs
 klick
 kloof
+kn
 knack
 knacker
 knackers
@@ -33360,6 +33361,7 @@ mixture
 mixtures
 mixup
 mixups
+mn
 mnemonic
 mnemonically
 mnemonics
