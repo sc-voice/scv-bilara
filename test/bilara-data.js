@@ -428,7 +428,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("sutta_uidSearch(...) finds suttas by sutta_uid", function(done) {
+    it("TESTTESTsutta_uidSearch(...) normalizes sutta references", done=>{
         (async function() { try {
             await bd.initialize();
             var maxResults = 4;
@@ -439,11 +439,11 @@
                 "an10.1", "an10.2", "an10.3", "an10.4", "an10.5",
             ]);
             should.deepEqual(res.suttaRefs, [
-                "an10.1/en", 
-                "an10.2/en", 
-                "an10.3/en", 
-                "an10.4/en", 
-                "an10.5/en",
+                "an10.1", 
+                "an10.2", 
+                "an10.3", 
+                "an10.4", 
+                "an10.5",
             ]);
 
             // major id range MN2-11
@@ -459,31 +459,23 @@
             ]);
 
             // language
-            var res = bd.sutta_uidSearch("an1.2-11", maxResults, 'de');
-            should.deepEqual(res.uids, [
-                "an1.1-10", "an1.11-20",
-            ]);
-            should.deepEqual(res.suttaRefs, [
-                "an1.1-10/de", 
-                "an1.11-20/de", 
-            ]);
-
-            // language
-            var res = bd.sutta_uidSearch("an1.2-11", maxResults, 'de');
-            should.deepEqual(res.uids, [
-                "an1.1-10", "an1.11-20",
-            ]);
-            should.deepEqual(res.suttaRefs, [
-                "an1.1-10/de", 
-                "an1.11-20/de", 
-            ]);
-            var res = bd.sutta_uidSearch("an1.2-11/de", maxResults, 'de');
+            var res = bd.sutta_uidSearch("an1.2-11/de", maxResults);
             should.deepEqual(res.uids, [
                 "an1.1-10/de", "an1.11-20/de",
             ]);
             should.deepEqual(res.suttaRefs, [
                 "an1.1-10/de", 
                 "an1.11-20/de", 
+            ]);
+
+            // author
+            var res = bd.sutta_uidSearch("an1.2-11/en/bodhi", maxResults);
+            should.deepEqual(res.uids, [
+                "an1.1-10/en/bodhi", "an1.11-20/en/bodhi",
+            ]);
+            should.deepEqual(res.suttaRefs, [
+                "an1.1-10/en/bodhi", 
+                "an1.11-20/en/bodhi", 
             ]);
 
             done(); 

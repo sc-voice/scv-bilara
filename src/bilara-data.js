@@ -563,20 +563,17 @@
             return result;
         }
 
-        sutta_uidSearch(pattern, maxResults=5, lang='en') {
+        sutta_uidSearch(pattern, maxResults=5) {
             var method = 'sutta_uid';
-            var {
-                languages,
-            } = this;
             var uids = this.suttaList(pattern).slice(0, maxResults);
             var suttaRefs = uids.map(ref => {
                 var refParts = ref.split('/');
-                var uid = refParts[0];
-                var refLang = refParts[1] || lang;
                 var refTranslator = refParts[2];
+                var uid = refParts[0];
+                var refLang = refParts[1];
                 return refTranslator 
                     ? `${uid}/${refLang}/${refTranslator}`
-                    : `${uid}/${refLang}`;
+                    : (refLang ? `${uid}/${refLang}` : uid);
             });
 
             return {

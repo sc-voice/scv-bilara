@@ -537,7 +537,7 @@
             should(res.method).equal('sutta_uid');
             should(res.maxResults).equal(maxResults);
             should.deepEqual(res.suttaRefs,
-                ['sn12.23/de', 'an1.1-10/de', 'an1.11-20/de', ]);
+                ['sn12.23', 'an1.1-10', 'an1.11-20', ]);
             should(res.resultPattern).equal(pattern);
             should(res.lang).equal('de');
             should(res.mlDocs.length).equal(3);
@@ -580,7 +580,7 @@
                 lang: 'de',
                 minLang: 2,
             });
-            should.deepEqual(res.suttaRefs, ['dn33/de']);
+            should.deepEqual(res.suttaRefs, ['dn33']);
             should(res.mlDocs.length).equal(1);
             should(res.minLang).equal(2);
 
@@ -590,7 +590,7 @@
                 lang: 'de',
                 minLang: 3,
             });
-            should.deepEqual(res.suttaRefs, ['dn33/de']);
+            should.deepEqual(res.suttaRefs, ['dn33']);
             should(res.mlDocs.length).equal(0);
 
             done(); 

@@ -415,7 +415,10 @@
                     var mlDocs = [];
                     var nResults = Math.min(maxResults, suttaRefs.length);
                     for (var i = 0; i < nResults; i++) {
-                        var mld = await bd.loadMLDoc(suttaRefs[i]);
+                        var mld = await bd.loadMLDoc({
+                            suid: suttaRefs[i],
+                            languages,
+                        });
                         if (mld.bilaraPaths.length >= minLang) {
                             mlDocs.push(mld);
                         }
