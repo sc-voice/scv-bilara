@@ -428,7 +428,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTsutta_uidSearch(...) normalizes sutta references", done=>{
+    it("sutta_uidSearch(...) normalizes sutta references", done=>{
         (async function() { try {
             await bd.initialize();
             var maxResults = 4;
@@ -485,10 +485,12 @@
         (async function() { try {
             await bd.initialize();
             var an1_9_en = {
+                scid: "an1.9:0.1",
                 pli: '9 ',
                 en: '9 ',
             };
             var an1_9_de = {
+                scid: "an1.9:0.1",
                 pli: '9 ',
                 de: '9 ',
             };
@@ -533,6 +535,7 @@
         (async function() { try {
             await bd.initialize();
             var an1_9 = {
+                scid: "an1.9:0.1",
                 pli: '9 ',
                 en: '9 ',
                 de: '9 ',

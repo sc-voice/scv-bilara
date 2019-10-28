@@ -9,11 +9,17 @@
         static pathParts(bilaraPath) {
             var bpParts = bilaraPath.split('/');
             var fname = bpParts.pop();
+            var type = bpParts[0];
+            var lang = bpParts[1];
+            var author_uid = bpParts[2];
+            var suid = fname.replace(/_.*$/,'');
+            var suttaRef = `${suid}/${lang}/${author_uid}`;
             return {
-                suid: fname.replace(/_.*$/,''),
-                type: bpParts[0],
-                lang: bpParts[1],
-                author_uid: bpParts[2],
+                suid,
+                type,
+                lang,
+                author_uid,
+                suttaRef,
                 bilaraPath,
             };
         }

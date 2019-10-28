@@ -56,6 +56,15 @@
             return result;
         }
 
+        languages() {
+            return Object.keys(
+                this.bilaraPaths.reduce((a,bp) => {
+                    a[bp.split('/')[1]] = true;
+                    return a;
+                }, {})
+            );
+        }
+
         load(root) {
             var {
                 segMap,
@@ -82,7 +91,9 @@
                         var { fh, p_read, lang, } = p_bp[ip];
                         var strings = JSON.parse(await p_read);
                         Object.keys(strings).forEach(k => {
-                            var m = (segMap[k] = segMap[k] || {});
+                            var m = (segMap[k] = segMap[k] || {
+                                scid: k,
+                            });
                             m[lang] = strings[k];
                         });
                         fh.close();
@@ -94,10 +105,27 @@
         }
 
         segments() {
-            return this.scids().map(scid => ({
+            return this.scids().map(scid => Object.assign({
                 scid,
-                [this.lang]: this.segMap[scid] || '',
-            }));
+            }, this.segMap[scid]));
+        }
+
+        filterSegments(pattern, languages) {
+            var scids = this.scids();
+            var rex = pattern instanceof RegExp 
+                ? rex : new RegExp(pattern, "ui");
+            scids.forEach(scid => {
+                var seg = this.segMap[scid];
+                var match = languages.reduce((a,l) => 
+                    a || rex.test(seg[l])
+                , false);
+                if (match) {
+                    //console.log(`dbg keep`, seg);
+                } else {
+                    delete this.segMap[scid];
+                }
+            });
+            return this.segments();
         }
 
     }

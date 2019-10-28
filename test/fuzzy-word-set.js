@@ -39,7 +39,7 @@
         // it's a fuzzy set!
         should(fws.contains('howdy')).equal(true); 
     });
-    it("TESTTESTinclude(...) clarifies set membership", ()=>{
+    it("include(...) clarifies set membership", ()=>{
         var fws = new FuzzyWordSet();
         should(fws.contains('hello')).equal(false);
         should(fws.contains('howdy')).equal(false);
@@ -56,7 +56,7 @@
         should(fws.contains('hello')).equal(true);
         should(fws.contains('howdy')).equal(false); 
     });
-    it("TESTTESTtrain(...) handles prefixes", ()=>{
+    it("train(...) handles prefixes", ()=>{
         var fws = new FuzzyWordSet();
         var iterations = fws.train({
             hello: true,

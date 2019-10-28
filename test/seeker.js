@@ -19,6 +19,8 @@
         logLevel,
     };
     this.timeout(20*1000);
+    const en_suj = "translation/en/sujato/";
+    const de_sab = "translation/de/sabbamitta/";
 
     const BILARA_PATH = path.join(LOCAL_DIR, 'bilara-data');
 
@@ -55,14 +57,13 @@
                 pattern: "root of suffering",
             });
             should.deepEqual(res, [
-                'sujato/sn/sn42/sn42.11_translation-en-sujato.json:5',
-                'sujato/mn/mn105_translation-en-sujato.json:3',
-                'sujato/mn/mn1_translation-en-sujato.json:2',
-                'sujato/sn/sn56/sn56.21_translation-en-sujato.json:1',
-                'sujato/mn/mn66_translation-en-sujato.json:1',
-                'sujato/mn/mn116_translation-en-sujato.json:1',
-                'sujato/dn/dn16_translation-en-sujato.json:1',
-                // 'brahmali/pli-tv/pli-tv-kd/pli-tv-kd6_translation-en-brahmali.json:1', // TODO: Enable Vinaya later
+                `${en_suj}sn/sn42/sn42.11_translation-en-sujato.json:5`,
+                `${en_suj}mn/mn105_translation-en-sujato.json:3`,
+                `${en_suj}mn/mn1_translation-en-sujato.json:2`,
+                `${en_suj}sn/sn56/sn56.21_translation-en-sujato.json:1`,
+                `${en_suj}mn/mn66_translation-en-sujato.json:1`,
+                `${en_suj}mn/mn116_translation-en-sujato.json:1`,
+                `${en_suj}dn/dn16_translation-en-sujato.json:1`,
             ]);
 
             done();
@@ -76,9 +77,9 @@
                 maxResults: 3,
             });
             should.deepEqual(res, [
-                'sujato/sn/sn42/sn42.11_translation-en-sujato.json:5',
-                'sujato/mn/mn105_translation-en-sujato.json:3',
-                'sujato/mn/mn1_translation-en-sujato.json:2',
+                `${en_suj}sn/sn42/sn42.11_translation-en-sujato.json:5`,
+                `${en_suj}mn/mn105_translation-en-sujato.json:3`,
+                `${en_suj}mn/mn1_translation-en-sujato.json:2`,
             ]);
 
             done();
@@ -92,9 +93,8 @@
                 grepDeny: new RegExp("/(dhp)/","iu"),
             });
             should.deepEqual(res, [
-                // 'sujato/kn/dhp/dhp100-115_translation-en-sujato.json:6', // Disallow
-                'sujato/dn/dn9_translation-en-sujato.json:1',
-                'sujato/an/an10/an10.46_translation-en-sujato.json:1'
+                `${en_suj}dn/dn9_translation-en-sujato.json:1`,
+                `${en_suj}an/an10/an10.46_translation-en-sujato.json:1`
             ]);
 
             done();
@@ -108,9 +108,9 @@
                 lang: 'de',
             });
             should.deepEqual(res, [
-              'sabbamitta/an/an1/an1.31-40_translation-de-sabbamitta.json:10',
-              'sabbamitta/an/an1/an1.21-30_translation-de-sabbamitta.json:10',
-              'sabbamitta/an/an1/an1.41-50_translation-de-sabbamitta.json:2',
+              `${de_sab}an/an1/an1.31-40_translation-de-sabbamitta.json:10`,
+              `${de_sab}an/an1/an1.21-30_translation-de-sabbamitta.json:10`,
+              `${de_sab}an/an1/an1.41-50_translation-de-sabbamitta.json:2`,
             ]);
 
             done();
@@ -215,9 +215,9 @@
                     suffering: 736,
                 },
                 lines: [ 
-                    'sujato/sn/sn12/sn12.23_translation-en-sujato.json:4',
-                    'sujato/dn/dn33_translation-en-sujato.json:3',
-                    'sujato/dn/dn34_translation-en-sujato.json:3',
+                    `${en_suj}sn/sn12/sn12.23_translation-en-sujato.json:4`,
+                    `${en_suj}dn/dn33_translation-en-sujato.json:3`,
+                    `${en_suj}dn/dn34_translation-en-sujato.json:3`,
                 ],
             };
 
@@ -247,17 +247,17 @@
                 lang: 'de', // Deutsch
             }).initialize(`dbg 2`);
             var expected = [ 
-                'sujato/sn/sn12/sn12.23_translation-en-sujato.json:4',
-                'sujato/dn/dn33_translation-en-sujato.json:3',
-                'sujato/dn/dn34_translation-en-sujato.json:3',
-                'sujato/dn/dn10_translation-en-sujato.json:2',
-                'sujato/mn/mn68_translation-en-sujato.json:2',
-                'sujato/an/an10/an10.50_translation-en-sujato.json:1',
-                'sujato/an/an3/an3.70_translation-en-sujato.json:1',
-                'sujato/dn/dn19_translation-en-sujato.json:1',
-                'sujato/dn/dn30_translation-en-sujato.json:1',
-                'sujato/mn/mn34_translation-en-sujato.json:1',
-                "sujato/mn/mn90_translation-en-sujato.json:1",
+                `${en_suj}sn/sn12/sn12.23_translation-en-sujato.json:4`,
+                `${en_suj}dn/dn33_translation-en-sujato.json:3`,
+                `${en_suj}dn/dn34_translation-en-sujato.json:3`,
+                `${en_suj}dn/dn10_translation-en-sujato.json:2`,
+                `${en_suj}mn/mn68_translation-en-sujato.json:2`,
+                `${en_suj}an/an10/an10.50_translation-en-sujato.json:1`,
+                `${en_suj}an/an3/an3.70_translation-en-sujato.json:1`,
+                `${en_suj}dn/dn19_translation-en-sujato.json:1`,
+                `${en_suj}dn/dn30_translation-en-sujato.json:1`,
+                `${en_suj}mn/mn34_translation-en-sujato.json:1`,
+                `${en_suj}mn/mn90_translation-en-sujato.json:1`,
             ];
 
             var data = await skr.keywordSearch({ 
@@ -307,11 +307,11 @@
                 maxResults: 5,
                 lang: 'pli', // searching bilara-data/root/pli
                 lines: [ 
-                    'ms/an/an10/an10.93_root-pli-ms.json:9',
-                    'ms/sn/sn10/sn10.8_root-pli-ms.json:9',
-                    'ms/mn/mn143_root-pli-ms.json:7',
-                    'ms/sn/sn55/sn55.26_root-pli-ms.json:7',
-                    'ms/sn/sn55/sn55.27_root-pli-ms.json:4'
+                    'root/pli/ms/an/an10/an10.93_root-pli-ms.json:9',
+                    'root/pli/ms/sn/sn10/sn10.8_root-pli-ms.json:9',
+                    'root/pli/ms/mn/mn143_root-pli-ms.json:7',
+                    'root/pli/ms/sn/sn55/sn55.26_root-pli-ms.json:7',
+                    'root/pli/ms/sn/sn55/sn55.27_root-pli-ms.json:4'
                 ],
             };
 
@@ -348,11 +348,11 @@
                 maxResults: 5,
                 lang: 'pli', // searching bilara-data/root/pli
                 lines: [ 
-                    'ms/an/an10/an10.93_root-pli-ms.json:9',
-                    'ms/sn/sn10/sn10.8_root-pli-ms.json:9',
-                    'ms/mn/mn143_root-pli-ms.json:7',
-                    'ms/sn/sn55/sn55.26_root-pli-ms.json:7',
-                    'ms/sn/sn55/sn55.27_root-pli-ms.json:4'
+                    'root/pli/ms/an/an10/an10.93_root-pli-ms.json:9',
+                    'root/pli/ms/sn/sn10/sn10.8_root-pli-ms.json:9',
+                    'root/pli/ms/mn/mn143_root-pli-ms.json:7',
+                    'root/pli/ms/sn/sn55/sn55.26_root-pli-ms.json:7',
+                    'root/pli/ms/sn/sn55/sn55.27_root-pli-ms.json:4'
                 ],
             };
 
@@ -384,6 +384,7 @@
             }).initialize();
             var expected = {
                 lang: 'de',
+                resultPattern: "anathapindika|hausherr",
                 maxResults: 10,
                 method: 'keywords',
                 keywordsFound: {
@@ -391,9 +392,9 @@
                     anathapindika: 10,
                 },
                 lines: [
-                    'sabbamitta/sn/sn10/sn10.8_translation-de-sabbamitta.json:4',
-                    'sabbamitta/an/an2/an2.32-41_translation-de-sabbamitta.json:2',
-                    'sabbamitta/an/an1/an1.248-257_translation-de-sabbamitta.json:1',
+`${de_sab}sn/sn10/sn10.8_translation-de-sabbamitta.json:4`,
+`${de_sab}an/an2/an2.32-41_translation-de-sabbamitta.json:2`,
+`${de_sab}an/an1/an1.248-257_translation-de-sabbamitta.json:1`,
                 ],
             };
 
@@ -465,9 +466,9 @@
                 lang: 'en',
                 pattern: `\\broot of suffering`,
                 lines: [ 
-                    'sujato/sn/sn42/sn42.11_translation-en-sujato.json:5',
-                    'sujato/mn/mn105_translation-en-sujato.json:3',
-                    'sujato/mn/mn1_translation-en-sujato.json:2',
+                    `${en_suj}sn/sn42/sn42.11_translation-en-sujato.json:5`,
+                    `${en_suj}mn/mn105_translation-en-sujato.json:3`,
+                    `${en_suj}mn/mn1_translation-en-sujato.json:2`,
                 ],
             };
 
@@ -492,7 +493,7 @@
     });
     it("phraseSearch(...) finds Deutsch results", done=>{
         var lines = [
-            'sabbamitta/sn/sn42/sn42.11_translation-de-sabbamitta.json:5',
+            `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
         ];
         (async function() { try {
             var lang = 'de';
@@ -518,7 +519,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) finds sutta references", done=>{
+    it("find(...) finds sutta references", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
@@ -553,12 +554,12 @@
             should.deepEqual(mld1.bilaraPaths.sort(), [
                 'root/pli/ms/'+
                     'an/an1/an1.1-10_root-pli-ms.json',
-                'translation/en/sujato/'+
-                    'an/an1/an1.1-10_translation-en-sujato.json',
+                `${en_suj}an/an1/an1.1-10_translation-en-sujato.json`,
                 'translation/de/sabbamitta/'+
                     'an/an1/an1.1-10_translation-de-sabbamitta.json',
             ].sort());
             should.deepEqual(mld1.segMap['an1.10:0.1'], {
+                scid: 'an1.10:0.1',
                 en: '10 ',
                 de: '10 ',
                 pli: '10 ',
@@ -566,7 +567,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind({minLang}) => minimum language count", done=>{
+    it("find({minLang}) => minimum language count", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
@@ -593,6 +594,97 @@
             should.deepEqual(res.suttaRefs, ['dn33']);
             should(res.mlDocs.length).equal(0);
 
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("find(...) => finds phrase", done=>{
+        (async function() { try {
+            var maxResults = 3;
+            var skr = await new Seeker({
+                maxResults,
+                logLevel,
+            }).initialize();
+
+            var pattern = "root of suffering"; 
+            var res = await skr.find({
+                pattern,
+                lang: 'de',
+                minLang: 2,
+                filterSegments: false, // return entire sutta
+            });
+            should.deepEqual(res.suttaRefs, [
+                'sn42.11/en/sujato',
+                'mn105/en/sujato',
+                'mn1/en/sujato',
+            ]);
+            var [
+                mld0,
+                mld1,
+                mld2,
+            ] = res.mlDocs;
+            should(res.mlDocs.length).equal(3);
+            should(res.minLang).equal(2);
+            should.deepEqual(mld0.segments()[0], {
+                scid: 'sn42.11:0.1',
+                de: "Verbundene Lehrreden 42",
+                en: "Linked Discourses 42 ",
+                pli: "Saṃyutta Nikāya 42 ",
+            });
+            should.deepEqual(mld1.segments()[0], {
+                scid: 'mn105:0.1',
+                en: "Middle Discourses 105 ",
+                pli: "Majjhima Nikāya 105 ",
+            });
+            should.deepEqual(mld2.segments()[0], {
+                scid: 'mn1:0.1',
+                en: "Middle Discourses 1 ",
+                pli: "Majjhima Nikāya 1 ",
+            });
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTfind(...) => finds keywords", done=>{
+        (async function() { try {
+            var maxResults = 3;
+            var skr = await new Seeker({
+                maxResults,
+                logLevel,
+            }).initialize();
+
+            var pattern = "sn leidens"; 
+            var res = await skr.find({
+                pattern,
+                lang: 'de',
+                minLang: 2,
+            });
+            should.deepEqual(res.suttaRefs, [
+                'sn42.11/de/sabbamitta',
+                'sn12.19/de/sabbamitta',
+                'sn45.8/de/sabbamitta',
+            ]);
+            var [
+                mld0,
+                mld1,
+                mld2,
+            ] = res.mlDocs;
+            should(res.mlDocs.length).equal(3);
+            should(res.minLang).equal(2);
+            should(mld0.segments()[0]).properties({
+                scid: 'sn42.11:1.4',
+                en: "“Chief, if I were to teach you about the origin "+
+                    "and ending of suffering in the past, saying ",
+            });
+            should(mld1.segments()[0]).properties({
+                scid: 'sn12.19:5.3',
+                en: "The fool has not completed the spiritual journey "+
+                    "for the complete ending of suffering. ",
+            });
+            should(mld2.segments()[0]).properties({
+                scid: 'sn45.8:3.2',
+                en: "Knowing about suffering, the origin of suffering, "+
+                    "the cessation of suffering, and the practice that "+
+                    "leads to the cessation of suffering. ",
+            });
             done(); 
         } catch(e) {done(e);} })();
     });

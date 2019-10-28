@@ -34,6 +34,7 @@
         should.deepEqual(mld.root_text, {
             type: 'root',
             suid: "an1.1-10",
+            suttaRef: "an1.1-10/pli/ms",
             lang: 'pli',
             author_uid: 'ms',
             bilaraPath: bilaraPaths[0],
@@ -56,7 +57,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTroot_text(...) => root info", done=>{
+    it("root_text(...) => root info", done=>{
         (async function() { try {
             var mld = new MLDoc({
                 bilaraPaths,
@@ -65,6 +66,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
             should.deepEqual(mld.root_text,{
                 type: 'root',
                 lang: 'pli',
+                suttaRef: "an1.1-10/pli/ms",
                 author_uid: 'ms',
                 bilaraPath: 'root/pli/ms/an/an1/an1.1-10_root-pli-ms.json',
                 suid: 'an1.1-10',
@@ -73,7 +75,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTtranslations(...) => translations info", done=>{
+    it("translations(...) => translations info", done=>{
         (async function() { try {
             var mld = new MLDoc({
                 bilaraPaths,
@@ -83,6 +85,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
                 type: 'translation',
                 lang: 'en',
                 author_uid: 'sujato',
+                suttaRef: "an1.1-10/en/sujato",
                 bilaraPath: 'translation/en/sujato/'+
                     'an/an1/an1.1-10_translation-en-sujato.json',
                 suid: 'an1.1-10',
@@ -90,10 +93,40 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
                 type: 'translation',
                 lang: 'de',
                 author_uid: 'sabbamitta',
+                suttaRef: "an1.1-10/de/sabbamitta",
                 bilaraPath: 'translation/de/sabbamitta/'+
                     'an/an1/an1.1-10_translation-de-sabbamitta.json',
                 suid: 'an1.1-10',
             }]);
+
+            done();
+        } catch(e) { done(e); } })();
+    });
+    it("languages(...) => language list", done=>{
+        (async function() { try {
+            var mld = new MLDoc({
+                bilaraPaths,
+            });
+            var res = await mld.load(BILARA_PATH);
+            should.deepEqual(mld.languages(),[ 
+                'pli', 'en', 'de' ]);
+
+            done();
+        } catch(e) { done(e); } })();
+    });
+    it("filterSegments(...) => language list", done=>{
+        (async function() { try {
+            var mld = new MLDoc({
+                bilaraPaths,
+            });
+            var res = await mld.load(BILARA_PATH);
+            var segments = mld.filterSegments('\\btouch', ['en']);
+            should.deepEqual(segments.map(s => s.scid), [
+                'an1.5:1.1',
+                'an1.5:1.2',
+                'an1.10:1.1',
+                'an1.10:1.2',
+            ]);
 
             done();
         } catch(e) { done(e); } })();

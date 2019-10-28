@@ -9,7 +9,7 @@
         should(English.romanizePattern("abcdefghijklmnnopqrstuvwxyz"))
         .equal('abcdefghijklmnnopqrstuvwxyz');
     });
-    it("TESTTESTrecognizes English words", done=>{
+    it("recognizes English words", done=>{
         this.timeout(5*1000);
         (async function() { try {
             enWords = await English.wordSet();

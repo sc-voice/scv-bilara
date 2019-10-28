@@ -10,6 +10,7 @@
         exec,
     } = require('child_process');
     const FuzzyWordSet = require('./fuzzy-word-set');
+    const BilaraPath = require('./bilara-path');
     const Pali = require('./pali');
     const English = require('./english');
     const BilaraData = require('./bilara-data');
@@ -168,6 +169,7 @@
             var {
                 grepAllow,
                 grepDeny,
+                root,
             } = this;
             lang = lang || language || this.lang;
             if (searchMetadata) {
@@ -182,7 +184,8 @@
                 `|sort -g -r -k 2,2 -k 1,1 -t ':'`;
             maxResults && (cmd += `|head -${maxResults}`);
             var cwd = this.langPath(lang);
-            var cwdMsg = cwd.replace(`${this.root}/`,'');
+            var pathPrefix = cwd.replace(root, '').replace(/^\/?/, '');
+            var cwdMsg = cwd.replace(`${root}/`,'');
             this.log(`grep(${cwdMsg}) ${cmd}`);
             var execOpts = {
                 cwd,
@@ -197,7 +200,8 @@
                     } else {
                         var raw = stdout && stdout.trim().split('\n') || [];
                         var rawFiltered = raw.filter(f=>
-                            grepAllow.test(f) && !grepDeny.test(f));
+                            grepAllow.test(f) && !grepDeny.test(f))
+                            .map(f => path.join(pathPrefix, f));
                         resolve(rawFiltered);
                     }
                 });
@@ -310,6 +314,7 @@
                     resolve({
                         method: 'keywords',
                         keywordsFound,
+                        resultPattern: keywords.join('|'),
                         lang,
                         maxResults,
                         lines,
@@ -331,6 +336,7 @@
                 minLang,    // minimum number of languages
                 maxResults,
                 sortLines,
+                filterSegments,
             } = typeof opts !== 'string' 
                 ? args[0]
                 : {
@@ -343,6 +349,9 @@
             pattern = Seeker.sanitizePattern(pattern);
             pattern = Seeker.normalizePattern(pattern);
             minLang = minLang || this.minLang;
+            if (filterSegments == null) {
+                filterSegments = !Seeker.isUidPattern(pattern);
+            }
             lang = lang || language || 'en';
             languages = languages || this.languages || [];
             (lang && languages.indexOf(lang)<0) && languages.push(lang);
@@ -353,6 +362,7 @@
             }
             return {
                 pattern,
+                filterSegments,
                 languages,
                 maxResults,
                 minLang,
@@ -369,6 +379,7 @@
                 languages,
                 sortLines,
                 maxResults,
+                filterSegments,
             } = this.findArgs(args);
             var that = this;
             var bd = that.bilaraData;
@@ -383,33 +394,28 @@
                         } = bd.sutta_uidSearch(pattern, maxResults, lang);
                     } else {
                         var method = 'phrase';
-                        var lines = [];
                         var searchOpts = {
                             pattern, 
                             maxResults, 
                             lang, 
+                            filterSegments,
                         };
 
-                        if (!lines.length && !/^[a-z]+$/iu.test(pattern)) {
-                            lines = await that.phraseSearch(searchOpts);
-                        }
-                        var resultPattern = pattern;
+                        var {
+                            lines,
+                            pattern: resultPattern,
+                        } = await that.phraseSearch(searchOpts);
                         if (!lines.length) {
                             var method = 'keywords';
                             var data = await that.keywordSearch(searchOpts);
-                            lines = data.lines;
-                            resultPattern = data.resultPattern;
+                            var {
+                                lines,
+                                resultPattern,
+                            } = data;
                         }
                         sortLines && lines.sort(sortLines);
-                        var suttaRefs = lines.map(line => {
-                            var iColon = line.indexOf(':');
-                            var pathParts = line.substring(0,iColon).split('/');
-                            var suttaRef = 
-                                pathParts[3].replace(/.json/,'') + '/' +
-                                pathParts[1] + '/' +
-                                pathParts[2];
-                            return suttaRef;
-                        });
+                        var suttaRefs = lines.map(line => 
+                            BilaraPath.pathParts(line).suttaRef);
                     }
 
                     var mlDocs = [];
@@ -419,6 +425,9 @@
                             suid: suttaRefs[i],
                             languages,
                         });
+                        if (filterSegments) {
+                            mld.filterSegments(resultPattern, languages);
+                        }
                         if (mld.bilaraPaths.length >= minLang) {
                             mlDocs.push(mld);
                         }

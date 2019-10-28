@@ -11,7 +11,7 @@
         should(Pali.romanizePattern("nopqrstuvwxyz"))
         .equal('(n|ṅ|ñ|ṇ)opqrs(t|ṭ)(u|ū)vwxyz');
     });
-    it("TESTTESTrecognizes Pali words", done=>{
+    it("recognizes Pali words", done=>{
         this.timeout(5*1000);
         (async function() { try {
             paliWords = await Pali.wordSet();
