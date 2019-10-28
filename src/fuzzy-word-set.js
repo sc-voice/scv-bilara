@@ -89,7 +89,7 @@
                     if (c) {
                         states[c] = {
                             [word.charAt(i+1)]: m,
-                            [OTHER]: s,
+                            [OTHER]: FALSE, // be exclusive
                         };
                     } else {
                         states[c] = m;

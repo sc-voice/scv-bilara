@@ -174,7 +174,7 @@
             en: '2 ',
         });
     });
-    it("fillWordMap(...) can train a FuzzyWordSet", ()=>{
+    it("TESTTESTfillWordMap(...) can train a FuzzyWordSet", ()=>{
         var fws = new FuzzyWordSet();
         var dn33 = new SegDoc({
             bilaraPath: 'data/dn33.json',
@@ -209,8 +209,8 @@
         should(fws.contains('radiance')).equal(false);
         should(fws.contains('ratti')).equal(true);
         should(JSON.stringify(wordMap).length).equal(109070); // fat
-        should(JSON.stringify(fws).length).equal(17239); // skinny
-        should(iterations).equal(5);
+        should(JSON.stringify(fws).length).equal(27629); // skinny
+        should(iterations).equal(6);
     });
 
 })
