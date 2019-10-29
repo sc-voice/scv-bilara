@@ -153,10 +153,10 @@ output       : ${outFormat} color:${color}
 found        : ${res.method} in ${refs}; maxResults:${maxDoc}
 `);
     mlDocs.forEach(mld => {
+        var suid = mld.suid;
         mld.segments().forEach((seg,i) => {
             var scid = seg.scid;
             var sep = '-------------------------------';
-            var suid = scid.split(':')[0];
             i===0 && console.log(
                 `${sep} ${suid} ${sep}`);
             Object.keys(seg).forEach(k => {
