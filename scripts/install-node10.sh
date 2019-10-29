@@ -1,0 +1,36 @@
+#!/bin/bash
+RQDVER=10.17.0
+if [ -e /usr/bin/node ]; then
+    NODEVER=`/usr/bin/node --version`
+    if [ "$NODEVER" == "v${RQDVER}" ]; then
+        echo -e "NODE\t: node ${NODEVER} found (OK)"
+        exit 0
+    fi
+    echo -e "NODE\t: apt remove nodejs@${NODEVER} "
+    sudo apt remove -y nodejs
+    sudo apt autoremove
+    echo -e "NODE\t: apt install nodejs@${RQDVER} "
+    curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
+    sudo apt install -y nodejs
+    exit 0;
+fi
+
+. ~/.nvm/nvm.sh  
+type node > /dev/null
+RC=$?; if [ "$RC" == "0" ]; then
+    NODEVER=`node --version`
+    if [ "$NODEVER" == "v${RQDVER}" ]; then
+        echo -e "NODE\t: node ${NODEVER} found (OK)"
+    else
+        echo -e "NODE\t: node ${NODEVER} found. Expected node v${RQDVER}"
+        . ~/.nvm/nvm.sh  
+        RC=$?; if [ "$RC" == "0" ]; then
+            echo -e "NODE\t: installing node ${RQDVER} with nvm"
+            nvm install ${RQDVER}
+            echo -e "NODE\t: TYPE THE FOLLOWING NOW"
+            echo -e "nvm use ${RQDVER}"
+        fi
+    fi
+else 
+    echo -e "NODE\t: node v${NODEVER} not found. "
+fi
