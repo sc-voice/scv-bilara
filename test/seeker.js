@@ -8,6 +8,7 @@
         English,
         FuzzyWordSet,
         Seeker,
+        Unicode,
     } = require("../index");
     const {
         js,
@@ -671,21 +672,26 @@
             should(res.minLang).equal(2);
             should(mld0.segments()[0]).properties({
                 scid: 'sn42.11:1.4',
+                de: "„Vorsteher, wenn ich dir das Entstehen und Aufhören "+
+                    "des \u001b[38;5;121mLeidens\u001b[0m in der "+
+                    "Vergangenheit erklären würde: ",
                 en: "“Chief, if I were to teach you about the origin "+
                     "and ending of suffering in the past, saying ",
             });
-            should(mld1.segments()[0]).properties({
-                scid: 'sn12.19:5.3',
-                en: "The fool has not completed the spiritual journey "+
-                    "for the complete ending of suffering. ",
-            });
-            should(mld2.segments()[0]).properties({
-                scid: 'sn45.8:3.2',
-                en: "Knowing about suffering, the origin of suffering, "+
-                    "the cessation of suffering, and the practice that "+
-                    "leads to the cessation of suffering. ",
-            });
             done(); 
         } catch(e) {done(e);} })();
+    });
+    it("TESTTESTRegExp knows about word boundaries", () => {
+        var u = new Unicode();
+        var text = [
+            `“Yaṃ panāniccaṃ dukkhaṃ vā taṃ sukhaṃ vā”ti?`,
+            `sotaṃ niccaṃ vā aniccaṃ vā”ti?`,
+        ];
+        var utext = text.map(t=>u.romanize(t));
+        var pattern = "\\b(a|ā)(n|ṅ|ñ|ṇ)(i|ī)cc(a|ā)";
+        var re = new RegExp(`${pattern}`, "gui");
+        should(utext[0].replace(re,'ANICCA')).equal(utext[0]);
+        should(utext[1].replace(re,'ANICCA')).equal(
+            `sotam niccam va ANICCAm va”ti?`);
     });
 })

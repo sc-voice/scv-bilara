@@ -35,6 +35,9 @@
             this.paliWords = opts.paliWords;
             this.bilaraData = opts.bilaraData || new BilaraData(opts);
             this.enWords = opts.enWords;
+            this.matchColor = opts.matchColor == null ? 121 : opts.matchColor;
+            this.matchHighlight = opts.matchHighlight || 
+                `\u001b[38;5;${this.matchColor}m$&\u001b[0m`;
             this.matchWordEnd = opts.matchWordEnd;
             this.maxResults = opts.maxResults == null ? 5 : opts.maxResults;
             this.minLang = opts.minLang || 2;
@@ -335,6 +338,7 @@
                 languages,
                 minLang,    // minimum number of languages
                 maxResults,
+                matchHighlight,
                 sortLines,
                 filterSegments,
             } = typeof opts !== 'string' 
@@ -360,12 +364,14 @@
             if (isNaN(maxResults)) {
                 throw new Error("maxResults must be a number");
             }
+            matchHighlight = matchHighlight || this.matchHighlight;
             return {
                 pattern,
                 filterSegments,
                 languages,
                 maxResults,
                 minLang,
+                matchHighlight,
                 sortLines,
                 lang,
             }
@@ -379,6 +385,7 @@
                 languages,
                 sortLines,
                 maxResults,
+                matchHighlight,
                 filterSegments,
             } = this.findArgs(args);
             var that = this;
@@ -427,25 +434,27 @@
                         });
                         if (filterSegments) {
                             mld.filterSegments(resultPattern, languages);
+                            mld.highlightMatch(resultPattern, matchHighlight);
                         }
                         if (mld.bilaraPaths.length >= minLang) {
                             mlDocs.push(mld);
                         }
                     }
+                    var searchLang = that.patternLanguage(pattern, lang);
                     resolve({
-                        method,
-                        suttaRefs,
-                        maxResults,
-                        minLang,
-                        mlDocs,
-                        resultPattern,
                         lang,
+                        searchLang,
+                        maxResults,
+                        method,
+                        minLang,
+                        resultPattern,
+                        suttaRefs,
+
+                        mlDocs,
                     });
                 } catch(e) {reject(e);} })();
             });
         }
-
-
 
     }
 

@@ -120,13 +120,31 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
                 bilaraPaths,
             });
             var res = await mld.load(BILARA_PATH);
-            var segments = mld.filterSegments('\\btouch', ['en']);
+            var segments = mld.filterSegments('\\btouch', ['en'])
+                .segments();
             should.deepEqual(segments.map(s => s.scid), [
                 'an1.5:1.1',
                 'an1.5:1.2',
                 'an1.10:1.1',
                 'an1.10:1.2',
             ]);
+
+            done();
+        } catch(e) { done(e); } })();
+    });
+    it("TESTTESThighlightMatch(...) => colors matches", done=>{
+        (async function() { try {
+            var mld = new MLDoc({
+                bilaraPaths,
+            });
+            var res = await mld.load(BILARA_PATH);
+            mld.filterSegments('\\btouch', ['en']);
+            var segments = mld.highlightMatch('\\btouch', "<$&>")
+                .segments();
+            should(segments[0].scid).equal('an1.5:1.1');
+            should(segments[0].en).equal(
+                `“Mendicants, I do not see a single <touch> that `+
+                `occupies a man’s mind like the <touch> of a woman. `);
 
             done();
         } catch(e) { done(e); } })();

@@ -6,6 +6,7 @@
         logger,
     } = require('just-simple').JustSimple;
     const BilaraPath = require('./bilara-path');
+    const Unicode = require('./unicode');
     const SuttaCentralId = require('./sutta-central-id');
 
     class MLDoc {
@@ -18,6 +19,7 @@
             }
             this.bilaraPaths = bilaraPaths;
             this.segMap = {};
+            this.unicode = opts.unicode || new Unicode();
 
             logger.logInstance(this, opts);
         }
@@ -114,18 +116,39 @@
             var scids = this.scids();
             var rex = pattern instanceof RegExp 
                 ? rex : new RegExp(pattern, "ui");
+            var unicode = this.unicode;
             scids.forEach(scid => {
                 var seg = this.segMap[scid];
-                var match = languages.reduce((a,l) => 
-                    a || rex.test(seg[l])
-                , false);
+                var match = languages.reduce((a,l) => {
+                    if (!a) {
+                        if (rex.test(seg[l])) {
+                            return rex.test(unicode.romanize(seg[l]));
+                        }
+                    }
+                    return a;
+                }, false);
                 if (match) {
                     //console.log(`dbg keep`, seg);
                 } else {
                     delete this.segMap[scid];
                 }
             });
-            return this.segments();
+            return this;
+        }
+
+        highlightMatch(pattern, matchHighlight) {
+            var scids = this.scids();
+            var rex = pattern instanceof RegExp 
+                ? rex : new RegExp(pattern, "gui");
+            scids.forEach(scid => {
+                var seg = this.segMap[scid];
+                Object.keys(seg).forEach(k => {
+                    if (k !== 'scid') {
+                        seg[k] = seg[k].replace(rex, matchHighlight);
+                    }
+                });
+            });
+            return this;
         }
 
     }

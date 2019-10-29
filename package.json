@@ -1,12 +1,13 @@
 {
   "name": "sc-voice",
-  "version": "0.1.35",
+  "version": "0.1.36",
   "description": "SuttaCentral Voice adapter for SuttaCentral bilara-data",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "dependencies": {
+    "check-node-version": "^4.0.1",
     "just-simple": "^0.1.4",
     "merkle-json": "^1.1.4",
     "nodegit": "^0.26.2",
