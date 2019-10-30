@@ -114,7 +114,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTfilterSegments(...) => single sutta", done=>{
+    it("filterSegments(...) => single sutta", done=>{
         (async function() { try {
             var mld = new MLDoc({
                 bilaraPaths,
