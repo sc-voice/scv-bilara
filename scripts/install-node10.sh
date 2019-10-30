@@ -6,12 +6,13 @@ if [ -e /usr/bin/node ]; then
         echo -e "NODE\t: node ${NODEVER} found (OK)"
         exit 0
     fi
-    echo -e "NODE\t: apt remove nodejs@${NODEVER} "
-    sudo apt remove -y nodejs
-    sudo apt autoremove
-    echo -e "NODE\t: apt install nodejs@${RQDVER} "
+    echo -e "NODE\t: apt-get remove nodejs@${NODEVER} "
+    sudo apt-get remove -y nodejs
+    echo -e "NODE\t: apt autoremove ... "
+    sudo apt autoremove -y
+    echo -e "NODE\t: apt-get install nodejs@${RQDVER} "
     curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
-    sudo apt install -y nodejs
+    sudo apt-get install -y nodejs
     exit 0;
 fi
 
