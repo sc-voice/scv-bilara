@@ -35,3 +35,5 @@ For more information, `./scripts/search.js --help`.
 ./scripts/search.js nandi dukkhassa
 ```
 
+<a href="https://raw.githubusercontent.com/sc-voice/scv-bilara/master/src/assets/search-nandi.png"
+<img src="https://raw.githubusercontent.com/sc-voice/scv-bilara/master/src/assets/search-nandi.png" height=400px></a>
