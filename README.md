@@ -25,15 +25,16 @@ and repeat the installation above.
 ### Scripts
 
 #### search.js
-Linux command-line utility that searches up to three languages (e.g., pli, en, de)
-and returns bi- or tri-lingual results in human-readable, csv or JSON formats.
-For more information, `./scripts/search.js --help`.
+Scriptable linux command-line utility that 
+searches for suttas by id, phrase or keyword in multiple languages
+(e.g., pli, en, de). Output result formats include: human-readable, 
+csv, or JSON.
 
 ```bash
-./scripts/search.js wurzel des leidens
-./scripts/search.js root of suffering
-./scripts/search.js nandi dukkhassa
+./scripts/search.js nandi dukk
 ```
 
-<a href="https://raw.githubusercontent.com/sc-voice/scv-bilara/master/src/assets/search-nandi.png"
+<a href="https://raw.githubusercontent.com/sc-voice/scv-bilara/master/src/assets/search-nandi.png">
 <img src="https://raw.githubusercontent.com/sc-voice/scv-bilara/master/src/assets/search-nandi.png" height=400px></a>
+
+For more information, `./scripts/search.js --help`.
