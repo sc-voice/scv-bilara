@@ -147,44 +147,6 @@
         testPattern("a.+b", 'a.+b');
         testPattern("sattānaṃ", "sattānaṃ");
     });
-    it("isUidPattern(pattern) is true for sutta_uid patterns", function() {
-        // unsupported sutta
-        should(Seeker.isUidPattern('t1670b2.8')).equal(true);
-
-        // fully specified sutta
-        should(Seeker.isUidPattern('mn1/en/sujato')).equal(true);
-        should(Seeker.isUidPattern(
-            'mn1/en/sujato,mn1/en/bodhi')).equal(true);
-        should(Seeker.isUidPattern(
-            'dn7/de/kusalagnana-maitrimurti-traetow')).equal(true);
-
-        // valid collection with a number
-        should(Seeker.isUidPattern('mn2000')).equal(true);
-        should(Seeker.isUidPattern('an1')).equal(true);
-        should(Seeker.isUidPattern('sn22.1')).equal(true);
-        should(Seeker.isUidPattern('sn22.1-20')).equal(true);
-        should(Seeker.isUidPattern('mn8-11')).equal(true);
-        should(Seeker.isUidPattern('mn8-11,mn9-12')).equal(true);
-
-        // unknown but valid sutta 
-        should(Seeker.isUidPattern('a1')).equal(true);
-        should(Seeker.isUidPattern('mn01')).equal(true);
-
-        // not a sutta_uid pattern
-        should(Seeker.isUidPattern('red')).equal(false);
-        should(Seeker.isUidPattern('thig')).equal(false);
-        should(Seeker.isUidPattern('mn')).equal(false);
-
-        // lists
-        should(Seeker.isUidPattern('mn1, mn2')).equal(true);
-        should(Seeker.isUidPattern('sn22-25')).equal(true);
-        should(Seeker.isUidPattern('sn22.1-20,mn1')).equal(true);
-        should(Seeker.isUidPattern('sn22.1-20   ,   mn1')).equal(true);
-        should(Seeker.isUidPattern('sn22.1-20,red')).equal(false);
-        should(Seeker.isUidPattern('red,sn22.1-20,mn1')).equal(false);
-        should(Seeker.isUidPattern('sn22.1-20    ,   red')).equal(false);
-        should(Seeker.isUidPattern('red,sn22.1-20')).equal(false);
-    });
     it("keywordPattern(...) returns grep pattern", done=> {
         (async function() { try {
             var skr = await new Seeker(SEEKEROPTS).initialize();

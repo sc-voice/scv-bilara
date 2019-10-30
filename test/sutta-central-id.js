@@ -263,5 +263,43 @@
         var scid = new SuttaCentralId('mn1');
         should.deepEqual(scid.groups, null);
     });
+    it("TESTTESTtest(text) => text is suid ", function() {
+        // unsupported sutta
+        should(SuttaCentralId.test('t1670b2.8')).equal(true);
+
+        // fully specified sutta
+        should(SuttaCentralId.test('mn1/en/sujato')).equal(true);
+        should(SuttaCentralId.test(
+            'mn1/en/sujato,mn1/en/bodhi')).equal(true);
+        should(SuttaCentralId.test(
+            'dn7/de/kusalagnana-maitrimurti-traetow')).equal(true);
+
+        // valid collection with a number
+        should(SuttaCentralId.test('mn2000')).equal(true);
+        should(SuttaCentralId.test('an1')).equal(true);
+        should(SuttaCentralId.test('sn22.1')).equal(true);
+        should(SuttaCentralId.test('sn22.1-20')).equal(true);
+        should(SuttaCentralId.test('mn8-11')).equal(true);
+        should(SuttaCentralId.test('mn8-11,mn9-12')).equal(true);
+
+        // unknown but valid sutta 
+        should(SuttaCentralId.test('a1')).equal(true);
+        should(SuttaCentralId.test('mn01')).equal(true);
+
+        // not a sutta_uid pattern
+        should(SuttaCentralId.test('red')).equal(false);
+        should(SuttaCentralId.test('thig')).equal(false);
+        should(SuttaCentralId.test('mn')).equal(false);
+
+        // lists
+        should(SuttaCentralId.test('mn1, mn2')).equal(true);
+        should(SuttaCentralId.test('sn22-25')).equal(true);
+        should(SuttaCentralId.test('sn22.1-20,mn1')).equal(true);
+        should(SuttaCentralId.test('sn22.1-20   ,   mn1')).equal(true);
+        should(SuttaCentralId.test('sn22.1-20,red')).equal(false);
+        should(SuttaCentralId.test('red,sn22.1-20,mn1')).equal(false);
+        should(SuttaCentralId.test('sn22.1-20    ,   red')).equal(false);
+        should(SuttaCentralId.test('red,sn22.1-20')).equal(false);
+    });
 
 })

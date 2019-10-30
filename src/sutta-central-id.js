@@ -23,6 +23,13 @@
             this.scid = scid;
         }
 
+        static test(text) {
+            var commaParts = text.toLowerCase().split(',').map(p=>p.trim());
+            return commaParts.reduce((acc,part) => {
+                return acc && /^[a-z]+ ?[0-9]+[-0-9a-z.:\/]*$/i.test(part);
+            }, true);
+        }
+
         static scidRegExp(pat) {
             if (!pat) {
                 return /.*/;

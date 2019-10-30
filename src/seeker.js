@@ -14,6 +14,7 @@
     const Pali = require('./pali');
     const English = require('./english');
     const BilaraData = require('./bilara-data');
+    const SuttaCentralId = require('./sutta-central-id');
 
     const APP_DIR = path.join(__dirname, '..');
     const BILARA_PATH = path.join(LOCAL_DIR, 'bilara-data');
@@ -42,14 +43,6 @@
             this.maxResults = opts.maxResults == null ? 5 : opts.maxResults;
             this.minLang = opts.minLang || 2;
         }
-
-        static isUidPattern(pattern) {
-            var commaParts = pattern.toLowerCase().split(',').map(p=>p.trim());
-            return commaParts.reduce((acc,part) => {
-                return acc && /^[a-z]+ ?[0-9]+[-0-9a-z.:\/]*$/i.test(part);
-            }, true);
-        }
-
 
         static sanitizePattern(pattern) {
             if (!pattern) {
@@ -354,7 +347,7 @@
             pattern = Seeker.normalizePattern(pattern);
             minLang = minLang || this.minLang;
             if (filterSegments == null) {
-                filterSegments = !Seeker.isUidPattern(pattern);
+                filterSegments = !SuttaCentralId.test(pattern);
             }
             lang = lang || language || 'en';
             languages = languages || this.languages || [];
@@ -393,7 +386,7 @@
             return new Promise((resolve, reject) => {
                 (async function() { try {
                     var resultPattern = pattern;
-                    if (Seeker.isUidPattern(pattern)) {
+                    if (SuttaCentralId.test(pattern)) {
                         var {
                             method,
                             uids,
@@ -710,7 +703,7 @@
             var sortLines = opts.sortLines;
             return new Promise((resolve, reject) => {
                 (async function() { try {
-                    if (SuttaStore.isUidPattern(pattern)) {
+                    if (SuttaCentralId.test(pattern)) {
                         var {
                             method,
                             uids,
@@ -793,7 +786,7 @@
             }
             return new Promise((resolve, reject) => {
                 (async function() { try {
-                    if (SuttaStore.isUidPattern(pattern)) {
+                    if (SuttaCentralId.test(pattern)) {
                         var method = 'sutta_uid';
                         logger.info(`SuttaStore.search(${pattern})`+
                             `lang:${language} `+
