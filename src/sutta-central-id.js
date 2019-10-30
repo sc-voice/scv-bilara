@@ -23,6 +23,14 @@
             this.scid = scid;
         }
 
+        static rangeHigh(scid) {
+            return scid.replace(/[0-9]+-/g,'');
+        }
+
+        static rangeLow(scid) {
+            return scid.replace(/-[0-9]+/g,'');
+        }
+
         static test(text) {
             var commaParts = text.toLowerCase().split(',').map(p=>p.trim());
             return commaParts.reduce((acc,part) => {
@@ -134,7 +142,6 @@
         toString() {
             return this.scid;
         }
-
 
     }
 

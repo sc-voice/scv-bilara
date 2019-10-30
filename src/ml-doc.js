@@ -19,8 +19,9 @@
             }
             this.bilaraPaths = bilaraPaths;
             this.segMap = {};
-            this.unicode = opts.unicode || new Unicode();
-
+            Object.defineProperty(this, "unicode", {
+                value: opts.unicode || new Unicode(),
+            });
             logger.logInstance(this, opts);
         }
 
@@ -117,16 +118,32 @@
             var rex = pattern instanceof RegExp 
                 ? rex : new RegExp(pattern, "ui");
             var unicode = this.unicode;
+            var matchAll = SuttaCentralId.test(pattern)
+                && pattern.indexOf(',') >= 0;
+            var matchScid = SuttaCentralId.test(pattern) 
+                && pattern.indexOf(',') < 0;
+            var matchLow = SuttaCentralId.rangeLow(pattern);
+            var matchHigh = SuttaCentralId.rangeHigh(pattern);
             scids.forEach(scid => {
                 var seg = this.segMap[scid];
-                var match = languages.reduce((a,l) => {
-                    if (!a) {
-                        if (rex.test(seg[l])) {
-                            return rex.test(unicode.romanize(seg[l]));
+                if (matchAll) {
+                    var match = true;
+                } else if (matchScid) {
+                    var id = pattern.indexOf(':') >= 0
+                        ? scid : scid.split(':')[0];
+                    var cmpL = SuttaCentralId.compareLow(id, matchLow);
+                    var cmpH = SuttaCentralId.compareHigh(id, matchHigh);
+                    var match = 0 <= cmpL && cmpH <= 0;
+                } else {
+                    var match = languages.reduce((a,l) => {
+                        if (!a) {
+                            if (rex.test(seg[l])) {
+                                return rex.test(unicode.romanize(seg[l]));
+                            }
                         }
-                    }
-                    return a;
-                }, false);
+                        return a;
+                    }, false);
+                }
                 if (match) {
                     //console.log(`dbg keep`, seg);
                 } else {

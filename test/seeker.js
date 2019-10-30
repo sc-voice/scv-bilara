@@ -482,7 +482,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("find(...) finds sutta references", done=>{
+    it("TESTTESTfind(...) finds sutta references", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
@@ -606,7 +606,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) => finds keywords", done=>{
+    it("find(...) => finds keywords", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
@@ -643,7 +643,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTRegExp knows about word boundaries", () => {
+    it("RegExp knows about word boundaries", () => {
         var u = new Unicode();
         var text = [
             `“Yaṃ panāniccaṃ dukkhaṃ vā taṃ sukhaṃ vā”ti?`,

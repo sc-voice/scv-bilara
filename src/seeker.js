@@ -347,7 +347,7 @@
             pattern = Seeker.normalizePattern(pattern);
             minLang = minLang || this.minLang;
             if (filterSegments == null) {
-                filterSegments = !SuttaCentralId.test(pattern);
+                filterSegments = true; //!SuttaCentralId.test(pattern);
             }
             lang = lang || language || 'en';
             languages = languages || this.languages || [];

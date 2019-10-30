@@ -1,5 +1,9 @@
 #!/bin/bash
 RQDVER=10.17.0
+if [ ! -x /usr/bin/curl ]; then
+    echo -e "NODE\t: apt-get install curl"
+    sudo apt-get install -y curl
+fi
 if [ -e /usr/bin/node ]; then
     NODEVER=`/usr/bin/node --version`
     if [ "$NODEVER" == "v${RQDVER}" ]; then
@@ -28,8 +32,11 @@ RC=$?; if [ "$RC" == "0" ]; then
         RC=$?; if [ "$RC" == "0" ]; then
             echo -e "NODE\t: installing node ${RQDVER} with nvm"
             nvm install ${RQDVER}
+            nvm alias default ${RQDVER}
             echo -e "NODE\t: TYPE THE FOLLOWING NOW"
-            echo -e "nvm use ${RQDVER}"
+            echo
+            echo -e "     nvm use default"
+            echo
         fi
     fi
 else 

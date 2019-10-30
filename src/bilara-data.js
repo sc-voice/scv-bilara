@@ -487,6 +487,7 @@
         }
 
         expandRange(suttaRef) {
+            suttaRef = suttaRef.split(':')[0];
             var reCname = new RegExp("[-.:0-9.].*", "u");
             var cname = suttaRef.replace(reCname, '');
             var suffix = suttaRef.replace(/[^/]*([a-z\/]*)$/iu, '$1');
@@ -525,6 +526,7 @@
                     var last = Number(rangeParts[1]);
                 }
                 if (isNaN(first) || isNaN(last)) {
+                console.log(`dbg`,{dotParts,rangeParts});
                     throw new Error(`Invalid sutta reference: ${suttaRef} [E1]`);
                 }
                 var firstItem = `${prefix}${first}`;

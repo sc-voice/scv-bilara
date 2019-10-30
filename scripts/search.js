@@ -30,6 +30,11 @@ DESCRIPTION
         output results in JSON to stdout, highlighting matches if
         output is console.
 
+    -f, --filter MODE
+        Filter segments according to mode: "pattern", "none".
+        If mode is "pattern", then only segments matching pattern
+        will be shown. If mode is "none", segments will not be filtered.
+
     -c, --color COLORNUMBER
         Display matches with colors. Default is 201.
         See https://misc.flogisoft.com/bash/tip_colors_and_formatting
@@ -71,6 +76,7 @@ var minLang = 0;
 var logLevel = false;
 var color = 201;
 var outFormat = 'human';
+var filterSegments = true;
 
 var nargs = process.argv.length;
 if (nargs < 3) {
@@ -85,6 +91,9 @@ for (var i = 0; i < nargs; i++) {
         maxDoc = Number(process.argv[++i]);
     } else if (arg === '-ll' || arg === '--logLevel') {
         logLevel = process.argv[++i];
+    } else if (arg === '-f' || arg === '--filter') {
+        var filter  = process.argv[++i];
+        filterSegments = filter === 'pattern';
     } else if (arg === '-c' || arg === '--color') {
         color = Number(process.argv[++i]);
     } else if (arg === '-oj' || arg === '--outJSON') {
@@ -281,6 +290,7 @@ found        : ${res.method} in ${refs}; maxResults:${maxDoc}
         var res = await skr.find({
             pattern,
             matchHighlight,
+            filterSegments,
             lang,
         });
         if (outFormat === 'csv') {

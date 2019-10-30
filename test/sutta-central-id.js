@@ -263,7 +263,7 @@
         var scid = new SuttaCentralId('mn1');
         should.deepEqual(scid.groups, null);
     });
-    it("TESTTESTtest(text) => text is suid ", function() {
+    it("test(text) => text is suid ", function() {
         // unsupported sutta
         should(SuttaCentralId.test('t1670b2.8')).equal(true);
 
@@ -300,6 +300,23 @@
         should(SuttaCentralId.test('red,sn22.1-20,mn1')).equal(false);
         should(SuttaCentralId.test('sn22.1-20    ,   red')).equal(false);
         should(SuttaCentralId.test('red,sn22.1-20')).equal(false);
+    });
+    it("(rangeHigh) => upper bound", ()=>{
+        should(SuttaCentralId.rangeHigh("an1.2-11:2-5.1.3-19/en/sujato"))
+            .equal("an1.11:5.1.19/en/sujato");
+        should(SuttaCentralId.rangeHigh("an1.2-11:2-5.1.3-19"))
+            .equal("an1.11:5.1.19");
+        should(SuttaCentralId.rangeHigh("an1.2-11")).equal("an1.11");
+        should(SuttaCentralId.rangeHigh("an1.2")).equal("an1.2");
+        should(SuttaCentralId.rangeHigh("mn1")).equal("mn1");
+    });
+    it("(rangeLow) => lower bound", ()=>{
+        should(SuttaCentralId.rangeLow("an1.2-11:2-5.1.3-19/en/sujato"))
+            .equal("an1.2:2.1.3/en/sujato");
+        should(SuttaCentralId.rangeLow("an1.2-11:2-5.1.3-19")).equal("an1.2:2.1.3");
+        should(SuttaCentralId.rangeLow("an1.2-11")).equal("an1.2");
+        should(SuttaCentralId.rangeLow("an1.2")).equal("an1.2");
+        should(SuttaCentralId.rangeLow("mn1")).equal("mn1");
     });
 
 })
