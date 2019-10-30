@@ -1,4 +1,6 @@
 #!/bin/bash
+DIR=`dirname $0`
+${DIR}/install-nodev10.sh
 npm install
 mkdir -p local
 cd local
