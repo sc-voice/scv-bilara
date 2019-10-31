@@ -32,17 +32,17 @@ DESCRIPTION
         output results in JSON to stdout, highlighting matches if
         output is console.
 
-    -f, --filter MODE
-        Filter segments according to mode: "pattern", "none".
-        If mode is "pattern", then only segments matching pattern
-        will be shown. If mode is "none", segments will not be filtered.
-
     -c, --color COLORNUMBER
         Display matches with colors. Default is 201.
         See https://misc.flogisoft.com/bash/tip_colors_and_formatting
 
     -d, --maxDoc NUMBER
         specify maximum number of documents to display. Default is 10.
+
+    -f, --filter MODE
+        Filter segments according to mode: "pattern", "none".
+        If mode is "pattern", then only segments matching pattern
+        will be shown. If mode is "none", segments will not be filtered.
 
     -l, --lang ISO_LANG_2
         Specify ISO 2-letter language code for primary translation language.
@@ -51,6 +51,17 @@ DESCRIPTION
     -ll, --logLevel LOGLEVEL
         Logging is normally turned off, but you can specificy a LOGLEVEL:
         debug, warn, info, error. The most useful will be "info".
+
+    -ml, --minLang NUMBER
+        Only show segments from documents having at least minLang languages. 
+        Default is 3 unless the pattern language is 'en', in which case 
+        it is 2.
+
+    -oc, --outCSV
+        Output comma-separated values.
+
+    -oj, --outJSON
+        Output JSON 
 
     -oh, --outHuman
         Output human format (default).
@@ -61,18 +72,8 @@ DESCRIPTION
     -op, --outPaths
         Output file paths of matching suttas
 
-    -oc, --outCSV
-        Output comma-separated values.
-
-    -oj, --outJSON
-        Output JSON 
-
     --outLegacy
         Output legacy format. (DEPRECATED)
-
-    -ml, --minLang NUMBER
-        Only show segments from documents having at least minLang languages. 
-        Default is 3 unless lang is 'en', in which case it is 2.
 `);
     process.exit(0);
 }
@@ -126,7 +127,6 @@ for (var i = 2; i < nargs; i++) {
     }
 }
 
-minLang = minLang || (lang === 'en' ? 2 : 3);
 pattern = pattern || `wurzel des leidens`;
 const matchBash = `\u001b[38;5;${color}m$&\u001b[0m`;
 
@@ -234,7 +234,9 @@ function scriptEditor(res, pattern) {
     var bd = await new BilaraData({
         logLevel,
     }).initialize();
+
     if (outFormat === 'legacy') {
+        minLang = minLang || (lang === 'en' ? 2 : 3);
         var skr = await new Seeker({
             lang,
             maxResults: 0,
@@ -338,6 +340,8 @@ function scriptEditor(res, pattern) {
             maxResults: maxDoc,
             logLevel,
         }).initialize();
+        var patLang = skr.patternLanguage(pattern, lang);
+        minLang = minLang || (patLang === 'en' ? 2 : 3);
         var matchHighlight = process.stdout.isTTY && outFormat!=='json'
             ? matchBash : `$&`;
         var res = await skr.find({
