@@ -55,9 +55,6 @@ DESCRIPTION
     -oh, --outHuman
         Output human format (default).
 
-    -e, --editor EDITOR
-        Launch editor on matching files and pattern: vi, vim, subl
-
     -ol, --outLines
         Output matching lines only.
 
@@ -88,7 +85,6 @@ var logLevel = false;
 var color = 201;
 var outFormat = 'human';
 var filterSegments = true;
-var editor = 'vi';
 
 var nargs = process.argv.length;
 if (nargs < 3) {
@@ -120,8 +116,6 @@ for (var i = 2; i < nargs; i++) {
         outFormat = 'legacy';
     } else if (arg === '-oc' || arg === '--outCSV') {
         outFormat = 'csv';
-    } else if (arg === '-e' || arg === '--editor') {
-        editor = process.argv[++i];
     } else if (arg === '-ml' || arg === '--minLang') {
         minLang = Number(process.argv[++i]);
         console.error(`minLang:${minLang}`);
@@ -228,9 +222,8 @@ function write_editor(res, args, editor) {
 }
 
 function scriptEditor(res, pattern) {
-    if (editor === 'subl') {
-        write_editor(res, '', editor);
-    } 
+    write_editor(res, '', 'subl');
+
     var vipat = res.resultPattern
         .replace(/\\b/, '\\<')
         .replace(/[|()]/g,'\\$&');
