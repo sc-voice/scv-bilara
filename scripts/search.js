@@ -8,6 +8,7 @@ const fs = require('fs');
 const path = require('path');
 const {
     BilaraData,
+    BilaraPath,
     FuzzyWordSet,
     Pali,
     Seeker,
@@ -15,7 +16,8 @@ const {
     SuttaCentralId,
 
 } = require('../index');
-const BILARA_DATA = path.join(__dirname, '../local/bilara-data');
+const LOCAL = path.join(__dirname, '../local');
+const BILARA_DATA = path.join(LOCAL, '/bilara-data');
 
 function help() {
     console.log(`
@@ -53,6 +55,9 @@ DESCRIPTION
     -oh, --outHuman
         Output human format (default).
 
+    -e, --editor EDITOR
+        Launch editor on matching files and pattern: vi, vim, subl
+
     -ol, --outLines
         Output matching lines only.
 
@@ -83,6 +88,7 @@ var logLevel = false;
 var color = 201;
 var outFormat = 'human';
 var filterSegments = true;
+var editor = 'vi';
 
 var nargs = process.argv.length;
 if (nargs < 3) {
@@ -114,6 +120,8 @@ for (var i = 2; i < nargs; i++) {
         outFormat = 'legacy';
     } else if (arg === '-oc' || arg === '--outCSV') {
         outFormat = 'csv';
+    } else if (arg === '-e' || arg === '--editor') {
+        editor = process.argv[++i];
     } else if (arg === '-ml' || arg === '--minLang') {
         minLang = Number(process.argv[++i]);
         console.error(`minLang:${minLang}`);
@@ -204,6 +212,29 @@ function outLines(res, pattern) {
             console.log(line);
         });
     });
+}
+
+function write_editor(res, args, editor) {
+    var searchPaths = res.bilaraPaths.filter(p => 
+        BilaraPath.pathParts(p).lang === res.searchLang
+    )
+    .map(p => path.join(BILARA_DATA, p));
+    script = [
+        args,
+        ...searchPaths,
+    ].join(' ');
+    var epath = path.join(LOCAL, `bilara_edit.${editor}`);
+    fs.writeFileSync(epath, script);
+}
+
+function scriptEditor(res, pattern) {
+    if (editor === 'subl') {
+        write_editor(res, '', editor);
+    } 
+    var vipat = res.resultPattern
+        .replace(/\\b/, '\\<')
+        .replace(/[|()]/g,'\\$&');
+    write_editor(res, `'+/${vipat}'`, 'vi');
 }
 
 (async function() { try {
@@ -334,5 +365,6 @@ function outLines(res, pattern) {
         } else {
             outHuman(res, pattern);
         }
+        scriptEditor(res, pattern);
     }
 } catch(e) { logger.warn(e.stack); }})();
