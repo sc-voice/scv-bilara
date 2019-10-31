@@ -22,7 +22,7 @@ const BILARA_DATA = path.join(LOCAL, '/bilara-data');
 function help() {
     console.log(`
 NAME
-        search.js - seach bilara-data root text and translations
+        search.js - search bilara-data root text and translations
 
 SYNOPSIS
         search.js [OPTIONS] PATTERN_KEYWORDS
