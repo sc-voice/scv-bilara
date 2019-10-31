@@ -53,13 +53,19 @@ DESCRIPTION
     -oh, --outHuman
         Output human format (default).
 
+    -ol, --outLines
+        Output matching lines only.
+
+    -op, --outPaths
+        Output file paths of matching suttas
+
     -oc, --outCSV
         Output comma-separated values.
 
     -oj, --outJSON
         Output JSON 
 
-    -ol, --outLegacy
+    --outLegacy
         Output legacy format. (DEPRECATED)
 
     -ml, --minLang NUMBER
@@ -82,7 +88,7 @@ var nargs = process.argv.length;
 if (nargs < 3) {
     help();
 }
-for (var i = 0; i < nargs; i++) {
+for (var i = 2; i < nargs; i++) {
     var arg = process.argv[i];
     if (i<2) { continue; }
     if (arg === '-?' || arg === '--help') {
@@ -98,20 +104,26 @@ for (var i = 0; i < nargs; i++) {
         color = Number(process.argv[++i]);
     } else if (arg === '-oj' || arg === '--outJSON') {
         outFormat = 'json';
+    } else if (arg === '-ol' || arg === '--outLines') {
+        outFormat = 'lines';
+    } else if (arg === '-op' || arg === '--outPaths') {
+        outFormat = 'paths';
     } else if (arg === '-oh' || arg === '--outHuman') {
         outFormat = 'human';
-    } else if (arg === '-ol' || arg === '--outLegacy') {
+    } else if (arg === '--outLegacy') {
         outFormat = 'legacy';
     } else if (arg === '-oc' || arg === '--outCSV') {
         outFormat = 'csv';
     } else if (arg === '-ml' || arg === '--minLang') {
         minLang = Number(process.argv[++i]);
+        console.error(`minLang:${minLang}`);
     } else if (arg === '-l' || arg === '--lang') {
         lang = process.argv[++i];
     } else {
         pattern = pattern ? `${pattern} ${arg}` : arg;
     }
 }
+
 minLang = minLang || (lang === 'en' ? 2 : 3);
 pattern = pattern || `wurzel des leidens`;
 const matchBash = `\u001b[38;5;${color}m$&\u001b[0m`;
@@ -154,7 +166,7 @@ function outHuman(res, pattern) {
         mlDocs,
     } = res;
     var refs = res.suttaRefs.map(s=>s.split('/')[0]).join(',');
-    console.log(
+    console.error(
 `pattern      : "${pattern}" (${res.resultPattern})
 languages    : translation:${lang} search:${res.searchLang} minLang:${res.minLang}
 date         : ${new Date().toLocaleString()}
@@ -166,13 +178,30 @@ found        : ${res.method} in ${refs}; maxResults:${maxDoc}
         mld.segments().forEach((seg,i) => {
             var scid = seg.scid;
             var sep = '-------------------------------';
-            i===0 && console.log(
+            i===0 && console.error(
                 `${sep} ${suid} ${sep}`);
             Object.keys(seg).forEach(k => {
                 var key = `    ${k}`;
                 key = key.substring(key.length-4);
                 console.log(`${key}: ${seg[k]}`);
             });
+        });
+    });
+}
+
+function outPaths(res, pattern) {
+    res.bilaraPaths.forEach(p => {
+        console.log(path.join(BILARA_DATA, p));
+    });
+}
+
+function outLines(res, pattern) {
+    res.mlDocs.forEach(mld => {
+        var suid = mld.suid;
+        mld.segments().forEach((seg,i) => {
+            var scid = seg.scid;
+            var line = `${scid}: ${seg[res.searchLang]}`;
+            console.log(line);
         });
     });
 }
@@ -291,12 +320,17 @@ found        : ${res.method} in ${refs}; maxResults:${maxDoc}
             pattern,
             matchHighlight,
             filterSegments,
+            minLang,
             lang,
         });
         if (outFormat === 'csv') {
-            outCSV(res);
+            outCSV(res, pattern);
         } else if (outFormat === 'json') {
-            outJSON(res);
+            outJSON(res, pattern);
+        } else if (outFormat === 'paths') {
+            outPaths(res, pattern);
+        } else if (outFormat === 'lines') {
+            outLines(res, pattern);
         } else {
             outHuman(res, pattern);
         }

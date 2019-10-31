@@ -113,7 +113,7 @@
             }, this.segMap[scid]));
         }
 
-        filterSegments(pattern, languages) {
+        filterSegments(pattern, languages=this.languages()) {
             var scids = this.scids();
             var rex = pattern instanceof RegExp 
                 ? rex : new RegExp(pattern, "ui");

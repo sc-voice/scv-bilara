@@ -319,10 +319,6 @@
             });
         }
 
-        findSuttas(...args) { // DEPRECATED
-            return this.find.apply(this, args);
-        }
-
         findArgs(args) {
             var {
                 pattern,
@@ -419,21 +415,23 @@
                     }
 
                     var mlDocs = [];
+                    var searchLang = that.patternLanguage(pattern, lang);
                     var nResults = Math.min(maxResults, suttaRefs.length);
+                    var bilaraPaths = [];
                     for (var i = 0; i < nResults; i++) {
                         var mld = await bd.loadMLDoc({
                             suid: suttaRefs[i],
                             languages,
                         });
+                        bilaraPaths = [...bilaraPaths, ...mld.bilaraPaths];
                         if (filterSegments) {
-                            mld.filterSegments(resultPattern, languages);
+                            mld.filterSegments(resultPattern, [searchLang]);
                             mld.highlightMatch(resultPattern, matchHighlight);
                         }
                         if (mld.bilaraPaths.length >= minLang) {
                             mlDocs.push(mld);
                         }
                     }
-                    var searchLang = that.patternLanguage(pattern, lang);
                     resolve({
                         lang,
                         searchLang,
@@ -441,8 +439,8 @@
                         method,
                         minLang,
                         resultPattern,
+                        bilaraPaths,
                         suttaRefs,
-
                         mlDocs,
                     });
                 } catch(e) {reject(e);} })();
