@@ -37,7 +37,7 @@ if (nargs < 5) {
 var lang = process.argv[2];
 var translator = process.argv[3];
 var suid = process.argv[4];
-var branch = `${lang}_${translator}_${suid}`;
+var branch = `${suid}_${lang}_${translator}`;
 logLevel = false;
 
 (async function() { try {

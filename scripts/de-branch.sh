@@ -22,7 +22,7 @@ HELP
     exit 0
 fi
 
-BRANCH=de_sabbamitta_${SUID}
+BRANCH=${SUID}_de_sabbamitta
 git checkout $BRANCH >& /dev/null
 RC=$?; if [ "$RC" == "0" ]; then
     echo -e "DEBR\t: ${BRANCH} (OK)"
