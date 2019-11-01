@@ -120,7 +120,7 @@
             });
         } 
         
-        commit(comment='cosmetic changes', add=true) {
+        commit(comment='cosmetic changes', add=true, push=false) {
             var that = this;
             var {
                 repoDir,
@@ -135,6 +135,9 @@
                     add && await that.add();
                     var repoPath = that.validateRepoPath();
                     var cmd = `git commit -am "${comment}"`;
+                    if (push) {
+                        cmd += ` && git push`;
+                    }
                     that.log(`${repoDir}: ${cmd}`);
                     var execOpts = {
                         cwd: repoPath,

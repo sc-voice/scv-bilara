@@ -82,7 +82,7 @@ logLevel = false;
         logger.info(`adding ${dstFullPath}`);
         await git.add(dstPath);
         logger.info(`committing ${dstFullPath}`);
-        await git.commit(`added ${branch}`,false);
+        await git.commit(`added ${branch}`,false, true);
     } else {
         throw new Error('Could not locate ${suid}');
     }
