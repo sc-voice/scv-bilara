@@ -22,6 +22,25 @@ The installation script has been known to fail if it cannot install
 NodeJS v10.17.0. If you encounter this, install NodeJS v10.17.0 manually
 and repeat the installation above.
 
+##### bilara-data
+By default, `scv-bilara` works with the `sc-voice/bilara-data` fork of 
+[SuttaCentral bilara-data](https://github.com/suttacentral/bilara-data). 
+To use `scv-bilara` with any other fork of `bilara-data`, simply clone
+the desired repository into the `local` subdirectory before using any scripts. Notice that
+any existing bilara-data must be removed.
+
+```
+rm -rf local/bilara-data
+git clone https://github.com/suttacentral/bilara-data local/bilara-data
+```
+
+For those who prefer Git over SSH:
+
+```
+rm -rf local/bilara-data
+git clone git@github.com:suttacentral/bilara-data local/bilara-data
+```
+
 ### Scripts
 
 #### search.js
