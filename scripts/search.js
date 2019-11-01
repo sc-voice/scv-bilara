@@ -166,14 +166,20 @@ function outJSON(res) {
 function outHuman(res, pattern) {
     var {
         mlDocs,
+        suttaRefs,
+        method,
     } = res;
-    var refs = res.suttaRefs.map(s=>s.split('/')[0]).join(',');
+    var refs = res.suttaRefs.map(s=>s.split('/')[0])
+        .sort(SuttaCentralId.compareLow)
+        .join(',');
+    var nRefs = res.suttaRefs.length;
+    var nDocs = mlDocs.length;
     console.error(
 `pattern      : "${pattern}" (${res.resultPattern})
 languages    : translation:${lang} search:${res.searchLang} minLang:${res.minLang}
 date         : ${new Date().toLocaleString()}
 output       : ${outFormat} color:${color}
-found        : ${res.method} in ${refs}; maxResults:${maxDoc}
+found        : ${method} in ${nDocs}/${nRefs} documents ${refs}; maxResults:${maxDoc}
 `);
     mlDocs.forEach(mld => {
         var suid = mld.suid;

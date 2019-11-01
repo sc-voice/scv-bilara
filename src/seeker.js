@@ -416,9 +416,8 @@
 
                     var mlDocs = [];
                     var searchLang = that.patternLanguage(pattern, lang);
-                    var nResults = Math.min(maxResults, suttaRefs.length);
                     var bilaraPaths = [];
-                    for (var i = 0; i < nResults; i++) {
+                    for (var i = 0; i < suttaRefs.length; i++) {
                         var mld = await bd.loadMLDoc({
                             suid: suttaRefs[i],
                             languages,
@@ -429,6 +428,9 @@
                             mld.highlightMatch(resultPattern, matchHighlight);
                         }
                         if (mld.bilaraPaths.length >= minLang) {
+                            if (mlDocs.length >= maxResults) {
+                                break;
+                            }
                             mlDocs.push(mld);
                         }
                     }
