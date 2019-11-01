@@ -29,7 +29,7 @@ SYNOPSIS
 
 DESCRIPTION
         Searches bilara-data for sutta and converts it to DE
-        translation file format with wrapped lines
+        translation file format 
 `);
     process.exit(0);
 }
