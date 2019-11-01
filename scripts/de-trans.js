@@ -55,16 +55,19 @@ function wrap(line, len = 65) {
         if (a.len + w.length + 1 > len) {
             a.text += `\n${w}`;
             a.len = w.length;
-        } else {
-            a.text += `${w} `;
+        } else if (a.len) {
+            a.text += ` ${w}`;
             a.len += w.length + 1;
+        } else {
+            a.text += w;
+            a.len += w.length;
         }
         return a;
     }, {
         text: "",
         len: 0,
     });
-    return a.text.trim();
+    return a.text;
 }
 
 (async function() { try {
@@ -98,7 +101,7 @@ function wrap(line, len = 65) {
                         if (/^[0-9]+ *$/.test(seg.en)) {
                             console.log(`:title:${seg.en}`);
                         } else {
-                            console.log(wrap(seg.en));
+                            console.log(wrap(seg.en, 100000));
                         }
                         break;
                 }
