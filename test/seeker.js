@@ -352,7 +352,7 @@
                 method: 'keywords',
                 keywordsFound: {
                     hausherr: 5,
-                    anathapindika: 10,
+                    anathapindika: 11,
                 },
                 lines: [
 `${de_sab}sn/sn10/sn10.8_translation-de-sabbamitta.json:4`,

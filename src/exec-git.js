@@ -31,7 +31,7 @@
             return repoPath;
         }
 
-        onExec(resolve, reject) {
+        onExec(resolve, reject, resData) {
             var that = this;
             return (error, stdout, stderr) => {
                 if (error) {
@@ -39,10 +39,35 @@
                     reject(error);
                     return;
                 } 
-                stdout && that.log(`stdout\n${stdout}`);
-                stderr && that.log(`stderr\n${stderr}`);
-                resolve(that);
+                if (resData === 'stdout') {
+                    resolve(stdout);
+                } else {
+                    stdout && that.log(`stdout\n${stdout}`);
+                    stderr && that.log(`stderr\n${stderr}`);
+                    resolve(that);
+                }
             }
+        }
+
+        ls_remote(origin=true) {
+            var that = this;
+            var {
+                repoDir,
+            } = this;
+            return new Promise((resolve, reject) => {
+                (async function() { try {
+                    var repoPath = that.validateRepoPath();
+                    var cmd = origin
+                        ? `git ls-remote ${that.repo}` 
+                        : `git ls-remote`;
+                    that.log(`${repoDir}: ${cmd}`);
+                    var execOpts = {
+                        cwd: repoPath,
+                    };
+                    exec(cmd, execOpts, 
+                        that.onExec(resolve, reject, 'stdout'));
+                } catch(e) {reject(e);} })();
+            });
         }
 
         sync(repo=this.repo, repoPath=this.repoPath) {

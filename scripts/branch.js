@@ -38,21 +38,27 @@ var lang = process.argv[2];
 var translator = process.argv[3];
 var suid = process.argv[4];
 var branch = `${lang}_${translator}_${suid}`;
+logLevel = false;
 
 (async function() { try {
     var bd = await new BilaraData({
         logLevel,
     }).initialize();
     await bd.sync();
-    var git = new ExecGit();
+    var git = new ExecGit({
+        logLevel,
+    });
     var suttaInfo =  bd.suttaInfo(suid);
-    console.log(`dbg`,{suttaInfo});
     var srcInfo = suttaInfo.filter(i => i.lang === 'en')[0];
     var dstInfo = suttaInfo.filter(i => i.lang === lang)[0];
-    if (dstInfo) {
-        logger.info(`found:${suttaInfo.bilaraPath}`);
+    var remotes = await git.ls_remote();
+    var remoteBranch = remotes.split('\n')
+        .filter(r => r.indexOf(branch) >= 0)[0];
+    console.log(`Remote branch ${branch}`, 
+        remoteBranch ? "found" : "not found");
+    if (remoteBranch) {
         await git.branch(branch, false);
-    } else if (srcInfo) {
+    } else if (srcInfo) { // translation does not exist. 
         var srcPath = srcInfo.bilaraPath;
         logger.info(`source: ${srcPath}`);
         var dstPath = [
