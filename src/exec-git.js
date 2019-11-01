@@ -119,7 +119,29 @@
             });
         } 
 
-        add() {
+        branch(branch, add=false) {
+            var that = this;
+            var {
+                repoDir,
+            } = this;
+            return new Promise((resolve, reject) => {
+                (async function() { try {
+                    var repoPath = that.validateRepoPath();
+                    var cmd = add 
+                        ? `git checkout -b "${branch}"`
+                        : `git checkout "${branch}"`;
+                    cmd += `; git push -u origin ${branch}`;
+                    that.log(`${repoDir}: ${cmd}`);
+                    that.log(`BRANCH CREATION IN PROGRESS (WAIT...)`);
+                    var execOpts = {
+                        cwd: repoPath,
+                    };
+                    exec(cmd, execOpts, that.onExec(resolve, reject));
+                } catch(e) {reject(e);} })();
+            });
+        } 
+
+        add(newFile) {
             var that = this;
             var {
                 repoDir,
@@ -132,7 +154,9 @@
                         return;
                     }
                     var repoPath = that.validateRepoPath();
-                    var cmd = `git add .`;
+                    var cmd = newFile 
+                        ? `git add ${newFile}` 
+                        : `git add .`;
                     that.log(`${repoDir}: ${cmd}`);
                     var execOpts = {
                         cwd: repoPath,
