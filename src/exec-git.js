@@ -23,6 +23,8 @@
             logger.logInstance(this, opts);
         }
 
+        static get DEFAULT_REPO() { return BILARA_DATA_GIT; }
+
         validateRepoPath(repoPath = this.repoPath) {
             if (!fs.existsSync(path.join(repoPath,'.git'))) {
                 throw new Error(
@@ -41,6 +43,11 @@
                 } 
                 if (resData === 'stdout') {
                     resolve(stdout);
+                } else if (resData === 'std') {
+                    resolve({
+                        stdout,
+                        stderr,
+                    });
                 } else {
                     stdout && that.log(`stdout\n${stdout}`);
                     stderr && that.log(`stderr\n${stderr}`);
@@ -147,7 +154,82 @@
             });
         } 
 
-        branch(branch, add=false) {
+        branch(branch, opts=false) {
+            var that = this;
+            if (typeof opts === 'boolean') {
+                opts = { add: opts };
+            }
+            var {
+                add,
+                list,
+                deleteMerged,
+            } = opts;
+            var {
+                repoDir,
+            } = this;
+            return new Promise((resolve, reject) => {
+                (async function() { try {
+                    var repoPath = that.validateRepoPath();
+                    var execOpts = {
+                        cwd: repoPath,
+                    };
+                    var resData = 'std';
+                    if (list) {
+                        var cmd = `git branch`;
+                    } else if (add) {
+                        var cmd = [
+                            `git checkout -b "${branch}"`,
+                            `git push -u origin ${branch}`,
+                        ].join(';');
+                        that.log(`${repoDir}: ${cmd}`);
+                        that.log(`BRANCH CREATION IN PROGRESS (WAIT...)`);
+                    } else if (deleteMerged) {
+                        that.log(`DELETING MERGED BRANCH ${branch}`);
+                        var cmd = [
+                            `git branch -d ${branch}`,
+                            `git push origin --delete ${branch}`,
+                        ].join(' && ');
+                    } else {
+                        var cmd = `git checkout "${branch}"`;
+                        that.log(`${repoDir}: ${cmd}`);
+                    }
+                    exec(cmd, execOpts, that.onExec(resolve, reject, resData));
+                } catch(e) {reject(e);} })();
+            });
+        } 
+
+        diff(branch, opts={}) {
+            var that = this;
+            if (typeof opts === 'string') {
+                opts = {args: opts};
+            }
+            var {
+                args,
+                nameOnly,
+            } = opts;
+            var {
+                repoDir,
+            } = this;
+            return new Promise((resolve, reject) => {
+                (async function() { try {
+                    var repoPath = that.validateRepoPath();
+                    if (args) {
+                        var cmd = `git diff ${args} ${branch}` ;
+                    } else if (nameOnly) {
+                        var cmd = `git diff --name-only ${branch}` ;
+                    } else {
+                        var cmd = `git diff ${branch}` ;
+                    }
+                    that.log(`${repoDir}: ${cmd}`);
+                    var execOpts = {
+                        cwd: repoPath,
+                    };
+                    exec(cmd, execOpts, that.onExec(resolve, reject, 'std'));
+                } catch(e) {reject(e);} })();
+            });
+        } 
+
+        merge(branch, opts='') {
             var that = this;
             var {
                 repoDir,
@@ -155,12 +237,8 @@
             return new Promise((resolve, reject) => {
                 (async function() { try {
                     var repoPath = that.validateRepoPath();
-                    var cmd = add 
-                        ? `git checkout -b "${branch}"`
-                        : `git checkout "${branch}"`;
-                    cmd += `; git push -u origin ${branch}`;
+                    var cmd = `git merge ${opts} ${branch}` ;
                     that.log(`${repoDir}: ${cmd}`);
-                    that.log(`BRANCH CREATION IN PROGRESS (WAIT...)`);
                     var execOpts = {
                         cwd: repoPath,
                     };

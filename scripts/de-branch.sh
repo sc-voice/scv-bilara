@@ -30,5 +30,5 @@ RC=$?; if [ "$RC" == "0" ]; then
 fi
 
 echo -e "DEBR\t: Creating  ${BRANCH}..."
-$DIR/branch.js de sabbamitta $SUID
+$DIR/branch.js $SUID de sabbamitta 
 

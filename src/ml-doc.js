@@ -136,10 +136,13 @@
                     var match = 0 <= cmpL && cmpH <= 0;
                 } else {
                     var match = languages.reduce((a,l) => {
-                        if (!a) {
+                        if (!a && seg[l]) {
                             if (rex.test(seg[l])) {
+                                return true;
+                            } else {
                                 return rex.test(unicode.romanize(seg[l]));
                             }
+
                         }
                         return a;
                     }, false);

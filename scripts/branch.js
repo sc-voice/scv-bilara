@@ -20,8 +20,8 @@ NAME
     branch.js - create new git branch for editing a sutta
 
 SYNOPSIS
-    branch.js [OPTIONS] LANG TRANSLATOR SUID
-        Create bilara-data git branch LANG_TRANSLATOR_SUID and
+    branch.js [OPTIONS] SUID LANG TRANSLATOR
+        Create bilara-data git branch SUID_LANG_TRANSLATOR and
         copy the en/sujato version of SUID into the appropriate
         LANG/TRANSLATOR subdirectory.
 `);
@@ -34,9 +34,9 @@ var nargs = process.argv.length;
 if (nargs < 5) {
     help();
 }
-var lang = process.argv[2];
-var translator = process.argv[3];
-var suid = process.argv[4];
+var suid = process.argv[2];
+var lang = process.argv[3];
+var translator = process.argv[4];
 var branch = `${suid}_${lang}_${translator}`;
 logLevel = false;
 
@@ -70,6 +70,7 @@ logLevel = false;
         .replace('en-sujato', `${lang}-${translator}`);
         logger.info(`destination: ${dstPath}`);
         logger.info(`creating branch ${branch}`);
+        await git.branch('master');
         await git.branch(branch, true);
         var data = fs.readFileSync(path.join(BILARA_DATA, srcPath));
         var dstDir = path.dirname(dstPath);

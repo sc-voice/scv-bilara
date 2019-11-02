@@ -141,6 +141,9 @@
             if (!this.initialized) {
                 throw new Error('Expected preceding call to initialize()');
             }
+            if (suid == null) {
+                throw new Error('suid is required');
+            }
             var info = this.suttaMap[suid];
             if (!info) {
                 var parts = suid.split('/');

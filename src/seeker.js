@@ -41,6 +41,7 @@
                 `\u001b[38;5;${this.matchColor}m$&\u001b[0m`;
             this.matchWordEnd = opts.matchWordEnd;
             this.maxResults = opts.maxResults == null ? 5 : opts.maxResults;
+            this.maxDoc = opts.maxDoc == null ? 5 : opts.maxDoc;
             this.minLang = opts.minLang || 2;
         }
 
@@ -326,7 +327,8 @@
                 language, // DEPRECATED
                 languages,
                 minLang,    // minimum number of languages
-                maxResults,
+                maxResults, // maximum number of grep files
+                maxDoc,     // maximum number of returned documents
                 matchHighlight,
                 sortLines,
                 filterSegments,
@@ -348,17 +350,19 @@
             lang = lang || language || 'en';
             languages = languages || this.languages || [];
             (lang && languages.indexOf(lang)<0) && languages.push(lang);
-            var maxResults = Number(
+            maxResults = Number(
                 maxResults==null ? this.maxResults : maxResults);
             if (isNaN(maxResults)) {
                 throw new Error("maxResults must be a number");
             }
+            maxDoc = Number(maxDoc==null ? this.maxDoc : maxDoc);
             matchHighlight = matchHighlight || this.matchHighlight;
             return {
                 pattern,
                 filterSegments,
                 languages,
                 maxResults,
+                maxDoc,
                 minLang,
                 matchHighlight,
                 sortLines,
@@ -374,6 +378,7 @@
                 languages,
                 sortLines,
                 maxResults,
+                maxDoc,
                 matchHighlight,
                 filterSegments,
             } = this.findArgs(args);
@@ -428,7 +433,7 @@
                             mld.highlightMatch(resultPattern, matchHighlight);
                         }
                         if (mld.bilaraPaths.length >= minLang) {
-                            if (mlDocs.length >= maxResults) {
+                            if (mlDocs.length >= maxDoc) {
                                 break;
                             }
                             mlDocs.push(mld);
@@ -438,6 +443,7 @@
                         lang,
                         searchLang,
                         maxResults,
+                        maxDoc,
                         method,
                         minLang,
                         resultPattern,

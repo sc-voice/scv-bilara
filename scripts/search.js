@@ -57,6 +57,9 @@ DESCRIPTION
         Default is 3 unless the pattern language is 'en', in which case 
         it is 2.
 
+    -mr, --maxResults NUMBER
+        Maximum number of grep result files to work with (default 1000).
+
     -oc, --outCSV
         Output comma-separated values.
 
@@ -81,6 +84,7 @@ DESCRIPTION
 var pattern;
 var lang = 'de';
 var maxDoc = 10;
+var maxResults = 1000;
 var minLang = 0;
 var logLevel = false;
 var color = 201;
@@ -117,6 +121,8 @@ for (var i = 2; i < nargs; i++) {
         outFormat = 'legacy';
     } else if (arg === '-oc' || arg === '--outCSV') {
         outFormat = 'csv';
+    } else if (arg === '-mr' || arg === '--maxResults') {
+        maxResults = Number(process.argv[++i]);
     } else if (arg === '-ml' || arg === '--minLang') {
         minLang = Number(process.argv[++i]);
         console.error(`minLang:${minLang}`);
@@ -179,15 +185,15 @@ function outHuman(res, pattern) {
 languages    : translation:${lang} search:${res.searchLang} minLang:${res.minLang}
 date         : ${new Date().toLocaleString()}
 output       : ${outFormat} color:${color}
-found        : ${method} in ${nDocs}/${nRefs} documents ${refs}; maxResults:${maxDoc}
+found        : ${method} in ${nDocs}/${nRefs} documents ${refs}; maxDoc:${maxDoc} maxResults:${maxResults}
 `);
-    mlDocs.forEach(mld => {
+    mlDocs.forEach((mld,im) => {
         var suid = mld.suid;
         mld.segments().forEach((seg,i) => {
             var scid = seg.scid;
             var sep = '-------------------------------';
             i===0 && console.error(
-                `${sep} ${suid} ${sep}`);
+                `${sep} [${im+1}] ${suid} ${sep}`);
             Object.keys(seg).forEach(k => {
                 var key = `    ${k}`;
                 key = key.substring(key.length-4);
@@ -343,7 +349,8 @@ function scriptEditor(res, pattern) {
     } else {
         var skr = await new Seeker({
             matchColor: color,
-            maxResults: maxDoc,
+            maxResults,
+            maxDoc,
             logLevel,
         }).initialize();
         var patLang = skr.patternLanguage(pattern, lang);
