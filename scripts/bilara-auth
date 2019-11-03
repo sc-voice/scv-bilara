@@ -1,0 +1,21 @@
+#!/bin/bash
+DIR=`dirname $0`
+pushd $DIR/../local/bilara-data
+if [ "$1" == "ssh" ]; then
+    git config remote.origin.url git@github.com:sc-voice/bilara-data
+elif [ "$1" == "https" ]; then
+    git config remote.origin.url https://github.com/sc-voice/bilara-data
+else 
+    cat <<HELP
+NAME
+    bilara-auth - set github authentication mode
+
+SYNOPSIS
+    bilara-auth https
+    bilara-auth ssh
+
+DESCRIPTION
+        Configure the bilara-data repository for SSH or HTTPS access
+HELP
+fi
+git config --list | grep origin.url
