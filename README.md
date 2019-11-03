@@ -43,7 +43,7 @@ git clone git@github.com:suttacentral/bilara-data local/bilara-data
 
 ### Scripts
 
-#### search.js
+#### search
 Scriptable linux command-line utility that 
 searches for suttas by id, phrase or keyword in multiple languages
 (e.g., pli, en, de). Output result formats include: human-readable, 
@@ -57,13 +57,37 @@ CSV, or JSON. Search patterns can be:
 Example:
 
 ```bash
-./scripts/search.js nandi dukk
+./scripts/search nandi dukk
 ```
 
 <a href="https://raw.githubusercontent.com/sc-voice/scv-bilara/master/src/assets/search-nandi.png">
 <img src="https://raw.githubusercontent.com/sc-voice/scv-bilara/master/src/assets/search-nandi.png" height=400px></a>
 
-For more information, `./scripts/search.js --help`.
+For more information, `./scripts/search --help`.
+
+#### bilara-auth
+Scv-bilara normally clones `sc-voice/bilara-data` into `local/bilara-data` 
+using HTTPS authentication. This may become annoying to enter username/password
+for every scv-bilara script that authenticates with Github. You can also use
+[Github SSH authentication](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
+to painlessly avoid username/password entry. To use SSH authentication,
+you'll need to use `bilara-auth ssh`. We recommend SSH authentication
+unless you like typing your username/password a lot.
+And if you choose SSH authentication, we recommend using an ssh-agent
+so that you don't have to keep typing in the passphrase:
+
+```
+eval `ssh-agent -s`; ssh-add ~/.ssh/id_rsa
+```
+
+#### branch SUTTA LANG TRANSLATOR
+Create a Github bilara-data branch for working on an unpublished translation.
+
+For more information, './scripts/bilara-auth --help'
+
+#### publish SUTTA
+Merge the contents of the unpublished SUTTA branch into `master`. 
+Upon success, delete the merged SUTTA branch, which will be empty of changes.
 
 ### API
 The `scv-bilara` library has Javascript classes for
@@ -76,7 +100,7 @@ The `scv-bilara` library has Javascript classes for
 * **FuzzyWordSet** Determines set membership by prefix matching
 * **MLDoc** Multilingual segmented document
 * **Pali** FuzzyWordSet that recognizes Pali words
-* **Seeker** Search engine. See `scripts/search.js`
+* **Seeker** Search engine. See `scripts/search`
 * **SegDoc** Single-language segmented document
 * **SuttaCentralId** utility for matching and parsing SuttaCentral Ids
 * **Unicode** multilingual helper
