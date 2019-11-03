@@ -30,11 +30,11 @@ SYNOPSIS
 
 var logLevel = false;
 
+var suid = process.argv[2];
 var nargs = process.argv.length;
-if (nargs < 5) {
+if (nargs < 5 && suid !== 'master') {
     help();
 }
-var suid = process.argv[2];
 var lang = process.argv[3];
 var translator = process.argv[4];
 var branch = `${suid}_${lang}_${translator}`;
@@ -51,10 +51,18 @@ class Branch {
             var bd = await new BilaraData({
                 logLevel,
             }).initialize();
-            await bd.sync();
             var git = new ExecGit({
                 logLevel:'info',
             });
+            if (fs.existsSync(git.repoPath)) {
+                await git.branch('master', false);
+            }
+            await bd.sync();
+            if (suid === 'master') {
+                await git.branch('master');
+                that.log(`You are now on master`);
+                process.exit(0);
+            }
             var suttaInfo =  bd.suttaInfo(suid);
             var srcInfo = suttaInfo.filter(i => i.lang === 'en')[0];
             var dstInfo = suttaInfo.filter(i => i.lang === lang)[0];

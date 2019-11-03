@@ -85,7 +85,7 @@
             return new Promise((resolve, reject) => {
                 (async function() { try {
                     if (fs.existsSync(repoPath)) {
-                        var cmd = `cd ${repoPath}; git pull`;
+                        var cmd = `cd ${repoPath} && git fetch --all && git merge`;
                     } else {
                         var repoDir = path.basename(repoPath);
                         var cmd = `git clone ${repo} ${repoDir}`;

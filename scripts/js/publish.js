@@ -109,7 +109,7 @@ class Publish {
                 });
                 process.exit(0);
             }
-            diffFiles = diff.stdout.trim().split('\n');
+            var diffFiles = diff.stdout.trim().split('\n');
             if (diffFiles.length > 1) {
                 logger.error(`Manual merge required for:\n${diff.stdout}`);
                 process.exit(1);
