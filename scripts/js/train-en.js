@@ -7,7 +7,7 @@ const {
     SegDoc,
     ExecGit,
 
-} = require('../index');
+} = require('../../index');
 const {
     js,
     logger,
@@ -16,7 +16,7 @@ const {
 
 
 (async function() { try {
-    logger.info('train-en.js initializing...');
+    logger.info('train-en initializing...');
 
     var bd = await new BilaraData({
         logLevel: false,
@@ -33,7 +33,7 @@ const {
     var foreignWords = {};
     langs.forEach(lang => {
         var wordsPath = path.join(__dirname, 
-            `../src/assets/words-${lang}.txt`);
+            `../../src/assets/words-${lang}.txt`);
         var wordList = fs.readFileSync(wordsPath).toString().split('\n');
         wordList.forEach(w => foreignWords[w] = false);
         logger.info(`${lang} words:${Object.keys(foreignWords).length}`);
@@ -43,7 +43,7 @@ const {
     var langWords = {};
     langs.forEach(lang => {
         var wordsPath = path.join(__dirname, 
-            `../src/assets/words-${lang}.txt`);
+            `../../src/assets/words-${lang}.txt`);
         var wordList = fs.readFileSync(wordsPath).toString().split('\n');
         wordList.forEach(w => langWords[w] = true);
         logger.info(`${lang} words:${Object.keys(langWords).length}`);
@@ -59,7 +59,7 @@ const {
         `iterations:${iterations}`,
         `fws:${JSON.stringify(fws).length}C`,
     ].join(' '));
-    var enPath = path.join(__dirname, '../src/assets/fws-en.json');
+    var enPath = path.join(__dirname, '../../src/assets/fws-en.json');
     fs.writeFileSync(enPath, JSON.stringify(fws, null, 1));
     logger.info(`training completed: ${JSON.stringify(fws).length}C`);
 } catch(e) {

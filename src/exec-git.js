@@ -186,6 +186,7 @@
                     } else if (deleteMerged) {
                         that.log(`DELETING MERGED BRANCH ${branch}`);
                         var cmd = [
+                            `git push`,
                             `git branch -d ${branch}`,
                             `git push origin --delete ${branch}`,
                         ].join(' && ');
@@ -231,13 +232,25 @@
 
         merge(branch, opts='') {
             var that = this;
+            if (typeof opts === 'string') {
+                opts = { args: opts, };
+            }
+            var {
+                args,
+                push,
+                message,
+            } = opts;
+            args = args || '';
+            (message) && (args += ` -m "${message}"`);
             var {
                 repoDir,
             } = this;
             return new Promise((resolve, reject) => {
                 (async function() { try {
                     var repoPath = that.validateRepoPath();
-                    var cmd = `git merge ${opts} ${branch}` ;
+                    var cmd = `git merge ${args} ${branch}` ;
+                    push && (cmd += ` && git push`);
+
                     that.log(`${repoDir}: ${cmd}`);
                     var execOpts = {
                         cwd: repoPath,

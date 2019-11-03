@@ -1,4 +1,4 @@
 #!/bin/bash
-./scripts/de-words.js
+./scripts/js/de-words
 sort src/assets/words-de.txt > /tmp/words-de.txt
 mv /tmp/words-de.txt src/assets/words-de.txt

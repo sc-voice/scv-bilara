@@ -15,17 +15,17 @@ const {
     SegDoc,
     SuttaCentralId,
 
-} = require('../index');
-const LOCAL = path.join(__dirname, '../local');
+} = require('../../index');
+const LOCAL = path.join(__dirname, '../../local');
 const BILARA_DATA = path.join(LOCAL, '/bilara-data');
 
 function help() {
     console.log(`
 NAME
-        search.js - search bilara-data root text and translations
+        search - search bilara-data root text and translations
 
 SYNOPSIS
-        search.js [OPTIONS] PATTERN_KEYWORDS
+        search [OPTIONS] PATTERN_KEYWORDS
 
 DESCRIPTION
         Searches bilara-data for root text or translations. Writes

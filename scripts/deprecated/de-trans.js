@@ -15,17 +15,17 @@ const {
     SegDoc,
     SuttaCentralId,
 
-} = require('../index');
-const LOCAL = path.join(__dirname, '../local');
+} = require('../../index');
+const LOCAL = path.join(__dirname, '../../local');
 const BILARA_DATA = path.join(LOCAL, '/bilara-data');
 
 function help() {
     console.log(`
 NAME
-        de-trans.js - convert Bhante Sujato source into DE translation file
+        de-trans - convert Bhante Sujato source into DE translation file
 
 SYNOPSIS
-        de-trans.js SUTTA_ID
+        de-trans SUTTA_ID
 
 DESCRIPTION
         Searches bilara-data for sutta and converts it to DE

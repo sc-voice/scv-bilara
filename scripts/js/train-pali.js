@@ -6,7 +6,7 @@ const {
     FuzzyWordSet,
     SegDoc,
 
-} = require('../index');
+} = require('../../index');
 const {
     js,
     logger,
@@ -20,7 +20,8 @@ const {
     var langs = ['en','de'];
     var langWords = {};
     langs.forEach(lang => {
-        var wordsPath = path.join(__dirname, `../src/assets/words-${lang}.txt`);
+        var wordsPath = path.join(__dirname, 
+            `../../src/assets/words-${lang}.txt`);
         var wordList = fs.readFileSync(wordsPath).toString().split('\n');
         wordList.forEach(w => langWords[w] = false);
         logger.info(`${lang} words:${Object.keys(langWords).length}`);
@@ -55,7 +56,8 @@ const {
         `iterations:${iterations}`,
         `fws:${JSON.stringify(fws).length}C`,
     ].join(' '));
-    var paliPath = path.join(__dirname, '../src/assets/fws-pali.json');
+    var paliPath = path.join(__dirname, 
+        '../../src/assets/fws-pali.json');
     fs.writeFileSync(paliPath, JSON.stringify(fws, null, 1));
     logger.info(`training completed: ${JSON.stringify(fws).length}C`);
 } catch(e) {

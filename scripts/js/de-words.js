@@ -8,14 +8,14 @@ const {
     DETranslation,
     BilaraData,
     ExecGit,
-} = require('../index');
+} = require('../../index');
 const {
     js,
     logger,
     LOCAL_DIR,
 } = require('just-simple').JustSimple;
 
-logger.info('de-suttas.js');
+logger.info('de-suttas');
 
 var patAllow = ".*/(AN|DN|MN|KN|SN)/.*";
 var reAllow = new RegExp(patAllow);
