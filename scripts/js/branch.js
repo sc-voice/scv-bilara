@@ -51,10 +51,13 @@ class Branch {
             var bd = await new BilaraData({
                 logLevel,
             }).initialize();
-            await bd.sync();
             var git = new ExecGit({
                 logLevel:'info',
             });
+            if (fs.existsSync(git.repoPath)) {
+                await git.branch('master', false);
+            }
+            await bd.sync();
             var suttaInfo =  bd.suttaInfo(suid);
             var srcInfo = suttaInfo.filter(i => i.lang === 'en')[0];
             var dstInfo = suttaInfo.filter(i => i.lang === lang)[0];
