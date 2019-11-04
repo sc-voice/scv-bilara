@@ -560,5 +560,17 @@
             done();
         } catch(e) { done(e); }})();
     });
+    it("TESTTESTauthorInfo(author) => author details",done=>{
+        (async function() { try {
+            await bd.initialize();
+            should.deepEqual(bd.authorInfo('sabbamitta'), {
+                name: 'Sabbamitta Anagarika',
+                type: 'translator',
+                root_edition: 'ms',
+                root_lang: 'pli',
+            });
+            done();
+        } catch(e) { done(e); }})();
+    });
 
 })

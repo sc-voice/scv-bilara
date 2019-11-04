@@ -2,6 +2,9 @@
     const fs = require("fs");
     const path = require("path");
     const {
+        readFile,
+    } = fs.promises;
+    const {
         js,
         logger,
         LOCAL_DIR,
@@ -52,72 +55,74 @@
             if (this.initialized) {
                 return Promise.resolve(this);
             }
-            return new Promise((resolve, reject) => {
-                var that = this;
-                (async function() { try {
-                    sync && await that.sync();
+            var that = this;
+            var pbody = (resolve, reject) => {(async function() { try {
+                sync && await that.sync();
 
-                    var map = that.suttaMap = {};
-                    var rootPath = path.join(that.root, 'root');
-                    if (!fs.existsSync(rootPath)) {
-                        throw new Error(`Root document directory `+
-                            `not found:${rootPath}`); 
-                    }
-                    that.rootFiles = that.dirFiles(rootPath)
-                        .filter(f => that.isSuttaPath(f))
-                    that.rootFiles.forEach((f,i) => {
-                        var file = f.replace(/.*\/root\//,'root/');
-                        var parts = file.split('/');
-                        var lang = parts[1];
-                        var author = parts[2];
-                        var nikaya = parts[3];
-                        var suid = parts[parts.length-1]
-                            .split('_')[0].toLowerCase();
-                        map[suid] = map[suid] || [];
-                        map[suid].push({
-                            suid,
-                            lang,
-                            nikaya,
-                            author,
-                            bilaraPath: file,
-                        });
+                var map = that.suttaMap = {};
+                var rootPath = path.join(that.root, 'root');
+                if (!fs.existsSync(rootPath)) {
+                    throw new Error(`Root document directory `+
+                        `not found:${rootPath}`); 
+                }
+                that.rootFiles = that.dirFiles(rootPath)
+                    .filter(f => that.isSuttaPath(f))
+                that.rootFiles.forEach((f,i) => {
+                    var file = f.replace(/.*\/root\//,'root/');
+                    var parts = file.split('/');
+                    var lang = parts[1];
+                    var author = parts[2];
+                    var nikaya = parts[3];
+                    var suid = parts[parts.length-1]
+                        .split('_')[0].toLowerCase();
+                    map[suid] = map[suid] || [];
+                    map[suid].push({
+                        suid,
+                        lang,
+                        nikaya,
+                        author,
+                        bilaraPath: file,
                     });
+                });
 
-                    var transPath = path.join(that.root, 'translation');
-                    if (!fs.existsSync(transPath)) {
-                        throw new Error(
-                            `Translation directory not found:${transPath}`); 
-                    }
-                    that.translations = that.dirFiles(transPath)
-                        .filter(f => that.isSuttaPath(f))
-                        .sort();
-                    that.translations.forEach((f,i) => {
-                        var file = f.replace(/.*\/translation\//,
-                            'translation/');
-                        var parts = file.split('/');
-                        var lang = parts[1];
-                        var author = parts[2];
-                        var nikaya = parts[3];
-                        var suid = parts[parts.length-1]
-                            .split('_')[0].toLowerCase();
-                        map[suid] = map[suid] || [];
-                        map[suid].push({
-                            suid,
-                            lang,
-                            nikaya,
-                            author,
-                            bilaraPath: file,
-                        });
+                var transPath = path.join(that.root, 'translation');
+                if (!fs.existsSync(transPath)) {
+                    throw new Error(
+                        `Translation directory not found:${transPath}`); 
+                }
+                that.translations = that.dirFiles(transPath)
+                    .filter(f => that.isSuttaPath(f))
+                    .sort();
+                that.translations.forEach((f,i) => {
+                    var file = f.replace(/.*\/translation\//,
+                        'translation/');
+                    var parts = file.split('/');
+                    var lang = parts[1];
+                    var author = parts[2];
+                    var nikaya = parts[3];
+                    var suid = parts[parts.length-1]
+                        .split('_')[0].toLowerCase();
+                    map[suid] = map[suid] || [];
+                    map[suid].push({
+                        suid,
+                        lang,
+                        nikaya,
+                        author,
+                        bilaraPath: file,
                     });
-                    var uidExpPath = path.join(that.root, 
-                        '.voice', 'uid_expansion.json');
-                    that.uid_expansion = 
-                        JSON.parse(fs.readFileSync(uidExpPath));
-
-                    that.initialized = true;
-                    resolve(that);
-                } catch(e) {reject(e);} })();
-            });
+                });
+                var uidExpPath = path.join(that.root, 
+                    '.voice', 'uid_expansion.json');
+                that.uid_expansion = 
+                    JSON.parse(fs.readFileSync(uidExpPath));
+                Object.defineProperty(that, '_authors', {
+                    value: JSON.parse(await readFile(
+                        path.join(that.root, `_author.json`))),
+                });
+                that.initialized = true;
+                resolve(that);
+            } catch(e) {reject(e);} })()};
+            return new Promise(pbody);
         }
 
         get suttaIds() {
@@ -127,6 +132,13 @@
             }
 
             return this._suttaIds;
+        }
+
+        authorInfo(author) {
+            if (!this.initialized) {
+                throw new Error("initialize() is required");
+            }
+            return this._authors[author];
         }
 
         sync() {

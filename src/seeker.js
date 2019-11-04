@@ -74,7 +74,8 @@
         }
 
         get initialized() {
-            return this.paliWords != null && this.enWords != null;
+            return this.paliWords != null && this.enWords != null
+                && this.bilaraData.initialized;
         }
 
         initialize(msg='') {
