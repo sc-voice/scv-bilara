@@ -13,6 +13,7 @@
             type: 'translation',
             lang: 'en',
             author_uid: 'sujato',
+            collection: 'sn',
             bilaraPath: f,
         });
         var f = 'translation/en/sujato/'+
@@ -23,6 +24,7 @@
             type: 'translation',
             lang: 'en',
             author_uid: 'sujato',
+            collection: 'sn',
             bilaraPath: f,
         });
     });

@@ -12,11 +12,13 @@
             var type = bpParts[0];
             var lang = bpParts[1];
             var author_uid = bpParts[2];
+            var collection = bpParts[3];
             var suid = fname.replace(/_.*$/,'');
             var suttaRef = `${suid}/${lang}/${author_uid}`;
             return {
                 suid,
                 type,
+                collection,
                 lang,
                 author_uid,
                 suttaRef,
