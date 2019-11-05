@@ -104,6 +104,11 @@
 
         patternLanguage(pattern, lang=this.lang) {
             this.validate();
+            if (SuttaCentralId.test(pattern)) {
+                var langs = SuttaCentralId.languages(pattern);
+                return langs.length === 0 || langs.indexOf(lang) >= 0 
+                    ? lang : langs[0];
+            }
             var keywords = pattern.split(/ +/);
             return keywords.reduce((a,k) => {
                 if (this.enWords.contains(k)) {

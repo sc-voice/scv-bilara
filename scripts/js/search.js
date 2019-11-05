@@ -161,7 +161,6 @@ function outJSON(res) {
         resultPattern,
     } = res;
     var text = JSON.stringify(res, null, 2);
-    console.log(`dbg `, process.stdout.isTTY);
     if (process.stdout.isTTY) {
         var rex = new RegExp(resultPattern, "giu");
         text = text.replace(rex, matchBash);
@@ -214,7 +213,8 @@ function outLines(res, pattern) {
         var suid = mld.suid;
         mld.segments().forEach((seg,i) => {
             var scid = seg.scid;
-            var line = `${scid}: ${seg[res.searchLang]}`;
+            var text = seg[res.searchLang] || '';
+            var line = `${scid}: ${text}`;
             console.log(line);
         });
     });

@@ -382,11 +382,21 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("patternLanguage(...) => search language context",done=>{
+    it("TESTTESTpatternLanguage(...) => search language context",done=>{
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,
             }).initialize();
+
+            // Sutta references
+            should(skr.patternLanguage('mn1','de')).equal('de');
+            should(skr.patternLanguage('mn1/pli','de')).equal('pli');
+            should(skr.patternLanguage('mn1/en','de')).equal('en');
+            should(skr.patternLanguage('mn1/en/sujato','de')).equal('en');
+            should(skr.patternLanguage('mn1/de','de')).equal('de');
+            should(skr.patternLanguage('mn1/de/sabbamitta','de'))
+                .equal('de');
+
             should(skr.patternLanguage('wurzel des leidens','de'))
                 .equal('de');
             should(skr.patternLanguage('awakened buddha','de'))

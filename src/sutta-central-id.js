@@ -38,6 +38,19 @@
             }, true);
         }
 
+        static languages(text) {
+            if (!SuttaCentralId.test(text)) {
+                return [];
+            }
+            var commaParts = text.toLowerCase().split(',').map(p=>p.trim());
+            return commaParts.reduce((a,c)=>{
+                var cparts = c.split('/');
+                var lang = cparts[1];
+                a = lang && a.indexOf(lang)<0 ? [...a, lang] : a;
+                return a;
+            },[]);
+        }
+
         static scidRegExp(pat) {
             if (!pat) {
                 return /.*/;
