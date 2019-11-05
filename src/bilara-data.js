@@ -42,6 +42,10 @@
                 BilaraData.isSourceDoc;
             this.reNikayas = new RegExp(
                 `/(${this.nikayas.join('|')})/`, 'ui');
+            Object.defineProperty(this, "_sources", {
+                writable: true,
+                value: null,
+            });
             Object.defineProperty(this, "_suttaMap", {
                 writable: true,
                 value: null,
@@ -54,16 +58,13 @@
         }
 
         static isSourceDoc({suid, lang, author}) {
-            if (lang === 'pli') { // bi-lingual source 
-                return author === 'ms';
+            if (this._sources == null) {
+                var sourcesPath = path.join(__dirname, 
+                    "../src/assets/sources.json");
+                this._sources = JSON.parse(fs.readFileSync(sourcesPath));
             }
-            if (lang === 'en') { // tri-lingual source 
-                return !!{
-                    sujato: true,   // suttas
-                    brahmali: true, // vinaya
-                }[author];
-            }
-            return false;
+            var authors = this._sources[lang];
+            return authors && authors.indexOf(author)>=0;
         }
 
         initialize(sync=false) {
