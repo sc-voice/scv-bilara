@@ -382,7 +382,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTpatternLanguage(...) => search language context",done=>{
+    it("patternLanguage(...) => search language context",done=>{
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,
@@ -571,6 +571,44 @@
                     'tejasmiṃ maññati, tejato maññati, '+
                     'tejaṃ meti maññati, tejaṃ abhinandati. ',
                 en: 'But then they identify with fire … ',
+            });
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("find(...) finds an1.2 part of an1.1-10", done=>{
+        (async function() { try {
+            var maxResults = 3;
+            var skr = await new Seeker({
+                maxResults,
+                logLevel,
+            }).initialize();
+
+            // lists of suttas with ranges
+            var lang = 'de';
+            // The pattern resolves to 4 suttas, of which 3 are returned
+            var pattern = "an1.2"; 
+            var res = await skr.find({
+                pattern,
+                lang,
+            });
+            var [mld0] = res.mlDocs;
+            should(res.method).equal('sutta_uid');
+            should(res.maxResults).equal(maxResults);
+            should.deepEqual(res.suttaRefs, ['an1.1-10']);
+            should(res.resultPattern).equal(pattern);
+            should(res.lang).equal('de');
+            should(res.mlDocs.length).equal(1);
+            var segments = mld0.segments();
+            should(segments.length).equal(4);
+            should.deepEqual(segments.reduce((a,s) => {
+                var scid = s.scid;
+                a[scid] = a.hasOwnProperty(scid) ? a[scid] + 1 : 1;
+                return a;
+            }, {}), {
+                "an1.2:0.1" : 1,
+                "an1.2:1.1" : 1,
+                "an1.2:1.2" : 1,
+                "an1.2:1.3" : 1,
             });
             done(); 
         } catch(e) {done(e);} })();

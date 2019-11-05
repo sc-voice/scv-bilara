@@ -129,11 +129,20 @@
                 if (matchAll) {
                     var match = true;
                 } else if (matchScid) {
-                    var id = pattern.indexOf(':') >= 0
-                        ? scid : scid.split(':')[0];
-                    var cmpL = SuttaCentralId.compareLow(id, matchLow);
-                    var cmpH = SuttaCentralId.compareHigh(id, matchHigh);
-                    var match = 0 <= cmpL && cmpH <= 0;
+                    var commaParts = pattern.split(/, */);
+                    var match = commaParts.reduce((a,p) => {
+                        var slashParts = p.split('/');
+                        var pat = slashParts[0];
+                        let matchLow = SuttaCentralId.rangeLow(pat);
+                        let matchHigh = SuttaCentralId.rangeHigh(pat);
+                        let id = pat.indexOf(':') >= 0
+                            ? scid : scid.split(':')[0];
+                        let cmpL = SuttaCentralId
+                            .compareLow(id, matchLow);
+                        let cmpH = SuttaCentralId
+                            .compareHigh(id, matchHigh);
+                        return a || (0 <= cmpL && cmpH <= 0);
+                    }, false);
                 } else {
                     var match = languages.reduce((a,l) => {
                         if (!a && seg[l]) {
