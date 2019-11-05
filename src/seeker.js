@@ -352,9 +352,7 @@
             pattern = Seeker.sanitizePattern(pattern);
             pattern = Seeker.normalizePattern(pattern);
             minLang = minLang || this.minLang;
-            if (filterSegments == null) {
-                filterSegments = true; //!SuttaCentralId.test(pattern);
-            }
+            (filterSegments == null) && (filterSegments = true);
             lang = lang || language || 'en';
             languages = languages || this.languages || [];
             (lang && languages.indexOf(lang)<0) && languages.push(lang);

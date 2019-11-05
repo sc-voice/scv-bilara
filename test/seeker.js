@@ -492,7 +492,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("find(...) finds sutta references", done=>{
+    it("TESTTESTfind(...) finds sutta references", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
@@ -540,7 +540,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) finds mn1/en/sujato", done=>{
+    it("find(...) finds mn1/en/sujato", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({

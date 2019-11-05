@@ -481,7 +481,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTloadMLDoc(...) loads bilingual doc", done=>{
+    it("loadMLDoc(...) loads bilingual doc", done=>{
         (async function() { try {
             await bd.initialize();
             var an1_9_en = {
@@ -529,7 +529,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTloadMLDoc(...) loads trilingual doc", done=>{
+    it("loadMLDoc(...) loads trilingual doc", done=>{
         (async function() { try {
             await bd.initialize();
             var an1_9 = {
@@ -560,7 +560,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTauthorInfo(author) => author details",done=>{
+    it("authorInfo(author) => author details",done=>{
         (async function() { try {
             await bd.initialize();
             should.deepEqual(bd.authorInfo('sabbamitta'), {

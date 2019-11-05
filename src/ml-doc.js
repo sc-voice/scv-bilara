@@ -115,34 +115,24 @@
 
         filterSegments(pattern, languages=this.languages()) {
             var scids = this.scids();
+            var suid = new SuttaCentralId(this.suid);
             var rex = pattern instanceof RegExp 
                 ? rex : new RegExp(pattern, "ui");
             var unicode = this.unicode;
-            var matchAll = SuttaCentralId.test(pattern)
-                && pattern.indexOf(',') >= 0;
-            var matchScid = SuttaCentralId.test(pattern) 
-                && pattern.indexOf(',') < 0;
+            var matchScid = SuttaCentralId.test(pattern);
+            if (matchScid) {
+                var scidPat = pattern.split(/, */).reduce((a,p) => {
+                    return suid.match(p) ? p : a
+                }, pattern);
+                scidPat = scidPat.split('/')[0];
+            }
             var matchLow = SuttaCentralId.rangeLow(pattern);
             var matchHigh = SuttaCentralId.rangeHigh(pattern);
             scids.forEach(scid => {
                 var seg = this.segMap[scid];
-                if (matchAll) {
-                    var match = true;
-                } else if (matchScid) {
-                    var commaParts = pattern.split(/, */);
-                    var match = commaParts.reduce((a,p) => {
-                        var slashParts = p.split('/');
-                        var pat = slashParts[0];
-                        let matchLow = SuttaCentralId.rangeLow(pat);
-                        let matchHigh = SuttaCentralId.rangeHigh(pat);
-                        let id = pat.indexOf(':') >= 0
-                            ? scid : scid.split(':')[0];
-                        let cmpL = SuttaCentralId
-                            .compareLow(id, matchLow);
-                        let cmpH = SuttaCentralId
-                            .compareHigh(id, matchHigh);
-                        return a || (0 <= cmpL && cmpH <= 0);
-                    }, false);
+                if (matchScid) {
+                    var id = scid.split(':')[0];
+                    match = new SuttaCentralId(id).match(scidPat);
                 } else {
                     var match = languages.reduce((a,l) => {
                         if (!a && seg[l]) {

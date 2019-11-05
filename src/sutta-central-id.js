@@ -127,6 +127,19 @@
             return cmp;
         }
 
+        match(pat) {
+            let scid = this.scid;
+            let id = pat.indexOf(':') >= 0 ? scid : scid.split(':')[0];
+            let scidLow = SuttaCentralId.rangeLow(id);
+            let scidHigh = SuttaCentralId.rangeHigh(id);
+            let matchLow = SuttaCentralId.rangeLow(pat);
+            let matchHigh = SuttaCentralId.rangeHigh(pat);
+            let cmpL = SuttaCentralId.compareLow(scidHigh, matchLow);
+            let cmpH = SuttaCentralId.compareHigh(scidLow, matchHigh);
+            var match = 0 <= cmpL && cmpH <= 0;
+            return match;
+        }
+
         get groups() {
             var tokens = this.scid && this.scid.split(':');
             return tokens && tokens[1] ? tokens[1].split('.') : null;
