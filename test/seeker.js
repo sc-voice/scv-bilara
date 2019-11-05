@@ -530,6 +530,31 @@
             done(); 
         } catch(e) {done(e);} })();
     });
+    it("find(...) does not find legacy suttas", done=>{
+        (async function() { try {
+            var maxResults = 3;
+            var skr = await new Seeker({
+                maxResults,
+                logLevel,
+            }).initialize();
+
+            // lists of suttas with ranges
+            var lang = 'de';
+            // The pattern resolves to 4 suttas, of which 3 are returned
+            var pattern = "mn1/en/bodhi"; 
+            var res = await skr.find({
+                pattern,
+                lang,
+            });
+            should(res.method).equal('sutta_uid');
+            should(res.maxResults).equal(maxResults);
+            should.deepEqual(res.suttaRefs, ['mn1/en/bodhi']);
+            should(res.resultPattern).equal(pattern);
+            should(res.lang).equal('de');
+            should(res.mlDocs.length).equal(0);
+            done(); 
+        } catch(e) {done(e);} })();
+    });
     it("find({minLang}) => minimum language count", done=>{
         (async function() { try {
             var maxResults = 3;

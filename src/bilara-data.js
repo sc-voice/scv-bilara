@@ -38,6 +38,8 @@
                 logLevel: this.logLevel,
             });
             this.languages = opts.languages || [ 'pli', this.lang ];
+            this.isSourceDoc = opts.isSourceDoc ||
+                BilaraData.isSourceDoc;
             this.reNikayas = new RegExp(
                 `/(${this.nikayas.join('|')})/`, 'ui');
             Object.defineProperty(this, "_suttaMap", {
@@ -49,6 +51,19 @@
                 value: null,
             });
             this.initialized = false;
+        }
+
+        static isSourceDoc({suid, lang, author}) {
+            if (lang === 'pli') { // bi-lingual source 
+                return author === 'ms';
+            }
+            if (lang === 'en') { // tri-lingual source 
+                return !!{
+                    sujato: true,   // suttas
+                    brahmali: true, // vinaya
+                }[author];
+            }
+            return false;
         }
 
         initialize(sync=false) {
@@ -149,21 +164,18 @@
             return this.reNikayas.test(fpath);
         }
 
-        suttaInfo(suid) {
+        suttaInfo(suttaRef) {
             if (!this.initialized) {
                 throw new Error('Expected preceding call to initialize()');
             }
-            if (suid == null) {
+            if (suttaRef == null) {
                 throw new Error('suid is required');
             }
+            var refParts = suttaRef.split('/');
+            var suid = refParts[0];
+            var lang = refParts[1];
+            var author = refParts[2];
             var info = this.suttaMap[suid];
-            if (!info) {
-                var parts = suid.split('/');
-                var suid = parts[0];
-                var lang = parts[1];
-                var author = parts[2];
-                info = this.suttaMap[suid];
-            }
             if (!info) { // binary search
                 var suttaIds = this.suttaIds;
                 var j = suttaIds.length-1;
@@ -184,7 +196,10 @@
                 info = this.suttaMap[suttaIds[i]];
                 //console.log(`dbg suid ${suid} => ${suttaIds[i]}`);
             }
-            return info;
+            return info.filter(i => 
+                (!lang || i.lang === lang) &&
+                (!author || i.author === author)
+            );
         }
 
         dirFiles(root) {
@@ -283,13 +298,18 @@
 
         loadMLDoc(...args) {
             var {
-                suid,
+                suid:suidRef,
                 author,
+                lang,
                 logLevel,
                 returnNull,
                 languages,
             } = this.loadArgs(args);
 
+            var suidParts = suidRef.split('/');
+            var suid = suidParts[0];
+            (suidParts.length > 1) && (lang = suidParts[1]);
+            (suidParts.length > 2) && (author = suidParts[2]);
             var info = this.suttaInfo(suid);
             if (info == null) {
                 if (returnNull) {
@@ -300,8 +320,9 @@
             var langMap = languages.reduce((a,l) => (a[l] = true, a), {});
             var bilaraPaths = info
                 .filter(i=>langMap[i.lang])
-                .filter(i=> !author || i.author === author 
-                    || i.author === 'ms') // always include Pali
+                .filter(i=> !author ||
+                    i.lang === lang && i.author === author ||
+                    i.lang !== lang && this.isSourceDoc(i))
                 .map(i=>i.bilaraPath);
             if (bilaraPaths.length === 0) {
                 if (returnNull) {

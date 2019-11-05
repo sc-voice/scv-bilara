@@ -481,7 +481,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("loadMLDoc(...) loads bilingual doc", done=>{
+    it("TESTTESTloadMLDoc(...) loads bilingual doc", done=>{
         (async function() { try {
             await bd.initialize();
             var an1_9_en = {
@@ -525,13 +525,11 @@
                 languages: ['de', 'pli'],
             });
             should.deepEqual(mld.segMap['an1.9:0.1'], an1_9_de);
-            var mld = await bd.loadMLDoc("an1.9/de/sabbamitta");
-            should.deepEqual(mld.segMap['an1.9:0.1'], an1_9_de);
 
             done();
         } catch(e) { done(e); }})();
     });
-    it("loadMLDoc(...) loads trilingual doc", done=>{
+    it("TESTTESTloadMLDoc(...) loads trilingual doc", done=>{
         (async function() { try {
             await bd.initialize();
             var an1_9 = {
@@ -555,6 +553,8 @@
             });
             should.deepEqual(mld.segMap['an1.9:0.1'], an1_9);
             var mld = await bd.loadMLDoc("an1.9/de");
+            should.deepEqual(mld.segMap['an1.9:0.1'], an1_9);
+            var mld = await bd.loadMLDoc("an1.9/de/sabbamitta");
             should.deepEqual(mld.segMap['an1.9:0.1'], an1_9);
 
             done();

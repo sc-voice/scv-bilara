@@ -215,13 +215,14 @@
                 pattern,
                 maxResults,
             } = args;
+            lang = lang || language || this.lang;
             maxResults = maxResults == null ? this.maxResults : maxResults;
             return new Promise((resolve, reject) => {
                 (async function() { try {
                     if (pattern == null) {
                         throw new Error(`phraseSearch() requires pattern`);
                     }
-                    lang = that.patternLanguage(pattern, lang || language);
+                    lang = that.patternLanguage(pattern, lang);
                     pattern = lang === 'pli' 
                         ? `\\b${Pali.romanizePattern(pattern)}` 
                         : `\\b${pattern}`;
@@ -253,6 +254,7 @@
             } = args;
             comparator = comparator || this.grepComparator;
             var that = this;
+            lang = lang || language || this.lang;
             maxResults = maxResults == null ? this.maxResults : maxResults;
             var keywords = this.patternKeywords(pattern);
             lang = this.patternLanguage(pattern, lang || language);
@@ -385,75 +387,77 @@
             } = this.findArgs(args);
             var that = this;
             var bd = that.bilaraData;
-            return new Promise((resolve, reject) => {
-                (async function() { try {
-                    var resultPattern = pattern;
-                    if (SuttaCentralId.test(pattern)) {
-                        var {
-                            method,
-                            uids,
-                            suttaRefs,
-                        } = bd.sutta_uidSearch(pattern, maxResults, lang);
-                    } else {
-                        var method = 'phrase';
-                        var searchOpts = {
-                            pattern, 
-                            maxResults, 
-                            lang, 
-                            filterSegments,
-                        };
+            var pbody = (resolve, reject) => {(async function() { try {
+                var resultPattern = pattern;
+                if (SuttaCentralId.test(pattern)) {
+                    var {
+                        method,
+                        uids,
+                        suttaRefs,
+                    } = bd.sutta_uidSearch(pattern, maxResults, lang);
+                } else {
+                    var method = 'phrase';
+                    var searchOpts = {
+                        pattern, 
+                        maxResults, 
+                        lang, 
+                        filterSegments,
+                    };
 
+                    var {
+                        lines,
+                        pattern: resultPattern,
+                    } = await that.phraseSearch(searchOpts);
+                    if (!lines.length) {
+                        var method = 'keywords';
+                        var data = await that.keywordSearch(searchOpts);
                         var {
                             lines,
-                            pattern: resultPattern,
-                        } = await that.phraseSearch(searchOpts);
-                        if (!lines.length) {
-                            var method = 'keywords';
-                            var data = await that.keywordSearch(searchOpts);
-                            var {
-                                lines,
-                                resultPattern,
-                            } = data;
-                        }
-                        sortLines && lines.sort(sortLines);
-                        var suttaRefs = lines.map(line => 
-                            BilaraPath.pathParts(line).suttaRef);
+                            resultPattern,
+                        } = data;
                     }
+                    sortLines && lines.sort(sortLines);
+                    var suttaRefs = lines.map(line => 
+                        BilaraPath.pathParts(line).suttaRef);
+                }
 
-                    var mlDocs = [];
-                    var searchLang = that.patternLanguage(pattern, lang);
-                    var bilaraPaths = [];
-                    for (var i = 0; i < suttaRefs.length; i++) {
-                        var mld = await bd.loadMLDoc({
-                            suid: suttaRefs[i],
-                            languages,
-                        });
-                        bilaraPaths = [...bilaraPaths, ...mld.bilaraPaths];
-                        if (filterSegments) {
-                            mld.filterSegments(resultPattern, [searchLang]);
-                            mld.highlightMatch(resultPattern, matchHighlight);
-                        }
-                        if (mld.bilaraPaths.length >= minLang) {
-                            if (mlDocs.length >= maxDoc) {
-                                break;
-                            }
-                            mlDocs.push(mld);
-                        }
-                    }
-                    resolve({
-                        lang,
-                        searchLang,
-                        maxResults,
-                        maxDoc,
-                        method,
-                        minLang,
-                        resultPattern,
-                        bilaraPaths,
-                        suttaRefs,
-                        mlDocs,
+                var mlDocs = [];
+                var searchLang = that.patternLanguage(pattern, lang);
+                var bilaraPaths = [];
+                for (var i = 0; i < suttaRefs.length; i++) {
+                    let suttaRef = suttaRefs[i];
+                    let [suid,lang,author] = suttaRef.split('/');
+                    let mld = await bd.loadMLDoc({
+                        suid: bd.isSourceDoc({suid,lang,author})
+                            ? suid : suttaRef,
+                        languages,
                     });
-                } catch(e) {reject(e);} })();
-            });
+                    bilaraPaths = [...bilaraPaths, ...mld.bilaraPaths];
+                    if (filterSegments) {
+                        mld.filterSegments(resultPattern, [searchLang]);
+                        mld.highlightMatch(resultPattern, matchHighlight);
+                    }
+                    if (mld.bilaraPaths.length >= minLang) {
+                        if (mlDocs.length >= maxDoc) {
+                            break;
+                        }
+                        mlDocs.push(mld);
+                    }
+                }
+                resolve({
+                    lang,
+                    searchLang,
+                    maxResults,
+                    maxDoc,
+                    method,
+                    minLang,
+                    resultPattern,
+                    bilaraPaths,
+                    suttaRefs,
+                    mlDocs,
+                });
+            } catch(e) {reject(e);}})()};
+            return new Promise(pbody);
         }
 
     }
