@@ -395,6 +395,7 @@
                         uids,
                         suttaRefs,
                     } = bd.sutta_uidSearch(pattern, maxResults, lang);
+                    filterSegments = false;
                 } else {
                     var method = 'phrase';
                     var searchOpts = {

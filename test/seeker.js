@@ -530,6 +530,41 @@
             done(); 
         } catch(e) {done(e);} })();
     });
+    it("TESTTESTfind(...) finds mn1/en/sujato", done=>{
+        (async function() { try {
+            var maxResults = 3;
+            var skr = await new Seeker({
+                maxResults,
+                logLevel,
+            }).initialize();
+
+            // lists of suttas with ranges
+            var lang = 'de';
+            // The pattern resolves to 4 suttas, of which 3 are returned
+            var pattern = "mn1/en/sujato"; 
+            var res = await skr.find({
+                pattern,
+                lang,
+            });
+            var [mld0] = res.mlDocs;
+            should(res.method).equal('sutta_uid');
+            should(res.maxResults).equal(maxResults);
+            should.deepEqual(res.suttaRefs, ['mn1/en/sujato']);
+            should(res.resultPattern).equal(pattern);
+            should(res.lang).equal('de');
+            should(res.mlDocs.length).equal(1);
+            var segments = mld0.segments();
+            should(segments.length).equal(334);
+            should.deepEqual(segments[22],{
+                scid: 'mn1:5.2',
+                pli: 'tejaṃ tejato saññatvā tejaṃ maññati, '+
+                    'tejasmiṃ maññati, tejato maññati, '+
+                    'tejaṃ meti maññati, tejaṃ abhinandati. ',
+                en: 'But then they identify with fire … ',
+            });
+            done(); 
+        } catch(e) {done(e);} })();
+    });
     it("find(...) does not find legacy suttas", done=>{
         (async function() { try {
             var maxResults = 3;
