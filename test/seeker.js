@@ -507,6 +507,7 @@
             var res = await skr.find({
                 pattern,
                 lang,
+                matchHighlight: false,
             });
             should(res.method).equal('sutta_uid');
             should(res.maxResults).equal(maxResults);
@@ -555,6 +556,7 @@
             var res = await skr.find({
                 pattern,
                 lang,
+                matchHighlight: false,
             });
             var [mld0] = res.mlDocs;
             should(res.method).equal('sutta_uid');
@@ -590,6 +592,7 @@
             var res = await skr.find({
                 pattern,
                 lang,
+                matchHighlight: false,
             });
             var [mld0] = res.mlDocs;
             should(res.method).equal('sutta_uid');

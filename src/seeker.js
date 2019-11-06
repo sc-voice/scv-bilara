@@ -37,8 +37,9 @@
             this.bilaraData = opts.bilaraData || new BilaraData(opts);
             this.enWords = opts.enWords;
             this.matchColor = opts.matchColor == null ? 121 : opts.matchColor;
-            this.matchHighlight = opts.matchHighlight || 
-                `\u001b[38;5;${this.matchColor}m$&\u001b[0m`;
+            this.matchHighlight = opts.matchHighlight === undefined 
+                ? `\u001b[38;5;${this.matchColor}m$&\u001b[0m`
+                : '';
             this.matchWordEnd = opts.matchWordEnd;
             this.maxResults = opts.maxResults == null ? 5 : opts.maxResults;
             this.maxDoc = opts.maxDoc == null ? 5 : opts.maxDoc;
@@ -362,7 +363,8 @@
                 throw new Error("maxResults must be a number");
             }
             maxDoc = Number(maxDoc==null ? this.maxDoc : maxDoc);
-            matchHighlight = matchHighlight || this.matchHighlight;
+            (matchHighlight == null) && 
+                (matchHighlight = this.matchHighlight);
             return {
                 pattern,
                 filterSegments,
@@ -439,6 +441,8 @@
                     bilaraPaths = [...bilaraPaths, ...mld.bilaraPaths];
                     if (filterSegments) {
                         mld.filterSegments(resultPattern, [searchLang]);
+                    }
+                    if (matchHighlight) {
                         mld.highlightMatch(resultPattern, matchHighlight);
                     }
                     if (mld.bilaraPaths.length >= minLang) {

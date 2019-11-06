@@ -113,6 +113,27 @@
             }, this.segMap[scid]));
         }
 
+        matchScid({seg, matchSeg, scidPat}) {
+            var scid = seg.scid;
+            var id = matchSeg ? scid : scid.split(':')[0];
+            return SuttaCentralId.match(id, scidPat);
+        }
+
+        matchText({seg, languages, rex}) {
+            var unicode = this.unicode;
+            return languages.reduce((a,l) => {
+                if (!a && seg[l]) {
+                    if (rex.test(seg[l])) {
+                        return true;
+                    } else {
+                        return rex.test(unicode.romanize(seg[l]));
+                    }
+
+                }
+                return a;
+            }, false);
+        }
+
         filterSegments(pattern, languages=this.languages()) {
             var scids = this.scids();
             var suid = this.suid;
@@ -129,24 +150,11 @@
             }
             var matchLow = SuttaCentralId.rangeLow(pattern);
             var matchHigh = SuttaCentralId.rangeHigh(pattern);
-            scids.forEach(scid => {
+            scids.forEach((scid,i) => {
                 var seg = this.segMap[scid];
-                if (matchScid) {
-                    var id = matchSeg ? scid : scid.split(':')[0];
-                    match = SuttaCentralId.match(id, scidPat);
-                } else {
-                    var match = languages.reduce((a,l) => {
-                        if (!a && seg[l]) {
-                            if (rex.test(seg[l])) {
-                                return true;
-                            } else {
-                                return rex.test(unicode.romanize(seg[l]));
-                            }
-
-                        }
-                        return a;
-                    }, false);
-                }
+                var match = matchScid
+                    ? this.matchScid({seg, matchSeg, scidPat})
+                    : this.matchText({seg, languages, rex});
                 if (match) {
                     //console.log(`dbg keep`, seg);
                 } else {

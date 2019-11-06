@@ -33,7 +33,9 @@ DESCRIPTION
         output is console.
 
     -c, --color COLORNUMBER
-        Display matches with colors. Default is 201.
+        Display matches with colors. The default color is 201.
+        Use "--color auto" to remove color when stdout is not a console.
+        Use "--color none" to remove color.
         See https://misc.flogisoft.com/bash/tip_colors_and_formatting
 
     -d, --maxDoc NUMBER
@@ -76,7 +78,7 @@ DESCRIPTION
         Output file paths of matching suttas
 
     --outLegacy
-        Output legacy format. (DEPRECATED)
+        Output legacy format. (NO LONGER SUPPORTED)
 `);
     process.exit(0);
 }
@@ -90,6 +92,7 @@ var logLevel = false;
 var color = 201;
 var outFormat = 'human';
 var filterSegments = true;
+var isTTY = process.stdout.isTTY;
 
 var nargs = process.argv.length;
 if (nargs < 3) {
@@ -108,7 +111,7 @@ for (var i = 2; i < nargs; i++) {
         var filter  = process.argv[++i];
         filterSegments = filter === 'pattern';
     } else if (arg === '-c' || arg === '--color') {
-        color = Number(process.argv[++i]);
+        color = process.argv[++i];
     } else if (arg === '-oj' || arg === '--outJSON') {
         outFormat = 'json';
     } else if (arg === '-ol' || arg === '--outLines') {
@@ -119,6 +122,7 @@ for (var i = 2; i < nargs; i++) {
         outFormat = 'human';
     } else if (arg === '--outLegacy') {
         outFormat = 'legacy';
+        help();
     } else if (arg === '-oc' || arg === '--outCSV') {
         outFormat = 'csv';
     } else if (arg === '-mr' || arg === '--maxResults') {
@@ -134,7 +138,17 @@ for (var i = 2; i < nargs; i++) {
 }
 
 pattern = pattern || `wurzel des leidens`;
-const matchBash = `\u001b[38;5;${color}m$&\u001b[0m`;
+function matchBash(color) {
+    if (color === 'none' || 
+        color==='auto' && (isTTY || outFormat==='json')) {
+        return `$&`
+    }
+    if (color === 'auto') {
+        return `\u001b[38;5;201m$&\u001b[0m`
+    }
+    var c = Number(color);
+    return `\u001b[38;5;${c}m$&\u001b[0m`
+}
 
 function outCSV(res) {
     var {
@@ -161,9 +175,9 @@ function outJSON(res) {
         resultPattern,
     } = res;
     var text = JSON.stringify(res, null, 2);
-    if (process.stdout.isTTY) {
+    if (color !== 'none' && (isTTY || color !== 'auto')) {
         var rex = new RegExp(resultPattern, "giu");
-        text = text.replace(rex, matchBash);
+        text = text.replace(rex, matchBash(color));
     }
     console.log(text);
 }
@@ -180,7 +194,7 @@ function outHuman(res, pattern) {
         .join(',');
     var nRefs = res.suttaRefs.length;
     var nDocs = mlDocs.length;
-    console.error(
+    console.log(
 `pattern      : "${pattern}" grep:${res.resultPattern}
 languages    : translation:${lang} search:${res.searchLang} minLang:${res.minLang}
 output       : ${outFormat} color:${color} elapsed:${elapsed} seconds
@@ -190,7 +204,7 @@ found        : ${method} in ${nDocs}/${nRefs} documents ${refs}; maxDoc:${maxDoc
         mld.segments().forEach((seg,i) => {
             var scid = seg.scid;
             var sep = '-------------------------------';
-            i===0 && console.error(
+            i===0 && console.log(
                 `${sep} [${im+1}/${mlDocs.length}] ${suid} ${sep}`);
             Object.keys(seg).forEach(k => {
                 var key = `    ${k}`;
@@ -353,9 +367,8 @@ function scriptEditor(res, pattern) {
             logLevel,
         }).initialize();
         var patLang = skr.patternLanguage(pattern, lang);
-        minLang = minLang || (patLang === 'en' ? 2 : 3);
-        var matchHighlight = process.stdout.isTTY && outFormat!=='json'
-            ? matchBash : `$&`;
+        minLang = minLang || (lang === 'en' || patLang === 'en' ? 2 : 3);
+        var matchHighlight = matchBash(color);
         var res = await skr.find({
             pattern,
             matchHighlight,
