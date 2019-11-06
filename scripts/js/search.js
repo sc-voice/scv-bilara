@@ -71,11 +71,17 @@ DESCRIPTION
     -oh, --outHuman
         Output human format (default).
 
+    -om, --outMarkdown
+        Output translation for matching segments, formatted with Markdown.
+
     -ol, --outLines
         Output matching lines only.
 
     -op, --outPaths
         Output file paths of matching suttas
+
+    -ot, --outTrans
+        Output translation only for matching segments.
 
     --outLegacy
         Output legacy format. (NO LONGER SUPPORTED)
@@ -114,6 +120,10 @@ for (var i = 2; i < nargs; i++) {
         color = process.argv[++i];
     } else if (arg === '-oj' || arg === '--outJSON') {
         outFormat = 'json';
+    } else if (arg === '-om' || arg === '--outMarkdown') {
+        outFormat = 'markdown';
+    } else if (arg === '-ot' || arg === '--outTrans') {
+        outFormat = 'trans';
     } else if (arg === '-ol' || arg === '--outLines') {
         outFormat = 'lines';
     } else if (arg === '-op' || arg === '--outPaths') {
@@ -229,6 +239,33 @@ function outLines(res, pattern) {
             var text = seg[res.searchLang] || '';
             var line = `${scid}: ${text}`;
             console.log(line);
+        });
+    });
+}
+
+function outMarkdown(res, pattern) {
+    res.mlDocs.forEach(mld => {
+        var suid = mld.suid;
+        mld.segments().forEach((seg,i) => {
+            var scid = seg.scid;
+            var text = (seg[res.lang] || '').trim();
+            var linkText = suid;
+            var link = `https://suttacentral.net/${suid}/en/sujato#${scid}`;
+            text && console.log(`> [${linkText}](${link}): ${text}`);
+        });
+    });
+}
+
+function outTrans(res, pattern) {
+    res.mlDocs.forEach(mld => {
+        var suid = mld.suid;
+        mld.segments().forEach((seg,i) => {
+            var scid = seg.scid;
+            var text = (seg[res.lang] || '').trim();
+            if (i === 0) {
+                console.log(`--- [${suid}](https://suttacentral.net/${suid}) ---`);
+            }
+            text && console.log(text);
         });
     });
 }
@@ -384,6 +421,10 @@ function scriptEditor(res, pattern) {
             outPaths(res, pattern);
         } else if (outFormat === 'lines') {
             outLines(res, pattern);
+        } else if (outFormat === 'markdown') {
+            outMarkdown(res, pattern);
+        } else if (outFormat === 'trans') {
+            outTrans(res, pattern);
         } else {
             outHuman(res, pattern);
         }
