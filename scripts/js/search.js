@@ -74,6 +74,9 @@ DESCRIPTION
     -om, --outMarkdown
         Output translation for matching segments, formatted with Markdown.
 
+    -om2, --outMarkdown2
+        Output Pali and translation for matching segments, formatted with Markdown.
+
     -ol, --outLines
         Output matching lines only.
 
@@ -122,6 +125,8 @@ for (var i = 2; i < nargs; i++) {
         outFormat = 'json';
     } else if (arg === '-om' || arg === '--outMarkdown') {
         outFormat = 'markdown';
+    } else if (arg === '-om2' || arg === '--outMarkdown2') {
+        outFormat = 'markdown2';
     } else if (arg === '-ot' || arg === '--outTrans') {
         outFormat = 'trans';
     } else if (arg === '-ol' || arg === '--outLines') {
@@ -243,7 +248,7 @@ function outLines(res, pattern) {
     });
 }
 
-function outMarkdown(res, pattern) {
+function outMarkdown(res, pattern, nLang=1) {
     res.mlDocs.forEach(mld => {
         var suid = mld.suid;
         mld.segments().forEach((seg,i) => {
@@ -251,6 +256,9 @@ function outMarkdown(res, pattern) {
             var text = (seg[res.lang] || '').trim();
             var linkText = suid;
             var link = `https://suttacentral.net/${suid}/en/sujato#${scid}`;
+            if (nLang > 1) {
+                console.log(`> [${linkText}](${link}): ${seg.pli}`);
+            }
             text && console.log(`> [${linkText}](${link}): ${text}`);
         });
     });
@@ -422,7 +430,9 @@ function scriptEditor(res, pattern) {
         } else if (outFormat === 'lines') {
             outLines(res, pattern);
         } else if (outFormat === 'markdown') {
-            outMarkdown(res, pattern);
+            outMarkdown(res, pattern, 1);
+        } else if (outFormat === 'markdown2') {
+            outMarkdown(res, pattern, 2);
         } else if (outFormat === 'trans') {
             outTrans(res, pattern);
         } else {
