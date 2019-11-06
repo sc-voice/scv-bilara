@@ -115,24 +115,25 @@
 
         filterSegments(pattern, languages=this.languages()) {
             var scids = this.scids();
-            var suid = new SuttaCentralId(this.suid);
+            var suid = this.suid;
             var rex = pattern instanceof RegExp 
                 ? rex : new RegExp(pattern, "ui");
             var unicode = this.unicode;
             var matchScid = SuttaCentralId.test(pattern);
             if (matchScid) {
                 var scidPat = pattern.split(/, */).reduce((a,p) => {
-                    return suid.match(p) ? p : a
+                    return SuttaCentralId.match(suid, p) ? p : a
                 }, pattern);
                 scidPat = scidPat.split('/')[0];
+                var matchSeg = scidPat.indexOf(':') >= 0;
             }
             var matchLow = SuttaCentralId.rangeLow(pattern);
             var matchHigh = SuttaCentralId.rangeHigh(pattern);
             scids.forEach(scid => {
                 var seg = this.segMap[scid];
                 if (matchScid) {
-                    var id = scid.split(':')[0];
-                    match = new SuttaCentralId(id).match(scidPat);
+                    var id = matchSeg ? scid : scid.split(':')[0];
+                    match = SuttaCentralId.match(id, scidPat);
                 } else {
                     var match = languages.reduce((a,l) => {
                         if (!a && seg[l]) {
@@ -157,16 +158,23 @@
 
         highlightMatch(pattern, matchHighlight) {
             var scids = this.scids();
-            var rex = pattern instanceof RegExp 
-                ? rex : new RegExp(pattern, "gui");
-            scids.forEach(scid => {
-                var seg = this.segMap[scid];
-                Object.keys(seg).forEach(k => {
-                    if (k !== 'scid') {
-                        seg[k] = seg[k].replace(rex, matchHighlight);
-                    }
+            if (SuttaCentralId.test(pattern)) {
+                scids.forEach(scid => {
+                    var seg = this.segMap[scid];
+                    seg.scid = seg.scid.replace(/^.*$/, matchHighlight);
                 });
-            });
+            } else {
+                var rex = pattern instanceof RegExp 
+                    ? rex : new RegExp(pattern, "gui");
+                scids.forEach(scid => {
+                    var seg = this.segMap[scid];
+                    Object.keys(seg).forEach(k => {
+                        if (k !== 'scid') {
+                            seg[k] = seg[k].replace(rex, matchHighlight);
+                        }
+                    });
+                });
+            }
             return this;
         }
 

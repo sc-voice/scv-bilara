@@ -14,12 +14,20 @@
     const BILARA_PATH = path.join(__dirname, '../local/bilara-data');
     this.timeout(5*1000);
     var logLevel = false;
-    var bilaraPaths = [
+    var bilaraPaths_an1_1_1 = [
         "root/pli/ms/an/an1/an1.1-10_root-pli-ms.json",
         "translation/en/sujato/"+
             "an/an1/an1.1-10_translation-en-sujato.json",
         "translation/de/sabbamitta/"+
             "an/an1/an1.1-10_translation-de-sabbamitta.json",
+    ];
+
+    var bilaraPaths_sn12_23 = [
+        "root/pli/ms/sn/sn12/sn12.23_root-pli-ms.json",
+        "translation/en/sujato/"+
+            "sn/sn12/sn12.23_translation-en-sujato.json",
+        "translation/de/sabbamitta/"+
+            "sn/sn12/sn12.23_translation-de-sabbamitta.json",
     ];
 
     it("default ctor", () => {
@@ -29,7 +37,7 @@
     });
     it("custom ctor", () => {
         var mld = new MLDoc({
-            bilaraPaths,
+            bilaraPaths: bilaraPaths_an1_1_1,
         });
         should.deepEqual(mld.root_text, {
             type: 'root',
@@ -38,13 +46,13 @@
             collection: 'an',
             lang: 'pli',
             author_uid: 'ms',
-            bilaraPath: bilaraPaths[0],
+            bilaraPath: bilaraPaths_an1_1_1[0],
         });
     });
     it("load(...) loads MLDoc", done=>{
         (async function() { try {
             var mld = new MLDoc({
-                bilaraPaths,
+                bilaraPaths: bilaraPaths_an1_1_1,
             });
             var res = await mld.load(BILARA_PATH);
             should(res).equal(mld);
@@ -61,7 +69,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
     it("root_text(...) => root info", done=>{
         (async function() { try {
             var mld = new MLDoc({
-                bilaraPaths,
+                bilaraPaths: bilaraPaths_an1_1_1,
             });
             var res = await mld.load(BILARA_PATH);
             should.deepEqual(mld.root_text,{
@@ -80,7 +88,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
     it("translations(...) => translations info", done=>{
         (async function() { try {
             var mld = new MLDoc({
-                bilaraPaths,
+                bilaraPaths: bilaraPaths_an1_1_1,
             });
             var res = await mld.load(BILARA_PATH);
             should.deepEqual(mld.translations,[{
@@ -109,7 +117,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
     it("languages(...) => language list", done=>{
         (async function() { try {
             var mld = new MLDoc({
-                bilaraPaths,
+                bilaraPaths: bilaraPaths_an1_1_1,
             });
             var res = await mld.load(BILARA_PATH);
             should.deepEqual(mld.languages(),[ 
@@ -118,10 +126,41 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
             done();
         } catch(e) { done(e); } })();
     });
+    it("TESTTESTfilterSegments(...) => single segment", done=>{
+        (async function() { try {
+            var mld = new MLDoc({
+                bilaraPaths: bilaraPaths_an1_1_1,
+            });
+            var res = await mld.load(BILARA_PATH);
+            var segments = mld.filterSegments('an1.2:1.2', ['en'])
+                .segments();
+            should.deepEqual(segments.map(s => s.scid), [
+                'an1.2:1.2',
+            ]);
+
+            done();
+        } catch(e) { done(e); } })();
+    });
+    it("TESTTESTfilterSegments(...) => major segment", done=>{
+        (async function() { try {
+            var mld = new MLDoc({
+                bilaraPaths: bilaraPaths_sn12_23,
+            });
+            var res = await mld.load(BILARA_PATH);
+            var segments = mld.filterSegments('sn12.23:8', ['en'])
+                .segments();
+            should.deepEqual(segments.map(s => s.scid), [
+                'sn12.23:8.1',
+                'sn12.23:8.2',
+            ]);
+
+            done();
+        } catch(e) { done(e); } })();
+    });
     it("filterSegments(...) => single sutta", done=>{
         (async function() { try {
             var mld = new MLDoc({
-                bilaraPaths,
+                bilaraPaths: bilaraPaths_an1_1_1,
             });
             var res = await mld.load(BILARA_PATH);
             var segments = mld.filterSegments('an1.2', ['en'])
@@ -140,7 +179,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
     it("filterSegments(...) => language list", done=>{
         (async function() { try {
             var mld = new MLDoc({
-                bilaraPaths,
+                bilaraPaths: bilaraPaths_an1_1_1,
             });
             var res = await mld.load(BILARA_PATH);
             var segments = mld.filterSegments('\\btouch', ['en'])
@@ -158,7 +197,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
     it("highlightMatch(...) => colors matches", done=>{
         (async function() { try {
             var mld = new MLDoc({
-                bilaraPaths,
+                bilaraPaths: bilaraPaths_an1_1_1,
             });
             var res = await mld.load(BILARA_PATH);
             mld.filterSegments('\\btouch', ['en']);

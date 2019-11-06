@@ -33,11 +33,6 @@
         this.timeout(3*1000);
         var cmp = SuttaCentralId.compareLow;
 
-        // bilara-data order
-        // TODO
-        //assertEqual(SuttaCentralId.compareLow,
-            //'sn22.11',
-            //'translation/en/sujato/sn/sn22/sn22.11-20_translation-en-sujato.json');
         assertLess(SuttaCentralId.compareLow,
             "an1.150:0.2", "an1.152-159:0.1");
         assertLess(SuttaCentralId.compareLow,
@@ -303,12 +298,12 @@
     });
     it("(rangeHigh) => upper bound", ()=>{
         should(SuttaCentralId.rangeHigh("an1.2-11:2-5.1.3-19/en/sujato"))
-            .equal("an1.11:5.1.19/en/sujato");
+            .equal("an1.11:5.1.19.9999/en/sujato");
         should(SuttaCentralId.rangeHigh("an1.2-11:2-5.1.3-19"))
-            .equal("an1.11:5.1.19");
-        should(SuttaCentralId.rangeHigh("an1.2-11")).equal("an1.11");
-        should(SuttaCentralId.rangeHigh("an1.2")).equal("an1.2");
-        should(SuttaCentralId.rangeHigh("mn1")).equal("mn1");
+            .equal("an1.11:5.1.19.9999");
+        should(SuttaCentralId.rangeHigh("an1.2-11")).equal("an1.11.9999");
+        should(SuttaCentralId.rangeHigh("an1.2")).equal("an1.2.9999");
+        should(SuttaCentralId.rangeHigh("mn1")).equal("mn1.9999");
     });
     it("(rangeLow) => lower bound", ()=>{
         should(SuttaCentralId.rangeLow("an1.2-11:2-5.1.3-19/en/sujato"))

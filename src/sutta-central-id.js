@@ -23,8 +23,22 @@
             this.scid = scid;
         }
 
+        static match(scid, pat) {
+            let id = pat.indexOf(':') >= 0 ? scid : scid.split(':')[0];
+            let scidLow = SuttaCentralId.rangeLow(id);
+            let scidHigh = SuttaCentralId.rangeHigh(id);
+            let matchLow = SuttaCentralId.rangeLow(pat);
+            let matchHigh = SuttaCentralId.rangeHigh(pat);
+            let cmpL = SuttaCentralId.compareLow(scidHigh, matchLow);
+            let cmpH = SuttaCentralId.compareHigh(scidLow, matchHigh);
+            var match = 0 <= cmpL && cmpH <= 0;
+            return match;
+        }
+
         static rangeHigh(scid) {
-            return scid.replace(/[0-9]+-/g,'');
+            var scidParts = scid.split('/');
+            scidParts[0] = scidParts[0].replace(/[0-9]+-/g,'')+'.9999';
+            return scidParts.join('/');
         }
 
         static rangeLow(scid) {
@@ -125,19 +139,6 @@
                 }
             }
             return cmp;
-        }
-
-        match(pat) {
-            let scid = this.scid;
-            let id = pat.indexOf(':') >= 0 ? scid : scid.split(':')[0];
-            let scidLow = SuttaCentralId.rangeLow(id);
-            let scidHigh = SuttaCentralId.rangeHigh(id);
-            let matchLow = SuttaCentralId.rangeLow(pat);
-            let matchHigh = SuttaCentralId.rangeHigh(pat);
-            let cmpL = SuttaCentralId.compareLow(scidHigh, matchLow);
-            let cmpH = SuttaCentralId.compareHigh(scidLow, matchHigh);
-            var match = 0 <= cmpL && cmpH <= 0;
-            return match;
         }
 
         get groups() {

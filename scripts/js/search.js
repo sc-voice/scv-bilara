@@ -46,7 +46,7 @@ DESCRIPTION
 
     -l, --lang ISO_LANG_2
         Specify ISO 2-letter language code for primary translation language.
-        Default is "de" for German.
+        Default is "en" for English.
 
     -ll, --logLevel LOGLEVEL
         Logging is normally turned off, but you can specificy a LOGLEVEL:
@@ -82,7 +82,7 @@ DESCRIPTION
 }
 
 var pattern;
-var lang = 'de';
+var lang = 'en';
 var maxDoc = 10;
 var maxResults = 1000;
 var minLang = 0;
@@ -172,6 +172,7 @@ function outHuman(res, pattern) {
     var {
         mlDocs,
         suttaRefs,
+        elapsed,
         method,
     } = res;
     var refs = res.suttaRefs.map(s=>s.split('/')[0])
@@ -180,19 +181,17 @@ function outHuman(res, pattern) {
     var nRefs = res.suttaRefs.length;
     var nDocs = mlDocs.length;
     console.error(
-`pattern      : "${pattern}" (${res.resultPattern})
+`pattern      : "${pattern}" grep:${res.resultPattern}
 languages    : translation:${lang} search:${res.searchLang} minLang:${res.minLang}
-date         : ${new Date().toLocaleString()}
-output       : ${outFormat} color:${color}
-found        : ${method} in ${nDocs}/${nRefs} documents ${refs}; maxDoc:${maxDoc} maxResults:${maxResults}
-`);
+output       : ${outFormat} color:${color} elapsed:${elapsed} seconds
+found        : ${method} in ${nDocs}/${nRefs} documents ${refs}; maxDoc:${maxDoc} maxResults:${maxResults}`);
     mlDocs.forEach((mld,im) => {
         var suid = mld.suid;
         mld.segments().forEach((seg,i) => {
             var scid = seg.scid;
             var sep = '-------------------------------';
             i===0 && console.error(
-                `${sep} [${im+1}] ${suid} ${sep}`);
+                `${sep} [${im+1}/${mlDocs.length}] ${suid} ${sep}`);
             Object.keys(seg).forEach(k => {
                 var key = `    ${k}`;
                 key = key.substring(key.length-4);

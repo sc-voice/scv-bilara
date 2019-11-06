@@ -377,6 +377,7 @@
         }
 
         find(...args) {
+            var msStart = Date.now();
             var {
                 pattern,
                 lang,
@@ -449,6 +450,7 @@
                 }
                 resolve({
                     lang,
+                    elapsed: (Date.now()-msStart)/1000,
                     searchLang,
                     maxResults,
                     maxDoc,
