@@ -11,6 +11,7 @@
     } = require('child_process');
     const FuzzyWordSet = require('./fuzzy-word-set');
     const BilaraPath = require('./bilara-path');
+    const MLDoc = require('./ml-doc');
     const Pali = require('./pali');
     const Unicode = require('./unicode');
     const English = require('./english');
@@ -347,7 +348,7 @@
 
         findArgs(args) {
             var {
-                pattern,
+                pattern: rawPattern,
                 searchLang,
                 lang,
                 language, // DEPRECATED
@@ -364,14 +365,49 @@
                     pattern: args[0],
                     maxResults: args[1],
                 };
-            if (pattern == null) {
+            if (rawPattern == null) {
                 throw new Error(`pattern is required`);
             }
+
+            // STEP 1. extract embeddable options
+            var argv = rawPattern.split(' ');
+            var pattern = '';
+            for (var i = 0; i < argv.length; i++) {
+                var arg = argv[i];
+                if (arg === '-d' || arg === '--maxDoc') {
+                    let n = Number(argv[++i]);
+                    if (!isNaN(n) && 0 < n ) {
+                        maxDoc = n;
+                    }
+                } else if (arg === '-mr' || arg === '--maxResults') {
+                    let n = Number(argv[++i]);
+                    if (!isNaN(n) && 0 < n && n < 4000 ) {
+                        maxResults = n;
+                    }
+                } else if (arg === '-ml' || arg === '--minLang') {
+                    let n = Number(argv[++i]);
+                    if (!isNaN(n) && 0 < n && n <= 3) {
+                        minLang = n;
+                    }
+                } else if (arg === '-l' || arg === '--lang') {
+                    (arg = argv[++i]) && (lang = arg);
+                } else if (arg === '-sl' || arg === '--searchLang') {
+                    (arg = argv[++i]) && (searchLang = arg);
+                } else {
+                    pattern  = pattern ? `${pattern} ${arg}` : arg;
+                }
+            }
+
+            // STEP 2. Assign default values
+            lang = lang || language || this.lang;
+            searchLang = searchLang == null 
+                ? this.patternLanguage(pattern, lang)
+                : searchLang;
+            minLang = minLang || 
+                (lang === 'en' || searchLang === 'en' ? 2 : 3);
             pattern = Seeker.sanitizePattern(pattern);
             pattern = Seeker.normalizePattern(pattern);
-            minLang = minLang || this.minLang;
             (filterSegments == null) && (filterSegments = true);
-            lang = lang || language || 'en';
             languages = languages || this.languages || [];
             (lang && languages.indexOf(lang)<0) && languages.push(lang);
             maxResults = Number(
@@ -382,6 +418,7 @@
             maxDoc = Number(maxDoc==null ? this.maxDoc : maxDoc);
             (matchHighlight == null) && 
                 (matchHighlight = this.matchHighlight);
+
             return {
                 pattern,
                 filterSegments,
@@ -412,9 +449,6 @@
             } = this.findArgs(args);
             var that = this;
             var bd = that.bilaraData;
-            if (searchLang == null) {
-                searchLang = that.patternLanguage(pattern, lang);
-            }
             var pbody = (resolve, reject) => {(async function() { try {
                 var resultPattern = pattern;
                 if (SuttaCentralId.test(pattern)) {
@@ -466,25 +500,27 @@
                         var resFilter = mld
                             .filterSegments(resultPattern, [searchLang]);
                         segsMatched += resFilter.matched;
+                        mld.segsMatched = resFilter.matched;
                     }
                     if (matchHighlight) {
                         mld.highlightMatch(resultPattern, matchHighlight);
                     }
                     if (mld.bilaraPaths.length >= minLang) {
-                        if (mlDocs.length >= maxDoc) {
-                            break;
-                        }
                         mlDocs.push(mld);
                     }
                 }
+                mlDocs.sort((a,b) => MLDoc.compare(b,a));
+                mlDocs = mlDocs.slice(0, maxDoc);
                 resolve({
-                    lang,
+                    lang,   // embeddable option
+                    searchLang, // embeddable option
+                    minLang,    // embeddable option
+                    maxDoc, // embeddable option
+                    maxResults, // embeddable option
+
+                    pattern,
                     elapsed: (Date.now()-msStart)/1000,
-                    searchLang,
-                    maxResults,
-                    maxDoc,
                     method,
-                    minLang,
                     resultPattern,
                     segsMatched,
                     bilaraPaths,

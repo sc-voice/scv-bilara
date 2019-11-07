@@ -20,10 +20,16 @@
             }
             this.bilaraPaths = bilaraPaths;
             this.segMap = {};
+            this.score = 0; // search relevance
             Object.defineProperty(this, "unicode", {
                 value: opts.unicode || new Unicode(),
             });
             logger.logInstance(this, opts);
+        }
+
+        static compare(m1,m2) {
+            var cmp = m1.score - m2.score;
+            return cmp ? cmp : SuttaCentralId.compareLow(m1.suid, m2.suid);
         }
 
         get suid() { 
@@ -167,6 +173,8 @@
                     delete this.segMap[scid];
                 }
             });
+            var score = matched + matched/scids.length;
+            this.score = score;
             return {
                 matched,
                 matchLow,
@@ -174,6 +182,7 @@
                 matchScid,
                 rex,
                 suid,
+                score,
             }
         }
 

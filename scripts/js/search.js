@@ -55,7 +55,7 @@ DESCRIPTION
         debug, warn, info, error. The most useful will be "info".
 
     -ml, --minLang NUMBER
-        Only show segments from documents having at least minLang languages. 
+        Only show segments from documents with at least minLang languages. 
         Default is 3 unless the pattern language is 'en', in which case 
         it is 2.
 
@@ -103,16 +103,13 @@ DESCRIPTION
 }
 
 var pattern;
-var lang = 'en';
-var maxDoc = 10;
 var maxResults = 1000;
-var minLang = 0;
 var logLevel = false;
 var color = 201;
 var outFormat = 'human';
 var filterSegments = true;
 var isTTY = process.stdout.isTTY;
-var searchLang;
+//var searchLang;
 
 var nargs = process.argv.length;
 if (nargs < 3) {
@@ -123,8 +120,6 @@ for (var i = 2; i < nargs; i++) {
     if (i<2) { continue; }
     if (arg === '-?' || arg === '--help') {
         help();
-    } else if (arg === '-d' || arg === '--maxDoc') {
-        maxDoc = Number(process.argv[++i]);
     } else if (arg === '-ll' || arg === '--logLevel') {
         logLevel = process.argv[++i];
     } else if (arg === '-f' || arg === '--filter') {
@@ -157,13 +152,6 @@ for (var i = 2; i < nargs; i++) {
         outFormat = 'csv';
     } else if (arg === '-mr' || arg === '--maxResults') {
         maxResults = Number(process.argv[++i]);
-    } else if (arg === '-ml' || arg === '--minLang') {
-        minLang = Number(process.argv[++i]);
-        console.error(`minLang:${minLang}`);
-    } else if (arg === '-l' || arg === '--lang') {
-        lang = process.argv[++i];
-    } else if (arg === '-sl' || arg === '--searchLang') {
-        searchLang = process.argv[++i];
     } else {
         pattern = pattern ? `${pattern} ${arg}` : arg;
     }
@@ -229,17 +217,22 @@ function outHuman(res, pattern) {
     var nRefs = res.suttaRefs.length;
     var nDocs = mlDocs.length;
     console.log(
-`pattern      : "${pattern}" grep:${res.resultPattern}
-languages    : translation:${lang} search:${res.searchLang} minLang:${minLang}
-output       : ${outFormat} color:${color} elapsed:${elapsed}s maxDoc:${maxDoc}
+`pattern      : "${res.pattern}" grep:${res.resultPattern}
+languages    : translation:${res.lang} search:${res.searchLang} minLang:${res.minLang}
+output       : ${outFormat} color:${color} elapsed:${elapsed}s maxDoc:${res.maxDoc}
 found        : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${refs}`);
     mlDocs.forEach((mld,im) => {
         var suid = mld.suid;
         mld.segments().forEach((seg,i) => {
             var scid = seg.scid;
-            var sep = '-------------------------------';
-            i===0 && console.log(
-                `${sep} [${im+1}/${mlDocs.length}] ${suid} ${sep}`);
+            var sep = '-----------------------';
+            if (i === 0) {
+                let sm = mld.hasOwnProperty('segsMatched')
+                    ? mld.segsMatched : '';
+                let score = mld.score.toFixed(2);
+                let title = `doc:${im+1}/${nDocs} ${suid} score:${score}`;
+                console.log(`${sep} ${title} ${sep}`);
+            }
             Object.keys(seg).forEach(k => {
                 var key = `    ${k}`;
                 key = key.substring(key.length-4);
@@ -327,144 +320,37 @@ function scriptEditor(res, pattern) {
         logLevel,
     }).initialize();
 
-    if (outFormat === 'legacy') {
-        minLang = minLang || (lang === 'en' ? 2 : 3);
-        var skr = await new Seeker({
-            lang,
-            maxResults: 0,
-            logLevel,
-        }).initialize();
-
-        var data = await skr.phraseSearch({ 
-            pattern,
-            lang,
-        });
-        var rex = data.lang === 'pli'
-            ? new RegExp("\\b"+Pali.romanizePattern(pattern), 'uig')
-            : new RegExp("\\b"+pattern, 'uig');
-        var output = {
-            lang,
-            searchLang: data.lang,
-            message: '',
-            maxDoc,
-            minLang,
-            pattern,
-            regExp: rex.toString(),
-            shown: [],
-            segments: [],
-        };
-        if (data.lines.length === 0) {
-            output.data = data;
-        }
-        var pliRoot = path.join(BILARA_DATA, `root/${data.lang}`);
-        var enRoot = path.join(BILARA_DATA, `translation/en`);
-        var searchRoot = data.lang === 'pli' 
-            ? pliRoot
-            : path.join(BILARA_DATA, `translation/${data.lang}`);
-        var files = data.lines.map(line => 
-            path.join(searchRoot, line.split(':')[0]))
-            .sort(SuttaCentralId.compareLow);
-        var found = [];
-        for (var iFile = 0; iFile < files.length; iFile++) {
-            var f = files[iFile];
-            var suid = path.basename(f, '.json').split('_')[0];
-            found.push(suid);
-            var actLang = 0;
-            var loadOpts = {
-                suid,
-                returnNull: true,
-            };
-
-            loadOpts.lang = 'pli';
-            var sdpli = await bd.loadSegDoc(loadOpts);
-            sdpli && actLang++;
-
-            loadOpts.lang = 'en';
-            var sden = await bd.loadSegDoc(loadOpts);
-            sden && actLang++;
-
-            loadOpts.lang = lang;
-            sdlang = lang !== 'en' && lang !== 'pli' && 
-                await bd.loadSegDoc(loadOpts);
-            sdlang && actLang++;
-
-            if (actLang < minLang) { 
-                continue; 
-            }
-            output.shown.push(suid);
-            if (output.shown.length >= maxDoc) {
-                continue;
-            }
-
-            sdsearch = data.lang === 'pli' ? sdpli
-                : data.lang === 'en' ? sden
-                : sdlang;
-
-            sdsearch.segments().forEach(seg => {
-                seg.pli = sdpli.segMap[seg.scid];
-                seg.en = sden.segMap[seg.scid];
-                sdlang && (seg[lang] = sdlang.segMap[seg.scid]);
-
-                if (rex.test(seg[data.lang])) {
-                    output.segments.push(seg);
-                }
-            });
-        }
-        if (output.shown.length === 0) {
-            output.message = `All ${found.length} documents found `+
-                `have less than ${minLang} languages: `+
-                `${found.join(', ')}`;
-        } else if (output.shown.length < maxDoc) {
-            output.message = `Found ${output.shown.length} document(s) `+
-                `with at least ${minLang} languages`;
-        } else {
-            output.message = `Showing ${maxDoc}/${found.length} documents`;
-        }
-        var outText = JSON.stringify(output, null, 2);
-        if (color) {
-            outText = outText.replace(rex, 
-                `\u001b[38;5;${color}m$&\u001b[0m`);
-        }
-        console.log(outText);
+    var skr = await new Seeker({
+        matchColor: color,
+        maxResults,
+        logLevel,
+    }).initialize();
+    var matchHighlight = matchBash(color);
+    var res = await skr.find({
+        pattern,
+        matchHighlight,
+        filterSegments,
+    });
+    if (outFormat === 'csv') {
+        outCSV(res, pattern);
+    } else if (outFormat === 'json') {
+        outJSON(res, pattern);
+    } else if (outFormat === 'paths') {
+        outPaths(res, pattern);
+    } else if (outFormat === 'lines') {
+        outLines(res, pattern);
+    } else if (outFormat === 'markdown') {
+        outMarkdown(res, pattern);
+    } else if (outFormat === 'markdown1') {
+        outMarkdown(res, pattern, 1);
+    } else if (outFormat === 'markdown2') {
+        outMarkdown(res, pattern, 2);
+    } else if (outFormat === 'markdown3') {
+        outMarkdown(res, pattern, 3);
+    } else if (outFormat === 'trans') {
+        outTrans(res, pattern);
     } else {
-        var skr = await new Seeker({
-            matchColor: color,
-            maxResults,
-            maxDoc,
-            logLevel,
-        }).initialize();
-        var patLang = skr.patternLanguage(pattern, lang);
-        minLang = minLang || (lang === 'en' || patLang === 'en' ? 2 : 3);
-        var matchHighlight = matchBash(color);
-        var res = await skr.find({
-            pattern,
-            matchHighlight,
-            filterSegments,
-            minLang,
-            searchLang,
-            lang,
-        });
-        if (outFormat === 'csv') {
-            outCSV(res, pattern);
-        } else if (outFormat === 'json') {
-            outJSON(res, pattern);
-        } else if (outFormat === 'paths') {
-            outPaths(res, pattern);
-        } else if (outFormat === 'lines') {
-            outLines(res, pattern);
-        } else if (outFormat === 'markdown') {
-            outMarkdown(res, pattern);
-        } else if (outFormat === 'markdown1') {
-            outMarkdown(res, pattern, 1);
-        } else if (outFormat === 'markdown2') {
-            outMarkdown(res, pattern, 2);
-        } else if (outFormat === 'markdown3') {
-            outMarkdown(res, pattern, 3);
-        } else if (outFormat === 'trans') {
-            outTrans(res, pattern);
-        } else {
-            outHuman(res, pattern);
-        }
-        scriptEditor(res, pattern);
+        outHuman(res, pattern);
     }
+    scriptEditor(res, pattern);
 } catch(e) { logger.warn(e.stack); }})();

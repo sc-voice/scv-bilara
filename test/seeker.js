@@ -551,7 +551,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("find(...) finds sutta references", done=>{
+    it("TESTTESTfind(...) finds sutta references", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
@@ -581,21 +581,21 @@
                 logLevel,
             });
             should(mld1).properties({
-                suid: 'an1.1-10',
+                suid: 'an1.11-20',
                 logLevel,
             });
             should.deepEqual(mld1.bilaraPaths.sort(), [
                 'root/pli/ms/'+
-                    'an/an1/an1.1-10_root-pli-ms.json',
-                `${en_suj}an/an1/an1.1-10_translation-en-sujato.json`,
+                    'an/an1/an1.11-20_root-pli-ms.json',
+                `${en_suj}an/an1/an1.11-20_translation-en-sujato.json`,
                 'translation/de/sabbamitta/'+
-                    'an/an1/an1.1-10_translation-de-sabbamitta.json',
+                    'an/an1/an1.11-20_translation-de-sabbamitta.json',
             ].sort());
-            should.deepEqual(mld1.segMap['an1.10:0.1'], {
-                scid: 'an1.10:0.1',
-                en: '10 ',
-                de: '10 ',
-                pli: '10 ',
+            should.deepEqual(mld1.segMap['an1.12:0.1'], {
+                scid: 'an1.12:0.1',
+                en: '12 ',
+                de: '12 ',
+                pli: '12 ',
             });
             done(); 
         } catch(e) {done(e);} })();
@@ -776,7 +776,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) => finds searchLang phrase", done=>{
+    it("find(...) => finds searchLang phrase", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
@@ -791,6 +791,22 @@
                 lang: 'de',
                 minLang: 2,
                 filterSegments: false, // return entire sutta
+            });
+            should.deepEqual(res.suttaRefs, [
+                'thag2.15/en/sujato', 'dn14/en/sujato',
+            ]);
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTfind(...) => accepts embedded options", done=>{
+        (async function() { try {
+            var skr = await new Seeker({
+                logLevel,
+            }).initialize();
+
+            var pattern = "sabbamitta -ml 3 -sl en -l de -ml 2"; 
+            var res = await skr.find({
+                pattern,
             });
             should.deepEqual(res.suttaRefs, [
                 'thag2.15/en/sujato', 'dn14/en/sujato',
