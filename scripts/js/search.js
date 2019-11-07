@@ -94,6 +94,10 @@ DESCRIPTION
 
     --outLegacy
         Output legacy format. (NO LONGER SUPPORTED)
+
+    -sl, --searchLang ISO_LANG_2
+        Specify ISO 2-letter language code for language to search.
+        Default is determined from pattern language.
 `);
     process.exit(0);
 }
@@ -108,6 +112,7 @@ var color = 201;
 var outFormat = 'human';
 var filterSegments = true;
 var isTTY = process.stdout.isTTY;
+var searchLang;
 
 var nargs = process.argv.length;
 if (nargs < 3) {
@@ -157,6 +162,8 @@ for (var i = 2; i < nargs; i++) {
         console.error(`minLang:${minLang}`);
     } else if (arg === '-l' || arg === '--lang') {
         lang = process.argv[++i];
+    } else if (arg === '-sl' || arg === '--searchLang') {
+        searchLang = process.argv[++i];
     } else {
         pattern = pattern ? `${pattern} ${arg}` : arg;
     }
@@ -434,6 +441,7 @@ function scriptEditor(res, pattern) {
             matchHighlight,
             filterSegments,
             minLang,
+            searchLang,
             lang,
         });
         if (outFormat === 'csv') {

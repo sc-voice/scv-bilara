@@ -299,6 +299,37 @@
             done(); 
         } catch(e) {done(e);} })();
     });
+    it("TESTTESTkeywordSearch(...) searches English, not Pali", done=>{
+        (async function() { try {
+            var maxResults = 2;
+            var skr = await new Seeker({
+                maxResults,
+                logLevel,
+            }).initialize();
+            var expected = {
+                method: 'keywords',
+                maxResults,
+                lang: 'en', // searching bilara-data/translation/en
+                lines: [ 
+'translation/en/sujato/mn/mn143_translation-en-sujato.json:16',
+'translation/en/sujato/an/an10/an10.93_translation-en-sujato.json:11'
+                ],
+            };
+
+            // Single Pali keyword searches Pali
+            var data = await skr.keywordSearch({ 
+                pattern: 'Anāthapiṇḍika',
+                searchLang: 'en', // will not be ignored
+                lang: 'en', // will be ignored
+            });
+            should(data).properties(expected);
+            should.deepEqual(data.keywordsFound, {
+                'Anāthapiṇḍika': 223,
+            });
+
+            done(); 
+        } catch(e) {done(e);} })();
+    });
     it("keywordSearch(...) searches Pali, not Deutsch", done=>{
         (async function() { try {
             var maxResults = 2;
@@ -458,6 +489,36 @@
             should(data).properties(expected);
             should.deepEqual(data.lines.slice(0,3), expected.lines);
             should(data.lines.length).equal(maxResults);
+
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTphraseSearch(...) searches English", done=>{
+        var lines = [
+            `${en_suj}kn/thag/thag2.15_translation-en-sujato.json:1`,
+            `${en_suj}dn/dn14_translation-en-sujato.json:1`, 
+        ];
+        (async function() { try {
+            var lang = 'de';
+            var pattern = `sabbamitta`;
+            var maxResults = 3;
+            var skr = await new Seeker({
+                lang,
+                maxResults,
+                logLevel,
+            }).initialize();
+
+            var data = await skr.phraseSearch({ 
+                pattern,
+                searchLang: 'en',
+                lang,
+            });
+            should.deepEqual(data, {
+                method: 'phrase',
+                lang: 'en',
+                pattern: `\\bsabbamitta`,
+                lines,
+            });
 
             done(); 
         } catch(e) {done(e);} })();
@@ -712,6 +773,28 @@
                 en: "Middle Discourses 1 ",
                 pli: "Majjhima Nikāya 1 ",
             });
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTfind(...) => finds searchLang phrase", done=>{
+        (async function() { try {
+            var maxResults = 3;
+            var skr = await new Seeker({
+                maxResults,
+                logLevel,
+            }).initialize();
+
+            var pattern = "sabbamitta"; 
+            var res = await skr.find({
+                pattern,
+                searchLang: 'en',
+                lang: 'de',
+                minLang: 2,
+                filterSegments: false, // return entire sutta
+            });
+            should.deepEqual(res.suttaRefs, [
+                'thag2.15/en/sujato', 'dn14/en/sujato',
+            ]);
             done(); 
         } catch(e) {done(e);} })();
     });

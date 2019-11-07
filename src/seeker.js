@@ -221,6 +221,7 @@
             this.validate();
             var that = this;
             var {
+                searchLang,
                 lang,
                 language,
                 pattern,
@@ -233,7 +234,9 @@
                     if (pattern == null) {
                         throw new Error(`phraseSearch() requires pattern`);
                     }
-                    lang = that.patternLanguage(pattern, lang);
+                    lang = searchLang == null
+                        ? that.patternLanguage(pattern, lang)
+                        : searchLang;
                     if (lang === 'pli') {
                         var romPat = that.unicode.romanize(pattern);
                         var pat = romPat === pattern
@@ -264,6 +267,7 @@
                 pattern,
                 maxResults,
                 lang,
+                searchLang,
                 language, // DEPRECATED
                 searchMetadata,
                 comparator,
@@ -273,7 +277,9 @@
             lang = lang || language || this.lang;
             maxResults = maxResults == null ? this.maxResults : maxResults;
             var keywords = this.patternKeywords(pattern);
-            lang = this.patternLanguage(pattern, lang || language);
+            lang = searchLang == null
+                ? this.patternLanguage(pattern, lang || language)
+                : searchLang;
             var wordArgs = Object.assign({}, args, {
                 maxResults: 0, // don't clip prematurely
                 lang,
@@ -342,6 +348,7 @@
         findArgs(args) {
             var {
                 pattern,
+                searchLang,
                 lang,
                 language, // DEPRECATED
                 languages,
@@ -380,6 +387,7 @@
                 filterSegments,
                 languages,
                 maxResults,
+                searchLang,
                 maxDoc,
                 minLang,
                 matchHighlight,
@@ -392,6 +400,7 @@
             var msStart = Date.now();
             var {
                 pattern,
+                searchLang,
                 lang,
                 minLang,
                 languages,
@@ -403,6 +412,9 @@
             } = this.findArgs(args);
             var that = this;
             var bd = that.bilaraData;
+            if (searchLang == null) {
+                searchLang = that.patternLanguage(pattern, lang);
+            }
             var pbody = (resolve, reject) => {(async function() { try {
                 var resultPattern = pattern;
                 if (SuttaCentralId.test(pattern)) {
@@ -415,6 +427,7 @@
                     var method = 'phrase';
                     var searchOpts = {
                         pattern, 
+                        searchLang,
                         maxResults, 
                         lang, 
                         filterSegments,
@@ -438,7 +451,6 @@
                 }
 
                 var mlDocs = [];
-                var searchLang = that.patternLanguage(pattern, lang);
                 var segsMatched = 0;
                 var bilaraPaths = [];
                 for (var i = 0; i < suttaRefs.length; i++) {
