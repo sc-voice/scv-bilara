@@ -7,6 +7,7 @@
     } = require('just-simple').JustSimple;
     const BilaraPath = require('./bilara-path');
     const Unicode = require('./unicode');
+    const Pali = require('./pali');
     const SuttaCentralId = require('./sutta-central-id');
 
     class MLDoc {
@@ -116,17 +117,21 @@
         matchScid({seg, matchSeg, scidPat}) {
             var scid = seg.scid;
             var id = matchSeg ? scid : scid.split(':')[0];
-            return SuttaCentralId.match(id, scidPat);
+            var match = SuttaCentralId.match(id, scidPat);
+            return match;
         }
 
         matchText({seg, languages, rex}) {
             var unicode = this.unicode;
             return languages.reduce((a,l) => {
-                if (!a && seg[l]) {
-                    if (rex.test(seg[l])) {
+                var text = seg[l];
+                if (!a && text) {
+                    if (rex.test(text)) {
                         return true;
-                    } else {
-                        return rex.test(unicode.romanize(seg[l]));
+                    } else if (l === 'pli') {
+                        var romText = unicode.romanize(text);
+                        var match = rex.test(romText);
+                        return match;
                     }
 
                 }
@@ -145,23 +150,31 @@
                 var scidPat = pattern.split(/, */).reduce((a,p) => {
                     return SuttaCentralId.match(suid, p) ? p : a
                 }, pattern);
-                scidPat = scidPat.split('/')[0];
+                scidPat = scidPat.split('/')[0].replace(/ */uig, '');
                 var matchSeg = scidPat.indexOf(':') >= 0;
             }
             var matchLow = SuttaCentralId.rangeLow(pattern);
             var matchHigh = SuttaCentralId.rangeHigh(pattern);
+            var matched = 0;
             scids.forEach((scid,i) => {
                 var seg = this.segMap[scid];
                 var match = matchScid
                     ? this.matchScid({seg, matchSeg, scidPat})
                     : this.matchText({seg, languages, rex});
                 if (match) {
-                    //console.log(`dbg keep`, seg);
+                    matched++;
                 } else {
                     delete this.segMap[scid];
                 }
             });
-            return this;
+            return {
+                matched,
+                matchLow,
+                matchHigh,
+                matchScid,
+                rex,
+                suid,
+            }
         }
 
         highlightMatch(pattern, matchHighlight) {

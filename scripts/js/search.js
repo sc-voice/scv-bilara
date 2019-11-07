@@ -72,10 +72,16 @@ DESCRIPTION
         Output human format (default).
 
     -om, --outMarkdown
+        Output Markdown for matching segments. Default.
+
+    -om1, --outMarkdown1
         Output translation for matching segments, formatted with Markdown.
 
     -om2, --outMarkdown2
         Output Pali and translation for matching segments, formatted with Markdown.
+
+    -om3, --outMarkdown3
+        Output matching segments, formatted with tri-lingual Markdown.
 
     -ol, --outLines
         Output matching lines only.
@@ -125,8 +131,12 @@ for (var i = 2; i < nargs; i++) {
         outFormat = 'json';
     } else if (arg === '-om' || arg === '--outMarkdown') {
         outFormat = 'markdown';
+    } else if (arg === '-om1' || arg === '--outMarkdown1') {
+        outFormat = 'markdown1';
     } else if (arg === '-om2' || arg === '--outMarkdown2') {
         outFormat = 'markdown2';
+    } else if (arg === '-om3' || arg === '--outMarkdown3') {
+        outFormat = 'markdown3';
     } else if (arg === '-ot' || arg === '--outTrans') {
         outFormat = 'trans';
     } else if (arg === '-ol' || arg === '--outLines') {
@@ -203,6 +213,8 @@ function outHuman(res, pattern) {
         suttaRefs,
         elapsed,
         method,
+        minLang,
+        segsMatched,
     } = res;
     var refs = res.suttaRefs.map(s=>s.split('/')[0])
         .sort(SuttaCentralId.compareLow)
@@ -211,9 +223,9 @@ function outHuman(res, pattern) {
     var nDocs = mlDocs.length;
     console.log(
 `pattern      : "${pattern}" grep:${res.resultPattern}
-languages    : translation:${lang} search:${res.searchLang} minLang:${res.minLang}
-output       : ${outFormat} color:${color} elapsed:${elapsed} seconds
-found        : ${method} in ${nDocs}/${nRefs} documents ${refs}; maxDoc:${maxDoc} maxResults:${maxResults}`);
+languages    : translation:${lang} search:${res.searchLang} minLang:${minLang}
+output       : ${outFormat} color:${color} elapsed:${elapsed}s maxDoc:${maxDoc}
+found        : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${refs}`);
     mlDocs.forEach((mld,im) => {
         var suid = mld.suid;
         mld.segments().forEach((seg,i) => {
@@ -248,18 +260,21 @@ function outLines(res, pattern) {
     });
 }
 
-function outMarkdown(res, pattern, nLang=1) {
+function outMarkdown(res, pattern, nLang=3) {
     res.mlDocs.forEach(mld => {
         var suid = mld.suid;
         mld.segments().forEach((seg,i) => {
             var scid = seg.scid;
-            var text = (seg[res.lang] || '').trim();
+            var langText = (seg[res.lang] || '').trim();
             var linkText = suid;
             var link = `https://suttacentral.net/${suid}/en/sujato#${scid}`;
             if (nLang > 1) {
                 console.log(`> [${linkText}](${link}): ${seg.pli}`);
             }
-            text && console.log(`> [${linkText}](${link}): ${text}`);
+            if (nLang > 2 && res.lang !== 'en') {
+                console.log(`> [${linkText}](${link}): ${seg.en}`);
+            }
+            langText && console.log(`> [${linkText}](${link}): ${langText}`);
         });
     });
 }
@@ -430,9 +445,13 @@ function scriptEditor(res, pattern) {
         } else if (outFormat === 'lines') {
             outLines(res, pattern);
         } else if (outFormat === 'markdown') {
+            outMarkdown(res, pattern);
+        } else if (outFormat === 'markdown1') {
             outMarkdown(res, pattern, 1);
         } else if (outFormat === 'markdown2') {
             outMarkdown(res, pattern, 2);
+        } else if (outFormat === 'markdown3') {
+            outMarkdown(res, pattern, 3);
         } else if (outFormat === 'trans') {
             outTrans(res, pattern);
         } else {

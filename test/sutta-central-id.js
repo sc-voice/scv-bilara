@@ -258,7 +258,11 @@
         var scid = new SuttaCentralId('mn1');
         should.deepEqual(scid.groups, null);
     });
-    it("test(text) => text is suid ", function() {
+    it("TESTTESTtest(text) => text is suid ", function() {
+        // space
+        should(SuttaCentralId.test('mn 1-10')).equal(true);
+        should(SuttaCentralId.test('mn 1')).equal(true);
+
         // unsupported sutta
         should(SuttaCentralId.test('t1670b2.8')).equal(true);
 

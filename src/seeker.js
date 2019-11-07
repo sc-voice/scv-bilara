@@ -12,6 +12,7 @@
     const FuzzyWordSet = require('./fuzzy-word-set');
     const BilaraPath = require('./bilara-path');
     const Pali = require('./pali');
+    const Unicode = require('./unicode');
     const English = require('./english');
     const BilaraData = require('./bilara-data');
     const SuttaCentralId = require('./sutta-central-id');
@@ -29,6 +30,7 @@
             logger.logInstance(this, opts);
             this.lang = opts.lang || 'en';
             this.languages = opts.languages || ['pli', 'en'];
+            this.unicode = opts.unicode || new Unicode();
             this.grepAllow = opts.grepAllow ||
                 new RegExp("^[^/]+/(an|sn|mn|kn|dn)/","iu");
             this.grepDeny = opts.grepDeny ||
@@ -150,10 +152,13 @@
         }
 
         keywordPattern(keyword, lang) {
-            if (this.paliWords.contains(keyword)) {
-                keyword = Pali.romanizePattern(keyword);
-            }
             var pat = `\\b${keyword}`;
+            if (this.paliWords.contains(keyword)) {
+                var romKeyword = this.unicode.romanize(keyword);
+                pat = keyword === romKeyword
+                    ? `\\b${Pali.romanizePattern(keyword)}`
+                    : keyword;
+            }
             if (this.matchWordEnd === undefined && lang === 'en') {
                 pat += '\\b';
             } else if (this.matchWordEnd === true) {
@@ -229,12 +234,17 @@
                         throw new Error(`phraseSearch() requires pattern`);
                     }
                     lang = that.patternLanguage(pattern, lang);
-                    pattern = lang === 'pli' 
-                        ? `\\b${Pali.romanizePattern(pattern)}` 
-                        : `\\b${pattern}`;
-                    that.log(`phraseSearch(${pattern},${lang})`);
+                    if (lang === 'pli') {
+                        var romPat = that.unicode.romanize(pattern);
+                        var pat = romPat === pattern
+                            ? `\\b${Pali.romanizePattern(pattern)}` 
+                            : pattern;
+                    } else {
+                        var pat = `\\b${pattern}`;
+                    }
+                    that.log(`phraseSearch(${pat},${lang})`);
                     var grepArgs = Object.assign({}, args, {
-                        pattern,
+                        pattern:pat,
                         lang,
                         maxResults,
                     });
@@ -242,7 +252,7 @@
                     resolve({
                         method: 'phrase',
                         lang,
-                        pattern,
+                        pattern:pat,
                         lines,
                     });
                 } catch(e) { reject(e); }})();
@@ -429,6 +439,7 @@
 
                 var mlDocs = [];
                 var searchLang = that.patternLanguage(pattern, lang);
+                var segsMatched = 0;
                 var bilaraPaths = [];
                 for (var i = 0; i < suttaRefs.length; i++) {
                     let suttaRef = suttaRefs[i];
@@ -440,7 +451,9 @@
                     });
                     bilaraPaths = [...bilaraPaths, ...mld.bilaraPaths];
                     if (filterSegments) {
-                        mld.filterSegments(resultPattern, [searchLang]);
+                        var resFilter = mld
+                            .filterSegments(resultPattern, [searchLang]);
+                        segsMatched += resFilter.matched;
                     }
                     if (matchHighlight) {
                         mld.highlightMatch(resultPattern, matchHighlight);
@@ -461,6 +474,7 @@
                     method,
                     minLang,
                     resultPattern,
+                    segsMatched,
                     bilaraPaths,
                     suttaRefs,
                     mlDocs,

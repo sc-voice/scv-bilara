@@ -260,21 +260,20 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("keywordSearch(...) searches Pali, not English", done=>{
+    it("TESTTESTkeywordSearch(...) searches Pali, not English", done=>{
         (async function() { try {
+            var maxResults = 2;
             var skr = await new Seeker({
+                maxResults,
                 logLevel,
             }).initialize();
             var expected = {
                 method: 'keywords',
-                maxResults: 5,
+                maxResults,
                 lang: 'pli', // searching bilara-data/root/pli
                 lines: [ 
                     'root/pli/ms/an/an10/an10.93_root-pli-ms.json:9',
                     'root/pli/ms/sn/sn10/sn10.8_root-pli-ms.json:9',
-                    'root/pli/ms/mn/mn143_root-pli-ms.json:7',
-                    'root/pli/ms/sn/sn55/sn55.26_root-pli-ms.json:7',
-                    'root/pli/ms/sn/sn55/sn55.27_root-pli-ms.json:4'
                 ],
             };
 
@@ -285,7 +284,7 @@
             });
             should(data).properties(expected);
             should.deepEqual(data.keywordsFound, {
-                    'Anāthapiṇḍika': 221,
+                'Anāthapiṇḍika': 220,
             });
 
             // Single romanized Pali searches Pali
@@ -302,20 +301,19 @@
     });
     it("keywordSearch(...) searches Pali, not Deutsch", done=>{
         (async function() { try {
+            var maxResults = 2;
             var skr = await new Seeker({
                 lang: 'de',
+                maxResults,
                 logLevel,
             }).initialize();
             var expected = {
                 method: 'keywords',
-                maxResults: 5,
+                maxResults,
                 lang: 'pli', // searching bilara-data/root/pli
                 lines: [ 
                     'root/pli/ms/an/an10/an10.93_root-pli-ms.json:9',
                     'root/pli/ms/sn/sn10/sn10.8_root-pli-ms.json:9',
-                    'root/pli/ms/mn/mn143_root-pli-ms.json:7',
-                    'root/pli/ms/sn/sn55/sn55.26_root-pli-ms.json:7',
-                    'root/pli/ms/sn/sn55/sn55.27_root-pli-ms.json:4'
                 ],
             };
 

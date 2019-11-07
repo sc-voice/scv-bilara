@@ -46,6 +46,9 @@
         }
 
         static test(text) {
+            if (typeof text !== 'string') {
+                throw new Error(`Expected string:${text}`);
+            }
             var commaParts = text.toLowerCase().split(',').map(p=>p.trim());
             return commaParts.reduce((acc,part) => {
                 return acc && /^[a-z]+ ?[0-9]+[-0-9a-z.:\/]*$/i.test(part);
