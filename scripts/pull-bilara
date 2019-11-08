@@ -1,13 +1,14 @@
 #!/bin/bash
 DIR=`dirname $0`
 echo "$0 DIR:$DIR"
-cd ${DIR}/../local/bilara-data
-echo -e "PULL\t: Switching to master branch" && \
+cd ${DIR}/../local/bilara-data; pwd
+echo -e "BILARA\t: Switching to master branch" && \
 git checkout master && \
-echo -e "PULL\t: Refreshing bilara-data fork from Github..." && \
+echo -e "BILARA\t: Refreshing bilara-data fork from Github..." && \
 git pull && \
-echo -e "PULL\t: Refreshing bilara-data fork from upstream master..." && \
+echo -e "BILARA\t: Refreshing bilara-data fork from upstream master..." && \
 git pull -Xtheirs --no-edit https://github.com/suttacentral/bilara-data && \
-echo -e "PULL\t: Committing changes to bilara-data..." && \
+echo -e "BILARA\t: Committing changes to bilara-data..." && \
 git commit -am "SuttaCentral Update" && \
+echo -e "BILARA\t: Pushing changes to Github..." && \
 git push
