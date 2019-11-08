@@ -28,7 +28,7 @@
         }
 
         static compare(m1,m2) {
-            var cmp = m1.score - m2.score;
+            var cmp = m2.score - m1.score;
             return cmp ? cmp : SuttaCentralId.compareLow(m1.suid, m2.suid);
         }
 
@@ -145,7 +145,10 @@
             }, false);
         }
 
-        filterSegments(pattern, languages=this.languages()) {
+        filterSegments(pattern, 
+            languages=this.languages(), 
+            showMatchesOnly=true) 
+        {
             var scids = this.scids();
             var suid = this.suid;
             var rex = pattern instanceof RegExp 
@@ -170,10 +173,12 @@
                 if (match) {
                     matched++;
                 } else {
-                    delete this.segMap[scid];
+                    showMatchesOnly && delete this.segMap[scid];
                 }
             });
-            var score = matched + matched/scids.length;
+            var score = matchScid
+                ? 0
+                : Number((matched + matched/scids.length).toFixed(3));
             this.score = score;
             return {
                 matched,

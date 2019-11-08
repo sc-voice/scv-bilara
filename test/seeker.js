@@ -551,6 +551,25 @@
             done(); 
         } catch(e) {done(e);} })();
     });
+    it("TESTTESTfind(...) orders sutta references found", done=>{
+        (async function() { try {
+            var skr = await new Seeker({
+                logLevel,
+            }).initialize();
+
+            var res = await skr.find({
+                pattern: "sn29.9-999",
+                matchHighlight: false,
+            });
+            should(res.method).equal('sutta_uid');
+            should.deepEqual(res.suttaRefs,
+                ['sn29.9', 'sn29.10', 'sn29.11-20', 'sn29.21-50']);
+            should.deepEqual(res.mlDocs.map(mld=>mld.score), [0,0,0,0]);
+            should.deepEqual(res.mlDocs.map(mld=>mld.suid),  
+                ['sn29.9', 'sn29.10', 'sn29.11-20', 'sn29.21-50']);
+            done(); 
+        } catch(e) {done(e);} })();
+    });
     it("TESTTESTfind(...) finds sutta references", done=>{
         (async function() { try {
             var maxResults = 3;
@@ -572,31 +591,13 @@
             should(res.maxResults).equal(maxResults);
             should.deepEqual(res.suttaRefs,
                 ['sn12.23', 'an1.1-10', 'an1.11-20', ]);
+            // mlDocs are not sorted when searching by suid 
+            // since the user is specifying the desired order
+            should.deepEqual(res.mlDocs.map(mld=>mld.suid),
+                ['sn12.23', 'an1.1-10', 'an1.11-20', ]);
             should(res.resultPattern).equal(pattern);
             should(res.lang).equal('de');
             should(res.mlDocs.length).equal(3);
-            var [mld0, mld1] = res.mlDocs;
-            should(mld0).properties({
-                suid: 'sn12.23',
-                logLevel,
-            });
-            should(mld1).properties({
-                suid: 'an1.11-20',
-                logLevel,
-            });
-            should.deepEqual(mld1.bilaraPaths.sort(), [
-                'root/pli/ms/'+
-                    'an/an1/an1.11-20_root-pli-ms.json',
-                `${en_suj}an/an1/an1.11-20_translation-en-sujato.json`,
-                'translation/de/sabbamitta/'+
-                    'an/an1/an1.11-20_translation-de-sabbamitta.json',
-            ].sort());
-            should.deepEqual(mld1.segMap['an1.12:0.1'], {
-                scid: 'an1.12:0.1',
-                en: '12 ',
-                de: '12 ',
-                pli: '12 ',
-            });
             done(); 
         } catch(e) {done(e);} })();
     });
@@ -636,7 +637,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("find(...) finds an1.2 part of an1.1-10", done=>{
+    it("TESTTESTfind(...) finds an1.2 part of an1.1-10", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
@@ -730,7 +731,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("find(...) => finds phrase", done=>{
+    it("TESTTESTfind(...) => finds phrase", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
@@ -743,12 +744,18 @@
                 pattern,
                 lang: 'de',
                 minLang: 2,
-                filterSegments: false, // return entire sutta
+                showMatchesOnly: false, // return entire sutta
             });
             should.deepEqual(res.suttaRefs, [
                 'sn42.11/en/sujato',
                 'mn105/en/sujato',
                 'mn1/en/sujato',
+            ]);
+            should.deepEqual(res.mlDocs.map(mld=>mld.score), [
+                5.091, 3.016, 2.006,
+            ]);
+            should.deepEqual(res.mlDocs.map(mld=>mld.suid), [
+                "sn42.11", "mn105", "mn1",
             ]);
             var [
                 mld0,
@@ -790,7 +797,7 @@
                 searchLang: 'en',
                 lang: 'de',
                 minLang: 2,
-                filterSegments: false, // return entire sutta
+                showMatchesOnly: false, // return entire sutta
             });
             should.deepEqual(res.suttaRefs, [
                 'thag2.15/en/sujato', 'dn14/en/sujato',

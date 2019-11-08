@@ -358,7 +358,7 @@
                 maxDoc,     // maximum number of returned documents
                 matchHighlight,
                 sortLines,
-                filterSegments,
+                showMatchesOnly,
             } = typeof opts !== 'string' 
                 ? args[0]
                 : {
@@ -407,7 +407,7 @@
                 (lang === 'en' || searchLang === 'en' ? 2 : 3);
             pattern = Seeker.sanitizePattern(pattern);
             pattern = Seeker.normalizePattern(pattern);
-            (filterSegments == null) && (filterSegments = true);
+            (showMatchesOnly == null) && (showMatchesOnly = true);
             languages = languages || this.languages || [];
             (lang && languages.indexOf(lang)<0) && languages.push(lang);
             maxResults = Number(
@@ -421,7 +421,7 @@
 
             return {
                 pattern,
-                filterSegments,
+                showMatchesOnly,
                 languages,
                 maxResults,
                 searchLang,
@@ -445,18 +445,20 @@
                 maxResults,
                 maxDoc,
                 matchHighlight,
-                filterSegments,
+                showMatchesOnly,
             } = this.findArgs(args);
             var that = this;
             var bd = that.bilaraData;
             var pbody = (resolve, reject) => {(async function() { try {
                 var resultPattern = pattern;
+                var scoreDoc = true;
                 if (SuttaCentralId.test(pattern)) {
                     var {
                         method,
                         uids,
                         suttaRefs,
                     } = bd.sutta_uidSearch(pattern, maxResults, lang);
+                    scoreDoc = false;
                 } else {
                     var method = 'phrase';
                     var searchOpts = {
@@ -464,7 +466,7 @@
                         searchLang,
                         maxResults, 
                         lang, 
-                        filterSegments,
+                        showMatchesOnly,
                     };
 
                     var {
@@ -496,12 +498,11 @@
                         languages,
                     });
                     bilaraPaths = [...bilaraPaths, ...mld.bilaraPaths];
-                    if (filterSegments) {
-                        var resFilter = mld
-                            .filterSegments(resultPattern, [searchLang]);
-                        segsMatched += resFilter.matched;
-                        mld.segsMatched = resFilter.matched;
-                    }
+                    var resFilter = mld.filterSegments(resultPattern, 
+                        [searchLang], 
+                        showMatchesOnly);
+                    segsMatched += resFilter.matched;
+                    mld.segsMatched = resFilter.matched;
                     if (matchHighlight) {
                         mld.highlightMatch(resultPattern, matchHighlight);
                     }
@@ -509,7 +510,7 @@
                         mlDocs.push(mld);
                     }
                 }
-                mlDocs.sort((a,b) => MLDoc.compare(b,a));
+                scoreDoc && mlDocs.sort(MLDoc.compare);
                 mlDocs = mlDocs.slice(0, maxDoc);
                 resolve({
                     lang,   // embeddable option

@@ -107,7 +107,7 @@ var maxResults = 1000;
 var logLevel = false;
 var color = 201;
 var outFormat = 'human';
-var filterSegments = true;
+var showMatchesOnly = true;
 var isTTY = process.stdout.isTTY;
 //var searchLang;
 
@@ -124,7 +124,7 @@ for (var i = 2; i < nargs; i++) {
         logLevel = process.argv[++i];
     } else if (arg === '-f' || arg === '--filter') {
         var filter  = process.argv[++i];
-        filterSegments = filter === 'pattern';
+        showMatchesOnly = filter === 'pattern';
     } else if (arg === '-c' || arg === '--color') {
         color = process.argv[++i];
     } else if (arg === '-oj' || arg === '--outJSON') {
@@ -329,7 +329,7 @@ function scriptEditor(res, pattern) {
     var res = await skr.find({
         pattern,
         matchHighlight,
-        filterSegments,
+        showMatchesOnly,
     });
     if (outFormat === 'csv') {
         outCSV(res, pattern);
