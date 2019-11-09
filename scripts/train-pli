@@ -1,0 +1,4 @@
+#!/bin/bash
+DIR=`dirname $0`
+echo "$0 DIR:$DIR"
+${DIR}/js/train-pli.js
