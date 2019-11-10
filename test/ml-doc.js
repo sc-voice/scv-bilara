@@ -134,17 +134,35 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
         var rex = new RegExp(`\\b${Pali.romanizePattern(pattern)}`, "ui");
         should(mld.matchText({seg, languages, rex})).equal(true);
     });
-    it("languages(...) => language list", done=>{
-        (async function() { try {
-            var mld = new MLDoc({
-                bilaraPaths: bilaraPaths_an1_1_1,
-            });
-            var res = await mld.load(BILARA_PATH);
-            should.deepEqual(mld.languages(),[ 
-                'pli', 'en', 'de' ]);
+    it("TESTTESTlangCompare_pli_en(...) => orders languages", ()=>{
+        should(MLDoc.langCompare_pli_en('en', 'pli')).equal(1);
+        should(MLDoc.langCompare_pli_en('en', 'pt')).equal(-1);
+        should(MLDoc.langCompare_pli_en('de', 'pt')).equal(-1);
+        should.deepEqual(
+            ['de', 'en', 'pt', 'pli'].sort(MLDoc.langCompare_pli_en), 
+            ['pli', 'en', 'de', 'pt']);
+    });
+    it("TESTTESTlanguages(...) => language list", ()=>{
+        var mld = new MLDoc({
+            bilaraPaths: bilaraPaths_an1_1_1,
+        });
 
-            done();
-        } catch(e) { done(e); } })();
+        // languages are sorted in source order
+        should.deepEqual(mld.languages(), ['pli', 'en', 'de' ]);
+    });
+    it("TESTTESTlang => target language", () => {
+        // default language is translation language (vs. source language)
+        var mld = new MLDoc({
+            bilaraPaths: bilaraPaths_an1_1_1,
+        });
+        should(mld.lang).equal('de');
+
+        // custom target language
+        var mld = new MLDoc({
+            bilaraPaths: bilaraPaths_an1_1_1,
+            lang: 'en',
+        });
+        should(mld.lang).equal('en');
     });
     it("TESTTESTfilterSegments(...) => pali segment", done=>{
         (async function() { try {

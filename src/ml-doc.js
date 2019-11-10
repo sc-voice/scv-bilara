@@ -19,6 +19,7 @@
                 throw new Error(`bilaraPaths is required`);
             }
             this.bilaraPaths = bilaraPaths;
+            this.lang = opts.lang || this.languages().pop();
             this.segMap = {};
             this.score = 0; // search relevance
             Object.defineProperty(this, "unicode", {
@@ -30,6 +31,26 @@
         static compare(m1,m2) {
             var cmp = m2.score - m1.score;
             return cmp ? cmp : SuttaCentralId.compareLow(m1.suid, m2.suid);
+        }
+
+        static langCompare_pli_en(a,b) {
+            if (a === b) {
+                return 0;
+            }
+
+            if (a === 'pli') { // Pali is primary source
+                return -1;
+            } else if (b === 'pli') {
+                return 1;
+            }
+
+            if (a === 'en') { // English is secondary source
+                return -1;
+            } else if (b === 'en') {
+                return 1;
+            }
+
+            return a.localeCompare(b); // arbitrary but consistent
         }
 
         get suid() { 
@@ -72,7 +93,7 @@
                     a[bp.split('/')[1]] = true;
                     return a;
                 }, {})
-            );
+            ).sort(MLDoc.langCompare_pli_en);
         }
 
         load(root) {
