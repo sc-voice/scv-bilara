@@ -55,6 +55,9 @@
             author_uid: 'ms',
             bilaraPath: bilaraPaths_an1_1_1[0],
         });
+
+        var mldCopy = new MLDoc(mld);
+        should.deepEqual(mldCopy, mld);
     });
     it("load(...) loads MLDoc", done=>{
         (async function() { try {

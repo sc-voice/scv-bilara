@@ -20,7 +20,7 @@
             }
             this.bilaraPaths = bilaraPaths;
             this.lang = opts.lang || this.languages().pop();
-            this.segMap = {};
+            this.segMap = opts.segMap || {};
             this.score = 0; // search relevance
             Object.defineProperty(this, "unicode", {
                 value: opts.unicode || new Unicode(),
