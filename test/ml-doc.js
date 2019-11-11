@@ -199,15 +199,18 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
             done();
         } catch(e) { done(e); } })();
     });
-    it("filterSegments(...) => major segment", done=>{
+    it("TESTTESTfilterSegments(...) => major segment", done=>{
         (async function() { try {
             var mld = new MLDoc({
                 bilaraPaths: bilaraPaths_sn12_23,
             });
             var res = await mld.load(BILARA_PATH);
-            mld.filterSegments('sn12.23:8', ['en']);
+            var showMatchesOnly = false;
+            mld.filterSegments('sn12.23:8', ['en'], showMatchesOnly);
             var segments = mld.segments();
-            should.deepEqual(segments.map(s => s.scid), [
+            should(segments.length).equal(93);
+            var matched = segments.filter(s => s.matched);
+            should.deepEqual(matched.map(s => s.scid), [
                 'sn12.23:8.1',
                 'sn12.23:8.2',
             ]);

@@ -629,6 +629,7 @@
             should(segments.length).equal(334);
             should.deepEqual(segments[22],{
                 scid: 'mn1:5.2',
+                matched: true,
                 pli: 'tejaṃ tejato saññatvā tejaṃ maññati, '+
                     'tejasmiṃ maññati, tejato maññati, '+
                     'tejaṃ meti maññati, tejaṃ abhinandati. ',

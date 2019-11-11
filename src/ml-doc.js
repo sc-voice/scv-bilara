@@ -193,6 +193,7 @@
                     : this.matchText({seg, languages, rex});
                 if (match) {
                     matched++;
+                    seg.matched = true;
                 } else {
                     showMatchesOnly && delete this.segMap[scid];
                 }
@@ -225,7 +226,7 @@
                 scids.forEach(scid => {
                     var seg = this.segMap[scid];
                     Object.keys(seg).forEach(k => {
-                        if (k !== 'scid') {
+                        if (k !== 'scid' && k !== 'matched') {
                             seg[k] = seg[k].replace(rex, matchHighlight);
                         }
                     });
