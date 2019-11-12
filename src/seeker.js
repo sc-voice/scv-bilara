@@ -39,7 +39,8 @@
             this.paliWords = opts.paliWords;
             this.bilaraData = opts.bilaraData || new BilaraData(opts);
             this.enWords = opts.enWords;
-            this.matchColor = opts.matchColor == null ? 121 : opts.matchColor;
+            this.matchColor = opts.matchColor == null 
+                ? 121 : opts.matchColor;
             this.matchHighlight = opts.matchHighlight === undefined 
                 ? `\u001b[38;5;${this.matchColor}m$&\u001b[0m`
                 : '';

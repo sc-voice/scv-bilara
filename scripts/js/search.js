@@ -71,6 +71,15 @@ DESCRIPTION
     -oh, --outHuman
         Output human format (default).
 
+    -oh1, --outHuman1
+        Output human format in translation language.
+
+    -oh2, --outHuman2
+        Output human format in Pali and translation language.
+
+    -oh3, --outHuman3
+        Output human format in Pali, English and translation language.
+
     -om, --outMarkdown
         Output Markdown for matching segments. Default.
 
@@ -145,6 +154,12 @@ for (var i = 2; i < nargs; i++) {
         outFormat = 'paths';
     } else if (arg === '-oh' || arg === '--outHuman') {
         outFormat = 'human';
+    } else if (arg === '-oh1' || arg === '--outHuman1') {
+        outFormat = 'human1';
+    } else if (arg === '-oh2' || arg === '--outHuman2') {
+        outFormat = 'human2';
+    } else if (arg === '-oh3' || arg === '--outHuman3') {
+        outFormat = 'human3';
     } else if (arg === '--outLegacy') {
         outFormat = 'legacy';
         help();
@@ -202,13 +217,15 @@ function outJSON(res) {
     console.log(text);
 }
 
-function outHuman(res, pattern) {
+function outHuman(res, pattern, nLang=1) {
     var {
         mlDocs,
         suttaRefs,
         elapsed,
+        searchLang,
         method,
         minLang,
+        lang,
         segsMatched,
     } = res;
     var refs = res.suttaRefs.map(s=>s.split('/')[0])
@@ -218,7 +235,7 @@ function outHuman(res, pattern) {
     var nDocs = mlDocs.length;
     console.log(
 `pattern      : "${res.pattern}" grep:${res.resultPattern}
-languages    : translation:${res.lang} search:${res.searchLang} minLang:${res.minLang}
+languages    : translation:${res.lang} search:${searchLang} minLang:${res.minLang}
 output       : ${outFormat} color:${color} elapsed:${elapsed}s maxDoc:${res.maxDoc}
 found        : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${refs}`);
     mlDocs.forEach((mld,im) => {
@@ -233,11 +250,22 @@ found        : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${
                 let title = `doc:${im+1}/${nDocs} ${suid} score:${score}`;
                 console.log(`${sep} ${title} ${sep}`);
             }
-            Object.keys(seg).forEach(k => {
-                var key = `    ${k}`;
-                key = key.substring(key.length-4);
-                console.log(`${key}: ${seg[k]}`);
-            });
+            if (nLang === 1) {
+                console.log(`${seg.scid}: ${seg[searchLang]}`);
+            } else {
+                console.log(`scid: ${seg.scid}`);
+                console.log(` pli: ${seg.pli || ''}`);
+                if (nLang === 3 || searchLang==='en' || lang === 'en') {
+                    console.log(`  en: ${seg.en || ''}`);
+                }
+                if (searchLang !== 'pli' && searchLang !== 'en') {
+                    var text = seg[searchLang] || '';
+                    console.log(`  ${searchLang}: ${text}`);
+                } else if (lang !== 'pli' && lang !== 'en') {
+                    var text = seg[lang] || '';
+                    console.log(`  ${lang}: ${text}`);
+                }
+            }
         });
     });
 }
@@ -349,8 +377,14 @@ function scriptEditor(res, pattern) {
         outMarkdown(res, pattern, 3);
     } else if (outFormat === 'trans') {
         outTrans(res, pattern);
+    } else if (outFormat === 'human1') {
+        outHuman(res, pattern, 1);
+    } else if (outFormat === 'human2') {
+        outHuman(res, pattern, 2);
+    } else if (outFormat === 'human3') {
+        outHuman(res, pattern, 3);
     } else {
-        outHuman(res, pattern);
+        outHuman(res, pattern, 3);
     }
     scriptEditor(res, pattern);
 } catch(e) { logger.warn(e.stack); }})();
