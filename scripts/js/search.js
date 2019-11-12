@@ -246,7 +246,7 @@ found        : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${
             if (i === 0) {
                 let sm = mld.hasOwnProperty('segsMatched')
                     ? mld.segsMatched : '';
-                let score = mld.score.toFixed(2);
+                let score = mld.score.toFixed(3);
                 let title = `doc:${im+1}/${nDocs} ${suid} score:${score}`;
                 console.log(`${sep} ${title} ${sep}`);
             }

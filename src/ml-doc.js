@@ -81,6 +81,20 @@
                 .filter(t => t.type === 'translation');
         }
 
+        titles(lang=this.lang) {
+            var titles = this.segments().slice(0,4).reduce((a,s)=>{
+                if (s.scid.split(':')[1].match(/^0/)) {
+                    var text = (s[lang] || s.en || s.pli || '');
+                    text.length && a.push(text.trim());
+                }
+                return a;
+            },[]);
+            if (titles.length === 0) {
+                titles = [`(no-title-${this.suid})`];
+            }
+            return titles;
+        }
+
         scids() {
             var result = Object.keys(this.segMap);
             result.sort(SuttaCentralId.compareLow);
