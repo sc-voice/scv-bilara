@@ -169,6 +169,30 @@
             return new SuttaCentralId(`${this.sutta}:${groups.join('.')}.`);
         }
 
+        add(...args) {
+            var prefix = this.scid.replace(/[-.:0-9]+$/,'');
+            var id = this.scid.substring(prefix.length);
+            var colonParts = id.split(':');
+            if (colonParts.length > 1) { // segment id
+                var dotParts = colonParts[1].split('.');
+                var n = Math.min(args.length, dotParts.length);
+                for (var i = 0; i < n; i++) {
+                    var a = Number(args[i]);
+                    dotParts[i] = Number(dotParts[i]) + a;
+                }
+                var id2 = `${colonParts[0]}:${dotParts.join('.')}`;
+            } else { // document id
+                var dotParts = colonParts[0].split('.');
+                var n = Math.min(args.length, dotParts.length);
+                for (var i = 0; i < n; i++) {
+                    var a = Number(args[i]);
+                    dotParts[i] = Number(dotParts[i]) + a;
+                }
+                var id2 = `${dotParts.join('.')}`;
+            }
+            return new SuttaCentralId(`${prefix}${id2}`);
+        }
+
         toString() {
             return this.scid;
         }

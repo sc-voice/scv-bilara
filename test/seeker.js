@@ -260,7 +260,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTkeywordSearch(...) searches Pali, not English", done=>{
+    it("keywordSearch(...) searches Pali, not English", done=>{
         (async function() { try {
             var maxResults = 2;
             var skr = await new Seeker({
@@ -299,7 +299,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTkeywordSearch(...) searches English, not Pali", done=>{
+    it("keywordSearch(...) searches English, not Pali", done=>{
         (async function() { try {
             var maxResults = 2;
             var skr = await new Seeker({
@@ -493,7 +493,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTphraseSearch(...) searches English", done=>{
+    it("phraseSearch(...) searches English", done=>{
         var lines = [
             `${en_suj}kn/thag/thag2.15_translation-en-sujato.json:1`,
             `${en_suj}dn/dn14_translation-en-sujato.json:1`, 
@@ -551,7 +551,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) orders sutta references found", done=>{
+    it("find(...) orders sutta references found", done=>{
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,
@@ -570,7 +570,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) finds sutta references", done=>{
+    it("find(...) finds sutta references", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
@@ -638,7 +638,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) finds an1.2 part of an1.1-10", done=>{
+    it("find(...) finds an1.2 part of an1.1-10", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
@@ -732,7 +732,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) => finds phrase", done=>{
+    it("find(...) => finds phrase", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
@@ -806,7 +806,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) => accepts embedded options", done=>{
+    it("find(...) => accepts embedded options", done=>{
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,

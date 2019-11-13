@@ -258,7 +258,7 @@
         var scid = new SuttaCentralId('mn1');
         should.deepEqual(scid.groups, null);
     });
-    it("TESTTESTtest(text) => text is suid ", function() {
+    it("test(text) => text is suid ", function() {
         // space
         should(SuttaCentralId.test('mn 1-10')).equal(true);
         should(SuttaCentralId.test('mn 1')).equal(true);
@@ -316,6 +316,15 @@
         should(SuttaCentralId.rangeLow("an1.2-11")).equal("an1.2");
         should(SuttaCentralId.rangeLow("an1.2")).equal("an1.2");
         should(SuttaCentralId.rangeLow("mn1")).equal("mn1");
+    });
+    it("add(...) increments number", ()=>{
+        var segid = new SuttaCentralId('an1.1:0.1');
+        should(segid.add(1).scid).equal('an1.1:1.1');
+        should(segid.add(0,1).scid).equal('an1.1:0.2');
+
+        var suid = new SuttaCentralId('an1.1');
+        should(suid.add(1).scid).equal('an2.1');
+        should(suid.add(0,1).scid).equal('an1.2');
     });
 
 })

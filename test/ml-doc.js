@@ -149,7 +149,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTmatchText(...) matches segment text", ()=>{
+    it("matchText(...) matches segment text", ()=>{
         var mld = new MLDoc({
             bilaraPaths: [],
         });
@@ -162,7 +162,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
         var rex = new RegExp(`\\b${Pali.romanizePattern(pattern)}`, "ui");
         should(mld.matchText({seg, languages, rex})).equal(true);
     });
-    it("TESTTESTlangCompare_pli_en(...) => orders languages", ()=>{
+    it("langCompare_pli_en(...) => orders languages", ()=>{
         should(MLDoc.langCompare_pli_en('en', 'pli')).equal(1);
         should(MLDoc.langCompare_pli_en('en', 'pt')).equal(-1);
         should(MLDoc.langCompare_pli_en('de', 'pt')).equal(-1);
@@ -170,7 +170,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
             ['de', 'en', 'pt', 'pli'].sort(MLDoc.langCompare_pli_en), 
             ['pli', 'en', 'de', 'pt']);
     });
-    it("TESTTESTlanguages(...) => language list", ()=>{
+    it("languages(...) => language list", ()=>{
         var mld = new MLDoc({
             bilaraPaths: bilaraPaths_an1_1_1,
         });
@@ -178,7 +178,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
         // languages are sorted in source order
         should.deepEqual(mld.languages(), ['pli', 'en', 'de' ]);
     });
-    it("TESTTESTlang => target language", () => {
+    it("lang => target language", () => {
         // default language is translation language (vs. source language)
         var mld = new MLDoc({
             bilaraPaths: bilaraPaths_an1_1_1,
@@ -192,7 +192,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
         });
         should(mld.lang).equal('en');
     });
-    it("TESTTESTfilterSegments(...) => pali segment", done=>{
+    it("filterSegments(...) => pali segment", done=>{
         (async function() { try {
             var mld = new MLDoc({
                 bilaraPaths: bilaraPaths_mn118,
@@ -224,7 +224,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTfilterSegments(...) => major segment", done=>{
+    it("filterSegments(...) => major segment", done=>{
         (async function() { try {
             var mld = new MLDoc({
                 bilaraPaths: bilaraPaths_sn12_23,
