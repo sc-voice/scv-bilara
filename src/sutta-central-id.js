@@ -153,6 +153,10 @@
             return this.sutta.replace(/[-0-9.]*$/,'');
         }
 
+        get nikayaFolder() {
+            return this.sutta.split('.')[0];
+        }
+
         get sutta() {
             return this.scid && this.scid.split(':')[0] ;
         }
@@ -170,15 +174,16 @@
         }
 
         add(...args) {
-            var prefix = this.scid.replace(/[-.:0-9]+$/,'');
+            var prefix = this.nikaya;
             var id = this.scid.substring(prefix.length);
             var colonParts = id.split(':');
             if (colonParts.length > 1) { // segment id
                 var dotParts = colonParts[1].split('.');
-                var n = Math.min(args.length, dotParts.length);
-                for (var i = 0; i < n; i++) {
+                for (var i = 0; i < dotParts.length; i++) {
                     var a = Number(args[i]);
-                    dotParts[i] = Number(dotParts[i]) + a;
+                    dotParts[i] = i < args.length
+                        ? Number(dotParts[i]) + a
+                        : 0;
                 }
                 var id2 = `${colonParts[0]}:${dotParts.join('.')}`;
             } else { // document id

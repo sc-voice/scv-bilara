@@ -13,12 +13,18 @@
         constructor(opts={}) {
             this.srcRoot = opts.srcRoot || path.join(LOCAL_DIR, 'html');
             this.dstRoot = opts.dstRoot || BILARA_PATH;
+            this.type = opts.type || 'root';
+            this.translator = opts.translator || 'ms';
+            this.lang = opts.lang || 'pli';
         }
 
         import(src) {
             var {
                 srcRoot,
                 dstRoot,
+                type,
+                lang,
+                translator,
             } = this;
             var srcPath = path.join(srcRoot, src);
             if (!fs.existsSync(srcPath)) {
@@ -52,6 +58,18 @@
                 }
             }
 
+            var dstDir = path.join(dstRoot, 
+                type,
+                lang,
+                translator,
+                segid.nikayaFolder,
+            );
+            fs.mkdirSync(dstDir, {recursive: true});
+            var dstPath = path.join(dstDir,
+                `${suid}_${type}-${lang}-${translator}.json`);
+            fs.writeFileSync(dstPath, JSON.stringify(segMap, null, 2));
+            console.log(dstPath);
+
             return {
                 segid,
                 suid,
@@ -67,7 +85,7 @@
                 segid,
                 segMap,
             } = context;
-            var text = line.replace(/.*<i>/,'').replace(/<\/i>.*/,'');
+            var text = this.rootText(line);
             segMap[segid.scid] = text;
             context.segid = segid.add(0,1);
         }
@@ -79,9 +97,11 @@
                 segid,
                 segMap,
             } = context;
-            var text = line.replace(/.*<i>/,'').replace(/<\/i>.*/,'');
+            var text = this.rootText(line);
+            segid = segid.add(1);
             segMap[segid.scid] = text;
-            context.segid = segid.add(1);
+            segid = segid.add(0,1);
+            context.segid = segid;
         }
 
         importDiv(context) {
@@ -108,7 +128,7 @@
                 suid,
                 segMap,
             } = context;
-            var text = line.replace(/.*<i>/u,'').replace(/<\/i>.*/,'');
+            var text = this.rootText(line);
             segMap[segid.scid] = text;
             context.segid = segid.add(0,1);
         }
@@ -127,6 +147,13 @@
             return id;
         }
 
+        rootText(line) {
+            return line.replace(/.*<i>/,'').replace(/<\/i>.*/,'');
+        }
+
+        transText(line) {
+            return line.replace(/.*<b>/,'').replace(/<\/b>.*/,'');
+        }
     }
 
     module.exports = exports.ImportHtml = ImportHtml;
