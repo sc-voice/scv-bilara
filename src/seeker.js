@@ -494,7 +494,7 @@
                     let suttaRef = suttaRefs[i];
                     let [suid,lang,author] = suttaRef.split('/');
                     let mld = await bd.loadMLDoc({
-                        suid: bd.isSourceDoc({suid,lang,author})
+                        suid: bd.isBilaraDoc({suid,lang,author})
                             ? suid : suttaRef,
                         languages,
                     });

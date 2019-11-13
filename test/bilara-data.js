@@ -13,6 +13,14 @@
     } = require("just-simple").JustSimple;
     this.timeout(8*1000);
     var logLevel = false;
+    function BILPATH(lang,auth,mid) {
+        return [
+            'translation',
+            lang,
+            auth,
+            `${mid}_translation-${lang}-${auth}.json`
+        ].join('/');
+    }
 
     var bd = new BilaraData({ logLevel }); 
 
@@ -42,19 +50,71 @@
             var res = await bd.initialize(sync);
             should(res).equal(bd);
             should(bd.initialized).equal(true);
+            should.deepEqual(Object.keys(bd.authors).sort(), [
+                'ms', 'sabbamitta', 'sujato', 
+            ]);
 
             done();
         } catch(e) {done(e);} })();
     });
-    it("isSuttaPath(f) filters supported suttas", ()=>{
-        should(bd.isSuttaPath(
-            'translation/en/sujato/mn/mn1_translation-en-sujato.json'))
+    it("TESTTESTauthorInfo() => supported author info", done=>{
+        (async function() { try {
+            await bd.initialize();
+            var ms = {
+                type: "root",
+                name: "Mahāsaṅgīti Tipiṭaka Buddhavasse 2500",
+                lang: 'pli',
+                root_lang: "pli",
+                root_edition: "ms",
+            };
+            var sujato = {
+                lang: 'en',
+                type: "translator",
+                name: "Sujato Bhikkhu",
+                root_lang: "pli",
+                root_edition: "ms"
+            };
+            var brahmali = {
+                lang: 'en',
+                type: "translator",
+                name: "Brahmali Bhikkhu",
+                root_lang: "pli",
+                root_edition: "ms"
+            };
+            var sabbamitta = {
+                lang: 'de',
+                type: "translator",
+                name: "Sabbamitta Anagarika",
+                root_lang: "pli",
+                root_edition: "ms"
+            };
+
+            should.deepEqual(bd.authors, {
+                ms,
+                sujato,
+                // brahmali, // not published yet
+                sabbamitta,
+            });
+
+            should.deepEqual(bd.authorInfo('sabbamitta'), sabbamitta);
+            done();
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTsupportedLanguages() => segmented translations", done=>{
+        (async function() { try {
+            await bd.initialize();
+            should.deepEqual(bd.supportedLanguages(), [
+                'de', 'en', 'pli', 
+            ]);
+            done();
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTisSuttaPath(f) filters supported suttas", ()=>{
+        should(bd.isSuttaPath(BILPATH('en', 'sujato','mn/mn1')))
             .equal(true);
-        should(bd.isSuttaPath(
-            'translation/en/sujato/kn/thig/thig2.4_translation-en-sujato.json'))
+        should(bd.isSuttaPath(BILPATH('en', 'sujato', `/kn/thig/thig2.4`)))
             .equal(true);
-        should(bd.isSuttaPath(
-            'translation/en/sujato/kn/dhp/dhp21-32_translation-en-sujato.json'))
+        should(bd.isSuttaPath(BILPATH('en', 'sujato', `kn/dhp/dhp21-32`)))
             .equal(false);
     });
     it("suttaInfo(...) returns sutta metadata", done=>{
@@ -72,8 +132,7 @@
                 lang: 'en',
                 nikaya: 'dn',
                 suid: 'dn33',
-                bilaraPath: 'translation/'+
-                    'en/sujato/dn/dn33_translation-en-sujato.json',
+                bilaraPath: BILPATH('en','sujato', `dn/dn33`),
             }
             should.deepEqual(bd.suttaInfo('dn33'), [dn33Pli, dn33En]);
             var sn12_3pli = {
@@ -88,16 +147,14 @@
                 lang: 'en',
                 nikaya: 'sn',
                 suid: 'sn12.3',
-                bilaraPath: 'translation/'+
-                    'en/sujato/sn/sn12/sn12.3_translation-en-sujato.json',
+                bilaraPath: BILPATH('en','sujato', `sn/sn12/sn12.3`),
             };
             var sn12_3de = {
                 author: 'sabbamitta',
                 lang: 'de',
                 nikaya: 'sn',
                 suid: 'sn12.3',
-                bilaraPath: 'translation/'+
-                    'de/sabbamitta/sn/sn12/sn12.3_translation-de-sabbamitta.json',
+                bilaraPath: BILPATH('de', 'sabbamitta', `sn/sn12/sn12.3`),
             };
             should.deepEqual(bd.suttaInfo('sn12.3'), 
                 [sn12_3pli, sn12_3de, sn12_3en]);
@@ -121,8 +178,7 @@
                 lang: 'de',
                 nikaya: 'an',
                 suid: 'an2.1-10',
-                bilaraPath: 'translation/'+
-                    'de/sabbamitta/an/an2/an2.1-10_translation-de-sabbamitta.json',
+                bilaraPath: BILPATH('de','sabbamitta', 'an/an2/an2.1-10'),
             };
             should.deepEqual(bd.suttaInfo('an2.1-10'), 
                 [ an2_1_10pli, an2_1_10de, an2_1_10en ]);
@@ -229,7 +285,7 @@
                 lang,
                 author,
             })[0];
-            var mn1 = 'translation/en/sujato/mn/mn1_translation-en-sujato.json';
+            var mn1 = BILPATH('en','sujato', 'mn/mn1');
             should(spath).equal(path.join(bd.root, mn1));
             should(fs.existsSync(spath)).equal(true);
             
@@ -249,13 +305,12 @@
 
             // By language
             var spath = bd.docPaths('an1.2','de')[0];
-            should(spath).equal(path.join(bd.root, 'translation/'+
-                'de/sabbamitta/an/an1/an1.1-10_translation-de-sabbamitta.json'));
+            should(spath).equal(path.join(bd.root, 
+                BILPATH('de','sabbamitta', 'an/an1/an1.1-10')));
             should(fs.existsSync(spath)).equal(true);
 
             // By SuttaCentralId
-            var an1_1 = 'translation/'+
-                'de/sabbamitta/an/an1/an1.1-10_translation-de-sabbamitta.json';
+            var an1_1 = BILPATH('de','sabbamitta','an/an1/an1.1-10');
             var spath = bd.docPaths('an1.2:0.3','de')[0];
             should(spath).equal(path.join(bd.root,an1_1));
             should(fs.existsSync(spath)).equal(true);
@@ -294,7 +349,7 @@
                 lang,
                 author,
             });
-            var mn1 = 'translation/en/sujato/mn/mn1_translation-en-sujato.json';
+            var mn1 = BILPATH('en','sujato','mn/mn1');
             should(spath).equal(path.join(bd.root, mn1));
             done(); 
         } catch(e) {done(e);} })();
@@ -350,7 +405,9 @@
             // Expand ranges an normalize sutta references
             should.deepEqual( bd.suttaList(
                 ['MN 1-3/de/sabbamitta','mn4/en']), // spaces
-                ['mn1/de/sabbamitta', 'mn2/de/sabbamitta', 'mn3/de/sabbamitta', 
+                [   'mn1/de/sabbamitta', 
+                    'mn2/de/sabbamitta', 
+                    'mn3/de/sabbamitta', 
                     'mn4/en']);
             should.deepEqual( bd.suttaList(['an1.2-11']),
                 ['an1.1-10', 'an1.11-20']);
@@ -374,7 +431,7 @@
                 ['an2.1-10']);
             should.deepEqual( bd.suttaList(
                 ['sn29']), // implied sub-chapters
-                ['sn29.1', 'sn29.2', 'sn29.3', 'sn29.4', 'sn29.5',
+                [   'sn29.1', 'sn29.2', 'sn29.3', 'sn29.4', 'sn29.5',
                     'sn29.6', 'sn29.7', 'sn29.8', 'sn29.9', 'sn29.10',
                     'sn29.11-20', 'sn29.21-50', ]);
             should.deepEqual( bd.suttaList(
@@ -560,17 +617,4 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("authorInfo(author) => author details",done=>{
-        (async function() { try {
-            await bd.initialize();
-            should.deepEqual(bd.authorInfo('sabbamitta'), {
-                name: 'Sabbamitta Anagarika',
-                type: 'translator',
-                root_edition: 'ms',
-                root_lang: 'pli',
-            });
-            done();
-        } catch(e) { done(e); }})();
-    });
-
 })

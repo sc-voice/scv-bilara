@@ -38,10 +38,9 @@
                 logLevel: this.logLevel,
             });
             this.languages = opts.languages || [ 'pli', this.lang ];
-            this.isSourceDoc = opts.isSourceDoc ||
-                BilaraData.isSourceDoc;
             this.reNikayas = new RegExp(
                 `/(${this.nikayas.join('|')})/`, 'ui');
+            this.authors = {};
             Object.defineProperty(this, "_sources", {
                 writable: true,
                 value: null,
@@ -57,7 +56,7 @@
             this.initialized = false;
         }
 
-        static isSourceDoc({suid, lang, author}) {
+        isBilaraDoc({suid, lang, author}) {
             if (this._sources == null) {
                 var sourcesPath = path.join(__dirname, 
                     "../src/assets/sources.json");
@@ -72,9 +71,17 @@
                 return Promise.resolve(this);
             }
             var that = this;
+            var {
+                authors,
+            } = that;
             var pbody = (resolve, reject) => {(async function() { try {
                 sync && await that.sync();
 
+                let authorJson = JSON.parse(await readFile(
+                    path.join(that.root, `_author.json`)));
+                that.addAuthor('ms', Object.assign({
+                    lang: 'pli'
+                }, authorJson.ms));
                 var map = that.suttaMap = {};
                 var rootPath = path.join(that.root, 'root');
                 if (!fs.existsSync(rootPath)) {
@@ -118,6 +125,9 @@
                     var nikaya = parts[3];
                     var suid = parts[parts.length-1]
                         .split('_')[0].toLowerCase();
+                    that.addAuthor(author, Object.assign({
+                        lang,
+                    }, authorJson[author]));
                     map[suid] = map[suid] || [];
                     map[suid].push({
                         suid,
@@ -131,14 +141,40 @@
                     '.voice', 'uid_expansion.json');
                 that.uid_expansion = 
                     JSON.parse(fs.readFileSync(uidExpPath));
-                Object.defineProperty(that, '_authors', {
-                    value: JSON.parse(await readFile(
-                        path.join(that.root, `_author.json`))),
-                });
                 that.initialized = true;
                 resolve(that);
             } catch(e) {reject(e);} })()};
             return new Promise(pbody);
+        }
+
+        addAuthor(author, info) {
+            var {
+                authors,
+            } = this;
+            if (authors[author] == null) {
+                authors[author] = Object.assign({}, authors[author], info);
+                this.log(`addAuthor(${author}:${js.simpleString(info)})`);
+            }
+        }
+
+        supportedLanguages() {
+            if (!this.initialized) {
+                throw new Error('Expected preceding call to initialize()');
+            }
+            var authors = this.authors;
+            return Object.keys(
+                Object.keys(authors)
+                    .reduce((a,auth) => {
+                    a[authors[auth].lang] = true;
+                    return a;
+                }, {})).sort();
+        }
+
+        authorInfo(author) {
+            if (!this.initialized) {
+                throw new Error('Expected preceding call to initialize()');
+            }
+            return authors[authors];
         }
 
         get suttaIds() {
@@ -148,13 +184,6 @@
             }
 
             return this._suttaIds;
-        }
-
-        authorInfo(author) {
-            if (!this.initialized) {
-                throw new Error("initialize() is required");
-            }
-            return this._authors[author];
         }
 
         sync() {
@@ -323,7 +352,7 @@
                 .filter(i=>langMap[i.lang])
                 .filter(i=> !author ||
                     i.lang === lang && i.author === author ||
-                    i.lang !== lang && this.isSourceDoc(i))
+                    i.lang !== lang && this.isBilaraDoc(i))
                 .map(i=>i.bilaraPath);
             if (bilaraPaths.length === 0) {
                 if (returnNull) {
@@ -600,6 +629,10 @@
                 }
             }
             return result;
+        }
+
+        authorInfo(author) {
+            return this.authors[author];
         }
 
         sutta_uidSearch(pattern, maxResults=5) {
