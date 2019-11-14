@@ -22,27 +22,23 @@
             srcRoot: path.join(LOCAL_DIR, 'html'),
             dstRoot: BILARA_DATA,
             type: 'root',
-            lang: 'pli',
             translator: 'ms',
         });
     });
     it("TESTTESTcustom ctor", ()=>{
         var srcRoot = TEST_DATA;
         var dstRoot = BILARA_TEST;
-        var lang = 'en';
         var translator = 'sujato';
         var type = 'translation';
         var ih = new ImportHtml({
             srcRoot,
             dstRoot,
-            lang,
             translator,
             type,
         });
         should(ih).properties({
             srcRoot,
             dstRoot,
-            lang,
             translator,
             type,
         });
@@ -53,8 +49,23 @@
             dstRoot: BILARA_TEST
         });
         var res = ih.import('ds1.1.html');
-        should(res.suid).equal('ds1.1');
-        should(res.lang).equal('pli');
-        console.log(res.segMap);
+        var {
+            segMap,
+            suid,
+            segments,
+            lang,
+        } = res;
+        should(suid).equal('ds1.1');
+        should(lang).equal('pli');
+        should(segMap['ds1.1:0.1']).match(/Dhammasaṅgaṇī/);
+        should(segMap['ds1.1:0.2']).match(/Tikamātikā/);
+        should(segMap['ds1.1:1.0.1']).match(/1. Kusalattika/);
+        should(segMap['ds1.1:1.1']).match(/Kusalā dhammā/);
+        should(segMap['ds1.1:2.1']).match(/Akusalā dhammā/);
+        should(segMap['ds1.1:3.1']).match(/Abyākatā dhammā/);
+        should(segMap['ds1.1:4.0']).match(/2. Vedanāttika/);
+        should(segMap['ds1.1:4.1']).match(/Sukhāya vedanāya/);
+        should(segMap['ds1.1:5.1']).match(/Dukkhāya vedanāya/);
+        should(segMap['ds1.1:6.1']).match(/Adukkhamasukhāya vedanāya/);
     });
 })

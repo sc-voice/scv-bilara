@@ -161,6 +161,11 @@
             return this.scid && this.scid.split(':')[0] ;
         }
 
+        segmentParts() {
+            var segid = this.scid.split(':')[1];
+            return segid.split('.');
+        }
+
         get parent() {
             var groups = this.groups;
             if (groups == null) {

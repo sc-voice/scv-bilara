@@ -317,9 +317,9 @@
         should(SuttaCentralId.rangeLow("an1.2")).equal("an1.2");
         should(SuttaCentralId.rangeLow("mn1")).equal("mn1");
     });
-    it("add(...) increments number", ()=>{
+    it("TESTTESTadd(...) increments number", ()=>{
         var segid = new SuttaCentralId('an1.1:0.1');
-        should(segid.add(1).scid).equal('an1.1:1.1');
+        should(segid.add(1).scid).equal('an1.1:1.0');
         should(segid.add(0,1).scid).equal('an1.1:0.2');
 
         var suid = new SuttaCentralId('an1.1');
