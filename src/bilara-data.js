@@ -643,8 +643,10 @@
             if (coll.subchapters) { // e.g., SN, AN, KN
                 if (dotParts.length === 1) { // e.g. SN50
                     var prefix = `${sref}.`;
-                    var first = rangeParts.length === 1 ? 1 : Number(rangeParts[0]);
-                    var last = rangeParts.length === 1 ? 999 : Number(rangeParts[1]);
+                    var first = rangeParts.length === 1 
+                        ? 1 : Number(rangeParts[0]);
+                    var last = rangeParts.length === 1 
+                        ? 999 : Number(rangeParts[1]);
                 } else if (rangeParts.length === 1) {
                     var prefix = `${cname}${dotParts[0]}.`;
                     rangeParts[0] = dotParts[1];
@@ -656,7 +658,8 @@
                     var last = Number(rangeParts[1]);
                 }
                 if (isNaN(first) || isNaN(last)) {
-                    throw new Error(`Invalid sutta reference: ${suttaRef} [E1]`);
+                    throw new Error(
+                        `Invalid sutta reference: ${suttaRef} [E1]`);
                 }
                 var firstItem = `${prefix}${first}`;
                 var iCur = this.suttaIndex(firstItem, false);
@@ -677,7 +680,8 @@
                     var last = Number(rangeParts[1]);
                 }
                 if (isNaN(first) || isNaN(last)) {
-                    throw new Error(`Invalid sutta reference: ${suttaRef} [E2]`);
+                    throw new Error(
+                        `Invalid sutta reference: ${suttaRef} [E2]`);
                 }
                 var firstItem = `${cname}${first}`;
                 var iCur = this.suttaIndex(firstItem, false);
