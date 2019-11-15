@@ -15,7 +15,8 @@
             this.suid = suid;
             this.segid = new SuttaCentralId(`${suid}:0.1`);
             this.nikayaFolder = this.segid.nikayaFolder;
-            this.segMap = {};
+            this.segRoot = {};
+            this.segRef = {};
             this.div = 0;
             this.sc = '';
             this.lang = opts.lang || 'pli';
@@ -26,7 +27,7 @@
                 dstRoot,
                 type,
                 translator,
-                segMap,
+                segRoot,
             } = this;
 
             this.sc = this.scOfLine(line);
@@ -55,11 +56,11 @@
             var {
                 suid,
                 segid,
-                segMap,
+                segRoot,
                 sc,
             } = this;
             var text = this.rootText(line);
-            segMap[segid.scid] = text;
+            segRoot[segid.scid] = text;
             this.segid = segid.add(0,1);
         }
 
@@ -67,11 +68,11 @@
             var {
                 suid,
                 segid,
-                segMap,
+                segRoot,
                 sc,
             } = this;
             var text = this.rootText(line);
-            segMap[segid.scid] = text;
+            segRoot[segid.scid] = text;
             this.segid = segid.add(0,1);
         }
 
@@ -79,7 +80,7 @@
             var {
                 suid,
                 segid,
-                segMap,
+                segRoot,
                 sc,
             } = this;
             var text = this.rootText(line);
@@ -92,11 +93,11 @@
                     this.segid = 
                     segid = new SuttaCentralId(`${suid}:1.0`);
                 }
-                segMap[segid.scid] = text;
+                segRoot[segid.scid] = text;
                 this.segid = segid.add(0,0,1);
             } else {
                 segid = new SuttaCentralId(`${suid}:${Number(sc)+1}.0`);
-                segMap[segid.scid] = text;
+                segRoot[segid.scid] = text;
                 this.segid = segid.add(0,1);
             }
         }
@@ -121,25 +122,26 @@
             var {
                 segid,
                 suid,
-                segMap,
+                segRoot,
+                segRef,
                 sc,
             } = this;
+            var ref = this.refText(line);
             var text = this.rootText(line);
             if (sc === '') {
-                segMap[segid.scid] = text;
                 this.segid = segid.add(0,0,1);
             } else if (sc === '1') {
                 segid = new SuttaCentralId(`${suid}:${sc}.1`);
-                segMap[segid.scid] = text;
                 this.segid = segid.add(0,1);
             } else {
                 var segParts = segid.segmentParts();
                 if (segParts[0] !== sc) {
                     segid = new SuttaCentralId(`${suid}:${sc}.1`);
                 }
-                segMap[segid.scid] = text;
                 this.segid = segid.add(0,1);
             }
+            segRoot[segid.scid] = text;
+            ref && (segRef[segid.scid] = ref);
         }
 
         importId(line) {
@@ -157,6 +159,12 @@
 
         rootText(line) {
             return line.replace(/.*<i>/,'').replace(/<\/i>.*/,'');
+        }
+
+        refText(line) {
+            return line.match(/data-ref/) 
+                ? line.replace(/.*data-ref="/,'').split('"')[0]
+                : null;
         }
 
         transText(line) {
@@ -194,27 +202,34 @@
             var {
                 lang,
                 nikayaFolder,
-                segMap,
+                segRoot,
+                segRef,
             } = importer;
 
-            var dstDir = path.join(dstRoot, 
-                type,
-                lang,
-                translator,
-                nikayaFolder,
-            );
+            // write root segments
+            var dstDir = path.join(dstRoot, 'root', lang, translator,
+                nikayaFolder);
             fs.mkdirSync(dstDir, {recursive: true});
             var dstPath = path.join(dstDir,
-                `${suid}_${type}-${lang}-${translator}.json`);
-            fs.writeFileSync(dstPath, JSON.stringify(segMap, null, 2));
+                `${suid}_root-${lang}-${translator}.json`);
+            fs.writeFileSync(dstPath, JSON.stringify(segRoot, null, 2));
+            var localPath = dstPath.replace(LOCAL_DIR,'').substring(1);
+            this.log(`wrote ${localPath}`);
+
+            // write reference segments
+            var dstDir = path.join(dstRoot, 'reference', nikayaFolder);
+            fs.mkdirSync(dstDir, {recursive: true});
+            var dstPath = path.join(dstDir, `${suid}_reference.json`);
+            fs.writeFileSync(dstPath, JSON.stringify(segRef, null, 2));
             var localPath = dstPath.replace(LOCAL_DIR,'').substring(1);
             this.log(`wrote ${localPath}`);
 
             return {
                 suid,
-                segMap,
+                segRoot,
+                segRef,
                 lang,
-                segments: Object.keys(segMap).map(k => ({[k]:segMap[k]})),
+                segments: Object.keys(segRoot).map(k => ({[k]:segRoot[k]})),
             }
         }
     }

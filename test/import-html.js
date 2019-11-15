@@ -43,29 +43,42 @@
             type,
         });
     });
-    it("import(...) imports HTML file", ()=>{
+    it("TESTTESTimport(...) imports HTML file", ()=>{
         var ih = new ImportHtml({
             srcRoot: TEST_DATA,
             dstRoot: BILARA_TEST
         });
         var res = ih.import('ds1.1.html');
         var {
-            segMap,
+            segRoot,
+            segRef,
             suid,
             segments,
             lang,
         } = res;
         should(suid).equal('ds1.1');
         should(lang).equal('pli');
-        should(segMap['ds1.1:0.1']).match(/Dhammasaṅgaṇī/);
-        should(segMap['ds1.1:0.2']).match(/Tikamātikā/);
-        should(segMap['ds1.1:1.0.1']).match(/1. Kusalattika/);
-        should(segMap['ds1.1:1.1']).match(/Kusalā dhammā/);
-        should(segMap['ds1.1:2.1']).match(/Akusalā dhammā/);
-        should(segMap['ds1.1:3.1']).match(/Abyākatā dhammā/);
-        should(segMap['ds1.1:4.0']).match(/2. Vedanāttika/);
-        should(segMap['ds1.1:4.1']).match(/Sukhāya vedanāya/);
-        should(segMap['ds1.1:5.1']).match(/Dukkhāya vedanāya/);
-        should(segMap['ds1.1:6.1']).match(/Adukkhamasukhāya vedanāya/);
+        should(segRoot['ds1.1:0.1']).match(/Dhammasaṅgaṇī/);
+        should(segRoot['ds1.1:0.2']).match(/Tikamātikā/);
+        should(segRoot['ds1.1:1.0.1']).match(/1. Kusalattika/);
+        should(segRoot['ds1.1:1.0.2']).match(/Namo tassa Bhagavato/);
+        should(segRoot['ds1.1:1.1']).match(/Kusalā dhammā/);
+        should(segRoot['ds1.1:2.1']).match(/Akusalā dhammā/);
+        should(segRoot['ds1.1:3.1']).match(/Abyākatā dhammā/);
+        should(segRoot['ds1.1:4.0']).match(/2. Vedanāttika/);
+        should(segRoot['ds1.1:4.1']).match(/Sukhāya vedanāya/);
+        should(segRoot['ds1.1:5.1']).match(/Dukkhāya vedanāya/);
+        should(segRoot['ds1.1:6.1']).match(/Adukkhamasukhāya vedanāya/);
+        should(fs.existsSync(path.join(BILARA_TEST, 
+            'root/pli/ms/ds1/ds1.1_root-pli-ms.json'))).equal(true);
+
+        should(segRef['ds1.1:1.0.2']).match(/ms29Dhs_1/);
+        should(segRef['ds1.1:1.1'])
+            .match(/sc1, pts-vp-pli1, ms29Dhs_2, msdiv1/);
+        should(segRef['ds1.1:2.1']).match(/sc2, ms29Dhs_3/);
+        should(segRef['ds1.1:66.1']).match(/sc66, ms29Dhs_67/);
+        should(segRef['ds1.1:66.2']).match(/ms29Dhs_68/);
+        should(fs.existsSync(path.join(BILARA_TEST, 
+            'reference/ds1/ds1.1_reference.json'))).equal(true);
     });
 })
