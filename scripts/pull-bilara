@@ -5,7 +5,7 @@ cd ${DIR}/../local/bilara-data; pwd
 echo -e "BILARA\t: Switching to master branch" && \
 git checkout master && \
 echo -e "BILARA\t: Refreshing bilara-data fork from Github..." && \
-git pull && \
+git pull --rebase && \
 echo -e "BILARA\t: Refreshing bilara-data fork from upstream master..." && \
 git pull -Xtheirs --no-edit https://github.com/suttacentral/bilara-data && \
 echo -e "BILARA\t: Committing changes to bilara-data..." && \
