@@ -16,7 +16,7 @@
     const BILARA_DATA = path.join(LOCAL_DIR, 'bilara-data');
     const BILARA_TEST = path.join(LOCAL_DIR, 'bilara-test');
 
-    it("TESTTESTdefault ctor", ()=>{
+    it("default ctor", ()=>{
         var ih = new ImportHtml();
         should(ih).properties({
             srcRoot: path.join(LOCAL_DIR, 'html'),
@@ -25,7 +25,7 @@
             translator: 'ms',
         });
     });
-    it("TESTTESTcustom ctor", ()=>{
+    it("custom ctor", ()=>{
         var srcRoot = TEST_DATA;
         var dstRoot = BILARA_TEST;
         var translator = 'sujato';
@@ -43,7 +43,7 @@
             type,
         });
     });
-    it("TESTTESTimport(...) imports HTML file", ()=>{
+    it("import(...) imports HTML file", ()=>{
         var ih = new ImportHtml({
             srcRoot: TEST_DATA,
             dstRoot: BILARA_TEST

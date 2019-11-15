@@ -1,6 +1,7 @@
 (function(exports) {
     const fs = require("fs");
     const path = require("path");
+    const json5 = require("json5");
     const {
         readFile,
     } = fs.promises;
@@ -21,8 +22,7 @@
     const ExecGit = require('./exec-git');
 
     const BILARA_DATA_GIT = 'https://github.com/sc-voice/bilara-data.git';
-    const NIKAYAS_PATH = path.join(__dirname, '../src/assets/nikayas.json');
-    const NIKAYAS = JSON.parse(fs.readFileSync(NIKAYAS_PATH));
+    const PUB_PREFIX = /^https:.*translation\//;
 
     class BilaraData {
         constructor(opts={}) {
@@ -30,16 +30,11 @@
             this.root = opts.root || path.join(LOCAL_DIR, 'bilara-data');
             this.lang = opts.lang || 'en';
             logger.logInstance(this, opts);
-            this.nikayas = opts.nikayas || [
-                'an','mn','dn','sn', 'kn/thig', 'kn/thag'
-            ];
             this.execGit = opts.execGit || new ExecGit({
                 repo: BILARA_DATA_GIT,
                 logLevel: this.logLevel,
             });
             this.languages = opts.languages || [ 'pli', this.lang ];
-            this.reNikayas = new RegExp(
-                `/(${this.nikayas.join('|')})/`, 'ui');
             this.authors = {};
             Object.defineProperty(this, "_sources", {
                 writable: true,
@@ -77,6 +72,10 @@
             var pbody = (resolve, reject) => {(async function() { try {
                 sync && await that.sync();
 
+                let pubJson = json5.parse(await readFile(
+                    path.join(that.root, `_publication.json`)));
+                that.publication = Object.keys(pubJson)
+                    .map(k=>pubJson[k]);
                 let authorJson = JSON.parse(await readFile(
                     path.join(that.root, `_author.json`)));
                 that.addAuthor('ms', Object.assign({
@@ -88,8 +87,11 @@
                     throw new Error(`Root document directory `+
                         `not found:${rootPath}`); 
                 }
+
+                // The following code must be synchronous
+                that.initialized = true;
                 that.rootFiles = that.dirFiles(rootPath)
-                    .filter(f => that.isSuttaPath(f))
+                    .filter(f => that.isPublishedPath(f))
                 that.rootFiles.forEach((f,i) => {
                     var file = f.replace(/.*\/root\//,'root/');
                     var parts = file.split('/');
@@ -114,7 +116,7 @@
                         `Translation directory not found:${transPath}`); 
                 }
                 that.translations = that.dirFiles(transPath)
-                    .filter(f => that.isSuttaPath(f))
+                    .filter(f => that.isPublishedPath(f))
                     .sort();
                 that.translations.forEach((f,i) => {
                     var file = f.replace(/.*\/translation\//,
@@ -141,7 +143,6 @@
                     '.voice', 'uid_expansion.json');
                 that.uid_expansion = 
                     JSON.parse(fs.readFileSync(uidExpPath));
-                that.initialized = true;
                 resolve(that);
             } catch(e) {reject(e);} })()};
             return new Promise(pbody);
@@ -170,6 +171,52 @@
                 }, {})).sort();
         }
 
+        published() {
+            var that = this;
+            var {
+                root,
+            } = that;
+            var loadPublished = ()=>{
+                return that.publication.reduce( (a,p) => {
+                    let {
+                        is_published: isPub,
+                        text_uid,
+                        source_url,
+                    } = p;
+                    var bilPath = source_url.replace(/.*master\//,'');
+                    var dirs = fs.readdirSync(path.join(root,bilPath));
+                    var subchapters = dirs.reduce(
+                        (a,d) => (d.match(/.*json$/) ? false : a),
+                        true);
+                    if (isPub==="true" || p.isPub===true){
+                        if (a[text_uid] == null) {
+                            a[text_uid] = {
+                                name: text_uid,
+                                folder: bilPath.split("/")[3],
+                                subchapters,
+                            };
+                        }
+                    }
+                    return a;
+                }, {});
+            }
+            if (this._published == null && this.publication) {
+                Object.defineProperty(this, "_published", {
+                    value: loadPublished(),
+                });
+            }
+            return this._published;
+        }
+
+        publishedPaths() {
+            return this.publication && this.publication.reduce((a,p) => {
+                if (p.is_published==="true" || p.is_published===true) {
+                    a.push(p.source_url.replace(PUB_PREFIX, ''));
+                }
+                return a;
+            }, []).sort();
+        }
+
         authorInfo(author) {
             if (!this.initialized) {
                 throw new Error('Expected preceding call to initialize()');
@@ -191,7 +238,22 @@
         }
 
         isSuttaPath(fpath) {
-            return this.reNikayas.test(fpath);
+            console.trace(`DEPRECATED: isSuttaPath => isPublishedPath`);
+            return this.isPublishedPath(fpath);
+        }
+
+        isPublishedPath(fpath) {
+            if (!this.initialized) {
+                throw new Error('Expected preceding call to initialize()');
+            }
+            if (this._rePubPaths == null) {
+                var published = [...this.publishedPaths(), 'root/pli/ms'];
+                this.log(`published paths:\n${published.join('\n')}`);
+                Object.defineProperty(this, "_rePubPaths", {
+                    value: new RegExp(`(${published.join("|")})/.*`),
+                });
+            }
+            return this._rePubPaths.test(fpath);
         }
 
         suttaInfo(suttaRef) {
@@ -544,7 +606,8 @@
             try {
                 return list.reduce((acc, item) => {
                     var suttaRef = item.toLowerCase().replace(/ /gu, '');
-                    this.expandRange(suttaRef).forEach(item => acc.push(item));
+                    this.expandRange(suttaRef)
+                        .forEach(item => acc.push(item));
                     return acc;
                 }, []);
             } catch (e) {
@@ -563,18 +626,19 @@
                 // e.g., kusalagnana-maitrimurti-traetow
                 return [ suttaRef ];
             }
-            var coll = Object.keys(NIKAYAS).reduce((acc,ck) => {
-                var c = NIKAYAS[ck];
+            var coll = Object.keys(this.published()).reduce((acc,ck) => {
+                var c = this.published()[ck];
                 return acc || cname === c.name && c;
             }, false);
             var result = [];
             if (!coll) { // no collection
-                throw new Error(`Unrecognized sutta collection: ${suttaRef} [E4]`);
+                throw new Error(`Not published: ${suttaRef} [E4]`);
             }
             var rangeParts = range.split('-');
             var dotParts = rangeParts[0].split('.');
-            if (dotParts.length > 2) {
-                throw new Error(`Invalid sutta reference: ${suttaRef} [E3]`);
+            if (dotParts.length > 3) {
+                throw new Error(
+                    `Invalid sutta reference: ${suttaRef} [E3]`);
             }
             if (coll.subchapters) { // e.g., SN, AN, KN
                 if (dotParts.length === 1) { // e.g. SN50
@@ -592,7 +656,6 @@
                     var last = Number(rangeParts[1]);
                 }
                 if (isNaN(first) || isNaN(last)) {
-                console.log(`dbg`,{dotParts,rangeParts});
                     throw new Error(`Invalid sutta reference: ${suttaRef} [E1]`);
                 }
                 var firstItem = `${prefix}${first}`;
