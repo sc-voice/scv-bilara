@@ -523,7 +523,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("phraseSearch(...) finds Deutsch results", done=>{
+    it("TESTTESTphraseSearch(...) finds Deutsch results", done=>{
         var lines = [
             `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
         ];
@@ -532,15 +532,16 @@
             var pattern = `wurzel des leidens`;
             var maxResults = 3;
             var skr = await new Seeker({
-                lang,
                 maxResults,
                 logLevel,
             }).initialize();
+            should.deepEqual(skr.languages, ['pli','en']);
 
             var data = await skr.phraseSearch({ 
                 pattern,
                 lang,
             });
+            should.deepEqual(skr.languages, ['pli','en']);
             should.deepEqual(data, {
                 method: 'phrase',
                 lang,
@@ -702,13 +703,14 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("find({minLang}) => minimum language count", done=>{
+    it("TESTTESTfind({minLang}) => minimum language count", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
                 maxResults,
                 logLevel,
             }).initialize();
+            should.deepEqual(skr.languages, ['pli','en']);
 
             var pattern = "dn33"; 
             var res = await skr.find({
@@ -716,6 +718,7 @@
                 lang: 'de',
                 minLang: 2,
             });
+            should.deepEqual(skr.languages, ['pli','en']);
             should.deepEqual(res.suttaRefs, ['dn33']);
             should(res.mlDocs.length).equal(1);
             should(res.minLang).equal(2);

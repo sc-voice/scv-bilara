@@ -409,7 +409,7 @@
             pattern = Seeker.sanitizePattern(pattern);
             pattern = Seeker.normalizePattern(pattern);
             (showMatchesOnly == null) && (showMatchesOnly = true);
-            languages = languages || this.languages || [];
+            languages = languages || this.languages.slice() || [];
             (lang && languages.indexOf(lang)<0) && languages.push(lang);
             maxResults = Number(
                 maxResults==null ? this.maxResults : maxResults);

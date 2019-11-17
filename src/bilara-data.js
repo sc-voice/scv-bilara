@@ -427,6 +427,7 @@
             }
             return new MLDoc({
                 logLevel,
+                lang,
                 bilaraPaths,
             }).load(this.root);
         }
