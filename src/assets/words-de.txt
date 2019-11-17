@@ -133,6 +133,8 @@ bleiben
 bleibender
 bleibt
 blickwinkel
+blind
+blinden
 blut
 blüte
 böse
