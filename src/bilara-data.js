@@ -324,7 +324,8 @@
                 returnNull,
                 languages,
             } = opts;
-            lang = lang || language || this.lang;
+            var thisLang = this.lang;
+            lang = lang || language || thisLang;
             languages = languages || (this.languages.indexOf(lang) <= 0
                 ? [...this.languages, lang]
                 : this.languages);
@@ -367,6 +368,7 @@
                     throw e;
                 }
             });
+
             if (lang == null && author == null) {
                 lang = info[0].lang;
                 author = info[0].author;

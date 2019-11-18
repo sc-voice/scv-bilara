@@ -665,7 +665,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTpublished(...) => published divisions", done=>{
+    it("published(...) => published divisions", done=>{
         (async function() { try {
             await bd.initialize();
             should.deepEqual(bd.published(), {

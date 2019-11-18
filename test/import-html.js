@@ -43,7 +43,7 @@
             type,
         });
     });
-    it("TESTTESTimport(...) imports HTML file", ()=>{
+    it("import(...) imports HTML file", ()=>{
         var ih = new ImportHtml({
             srcRoot: TEST_DATA,
             dstRoot: BILARA_TEST

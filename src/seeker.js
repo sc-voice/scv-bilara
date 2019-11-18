@@ -400,7 +400,8 @@
             }
 
             // STEP 2. Assign default values
-            lang = lang || language || this.lang;
+            var thisLang = this.lang;
+            lang = lang || language || thisLang;
             searchLang = searchLang == null 
                 ? this.patternLanguage(pattern, lang)
                 : searchLang;
@@ -492,11 +493,16 @@
                 var bilaraPaths = [];
                 for (var i = 0; i < suttaRefs.length; i++) {
                     let suttaRef = suttaRefs[i];
-                    let [suid,lang,author] = suttaRef.split('/');
+                    let [suid,refLang,author] = suttaRef.split('/');
+                    let isBilDoc = bd.isBilaraDoc({
+                        suid,
+                        lang:refLang,
+                        author
+                    });
                     let mld = await bd.loadMLDoc({
-                        suid: bd.isBilaraDoc({suid,lang,author})
-                            ? suid : suttaRef,
+                        suid: isBilDoc ? suid : suttaRef,
                         languages,
+                        lang,
                     });
                     bilaraPaths = [...bilaraPaths, ...mld.bilaraPaths];
                     var resFilter = mld.filterSegments(resultPattern, 

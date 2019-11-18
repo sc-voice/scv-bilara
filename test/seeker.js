@@ -523,7 +523,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTphraseSearch(...) finds Deutsch results", done=>{
+    it("phraseSearch(...) finds Deutsch results", done=>{
         var lines = [
             `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
         ];
@@ -703,7 +703,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind({minLang}) => minimum language count", done=>{
+    it("find({minLang}) => minimum language count", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
@@ -787,7 +787,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("find(...) => finds searchLang phrase", done=>{
+    it("TESTTESTfind(...) => finds searchLang phrase", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
@@ -806,6 +806,7 @@
             should.deepEqual(res.suttaRefs, [
                 'thag2.15/en/sujato', 'dn14/en/sujato',
             ]);
+            should(res.mlDocs[0].lang).equal('de');
             done(); 
         } catch(e) {done(e);} })();
     });
