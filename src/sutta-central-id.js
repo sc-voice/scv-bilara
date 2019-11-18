@@ -161,11 +161,6 @@
             return this.scid && this.scid.split(':')[0] ;
         }
 
-        segmentParts() {
-            var segid = this.scid.split(':')[1];
-            return segid.split('.');
-        }
-
         get parent() {
             var groups = this.groups;
             if (groups == null) {
@@ -176,6 +171,15 @@
                 return new SuttaCentralId(`${this.sutta}:`);
             }
             return new SuttaCentralId(`${this.sutta}:${groups.join('.')}.`);
+        }
+
+        sectionParts() {
+            return this.scid.split(':')[0].split('.');
+        }
+
+        segmentParts() {
+            var segid = this.scid.split(':')[1];
+            return segid.split('.');
         }
 
         add(...args) {
