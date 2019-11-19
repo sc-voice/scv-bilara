@@ -1273,6 +1273,7 @@ verehre
 verfärbten
 verfehlungen
 vergänglichkeit
+vergelten
 vergleicht
 vergnügen
 vergrößern
@@ -1384,3 +1385,10 @@ wurzel
 eigenschaften
 leben
 zuflucht
+unmoralisch
+unmoralisches
+sittlich
+sittliches
+sittlicher
+sittlichem
+sittlichen
