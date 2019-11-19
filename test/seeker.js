@@ -147,19 +147,19 @@
         testPattern("a.+b", 'a.+b');
         testPattern("sattānaṃ", "sattānaṃ");
     });
-    it("keywordPattern(...) returns grep pattern", done=> {
+    it("TESTTESTkeywordPattern(...) returns grep pattern", done=> {
         (async function() { try {
             var skr = await new Seeker(SEEKEROPTS).initialize();
             should(skr.keywordPattern('anathapindika', 'en')).equal(
                 '\\b(a|ā)(n|ṅ|ñ|ṇ)(a|ā)(t|ṭ)h(a|ā)p'+
-                        '(i|ī)(n|ṅ|ñ|ṇ)(d|ḍ)(i|ī)k(a|ā)\\b');
+                        '(i|ī)(n|ṅ|ñ|ṇ)(d|ḍ)(i|ī)k(a|ā)');
             should(skr.keywordPattern('anathapindika', 'pli')).equal(
                 '\\b(a|ā)(n|ṅ|ñ|ṇ)(a|ā)(t|ṭ)h(a|ā)p'+
                         '(i|ī)(n|ṅ|ñ|ṇ)(d|ḍ)(i|ī)k(a|ā)');
             done();
         } catch(e) { done(e); } })();
     });
-    it("keywordSearch(...) limits results", done=>{
+    it("TESTTESTkeywordSearch(...) limits results", done=>{
         (async function() { try {
             var lang = 'en';
             var pattern = Seeker.normalizePattern('suffering joy faith');
@@ -173,15 +173,10 @@
                 method: "keywords",
                 lang: 'en',
                 keywordsFound: {
-                    faith: 310,
-                    joy: 80,
-                    suffering: 736,
+                    faith: 388,
+                    joy: 131,
+                    suffering: 738,
                 },
-                lines: [ 
-                    `${en_suj}sn/sn12/sn12.23_translation-en-sujato.json:4`,
-                    `${en_suj}dn/dn33_translation-en-sujato.json:3`,
-                    `${en_suj}dn/dn34_translation-en-sujato.json:3`,
-                ],
             };
 
             var data = await skr.keywordSearch({ 
@@ -197,54 +192,46 @@
                 maxResults, // explicit specification
             });
             should(data).properties(expected);
+            should.deepEqual(data.lines, [ 
+                `${en_suj}dn/dn34_translation-en-sujato.json:5`,
+                `${en_suj}dn/dn33_translation-en-sujato.json:4`,
+                `${en_suj}sn/sn12/sn12.23_translation-en-sujato.json:4`,
+            ]);
 
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("keywordSearch(...) searches English", done=>{
+    it("TESTTESTkeywordSearch(...) searches English", done=>{
         (async function() { try {
-            var maxResults = 15;
             var pattern = Seeker.normalizePattern('suffering joy faith');
             var skr = await new Seeker({
                 logLevel,
                 lang: 'de', // Deutsch
             }).initialize(`dbg 2`);
-            var expected = [ 
-                `${en_suj}sn/sn12/sn12.23_translation-en-sujato.json:4`,
-                `${en_suj}dn/dn33_translation-en-sujato.json:3`,
-                `${en_suj}dn/dn34_translation-en-sujato.json:3`,
-                `${en_suj}dn/dn10_translation-en-sujato.json:2`,
-                `${en_suj}mn/mn68_translation-en-sujato.json:2`,
-                `${en_suj}an/an10/an10.50_translation-en-sujato.json:1`,
-                `${en_suj}an/an3/an3.70_translation-en-sujato.json:1`,
-                `${en_suj}dn/dn19_translation-en-sujato.json:1`,
-                `${en_suj}dn/dn30_translation-en-sujato.json:1`,
-                `${en_suj}mn/mn34_translation-en-sujato.json:1`,
-                `${en_suj}mn/mn90_translation-en-sujato.json:1`,
-            ];
-
             var data = await skr.keywordSearch({ 
                 pattern,
                 lang: 'en', // overrides Seeker default lang
-                maxResults,
             });
             var enExpected = {
                 lang: 'en',
                 method: 'keywords',
                 keywordsFound: {
-                    suffering: 736,
-                    joy: 80,
-                    faith: 310,
+                    suffering: 738,
+                    joy: 131,
+                    faith: 388,
                 },
-                maxResults,
-                lines: expected,
             };
             should(data).properties(enExpected);
+            should.deepEqual(data.lines.slice(0,4), [
+                `${en_suj}dn/dn34_translation-en-sujato.json:5`,
+                `${en_suj}dn/dn33_translation-en-sujato.json:4`,
+                `${en_suj}sn/sn12/sn12.23_translation-en-sujato.json:4`,
+                `${en_suj}dn/dn10_translation-en-sujato.json:2`,
+            ]);
 
             // Using Seeker default lang still returns English
             var data = await skr.keywordSearch({ 
                 pattern,
-                maxResults,
             });
             should(data).properties(enExpected);
 
@@ -253,7 +240,6 @@
             should(skr.lang).equal('en');
             var data = await skr.keywordSearch({ 
                 pattern,
-                maxResults,
             });
             should(data).properties(enExpected);
 
@@ -368,7 +354,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("keywordSearch(...) searches Deutsch, not Pali", done=>{
+    it("TESTTESTkeywordSearch(...) searches Deutsch, not Pali", done=>{
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,
@@ -376,7 +362,9 @@
             }).initialize();
             var expected = {
                 lang: 'de',
-                resultPattern: "anathapindika|hausherr",
+                resultPattern: 
+                "\\b(a|ā)(n|ṅ|ñ|ṇ)(a|ā)(t|ṭ)h(a|ā)p(i|ī)(n|ṅ|ñ|ṇ)"+
+                    "(d|ḍ)(i|ī)k(a|ā)|\\bhausherr",
                 maxResults: 10,
                 method: 'keywords',
                 keywordsFound: {
@@ -678,11 +666,11 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("find(...) does not find legacy suttas", done=>{
+    it("TESTTESTfind(...) does not find legacy suttas", done=>{
         (async function() { try {
-            var maxResults = 3;
+            var maxDoc = 3;
             var skr = await new Seeker({
-                maxResults,
+                maxDoc,
                 logLevel,
             }).initialize();
 
@@ -695,15 +683,15 @@
                 lang,
             });
             should(res.method).equal('sutta_uid');
-            should(res.maxResults).equal(maxResults);
-            should.deepEqual(res.suttaRefs, ['mn1/en/bodhi']);
+            should(res.maxDoc).equal(maxDoc);
+            should.deepEqual(res.suttaRefs, []);
             should(res.resultPattern).equal(pattern);
             should(res.lang).equal('de');
             should(res.mlDocs.length).equal(0);
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("find({minLang}) => minimum language count", done=>{
+    it("TESTTESTfind({minLang}) => minimum language count", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
@@ -729,7 +717,7 @@
                 lang: 'de',
                 minLang: 3,
             });
-            should.deepEqual(res.suttaRefs, ['dn33']);
+            should.deepEqual(res.suttaRefs, []);
             should(res.mlDocs.length).equal(0);
 
             done(); 
@@ -787,7 +775,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) => finds searchLang phrase", done=>{
+    it("find(...) => finds searchLang phrase", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
@@ -828,13 +816,13 @@
     });
     it("find(...) => finds keywords", done=>{
         (async function() { try {
-            var maxResults = 3;
+            var maxDoc = 3;
             var skr = await new Seeker({
-                maxResults,
+                maxDoc,
                 logLevel,
             }).initialize();
 
-            var pattern = "sn leidens"; 
+            var pattern = "wurzel leidens"; 
             var res = await skr.find({
                 pattern,
                 lang: 'de',
@@ -842,9 +830,41 @@
             });
             should.deepEqual(res.suttaRefs, [
                 'sn42.11/de/sabbamitta',
-                'sn12.19/de/sabbamitta',
-                'sn45.8/de/sabbamitta',
             ]);
+            var [
+                mld0,
+            ] = res.mlDocs;
+            should(res.mlDocs.length).equal(1);
+            should(res.minLang).equal(2);
+            should(mld0.segments()[0]).properties({
+                scid: 'sn42.11:2.11',
+                en: 'For desire is the root of suffering. ',
+            });
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("find(...) => finds segments with all keywords", done=>{
+        (async function() { try {
+            var maxDoc = 3;
+            var skr = await new Seeker({
+                logLevel,
+            }).initialize();
+
+            var pattern = "red yellow"; 
+            var res = await skr.find({
+                pattern,
+                lang: 'de',
+                minLang: 2,
+                maxDoc,
+            });
+            should(res.resultPattern).equal('\\bred|\\byellow');
+            should(res.method).equal('keywords');
+            should.deepEqual(res.suttaRefs.slice(0,3), [
+                'mn77/en/sujato',
+                'dn16/en/sujato',
+                'dn23/en/sujato',
+            ]);
+            should(res.suttaRefs.length).equal(16);
             var [
                 mld0,
                 mld1,
@@ -852,14 +872,9 @@
             ] = res.mlDocs;
             should(res.mlDocs.length).equal(3);
             should(res.minLang).equal(2);
-            should(mld0.segments()[0]).properties({
-                scid: 'sn42.11:1.4',
-                de: "„Vorsteher, wenn ich dir das Entstehen und Aufhören "+
-                    "des \u001b[38;5;121mLeidens\u001b[0m in der "+
-                    "Vergangenheit erklären würde: ",
-                en: "“Chief, if I were to teach you about the origin "+
-                    "and ending of suffering in the past, saying ",
-            });
+            should(res.suttaRefs.length).equal(16);
+            should(res.segsMatched).equal(26);
+            should(mld0.score).above(mld1.score);
             done(); 
         } catch(e) {done(e);} })();
     });

@@ -45,8 +45,9 @@
                 ? `\u001b[38;5;${this.matchColor}m$&\u001b[0m`
                 : '';
             this.matchWordEnd = opts.matchWordEnd;
-            this.maxResults = opts.maxResults == null ? 5 : opts.maxResults;
-            this.maxDoc = opts.maxDoc == null ? 5 : opts.maxDoc;
+            this.maxResults = opts.maxResults == null 
+                ? 1000 : opts.maxResults;
+            this.maxDoc = opts.maxDoc == null ? 50 : opts.maxDoc;
             this.minLang = opts.minLang || 2;
         }
 
@@ -161,9 +162,7 @@
                     ? `\\b${Pali.romanizePattern(keyword)}`
                     : keyword;
             }
-            if (this.matchWordEnd === undefined && lang === 'en') {
-                pat += '\\b';
-            } else if (this.matchWordEnd === true) {
+            if (this.matchWordEnd === true) {
                 pat += '\\b';
             }
             return pat;
@@ -294,7 +293,8 @@
                     var mrgIn = [];
                     for (var i=0; i< keywords.length; i++) {
                         var keyword = keywords[i];
-                        wordArgs.pattern = that.keywordPattern(keyword, lang);
+                        wordArgs.pattern = that
+                            .keywordPattern(keyword, lang);
                         var wordlines = await that.grep(wordArgs);
                         keywordsFound[keyword] = wordlines.length;
                         wordlines.sort();
@@ -338,7 +338,9 @@
                     resolve({
                         method: 'keywords',
                         keywordsFound,
-                        resultPattern: keywords.join('|'),
+                        resultPattern: keywords
+                            .map(k=> that.keywordPattern(k, lang))
+                            .join('|'),
                         lang,
                         maxResults,
                         lines,
@@ -491,6 +493,7 @@
                 var mlDocs = [];
                 var segsMatched = 0;
                 var bilaraPaths = [];
+                var matchingRefs = [];
                 for (var i = 0; i < suttaRefs.length; i++) {
                     let suttaRef = suttaRefs[i];
                     let [suid,refLang,author] = suttaRef.split('/');
@@ -513,8 +516,10 @@
                     if (matchHighlight) {
                         mld.highlightMatch(resultPattern, matchHighlight);
                     }
-                    if (mld.bilaraPaths.length >= minLang) {
+                    if (mld.bilaraPaths.length >= minLang && 
+                        Object.keys(mld.segMap).length ) {
                         mlDocs.push(mld);
+                        matchingRefs.push(suttaRef);
                     }
                 }
                 scoreDoc && mlDocs.sort(MLDoc.compare);
@@ -532,7 +537,7 @@
                     resultPattern,
                     segsMatched,
                     bilaraPaths,
-                    suttaRefs,
+                    suttaRefs: matchingRefs,
                     mlDocs,
                 });
             } catch(e) {reject(e);}})()};

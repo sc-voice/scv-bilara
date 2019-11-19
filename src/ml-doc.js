@@ -162,17 +162,17 @@
             return match;
         }
 
-        matchText({seg, languages, rex}) {
+        matchText({seg, languages, rexList}) {
             var unicode = this.unicode;
             return languages.reduce((a,l) => {
                 var text = seg[l];
                 if (!a && text) {
-                    if (rex.test(text)) {
+                    if (rexList.reduce((a,re)=>a && re.test(text),true)) {
                         return true;
                     } else if (l === 'pli') {
                         var romText = unicode.romanize(text);
-                        var match = rex.test(romText);
-                        return match;
+                        return rexList.reduce(
+                            (a,re)=>a && re.test(romText),true); 
                     }
 
                 }
@@ -186,8 +186,12 @@
         {
             var scids = this.scids();
             var suid = this.suid;
-            var rex = pattern instanceof RegExp 
-                ? rex : new RegExp(pattern, "ui");
+            if (pattern instanceof RegExp) {
+                var rexList = [ pattern ];
+            } else {
+                var patterns = pattern.split('|');
+                var rexList = patterns.map(p => new RegExp(p, "ui"));
+            }
             var unicode = this.unicode;
             var matchScid = SuttaCentralId.test(pattern);
             if (matchScid) {
@@ -204,7 +208,7 @@
                 var seg = this.segMap[scid];
                 var match = matchScid
                     ? this.matchScid({seg, matchSeg, scidPat})
-                    : this.matchText({seg, languages, rex});
+                    : this.matchText({seg, languages, rexList});
                 if (match) {
                     matched++;
                     seg.matched = true;
@@ -221,7 +225,7 @@
                 matchLow,
                 matchHigh,
                 matchScid,
-                rex,
+                rexList,
                 suid,
                 score,
             }

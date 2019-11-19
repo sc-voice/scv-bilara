@@ -39,7 +39,7 @@ DESCRIPTION
         See https://misc.flogisoft.com/bash/tip_colors_and_formatting
 
     -d, --maxDoc NUMBER
-        specify maximum number of documents to display. Default is 10.
+        specify maximum number of documents to display. Default is 50.
 
     -f, --filter MODE
         Filter segments according to mode: "pattern", "none".

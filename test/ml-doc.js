@@ -149,7 +149,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
             done();
         } catch(e) { done(e); } })();
     });
-    it("matchText(...) matches segment text", ()=>{
+    it("TESTTESTmatchText(...) matches segment text", ()=>{
         var mld = new MLDoc({
             bilaraPaths: [],
         });
@@ -158,9 +158,10 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
         };
         var languages = ['pli'];
         var pattern = 'nandi dukkhassa';
-        //var rex = /\b(n|ṅ|ñ|ṇ)(a|ā)(n|ṅ|ñ|ṇ)(d|ḍ)ī (d|ḍ)(u|ū)kkh(a|ā)ss(a|ā)/iu;
-        var rex = new RegExp(`\\b${Pali.romanizePattern(pattern)}`, "ui");
-        should(mld.matchText({seg, languages, rex})).equal(true);
+        var rexList = [
+            new RegExp(`\\b${Pali.romanizePattern(pattern)}`, "ui"),
+        ];
+        should(mld.matchText({seg, languages, rexList})).equal(true);
     });
     it("langCompare_pli_en(...) => orders languages", ()=>{
         should(MLDoc.langCompare_pli_en('en', 'pli')).equal(1);
