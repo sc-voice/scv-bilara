@@ -92,7 +92,7 @@ DESCRIPTION
     -om3, --outMarkdown3
         Output matching segments, formatted with tri-lingual Markdown.
 
-    -ol, --outLines
+    -ol, -ol1, --outLines
         Output matching lines only.
 
     -op, --outPaths
@@ -148,7 +148,7 @@ for (var i = 2; i < nargs; i++) {
         outFormat = 'markdown3';
     } else if (arg === '-ot' || arg === '--outTrans') {
         outFormat = 'trans';
-    } else if (arg === '-ol' || arg === '--outLines') {
+    } else if (arg === '-ol' || arg === '-ol1' || arg === '--outLines') {
         outFormat = 'lines';
     } else if (arg === '-op' || arg === '--outPaths') {
         outFormat = 'paths';

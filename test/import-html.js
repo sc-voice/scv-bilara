@@ -43,7 +43,7 @@
             type,
         });
     });
-    it("TESTTESTimport(...) imports ds1.1 file", ()=>{
+    it("import(...) imports ds1.1 file", ()=>{
         var ih = new ImportHtml({
             srcRoot: TEST_DATA,
             dstRoot: BILARA_TEST

@@ -147,7 +147,7 @@
         testPattern("a.+b", 'a.+b');
         testPattern("sattānaṃ", "sattānaṃ");
     });
-    it("TESTTESTkeywordPattern(...) returns grep pattern", done=> {
+    it("keywordPattern(...) returns grep pattern", done=> {
         (async function() { try {
             var skr = await new Seeker(SEEKEROPTS).initialize();
             should(skr.keywordPattern('anathapindika', 'en')).equal(
@@ -159,7 +159,7 @@
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTkeywordSearch(...) limits results", done=>{
+    it("keywordSearch(...) limits results", done=>{
         (async function() { try {
             var lang = 'en';
             var pattern = Seeker.normalizePattern('suffering joy faith');
@@ -201,7 +201,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTkeywordSearch(...) searches English", done=>{
+    it("keywordSearch(...) searches English", done=>{
         (async function() { try {
             var pattern = Seeker.normalizePattern('suffering joy faith');
             var skr = await new Seeker({
@@ -354,7 +354,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTkeywordSearch(...) searches Deutsch, not Pali", done=>{
+    it("keywordSearch(...) searches Deutsch, not Pali", done=>{
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,
@@ -666,7 +666,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) does not find legacy suttas", done=>{
+    it("find(...) does not find legacy suttas", done=>{
         (async function() { try {
             var maxDoc = 3;
             var skr = await new Seeker({
@@ -691,7 +691,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind({minLang}) => minimum language count", done=>{
+    it("find({minLang}) => minimum language count", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
@@ -843,7 +843,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("find(...) => finds segments with all keywords", done=>{
+    it("TESTTESTfind(...) => finds segments with all keywords", done=>{
         (async function() { try {
             var maxDoc = 3;
             var skr = await new Seeker({

@@ -184,10 +184,8 @@
             if (typeof args[0] === 'string') {
                 var opts = {
                     resultPattern: args[0],
-                    languages: args[1] === undefined 
-                        ? this.languages() : args[1],
-                    showMatchesOnly: args[2] === undefined 
-                        ? true : args[2],
+                    languages: args[1],
+                    showMatchesOnly: args[2],
                 }
             } else {
                 opts = args[0];
@@ -198,14 +196,24 @@
                 languages,
                 showMatchesOnly,
             } = opts;
+            showMatchesOnly = showMatchesOnly===undefined 
+                ? true : showMatchesOnly;
+            languages = languages===undefined
+                ? this.languages() : languages;
+            pattern = pattern || resultPattern;
             var scids = this.scids();
             var suid = this.suid;
             if (resultPattern instanceof RegExp) {
                 var rexList = [ resultPattern ];
             } else {
-                var patterns = resultPattern.split('|');
-                //console.log(`dbg resultPattern`, resultPattern);
-                var rexList = patterns.map(p => new RegExp(p, "ui"));
+                var resultPatterns = resultPattern.split('|');
+                var patterns = pattern.split(' ');
+                if (resultPatterns.length === patterns.length) {
+                    var rexList = resultPatterns
+                        .map(p => new RegExp(p, "ui"));
+                } else {
+                    var rexList = patterns.map(p => new RegExp(p, "ui"));
+                }
             }
             var unicode = this.unicode;
             var matchScid = SuttaCentralId.test(resultPattern);

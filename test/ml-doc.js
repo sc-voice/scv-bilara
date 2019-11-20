@@ -15,6 +15,12 @@
     const BILARA_PATH = path.join(__dirname, '../local/bilara-data');
     this.timeout(5*1000);
     var logLevel = false;
+    var bilaraPaths_sn10_8 = [
+        "root/pli/ms/sn/sn10/sn10.8_root-pli-ms.json",
+        "translation/en/sujato/"+
+            "sn/sn10/sn10.8_translation-en-sujato.json",
+    ];
+
     var bilaraPaths_mn118 = [
         "root/pli/ms/mn/mn118_root-pli-ms.json",
         "translation/en/sujato/"+
@@ -149,7 +155,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTmatchText(...) matches segment text", ()=>{
+    it("matchText(...) matches segment text", ()=>{
         var mld = new MLDoc({
             bilaraPaths: [],
         });
@@ -192,6 +198,30 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
             lang: 'en',
         });
         should(mld.lang).equal('en');
+    });
+    it("TESTTESTfilterSegments(...) => the dark light", done=>{
+        (async function() { try {
+            var mld = new MLDoc({
+                bilaraPaths: bilaraPaths_sn10_8,
+            });
+            var res = await mld.load(BILARA_PATH);
+            var pattern = "the dark light";
+            var resultPattern = "\b(t|ṭ)he|\bdark|\blight";
+            mld.filterSegments({
+                pattern, 
+                resultPattern,
+                languages: ['pli','en'],
+            });
+            var segments = mld.segments();
+            should.deepEqual(segments.map(s => s.scid), [
+                'sn10.8:1.11',
+                'sn10.8:4.1',
+                'sn10.8:7.1',
+                'sn10.8:10.1',
+            ]);
+
+            done();
+        } catch(e) { done(e); } })();
     });
     it("filterSegments(...) => pali segment", done=>{
         (async function() { try {
@@ -300,7 +330,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
             done();
         } catch(e) { done(e); } })();
     });
-    it("highlightMatch(...) => colors matches", done=>{
+    it("TESTTESThighlightMatch(...) => colors matches", done=>{
         (async function() { try {
             var mld = new MLDoc({
                 bilaraPaths: bilaraPaths_an1_1_1,
