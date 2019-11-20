@@ -180,29 +180,44 @@
             }, false);
         }
 
-        filterSegments(pattern, 
-            languages=this.languages(), 
-            showMatchesOnly=true) 
-        {
+        filterSegments(...args) {
+            if (typeof args[0] === 'string') {
+                var opts = {
+                    resultPattern: args[0],
+                    languages: args[1] === undefined 
+                        ? this.languages() : args[1],
+                    showMatchesOnly: args[2] === undefined 
+                        ? true : args[2],
+                }
+            } else {
+                opts = args[0];
+            }
+            var {
+                pattern,
+                resultPattern,
+                languages,
+                showMatchesOnly,
+            } = opts;
             var scids = this.scids();
             var suid = this.suid;
-            if (pattern instanceof RegExp) {
-                var rexList = [ pattern ];
+            if (resultPattern instanceof RegExp) {
+                var rexList = [ resultPattern ];
             } else {
-                var patterns = pattern.split('|');
+                var patterns = resultPattern.split('|');
+                //console.log(`dbg resultPattern`, resultPattern);
                 var rexList = patterns.map(p => new RegExp(p, "ui"));
             }
             var unicode = this.unicode;
-            var matchScid = SuttaCentralId.test(pattern);
+            var matchScid = SuttaCentralId.test(resultPattern);
             if (matchScid) {
-                var scidPat = pattern.split(/, */).reduce((a,p) => {
+                var scidPat = resultPattern.split(/, */).reduce((a,p) => {
                     return SuttaCentralId.match(suid, p) ? p : a
-                }, pattern);
+                }, resultPattern);
                 scidPat = scidPat.split('/')[0].replace(/ */uig, '');
                 var matchSeg = scidPat.indexOf(':') >= 0;
             }
-            var matchLow = SuttaCentralId.rangeLow(pattern);
-            var matchHigh = SuttaCentralId.rangeHigh(pattern);
+            var matchLow = SuttaCentralId.rangeLow(resultPattern);
+            var matchHigh = SuttaCentralId.rangeHigh(resultPattern);
             var matched = 0;
             scids.forEach((scid,i) => {
                 var seg = this.segMap[scid];

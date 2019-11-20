@@ -508,9 +508,12 @@
                         lang,
                     });
                     bilaraPaths = [...bilaraPaths, ...mld.bilaraPaths];
-                    var resFilter = mld.filterSegments(resultPattern, 
-                        [searchLang], 
-                        showMatchesOnly);
+                    var resFilter = mld.filterSegments({
+                        pattern,
+                        resultPattern, 
+                        languages: [searchLang], 
+                        showMatchesOnly,
+                    });
                     segsMatched += resFilter.matched;
                     mld.segsMatched = resFilter.matched;
                     if (matchHighlight) {
