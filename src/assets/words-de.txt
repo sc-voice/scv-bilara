@@ -1392,3 +1392,7 @@ sittliches
 sittlicher
 sittlichem
 sittlichen
+leuchtend
+leuchtende
+leuchtenden
+leuchtender
