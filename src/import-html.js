@@ -18,7 +18,8 @@
             this.section = 0;
             this.segRoot = {};
             this.segRef = {};
-            this.segMarkup = { };
+            this.segHtml = { };
+            this.header = 0;
             this.div = 0;
             this.sc = '';
             this.lang = opts.lang || 'pli';
@@ -26,18 +27,16 @@
 
         importLine(line,nextLine) {
             var {
-                lastSegid,
-                segMarkup,
+                segid_1,
+                segHtml,
             } = this;
             this.sc = this.scOfLine(line);
             if (line.match('<section')) {
                 this.importId(line);
             } else if (line.match('class="division"')) {
                 this.importDivision(line);
-            } else if (line.match(/^<h1/)) {
-                this.importH1(line);
-            } else if (line.match(/^<h3/)) {
-                this.importH3(line, nextLine);
+            } else if (line.match(/^<h[1-9]/)) {
+                this.importH(line, nextLine);
             } else if (line.match(/^<\/?div/)) {
                 this.importDiv(line);
             } else if (line.match(/^<p/)) {
@@ -71,56 +70,54 @@
                 section,
                 segid,
                 segRoot,
-                segMarkup,
+                segHtml,
                 sc,
             } = this;
-            this.lastSegid = segid;
+            this.segid_1 = segid;
             segRoot[segid.scid] = this.rootText(line);
-            segMarkup[segid.scid] = this.markupText(line, 'section');
+            segHtml[segid.scid] = this.htmlText(line, 'division');
             this.segid = segid.add(0,1);
         }
 
-        importH1(line) {
-            var {
-                suid,
-                segid,
-                segRoot,
-                segMarkup,
-                sc,
-            } = this;
-            var text = this.rootText(line);
-            this.lastSegid = segid;
-            segRoot[segid.scid] = text;
-            segMarkup[segid.scid] = this.markupText(line, 'p');
-            this.segid = segid.add(0,1);
-        }
-
-        importH3(line, nextLine) {
+        importH(line, nextLine, h) {
             var {
                 suid,
                 section,
                 segid,
+                segid_1,
                 segRoot,
-                segMarkup,
+                segHtml,
                 sc,
             } = this;
-            if (sc === '') {
-                var nextSc = this.scOfLine(nextLine);
-                if (nextSc === sc) {
-                    this.segid = 
-                    segid = new SuttaCentralId(`${suid}:1.0.1`);
-                } else {
-                    this.segid = 
-                    segid = new SuttaCentralId(`${suid}:1.0`);
-                }
-                this.segid = segid.add(0,0,1);
-            } else {
-                segid = new SuttaCentralId(`${suid}:${Number(sc)+1}.0`);
+            var h = line.substring(1,3);
+            if (h === 'h1') {
+                var text = this.rootText(line);
+                this.segid_1 = segid;
+                segRoot[segid.scid] = text;
+                segHtml[segid.scid] = this.htmlText(line, 'h1');
                 this.segid = segid.add(0,1);
+            } else {
+                if (sc === '') {
+                    var nextSc = this.scOfLine(nextLine);
+                    var segParts = segid.segmentParts();
+                    if (nextSc === sc) {
+                        this.segid = 
+                        segid = new SuttaCentralId(`${suid}:1.0.1`);
+                    } else if (segParts.length === 2) {
+                        this.segid = 
+                        segid = new SuttaCentralId(`${suid}:1.0`);
+                    } else {
+                        // e.g., ds1.2.html first h3
+                    }
+                    this.segid = segid.add(0,0,1);
+                } else {
+                    segid = new SuttaCentralId(`${suid}:${Number(sc)+1}.0`);
+                    this.segid = segid.add(0,1);
+                }
+                this.segid_1 = segid;
+                segRoot[segid.scid] = this.rootText(line);
+                segHtml[segid.scid] = this.htmlText(line, h);
             }
-            this.lastSegid = segid;
-            segRoot[segid.scid] = this.rootText(line);
-            segMarkup[segid.scid] = this.markupText(line, 'h3');
         }
 
         importDiv(line) {
@@ -141,19 +138,23 @@
 
         importText(line) {
             var {
-                lastSegid,
+                segid_1,
                 section,
                 segid,
                 suid,
                 segRoot,
                 segRef,
-                segMarkup,
+                segHtml,
                 sc,
             } = this;
             var ref = this.refText(line);
             var text = this.rootText(line);
-            var lastSegParts = lastSegid.segmentParts();
+            var lastSegParts = segid_1.segmentParts();
             var curSegParts = segid.segmentParts();
+            var cls = '';
+            if (/p class=/.test(line)) {
+                cls = line.split('class="')[1].split('"')[0];
+            }
             if (sc === '') {
                 this.segid = segid.add(0,0,1);
             } else if (sc === '1') {
@@ -167,19 +168,25 @@
             }
             segRoot[segid.scid] = text;
             ref && (segRef[segid.scid] = ref);
-            if (!segMarkup[lastSegid.scid].match(/\bp\b/)) {
-                segMarkup[segid.scid] = this.markupText(line, 'p_');
-            } else {
-                segMarkup[segid.scid] = this.markupText(line, '_p');
-                if (segMarkup[lastSegid.scid] === '{}</p>') {
-                    segMarkup[lastSegid.scid] = '{}';
+
+            // HTML
+            var p = cls ? `<p class='${cls}'>` : `<p>`;
+            if (segHtml[segid_1.scid].match(/{}<\/p>$/)) {
+                if (segid.scid.match(/\.1$/) || cls) {
+                    segHtml[segid.scid] = `${p}{}</p>`;
+                } else {
+                    segHtml[segid_1.scid] = segHtml[segid_1.scid]
+                        .replace(/<\/p>/,'');
+                    segHtml[segid.scid] = `{}</p>`;
                 }
+            } else {
+                segHtml[segid.scid] = `${p}{}</p>`;
             }
 
-            this.lastSegid = segid;
+            this.segid_1 = segid;
         }
 
-        markupText(line, element) {
+        htmlText(line, element) {
             var {
                 suid,
                 segid,
@@ -188,16 +195,22 @@
             } = this;
             var sectid = segid.sectionParts();
             var segParts = segid.segmentParts();
-            if (element === 'section' && section === 0) {
-                this.section = ++section;
-                return [
-                    `<section id='vagga'>`,
-                    `<section class='sutta' data-uid='${sectid}' `+
-                        `id='${section}'>`,
-                    `<article>`,
-                    `<div class='hgroup'>`,
-                    `<p class='division'>{}</p>`,
-                ].join('');
+            if (element === 'header') {
+                return this.header++ === 0
+                    ? `<header><p class='collection'>{}</p>`
+                    : `<p class='collection'>{}</p>`;
+            } else if (element === 'division') {
+                return this.header++ === 0
+                    ? `<header><p class='division'>{}</p>`
+                    : `<p class='division'>{}</p>`;
+            } else if (element === 'kanda') {
+                return this.header++ === 0
+                    ? `<header><p class='kanda'>{}</p>`
+                    : `<p class='kanda'>{}</p>`;
+            } else if (element === 'vagga') {
+                return this.header++ === 0
+                    ? `<header><p class='vagga'>{}</p>`
+                    : `<p class='vagga'>{}</p>`;
             } else if (element === 'section') {
                 this.section = ++section;
                 return [
@@ -210,19 +223,13 @@
                 ].join('');
             }
             if (element === 'h1') {
-                return `<h1>{}</h1></div>`;
+                return `<h1>{}</h1></header>`;
+            }
+            if (element === 'h2') {
+                return `<h2>{}</h2>`
             }
             if (element === 'h3') {
                 return `<h3>{}</h3>`
-            }
-            if (element === 'p') {
-                return '<p>{}</p>';
-            }
-            if (element === 'p_') {
-                return '<p>{}';
-            }
-            if (element === '_p') {
-                return '{}</p>';
             }
 
             return '{}';
@@ -271,13 +278,16 @@
                 importer.importLine(lines[i], lines[i+1]);
             }
             var {
-                lastSegid,
+                segid_1,
                 lang,
                 nikayaFolder,
                 segRoot,
                 segRef,
-                segMarkup,
+                segHtml,
             } = importer;
+            var segids = Object.keys(segRoot)
+                .sort(SuttaCentralId.compareLow);
+            var nsegids = segids.length;
 
             // write root segments
             var dstDir = path.join(dstRoot, 'root', lang, translator,
@@ -297,13 +307,11 @@
             var localPath = dstPath.replace(LOCAL_DIR,'').substring(1);
             this.log(`wrote ${localPath}`);
 
-            // write markup segments
-            segMarkup[lastSegid.scid] += "<p class='endsection'>";
-            segMarkup["~"] = "</p></article></section></body></html>";
-            var dstDir = path.join(dstRoot, 'markup', nikayaFolder);
+            // write Html segments
+            var dstDir = path.join(dstRoot, 'html', nikayaFolder);
             fs.mkdirSync(dstDir, {recursive: true});
-            var dstPath = path.join(dstDir, `${suid}_markup.json`);
-            fs.writeFileSync(dstPath, JSON.stringify(segMarkup, null, 2));
+            var dstPath = path.join(dstDir, `${suid}_html.json`);
+            fs.writeFileSync(dstPath, JSON.stringify(segHtml, null, 2));
             var localPath = dstPath.replace(LOCAL_DIR,'').substring(1);
             this.log(`wrote ${localPath}`);
 
@@ -311,7 +319,7 @@
                 suid,
                 segRoot,
                 segRef,
-                segMarkup,
+                segHtml,
                 lang,
                 segments: Object.keys(segRoot).map(k => ({[k]:segRoot[k]})),
             }
