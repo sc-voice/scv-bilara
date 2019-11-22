@@ -294,7 +294,7 @@ function outMarkdown(res, pattern, nLang=3) {
         mld.segments().forEach((seg,i) => {
             var scid = seg.scid;
             var langText = (seg[res.lang] || '').trim();
-            var linkText = suid;
+            var linkText = new SuttaCentralId(scid).standardForm();
             var link = `https://suttacentral.net/${suid}/en/sujato#${scid}`;
             if (nLang > 1) {
                 console.log(`> [${linkText}](${link}): ${seg.pli}`);

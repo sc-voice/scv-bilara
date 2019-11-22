@@ -173,6 +173,24 @@
             return new SuttaCentralId(`${this.sutta}:${groups.join('.')}.`);
         }
 
+        standardForm() {
+            var std = {
+                "sn": "SN",
+                "mn": "MN",
+                "dn": "DN",
+                "an": "AN",
+                "thig": "Thig",
+                "thag": "Thag",
+            };
+            var result = this.scid;
+            var keys = Object.keys(std);
+            for (var i=0; i < keys.length; i++) {
+                var k = keys[i];
+                result = result.replace(k,std[k]);
+            }
+            return result;
+        }
+
         sectionParts() {
             return this.scid.split(':')[0].split('.');
         }
