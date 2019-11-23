@@ -1397,3 +1397,5 @@ leuchtend
 leuchtende
 leuchtenden
 leuchtender
+erringen
+errungen
