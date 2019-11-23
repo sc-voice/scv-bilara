@@ -383,6 +383,7 @@ euer
 eure
 eurer
 existenz
+fäkalien
 fortgesetzte
 fortgesetzten
 fortgesetzt
@@ -719,6 +720,7 @@ körperliche
 körperlicher
 körpers
 köstlichen
+kot
 kraft
 kräfte
 kräften
