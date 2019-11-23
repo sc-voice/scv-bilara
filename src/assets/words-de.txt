@@ -383,6 +383,10 @@ euer
 eure
 eurer
 existenz
+fortgesetzte
+fortgesetzten
+fortgesetzt
+fortgesetzter
 gäbe
 gähnen
 gebändigt
