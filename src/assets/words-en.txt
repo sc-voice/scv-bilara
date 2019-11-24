@@ -24722,7 +24722,6 @@ hexed
 hey
 heyday
 heydays
-hi
 hiatus
 hiatuses
 hibernal

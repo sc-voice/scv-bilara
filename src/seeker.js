@@ -519,10 +519,15 @@
                     if (matchHighlight) {
                         mld.highlightMatch(resultPattern, matchHighlight);
                     }
-                    if (mld.bilaraPaths.length >= minLang && 
-                        Object.keys(mld.segMap).length ) {
-                        mlDocs.push(mld);
-                        matchingRefs.push(suttaRef);
+                    if (mld.bilaraPaths.length >= minLang) {
+                        if (Object.keys(mld.segMap).length ) {
+                            mlDocs.push(mld);
+                            matchingRefs.push(suttaRef);
+                        } else {
+                            that.log(`skipping ${mld.suid} segments:0`);
+                        }
+                    } else {
+                        that.log(`skipping ${mld.suid} minLang:${minLang}`);
                     }
                 }
                 scoreDoc && mlDocs.sort(MLDoc.compare);

@@ -1,0 +1,3 @@
+#!/bin/bash
+./scripts/train-de
+./scripts/train-en

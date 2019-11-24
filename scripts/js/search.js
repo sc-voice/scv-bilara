@@ -80,6 +80,18 @@ DESCRIPTION
     -oh3, --outHuman3
         Output human format in Pali, English and translation language.
 
+    -ol, --outLines
+        Output lines only.
+
+    -ol1
+        Output translation lines only.
+
+    -ol2 
+        Output matching lines as well as the corresponding translation or root text.
+
+    -ol3 
+        Output trilingual lines.
+
     -om, --outMarkdown
         Output Markdown for matching segments. Default.
 
@@ -91,9 +103,6 @@ DESCRIPTION
 
     -om3, --outMarkdown3
         Output matching segments, formatted with tri-lingual Markdown.
-
-    -ol, -ol1, --outLines
-        Output matching lines only.
 
     -op, --outPaths
         Output file paths of matching suttas
@@ -148,8 +157,14 @@ for (var i = 2; i < nargs; i++) {
         outFormat = 'markdown3';
     } else if (arg === '-ot' || arg === '--outTrans') {
         outFormat = 'trans';
-    } else if (arg === '-ol' || arg === '-ol1' || arg === '--outLines') {
+    } else if (arg === '-ol' || arg === '--outLines') {
         outFormat = 'lines';
+    } else if (arg === '-ol1') {
+        outFormat = 'lines1';
+    } else if (arg === '-ol2') {
+        outFormat = 'lines2';
+    } else if (arg === '-ol3') {
+        outFormat = 'lines3';
     } else if (arg === '-op' || arg === '--outPaths') {
         outFormat = 'paths';
     } else if (arg === '-oh' || arg === '--outHuman') {
@@ -276,14 +291,40 @@ function outPaths(res, pattern) {
     });
 }
 
-function outLines(res, pattern) {
+function outLines(res, pattern, n=0) {
+    var {
+        lang,
+        searchLang,
+    } = res;
+    n = Number(n);
     res.mlDocs.forEach(mld => {
         var suid = mld.suid;
         mld.segments().forEach((seg,i) => {
             var scid = seg.scid;
-            var text = seg[res.searchLang] || '';
-            var line = `${scid}: ${text}`;
-            console.log(line);
+            var langText = seg[lang] || '';
+            var searchText = (
+                    n===0 && searchLang!==lang ||
+                    n===2 && searchLang!==lang ||
+                    n>2 && searchLang!==lang && searchLang!=='pli'
+                ) &&
+                seg[searchLang] 
+                || '';
+            var enText = n>2 && searchLang!=='en' && lang!=='en' &&
+                seg.en || '';
+            var pliText = (
+                    n===2 && searchLang===lang || 
+                    n>2 && searchLang!=='pli' && lang!=='pli'
+                ) &&
+                lang!=='pli' && seg.pli 
+                || '';
+
+            pliText && console.log(`${scid}: ${pliText}`);
+            enText && console.log(`${scid}: ${enText}`);
+            searchText && console.log(`${scid}: ${searchText}`);
+            langText && console.log(`${scid}: ${langText}`);
+            if (!pliText && !searchText && !langText) {
+                console.log(seg);
+            }
         });
     });
 }
@@ -367,6 +408,12 @@ function scriptEditor(res, pattern) {
         outPaths(res, pattern);
     } else if (outFormat === 'lines') {
         outLines(res, pattern);
+    } else if (outFormat === 'lines1') {
+        outLines(res, pattern, 1);
+    } else if (outFormat === 'lines2') {
+        outLines(res, pattern, 2);
+    } else if (outFormat === 'lines3') {
+        outLines(res, pattern, 3);
     } else if (outFormat === 'markdown') {
         outMarkdown(res, pattern);
     } else if (outFormat === 'markdown1') {
