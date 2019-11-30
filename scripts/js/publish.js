@@ -20,7 +20,7 @@ NAME
     publish - merge bilara-data sutta branch into master
 
 SYNOPSIS
-    publish [OPTIONS] LANG TRANSLATOR SUID
+    publish [OPTIONS] SUID LANG TRANSLATOR 
         Merge bilara-data git branch SUID_LANG_TRANSLATOR into
         master and delete it if merge is successful
 
@@ -70,8 +70,8 @@ class Publish {
                 help();
             }
             var branchPrefix = suid;
-            lang && (branchPrefix += ` ${lang}`);
-            translator && (branchPrefix += ` ${translator}`);
+            lang && (branchPrefix += `_${lang}`);
+            translator && (branchPrefix += `_${translator}`);
             that.log(`publish() ${branchPrefix}...`);
             var git = new ExecGit({
                 logLevel: 'info',

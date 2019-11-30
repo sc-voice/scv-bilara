@@ -368,7 +368,7 @@
                 maxResults: 10,
                 method: 'keywords',
                 keywordsFound: {
-                    hausherr: 5,
+                    hausherr: 6,
                     anathapindika: 12,
                 },
                 lines: [
