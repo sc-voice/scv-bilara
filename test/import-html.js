@@ -107,7 +107,7 @@
         should(fs.existsSync(path.join(BILARA_TEST, 
             'html/ds1/ds1.1_html.json'))).equal(true);
     });
-    it("TESTTESTimport(...) imports ds1.2 file", ()=>{
+    it("import(...) imports ds1.2 file", ()=>{
         var ih = new ImportHtml({
             srcRoot: TEST_DATA,
             dstRoot: BILARA_TEST

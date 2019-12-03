@@ -199,7 +199,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
         });
         should(mld.lang).equal('en');
     });
-    it("TESTTESTfilterSegments(...) => the dark light", done=>{
+    it("filterSegments(...) => the dark light", done=>{
         (async function() { try {
             var mld = new MLDoc({
                 bilaraPaths: bilaraPaths_sn10_8,
@@ -330,7 +330,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESThighlightMatch(...) => colors matches", done=>{
+    it("highlightMatch(...) => colors matches", done=>{
         (async function() { try {
             var mld = new MLDoc({
                 bilaraPaths: bilaraPaths_an1_1_1,

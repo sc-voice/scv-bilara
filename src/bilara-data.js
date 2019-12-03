@@ -179,23 +179,43 @@
             var loadPublished = ()=>{
                 return that.publication.reduce( (a,p) => {
                     let {
-                        is_published: isPub,
+                        is_published,
                         text_uid,
                         source_url,
                     } = p;
                     var bilPath = source_url.replace(/.*master\//,'');
-                    var dirs = fs.readdirSync(path.join(root,bilPath));
-                    var subchapters = dirs.reduce(
-                        (a,d) => (d.match(/.*json$/) ? false : a),
-                        true);
-                    if (isPub==="true" || p.isPub===true){
-                        if (a[text_uid] == null) {
-                            a[text_uid] = {
-                                name: text_uid,
-                                folder: bilPath.split("/")[3],
-                                subchapters,
-                            };
-                        }
+                    if (is_published!=="true" && p.is_published!==true){
+                        return a;
+                    }
+                    if (a[text_uid]) {
+                        return a;
+                    }
+                    var rootBilPath = path.join(root, bilPath);
+                    var subchapters = false;
+                    if (!fs.existsSync(rootBilPath)) {
+                        //console.log(`dbg no file`, text_uid, rootBilPath);
+                        a[text_uid] = {
+                            name: text_uid,
+                            //folder: bilPath.split("/")[3],
+                            subchapters,
+                        };
+                    } else if (fs.statSync(rootBilPath).isFile()) {
+                        //console.log(`it's a file:`, bilPath);
+                        a[text_uid] = {
+                            name: text_uid,
+                            //folder: bilPath.split("/")[3],
+                            subchapters,
+                        };
+                    } else {
+                        var dirs = fs.readdirSync(rootBilPath);
+                        subchapters = dirs.reduce(
+                            (a,d) => (d.match(/.*json$/) ? false : a),
+                            true);
+                        a[text_uid] = {
+                            name: text_uid,
+                            //folder: bilPath.split("/")[3],
+                            subchapters,
+                        };
                     }
                     return a;
                 }, {});
@@ -250,7 +270,7 @@
                 var published = [...this.publishedPaths(), 'root/pli/ms'];
                 this.log(`published paths:\n${published.join('\n')}`);
                 Object.defineProperty(this, "_rePubPaths", {
-                    value: new RegExp(`(${published.join("|")})/.*`),
+                    value: new RegExp(`(${published.join("|")}).*`),
                 });
             }
             return this._rePubPaths.test(fpath);

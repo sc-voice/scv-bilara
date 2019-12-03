@@ -4,6 +4,7 @@
     const path = require('path');
     const {
         BilaraData,
+        MLDoc,
         SuttaCentralId,
     } = require("../index");
     const {
@@ -131,6 +132,39 @@
             should(bd.isPublishedPath(
                 TRANSPATH('en', 'sujato', `kn/dhp/dhp21-32`)))
                 .equal(false);
+            done();
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTisPublishedPath(f) handles pieces of a nikaya", done=>{
+        (async function() { try {
+            var root = path.join(__dirname, 'data', 'bilara-data');
+            var bd = new BilaraData({ 
+                logLevel: 'info',
+                root,
+            });
+            await bd.initialize();
+        
+            const an1_71_81_path = 
+                TRANSPATH('de', 'sabbamitta', `an/an1/an1.71-81`);
+            should(bd.isPublishedPath(an1_71_81_path)).equal(true);
+            var mld = await bd.loadMLDoc({
+                suid: 'an1.71-81',
+                languages: ['de'],
+            });
+            should(mld.segMap['an1.80:1.2'].scid).equal('an1.80:1.2');
+            should(mld.segMap['an1.80:1.2'].de).match(/Der schlimmste/);
+
+            const an2_1_10_path = 
+                TRANSPATH('de', 'sabbamitta', `an/an2/an2.1-10`);
+            should(bd.isPublishedPath(an1_71_81_path)).equal(true);
+            var mld = await bd.loadMLDoc({
+                suid: 'an2.3',
+                languages: ['de'],
+            });
+            should(mld).instanceOf(MLDoc);
+            should(mld.segMap['an2.9:1.7'].scid).equal('an2.9:1.7');
+            should(mld.segMap['an2.9:1.7'].de).equal(' ');
+
             done();
         } catch(e) {done(e);} })();
     });
@@ -671,32 +705,32 @@
             should.deepEqual(bd.published(), {
               "an": {
                 "name": "an",
-                "folder": "an",
+                //"folder": "an",
                 "subchapters": true
               },
               "mn": {
                 "name": "mn",
-                "folder": "mn",
+                //"folder": "mn",
                 "subchapters": false
               },
               "dn": {
                 "name": "dn",
-                "folder": "dn",
+                //"folder": "dn",
                 "subchapters": false
               },
               "sn": {
                 "name": "sn",
-                "folder": "sn",
+                //"folder": "sn",
                 "subchapters": true
               },
               "thig": {
                 "name": "thig",
-                "folder": "kn",
+                //"folder": "kn",
                 "subchapters": false,
               },
               "thag": {
                 "name": "thag",
-                "folder": "kn",
+                //"folder": "kn",
                 "subchapters": false,
               }
             });

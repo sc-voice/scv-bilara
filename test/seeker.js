@@ -843,7 +843,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) => finds segments with all keywords", done=>{
+    it("find(...) => finds segments with all keywords", done=>{
         (async function() { try {
             var maxDoc = 3;
             var skr = await new Seeker({

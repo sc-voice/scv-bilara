@@ -326,7 +326,7 @@
         should(suid.add(1).scid).equal('an2.1');
         should(suid.add(0,1).scid).equal('an1.2');
     });
-    it("TESTTESTstandardForm() => human standard",()=>{
+    it("standardForm() => human standard",()=>{
         var segid = new SuttaCentralId('an1.1:0.1');
         should(segid.standardForm()).equal('AN1.1:0.1');
         var segid = new SuttaCentralId('thag1.1:2.3');
