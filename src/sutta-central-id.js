@@ -154,7 +154,11 @@
         }
 
         get nikayaFolder() {
-            return this.sutta.split('.')[0];
+            var suid = this.sutta.split('.')[0];
+            var prefix = suid.replace(/[0-9-.:]*$/,'');
+            return suid === this.sutta 
+                ? prefix
+                : `${prefix}/${suid}`;
         }
 
         get sutta() {

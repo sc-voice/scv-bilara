@@ -699,59 +699,56 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("published(...) => published divisions", done=>{
+    it("TESTTESTpublished(...) => published divisions", done=>{
         (async function() { try {
             await bd.initialize();
-            should.deepEqual(bd.published(), {
-              "an": {
-                "name": "an",
-                //"folder": "an",
-                "subchapters": true
-              },
-              "mn": {
+            var pub = bd.published();
+            should.deepEqual(pub.mn, {
                 "name": "mn",
                 //"folder": "mn",
                 "subchapters": false
-              },
-              "dn": {
+            });
+            should.deepEqual(pub.dn, {
                 "name": "dn",
                 //"folder": "dn",
                 "subchapters": false
-              },
-              "sn": {
-                "name": "sn",
+            });
+            should.deepEqual(pub.sn, {
+                name: 'sn',
                 //"folder": "sn",
                 "subchapters": true
-              },
-              "thig": {
-                "name": "thig",
+            });
+            should.deepEqual(pub.thig, {
+                name: 'thig',
                 //"folder": "kn",
                 "subchapters": false,
-              },
-              "thag": {
-                "name": "thag",
+            });
+            should.deepEqual(pub.thag, {
+                name: 'thag',
                 //"folder": "kn",
                 "subchapters": false,
-              }
             });
 
             done();
         } catch(e) { done(e); }})();
     });
-    it("publishedPaths(...) => published bilara paths", done=>{
+    it("TESTTESTpublishedPaths(...) => published bilara paths", done=>{
         (async function() { try {
             await bd.initialize();
             should.deepEqual(bd.publishedPaths(), [
-                "de/sabbamitta/an",
-                "de/sabbamitta/mn",
-                "de/sabbamitta/sn",
-                "en/sujato/an",
-                "en/sujato/dn",
-                "en/sujato/kn/thag",
-                "en/sujato/kn/thig",
-                "en/sujato/mn",
-                "en/sujato/sn",
-
+"de/sabbamitta/an/an1",
+"de/sabbamitta/an/an10/an10.61_translation-de-sabbamitta.json",
+"de/sabbamitta/an/an2",
+"de/sabbamitta/an/an3",
+"de/sabbamitta/an/an4/an4.85_translation-de-sabbamitta.json",
+"de/sabbamitta/mn",
+"de/sabbamitta/sn",
+"en/sujato/an",
+"en/sujato/dn",
+"en/sujato/kn/thag",
+"en/sujato/kn/thig",
+"en/sujato/mn",
+"en/sujato/sn",
             ]);
 
             done();

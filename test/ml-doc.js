@@ -76,7 +76,7 @@
             should(segMap['an1.9:1.2']).properties({
 pli: 'Purisaraso, bhikkhave, itthiyā cittaṃ pariyādāya tiṭṭhatī”ti. ',
 en: 'The taste of a man occupies a woman’s mind.” ', 
-de: 'Der Geschmack eines Mannes hält den Geist einer Frau besetzt.“ ',
+de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
             });
             should(mld.suid).equal('an1.1-10');
             done();

@@ -52,7 +52,7 @@
             type,
         });
     });
-    it("import(...) imports ds1.1 file", ()=>{
+    it("TESTTESTimport(...) imports ds1.1 file", ()=>{
         var ih = new ImportHtml({
             srcRoot: TEST_DATA,
             dstRoot: BILARA_TEST
@@ -80,7 +80,7 @@
         should(segRoot['ds1.1:5.1']).match(/Dukkhāya vedanāya/);
         should(segRoot['ds1.1:6.1']).match(/Adukkhamasukhāya vedanāya/);
         should(fs.existsSync(path.join(BILARA_TEST, 
-            'root/pli/ms/ds1/ds1.1_root-pli-ms.json'))).equal(true);
+            'root/pli/ms/ds/ds1/ds1.1_root-pli-ms.json'))).equal(true);
 
         should(segRef['ds1.1:1.0.2']).match(/ms29Dhs_1/);
         should(segRef['ds1.1:1.1'])
@@ -89,7 +89,7 @@
         should(segRef['ds1.1:66.1']).match(/sc66, ms29Dhs_67/);
         should(segRef['ds1.1:66.2']).match(/ms29Dhs_68/);
         should(fs.existsSync(path.join(BILARA_TEST, 
-            'reference/ds1/ds1.1_reference.json'))).equal(true);
+            'reference/ds/ds1/ds1.1_reference.json'))).equal(true);
 
         should(segHtml['ds1.1:0.1'])
             .equal(`<header><p class='division'>{}</p>`);
@@ -105,7 +105,7 @@
         should(segHtml['ds1.1:66.2'])
             .equal(`<p class='endsutta'>{}</p>`);
         should(fs.existsSync(path.join(BILARA_TEST, 
-            'html/ds1/ds1.1_html.json'))).equal(true);
+            'html/ds/ds1/ds1.1_html.json'))).equal(true);
     });
     it("import(...) imports ds1.2 file", ()=>{
         var ih = new ImportHtml({
@@ -143,7 +143,7 @@
         should(segRoot['ds1.2:200.3'])
             .equal('Abhidhammadukamātikā.');
         should(fs.existsSync(path.join(BILARA_TEST, 
-            'root/pli/ms/ds1/ds1.2_root-pli-ms.json'))).equal(true);
+            'root/pli/ms/ds/ds1/ds1.2_root-pli-ms.json'))).equal(true);
 
         dumpSegs(segRoot, segRef);
         should(segRef['ds1.2:1.1']).equal('sc1, ms29Dhs_69, msdiv23');
@@ -151,7 +151,7 @@
         should(segRef['ds1.2:200.1']).equal('sc200, ms29Dhs_280');
         should(segRef['ds1.2:200.2']).equal('ms29Dhs_281');
         should(fs.existsSync(path.join(BILARA_TEST, 
-            'reference/ds1/ds1.2_reference.json'))).equal(true);
+            'reference/ds/ds1/ds1.2_reference.json'))).equal(true);
 
         dumpSegs(segRoot, segHtml);
         should(segHtml['ds1.2:0.1'])
@@ -168,6 +168,6 @@
         should(segHtml['ds1.2:200.3'])
             .equal(`<p class='endsutta'>{}</p>`);
         should(fs.existsSync(path.join(BILARA_TEST, 
-            'html/ds1/ds1.2_html.json'))).equal(true);
+            'html/ds/ds1/ds1.2_html.json'))).equal(true);
     });
 })

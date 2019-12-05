@@ -285,6 +285,7 @@
                 segRef,
                 segHtml,
             } = importer;
+            console.log(`dbg nikayaFolder`,nikayaFolder);
             var segids = Object.keys(segRoot)
                 .sort(SuttaCentralId.compareLow);
             var nsegids = segids.length;
