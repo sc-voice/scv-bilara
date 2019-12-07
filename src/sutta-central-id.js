@@ -36,13 +36,32 @@
         }
 
         static rangeHigh(scid) {
-            var scidParts = scid.split('/');
-            scidParts[0] = scidParts[0].replace(/[0-9]+-/g,'')+'.9999';
-            return scidParts.join('/');
+            var slashParts = scid.split('/');
+            var scidMain = slashParts.shift();
+            var suffix = slashParts.join('/');
+            var extRanges = scidMain.split('--');
+            if (extRanges.length > 2) {
+                throw new Error(`Invalid SuttaCentral reference:${scid}`);
+            }
+            var [c0,c1] = extRanges.map(er => er.split(':'));
+            var result = extRanges.pop();
+            if (c1 && c0.length>1 && c1.length<2) {
+                result = `${c0[0]}:${result}`;
+            }
+            result = c0.length > 1
+                ? result.replace(/[0-9]+-/g,'')+'.9999'
+                : result.replace(/[0-9]+-/g,'');
+            return suffix ? `${result}/${suffix}` : result;
+
         }
 
         static rangeLow(scid) {
-            return scid.replace(/-[0-9]+/g,'');
+            var slashParts = scid.split('/');
+            var scidMain = slashParts.shift();
+            var suffix = slashParts.join('/');
+            var result = scidMain.split('--')[0];
+            result = result.replace(/-[0-9]+/g,'');
+            return suffix ? `${result}/${suffix}` : result;
         }
 
         static test(text) {

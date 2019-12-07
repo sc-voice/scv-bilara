@@ -310,19 +310,32 @@
         should(SuttaCentralId.test('sn22.1-20    ,   red')).equal(false);
         should(SuttaCentralId.test('red,sn22.1-20')).equal(false);
     });
-    it("(rangeHigh) => upper bound", ()=>{
+    it("TESTTESTrangeHigh => upper bound", ()=>{
+        should(SuttaCentralId.rangeHigh("an1.10--an1.11"))
+            .equal("an1.11");
+        should(SuttaCentralId.rangeHigh("an1.2:3.4--5.6"))
+            .equal("an1.2:5.6.9999");
+        should(SuttaCentralId.rangeHigh(
+            "an1.2:2.1.3--an1.11:5.1.19/en/sujato"))
+            .equal("an1.11:5.1.19.9999/en/sujato");
         should(SuttaCentralId.rangeHigh("an1.2-11:2-5.1.3-19/en/sujato"))
             .equal("an1.11:5.1.19.9999/en/sujato");
         should(SuttaCentralId.rangeHigh("an1.2-11:2-5.1.3-19"))
             .equal("an1.11:5.1.19.9999");
-        should(SuttaCentralId.rangeHigh("an1.2-11")).equal("an1.11.9999");
-        should(SuttaCentralId.rangeHigh("an1.2")).equal("an1.2.9999");
-        should(SuttaCentralId.rangeHigh("mn1")).equal("mn1.9999");
+        should(SuttaCentralId.rangeHigh("an1.2-11")).equal("an1.11");
+        should(SuttaCentralId.rangeHigh("an1.2")).equal("an1.2");
+        should(SuttaCentralId.rangeHigh("mn1")).equal("mn1");
     });
-    it("(rangeLow) => lower bound", ()=>{
+    it("TESTTESrangeLow => lower bound", ()=>{
+        should(SuttaCentralId.rangeLow(
+            "an1.2:2.1.3--an1.11:5.1.19/en/sujato"))
+            .equal("an1.2:2.1.3/en/sujato");
+        should(SuttaCentralId.rangeLow("an1.2:3.4--5.6"))
+            .equal("an1.2:3.4");
         should(SuttaCentralId.rangeLow("an1.2-11:2-5.1.3-19/en/sujato"))
             .equal("an1.2:2.1.3/en/sujato");
-        should(SuttaCentralId.rangeLow("an1.2-11:2-5.1.3-19")).equal("an1.2:2.1.3");
+        should(SuttaCentralId.rangeLow("an1.2-11:2-5.1.3-19"))
+            .equal("an1.2:2.1.3");
         should(SuttaCentralId.rangeLow("an1.2-11")).equal("an1.2");
         should(SuttaCentralId.rangeLow("an1.2")).equal("an1.2");
         should(SuttaCentralId.rangeLow("mn1")).equal("mn1");
