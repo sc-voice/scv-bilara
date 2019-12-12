@@ -31,7 +31,10 @@
             srcRoot: path.join(LOCAL_DIR, 'html'),
             dstRoot: BILARA_DATA,
             type: 'root',
-            translator: 'ms',
+            author: 'ms',
+            rootLang: 'pli',
+            translator: 'sujato',
+            transLang: 'en',
         });
     });
     it("custom ctor", ()=>{
@@ -64,10 +67,16 @@
             segHtml,
             suid,
             segments,
-            lang,
+            author,
+            rootLang,
+            translator,
+            transLang,
         } = res;
         should(suid).equal('ds1.1');
-        should(lang).equal('pli');
+        should(rootLang).equal('pli');
+        should(author).equal('ms');
+        should(translator).equal('sujato');
+        should(transLang).equal('en');
         should(segRoot['ds1.1:0.1']).match(/Dhammasaṅgaṇī/);
         should(segRoot['ds1.1:0.2']).match(/Tikamātikā/);
         should(segRoot['ds1.1:1.0.1']).match(/1. Kusalattika/);
@@ -119,10 +128,10 @@
             segHtml,
             suid,
             segments,
-            lang,
+            rootLang,
         } = res;
         should(suid).equal('ds1.2');
-        should(lang).equal('pli');
+        should(rootLang).equal('pli');
         should(segRoot['ds1.2:0.1']).equal('Dhammasaṅgaṇī');
         should(segRoot['ds1.2:0.2']).equal('Dukamātikā');
         should(segRoot['ds1.2:1.0.1']).equal('Hetugocchaka');

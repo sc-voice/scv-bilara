@@ -17,12 +17,13 @@
             this.nikayaFolder = this.segid.nikayaFolder;
             this.section = 0;
             this.segRoot = {};
+            this.segTrans = {};
             this.segRef = {};
             this.segHtml = { };
             this.header = 0;
             this.div = 0;
             this.sc = '';
-            this.lang = opts.lang || 'pli';
+            this.rootLang = opts.rootLang || 'pli';
         }
 
         importLine(line,nextLine) {
@@ -70,11 +71,13 @@
                 section,
                 segid,
                 segRoot,
+                segTrans,
                 segHtml,
                 sc,
             } = this;
             this.segid_1 = segid;
             segRoot[segid.scid] = this.rootText(line);
+            segTrans[segid.scid] = this.transText(line);
             segHtml[segid.scid] = this.htmlText(line, 'division');
             this.segid = segid.add(0,1);
         }
@@ -86,6 +89,7 @@
                 segid,
                 segid_1,
                 segRoot,
+                segTrans,
                 segHtml,
                 sc,
             } = this;
@@ -94,6 +98,7 @@
                 var text = this.rootText(line);
                 this.segid_1 = segid;
                 segRoot[segid.scid] = text;
+                segTrans[segid.scid] = this.transText(line);
                 segHtml[segid.scid] = this.htmlText(line, 'h1');
                 this.segid = segid.add(0,1);
             } else {
@@ -116,6 +121,7 @@
                 }
                 this.segid_1 = segid;
                 segRoot[segid.scid] = this.rootText(line);
+                segTrans[segid.scid] = this.transText(line);
                 segHtml[segid.scid] = this.htmlText(line, h);
             }
         }
@@ -129,7 +135,7 @@
                 this.div++;
                 quoteParts.pop(); // >
                 if (quoteParts[1] === 'text') {
-                    this.lang = quoteParts.pop();
+                    this.rootLang = quoteParts.pop();
                 }
             } else {
                 this.div--;
@@ -143,6 +149,7 @@
                 segid,
                 suid,
                 segRoot,
+                segTrans,
                 segRef,
                 segHtml,
                 sc,
@@ -167,6 +174,7 @@
                 this.segid = segid.add(0,1);
             }
             segRoot[segid.scid] = text;
+            segTrans[segid.scid] = this.transText(line);
             ref && (segRef[segid.scid] = ref);
 
             // HTML
@@ -246,7 +254,8 @@
         }
 
         transText(line) {
-            return line.replace(/.*<b>/,'').replace(/<\/b>.*/,'');
+            var text = line.replace(/.*<b>/,'').replace(/<\/b>.*/,'');
+            return text.length ? text : this.refText(line);
         }
     }
 
@@ -256,15 +265,22 @@
             this.srcRoot = opts.srcRoot || path.join(LOCAL_DIR, 'html');
             this.dstRoot = opts.dstRoot || BILARA_PATH;
             this.type = opts.type || 'root';
-            this.translator = opts.translator || 'ms';
+            this.author = opts.author || 'ms';
+            this.rootLang = opts.rootLang || 'pli';
+            this.translator = opts.translator || 'sujato';
+            this.transLang = opts.transLang || 'en';
         }
 
         import(src) {
             var {
                 srcRoot,
                 dstRoot,
+                nikayaFolder,
                 type,
+                author,
+                rootLang,
                 translator,
+                transLang,
             } = this;
             var srcPath = path.join(srcRoot, src);
             if (!fs.existsSync(srcPath)) {
@@ -279,9 +295,9 @@
             }
             var {
                 segid_1,
-                lang,
                 nikayaFolder,
                 segRoot,
+                segTrans,
                 segRef,
                 segHtml,
             } = importer;
@@ -291,14 +307,25 @@
             var nsegids = segids.length;
 
             // write root segments
-            var dstDir = path.join(dstRoot, 'root', lang, translator,
+            var dstDir = path.join(dstRoot, 'root', rootLang, author,
                 nikayaFolder);
             fs.mkdirSync(dstDir, {recursive: true});
             var dstPath = path.join(dstDir,
-                `${suid}_root-${lang}-${translator}.json`);
+                `${suid}_root-${rootLang}-${author}.json`);
             fs.writeFileSync(dstPath, JSON.stringify(segRoot, null, 2));
             var localPath = dstPath.replace(LOCAL_DIR,'').substring(1);
-            this.log(`wrote ${localPath}`);
+            this.log(`root => ${localPath}`);
+
+            // write translation segments
+            var dstDir = path.join(dstRoot, 
+                'translation', transLang, translator,
+                nikayaFolder);
+            fs.mkdirSync(dstDir, {recursive: true});
+            var dstPath = path.join(dstDir,
+                `${suid}_translation-${transLang}-${translator}.json`);
+            fs.writeFileSync(dstPath, JSON.stringify(segTrans, null, 2));
+            var localPath = dstPath.replace(LOCAL_DIR,'').substring(1);
+            this.log(`translation => ${localPath}`);
 
             // write reference segments
             var dstDir = path.join(dstRoot, 'reference', nikayaFolder);
@@ -321,7 +348,10 @@
                 segRoot,
                 segRef,
                 segHtml,
-                lang,
+                rootLang,
+                author,
+                translator,
+                transLang,
                 segments: Object.keys(segRoot).map(k => ({[k]:segRoot[k]})),
             }
         }

@@ -173,11 +173,15 @@
         }
 
         get nikayaFolder() {
-            var suid = this.sutta.split('.')[0];
-            var prefix = suid.replace(/[0-9-.:]*$/,'');
-            return suid === this.sutta 
+            var majorid = this.sutta.split('.')[0];
+            var prefix = majorid.replace(/[0-9-.:]*$/,'');
+            var folder = {
+                thag: `kn/thag`,
+                thig: `kn/thig`,
+            }[prefix] || (majorid === this.sutta 
                 ? prefix
-                : `${prefix}/${suid}`;
+                : `${prefix}/${majorid}`);
+            return folder;
         }
 
         get sutta() {

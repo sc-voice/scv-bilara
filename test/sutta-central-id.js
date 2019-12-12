@@ -232,6 +232,9 @@
         should(scid.nikaya).equal('sn');
     });
     it("TESTTESTnikayaFolder => nikaya folder", function() {
+        var scid = new SuttaCentralId('thag21.7');
+        should(scid.nikayaFolder).equal('kn/thag');
+
         var scid = new SuttaCentralId('mn1');
         should(scid.nikayaFolder).equal('mn');
 
@@ -240,6 +243,7 @@
 
         var scid = new SuttaCentralId('sn1.11-20:2.3.4');
         should(scid.nikayaFolder).equal('sn/sn1');
+
     });
     it("parent returns parent SuttaCentralId", function() {
         var scid = new SuttaCentralId('mn1');
