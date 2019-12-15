@@ -1364,6 +1364,8 @@ vollblutelefant
 vollblutpferd
 vollendet
 vollendete
+vollendetem
+vollendeten
 vollendeter
 vollendung
 völlig
