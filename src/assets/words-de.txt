@@ -1362,6 +1362,10 @@ vierzig
 voll
 vollblutelefant
 vollblutpferd
+vollendet
+vollendete
+vollendeter
+vollendung
 völlig
 völligen
 vollkommen
