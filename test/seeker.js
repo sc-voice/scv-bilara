@@ -175,7 +175,7 @@
                 keywordsFound: {
                     faith: 388,
                     joy: 131,
-                    suffering: 738,
+                    suffering: 740,
                 },
             };
 
@@ -216,7 +216,7 @@
                 lang: 'en',
                 method: 'keywords',
                 keywordsFound: {
-                    suffering: 738,
+                    suffering: 740,
                     joy: 131,
                     faith: 388,
                 },

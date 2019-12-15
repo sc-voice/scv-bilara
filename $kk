@@ -184,8 +184,8 @@
             if (sc === '') {
             console.log(`dbg sc segid`, segid.scid);
                 var segParts = segid.segmentParts();
-                this.segid = segParts.length === 2
-                    ? segid.add(0,1)
+                this.segid = setParts.length === 2
+                    ? segid.add(0,1);
                     : segid.add(0,0,1);
             } else if (sc === '1') {
                 segid = new SuttaCentralId(`${suid}:${sc}.1`);

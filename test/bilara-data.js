@@ -405,7 +405,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("nikayaSuttaIds(...) returns sutta_uids", done=>{
+    it("TESTTESTnikayaSuttaIds(...) returns sutta_uids", done=>{
         (async function() { try {
             var language = 'en';
             const KNSTART = [
@@ -420,7 +420,7 @@
             should(ids).instanceOf(Array);
             should.deepEqual(ids.slice(0,3), KNSTART);
             should.deepEqual(ids.slice(ids.length-3,ids.length), KNEND);
-            should(ids.length).equal(361);
+            should(ids.length).equal(363);
 
             // Root nikaya an
             var ids = await bd.nikayaSuttaIds('an');
