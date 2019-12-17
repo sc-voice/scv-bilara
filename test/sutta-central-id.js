@@ -231,7 +231,7 @@
         var scid = new SuttaCentralId('sn1.11-20:2.3.4');
         should(scid.nikaya).equal('sn');
     });
-    it("TESTTESTnikayaFolder => nikaya folder", function() {
+    it("nikayaFolder => nikaya folder", function() {
         var scid = new SuttaCentralId('thag21.7');
         should(scid.nikayaFolder).equal('kn/thag');
 
@@ -314,7 +314,7 @@
         should(SuttaCentralId.test('sn22.1-20    ,   red')).equal(false);
         should(SuttaCentralId.test('red,sn22.1-20')).equal(false);
     });
-    it("TESTTESTrangeHigh => upper bound", ()=>{
+    it("rangeHigh => upper bound", ()=>{
         should(SuttaCentralId.rangeHigh("an1.10--an1.11"))
             .equal("an1.11");
         should(SuttaCentralId.rangeHigh("an1.2:3.4--5.6"))
@@ -330,7 +330,7 @@
         should(SuttaCentralId.rangeHigh("an1.2")).equal("an1.2");
         should(SuttaCentralId.rangeHigh("mn1")).equal("mn1");
     });
-    it("TESTTESrangeLow => lower bound", ()=>{
+    it("rangeLow => lower bound", ()=>{
         should(SuttaCentralId.rangeLow(
             "an1.2:2.1.3--an1.11:5.1.19/en/sujato"))
             .equal("an1.2:2.1.3/en/sujato");

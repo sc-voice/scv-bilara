@@ -135,7 +135,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTisPublishedPath(f) handles pieces of a nikaya", done=>{
+    it("isPublishedPath(f) handles pieces of a nikaya", done=>{
         (async function() { try {
             var root = path.join(__dirname, 'data', 'bilara-data');
             var bd = new BilaraData({ 
@@ -405,7 +405,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTnikayaSuttaIds(...) returns sutta_uids", done=>{
+    it("nikayaSuttaIds(...) returns sutta_uids", done=>{
         (async function() { try {
             var language = 'en';
             const KNSTART = [
@@ -699,7 +699,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTpublished(...) => published divisions", done=>{
+    it("published(...) => published divisions", done=>{
         (async function() { try {
             await bd.initialize();
             var pub = bd.published();
@@ -732,7 +732,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTpublishedPaths(...) => published bilara paths", done=>{
+    it("publishedPaths(...) => published bilara paths", done=>{
         (async function() { try {
             await bd.initialize();
             should.deepEqual(bd.publishedPaths(), [

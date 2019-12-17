@@ -15,15 +15,15 @@
     const TEST_DATA = path.join(__dirname, 'data');
     const BILARA_DATA = path.join(LOCAL_DIR, 'bilara-data');
     const BILARA_TEST = path.join(LOCAL_DIR, 'test-bilara');
+    this.timeout(5*1000);
 
-    function dumpSegs(...segMaps) {
+    function dumpSegs(n, ...segMaps) {
         var scids = Object.keys(segMaps[0]);
-        var n = 5;
         scids.slice(0,n).forEach(k => console.log(
-            `dbg seg ${k} ${segMaps[0][k]}  | ${segMaps[1][k]}`));
+            `dbg dump ${k} ${segMaps[0][k]}  | ${segMaps[1][k]}`));
         console.log('...');
         scids.slice(scids.length-n).forEach(k => console.log(
-            `dbg seg ${k} ${segMaps[0][k]}  | ${segMaps[1][k]}`));
+            `dbg dump ${k} ${segMaps[0][k]}  | ${segMaps[1][k]}`));
     }
 
     it("default ctor", ()=>{
@@ -56,7 +56,7 @@
             type,
         });
     });
-    it("TESTTESTimport(...) imports ds1.1 file", ()=>{
+    it("import(...) imports ds1.1 file", ()=>{
         var ih = new ImportHtml({
             srcRoot: TEST_DATA,
             dstRoot: BILARA_TEST
@@ -78,7 +78,7 @@
         should(author).equal('ms');
         should(translator).equal('sujato');
         should(transLang).equal('en');
-        dumpSegs(segRoot, segRef);
+        //dumpSegs(6, segRoot, segHtml);
         should(segRoot['ds1.1:0.1']).match(/Dhammasaṅgaṇī/);
         should(segRoot['ds1.1:0.2']).match(/Tikamātikā/);
         should(segRoot['ds1.1:1.0.1']).match(/1. Kusalattika/);
@@ -118,7 +118,7 @@
         should(fs.existsSync(path.join(BILARA_TEST, 
             'html/ds/ds1/ds1.1_html.json'))).equal(true);
     });
-    it("TESTTESTimport(...) imports ds1.2 file", ()=>{
+    it("import(...) imports ds1.2 file", ()=>{
         var ih = new ImportHtml({
             srcRoot: TEST_DATA,
             dstRoot: BILARA_TEST
@@ -179,8 +179,7 @@
         should(fs.existsSync(path.join(BILARA_TEST, 
             'html/ds/ds1/ds1.2_html.json'))).equal(true);
     });
-    it("TESTTESTimport(...) imports thag21.1 file", ()=>{
-        return; // TODO
+    it("import(...) imports thag21.1 file", ()=>{
         var ih = new ImportHtml({
             srcRoot: TEST_DATA,
             dstRoot: BILARA_TEST
@@ -189,6 +188,7 @@
         var {
             segRoot,
             segTrans,
+            segVar,
             segRef,
             segHtml,
             suid,
@@ -197,71 +197,114 @@
         } = res;
         should(suid).equal('thag21.1');
         should(rootLang).equal('pli');
-        dumpSegs(segRoot, segTrans);
-        var honor_data_uid = false;
-        if (honor_data_uid) {
-            should(segRoot['thag21.1:1.1']).equal('Theragāthā');
-            should(segTrans['thag21.1:1.1'])
-                .equal('Verses of the Senior Monks');
-            should(segHtml['thag21.1:1.1'])
-                .equal(`<header><p class='division'>{}`);
+        should(segRoot['thag21.1:0.1']).equal('Theragāthā');
+        should(segTrans['thag21.1:0.1'])
+            .equal('Verses of the Senior Monks');
+        should(segHtml['thag21.1:0.1'])
+            .equal(`<header><p class='division'>{}`);
+        should(segRef.hasOwnProperty('thag21.1:0.1')).equal(false);
 
-            should(segRoot['thag21.1:2.1']).equal('Mahānipāta');
-            should(segTrans['thag21.1:2.1']).equal('The Great Book');
-            should(segHtml['thag21.1:2.1']).equal(`{}`);
+        should(segRoot['thag21.1:0.2']).equal('Mahānipāta');
+        should(segTrans['thag21.1:0.2']).equal('The Great Book');
+        should(segHtml['thag21.1:0.2']).equal(`{}`);
+        should(segRef.hasOwnProperty('thag21.1:0.2')).equal(false);
 
-            should(segRoot['thag21.1:3.1']).equal('Paṭhamavagga');
-            should(segTrans['thag21.1:3.1']).equal('Chapter One');
-            should(segHtml['thag21.1:3.1']).equal(`{}`);
+        should(segRoot['thag21.1:0.3']).equal('Paṭhamavagga');
+        should(segTrans['thag21.1:0.3']).equal('Chapter One');
+        should(segHtml['thag21.1:0.3']).equal(`{}</p>`);
+        should(segRef.hasOwnProperty('thag21.1:0.3')).equal(false);
 
-            should(segRoot['thag21.1:4.1']).equal('21.1. Vaṅgīsattheragāthā');
-            should(segTrans['thag21.1:4.1']).equal('21.1. Vaṅgīsa');
+        should(segRoot['thag21.1:0.4']).equal('21.1. Vaṅgīsattheragāthā');
+        should(segTrans['thag21.1:0.4']).equal('21.1. Vaṅgīsa');
+        should(segHtml['thag21.1:0.4']).equal(`<h1>{}</h1></header>`);
+        should(segRef.hasOwnProperty('thag21.1:0.4')).equal(false);
+        should(segVar.hasOwnProperty('thag21.1:0.4')).equal(false);
 
-            should(segRoot['thag21.1:5.1'])
-                .equal('“Nikkhantaṃ vata maṃ santaṃ,');
-            should(segTrans['thag21.1:5.1'])
-                .equal('“Now that I’ve gone forth');
-            should(segRef['thag21.1:5.1'])
-                .equal('sc1, vns1219, vnp1209, pts-vp-pli109');
-        } else {
-            should(segRoot['thag21.1:0.1']).equal('Theragāthā');
-            should(segTrans['thag21.1:0.1'])
-                .equal('Verses of the Senior Monks');
-            should(segHtml['thag21.1:0.1'])
-                .equal(`<header><p class='division'>{}`);
+        should(segRoot['thag21.1:1.1']).equal('“Nikkhantaṃ vata maṃ santaṃ,');
+        should(segTrans['thag21.1:1.1']).equal('“Now that I’ve gone forth');
+        should(segHtml['thag21.1:1.1']).equal(`<p>{}`);
+        should(segRef['thag21.1:1.1'])
+            .equal(`sc1, vns1219, vnp1209, pts-vp-pli109`);
 
-            should(segRoot['thag21.1:0.2']).equal('Mahānipāta');
-            should(segTrans['thag21.1:0.2']).equal('The Great Book');
-            should(segHtml['thag21.1:0.2']).equal(`{}`);
+        should(segRoot['thag21.1:1.2']).equal('agārasmānagāriyaṃ;');
+        should(segTrans['thag21.1:1.2'])
+            .equal('from the lay life to homelessness,');
+        should(segHtml['thag21.1:1.2']).equal(`{}`);
+        should(segRef.hasOwnProperty('thag21.1:1.2')).equal(false);
+        should(segVar.hasOwnProperty('thag21.1:1.2')).equal(false);
 
-            should(segRoot['thag21.1:0.3']).equal('Paṭhamavagga');
-            should(segTrans['thag21.1:0.3']).equal('Chapter One');
-            should(segHtml['thag21.1:0.3']).equal(`{}</p>`);
+        should(segRoot['thag21.1:2.1']).equal('Uggaputtā mahissāsā,');
+        should(segRef['thag21.1:2.1']).equal('sc2, vns1220, vnp1210');
 
-            should(segRoot['thag21.1:0.4']).equal('21.1. Vaṅgīsattheragāthā');
-            should(segTrans['thag21.1:0.4']).equal('21.1. Vaṅgīsa');
-            should(segHtml['thag21.1:0.4']).equal(`<h1>{}</h1></header>`);
+        should(segRoot['thag21.1:2.2']).equal('sikkhitā daḷhadhammino;');
+        should(segTrans['thag21.1:2.2'])
+            .equal('well trained, with strong bows,');
+        should(segVar['thag21.1:2.2'])
+            .equal(`daḷhadhammino → daḷhadhanvino (bj-a)`);
 
-            should(segRoot['thag21.1:1.1'])
-                .equal('“Nikkhantaṃ vata maṃ santaṃ,');
-            should(segTrans['thag21.1:1.1'])
-                .equal('“Now that I’ve gone forth');
-            should(segRef['thag21.1:1.1'])
-                .equal('sc1, vns1219, vnp1209, pts-vp-pli109');
-
-        }
         should(fs.existsSync(path.join(BILARA_TEST, 
             'root/pli/ms/kn/thag/thag21.1_root-pli-ms.json'))).equal(true);
-
         should(fs.existsSync(path.join(BILARA_TEST, 
             'reference/kn/thag/thag21.1_reference.json'))).equal(true);
-
-        dumpSegs(segRoot, segHtml);
-        should(segHtml['thag21.1:200.2'])
-            .equal(`<p class='endsection'>{}</p>`);
-        should(segHtml['thag21.1:200.3'])
-            .equal(`<p class='endsutta'>{}</p>`);
         should(fs.existsSync(path.join(BILARA_TEST, 
-            'html/ds/thag21.1.2_html.json'))).equal(true);
+            'variant/kn/thag/thag21.1_variant-pli-ms.json'))).equal(true);
+        should(fs.existsSync(path.join(BILARA_TEST, 
+            'html/kn/thag/thag21.1_html.json'))).equal(true);
+
+        dumpSegs(6, segRoot, segHtml);
+
+        should(segRoot['thag21.1:74.1']).equal('Sīhanādaṃ naditvāna,');
+        should(segTrans['thag21.1:74.1']).equal(' ');
+        should(segVar.hasOwnProperty('thag21.1:74.1')).equal(false);
+        should(segRef['thag21.1:74.1']).equal('sc74');
+
+        should(segRoot['thag21.1:74.2']).equal('buddhaputtā anāsavā;');
+        should(segTrans['thag21.1:74.2']).equal(' ');
+        should(segHtml['thag21.1:74.2']).equal('{}');
+        should(segVar.hasOwnProperty('thag21.1:74.2')).equal(false);
+        should(segRef.hasOwnProperty('thag21.1:74.2')).equal(false);
+
+        should(segRoot['thag21.1:74.3']).equal('Khemantaṃ pāpuṇitvāna,');
+        should(segTrans['thag21.1:74.3']).equal(' ');
+        should(segHtml['thag21.1:74.3']).equal('{}');
+        should(segVar.hasOwnProperty('thag21.1:74.3')).equal(false);
+        should(segRef.hasOwnProperty('thag21.1:74.3')).equal(false);
+
+        should(segRoot['thag21.1:74.4']).equal('aggikhandhāva nibbutāti.');
+        should(segTrans['thag21.1:74.4']).equal(' ');
+        should(segHtml['thag21.1:74.4']).equal('{}</p>');
+        should(segVar.hasOwnProperty('thag21.1:74.4')).equal(false);
+        should(segRef.hasOwnProperty('thag21.1:74.4')).equal(false);
+
+        should(segRoot['thag21.1:74.5']).equal('Theragāthāpāḷi niṭṭhitā.');
+        should(segTrans['thag21.1:74.5'])
+            .equal('The Verses of the Senior Monks are finished.');
+        should(segHtml['thag21.1:74.5']).equal(`<p class='endbook'>{}</p>`);
+        should(segVar.hasOwnProperty('thag21.1:74.5')).equal(false);
+        should(segRef.hasOwnProperty('thag21.1:74.5')).equal(false);
+    });
+    it("TESTTESTimport(...) imports ds2.1.1 file", ()=>{
+        var ih = new ImportHtml({
+            srcRoot: TEST_DATA,
+            dstRoot: BILARA_TEST
+        });
+        var res = ih.import('ds2.1.1.html');
+        var {
+            segRoot,
+            segRef,
+            segHtml,
+            suid,
+            segments,
+            rootLang,
+        } = res;
+        should(suid).equal('ds2.1.1');
+        should(rootLang).equal('pli');
+        //dumpSegs(5, segRoot, segHtml);
+        should(segRoot['ds2.1.1:0.1']).equal('Dhammasaṅgaṇī');
+        should(segRoot['ds2.1.1:0.2']).equal('2 Niddesa');
+        should(segRoot['ds2.1.1:0.3']).equal('2.1 Cittuppādakaṇḍa');
+        should(segRoot['ds2.1.1:1.0']).equal('2.1.1.1. Padabhājanī');
+        should(segRoot['ds2.1.1:2.1']).match(/Phasso hoti, vedanā hoti,/);
+        should(segRoot['ds2.1.1:3.1']).match(/Vitakko hoti, vicāro hoti/);
     });
 })

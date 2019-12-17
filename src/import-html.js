@@ -16,6 +16,7 @@
             this.segid = new SuttaCentralId(`${suid}:0.1`);
             this.nikayaFolder = this.segid.nikayaFolder;
             this.section = 0;
+            this.segVar = {};
             this.segRoot = {};
             this.segTrans = {};
             this.segRef = {};
@@ -43,6 +44,8 @@
             } else if (line.match(/^<\/?div/)) {
                 this.importDiv(line);
             } else if (line.match(/^<p/)) {
+                this.importText(line);
+            } else if (line.match(/^<a\b/)) {
                 this.importText(line);
             }
         }
@@ -84,20 +87,14 @@
         }
 
         identifyLine(line) {
-            const HONOR_data_uid = false;
             var parts = line.split('data-uid="');
             var {
                 segid,
-                sc,
+                sc:scCur,
             } = this;
-            if (HONOR_data_uid && parts.length > 1) { 
-                segid = new SuttaCentralId(parts[1].split('"')[0]);
-                sc = segid.segmentParts()[0];
-            } else {
-                sc = /\bsc[0-9 ]*,/.test(line)
-                    ? line.replace(/.*\bsc([0-9]+).*/,'$1')
-                    : sc;
-            }
+            var sc = /\bdata-ref.*sc[0-9 ]+/.test(line)
+                ? line.replace(/.*\bsc([0-9]+).*/,'$1')
+                : scCur;
             return { segid, sc };
         }
 
@@ -168,12 +165,14 @@
                 suid,
                 segRoot,
                 segTrans,
+                segVar,
                 segRef,
                 segHtml,
                 segid,
                 sc,
             } = this;
-            var ref = this.refText(line);
+            var refText = this.refText(line);
+            var varText = this.varText(line);
             var text = this.rootText(line);
             var lastSegParts = segid_1.segmentParts();
             var curSegParts = segid.segmentParts();
@@ -181,13 +180,18 @@
             if (/p class=/.test(line)) {
                 cls = line.split('class="')[1].split('"')[0];
             }
+            if (this.sc === '' || this.sc < 6) {
+                let s = this.segRoot['ds2.1.1:1.0'];
+            }
             if (sc === '') {
-            console.log(`dbg sc segid`, segid.scid);
                 var segParts = segid.segmentParts();
                 this.segid = segParts.length === 2
                     ? segid.add(0,1)
                     : segid.add(0,0,1);
-            } else if (sc === '1') {
+            } else if (sc === '1' && (
+                curSegParts[curSegParts.length-1]==='0' ||
+                curSegParts[1]==='0' ||
+                curSegParts[0] !== '1')) {
                 segid = new SuttaCentralId(`${suid}:${sc}.1`);
                 this.segid = segid.add(0,1);
             } else {
@@ -196,13 +200,10 @@
                 }
                 this.segid = segid.add(0,1);
             }
-            if (sc == '' || Number(sc) < 4) {
-                console.log(`dbg importText`, 
-                    sc, segid.scid, line.substring(0, 35));
-            }
             segRoot[segid.scid] = text;
             segTrans[segid.scid] = this.transText(line);
-            ref && (segRef[segid.scid] = ref);
+            refText && (segRef[segid.scid] = refText);
+            varText && (segVar[segid.scid] = varText);
 
             // HTML
             var p = cls ? `<p class='${cls}'>` : `<p>`;
@@ -280,9 +281,15 @@
                 : null;
         }
 
+        varText(line) {
+            return line.match(/data-var/) 
+                ? line.replace(/.*data-var="/,'').split('"')[0]
+                : null;
+        }
+
         transText(line) {
             var text = line.replace(/.*<b>/,'').replace(/<\/b>.*/,'');
-            return text.length ? text : this.refText(line);
+            return text.length ? text : ' ';
         }
     }
 
@@ -326,9 +333,10 @@
                 segRoot,
                 segTrans,
                 segRef,
+                segVar,
                 segHtml,
             } = importer;
-            console.log(`dbg nikayaFolder`,nikayaFolder);
+            //console.log(`dbg nikayaFolder`,nikayaFolder);
             var segids = Object.keys(segRoot)
                 .sort(SuttaCentralId.compareLow);
             var nsegids = segids.length;
@@ -360,7 +368,16 @@
             var dstPath = path.join(dstDir, `${suid}_reference.json`);
             fs.writeFileSync(dstPath, JSON.stringify(segRef, null, 2));
             var localPath = dstPath.replace(LOCAL_DIR,'').substring(1);
-            this.log(`wrote ${localPath}`);
+            this.log(`wrote reference ${localPath}`);
+
+            // write variant segments
+            var dstDir = path.join(dstRoot, 'variant', nikayaFolder);
+            fs.mkdirSync(dstDir, {recursive: true});
+            var dstPath = path.join(dstDir, 
+                `${suid}_variant-${rootLang}-${author}.json`);
+            fs.writeFileSync(dstPath, JSON.stringify(segVar, null, 2));
+            var localPath = dstPath.replace(LOCAL_DIR,'').substring(1);
+            this.log(`wrote variant ${localPath}`);
 
             // write Html segments
             var dstDir = path.join(dstRoot, 'html', nikayaFolder);
@@ -373,6 +390,7 @@
             return {
                 suid,
                 segTrans,
+                segVar,
                 segRoot,
                 segRef,
                 segHtml,
