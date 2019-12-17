@@ -272,7 +272,9 @@
         }
 
         rootText(line) {
-            return line.replace(/.*<i>/,'').replace(/<\/i>.*/,'');
+            var parts = line.split('<i>');
+            parts.shift(); // discard stuff preceding <i>
+            return parts.map(p=>p.replace(/<\/i>.*/,'')).join('\n');
         }
 
         refText(line) {
@@ -288,9 +290,11 @@
         }
 
         transText(line) {
-            var text = line.replace(/.*<b>/,'').replace(/<\/b>.*/,'');
-            return text.length ? text : ' ';
+            var parts = line.split('<b>');
+            parts.shift(); // discard stuff preceding <b>
+            return parts.map(p=>p.replace(/<\/b>.*/,'')).join('\n');
         }
+
     }
 
     class ImportHtml {

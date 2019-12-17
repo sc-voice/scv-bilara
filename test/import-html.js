@@ -179,7 +179,7 @@
         should(fs.existsSync(path.join(BILARA_TEST, 
             'html/ds/ds1/ds1.2_html.json'))).equal(true);
     });
-    it("import(...) imports thag21.1 file", ()=>{
+    it("TESTTESTimport(...) imports thag21.1 file", ()=>{
         var ih = new ImportHtml({
             srcRoot: TEST_DATA,
             dstRoot: BILARA_TEST
@@ -254,24 +254,24 @@
         dumpSegs(6, segRoot, segHtml);
 
         should(segRoot['thag21.1:74.1']).equal('Sīhanādaṃ naditvāna,');
-        should(segTrans['thag21.1:74.1']).equal(' ');
+        should(segTrans['thag21.1:74.1']).equal('');
         should(segVar.hasOwnProperty('thag21.1:74.1')).equal(false);
         should(segRef['thag21.1:74.1']).equal('sc74');
 
         should(segRoot['thag21.1:74.2']).equal('buddhaputtā anāsavā;');
-        should(segTrans['thag21.1:74.2']).equal(' ');
+        should(segTrans['thag21.1:74.2']).equal('');
         should(segHtml['thag21.1:74.2']).equal('{}');
         should(segVar.hasOwnProperty('thag21.1:74.2')).equal(false);
         should(segRef.hasOwnProperty('thag21.1:74.2')).equal(false);
 
         should(segRoot['thag21.1:74.3']).equal('Khemantaṃ pāpuṇitvāna,');
-        should(segTrans['thag21.1:74.3']).equal(' ');
+        should(segTrans['thag21.1:74.3']).equal('');
         should(segHtml['thag21.1:74.3']).equal('{}');
         should(segVar.hasOwnProperty('thag21.1:74.3')).equal(false);
         should(segRef.hasOwnProperty('thag21.1:74.3')).equal(false);
 
         should(segRoot['thag21.1:74.4']).equal('aggikhandhāva nibbutāti.');
-        should(segTrans['thag21.1:74.4']).equal(' ');
+        should(segTrans['thag21.1:74.4']).equal('');
         should(segHtml['thag21.1:74.4']).equal('{}</p>');
         should(segVar.hasOwnProperty('thag21.1:74.4')).equal(false);
         should(segRef.hasOwnProperty('thag21.1:74.4')).equal(false);
@@ -304,6 +304,10 @@
         should(segRoot['ds2.1.1:0.2']).equal('2 Niddesa');
         should(segRoot['ds2.1.1:0.3']).equal('2.1 Cittuppādakaṇḍa');
         should(segRoot['ds2.1.1:1.0']).equal('2.1.1.1. Padabhājanī');
+        should.deepEqual(segRoot['ds2.1.1:1.1'].split('\n'),[
+            'Katame dhammā kusalā?',
+            'Yasmiṃ samaye kāmāvacaraṃ kusalaṃ cittaṃ uppannaṃ hoti somanassasahagataṃ ñāṇasampayuttaṃ rūpārammaṇaṃ vā saddārammaṇaṃ vā gandhārammaṇaṃ vā rasārammaṇaṃ vā phoṭṭhabbārammaṇaṃ vā dhammārammaṇaṃ vā yaṃ yaṃ vā panārabbha, tasmiṃ samaye—'
+        ]);
         should(segRoot['ds2.1.1:2.1']).match(/Phasso hoti, vedanā hoti,/);
         should(segRoot['ds2.1.1:3.1']).match(/Vitakko hoti, vicāro hoti/);
     });
