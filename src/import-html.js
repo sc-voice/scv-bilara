@@ -324,7 +324,15 @@
             if (!fs.existsSync(srcPath)) {
                 throw new Error(`import file not found:${srcPath}`);
             }
-            var lines = fs.readFileSync(srcPath).toString().split('\n');
+            var rawLines = fs.readFileSync(srcPath).toString().split('\n');
+            var lines = rawLines.reduce((a,line) => {
+                var parts = line.split(/ <a\b/);
+                a.push(parts[0]);
+                for (var i = 1; i < parts.length; i++) {
+                    a.push(`<a${parts[i]}`);
+                }
+                return a;
+            }, []);
             var suid = src.replace('.html','');
 
             var importer = new Importer(suid, this);

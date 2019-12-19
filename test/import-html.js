@@ -304,10 +304,9 @@
         should(segRoot['ds2.1.1:0.2']).equal('2 Niddesa');
         should(segRoot['ds2.1.1:0.3']).equal('2.1 Cittuppādakaṇḍa');
         should(segRoot['ds2.1.1:1.0']).equal('2.1.1.1. Padabhājanī');
-        should.deepEqual(segRoot['ds2.1.1:1.1'].split('\n'),[
-            'Katame dhammā kusalā?',
-            'Yasmiṃ samaye kāmāvacaraṃ kusalaṃ cittaṃ uppannaṃ hoti somanassasahagataṃ ñāṇasampayuttaṃ rūpārammaṇaṃ vā saddārammaṇaṃ vā gandhārammaṇaṃ vā rasārammaṇaṃ vā phoṭṭhabbārammaṇaṃ vā dhammārammaṇaṃ vā yaṃ yaṃ vā panārabbha, tasmiṃ samaye—'
-        ]);
+        should(segRoot['ds2.1.1:1.1']).equal('Katame dhammā kusalā?');
+        should(segRoot['ds2.1.1:1.2'])
+            .equal('Yasmiṃ samaye kāmāvacaraṃ kusalaṃ cittaṃ uppannaṃ hoti somanassasahagataṃ ñāṇasampayuttaṃ rūpārammaṇaṃ vā saddārammaṇaṃ vā gandhārammaṇaṃ vā rasārammaṇaṃ vā phoṭṭhabbārammaṇaṃ vā dhammārammaṇaṃ vā yaṃ yaṃ vā panārabbha, tasmiṃ samaye—');
         should(segRoot['ds2.1.1:2.1']).match(/Phasso hoti, vedanā hoti,/);
         should(segRoot['ds2.1.1:3.1']).match(/Vitakko hoti, vicāro hoti/);
     });

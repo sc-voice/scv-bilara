@@ -173,8 +173,8 @@
                 method: "keywords",
                 lang: 'en',
                 keywordsFound: {
-                    faith: 388,
-                    joy: 131,
+                    faith: 389,
+                    joy: 132,
                     suffering: 740,
                 },
             };
@@ -217,8 +217,8 @@
                 method: 'keywords',
                 keywordsFound: {
                     suffering: 740,
-                    joy: 131,
-                    faith: 388,
+                    joy: 132,
+                    faith: 389,
                 },
             };
             should(data).properties(enExpected);
