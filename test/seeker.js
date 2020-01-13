@@ -723,6 +723,35 @@
             done(); 
         } catch(e) {done(e);} })();
     });
+    it("TESTTESTfind(...) => finds jhana", done=>{
+        (async function() { try {
+            var maxDoc = 5;
+            var maxResults = 15;
+            var skr = await new Seeker({
+                maxDoc,
+                maxResults,
+                logLevel,
+            }).initialize();
+
+            var pattern = "jhana";
+            var res = await skr.find({
+                pattern,
+                lang: 'de',
+                minLang: 2,
+                showMatchesOnly: false, // return entire sutta
+            });
+            should(res.maxDoc).equal(maxDoc);
+            should(res.mlDocs.length).equal(maxDoc);
+            should.deepEqual(res.suttaRefs.slice(0,maxDoc), [
+                'mn108/pli/ms',
+                'an9.36/pli/ms',
+                'an6.60/pli/ms',
+                'dn33/pli/ms',
+                'mn66/pli/ms',
+            ]);
+            done(); 
+        } catch(e) {done(e);} })();
+    });
     it("find(...) => finds phrase", done=>{
         (async function() { try {
             var maxResults = 3;
