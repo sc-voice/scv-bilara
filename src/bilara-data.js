@@ -745,6 +745,31 @@
             }
         }
 
+        readBlurb({suid, lang}) {
+            var that = this;
+            var pbody = (resolve, reject)=>(async function() { try {
+                if (!suid) {
+                    resolve(null);
+                }
+                suid = suid.toLowerCase();
+                lang = lang || that.lang;
+                var dir = path.join(that.root, 'root', lang, 'blurb');
+                var nikaya = suid.replace(/[1-9].*/,'');
+                var fname = `${nikaya}-blurbs_root-${lang}.json`;
+                var fpath = path.join(dir, fname);
+                if (!fs.existsSync(fpath)) {
+                    if (lang !== 'en') {
+                        var enBlurb = await that.readBlurb({suid,lang:'en'});
+                        resolve(enBlurb);
+                    }
+                    resolve(null);
+                }
+                var json = await fs.promises.readFile(fpath);
+                var blurbs = JSON.parse(json);
+                resolve(blurbs[suid] || null);
+            } catch(e) { reject(e); } })();
+            return new Promise(pbody);
+        }
     }
 
     module.exports = exports.BilaraData = BilaraData;

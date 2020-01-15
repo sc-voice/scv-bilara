@@ -754,4 +754,36 @@
             done();
         } catch(e) { done(e); }})();
     });
+    it("TESTTESTreadBlurb(...) => blurb for language", done=>{
+        (async function() { try {
+            await bd.initialize();
+            var reAN3_1 = /Fools are dangerous, but the wise are safe/;
+
+            // full arguments
+            var blurb = await bd.readBlurb({suid:'an3.1', lang:'en'});
+            should(blurb).match(reAN3_1);
+
+            // default language
+            var blurb = await bd.readBlurb({suid:'an3.1'});
+            should(blurb).match(reAN3_1);
+
+            // case independent
+            var blurb = await bd.readBlurb({suid:'AN3.1'});
+            should(blurb).match(reAN3_1);
+
+            // Unsupported language
+            var blurb = await bd.readBlurb({suid:'AN3.1', lang:'xx'});
+            should(blurb).match(reAN3_1);
+
+            // German
+            var blurb = await bd.readBlurb({suid:'an3.1', lang:'de'});
+            should(blurb).match(/Toren sind gefährlich, aber kluge Menschen/);
+
+            // no blurb
+            var blurb = await bd.readBlurb({suid:'MN999'});
+            should(blurb).equal(null);
+
+            done();
+        } catch(e) { done(e); }})();
+    });
 })

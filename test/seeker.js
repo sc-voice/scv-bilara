@@ -723,7 +723,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) => finds jhana", done=>{
+    it("find(...) => finds jhana", done=>{
         (async function() { try {
             var maxDoc = 5;
             var maxResults = 15;

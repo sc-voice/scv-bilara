@@ -179,7 +179,7 @@
         should(fs.existsSync(path.join(BILARA_TEST, 
             'html/ds/ds1/ds1.2_html.json'))).equal(true);
     });
-    it("TESTTESTimport(...) imports thag21.1 file", ()=>{
+    it("import(...) imports thag21.1 file", ()=>{
         var ih = new ImportHtml({
             srcRoot: TEST_DATA,
             dstRoot: BILARA_TEST
@@ -283,7 +283,7 @@
         should(segVar.hasOwnProperty('thag21.1:74.5')).equal(false);
         should(segRef.hasOwnProperty('thag21.1:74.5')).equal(false);
     });
-    it("TESTTESTimport(...) imports ds2.1.1 file", ()=>{
+    it("import(...) imports ds2.1.1 file", ()=>{
         var ih = new ImportHtml({
             srcRoot: TEST_DATA,
             dstRoot: BILARA_TEST
