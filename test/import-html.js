@@ -310,4 +310,85 @@
         should(segRoot['ds2.1.1:2.1']).match(/Phasso hoti, vedanā hoti,/);
         should(segRoot['ds2.1.1:3.1']).match(/Vitakko hoti, vicāro hoti/);
     });
+    it("TESTTESTimport(...) imports vb3 file", ()=>{
+        var ih = new ImportHtml({
+            srcRoot: TEST_DATA,
+            dstRoot: BILARA_TEST
+        });
+        var res = ih.import('vb3.html');
+        var {
+            segRoot,
+            segRef,
+            segHtml,
+            segVar,
+            suid,
+            segments,
+            rootLang,
+        } = res;
+        should(suid).equal('vb3');
+        should(rootLang).equal('pli');
+        should(segRoot['vb3:1.2'])
+            .match(/pathavīdhātu, āpodhātu, tejodhātu, vāyodhātu,/);
+        should(segVar['vb3:1.2'])
+            .equal('pathavīdhātu → paṭhavīdhātu (bj, sya-all, pts-vp-pli1)');
+        should.deepEqual(segVar['vb3:2.6'], [
+            'nhāru → nahāru (bj, pts-vp-pli1)',  
+            'aṭṭhimiñjaṃ → aṭṭhimiñjā (bj)',
+        ].join(' | '));
+        should(segRoot['vb3:2.6']).match(/nhāru/);
+        should(segRoot['vb3:2.6']).match(/aṭṭhimiñjaṃ/);
+        should.deepEqual(segVar['vb3:3.3'], [
+            'sajjhaṃ → sajjhu (bj, sya-all, pts-vp-pli1)',
+            'lohitaṅko → lohitaṅgo (sya-all, mr); lohitako (?)',
+            'kaṭhalaṃ → kathalā (sya-all, pts-vp-pli1); kathalaṃ (mr)',
+        ].join(' | '));
+        should(segRoot['vb3:3.3']).match(/sajjhaṃ/);
+        should(segRoot['vb3:3.3']).match(/lohitaṅko/);
+        should(segRoot['vb3:3.3']).match(/kaṭhalaṃ bhūmi pāsāṇo pabbato/);
+        should(segRoot['vb3:4.5']).match(/sineho sinehagataṃ/);
+        should(segVar['vb3:4.5']).match(/sineho sinehagataṃ/);
+        should(segRoot['vb3:7.3']).match(/palālaggi/);
+        should(segVar['vb3:7.3']).match(/palālaggi/);
+        should(segRoot['vb3:8.6']).match(/koṭṭhāsayā/);
+        should(segVar['vb3:8.6']).match(/koṭṭhāsayā/);
+        should(segRoot['vb3:9.3']).match(/verambhavātā/);
+        should(segVar['vb3:9.3']).match(/verambhavātā/);
+        should(segRoot['vb3:23.4']).match(/rūpā/);
+        should(segVar['vb3:23.4']).match(/rūpā/);
+    });
+    it("TESTTESTimport(...) imports vv22 file", ()=>{
+        var ih = new ImportHtml({
+            srcRoot: TEST_DATA,
+            dstRoot: BILARA_TEST
+        });
+        var res = ih.import('vv22.html');
+        var {
+            segRoot,
+            segRef,
+            segHtml,
+            segVar,
+            suid,
+            segments,
+            rootLang,
+        } = res;
+        should(suid).equal('vv22');
+        should(rootLang).equal('pli');
+        should(segRoot['vv22:1.2']).match(/mañjiṭṭhā/);
+        should(segVar['vv22:1.2']).match(/mañjiṭṭhā/);
+        should(segRoot['vv22:4.1']).match(/Bhadditthikāti/);
+        should(segVar['vv22:4.1']).match(/Bhadditthikāti/);
+        should(segRoot['vv22:9.4']).match(/Appamādavihārinī/);
+        should(segVar['vv22:9.4']).match(/Appamādavihārinī/);
+        should(segRoot['vv22:9.5']).match(/Katāvāsā katakusalā/);
+        should(segVar['vv22:9.5'])
+            .match(/Katāvāsā … nandanaṃ: etthantare pāṭho sī pot/);
+        should(segRoot['vv22:10.1']).match(/cāhaṃ/);
+        should(segVar['vv22:10.1']).match("cāhaṃ → cahaṃ (bj, pts-vp-pli1-2)");
+        should(segVar['vv22:10.3']).match(
+            /Katāvāsā katakusalā → katāvakāsā katakusalā /);
+        should(segVar['vv22:11.3']).match(
+            /Katāvāsā katakusalā → katāvakāsā katakusalā .*sya2ed, pts/);
+        should(segRoot['vv22:12.1']).match(/Bhadditthivimānaṃ/);
+        should(segVar['vv22:12.1']).match(/Bhadditthivimānaṃ/);
+    });
 })

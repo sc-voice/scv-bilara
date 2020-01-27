@@ -1,0 +1,33 @@
+#!/bin/bash
+DIR=`dirname $0`
+echo DIR=$DIR
+SRC=~/Downloads/pli_remainder_segmented
+DST=../bilara-data
+
+$DIR/import-html -s $SRC/abhidhamma/ds -d $DST
+$DIR/import-html -s $SRC/abhidhamma/dt -d $DST
+$DIR/import-html -s $SRC/abhidhamma/kv -d $DST
+$DIR/import-html -s $SRC/abhidhamma/patthana -d $DST
+$DIR/import-html -s $SRC/abhidhamma/pp -d $DST
+$DIR/import-html -s $SRC/abhidhamma/vb -d $DST
+$DIR/import-html -s $SRC/abhidhamma/ya -d $DST
+
+$DIR/import-html -s $SRC/sutta/kn/bv -d $DST
+$DIR/import-html -s $SRC/sutta/kn/cnd -d $DST
+$DIR/import-html -s $SRC/sutta/kn/cp -d $DST
+$DIR/import-html -s $SRC/sutta/kn/iti -d $DST
+$DIR/import-html -s $SRC/sutta/kn/ja -d $DST
+$DIR/import-html -s $SRC/sutta/kn/kp -d $DST
+$DIR/import-html -s $SRC/sutta/kn/mil -d $DST
+$DIR/import-html -s $SRC/sutta/kn/mnd -d $DST
+$DIR/import-html -s $SRC/sutta/kn/ne -d $DST
+$DIR/import-html -s $SRC/sutta/kn/pe -d $DST
+$DIR/import-html -s $SRC/sutta/kn/ps -d $DST
+$DIR/import-html -s $SRC/sutta/kn/pv -d $DST
+$DIR/import-html -s $SRC/sutta/kn/snp -d $DST
+$DIR/import-html -s $SRC/sutta/kn/tha-ap -d $DST
+$DIR/import-html -s $SRC/sutta/kn/thag -d $DST
+$DIR/import-html -s $SRC/sutta/kn/thi-ap -d $DST
+$DIR/import-html -s $SRC/sutta/kn/thig -d $DST
+$DIR/import-html -s $SRC/sutta/kn/ud -d $DST
+$DIR/import-html -s $SRC/sutta/kn/vv -d $DST

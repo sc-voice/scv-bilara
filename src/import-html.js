@@ -222,6 +222,45 @@
             this.segid_1 = segid;
         }
 
+        alignSegVar() {
+            var {
+                segRoot,
+            } = this;
+            var segids = Object.keys(segRoot);
+            var segVar = {};
+            Object.keys(this.segVar).forEach(k=>{
+                var vk = this.segVar[k];
+                var termParts = vk.split('→')[0].split('|');
+                if (termParts.length > 1) {
+                    var term = termParts[termParts.length-1].trim();
+                } else {
+                    var term = termParts[0].trim();
+                }
+
+                for (var i=0; i<segids.length; i++) {
+                    var segid = segids[i];
+                    var rv = segRoot[segid];
+                    var imatch = rv.indexOf(term);
+                    if (imatch>=0) { // keyword found in segment
+                        var sv = segVar[segid];
+                        if (sv) {
+                            if (sv.indexOf(term) >= 0) {
+                                continue; // already has variant
+                            }
+                            segVar[segid] = `${sv} | ${vk}`;
+                        } else {
+                            segVar[segid] = vk;
+                        }
+                        break;
+                    }
+                    if (i === segids.length-1) {
+                        throw new Error(`Could not match ${term} from ${vk}`);
+                    }
+                };
+            });
+            this.segVar = segVar;
+        }
+
         htmlText(line, element) {
             var {
                 suid,
@@ -324,7 +363,12 @@
             if (!fs.existsSync(srcPath)) {
                 throw new Error(`import file not found:${srcPath}`);
             }
+            try {
             var rawLines = fs.readFileSync(srcPath).toString().split('\n');
+            } catch (e) {
+                console.error(`could not readFileSync(${srcPath})`);
+                throw e;
+            }
             var lines = rawLines.reduce((a,line) => {
                 var parts = line.split(/ <a\b/);
                 a.push(parts[0]);
@@ -339,6 +383,7 @@
             for (let i=0; i < lines.length; i++) {
                 importer.importLine(lines[i], lines[i+1]);
             }
+            importer.alignSegVar();
             var {
                 segid_1,
                 nikayaFolder,
@@ -387,9 +432,14 @@
             fs.mkdirSync(dstDir, {recursive: true});
             var dstPath = path.join(dstDir, 
                 `${suid}_variant-${rootLang}-${author}.json`);
-            fs.writeFileSync(dstPath, JSON.stringify(segVar, null, 2));
-            var localPath = dstPath.replace(LOCAL_DIR,'').substring(1);
-            this.log(`wrote variant ${localPath}`);
+            if (Object.keys(segVar).length) {
+                fs.writeFileSync(dstPath, JSON.stringify(segVar, null, 2));
+                var localPath = dstPath.replace(LOCAL_DIR,'').substring(1);
+                this.log(`wrote variant ${localPath}`);
+            } else if (fs.existsSync(dstPath)) {
+                fs.unlinkSync(dstPath);
+                this.log(`removed blank variant ${localPath}`);
+            }
 
             // write Html segments
             var dstDir = path.join(dstRoot, 'html', nikayaFolder);

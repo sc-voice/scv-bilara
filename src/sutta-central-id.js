@@ -176,8 +176,26 @@
             var majorid = this.sutta.split('.')[0];
             var prefix = majorid.replace(/[0-9-.:]*$/,'');
             var folder = {
+                bv: `kn/bv`,
+                bv: `kn/bv`,
+                cnd: `kn/cnd`,
+                cp: `kn/cp`,
+                iti: `kn/iti`,
+                ja: `kn/ja`,
+                kp: `kn/kp`,
+                mil: `kn/mil`,
+                mnd: `kn/mnd`,
+                ne: `kn/ne`,
+                pe: `kn/pe`,
+                ps: `kn/ps`,
+                pv: `kn/pv`,
+                snp: `kn/snp`,
+                "tha-ap": `kn/tha-ap`,
                 thag: `kn/thag`,
+                "thi-ap": `kn/thi-ap`,
                 thig: `kn/thig`,
+                ud: `kn/ud`,
+                vv: `kn/vv`,
             }[prefix] || (majorid === this.sutta 
                 ? prefix
                 : `${prefix}/${majorid}`);
