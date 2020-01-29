@@ -519,7 +519,10 @@
                     if (matchHighlight) {
                         mld.highlightMatch(resultPattern, matchHighlight);
                     }
-                    if (mld.bilaraPaths.length >= minLang) {
+                    if (resFilter.matched === 0) {
+                        that.log(
+                            `Partial match ignored ${mld.suid} ${pattern}`);
+                    } else if (mld.bilaraPaths.length >= minLang) {
                         if (Object.keys(mld.segMap).length ) {
                             mlDocs.push(mld);
                             matchingRefs.push(suttaRef);

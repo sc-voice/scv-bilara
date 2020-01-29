@@ -843,6 +843,25 @@
             done(); 
         } catch(e) {done(e);} })();
     });
+    it("find(...) => finds all keywords", done=>{
+        (async function() { try {
+            var maxDoc = 50;
+            var skr = await new Seeker({
+                maxDoc,
+                logLevel,
+            }).initialize();
+
+            var pattern = "darkness light"; 
+            var res = await skr.find({
+                pattern,
+                lang: 'de',
+                minLang: 2,
+                showMatchesOnly: false,
+            });
+            should(res.suttaRefs.length).equal(15);
+            done(); 
+        } catch(e) {done(e);} })();
+    });
     it("find(...) => finds keywords", done=>{
         (async function() { try {
             var maxDoc = 3;
