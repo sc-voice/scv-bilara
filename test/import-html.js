@@ -310,7 +310,7 @@
         should(segRoot['ds2.1.1:2.1']).match(/Phasso hoti, vedanā hoti,/);
         should(segRoot['ds2.1.1:3.1']).match(/Vitakko hoti, vicāro hoti/);
     });
-    it("TESTTESTimport(...) imports vb3 file", ()=>{
+    it("import(...) imports vb3 file", ()=>{
         var ih = new ImportHtml({
             srcRoot: TEST_DATA,
             dstRoot: BILARA_TEST
@@ -356,7 +356,7 @@
         should(segRoot['vb3:23.4']).match(/rūpā/);
         should(segVar['vb3:23.4']).match(/rūpā/);
     });
-    it("TESTTESTimport(...) imports vv22 file", ()=>{
+    it("import(...) imports vv22 file", ()=>{
         var ih = new ImportHtml({
             srcRoot: TEST_DATA,
             dstRoot: BILARA_TEST
@@ -390,5 +390,48 @@
             /Katāvāsā katakusalā → katāvakāsā katakusalā .*sya2ed, pts/);
         should(segRoot['vv22:12.1']).match(/Bhadditthivimānaṃ/);
         should(segVar['vv22:12.1']).match(/Bhadditthivimānaṃ/);
+    });
+    it("TESTTESTimport(...) imports mil3.1.10 file", ()=>{
+        var ih = new ImportHtml({
+            srcRoot: TEST_DATA,
+            dstRoot: BILARA_TEST
+        });
+        var res = ih.import('mil3.1.10.html');
+        var {
+            segRoot,
+            segRef,
+            segHtml,
+            segVar,
+            suid,
+            segments,
+            rootLang,
+        } = res;
+        should(suid).equal('mil3.1.10');
+        should(rootLang).equal('pli');
+        should(segRoot['mil3.1.10:4.1'])
+            .equal('“Kallosi, bhante nāgasenā”ti.');
+        should(segVar['mil3.1.10:4.1'])
+            .equal("ayaṃ pāṭho maku potthake");
+    });
+    it("import(...) imports mil3.1.2 file", ()=>{
+        var ih = new ImportHtml({
+            srcRoot: TEST_DATA,
+            dstRoot: BILARA_TEST
+        });
+        var res = ih.import('mil3.1.2.html');
+        var {
+            segRoot,
+            segRef,
+            segHtml,
+            segVar,
+            suid,
+            segments,
+            rootLang,
+        } = res;
+        should(suid).equal('mil3.1.2');
+        should(rootLang).equal('pli');
+        should(segRoot['mil3.1.2:13.1']).match(/Vassagaṇanapañho/);
+        should(segVar['mil3.1.2:13.1'])
+            .equal("Vassagaṇanapañho → vassapañho (maku)");
     });
 })

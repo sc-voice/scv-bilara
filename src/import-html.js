@@ -224,6 +224,7 @@
 
         alignSegVar() {
             var {
+                suid,
                 segRoot,
             } = this;
             var segids = Object.keys(segRoot);
@@ -253,10 +254,12 @@
                         }
                         break;
                     }
-                    if (i === segids.length-1) {
-                        throw new Error(`Could not match ${term} from ${vk}`);
-                    }
                 };
+                if (i === segids.length) {
+                    segVar[k] = vk;
+                    console.log(
+                        `${suid}:${k} Could not match ${term} from ${vk}`);
+                }
             });
             this.segVar = segVar;
         }
