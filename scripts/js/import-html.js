@@ -31,6 +31,8 @@ OPTIONS
         Specify source root folder. REQUIRED.
     -d, --dstRoot FOLDER
         Specify destination root folder. Default is "local/bilara-data"
+    -df, --dstFolder FOLDER
+        Spectify destination subfolder. Default is ""
     --type TYPE
         Specify document type. Default is "root"
     -t, --translator TRANSLATOR
@@ -49,6 +51,7 @@ var logLevel = false;
 
 var srcRoot = null;
 var dstRoot = BILARA_DATA;
+var dstFolder = "";
 var type = 'root';
 var author = 'ms';
 var rootLang = 'pli';
@@ -65,6 +68,8 @@ for (var i = 2; i < nargs; i++) {
         srcRoot = process.argv[++i];
     } else if (arg === '-d' || arg === '--dstRoot') {
         dstRoot = process.argv[++i];
+    } else if (arg === '-df' || arg === '--dstFolder') {
+        dstFolder = process.argv[++i];
     } else if (arg === '--type') {
         type = process.argv[++i];
     } else if (arg === '-a' || arg === '--author') {
@@ -102,6 +107,7 @@ if (!fs.existsSync(dstRoot)) {
     var importer = new ImportHtml({
         srcRoot,
         dstRoot,
+        dstFolder,
         type,
         translator,
         transLang,

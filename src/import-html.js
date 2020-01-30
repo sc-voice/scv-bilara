@@ -344,6 +344,7 @@
             logger.logInstance(this, opts);
             this.srcRoot = opts.srcRoot || path.join(LOCAL_DIR, 'html');
             this.dstRoot = opts.dstRoot || BILARA_PATH;
+            this.dstFolder = opts.dstFolder || "";
             this.type = opts.type || 'root';
             this.author = opts.author || 'ms';
             this.rootLang = opts.rootLang || 'pli';
@@ -355,6 +356,7 @@
             var {
                 srcRoot,
                 dstRoot,
+                dstFolder,
                 nikayaFolder,
                 type,
                 author,
@@ -431,7 +433,7 @@
             this.log(`wrote reference ${localPath}`);
 
             // write variant segments
-            var dstDir = path.join(dstRoot, 'variant', nikayaFolder);
+            var dstDir = path.join(dstRoot, 'variant/pli/ms', nikayaFolder);
             fs.mkdirSync(dstDir, {recursive: true});
             var dstPath = path.join(dstDir, 
                 `${suid}_variant-${rootLang}-${author}.json`);
