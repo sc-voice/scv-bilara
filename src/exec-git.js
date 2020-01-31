@@ -10,6 +10,7 @@
         exec,
         execSync,
     } = require('child_process');
+    const MAXBUFFER = 10 * 1024 * 1024;
 
     const BILARA_DATA_GIT = 'https://github.com/sc-voice/bilara-data.git';
 
@@ -70,6 +71,7 @@
                     that.log(`${repoDir}: ${cmd}`);
                     var execOpts = {
                         cwd: repoPath,
+                        maxBuffer: MAXBUFFER,
                     };
                     exec(cmd, execOpts, 
                         that.onExec(resolve, reject, 'stdout'));
@@ -93,6 +95,7 @@
                     that.log(cmd);
                     var execOpts = {
                         cwd,
+                        maxBuffer: MAXBUFFER,
                     };
                     var res = execSync(cmd, execOpts).toString();
                     that.log(res);
@@ -112,6 +115,7 @@
                     var cmd = `git status`;
                     var execOpts = {
                         cwd: repoPath,
+                        maxBuffer: MAXBUFFER,
                     };
                     exec(cmd, execOpts, (error, stdout, stderr) => {
                         if (error) {
@@ -148,6 +152,7 @@
                     that.log(`${repoDir}: ${cmd}`);
                     var execOpts = {
                         cwd: repoPath,
+                        maxBuffer: MAXBUFFER,
                     };
                     exec(cmd, execOpts, that.onExec(resolve, reject));
                 } catch(e) {reject(e);} })();
@@ -172,6 +177,7 @@
                     var repoPath = that.validateRepoPath();
                     var execOpts = {
                         cwd: repoPath,
+                        maxBuffer: MAXBUFFER,
                     };
                     var resData = 'std';
                     if (list) {
@@ -224,6 +230,7 @@
                     that.log(`${repoDir}: ${cmd}`);
                     var execOpts = {
                         cwd: repoPath,
+                        maxBuffer: MAXBUFFER,
                     };
                     exec(cmd, execOpts, that.onExec(resolve, reject, 'std'));
                 } catch(e) {reject(e);} })();
@@ -254,6 +261,7 @@
                     that.log(`${repoDir}: ${cmd}`);
                     var execOpts = {
                         cwd: repoPath,
+                        maxBuffer: MAXBUFFER,
                     };
                     exec(cmd, execOpts, that.onExec(resolve, reject));
                 } catch(e) {reject(e);} })();
@@ -279,6 +287,7 @@
                     that.log(`${repoDir}: ${cmd}`);
                     var execOpts = {
                         cwd: repoPath,
+                        maxBuffer: MAXBUFFER,
                     };
                     exec(cmd, execOpts, that.onExec(resolve, reject));
                 } catch(e) {reject(e);} })();

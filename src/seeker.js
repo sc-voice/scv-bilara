@@ -519,6 +519,7 @@
                     if (matchHighlight) {
                         mld.highlightMatch(resultPattern, matchHighlight);
                     }
+                    //if (!resFilter.matchScid && resFilter.matched === 0) {
                     if (resFilter.matched === 0) {
                         that.log(
                             `Partial match ignored ${mld.suid} ${pattern}`);

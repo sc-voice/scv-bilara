@@ -559,7 +559,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("find(...) finds sutta references", done=>{
+    it("TESTTESTfind(...) finds sutta references", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
@@ -575,6 +575,7 @@
                 pattern,
                 lang,
                 matchHighlight: false,
+                showMatchesOnly: false,
             });
             should(res.method).equal('sutta_uid');
             should(res.maxResults).equal(maxResults);
