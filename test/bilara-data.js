@@ -754,7 +754,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("readBlurb(...) => blurb for language", done=>{
+    it("TESTTESTreadBlurb(...) => blurb for language", done=>{
         (async function() { try {
             await bd.initialize();
             var reAN3_1 = /Fools are dangerous, but the wise are safe/;
@@ -777,7 +777,11 @@
 
             // German
             var blurb = await bd.readBlurb({suid:'an3.1', lang:'de'});
-            should(blurb).match(/Toren sind gefährlich, aber kluge Menschen/);
+            should(blurb).match(
+                /Toren sind gefährlich, aber kluge Menschen/);
+
+            var blurb = await bd.readBlurb({suid:'dn33', lang:'de'});
+            should(blurb).match(/Der Buddha ermuntert/);
 
             // no blurb
             var blurb = await bd.readBlurb({suid:'MN999'});

@@ -759,7 +759,13 @@
                 var fpath = path.join(dir, fname);
                 if (!fs.existsSync(fpath)) {
                     if (lang !== 'en') {
-                        var enBlurb = await that.readBlurb({suid,lang:'en'});
+                        var enBlurb = await 
+                            that.readBlurb({suid,lang:'en'});
+                        if (enBlurb) {
+                            logger.info(
+                                `Not found: ${fpath}. Using en blurb`);
+
+                        }
                         resolve(enBlurb);
                     }
                     resolve(null);
