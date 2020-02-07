@@ -344,7 +344,7 @@
             logger.logInstance(this, opts);
             this.srcRoot = opts.srcRoot || path.join(LOCAL_DIR, 'html');
             this.dstRoot = opts.dstRoot || BILARA_PATH;
-            this.dstFolder = opts.dstFolder || "";
+            this.dstFolder = opts.dstFolder || "abhidhamma";
             this.type = opts.type || 'root';
             this.author = opts.author || 'ms';
             this.rootLang = opts.rootLang || 'pli';
@@ -352,7 +352,7 @@
             this.transLang = opts.transLang || 'en';
         }
 
-        import(src) {
+        import(src,srcFolder) {
             var {
                 srcRoot,
                 dstRoot,
@@ -364,7 +364,9 @@
                 translator,
                 transLang,
             } = this;
-            var srcPath = path.join(srcRoot, src);
+            var srcPath = srcFolder 
+                ? path.join(srcRoot, srcFolder, src)
+                : path.join(srcRoot, src);
             if (!fs.existsSync(srcPath)) {
                 throw new Error(`import file not found:${srcPath}`);
             }
@@ -399,13 +401,16 @@
                 segHtml,
             } = importer;
             //console.log(`dbg nikayaFolder`,nikayaFolder);
+            var outFolder = srcFolder 
+                ? path.join(dstFolder, nikayaFolder, srcFolder)
+                : path.join(dstFolder, nikayaFolder);
             var segids = Object.keys(segRoot)
                 .sort(SuttaCentralId.compareLow);
             var nsegids = segids.length;
 
             // write root segments
             var dstDir = path.join(dstRoot, 'root', rootLang, author,
-                nikayaFolder);
+                outFolder);
             fs.mkdirSync(dstDir, {recursive: true});
             var dstPath = path.join(dstDir,
                 `${suid}_root-${rootLang}-${author}.json`);
@@ -416,7 +421,7 @@
             // write translation segments
             var dstDir = path.join(dstRoot, 
                 'translation', transLang, translator,
-                nikayaFolder);
+                outFolder);
             fs.mkdirSync(dstDir, {recursive: true});
             var dstPath = path.join(dstDir,
                 `${suid}_translation-${transLang}-${translator}.json`);
@@ -425,7 +430,8 @@
             this.log(`translation => ${localPath}`);
 
             // write reference segments
-            var dstDir = path.join(dstRoot, 'reference', nikayaFolder);
+            var dstDir = path.join(dstRoot, 'reference', 'pli', 'ms',
+                outFolder);
             fs.mkdirSync(dstDir, {recursive: true});
             var dstPath = path.join(dstDir, `${suid}_reference.json`);
             fs.writeFileSync(dstPath, JSON.stringify(segRef, null, 2));
@@ -433,7 +439,8 @@
             this.log(`wrote reference ${localPath}`);
 
             // write variant segments
-            var dstDir = path.join(dstRoot, 'variant/pli/ms', nikayaFolder);
+            var dstDir = path.join(dstRoot, 'variant/pli/ms', 
+                outFolder);
             fs.mkdirSync(dstDir, {recursive: true});
             var dstPath = path.join(dstDir, 
                 `${suid}_variant-${rootLang}-${author}.json`);
@@ -447,7 +454,8 @@
             }
 
             // write Html segments
-            var dstDir = path.join(dstRoot, 'html', nikayaFolder);
+            var dstDir = path.join(dstRoot, 'html', 'pli', 'ms',
+                outFolder);
             fs.mkdirSync(dstDir, {recursive: true});
             var dstPath = path.join(dstDir, `${suid}_html.json`);
             fs.writeFileSync(dstPath, JSON.stringify(segHtml, null, 2));

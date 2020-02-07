@@ -51,7 +51,7 @@ var logLevel = false;
 
 var srcRoot = null;
 var dstRoot = BILARA_DATA;
-var dstFolder = "";
+var dstFolder = "abhidhamma";
 var type = 'root';
 var author = 'ms';
 var rootLang = 'pli';
@@ -102,6 +102,7 @@ if (!fs.existsSync(dstRoot)) {
     logger.info(`Importing HTML`);
     logger.info(`  srcRoot:${srcRoot}`);
     logger.info(`  dstRoot:${dstRoot}`);
+    logger.info(`  dstFolder:${dstFolder}`);
     logger.info(`  type   :${type}`);
     logger.info(`  author :${translator}`);
     var importer = new ImportHtml({
@@ -114,10 +115,23 @@ if (!fs.existsSync(dstRoot)) {
         author,
         rootLang,
     });
-    var files = fs.readdirSync(srcRoot);
+    var files = fs.readdirSync(srcRoot, {withFileTypes:true});
     console.log(files);
     files.forEach(f => {
-        var res = importer.import(f);
+        if (f.isFile()) {
+            if (f.name.match('.json')) {
+                // skip
+            } else {
+                var res = importer.import(f.name);
+            }
+        } else if (f.isDirectory()) {
+            var dirRoot = path.join(srcRoot, f.name);
+            console.log(`dbg import dir`, dirRoot);
+            var dirFiles = fs.readdirSync(dirRoot);
+            dirFiles.forEach(df => {
+                var res = importer.import(df, f.name);
+            });
+        }
     });
 
     logger.info(`Import completed`);

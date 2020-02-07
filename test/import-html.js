@@ -31,6 +31,7 @@
         should(ih).properties({
             srcRoot: path.join(LOCAL_DIR, 'html'),
             dstRoot: BILARA_DATA,
+            dstFolder: "abhidhamma",
             type: 'root',
             author: 'ms',
             rootLang: 'pli',
@@ -41,17 +42,20 @@
     it("custom ctor", ()=>{
         var srcRoot = TEST_DATA;
         var dstRoot = BILARA_TEST;
+        var dstFolder = "sutta";
         var translator = 'sujato';
         var type = 'translation';
         var ih = new ImportHtml({
             srcRoot,
             dstRoot,
+            dstFolder,
             translator,
             type,
         });
         should(ih).properties({
             srcRoot,
             dstRoot,
+            dstFolder,
             translator,
             type,
         });
@@ -59,7 +63,8 @@
     it("import(...) imports ds1.1 file", ()=>{
         var ih = new ImportHtml({
             srcRoot: TEST_DATA,
-            dstRoot: BILARA_TEST
+            dstRoot: BILARA_TEST,
+            dstFolder: "abhidhamma",
         });
         var res = ih.import('ds1.1.html');
         var {
@@ -91,7 +96,8 @@
         should(segRoot['ds1.1:5.1']).match(/Dukkhāya vedanāya/);
         should(segRoot['ds1.1:6.1']).match(/Adukkhamasukhāya vedanāya/);
         should(fs.existsSync(path.join(BILARA_TEST, 
-            'root/pli/ms/ds/ds1/ds1.1_root-pli-ms.json'))).equal(true);
+            'root/pli/ms/abhidhamma/ds/ds1/ds1.1_root-pli-ms.json')))
+            .equal(true);
 
         should(segRef['ds1.1:1.0.2']).match(/ms29Dhs_1/);
         should(segRef['ds1.1:1.1'])
@@ -100,7 +106,8 @@
         should(segRef['ds1.1:66.1']).match(/sc66, ms29Dhs_67/);
         should(segRef['ds1.1:66.2']).match(/ms29Dhs_68/);
         should(fs.existsSync(path.join(BILARA_TEST, 
-            'reference/ds/ds1/ds1.1_reference.json'))).equal(true);
+            'reference/pli/ms/abhidhamma/ds/ds1/ds1.1_reference.json')))
+            .equal(true);
 
         should(segHtml['ds1.1:0.1'])
             .equal(`<header><p class='division'>{}</p>`);
@@ -116,7 +123,7 @@
         should(segHtml['ds1.1:66.2'])
             .equal(`<p class='endsutta'>{}</p>`);
         should(fs.existsSync(path.join(BILARA_TEST, 
-            'html/ds/ds1/ds1.1_html.json'))).equal(true);
+            'html/pli/ms/abhidhamma/ds/ds1/ds1.1_html.json'))).equal(true);
     });
     it("import(...) imports ds1.2 file", ()=>{
         var ih = new ImportHtml({
@@ -154,14 +161,16 @@
         should(segRoot['ds1.2:200.3'])
             .equal('Abhidhammadukamātikā.');
         should(fs.existsSync(path.join(BILARA_TEST, 
-            'root/pli/ms/ds/ds1/ds1.2_root-pli-ms.json'))).equal(true);
+            'root/pli/ms/abhidhamma/ds/ds1/ds1.2_root-pli-ms.json')))
+            .equal(true);
 
         should(segRef['ds1.2:1.1']).equal('sc1, ms29Dhs_69, msdiv23');
         should(segRef['ds1.2:2.1']).equal('sc2, ms29Dhs_70');
         should(segRef['ds1.2:200.1']).equal('sc200, ms29Dhs_280');
         should(segRef['ds1.2:200.2']).equal('ms29Dhs_281');
         should(fs.existsSync(path.join(BILARA_TEST, 
-            'reference/ds/ds1/ds1.2_reference.json'))).equal(true);
+            'reference/pli/ms/abhidhamma/ds/ds1/ds1.2_reference.json')))
+            .equal(true);
 
         should(segHtml['ds1.2:0.1'])
             .equal(`<header><p class='division'>{}</p>`);
@@ -177,12 +186,13 @@
         should(segHtml['ds1.2:200.3'])
             .equal(`<p class='endsutta'>{}</p>`);
         should(fs.existsSync(path.join(BILARA_TEST, 
-            'html/ds/ds1/ds1.2_html.json'))).equal(true);
+            'html/pli/ms/abhidhamma/ds/ds1/ds1.2_html.json'))).equal(true);
     });
     it("import(...) imports thag21.1 file", ()=>{
         var ih = new ImportHtml({
             srcRoot: TEST_DATA,
-            dstRoot: BILARA_TEST
+            dstRoot: BILARA_TEST,
+            dstFolder: "sutta",
         });
         var res = ih.import('thag21.1.html');
         var {
@@ -243,13 +253,17 @@
             .equal(`daḷhadhammino → daḷhadhanvino (bj-a)`);
 
         should(fs.existsSync(path.join(BILARA_TEST, 
-            'root/pli/ms/kn/thag/thag21.1_root-pli-ms.json'))).equal(true);
+            'root/pli/ms/sutta/kn/thag/thag21.1_root-pli-ms.json')))
+            .equal(true);
         should(fs.existsSync(path.join(BILARA_TEST, 
-            'reference/kn/thag/thag21.1_reference.json'))).equal(true);
+            'reference/pli/ms/sutta/kn/thag/thag21.1_reference.json')))
+            .equal(true);
         should(fs.existsSync(path.join(BILARA_TEST, 
-            'variant/kn/thag/thag21.1_variant-pli-ms.json'))).equal(true);
+            'variant/pli/ms/sutta/kn/thag/thag21.1_variant-pli-ms.json')))
+            .equal(true);
         should(fs.existsSync(path.join(BILARA_TEST, 
-            'html/kn/thag/thag21.1_html.json'))).equal(true);
+            'html/pli/ms/sutta/kn/thag/thag21.1_html.json')))
+            .equal(true);
 
         dumpSegs(6, segRoot, segHtml);
 
@@ -391,10 +405,11 @@
         should(segRoot['vv22:12.1']).match(/Bhadditthivimānaṃ/);
         should(segVar['vv22:12.1']).match(/Bhadditthivimānaṃ/);
     });
-    it("TESTTESTimport(...) imports mil3.1.10 file", ()=>{
+    it("import(...) imports mil3.1.10 file", ()=>{
         var ih = new ImportHtml({
             srcRoot: TEST_DATA,
-            dstRoot: BILARA_TEST
+            dstRoot: BILARA_TEST,
+            dstFolder: "sutta",
         });
         var res = ih.import('mil3.1.10.html');
         var {
@@ -416,7 +431,8 @@
     it("import(...) imports mil3.1.2 file", ()=>{
         var ih = new ImportHtml({
             srcRoot: TEST_DATA,
-            dstRoot: BILARA_TEST
+            dstRoot: BILARA_TEST,
+            dstFolder: "sutta",
         });
         var res = ih.import('mil3.1.2.html');
         var {
@@ -433,5 +449,32 @@
         should(segRoot['mil3.1.2:13.1']).match(/Vassagaṇanapañho/);
         should(segVar['mil3.1.2:13.1'])
             .equal("Vassagaṇanapañho → vassapañho (maku)");
+    });
+    it("TESTTESTimport(...) imports iti10 file", ()=>{
+        var ih = new ImportHtml({
+            srcRoot: TEST_DATA,
+            dstRoot: BILARA_TEST,
+            dstFolder: "sutta",
+        });
+        var res = ih.import('iti10.html', 'vagga1');
+        var {
+            segRoot,
+            segRef,
+            segHtml,
+            segVar,
+            suid,
+            segments,
+            rootLang,
+        } = res;
+        should(suid).equal('iti10');
+        should(rootLang).equal('pli');
+        console.log(`dbg segRoot`, segRoot);
+        should(segRoot['iti10:1.1'])
+            .match(/Vuttañhetaṃ bhagavatā vuttamarahatāti me sutaṃ/);
+        should(segRoot['iti10:2.1'])
+            .match(/Dosaṃ, bhikkhave, anabhijānaṃ aparijānaṃ tattha/);
+        should(segRoot['iti10:5.1']).match(/Rāgadosā atha moho/);
+        should(segRoot['iti10:5.4'])
+            .match(/Pakāsitā vaggamāhu paṭhamanti/);
     });
 })
