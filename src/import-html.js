@@ -22,6 +22,7 @@
             this.segRef = {};
             this.segHtml = { };
             this.header = 0;
+            this.prevLine = '';
             this.div = 0;
             this.sc = '';
             this.rootLang = opts.rootLang || 'pli';
@@ -31,6 +32,7 @@
             var {
                 segid_1,
                 segHtml,
+                prevLine,
             } = this;
             var { segid, sc } = this.identifyLine(line);
             this.segid = segid;
@@ -44,10 +46,11 @@
             } else if (line.match(/^<\/?div/)) {
                 this.importDiv(line);
             } else if (line.match(/^<p/)) {
-                this.importText(line);
+                this.importText(line, prevLine);
             } else if (line.match(/^<a\b/)) {
-                this.importText(line);
+                this.importText(line, prevLine);
             }
+            this.prevLine = line;
         }
 
         scOfLine(line) {
@@ -158,7 +161,7 @@
             }
         }
 
-        importText(line) {
+        importText(line, prevLine) {
             var {
                 segid_1,
                 section,
@@ -206,18 +209,9 @@
             varText && (segVar[segid.scid] = varText);
 
             // HTML
-            var p = cls ? `<p class='${cls}'>` : `<p>`;
-            if (segHtml[segid_1.scid].match(/{}<\/p>$/)) {
-                if (segid.scid.match(/\.1$/) || cls) {
-                    segHtml[segid.scid] = `${p}{}</p>`;
-                } else {
-                    segHtml[segid_1.scid] = segHtml[segid_1.scid]
-                        .replace(/<\/p>/,'');
-                    segHtml[segid.scid] = `{}</p>`;
-                }
-            } else {
-                segHtml[segid.scid] = `${p}{}</p>`;
-            }
+            segHtml[segid.scid] = line.trim()
+                .replace(/<a.*\/a>/,'{}')
+                .replace(/"/g, "'");
 
             this.segid_1 = segid;
         }
@@ -257,7 +251,7 @@
                 };
                 if (i === segids.length) {
                     segVar[k] = vk;
-                    console.log(
+                    logger.warn(
                         `${suid}:${k} Could not match ${term} from ${vk}`);
                 }
             });
@@ -371,16 +365,26 @@
                 throw new Error(`import file not found:${srcPath}`);
             }
             try {
-            var rawLines = fs.readFileSync(srcPath).toString().split('\n');
+                var rawLines = fs.readFileSync(srcPath)
+                    .toString().split('\n');
             } catch (e) {
                 console.error(`could not readFileSync(${srcPath})`);
                 throw e;
             }
             var lines = rawLines.reduce((a,line) => {
-                var parts = line.split(/ <a\b/);
-                a.push(parts[0]);
-                for (var i = 1; i < parts.length; i++) {
-                    a.push(`<a${parts[i]}`);
+                var parts = line.split(/<a\b/);
+                if (parts.length === 1) {
+                    a.push(line);
+                } else {
+                    var rem = parts[0];
+                    for (var i = 1; i < parts.length; i++) {
+                        var pi = parts[i];
+                        a.push(`${rem}<a${pi}`);
+                        rem = '';
+                    }
+                    if (rem) {
+                        a.push(`${a.pop()}${rem}`);
+                    }
                 }
                 return a;
             }, []);
@@ -400,7 +404,6 @@
                 segVar,
                 segHtml,
             } = importer;
-            //console.log(`dbg nikayaFolder`,nikayaFolder);
             var outFolder = srcFolder 
                 ? path.join(dstFolder, nikayaFolder, srcFolder)
                 : path.join(dstFolder, nikayaFolder);
@@ -408,59 +411,77 @@
                 .sort(SuttaCentralId.compareLow);
             var nsegids = segids.length;
 
-            // write root segments
-            var dstDir = path.join(dstRoot, 'root', rootLang, author,
-                outFolder);
-            fs.mkdirSync(dstDir, {recursive: true});
-            var dstPath = path.join(dstDir,
-                `${suid}_root-${rootLang}-${author}.json`);
-            fs.writeFileSync(dstPath, JSON.stringify(segRoot, null, 2));
-            var localPath = dstPath.replace(LOCAL_DIR,'').substring(1);
-            this.log(`root => ${localPath}`);
-
-            // write translation segments
-            var dstDir = path.join(dstRoot, 
-                'translation', transLang, translator,
-                outFolder);
-            fs.mkdirSync(dstDir, {recursive: true});
-            var dstPath = path.join(dstDir,
-                `${suid}_translation-${transLang}-${translator}.json`);
-            fs.writeFileSync(dstPath, JSON.stringify(segTrans, null, 2));
-            var localPath = dstPath.replace(LOCAL_DIR,'').substring(1);
-            this.log(`translation => ${localPath}`);
-
-            // write reference segments
-            var dstDir = path.join(dstRoot, 'reference', 'pli', 'ms',
-                outFolder);
-            fs.mkdirSync(dstDir, {recursive: true});
-            var dstPath = path.join(dstDir, `${suid}_reference.json`);
-            fs.writeFileSync(dstPath, JSON.stringify(segRef, null, 2));
-            var localPath = dstPath.replace(LOCAL_DIR,'').substring(1);
-            this.log(`wrote reference ${localPath}`);
-
-            // write variant segments
-            var dstDir = path.join(dstRoot, 'variant/pli/ms', 
-                outFolder);
-            fs.mkdirSync(dstDir, {recursive: true});
-            var dstPath = path.join(dstDir, 
-                `${suid}_variant-${rootLang}-${author}.json`);
-            if (Object.keys(segVar).length) {
-                fs.writeFileSync(dstPath, JSON.stringify(segVar, null, 2));
+            try { // write root segments
+                var dstDir = path.join(dstRoot, 'root', rootLang, author,
+                    outFolder);
+                fs.mkdirSync(dstDir, {recursive: true});
+                var dstPath = path.join(dstDir,
+                    `${suid}_root-${rootLang}-${author}.json`);
+                fs.writeFileSync(dstPath, JSON.stringify(segRoot, null, 2));
                 var localPath = dstPath.replace(LOCAL_DIR,'').substring(1);
-                this.log(`wrote variant ${localPath}`);
-            } else if (fs.existsSync(dstPath)) {
-                fs.unlinkSync(dstPath);
-                this.log(`removed blank variant ${localPath}`);
+            } catch (e) {
+                console.error(`root => ${localPath}`, e.stack);
+                throw e;
             }
 
-            // write Html segments
-            var dstDir = path.join(dstRoot, 'html', 'pli', 'ms',
-                outFolder);
-            fs.mkdirSync(dstDir, {recursive: true});
-            var dstPath = path.join(dstDir, `${suid}_html.json`);
-            fs.writeFileSync(dstPath, JSON.stringify(segHtml, null, 2));
-            var localPath = dstPath.replace(LOCAL_DIR,'').substring(1);
-            this.log(`wrote ${localPath}`);
+            try { // write translation segments
+                var dstDir = path.join(dstRoot, 
+                    'translation', transLang, translator,
+                    outFolder);
+                fs.mkdirSync(dstDir, {recursive: true});
+                var dstPath = path.join(dstDir,
+                    `${suid}_translation-${transLang}-${translator}.json`);
+                fs.writeFileSync(dstPath, JSON.stringify(segTrans, null, 2));
+                var localPath = dstPath.replace(LOCAL_DIR,'').substring(1);
+            } catch (e) {
+                console.error(`translation ${localPath}`, e.stack);
+                throw e;
+            }
+
+            try { // write reference segments
+                var dstDir = path.join(dstRoot, 'reference', 'pli', 'ms',
+                    outFolder);
+                fs.mkdirSync(dstDir, {recursive: true});
+                var dstPath = path.join(dstDir, `${suid}_reference.json`);
+                fs.writeFileSync(dstPath, JSON.stringify(segRef, null, 2));
+                var localPath = dstPath.replace(LOCAL_DIR,'').substring(1);
+            } catch (e) {
+                console.error(`reference ${localPath}`, e.stack);
+                throw e;
+            }
+
+            try { // write variant segments
+                var dstDir = path.join(dstRoot, 'variant/pli/ms', 
+                    outFolder);
+                fs.mkdirSync(dstDir, {recursive: true});
+                var dstPath = path.join(dstDir, 
+                    `${suid}_variant-${rootLang}-${author}.json`);
+                if (Object.keys(segVar).length) {
+                    fs.writeFileSync(dstPath, 
+                        JSON.stringify(segVar, null, 2));
+                    var localPath = dstPath.replace(LOCAL_DIR,'')
+                        .substring(1);
+                } else if (fs.existsSync(dstPath)) {
+                    fs.unlinkSync(dstPath);
+                }
+            } catch (e) {
+                console.error(`variant ${localPath}`, e.stack);
+                throw e;
+            }
+
+            try {// write Html segments
+                var dstDir = path.join(dstRoot, 'html', 'pli', 'ms',
+                    outFolder);
+                fs.mkdirSync(dstDir, {recursive: true});
+                var dstPath = path.join(dstDir, `${suid}_html.json`);
+                fs.writeFileSync(dstPath, JSON.stringify(segHtml, null, 2));
+                var localPath = dstPath.replace(LOCAL_DIR,'').substring(1);
+            } catch (e) {
+                console.error(`HTML ${localPath}`, e.stack);
+                throw e;
+            }
+
+            logger.info(`imported ${suid}`);
 
             return {
                 suid,

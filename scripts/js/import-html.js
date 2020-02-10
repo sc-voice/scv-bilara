@@ -116,7 +116,6 @@ if (!fs.existsSync(dstRoot)) {
         rootLang,
     });
     var files = fs.readdirSync(srcRoot, {withFileTypes:true});
-    console.log(files);
     files.forEach(f => {
         if (f.isFile()) {
             if (f.name.match('.json')) {
@@ -126,7 +125,6 @@ if (!fs.existsSync(dstRoot)) {
             }
         } else if (f.isDirectory()) {
             var dirRoot = path.join(srcRoot, f.name);
-            console.log(`dbg import dir`, dirRoot);
             var dirFiles = fs.readdirSync(dirRoot);
             dirFiles.forEach(df => {
                 var res = importer.import(df, f.name);
