@@ -6,32 +6,32 @@ DST=../bilara-data
 
 #--- The following are done
 
-#--- Bhante please review the following
-$DIR/import-html -s $SRC/abhidhamma/ds -d $DST -df abhidhamma
-$DIR/import-html -s $SRC/abhidhamma/dt -d $DST -df abhidhamma
-$DIR/import-html -s $SRC/abhidhamma/kv -d $DST -df abhidhamma
-$DIR/import-html -s $SRC/abhidhamma/patthana -d $DST -df abhidhamma
-$DIR/import-html -s $SRC/abhidhamma/pp -d $DST -df abhidhamma
-$DIR/import-html -s $SRC/abhidhamma/vb -d $DST -df abhidhamma
-$DIR/import-html -s $SRC/abhidhamma/ya -d $DST -df abhidhamma
-$DIR/import-html -s $SRC/sutta/kn/bv -d $DST -df sutta
-$DIR/import-html -s $SRC/sutta/kn/cnd -d $DST -df sutta
-$DIR/import-html -s $SRC/sutta/kn/cp -d $DST -df sutta
-$DIR/import-html -s $SRC/sutta/kn/mil -d $DST -df sutta
-$DIR/import-html -s $SRC/sutta/kn/iti -d $DST -df sutta
-$DIR/import-html -s $SRC/sutta/kn/ja -d $DST -df sutta
-$DIR/import-html -s $SRC/sutta/kn/kp -d $DST -df sutta
-$DIR/import-html -s $SRC/sutta/kn/mnd -d $DST -df sutta
-$DIR/import-html -s $SRC/sutta/kn/ne -d $DST -df sutta
-$DIR/import-html -s $SRC/sutta/kn/pe -d $DST -df sutta
-$DIR/import-html -s $SRC/sutta/kn/ps -d $DST -df sutta
+#$DIR/import-html -s $SRC/abhidhamma/ds -d $DST -df abhidhamma
+#$DIR/import-html -s $SRC/abhidhamma/dt -d $DST -df abhidhamma
+#$DIR/import-html -s $SRC/abhidhamma/kv -d $DST -df abhidhamma
+#$DIR/import-html -s $SRC/abhidhamma/patthana -d $DST -df abhidhamma
+#$DIR/import-html -s $SRC/abhidhamma/pp -d $DST -df abhidhamma
+#$DIR/import-html -s $SRC/abhidhamma/vb -d $DST -df abhidhamma
+#$DIR/import-html -s $SRC/abhidhamma/ya -d $DST -df abhidhamma
+#$DIR/import-html -s $SRC/sutta/kn/bv -d $DST -df sutta
+#$DIR/import-html -s $SRC/sutta/kn/cnd -d $DST -df sutta
+#$DIR/import-html -s $SRC/sutta/kn/cp -d $DST -df sutta
+#$DIR/import-html -s $SRC/sutta/kn/mil -d $DST -df sutta
+#$DIR/import-html -s $SRC/sutta/kn/iti -d $DST -df sutta
+#$DIR/import-html -s $SRC/sutta/kn/ja -d $DST -df sutta
+#$DIR/import-html -s $SRC/sutta/kn/kp -d $DST -df sutta
+#$DIR/import-html -s $SRC/sutta/kn/mnd -d $DST -df sutta
+#$DIR/import-html -s $SRC/sutta/kn/ne -d $DST -df sutta
+#$DIR/import-html -s $SRC/sutta/kn/pe -d $DST -df sutta
+#$DIR/import-html -s $SRC/sutta/kn/ps -d $DST -df sutta
 
-#--- Karl needs to import the following
-#$DIR/import-html -s $SRC/sutta/kn/pv -d $DST -df sutta
-#$DIR/import-html -s $SRC/sutta/kn/snp -d $DST -df sutta
-#$DIR/import-html -s $SRC/sutta/kn/tha-ap -d $DST -df sutta
-#$DIR/import-html -s $SRC/sutta/kn/thag -d $DST -df sutta
-#$DIR/import-html -s $SRC/sutta/kn/thi-ap -d $DST -df sutta
-#$DIR/import-html -s $SRC/sutta/kn/thig -d $DST -df sutta
-#$DIR/import-html -s $SRC/sutta/kn/ud -d $DST -df sutta
-#$DIR/import-html -s $SRC/sutta/kn/vv -d $DST -df sutta
+#--- Bhante please review the following
+$DIR/import-html -s $SRC/sutta/kn/pv -d $DST -df sutta
+$DIR/import-html -s $SRC/sutta/kn/snp -d $DST -df sutta
+$DIR/import-html -s $SRC/sutta/kn/tha-ap -d $DST -df sutta
+$DIR/import-html -s $SRC/sutta/kn/thag -d $DST -df sutta
+$DIR/import-html -s $SRC/sutta/kn/thi-ap -d $DST -df sutta
+$DIR/import-html -s $SRC/sutta/kn/thig -d $DST -df sutta
+$DIR/import-html -s $SRC/sutta/kn/ud -d $DST -df sutta
+$DIR/import-html -s $SRC/sutta/kn/vv -d $DST -df sutta
+#--- Karl is done
