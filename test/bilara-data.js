@@ -178,6 +178,13 @@
                 suid: 'dn33',
                 bilaraPath: 'root/pli/ms/dn/dn33_root-pli-ms.json',
             };
+            var dn33De = {
+                author: 'sabbamitta',
+                lang: 'de',
+                nikaya: 'dn',
+                suid: 'dn33',
+                bilaraPath: TRANSPATH('de','sabbamitta', `dn/dn33`),
+            }
             var dn33En = {
                 author: 'sujato',
                 lang: 'en',
@@ -185,7 +192,8 @@
                 suid: 'dn33',
                 bilaraPath: TRANSPATH('en','sujato', `dn/dn33`),
             }
-            should.deepEqual(bd.suttaInfo('dn33'), [dn33Pli, dn33En]);
+            should.deepEqual(bd.suttaInfo('dn33'), 
+                [dn33Pli, dn33De, dn33En]);
             var sn12_3pli = {
                 author: 'ms',
                 lang: 'pli',
@@ -736,11 +744,8 @@
         (async function() { try {
             await bd.initialize();
             should.deepEqual(bd.publishedPaths(), [
-"de/sabbamitta/an/an1",
-"de/sabbamitta/an/an10/an10.61_translation-de-sabbamitta.json",
-"de/sabbamitta/an/an2",
-"de/sabbamitta/an/an3",
-"de/sabbamitta/an/an4/an4.85_translation-de-sabbamitta.json",
+"de/sabbamitta/an",
+"de/sabbamitta/dn",
 "de/sabbamitta/mn",
 "de/sabbamitta/sn",
 "en/sujato/an",
@@ -754,7 +759,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTreadBlurb(...) => blurb for language", done=>{
+    it("readBlurb(...) => blurb for language", done=>{
         (async function() { try {
             await bd.initialize();
             var reAN3_1 = /Fools are dangerous, but the wise are safe/;

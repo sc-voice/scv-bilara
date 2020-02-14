@@ -191,7 +191,7 @@
         should(fs.existsSync(path.join(BILARA_TEST, 
             'html/pli/ms/abhidhamma/ds/ds1/ds1.2_html.json'))).equal(true);
     });
-    it("TESTTESTimport(...) imports thag21.1 file", ()=>{
+    it("import(...) imports thag21.1 file", ()=>{
         var ih = new ImportHtml({
             srcRoot: TEST_DATA,
             dstRoot: BILARA_TEST,

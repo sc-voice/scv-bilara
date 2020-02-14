@@ -111,6 +111,7 @@
             should.deepEqual(res, [
               `${de_sab}an/an1/an1.31-40_translation-de-sabbamitta.json:10`,
               `${de_sab}an/an1/an1.21-30_translation-de-sabbamitta.json:10`,
+              `${de_sab}an/an3/an3.61_translation-de-sabbamitta.json:3`,
               `${de_sab}an/an1/an1.41-50_translation-de-sabbamitta.json:2`,
             ]);
 
@@ -368,8 +369,8 @@
                 maxResults: 10,
                 method: 'keywords',
                 keywordsFound: {
-                    hausherr: 6,
-                    anathapindika: 12,
+                    hausherr: 7,
+                    anathapindika: 13,
                 },
                 lines: [
 `${de_sab}sn/sn10/sn10.8_translation-de-sabbamitta.json:4`,
@@ -559,7 +560,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) finds sutta references", done=>{
+    it("find(...) finds sutta references", done=>{
         (async function() { try {
             var maxResults = 3;
             var skr = await new Seeker({
@@ -712,14 +713,13 @@
             should(res.mlDocs.length).equal(1);
             should(res.minLang).equal(2);
 
-            // DN33 currently has no Deutsch translation
             var res = await skr.find({
                 pattern,
                 lang: 'de',
                 minLang: 3,
             });
-            should.deepEqual(res.suttaRefs, []);
-            should(res.mlDocs.length).equal(0);
+            should.deepEqual(res.suttaRefs, ['dn33']);
+            should(res.mlDocs.length).equal(1);
 
             done(); 
         } catch(e) {done(e);} })();
