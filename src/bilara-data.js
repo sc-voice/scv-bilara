@@ -21,6 +21,8 @@
     const English = require('./english');
     const ExecGit = require('./exec-git');
 
+    const SUTTA_FOLDER = path.join(LOCAL_DIR, "bilara-data", 
+        "root", "pli", "ms", "sutta");
     const BILARA_DATA_GIT = 'https://github.com/sc-voice/bilara-data.git';
     const PUB_PREFIX = /^https:.*translation\//;
 
@@ -36,6 +38,7 @@
             });
             this.languages = opts.languages || [ 'pli', this.lang ];
             this.authors = {};
+            this.sva = fs.existsSync(SUTTA_FOLDER);
             Object.defineProperty(this, "_sources", {
                 writable: true,
                 value: null,
@@ -68,6 +71,7 @@
             var that = this;
             var {
                 authors,
+                sva,
             } = that;
             var pbody = (resolve, reject) => {(async function() { try {
                 sync && await that.sync();
@@ -81,7 +85,7 @@
                 that.addAuthor('ms', Object.assign({
                     lang: 'pli'
                 }, authorJson.ms));
-                var map = that.suttaMap = {};
+                var suttaMap = that.suttaMap = {};
                 var rootPath = path.join(that.root, 'root');
                 if (!fs.existsSync(rootPath)) {
                     throw new Error(`Root document directory `+
@@ -97,13 +101,15 @@
                     var parts = file.split('/');
                     var lang = parts[1];
                     var author = parts[2];
-                    var nikaya = parts[3];
+                    var category = sva ? parts[3] : 'sutta';
+                    var nikaya = parts[sva ? 4 : 3];
                     var suid = parts[parts.length-1]
                         .split('_')[0].toLowerCase();
-                    map[suid] = map[suid] || [];
-                    map[suid].push({
+                    suttaMap[suid] = suttaMap[suid] || [];
+                    suttaMap[suid].push({
                         suid,
                         lang,
+                        category,
                         nikaya,
                         author,
                         bilaraPath: file,
@@ -124,16 +130,18 @@
                     var parts = file.split('/');
                     var lang = parts[1];
                     var author = parts[2];
-                    var nikaya = parts[3];
+                    var category = sva ? parts[3] : 'sutta';
+                    var nikaya = parts[sva ? 4 : 3];
                     var suid = parts[parts.length-1]
                         .split('_')[0].toLowerCase();
                     that.addAuthor(author, Object.assign({
                         lang,
                     }, authorJson[author]));
-                    map[suid] = map[suid] || [];
-                    map[suid].push({
+                    suttaMap[suid] = suttaMap[suid] || [];
+                    suttaMap[suid].push({
                         suid,
                         lang,
+                        category,
                         nikaya,
                         author,
                         bilaraPath: file,
@@ -193,7 +201,6 @@
                     var rootBilPath = path.join(root, bilPath);
                     var subchapters = false;
                     if (!fs.existsSync(rootBilPath)) {
-                        //console.log(`dbg no file`, text_uid, rootBilPath);
                         a[text_uid] = {
                             name: text_uid,
                             //folder: bilPath.split("/")[3],
@@ -267,7 +274,8 @@
                 throw new Error('Expected preceding call to initialize()');
             }
             if (this._rePubPaths == null) {
-                var published = [...this.publishedPaths(), 'root/pli/ms'];
+                var published = [...this.publishedPaths(), 
+                    this.sva ? 'root/pli/ms/sutta' : 'root/pli/ms'];
                 this.log(`published paths:\n${published.join('\n')}`);
                 Object.defineProperty(this, "_rePubPaths", {
                     value: new RegExp(`(${published.join("|")}).*`),
@@ -296,17 +304,21 @@
                     var sk = suttaIds[k];
                     var cmp = SuttaCentralId.compareLow(suid, sk);
                     if (cmp <= 0) {
-                        //console.log(`dbg ikj ${i} ${k} ${j} *${sk}`);
                         j = k;
                     } else if (i !== k) {
-                        //console.log(`dbg ikj ${i} ${k} ${j} ${sk}*`);
                         i = k;
                     } else {
                         break;
                     }
                 }
-                info = this.suttaMap[suttaIds[i]];
-                //console.log(`dbg suid ${suid} => ${suttaIds[i]}`);
+                var nikaya = new SuttaCentralId(suid).nikaya;
+                var suidMaybe = suttaIds[i];
+                var nikayaMaybe = new SuttaCentralId(suidMaybe).nikaya;
+                if (nikaya !== nikayaMaybe) {
+                    return null; // no information
+                }
+                
+                info = this.suttaMap[suidMaybe];
             }
             return info.filter(i => 
                 (!lang || i.lang === lang) &&
@@ -316,7 +328,8 @@
 
         dirFiles(root) {
             var files = [];
-            var cmd = `find ${root} -path '*.git*' -prune -o -type f -print`;
+            var prune = `-path '*.git*' -prune`;
+            var cmd = `find ${root} ${prune} -o -type f -print`;
             var execOpts = {
                 cwd: LOCAL_DIR,
             };
