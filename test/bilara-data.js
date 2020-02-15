@@ -36,8 +36,10 @@
     }
 
     var bd = new BilaraData({ logLevel }); 
+    var SABBAMITTA = SVA ? 'sabbamitta/sutta' : 'sabbamitta';
+    var SUJATO = SVA ? 'sujato/sutta' : 'sujato';
 
-    it("TESTTESTdefault ctor", () => {
+    it("default ctor", () => {
         const LOCAL = path.join(__dirname, '..', 'local');
         var bdDefault = new BilaraData(); 
         should(bdDefault).instanceOf(BilaraData);
@@ -49,7 +51,7 @@
         });
         should(bdDefault.sva).equal(SVA); // sutta-vinaya-abhidhamma
     });
-    it("TESTTESTinitialize(...) must be called", (done) => {
+    it("initialize(...) must be called", (done) => {
         (async function() { try {
             var newbd = new BilaraData();
             should(newbd.initialized).equal(false);
@@ -68,7 +70,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTauthorInfo() => supported author info", done=>{
+    it("authorInfo() => supported author info", done=>{
         (async function() { try {
             await bd.initialize();
             var ms = {
@@ -111,7 +113,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTsupportedLanguages() => segmented translations", done=>{
+    it("supportedLanguages() => segmented translations", done=>{
         (async function() { try {
             await bd.initialize();
             should.deepEqual(bd.supportedLanguages(), [
@@ -120,7 +122,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTisPublishedPath(f) filters supported suttas", done=>{
+    it("isPublishedPath(f) filters supported suttas", done=>{
         (async function() { try {
             await bd.initialize();
         
@@ -137,9 +139,10 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTisPublishedPath(f) handles pieces of a nikaya", done=>{
+    it("isPublishedPath(f) handles pieces of a nikaya", done=>{
         (async function() { try {
-            var root = path.join(__dirname, 'data', 'bilara-data');
+            var root = path.join(__dirname, 'data', 
+                SVA ? 'bilara-data-sva' : 'bilara-data');
             var bd = new BilaraData({ 
                 logLevel: 'info',
                 root,
@@ -184,7 +187,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTsuttaInfo(...) returns sutta metadata", done=>{
+    it("suttaInfo(...) returns sutta metadata", done=>{
         (async function() { try {
             await bd.initialize();
             var dn33Pli = {
@@ -270,7 +273,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTloadSegDoc(...) loads translation document", done=>{
+    it("loadSegDoc(...) loads translation document", done=>{
         (async function() { try {
             await bd.initialize();
             var expectedProps = {
@@ -304,7 +307,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTloadSegDoc(...) loads segmented document", done=>{
+    it("loadSegDoc(...) loads segmented document", done=>{
         (async function() { try {
             await bd.initialize();
 
@@ -339,7 +342,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTnormalizeSuttaId(id) => normalized sutta_uid", done=>{
+    it("normalizeSuttaId(id) => normalized sutta_uid", done=>{
         (async function() { try {
             await bd.initialize();
             should(bd.normalizeSuttaId('an2.12')).equal('an2.11-20');
@@ -355,7 +358,7 @@
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTdocPaths(...) filepath for scid", function(done) {
+    it("docPaths(...) filepath for scid", function(done) {
         (async function() { try {
             await bd.initialize();
 
@@ -401,7 +404,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTdocPaths(...) bad input", function(done) {
+    it("docPaths(...) bad input", function(done) {
         (async function() { try {
             // No file
             var spath = bd.docPaths('mn1','en','no-author')[0];
@@ -419,7 +422,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTsuttaPath(...) deprecated", function(done) {
+    it("suttaPath(...) deprecated", function(done) {
         (async function() { try {
             await bd.initialize();
 
@@ -437,7 +440,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTnikayaSuttaIds(...) returns sutta_uids", done=>{
+    it("nikayaSuttaIds(...) returns sutta_uids", done=>{
         (async function() { try {
             var language = 'en';
             if (SVA) {
@@ -561,17 +564,19 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("sutta_uidSuccessor(sutta_uid) returns following sutta_uid", done=>{
+    it("sutta_uidSuccessor(sutta_uid) => next sutta_uid", done=>{
         (async function() { try {
             await bd.initialize();
 
             // logical
             should(bd.sutta_uidSuccessor('mn33',true)).equal('mn34');
-            should(bd.sutta_uidSuccessor('sn29.10-21',true)).equal('sn29.22');
+            should(bd.sutta_uidSuccessor('sn29.10-21',true))
+                .equal('sn29.22');
             should(bd.sutta_uidSuccessor('sn29.10-21')).equal('sn30.1');
 
             should(bd.sutta_uidSuccessor('mn33',false)).equal('mn34');
-            should(bd.sutta_uidSuccessor('sn29.10-21',false)).equal('sn30.1');
+            should(bd.sutta_uidSuccessor('sn29.10-21',false))
+                .equal('sn30.1');
             should(bd.sutta_uidSuccessor('thag16.1')).equal('thag16.2');
             should(bd.sutta_uidSuccessor('thag16.1-10')).equal('thag17.1');
             done(); 
@@ -777,16 +782,16 @@
         (async function() { try {
             await bd.initialize();
             should.deepEqual(bd.publishedPaths(), [
-"de/sabbamitta/an",
-"de/sabbamitta/dn",
-"de/sabbamitta/mn",
-"de/sabbamitta/sn",
-"en/sujato/an",
-"en/sujato/dn",
-"en/sujato/kn/thag",
-"en/sujato/kn/thig",
-"en/sujato/mn",
-"en/sujato/sn",
+`de/${SABBAMITTA}/an`,
+`de/${SABBAMITTA}/dn`,
+`de/${SABBAMITTA}/mn`,
+`de/${SABBAMITTA}/sn`,
+`en/${SUJATO}/an`,
+`en/${SUJATO}/dn`,
+`en/${SUJATO}/kn/thag`,
+`en/${SUJATO}/kn/thig`,
+`en/${SUJATO}/mn`,
+`en/${SUJATO}/sn`,
             ]);
 
             done();
