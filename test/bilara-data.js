@@ -14,7 +14,8 @@
     } = require("just-simple").JustSimple;
     this.timeout(8*1000);
     var logLevel = false;
-    const SVA = false; // sutta-vinaya-abhidhamma
+    var bd = new BilaraData({ logLevel }); 
+    const SVA = bd.sva; // sutta-vinaya-abhidhamma
     function ROOTPATH(mid) {
         var lang = 'pli';
         var auth = 'ms';
@@ -35,7 +36,6 @@
         ].join('/');
     }
 
-    var bd = new BilaraData({ logLevel }); 
     var SABBAMITTA = SVA ? 'sabbamitta/sutta' : 'sabbamitta';
     var SUJATO = SVA ? 'sujato/sutta' : 'sujato';
 

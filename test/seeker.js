@@ -20,8 +20,11 @@
         logLevel,
     };
     this.timeout(20*1000);
-    const en_suj = "translation/en/sujato/";
-    const de_sab = "translation/de/sabbamitta/";
+    var bd = new BilaraData({ logLevel }); 
+    const SVA = bd.sva; // sutta-vinaya-abhidhamma
+    var en_suj = `translation/en/sujato/${SVA ? "sutta/" : ""}`;
+    var de_sab = `translation/de/sabbamitta/${SVA ? "sutta/" : ""}`;
+    var pli_ms = `root/pli/ms/${SVA ? "sutta/" : ""}`;
 
     const BILARA_PATH = path.join(LOCAL_DIR, 'bilara-data');
 
@@ -31,8 +34,13 @@
             logLevel: 'info',
             lang: 'en',
             root: BILARA_PATH,
+            sva: SVA,
             paliWords: undefined,
         });
+        var grepAllow = SVA 
+            ? "/^[^\\/]+\\/sutta\\/(an|sn|mn|kn|dn)\\//iu"
+            : "/^[^\\/]+\\/(an|sn|mn|kn|dn)\\//iu";
+        should(skr.grepAllow.toString()).equal(grepAllow);
     });
     it("custom ctor", ()=>{
         var logLevel = 'warn';
@@ -50,6 +58,14 @@
             lang,
         });
         should(skr.paliWords).instanceOf(FuzzyWordSet);
+    });
+    it("grepAllow/Deny matches file names", ()=>{
+        var reAllow = new RegExp("^[^/]+/sutta/(an|sn|mn|kn|dn)/","iu");
+        var reDeny = new RegExp("/(dhp)/","iu");
+        var fn = 'sujato/sutta/sn/sn42/'+
+            'sn42.11_translation-en-sujato.json:5';
+        should(reAllow.test(fn)).equal(true);
+        should(reDeny.test(fn)).equal(false);
     });
     it("grep(...) finds en things", done=>{
         (async function() { try {
@@ -118,7 +134,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("sanitizePattern(pattern) prevents code injection attacks", ()=>{
+    it("sanitizePattern(...) code injection guard", ()=>{
         var testPattern = (pattern,expected) => {
             should(Seeker.sanitizePattern(pattern)).equal(expected);
         }
@@ -134,7 +150,7 @@
         testPattern("sattānaṃ", "sattānaṃ");
         should.throws(() => SuttaStore.sanitizePattern("not [good"));
     });
-    it("normalizePattern(pattern) prevents code injection attacks", ()=>{
+    it("normalizePattern(...) code injection guard", ()=>{
         var testPattern = (pattern,expected) => {
             should(Seeker.normalizePattern(pattern)).equal(expected);
         }
@@ -259,8 +275,8 @@
                 maxResults,
                 lang: 'pli', // searching bilara-data/root/pli
                 lines: [ 
-                    'root/pli/ms/an/an10/an10.93_root-pli-ms.json:9',
-                    'root/pli/ms/sn/sn10/sn10.8_root-pli-ms.json:9',
+                    `${pli_ms}an/an10/an10.93_root-pli-ms.json:9`,
+                    `${pli_ms}sn/sn10/sn10.8_root-pli-ms.json:9`,
                 ],
             };
 
@@ -271,7 +287,7 @@
             });
             should(data).properties(expected);
             should.deepEqual(data.keywordsFound, {
-                'Anāthapiṇḍika': 220,
+                'Anāthapiṇḍika': SVA ? 278 : 220,
             });
 
             // Single romanized Pali searches Pali
@@ -280,7 +296,7 @@
             });
             should(data).properties(expected);
             should.deepEqual(data.keywordsFound, {
-                    'anathapindika': 221,
+                'anathapindika': SVA ? 279 : 221,
             });
 
             done(); 
@@ -298,8 +314,8 @@
                 maxResults,
                 lang: 'en', // searching bilara-data/translation/en
                 lines: [ 
-'translation/en/sujato/mn/mn143_translation-en-sujato.json:16',
-'translation/en/sujato/an/an10/an10.93_translation-en-sujato.json:11'
+                    `${en_suj}mn/mn143_translation-en-sujato.json:16`,
+                    `${en_suj}an/an10/an10.93_translation-en-sujato.json:11`
                 ],
             };
 
@@ -330,8 +346,8 @@
                 maxResults,
                 lang: 'pli', // searching bilara-data/root/pli
                 lines: [ 
-                    'root/pli/ms/an/an10/an10.93_root-pli-ms.json:9',
-                    'root/pli/ms/sn/sn10/sn10.8_root-pli-ms.json:9',
+                    `${pli_ms}an/an10/an10.93_root-pli-ms.json:9`,
+                    `${pli_ms}sn/sn10/sn10.8_root-pli-ms.json:9`,
                 ],
             };
 
@@ -344,7 +360,7 @@
 
             // Single romanized Pali searches Pali
             expected.keywordsFound = {
-                'anathapindika': 221,
+                'anathapindika': SVA ? 279 : 221,
             };
             var data = await skr.keywordSearch({ 
                 pattern: 'anathapindika',
@@ -727,7 +743,7 @@
     it("find(...) => finds jhana", done=>{
         (async function() { try {
             var maxDoc = 5;
-            var maxResults = 15;
+            var maxResults = 50;
             var skr = await new Seeker({
                 maxDoc,
                 maxResults,

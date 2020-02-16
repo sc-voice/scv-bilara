@@ -29,15 +29,17 @@
         constructor(opts={}) {
             var root = this.root = opts.root || BILARA_PATH;
             logger.logInstance(this, opts);
+            this.bilaraData = opts.bilaraData || new BilaraData(opts);
+            this.sva = this.bilaraData.sva;
             this.lang = opts.lang || 'en';
             this.languages = opts.languages || ['pli', 'en'];
             this.unicode = opts.unicode || new Unicode();
-            this.grepAllow = opts.grepAllow ||
-                new RegExp("^[^/]+/(an|sn|mn|kn|dn)/","iu");
+            this.grepAllow = opts.grepAllow || this.sva
+                ? new RegExp("^[^/]+/sutta/(an|sn|mn|kn|dn)/","iu")
+                : new RegExp("^[^/]+/(an|sn|mn|kn|dn)/","iu");
             this.grepDeny = opts.grepDeny ||
                 new RegExp("/(dhp)/","iu");
             this.paliWords = opts.paliWords;
-            this.bilaraData = opts.bilaraData || new BilaraData(opts);
             this.enWords = opts.enWords;
             this.matchColor = opts.matchColor == null 
                 ? 121 : opts.matchColor;
