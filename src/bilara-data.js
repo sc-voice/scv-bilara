@@ -73,7 +73,20 @@
                 sva,
             } = that;
             var pbody = (resolve, reject) => {(async function() { try {
-                sync && await that.sync();
+                var version = that.version();
+                var EXPECTED_VERSION = 1
+                var purge = false;
+                if (version.major < EXPECTED_VERSION) {
+                    that.log(`Expected bilara-data version `+
+                        `actual:${version.major} `+
+                        `expected:${EXPECTED_VERSION} `+
+                        `(re-cloning repository...)`);
+                    purge = true;
+                }
+                (sync || purge) && await that.sync({
+                    purge,
+                    initializing: true,
+                });
 
                 let pubPath = path.join(that.root, `_publication.json`);
                 let pubJson = fs.existsSync(pubPath)
@@ -266,6 +279,7 @@
         sync(opts={}) {
             var that = this;
             var purge = opts.purge || false;
+            var initializing = opts.initializing || false;
             var pbody = (resolve, reject)=>(async function() { try {
                 if (purge) {
                     var cmd = `rm -rf ${that.name}`;
@@ -276,7 +290,7 @@
                     var res = execSync(cmd, execOpts).toString();
                 }
                 var res = await that.execGit.sync();
-                if (purge) {
+                if (purge && !initializing) {
                     await that.initialize();
                 }
                 resolve(res);
@@ -776,6 +790,24 @@
                 uids,
                 suttaRefs,
             }
+        }
+
+        version() {
+            var pkgPath = path.join(this.root, "package.json");
+            var result = {
+                major: 0,
+                minor: 0,
+                patch: 0,
+            };
+            if (fs.existsSync(pkgPath)) {
+                var json = JSON.parse(fs.readFileSync(pkgPath).toString());
+                var verParts = json.version.split(".");
+                result.major = Number(verParts[0]);
+                result.minor = Number(verParts[1]);
+                result.patch = Number(verParts[2]);
+            }
+
+            return result;
         }
 
         readBlurb({suid, lang}) {

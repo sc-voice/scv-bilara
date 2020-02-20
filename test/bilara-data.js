@@ -75,8 +75,18 @@
             var name = "test-repo";
             var bd = new BilaraData({name});
             var dummyPath = path.join(bd.root, "root", "dummy.txt");
+
+            // initalize should purge if downrev
+            fs.existsSync(dummyPath) && fs.unlinkSync(dummyPath);
+            should(fs.existsSync(dummyPath)).equal(false);
+            await bd.initialize();
+            should(fs.existsSync(dummyPath)).equal(true);
+
+            // normal sync doesn't purge
             fs.existsSync(dummyPath) && fs.unlinkSync(dummyPath);
             await bd.sync();
+
+            // purge reclones repo
             should(fs.existsSync(dummyPath)).equal(false);
             await bd.sync({purge:true});
             should(fs.existsSync(dummyPath)).equal(true);
@@ -843,6 +853,17 @@
             var blurb = await bd.readBlurb({suid:'MN999'});
             should(blurb).equal(null);
 
+            done();
+        } catch(e) { done(e); }})();
+    });
+    it("TESTTESTversion() => bilara-data package version", done=>{
+        (async function() { try {
+            await bd.initialize();
+            should(bd.version()).properties({
+                major: 1,
+                minor: 0,
+                patch: 0,
+            });
             done();
         } catch(e) { done(e); }})();
     });
