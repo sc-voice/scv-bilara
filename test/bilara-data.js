@@ -76,6 +76,8 @@
             var bd = new BilaraData({name});
             var dummyPath = path.join(bd.root, "root", "dummy.txt");
             fs.existsSync(dummyPath) && fs.unlinkSync(dummyPath);
+            await bd.sync();
+            should(fs.existsSync(dummyPath)).equal(false);
             await bd.sync({purge:true});
             should(fs.existsSync(dummyPath)).equal(true);
             done();

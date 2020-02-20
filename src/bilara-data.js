@@ -263,8 +263,9 @@
             return this._suttaIds;
         }
 
-        sync({purge=false}) {
+        sync(opts={}) {
             var that = this;
+            var purge = opts.purge || false;
             var pbody = (resolve, reject)=>(async function() { try {
                 if (purge) {
                     var cmd = `rm -rf ${that.name}`;
