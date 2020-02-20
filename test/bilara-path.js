@@ -27,7 +27,7 @@
     }
 
 
-    it("TESTTESTpathParts(f) returns parts of bilara filename",()=>{
+    it("pathParts(f) returns parts of bilara filename",()=>{
         var f = TRANSPATH('en','sujato','sn/sn22/sn22.2');
         should.deepEqual(BilaraPath.pathParts(f), {
             suid: 'sn22.2',

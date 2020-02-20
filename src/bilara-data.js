@@ -23,17 +23,16 @@
 
     const SUTTA_FOLDER = path.join(LOCAL_DIR, "bilara-data", 
         "root", "pli", "ms", "sutta");
-    const BILARA_DATA_GIT = 'https://github.com/sc-voice/bilara-data.git';
     const PUB_PREFIX = /^https:.*translation\//;
 
     class BilaraData {
         constructor(opts={}) {
             this.name = opts.name || 'bilara-data';
-            this.root = opts.root || path.join(LOCAL_DIR, 'bilara-data');
+            this.root = opts.root || path.join(LOCAL_DIR, this.name);
             this.lang = opts.lang || 'en';
             logger.logInstance(this, opts);
             this.execGit = opts.execGit || new ExecGit({
-                repo: BILARA_DATA_GIT,
+                repo: `https://github.com/sc-voice/${this.name}.git`,
                 logLevel: this.logLevel,
             });
             this.languages = opts.languages || [ 'pli', this.lang ];
@@ -76,12 +75,16 @@
             var pbody = (resolve, reject) => {(async function() { try {
                 sync && await that.sync();
 
-                let pubJson = json5.parse(await readFile(
-                    path.join(that.root, `_publication.json`)));
+                let pubPath = path.join(that.root, `_publication.json`);
+                let pubJson = fs.existsSync(pubPath)
+                    ? json5.parse(await readFile(pubPath))
+                    : {};
                 that.publication = Object.keys(pubJson)
                     .map(k=>pubJson[k]);
-                let authorJson = JSON.parse(await readFile(
-                    path.join(that.root, `_author.json`)));
+                let authPath = path.join(that.root, `_author.json`);
+                let authorJson = fs.existsSync(authPath)
+                    ? JSON.parse(await readFile(authPath)) 
+                    : {};
                 that.addAuthor('ms', Object.assign({
                     lang: 'pli'
                 }, authorJson.ms));
@@ -260,8 +263,24 @@
             return this._suttaIds;
         }
 
-        sync() {
-            return this.execGit.sync();
+        sync({purge=false}) {
+            var that = this;
+            var pbody = (resolve, reject)=>(async function() { try {
+                if (purge) {
+                    var cmd = `rm -rf ${that.name}`;
+                    var execOpts = {
+                        cwd: LOCAL_DIR,
+                    };
+                    that.log(`Purging repository: ${cmd}`);
+                    var res = execSync(cmd, execOpts).toString();
+                }
+                var res = await that.execGit.sync();
+                if (purge) {
+                    await that.initialize();
+                }
+                resolve(res);
+            } catch(e) { reject(e); } })();
+            return new Promise(pbody);
         }
 
         isSuttaPath(fpath) {

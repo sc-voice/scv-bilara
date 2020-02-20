@@ -66,7 +66,7 @@
             var mld = new MLDoc();
         });
     });
-    it("TESTTESTcustom ctor", () => {
+    it("custom ctor", () => {
         var mld = new MLDoc({
             bilaraPaths: bilaraPaths_an1_1_1,
         });
@@ -126,7 +126,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTroot_text(...) => root info", done=>{
+    it("root_text(...) => root info", done=>{
         (async function() { try {
             var mld = new MLDoc({
                 bilaraPaths: bilaraPaths_an1_1_1,
@@ -146,7 +146,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTtranslations(...) => translations info", done=>{
+    it("translations(...) => translations info", done=>{
         (async function() { try {
             var mld = new MLDoc({
                 bilaraPaths: bilaraPaths_an1_1_1,
@@ -219,7 +219,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
         });
         should(mld.lang).equal('en');
     });
-    it("TESTTESTfilterSegments(...) => the dark light", done=>{
+    it("filterSegments(...) => the dark light", done=>{
         (async function() { try {
             var mld = new MLDoc({
                 bilaraPaths: bilaraPaths_sn10_8,
@@ -243,7 +243,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTfilterSegments(...) => pali segment", done=>{
+    it("filterSegments(...) => pali segment", done=>{
         (async function() { try {
             var mld = new MLDoc({
                 bilaraPaths: bilaraPaths_mn118,
@@ -275,7 +275,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTfilterSegments(...) => major segment", done=>{
+    it("filterSegments(...) => major segment", done=>{
         (async function() { try {
             var mld = new MLDoc({
                 bilaraPaths: bilaraPaths_sn12_23,
@@ -350,7 +350,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESThighlightMatch(...) => colors matches", done=>{
+    it("highlightMatch(...) => colors matches", done=>{
         (async function() { try {
             var mld = new MLDoc({
                 bilaraPaths: bilaraPaths_an1_1_1,

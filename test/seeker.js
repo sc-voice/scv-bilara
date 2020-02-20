@@ -371,7 +371,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("keywordSearch(...) searches Deutsch, not Pali", done=>{
+    it("TESTTESTkeywordSearch(...) searches Deutsch, not Pali", done=>{
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,
@@ -385,13 +385,15 @@
                 maxResults: 10,
                 method: 'keywords',
                 keywordsFound: {
-                    hausherr: 7,
-                    anathapindika: 13,
+                    hausherr: 9,
+                    anathapindika: 15,
                 },
                 lines: [
 `${de_sab}sn/sn10/sn10.8_translation-de-sabbamitta.json:4`,
 `${de_sab}an/an2/an2.32-41_translation-de-sabbamitta.json:2`,
 `${de_sab}an/an1/an1.248-257_translation-de-sabbamitta.json:1`,
+`${de_sab}an/an3/an3.109_translation-de-sabbamitta.json:1`,
+`${de_sab}an/an3/an3.110_translation-de-sabbamitta.json:1`,
                 ],
             };
 
