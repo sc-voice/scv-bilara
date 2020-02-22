@@ -385,8 +385,8 @@
                 maxResults: 10,
                 method: 'keywords',
                 keywordsFound: {
-                    hausherr: 9,
-                    anathapindika: 15,
+                    hausherr: 10,
+                    anathapindika: 16,
                 },
                 lines: [
 `${de_sab}sn/sn10/sn10.8_translation-de-sabbamitta.json:4`,

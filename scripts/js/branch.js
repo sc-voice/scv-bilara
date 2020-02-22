@@ -86,6 +86,7 @@ class Branch {
                 that.log(`destination: ${dstPath}`);
                 that.log(`creating branch ${branch}`);
                 await git.branch('master');
+                await git.sync();
                 await git.branch(branch, true);
                 var data = fs.readFileSync(path.join(BILARA_DATA, srcPath));
                 var dstDir = path.dirname(dstPath);
