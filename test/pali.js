@@ -52,7 +52,7 @@
                 member: true,
             });
             should.deepEqual(paliWords.trace('bhante'), {
-                trace: 'bhan',
+                trace: 'bha',
                 member: true,
             });
             should.deepEqual(paliWords.trace('anataph'), {
