@@ -46,7 +46,7 @@
                 member: false,
             });
             should.deepEqual(enWords.trace('bhante'), {
-                trace: 'bh~',
+                trace: 'bhan~',
                 member: false,
             });
             should.deepEqual(enWords.trace('anataph'), {

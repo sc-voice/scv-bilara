@@ -4612,6 +4612,7 @@ bemused
 bemusedly
 bemusement
 ben
+benares
 bench
 bench-back
 benches
@@ -4795,6 +4796,7 @@ bewitched
 bewitching
 beyond
 beyondall
+bhaddiya
 biannual
 bias
 biased
@@ -29351,6 +29353,7 @@ koran
 korea
 korean
 koreans
+kosambi
 kosher
 kraal
 kraals

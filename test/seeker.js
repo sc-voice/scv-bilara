@@ -371,7 +371,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTkeywordSearch(...) searches Deutsch, not Pali", done=>{
+    it("keywordSearch(...) searches Deutsch, not Pali", done=>{
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,
@@ -418,11 +418,14 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("patternLanguage(...) => search language context",done=>{
+    it("TESTTESTpatternLanguage(...) => search language context",done=>{
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,
             }).initialize();
+
+            should(skr.patternLanguage('buddha was staying near benares', 'de')).equal('en');
+            should(skr.patternLanguage('buddha was staying near benares', 'en')).equal('en');
 
             // Sutta references
             should(skr.patternLanguage('mn1','de')).equal('de');
@@ -957,5 +960,36 @@
         should(utext[0].replace(re,'ANICCA')).equal(utext[0]);
         should(utext[1].replace(re,'ANICCA')).equal(
             `sotam niccam va ANICCAm va”ti?`);
+    });
+    it("TESTTESTgrep(...) => de, Benares", done=>{
+        done(); return; //TBD
+        (async function() { try {
+            var lang = 'de';
+            var logLevel = 'info';
+            var skr = await new Seeker({logLevel}).initialize();
+            var res = await skr.find({
+                pattern: "Buddha was staying near Benares",
+                maxResults: 3,
+                lang,
+                minLang: 2,
+            });
+            let {
+                bilaraPaths,
+                method,
+                searchLang,
+            } = res;
+            should(method).equal('phrase');
+            should(searchLang).equal(searchLang);
+            should.deepEqual(bilaraPaths, [
+                `${pli_ms}sn/sn56/sn56.11_root-pli-ms.json`,
+                `${en_suj}sn/sn56/sn56.11_translation-en-sujato.json`,
+                `${pli_ms}sn/sn55/sn55.53_root-pli-ms.json`,
+                `${en_suj}sn/sn55/sn55.53_translation-en-sujato.json`,
+                `${pli_ms}sn/sn4/sn4.5_root-pli-ms.json`,
+                `${en_suj}sn/sn4/sn4.5_translation-en-sujato.json`,
+            ]);
+
+            done();
+        } catch(e) { done(e); }})();
     });
 })

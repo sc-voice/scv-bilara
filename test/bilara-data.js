@@ -70,7 +70,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTsync() purges and refreshes repo", (done) => {
+    it("sync() purges and refreshes repo", (done) => {
         (async function() { try {
             var name = "test-repo";
             var bd = new BilaraData({name});
@@ -856,7 +856,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTversion() => bilara-data package version", done=>{
+    it("version() => bilara-data package version", done=>{
         (async function() { try {
             await bd.initialize();
             should(bd.version()).properties({
