@@ -192,7 +192,7 @@
                 keywordsFound: {
                     faith: 389,
                     joy: 132,
-                    suffering: 740,
+                    suffering: 744,
                 },
             };
 
@@ -233,7 +233,7 @@
                 lang: 'en',
                 method: 'keywords',
                 keywordsFound: {
-                    suffering: 740,
+                    suffering: 744,
                     joy: 132,
                     faith: 389,
                 },
@@ -418,7 +418,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTpatternLanguage(...) => search language context",done=>{
+    it("patternLanguage(...) => search language context",done=>{
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,
@@ -961,11 +961,10 @@
         should(utext[1].replace(re,'ANICCA')).equal(
             `sotam niccam va ANICCAm va”ti?`);
     });
-    it("TESTTESTgrep(...) => de, Benares", done=>{
-        done(); return; //TBD
+    it("find(...) => de, Benares", done=>{
         (async function() { try {
             var lang = 'de';
-            var logLevel = 'info';
+            var logLevel = false;
             var skr = await new Seeker({logLevel}).initialize();
             var res = await skr.find({
                 pattern: "Buddha was staying near Benares",
@@ -987,6 +986,36 @@
                 `${en_suj}sn/sn55/sn55.53_translation-en-sujato.json`,
                 `${pli_ms}sn/sn4/sn4.5_root-pli-ms.json`,
                 `${en_suj}sn/sn4/sn4.5_translation-en-sujato.json`,
+            ]);
+
+            done();
+        } catch(e) { done(e); }})();
+    });
+    it("find(...) => no first point", done=>{
+        (async function() { try {
+            var lang = 'de';
+            var logLevel = 'info';
+            var skr = await new Seeker({logLevel}).initialize();
+            var res = await skr.find({
+                pattern: "no first point",
+                maxResults: 3,
+                lang,
+                minLang: 2,
+            });
+            let {
+                bilaraPaths,
+                method,
+                searchLang,
+            } = res;
+            should(method).equal('phrase');
+            should(searchLang).equal(searchLang);
+            should.deepEqual(bilaraPaths, [
+                `${pli_ms}sn/sn15/sn15.2_root-pli-ms.json`,
+                `${en_suj}sn/sn15/sn15.2_translation-en-sujato.json`,
+                `${pli_ms}sn/sn15/sn15.1_root-pli-ms.json`,
+                `${en_suj}sn/sn15/sn15.1_translation-en-sujato.json`,
+                `${pli_ms}sn/sn15/sn15.19_root-pli-ms.json`,
+                `${en_suj}sn/sn15/sn15.19_translation-en-sujato.json`,
             ]);
 
             done();
