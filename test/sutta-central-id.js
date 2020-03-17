@@ -273,6 +273,9 @@
         should.deepEqual(scid.groups, null);
     });
     it("test(text) => text is suid ", function() {
+        // vinaya
+        should(SuttaCentralId.test('pli-tv-bi-vb-sk1-75')).equal(true);
+
         // space
         should(SuttaCentralId.test('mn 1-10')).equal(true);
         should(SuttaCentralId.test('mn 1')).equal(true);

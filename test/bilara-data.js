@@ -15,22 +15,22 @@
     this.timeout(8*1000);
     var logLevel = false;
     var bd = new BilaraData({ logLevel }); 
-    function ROOTPATH(mid) {
+    function ROOTPATH(mid,category='sutta') {
         var lang = 'pli';
         var auth = 'ms';
         return [
             'root',
             lang,
-            `${auth}/sutta`,
+            `${auth}/${category}`,
             `${mid}_root-${lang}-${auth}.json`
         ].join('/');
     }
 
-    function TRANSPATH(lang,auth,mid) {
+    function TRANSPATH(lang,auth,mid, category='sutta') {
         return [
             'translation',
             lang,
-            `${auth}/sutta`,
+            `${auth}/${category}`,
             `${mid}_translation-${lang}-${auth}.json`
         ].join('/');
     }
@@ -47,7 +47,34 @@
             lang: 'en',
             languages: ['pli', 'en'],
             logLevel: 'info',
+            includeUnpublished: false,
         });
+    });
+    it("TESTTESTincludeUnpublished includes all files", done=> {
+        (async function() { try {
+            var bd = await new BilaraData({
+                includeUnpublished: true,
+            }).initialize(); 
+            should(bd.includeUnpublished).equal(true);
+            should.deepEqual(bd.suttaMap['pli-tv-bi-vb-sk1-75'],[{
+                suid: 'pli-tv-bi-vb-sk1-75',
+                lang: 'pli',
+                category: 'vinaya',
+                nikaya: 'pli-tv-bi-vb',
+                author: 'ms',
+                bilaraPath: 
+                    ROOTPATH('pli-tv-bi-vb/pli-tv-bi-vb-sk1-75', 'vinaya'),
+            }, {
+                suid: 'pli-tv-bi-vb-sk1-75',
+                lang: 'en',
+                category: 'vinaya',
+                nikaya: 'pli-tv-bi-vb',
+                author: 'brahmali',
+                bilaraPath: TRANSPATH('en', 'brahmali', 
+                        'pli-tv-bi-vb/pli-tv-bi-vb-sk1-75', 'vinaya'),
+            }]);
+            done();
+        } catch(e) {done(e);} })();
     });
     it("initialize(...) must be called", (done) => {
         (async function() { try {

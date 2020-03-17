@@ -20,9 +20,6 @@
     const Pali = require('./pali');
     const English = require('./english');
     const ExecGit = require('./exec-git');
-
-    const SUTTA_FOLDER = path.join(LOCAL_DIR, "bilara-data", 
-        "root", "pli", "ms", "sutta");
     const PUB_PREFIX = /^https:.*translation\//;
 
     class BilaraData {
@@ -30,6 +27,8 @@
             this.name = opts.name || 'bilara-data';
             this.root = opts.root || path.join(LOCAL_DIR, this.name);
             this.lang = opts.lang || 'en';
+            this.includeUnpublished = opts.includeUnpublished == null 
+                ? false : opts.includeUnpublished;
             logger.logInstance(this, opts);
             this.execGit = opts.execGit || new ExecGit({
                 repo: `https://github.com/sc-voice/${this.name}.git`,
@@ -38,10 +37,6 @@
             this.languages = opts.languages || [ 'pli', this.lang ];
             this.authors = {};
             Object.defineProperty(this, "_sources", {
-                writable: true,
-                value: null,
-            });
-            Object.defineProperty(this, "_suttaMap", {
                 writable: true,
                 value: null,
             });
@@ -305,9 +300,14 @@
             if (!this.initialized) {
                 throw new Error('Expected preceding call to initialize()');
             }
+            if (this.includeUnpublished) {
+                return true;
+            }
             if (this._rePubPaths == null) {
-                var published = [...this.publishedPaths(), 
-                    'root/pli/ms/sutta'];
+                var published = [
+                    ...this.publishedPaths(), 
+                    'root/pli/ms/sutta',
+                ];
                 this.log(`published paths:\n${published.join('\n')}`);
                 Object.defineProperty(this, "_rePubPaths", {
                     value: new RegExp(`(${published.join("|")}).*`),
@@ -694,8 +694,9 @@
                 // e.g., kusalagnana-maitrimurti-traetow
                 return [ suttaRef ];
             }
-            var coll = Object.keys(this.published()).reduce((acc,ck) => {
-                var c = this.published()[ck];
+            var published = this.published();
+            var coll = Object.keys(published).reduce((acc,ck) => {
+                var c = published[ck];
                 return acc || cname === c.name && c;
             }, false);
             var result = [];
