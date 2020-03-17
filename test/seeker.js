@@ -191,8 +191,8 @@
                 lang: 'en',
                 keywordsFound: {
                     faith: 389,
-                    joy: 132,
-                    suffering: 744,
+                    joy: 133,
+                    suffering: 755,
                 },
             };
 
@@ -233,8 +233,8 @@
                 lang: 'en',
                 method: 'keywords',
                 keywordsFound: {
-                    suffering: 744,
-                    joy: 132,
+                    suffering: 755,
+                    joy: 133,
                     faith: 389,
                 },
             };
@@ -386,7 +386,7 @@
                 method: 'keywords',
                 keywordsFound: {
                     hausherr: 10,
-                    anathapindika: 16,
+                    anathapindika: 17,
                 },
                 lines: [
 `${de_sab}sn/sn10/sn10.8_translation-de-sabbamitta.json:4`,
@@ -981,6 +981,7 @@
             should(searchLang).equal(searchLang);
             should.deepEqual(bilaraPaths, [
                 `${pli_ms}sn/sn56/sn56.11_root-pli-ms.json`,
+                `${de_sab}sn/sn56/sn56.11_translation-de-sabbamitta.json`,
                 `${en_suj}sn/sn56/sn56.11_translation-en-sujato.json`,
                 `${pli_ms}sn/sn55/sn55.53_root-pli-ms.json`,
                 `${en_suj}sn/sn55/sn55.53_translation-en-sujato.json`,

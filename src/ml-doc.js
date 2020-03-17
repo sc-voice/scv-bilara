@@ -4,11 +4,13 @@
     const {
         js,
         logger,
+        LOCAL_DIR,
     } = require('just-simple').JustSimple;
     const BilaraPath = require('./bilara-path');
     const Unicode = require('./unicode');
     const Pali = require('./pali');
     const SuttaCentralId = require('./sutta-central-id');
+    const BILARA_PATH = path.join(LOCAL_DIR, 'bilara-data');
 
     class MLDoc {
         constructor(opts={}) {
@@ -110,7 +112,7 @@
             ).sort(MLDoc.langCompare_pli_en);
         }
 
-        load(root) {
+        load(root=BILARA_PATH) {
             var {
                 segMap,
                 bilaraPaths,
