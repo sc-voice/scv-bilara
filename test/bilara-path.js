@@ -6,14 +6,13 @@
     } = require("../index");
 
     var bd = new BilaraData;
-    var SVA = bd.sva;
     function ROOTPATH(mid) {
         var lang = 'pli';
         var auth = 'ms';
         return [
             'root',
             lang,
-            SVA ? `${auth}/sutta`: auth,
+            `${auth}/sutta`,
             `${mid}_root-${lang}-${auth}.json`
         ].join('/');
     }
@@ -21,7 +20,7 @@
         return [
             'translation',
             lang,
-            SVA ? `${auth}/sutta`: auth,
+            `${auth}/sutta`,
             `${mid}_translation-${lang}-${auth}.json`
         ].join('/');
     }

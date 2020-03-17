@@ -37,7 +37,6 @@
             });
             this.languages = opts.languages || [ 'pli', this.lang ];
             this.authors = {};
-            this.sva = fs.existsSync(SUTTA_FOLDER);
             Object.defineProperty(this, "_sources", {
                 writable: true,
                 value: null,
@@ -70,7 +69,6 @@
             var that = this;
             var {
                 authors,
-                sva,
             } = that;
             var pbody = (resolve, reject) => {(async function() { try {
                 var version = that.version();
@@ -117,8 +115,8 @@
                     var parts = file.split('/');
                     var lang = parts[1];
                     var author = parts[2];
-                    var category = sva ? parts[3] : 'sutta';
-                    var nikaya = parts[sva ? 4 : 3];
+                    var category = parts[3];
+                    var nikaya = parts[4];
                     var suid = parts[parts.length-1]
                         .split('_')[0].toLowerCase();
                     suttaMap[suid] = suttaMap[suid] || [];
@@ -146,8 +144,8 @@
                     var parts = file.split('/');
                     var lang = parts[1];
                     var author = parts[2];
-                    var category = sva ? parts[3] : 'sutta';
-                    var nikaya = parts[sva ? 4 : 3];
+                    var category = parts[3];
+                    var nikaya = parts[4];
                     var suid = parts[parts.length-1]
                         .split('_')[0].toLowerCase();
                     that.addAuthor(author, Object.assign({
@@ -309,7 +307,7 @@
             }
             if (this._rePubPaths == null) {
                 var published = [...this.publishedPaths(), 
-                    this.sva ? 'root/pli/ms/sutta' : 'root/pli/ms'];
+                    'root/pli/ms/sutta'];
                 this.log(`published paths:\n${published.join('\n')}`);
                 Object.defineProperty(this, "_rePubPaths", {
                     value: new RegExp(`(${published.join("|")}).*`),

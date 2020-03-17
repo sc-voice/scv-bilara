@@ -21,10 +21,9 @@
     };
     this.timeout(20*1000);
     var bd = new BilaraData({ logLevel }); 
-    const SVA = bd.sva; // sutta-vinaya-abhidhamma
-    var en_suj = `translation/en/sujato/${SVA ? "sutta/" : ""}`;
-    var de_sab = `translation/de/sabbamitta/${SVA ? "sutta/" : ""}`;
-    var pli_ms = `root/pli/ms/${SVA ? "sutta/" : ""}`;
+    var en_suj = `translation/en/sujato/sutta/`;
+    var de_sab = `translation/de/sabbamitta/sutta/`;
+    var pli_ms = `root/pli/ms/sutta/`;
 
     const BILARA_PATH = path.join(LOCAL_DIR, 'bilara-data');
 
@@ -34,12 +33,9 @@
             logLevel: 'info',
             lang: 'en',
             root: BILARA_PATH,
-            sva: SVA,
             paliWords: undefined,
         });
-        var grepAllow = SVA 
-            ? "/^[^\\/]+\\/sutta\\/(an|sn|mn|kn|dn)\\//iu"
-            : "/^[^\\/]+\\/(an|sn|mn|kn|dn)\\//iu";
+        var grepAllow = "/^[^\\/]+\\/sutta\\/(an|sn|mn|kn|dn)\\//iu";
         should(skr.grepAllow.toString()).equal(grepAllow);
     });
     it("custom ctor", ()=>{
@@ -287,7 +283,7 @@
             });
             should(data).properties(expected);
             should.deepEqual(data.keywordsFound, {
-                'Anāthapiṇḍika': SVA ? 278 : 220,
+                'Anāthapiṇḍika': 278,
             });
 
             // Single romanized Pali searches Pali
@@ -296,7 +292,7 @@
             });
             should(data).properties(expected);
             should.deepEqual(data.keywordsFound, {
-                'anathapindika': SVA ? 279 : 221,
+                'anathapindika': 279,
             });
 
             done(); 
@@ -360,7 +356,7 @@
 
             // Single romanized Pali searches Pali
             expected.keywordsFound = {
-                'anathapindika': SVA ? 279 : 221,
+                'anathapindika': 279,
             };
             var data = await skr.keywordSearch({ 
                 pattern: 'anathapindika',

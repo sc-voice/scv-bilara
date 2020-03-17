@@ -1,7 +1,7 @@
 {
   "scpub11": {
     "publication_number": "scpub11",
-    "source_url": "https://github.com/sc-voice/bilara-data/tree/master/translation/de/sabbamitta/an/an1/an1.71-81_translation-de-sabbamitta.json",
+    "source_url": "https://github.com/sc-voice/bilara-data/tree/master/translation/de/sabbamitta/sutta/an/an1/an1.71-81_translation-de-sabbamitta.json",
     "author_uid": "sabbamitta",
     "author_name": "Anagarika Sabbamitta",
     "author_github_handle": "sabbamitta",
@@ -24,7 +24,7 @@
   },
   "scpub12": {
     "publication_number": "scpub12",
-    "source_url": "https://github.com/sc-voice/bilara-data/tree/master/translation/de/sabbamitta/an/an2",
+    "source_url": "https://github.com/sc-voice/bilara-data/tree/master/translation/de/sabbamitta/sutta/an/an2",
     "author_uid": "sabbamitta",
     "author_name": "Anagarika Sabbamitta",
     "author_github_handle": "sabbamitta",

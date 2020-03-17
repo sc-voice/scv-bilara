@@ -15,14 +15,13 @@
     this.timeout(8*1000);
     var logLevel = false;
     var bd = new BilaraData({ logLevel }); 
-    const SVA = bd.sva; // sutta-vinaya-abhidhamma
     function ROOTPATH(mid) {
         var lang = 'pli';
         var auth = 'ms';
         return [
             'root',
             lang,
-            SVA ? `${auth}/sutta`: auth,
+            `${auth}/sutta`,
             `${mid}_root-${lang}-${auth}.json`
         ].join('/');
     }
@@ -31,13 +30,13 @@
         return [
             'translation',
             lang,
-            SVA ? `${auth}/sutta`: auth,
+            `${auth}/sutta`,
             `${mid}_translation-${lang}-${auth}.json`
         ].join('/');
     }
 
-    var SABBAMITTA = SVA ? 'sabbamitta/sutta' : 'sabbamitta';
-    var SUJATO = SVA ? 'sujato/sutta' : 'sujato';
+    var SABBAMITTA = 'sabbamitta/sutta';
+    var SUJATO = 'sujato/sutta';
 
     it("default ctor", () => {
         const LOCAL = path.join(__dirname, '..', 'local');
@@ -49,7 +48,6 @@
             languages: ['pli', 'en'],
             logLevel: 'info',
         });
-        should(bdDefault.sva).equal(SVA); // sutta-vinaya-abhidhamma
     });
     it("initialize(...) must be called", (done) => {
         (async function() { try {
@@ -164,24 +162,21 @@
     });
     it("isPublishedPath(f) handles pieces of a nikaya", done=>{
         (async function() { try {
-            var root = path.join(__dirname, 'data', 
-                SVA ? 'bilara-data-sva' : 'bilara-data');
+            var root = path.join(__dirname, 'data', 'bilara-data' );
             var bd = new BilaraData({ 
                 logLevel: 'info',
                 root,
             });
             await bd.initialize();
         
-            if (SVA) {
-                const bv1_root_path = ROOTPATH(`bv/bv1`);
-                should(bd.isPublishedPath(bv1_root_path)).equal(true);
-                var mld = await bd.loadMLDoc({
-                    suid: 'bv1',
-                    languages: ['pli'],
-                });
-                should(mld).instanceOf(MLDoc);
-                should(mld.segMap['bv1:1.1'].scid).equal('bv1:1.1');
-            }
+            const bv1_root_path = ROOTPATH(`bv/bv1`);
+            should(bd.isPublishedPath(bv1_root_path)).equal(true);
+            var mld = await bd.loadMLDoc({
+                suid: 'bv1',
+                languages: ['pli'],
+            });
+            should(mld).instanceOf(MLDoc);
+            should(mld.segMap['bv1:1.1'].scid).equal('bv1:1.1');
 
             const an1_71_81_path = 
                 TRANSPATH('de', 'sabbamitta', `an/an1/an1.71-81`);
@@ -466,28 +461,19 @@
     it("nikayaSuttaIds(...) returns sutta_uids", done=>{
         (async function() { try {
             var language = 'en';
-            if (SVA) {
-                var KNSTART = [
-                    'bv1', 'bv2', 'bv3', 'bv4', 'bv5', 
-                ];
-                var KNEND = [
-                    'vv83', 'vv84', 'vv85',
-                ];
-            } else {
-                var KNSTART = [
-                    'dhp1-20', 'dhp21-32', 'dhp33-43', 
-                ];
-                var KNEND = [
-                    'thig14.1', 'thig15.1', 'thig16.1',
-                ];
-            }
+            var KNSTART = [
+                'bv1', 'bv2', 'bv3', 'bv4', 'bv5', 
+            ];
+            var KNEND = [
+                'vv83', 'vv84', 'vv85',
+            ];
 
             // Root nikaya kn
             var ids = await bd.nikayaSuttaIds('kn');
             should(ids).instanceOf(Array);
             should.deepEqual(ids.slice(0,KNSTART.length), KNSTART);
             should.deepEqual(ids.slice(ids.length-3,ids.length), KNEND);
-            should(ids.length).equal(SVA ? 2351 : 363);
+            should(ids.length).equal(2351 );
 
             // Root nikaya an
             var ids = await bd.nikayaSuttaIds('an');

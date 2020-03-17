@@ -16,17 +16,14 @@
     this.timeout(5*1000);
     var logLevel = false;
     var bd = new BilaraData();
-    var SVA = bd.sva;
-    const BILARA_PATH = SVA 
-        ? path.join(__dirname, '../test/data/bilara-data-sva')
-        : path.join(__dirname, '../local/bilara-data');
+    const BILARA_PATH = path.join(__dirname, '../test/data/bilara-data');
     function ROOTPATH(mid) {
         var lang = 'pli';
         var auth = 'ms';
         return [
             'root',
             lang,
-            SVA ? `${auth}/sutta`: auth,
+            `${auth}/sutta`,
             `${mid}_root-${lang}-${auth}.json`
         ].join('/');
     }
@@ -34,7 +31,7 @@
         return [
             'translation',
             lang,
-            SVA ? `${auth}/sutta`: auth,
+            `${auth}/sutta`,
             `${mid}_translation-${lang}-${auth}.json`
         ].join('/');
     }
