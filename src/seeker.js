@@ -394,6 +394,10 @@
                     if (!isNaN(n) && 0 < n && n < 4000 ) {
                         maxResults = n;
                     }
+                } else if (arg === '-ml1' ) {
+                    minLang = 1;
+                } else if (arg === '-ml2' ) {
+                    minLang = 2;
                 } else if (arg === '-ml3' ) {
                     minLang = 3;
                 } else if (arg === '-ml' || arg === '--minLang') {
