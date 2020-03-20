@@ -188,7 +188,7 @@
                 keywordsFound: {
                     faith: 389,
                     joy: 133,
-                    suffering: 755,
+                    suffering: 754,
                 },
             };
 
@@ -229,7 +229,7 @@
                 lang: 'en',
                 method: 'keywords',
                 keywordsFound: {
-                    suffering: 755,
+                    suffering: 754,
                     joy: 133,
                     faith: 389,
                 },
@@ -1017,5 +1017,91 @@
 
             done();
         } catch(e) { done(e); }})();
+    });
+    it("find(...) finds pli-tv-bi-vb-sk1-75", done=>{
+        done(); return; // TODO
+        (async function() { try {
+            var maxDoc = 3;
+            var bilaraData = new BilaraData({
+                includeUnpublished: true,
+            });
+            var skr = await new Seeker({
+                maxDoc,
+                bilaraData,
+                logLevel,
+            }).initialize();
+
+            // lists of suttas with ranges
+            var lang = 'en';
+            // The pattern resolves to 4 suttas, of which 3 are returned
+            var pattern = "pli-tv-bi-vb-sk1-75"; 
+            var res = await skr.find({
+                pattern,
+                lang,
+            });
+            should(res.method).equal('sutta_uid');
+            should(res.maxDoc).equal(maxDoc);
+            should.deepEqual(res.suttaRefs, []);
+            should(res.resultPattern).equal(pattern);
+            should(res.lang).equal('de');
+            should(res.mlDocs.length).equal(0);
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTfindArgs(...) parses pattern string", done=>{
+        (async function() { try {
+            var bilaraData = await bd.initialize();
+            var skr = await new Seeker({
+                bilaraData,
+                logLevel,
+            }).initialize();
+            
+            // English
+            should.deepEqual(skr.findArgs(["root of suffering"]), {
+                lang: 'en',
+                languages: ['pli', 'en'],
+                matchHighlight: "\u001b[38;5;121m$&\u001b[0m",
+                maxDoc: 50,
+                maxResults: 1000,
+                minLang: 2,
+                pattern: "root of suffering",
+                searchLang: 'en',
+                showMatchesOnly: true,
+                sortLines: undefined,
+            });
+
+            // German
+            should.deepEqual(skr.findArgs([
+                "wurzel des leidens -ml3 -l de"
+            ]), {
+                lang: 'de',
+                languages: ['pli', 'en', 'de'],
+                matchHighlight: "\u001b[38;5;121m$&\u001b[0m",
+                maxDoc: 50,
+                maxResults: 1000,
+                minLang: 3,
+                pattern: "wurzel des leidens",
+                searchLang: 'de',
+                showMatchesOnly: true,
+                sortLines: undefined,
+            });
+
+            // German
+            should.deepEqual(skr.findArgs([
+                "wurzel des leidens -ml 3 -l de"
+            ]), {
+                lang: 'de',
+                languages: ['pli', 'en', 'de'],
+                matchHighlight: "\u001b[38;5;121m$&\u001b[0m",
+                maxDoc: 50,
+                maxResults: 1000,
+                minLang: 3,
+                pattern: "wurzel des leidens",
+                searchLang: 'de',
+                showMatchesOnly: true,
+                sortLines: undefined,
+            });
+            done(); 
+        } catch(e) {done(e);} })();
     });
 })

@@ -192,6 +192,7 @@
             var that = this;
             var {
                 root,
+                includeUnpublished,
             } = that;
             var loadPublished = ()=>{
                 return that.publication.reduce( (a,p) => {
@@ -199,9 +200,12 @@
                         is_published,
                         text_uid,
                         source_url,
+                        publication_number,
+                        parent_publication,
                     } = p;
                     var bilPath = source_url.replace(/.*master\//,'');
-                    if (is_published!=="true" && p.is_published!==true){
+                    if (!includeUnpublished &&
+                        is_published!=="true" && p.is_published!==true){
                         return a;
                     }
                     if (a[text_uid]) {
@@ -209,29 +213,23 @@
                     }
                     var rootBilPath = path.join(root, bilPath);
                     var subchapters = false;
+                    var entry = {
+                        name: text_uid,
+                    }
+                    if (publication_number) {
+                        entry.publication_number = publication_number;
+                    }
                     if (!fs.existsSync(rootBilPath)) {
-                        a[text_uid] = {
-                            name: text_uid,
-                            //folder: bilPath.split("/")[3],
-                            subchapters,
-                        };
+                        a[text_uid] = entry;
                     } else if (fs.statSync(rootBilPath).isFile()) {
                         //console.log(`it's a file:`, bilPath);
-                        a[text_uid] = {
-                            name: text_uid,
-                            //folder: bilPath.split("/")[3],
-                            subchapters,
-                        };
+                        a[text_uid] = entry;
                     } else {
                         var dirs = fs.readdirSync(rootBilPath);
-                        subchapters = dirs.reduce(
+                        entry.subchapters = dirs.reduce(
                             (a,d) => (d.match(/.*json$/) ? false : a),
                             true);
-                        a[text_uid] = {
-                            name: text_uid,
-                            //folder: bilPath.split("/")[3],
-                            subchapters,
-                        };
+                        a[text_uid] = entry;
                     }
                     return a;
                 }, {});
@@ -246,7 +244,8 @@
 
         publishedPaths() {
             return this.publication && this.publication.reduce((a,p) => {
-                if (p.is_published==="true" || p.is_published===true) {
+                if (this.includeUnpublished ||
+                    p.is_published==="true" || p.is_published===true) {
                     a.push(p.source_url.replace(PUB_PREFIX, ''));
                 }
                 return a;
@@ -307,6 +306,7 @@
                 var published = [
                     ...this.publishedPaths(), 
                     'root/pli/ms/sutta',
+                    'root/pli/ms/vinaya',
                 ];
                 this.log(`published paths:\n${published.join('\n')}`);
                 Object.defineProperty(this, "_rePubPaths", {

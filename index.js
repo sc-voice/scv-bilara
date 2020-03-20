@@ -8,6 +8,7 @@ module.exports = {
     ImportHtml: require("./src/import-html"),
     MLDoc: require("./src/ml-doc"),
     Pali: require("./src/pali"),
+    Publication: require("./src/publication"),
     Seeker: require("./src/seeker"),
     SegDoc: require("./src/seg-doc"),
     SuttaCentralId: require("./src/sutta-central-id"),

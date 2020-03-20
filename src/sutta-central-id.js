@@ -196,6 +196,7 @@
                 thig: `kn/thig`,
                 ud: `kn/ud`,
                 vv: `kn/vv`,
+                'pli-tv-bi-vb-sk': `pli-tv-bi-vb/pli-tv-bi-vb-sk`,
             }[prefix] || (majorid === this.sutta 
                 ? prefix
                 : `${prefix}/${majorid}`);

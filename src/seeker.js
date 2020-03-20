@@ -350,6 +350,18 @@
         }
 
         findArgs(args) {
+            if (!(args instanceof Array)) {
+                throw new Error("findArgs(?ARRAY-OF-ARGS?)");
+            }
+            if (typeof args[0] === 'string') {
+                var opts = {
+                    pattern: args[0],
+                    maxResults: args[1],
+                }
+            } else {
+                var opts = args[0];
+            }
+            var rawPattern = opts.pattern;
             var {
                 pattern: rawPattern,
                 searchLang,
@@ -362,12 +374,7 @@
                 matchHighlight,
                 sortLines,
                 showMatchesOnly,
-            } = typeof opts !== 'string' 
-                ? args[0]
-                : {
-                    pattern: args[0],
-                    maxResults: args[1],
-                };
+            } = opts;
             if (rawPattern == null) {
                 throw new Error(`pattern is required`);
             }
@@ -387,6 +394,8 @@
                     if (!isNaN(n) && 0 < n && n < 4000 ) {
                         maxResults = n;
                     }
+                } else if (arg === '-ml3' ) {
+                    minLang = 3;
                 } else if (arg === '-ml' || arg === '--minLang') {
                     let n = Number(argv[++i]);
                     if (!isNaN(n) && 0 < n && n <= 3) {

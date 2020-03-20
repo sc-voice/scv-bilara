@@ -37,6 +37,7 @@
 
     var SABBAMITTA = 'sabbamitta/sutta';
     var SUJATO = 'sujato/sutta';
+    var BRAHMALI = 'brahmali/vinaya';
 
     it("default ctor", () => {
         const LOCAL = path.join(__dirname, '..', 'local');
@@ -50,7 +51,7 @@
             includeUnpublished: false,
         });
     });
-    it("TESTTESTincludeUnpublished includes all files", done=> {
+    it("includeUnpublished includes all files", done=> {
         (async function() { try {
             var bd = await new BilaraData({
                 includeUnpublished: true,
@@ -73,6 +74,7 @@
                 bilaraPath: TRANSPATH('en', 'brahmali', 
                         'pli-tv-bi-vb/pli-tv-bi-vb-sk1-75', 'vinaya'),
             }]);
+            console.log(`dbg publishedPaths`, bd.publishedPaths());
             done();
         } catch(e) {done(e);} })();
     });
@@ -781,39 +783,6 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("published(...) => published divisions", done=>{
-        (async function() { try {
-            await bd.initialize();
-            var pub = bd.published();
-            should.deepEqual(pub.mn, {
-                "name": "mn",
-                //"folder": "mn",
-                "subchapters": false
-            });
-            should.deepEqual(pub.dn, {
-                "name": "dn",
-                //"folder": "dn",
-                "subchapters": false
-            });
-            should.deepEqual(pub.sn, {
-                name: 'sn',
-                //"folder": "sn",
-                "subchapters": true
-            });
-            should.deepEqual(pub.thig, {
-                name: 'thig',
-                //"folder": "kn",
-                "subchapters": false,
-            });
-            should.deepEqual(pub.thag, {
-                name: 'thag',
-                //"folder": "kn",
-                "subchapters": false,
-            });
-
-            done();
-        } catch(e) { done(e); }})();
-    });
     it("publishedPaths(...) => published bilara paths", done=>{
         (async function() { try {
             await bd.initialize();
@@ -824,6 +793,26 @@
 `de/${SABBAMITTA}/sn`,
 `en/${SUJATO}/an`,
 `en/${SUJATO}/dn`,
+`en/${SUJATO}/kn/thag`,
+`en/${SUJATO}/kn/thig`,
+`en/${SUJATO}/mn`,
+`en/${SUJATO}/sn`,
+            ]);
+
+            // includeUnpublished
+            var bd2 = await new BilaraData({
+                includeUnpublished: true,
+            }).initialize();
+            should.deepEqual(bd2.publishedPaths(), [
+`de/${SABBAMITTA}/an`,
+`de/${SABBAMITTA}/dn`,
+`de/${SABBAMITTA}/mn`,
+`de/${SABBAMITTA}/sn`,
+`en/${BRAHMALI}`,
+`en/${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-sk`,
+`en/${SUJATO}/an`,
+`en/${SUJATO}/dn`,
+`en/${SUJATO}/kn/dhp`,
 `en/${SUJATO}/kn/thag`,
 `en/${SUJATO}/kn/thig`,
 `en/${SUJATO}/mn`,
