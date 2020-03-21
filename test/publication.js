@@ -23,9 +23,9 @@
             `${mid}_translation-${lang}-${auth}.json`
         ].join('/');
     }
-    var SABBAMITTA = 'sabbamitta/sutta';
-    var SUJATO = 'sujato/sutta';
-    var BRAHMALI = 'brahmali/vinaya';
+    var SABBAMITTA = 'translation/de/sabbamitta/sutta';
+    var SUJATO = 'translation/en/sujato/sutta';
+    var BRAHMALI = 'translation/en/brahmali/vinaya';
     var logLevel = false;
 
     var pubTest = new Publication({
@@ -33,7 +33,7 @@
     });
 
 
-    it("TESTTESTdefault ctor", ()=>{
+    it("default ctor", ()=>{
         var pub = new Publication();
         should(pub).instanceOf(Publication);
         should(pub).properties({
@@ -41,49 +41,70 @@
             initialized: false,
         });
     });
-    it("TESTTESTpublishedPaths() => published bilara paths", done=> {
+    it("pubPaths() => published bilara paths", done=> {
         (async function() { try {
             var pub = await pubTest.initialize(); 
-            should.deepEqual(pub.publishedPaths(),[
-                "de/sabbamitta/sutta/an",
-                "de/sabbamitta/sutta/dn",
-                "de/sabbamitta/sutta/mn",
-                "de/sabbamitta/sutta/sn",
-                "en/sujato/sutta/an",
-                "en/sujato/sutta/dn",
-                "en/sujato/sutta/kn/thag",
-                "en/sujato/sutta/kn/thig",
-                "en/sujato/sutta/mn",
-                "en/sujato/sutta/sn",
+            should.deepEqual(pub.pubPaths().sort(),[
+                `${SABBAMITTA}/an`,
+                `${SABBAMITTA}/dn`,
+                `${SABBAMITTA}/mn`,
+                `${SABBAMITTA}/sn`,
+                `${SUJATO}/an`,
+                `${SUJATO}/dn`,
+                `${SUJATO}/kn/thag`,
+                `${SUJATO}/kn/thig`,
+                `${SUJATO}/mn`,
+                `${SUJATO}/sn`,
             ]);
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTpublishedPaths() => all bilara paths", done=> {
+    it("pubPaths() => all bilara paths", done=> {
         (async function() { try {
+            var pub = await pubTest.initialize();
+
+            // Explicit
+            var includeUnpublished = true;
+            should.deepEqual(pub.pubPaths({includeUnpublished}).sort(),[
+                `${SABBAMITTA}/an`,
+                `${SABBAMITTA}/dn`,
+                `${SABBAMITTA}/mn`,
+                `${SABBAMITTA}/sn`,
+                `${BRAHMALI}`,
+                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-sk`,
+                `${SUJATO}/an`,
+                `${SUJATO}/dn`,
+                `${SUJATO}/kn/dhp`,
+                `${SUJATO}/kn/thag`,
+                `${SUJATO}/kn/thig`,
+                `${SUJATO}/mn`,
+                `${SUJATO}/sn`,
+            ]);
+
+            // Implied
             var pub = await new Publication({
-                includeUnpublished: true,
+                includeUnpublished,
             }).initialize(); 
             should(pub.includeUnpublished).equal(true);
-            should.deepEqual(pub.publishedPaths(),[
-                "de/sabbamitta/sutta/an",
-                "de/sabbamitta/sutta/dn",
-                "de/sabbamitta/sutta/mn",
-                "de/sabbamitta/sutta/sn",
-                "en/brahmali/vinaya",
-                "en/brahmali/vinaya/pli-tv-bi-vb/pli-tv-bi-vb-sk",
-                "en/sujato/sutta/an",
-                "en/sujato/sutta/dn",
-                "en/sujato/sutta/kn/dhp",
-                "en/sujato/sutta/kn/thag",
-                "en/sujato/sutta/kn/thig",
-                "en/sujato/sutta/mn",
-                "en/sujato/sutta/sn",
+            should.deepEqual(pub.pubPaths().sort(),[
+                `${SABBAMITTA}/an`,
+                `${SABBAMITTA}/dn`,
+                `${SABBAMITTA}/mn`,
+                `${SABBAMITTA}/sn`,
+                `${BRAHMALI}`,
+                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-sk`,
+                `${SUJATO}/an`,
+                `${SUJATO}/dn`,
+                `${SUJATO}/kn/dhp`,
+                `${SUJATO}/kn/thag`,
+                `${SUJATO}/kn/thig`,
+                `${SUJATO}/mn`,
+                `${SUJATO}/sn`,
             ]);
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTisPublishedPath(f) filters supported suttas", done=>{
+    it("isPublishedPath(f) filters supported suttas", done=>{
         (async function() { try {
             var pub = await pubTest.initialize(); 
         
@@ -100,7 +121,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTisPublishedPath(f) handles pieces of a nikaya", done=>{
+    it("isPublishedPath(f) handles pieces of a nikaya", done=>{
         (async function() { try {
             var root = path.join(__dirname, 'data', 'bilara-data' );
             var pub = new Publication({ 
@@ -123,19 +144,18 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTpublished(...) => published divisions", done=>{
+    it("text_uidPub(...) => published divisions", done=>{
         (async function() { try {
             var pub = await new Publication({
                 includeUnpublished: true,
             }).initialize();
-            var published = pub.published();
-            should(published['pli-tv-vi']).properties({
+            should(pub.text_uidInfo('pli-tv-vi')).properties({
                 name: 'pli-tv-vi',
                 "publication_number": "scpub8",
                 "subchapters": true,
                 author_name: "Bhikkhu Brahmali",
             });
-            should(published['pli-tv-bi-vb-sk']).properties({
+            should(pub.text_uidInfo('pli-tv-bi-vb-sk')).properties({
                 name: 'pli-tv-bi-vb-sk',            // generated
                 subchapters: false,                 // generated
                 division: "pli-tv-bi-vb",           // child only
@@ -143,70 +163,31 @@
                 author_name: "Bhikkhu Brahmali",    // inherited
                 is_published: 'false',              // inherited
             });
-            should(published.mn).properties({
+            should(pub.text_uidInfo('mn')).properties({
                 "name": "mn",
                 "publication_number": "scpub3",
                 "subchapters": false
             });
-            should(published.dn).properties({
+            should(pub.text_uidInfo('dn')).properties({
                 "name": "dn",
                 "publication_number": "scpub2",
                 "subchapters": false
             });
-            should(published.sn).properties({
+            should(pub.text_uidInfo('sn')).properties({
                 name: 'sn',
                 "publication_number": "scpub4",
                 "subchapters": true
             });
-            should(published.thig).properties({
+            should(pub.text_uidInfo('thig')).properties({
                 name: 'thig',
                 "publication_number": "scpub6",
                 "subchapters": false,
             });
-            should(published.thag).properties({
+            should(pub.text_uidInfo('thag')).properties({
                 name: 'thag',
                 "publication_number": "scpub1",
                 "subchapters": false,
             });
-
-            done();
-        } catch(e) { done(e); }})();
-    });
-    it("TESTTESTpublishedPaths(...) => published bilara paths", done=>{
-        (async function() { try {
-            var pub = await pubTest.initialize();
-            should.deepEqual(pub.publishedPaths(), [
-`de/${SABBAMITTA}/an`,
-`de/${SABBAMITTA}/dn`,
-`de/${SABBAMITTA}/mn`,
-`de/${SABBAMITTA}/sn`,
-`en/${SUJATO}/an`,
-`en/${SUJATO}/dn`,
-`en/${SUJATO}/kn/thag`,
-`en/${SUJATO}/kn/thig`,
-`en/${SUJATO}/mn`,
-`en/${SUJATO}/sn`,
-            ]);
-
-            // includeUnpublished
-            var pub = await new Publication({
-                includeUnpublished: true,
-            }).initialize();
-            should.deepEqual(pub.publishedPaths(), [
-`de/${SABBAMITTA}/an`,
-`de/${SABBAMITTA}/dn`,
-`de/${SABBAMITTA}/mn`,
-`de/${SABBAMITTA}/sn`,
-`en/${BRAHMALI}`,
-`en/${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-sk`,
-`en/${SUJATO}/an`,
-`en/${SUJATO}/dn`,
-`en/${SUJATO}/kn/dhp`,
-`en/${SUJATO}/kn/thag`,
-`en/${SUJATO}/kn/thig`,
-`en/${SUJATO}/mn`,
-`en/${SUJATO}/sn`,
-            ]);
 
             done();
         } catch(e) { done(e); }})();

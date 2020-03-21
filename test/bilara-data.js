@@ -39,7 +39,7 @@
     var SUJATO = 'sujato/sutta';
     var BRAHMALI = 'brahmali/vinaya';
 
-    it("default ctor", () => {
+    it("TESTTESTdefault ctor", () => {
         const LOCAL = path.join(__dirname, '..', 'local');
         var bdDefault = new BilaraData(); 
         should(bdDefault).instanceOf(BilaraData);
@@ -51,7 +51,7 @@
             includeUnpublished: false,
         });
     });
-    it("includeUnpublished includes all files", done=> {
+    it("TESTTESTincludeUnpublished includes all files", done=> {
         (async function() { try {
             var bd = await new BilaraData({
                 includeUnpublished: true,
@@ -74,7 +74,6 @@
                 bilaraPath: TRANSPATH('en', 'brahmali', 
                         'pli-tv-bi-vb/pli-tv-bi-vb-sk1-75', 'vinaya'),
             }]);
-            console.log(`dbg publishedPaths`, bd.publishedPaths());
             done();
         } catch(e) {done(e);} })();
     });
@@ -169,68 +168,6 @@
             should.deepEqual(bd.supportedLanguages(), [
                 'de', 'en', 'pli', 
             ]);
-            done();
-        } catch(e) {done(e);} })();
-    });
-    it("isPublishedPath(f) filters supported suttas", done=>{
-        (async function() { try {
-            await bd.initialize();
-        
-            should(bd.isPublishedPath(ROOTPATH('mn/mn1')))
-                .equal(true);
-            should(bd.isPublishedPath(TRANSPATH('en', 'sujato','mn/mn1')))
-                .equal(true);
-            should(bd.isPublishedPath(
-                TRANSPATH('en', 'sujato', `kn/thig/thig2.4`)))
-                .equal(true);
-            should(bd.isPublishedPath(
-                TRANSPATH('en', 'sujato', `kn/dhp/dhp21-32`)))
-                .equal(false);
-            done();
-        } catch(e) {done(e);} })();
-    });
-    it("isPublishedPath(f) handles pieces of a nikaya", done=>{
-        (async function() { try {
-            var root = path.join(__dirname, 'data', 'bilara-data' );
-            var bd = new BilaraData({ 
-                logLevel: 'info',
-                root,
-            });
-            await bd.initialize();
-        
-            const bv1_root_path = ROOTPATH(`bv/bv1`);
-            should(bd.isPublishedPath(bv1_root_path)).equal(true);
-            var mld = await bd.loadMLDoc({
-                suid: 'bv1',
-                languages: ['pli'],
-            });
-            should(mld).instanceOf(MLDoc);
-            should(mld.segMap['bv1:1.1'].scid).equal('bv1:1.1');
-
-            const an1_71_81_path = 
-                TRANSPATH('de', 'sabbamitta', `an/an1/an1.71-81`);
-            should(bd.isPublishedPath(an1_71_81_path)).equal(true);
-            var mld = await bd.loadMLDoc({
-                suid: 'an1.71-81',
-                languages: ['de'],
-            });
-            should(mld.segMap['an1.80:1.2'].scid).equal('an1.80:1.2');
-            should(mld.segMap['an1.80:1.2'].de).match(/Der schlimmste/);
-
-            const an2_1_10_path = 
-                TRANSPATH('de', 'sabbamitta', `an/an2/an2.1-10`);
-            should(bd.isPublishedPath(an1_71_81_path)).equal(true);
-            var mld = await bd.loadMLDoc({
-                suid: 'an2.3',
-                languages: ['de'],
-            });
-            should(mld).instanceOf(MLDoc);
-            should(mld.segMap['an2.9:1.7'].scid).equal('an2.9:1.7');
-            should(mld.segMap['an2.9:1.7'].de).equal(' ');
-
-            const bv1_trans_path = TRANSPATH('en', 'sujato', `bv/bv1`);
-            should(bd.isPublishedPath(bv1_trans_path)).equal(false);
-
             done();
         } catch(e) {done(e);} })();
     });
@@ -531,7 +468,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("suttaList(pattern) => [normalized-sutta-reference]", done=>{
+    it("TESTTESTsuttaList(pattern) => [normalized-sutta-reference]", done=>{
         (async function() { try {
             await bd.initialize();
 
@@ -779,45 +716,6 @@
             should.deepEqual(mld.segMap['an1.9:0.1'], an1_9);
             var mld = await bd.loadMLDoc("an1.9/de/sabbamitta");
             should.deepEqual(mld.segMap['an1.9:0.1'], an1_9);
-
-            done();
-        } catch(e) { done(e); }})();
-    });
-    it("publishedPaths(...) => published bilara paths", done=>{
-        (async function() { try {
-            await bd.initialize();
-            should.deepEqual(bd.publishedPaths(), [
-`de/${SABBAMITTA}/an`,
-`de/${SABBAMITTA}/dn`,
-`de/${SABBAMITTA}/mn`,
-`de/${SABBAMITTA}/sn`,
-`en/${SUJATO}/an`,
-`en/${SUJATO}/dn`,
-`en/${SUJATO}/kn/thag`,
-`en/${SUJATO}/kn/thig`,
-`en/${SUJATO}/mn`,
-`en/${SUJATO}/sn`,
-            ]);
-
-            // includeUnpublished
-            var bd2 = await new BilaraData({
-                includeUnpublished: true,
-            }).initialize();
-            should.deepEqual(bd2.publishedPaths(), [
-`de/${SABBAMITTA}/an`,
-`de/${SABBAMITTA}/dn`,
-`de/${SABBAMITTA}/mn`,
-`de/${SABBAMITTA}/sn`,
-`en/${BRAHMALI}`,
-`en/${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-sk`,
-`en/${SUJATO}/an`,
-`en/${SUJATO}/dn`,
-`en/${SUJATO}/kn/dhp`,
-`en/${SUJATO}/kn/thag`,
-`en/${SUJATO}/kn/thig`,
-`en/${SUJATO}/mn`,
-`en/${SUJATO}/sn`,
-            ]);
 
             done();
         } catch(e) { done(e); }})();

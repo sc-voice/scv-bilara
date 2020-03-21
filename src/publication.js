@@ -20,7 +20,7 @@
     const Pali = require('./pali');
     const English = require('./english');
     const ExecGit = require('./exec-git');
-    const PUB_PREFIX = /^https:.*translation\//;
+    const PUB_PREFIX = /^https:.*master\//;
 
     class Publication {
         constructor(opts={}) {
@@ -76,7 +76,7 @@
             });
         }
 
-        published() {
+        text_uidInfo(tid) {
             var that = this;
             var {
                 root,
@@ -117,17 +117,19 @@
                     return a;
                 }, {});
             }
-            if (this._published == null && this.pubEntries) {
-                Object.defineProperty(this, "_published", {
+            if (this.text_uidMap == null && this.pubEntries) {
+                Object.defineProperty(this, "text_uidMap", {
                     value: loadPublished(),
                 });
             }
-            return this._published;
+            return this.text_uidMap[tid];
         }
 
-        publishedPaths() {
+        pubPaths(opts={}) {
+            var includeUnpublished = opts.includeUnpublished || 
+                this.includeUnpublished;
             return this.pubEntries && this.pubEntries.reduce((a,p) => {
-                if (this.includeUnpublished ||
+                if (includeUnpublished ||
                     p.is_published==="true" || p.is_published===true) {
                     a.push(p.source_url.replace(PUB_PREFIX, ''));
                 }
@@ -144,11 +146,10 @@
             }
             if (this._rePubPaths == null) {
                 var published = [
-                    ...this.publishedPaths(), 
+                    ...this.pubPaths(), 
                     'root/pli/ms/sutta',
                     'root/pli/ms/vinaya',
                 ];
-                this.log(`published paths:\n${published.join('\n')}`);
                 Object.defineProperty(this, "_rePubPaths", {
                     value: new RegExp(`(${published.join("|")}).*`),
                 });
