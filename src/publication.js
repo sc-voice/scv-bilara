@@ -49,16 +49,31 @@
             var that = this;
             var pbody = (resolve, reject) => {(async function() { try {
                 let pubPath = path.join(that.root, `_publication.json`);
-                let pubJson = fs.existsSync(pubPath)
+                that._publication = fs.existsSync(pubPath)
                     ? json5.parse(await readFile(pubPath))
                     : {};
-                that.publication = Object.keys(pubJson)
-                    .map(k=>pubJson[k]);
+                that.pubEntries = Object.keys(that._publication)
+                    .map(k=>that._publication[k]);
 
                 that.initialized = true;
                 resolve(that);
             } catch(e) {reject(e);} })()};
             return new Promise(pbody);
+        }
+
+        pubEntry(pubNum) {
+            var entry = this._publication[pubNum];
+            var {
+                text_uid,
+                parent_publication,
+            } = entry;
+            var parent = parent_publication
+                ? this.pubEntry(parent_publication)
+                : {};
+
+            return Object.assign({}, parent, entry, {
+                name: text_uid,
+            });
         }
 
         published() {
@@ -68,7 +83,7 @@
                 includeUnpublished,
             } = that;
             var loadPublished = ()=>{
-                return that.publication.reduce( (a,p) => {
+                return that.pubEntries.reduce( (a,p) => {
                     let {
                         is_published,
                         text_uid,
@@ -86,27 +101,23 @@
                     }
                     var rootBilPath = path.join(root, bilPath);
                     var subchapters = false;
-                    var entry = {
-                        name: text_uid,
-                    }
-                    if (publication_number) {
-                        entry.publication_number = publication_number;
-                    }
+                    var entry = that.pubEntry(p.publication_number);
                     if (!fs.existsSync(rootBilPath)) {
                         a[text_uid] = entry;
                     } else if (fs.statSync(rootBilPath).isFile()) {
                         a[text_uid] = entry;
                     } else {
                         var dirs = fs.readdirSync(rootBilPath);
-                        entry.subchapters = dirs.reduce(
+                        subchapters = dirs.reduce(
                             (a,d) => (d.match(/.*json$/) ? false : a),
                             true);
                         a[text_uid] = entry;
                     }
+                    entry.subchapters = subchapters;
                     return a;
                 }, {});
             }
-            if (this._published == null && this.publication) {
+            if (this._published == null && this.pubEntries) {
                 Object.defineProperty(this, "_published", {
                     value: loadPublished(),
                 });
@@ -115,7 +126,7 @@
         }
 
         publishedPaths() {
-            return this.publication && this.publication.reduce((a,p) => {
+            return this.pubEntries && this.pubEntries.reduce((a,p) => {
                 if (this.includeUnpublished ||
                     p.is_published==="true" || p.is_published===true) {
                     a.push(p.source_url.replace(PUB_PREFIX, ''));

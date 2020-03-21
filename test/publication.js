@@ -125,29 +125,45 @@
     });
     it("TESTTESTpublished(...) => published divisions", done=>{
         (async function() { try {
-            var pub = await pubTest.initialize();
+            var pub = await new Publication({
+                includeUnpublished: true,
+            }).initialize();
             var published = pub.published();
-            should.deepEqual(published.mn, {
+            should(published['pli-tv-vi']).properties({
+                name: 'pli-tv-vi',
+                "publication_number": "scpub8",
+                "subchapters": true,
+                author_name: "Bhikkhu Brahmali",
+            });
+            should(published['pli-tv-bi-vb-sk']).properties({
+                name: 'pli-tv-bi-vb-sk',            // generated
+                subchapters: false,                 // generated
+                division: "pli-tv-bi-vb",           // child only
+                publication_number: "scpub8.1",     // override
+                author_name: "Bhikkhu Brahmali",    // inherited
+                is_published: 'false',              // inherited
+            });
+            should(published.mn).properties({
                 "name": "mn",
                 "publication_number": "scpub3",
                 "subchapters": false
             });
-            should.deepEqual(published.dn, {
+            should(published.dn).properties({
                 "name": "dn",
                 "publication_number": "scpub2",
                 "subchapters": false
             });
-            should.deepEqual(published.sn, {
+            should(published.sn).properties({
                 name: 'sn',
                 "publication_number": "scpub4",
                 "subchapters": true
             });
-            should.deepEqual(published.thig, {
+            should(published.thig).properties({
                 name: 'thig',
                 "publication_number": "scpub6",
                 "subchapters": false,
             });
-            should.deepEqual(published.thag, {
+            should(published.thag).properties({
                 name: 'thag',
                 "publication_number": "scpub1",
                 "subchapters": false,
