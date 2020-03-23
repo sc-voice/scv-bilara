@@ -101,17 +101,17 @@
 
         static scidNumbersLow(id_or_path) {
             var scid = BilaraPath.pathParts(id_or_path).suid;
-            var colonParts = scid.replace(/^[a-z]*/,'').split(':');
+            var colonParts = scid.replace(/^[-a-z]*/,'').split(':');
             var dotParts = colonParts.reduce((a,c) => 
                 a.concat(c.split('.')), []);
             var nums = dotParts.map(n => Number(n.split('-')[0]));
-            //console.log(`dbg scidNumberLow ${scid}`, nums);
+            //console.log(`dbg scidNumberLow ${scid}`, {nums});
             return nums;
         }
 
         static scidNumbersHigh(id_or_path) {
             var scid = BilaraPath.pathParts(id_or_path).suid;
-            var colonParts = scid.replace(/^[a-z]*/,'').split(':');
+            var colonParts = scid.replace(/^[-a-z]*/,'').split(':');
             var dotParts = colonParts.reduce((a,c) => 
                 a.concat(c.split('.')), []);
             var nums = dotParts.map(n => Number(n.split('-').pop()));

@@ -71,6 +71,7 @@
                 `${SABBAMITTA}/mn`,
                 `${SABBAMITTA}/sn`,
                 `${BRAHMALI}`,
+                `${BRAHMALI}/pli-tv-bi-vb`,
                 `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-sk`,
                 `${SUJATO}/an`,
                 `${SUJATO}/dn`,
@@ -92,6 +93,7 @@
                 `${SABBAMITTA}/mn`,
                 `${SABBAMITTA}/sn`,
                 `${BRAHMALI}`,
+                `${BRAHMALI}/pli-tv-bi-vb`,
                 `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-sk`,
                 `${SUJATO}/an`,
                 `${SUJATO}/dn`,
@@ -158,8 +160,8 @@
             should(pub.text_uidInfo('pli-tv-bi-vb-sk')).properties({
                 name: 'pli-tv-bi-vb-sk',            // generated
                 subchapters: false,                 // generated
-                division: "pli-tv-bi-vb",           // child only
-                publication_number: "scpub8.1",     // override
+                publication_number: "scpub8.1.1",   // override
+                division: "bi-vi",                  // inherited
                 author_name: "Bhikkhu Brahmali",    // inherited
                 is_published: 'false',              // inherited
             });

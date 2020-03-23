@@ -39,7 +39,7 @@
     var SUJATO = 'sujato/sutta';
     var BRAHMALI = 'brahmali/vinaya';
 
-    it("TESTTESTdefault ctor", () => {
+    it("default ctor", () => {
         const LOCAL = path.join(__dirname, '..', 'local');
         var bdDefault = new BilaraData(); 
         should(bdDefault).instanceOf(BilaraData);
@@ -51,7 +51,7 @@
             includeUnpublished: false,
         });
     });
-    it("TESTTESTincludeUnpublished includes all files", done=> {
+    it("includeUnpublished includes all files", done=> {
         (async function() { try {
             var bd = await new BilaraData({
                 includeUnpublished: true,
@@ -468,7 +468,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTsuttaList(pattern) => [normalized-sutta-reference]", done=>{
+    it("suttaList(pattern) => [normalized-sutta-reference]", done=>{
         (async function() { try {
             await bd.initialize();
 
@@ -542,6 +542,16 @@
     it("sutta_uidSuccessor(sutta_uid) => next sutta_uid", done=>{
         (async function() { try {
             await bd.initialize();
+
+            // vinaya
+            should(bd.sutta_uidSuccessor('pli-tv-bi-vb-sk1',true))
+                .equal('pli-tv-bi-vb-sk2');
+            should(bd.sutta_uidSuccessor('pli-tv-bi-vb-sk1-75',true))
+                .equal('pli-tv-bi-vb-sk76');
+            should(bd.sutta_uidSuccessor('pli-tv-bi-vb-sk1',false))
+                .equal('pli-tv-bi-vb-ss1');
+            should(bd.sutta_uidSuccessor('pli-tv-bi-vb-sk1-75',false))
+                .equal('pli-tv-bi-vb-ss1');
 
             // logical
             should(bd.sutta_uidSuccessor('mn33',true)).equal('mn34');

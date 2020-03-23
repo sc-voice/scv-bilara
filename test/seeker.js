@@ -1018,37 +1018,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("find(...) finds pli-tv-bi-vb-sk1-75", done=>{
-        done(); return; // TODO
-        (async function() { try {
-            var maxDoc = 3;
-            var bilaraData = new BilaraData({
-                includeUnpublished: true,
-            });
-            var skr = await new Seeker({
-                maxDoc,
-                bilaraData,
-                logLevel,
-            }).initialize();
-
-            // lists of suttas with ranges
-            var lang = 'en';
-            // The pattern resolves to 4 suttas, of which 3 are returned
-            var pattern = "pli-tv-bi-vb-sk1-75"; 
-            var res = await skr.find({
-                pattern,
-                lang,
-            });
-            should(res.method).equal('sutta_uid');
-            should(res.maxDoc).equal(maxDoc);
-            should.deepEqual(res.suttaRefs, []);
-            should(res.resultPattern).equal(pattern);
-            should(res.lang).equal('de');
-            should(res.mlDocs.length).equal(0);
-            done(); 
-        } catch(e) {done(e);} })();
-    });
-    it("TESTTESTfindArgs(...) parses pattern string", done=>{
+    it("findArgs(...) parses pattern string", done=>{
         (async function() { try {
             var bilaraData = await bd.initialize();
             var skr = await new Seeker({
@@ -1101,6 +1071,35 @@
                 showMatchesOnly: true,
                 sortLines: undefined,
             });
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("find(...) finds pli-tv-bi-vb-sk1-75", done=>{
+        (async function() { try {
+            var maxDoc = 3;
+            var bilaraData = new BilaraData({
+                includeUnpublished: true,
+            });
+            var skr = await new Seeker({
+                maxDoc,
+                bilaraData,
+                logLevel,
+            }).initialize();
+
+            // lists of suttas with ranges
+            var lang = 'en';
+            // The pattern resolves to 4 suttas, of which 3 are returned
+            var pattern = "pli-tv-bi-vb-sk1-75"; 
+            var res = await skr.find({
+                pattern,
+                lang,
+            });
+            should(res.method).equal('sutta_uid');
+            should(res.maxDoc).equal(maxDoc);
+            should.deepEqual(res.suttaRefs, ['pli-tv-bi-vb-sk1-75']);
+            should(res.resultPattern).equal(pattern);
+            should(res.lang).equal('en');
+            should(res.mlDocs.length).equal(1);
             done(); 
         } catch(e) {done(e);} })();
     });

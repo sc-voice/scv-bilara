@@ -129,14 +129,10 @@ function verify(res, pattern, n=0) {
 }
 
 (async function() { try {
-    var bd = await new BilaraData({
-        logLevel,
-        includeUnpublished: true,
-    }).initialize();
-    var suttaMap = bd.suttaMap;
-    console.log(`dbg keys`, suttaMap['an1.1-10']);
+    var includeUnpublished = true;
 
     var skr = await new Seeker({
+        includeUnpublished,
         matchHighlight,
         maxResults,
         logLevel,

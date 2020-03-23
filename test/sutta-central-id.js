@@ -119,6 +119,9 @@
                 should(SuttaCentralId.compareLow(b,a)).equal(-expected);
             }
         };
+
+        testCompare('pli-tv-bi-vb-sk1', 'pli-tv-bi-vb-sk75', -74);
+
         testCompare('dn33:1.2.31', 'dn33:1.10.1', -8);
 
         testCompare("an1.150:0.2", "an1.152-159:0.1", -2);

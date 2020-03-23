@@ -570,7 +570,8 @@
             var prefix = sutta_uid.replace(/[-0-9.:]*$/u, '');
             var dotParts = sutta_uid.substring(prefix.length).split(".");
             var dotLast = dotParts.length-1;
-            var rangeParts = sutta_uid.split("-");
+            var rangeParts = sutta_uid.substring(prefix.length).split("-");
+            rangeParts[0] = prefix+rangeParts[0];
             var rangeLast = rangeParts.length - 1;
             if (logical) { // logical
                 dotParts[dotParts.length-1] = (rangeParts.length < 2) 
@@ -607,8 +608,8 @@
 
         expandRange(suttaRef) {
             suttaRef = suttaRef.split(':')[0];
-            var reCname = new RegExp("[-.:0-9.].*", "u");
-            var cname = suttaRef.replace(reCname, '');
+            var reCollection = new RegExp("[0-9].*", "u");
+            var cname = suttaRef.replace(reCollection, '');
             var suffix = suttaRef.replace(/[^/]*([a-z\/]*)$/iu, '$1');
             var sref = suttaRef.replace(suffix, '');
             var range = sref.substring(cname.length);
@@ -619,7 +620,7 @@
             var coll = this.publication.text_uidInfo(cname);
             var result = [];
             if (!coll) { // no collection
-                throw new Error(`Not published: ${suttaRef} [E4]`);
+                throw new Error(`Not published: ${suttaRef} ${cname} [E4]`);
             }
             var rangeParts = range.split('-');
             var dotParts = rangeParts[0].split('.');
