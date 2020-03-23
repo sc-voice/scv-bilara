@@ -29,6 +29,10 @@ SYNOPSIS
 
 DESCRIPTION
         Verifies selected suttas.
+
+OPTIONS
+        -f, --fix
+        Update files with fixed segment errors
 `);
     process.exit(0);
 }
@@ -39,6 +43,7 @@ var logLevel = false;
 var matchHighlight = '';
 var showMatchesOnly = true;
 var isTTY = process.stdout.isTTY;
+var fixFile = false;
 var languages = [
     'pli', 
 ];
@@ -58,6 +63,8 @@ for (var i = 2; i < nargs; i++) {
     if (i<2) { continue; }
     if (arg === '-?' || arg === '--help') {
         help();
+    } else if (arg === '-f' || arg === '--fix') {
+        fixFile = true;
     } else {
         pattern = pattern ? `${pattern} ${arg}` : arg;
     }
@@ -71,17 +78,32 @@ function verifySeg(mld, seg) {
     var suid = mld.suid;
     var repairedId = null;
     var newSeg = null;
-    var parts = seg.scid.split(':');
-    if (!repairedId && parts.length === 1) {
+    var colonParts = seg.scid.split(':');
+    if (!repairedId && colonParts.length === 1) {
         var suidDots = suid.split('.');
         var scidDots = seg.scid.split('.');
         repairedId = [
             scidDots.slice(0,suidDots.length).join('.'),
             ':',
             scidDots.slice(suidDots.length).join('.')].join('');
+        logger.info(`Missing colon "${seg.scid}" => "${repairedId}"`);
+    }
+    if (!repairedId && colonParts.length > 2) {
+        var {
+            suid:fileSuid,
+        } = BilaraPath.pathParts(suid);
+        repairedId = "";
+        do {
+            repairedId += repairedId.length===0
+                ? colonParts.shift()
+                : `-${colonParts.shift()}`;
+        } while (colonParts.length && repairedId.length < fileSuid.length);
+        repairedId += `:${colonParts.join('.')}`;
+        logger.info(`Too many colons "${seg.scid}" => "${repairedId}"`);
     }
     if (!repairedId && !SuttaCentralId.match(seg.scid, suid)) {
-        repairedId = parts.map((part,i) => i ? suid : part).join(':');
+        repairedId = colonParts.map((part,i) => i ? suid : part)
+            .join(':');
     }
     if (repairedId) {
         newSeg = Object.assign({}, seg, {
@@ -109,7 +131,7 @@ function verifyDoc(mld) {
         }
     });
     var repairs = Object.keys(repairMap).length;
-    if (repairs) {
+    if (fixFile && repairs) {
         mld.bilaraPaths.forEach(fname => {
             console.log(`repairing ${fname}`);
             var fpath = path.join(BILARA_DATA, fname);
