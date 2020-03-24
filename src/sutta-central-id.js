@@ -99,12 +99,27 @@
             return new RegExp(pat);
         }
 
+        static partNumber(part) {
+            var n = Number(part);
+            if (isNaN(n)) {
+                var caretParts = part.split('^');
+                var [c0,c1] = caretParts;
+                var n = Number(c0);
+                return [n, 1+c1.charCodeAt(0) - 'a'.charCodeAt(0)];
+            } else {
+                return [n];
+            } 
+        }
+
         static scidNumbersLow(id_or_path) {
             var scid = BilaraPath.pathParts(id_or_path).suid;
             var colonParts = scid.replace(/^[-a-z]*/,'').split(':');
             var dotParts = colonParts.reduce((a,c) => 
                 a.concat(c.split('.')), []);
-            var nums = dotParts.map(n => Number(n.split('-')[0]));
+            var nums = dotParts.reduce((a,n) => {
+                var lowPart = n.split('-')[0];
+                return a.concat(SuttaCentralId.partNumber(lowPart));
+            }, []);
             //console.log(`dbg scidNumberLow ${scid}`, {nums});
             return nums;
         }
@@ -114,7 +129,10 @@
             var colonParts = scid.replace(/^[-a-z]*/,'').split(':');
             var dotParts = colonParts.reduce((a,c) => 
                 a.concat(c.split('.')), []);
-            var nums = dotParts.map(n => Number(n.split('-').pop()));
+            var nums = dotParts.reduce((a,n) => {
+                var highPart = n.split('-').pop();
+                return a.concat(SuttaCentralId.partNumber(highPart));
+            }, []);
             //console.log(`dbg scidNumberLow ${scid}`, nums);
             return nums;
         }

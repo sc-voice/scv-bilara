@@ -3,6 +3,11 @@
     const {
         SuttaCentralId,
     } = require("../index");
+    const {
+        logger,
+        LOCAL_DIR,
+    } = require("just-simple").JustSimple;
+    const logLevel = false;
 
     const assertLess = (cmp,a,b) => {
         should(cmp(a,b)).below(0);
@@ -12,6 +17,17 @@
         should(cmp(a,b)).equal(0);
         should(cmp(b,a)).equal(0);
     };
+    function testCompare(a,b,expected) {
+        should(SuttaCentralId.compareLow(a,b)).equal(expected);
+        if (expected === 0) {
+            should(SuttaCentralId.compareLow(b,a)).equal(expected);
+        } else {
+            should(SuttaCentralId.compareLow(b,a)).equal(-expected);
+        }
+    }
+
+    var en_suj = `translation/en/sujato/sutta/`;
+    this.timeout(5*1000);
 
     it("default ctor", function() {
         should.throws(() => {
@@ -30,8 +46,10 @@
         should(scid.toString()).equal('mn1:2.3.4');
     });
     it("compareLow(a,b) compares sutta file names", function(){
-        this.timeout(3*1000);
         var cmp = SuttaCentralId.compareLow;
+
+        // vinaya
+        testCompare('pli-tv-bi-vb-sk1', 'pli-tv-bi-vb-sk75', -74);
 
         assertLess(SuttaCentralId.compareLow,
             "an1.150:0.2", "an1.152-159:0.1");
@@ -41,7 +59,7 @@
             "an1.150:0.1", "an1.162-169:0.1");
 
         assertEqual(SuttaCentralId.compareLow,
-            'translation/en/sujato/sn/sn22/sn22.11_translation-en-sujato.json',
+            `${en_suj}sn/sn22/sn22.11_translation-en-sujato.json`,
             'translation/en/sujato/sn/sn22/sn22.11-20_translation-en-sujato.json');
         assertLess(SuttaCentralId.compareLow,
             'translation/en/sujato/sn/sn22/sn22.2_translation-en-sujato.json',
@@ -110,17 +128,10 @@
         should(cmp("an1.10", "an1.1-10")).equal(9);
 
     });
-    it("compareLow(a,b) compares segment ids", ()=>{
-        var testCompare = (a,b,expected) => {
-            should(SuttaCentralId.compareLow(a,b)).equal(expected);
-            if (expected === 0) {
-                should(SuttaCentralId.compareLow(b,a)).equal(expected);
-            } else {
-                should(SuttaCentralId.compareLow(b,a)).equal(-expected);
-            }
-        };
-
-        testCompare('pli-tv-bi-vb-sk1', 'pli-tv-bi-vb-sk75', -74);
+    it("TESTTESTcompareLow(a,b) compares segment ids", ()=>{
+        // vinaya
+        testCompare('pli-tv-kd15:17.3.2^a', 'pli-tv-kd15:17.3.2', 1);
+        testCompare('pli-tv-kd15:17.3.2^a', 'pli-tv-kd15:17.3.2^c', -2);
 
         testCompare('dn33:1.2.31', 'dn33:1.10.1', -8);
 
