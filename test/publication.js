@@ -59,7 +59,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("pubPaths() => all bilara paths", done=> {
+    it("TESTTESTpubPaths() => all bilara paths", done=> {
         (async function() { try {
             var pub = await pubTest.initialize();
 
@@ -72,7 +72,14 @@
                 `${SABBAMITTA}/sn`,
                 `${BRAHMALI}`,
                 `${BRAHMALI}/pli-tv-bi-vb`,
+                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-as`,
+                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-np`,
+                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-pc`,
+                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-pd`,
+                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-pj`,
                 `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-sk`,
+                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-ss`,
+                `${BRAHMALI}/pli-tv-bu-kd`,
                 `${SUJATO}/an`,
                 `${SUJATO}/dn`,
                 `${SUJATO}/kn/dhp`,
@@ -94,7 +101,14 @@
                 `${SABBAMITTA}/sn`,
                 `${BRAHMALI}`,
                 `${BRAHMALI}/pli-tv-bi-vb`,
+                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-as`,
+                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-np`,
+                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-pc`,
+                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-pd`,
+                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-pj`,
                 `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-sk`,
+                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-ss`,
+                `${BRAHMALI}/pli-tv-bu-kd`,
                 `${SUJATO}/an`,
                 `${SUJATO}/dn`,
                 `${SUJATO}/kn/dhp`,
@@ -146,7 +160,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("text_uidPub(...) => published divisions", done=>{
+    it("TESTTESTtext_uidPub(...) => published divisions", done=>{
         (async function() { try {
             var pub = await new Publication({
                 includeUnpublished: true,
@@ -160,7 +174,7 @@
             should(pub.text_uidInfo('pli-tv-bi-vb-sk')).properties({
                 name: 'pli-tv-bi-vb-sk',            // generated
                 subchapters: false,                 // generated
-                publication_number: "scpub8.1.1",   // override
+                publication_number: "scpub8.1.6",   // override
                 division: "bi-vi",                  // inherited
                 author_name: "Bhikkhu Brahmali",    // inherited
                 is_published: 'false',              // inherited

@@ -99,13 +99,27 @@
             return new RegExp(pat);
         }
 
-        static partNumber(part) {
+        static partNumber(part, id) {
             var n = Number(part);
             if (isNaN(n)) {
                 var caretParts = part.split('^');
                 var [c0,c1] = caretParts;
-                var n = Number(c0);
-                return [n, 1+c1.charCodeAt(0) - 'a'.charCodeAt(0)];
+                if (c1 == null) {
+                    var c0dig = c0.replace(/[a-z]*/ug,'');
+                    var c0let = c0.replace(/[0-9]*/ug,'');
+                    var n0 = Number(c0dig);
+                    var n1 = c0let.charCodeAt(0) - 'a'.charCodeAt(0) + 1;
+                    // console.log(`dbg parNumber`, {c0dig, c0let,n0,n1});
+                    if (isNaN(n0) || isNaN(n1)) {
+                        throw new Error(
+                            `partNumber() cannot parse ${part} in ${id}`);
+                    }
+                } else {
+                    var n0 = Number(c0);
+                    var n1 = c1.charCodeAt(0) - 'z'.charCodeAt(0) - 1;
+                }
+
+                return [n0, n1];
             } else {
                 return [n];
             } 
@@ -118,7 +132,8 @@
                 a.concat(c.split('.')), []);
             var nums = dotParts.reduce((a,n) => {
                 var lowPart = n.split('-')[0];
-                return a.concat(SuttaCentralId.partNumber(lowPart));
+                return a.concat(SuttaCentralId
+                    .partNumber(lowPart, id_or_path));
             }, []);
             //console.log(`dbg scidNumberLow ${scid}`, {nums});
             return nums;
@@ -131,7 +146,8 @@
                 a.concat(c.split('.')), []);
             var nums = dotParts.reduce((a,n) => {
                 var highPart = n.split('-').pop();
-                return a.concat(SuttaCentralId.partNumber(highPart));
+                return a.concat(SuttaCentralId
+                    .partNumber(highPart, id_or_path));
             }, []);
             //console.log(`dbg scidNumberLow ${scid}`, nums);
             return nums;
@@ -151,8 +167,8 @@
                     var ai = adig[i];
                     var bi = bdig[i];
                     if (ai === bi) { continue; }
-                    if (ai === undefined ) { return -1; }
-                    if (bi === undefined ) { return 1; }
+                    if (ai === undefined ) { return -bi || -1; }
+                    if (bi === undefined ) { return ai || 1; }
                     return ai - bi;
                 }
             }
@@ -173,8 +189,8 @@
                     var ai = adig[i];
                     var bi = bdig[i];
                     if (ai === bi) { continue; }
-                    if (ai === undefined ) { return -1; }
-                    if (bi === undefined ) { return 1; }
+                    if (ai === undefined ) { return -bi || -1; }
+                    if (bi === undefined ) { return ai || 1; }
                     return ai - bi;
                 }
             }

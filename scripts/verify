@@ -1,0 +1,18 @@
+#!/bin/bash
+DIR=`dirname $0`
+echo $DIR
+#$DIR/js/verify.js an1-999
+#$DIR/js/verify.js sn1-999
+#$DIR/js/verify.js mn1-999
+#$DIR/js/verify.js dn1-999
+#$DIR/js/verify.js thig1-999
+#$DIR/js/verify.js thag1-999
+$DIR/js/verify.js pli-tv-bi-vb-as1-999
+$DIR/js/verify.js pli-tv-bi-vb-np1-999
+#$DIR/js/verify.js pli-tv-bi-vb-pc1-999
+$DIR/js/verify.js pli-tv-bi-vb-ss1-999
+$DIR/js/verify.js pli-tv-bi-vb-sk1-999
+#$DIR/js/verify.js pli-tv-kd1-999
+#$DIR/js/verify.js pli-tv-bi-vb-ss1-999
+#$DIR/js/verify.js pli-tv-bi-vb-np1-999
+#$DIR/js/verify.js pli-tv-bi-vb-pc1-999

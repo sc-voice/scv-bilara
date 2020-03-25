@@ -17,7 +17,7 @@
         should(cmp(a,b)).equal(0);
         should(cmp(b,a)).equal(0);
     };
-    function testCompare(a,b,expected) {
+    function testCompareLow(a,b,expected) {
         should(SuttaCentralId.compareLow(a,b)).equal(expected);
         if (expected === 0) {
             should(SuttaCentralId.compareLow(b,a)).equal(expected);
@@ -49,7 +49,7 @@
         var cmp = SuttaCentralId.compareLow;
 
         // vinaya
-        testCompare('pli-tv-bi-vb-sk1', 'pli-tv-bi-vb-sk75', -74);
+        testCompareLow('pli-tv-bi-vb-sk1', 'pli-tv-bi-vb-sk75', -74);
 
         assertLess(SuttaCentralId.compareLow,
             "an1.150:0.2", "an1.152-159:0.1");
@@ -130,27 +130,31 @@
     });
     it("TESTTESTcompareLow(a,b) compares segment ids", ()=>{
         // vinaya
-        testCompare('pli-tv-kd15:17.3.2^a', 'pli-tv-kd15:17.3.2', 1);
-        testCompare('pli-tv-kd15:17.3.2^a', 'pli-tv-kd15:17.3.2^c', -2);
+        testCompareLow('pli-tv-kd15:17.3.2^a', 'pli-tv-kd15:17.3.2', -26);
+        testCompareLow('pli-tv-kd15:17.3', 'pli-tv-kd15:17.3.2', -2);
+        testCompareLow('pli-tv-kd15:17.3.2^a', 'pli-tv-kd15:17.3.2^c', -2);
+        testCompareLow('pli-tv-kd15:17.3.2a', 'pli-tv-kd15:17.3.2', 1);
+        testCompareLow('pli-tv-kd15:17.3.2a', 'pli-tv-kd15:17.3.2c', -2);
+        testCompareLow('pli-tv-kd15:17.3.2^a', 'pli-tv-kd15:17.3.2a', -27);
 
-        testCompare('dn33:1.2.31', 'dn33:1.10.1', -8);
+        testCompareLow('dn33:1.2.31', 'dn33:1.10.1', -8);
 
-        testCompare("an1.150:0.2", "an1.152-159:0.1", -2);
-        testCompare("an1.152-159:0.1", "an1.162-169:0.1", -10); 
-        testCompare("an1.150:0.1", "an1.162-169:0.1", -12);
+        testCompareLow("an1.150:0.2", "an1.152-159:0.1", -2);
+        testCompareLow("an1.152-159:0.1", "an1.162-169:0.1", -10); 
+        testCompareLow("an1.150:0.1", "an1.162-169:0.1", -12);
 
-        testCompare('an1.2:2.3', 'an1.10:0.1', -8);
-        testCompare('an1.2:0.1', 'an1.10:0.1', -8);
-        testCompare('dn33', 'dn33', 0);
-        testCompare('sn2.1', 'dn33', 1);
-        testCompare('dn33:1.2.31', 'dn33:1.10.1', -8);
-        testCompare('dn33:1.10.31', 'dn33:1.10.31', 0);
-        testCompare('dn33:1.10.31', 'dn33:2.10.31', -1);
-        testCompare('dn33:1.1.31', 'dn33:1.10.31', -9);
-        testCompare('dn33:1.1', 'dn33:1.1', 0);
-        testCompare('dn33:1.1', 'dn33:1.11', -10);
-        testCompare('dn33:1.1', 'dn33:1.1.0', -1);
-        testCompare('dn33:1.10.1', 'dn33:1.2.0', 8);
+        testCompareLow('an1.2:2.3', 'an1.10:0.1', -8);
+        testCompareLow('an1.2:0.1', 'an1.10:0.1', -8);
+        testCompareLow('dn33', 'dn33', 0);
+        testCompareLow('sn2.1', 'dn33', 1);
+        testCompareLow('dn33:1.2.31', 'dn33:1.10.1', -8);
+        testCompareLow('dn33:1.10.31', 'dn33:1.10.31', 0);
+        testCompareLow('dn33:1.10.31', 'dn33:2.10.31', -1);
+        testCompareLow('dn33:1.1.31', 'dn33:1.10.31', -9);
+        testCompareLow('dn33:1.1', 'dn33:1.1', 0);
+        testCompareLow('dn33:1.1', 'dn33:1.11', -10);
+        testCompareLow('dn33:1.1', 'dn33:1.1.0', -1);
+        testCompareLow('dn33:1.10.1', 'dn33:1.2.0', 8);
     });
     it("compareHigh(a,b) compares sutta file names", function(){
         var cmp = SuttaCentralId.compareHigh;

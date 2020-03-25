@@ -52,7 +52,6 @@ var transPath = path.join(BILARA_DATA, 'translation');
 fs.readdirSync(transPath).forEach(tdf => {
     languages.push(tdf);
 });
-console.log(`languages ${languages}`);
 
 var nargs = process.argv.length;
 if (nargs < 3) {
@@ -118,7 +117,6 @@ function verifyDoc(mld) {
     var suid = mld.suid;
     var languages = {};
     var repairMap = {};
-    console.log(`verifying ${suid}`);
     mld.segments().forEach(seg => {
         var newSeg = verifySeg(mld, seg);
         if (newSeg) {
@@ -147,6 +145,7 @@ function verifyDoc(mld) {
 }
 
 function verify(res, pattern, n=0) {
+    console.log(`verifying ${res.mlDocs.map(mld=>mld.suid)}`);
     res.mlDocs.forEach(mld => verifyDoc(mld));
 }
 
