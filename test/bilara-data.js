@@ -12,7 +12,7 @@
         logger,
         LOCAL_DIR,
     } = require("just-simple").JustSimple;
-    this.timeout(8*1000);
+    this.timeout(10*1000);
     var logLevel = false;
     var bd = new BilaraData({ logLevel }); 
     function ROOTPATH(mid,category='sutta') {

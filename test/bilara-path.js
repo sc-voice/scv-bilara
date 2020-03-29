@@ -4,18 +4,9 @@
         BilaraPath,
         BilaraData,
     } = require("../index");
+    this.timeout(1*1000);
 
     var bd = new BilaraData;
-    function ROOTPATH(mid) {
-        var lang = 'pli';
-        var auth = 'ms';
-        return [
-            'root',
-            lang,
-            `${auth}/sutta`,
-            `${mid}_root-${lang}-${auth}.json`
-        ].join('/');
-    }
     function TRANSPATH(lang,auth,mid) {
         return [
             'translation',
@@ -24,7 +15,6 @@
             `${mid}_translation-${lang}-${auth}.json`
         ].join('/');
     }
-
 
     it("pathParts(f) returns parts of bilara filename",()=>{
         var f = TRANSPATH('en','sujato','sn/sn22/sn22.2');
