@@ -59,8 +59,18 @@
             if (!this.initialized) {
                 throw new Error(`initialize() has not been called`);
             }
-            
-            return this.suidMap[suid];
+            var suidParts = suid.split('/');
+            var key = suidParts[0];
+            return this.suidMap[key];
+        }
+
+        suidPath(suid) {
+            var pathInfo = this.suidPaths(suid);
+            var suidParts = suid.split('/');
+            var key = suidParts.length === 1
+                ? `root/pli/ms`
+                : `translation/${suidParts[1]}/${suidParts[2]}`;
+            return pathInfo && pathInfo[key];
         }
 
         loadPaths(opts={}) {

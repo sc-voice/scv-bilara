@@ -15,6 +15,7 @@
     } = require('child_process');
     const SegDoc = require('./seg-doc');
     const MLDoc = require('./ml-doc');
+    const BilaraPathMap = require('./bilara-path-map');
     const SuttaCentralId = require('./sutta-central-id');
     const FuzzyWordSet = require('./fuzzy-word-set');
     const Pali = require('./pali');
@@ -26,6 +27,8 @@
         constructor(opts={}) {
             this.name = opts.name || 'bilara-data';
             this.root = opts.root || path.join(LOCAL_DIR, this.name);
+            this.bilaraPathMap = opts.bilaraPathMap || 
+                new BilaraPathMap({root: this.root});
             this.lang = opts.lang || 'en';
             this.includeUnpublished = opts.includeUnpublished == null 
                 ? false : opts.includeUnpublished;
@@ -48,12 +51,18 @@
             }
             var that = this;
             var pbody = (resolve, reject) => {(async function() { try {
+                await that.bilaraPathMap.initialize();
                 let pubPath = path.join(that.root, `_publication.json`);
                 that._publication = fs.existsSync(pubPath)
                     ? json5.parse(await readFile(pubPath))
                     : {};
                 that.pubEntries = Object.keys(that._publication)
                     .map(k=>that._publication[k]);
+                that.pubInfoMap = that.pubEntries.reduce((a,p) => {
+                    var bilPath = p.source_url.replace(/.*master\//,'');
+                    a[bilPath] = p;
+                    return a;
+                }, {});
 
                 that.initialized = true;
                 resolve(that);
@@ -137,12 +146,53 @@
             }, []).sort();
         }
 
-        isPublishedPath(fpath) {
+        pubInfo(suid) {
             if (!this.initialized) {
                 throw new Error('Expected preceding call to initialize()');
             }
-            if (this.includeUnpublished) {
-                return true;
+            let {
+                bilaraPathMap: bpm,
+                pubInfoMap,
+            } = this;
+            if (suid == null) {
+                throw new Error(`suid is required`);
+            }
+            var suidParts = suid.split('/');
+            var suidFilter = suidParts.length > 1 
+                ? suidParts.slice(1).join('/')
+                : null;
+            var sps = bpm.suidPaths(suid);
+            var spsKeys = sps && Object.keys(sps) || [];
+            var spsValues = spsKeys.map(k=>sps[k]);
+            var result = [];
+            for (var isps = 0; isps < spsValues.length; isps ++) {
+                var sp = spsValues[isps];
+                if (suidFilter && sp.indexOf(suidFilter) < 0) {
+                    continue;
+                }
+
+                var spParts = sp && sp.split('/') || [];
+                while (spParts.length > 0) {
+                    let key = spParts.join('/');
+                    let info = pubInfoMap[key];
+                    if (info) {
+                        var entry = this.pubEntry(info.publication_number);
+                        var spPath = path.dirname(sp);
+                        // subchapters are an1, vagga1, etc.
+                        entry.subchapters = /[0-9]$/.test(spPath);
+                        result.push(entry);
+                        break;
+                    }
+                    spParts.pop();
+                }
+            }
+
+            return result;
+        }
+
+        isPublishedPath(fpath) {
+            if (!this.initialized) {
+                throw new Error('Expected preceding call to initialize()');
             }
             if (this._rePubPaths == null) {
                 var published = [
@@ -151,10 +201,17 @@
                     'root/pli/ms/vinaya',
                 ];
                 Object.defineProperty(this, "_rePubPaths", {
-                    value: new RegExp(`(${published.join("|")}).*`),
+                    value: new RegExp(`(${published.join("|")}).*`,'u'),
                 });
             }
-            return this._rePubPaths.test(fpath);
+            let {
+                bilaraPathMap: bpm,
+                _rePubPaths: re,
+            } = this;
+            var sp = bpm.suidPath(fpath);
+            var pub = re.test(sp);
+
+            return re.test(sp) || re.test(fpath);
         }
 
     }

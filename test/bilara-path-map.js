@@ -34,14 +34,14 @@
         ].join('/');
     }
 
-    it("TESTTESTdefault ctor",done=>{
+    it("default ctor",done=>{
         (async function() { try {
             var bpm = new BilaraPathMap();
             should(bpm.initialized).equal(false);
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTsuidPath(suid) returns local bilara paths",done=>{
+    it("suidPath(suid) returns local bilara paths",done=>{
         (async function() { try {
             var bpm = new BilaraPathMap()
             should.throws(()=>{bpm.suidPaths('dn33');});

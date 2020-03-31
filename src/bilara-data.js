@@ -611,18 +611,25 @@
         expandRange(suttaRef) {
             suttaRef = suttaRef.split(':')[0];
             var reCollection = new RegExp("[0-9].*", "u");
-            var cname = suttaRef.replace(reCollection, '');
+            var collName = suttaRef.replace(reCollection, '');
             var suffix = suttaRef.replace(/[^/]*([a-z\/]*)$/iu, '$1');
             var sref = suttaRef.replace(suffix, '');
-            var range = sref.substring(cname.length);
+            var range = sref.substring(collName.length);
             if (/^[-a-z]+$/.test(range)) { 
                 // e.g., kusalagnana-maitrimurti-traetow
                 return [ suttaRef ];
             }
-            var coll = this.publication.text_uidInfo(cname);
+            var rl = SuttaCentralId.rangeLow(suttaRef);
+            var suttaRefLow = this.suttaIds[this.suttaIndex(rl)];
+            if (!suttaRefLow) {
+                throw new Error(
+                    `Document not found: ${suttaRef} [E5]`);
+            }
+            var coll = this.publication.pubInfo(suttaRefLow);
             var result = [];
-            if (!coll) { // no collection
-                throw new Error(`Not published: ${suttaRef} ${cname} [E4]`);
+            if (!coll || !coll.length) { // no collection
+                throw new Error(
+                    `Unpublished:${suttaRef} collection:${collName} [E4]`);
             }
             var rangeParts = range.split('-');
             var dotParts = rangeParts[0].split('.');
@@ -630,7 +637,7 @@
                 throw new Error(
                     `Invalid sutta reference: ${suttaRef} [E3]`);
             }
-            if (coll.subchapters) { // e.g., SN, AN, KN
+            if (coll[0].subchapters) { // e.g., SN, AN, KN
                 if (dotParts.length === 1) { // e.g. SN50
                     var prefix = `${sref}.`;
                     var first = rangeParts.length === 1 
@@ -638,12 +645,12 @@
                     var last = rangeParts.length === 1 
                         ? 999 : Number(rangeParts[1]);
                 } else if (rangeParts.length === 1) {
-                    var prefix = `${cname}${dotParts[0]}.`;
+                    var prefix = `${collName}${dotParts[0]}.`;
                     rangeParts[0] = dotParts[1];
                     var first = Number(rangeParts[0]);
                     var last = first;
                 } else { // e.g., SN50.1
-                    var prefix = `${cname}${dotParts[0]}.`;
+                    var prefix = `${collName}${dotParts[0]}.`;
                     var first = Number(dotParts[1]);
                     var last = Number(rangeParts[1]);
                 }
@@ -673,12 +680,12 @@
                     throw new Error(
                         `Invalid sutta reference: ${suttaRef} [E2]`);
                 }
-                var firstItem = `${cname}${first}`;
+                var firstItem = `${collName}${first}`;
                 var iCur = this.suttaIndex(firstItem, false);
                 if (iCur == null) {
                     throw new Error(`Sutta ${firstItem} not found`);
                 }
-                var lastItem = `${cname}${last}`;
+                var lastItem = `${collName}${last}`;
                 var endUid = this.sutta_uidSuccessor(lastItem);
                 var iEnd = this.suttaIndex(endUid);
                 for (var i = iCur; i < iEnd; i++) {

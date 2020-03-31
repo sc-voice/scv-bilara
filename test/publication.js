@@ -59,7 +59,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTpubPaths() => all bilara paths", done=> {
+    it("pubPaths() => all bilara paths", done=> {
         (async function() { try {
             var pub = await pubTest.initialize();
 
@@ -72,14 +72,9 @@
                 `${SABBAMITTA}/sn`,
                 `${BRAHMALI}`,
                 `${BRAHMALI}/pli-tv-bi-vb`,
-                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-as`,
-                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-np`,
-                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-pc`,
-                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-pd`,
-                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-pj`,
-                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-sk`,
-                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-ss`,
-                `${BRAHMALI}/pli-tv-bu-kd`,
+                `${BRAHMALI}/pli-tv-bu-vb`,
+                `${BRAHMALI}/pli-tv-kd`,
+                `${BRAHMALI}/pli-tv-pvr`,
                 `${SUJATO}/an`,
                 `${SUJATO}/dn`,
                 `${SUJATO}/kn/dhp`,
@@ -101,14 +96,9 @@
                 `${SABBAMITTA}/sn`,
                 `${BRAHMALI}`,
                 `${BRAHMALI}/pli-tv-bi-vb`,
-                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-as`,
-                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-np`,
-                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-pc`,
-                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-pd`,
-                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-pj`,
-                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-sk`,
-                `${BRAHMALI}/pli-tv-bi-vb/pli-tv-bi-vb-ss`,
-                `${BRAHMALI}/pli-tv-bu-kd`,
+                `${BRAHMALI}/pli-tv-bu-vb`,
+                `${BRAHMALI}/pli-tv-kd`,
+                `${BRAHMALI}/pli-tv-pvr`,
                 `${SUJATO}/an`,
                 `${SUJATO}/dn`,
                 `${SUJATO}/kn/dhp`,
@@ -124,6 +114,13 @@
         (async function() { try {
             var pub = await pubTest.initialize(); 
         
+            should(pub.isPublishedPath('nonsense/en/nobody'))
+                .equal(false);
+            should(pub.isPublishedPath('pli-tv-bu-vb-pj1/en/brahmali'))
+                .equal(false);
+            should(pub.isPublishedPath('mn1')).equal(true);
+            should(pub.isPublishedPath('mn1/en/sujato')).equal(true);
+            should(pub.isPublishedPath('mn1/en/nobody')).equal(false);
             should(pub.isPublishedPath(ROOTPATH('mn/mn1')))
                 .equal(true);
             should(pub.isPublishedPath(TRANSPATH('en', 'sujato','mn/mn1')))
@@ -134,6 +131,31 @@
             should(pub.isPublishedPath(
                 TRANSPATH('en', 'sujato', `kn/dhp/dhp21-32`)))
                 .equal(false);
+            done();
+        } catch(e) {done(e);} })();
+    });
+    it("isPublishedPath(f) allows unpublished paths", done=>{
+        (async function() { try {
+            var pub = await new Publication({
+                includeUnpublished: true,
+            }).initialize(); 
+        
+            should(pub.isPublishedPath(ROOTPATH('mn/mn1')))
+                .equal(true);
+            should(pub.isPublishedPath(ROOTPATH('mn1')))
+                .equal(true);
+            should(pub.isPublishedPath('pli-tv-bu-vb-pj1/en/brahmali'))
+                .equal(true);
+            should(pub.isPublishedPath('nonsense/en/nobody'))
+                .equal(false);
+            should(pub.isPublishedPath(TRANSPATH('en', 'sujato','mn/mn1')))
+                .equal(true);
+            should(pub.isPublishedPath(
+                TRANSPATH('en', 'sujato', `kn/thig/thig2.4`)))
+                .equal(true);
+            should(pub.isPublishedPath(
+                TRANSPATH('en', 'sujato', `kn/dhp/dhp21-32`)))
+                .equal(true);
             done();
         } catch(e) {done(e);} })();
     });
@@ -160,50 +182,59 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTtext_uidPub(...) => published divisions", done=>{
+    it("pubInfo(suid) => publication information", done=>{
         (async function() { try {
             var pub = await new Publication({
                 includeUnpublished: true,
             }).initialize();
-            should(pub.text_uidInfo('pli-tv-vi')).properties({
-                name: 'pli-tv-vi',
-                "publication_number": "scpub8",
-                "subchapters": true,
+
+            // multiply published
+            var pi = pub.pubInfo("an1.1-10/de/sabbamitta");
+            should(pi[0]).properties({
+                publication_number: "scpub11",
+                author_name: "Anagarika Sabbamitta",
+                text_uid: "an",
+                subchapters: true,
+                is_published: "true",
+            });
+            should(pi.length).equal(1);
+
+            // unpublished
+            var pi = pub.pubInfo("pli-tv-bi-vb-sk1-75");
+            should(pi.length).equal(1);
+            should(pi[0]).properties({
+                publication_number: "scpub8.1",
                 author_name: "Bhikkhu Brahmali",
+                text_uid: "pli-tv-bi-vb",
+                subchapters: false,
+                is_published: "false",
             });
-            should(pub.text_uidInfo('pli-tv-bi-vb-sk')).properties({
-                name: 'pli-tv-bi-vb-sk',            // generated
-                subchapters: false,                 // generated
-                publication_number: "scpub8.1.6",   // override
-                division: "bi-vi",                  // inherited
-                author_name: "Bhikkhu Brahmali",    // inherited
-                is_published: 'false',              // inherited
+
+            // published generic
+            var pi = pub.pubInfo("mn1");
+            should(pi.length).equal(1);
+            should(pi[0]).properties({
+                publication_number: "scpub3",
+                author_name: "Bhikkhu Sujato",
+                text_uid: "mn",
+                subchapters: false,
+                is_published: "true",
             });
-            should(pub.text_uidInfo('mn')).properties({
-                "name": "mn",
-                "publication_number": "scpub3",
-                "subchapters": false
+
+            // published specific
+            var pi = pub.pubInfo("mn1/en/sujato");
+            should(pi.length).equal(1);
+            should(pi[0]).properties({
+                publication_number: "scpub3",
+                author_name: "Bhikkhu Sujato",
+                text_uid: "mn",
+                subchapters: false,
+                is_published: "true",
             });
-            should(pub.text_uidInfo('dn')).properties({
-                "name": "dn",
-                "publication_number": "scpub2",
-                "subchapters": false
-            });
-            should(pub.text_uidInfo('sn')).properties({
-                name: 'sn',
-                "publication_number": "scpub4",
-                "subchapters": true
-            });
-            should(pub.text_uidInfo('thig')).properties({
-                name: 'thig',
-                "publication_number": "scpub6",
-                "subchapters": false,
-            });
-            should(pub.text_uidInfo('thag')).properties({
-                name: 'thag',
-                "publication_number": "scpub1",
-                "subchapters": false,
-            });
+
+            // unavailable
+            var pi = pub.pubInfo("mn1/de/sabbamitta");
+            should(pi.length).equal(0);
 
             done();
         } catch(e) { done(e); }})();

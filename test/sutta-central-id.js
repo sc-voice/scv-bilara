@@ -128,7 +128,7 @@
         should(cmp("an1.10", "an1.1-10")).equal(9);
 
     });
-    it("TESTTESTcompareLow(a,b) compares segment ids", ()=>{
+    it("compareLow(a,b) compares segment ids", ()=>{
         // vinaya
         testCompareLow('pli-tv-kd15:17.3.2^a', 'pli-tv-kd15:17.3.2', -26);
         testCompareLow('pli-tv-kd15:17.3', 'pli-tv-kd15:17.3.2', -2);
