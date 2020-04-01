@@ -1,18 +1,44 @@
 #!/bin/bash
 DIR=`dirname $0`
 echo $DIR
-#$DIR/js/verify.js an1-999
+$DIR/js/verify.js an1.1-999
+$DIR/js/verify.js an2.1-999
+$DIR/js/verify.js an3.1-999
+$DIR/js/verify.js an4.1-999
+$DIR/js/verify.js an5.1-999
+$DIR/js/verify.js an6.1-999
+$DIR/js/verify.js an7.1-999
+$DIR/js/verify.js an8.1-999
+$DIR/js/verify.js an9.1-999
+$DIR/js/verify.js an10.1-999
 #$DIR/js/verify.js sn1-999
 #$DIR/js/verify.js mn1-999
 #$DIR/js/verify.js dn1-999
 #$DIR/js/verify.js thig1-999
 #$DIR/js/verify.js thag1-999
-$DIR/js/verify.js pli-tv-bi-vb-as1-999
-$DIR/js/verify.js pli-tv-bi-vb-np1-999
-#$DIR/js/verify.js pli-tv-bi-vb-pc1-999
-$DIR/js/verify.js pli-tv-bi-vb-ss1-999
-$DIR/js/verify.js pli-tv-bi-vb-sk1-999
-#$DIR/js/verify.js pli-tv-kd1-999
+#
+#$DIR/js/verify.js pli-tv-bi-vb-as1-999
 #$DIR/js/verify.js pli-tv-bi-vb-ss1-999
 #$DIR/js/verify.js pli-tv-bi-vb-np1-999
 #$DIR/js/verify.js pli-tv-bi-vb-pc1-999
+#$DIR/js/verify.js pli-tv-bi-vb-sk1-999
+#$DIR/js/verify.js pli-tv-bi-vb-pd1-999
+#$DIR/js/verify.js pli-tv-bi-vb-pj5-8
+#
+#$DIR/js/verify.js pli-tv-kd1-999
+#
+#$DIR/js/verify.js pli-tv-bu-vb-as1-999
+#$DIR/js/verify.js pli-tv-bu-vb-sk1-999
+#$DIR/js/verify.js pli-tv-bu-vb-as1-999
+#$DIR/js/verify.js pli-tv-bu-vb-pj1-999
+#$DIR/js/verify.js pli-tv-bu-vb-pd1-999
+#$DIR/js/verify.js pli-tv-bu-vb-ss1-999
+#$DIR/js/verify.js pli-tv-bu-vb-ay1-999
+#$DIR/js/verify.js pli-tv-bu-vb-np1-999
+#$DIR/js/verify.js pli-tv-bu-vb-pc1-999
+#$DIR/js/verify.js pli-tv-bu-vb-pj1-4
+#
+#$DIR/js/verify.js pli-tv-pvr1.1-999
+#$DIR/js/verify.js pli-tv-pvr2.1-999
+#$DIR/js/verify.js pli-tv-pvr3-999
+#

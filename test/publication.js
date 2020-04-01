@@ -182,11 +182,32 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("pubInfo(suid) => publication information", done=>{
+    it("TESTTESTpubInfo(suid) => publication information", done=>{
         (async function() { try {
             var pub = await new Publication({
                 includeUnpublished: true,
             }).initialize();
+
+            // vinaya
+            var pi = pub.pubInfo("pli-tv-bu-vb-pj4");
+            should(pi[0]).properties({
+                publication_number: "scpub8.2",
+                author_name: "Bhikkhu Brahmali",
+                text_uid: "pli-tv-bu-vb",
+                subchapters: false,
+                is_published: "false",
+            });
+            should(pi.length).equal(1);
+
+            var pi = pub.pubInfo("pli-tv-pvr1.1");
+            should(pi[0]).properties({
+                publication_number: "scpub8.4",
+                author_name: "Bhikkhu Brahmali",
+                text_uid: "pli-tv-pvr",
+                subchapters: false,
+                is_published: "false",
+            });
+            should(pi.length).equal(1);
 
             // multiply published
             var pi = pub.pubInfo("an1.1-10/de/sabbamitta");

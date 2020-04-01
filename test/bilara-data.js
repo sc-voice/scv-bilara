@@ -568,7 +568,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTsutta_uidSearch(...) normalizes sutta references", done=>{
+    it("sutta_uidSearch(...) normalizes sutta references", done=>{
         (async function() { try {
             await bd.initialize();
             var maxResults = 4;
