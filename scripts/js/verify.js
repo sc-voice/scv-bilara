@@ -101,15 +101,15 @@ function verifySeg(mld, seg) {
         logger.info(`Too many colons "${seg.scid}" => "${repairedId}"`);
     }
     if (!repairedId && !SuttaCentralId.match(seg.scid, suid)) {
-        repairedId = colonParts.map((part,i) => i ? suid : part)
+        repairedId = colonParts.map((part,i) => i ? part : suid )
             .join(':');
+        logger.info(`Segment id/file mismatch "${seg.scid}" => "${repairedId}"`);
     }
     if (repairedId) {
         newSeg = Object.assign({}, seg, {
             scid: repairedId,
         });
     }
-    newSeg && console.log(newSeg);
     return newSeg;
 }
 

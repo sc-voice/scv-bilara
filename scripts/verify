@@ -1,44 +1,139 @@
 #!/bin/bash
 DIR=`dirname $0`
 echo $DIR
-$DIR/js/verify.js an1.1-999
-$DIR/js/verify.js an2.1-999
-$DIR/js/verify.js an3.1-999
-$DIR/js/verify.js an4.1-999
-$DIR/js/verify.js an5.1-999
-$DIR/js/verify.js an6.1-999
-$DIR/js/verify.js an7.1-999
-$DIR/js/verify.js an8.1-999
-$DIR/js/verify.js an9.1-999
-$DIR/js/verify.js an10.1-999
-#$DIR/js/verify.js sn1-999
-#$DIR/js/verify.js mn1-999
-#$DIR/js/verify.js dn1-999
-#$DIR/js/verify.js thig1-999
-#$DIR/js/verify.js thag1-999
-#
-#$DIR/js/verify.js pli-tv-bi-vb-as1-999
-#$DIR/js/verify.js pli-tv-bi-vb-ss1-999
-#$DIR/js/verify.js pli-tv-bi-vb-np1-999
-#$DIR/js/verify.js pli-tv-bi-vb-pc1-999
-#$DIR/js/verify.js pli-tv-bi-vb-sk1-999
-#$DIR/js/verify.js pli-tv-bi-vb-pd1-999
-#$DIR/js/verify.js pli-tv-bi-vb-pj5-8
-#
-#$DIR/js/verify.js pli-tv-kd1-999
-#
-#$DIR/js/verify.js pli-tv-bu-vb-as1-999
-#$DIR/js/verify.js pli-tv-bu-vb-sk1-999
-#$DIR/js/verify.js pli-tv-bu-vb-as1-999
-#$DIR/js/verify.js pli-tv-bu-vb-pj1-999
-#$DIR/js/verify.js pli-tv-bu-vb-pd1-999
-#$DIR/js/verify.js pli-tv-bu-vb-ss1-999
-#$DIR/js/verify.js pli-tv-bu-vb-ay1-999
-#$DIR/js/verify.js pli-tv-bu-vb-np1-999
-#$DIR/js/verify.js pli-tv-bu-vb-pc1-999
-#$DIR/js/verify.js pli-tv-bu-vb-pj1-4
-#
-#$DIR/js/verify.js pli-tv-pvr1.1-999
-#$DIR/js/verify.js pli-tv-pvr2.1-999
-#$DIR/js/verify.js pli-tv-pvr3-999
-#
+DOCS=$1
+if [ "$DOCS" == "" ]; then DOCS='ALL'; fi
+
+if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "AN" ]; then
+    $DIR/js/verify.js an1.1-999
+    $DIR/js/verify.js an2.1-999
+    $DIR/js/verify.js an3.1-999
+    $DIR/js/verify.js an4.1-999
+    $DIR/js/verify.js an5.1-999
+    $DIR/js/verify.js an6.1-999
+    $DIR/js/verify.js an7.1-999
+    $DIR/js/verify.js an8.1-999
+    $DIR/js/verify.js an9.1-999
+    $DIR/js/verify.js an10.1-999
+    DOCS=
+fi
+
+if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "SN" ]; then
+    $DIR/js/verify.js sn1.1-999
+    $DIR/js/verify.js sn2.1-999
+    $DIR/js/verify.js sn3.1-999
+    $DIR/js/verify.js sn4.1-999
+    $DIR/js/verify.js sn5.1-999
+    $DIR/js/verify.js sn6.1-999
+    $DIR/js/verify.js sn7.1-999
+    $DIR/js/verify.js sn8.1-999
+    $DIR/js/verify.js sn9.1-999
+    $DIR/js/verify.js sn10.1-999
+    $DIR/js/verify.js sn11.1-999
+    $DIR/js/verify.js sn12.1-999
+    $DIR/js/verify.js sn13.1-999
+    $DIR/js/verify.js sn14.1-999
+    $DIR/js/verify.js sn15.1-999
+    $DIR/js/verify.js sn16.1-999
+    $DIR/js/verify.js sn17.1-999
+    $DIR/js/verify.js sn18.1-999
+    $DIR/js/verify.js sn19.1-999
+    $DIR/js/verify.js sn20.1-999
+    DOCS=
+fi
+
+if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "MN" ]; then
+    $DIR/js/verify.js mn1-999
+    DOCS=
+fi
+
+if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "DN" ]; then
+    $DIR/js/verify.js dn1-999
+    DOCS=
+fi
+
+if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "THIG" ]; then
+    $DIR/js/verify.js thig1.1-999
+    $DIR/js/verify.js thig2.1-999
+    $DIR/js/verify.js thig3.1-999
+    $DIR/js/verify.js thig4.1-999
+    $DIR/js/verify.js thig5.1-999
+    $DIR/js/verify.js thig6.1-999
+    $DIR/js/verify.js thig7.1-999
+    $DIR/js/verify.js thig8.1-999
+    $DIR/js/verify.js thig9.1-999
+    $DIR/js/verify.js thig10.1-999
+    $DIR/js/verify.js thig11.1-999
+    $DIR/js/verify.js thig12.1-999
+    $DIR/js/verify.js thig13.1-999
+    $DIR/js/verify.js thig14.1-999
+    $DIR/js/verify.js thig15.1-999
+    $DIR/js/verify.js thig16.1-999
+    DOCS=
+fi
+
+if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "THAG" ]; then
+    $DIR/js/verify.js thag1.1-999
+    $DIR/js/verify.js thag2.1-999
+    $DIR/js/verify.js thag3.1-999
+    $DIR/js/verify.js thag4.1-999
+    $DIR/js/verify.js thag5.1-999
+    $DIR/js/verify.js thag6.1-999
+    $DIR/js/verify.js thag7.1-999
+    $DIR/js/verify.js thag8.1-999
+    $DIR/js/verify.js thag9.1-999
+    $DIR/js/verify.js thag10.1-999
+    $DIR/js/verify.js thag11.1-999
+    $DIR/js/verify.js thag12.1-999
+    $DIR/js/verify.js thag13.1-999
+    $DIR/js/verify.js thag14.1-999
+    $DIR/js/verify.js thag15.1-999
+    $DIR/js/verify.js thag16.1-999
+    $DIR/js/verify.js thag17.1-999
+    $DIR/js/verify.js thag18.1-999
+    $DIR/js/verify.js thag19.1-999
+    $DIR/js/verify.js thag20.1-999
+    $DIR/js/verify.js thag21.1-999
+    DOCS=
+fi
+
+if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "BI" ]; then
+    $DIR/js/verify.js pli-tv-bi-vb-as1-999
+    $DIR/js/verify.js pli-tv-bi-vb-ss1-999
+    $DIR/js/verify.js pli-tv-bi-vb-np1-999
+    $DIR/js/verify.js pli-tv-bi-vb-pc1-999
+    $DIR/js/verify.js pli-tv-bi-vb-sk1-999
+    $DIR/js/verify.js pli-tv-bi-vb-pd1-999
+    $DIR/js/verify.js pli-tv-bi-vb-pj5-8
+    DOCS=
+fi
+
+if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "KD" ]; then
+    $DIR/js/verify.js pli-tv-kd1-999
+    DOCS=
+fi
+
+if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "BU" ]; then
+    $DIR/js/verify.js pli-tv-bu-vb-as1-999
+    $DIR/js/verify.js pli-tv-bu-vb-sk1-999
+    $DIR/js/verify.js pli-tv-bu-vb-as1-999
+    $DIR/js/verify.js pli-tv-bu-vb-pj1-999
+    $DIR/js/verify.js pli-tv-bu-vb-pd1-999
+    $DIR/js/verify.js pli-tv-bu-vb-ss1-999
+    $DIR/js/verify.js pli-tv-bu-vb-ay1-999
+    $DIR/js/verify.js pli-tv-bu-vb-np1-999
+    $DIR/js/verify.js pli-tv-bu-vb-pc1-999
+    $DIR/js/verify.js pli-tv-bu-vb-pj1-4
+    DOCS=
+fi
+
+if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "PVR" ]; then
+    $DIR/js/verify.js pli-tv-pvr1.1-999
+    $DIR/js/verify.js pli-tv-pvr2.1-999
+    $DIR/js/verify.js pli-tv-pvr3-999
+    DOCS=
+fi
+
+if [ "$DOCS" != "ALL" ] && [ "$DOCS" != "" ]; then
+    $DIR/js/verify.js $DOCS
+fi
