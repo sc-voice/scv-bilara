@@ -27,7 +27,7 @@
 
     const BILARA_PATH = path.join(LOCAL_DIR, 'bilara-data');
 
-    it("default ctor", ()=>{
+    it("TESTTESTdefault ctor", ()=>{
         var skr = new Seeker();
         should(skr).properties({
             logLevel: 'info',
@@ -35,8 +35,6 @@
             root: BILARA_PATH,
             paliWords: undefined,
         });
-        var grepAllow = "/^[^\\/]+\\/sutta\\/(an|sn|mn|kn|dn)\\//iu";
-        should(skr.grepAllow.toString()).equal(grepAllow);
     });
     it("custom ctor", ()=>{
         var logLevel = 'warn';
@@ -98,12 +96,12 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("grep(...) skips grepDeny things", done=>{
+    it("TESTTESTgrep(...) filters result files", done=>{
         (async function() { try {
             var skr = new Seeker(SEEKEROPTS);
             var res = await skr.grep({
                 pattern: "a single day",
-                grepDeny: new RegExp("/(dhp)/","iu"),
+                tripitakaCategories: "dn,an",
             });
             should.deepEqual(res, [
                 `${en_suj}dn/dn9_translation-en-sujato.json:1`,
@@ -186,9 +184,9 @@
                 method: "keywords",
                 lang: 'en',
                 keywordsFound: {
-                    faith: 389,
-                    joy: 133,
-                    suffering: 755,
+                    faith: 395,
+                    joy: 141,
+                    suffering: 769,
                 },
             };
 
@@ -214,7 +212,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("keywordSearch(...) searches English", done=>{
+    it("TESTTESTkeywordSearch(...) searches English", done=>{
         (async function() { try {
             var pattern = Seeker.normalizePattern('suffering joy faith');
             var skr = await new Seeker({
@@ -229,9 +227,9 @@
                 lang: 'en',
                 method: 'keywords',
                 keywordsFound: {
-                    suffering: 755,
-                    joy: 133,
-                    faith: 389,
+                    suffering: 769,
+                    joy: 141,
+                    faith: 395,
                 },
             };
             should(data).properties(enExpected);
@@ -259,7 +257,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("keywordSearch(...) searches Pali, not English", done=>{
+    it("TESTTESTkeywordSearch(...) searches Pali, not English", done=>{
         (async function() { try {
             var maxResults = 2;
             var skr = await new Seeker({
@@ -283,7 +281,7 @@
             });
             should(data).properties(expected);
             should.deepEqual(data.keywordsFound, {
-                'Anāthapiṇḍika': 278,
+                'Anāthapiṇḍika': 280,
             });
 
             // Single romanized Pali searches Pali
@@ -292,7 +290,7 @@
             });
             should(data).properties(expected);
             should.deepEqual(data.keywordsFound, {
-                'anathapindika': 279,
+                'anathapindika': 281,
             });
 
             done(); 
@@ -356,7 +354,7 @@
 
             // Single romanized Pali searches Pali
             expected.keywordsFound = {
-                'anathapindika': 279,
+                'anathapindika': 281,
             };
             var data = await skr.keywordSearch({ 
                 pattern: 'anathapindika',
@@ -1137,9 +1135,11 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTtripitakaRegExp(tc) => regexp for paths", ()=>{
+    it("tripitakaRegExp(tc) => regexp for paths", ()=>{
         var skr = new Seeker();
         should(skr.tripitakaRegExp('su').toString())
+            .equal("/(\\/sutta\\/)/iu");
+        should(skr.tripitakaRegExp().toString())
             .equal("/(\\/sutta\\/)/iu");
         should(skr.tripitakaRegExp('bi,pj').toString())
             .equal("/(-bi-|-pj)/iu");

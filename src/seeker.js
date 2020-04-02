@@ -30,17 +30,11 @@
             var root = this.root = opts.root || BILARA_PATH;
             logger.logInstance(this, opts);
             this.bilaraData = opts.bilaraData || new BilaraData(opts);
-            var {
-                includeUnpublished,
-            } = this.bilaraData;
+            this.includeUnpublished = opts.includeUnpublished ||
+                this.bilaraData.includeUnpublished;
             this.lang = opts.lang || 'en';
             this.languages = opts.languages || ['pli', 'en'];
             this.unicode = opts.unicode || new Unicode();
-            this.grepAllow = opts.grepAllow || includeUnpublished
-                ? new RegExp("^[^/]+/(vinaya|sutta)/","iu")
-                : new RegExp("^[^/]+/sutta/(an|sn|mn|kn|dn)/","iu");
-            this.grepDeny = opts.grepDeny ||
-                new RegExp("/(dhp)/","iu");
             this.paliWords = opts.paliWords;
             this.enWords = opts.enWords;
             this.matchColor = opts.matchColor == null 
@@ -205,8 +199,14 @@
                 tcMap[p] && a.push(tcMap[p]);
                 return a;
             }, []);
-                //? new RegExp("^[^/]+/(vinaya|sutta)/","iu")
-            return new RegExp(`(${pats.join('|')})`, "iu")
+            if (pats.length) {
+                var re = new RegExp(`(${pats.join('|')})`, "iu");
+            } else {
+                var re = new RegExp(this.includeUnpublished
+                    ? '(/vinaya/|/sutta/)' : '(/sutta/)', 
+                    "iu")
+            }
+            return re;
         }
 
         grep(opts) {
@@ -220,8 +220,6 @@
             } = opts;
             var grepTC = this.tripitakaRegExp(tripitakaCategories);
             var {
-                grepAllow,
-                grepDeny,
                 root,
             } = this;
             lang = lang || language || this.lang;
@@ -252,8 +250,7 @@
                         reject(err);
                     } else {
                         var raw = stdout && stdout.trim().split('\n') || [];
-                        var rawFiltered = raw.filter(f=>
-                            grepAllow.test(f) && !grepDeny.test(f))
+                        var rawFiltered = raw.filter(f=> grepTC.test(f))
                             .map(f => path.join(pathPrefix, f));
                         resolve(rawFiltered);
                     }
@@ -270,6 +267,7 @@
                 language,
                 pattern,
                 maxResults,
+                tripitakaCategories,
             } = args;
             lang = lang || language || this.lang;
             maxResults = maxResults == null ? this.maxResults : maxResults;
@@ -294,6 +292,7 @@
                         pattern:pat,
                         lang,
                         maxResults,
+                        tripitakaCategories,
                     });
                     var lines = await that.grep(grepArgs);
                     resolve({
@@ -315,6 +314,7 @@
                 language, // DEPRECATED
                 searchMetadata,
                 comparator,
+                tripitakaCategories,
             } = args;
             comparator = comparator || this.grepComparator;
             var that = this;
@@ -534,6 +534,7 @@
                         maxResults, 
                         lang, 
                         showMatchesOnly,
+                        tripitakaCategories,
                     };
 
                     var {
