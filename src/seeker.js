@@ -30,11 +30,15 @@
             var root = this.root = opts.root || BILARA_PATH;
             logger.logInstance(this, opts);
             this.bilaraData = opts.bilaraData || new BilaraData(opts);
+            var {
+                includeUnpublished,
+            } = this.bilaraData;
             this.lang = opts.lang || 'en';
             this.languages = opts.languages || ['pli', 'en'];
             this.unicode = opts.unicode || new Unicode();
-            this.grepAllow = opts.grepAllow || 
-                new RegExp("^[^/]+/sutta/(an|sn|mn|kn|dn)/","iu");
+            this.grepAllow = opts.grepAllow || includeUnpublished
+                ? new RegExp("^[^/]+/(vinaya|sutta)/","iu")
+                : new RegExp("^[^/]+/sutta/(an|sn|mn|kn|dn)/","iu");
             this.grepDeny = opts.grepDeny ||
                 new RegExp("/(dhp)/","iu");
             this.paliWords = opts.paliWords;

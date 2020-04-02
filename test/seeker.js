@@ -1103,4 +1103,35 @@
             done(); 
         } catch(e) {done(e);} })();
     });
+    it("TESTTESTfind(...) finds pli-tv-bi-vb-pj7", done=>{
+        (async function() { try {
+            var maxDoc = 3;
+            var bilaraData = new BilaraData({
+                includeUnpublished: true,
+            });
+            var skr = await new Seeker({
+                maxDoc,
+                bilaraData,
+                logLevel,
+            }).initialize();
+
+            // lists of suttas with ranges
+            var lang = 'en';
+            // The pattern resolves to 4 suttas, of which 3 are returned
+            var pattern = "legitimately ejected"; 
+            var res = await skr.find({
+                pattern,
+                lang,
+            });
+            should(res.method).equal('phrase');
+            should(res.maxDoc).equal(maxDoc);
+            should.deepEqual(res.suttaRefs, [
+                'pli-tv-bi-vb-pj7/en/brahmali',
+            ]);
+            should(res.resultPattern).equal(`\\b${pattern}`);
+            should(res.lang).equal('en');
+            should(res.mlDocs.length).equal(1);
+            done(); 
+        } catch(e) {done(e);} })();
+    });
 })

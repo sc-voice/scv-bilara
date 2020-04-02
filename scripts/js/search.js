@@ -116,6 +116,10 @@ DESCRIPTION
     -sl, --searchLang ISO_LANG_2
         Specify ISO 2-letter language code for language to search.
         Default is determined from pattern language.
+
+    -up, --unpublished
+        Search unpublished documents
+
 `);
     process.exit(0);
 }
@@ -126,6 +130,7 @@ var logLevel = false;
 var color = 201;
 var outFormat = 'human';
 var showMatchesOnly = true;
+var includedUnpublished = false;
 var isTTY = process.stdout.isTTY;
 //var searchLang;
 
@@ -182,6 +187,8 @@ for (var i = 2; i < nargs; i++) {
         outFormat = 'csv';
     } else if (arg === '-mr' || arg === '--maxResults') {
         maxResults = Number(process.argv[++i]);
+    } else if (arg === '-up' || arg === '--unpublished') {
+        includeUnpublished = true;
     } else {
         pattern = pattern ? `${pattern} ${arg}` : arg;
     }
@@ -385,13 +392,15 @@ function scriptEditor(res, pattern) {
 }
 
 (async function() { try {
-    var bd = await new BilaraData({
+    var bilaraData = await new BilaraData({
         logLevel,
+        includeUnpublished,
     }).initialize();
 
     var skr = await new Seeker({
         matchColor: color,
         maxResults,
+        bilaraData,
         logLevel,
     }).initialize();
     var matchHighlight = matchBash(color);

@@ -182,7 +182,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTpubInfo(suid) => publication information", done=>{
+    it("pubInfo(suid) => publication information", done=>{
         (async function() { try {
             var pub = await new Publication({
                 includeUnpublished: true,
