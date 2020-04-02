@@ -1038,6 +1038,7 @@
                 searchLang: 'en',
                 showMatchesOnly: true,
                 sortLines: undefined,
+                tripitakaCategories: undefined,
             });
 
             // German
@@ -1054,6 +1055,7 @@
                 searchLang: 'de',
                 showMatchesOnly: true,
                 sortLines: undefined,
+                tripitakaCategories: undefined,
             });
 
             // German
@@ -1070,6 +1072,7 @@
                 searchLang: 'de',
                 showMatchesOnly: true,
                 sortLines: undefined,
+                tripitakaCategories: undefined,
             });
             done(); 
         } catch(e) {done(e);} })();
@@ -1103,7 +1106,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) finds pli-tv-bi-vb-pj7", done=>{
+    it("find(...) finds pli-tv-bi-vb-pj7", done=>{
         (async function() { try {
             var maxDoc = 3;
             var bilaraData = new BilaraData({
@@ -1134,4 +1137,11 @@
             done(); 
         } catch(e) {done(e);} })();
     });
+    it("TESTTESTtripitakaRegExp(tc) => regexp for paths", ()=>{
+        var skr = new Seeker();
+        should(skr.tripitakaRegExp('su').toString())
+            .equal("/(\\/sutta\\/)/iu");
+        should(skr.tripitakaRegExp('bi,pj').toString())
+            .equal("/(-bi-|-pj)/iu");
+    })
 })

@@ -116,7 +116,6 @@ fi
 if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "BU" ]; then
     $DIR/js/verify.js pli-tv-bu-vb-as1-999
     $DIR/js/verify.js pli-tv-bu-vb-sk1-999
-    $DIR/js/verify.js pli-tv-bu-vb-as1-999
     $DIR/js/verify.js pli-tv-bu-vb-pj1-999
     $DIR/js/verify.js pli-tv-bu-vb-pd1-999
     $DIR/js/verify.js pli-tv-bu-vb-ss1-999

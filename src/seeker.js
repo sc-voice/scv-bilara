@@ -172,6 +172,43 @@
             return pat;
         }
 
+        tripitakaRegExp(tc='') {
+            var tcParts = tc.toLowerCase().split(',');
+            var tcMap = {
+                'an': '/an/',
+                'as': '-as',
+                'ay': '-ay',
+                'bi': '-bi-',
+                'bu': '-bu-',
+                'dn': '/dn/',
+                'kd': '-kd',
+                'kn': '/kn/',
+                'mn': '/mn/',
+                'ms': '-ms',
+                'np': '-np',
+                'pc': '-pc',
+                'pd': '-pd',
+                'pj': '-pj',
+                'pvr': '-pvr',
+                'sk': '-sk',
+                'sn': '/sn/',
+                'ss': '-ss',
+                'su': '/sutta/',
+                'thag': '/thag/',
+                'thig': '/thig/',
+                'tv': '-tv-',
+                'vb': '-vb-',
+                'vin': '/vinaya/',
+
+            }
+            var pats = tcParts.reduce((a,p) => {
+                tcMap[p] && a.push(tcMap[p]);
+                return a;
+            }, []);
+                //? new RegExp("^[^/]+/(vinaya|sutta)/","iu")
+            return new RegExp(`(${pats.join('|')})`, "iu")
+        }
+
         grep(opts) {
             var {
                 pattern,
@@ -179,7 +216,9 @@
                 lang,
                 language, // DEPRECATED
                 searchMetadata, // TODO
+                tripitakaCategories,
             } = opts;
+            var grepTC = this.tripitakaRegExp(tripitakaCategories);
             var {
                 grepAllow,
                 grepDeny,
@@ -313,11 +352,13 @@
                                     count,
                                 });
                             } else if (mrgIn.length) {
-                                var cmp = mrgIn[0].fpath.localeCompare(fpath);
+                                var cmp = mrgIn[0].fpath
+                                    .localeCompare(fpath);
                                 if (cmp === 0) {
                                     var newItem = {
                                         fpath,
-                                        count: Math.min(mrgIn[0].count, count),
+                                        count: Math.min(
+                                            mrgIn[0].count, count),
                                     };
                                     mrgOut.push(newItem);
                                     mrgIn.shift();
@@ -378,6 +419,7 @@
                 matchHighlight,
                 sortLines,
                 showMatchesOnly,
+                tripitakaCategories,
             } = opts;
             if (rawPattern == null) {
                 throw new Error(`pattern is required`);
@@ -398,6 +440,8 @@
                     if (!isNaN(n) && 0 < n && n < 4000 ) {
                         maxResults = n;
                     }
+                } else if (arg.startsWith('-tc:')) {
+                    tripitakaCategories = arg.substring('-tc:'.length);
                 } else if (arg === '-ml1' ) {
                     minLang = 1;
                 } else if (arg === '-ml2' ) {
@@ -450,6 +494,7 @@
                 minLang,
                 matchHighlight,
                 sortLines,
+                tripitakaCategories,
                 lang,
             }
         }
@@ -467,6 +512,7 @@
                 maxDoc,
                 matchHighlight,
                 showMatchesOnly,
+                tripitakaCategories,
             } = this.findArgs(args);
             var that = this;
             var bd = that.bilaraData;

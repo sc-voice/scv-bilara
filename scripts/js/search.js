@@ -120,6 +120,10 @@ DESCRIPTION
     -up, --unpublished
         Search unpublished documents
 
+    -tc:CATEGORIES
+        Restrict searches to listed categories. For example, "-tc:bi,pj"
+        will search for information in the Bhikkhuni Pārājika
+
 `);
     process.exit(0);
 }
@@ -130,8 +134,9 @@ var logLevel = false;
 var color = 201;
 var outFormat = 'human';
 var showMatchesOnly = true;
-var includedUnpublished = false;
+var includeUnpublished = false;
 var isTTY = process.stdout.isTTY;
+var tripitakaCategories = '';
 //var searchLang;
 
 var nargs = process.argv.length;
