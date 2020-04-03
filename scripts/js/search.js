@@ -136,7 +136,7 @@ var outFormat = 'human';
 var showMatchesOnly = true;
 var includeUnpublished = false;
 var isTTY = process.stdout.isTTY;
-var tripitakaCategories = '';
+var tipitakaCategories = '';
 //var searchLang;
 
 var nargs = process.argv.length;

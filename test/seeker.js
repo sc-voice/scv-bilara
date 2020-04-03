@@ -96,14 +96,15 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTgrep(...) filters result files", done=>{
+    it("grep(...) filters result files", done=>{
         (async function() { try {
             var skr = new Seeker(SEEKEROPTS);
             var res = await skr.grep({
                 pattern: "a single day",
-                tripitakaCategories: "dn,an",
+                //tipitakaCategories: "dn,an",
             });
             should.deepEqual(res, [
+                `${en_suj}kn/dhp/dhp100-115_translation-en-sujato.json:6`,
                 `${en_suj}dn/dn9_translation-en-sujato.json:1`,
                 `${en_suj}an/an10/an10.46_translation-en-sujato.json:1`
             ]);
@@ -1036,7 +1037,7 @@
                 searchLang: 'en',
                 showMatchesOnly: true,
                 sortLines: undefined,
-                tripitakaCategories: undefined,
+                tipitakaCategories: undefined,
             });
 
             // German
@@ -1053,7 +1054,7 @@
                 searchLang: 'de',
                 showMatchesOnly: true,
                 sortLines: undefined,
-                tripitakaCategories: undefined,
+                tipitakaCategories: undefined,
             });
 
             // German
@@ -1070,7 +1071,7 @@
                 searchLang: 'de',
                 showMatchesOnly: true,
                 sortLines: undefined,
-                tripitakaCategories: undefined,
+                tipitakaCategories: undefined,
             });
             done(); 
         } catch(e) {done(e);} })();
@@ -1135,13 +1136,13 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("tripitakaRegExp(tc) => regexp for paths", ()=>{
+    it("tipitakaRegExp(tc) => regexp for paths", ()=>{
         var skr = new Seeker();
-        should(skr.tripitakaRegExp('su').toString())
+        should(skr.tipitakaRegExp('su').toString())
             .equal("/(\\/sutta\\/)/iu");
-        should(skr.tripitakaRegExp().toString())
+        should(skr.tipitakaRegExp().toString())
             .equal("/(\\/sutta\\/)/iu");
-        should(skr.tripitakaRegExp('bi,pj').toString())
+        should(skr.tipitakaRegExp('bi,pj').toString())
             .equal("/(-bi-|-pj)/iu");
     })
 })

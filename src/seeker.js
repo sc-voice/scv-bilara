@@ -166,10 +166,10 @@
             return pat;
         }
 
-        tripitakaRegExp(tc='') {
+        tipitakaRegExp(tc='') {
             var tcParts = tc.toLowerCase().split(',');
             var tcMap = {
-                'an': '/an/',
+                'ab': '/abhidhamma/',
                 'as': '-as',
                 'ay': '-ay',
                 'bi': '-bi-',
@@ -216,9 +216,9 @@
                 lang,
                 language, // DEPRECATED
                 searchMetadata, // TODO
-                tripitakaCategories,
+                tipitakaCategories,
             } = opts;
-            var grepTC = this.tripitakaRegExp(tripitakaCategories);
+            var grepTC = this.tipitakaRegExp(tipitakaCategories);
             var {
                 root,
             } = this;
@@ -267,7 +267,7 @@
                 language,
                 pattern,
                 maxResults,
-                tripitakaCategories,
+                tipitakaCategories,
             } = args;
             lang = lang || language || this.lang;
             maxResults = maxResults == null ? this.maxResults : maxResults;
@@ -292,7 +292,7 @@
                         pattern:pat,
                         lang,
                         maxResults,
-                        tripitakaCategories,
+                        tipitakaCategories,
                     });
                     var lines = await that.grep(grepArgs);
                     resolve({
@@ -314,7 +314,7 @@
                 language, // DEPRECATED
                 searchMetadata,
                 comparator,
-                tripitakaCategories,
+                tipitakaCategories,
             } = args;
             comparator = comparator || this.grepComparator;
             var that = this;
@@ -419,7 +419,7 @@
                 matchHighlight,
                 sortLines,
                 showMatchesOnly,
-                tripitakaCategories,
+                tipitakaCategories,
             } = opts;
             if (rawPattern == null) {
                 throw new Error(`pattern is required`);
@@ -441,7 +441,7 @@
                         maxResults = n;
                     }
                 } else if (arg.startsWith('-tc:')) {
-                    tripitakaCategories = arg.substring('-tc:'.length);
+                    tipitakaCategories = arg.substring('-tc:'.length);
                 } else if (arg === '-ml1' ) {
                     minLang = 1;
                 } else if (arg === '-ml2' ) {
@@ -494,7 +494,7 @@
                 minLang,
                 matchHighlight,
                 sortLines,
-                tripitakaCategories,
+                tipitakaCategories,
                 lang,
             }
         }
@@ -512,7 +512,7 @@
                 maxDoc,
                 matchHighlight,
                 showMatchesOnly,
-                tripitakaCategories,
+                tipitakaCategories,
             } = this.findArgs(args);
             var that = this;
             var bd = that.bilaraData;
@@ -534,7 +534,7 @@
                         maxResults, 
                         lang, 
                         showMatchesOnly,
-                        tripitakaCategories,
+                        tipitakaCategories,
                     };
 
                     var {
