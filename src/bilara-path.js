@@ -13,7 +13,7 @@
                 'html',
                 lang,
                 `${auth}/sutta`,
-                `${mid}_markup.json`,
+                `${mid}_html.json`,
             ].join('/');
         }
 

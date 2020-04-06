@@ -380,8 +380,8 @@
                 maxResults: 10,
                 method: 'keywords',
                 keywordsFound: {
-                    hausherr: 10,
-                    anathapindika: 19,
+                    hausherr: 14,
+                    anathapindika: 22,
                 },
                 lines: [
 `${de_sab}sn/sn10/sn10.8_translation-de-sabbamitta.json:4`,
@@ -389,6 +389,8 @@
 `${de_sab}an/an1/an1.248-257_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an3/an3.109_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an3/an3.110_translation-de-sabbamitta.json:1`,
+`${de_sab}an/an4/an4.58_translation-de-sabbamitta.json:1`,
+`${de_sab}an/an4/an4.60_translation-de-sabbamitta.json:1`,
                 ],
             };
 

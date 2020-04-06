@@ -99,7 +99,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTload(...) loads markup", done=>{
+    it("load(...) loads markup", done=>{
         (async function() { try {
             var mld = new MLDoc({
                 bilaraPaths: bilaraPaths_sn1_1,
@@ -112,8 +112,9 @@ scid: 'sn1.1:0.1',
 pli: 'Saṃyutta Nikāya 1 ',
 en: 'Linked Discourses 1 ',
 de: 'Verbundene Lehrreden 1',
-html: "<section class='sutta' id='sn1.1'><article><div class='hgroup'><p class='division'>", 
+html: '<article id=\'sn1.1\'><header><ul><li class=\'division\'>{}</li>',
             });
+
             should(segMap["sn1.1:1.1"].reference)
                 .equal("pts1ed1.1, pts2ed1.1, sc1");
             should(segMap["sn1.1:1.8"].variant)

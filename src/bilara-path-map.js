@@ -42,7 +42,7 @@
                 await that.loadPaths({ key: "root/pli/ms", });
                 await that.loadPaths({ 
                     key: "html/pli/ms", 
-                    rePathSuffix:/_markup.json/,
+                    rePathSuffix:/_html.json/,
                 });
                 await that.loadPaths({ 
                     key: "reference/pli/ms",

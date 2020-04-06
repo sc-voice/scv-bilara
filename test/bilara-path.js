@@ -4,20 +4,15 @@
         BilaraPath,
         BilaraData,
     } = require("../index");
+    var {
+        translationPath,
+    } = BilaraPath;
     this.timeout(1*1000);
 
     var bd = new BilaraData;
-    function TRANSPATH(lang,auth,mid) {
-        return [
-            'translation',
-            lang,
-            `${auth}/sutta`,
-            `${mid}_translation-${lang}-${auth}.json`
-        ].join('/');
-    }
 
     it("pathParts(f) returns parts of bilara filename",()=>{
-        var f = TRANSPATH('en','sujato','sn/sn22/sn22.2');
+        var f = translationPath('sn/sn22/sn22.2','en','sujato');
         should.deepEqual(BilaraPath.pathParts(f), {
             suid: 'sn22.2',
             suttaRef: 'sn22.2/en/sujato',
@@ -28,7 +23,7 @@
             collection: 'sn',
             bilaraPath: f,
         });
-        var f = TRANSPATH('en','sujato','sn/sn22/sn22.10');
+        var f = translationPath('sn/sn22/sn22.10','en','sujato');
         should.deepEqual(BilaraPath.pathParts(f), {
             suid: 'sn22.10',
             suttaRef: 'sn22.10/en/sujato',
