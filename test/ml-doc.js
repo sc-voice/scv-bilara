@@ -9,6 +9,7 @@
         SegDoc,
         MLDoc,
         BilaraData,
+        BilaraPath,
     } = require("../index");
     const {
         logger,
@@ -17,45 +18,45 @@
     var logLevel = false;
     var bd = new BilaraData();
     const BILARA_PATH = path.join(__dirname, '../test/data/bilara-data');
-    function ROOTPATH(mid) {
-        var lang = 'pli';
-        var auth = 'ms';
-        return [
-            'root',
-            lang,
-            `${auth}/sutta`,
-            `${mid}_root-${lang}-${auth}.json`
-        ].join('/');
-    }
-    function TRANSPATH(lang,auth,mid) {
-        return [
-            'translation',
-            lang,
-            `${auth}/sutta`,
-            `${mid}_translation-${lang}-${auth}.json`
-        ].join('/');
-    }
+    var {
+        htmlPath,
+        variantPath,
+        referencePath,
+        commentPath,
+        translationPath,
+        rootPath,
+    } = BilaraPath;
+
+    var bilaraPaths_sn1_1 = [
+        variantPath('sn/sn1/sn1.1'),
+        htmlPath('sn/sn1/sn1.1'),
+        rootPath('sn/sn1/sn1.1'),
+        referencePath('sn/sn1/sn1.1'),
+        commentPath('sn/sn1/sn1.1','en','sujato'),
+        translationPath('sn/sn1/sn1.1','en','sujato'),
+        translationPath('sn/sn1/sn1.1','de','sabbamitta'),
+    ];
 
     var bilaraPaths_sn10_8 = [
-        ROOTPATH('sn/sn10/sn10.8'),
-        TRANSPATH('en','sujato','sn/sn10/sn10.8'),
+        rootPath('sn/sn10/sn10.8'),
+        translationPath('sn/sn10/sn10.8','en','sujato'),
     ];
 
     var bilaraPaths_mn118 = [
-        ROOTPATH('mn/mn118'),
-        TRANSPATH('en','sujato','mn/mn118'),
+        rootPath('mn/mn118'),
+        translationPath('mn/mn118','en','sujato'),
     ];
 
     var bilaraPaths_an1_1_1 = [
-        ROOTPATH('an/an1/an1.1-10'),
-        TRANSPATH('en','sujato','an/an1/an1.1-10'),
-        TRANSPATH('de','sabbamitta','an/an1/an1.1-10'),
+        rootPath('an/an1/an1.1-10'),
+        translationPath('an/an1/an1.1-10','en','sujato'),
+        translationPath('an/an1/an1.1-10','de','sabbamitta'),
     ];
 
     var bilaraPaths_sn12_23 = [
-        ROOTPATH('sn/sn12/sn12.23'),
-        TRANSPATH('en','sujato','sn/sn12/sn12.23'),
-        TRANSPATH('de','sabbamitta','sn/sn12/sn12.23'),
+        rootPath('sn/sn12/sn12.23'),
+        translationPath('sn/sn12/sn12.23','en','sujato'),
+        translationPath('sn/sn12/sn12.23', 'de', 'sabbamitta'),
     ];
 
     it("default ctor", () => {
@@ -98,6 +99,30 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
             done();
         } catch(e) { done(e); } })();
     });
+    it("TESTTESTload(...) loads markup", done=>{
+        (async function() { try {
+            var mld = new MLDoc({
+                bilaraPaths: bilaraPaths_sn1_1,
+            });
+            var res = await mld.load();
+            should(res).equal(mld);
+            var segMap = mld.segMap;
+            should.deepEqual(segMap['sn1.1:0.1'], {
+scid: 'sn1.1:0.1',
+pli: 'Saṃyutta Nikāya 1 ',
+en: 'Linked Discourses 1 ',
+de: 'Verbundene Lehrreden 1',
+html: "<section class='sutta' id='sn1.1'><article><div class='hgroup'><p class='division'>", 
+            });
+            should(segMap["sn1.1:1.1"].reference)
+                .equal("pts1ed1.1, pts2ed1.1, sc1");
+            should(segMap["sn1.1:1.8"].variant)
+                .equal("nibbuyhāmi → nivuyhāmi (sya-all, km, mr)");
+            should(segMap["sn1.1:1.5"].comment).match(/BB has /);
+            should(mld.suid).equal('sn1.1');
+            done();
+        } catch(e) { done(e); } })();
+    });
     it("titles(...) => segment 0 text", done=>{
         (async function() { try {
             var mld = new MLDoc({
@@ -136,7 +161,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
                 category: 'sutta',
                 collection: 'an',
                 author_uid: 'ms',
-                bilaraPath: ROOTPATH('an/an1/an1.1-10'),
+                bilaraPath: rootPath('an/an1/an1.1-10'),
                 suid: 'an1.1-10',
             });
 
@@ -156,7 +181,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
                 category: 'sutta',
                 collection: 'an',
                 suttaRef: "an1.1-10/en/sujato",
-                bilaraPath: TRANSPATH('en','sujato','an/an1/an1.1-10'),
+                bilaraPath: translationPath('an/an1/an1.1-10','en','sujato'),
                 suid: 'an1.1-10',
             },{
                 type: 'translation',
@@ -165,7 +190,8 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
                 suttaRef: "an1.1-10/de/sabbamitta",
                 category: 'sutta',
                 collection: 'an',
-                bilaraPath: TRANSPATH('de','sabbamitta','an/an1/an1.1-10'),
+                bilaraPath: translationPath('an/an1/an1.1-10', 
+                    'de', 'sabbamitta'),
                 suid: 'an1.1-10',
             }]);
 

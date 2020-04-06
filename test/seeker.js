@@ -27,7 +27,7 @@
 
     const BILARA_PATH = path.join(LOCAL_DIR, 'bilara-data');
 
-    it("TESTTESTdefault ctor", ()=>{
+    it("default ctor", ()=>{
         var skr = new Seeker();
         should(skr).properties({
             logLevel: 'info',
@@ -213,7 +213,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTkeywordSearch(...) searches English", done=>{
+    it("keywordSearch(...) searches English", done=>{
         (async function() { try {
             var pattern = Seeker.normalizePattern('suffering joy faith');
             var skr = await new Seeker({
@@ -258,7 +258,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTkeywordSearch(...) searches Pali, not English", done=>{
+    it("keywordSearch(...) searches Pali, not English", done=>{
         (async function() { try {
             var maxResults = 2;
             var skr = await new Seeker({

@@ -2,9 +2,9 @@
 DIR=`dirname $0`
 echo $DIR
 DOCS=$1
-if [ "$DOCS" == "" ]; then DOCS='ALL'; fi
+if [ "$DOCS" == "" ]; then DOCS='all'; fi
 
-if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "AN" ]; then
+if [ "$DOCS" == "all" ] || [ "$DOCS" == "an" ]; then
     $DIR/js/verify.js an1.1-999
     $DIR/js/verify.js an2.1-999
     $DIR/js/verify.js an3.1-999
@@ -15,10 +15,10 @@ if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "AN" ]; then
     $DIR/js/verify.js an8.1-999
     $DIR/js/verify.js an9.1-999
     $DIR/js/verify.js an10.1-999
-    DOCS=
+    if [ "$DOCS" != "all" ]; then DOCS=; fi
 fi
 
-if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "SN" ]; then
+if [ "$DOCS" == "all" ] || [ "$DOCS" == "sn" ]; then
     $DIR/js/verify.js sn1.1-999
     $DIR/js/verify.js sn2.1-999
     $DIR/js/verify.js sn3.1-999
@@ -39,20 +39,20 @@ if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "SN" ]; then
     $DIR/js/verify.js sn18.1-999
     $DIR/js/verify.js sn19.1-999
     $DIR/js/verify.js sn20.1-999
-    DOCS=
+    if [ "$DOCS" != "all" ]; then DOCS=; fi
 fi
 
-if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "MN" ]; then
+if [ "$DOCS" == "all" ] || [ "$DOCS" == "mn" ]; then
     $DIR/js/verify.js mn1-999
-    DOCS=
+    if [ "$DOCS" != "all" ]; then DOCS=; fi
 fi
 
-if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "DN" ]; then
+if [ "$DOCS" == "all" ] || [ "$DOCS" == "dn" ]; then
     $DIR/js/verify.js dn1-999
-    DOCS=
+    if [ "$DOCS" != "all" ]; then DOCS=; fi
 fi
 
-if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "THIG" ]; then
+if [ "$DOCS" == "all" ] || [ "$DOCS" == "thig" ]; then
     $DIR/js/verify.js thig1.1-999
     $DIR/js/verify.js thig2.1-999
     $DIR/js/verify.js thig3.1-999
@@ -69,10 +69,10 @@ if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "THIG" ]; then
     $DIR/js/verify.js thig14.1-999
     $DIR/js/verify.js thig15.1-999
     $DIR/js/verify.js thig16.1-999
-    DOCS=
+    if [ "$DOCS" != "all" ]; then DOCS=; fi
 fi
 
-if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "THAG" ]; then
+if [ "$DOCS" == "all" ] || [ "$DOCS" == "thag" ]; then
     $DIR/js/verify.js thag1.1-999
     $DIR/js/verify.js thag2.1-999
     $DIR/js/verify.js thag3.1-999
@@ -94,10 +94,10 @@ if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "THAG" ]; then
     $DIR/js/verify.js thag19.1-999
     $DIR/js/verify.js thag20.1-999
     $DIR/js/verify.js thag21.1-999
-    DOCS=
+    if [ "$DOCS" != "all" ]; then DOCS=; fi
 fi
 
-if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "BI" ]; then
+if [ "$DOCS" == "all" ] || [ "$DOCS" == "bi" ]; then
     $DIR/js/verify.js pli-tv-bi-vb-as1-999
     $DIR/js/verify.js pli-tv-bi-vb-ss1-999
     $DIR/js/verify.js pli-tv-bi-vb-np1-999
@@ -105,15 +105,15 @@ if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "BI" ]; then
     $DIR/js/verify.js pli-tv-bi-vb-sk1-999
     $DIR/js/verify.js pli-tv-bi-vb-pd1-999
     $DIR/js/verify.js pli-tv-bi-vb-pj5-8
-    DOCS=
+    if [ "$DOCS" != "all" ]; then DOCS=; fi
 fi
 
-if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "KD" ]; then
+if [ "$DOCS" == "all" ] || [ "$DOCS" == "kd" ]; then
     $DIR/js/verify.js pli-tv-kd1-999
-    DOCS=
+    if [ "$DOCS" != "all" ]; then DOCS=; fi
 fi
 
-if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "BU" ]; then
+if [ "$DOCS" == "all" ] || [ "$DOCS" == "bu" ]; then
     $DIR/js/verify.js pli-tv-bu-vb-as1-999
     $DIR/js/verify.js pli-tv-bu-vb-sk1-999
     $DIR/js/verify.js pli-tv-bu-vb-pj1-999
@@ -123,16 +123,16 @@ if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "BU" ]; then
     $DIR/js/verify.js pli-tv-bu-vb-np1-999
     $DIR/js/verify.js pli-tv-bu-vb-pc1-999
     $DIR/js/verify.js pli-tv-bu-vb-pj1-4
-    DOCS=
+    if [ "$DOCS" != "all" ]; then DOCS=; fi
 fi
 
-if [ "$DOCS" == "ALL" ] || [ "$DOCS" == "PVR" ]; then
+if [ "$DOCS" == "all" ] || [ "$DOCS" == "pvr" ]; then
     $DIR/js/verify.js pli-tv-pvr1.1-999
     $DIR/js/verify.js pli-tv-pvr2.1-999
     $DIR/js/verify.js pli-tv-pvr3-999
-    DOCS=
+    if [ "$DOCS" != "all" ]; then DOCS=; fi
 fi
 
-if [ "$DOCS" != "ALL" ] && [ "$DOCS" != "" ]; then
+if [ "$DOCS" != "all" ] && [ "$DOCS" != "" ]; then
     $DIR/js/verify.js $DOCS
 fi

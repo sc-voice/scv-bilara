@@ -38,7 +38,8 @@ OPTIONS
 }
 
 var pattern;
-var maxResults = 1000;
+var maxResults = 2000;
+var maxDoc = 1000;
 var logLevel = false;
 var matchHighlight = '';
 var showMatchesOnly = true;
@@ -73,11 +74,27 @@ pattern = pattern || `wurzel des leidens`;
 
 var repairs = 0;
 
-function verifySeg(mld, seg) {
+function verifySeg({mld, seg, iSeg, nSegs, languages}) {
     var suid = mld.suid;
     var repairedId = null;
     var newSeg = null;
     var colonParts = seg.scid.split(':');
+    var keys = Object.keys(seg);
+    var nLangs = keys.length-2;
+    if (!repairedId && iSeg+1<nSegs && nLangs !== languages.length) {
+        languages.forEach(lang => {
+            if (mld.langSegs[lang]) {
+                if (!seg.hasOwnProperty(lang)) {
+                    logger.info(`Missing ${lang} translation ${seg.scid}`);
+                }
+            } else if (iSeg == 0) {
+                logger.info(`Translation stub:${lang} ${mld.suid}`);
+            }
+        });
+    }
+    if (!repairedId && iSeg===0 && !/:0/.test(seg.scid)) {
+        logger.info(`Expected segment ${seg.scid} to have scid:0...`);
+    }
     if (!repairedId && colonParts.length === 1) {
         var suidDots = suid.split('.');
         var scidDots = seg.scid.split('.');
@@ -115,17 +132,14 @@ function verifySeg(mld, seg) {
 
 function verifyDoc(mld) {
     var suid = mld.suid;
-    var languages = {};
     var repairMap = {};
-    mld.segments().forEach(seg => {
-        var newSeg = verifySeg(mld, seg);
+    var segs = mld.segments();
+    var nSegs = segs.length;
+    var languages = mld.languages();
+    segs.forEach((seg,iSeg) => {
+        var newSeg = verifySeg({mld, seg, iSeg, nSegs, languages});
         if (newSeg) {
             repairMap[seg.scid] = newSeg.scid;
-            Object.keys(newSeg).forEach(k=>{
-                if (!/scid|matched/.test(k)) {
-                    languages[k] = true;
-                }
-            });
         }
     });
     var repairs = Object.keys(repairMap).length;
@@ -156,6 +170,7 @@ function verify(res, pattern, n=0) {
         includeUnpublished,
         matchHighlight,
         maxResults,
+        maxDoc,
         logLevel,
         languages,
     }).initialize();

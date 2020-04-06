@@ -6,6 +6,64 @@
             return new BilaraPathMap.initialize();
         }
 
+        static htmlPath(mid) {
+            var lang = 'pli';
+            var auth = 'ms';
+            return [
+                'html',
+                lang,
+                `${auth}/sutta`,
+                `${mid}_markup.json`,
+            ].join('/');
+        }
+
+        static variantPath(mid) {
+            var lang = 'pli';
+            var auth = 'ms';
+            return [
+                'variant',
+                lang,
+                `${auth}/sutta`,
+                `${mid}_variant-${lang}-${auth}.json`,
+            ].join('/');
+        }
+        static referencePath(mid) {
+            var lang = 'pli';
+            var auth = 'ms';
+            return [
+                'reference',
+                lang,
+                `${auth}/sutta`,
+                `${mid}_reference.json`,
+            ].join('/');
+        }
+        static rootPath(mid) {
+            var lang = 'pli';
+            var auth = 'ms';
+            return [
+                'root',
+                lang,
+                `${auth}/sutta`,
+                `${mid}_root-${lang}-${auth}.json`
+            ].join('/');
+        }
+        static translationPath(mid,lang,auth) {
+            return [
+                'translation',
+                lang,
+                `${auth}/sutta`,
+                `${mid}_translation-${lang}-${auth}.json`
+            ].join('/');
+        }
+        static commentPath(mid,lang,auth) {
+            return [
+                'comment',
+                lang,
+                `${auth}/sutta`,
+                `${mid}_comment-${lang}-${auth}.json`
+            ].join('/');
+        }
+
         static pathParts(bilaraPath) {
             var bpParts = bilaraPath.split('/');
             var fname = bpParts.pop();

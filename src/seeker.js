@@ -406,7 +406,6 @@
             } else {
                 var opts = args[0];
             }
-            var rawPattern = opts.pattern;
             var {
                 pattern: rawPattern,
                 searchLang,
@@ -520,6 +519,7 @@
                 var resultPattern = pattern;
                 var scoreDoc = true;
                 if (SuttaCentralId.test(pattern)) {
+                    maxResults = maxResults || this.maxResults;
                     var {
                         method,
                         uids,

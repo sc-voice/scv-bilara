@@ -121,23 +121,37 @@
             return new Promise((resolve, reject) => {
                 (async function() { try {
                     // initiate file reads
+                    that.langContent = {};
+                    that.langSegs = {};
                     var p_bp = [];
                     for (var ip = 0; ip < bilaraPaths.length; ip++) {
                         var parts = BilaraPath.pathParts(bilaraPaths[ip]);
                         var bp = path.join(root, parts.bilaraPath);
                         var fh = await fs.promises.open(bp);
-                        fh && p_bp.push({
-                            fh,
-                            p_read: fh.readFile(),
-                            lang: parts.lang,
-                        });
+                        var isTrans = parts.type === 'translation';
+                        var isRoot = parts.type === 'root';
+                        var lang = isTrans || isRoot
+                            ? parts.lang
+                            : parts.type;
+                        if (fh) {
+                            var bpe = {
+                                fh,
+                                p_read: fh.readFile(),
+                                lang,
+                            };
+                            p_bp.push(bpe);
+                        } else {
+                            this.log(`MLDoc.load() path not found:${bp}`);
+                        }
                     }
 
                     // assemble content
                     for (var ip = 0; ip < p_bp.length; ip++) {
                         var { fh, p_read, lang, } = p_bp[ip];
                         var strings = JSON.parse(await p_read);
-                        Object.keys(strings).forEach(k => {
+                        var keys = Object.keys(strings);
+                        that.langSegs[lang] = keys.length;
+                        keys.forEach(k => {
                             var m = (segMap[k] = segMap[k] || {
                                 scid: k,
                             });
