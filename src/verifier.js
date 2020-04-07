@@ -8,6 +8,7 @@
     const path = require('path');
     const BilaraData = require('./bilara-data');
     const BilaraPath = require('./bilara-path');
+    const BilaraPathMap = require('./bilara-path-map');
     const Seeker = require('./seeker');
     const SuttaCentralId = require('./sutta-central-id');
     const LOCAL = path.join(__dirname, '../local');
@@ -113,6 +114,9 @@
         }
 
         verifyDoc(mld) {
+            var {
+                fixFile,
+            } = this;
             var suid = mld.suid;
             var repairMap = {};
             var segs = mld.segments();
@@ -134,10 +138,11 @@
                 }
             });
             if (!numberingValid) {
-                this.renumber(mld);
+                this.renumber(mld, repairMap);
             }
             var repairs = Object.keys(repairMap).length;
-            if (this.fixFile && repairs) {
+            if (repairs) {
+                mld.repaired = {};
                 mld.bilaraPaths.forEach(fname => {
                     console.log(`repairing ${fname}`);
                     var fpath = path.join(BILARA_DATA, fname);
@@ -147,8 +152,12 @@
                         var newK = repairMap[k] || k;
                         newJson[newK] = json[k];
                     });
-                    fs.writeFileSync(fpath, 
-                        JSON.stringify(newJson, null, 2));
+                    if (fixFile) {
+                        fs.writeFileSync(fpath, 
+                            JSON.stringify(newJson, null, 2));
+                    } else {
+                        mld.repaired[fname] = newJson;
+                    }
                 });
             }
         }
@@ -165,6 +174,7 @@
                 var res = await seeker.find({
                     pattern,
                     showMatchesOnly: true,
+                    types: BilaraPathMap.ALL_TYPES,
                 });
                 that.log(`verifying ${res.mlDocs.map(mld=>mld.suid)}`);
                 res.mlDocs.forEach(mld => that.verifyDoc(mld));
@@ -176,11 +186,35 @@
             return new Promise(pbody);
         }
 
-        renumber(mld){
-            return;
-            console.log(`dbg renumber`, mld.suid);
+        renumber(mld, repairMap){
+            var header = 0;
+            var major = 0;
+            var minor = 1;
             mld.segments().forEach((seg,i) => {
-                console.log(`dbg html`, seg);
+                var newScid = seg.scid;
+                var prefix = seg.scid.split(':')[0];
+                if (/<header>/.test(seg.html)) {
+                    header++;
+                }
+                if (/<blockquote/.test(seg.html)) {
+                    major++;
+                    minor = 1;
+                }
+                if (/class='endsutta'/.test(seg.html)) {
+                    major++;
+                    minor = 1;
+                }
+                if (header) {
+                    newScid = `${prefix}:0.${i+1}`;
+                } else {
+                    newScid = `${prefix}:${major}.${minor++}`;
+                }
+                if (seg.scid !== newScid) {
+                    repairMap[seg.scid] = newScid;
+                }
+                if (/<\/header>/.test(seg.html)) {
+                    header--;
+                }
             });
         }
 
