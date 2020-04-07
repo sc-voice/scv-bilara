@@ -419,6 +419,7 @@
                 sortLines,
                 showMatchesOnly,
                 tipitakaCategories,
+                types,
             } = opts;
             if (rawPattern == null) {
                 throw new Error(`pattern is required`);
@@ -483,6 +484,8 @@
             (matchHighlight == null) && 
                 (matchHighlight = this.matchHighlight);
 
+            types = types || ['root', 'translation'];
+
             return {
                 pattern,
                 showMatchesOnly,
@@ -495,6 +498,7 @@
                 sortLines,
                 tipitakaCategories,
                 lang,
+                types,
             }
         }
 
@@ -512,6 +516,7 @@
                 matchHighlight,
                 showMatchesOnly,
                 tipitakaCategories,
+                types,
             } = this.findArgs(args);
             var that = this;
             var bd = that.bilaraData;
@@ -570,6 +575,7 @@
                         suid: isBilDoc ? suid : suttaRef,
                         languages,
                         lang,
+                        types,
                     });
                     bilaraPaths = [...bilaraPaths, ...mld.bilaraPaths];
                     var resFilter = mld.filterSegments({

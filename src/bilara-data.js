@@ -35,6 +35,7 @@
             this.publication = opts.publication || new Publication({
                 includeUnpublished,
             });
+            this.bilaraPathMap = this.publication.bilaraPathMap;
             logger.logInstance(this, opts);
             this.execGit = opts.execGit || new ExecGit({
                 repo: `https://github.com/sc-voice/${this.name}.git`,
@@ -312,7 +313,9 @@
                 logLevel,
                 returnNull,
                 languages,
+                types,
             } = opts;
+            types = types || ['root', 'translation' ];
             var thisLang = this.lang;
             lang = lang || language || thisLang;
             languages = languages || (this.languages.indexOf(lang) <= 0
@@ -326,6 +329,7 @@
                 logLevel,
                 languages,
                 returnNull,
+                types,
             }
         }
 
@@ -387,7 +391,12 @@
                 logLevel,
                 returnNull,
                 languages,
+                types,
             } = this.loadArgs(args);
+            var {
+                bilaraPathMap: bpm,
+                root,
+            } = this;
 
             var suidParts = suidRef.split('/');
             var suid = suidParts[0];
@@ -407,6 +416,13 @@
                     i.lang === lang && i.author === author ||
                     i.lang !== lang && this.isBilaraDoc(i))
                 .map(i=>i.bilaraPath);
+            if (types.length > 2) {
+                var xTypes = types.filter(t=>
+                    t!=='translation' && t!=='root');
+                var xbps = bpm.bilaraPaths({suid, types:xTypes});
+                bilaraPaths = bilaraPaths.concat(
+                    xbps.map(bp=>bp.bilaraPath));
+            }
             if (bilaraPaths.length === 0) {
                 if (returnNull) {
                     this.log(`loadMLDoc(${suid}) no info:${languages}`);

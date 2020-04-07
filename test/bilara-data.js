@@ -4,6 +4,7 @@
     const path = require('path');
     const {
         BilaraData,
+        BilaraPathMap,
         MLDoc,
         SuttaCentralId,
     } = require("../index");
@@ -775,6 +776,25 @@
                 minor: 0,
                 patch: 0,
             });
+            done();
+        } catch(e) { done(e); }})();
+    });
+    it("loadMLDoc(...) loads all types", done=>{
+        (async function() { try {
+            await bd.initialize();
+            var mld = await bd.loadMLDoc({
+                suid: 'thag1.113',
+                types: BilaraPathMap.ALL_TYPES,
+            });
+            var segs = mld.segments();
+            should.deepEqual(segs[0],{
+                scid: 'thag1.113:1.1',
+                html: "<article id='thag1.113'><header>"+
+                    "<ul><li class='division'>{}</li>",
+                en: 'Verses of the Senior Monks',
+                pli: 'Theragāthā',
+            });
+
             done();
         } catch(e) { done(e); }})();
     });

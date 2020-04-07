@@ -4,6 +4,7 @@
     const path = require('path');
     const {
         BilaraData,
+        BilaraPathMap,
         Pali,
         English,
         FuzzyWordSet,
@@ -1040,6 +1041,7 @@
                 showMatchesOnly: true,
                 sortLines: undefined,
                 tipitakaCategories: undefined,
+                types: ['root', 'translation'],
             });
 
             // German
@@ -1057,6 +1059,7 @@
                 showMatchesOnly: true,
                 sortLines: undefined,
                 tipitakaCategories: undefined,
+                types: ['root', 'translation'],
             });
 
             // German
@@ -1074,6 +1077,7 @@
                 showMatchesOnly: true,
                 sortLines: undefined,
                 tipitakaCategories: undefined,
+                types: ['root', 'translation'],
             });
             done(); 
         } catch(e) {done(e);} })();
@@ -1146,5 +1150,31 @@
             .equal("/(\\/sutta\\/)/iu");
         should(skr.tipitakaRegExp('bi,pj').toString())
             .equal("/(-bi-|-pj)/iu");
+    })
+    it("find(...) finds an1.1 all types", done=>{
+        (async function() { try {
+            var skr = await new Seeker({
+                logLevel,
+            }).initialize();
+            var res = await skr.find({
+                pattern: "an1.1",
+                matchHighlight: false,
+                lang: 'de',
+                types: BilaraPathMap.ALL_TYPES,
+            });
+            should(res.mlDocs.length).equal(1);
+            var segs = res.mlDocs[0].segments();
+            should.deepEqual(segs[0], {
+                scid: 'an1.1:0.1',
+                html: "<section class='range' id='an1.1-10'><header>"+
+                    "<ul><li class='division'>{}</li>",
+                pli: 'Aṅguttara Nikāya 1 ',
+                en: 'Numbered Discourses 1 ',
+                de: 'Nummerierte Lehrreden 1',
+                matched: true,
+            });
+
+            done(); 
+        } catch(e) {done(e);} })();
     })
 })
