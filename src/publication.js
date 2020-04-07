@@ -194,6 +194,9 @@
             if (!this.initialized) {
                 throw new Error('Expected preceding call to initialize()');
             }
+            if (!fpath) {
+                return false;
+            }
             if (this._rePubPaths == null) {
                 var published = [
                     ...this.pubPaths(), 
