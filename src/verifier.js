@@ -47,6 +47,112 @@
             return new Promise(pbody);
         }
 
+        verifySeg({mld, seg, iSeg, nSegs, languages}) {
+            var suid = mld.suid;
+            var segInfo = null;
+            var colonParts = seg.scid.split(':');
+            var keys = Object.keys(seg);
+            var nLangs = keys.length-2;
+            var extraLangs = nLangs !== languages.length;
+            if (!segInfo && iSeg===0 && !/:0/.test(seg.scid)) {
+                logger.info(`Expected scid:0 for:${seg.scid}`);
+                segInfo = { renumber: true };
+            }
+            if (!segInfo && iSeg+1<nSegs && extraLangs) {
+                languages.forEach(lang => {
+                    if (mld.langSegs[lang]) {
+                        if (!seg.hasOwnProperty(lang)) {
+                            logger.info(
+                                `Missing ${lang} translation ${seg.scid}`);
+                        }
+                    } else if (iSeg == 0) {
+                        logger.info(`Translation stub:${lang} ${mld.suid}`);
+                    }
+                });
+            }
+            if (!segInfo && colonParts.length === 1) {
+                var suidDots = suid.split('.');
+                var scidDots = seg.scid.split('.');
+                segInfo = { repairedId: [
+                    scidDots.slice(0,suidDots.length).join('.'),
+                    ':',
+                    scidDots.slice(suidDots.length).join('.')].join('')
+                };
+                logger.info(
+                    `Missing colon "${seg.scid}" => "${repairedId}"`);
+            }
+            if (!segInfo && colonParts.length > 2) {
+                var {
+                    suid:fileSuid,
+                } = BilaraPath.pathParts(suid);
+                var repairedId = "";
+                do {
+                    repairedId += repairedId.length===0
+                        ? colonParts.shift()
+                        : `-${colonParts.shift()}`;
+                } while (colonParts.length && 
+                    repairedId.length < fileSuid.length);
+                repairedId += `:${colonParts.join('.')}`;
+                segInfo = {repairedId};
+                logger.info(`Too many colons "${seg.scid}" => `+
+                    `"${repairedId}"`);
+            }
+            if (!segInfo && !SuttaCentralId.match(seg.scid, suid)) {
+                seginfo = {
+                    repairedId: colonParts
+                        .map((part,i) => i ? part : suid )
+                        .join(':'),
+                };
+                logger.info(`Segment id/file mismatch "${seg.scid}" => `+
+                    `"${repairedId}"`);
+            }
+            if (segInfo) {
+                segInfo.seg = seg;
+            }
+            return segInfo;
+        }
+
+        verifyDoc(mld) {
+            var suid = mld.suid;
+            var repairMap = {};
+            var segs = mld.segments();
+            var nSegs = segs.length;
+            var languages = mld.languages();
+            var numberingValid = true;
+            segs.forEach((seg,iSeg) => {
+                var segInfo = this.verifySeg({
+                    mld, 
+                    seg, 
+                    iSeg, 
+                    nSegs, 
+                    languages,
+                });
+                numberingValid = numberingValid && 
+                    (!segInfo || !segInfo.renumber);
+                if (segInfo) {
+                    repairMap[seg.scid] = segInfo.scid;
+                }
+            });
+            if (!numberingValid) {
+                this.renumber(mld);
+            }
+            var repairs = Object.keys(repairMap).length;
+            if (this.fixFile && repairs) {
+                mld.bilaraPaths.forEach(fname => {
+                    console.log(`repairing ${fname}`);
+                    var fpath = path.join(BILARA_DATA, fname);
+                    var json = JSON.parse(fs.readFileSync(fpath));
+                    var newJson = {};
+                    Object.keys(json).forEach(k => {
+                        var newK = repairMap[k] || k;
+                        newJson[newK] = json[k];
+                    });
+                    fs.writeFileSync(fpath, 
+                        JSON.stringify(newJson, null, 2));
+                });
+            }
+        }
+
         verify(pattern) {
             var that = this;
             if (!that.initialized) {
@@ -70,101 +176,12 @@
             return new Promise(pbody);
         }
 
-        verifyDoc(mld) {
-            var suid = mld.suid;
-            var repairMap = {};
-            var segs = mld.segments();
-            var nSegs = segs.length;
-            var languages = mld.languages();
-            segs.forEach((seg,iSeg) => {
-                var newSeg = this.verifySeg({
-                    mld, 
-                    seg, 
-                    iSeg, 
-                    nSegs, 
-                    languages,
-                });
-                if (newSeg) {
-                    repairMap[seg.scid] = newSeg.scid;
-                }
+        renumber(mld){
+            return;
+            console.log(`dbg renumber`, mld.suid);
+            mld.segments().forEach((seg,i) => {
+                console.log(`dbg html`, seg);
             });
-            var repairs = Object.keys(repairMap).length;
-            if (this.fixFile && repairs) {
-                mld.bilaraPaths.forEach(fname => {
-                    console.log(`repairing ${fname}`);
-                    var fpath = path.join(BILARA_DATA, fname);
-                    var json = JSON.parse(fs.readFileSync(fpath));
-                    var newJson = {};
-                    Object.keys(json).forEach(k => {
-                        var newK = repairMap[k] || k;
-                        newJson[newK] = json[k];
-                    });
-                    fs.writeFileSync(fpath, 
-                        JSON.stringify(newJson, null, 2));
-                });
-            }
-        }
-
-        verifySeg({mld, seg, iSeg, nSegs, languages}) {
-            var suid = mld.suid;
-            var repairedId = null;
-            var newSeg = null;
-            var colonParts = seg.scid.split(':');
-            var keys = Object.keys(seg);
-            var nLangs = keys.length-2;
-            var extraLangs = nLangs !== languages.length;
-            if (!repairedId && iSeg+1<nSegs && extraLangs) {
-                languages.forEach(lang => {
-                    if (mld.langSegs[lang]) {
-                        if (!seg.hasOwnProperty(lang)) {
-                            logger.info(
-                                `Missing ${lang} translation ${seg.scid}`);
-                        }
-                    } else if (iSeg == 0) {
-                        logger.info(`Translation stub:${lang} ${mld.suid}`);
-                    }
-                });
-            }
-            if (!repairedId && iSeg===0 && !/:0/.test(seg.scid)) {
-                logger.info(`Expected scid:0 for:${seg.scid}`);
-            }
-            if (!repairedId && colonParts.length === 1) {
-                var suidDots = suid.split('.');
-                var scidDots = seg.scid.split('.');
-                repairedId = [
-                    scidDots.slice(0,suidDots.length).join('.'),
-                    ':',
-                    scidDots.slice(suidDots.length).join('.')].join('');
-                logger.info(
-                    `Missing colon "${seg.scid}" => "${repairedId}"`);
-            }
-            if (!repairedId && colonParts.length > 2) {
-                var {
-                    suid:fileSuid,
-                } = BilaraPath.pathParts(suid);
-                repairedId = "";
-                do {
-                    repairedId += repairedId.length===0
-                        ? colonParts.shift()
-                        : `-${colonParts.shift()}`;
-                } while (colonParts.length && 
-                    repairedId.length < fileSuid.length);
-                repairedId += `:${colonParts.join('.')}`;
-                logger.info(`Too many colons "${seg.scid}" => `+
-                    `"${repairedId}"`);
-            }
-            if (!repairedId && !SuttaCentralId.match(seg.scid, suid)) {
-                repairedId = colonParts.map((part,i) => i ? part : suid )
-                    .join(':');
-                logger.info(`Segment id/file mismatch "${seg.scid}" => `+
-                    `"${repairedId}"`);
-            }
-            if (repairedId) {
-                newSeg = Object.assign({}, seg, {
-                    scid: repairedId,
-                });
-            }
-            return newSeg;
         }
 
     }
