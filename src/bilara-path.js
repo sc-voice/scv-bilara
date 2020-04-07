@@ -1,9 +1,7 @@
 (function(exports) {
-    const BilaraPathMap = require("./bilara-path-map");
-
     class BilaraPath {
-        static createPathMap(opts) {
-            return new BilaraPathMap.initialize();
+        constructor(bilaraPath) {
+            Object.assign(this, BilaraPath.pathParts(bilaraPath));
         }
 
         static htmlPath(mid) {

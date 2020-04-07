@@ -5,6 +5,7 @@
         logger,
         LOCAL_DIR,
     } = require('just-simple').JustSimple;
+    const BilaraPath = require('./bilara-path');
     const ROOTMS_FOLDER = path.join(LOCAL_DIR, "bilara-data", 
         "root", "pli", "ms");
 
@@ -14,6 +15,15 @@
                 path.join(LOCAL_DIR, "bilara-data");
             this.initialized = false;
         }
+
+        static get ALL_TYPES() { return [
+            'root', 
+            'translation', 
+            'html', 
+            'variant', 
+            'reference', 
+            'comment',
+        ]};
 
         initialize() {
             var that = this;
@@ -55,9 +65,45 @@
             return new Promise(pbody);
         }
 
+        bilaraPaths(opts={}) {
+            if (typeof opts === 'string') {
+                opts = { suid: opts };
+            }
+            var {
+                suid,
+                lang,
+                author,
+                types,
+            } = opts;
+            types = types || ['root','translation'];
+            var reTypes = new RegExp(`^(${types.join('|')})`, 'u');
+            var paths = this.suidPaths(suid) || [];
+            var bps = Object.keys(paths).reduce((a,k) => {
+                var bp = paths[k];
+                reTypes.test(bp) && a.push(bp);
+                return a;
+            },[]);
+            if (typeof lang === 'string') {
+                let re = new RegExp(`/${lang}/`,'u');
+                bps = bps.filter(bp => re.test(bp));
+            } else if (lang instanceof Array) {
+                let re = new RegExp(`/(${lang.join('|')})/`,'u');
+                bps = bps.filter(bp => re.test(bp));
+            }
+            if (author) {
+                let re = new RegExp(`.*-${author}.json`,'u');
+                bps = bps.filter(bp => re.test(bp));
+            }
+
+            return bps.map(bp => new BilaraPath(bp));;
+        }
+
         suidPaths(suid) {
             if (!this.initialized) {
                 throw new Error(`initialize() has not been called`);
+            }
+            if (!suid) {
+                throw new Error('suid is required');
             }
             var suidParts = suid.split('/');
             var key = suidParts[0];
@@ -65,6 +111,9 @@
         }
 
         suidPath(suid) {
+            if (!suid) {
+                throw new Error('suid is required');
+            }
             var pathInfo = this.suidPaths(suid);
             var suidParts = suid.split('/');
             var key = suidParts.length === 1
