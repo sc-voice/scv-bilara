@@ -4,6 +4,7 @@
     const path = require('path');
     const {
         BilaraData,
+        BilaraPath,
         BilaraPathMap,
         Pali,
         English,
@@ -20,6 +21,10 @@
     const SEEKEROPTS = {
         logLevel,
     };
+    var {
+        translationPath,
+        rootPath,
+    } = BilaraPath;
     this.timeout(20*1000);
     var bd = new BilaraData({ logLevel }); 
     var en_suj = `translation/en/sujato/sutta/`;
@@ -381,8 +386,8 @@
                 maxResults: 10,
                 method: 'keywords',
                 keywordsFound: {
-                    hausherr: 14,
-                    anathapindika: 22,
+                    hausherr: 15,
+                    anathapindika: 24,
                 },
                 lines: [
 `${de_sab}sn/sn10/sn10.8_translation-de-sabbamitta.json:4`,
@@ -392,6 +397,7 @@
 `${de_sab}an/an3/an3.110_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an4/an4.58_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an4/an4.60_translation-de-sabbamitta.json:1`,
+`${de_sab}an/an4/an4.61_translation-de-sabbamitta.json:1`,
                 ],
             };
 
