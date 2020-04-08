@@ -20,6 +20,7 @@
         logger,
         LOCAL_DIR,
     } = require("just-simple").JustSimple;
+    const TEST_BILARA = path.join(__dirname, 'data', 'bilara-data');
     this.timeout(10*1000);
     var logLevel = false;
 
@@ -31,6 +32,14 @@
             initialized: false,
         });
         should(ver.seeker).instanceOf(Seeker);
+    });
+    it("custom ctor", ()=>{
+        var root = TEST_BILARA;
+        var ver = new Verifier({
+            root,
+        });
+        should(ver.seeker.root).equal(root);
+        should(ver.root).equal(root);
     });
     it("initialize() is required", done=>{
         (async function() { try {
@@ -46,7 +55,12 @@
     });
     it("TESTTESTverify() fixes thag1.113", done=>{
         (async function() { try {
-            var ver = await new Verifier({logLevel}).initialize();
+            var root = TEST_BILARA;
+            var logLevel = 'info';
+            var ver = await new Verifier({
+                logLevel,
+                root,
+            }).initialize();
             var res = await ver.verify("thag1.113");
             console.log(`dbg res`, res);
             should(res.mlDocs.length).equal(1);

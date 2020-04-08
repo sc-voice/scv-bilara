@@ -27,8 +27,10 @@
 
     class BilaraData {
         constructor(opts={}) {
+            logger.logInstance(this, opts);
             this.name = opts.name || 'bilara-data';
             this.root = opts.root || path.join(LOCAL_DIR, this.name);
+            this.log(`root:${this.root}`);
             this.lang = opts.lang || 'en';
             var includeUnpublished = opts.includeUnpublished == null 
                 ? false : opts.includeUnpublished;
@@ -36,7 +38,6 @@
                 includeUnpublished,
             });
             this.bilaraPathMap = this.publication.bilaraPathMap;
-            logger.logInstance(this, opts);
             this.execGit = opts.execGit || new ExecGit({
                 repo: `https://github.com/sc-voice/${this.name}.git`,
                 logLevel: this.logLevel,
@@ -703,7 +704,9 @@
                 }
                 var lastItem = `${collName}${last}`;
                 var endUid = this.sutta_uidSuccessor(lastItem);
-                var iEnd = this.suttaIndex(endUid);
+                var iEnd = endUid
+                    ? this.suttaIndex(endUid)
+                    : iCur+1;
                 for (var i = iCur; i < iEnd; i++) {
                     result.push(`${this.suttaIds[i]}${suffix}`);
                 }

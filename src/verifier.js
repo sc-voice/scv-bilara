@@ -17,6 +17,7 @@
     class Verifier {
         constructor(opts={}) {
             logger.logInstance(this, opts);
+            var root = this.root = opts.root || BILARA_DATA;
             var languages = this.languages = [
                 'pli', 
             ];
@@ -34,6 +35,7 @@
                 maxDoc: 1000,
                 logLevel: this.logLevel,
                 languages,
+                root,
             });
             this.initialized = false;
         }
