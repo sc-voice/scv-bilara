@@ -100,7 +100,7 @@
                     that.paliWords = paliWords;
                     that.enWords = enWords;
                     await that.bilaraData.initialize();
-                    that.log(`Seeker.initialize resolve ${msg}`); 
+                    //that.log(`Seeker.initialize resolve ${msg}`); 
                     resolve(that);
                 } catch(e) { reject(e); }})();
             });

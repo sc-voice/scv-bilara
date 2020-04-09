@@ -55,6 +55,7 @@
             dstFolder,
             translator,
             type,
+            logLevel,
         });
         should(ih).properties({
             srcRoot,
@@ -69,6 +70,7 @@
             srcRoot: TEST_DATA,
             dstRoot: BILARA_TEST,
             dstFolder: "abhidhamma",
+            logLevel,
         });
         var res = ih.import('ds1.1.html');
         var {
@@ -131,7 +133,8 @@
     it("import(...) imports ds1.2 file", ()=>{
         var ih = new ImportHtml({
             srcRoot: TEST_DATA,
-            dstRoot: BILARA_TEST
+            dstRoot: BILARA_TEST,
+            logLevel,
         });
         var res = ih.import('ds1.2.html');
         var {
@@ -196,6 +199,7 @@
             srcRoot: TEST_DATA,
             dstRoot: BILARA_TEST,
             dstFolder: "sutta",
+            logLevel,
         });
         var res = ih.import('thag21.1.html');
         var {
@@ -299,7 +303,8 @@
     it("import(...) imports ds2.1.1 file", ()=>{
         var ih = new ImportHtml({
             srcRoot: TEST_DATA,
-            dstRoot: BILARA_TEST
+            dstRoot: BILARA_TEST,
+            logLevel,
         });
         var res = ih.import('ds2.1.1.html');
         var {
@@ -372,7 +377,8 @@
     it("import(...) imports vv22 file", ()=>{
         var ih = new ImportHtml({
             srcRoot: TEST_DATA,
-            dstRoot: BILARA_TEST
+            dstRoot: BILARA_TEST,
+            logLevel,
         });
         var res = ih.import('vv22.html');
         var {
@@ -409,6 +415,7 @@
             srcRoot: TEST_DATA,
             dstRoot: BILARA_TEST,
             dstFolder: "sutta",
+            logLevel,
         });
         var res = ih.import('mil3.1.10.html');
         var {
@@ -432,6 +439,7 @@
             srcRoot: TEST_DATA,
             dstRoot: BILARA_TEST,
             dstFolder: "sutta",
+            logLevel,
         });
         var res = ih.import('mil3.1.2.html');
         var {
@@ -454,6 +462,7 @@
             srcRoot: TEST_DATA,
             dstRoot: BILARA_TEST,
             dstFolder: "sutta",
+            logLevel,
         });
         var res = ih.import('iti10.html', 'vagga1');
         var {
@@ -480,6 +489,7 @@
             srcRoot: TEST_DATA,
             dstRoot: BILARA_TEST,
             dstFolder: "sutta",
+            logLevel,
         });
         var res = ih.import('ne37.html');
         var {

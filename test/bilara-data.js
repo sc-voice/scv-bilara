@@ -56,6 +56,7 @@
         (async function() { try {
             var bd = await new BilaraData({
                 includeUnpublished: true,
+                logLevel,
             }).initialize(); 
             should(bd.includeUnpublished).equal(true);
             should.deepEqual(bd.suttaMap['pli-tv-bi-vb-sk1-75'],[{
@@ -80,7 +81,9 @@
     });
     it("initialize(...) must be called", (done) => {
         (async function() { try {
-            var newbd = new BilaraData();
+            var newbd = new BilaraData({
+                logLevel,
+            });
             should(newbd.initialized).equal(false);
             should.throws(() => {
                 newbd.suttaInfo('dn33');
@@ -788,7 +791,7 @@
             });
             var segs = mld.segments();
             should.deepEqual(segs[0],{
-                scid: 'thag1.113:1.1',
+                scid: 'thag1.113:0.1',
                 html: "<article id='thag1.113'><header>"+
                     "<ul><li class='division'>{}</li>",
                 en: 'Verses of the Senior Monks',

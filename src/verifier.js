@@ -58,7 +58,7 @@
             var nLangs = keys.length-2;
             var extraLangs = nLangs !== languages.length;
             if (!segInfo && iSeg===0 && !/:0/.test(seg.scid)) {
-                logger.info(`Expected scid:0 for:${seg.scid}`);
+                logger.info(`Expected scid:0 for:${seg.scid} => renumbering...`);
                 segInfo = { renumber: true };
             }
             if (!segInfo && iSeg+1<nSegs && extraLangs) {
@@ -118,6 +118,7 @@
         verifyDoc(mld) {
             var {
                 fixFile,
+                root,
             } = this;
             var suid = mld.suid;
             var repairMap = {};
@@ -147,11 +148,15 @@
                 mld.repaired = {};
                 mld.bilaraPaths.forEach(fname => {
                     console.log(`repairing ${fname}`);
-                    var fpath = path.join(BILARA_DATA, fname);
+                    var fpath = path.join(root, fname);
                     var json = JSON.parse(fs.readFileSync(fpath));
                     var newJson = {};
                     Object.keys(json).forEach(k => {
                         var newK = repairMap[k] || k;
+                        if (newJson[newK]) {
+                            throw new Error(
+                                `Segment number collision: ${k}=>${newK}`);
+                        }
                         newJson[newK] = json[k];
                     });
                     if (fixFile) {
@@ -189,33 +194,60 @@
         }
 
         renumber(mld, repairMap){
-            var header = 0;
+            var startOfText = 0;
             var major = 0;
             var minor = 1;
+            var zeroSegments = [];
+            var reZero = /(<h[2-9]>|class='namo')/u;
             mld.segments().forEach((seg,i) => {
                 var newScid = seg.scid;
                 var prefix = seg.scid.split(':')[0];
+                var isZeroSegment = false;
                 if (/<header>/.test(seg.html)) {
-                    header++;
-                }
-                if (/<blockquote/.test(seg.html)) {
-                    major++;
+                    startOfText = true;
                     minor = 1;
-                }
+                } 
+                if (reZero.test(seg.html)) {
+                    isZeroSegment = true;
+                    zeroSegments.push(seg.scid);
+                    minor !== 1 && major++;
+                    minor = 1;
+                } 
+                if (/<blockquote/.test(seg.html)) {
+                    minor !== 1 && major++;
+                    minor = 1;
+                } 
                 if (/class='endsutta'/.test(seg.html)) {
                     major++;
                     minor = 1;
                 }
-                if (header) {
-                    newScid = `${prefix}:0.${i+1}`;
-                } else {
-                    newScid = `${prefix}:${major}.${minor++}`;
-                }
-                if (seg.scid !== newScid) {
+                console.log(`dbg renumber`, major, minor, 
+                    {zeroSegments}, seg.html);
+                if (startOfText) {
+                    newScid = `${prefix}:${0}.${minor++}`;
                     repairMap[seg.scid] = newScid;
+                } else if (isZeroSegment) {
+                    // do nothing
+                } else { // normal segment
+                    if (zeroSegments.length === 1) {
+                        var oldScid = zeroSegments[0];
+                        newScid = `${prefix}:${major}.0`;
+                        repairMap[oldScid] = newScid;
+                    } else {
+                        for (let i=0; i<zeroSegments.length; i++) {
+                            var oldScid = zeroSegments[i];
+                            newScid = `${prefix}:${major}.0.${i+1}`;
+                            repairMap[oldScid] = newScid;
+                        }
+                    }
+
+                    newScid = `${prefix}:${major}.${minor}`;
+                    repairMap[seg.scid] = newScid;
+                    minor++;
+                    zeroSegments = [];
                 }
                 if (/<\/header>/.test(seg.html)) {
-                    header--;
+                    startOfText = false;
                 }
             });
         }

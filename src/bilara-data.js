@@ -182,7 +182,7 @@
             } = this;
             if (authors[author] == null) {
                 authors[author] = Object.assign({}, authors[author], info);
-                this.log(`addAuthor(${author}:${js.simpleString(info)})`);
+                //this.log(`addAuthor(${author}:${js.simpleString(info)})`);
             }
         }
 

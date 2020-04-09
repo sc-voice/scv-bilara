@@ -134,5 +134,5 @@ if [ "$DOCS" == "all" ] || [ "$DOCS" == "pvr" ]; then
 fi
 
 if [ "$DOCS" != "all" ] && [ "$DOCS" != "" ]; then
-    $DIR/js/verify.js $DOCS
+    $DIR/js/verify.js $*
 fi
