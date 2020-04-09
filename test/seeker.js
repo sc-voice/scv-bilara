@@ -386,8 +386,8 @@
                 maxResults: 10,
                 method: 'keywords',
                 keywordsFound: {
-                    hausherr: 15,
-                    anathapindika: 24,
+                    hausherr: 16,
+                    anathapindika: 26,
                 },
                 lines: [
 `${de_sab}sn/sn10/sn10.8_translation-de-sabbamitta.json:4`,
@@ -398,6 +398,7 @@
 `${de_sab}an/an4/an4.58_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an4/an4.60_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an4/an4.61_translation-de-sabbamitta.json:1`,
+`${de_sab}an/an4/an4.62_translation-de-sabbamitta.json:1`,
                 ],
             };
 
@@ -563,6 +564,23 @@
                 lines,
             });
 
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("find(...) finds thag1.10", done=>{
+        (async function() { try {
+            var skr = await new Seeker({
+                logLevel,
+            }).initialize();
+
+            var res = await skr.find({
+                pattern: "thag1.10",
+                matchHighlight: false,
+            });
+            should(res.method).equal('sutta_uid');
+            should.deepEqual(res.suttaRefs, ['thag1.10']);
+            should.deepEqual(res.mlDocs.map(mld=>mld.suid),  
+                ['thag1.10']);
             done(); 
         } catch(e) {done(e);} })();
     });

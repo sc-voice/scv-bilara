@@ -591,8 +591,7 @@
                     }
                     //if (!resFilter.matchScid && resFilter.matched === 0) {
                     if (resFilter.matched === 0) {
-                        that.log(
-                            `Partial match ignored ${mld.suid} ${pattern}`);
+                        //that.log(`Ignoring ${mld.suid} ${pattern}`);
                     } else if (mld.bilaraPaths.length >= minLang) {
                         if (Object.keys(mld.segMap).length ) {
                             mlDocs.push(mld);

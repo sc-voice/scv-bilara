@@ -147,7 +147,6 @@
             if (repairs) {
                 mld.repaired = {};
                 mld.bilaraPaths.forEach(fname => {
-                    console.log(`repairing ${fname}`);
                     var fpath = path.join(root, fname);
                     var json = JSON.parse(fs.readFileSync(fpath));
                     var newJson = {};
@@ -160,9 +159,11 @@
                         newJson[newK] = json[k];
                     });
                     if (fixFile) {
+                        console.log(`repair ${fname} (ok)`);
                         fs.writeFileSync(fpath, 
                             JSON.stringify(newJson, null, 2));
                     } else {
+                        console.log(`repair ${fname} (ignored)`);
                         mld.repaired[fname] = newJson;
                     }
                 });
@@ -183,7 +184,12 @@
                     showMatchesOnly: true,
                     types: BilaraPathMap.ALL_TYPES,
                 });
-                that.log(`verifying ${res.mlDocs.map(mld=>mld.suid)}`);
+                if (res.mlDocs.length) {
+                    that.log(`verifying ${res.mlDocs.map(mld=>mld.suid)}`);
+                } else {
+                    console.log(`dbg res`, res);
+                    that.log(`Nothing to verify for ${pattern}`);
+                }
                 res.mlDocs.forEach(mld => that.verifyDoc(mld));
                 resolve({
                     pattern,
@@ -199,7 +205,9 @@
             var minor = 1;
             var zeroSegments = [];
             var reZero = /(<h[2-9]>|class='namo')/u;
-            mld.segments().forEach((seg,i) => {
+            var reId = /id='[0-9]+'/u;
+            var segments = mld.segments();
+            segments.forEach((seg,i) => {
                 var newScid = seg.scid;
                 var prefix = seg.scid.split(':')[0];
                 var isZeroSegment = false;
@@ -210,19 +218,24 @@
                 if (reZero.test(seg.html)) {
                     isZeroSegment = true;
                     zeroSegments.push(seg.scid);
-                    minor !== 1 && major++;
                     minor = 1;
                 } 
-                if (/<blockquote/.test(seg.html)) {
-                    minor !== 1 && major++;
-                    minor = 1;
-                } 
-                if (/class='endsutta'/.test(seg.html)) {
+                if (reId.test(seg.html)) {
+                    var id = seg.html
+                        .split("id='")[1]
+                        .split("'")[0];
                     major++;
+                    if (Number(id) !== major) {
+                        throw new Error([
+                            `Sequencing error`,
+                            `suid:${mld.suid}`,
+                            `id:${id}`,
+                            `major:${major}`,
+                            `${seg.html}`,
+                        ].join(' '));
+                    }
                     minor = 1;
-                }
-                console.log(`dbg renumber`, major, minor, 
-                    {zeroSegments}, seg.html);
+                } 
                 if (startOfText) {
                     newScid = `${prefix}:${0}.${minor++}`;
                     repairMap[seg.scid] = newScid;

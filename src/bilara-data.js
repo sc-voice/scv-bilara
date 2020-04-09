@@ -654,7 +654,7 @@
                 throw new Error(
                     `Invalid sutta reference: ${suttaRef} [E3]`);
             }
-            if (coll[0].subchapters) { // e.g., SN, AN, KN
+            if (dotParts.length>1 || coll[0].subchapters) { // SN, AN, KN
                 if (dotParts.length === 1) { // e.g. SN50
                     var prefix = `${sref}.`;
                     var first = rangeParts.length === 1 
