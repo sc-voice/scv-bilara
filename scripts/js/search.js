@@ -383,7 +383,7 @@ function write_editor(res, args, editor) {
         args,
         ...searchPaths,
     ].join(' ');
-    var epath = path.join(LOCAL, `bilara_edit.${editor}`);
+    var epath = path.join(LOCAL, `bls_edit.${editor}`);
     fs.writeFileSync(epath, script);
 }
 

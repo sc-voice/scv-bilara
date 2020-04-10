@@ -30,16 +30,27 @@
             languages: ['pli', 'de', 'en', 'jpn', 'pt'],
             fixFile: false,
             initialized: false,
+            forceRenumber: false,
         });
         should(ver.seeker).instanceOf(Seeker);
     });
     it("custom ctor", ()=>{
         var root = TEST_BILARA;
+        var forceRenumber = true;
+        var fixFile = true;
         var ver = new Verifier({
             root,
+            forceRenumber,
+            fixFile
         });
         should(ver.seeker.root).equal(root);
         should(ver.root).equal(root);
+        should(ver).properties({
+            languages: ['pli', 'de', 'en', 'jpn', 'pt'],
+            fixFile,
+            initialized: false,
+            forceRenumber,
+        });
     });
     it("initialize() is required", done=>{
         (async function() { try {
@@ -53,7 +64,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTverify() fixes thag1.113", done=>{
+    it("ESTTESTverify() fixes thag1.113", done=>{
         done(); return; // TODO dbg
         (async function() { try {
             var root = TEST_BILARA;
@@ -103,7 +114,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTverify() fixes thag1.1", done=>{
+    it("ESTTESTverify() fixes thag1.1", done=>{
         done(); return; // TODO dbg
         (async function() { try {
             var root = TEST_BILARA;
@@ -168,7 +179,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTverify() fixes thag1.10", done=>{
+    it("ESTTESTverify() fixes thag1.10", done=>{
         (async function() { try {
             var root = TEST_BILARA;
             var ver = await new Verifier({
@@ -219,6 +230,148 @@
 
             var rootRepaired = repaired[rootPath('kn/thag/thag1.10')];
             should.deepEqual(Object.keys(rootRepaired), repairedScids);
+            should.deepEqual(
+                Object.keys(rootRepaired).map(k=>rootRepaired[k]),
+                segs.map(s=>s.pli));
+                
+            done();
+        } catch(e) { done(e); }})();
+    });
+    it("verify() fixes thag2.49", done=>{
+        (async function() { try {
+            var root = TEST_BILARA;
+            var forceRenumber = true;
+            var ver = await new Verifier({
+                logLevel,
+                root,
+                forceRenumber,
+            }).initialize();
+            var res = await ver.verify("thag2.49");
+            should(res.mlDocs.length).equal(1);
+            var mld0 = res.mlDocs[0];
+            var repaired = mld0.repaired;
+            console.log(`dbg res`, res);
+            var repairedScids = [
+                'thag2.49:0.1',
+                'thag2.49:0.2',
+                'thag2.49:0.3',
+                'thag2.49:0.4',
+                'thag2.49:1.1',
+                'thag2.49:1.2',
+                'thag2.49:1.3',
+                'thag2.49:1.4',
+                'thag2.49:2.1',
+                'thag2.49:2.2',
+                'thag2.49:2.3',
+                'thag2.49:2.4',
+                'thag2.49:2.5',
+                'thag2.49:2.6',
+                'thag2.49:2.7',
+                'thag2.49:3.0',
+                'thag2.49:3.1',
+                'thag2.49:3.2',
+                'thag2.49:3.3',
+                'thag2.49:3.4',
+                'thag2.49:3.5',
+                'thag2.49:3.6',
+                'thag2.49:3.7',
+                'thag2.49:4.0',
+                'thag2.49:4.1',
+                'thag2.49:4.2',
+                'thag2.49:4.3',
+                'thag2.49:4.4',
+            ];
+            var segs = mld0.segments();
+
+            var htmlRepaired = repaired[htmlPath('kn/thag/thag2.49')];
+            var keysRepaired = Object.keys(htmlRepaired);
+            for (let iRep = 0; iRep < keysRepaired.length; iRep++) {
+                should(keysRepaired[iRep]).equal(repairedScids[iRep]);
+            }
+            should.deepEqual(keysRepaired.map(k=>htmlRepaired[k]),
+                segs.map(s=>s.html));
+
+            // no fixes
+            var transRepaired = repaired[
+                translationPath('kn/thag/thag2.49','en','sujato')];
+            should(transRepaired).equal(undefined);
+
+            var rootRepaired = repaired[rootPath('kn/thag/thag2.49')];
+            should.deepEqual(Object.keys(rootRepaired), repairedScids);
+            should.deepEqual(
+                Object.keys(rootRepaired).map(k=>rootRepaired[k]),
+                segs.map(s=>s.pli));
+                
+            done();
+        } catch(e) { done(e); }})();
+    });
+    it("TESTTESTverify() fixes thag21.1", done=>{
+        (async function() { try {
+            var root = TEST_BILARA;
+            var forceRenumber = true;
+            var ver = await new Verifier({
+                logLevel,
+                root,
+                forceRenumber,
+            }).initialize();
+            var res = await ver.verify("thag21.1");
+            should(res.mlDocs.length).equal(1);
+            var mld0 = res.mlDocs[0];
+            var repaired = mld0.repaired;
+            var repairedScidHead = [
+                'thag21.1:0.1',
+                'thag21.1:0.2',
+                'thag21.1:0.3',
+                'thag21.1:0.4',
+                'thag21.1:1.1',
+                'thag21.1:1.2',
+                'thag21.1:1.3',
+                'thag21.1:1.4',
+                'thag21.1:1.5',
+            ];
+            var repairedScidTail = [
+                'thag21.1:2.5',
+                'thag21.1:3.0',
+                'thag21.1:3.1',
+                'thag21.1:3.2',
+                'thag21.1:3.3',
+                'thag21.1:3.4',
+                'thag21.1:3.5',
+                'thag21.1:3.6',
+                'thag21.1:3.7',
+                'thag21.1:3.8',
+                'thag21.1:3.9',
+            ];
+            var nHead = repairedScidHead.length;
+            var nTail = repairedScidTail.length;
+            var segs = mld0.segments();
+
+            var htmlRepaired = repaired[htmlPath('kn/thag/thag21.1')];
+            var keysRepaired = Object.keys(htmlRepaired);
+            var headRepaired = keysRepaired.slice(0,nHead);
+            for (let iRep = 0; iRep < headRepaired.length; iRep++) {
+                should(headRepaired[iRep]).equal(repairedScidHead[iRep]);
+            }
+            var tailRepaired = keysRepaired
+                .slice(keysRepaired.length-nTail);
+            for (let iRep = 0; iRep < tailRepaired.length; iRep++) {
+                should(tailRepaired[iRep]).equal(repairedScidTail[iRep]);
+            }
+            should.deepEqual(keysRepaired.map(k=>htmlRepaired[k]),
+                segs.map(s=>s.html));
+
+            var transRepaired = repaired[
+                translationPath('kn/thag/thag21.1','en','sujato')];
+            var headTrans = Object.keys(transRepaired).slice(0,nHead);
+            should.deepEqual(headTrans, repairedScidHead);
+            should.deepEqual(
+                Object.keys(transRepaired).map(k=>transRepaired[k]),
+                segs.filter(s=>s.hasOwnProperty('en')).map(s=>s.en)
+            );
+
+            var rootRepaired = repaired[rootPath('kn/thag/thag21.1')];
+            var headRoot = Object.keys(rootRepaired).slice(0,nHead);
+            should.deepEqual(headRoot, repairedScidHead);
             should.deepEqual(
                 Object.keys(rootRepaired).map(k=>rootRepaired[k]),
                 segs.map(s=>s.pli));

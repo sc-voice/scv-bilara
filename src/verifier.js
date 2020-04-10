@@ -6,6 +6,7 @@
     } = require('just-simple').JustSimple;
     const fs = require('fs');
     const path = require('path');
+    const MerkleJson = require('merkle-json').MerkleJson;
     const BilaraData = require('./bilara-data');
     const BilaraPath = require('./bilara-path');
     const BilaraPathMap = require('./bilara-path-map');
@@ -28,6 +29,8 @@
                 languages.push(tdf);
             });
 
+            this.forceRenumber = opts.forceRenumber || false;
+            this.merkleJson = new MerkleJson();
             this.seeker = new Seeker({
                 includeUnpublished: true,
                 matchHighlight: '',
@@ -118,7 +121,9 @@
         verifyDoc(mld) {
             var {
                 fixFile,
+                forceRenumber,
                 root,
+                merkleJson: mj,
             } = this;
             var suid = mld.suid;
             var repairMap = {};
@@ -140,7 +145,7 @@
                     repairMap[seg.scid] = segInfo.scid;
                 }
             });
-            if (!numberingValid) {
+            if (forceRenumber || !numberingValid) {
                 this.renumber(mld, repairMap);
             }
             var repairs = Object.keys(repairMap).length;
@@ -153,18 +158,23 @@
                     Object.keys(json).forEach(k => {
                         var newK = repairMap[k] || k;
                         if (newJson[newK]) {
+                            console.log(`dbg newJson`, newJson);
                             throw new Error(
                                 `Segment number collision: ${k}=>${newK}`);
                         }
                         newJson[newK] = json[k];
                     });
-                    if (fixFile) {
-                        console.log(`repair ${fname} (ok)`);
-                        fs.writeFileSync(fpath, 
-                            JSON.stringify(newJson, null, 2));
-                    } else {
-                        console.log(`repair ${fname} (ignored)`);
-                        mld.repaired[fname] = newJson;
+                    var hashOld = mj.hash(json);
+                    var hashNew = mj.hash(newJson);
+                    if (hashOld !== hashNew) {
+                        if (fixFile) {
+                            console.log(`repair ${fname} (ok)`);
+                            fs.writeFileSync(fpath, 
+                                JSON.stringify(newJson, null, 2));
+                        } else {
+                            console.log(`repair ${fname} (ignored)`);
+                            mld.repaired[fname] = newJson;
+                        }
                     }
                 });
             }
@@ -204,8 +214,9 @@
             var major = 0;
             var minor = 1;
             var zeroSegments = [];
-            var reZero = /(<h[2-9]>|class='namo')/u;
+            var reZero = /(<h[2-9]>|class='namo'|class='uddana-intro')/u;
             var reId = /id='[0-9]+'/u;
+            var reMajor=/(class='gatha'|class='uddanagatha')/u;
             var segments = mld.segments();
             segments.forEach((seg,i) => {
                 var newScid = seg.scid;
@@ -235,7 +246,10 @@
                         ].join(' '));
                     }
                     minor = 1;
-                } 
+                } else if (reMajor.test(seg.html)) {
+                    major++;
+                    minor = 1;
+                }
                 if (startOfText) {
                     newScid = `${prefix}:${0}.${minor++}`;
                     repairMap[seg.scid] = newScid;

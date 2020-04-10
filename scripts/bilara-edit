@@ -4,7 +4,7 @@ EDITOR=$1
 if [ "$EDITOR" == "" ]; then
     cat <<HELP
 NAME
-        bilara_edit - edit results of previous search
+        bilara-edit - edit results of previous search
 
 SYNOPSIS
         bilara-edit vi
@@ -24,4 +24,4 @@ if [ "$EDITOR" == "vim" ]; then
 else
     SUFFIX=$EDITOR
 fi
-bash -c "$EDITOR `cat $DIR/../local/bilara_edit.${SUFFIX}`" 
+bash -c "$EDITOR `cat $DIR/../local/bls_edit.${SUFFIX}`" 
