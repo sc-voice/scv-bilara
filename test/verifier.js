@@ -64,7 +64,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("ESTTESTverify() fixes thag1.113", done=>{
+    it("TESTTESTverify() fixes thag1.113", done=>{
         done(); return; // TODO dbg
         (async function() { try {
             var root = TEST_BILARA;
@@ -114,7 +114,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("ESTTESTverify() fixes thag1.1", done=>{
+    it("TESTTESTverify() fixes thag1.1", done=>{
         done(); return; // TODO dbg
         (async function() { try {
             var root = TEST_BILARA;
@@ -179,7 +179,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("ESTTESTverify() fixes thag1.10", done=>{
+    it("TESTTESTverify() fixes thag1.10", done=>{
         (async function() { try {
             var root = TEST_BILARA;
             var ver = await new Verifier({
@@ -201,7 +201,7 @@
                 'thag1.10:1.4',
                 'thag1.10:1.5',
                 'thag1.10:1.6',
-                'thag1.10:1.7',
+                'thag1.10:2.0',
                 'thag1.10:2.1',
                 'thag1.10:2.2',
                 'thag1.10:2.3',
@@ -327,20 +327,32 @@
                 'thag21.1:1.2',
                 'thag21.1:1.3',
                 'thag21.1:1.4',
-                'thag21.1:1.5',
+                'thag21.1:2.1',
+                'thag21.1:2.2',
+                'thag21.1:2.3',
+                'thag21.1:2.4',
+                'thag21.1:3.1',
             ];
             var repairedScidTail = [
-                'thag21.1:2.5',
-                'thag21.1:3.0',
-                'thag21.1:3.1',
-                'thag21.1:3.2',
-                'thag21.1:3.3',
-                'thag21.1:3.4',
-                'thag21.1:3.5',
-                'thag21.1:3.6',
-                'thag21.1:3.7',
-                'thag21.1:3.8',
-                'thag21.1:3.9',
+                'thag21.1:71.4',
+                'thag21.1:71.5',
+                'thag21.1:71.6',
+                'thag21.1:72.0',
+                'thag21.1:72.1',
+                'thag21.1:72.2',
+                'thag21.1:72.3',
+                'thag21.1:72.4',
+                'thag21.1:72.5',
+                'thag21.1:73.0',
+                'thag21.1:73.1',
+                'thag21.1:73.2',
+                'thag21.1:73.3',
+                'thag21.1:73.4',
+                'thag21.1:74.1',
+                'thag21.1:74.2',
+                'thag21.1:74.3',
+                'thag21.1:74.4',
+                'thag21.1:74.5',
             ];
             var nHead = repairedScidHead.length;
             var nTail = repairedScidTail.length;

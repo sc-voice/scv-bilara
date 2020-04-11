@@ -214,24 +214,27 @@
             var major = 0;
             var minor = 1;
             var zeroSegments = [];
-            var reZero = /(<h[2-9]>|class='namo'|class='uddana-intro')/u;
+            var reZero = /(<h[2-9]>|class='namo'|p class='uddana)/u;
             var reId = /id='[0-9]+'/u;
-            var reMajor=/(class='gatha'|class='uddanagatha')/u;
+            var reMajor=/<p/u;
+            var reNonMajor=/class='end/u;
             var segments = mld.segments();
             segments.forEach((seg,i) => {
                 var newScid = seg.scid;
                 var prefix = seg.scid.split(':')[0];
-                var isZeroSegment = false;
+                var isZeroSegment = reZero.test(seg.html);
+                var isMajor = reMajor.test(seg.html) && 
+                    !isZeroSegment &&
+                    !reNonMajor.test(seg.html);
+
                 if (/<header>/.test(seg.html)) {
                     startOfText = true;
                     minor = 1;
                 } 
-                if (reZero.test(seg.html)) {
-                    isZeroSegment = true;
+                if (isZeroSegment) {
                     zeroSegments.push(seg.scid);
                     minor = 1;
-                } 
-                if (reId.test(seg.html)) {
+                } else if (reId.test(seg.html)) {
                     var id = seg.html
                         .split("id='")[1]
                         .split("'")[0];
@@ -239,14 +242,14 @@
                     if (Number(id) !== major) {
                         throw new Error([
                             `Sequencing error`,
-                            `suid:${mld.suid}`,
+                            `seg[${i}] ${seg.scid}`,
                             `id:${id}`,
                             `major:${major}`,
                             `${seg.html}`,
                         ].join(' '));
                     }
                     minor = 1;
-                } else if (reMajor.test(seg.html)) {
+                } else if (isMajor) {
                     major++;
                     minor = 1;
                 }
