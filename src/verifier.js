@@ -216,16 +216,13 @@
             var zeroSegments = [];
             var reZero = /(<h[2-9]>|class='namo'|p class='uddana)/u;
             var reId = /id='[0-9]+'/u;
-            var reMajor=/<p/u;
-            var reNonMajor=/class='end/u;
+            var reMajor=/<p>/u;
             var segments = mld.segments();
             segments.forEach((seg,i) => {
                 var newScid = seg.scid;
                 var prefix = seg.scid.split(':')[0];
                 var isZeroSegment = reZero.test(seg.html);
-                var isMajor = reMajor.test(seg.html) && 
-                    !isZeroSegment &&
-                    !reNonMajor.test(seg.html);
+                var isMajor = reMajor.test(seg.html) && !isZeroSegment;
 
                 if (/<header>/.test(seg.html)) {
                     startOfText = true;
