@@ -198,6 +198,7 @@ drehender
 dreht
 drei
 dreißig
+dreist
 dringen
 dritte
 dritten
@@ -1183,6 +1184,7 @@ trocken
 trüb
 tür
 tut
+übung
 ufer
 um
 umgestellt
@@ -1421,3 +1423,4 @@ leuchtenden
 leuchtender
 erringen
 errungen
+zudringlich
