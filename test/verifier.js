@@ -64,7 +64,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTverify() fixes thag1.113", done=>{
+    it("verify() fixes thag1.113", done=>{
         done(); return; // TODO dbg
         (async function() { try {
             var root = TEST_BILARA;
@@ -114,7 +114,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTverify() fixes thag1.1", done=>{
+    it("verify() fixes thag1.1", done=>{
         done(); return; // TODO dbg
         (async function() { try {
             var root = TEST_BILARA;
@@ -179,7 +179,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTverify() fixes thag1.10", done=>{
+    it("verify() fixes thag1.10", done=>{
         (async function() { try {
             var root = TEST_BILARA;
             var ver = await new Verifier({
@@ -305,7 +305,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTverify() fixes thag21.1", done=>{
+    it("verify() fixes thag21.1", done=>{
         (async function() { try {
             var root = TEST_BILARA;
             var forceRenumber = true;
@@ -382,6 +382,77 @@
             );
 
             var rootRepaired = repaired[rootPath('kn/thag/thag21.1')];
+            var headRoot = Object.keys(rootRepaired).slice(0,nHead);
+            should.deepEqual(headRoot, repairedScidHead);
+            should.deepEqual(
+                Object.keys(rootRepaired).map(k=>rootRepaired[k]),
+                segs.map(s=>s.pli));
+                
+            done();
+        } catch(e) { done(e); }})();
+    });
+    it("TESTTESTverify() fixes thig16.1", done=>{
+        (async function() { try {
+            var root = TEST_BILARA;
+            var forceRenumber = true;
+            var ver = await new Verifier({
+                logLevel,
+                root,
+                forceRenumber,
+            }).initialize();
+            var res = await ver.verify("thig16.1");
+            should(res.mlDocs.length).equal(1);
+            var mld0 = res.mlDocs[0];
+            var repaired = mld0.repaired;
+            var repairedScidHead = [
+                'thig16.1:0.1',
+                'thig16.1:0.2',
+                'thig16.1:0.3',
+                'thig16.1:1.1',
+                'thig16.1:1.2',
+                'thig16.1:1.3',
+                'thig16.1:1.4',
+                'thig16.1:2.1',
+            ];
+            var repairedScidTail = [
+                'thig16.1:75.4',
+                'thig16.1:76.1',
+                'thig16.1:76.2',
+                'thig16.1:77.0',
+                'thig16.1:77.1',
+                'thig16.1:77.2',
+                'thig16.1:77.3',
+                'thig16.1:77.4',
+                'thig16.1:77.5',
+            ];
+            var nHead = repairedScidHead.length;
+            var nTail = repairedScidTail.length;
+            var segs = mld0.segments();
+
+            var htmlRepaired = repaired[htmlPath('kn/thig/thig16.1')];
+            var keysRepaired = Object.keys(htmlRepaired);
+            var headRepaired = keysRepaired.slice(0,nHead);
+            for (let iRep = 0; iRep < headRepaired.length; iRep++) {
+                should(headRepaired[iRep]).equal(repairedScidHead[iRep]);
+            }
+            var tailRepaired = keysRepaired
+                .slice(keysRepaired.length-nTail);
+            for (let iRep = 0; iRep < tailRepaired.length; iRep++) {
+                should(tailRepaired[iRep]).equal(repairedScidTail[iRep]);
+            }
+            should.deepEqual(keysRepaired.map(k=>htmlRepaired[k]),
+                segs.map(s=>s.html));
+
+            var transRepaired = repaired[
+                translationPath('kn/thig/thig16.1','en','sujato')];
+            var headTrans = Object.keys(transRepaired).slice(0,nHead);
+            should.deepEqual(headTrans, repairedScidHead);
+            should.deepEqual(
+                Object.keys(transRepaired).map(k=>transRepaired[k]),
+                segs.filter(s=>s.hasOwnProperty('en')).map(s=>s.en)
+            );
+
+            var rootRepaired = repaired[rootPath('kn/thig/thig16.1')];
             var headRoot = Object.keys(rootRepaired).slice(0,nHead);
             should.deepEqual(headRoot, repairedScidHead);
             should.deepEqual(
