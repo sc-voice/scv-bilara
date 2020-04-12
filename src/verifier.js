@@ -168,11 +168,11 @@
                     var hashNew = mj.hash(newJson);
                     if (hashOld !== hashNew) {
                         if (fixFile) {
-                            console.log(`repair ${fname} (ok)`);
+                            this.log(`repair ${fname} (ok)`);
                             fs.writeFileSync(fpath, 
                                 JSON.stringify(newJson, null, 2));
                         } else {
-                            console.log(`repair ${fname} (ignored)`);
+                            this.log(`repair ${fname} (ignored)`);
                             mld.repaired[fname] = newJson;
                         }
                     }
