@@ -462,7 +462,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTverify() fixes thig1.1", done=>{
+    it("verify() fixes thig1.1", done=>{
         (async function() { try {
             var root = TEST_BILARA;
             var forceRenumber = true;
@@ -518,6 +518,74 @@
             );
 
             var rootRepaired = repaired[rootPath('kn/thig/thig1.1')];
+            var headRoot = Object.keys(rootRepaired).slice(0,nHead);
+            should.deepEqual(headRoot, repairedScidHead);
+            should.deepEqual(
+                Object.keys(rootRepaired).map(k=>rootRepaired[k]),
+                segs.map(s=>s.pli));
+                
+            done();
+        } catch(e) { done(e); }})();
+    });
+    it("TESTTESTverify() fixes an3.47", done=>{
+        (async function() { try {
+            var root = TEST_BILARA;
+            var forceRenumber = true;
+            var ver = await new Verifier({
+                logLevel,
+                root,
+            }).initialize();
+            var res = await ver.verify("an3.47");
+            should(res.mlDocs.length).equal(1);
+            var mld0 = res.mlDocs[0];
+            var repaired = mld0.repaired;
+            var repairedScidHead = [
+                'an3.47:0.1',
+                'an3.47:0.2',
+                'an3.47:0.3',
+                'an3.47:1.1',
+                'an3.47:1.2',
+                'an3.47:1.3',
+                'an3.47:1.4',
+                'an3.47:1.5',
+                'an3.47:2.0',
+                'an3.47:2.1',
+            ];
+            var repairedScidTail = [
+                'an3.47:2.1',
+                'an3.47:2.2',
+                'an3.47:2.3',
+                'an3.47:2.4',
+                'an3.47:2.5',
+            ];
+            var nHead = repairedScidHead.length;
+            var nTail = repairedScidTail.length;
+            var segs = mld0.segments();
+
+            var htmlRepaired = repaired[htmlPath('an/an3/an3.47')];
+            var keysRepaired = Object.keys(htmlRepaired);
+            var headRepaired = keysRepaired.slice(0,nHead);
+            for (let iRep = 0; iRep < headRepaired.length; iRep++) {
+                should(headRepaired[iRep]).equal(repairedScidHead[iRep]);
+            }
+            var tailRepaired = keysRepaired
+                .slice(keysRepaired.length-nTail);
+            for (let iRep = 0; iRep < tailRepaired.length; iRep++) {
+                should(tailRepaired[iRep]).equal(repairedScidTail[iRep]);
+            }
+            should.deepEqual(keysRepaired.map(k=>htmlRepaired[k]),
+                segs.map(s=>s.html));
+
+            var transRepaired = repaired[
+                translationPath('an/an3/an3.47','en','sujato')];
+            var headTrans = Object.keys(transRepaired).slice(0,nHead);
+            should.deepEqual(headTrans, repairedScidHead);
+            should.deepEqual(
+                Object.keys(transRepaired).map(k=>transRepaired[k]),
+                segs.filter(s=>s.hasOwnProperty('en')).map(s=>s.en)
+            );
+
+            var rootRepaired = repaired[rootPath('an/an3/an3.47')];
             var headRoot = Object.keys(rootRepaired).slice(0,nHead);
             should.deepEqual(headRoot, repairedScidHead);
             should.deepEqual(

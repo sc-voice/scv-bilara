@@ -55,16 +55,35 @@
 
         verifySeg({mld, seg, iSeg, nSegs, languages}) {
             var suid = mld.suid;
-            var segInfo = null;
+            var verifyInfo = null;
             var colonParts = seg.scid.split(':');
             var keys = Object.keys(seg);
             var nLangs = keys.length-2;
             var extraLangs = nLangs !== languages.length;
-            if (!segInfo && iSeg===0 && !/:0/.test(seg.scid)) {
-                logger.info(`Expected scid:0 for:${seg.scid} => renumbering...`);
-                segInfo = { renumber: true };
+            var invalidIntHdg = /<h[2-9]/u.test(seg.html) &&
+                !/\.0/u.test(seg.scid);
+            if (!verifyInfo && iSeg===0 && !/:0/.test(seg.scid)) {
+                logger.info(`Renumbering seg[0]:${seg.scid}`);
+                verifyInfo = { renumber: true };
             }
-            if (!segInfo && iSeg+1<nSegs && extraLangs) {
+            if (!verifyInfo && invalidIntHdg) {
+                var colonParts = seg.scid.split(':');
+                var segParts = colonParts.pop().split('.');
+                var iHdg = segParts.length-2;
+                segParts[iHdg] = Number(segParts[iHdg])+1;
+                segParts[iHdg+1] = '0';
+                colonParts.push(segParts.join('.'));
+                var repairedId = colonParts.join(':');
+                logger.info([
+                    `Renumber internal`,
+                    `heading:${seg.scid}=>${repairedId}`,
+                    `${seg.html}`,
+                ].join(' '));
+                verifyInfo = { 
+                    repairedId,
+                };
+            }
+            if (!verifyInfo && iSeg+1<nSegs && extraLangs) {
                 languages.forEach(lang => {
                     if (mld.langSegs[lang]) {
                         if (!seg.hasOwnProperty(lang)) {
@@ -76,10 +95,10 @@
                     }
                 });
             }
-            if (!segInfo && colonParts.length === 1) {
+            if (!verifyInfo && colonParts.length === 1) {
                 var suidDots = suid.split('.');
                 var scidDots = seg.scid.split('.');
-                segInfo = { repairedId: [
+                verifyInfo = { repairedId: [
                     scidDots.slice(0,suidDots.length).join('.'),
                     ':',
                     scidDots.slice(suidDots.length).join('.')].join('')
@@ -87,7 +106,7 @@
                 logger.info(
                     `Missing colon "${seg.scid}" => "${repairedId}"`);
             }
-            if (!segInfo && colonParts.length > 2) {
+            if (!verifyInfo && colonParts.length > 2) {
                 var {
                     suid:fileSuid,
                 } = BilaraPath.pathParts(suid);
@@ -99,12 +118,12 @@
                 } while (colonParts.length && 
                     repairedId.length < fileSuid.length);
                 repairedId += `:${colonParts.join('.')}`;
-                segInfo = {repairedId};
+                verifyInfo = {repairedId};
                 logger.info(`Too many colons "${seg.scid}" => `+
                     `"${repairedId}"`);
             }
-            if (!segInfo && !SuttaCentralId.match(seg.scid, suid)) {
-                seginfo = {
+            if (!verifyInfo && !SuttaCentralId.match(seg.scid, suid)) {
+                verifyInfo = {
                     repairedId: colonParts
                         .map((part,i) => i ? part : suid )
                         .join(':'),
@@ -112,10 +131,10 @@
                 logger.info(`Segment id/file mismatch "${seg.scid}" => `+
                     `"${repairedId}"`);
             }
-            if (segInfo) {
-                segInfo.seg = seg;
+            if (verifyInfo) {
+                verifyInfo.seg = seg;
             }
-            return segInfo;
+            return verifyInfo;
         }
 
         verifyDoc(mld) {
@@ -132,7 +151,7 @@
             var languages = mld.languages();
             var numberingValid = true;
             segs.forEach((seg,iSeg) => {
-                var segInfo = this.verifySeg({
+                var verifyInfo = this.verifySeg({
                     mld, 
                     seg, 
                     iSeg, 
@@ -140,9 +159,9 @@
                     languages,
                 });
                 numberingValid = numberingValid && 
-                    (!segInfo || !segInfo.renumber);
-                if (segInfo) {
-                    repairMap[seg.scid] = segInfo.scid;
+                    (!verifyInfo || !verifyInfo.renumber);
+                if (verifyInfo) {
+                    repairMap[seg.scid] = verifyInfo.repairedId;
                 }
             });
             if (forceRenumber || !numberingValid) {
@@ -158,7 +177,6 @@
                     Object.keys(json).forEach(k => {
                         var newK = repairMap[k] || k;
                         if (newJson[newK]) {
-                            console.log(`dbg newJson`, newJson);
                             throw new Error(
                                 `Segment number collision: ${k}=>${newK}`);
                         }
@@ -197,7 +215,6 @@
                 if (res.mlDocs.length) {
                     that.log(`verifying ${res.mlDocs.map(mld=>mld.suid)}`);
                 } else {
-                    console.log(`dbg res`, res);
                     that.log(`Nothing to verify for ${pattern}`);
                 }
                 res.mlDocs.forEach(mld => that.verifyDoc(mld));
