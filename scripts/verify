@@ -30,16 +30,17 @@ echo "DOCS=[$DOCS]"
 if [ "$DOCS" == "" ]; then DOCS='all'; fi
 
 if [ "$DOCS" == "all" ] || [ "$DOCS" == "an" ]; then
-    $DIR/js/verify.js $ARGS an1.1-999
-    $DIR/js/verify.js $ARGS an2.1-999
-    $DIR/js/verify.js $ARGS an3.1-999
-    $DIR/js/verify.js $ARGS an4.1-999
-    $DIR/js/verify.js $ARGS an5.1-999
-    $DIR/js/verify.js $ARGS an6.1-999
-    $DIR/js/verify.js $ARGS an7.1-999
-    $DIR/js/verify.js $ARGS an8.1-999
-    $DIR/js/verify.js $ARGS an9.1-999
-    $DIR/js/verify.js $ARGS an10.1-999
+    $DIR/js/verify.js $ARGS an1.1-9999
+    $DIR/js/verify.js $ARGS an2.1-9999
+    $DIR/js/verify.js $ARGS an3.1-9999
+    $DIR/js/verify.js $ARGS an4.1-9999
+    $DIR/js/verify.js $ARGS an5.1-9999
+    $DIR/js/verify.js $ARGS an6.1-9999
+    $DIR/js/verify.js $ARGS an7.1-9999
+    $DIR/js/verify.js $ARGS an8.1-9999
+    $DIR/js/verify.js $ARGS an9.1-9999
+    $DIR/js/verify.js $ARGS an10.1-9999
+    $DIR/js/verify.js $ARGS an11.1-9999
     if [ "$DOCS" != "all" ]; then DOCS=; fi
 fi
 

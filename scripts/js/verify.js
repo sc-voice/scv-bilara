@@ -31,7 +31,7 @@ OPTIONS
 
 var pattern;
 var fixFile = false;
-var foreceRenumber = false;
+var forceRenumber = false;
 
 var nargs = process.argv.length;
 if (nargs < 3) {

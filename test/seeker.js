@@ -177,7 +177,7 @@
             done();
         } catch(e) { done(e); } })();
     });
-    it("keywordSearch(...) limits results", done=>{
+    it("TESTTESTkeywordSearch(...) limits results", done=>{
         (async function() { try {
             var lang = 'en';
             var pattern = Seeker.normalizePattern('suffering joy faith');
@@ -192,7 +192,7 @@
                 lang: 'en',
                 keywordsFound: {
                     faith: 395,
-                    joy: 141,
+                    joy: 142,
                     suffering: 769,
                 },
             };
@@ -219,7 +219,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("keywordSearch(...) searches English", done=>{
+    it("TESTTESTkeywordSearch(...) searches English", done=>{
         (async function() { try {
             var pattern = Seeker.normalizePattern('suffering joy faith');
             var skr = await new Seeker({
@@ -235,7 +235,7 @@
                 method: 'keywords',
                 keywordsFound: {
                     suffering: 769,
-                    joy: 141,
+                    joy: 142,
                     faith: 395,
                 },
             };
