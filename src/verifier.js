@@ -61,7 +61,7 @@
             var nLangs = keys.length-2;
             var extraLangs = nLangs !== languages.length;
             var invalidIntHdg = /<h[2-9]/u.test(seg.html) &&
-                !/\.0/u.test(seg.scid);
+                !/[:.]0/u.test(seg.scid);
             if (!verifyInfo && iSeg===0 && !/:0/.test(seg.scid)) {
                 logger.info(`Renumbering seg[0]:${seg.scid}`);
                 verifyInfo = { renumber: true };
