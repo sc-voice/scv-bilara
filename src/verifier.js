@@ -98,11 +98,12 @@
             if (!verifyInfo && colonParts.length === 1) {
                 var suidDots = suid.split('.');
                 var scidDots = seg.scid.split('.');
-                verifyInfo = { repairedId: [
+                var repairedId = [
                     scidDots.slice(0,suidDots.length).join('.'),
                     ':',
-                    scidDots.slice(suidDots.length).join('.')].join('')
-                };
+                    scidDots.slice(suidDots.length).join('.')
+                ].join('');
+                verifyInfo = { repairedId };
                 logger.info(
                     `Missing colon "${seg.scid}" => "${repairedId}"`);
             }
