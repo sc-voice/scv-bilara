@@ -1,6 +1,3 @@
-sprache
-moralisch
-moralischem
 achtsamkeit
 auch
 auf
@@ -236,6 +233,7 @@ ehrwürdiger
 eichhörnchen
 eifer
 eifrig
+eigenschaften
 ein
 einäugig
 einbildung
@@ -359,6 +357,7 @@ ernüchterung
 erregend
 erreichen
 erreicht
+erringen
 errungen
 erscheinen
 erscheint
@@ -753,6 +752,7 @@ länger
 längere
 lässt
 lebe
+leben
 lebewesen
 lebt
 lebte
@@ -780,6 +780,10 @@ leitern
 leitet
 lernen
 letzten
+leuchtend
+leuchtende
+leuchtenden
+leuchtender
 licht
 lichten
 liebe
@@ -840,6 +844,8 @@ mönche
 mönchen
 mönchs
 mönchsschülern
+moralisch
+moralischem
 morgen
 morgens
 mühe
@@ -1078,6 +1084,9 @@ sinnliches
 sinnloser
 sittlich
 sittlichen
+sittliches
+sittlicher
+sittlichem
 sitz
 sitze
 sitzt
@@ -1110,6 +1119,7 @@ spenden
 spezifische
 spielen
 spielt
+sprache
 spreche
 sprechen
 spricht
@@ -1225,6 +1235,8 @@ unglück
 unheil
 unheimlichen
 unmöglich
+unmoralisch
+unmoralisches
 unrechtmäßige
 unruhig
 uns
@@ -1410,20 +1422,5 @@ vorwürfe
 wecken
 weckt
 wurzel
-eigenschaften
-leben
-zuflucht
-unmoralisch
-unmoralisches
-sittlich
-sittliches
-sittlicher
-sittlichem
-sittlichen
-leuchtend
-leuchtende
-leuchtenden
-leuchtender
-erringen
-errungen
 zudringlich
+zuflucht
