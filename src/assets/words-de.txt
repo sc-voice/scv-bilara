@@ -25,6 +25,7 @@ beeindruckend
 beenden
 beendet
 beendigung
+befasst
 beflecken
 befleckt
 beflissen
@@ -471,6 +472,7 @@ gemeingut
 gemeint
 gemeistert
 gemütsruhe
+genau
 genießerisch
 genießt
 genossen
@@ -1214,6 +1216,7 @@ unfähig
 ungebildete
 ungebildeter
 ungeeignete
+ungenau
 ungeschützter
 ungetrübt
 ungewissheit
