@@ -23,13 +23,19 @@
                 'pli', 
             ];
             this.fixFile = opts.fixFile || false;
+            this.forceRenumber = opts.forceRenumber || false;;
+            this.fixStart = opts.fixStart == null || 
+                opts.fixStart || opts.forceRenumber;
+            this.fixInternal = opts.fixInternal == null || 
+                opts.fixInternal || opts.forceRenumber;
+            this.fixBody = opts.fixBody == null || 
+                opts.fixBody || opts.forceRenumber;
 
             var transPath = path.join(BILARA_DATA, 'translation');
             fs.readdirSync(transPath).forEach(tdf => {
                 languages.push(tdf);
             });
 
-            this.forceRenumber = opts.forceRenumber || false;
             this.merkleJson = new MerkleJson();
             this.seeker = new Seeker({
                 includeUnpublished: true,
@@ -64,7 +70,11 @@
                 !/[:.]0/u.test(seg.scid);
             if (!verifyInfo && iSeg===0 && !/:0/.test(seg.scid)) {
                 logger.info(`Renumbering seg[0]:${seg.scid}`);
-                verifyInfo = { renumber: true };
+                verifyInfo = { 
+                    fixStart: true,
+                    fixBody: true,
+                    fixInternal: true,
+                };
             }
             if (!verifyInfo && invalidIntHdg) {
                 var colonParts = seg.scid.split(':');
@@ -81,6 +91,7 @@
                 ].join(' '));
                 verifyInfo = { 
                     repairedId,
+                    fixInternal: true,
                 };
             }
             if (!verifyInfo && iSeg+1<nSegs && extraLangs) {
@@ -144,6 +155,9 @@
                 forceRenumber,
                 root,
                 merkleJson: mj,
+                fixStart,
+                fixInternal,
+                fixBody,
             } = this;
             var suid = mld.suid;
             var repairMap = {};
@@ -159,14 +173,23 @@
                     nSegs, 
                     languages,
                 });
-                numberingValid = numberingValid && 
-                    (!verifyInfo || !verifyInfo.renumber);
                 if (verifyInfo) {
+                    fixStart = fixStart || verifyInfo.fixStart;
+                    fixBody = fixBody || verifyInfo.fixBody;
+                    fixInternal = fixInternal || verifyInfo.fixInternal;
+                    numberingValid = numberingValid && 
+                        !(fixStart || fixInternal || fixBody);
                     repairMap[seg.scid] = verifyInfo.repairedId;
                 }
             });
             if (forceRenumber || !numberingValid) {
-                this.renumber(mld, repairMap);
+                this.renumber({
+                    mld, 
+                    repairMap,
+                    fixStart,
+                    fixInternal,
+                    fixBody,
+                });
             }
             var repairs = Object.keys(repairMap).length;
             if (repairs) {
@@ -227,7 +250,17 @@
             return new Promise(pbody);
         }
 
-        renumber(mld, repairMap){
+        renumber(opts={}) {
+            let {
+                mld, 
+                repairMap, 
+                fixStart,
+                fixInternal,
+                fixBody,
+            } = opts;
+            fixStart == null && (fixStart = this.fixStart);
+            fixInternal == null && (fixInternal = this.fixInternal);
+            fixBody == null && (fixBody = this.fixBody);
             var startOfText = 0;
             var major = 0;
             var minor = 1;
@@ -270,24 +303,26 @@
                 }
                 if (startOfText) {
                     newScid = `${prefix}:${0}.${minor++}`;
-                    repairMap[seg.scid] = newScid;
+                    fixStart && (repairMap[seg.scid] = newScid);
                 } else if (isZeroSegment) {
                     // do nothing
                 } else { // normal segment
-                    if (zeroSegments.length === 1) {
-                        var oldScid = zeroSegments[0];
-                        newScid = `${prefix}:${major}.0`;
-                        repairMap[oldScid] = newScid;
-                    } else {
-                        for (let i=0; i<zeroSegments.length; i++) {
-                            var oldScid = zeroSegments[i];
-                            newScid = `${prefix}:${major}.0.${i+1}`;
+                    if (fixInternal) {
+                        if (zeroSegments.length === 1) {
+                            var oldScid = zeroSegments[0];
+                            newScid = `${prefix}:${major}.0`;
                             repairMap[oldScid] = newScid;
+                        } else {
+                            for (let i=0; i<zeroSegments.length; i++) {
+                                var oldScid = zeroSegments[i];
+                                newScid = `${prefix}:${major}.0.${i+1}`;
+                                repairMap[oldScid] = newScid;
+                            }
                         }
                     }
 
                     newScid = `${prefix}:${major}.${minor}`;
-                    repairMap[seg.scid] = newScid;
+                    fixBody && (repairMap[seg.scid] = newScid);
                     minor++;
                     zeroSegments = [];
                 }
