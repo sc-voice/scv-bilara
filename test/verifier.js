@@ -305,7 +305,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTverify() fixes thag21.1", done=>{
+    it("verify() fixes thag21.1", done=>{
         (async function() { try {
             var root = TEST_BILARA;
             var forceRenumber = true;
@@ -530,7 +530,6 @@
     it("verify() fixes an3.47", done=>{
         (async function() { try {
             var root = TEST_BILARA;
-            var forceRenumber = true;
             var ver = await new Verifier({
                 logLevel,
                 root,
@@ -595,42 +594,42 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTverify() fixes dn1", done=>{
-        done(); return; // TODO dbg
+    it("TESTTESTverify() maps dn1", done=>{
         (async function() { try {
             var root = TEST_BILARA;
-            var forceRenumber = true;
+            var mapFile = path.join(__dirname, "data", "mapdn1.json");
+            var logLevel = 'info';
             var ver = await new Verifier({
                 logLevel,
                 root,
+                mapFile,
             }).initialize();
             var res = await ver.verify("dn1");
             should(res.mlDocs.length).equal(1);
             var mld0 = res.mlDocs[0];
             var repaired = mld0.repaired;
             var repairedScidHead = [
-                'dn1:0.1',
-                'dn1:0.2',
-                'dn1:0.3',
-                'dn1:1.1',
-                'dn1:1.2',
-                'dn1:1.3',
-                'dn1:1.4',
-                'dn1:1.5',
-                'dn1:1.6',
-                'dn1:2.1',
-                'dn1:2.2',
-                'dn1:2.3',
-                'dn1:2.4',
-                'dn1:2.5',
-                'dn1:3.1',
+                'dn1:0.1', 'dn1:0.2', 'dn1:0.3',
+                'dn1:1.1.1', 'dn1:1.1.2', 'dn1:1.1.3', 'dn1:1.1.4',
+                'dn1:1.1.5', 'dn1:1.1.6',
+                'dn1:1.2.1', 'dn1:1.2.2', 'dn1:1.2.3', 'dn1:1.2.4',
+                'dn1:1.2.5',
+                'dn1:1.3.1', 'dn1:1.3.2', 'dn1:1.3.3', 'dn1:1.3.4',
+                'dn1:1.3.5',
+                'dn1:1.4.1', 'dn1:1.4.2', 'dn1:1.4.3', 'dn1:1.4.4',
+                'dn1:1.4.5', 'dn1:1.4.6', 'dn1:1.4.7', 'dn1:1.4.8',
+                'dn1:1.4.9',
+                'dn1:1.5.1', 'dn1:1.5.2', 'dn1:1.5.3', 'dn1:1.5.4', 
+                'dn1:1.6.1', 'dn1:1.6.2', 'dn1:1.6.3', 'dn1:1.6.4', 
+                'dn1:1.6.5', 'dn1:1.6.6', 
+                'dn1:1.7.0.1', 'dn1:1.7.0.2', 
+                'dn1:1.7.1', 'dn1:1.7.2', 
+                'dn1:1.8.1', 'dn1:1.8.2', 'dn1:1.8.3', 'dn1:1.8.4', 
             ];
             var repairedScidTail = [
-                'dn1:2.1',
-                'dn1:2.2',
-                'dn1:2.3',
-                'dn1:2.4',
-                'dn1:2.5',
+                'dn1:3.74.5',
+                'dn1:3.74.6',
+                'dn1:3.74.7',
             ];
             var nHead = repairedScidHead.length;
             var nTail = repairedScidTail.length;

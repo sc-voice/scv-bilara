@@ -23,13 +23,11 @@
                 'pli', 
             ];
             this.fixFile = opts.fixFile || false;
-            this.forceRenumber = opts.forceRenumber || false;;
-            this.fixStart = opts.fixStart == null || 
-                opts.fixStart || opts.forceRenumber;
-            this.fixInternal = opts.fixInternal == null || 
-                opts.fixInternal || opts.forceRenumber;
-            this.fixBody = opts.fixBody == null || 
-                opts.fixBody || opts.forceRenumber;
+            this.forceRenumber = opts.forceRenumber || false;
+            this.mapFile = opts.mapFile;
+            this.fixStart = opts.fixStart || opts.forceRenumber;
+            this.fixInternal = opts.fixInternal || opts.forceRenumber;
+            this.fixBody = opts.fixBody || opts.forceRenumber;
 
             var transPath = path.join(BILARA_DATA, 'translation');
             fs.readdirSync(transPath).forEach(tdf => {
@@ -59,17 +57,20 @@
             return new Promise(pbody);
         }
 
-        verifySeg({mld, seg, iSeg, nSegs, languages}) {
+        verifySeg({mld, seg, iSeg, segs, languages, repairMap}) {
             var suid = mld.suid;
+            var nSegs = segs.length;
+            var iSegNext = iSeg+1;
             var verifyInfo = null;
             var colonParts = seg.scid.split(':');
             var keys = Object.keys(seg);
             var nLangs = keys.length-2;
             var extraLangs = nLangs !== languages.length;
-            var invalidIntHdg = /<h[2-9]/u.test(seg.html) &&
+            var reIntHdg = /<h[2-9]/u;
+            var invalidIntHdg = reIntHdg.test(seg.html) &&
                 !/[:.]0/u.test(seg.scid);
             if (!verifyInfo && iSeg===0 && !/:0/.test(seg.scid)) {
-                logger.info(`Renumbering seg[0]:${seg.scid}`);
+                this.log(`Renumbering seg[0]:${seg.scid}`);
                 verifyInfo = { 
                     fixStart: true,
                     fixBody: true,
@@ -77,52 +78,61 @@
                 };
             }
             if (!verifyInfo && invalidIntHdg) {
-                var colonParts = seg.scid.split(':');
-                var segParts = colonParts.pop().split('.');
-                var iHdg = segParts.length-2;
-                segParts[iHdg] = Number(segParts[iHdg])+1;
-                segParts[iHdg+1] = '0';
-                colonParts.push(segParts.join('.'));
-                var repairedId = colonParts.join(':');
-                logger.info([
-                    `Renumber internal`,
-                    `heading:${seg.scid}=>${repairedId}`,
-                    `${seg.html}`,
-                ].join(' '));
-                verifyInfo = { 
-                    repairedId,
-                    fixInternal: true,
-                };
+                while (iSegNext+1 < segs.length) {
+                    var segNext = segs[iSegNext];
+                    if (!reIntHdg.test(segNext.html)) {
+                        break;
+                    }
+                    iSegNext++;
+                }
+                let dotParts = segNext.scid.split('.');
+                dotParts[dotParts.length-1] = '0';
+                let prefix = dotParts.join('.');
+                let addSuffix = iSegNext > iSeg+1;
+                for (let iHdg=1; iHdg+iSeg<=iSegNext; iHdg++) {
+                    let hdgScid = segs[iSeg+iHdg-1].scid;
+                    if (addSuffix) {
+                        var repairedId = `${prefix}.${iHdg}`;
+                    } else {
+                        var repairedId = prefix;
+                    }
+                    repairMap[hdgScid] = repairedId;
+                    this.log([
+                        `heading:${hdgScid}=>${repairedId}`,
+                        `${seg.html}`,
+                    ].join(' '));
+                }
+                verifyInfo = {};
             }
             if (!verifyInfo && iSeg+1<nSegs && extraLangs) {
                 languages.forEach(lang => {
                     if (mld.langSegs[lang]) {
                         if (!seg.hasOwnProperty(lang)) {
-                            logger.info(
+                            this.log(
                                 `Missing ${lang} translation ${seg.scid}`);
                         }
                     } else if (iSeg == 0) {
-                        logger.info(`Translation stub:${lang} ${mld.suid}`);
+                        this.log(`Translation stub:${lang} ${mld.suid}`);
                     }
                 });
             }
             if (!verifyInfo && colonParts.length === 1) {
                 var suidDots = suid.split('.');
                 var scidDots = seg.scid.split('.');
-                var repairedId = [
+                let repairedId = [
                     scidDots.slice(0,suidDots.length).join('.'),
                     ':',
                     scidDots.slice(suidDots.length).join('.')
                 ].join('');
                 verifyInfo = { repairedId };
-                logger.info(
+                this.log(
                     `Missing colon "${seg.scid}" => "${repairedId}"`);
             }
             if (!verifyInfo && colonParts.length > 2) {
                 var {
                     suid:fileSuid,
                 } = BilaraPath.pathParts(suid);
-                var repairedId = "";
+                let repairedId = "";
                 do {
                     repairedId += repairedId.length===0
                         ? colonParts.shift()
@@ -131,7 +141,7 @@
                     repairedId.length < fileSuid.length);
                 repairedId += `:${colonParts.join('.')}`;
                 verifyInfo = {repairedId};
-                logger.info(`Too many colons "${seg.scid}" => `+
+                this.log(`Too many colons "${seg.scid}" => `+
                     `"${repairedId}"`);
             }
             if (!verifyInfo && !SuttaCentralId.match(seg.scid, suid)) {
@@ -140,11 +150,14 @@
                         .map((part,i) => i ? part : suid )
                         .join(':'),
                 };
-                logger.info(`Segment id/file mismatch "${seg.scid}" => `+
+                this.log(`Segment id/file mismatch "${seg.scid}" => `+
                     `"${repairedId}"`);
             }
             if (verifyInfo) {
                 verifyInfo.seg = seg;
+                verifyInfo.iSegNext = iSegNext;
+                verifyInfo.repairedId && (
+                    repairMap[seg.scid] = verifyInfo.repairedId);
             }
             return verifyInfo;
         }
@@ -158,30 +171,41 @@
                 fixStart,
                 fixInternal,
                 fixBody,
+                mapFile,
             } = this;
             var suid = mld.suid;
-            var repairMap = {};
+            var repairMap = mapFile
+                ? JSON.parse(fs.readFileSync(mapFile))
+                : {};
             var segs = mld.segments();
             var nSegs = segs.length;
             var languages = mld.languages();
             var numberingValid = true;
-            segs.forEach((seg,iSeg) => {
-                var verifyInfo = this.verifySeg({
+            for (let iSeg=0; iSeg<segs.length; ) {
+                let seg = segs[iSeg];
+                if (repairMap[seg.scid]) {
+                    iSeg++;
+                    continue;
+                }
+                let verifyInfo = this.verifySeg({
                     mld, 
                     seg, 
                     iSeg, 
-                    nSegs, 
+                    segs,
                     languages,
+                    repairMap,
                 });
                 if (verifyInfo) {
                     fixStart = fixStart || verifyInfo.fixStart;
                     fixBody = fixBody || verifyInfo.fixBody;
                     fixInternal = fixInternal || verifyInfo.fixInternal;
                     numberingValid = numberingValid && 
-                        !(fixStart || fixInternal || fixBody);
-                    repairMap[seg.scid] = verifyInfo.repairedId;
+                        !(fixStart || fixBody);
+                    iSeg = verifyInfo.iSegNext;
+                } else {
+                    iSeg++;
                 }
-            });
+            }
             if (forceRenumber || !numberingValid) {
                 this.renumber({
                     mld, 
@@ -229,6 +253,7 @@
             }
             var {
                 seeker,
+                mapFile,
             } = that;
             var pbody = (resolve,reject)=>(async function() {try{
                 var res = await seeker.find({
@@ -240,6 +265,16 @@
                     that.log(`verifying ${res.mlDocs.map(mld=>mld.suid)}`);
                 } else {
                     that.log(`Nothing to verify for ${pattern}`);
+                }
+                if (mapFile) {
+                    if (res.mlDocs.length > 1) {
+                        throw new Error([
+                            `A mapFile can only be used with`,
+                            `a single document:${mapFile}`,
+                        ].join(' '));
+                    } else if (!fs.existsSync(mapFile)) {
+                        throw new Error(`Map file not found:${mapFile}`);
+                    }
                 }
                 res.mlDocs.forEach(mld => that.verifyDoc(mld));
                 resolve({
@@ -258,6 +293,7 @@
                 fixInternal,
                 fixBody,
             } = opts;
+            this.log(`Renumbering ${mld.suid}`);
             fixStart == null && (fixStart = this.fixStart);
             fixInternal == null && (fixInternal = this.fixInternal);
             fixBody == null && (fixBody = this.fixBody);
