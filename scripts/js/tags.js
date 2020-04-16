@@ -74,7 +74,6 @@ function writeTags({files, tagPath}) {
         a[len] = (a[len]||0) + 1;
         return a;
     }, {});
-    //console.log(`dbg wordUsage`, wordUsage);
 } catch(e) {
     logger.warn(e.stack);
 }})();

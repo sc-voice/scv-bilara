@@ -25,6 +25,9 @@
             this.fixFile = opts.fixFile || false;
             this.forceRenumber = opts.forceRenumber || false;
             this.mapFile = opts.mapFile;
+            if (this.mapFile) {
+                this.log(`mapFile:${this.mapFile}`);
+            }
             this.fixStart = opts.fixStart || opts.forceRenumber;
             this.fixInternal = opts.fixInternal || opts.forceRenumber;
             this.fixBody = opts.fixBody || opts.forceRenumber;

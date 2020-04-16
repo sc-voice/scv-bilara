@@ -64,8 +64,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("verify() fixes thag1.113", done=>{
-        done(); return; // TODO dbg
+    it("TESTTESTverify() fixes thag1.113", done=>{
         (async function() { try {
             var root = TEST_BILARA;
             var ver = await new Verifier({
@@ -85,8 +84,8 @@
                 'thag1.113:1.2',
                 'thag1.113:1.3',
                 'thag1.113:1.4',
-                'thag1.113:2.1',
-                'thag1.113:2.2',
+                'thag1.113:1.5',
+                'thag1.113:1.6',
             ];
             var segs = mld0.segments();
 
@@ -114,8 +113,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("verify() fixes thag1.1", done=>{
-        done(); return; // TODO dbg
+    it("TESTTESTverify() fixes thag1.1", done=>{
         (async function() { try {
             var root = TEST_BILARA;
             var ver = await new Verifier({
@@ -150,7 +148,7 @@
                 'thag1.1:4.2',
                 'thag1.1:4.3',
                 'thag1.1:4.4',
-                'thag1.1:5.1',
+                'thag1.1:4.5',
             ];
             var segs = mld0.segments();
 
@@ -250,7 +248,6 @@
             should(res.mlDocs.length).equal(1);
             var mld0 = res.mlDocs[0];
             var repaired = mld0.repaired;
-            console.log(`dbg res`, res);
             var repairedScids = [
                 'thag2.49:0.1',
                 'thag2.49:0.2',
@@ -594,11 +591,10 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTverify() maps dn1", done=>{
+    it("verify() maps dn1", done=>{
         (async function() { try {
             var root = TEST_BILARA;
             var mapFile = path.join(__dirname, "data", "mapdn1.json");
-            var logLevel = 'info';
             var ver = await new Verifier({
                 logLevel,
                 root,

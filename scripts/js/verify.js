@@ -23,6 +23,9 @@ OPTIONS
         -f, --fix
         Update files with fixed segment errors
 
+        -m, --map MAPFILE
+        Use given JSON MAPFILE to initialize renumbering map.
+
         -n, --number
         Force segment id renumbering
 `);
@@ -32,6 +35,7 @@ OPTIONS
 var pattern;
 var fixFile = false;
 var forceRenumber = false;
+var mapFile;
 
 var nargs = process.argv.length;
 if (nargs < 3) {
@@ -44,6 +48,8 @@ for (var i = 2; i < nargs; i++) {
         help();
     } else if (arg === '-f' || arg === '--fix') {
         fixFile = true;
+    } else if (arg === '-m' || arg === '--map') {
+        mapFile = process.argv[++i];
     } else if (arg === '-n' || arg === '--number') {
         forceRenumber = true;
     } else {
@@ -57,6 +63,7 @@ pattern = pattern || `mn1`;
     var verifier = await new Verifier({
         fixFile,
         forceRenumber,
+        mapFile,
     }).initialize();
     await verifier.verify(pattern);
 } catch(e) { logger.warn(e.stack); }})();

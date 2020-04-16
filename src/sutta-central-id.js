@@ -109,7 +109,6 @@
                     var c0let = c0.replace(/[0-9]*/ug,'');
                     var n0 = Number(c0dig);
                     var n1 = c0let.charCodeAt(0) - 'a'.charCodeAt(0) + 1;
-                    // console.log(`dbg parNumber`, {c0dig, c0let,n0,n1});
                     if (isNaN(n0) || isNaN(n1)) {
                         throw new Error(
                             `partNumber() cannot parse ${part} in ${id}`);
@@ -135,7 +134,6 @@
                 return a.concat(SuttaCentralId
                     .partNumber(lowPart, id_or_path));
             }, []);
-            //console.log(`dbg scidNumberLow ${scid}`, {nums});
             return nums;
         }
 
@@ -149,7 +147,6 @@
                 return a.concat(SuttaCentralId
                     .partNumber(highPart, id_or_path));
             }, []);
-            //console.log(`dbg scidNumberLow ${scid}`, nums);
             return nums;
         }
 
