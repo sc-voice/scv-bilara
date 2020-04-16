@@ -931,6 +931,7 @@ provinzen
 prüft
 punkt
 punkten
+quälenden
 rät
 rätsel
 räuber
