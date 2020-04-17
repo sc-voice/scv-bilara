@@ -88,10 +88,14 @@
                     }
                     iSegNext++;
                 }
-                let dotParts = segNext.scid.split('.');
-                dotParts[dotParts.length-1] = '0';
-                let prefix = dotParts.join('.');
                 let addSuffix = iSegNext > iSeg+1;
+                let dotParts = segNext.scid.split('.');
+                if (segNext.scid.endsWith('1')) {
+                    dotParts[dotParts.length-1] = '0';
+                } else {
+                    dotParts.push('0');
+                }
+                let prefix = dotParts.join('.');
                 for (let iHdg=1; iHdg+iSeg<=iSegNext; iHdg++) {
                     let hdgScid = segs[iSeg+iHdg-1].scid;
                     if (addSuffix) {

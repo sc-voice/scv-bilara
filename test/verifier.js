@@ -524,7 +524,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("verify() fixes an3.47", done=>{
+    it("TESTTESTverify() fixes an3.47", done=>{
         (async function() { try {
             var root = TEST_BILARA;
             var ver = await new Verifier({
@@ -591,7 +591,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("verify() maps dn1", done=>{
+    it("TESTTESTverify() maps dn1", done=>{
         (async function() { try {
             var root = TEST_BILARA;
             var mapFile = path.join(__dirname, "data", "mapdn1.json");
