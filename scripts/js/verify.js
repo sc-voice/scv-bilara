@@ -23,7 +23,7 @@ OPTIONS
         -f, --fix
         Update files with fixed segment errors
 
-        -m, --map MAPFILE
+        -m:MAPFILE, --map:MAPFILE
         Use given JSON MAPFILE to initialize renumbering map.
 
         -n, --number
@@ -48,8 +48,8 @@ for (var i = 2; i < nargs; i++) {
         help();
     } else if (arg === '-f' || arg === '--fix') {
         fixFile = true;
-    } else if (arg === '-m' || arg === '--map') {
-        mapFile = process.argv[++i];
+    } else if (arg.startsWith('-m') || arg.startsWith('--map')) {
+        mapFile =  arg.split(':')[1];
     } else if (arg === '-n' || arg === '--number') {
         forceRenumber = true;
     } else {
