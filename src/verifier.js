@@ -32,7 +32,7 @@
             this.fixInternal = opts.fixInternal || opts.forceRenumber;
             this.fixBody = opts.fixBody || opts.forceRenumber;
 
-            var transPath = path.join(BILARA_DATA, 'translation');
+            var transPath = path.join(root, 'translation');
             fs.readdirSync(transPath).forEach(tdf => {
                 languages.push(tdf);
             });
@@ -93,7 +93,7 @@
                 if (segNext.scid.endsWith('1')) {
                     dotParts[dotParts.length-1] = '0';
                 } else {
-                    dotParts.push('0');
+                    throw new Error(`Cannot repair internal heading`);
                 }
                 let prefix = dotParts.join('.');
                 for (let iHdg=1; iHdg+iSeg<=iSegNext; iHdg++) {
@@ -110,6 +110,18 @@
                     ].join(' '));
                 }
                 verifyInfo = {};
+            }
+            if (reIntHdg.test(seg.html)) {
+                var prefix = seg.scid.split('.0')[0];
+                var prefixSeg = prefix !== seg.scid && mld.segMap[prefix];
+                if (prefixSeg) {
+                    throw new Error([
+                        `Invalid heading sort order`,
+                        seg.scid,
+                        `sorts after`,
+                        prefixSeg.scid,
+                    ].join(' '));
+                }
             }
             if (!verifyInfo && iSeg+1<nSegs && extraLangs) {
                 languages.forEach(lang => {
@@ -188,29 +200,30 @@
             var nSegs = segs.length;
             var languages = mld.languages();
             var numberingValid = true;
-            for (let iSeg=0; iSeg<segs.length; ) {
+            var iSegNext = 1;
+            for (let iSeg=0; iSeg<segs.length; iSeg = iSegNext) {
                 let seg = segs[iSeg];
-                if (repairMap[seg.scid]) {
-                    iSeg++;
-                    continue;
-                }
-                let verifyInfo = this.verifySeg({
-                    mld, 
-                    seg, 
-                    iSeg, 
-                    segs,
-                    languages,
-                    repairMap,
-                });
-                if (verifyInfo) {
-                    fixStart = fixStart || verifyInfo.fixStart;
-                    fixBody = fixBody || verifyInfo.fixBody;
-                    fixInternal = fixInternal || verifyInfo.fixInternal;
-                    numberingValid = numberingValid && 
-                        !(fixStart || fixBody);
-                    iSeg = verifyInfo.iSegNext;
+                let scid = seg.scid;
+                iSegNext = iSeg+1;
+                if (repairMap[scid]) {
+                    this.log(`skipping auto-repair of ${scid}`);
                 } else {
-                    iSeg++;
+                    let verifyInfo = this.verifySeg({
+                        mld, 
+                        seg, 
+                        iSeg, 
+                        segs,
+                        languages,
+                        repairMap,
+                    });
+                    if (verifyInfo) {
+                        fixStart = fixStart || verifyInfo.fixStart;
+                        fixBody = fixBody || verifyInfo.fixBody;
+                        fixInternal = fixInternal || verifyInfo.fixInternal;
+                        numberingValid = numberingValid && 
+                            !(fixStart || fixBody);
+                        iSegNext = verifyInfo.iSegNext;
+                    }
                 }
             }
             if (forceRenumber || !numberingValid) {

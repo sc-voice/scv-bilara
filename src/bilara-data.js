@@ -36,6 +36,7 @@
                 ? false : opts.includeUnpublished;
             this.publication = opts.publication || new Publication({
                 includeUnpublished,
+                root: this.root,
             });
             this.bilaraPathMap = this.publication.bilaraPathMap;
             this.execGit = opts.execGit || new ExecGit({

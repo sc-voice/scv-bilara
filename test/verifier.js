@@ -46,7 +46,7 @@
         should(ver.seeker.root).equal(root);
         should(ver.root).equal(root);
         should(ver).properties({
-            languages: ['pli', 'de', 'en', 'jpn', 'pt'],
+            languages: ['pli', 'de', 'en', 'jpn'],
             fixFile,
             initialized: false,
             forceRenumber,
@@ -64,7 +64,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTverify() fixes thag1.113", done=>{
+    it("verify() fixes thag1.113", done=>{
         (async function() { try {
             var root = TEST_BILARA;
             var ver = await new Verifier({
@@ -113,7 +113,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTverify() fixes thag1.1", done=>{
+    it("verify() fixes thag1.1", done=>{
         (async function() { try {
             var root = TEST_BILARA;
             var ver = await new Verifier({
@@ -524,7 +524,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTverify() fixes an3.47", done=>{
+    it("verify() fixes an3.47", done=>{
         (async function() { try {
             var root = TEST_BILARA;
             var ver = await new Verifier({
@@ -660,6 +660,26 @@
             should.deepEqual(
                 Object.keys(rootRepaired).map(k=>rootRepaired[k]),
                 segs.map(s=>s.pli));
+                
+            done();
+        } catch(e) { done(e); }})();
+    });
+    it("TESTTESTverify() maps dn2", done=>{
+        (async function() { try {
+            var root = TEST_BILARA;
+            var ver = await new Verifier({
+                logLevel,
+                root,
+            }).initialize();
+            var eExpected;
+            try {
+            var res = await ver.verify("dn2");
+            } catch(e) {
+                eExpected = e;
+            }
+            should(eExpected).instanceOf(Error);
+            should(eExpected.message)
+                .match(/Invalid heading sort order dn2:75.3.0/);
                 
             done();
         } catch(e) { done(e); }})();

@@ -129,6 +129,9 @@
 
     });
     it("compareLow(a,b) compares segment ids", ()=>{
+        // Zeroes
+        testCompareLow('dn2:75.3.0', 'dn2:75.3',1);
+
         // vinaya
         testCompareLow('pli-tv-kd15:17.3.2^a', 'pli-tv-kd15:17.3.2', -26);
         testCompareLow('pli-tv-kd15:17.3', 'pli-tv-kd15:17.3.2', -2);
