@@ -6,7 +6,6 @@ module.exports = {
     English: require("./src/english"),
     ExecGit: require("./src/exec-git"),
     FuzzyWordSet: require("./src/fuzzy-word-set"),
-    ImportHtml: require("./src/import-html"),
     MLDoc: require("./src/ml-doc"),
     Pali: require("./src/pali"),
     Publication: require("./src/publication"),
