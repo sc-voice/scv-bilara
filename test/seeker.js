@@ -121,6 +121,22 @@
     it("grep(...) finds de things", done=>{
         (async function() { try {
             var skr = new Seeker(SEEKEROPTS);
+            var maxResults = 5;
+
+            // diacritical word boundary
+            var res = await skr.grep({
+                pattern: "übung",
+                lang: 'de',
+                maxResults,
+            });
+            should.deepEqual(res, [
+              `${de_sab}dn/dn33_translation-de-sabbamitta.json:39`,
+              `${de_sab}an/an3/an3.156-162_translation-de-sabbamitta.json:21`,
+              `${de_sab}an/an3/an3.86_translation-de-sabbamitta.json:14`,
+              `${de_sab}an/an3/an3.87_translation-de-sabbamitta.json:12`,
+              `${de_sab}an/an3/an3.89_translation-de-sabbamitta.json:11`,
+            ]);
+
             var res = await skr.grep({
                 pattern: "wie der geist",
                 lang: 'de',
@@ -539,12 +555,16 @@
         } catch(e) {done(e);} })();
     });
     it("phraseSearch(...) finds Deutsch results", done=>{
-        var lines = [
+        var linesWurzel = [
             `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
+        ];
+        var linesUber = [
+          `${de_sab}dn/dn33_translation-de-sabbamitta.json:38`,
+          `${de_sab}an/an3/an3.156-162_translation-de-sabbamitta.json:21`,
+          `${de_sab}an/an3/an3.86_translation-de-sabbamitta.json:14`,
         ];
         (async function() { try {
             var lang = 'de';
-            var pattern = `wurzel des leidens`;
             var maxResults = 3;
             var skr = await new Seeker({
                 maxResults,
@@ -552,6 +572,21 @@
             }).initialize();
             should.deepEqual(skr.languages, ['pli','en']);
 
+            // diacritical word boundary
+            var pattern = `übung`;
+            var data = await skr.phraseSearch({ 
+                pattern,
+                lang,
+            });
+            should.deepEqual(skr.languages, ['pli','en']);
+            should.deepEqual(data, {
+                method: 'phrase',
+                lang,
+                pattern: `\\b${pattern}`,
+                lines: linesUber,
+            });
+
+            var pattern = `wurzel des leidens`;
             var data = await skr.phraseSearch({ 
                 pattern,
                 lang,
@@ -561,7 +596,7 @@
                 method: 'phrase',
                 lang,
                 pattern: `\\bwurzel des leidens`,
-                lines,
+                lines: linesWurzel,
             });
 
             done(); 
@@ -845,6 +880,33 @@
                 en: "Middle Discourses 1 ",
                 pli: "Majjhima Nikāya 1 ",
             });
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTfind(...) => finds ubung", done=>{
+        //done(); return; // TODO dbg
+        (async function() { try {
+            var maxResults = 3;
+            var skr = await new Seeker({
+                maxResults,
+                logLevel,
+            }).initialize();
+
+            var pattern = `übung`;
+            var res = await skr.find({
+                pattern,
+                lang: 'de',
+                minLang: 2,
+                showMatchesOnly: false, // return entire sutta
+            });
+            should.deepEqual(res.suttaRefs, [
+                'dn33/de/sabbamitta',
+                'an3.156-162/de/sabbamitta',
+                'an3.86/de/sabbamitta',
+            ]);
+            should.deepEqual(res.mlDocs.map(mld=>mld.score), [
+                38.033, 21.262, 14.4,
+            ]);
             done(); 
         } catch(e) {done(e);} })();
     });
@@ -1201,4 +1263,9 @@
             done(); 
         } catch(e) {done(e);} })();
     })
+    it("TESTTESTRegExp maches ubung", ()=>{
+        var re = /(?<=[\s,.:;"']|^)übung/iu;
+        var text = 'Wahrheit von der Übung, die zum Aufhören';
+        should(re.test(text)).equal(true);
+    });
 })

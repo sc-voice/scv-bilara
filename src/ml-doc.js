@@ -196,6 +196,13 @@
             }, false);
         }
 
+        jsPattern(pat, opts='ui') {
+            var p = pat.toString();
+            return p.startsWith('\\b') 
+                ? new RegExp(`(?<=[\\s,.:;"']|^)${p.substring(2)}`, opts)
+                : new RegExp(p, opts);
+        }
+
         filterSegments(...args) {
             if (typeof args[0] === 'string') {
                 var opts = {
@@ -220,16 +227,14 @@
             var scids = this.scids();
             var suid = this.suid;
             if (resultPattern instanceof RegExp) {
-                var rexList = [ resultPattern ];
+                var rexList = [ this.jsPattern(resultPattern) ];
             } else {
                 var resultPatterns = resultPattern.split('|');
                 var patterns = pattern.split(' ');
-                if (resultPatterns.length === patterns.length) {
-                    var rexList = resultPatterns
-                        .map(p => new RegExp(p, "ui"));
-                } else {
-                    var rexList = patterns.map(p => new RegExp(p, "ui"));
-                }
+                var srcPats = resultPatterns.length === patterns.length
+                    ? resultPatterns
+                    : patterns;
+                var rexList = srcPats.map(p => this.jsPattern(p));
             }
             var unicode = this.unicode;
             var matchScid = SuttaCentralId.test(resultPattern);
@@ -280,6 +285,7 @@
             } else {
                 var rex = pattern instanceof RegExp 
                     ? rex : new RegExp(pattern, "gui");
+                var rex = this.jsPattern(pattern, "gui");
                 scids.forEach(scid => {
                     var seg = this.segMap[scid];
                     Object.keys(seg).forEach(k => {

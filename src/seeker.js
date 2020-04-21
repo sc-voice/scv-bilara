@@ -228,10 +228,9 @@
                     `searchMetadata not supported`));
             }
             var grex = pattern;
-            var cmd = `grep -rciE '${grex}' `+
-                `--exclude-dir=.git `+
-                `--exclude='*.md' `+
-                `|grep -v ':0'`+
+            var cmd = `rg -c -i -e '${grex}' `+
+                `--glob='!package.json' `+
+                `--glob='!_*' `+
                 `|sort -g -r -k 2,2 -k 1,1 -t ':'`;
             maxResults && (cmd += `|head -${maxResults}`);
             var cwd = this.langPath(lang);
