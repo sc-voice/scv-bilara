@@ -68,7 +68,7 @@
             if (this._sources == null) {
                 var sourcesPath = path.join(__dirname, 
                     "../src/assets/sources.json");
-                this._sources = JSON.parse(fs.readFileSync(sourcesPath));
+                this._sources = json5.parse(fs.readFileSync(sourcesPath));
             }
             var authors = this._sources[lang];
             return authors && authors.indexOf(author)>=0;
@@ -101,7 +101,7 @@
 
                 let authPath = path.join(that.root, `_author.json`);
                 let authorJson = fs.existsSync(authPath)
-                    ? JSON.parse(await readFile(authPath)) 
+                    ? json5.parse(await readFile(authPath)) 
                     : {};
                 that.addAuthor('ms', Object.assign({
                     lang: 'pli'
@@ -171,7 +171,7 @@
                 var uidExpPath = path.join(that.root, 
                     '.voice', 'uid_expansion.json');
                 that.uid_expansion = 
-                    JSON.parse(fs.readFileSync(uidExpPath));
+                    json5.parse(fs.readFileSync(uidExpPath));
                 resolve(that);
             } catch(e) {reject(e);} })()};
             return new Promise(pbody);
@@ -747,7 +747,7 @@
                 patch: 0,
             };
             if (fs.existsSync(pkgPath)) {
-                var json = JSON.parse(fs.readFileSync(pkgPath).toString());
+                var json = json5.parse(fs.readFileSync(pkgPath).toString());
                 var verParts = json.version.split(".");
                 result.major = Number(verParts[0]);
                 result.minor = Number(verParts[1]);
@@ -783,7 +783,7 @@
                     resolve(null);
                 }
                 var json = await fs.promises.readFile(fpath);
-                var blurbs = JSON.parse(json);
+                var blurbs = json5.parse(json);
                 resolve(blurbs[suid] || null);
             } catch(e) { reject(e); } })();
             return new Promise(pbody);

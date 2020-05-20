@@ -130,29 +130,21 @@
                 type: "root",
                 name: "Mahāsaṅgīti Tipiṭaka Buddhavasse 2500",
                 lang: 'pli',
-                root_lang: "pli",
-                root_edition: "ms",
             };
             var sujato = {
                 lang: 'en',
                 type: "translator",
-                name: "Sujato Bhikkhu",
-                root_lang: "pli",
-                root_edition: "ms"
+                name: "Bhikkhu Sujato",
             };
             var brahmali = {
                 lang: 'en',
                 type: "translator",
                 name: "Brahmali Bhikkhu",
-                root_lang: "pli",
-                root_edition: "ms"
             };
             var sabbamitta = {
                 lang: 'de',
                 type: "translator",
-                name: "Sabbamitta Anagarika",
-                root_lang: "pli",
-                root_edition: "ms"
+                name: "Anagarika Sabbamitta",
             };
 
             should.deepEqual(bd.authors, {

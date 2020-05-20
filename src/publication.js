@@ -137,10 +137,12 @@
         pubPaths(opts={}) {
             var includeUnpublished = opts.includeUnpublished || 
                 this.includeUnpublished;
-            return this.pubEntries && this.pubEntries.reduce((a,p) => {
+            var pubEntries = this.pubEntries || [];
+            return pubEntries.reduce((a,p) => {
                 if (includeUnpublished ||
                     p.is_published==="true" || p.is_published===true) {
-                    a.push(p.source_url.replace(PUB_PREFIX, ''));
+                    var bp = p.source_url.replace(PUB_PREFIX, ''); 
+                    bp && a.push(bp);
                 }
                 return a;
             }, []).sort();

@@ -140,14 +140,14 @@
                 includeUnpublished: true,
             }).initialize(); 
         
+            should(pub.isPublishedPath('nonsense/en/nobody'))
+                .equal(false);
             should(pub.isPublishedPath(ROOTPATH('mn/mn1')))
                 .equal(true);
             should(pub.isPublishedPath(ROOTPATH('mn1')))
                 .equal(true);
             should(pub.isPublishedPath('pli-tv-bu-vb-pj1/en/brahmali'))
                 .equal(true);
-            should(pub.isPublishedPath('nonsense/en/nobody'))
-                .equal(false);
             should(pub.isPublishedPath(TRANSPATH('en', 'sujato','mn/mn1')))
                 .equal(true);
             should(pub.isPublishedPath(

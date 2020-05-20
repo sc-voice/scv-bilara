@@ -133,8 +133,8 @@
               `${de_sab}dn/dn33_translation-de-sabbamitta.json:39`,
               `${de_sab}an/an3/an3.156-162_translation-de-sabbamitta.json:21`,
               `${de_sab}an/an3/an3.86_translation-de-sabbamitta.json:14`,
-              `${de_sab}an/an3/an3.87_translation-de-sabbamitta.json:12`,
-              `${de_sab}an/an3/an3.89_translation-de-sabbamitta.json:11`,
+              `${de_sab}an/an4/an4.165_translation-de-sabbamitta.json:12`,
+              `${de_sab}an/an4/an4.164_translation-de-sabbamitta.json:12`,
             ]);
 
             var res = await skr.grep({
@@ -402,7 +402,7 @@
                 maxResults: 10,
                 method: 'keywords',
                 keywordsFound: {
-                    hausherr: 16,
+                    hausherr: 17,
                     anathapindika: 28,
                 },
                 lines: [
@@ -883,7 +883,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) => finds ubung", done=>{
+    it("find(...) => finds ubung", done=>{
         //done(); return; // TODO dbg
         (async function() { try {
             var maxResults = 3;
@@ -1263,7 +1263,7 @@
             done(); 
         } catch(e) {done(e);} })();
     })
-    it("TESTTESTRegExp maches ubung", ()=>{
+    it("RegExp maches ubung", ()=>{
         var re = /(?<=[\s,.:;"']|^)übung/iu;
         var text = 'Wahrheit von der Übung, die zum Aufhören';
         should(re.test(text)).equal(true);
