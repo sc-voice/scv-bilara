@@ -7,6 +7,7 @@
     } = require("../index");
     var {
         commentPath,
+        referencePath,
         translationPath,
         rootPath,
         htmlPath,
@@ -22,7 +23,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("suidPath(suid) returns local bilara paths",done=>{
+    it("TESTTESTsuidPath(suid) returns local bilara paths",done=>{
         (async function() { try {
             var bpm = new BilaraPathMap()
             should.throws(()=>{bpm.suidPaths('dn33');});
@@ -37,12 +38,13 @@
 "variant/pli/ms": "variant/pli/ms/sutta/dn/dn33_variant-pli-ms.json",
 "comment/en/sujato": commentPath('dn/dn33', 'en','sujato'),
 "translation/en/sujato": translationPath('dn/dn33','en','sujato'),
+"translation/ru/team": translationPath('dn/dn33','ru','team'),
 "translation/de/sabbamitta": translationPath('dn/dn33','de','sabbamitta'),
             });
             done();
         } catch(e) {done(e);} })();
     });
-    it("bilaraPaths(suid) returns local bilara paths",done=>{
+    it("TESTTESTbilaraPaths(suid) returns local bilara paths",done=>{
         (async function() { try {
             var bpm = await new BilaraPathMap().initialize();
 
@@ -52,6 +54,7 @@
             });
             should.deepEqual(bps.map(bp=>bp.bilaraPath).sort(), [
                 htmlPath('kn/thag/thag1.113'),
+                referencePath('kn/thag/thag1.113'),
                 rootPath('kn/thag/thag1.113'),
                 translationPath('kn/thag/thag1.113','en','sujato'),
             ]);

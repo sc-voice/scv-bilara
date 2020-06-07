@@ -118,7 +118,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("grep(...) finds de things", done=>{
+    it("TESTTESTgrep(...) finds de things", done=>{
         (async function() { try {
             var skr = new Seeker(SEEKEROPTS);
             var maxResults = 5;
@@ -130,11 +130,11 @@
                 maxResults,
             });
             should.deepEqual(res, [
-              `${de_sab}dn/dn33_translation-de-sabbamitta.json:39`,
-              `${de_sab}an/an3/an3.156-162_translation-de-sabbamitta.json:21`,
-              `${de_sab}an/an3/an3.86_translation-de-sabbamitta.json:14`,
-              `${de_sab}an/an4/an4.165_translation-de-sabbamitta.json:12`,
-              `${de_sab}an/an4/an4.164_translation-de-sabbamitta.json:12`,
+          `${de_sab}dn/dn33_translation-de-sabbamitta.json:39`,
+          `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:21`,
+          `${de_sab}an/an3/an3.156-162_translation-de-sabbamitta.json:21`,
+          `${de_sab}an/an3/an3.86_translation-de-sabbamitta.json:14`,
+          `${de_sab}an/an4/an4.165_translation-de-sabbamitta.json:12`,
             ]);
 
             var res = await skr.grep({
@@ -403,7 +403,7 @@
                 method: 'keywords',
                 keywordsFound: {
                     hausherr: 17,
-                    anathapindika: 28,
+                    anathapindika: 29,
                 },
                 lines: [
 `${de_sab}sn/sn10/sn10.8_translation-de-sabbamitta.json:4`,
@@ -554,14 +554,14 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("phraseSearch(...) finds Deutsch results", done=>{
+    it("TESTTESTphraseSearch(...) finds Deutsch results", done=>{
         var linesWurzel = [
             `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
         ];
         var linesUber = [
           `${de_sab}dn/dn33_translation-de-sabbamitta.json:38`,
+          `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:21`,
           `${de_sab}an/an3/an3.156-162_translation-de-sabbamitta.json:21`,
-          `${de_sab}an/an3/an3.86_translation-de-sabbamitta.json:14`,
         ];
         (async function() { try {
             var lang = 'de';
@@ -883,7 +883,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("find(...) => finds ubung", done=>{
+    it("TESTTESTfind(...) => finds ubung", done=>{
         //done(); return; // TODO dbg
         (async function() { try {
             var maxResults = 3;
@@ -901,11 +901,11 @@
             });
             should.deepEqual(res.suttaRefs, [
                 'dn33/de/sabbamitta',
+                'an4.198/de/sabbamitta',
                 'an3.156-162/de/sabbamitta',
-                'an3.86/de/sabbamitta',
             ]);
             should.deepEqual(res.mlDocs.map(mld=>mld.score), [
-                38.033, 21.262, 14.4,
+                38.033, 21.259, 21.189,
             ]);
             done(); 
         } catch(e) {done(e);} })();

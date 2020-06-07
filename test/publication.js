@@ -26,6 +26,9 @@
     var SABBAMITTA = 'translation/de/sabbamitta/sutta';
     var SUJATO = 'translation/en/sujato/sutta';
     var BRAHMALI = 'translation/en/brahmali/vinaya';
+    var KAZ = 'translation/jpn/kaz/sutta';
+    var PTTEAM = 'translation/pt/team/sutta';
+    var RUTEAM = 'translation/ru/team/sutta';
     var logLevel = false;
 
     var pubTest = new Publication({
@@ -78,10 +81,17 @@
                 `${SUJATO}/an`,
                 `${SUJATO}/dn`,
                 `${SUJATO}/kn/dhp`,
+                `${SUJATO}/kn/iti`,
+                `${SUJATO}/kn/kp`,
+                `${SUJATO}/kn/snp`,
                 `${SUJATO}/kn/thag`,
                 `${SUJATO}/kn/thig`,
+                `${SUJATO}/kn/ud`,
                 `${SUJATO}/mn`,
                 `${SUJATO}/sn`,
+                `${KAZ}/an`,
+                `${PTTEAM}/mn`,
+                `${RUTEAM}/dn`,
             ]);
 
             // Implied
@@ -102,10 +112,17 @@
                 `${SUJATO}/an`,
                 `${SUJATO}/dn`,
                 `${SUJATO}/kn/dhp`,
+                `${SUJATO}/kn/iti`,
+                `${SUJATO}/kn/kp`,
+                `${SUJATO}/kn/snp`,
                 `${SUJATO}/kn/thag`,
                 `${SUJATO}/kn/thig`,
+                `${SUJATO}/kn/ud`,
                 `${SUJATO}/mn`,
                 `${SUJATO}/sn`,
+                `${KAZ}/an`,
+                `${PTTEAM}/mn`,
+                `${RUTEAM}/dn`,
             ]);
             done();
         } catch(e) {done(e);} })();

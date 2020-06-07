@@ -169,7 +169,7 @@
                     });
                 });
                 var uidExpPath = path.join(that.root, 
-                    '.voice', 'uid_expansion.json');
+                    '.helpers', 'uid_expansion.json');
                 that.uid_expansion = 
                     json5.parse(fs.readFileSync(uidExpPath));
                 resolve(that);

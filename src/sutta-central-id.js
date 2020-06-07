@@ -13,7 +13,6 @@
     const SUTTAIDS_PATH = path.join(SRC_PATH, 'sutta-ids.json');
 
     var suttaIds;
-    var uid_expansion;
 
     class SuttaCentralId { 
         constructor(scid=null) {
