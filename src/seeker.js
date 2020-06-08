@@ -56,7 +56,8 @@
             const MAX_PATTERN = 1024;
             var excess = pattern.length - MAX_PATTERN;
             if (excess > 0) {
-                throw new Error(`Search text too long by ${excess} characters.`);
+                throw new Error(
+                    `Search text too long by ${excess} characters.`);
             }
             // replace quotes (code injection on grep argument)
             pattern = pattern.replace(/["']/g,'.'); 
@@ -406,6 +407,7 @@
                 var opts = args[0];
             }
             var {
+                verbose,
                 pattern: rawPattern,
                 searchLang,
                 lang,
@@ -486,6 +488,7 @@
             types = types || ['root', 'translation'];
 
             return {
+                verbose,
                 pattern,
                 showMatchesOnly,
                 languages,
@@ -503,6 +506,7 @@
 
         find(...args) {
             var msStart = Date.now();
+            var findArgs = this.findArgs(args);
             var {
                 pattern,
                 searchLang,
@@ -516,13 +520,16 @@
                 showMatchesOnly,
                 tipitakaCategories,
                 types,
-            } = this.findArgs(args);
+                verbose,
+            } = findArgs;
             var that = this;
             var bd = that.bilaraData;
             var pbody = (resolve, reject) => {(async function() { try {
                 var resultPattern = pattern;
                 var scoreDoc = true;
                 if (SuttaCentralId.test(pattern)) {
+                    verbose && console.log(`findArgs SuttaCentralId`, 
+                        js.simpleString(findArgs));
                     maxResults = maxResults || this.maxResults;
                     var {
                         method,
@@ -545,7 +552,12 @@
                         lines,
                         pattern: resultPattern,
                     } = await that.phraseSearch(searchOpts);
-                    if (!lines.length) {
+                    if (lines.length) {
+                        verbose && console.log(`findArgs phrase`, 
+                            js.simpleString(findArgs));
+                    } else {
+                        verbose && console.log(`findArgs keywords`, 
+                            js.simpleString(findArgs));
                         var method = 'keywords';
                         var data = await that.keywordSearch(searchOpts);
                         var {
@@ -571,12 +583,17 @@
                         author
                     });
                     let mld = await bd.loadMLDoc({
+                        verbose,
                         suid: isBilDoc ? suid : suttaRef,
                         languages,
                         lang,
                         types,
                     });
-                    bilaraPaths = [...bilaraPaths, ...mld.bilaraPaths];
+                    var mldBilaraPaths = mld.bilaraPaths;
+                    if (mldBilaraPaths.length < minLang) {
+                        continue;
+                    }
+                    bilaraPaths = [...bilaraPaths, ...mldBilaraPaths];
                     var resFilter = mld.filterSegments({
                         pattern,
                         resultPattern, 

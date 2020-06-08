@@ -6,6 +6,7 @@
         LOCAL_DIR,
     } = require('just-simple').JustSimple;
     const BilaraPath = require('./bilara-path');
+    const STUBFILESIZE = 5;
     const ROOTMS_FOLDER = path.join(LOCAL_DIR, "bilara-data", 
         "root", "pli", "ms");
 
@@ -145,12 +146,18 @@
                         let kidPath = path.join(dirPath, e.name);
                         traverse(kidPath);
                     } else if (/.*json$/u.test(e.name)) {
-                        var suid = e.name.replace(rePathSuffix,'');
-                        suidMap[suid] = Object.assign(suidMap[suid]||{}, {
-                            [key]: dirPath.replace(rootPrefix, '')  
-                                + `/${e.name}`,
-                        });
-                        nFiles++;
+                        var ePath = path.join(dirPath, e.name);
+                        var stat = fs.statSync(ePath);
+                        if (stat.size > STUBFILESIZE) {
+                            var suid = e.name.replace(rePathSuffix,'');
+                            var suidPath = dirPath.replace(rootPrefix, '')  
+                                        + `/${e.name}`;
+                            suidMap[suid] = Object.assign(
+                                suidMap[suid]||{}, {
+                                    [key]: suidPath,
+                            });
+                            nFiles++;
+                        }
                     }
                 }
             };

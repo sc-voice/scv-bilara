@@ -24,6 +24,7 @@
     const ExecGit = require('./exec-git');
     const PUB_PREFIX = /^https:.*translation\//;
     const ROOT_PLI_MS = path.join("root", "pli", "ms");
+    const STUBFILESIZE = 5;
 
     class BilaraData {
         constructor(opts={}) {
@@ -80,6 +81,7 @@
             }
             var that = this;
             var {
+                root,
                 authors,
             } = that;
             var pbody = (resolve, reject) => {(async function() { try {
@@ -148,6 +150,10 @@
                 that.translations.forEach((f,i) => {
                     var file = f.replace(/.*\/translation\//,
                         'translation/');
+                    var stat = fs.statSync(path.join(root, file));
+                    if (stat.size < STUBFILESIZE) {
+                        return;
+                    }
                     var parts = file.split('/');
                     var lang = parts[1];
                     var author = parts[2];
@@ -308,6 +314,7 @@
                     author: args[0].split('/')[2],
                 };
             var {
+                verbose,
                 suid,
                 lang,
                 language,
@@ -325,6 +332,7 @@
                 : this.languages);
             logLevel = logLevel === undefined ? this.logLevel : logLevel;
             return {
+                verbose,
                 suid,
                 lang,
                 author,
@@ -336,13 +344,16 @@
         }
 
         loadSegDoc(...args) {
+            var loadArgs = this.loadArgs(args);
             var {
+                verbose,
                 suid,
                 lang,
                 author,
                 logLevel,
                 returnNull,
-            } = this.loadArgs(args);
+            } = loadArgs;
+            verbose && console.log(`loadSegDoc`, js.simpleString(loadArgs));
 
             var info = this.suttaInfo(suid);
             if (info == null) {
@@ -373,7 +384,8 @@
                 (!author || i.author === author)
             )[0];
             if (suttaInfo == null || suttaInfo.bilaraPath == null) {
-                this.log(`loadSegDoc(${suid}) info:${js.simpleString(info)}`);
+                this.log(
+                    `loadSegDoc(${suid}) info:${js.simpleString(info)}`);
                 if (returnNull) {
                     return null;
                 }
@@ -386,7 +398,9 @@
         }
 
         loadMLDoc(...args) {
+            var loadArgs = this.loadArgs(args);
             var {
+                verbose,
                 suid:suidRef,
                 author,
                 lang,
@@ -394,7 +408,7 @@
                 returnNull,
                 languages,
                 types,
-            } = this.loadArgs(args);
+            } = loadArgs;
             var {
                 bilaraPathMap: bpm,
                 root,
@@ -434,6 +448,7 @@
                     ? `No information for ${suid}/${lang}`
                     : `No information for ${suid}/${lang}/${author}`);
             }
+            verbose && console.log(`loadMLDoc`, js.simpleString(loadArgs), bilaraPaths.length);
             return new MLDoc({
                 logLevel,
                 lang,

@@ -124,6 +124,8 @@ DESCRIPTION
         Restrict searches to listed categories. For example, "-tc:bi,pj"
         will search for information in the Bhikkhuni Pārājika
 
+    -v, --verbose
+        Print out more information
 `);
     process.exit(0);
 }
@@ -137,6 +139,7 @@ var showMatchesOnly = true;
 var includeUnpublished = false;
 var isTTY = process.stdout.isTTY;
 var tipitakaCategories = '';
+var verbose = false;
 //var searchLang;
 
 var nargs = process.argv.length;
@@ -194,6 +197,8 @@ for (var i = 2; i < nargs; i++) {
         maxResults = Number(process.argv[++i]);
     } else if (arg === '-up' || arg === '--unpublished') {
         includeUnpublished = true;
+    } else if (arg === '-v' || arg === '--verbose') {
+        verbose = true;
     } else {
         pattern = pattern ? `${pattern} ${arg}` : arg;
     }
@@ -409,11 +414,14 @@ function scriptEditor(res, pattern) {
         logLevel,
     }).initialize();
     var matchHighlight = matchBash(color);
-    var res = await skr.find({
+    var findOpts = {
         pattern,
         matchHighlight,
         showMatchesOnly,
-    });
+        verbose,
+    };
+    verbose && console.log(`findOpts`, findOpts);
+    var res = await skr.find(findOpts);
     if (outFormat === 'csv') {
         outCSV(res, pattern);
     } else if (outFormat === 'json') {

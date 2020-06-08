@@ -38,13 +38,13 @@
 "variant/pli/ms": "variant/pli/ms/sutta/dn/dn33_variant-pli-ms.json",
 "comment/en/sujato": commentPath('dn/dn33', 'en','sujato'),
 "translation/en/sujato": translationPath('dn/dn33','en','sujato'),
-"translation/ru/team": translationPath('dn/dn33','ru','team'),
+//"translation/ru/team": translationPath('dn/dn33','ru','team'),
 "translation/de/sabbamitta": translationPath('dn/dn33','de','sabbamitta'),
             });
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTbilaraPaths(suid) returns local bilara paths",done=>{
+    it("bilaraPaths(suid) returns local bilara paths",done=>{
         (async function() { try {
             var bpm = await new BilaraPathMap().initialize();
 
@@ -106,6 +106,22 @@
             should.deepEqual(bps.map(bp=>bp.bilaraPath), [
                 translationPath('an/an1/an1.1-10','en','sujato'),
                 commentPath('an/an1/an1.1-10','en','sujato'),
+            ]);
+            done();
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTbilaraPaths(suid) ignores stub translations",done=>{
+        (async function() { try {
+            var bpm = await new BilaraPathMap().initialize();
+
+            var bps = bpm.bilaraPaths({
+                lang: ['pli', 'en', 'de'],
+                suid: "mn1",
+                types: ['root', 'translation'],
+            });
+            should.deepEqual(bps.map(bp=>bp.bilaraPath).sort(), [
+                rootPath('mn/mn1'),
+                translationPath('mn/mn1','en','sujato'),
             ]);
             done();
         } catch(e) {done(e);} })();

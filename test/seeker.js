@@ -118,7 +118,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTgrep(...) finds de things", done=>{
+    it("(...) finds de things", done=>{
         (async function() { try {
             var skr = new Seeker(SEEKEROPTS);
             var maxResults = 5;
@@ -554,7 +554,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTphraseSearch(...) finds Deutsch results", done=>{
+    it("(...) finds Deutsch results", done=>{
         var linesWurzel = [
             `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
         ];
@@ -883,7 +883,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) => finds ubung", done=>{
+    it("(...) => finds ubung", done=>{
         //done(); return; // TODO dbg
         (async function() { try {
             var maxResults = 3;
@@ -1128,6 +1128,7 @@
                 sortLines: undefined,
                 tipitakaCategories: undefined,
                 types: ['root', 'translation'],
+                verbose: undefined,
             });
 
             // German
@@ -1146,6 +1147,7 @@
                 sortLines: undefined,
                 tipitakaCategories: undefined,
                 types: ['root', 'translation'],
+                verbose: undefined,
             });
 
             // German
@@ -1164,6 +1166,7 @@
                 sortLines: undefined,
                 tipitakaCategories: undefined,
                 types: ['root', 'translation'],
+                verbose: undefined,
             });
             done(); 
         } catch(e) {done(e);} })();
@@ -1197,7 +1200,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("find(...) finds pli-tv-bi-vb-pj7", done=>{
+    it("TESTTESTfind(...) finds pli-tv-bi-vb-pj7", done=>{
         (async function() { try {
             var maxDoc = 3;
             var bilaraData = new BilaraData({
@@ -1212,7 +1215,7 @@
             // lists of suttas with ranges
             var lang = 'en';
             // The pattern resolves to 4 suttas, of which 3 are returned
-            var pattern = "legitimately ejected"; 
+            var pattern = "ejected by a unanimous"; 
             var res = await skr.find({
                 pattern,
                 lang,
@@ -1221,10 +1224,11 @@
             should(res.maxDoc).equal(maxDoc);
             should.deepEqual(res.suttaRefs, [
                 'pli-tv-bi-vb-pj7/en/brahmali',
+                'pli-tv-bi-vb-ss4/en/brahmali',
             ]);
             should(res.resultPattern).equal(`\\b${pattern}`);
             should(res.lang).equal('en');
-            should(res.mlDocs.length).equal(1);
+            should(res.mlDocs.length).equal(2);
             done(); 
         } catch(e) {done(e);} })();
     });
@@ -1268,4 +1272,24 @@
         var text = 'Wahrheit von der Übung, die zum Aufhören';
         should(re.test(text)).equal(true);
     });
+    it("find(...) ignores translation stubs", done=>{
+        (async function() { try {
+            var skr = await new Seeker({
+                logLevel,
+            }).initialize();
+
+            var pattern = "root of suffering -ml 3 -l de"; 
+            var verbose = true;
+            var res = await skr.find({
+                pattern,
+                //verbose,
+            });
+            should.deepEqual(res.suttaRefs, [
+                'sn42.11/en/sujato',
+            ]);
+            should(res.bilaraPaths.length).equal(3);
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+
 })

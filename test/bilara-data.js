@@ -455,10 +455,11 @@
 
             // nikaya, language
             var ids = await bd.nikayaSuttaIds('sn', 'de');
-            should(ids.length).below(1819);
+            should(ids.length).below(1820);
 
             // Bad input
-            var ids = await bd.nikayaSuttaIds('nonikaya', 'yiddish', 'nobody');
+            var ids = await bd.nikayaSuttaIds('nonikaya', 'yiddish', 
+                'nobody');
             should.deepEqual(ids, []);
 
             done(); 

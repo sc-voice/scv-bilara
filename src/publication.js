@@ -113,14 +113,18 @@
                     var entry = that.pubEntry(p.publication_number);
                     if (!fs.existsSync(rootBilPath)) {
                         a[text_uid] = entry;
-                    } else if (fs.statSync(rootBilPath).isFile()) {
-                        a[text_uid] = entry;
                     } else {
-                        var dirs = fs.readdirSync(rootBilPath);
-                        subchapters = dirs.reduce(
-                            (a,d) => (d.match(/.*json$/) ? false : a),
-                            true);
-                        a[text_uid] = entry;
+                        var stat = fs.statSync(rootBilPath);
+                        console.log(`dbg stat`, stat);
+                        if (stat.isFile()) {
+                            a[text_uid] = entry;
+                        } else {
+                            var dirs = fs.readdirSync(rootBilPath);
+                            subchapters = dirs.reduce(
+                                (a,d) => (d.match(/.*json$/) ? false : a),
+                                true);
+                            a[text_uid] = entry;
+                        }
                     }
                     entry.subchapters = subchapters;
                     return a;
