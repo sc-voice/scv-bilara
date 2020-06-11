@@ -802,8 +802,9 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("find(...) => finds jhana", done=>{
+    it("TESTTESTfind(...) => finds jhana", done=>{
         (async function() { try {
+            var msStart = Date.now();
             var maxDoc = 5;
             var maxResults = 50;
             var skr = await new Seeker({
@@ -811,6 +812,7 @@
                 maxResults,
                 logLevel,
             }).initialize();
+            console.log(`dbg findA`, Date.now() - msStart);
 
             var pattern = "jhana";
             var res = await skr.find({
@@ -819,6 +821,7 @@
                 minLang: 2,
                 showMatchesOnly: false, // return entire sutta
             });
+            console.log(`dbg findB`, Date.now() - msStart);
             should(res.maxDoc).equal(maxDoc);
             should(res.mlDocs.length).equal(maxDoc);
             should.deepEqual(res.suttaRefs.slice(0,maxDoc), [

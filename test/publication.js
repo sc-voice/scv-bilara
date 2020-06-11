@@ -206,9 +206,6 @@
             }).initialize();
 
             // vinaya
-            var pi = pub.pubInfo("pli-tv-pvr1.1");
-            should(pi.length).equal(0); // no translation (stub ignored)
-
             var pi = pub.pubInfo("pli-tv-bu-vb-pj4");
             should(pi[0]).properties({
                 publication_number: "scpub8.2",
