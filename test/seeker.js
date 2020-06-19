@@ -118,7 +118,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("(...) finds de things", done=>{
+    it("grep(...) finds de things", done=>{
         (async function() { try {
             var skr = new Seeker(SEEKEROPTS);
             var maxResults = 5;
@@ -129,13 +129,13 @@
                 lang: 'de',
                 maxResults,
             });
-            should.deepEqual(res, [
+            should.deepEqual(res.slice(0,4), [
           `${de_sab}dn/dn33_translation-de-sabbamitta.json:39`,
           `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:21`,
           `${de_sab}an/an3/an3.156-162_translation-de-sabbamitta.json:21`,
           `${de_sab}an/an3/an3.86_translation-de-sabbamitta.json:14`,
-          `${de_sab}an/an4/an4.165_translation-de-sabbamitta.json:12`,
             ]);
+            should(res.length).below(6);
 
             var res = await skr.grep({
                 pattern: "wie der geist",
@@ -209,7 +209,7 @@
                 keywordsFound: {
                     faith: 395,
                     joy: 142,
-                    suffering: 769,
+                    suffering: 770,
                 },
             };
 
@@ -250,7 +250,7 @@
                 lang: 'en',
                 method: 'keywords',
                 keywordsFound: {
-                    suffering: 769,
+                    suffering: 770,
                     joy: 142,
                     faith: 395,
                 },
@@ -398,11 +398,11 @@
                 lang: 'de',
                 resultPattern: 
                 "\\b(a|ā)(n|ṅ|ñ|ṇ)(a|ā)(t|ṭ)h(a|ā)p(i|ī)(n|ṅ|ñ|ṇ)"+
-                    "(d|ḍ)(i|ī)k(a|ā)|\\bhausherr",
+                    "(d|ḍ)(i|ī)k(a|ā)|\\bhausbesitzer",
                 maxResults: 10,
                 method: 'keywords',
                 keywordsFound: {
-                    hausherr: 17,
+                    hausbesitzer: 28,
                     anathapindika: 29,
                 },
                 lines: [
@@ -411,6 +411,7 @@
 `${de_sab}an/an1/an1.248-257_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an3/an3.109_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an3/an3.110_translation-de-sabbamitta.json:1`,
+`${de_sab}an/an4/an4.197_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an4/an4.58_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an4/an4.60_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an4/an4.61_translation-de-sabbamitta.json:1`,
@@ -421,7 +422,7 @@
             // Mixed Pali/Deutsch keywords initial cap
             var data = await skr.keywordSearch({ 
                 pattern: Seeker.normalizePattern(
-                    'Anathapindika Hausherr'),
+                    'Anathapindika Hausbesitzer'),
                 maxResults: 10,
                 lang: 'de', // Requesting Deutsch search
             });
@@ -430,7 +431,7 @@
             // Mixed Pali/Deutsch keywords lowercase
             var data = await skr.keywordSearch({ 
                 pattern: Seeker.normalizePattern(
-                    'anathapindika hausherr'),
+                    'anathapindika hausbesitzer'),
                 maxResults: 10,
                 lang: 'de', // Requesting Deutsch search
             });
@@ -554,7 +555,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("(...) finds Deutsch results", done=>{
+    it("phraseSearch(...) finds Deutsch results", done=>{
         var linesWurzel = [
             `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
         ];
@@ -565,9 +566,11 @@
         ];
         (async function() { try {
             var lang = 'de';
-            var maxResults = 3;
+            var maxResults = 10;
+            var maxDoc = 3;
             var skr = await new Seeker({
                 maxResults,
+                maxDoc,
                 logLevel,
             }).initialize();
             should.deepEqual(skr.languages, ['pli','en']);
@@ -579,12 +582,12 @@
                 lang,
             });
             should.deepEqual(skr.languages, ['pli','en']);
-            should.deepEqual(data, {
+            should(data).properties({
                 method: 'phrase',
                 lang,
                 pattern: `\\b${pattern}`,
-                lines: linesUber,
             });
+            should.deepEqual(data.lines.slice(0,3), linesUber);
 
             var pattern = `wurzel des leidens`;
             var data = await skr.phraseSearch({ 
@@ -802,7 +805,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) => finds jhana", done=>{
+    it("find(...) => finds jhana", done=>{
         (async function() { try {
             var msStart = Date.now();
             var maxDoc = 5;
@@ -812,7 +815,6 @@
                 maxResults,
                 logLevel,
             }).initialize();
-            console.log(`dbg findA`, Date.now() - msStart);
 
             var pattern = "jhana";
             var res = await skr.find({
@@ -821,7 +823,6 @@
                 minLang: 2,
                 showMatchesOnly: false, // return entire sutta
             });
-            console.log(`dbg findB`, Date.now() - msStart);
             should(res.maxDoc).equal(maxDoc);
             should(res.mlDocs.length).equal(maxDoc);
             should.deepEqual(res.suttaRefs.slice(0,maxDoc), [
@@ -889,9 +890,9 @@
     it("(...) => finds ubung", done=>{
         //done(); return; // TODO dbg
         (async function() { try {
-            var maxResults = 3;
+            var maxDoc = 3;
             var skr = await new Seeker({
-                maxResults,
+                maxDoc,
                 logLevel,
             }).initialize();
 
@@ -900,13 +901,18 @@
                 pattern,
                 lang: 'de',
                 minLang: 2,
+                maxDoc,
                 showMatchesOnly: false, // return entire sutta
             });
-            should.deepEqual(res.suttaRefs, [
+            // suttaRefs will be many since grep/ripgrep
+            // search files
+            should.deepEqual(res.suttaRefs.slice(0,3), [
                 'dn33/de/sabbamitta',
                 'an4.198/de/sabbamitta',
                 'an3.156-162/de/sabbamitta',
             ]);
+            // We only care about three documents so that 
+            // is what we should get
             should.deepEqual(res.mlDocs.map(mld=>mld.score), [
                 38.033, 21.259, 21.189,
             ]);
@@ -1203,7 +1209,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) finds pli-tv-bi-vb-pj7", done=>{
+    it("find(...) finds pli-tv-bi-vb-pj7", done=>{
         (async function() { try {
             var maxDoc = 3;
             var bilaraData = new BilaraData({

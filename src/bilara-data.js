@@ -780,10 +780,18 @@
                 }
                 suid = suid.toLowerCase();
                 lang = lang || that.lang;
-                var dir = path.join(that.root, 'root', lang, 'blurb');
                 var nikaya = suid.replace(/[1-9].*/,'');
-                var fname = `${nikaya}-blurbs_root-${lang}.json`;
-                var fpath = path.join(dir, fname);
+                if (lang === 'pli' || lang ==='en') {
+                    var dir = path.join(that.root, 
+                        'root', lang, 'blurb');
+                    var fname = `${nikaya}-blurbs_root-${lang}.json`;
+                    var fpath = path.join(dir, fname);
+                } else {
+                    var dir = path.join(that.root, 
+                        'translation', lang, 'blurb');
+                    var fname = `${nikaya}-blurbs_translation-${lang}.json`;
+                    var fpath = path.join(dir, fname);
+                }
                 if (!fs.existsSync(fpath)) {
                     if (lang !== 'en') {
                         var enBlurb = await 
@@ -799,7 +807,8 @@
                 }
                 var json = await fs.promises.readFile(fpath);
                 var blurbs = json5.parse(json);
-                resolve(blurbs[suid] || null);
+                var key = `${nikaya}-blurbs:${suid}`;
+                resolve(blurbs[key] || blurbs[suid] || null);
             } catch(e) { reject(e); } })();
             return new Promise(pbody);
         }

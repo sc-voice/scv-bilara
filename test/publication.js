@@ -29,6 +29,7 @@
     var KAZ = 'translation/jpn/kaz/sutta';
     var PTTEAM = 'translation/pt/team/sutta';
     var RUTEAM = 'translation/ru/team/sutta';
+    var PATTON = 'translation/en/patton/sutta';
     var logLevel = false;
 
     var pubTest = new Publication({
@@ -44,7 +45,7 @@
             initialized: false,
         });
     });
-    it("pubPaths() => published bilara paths", done=> {
+    it("TESTTESTpubPaths() => published bilara paths", done=> {
         (async function() { try {
             var pub = await pubTest.initialize(); 
             should.deepEqual(pub.pubPaths().sort(),[
@@ -58,17 +59,18 @@
                 `${SUJATO}/kn/thig`,
                 `${SUJATO}/mn`,
                 `${SUJATO}/sn`,
-            ]);
+            ].sort());
             done();
         } catch(e) {done(e);} })();
     });
-    it("pubPaths() => all bilara paths", done=> {
+    it("TESTTESTpubPaths() => all bilara paths", done=> {
         (async function() { try {
             var pub = await pubTest.initialize();
 
             // Explicit
             var includeUnpublished = true;
             should.deepEqual(pub.pubPaths({includeUnpublished}).sort(),[
+                `translation/de/blurb`,
                 `${SABBAMITTA}/an`,
                 `${SABBAMITTA}/dn`,
                 `${SABBAMITTA}/mn`,
@@ -78,6 +80,7 @@
                 `${BRAHMALI}/pli-tv-bu-vb`,
                 `${BRAHMALI}/pli-tv-kd`,
                 `${BRAHMALI}/pli-tv-pvr`,
+                `${PATTON}/sa`,
                 `${SUJATO}/an`,
                 `${SUJATO}/dn`,
                 `${SUJATO}/kn/dhp`,
@@ -100,6 +103,7 @@
             }).initialize(); 
             should(pub.includeUnpublished).equal(true);
             should.deepEqual(pub.pubPaths().sort(),[
+                `translation/de/blurb`,
                 `${SABBAMITTA}/an`,
                 `${SABBAMITTA}/dn`,
                 `${SABBAMITTA}/mn`,
@@ -109,6 +113,7 @@
                 `${BRAHMALI}/pli-tv-bu-vb`,
                 `${BRAHMALI}/pli-tv-kd`,
                 `${BRAHMALI}/pli-tv-pvr`,
+                `${PATTON}/sa`,
                 `${SUJATO}/an`,
                 `${SUJATO}/dn`,
                 `${SUJATO}/kn/dhp`,
