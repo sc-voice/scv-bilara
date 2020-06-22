@@ -396,7 +396,7 @@ html: '<article id=\'sn1.1\'><header><ul><li class=\'division\'>{}</li>',
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTfilterSegments(...) => scores abhisambuddha", done=>{
+    it("filterSegments(...) => scores abhisambuddha", done=>{
         (async function() { try {
             var bilaraPaths = [
                 rootPath('an/an5/an5.196'),

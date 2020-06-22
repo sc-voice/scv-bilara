@@ -441,9 +441,7 @@
         } catch(e) {done(e);} })();
     });
     it("TESTTESTfind(...) scores relevance", done=>{
-        done(); return; //TODO
         (async function() { try {
-            var logLevel = 'info';
             var skr = await new Seeker({
                 logLevel,
                 lang: 'en', // English default
@@ -457,6 +455,10 @@
             should(data.resultPattern).equal(
                 '\\b(a|ā)bh(i|ī)s(a|ā)(m|ṁ|ṃ)b(u|ū)(d|ḍ)(d|ḍ)h(a|ā)');
             should(data.method).equal('phrase');
+            var mld0 = data.mlDocs[0];
+            should(mld0.bilaraPaths[0])
+                .equal('root/pli/ms/sutta/dn/dn34_root-pli-ms.json');
+            should(mld0.score).equal(10.011);
 
             done(); 
         } catch(e) {done(e);} })();
