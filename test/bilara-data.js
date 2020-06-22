@@ -728,7 +728,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTreadBlurb(...) => blurb for language", done=>{
+    it("readBlurb(...) => blurb for language", done=>{
         (async function() { try {
             await bd.initialize();
             var reAN3_1 = /Fools are dangerous, but the wise are safe/;

@@ -45,7 +45,7 @@
             initialized: false,
         });
     });
-    it("TESTTESTpubPaths() => published bilara paths", done=> {
+    it("pubPaths() => published bilara paths", done=> {
         (async function() { try {
             var pub = await pubTest.initialize(); 
             should.deepEqual(pub.pubPaths().sort(),[
@@ -63,7 +63,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTpubPaths() => all bilara paths", done=> {
+    it("pubPaths() => all bilara paths", done=> {
         (async function() { try {
             var pub = await pubTest.initialize();
 
@@ -204,7 +204,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTpubInfo(suid) => publication information", done=>{
+    it("pubInfo(suid) => publication information", done=>{
         (async function() { try {
             var pub = await new Publication({
                 includeUnpublished: true,

@@ -99,7 +99,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTload(...) loads markup", done=>{
+    it("load(...) loads markup", done=>{
         (async function() { try {
             var mld = new MLDoc({
                 bilaraPaths: bilaraPaths_sn1_1,
@@ -392,6 +392,36 @@ html: '<article id=\'sn1.1\'><header><ul><li class=\'division\'>{}</li>',
             should(segments[0].en).equal(
                 `“Mendicants, I do not see a single <touch> that `+
                 `occupies a man’s mind like the <touch> of a woman. `);
+
+            done();
+        } catch(e) { done(e); } })();
+    });
+    it("TESTTESTfilterSegments(...) => scores abhisambuddha", done=>{
+        (async function() { try {
+            var bilaraPaths = [
+                rootPath('an/an5/an5.196'),
+            ]
+            var mld = new MLDoc({
+                bilaraPaths,
+            });
+            var res = await mld.load(BILARA_PATH);
+            var pattern = "abhisambuddha";
+            var resultPattern = 
+                '\\b(a|ā)bh(i|ī)s(a|ā)(m|ṁ|ṃ)b(u|ū)(d|ḍ)(d|ḍ)h(a|ā)';
+            var res = await mld.filterSegments({
+                pattern, 
+                resultPattern,
+                languages: ['pli'],
+            });
+            var re = '\\b(a|ā)bh(i|ī)s(a|ā)(m|ṁ|ṃ)b(u|ū)(d|ḍ)(d|ḍ)h(a|ā)';
+            should(res).properties({
+                matchLow: re,
+                matchHigh: re,
+                rexList: [
+                    /(?<=[\s,.:;"']|^)abhisambuddha/iu,
+                ],
+                score: 1.031,
+            });
 
             done();
         } catch(e) { done(e); } })();

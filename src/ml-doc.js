@@ -198,9 +198,10 @@
 
         jsPattern(pat, opts='ui') {
             var p = pat.toString();
-            return p.startsWith('\\b') 
+            var result = p.startsWith('\\b') 
                 ? new RegExp(`(?<=[\\s,.:;"']|^)${p.substring(2)}`, opts)
                 : new RegExp(p, opts);
+            return result;
         }
 
         filterSegments(...args) {
@@ -230,7 +231,11 @@
                 var rexList = [ this.jsPattern(resultPattern) ];
             } else {
                 var resultPatterns = resultPattern.split('|');
-                var patterns = pattern.split(' ');
+                var patterns = pattern.split(' ').map(p=>{
+                    return p.charAt(0) === '_' 
+                        ? p.substring(1)  // unconstrained match
+                        : `\\b${p}`;    // word start match
+                });
                 var srcPats = resultPatterns.length === patterns.length
                     ? resultPatterns
                     : patterns;

@@ -23,7 +23,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTsuidPath(suid) returns local bilara paths",done=>{
+    it("suidPath(suid) returns local bilara paths",done=>{
         (async function() { try {
             var bpm = new BilaraPathMap()
             should.throws(()=>{bpm.suidPaths('dn33');});
@@ -110,7 +110,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTbilaraPaths(suid) ignores stub translations",done=>{
+    it("bilaraPaths(suid) ignores stub translations",done=>{
         (async function() { try {
             var bpm = await new BilaraPathMap().initialize();
 

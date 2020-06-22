@@ -440,6 +440,27 @@
             done(); 
         } catch(e) {done(e);} })();
     });
+    it("TESTTESTfind(...) scores relevance", done=>{
+        done(); return; //TODO
+        (async function() { try {
+            var logLevel = 'info';
+            var skr = await new Seeker({
+                logLevel,
+                lang: 'en', // English default
+            }).initialize();
+
+            // Mixed Pali/Deutsch keywords initial cap
+            var pattern = 'abhisambuddha';
+            var data = await skr.find({ 
+                pattern,
+            });
+            should(data.resultPattern).equal(
+                '\\b(a|ā)bh(i|ī)s(a|ā)(m|ṁ|ṃ)b(u|ū)(d|ḍ)(d|ḍ)h(a|ā)');
+            should(data.method).equal('phrase');
+
+            done(); 
+        } catch(e) {done(e);} })();
+    });
     it("patternLanguage(...) => search language context",done=>{
         (async function() { try {
             var skr = await new Seeker({

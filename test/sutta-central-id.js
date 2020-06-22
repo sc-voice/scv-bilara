@@ -293,7 +293,7 @@
         var scid = new SuttaCentralId('mn1');
         should.deepEqual(scid.groups, null);
     });
-    it("TESTTESTtest(text) => text is suid ", function() {
+    it("test(text) => text is suid ", function() {
         // vinaya
         should(SuttaCentralId.test('pli-tv-bi-vb-sk1-75')).equal(true);
 
