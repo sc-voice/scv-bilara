@@ -79,7 +79,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("initialize(...) must be called", (done) => {
+    it("TESTTESTinitialize(...) must be called", (done) => {
         (async function() { try {
             var newbd = new BilaraData({
                 logLevel,
@@ -94,7 +94,7 @@
             should(res).equal(bd);
             should(bd.initialized).equal(true);
             should.deepEqual(Object.keys(bd.authors).sort(), [
-                'ms', 'sabbamitta', 'sujato', 
+                'ashinsarana', 'ms', 'sabbamitta', 'sujato', 
             ]);
 
             done();
@@ -123,13 +123,18 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("authorInfo() => supported author info", done=>{
+    it("TESTTESTauthorInfo() => supported author info", done=>{
         (async function() { try {
             await bd.initialize();
             var ms = {
+                lang: 'pli',
                 type: "root",
                 name: "Mahāsaṅgīti Tipiṭaka Buddhavasse 2500",
-                lang: 'pli',
+            };
+            var sarana = {
+                lang: 'cs',
+                name: 'Ashin Sarana',
+                type: 'translator',
             };
             var sujato = {
                 lang: 'en',
@@ -149,9 +154,10 @@
 
             should.deepEqual(bd.authors, {
                 ms,
-                sujato,
                 // brahmali, // not published yet
+                ashinsarana: sarana,
                 sabbamitta,
+                sujato,
             });
 
             should.deepEqual(bd.authorInfo('sabbamitta'), sabbamitta);
@@ -162,7 +168,7 @@
         (async function() { try {
             await bd.initialize();
             should.deepEqual(bd.supportedLanguages(), [
-                'de', 'en', 'pli', 
+                'cs', 'de', 'en', 'pli', 
             ]);
             done();
         } catch(e) {done(e);} })();
@@ -618,17 +624,17 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("loadMLDoc(...) loads bilingual doc", done=>{
+    it("TESTTESTloadMLDoc(...) loads bilingual doc", done=>{
         (async function() { try {
             await bd.initialize();
             var an1_9_en = {
                 scid: "an1.9:0.1",
-                pli: '9 ',
+                pli: '9',
                 en: '9 ',
             };
             var an1_9_de = {
                 scid: "an1.9:0.1",
-                pli: '9 ',
+                pli: '9',
                 de: '9 ',
             };
 
@@ -671,7 +677,7 @@
             await bd.initialize();
             var an1_9 = {
                 scid: "an1.9:0.1",
-                pli: '9 ',
+                pli: '9',
                 en: '9 ',
                 de: '9 ',
             };
@@ -702,7 +708,7 @@
             await bd.initialize();
             var an1_9 = {
                 scid: "an1.9:0.1",
-                pli: '9 ',
+                pli: '9',
                 en: '9 ',
                 de: '9 ',
             };

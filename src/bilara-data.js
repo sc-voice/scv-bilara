@@ -423,7 +423,8 @@
                 if (returnNull) {
                     return null;
                 }
-                throw new Error(`no suttaInfo(suid:${suid})`);
+                var msgData = js.simpleString({suidRef,suid});
+                throw new Error(`no suttaInfo(${msgData})`);
             }
             var langMap = languages.reduce((a,l) => (a[l] = true, a), {});
             var bilaraPaths = info

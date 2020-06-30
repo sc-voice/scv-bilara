@@ -133,7 +133,8 @@
           `${de_sab}dn/dn33_translation-de-sabbamitta.json:39`,
           `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:21`,
           `${de_sab}an/an3/an3.156-162_translation-de-sabbamitta.json:21`,
-          `${de_sab}an/an3/an3.86_translation-de-sabbamitta.json:14`,
+          `${de_sab}an/an4/an4.163_translation-de-sabbamitta.json:15`,
+          //`${de_sab}an/an3/an3.86_translation-de-sabbamitta.json:14`,
             ]);
             should(res.length).below(6);
 
@@ -209,7 +210,7 @@
                 keywordsFound: {
                     faith: 395,
                     joy: 142,
-                    suffering: 770,
+                    suffering: 771,
                 },
             };
 
@@ -250,7 +251,7 @@
                 lang: 'en',
                 method: 'keywords',
                 keywordsFound: {
-                    suffering: 770,
+                    suffering: 771,
                     joy: 142,
                     faith: 395,
                 },
@@ -403,7 +404,7 @@
                 method: 'keywords',
                 keywordsFound: {
                     hausbesitzer: 28,
-                    anathapindika: 29,
+                    anathapindika: 30,
                 },
                 lines: [
 `${de_sab}sn/sn10/sn10.8_translation-de-sabbamitta.json:4`,
@@ -725,9 +726,9 @@
             should.deepEqual(segments[22],{
                 scid: 'mn1:5.2',
                 matched: true,
-                pli: 'tejaṃ tejato saññatvā tejaṃ maññati, '+
-                    'tejasmiṃ maññati, tejato maññati, '+
-                    'tejaṃ meti maññati, tejaṃ abhinandati. ',
+                pli: 'tejaṁ tejato saññatvā tejaṁ maññati, '+
+                    'tejasmiṁ maññati, tejato maññati, '+
+                    'tejaṁ meti maññati, tejaṁ abhinandati. ',
                 en: 'But then they identify with fire … ',
             });
             done(); 
@@ -895,7 +896,7 @@
                 scid: 'sn42.11:0.1',
                 de: "Verbundene Lehrreden 42",
                 en: "Linked Discourses 42 ",
-                pli: "Saṃyutta Nikāya 42 ",
+                pli: "Saṁyutta Nikāya 42 ",
             });
             should.deepEqual(mld1.segments()[0], {
                 scid: 'mn105:0.1',

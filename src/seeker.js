@@ -231,6 +231,7 @@
             var grex = pattern;
             var cmd = `rg -c -i -e '${grex}' `+
                 `--glob='!package.json' `+
+                `--glob='!*atthakatha*' `+
                 `--glob='!_*' `+
                 `|sort -g -r -k 2,2 -k 1,1 -t ':'`;
             maxResults && (cmd += `|head -${maxResults}`);

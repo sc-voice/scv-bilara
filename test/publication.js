@@ -23,6 +23,7 @@
             `${mid}_translation-${lang}-${auth}.json`
         ].join('/');
     }
+    var SARANA = `translation/cs/ashinsarana/sutta`;
     var SABBAMITTA = 'translation/de/sabbamitta/sutta';
     var SUJATO = 'translation/en/sujato/sutta';
     var BRAHMALI = 'translation/en/brahmali/vinaya';
@@ -49,6 +50,7 @@
         (async function() { try {
             var pub = await pubTest.initialize(); 
             should.deepEqual(pub.pubPaths().sort(),[
+                `${SARANA}/an`,
                 `${SABBAMITTA}/an`,
                 `${SABBAMITTA}/dn`,
                 `${SABBAMITTA}/mn`,
@@ -63,13 +65,17 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("pubPaths() => all bilara paths", done=> {
+    it("TESTTESTpubPaths() => all bilara paths", done=> {
         (async function() { try {
             var pub = await pubTest.initialize();
 
             // Explicit
             var includeUnpublished = true;
             should.deepEqual(pub.pubPaths({includeUnpublished}).sort(),[
+                `root/pli/bj/pli-tv-kd`,
+                `root/pli/dpcv/pli-tv-kd`,
+                `root/pli/vri/sutta/atthakatha/dn-a`,
+                `${SARANA}/an`,
                 `translation/de/blurb`,
                 `${SABBAMITTA}/an`,
                 `${SABBAMITTA}/dn`,
@@ -103,6 +109,10 @@
             }).initialize(); 
             should(pub.includeUnpublished).equal(true);
             should.deepEqual(pub.pubPaths().sort(),[
+                `root/pli/bj/pli-tv-kd`,
+                `root/pli/dpcv/pli-tv-kd`,
+                `root/pli/vri/sutta/atthakatha/dn-a`,
+                `${SARANA}/an`,
                 `translation/de/blurb`,
                 `${SABBAMITTA}/an`,
                 `${SABBAMITTA}/dn`,

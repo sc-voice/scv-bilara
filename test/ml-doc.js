@@ -109,7 +109,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
             var segMap = mld.segMap;
             should.deepEqual(segMap['sn1.1:0.1'], {
 scid: 'sn1.1:0.1',
-pli: 'Saṃyutta Nikāya 1 ',
+pli: 'Saṁyutta Nikāya 1 ',
 en: 'Linked Discourses 1 ',
 de: 'Verbundene Lehrreden 1',
 html: '<article id=\'sn1.1\'><header><ul><li class=\'division\'>{}</li>',
