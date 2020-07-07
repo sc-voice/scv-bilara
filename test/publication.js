@@ -28,7 +28,9 @@
     var SUJATO = 'translation/en/sujato/sutta';
     var BRAHMALI = 'translation/en/brahmali/vinaya';
     var KAZ = 'translation/jpn/kaz/sutta';
+    var MY = 'translation/my/my-team/sutta';
     var PTTEAM = 'translation/pt/team/sutta';
+    var ENCOMM = 'translation/en/comm-team/sutta';
     var RUTEAM = 'translation/ru/team/sutta';
     var PATTON = 'translation/en/patton/sutta';
     var logLevel = false;
@@ -74,7 +76,6 @@
             should.deepEqual(pub.pubPaths({includeUnpublished}).sort(),[
                 `root/pli/bj/pli-tv-kd`,
                 `root/pli/dpcv/pli-tv-kd`,
-                `root/pli/vri/sutta/atthakatha/dn-a`,
                 `${SARANA}/an`,
                 `translation/de/blurb`,
                 `${SABBAMITTA}/an`,
@@ -86,6 +87,7 @@
                 `${BRAHMALI}/pli-tv-bu-vb`,
                 `${BRAHMALI}/pli-tv-kd`,
                 `${BRAHMALI}/pli-tv-pvr`,
+                `${ENCOMM}/atthakatha/dn-a`,
                 `${PATTON}/sa`,
                 `${SUJATO}/an`,
                 `${SUJATO}/dn`,
@@ -99,6 +101,7 @@
                 `${SUJATO}/mn`,
                 `${SUJATO}/sn`,
                 `${KAZ}/an`,
+                `${MY}/dn`,
                 `${PTTEAM}/mn`,
                 `${RUTEAM}/dn`,
             ]);
@@ -111,7 +114,6 @@
             should.deepEqual(pub.pubPaths().sort(),[
                 `root/pli/bj/pli-tv-kd`,
                 `root/pli/dpcv/pli-tv-kd`,
-                `root/pli/vri/sutta/atthakatha/dn-a`,
                 `${SARANA}/an`,
                 `translation/de/blurb`,
                 `${SABBAMITTA}/an`,
@@ -123,6 +125,7 @@
                 `${BRAHMALI}/pli-tv-bu-vb`,
                 `${BRAHMALI}/pli-tv-kd`,
                 `${BRAHMALI}/pli-tv-pvr`,
+                `${ENCOMM}/atthakatha/dn-a`,
                 `${PATTON}/sa`,
                 `${SUJATO}/an`,
                 `${SUJATO}/dn`,
@@ -136,6 +139,7 @@
                 `${SUJATO}/mn`,
                 `${SUJATO}/sn`,
                 `${KAZ}/an`,
+                `${MY}/dn`,
                 `${PTTEAM}/mn`,
                 `${RUTEAM}/dn`,
             ]);

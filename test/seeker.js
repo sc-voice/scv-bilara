@@ -29,6 +29,7 @@
     var bd = new BilaraData({ logLevel }); 
     var en_suj = `translation/en/sujato/sutta/`;
     var de_sab = `translation/de/sabbamitta/sutta/`;
+    var my_my = `translation/my/my-team/sutta/`;
     var pli_ms = `root/pli/ms/sutta/`;
 
     const BILARA_PATH = path.join(LOCAL_DIR, 'bilara-data');
@@ -194,7 +195,7 @@
             done();
         } catch(e) { done(e); } })();
     });
-    it("keywordSearch(...) limits results", done=>{
+    it("TESTTESTkeywordSearch(...) limits results", done=>{
         (async function() { try {
             var lang = 'en';
             var pattern = Seeker.normalizePattern('suffering joy faith');
@@ -208,9 +209,9 @@
                 method: "keywords",
                 lang: 'en',
                 keywordsFound: {
-                    faith: 395,
-                    joy: 142,
-                    suffering: 771,
+                    faith: 398,
+                    joy: 145,
+                    suffering: 787,
                 },
             };
 
@@ -236,7 +237,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("keywordSearch(...) searches English", done=>{
+    it("TESTTESTkeywordSearch(...) searches English", done=>{
         (async function() { try {
             var pattern = Seeker.normalizePattern('suffering joy faith');
             var skr = await new Seeker({
@@ -251,9 +252,9 @@
                 lang: 'en',
                 method: 'keywords',
                 keywordsFound: {
-                    suffering: 771,
-                    joy: 142,
-                    faith: 395,
+                    suffering: 787,
+                    joy: 145,
+                    faith: 398,
                 },
             };
             should(data).properties(enExpected);
@@ -389,7 +390,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("keywordSearch(...) searches Deutsch, not Pali", done=>{
+    it("TESTTESTkeywordSearch(...) searches Deutsch, not Pali", done=>{
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,
@@ -403,8 +404,8 @@
                 maxResults: 10,
                 method: 'keywords',
                 keywordsFound: {
-                    hausbesitzer: 28,
-                    anathapindika: 30,
+                    hausbesitzer: 30,
+                    anathapindika: 31,
                 },
                 lines: [
 `${de_sab}sn/sn10/sn10.8_translation-de-sabbamitta.json:4`,
@@ -1321,6 +1322,22 @@
                 'sn42.11/en/sujato',
             ]);
             should(res.bilaraPaths.length).equal(3);
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTfind(...) ignores chinese", done=>{
+        (async function() { try {
+            var skr = await new Seeker({
+                logLevel,
+            }).initialize();
+
+            var pattern = "wrong livelihood"; 
+            var verbose = true;
+            var res = await skr.find({
+                pattern,
+                //verbose,
+            });
+            should(res.bilaraPaths.length).equal(158);
             done(); 
         } catch(e) {done(e);} })();
     });

@@ -578,6 +578,11 @@
                 for (var i = 0; i < suttaRefs.length; i++) {
                     let suttaRef = suttaRefs[i];
                     let [suid,refLang,author] = suttaRef.split('/');
+                    var suttaInfo = bd.suttaInfo(suttaRef);
+                    if (!suttaInfo) {
+                        verbose && console.log(`skipping ${suttaRef}`);
+                        continue; 
+                    }
                     let isBilDoc = bd.isBilaraDoc({
                         suid,
                         lang:refLang,

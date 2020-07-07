@@ -38,6 +38,7 @@
 "variant/pli/ms": "variant/pli/ms/sutta/dn/dn33_variant-pli-ms.json",
 "comment/en/sujato": commentPath('dn/dn33', 'en','sujato'),
 "translation/en/sujato": translationPath('dn/dn33','en','sujato'),
+"translation/my/my-team": translationPath('dn/dn33','my','my-team'),
 //"translation/ru/team": translationPath('dn/dn33','ru','team'),
 "translation/de/sabbamitta": translationPath('dn/dn33','de','sabbamitta'),
             });
