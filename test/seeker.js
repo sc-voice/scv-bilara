@@ -211,7 +211,7 @@
                 keywordsFound: {
                     faith: 398,
                     joy: 145,
-                    suffering: 787,
+                    suffering: 790,
                 },
             };
 
@@ -252,7 +252,7 @@
                 lang: 'en',
                 method: 'keywords',
                 keywordsFound: {
-                    suffering: 787,
+                    suffering: 790,
                     joy: 145,
                     faith: 398,
                 },
@@ -404,12 +404,13 @@
                 maxResults: 10,
                 method: 'keywords',
                 keywordsFound: {
-                    hausbesitzer: 30,
-                    anathapindika: 31,
+                    hausbesitzer: 33,
+                    anathapindika: 35,
                 },
                 lines: [
 `${de_sab}sn/sn10/sn10.8_translation-de-sabbamitta.json:4`,
 `${de_sab}an/an2/an2.32-41_translation-de-sabbamitta.json:2`,
+`${de_sab}an/an5/an5.41_translation-de-sabbamitta.json:2`,
 `${de_sab}an/an1/an1.248-257_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an3/an3.109_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an3/an3.110_translation-de-sabbamitta.json:1`,
@@ -417,7 +418,7 @@
 `${de_sab}an/an4/an4.58_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an4/an4.60_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an4/an4.61_translation-de-sabbamitta.json:1`,
-`${de_sab}an/an4/an4.62_translation-de-sabbamitta.json:1`,
+//`${de_sab}an/an4/an4.62_translation-de-sabbamitta.json:1`,
                 ],
             };
 
@@ -442,7 +443,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) scores relevance", done=>{
+    it("find(...) scores relevance", done=>{
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,
@@ -1325,7 +1326,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) ignores chinese", done=>{
+    it("find(...) ignores chinese", done=>{
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,

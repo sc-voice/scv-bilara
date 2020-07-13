@@ -22,6 +22,10 @@
                 ;
         }
 
+        static isVowel(c) {
+            return /a|ā|e|i|ī|o|u|ū/.test(c);
+        }
+
         static wordSet() {
             if (FWS_PALI == null) {
                 // Do this now, not async

@@ -67,7 +67,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTpubPaths() => all bilara paths", done=> {
+    it("pubPaths() => all bilara paths", done=> {
         (async function() { try {
             var pub = await pubTest.initialize();
 

@@ -79,7 +79,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTinitialize(...) must be called", (done) => {
+    it("initialize(...) must be called", (done) => {
         (async function() { try {
             var newbd = new BilaraData({
                 logLevel,
@@ -123,7 +123,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTauthorInfo() => supported author info", done=>{
+    it("authorInfo() => supported author info", done=>{
         (async function() { try {
             await bd.initialize();
             var ms = {
@@ -624,7 +624,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTloadMLDoc(...) loads bilingual doc", done=>{
+    it("loadMLDoc(...) loads bilingual doc", done=>{
         (async function() { try {
             await bd.initialize();
             var an1_9_en = {

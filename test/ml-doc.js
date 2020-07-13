@@ -426,4 +426,30 @@ html: '<article id=\'sn1.1\'><header><ul><li class=\'division\'>{}</li>',
             done();
         } catch(e) { done(e); } })();
     });
+    it("TESTTESThypenate(lang) => handles MN142", done=>{
+        (async function() { try {
+            var bilaraPaths = [
+                rootPath('mn/mn142'),
+            ]
+            var mld = new MLDoc({
+                bilaraPaths,
+            });
+            var res = await mld.load(BILARA_PATH);
+            var seg4_2 = mld.segMap["mn142:4.3"];
+            should(seg4_2).properties({
+                pli: "abhivādanapaccuṭṭhānaañjalikammasāmīci"+
+                    "kammacīvarapiṇḍapātasenāsanagilānappa"+
+                    "ccayabhesajjaparikkhārānuppadānena. ",
+            });
+            mld.hyphenate();
+            should.deepEqual(seg4_2.pli.split('\u00ad'), [
+                `abhivādanapaccuṭṭhānaañjali`,
+                `kammasāmīcikammacīvarapiṇḍa`,
+                `pātasenāsanagilānappaccayabhe`,
+                `sajjaparikkhārānuppadānena. `,
+            ]);
+
+            done();
+        } catch(e) { done(e); } })();
+    });
 })

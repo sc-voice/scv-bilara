@@ -24,6 +24,9 @@
             this.lang = opts.lang || this.languages().pop();
             this.segMap = opts.segMap || {};
             this.score = 0; // search relevance
+            this.hyphen = opts.hyphen || "\u00ad";
+            this.maxWord = opts.maxWord || 30;
+            this.minWord = opts.minWord || 5;
             Object.defineProperty(this, "unicode", {
                 value: opts.unicode || new Unicode(),
             });
@@ -202,6 +205,71 @@
                 ? new RegExp(`(?<=[\\s,.:;"']|^)${p.substring(2)}`, opts)
                 : new RegExp(p, opts);
             return result;
+        }
+
+        splitPaliWord(word) {
+            var {
+                hyphen,
+                minWord,
+                maxWord,
+            } = this;
+            var len = word.length;
+            if (len < 2*minWord) {
+                return [word];
+            }
+            var half = Math.round(len/2);
+            var cLeft = word.charAt(half-1);
+            var cRight = word.charAt(half);
+            if (Pali.isVowel(cLeft)) {
+                if (Pali.isVowel(cRight)) {
+                } else {
+                }
+            } else {
+                if (Pali.isVowel(cRight)) {
+                    if (cLeft === 'h') {
+                        half++;
+                    } else {
+                        half--;
+                    }
+                } else {
+                    half--;
+                }
+            }
+            var left = word.substring(0, half);
+            var right = word.substring(half);
+            var left = left.length > maxWord 
+                ? this.splitPaliWord(left)
+                : left;
+            var right = right.length > maxWord
+                ? this.splitPaliWord(right)
+                : right;
+            return `${left}${hyphen}${right}`;
+        }
+
+        hyphenate() {
+            var {
+                maxWord,
+                minWord,
+                hyphen,
+            } = this;
+            var lang = "pli";
+            var scids = this.scids();
+            scids.forEach((scid,i) => {
+                var seg = this.segMap[scid];
+                var text = seg[lang];
+                var words = text.split(" ");
+                var changed = false;
+                var hyphenated = words.reduce((a,w) => {
+                    if (w.length > maxWord) {
+                        changed = true;
+                        a.push(this.splitPaliWord(w));
+                    } else {
+                        a.push(w);
+                    }
+                    return a;
+                }, []);
+                changed && (seg[lang] = hyphenated.join(" "));
+            });
         }
 
         filterSegments(...args) {
