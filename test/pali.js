@@ -62,4 +62,19 @@
             done(); 
         } catch(e) {done(e);} })();
     });
+    it("TESTTESThypenate(word) => handles MN142", ()=>{
+        var word = [
+            "abhivādanapaccuṭṭhānaañjalikammasāmīci",
+            "kammacīvarapiṇḍapātasenāsanagilānappa",
+            "ccayabhesajjaparikkhārānuppadānena",
+        ].join('');
+        var pali = new Pali();
+        var hyphenated = pali.hyphenate(word);
+        should.deepEqual(hyphenated.split('\u00ad'), [
+            `abhivādanapaccuṭṭhānaañjali`,
+            `kammasāmīcikammacīvarapiṇḍa`,
+            `pātasenāsanagilānappaccayabhe`,
+            `sajjaparikkhārānuppadānena`,
+        ]);
+    });
 });

@@ -207,51 +207,8 @@
             return result;
         }
 
-        splitPaliWord(word) {
-            var {
-                hyphen,
-                minWord,
-                maxWord,
-            } = this;
-            var len = word.length;
-            if (len < 2*minWord) {
-                return [word];
-            }
-            var half = Math.round(len/2);
-            var cLeft = word.charAt(half-1);
-            var cRight = word.charAt(half);
-            if (Pali.isVowel(cLeft)) {
-                if (Pali.isVowel(cRight)) {
-                } else {
-                }
-            } else {
-                if (Pali.isVowel(cRight)) {
-                    if (cLeft === 'h') {
-                        half++;
-                    } else {
-                        half--;
-                    }
-                } else {
-                    half--;
-                }
-            }
-            var left = word.substring(0, half);
-            var right = word.substring(half);
-            var left = left.length > maxWord 
-                ? this.splitPaliWord(left)
-                : left;
-            var right = right.length > maxWord
-                ? this.splitPaliWord(right)
-                : right;
-            return `${left}${hyphen}${right}`;
-        }
-
-        hyphenate() {
-            var {
-                maxWord,
-                minWord,
-                hyphen,
-            } = this;
+        hyphenate(hyphenator=new Pali()) {
+            var { maxWord, } = hyphenator;
             var lang = "pli";
             var scids = this.scids();
             scids.forEach((scid,i) => {
@@ -262,7 +219,7 @@
                 var hyphenated = words.reduce((a,w) => {
                     if (w.length > maxWord) {
                         changed = true;
-                        a.push(this.splitPaliWord(w));
+                        a.push(hyphenator.hyphenate(w));
                     } else {
                         a.push(w);
                     }

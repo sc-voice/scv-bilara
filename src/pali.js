@@ -9,6 +9,12 @@
     var FWS_PALI;
 
     class Pali {
+        constructor(opts={}) {
+            this.hyphen = opts.hyphen || "\u00ad";
+            this.maxWord = opts.maxWord || 30;
+            this.minWord = opts.minWord || 5;
+        }
+
         static romanizePattern(pattern) {
             return pattern
                 .replace(/a/iug, '(a|ā)')
@@ -34,6 +40,45 @@
                 FWS_PALI = new FuzzyWordSet(json);
             }
             return Promise.resolve(FWS_PALI); 
+        }
+
+        hyphenate(word) {
+            var {
+                hyphen,
+                minWord,
+                maxWord,
+            } = this;
+            var len = word.length;
+            if (len < 2*minWord) {
+                return [word];
+            }
+            var half = Math.round(len/2);
+            var cLeft = word.charAt(half-1);
+            var cRight = word.charAt(half);
+            if (Pali.isVowel(cLeft)) {
+                if (Pali.isVowel(cRight)) {
+                } else {
+                }
+            } else {
+                if (Pali.isVowel(cRight)) {
+                    if (cLeft === 'h') {
+                        half++;
+                    } else {
+                        half--;
+                    }
+                } else {
+                    half--;
+                }
+            }
+            var left = word.substring(0, half);
+            var right = word.substring(half);
+            var left = left.length > maxWord 
+                ? this.hyphenate(left)
+                : left;
+            var right = right.length > maxWord
+                ? this.hyphenate(right)
+                : right;
+            return `${left}${hyphen}${right}`;
         }
     }
 
