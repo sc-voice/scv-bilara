@@ -1,14 +1,39 @@
 #!/bin/bash
 DIR=`dirname $0`
 echo "$0 DIR:$DIR"
-cd ${DIR}/../local/bilara-data; pwd
+cd ${DIR}/../local/bilara-data > /dev/null
+pwd
 
-echo -e "BILARA\t: Switching to master branch" && \
-git checkout master && \
+git remote -v | grep "upstream" > /dev/null
+RC=$?
+if [ "$RC" == "0" ]; then
+  echo -e "BILARA\t: found upstream remote (OK)"
+else
+  echo -e "BILARA\t: configuring upstream remote"
+  git remote add suttacentral https://github.com/suttacentral/bilara-data.git
+fi
+git fetch suttacentral
+git fetch
+
+echo -e "BILARA\t: Switching to unpublished branch" && \
+git checkout unpublished 
+git config branch.unpublished.remote origin
+git status | grep "but the upstream is gone"
+RC=$?
+if [ "$RC" == "0" ]; then
+  echo -e "BILARA\t: creating origin branch unpublished"
+  git push -u origin unpublished
+else
+  echo -e "BILARA\t: found origin branch unpublished (OK)"
+fi
+
 echo -e "BILARA\t: Refreshing bilara-data fork from Github..." && \
-git pull --rebase && \
-echo -e "BILARA\t: Refreshing bilara-data fork from upstream master..." && \
-git pull -Xtheirs --no-edit https://github.com/suttacentral/bilara-data && \
+git pull --rebase 
+
+echo -e "BILARA\t: Refreshing bilara-data fork from upstream ..." && \
+git pull -Xtheirs --no-edit https://github.com/suttacentral/bilara-data 
+
+
 echo -e "BILARA\t: Committing changes to bilara-data..." && \
 git commit -am "SuttaCentral Update" 
 
