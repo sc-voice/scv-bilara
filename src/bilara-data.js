@@ -85,7 +85,6 @@
                 authors,
             } = that;
             var pbody = (resolve, reject) => {(async function() { try {
-                await that.publication.initialize();
                 var version = that.version();
                 var EXPECTED_VERSION = 1
                 var purge = false;
@@ -100,6 +99,7 @@
                     purge,
                     initializing: true,
                 });
+                await that.publication.initialize();
 
                 let authPath = path.join(that.root, `_author.json`);
                 let authorJson = fs.existsSync(authPath)
@@ -226,6 +226,7 @@
             var that = this;
             var purge = opts.purge || false;
             var initializing = opts.initializing || false;
+            var branches = opts.branches || ['unpublished'];
             var pbody = (resolve, reject)=>(async function() { try {
                 if (purge) {
                     var cmd = `rm -rf ${that.name}`;
@@ -235,7 +236,8 @@
                     that.log(`Purging repository: ${cmd}`);
                     var res = execSync(cmd, execOpts).toString();
                 }
-                var res = await that.execGit.sync();
+                var res = await that.execGit
+                    .sync(undefined, undefined, branches);
                 if (purge && !initializing) {
                     await that.initialize();
                 }

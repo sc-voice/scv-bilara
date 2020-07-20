@@ -79,26 +79,43 @@
             });
         }
 
-        sync(repo=this.repo, repoPath=this.repoPath) {
+        sync(repo=this.repo, repoPath=this.repoPath, branches=['master']) {
             var that = this;
             var {
                 cwd,
             } = this;
             return new Promise((resolve, reject) => {
                 (async function() { try {
+                    var cmds = [];
                     if (fs.existsSync(repoPath)) {
-                        var cmd = `cd ${repoPath} && git fetch --all && git merge`;
+                        cmds.push(`cd ${repoPath} && git fetch --all`);
+                        if (branches instanceof Array) { 
+                            branches.forEach(branch => {
+                                cmds.push([
+                                    `if git checkout ${branch};`,
+                                    `then echo git checkout ${branch};`,
+                                    `else git branch --track`,
+                                    '"${remote#origin/}" "$remote";',
+                                    'fi',
+                                ].join(' '));
+                                // checkout and discard branch changes
+                                cmds.push(`git checkout ${branch}`);
+                                cmds.push(`git checkout .`); 
+                            });
+                        }
+                        cmds.push(`git merge`);
                     } else {
                         var repoDir = path.basename(repoPath);
-                        var cmd = `git clone ${repo} ${repoDir}`;
+                        cmds.push(`git clone ${repo} ${repoDir}`);
                     }
+                    var cmd = cmds.join(' && ');
                     that.log(cmd);
                     var execOpts = {
                         cwd,
                         maxBuffer: MAXBUFFER,
                     };
-                    var res = execSync(cmd, execOpts).toString();
-                    that.log(res);
+                    var res = execSync(cmd, execOpts);
+                    that.log(`sync() => ${res}`);
                     resolve(that);
                 } catch(e) {reject(e);} })();
             });

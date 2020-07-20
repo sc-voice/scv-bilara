@@ -195,7 +195,7 @@
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTkeywordSearch(...) limits results", done=>{
+    it("keywordSearch(...) limits results", done=>{
         (async function() { try {
             var lang = 'en';
             var pattern = Seeker.normalizePattern('suffering joy faith');
@@ -210,8 +210,8 @@
                 lang: 'en',
                 keywordsFound: {
                     faith: 398,
-                    joy: 145,
-                    suffering: 790,
+                    joy: 148,
+                    suffering: 794,
                 },
             };
 
@@ -237,7 +237,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTkeywordSearch(...) searches English", done=>{
+    it("keywordSearch(...) searches English", done=>{
         (async function() { try {
             var pattern = Seeker.normalizePattern('suffering joy faith');
             var skr = await new Seeker({
@@ -252,8 +252,8 @@
                 lang: 'en',
                 method: 'keywords',
                 keywordsFound: {
-                    suffering: 790,
-                    joy: 145,
+                    suffering: 794,
+                    joy: 148,
                     faith: 398,
                 },
             };
@@ -346,7 +346,7 @@
             });
             should(data).properties(expected);
             should.deepEqual(data.keywordsFound, {
-                'Anāthapiṇḍika': 223,
+                'Anāthapiṇḍika': 224,
             });
 
             done(); 
@@ -390,7 +390,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTkeywordSearch(...) searches Deutsch, not Pali", done=>{
+    it("keywordSearch(...) searches Deutsch, not Pali", done=>{
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,
@@ -405,7 +405,7 @@
                 method: 'keywords',
                 keywordsFound: {
                     hausbesitzer: 33,
-                    anathapindika: 35,
+                    anathapindika: 37,
                 },
                 lines: [
 `${de_sab}sn/sn10/sn10.8_translation-de-sabbamitta.json:4`,

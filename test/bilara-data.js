@@ -13,7 +13,7 @@
         logger,
         LOCAL_DIR,
     } = require("just-simple").JustSimple;
-    this.timeout(10*1000);
+    this.timeout(20*1000);
     var logLevel = false;
     var bd = new BilaraData({ logLevel }); 
     function ROOTPATH(mid,category='sutta') {
@@ -100,26 +100,72 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("sync() purges and refreshes repo", (done) => {
+    it("initialize(...) must be called", (done) => {
+        (async function() { try {
+            var newbd = new BilaraData({
+                logLevel,
+            });
+            should(newbd.initialized).equal(false);
+            should.throws(() => {
+                newbd.suttaInfo('dn33');
+            });
+
+            var sync = false; // true => git clone or git pull
+            var res = await bd.initialize(sync);
+            should(res).equal(bd);
+            should(bd.initialized).equal(true);
+            should.deepEqual(Object.keys(bd.authors).sort(), [
+                'ashinsarana', 'ms', 'sabbamitta', 'sujato', 
+            ]);
+
+            done();
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTsync() purges and refreshes repo", (done) => {
         (async function() { try {
             var name = "test-repo";
             var bd = new BilaraData({name});
             var dummyPath = path.join(bd.root, "root", "dummy.txt");
 
-            // initalize should purge if downrev
+            // make a local change
             fs.existsSync(dummyPath) && fs.unlinkSync(dummyPath);
             should(fs.existsSync(dummyPath)).equal(false);
-            await bd.initialize();
-            should(fs.existsSync(dummyPath)).equal(true);
-
-            // normal sync doesn't purge
-            fs.existsSync(dummyPath) && fs.unlinkSync(dummyPath);
-            await bd.sync();
 
             // purge reclones repo
-            should(fs.existsSync(dummyPath)).equal(false);
             await bd.sync({purge:true});
             should(fs.existsSync(dummyPath)).equal(true);
+            done();
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTsync() refreshes repo", (done) => {
+        (async function() { try {
+            var name = "test-repo";
+            var verbose = true;
+            var bd = new BilaraData({name, verbose});
+            var dummyPath = path.join(bd.root, "root", "dummy.txt");
+            var unpublishedPath = path.join(bd.root, "unpublished.txt");
+            var masterPath = path.join(bd.root, "master.txt");
+
+            // sync to restore, and make master current
+            await bd.sync();
+            should(fs.existsSync(dummyPath)).equal(true);
+            should(fs.existsSync(masterPath)).equal(false);
+            should(fs.existsSync(unpublishedPath)).equal(true);
+
+            // make a local change
+            fs.existsSync(dummyPath) && fs.unlinkSync(dummyPath);
+            should(fs.existsSync(dummyPath)).equal(false);
+
+            // sync to restore, and make master current
+            await bd.sync({branches:['unpublished', 'master']});
+            should(fs.existsSync(dummyPath)).equal(true);
+            should(fs.existsSync(unpublishedPath)).equal(false);
+
+            // sync to restore, and make unpublished current
+            await bd.sync({branches:['master', 'unpublished']});
+            should(fs.existsSync(dummyPath)).equal(true);
+            should(fs.existsSync(unpublishedPath)).equal(true);
+
             done();
         } catch(e) {done(e);} })();
     });
