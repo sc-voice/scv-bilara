@@ -1,40 +1,37 @@
 #!/bin/bash
 DIR=`dirname $0`
-echo "$0 DIR:$DIR"
+BRANCH=$1
+echo -e "BILARA\t: $0 DIR:$DIR"
+if [ "$BRANCH" == "" ]; then BRANCH=unpublished; fi
 cd ${DIR}/../local/bilara-data > /dev/null
-pwd
+echo -e "BILARA\t: BRANCH:$BRANCH pwd:"`pwd`
 
 git remote -v | grep "upstream" > /dev/null
 RC=$?
 if [ "$RC" == "0" ]; then
-  echo -e "BILARA\t: found upstream remote (OK)"
+  echo -e "BILARA\t: upstream remote found (OK)"
+elif git remote -v | grep suttacentral > /dev/null; then
+  echo -e "BILARA\t: suttacentral remote found (OK)"
 else
-  echo -e "BILARA\t: configuring upstream remote"
+  echo -e "BILARA\t: adding suttacentral remote"
   git remote add suttacentral https://github.com/suttacentral/bilara-data.git
 fi
 git fetch suttacentral
 git fetch
-
-echo -e "BILARA\t: Switching to unpublished branch" && \
-git checkout unpublished 
-git config branch.unpublished.remote origin
-git status | grep "but the upstream is gone"
-RC=$?
-if [ "$RC" == "0" ]; then
-  echo -e "BILARA\t: creating origin branch unpublished"
-  git push -u origin unpublished
+if git checkout $BRANCH >& /dev/null; then
+  echo -e "BILARA\t: on $BRANCH branch" 
 else
-  echo -e "BILARA\t: found origin branch unpublished (OK)"
+  echo -e "BILARA\t: fetching $BRANCH branch" 
+  git track --track origin/$BRANCH $BRANCH
 fi
 
-echo -e "BILARA\t: Refreshing bilara-data fork from Github..." && \
+echo -e "BILARA\t: Refreshing $BRANCH fork from Github..." && \
 git pull --rebase 
 
-echo -e "BILARA\t: Refreshing bilara-data fork from upstream ..." && \
+echo -e "BILARA\t: Refreshing $BRANCH fork from suttacentral ..." && \
 git pull -Xtheirs --no-edit https://github.com/suttacentral/bilara-data 
 
-
-echo -e "BILARA\t: Committing changes to bilara-data..." && \
+echo -e "BILARA\t: Committing $BRANCH changes to bilara-data..." && \
 git commit -am "SuttaCentral Update" 
 
 echo -e "BILARA\t: Pushing changes to Github..." && \

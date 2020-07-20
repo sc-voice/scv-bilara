@@ -121,7 +121,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTsync() purges and refreshes repo", (done) => {
+    it("sync() purges and refreshes repo", (done) => {
         (async function() { try {
             var name = "test-repo";
             var bd = new BilaraData({name});
@@ -137,7 +137,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTsync() refreshes repo", (done) => {
+    it("sync() refreshes repo", (done) => {
         (async function() { try {
             var name = "test-repo";
             var verbose = true;
