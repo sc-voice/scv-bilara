@@ -43,6 +43,7 @@
         }
 
         hyphenate(word) {
+            // TODO: https://github.com/suttacentral/legacy-suttacentral/blob/master/utility/pali-tools/hyphenate.py
             var {
                 hyphen,
                 minWord,
