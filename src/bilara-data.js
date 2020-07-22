@@ -24,7 +24,7 @@
     const ExecGit = require('./exec-git');
     const PUB_PREFIX = /^https:.*translation\//;
     const ROOT_PLI_MS = path.join("root", "pli", "ms");
-    const STUBFILESIZE = 5;
+    const STUBFILESIZE = 10;
 
     class BilaraData {
         constructor(opts={}) {
@@ -69,10 +69,12 @@
             if (this._sources == null) {
                 var sourcesPath = path.join(__dirname, 
                     "../src/assets/sources.json");
-                this._sources = json5.parse(fs.readFileSync(sourcesPath));
+                var s = fs.readFileSync(sourcesPath);
+                this._sources = json5.parse(s);
             }
             var authors = this._sources[lang];
-            return authors && authors.indexOf(author)>=0;
+            var result = authors && authors.indexOf(author)>=0;
+            return result;
         }
 
         initialize(sync=false) {
@@ -451,7 +453,6 @@
                     ? `No information for ${suid}/${lang}`
                     : `No information for ${suid}/${lang}/${author}`);
             }
-            verbose && console.log(`loadMLDoc`, js.simpleString(loadArgs), bilaraPaths.length);
             return new MLDoc({
                 logLevel,
                 lang,

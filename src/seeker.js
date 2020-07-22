@@ -547,6 +547,7 @@
                         lang, 
                         showMatchesOnly,
                         tipitakaCategories,
+                        verbose,
                     };
 
                     var {
@@ -555,7 +556,8 @@
                     } = await that.phraseSearch(searchOpts);
                     if (lines.length) {
                         verbose && console.log(`findArgs phrase`, 
-                            js.simpleString(findArgs));
+                            js.simpleString(findArgs), 
+                        );
                     } else {
                         verbose && console.log(`findArgs keywords`, 
                             js.simpleString(findArgs));
@@ -569,6 +571,7 @@
                     sortLines && lines.sort(sortLines);
                     var suttaRefs = lines.map(line => 
                         BilaraPath.pathParts(line).suttaRef);
+                    verbose && console.log(`findArgs suttaRefs`, suttaRefs);
                 }
 
                 var mlDocs = [];
@@ -597,6 +600,11 @@
                     });
                     var mldBilaraPaths = mld.bilaraPaths;
                     if (mldBilaraPaths.length < minLang) {
+                        verbose && that.log([
+                            `skipping ${mld.suid} minLang`,
+                            `${mldBilaraPaths.length}<${minLang}`,
+                            `[${languages}]`, 
+                        ].join(' '));
                         continue;
                     }
                     bilaraPaths = [...bilaraPaths, ...mldBilaraPaths];

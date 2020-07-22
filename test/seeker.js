@@ -33,6 +33,7 @@
     var pli_ms = `root/pli/ms/sutta/`;
 
     const BILARA_PATH = path.join(LOCAL_DIR, 'bilara-data');
+    const TEST_BILARA_PATH = path.join(__dirname, 'data', 'bilara-data');
 
     it("default ctor", ()=>{
         var skr = new Seeker();
@@ -1338,6 +1339,21 @@
                 //verbose,
             });
             should(res.bilaraPaths.length).equal(158);
+            done(); 
+        } catch(e) {done(e);} })();
+    });
+    it("TESTTESTfind(...) => ignores SN46.36", done=>{
+        (async function() { try {
+            var skr = await new Seeker({
+                root: TEST_BILARA_PATH,
+                logLevel,
+            }).initialize();
+
+            var pattern = "hindrance -ml 3 -sl en -l de"; 
+            var res = await skr.find({
+                pattern,
+            });
+            should.deepEqual(res.suttaRefs, []);
             done(); 
         } catch(e) {done(e);} })();
     });
