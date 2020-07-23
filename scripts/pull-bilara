@@ -16,7 +16,6 @@ else
   echo -e "BILARA\t: adding suttacentral remote"
   git remote add suttacentral https://github.com/suttacentral/bilara-data.git
 fi
-git fetch suttacentral
 git fetch
 if git checkout $BRANCH >& /dev/null; then
   echo -e "BILARA\t: on $BRANCH branch" 
@@ -26,8 +25,9 @@ else
 fi
 
 echo -e "BILARA\t: Refreshing $BRANCH fork from Github..." && \
-git pull --rebase 
+git pull 
 
+git fetch suttacentral
 echo -e "BILARA\t: Refreshing $BRANCH fork from suttacentral ..." && \
 git pull -Xtheirs --no-edit https://github.com/suttacentral/bilara-data 
 
