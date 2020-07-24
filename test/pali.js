@@ -62,13 +62,25 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("hyphenate(word) => handles MN142", ()=>{
+    it("TESTTESThyphenate(word) => handles MN142", ()=>{
         var word = [
             "abhivādanapaccuṭṭhānaañjalikammasāmīci",
             "kammacīvarapiṇḍapātasenāsanagilānappa",
             "ccayabhesajjaparikkhārānuppadānena",
         ].join('');
         var pali = new Pali();
+        should.deepEqual(pali.nonhyphenated.slice(0, 10), [
+            "aṅguttara",
+            "vibhaṅga",
+            "caṇḍala",
+            "indriya",
+            "nibbāna",
+            "thaddha",
+            "vitakka",
+            "Ānanda",
+            "bhacca",
+            "bhadde",
+        ]);
         var hyphenated = pali.hyphenate(word);
         should.deepEqual(hyphenated.split('\u00ad'), [
             `abhivādanapaccuṭṭhānaañjali`,
