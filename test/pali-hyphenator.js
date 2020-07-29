@@ -115,4 +115,16 @@
             `nena`,
         ]);
     });
+    it("TESTTESThyphenate(word) => handles kamma", ()=>{
+        var ph = new PaliHyphenator({
+            maxWord: 10,
+        });
+        var word = "kammakammakameleon";
+        var hyphen = "\u00ad";
+        should.deepEqual(ph.hyphenate(word).split(hyphen), [
+            "kamma",
+            "kamma",
+            "kameleon",
+        ]);
+    });
 });
