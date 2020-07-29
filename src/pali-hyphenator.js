@@ -33,8 +33,7 @@
         'kaḷā',
         'kana',
         'kattha',
-        'kamma',  // Added as presumed intentionof "khamma"
-        'khamma', // What is this?
+        'kamma',  // replaces "khamma"
         'khema',
         'koccha',
         'komāra',
