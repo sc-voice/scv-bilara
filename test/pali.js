@@ -69,24 +69,21 @@
             "ccayabhesajjaparikkhārānuppadānena",
         ].join('');
         var pali = new Pali();
-        should.deepEqual(pali.nonhyphenated.slice(0, 10), [
-            "aṅguttara",
-            "vibhaṅga",
-            "caṇḍala",
-            "indriya",
-            "nibbāna",
-            "thaddha",
-            "vitakka",
-            "Ānanda",
-            "bhacca",
-            "bhadde",
-        ]);
         var hyphenated = pali.hyphenate(word);
         should.deepEqual(hyphenated.split('\u00ad'), [
-            `abhivādanapaccuṭṭhānaañjali`,
-            `kammasāmīcikammacīvarapiṇḍa`,
-            `pātasenāsanagilānappaccayabhe`,
-            `sajjaparikkhārānuppadānena`,
+            `abhivādanapac`,
+            `cuṭṭhānaañjali`,
+            `kamma`,
+            `sāmīci`,
+            `kamma`,
+            `cīvara`,
+            `piṇḍa`,
+            `pātasenāsanagilā`,
+            `nappaccayabhesajja`,
+            `pari`,
+            `kkhārānup`,
+            `padā`,
+            `nena`,
         ]);
     });
 });

@@ -1342,7 +1342,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) => ignores SN46.36", done=>{
+    it("find(...) => ignores SN46.36", done=>{
         (async function() { try {
             var skr = await new Seeker({
                 root: TEST_BILARA_PATH,

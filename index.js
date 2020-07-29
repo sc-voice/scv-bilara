@@ -8,6 +8,7 @@ module.exports = {
     FuzzyWordSet: require("./src/fuzzy-word-set"),
     MLDoc: require("./src/ml-doc"),
     Pali: require("./src/pali"),
+    PaliHyphenator: require("./src/pali-hyphenator"),
     Publication: require("./src/publication"),
     Seeker: require("./src/seeker"),
     SegDoc: require("./src/seg-doc"),

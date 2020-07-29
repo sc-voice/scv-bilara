@@ -426,7 +426,7 @@ html: '<article id=\'sn1.1\'><header><ul><li class=\'division\'>{}</li>',
             done();
         } catch(e) { done(e); } })();
     });
-    it("hyphenate(lang) => handles MN142", done=>{
+    it("TESTTESThyphenate(lang) => handles MN142", done=>{
         (async function() { try {
             var bilaraPaths = [
                 rootPath('mn/mn142'),
@@ -443,10 +443,19 @@ html: '<article id=\'sn1.1\'><header><ul><li class=\'division\'>{}</li>',
             });
             mld.hyphenate();
             should.deepEqual(seg4_2.pli.split('\u00ad'), [
-                `abhivādanapaccuṭṭhānaañjali`,
-                `kammasāmīcikammacīvarapiṇḍa`,
-                `pātasenāsanagilānappaccayabhe`,
-                `sajjaparikkhārānuppadānena. `,
+                `abhivādanapac`,
+                `cuṭṭhānaañjali`,
+                `kamma`,
+                `sāmīci`,
+                `kamma`,
+                `cīvara`,
+                `piṇḍa`,
+                `pātasenāsanagilā`,
+                `nappaccayabhesajja`,
+                `pari`,
+                `kkhārānup`,
+                `padā`,
+                `nena. `,
             ]);
 
             done();
