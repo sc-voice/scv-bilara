@@ -126,7 +126,8 @@
             var atomicWords = word.replace(reAtomic, "-$1-")
                 .replace('--', '-')
                 .replace(/^(.?)-/, '$1')
-                .replace(/-$/, '');
+                .replace(/-$/, '')
+                .replace(/-kk/,'k-k');
             var that = this;
             v && console.log(`hyphenate(${word}) ${atomicWords}`);
             return atomicWords.split('-')

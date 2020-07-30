@@ -84,8 +84,8 @@
             `sanagilā`,
             `nappacca`,
             `yabhesajja`,
-            `pari`,
-            `kkhārānup`,
+            `parik`,
+            `khārānup`,
             `padā`,
             `nena`,
         ]);

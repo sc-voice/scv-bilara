@@ -113,8 +113,8 @@
             `sanagilā`,
             `nappacca`,
             `yabhesajja`,
-            `pari`,
-            `kkhārānup`,
+            `parik`,
+            `khārānup`,
             `padā`,
             `nena`,
         ]);
@@ -171,6 +171,6 @@
 
         // should break 
         should.deepEqual(ph.hyphenate("parikkhārā").split(hyphen), [
-            "pari", "kkhā", "rā", ]); // parik-khārā?
+            "parik", "khārā", ]); 
     });
 });
