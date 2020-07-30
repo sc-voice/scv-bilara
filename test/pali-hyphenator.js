@@ -155,4 +155,22 @@
         should.deepEqual(ph.hyphenate("ekacce").split(hyphen), [
             "ekac", "ce", ]);
     });
+    it("TESTTESThyphenate(word) => handles pari", ()=>{
+        var hyphen = "\u00ad";
+        var ph = new PaliHyphenator({
+            maxWord: 5,
+            minWord: 2,
+            hyphen,
+            verbose: "",
+        });
+
+        // should not break 
+        should("pari".length).equal(4);
+        should.deepEqual(ph.hyphenate("pari").split(hyphen), [
+            "pari", ]);
+
+        // should break 
+        should.deepEqual(ph.hyphenate("parikkhārā").split(hyphen), [
+            "pari", "kkhā", "rā", ]); // parik-khārā?
+    });
 });
