@@ -71,15 +71,19 @@
         var pali = new Pali();
         var hyphenated = pali.hyphenate(word);
         should.deepEqual(hyphenated.split('\u00ad'), [
-            `abhivādanapac`,
-            `cuṭṭhānaañjali`,
+            `abhivā`,
+            `danapac`,
+            `cuṭṭhā`,
+            `naañjali`,
             `kamma`,
             `sāmīci`,
             `kamma`,
             `cīvara`,
             `piṇḍa`,
-            `pātasenāsanagilā`,
-            `nappaccayabhesajja`,
+            `pātasenā`,
+            `sanagilā`,
+            `nappacca`,
+            `yabhesajja`,
             `pari`,
             `kkhārānup`,
             `padā`,

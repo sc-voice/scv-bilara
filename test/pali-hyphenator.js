@@ -9,7 +9,7 @@
         var ph = new PaliHyphenator();
         should(ph).properties({
             minWord: 5,
-            maxWord: 30,
+            maxWord: 25,
             hyphen: "\u00AD",
         });
         should(PaliHyphenator.VOWELS).equal("aāeiīouū");
@@ -100,15 +100,19 @@
         should(hyphenated[i++].length).below(maxWord+1);
         should(hyphenated[i++].length).below(maxWord+1);
         should.deepEqual(hyphenated, [
-            `abhivādanapac`, // doubled consonant
-            `cuṭṭhānaañjali`,
+            `abhivā`,
+            `danapac`, // doubled consonant
+            `cuṭṭhā`,
+            `naañjali`,
             `kamma`, // atomic
             `sāmīci`,
             `kamma`,
             `cīvara`, 
             `piṇḍa`, // atomic 
-            `pātasenāsanagilā`,
-            `nappaccayabhesajja`,
+            `pātasenā`,
+            `sanagilā`,
+            `nappacca`,
+            `yabhesajja`,
             `pari`,
             `kkhārānup`,
             `padā`,
@@ -126,5 +130,29 @@
             "kamma",
             "kameleon",
         ]);
+    });
+    it("TESTTESThyphenate(word) => handles ekaṁ", ()=>{
+        var hyphen = "\u00ad";
+        var ph = new PaliHyphenator({
+            maxWord: 5,
+            minWord: 2,
+            hyphen,
+            verbose: "",
+        });
+
+        // should not break 
+        should("ekaṁ".length).equal(4);
+        should.deepEqual(ph.hyphenate("ekaṁ").split(hyphen), [
+            "ekaṁ", ]);
+
+        // should break 
+        should.deepEqual(ph.hyphenate("ekamantaṁ").split(hyphen), [
+            "eka", "man", "taṁ", ]);
+        should.deepEqual(ph.hyphenate("ekamanso").split(hyphen), [
+            "eka", "manso", ]);
+        should.deepEqual(ph.hyphenate("Ekamidāhaṁ").split(hyphen), [
+            "Ekami", "dāhaṁ", ]);
+        should.deepEqual(ph.hyphenate("ekacce").split(hyphen), [
+            "ekac", "ce", ]);
     });
 });

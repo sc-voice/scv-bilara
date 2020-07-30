@@ -20,7 +20,7 @@
         'diṭṭhi',
         'dukkha',
         'dūpama',
-        'eka',
+        //'eka',
         'gamā',
         'gatā',
         'giri',
@@ -84,9 +84,11 @@
         constructor(opts={}) {
             // options
             this.hyphen = opts.hyphen || "\u00ad";
-            this.maxWord = opts.maxWord || 30;
+            this.maxWord = opts.maxWord || 25;
             this.minWord = opts.minWord || 5;
+            this.chunkLen = this.minWord * 2 + 1;
             this.atomic = opts.atomic || atomic;
+            this.verbose = opts.verbose;
 
             // instance
             var patVowels = `(${VOWELS.split('').join("|")})`;
@@ -109,55 +111,79 @@
         hyphenate(word, opts) {
             var {
                 hyphen,
-                minWord,
+                chunkLen,
                 maxWord,
                 reAtomic,
                 reIsAtomic,
+                verbose,
             } = Object.assign({}, this, opts);
+            if (word.length <= maxWord) {
+                return word;
+            }
+            var v = typeof verbose === 'string'
+                ? verbose === word
+                : !!verbose;
             var atomicWords = word.replace(reAtomic, "-$1-")
                 .replace('--', '-')
-                .replace(/^-/, '')
+                .replace(/^(.?)-/, '$1')
                 .replace(/-$/, '');
             var that = this;
-            return atomicWords.split('-').map(w => reIsAtomic.test(w)
-                ? w
-                : that._hyphenate(w, hyphen, minWord, maxWord)
+            v && console.log(`hyphenate(${word}) ${atomicWords}`);
+            return atomicWords.split('-')
+                .map(chunk => reIsAtomic.test(chunk)
+                    ? chunk
+                    : that._hyphenate(chunk, hyphen, chunkLen, v)
             ).join(hyphen);
         }
 
-        _hyphenate(word, hyphen, minWord, maxWord) {
-            var len = word.length;
-            if (len < 2*minWord) {
-                return word;
+        _hyphenate(chunk, hyphen, chunkLen, verbose) {
+            var len = chunk.length;
+            var half = Math.trunc(len/2);
+            var log = p => {
+                var left = chunk.substring(0,half);
+                var right = chunk.substring(half);
+                console.log(
+                    `hyphenate${p} (${len}/${chunkLen}) ${left}-${right}`);
+            };
+            if (len <= chunkLen) {
+                verbose && log('0');
+                return chunk;
             }
-            var half = Math.round(len/2);
-            var cLeft = word.charAt(half-1);
-            var cRight = word.charAt(half);
+            var cLeft = chunk.charAt(half-1);
+            var cRight = chunk.charAt(half);
+
             if (PaliHyphenator.isVowel(cLeft)) {
                 if (PaliHyphenator.isVowel(cRight)) {
-                } else {
+                    // half is fine
+                    verbose && log('1.1');
+                } else if (PaliHyphenator.isVowel(chunk.charAt(half+1))) {
+                    // half is fine
+                    verbose && log('1.2');
+                } else { // two consonants
+                    half++;
+                    verbose && log('1.3');
                 }
             } else {
                 if (PaliHyphenator.isVowel(cRight)) {
                     if (cLeft === 'h') {
                         half++;
+                        verbose && log('2.1.1');
                     } else {
                         half--;
+                        verbose && log('2.1.2');
                     }
                 } else if ( cLeft === cRight ) {
                     // doubled consonant
+                    verbose && log('2.2');
                 } else {
-                    half--;
+                    //half--;
+                    verbose && log('2.3');
                 }
             }
-            var left = word.substring(0, half);
-            var right = word.substring(half);
-            var left = left.length > maxWord 
-                ? this._hyphenate(left, hyphen, minWord, maxWord)
-                : left;
-            var right = right.length > maxWord
-                ? this._hyphenate(right, hyphen, minWord, maxWord) 
-                : right;
+            var left = chunk.substring(0, half);
+            var right = chunk.substring(half);
+            var left = this._hyphenate(left, hyphen, chunkLen, verbose);
+            var right = this._hyphenate(right, hyphen, chunkLen, verbose);
             return `${left}${hyphen}${right}`;
         }
 
