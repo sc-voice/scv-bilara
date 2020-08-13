@@ -990,6 +990,7 @@ ruhm
 rundum
 runzelige
 rute
+same
 schädlich
 schädlinge
 schätze
