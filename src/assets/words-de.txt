@@ -808,6 +808,9 @@ mängeln
 mannhafter
 männlicher
 mäßigung
+meditation
+meditationen
+meditationsgegenstand
 meditieren
 meditierend
 meditiert
@@ -1404,6 +1407,7 @@ vollständig
 vom
 von
 vor
+voran
 vorbei
 vorbrächten
 vordringen
@@ -1427,6 +1431,13 @@ vorwerfen
 vorwürfe
 wecken
 weckt
+wilde
+wilden
+wilder
+wildes
+wildnis
+wildnisnonne
+wildpark
 wurzel
 zudringlich
 zuflucht
