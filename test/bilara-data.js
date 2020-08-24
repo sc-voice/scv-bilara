@@ -780,12 +780,18 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("readBlurb(...) => blurb for language", done=>{
+    it("TESTTESTreadBlurb(...) => blurb for language", done=>{
         (async function() { try {
+            var bd = new BilaraData({
+                logLevel: 'info',
+            });
             await bd.initialize();
             var reAN3_1 = /Fools are dangerous, but the wise are safe/;
+            var reAN5_108 = /Five factors of a worthy mendicant./;
 
             // full arguments
+            var blurb = await bd.readBlurb({suid:'an5.108', lang:'en'});
+            should(blurb).match(reAN5_108);
             var blurb = await bd.readBlurb({suid:'an3.1', lang:'en'});
             should(blurb).match(reAN3_1);
 

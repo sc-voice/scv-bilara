@@ -62,7 +62,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESThyphenate(word) => handles MN142", ()=>{
+    it("hyphenate(word) => handles MN142", ()=>{
         var word = [
             "abhivādanapaccuṭṭhānaañjalikammasāmīci",
             "kammacīvarapiṇḍapātasenāsanagilānappa",

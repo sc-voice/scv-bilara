@@ -115,7 +115,7 @@
                         maxBuffer: MAXBUFFER,
                     };
                     var res = execSync(cmd, execOpts);
-                    that.log(`sync() => ${res}`);
+                    that.log(`sync() ${cmd} => ${res}`);
                     resolve(that);
                 } catch(e) {reject(e);} })();
             });

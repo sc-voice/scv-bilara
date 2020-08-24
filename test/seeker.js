@@ -196,7 +196,7 @@
             done();
         } catch(e) { done(e); } })();
     });
-    it("keywordSearch(...) limits results", done=>{
+    it("TESTTESTkeywordSearch(...) limits results", done=>{
         (async function() { try {
             var lang = 'en';
             var pattern = Seeker.normalizePattern('suffering joy faith');
@@ -210,9 +210,9 @@
                 method: "keywords",
                 lang: 'en',
                 keywordsFound: {
-                    faith: 398,
-                    joy: 148,
-                    suffering: 794,
+                    faith: 403,
+                    joy: 151,
+                    suffering: 802,
                 },
             };
 
@@ -238,7 +238,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("keywordSearch(...) searches English", done=>{
+    it("TESTTESTkeywordSearch(...) searches English", done=>{
         (async function() { try {
             var pattern = Seeker.normalizePattern('suffering joy faith');
             var skr = await new Seeker({
@@ -253,9 +253,9 @@
                 lang: 'en',
                 method: 'keywords',
                 keywordsFound: {
-                    suffering: 794,
-                    joy: 148,
-                    faith: 398,
+                    suffering: 802,
+                    joy: 151,
+                    faith: 403,
                 },
             };
             should(data).properties(enExpected);
@@ -390,7 +390,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("keywordSearch(...) searches Deutsch, not Pali", done=>{
+    it("TESTTESTkeywordSearch(...) searches Deutsch, not Pali", done=>{
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,
@@ -404,7 +404,7 @@
                 maxResults: 10,
                 method: 'keywords',
                 keywordsFound: {
-                    hausbesitzer: 33,
+                    hausbesitzer: 35,
                     anathapindika: 37,
                 },
                 lines: [
@@ -1235,7 +1235,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("find(...) finds pli-tv-bi-vb-pj7", done=>{
+    it("TESTTESTfind(...) finds pli-tv-bi-vb-pj7", done=>{
         (async function() { try {
             var maxDoc = 3;
             var bilaraData = new BilaraData({
@@ -1259,11 +1259,13 @@
             should(res.maxDoc).equal(maxDoc);
             should.deepEqual(res.suttaRefs, [
                 'pli-tv-bi-vb-pj7/en/brahmali',
+                'pli-tv-pvr2.1/en/brahmali',
                 'pli-tv-bi-vb-ss4/en/brahmali',
+                'pli-tv-pvr2.2/en/brahmali',
             ]);
             should(res.resultPattern).equal(`\\b${pattern}`);
             should(res.lang).equal('en');
-            should(res.mlDocs.length).equal(2);
+            should(res.mlDocs.length).equal(3);
             done(); 
         } catch(e) {done(e);} })();
     });

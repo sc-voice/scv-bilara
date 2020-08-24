@@ -426,7 +426,7 @@ html: '<article id=\'sn1.1\'><header><ul><li class=\'division\'>{}</li>',
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESThyphenate(lang) => handles MN142", done=>{
+    it("hyphenate(lang) => handles MN142", done=>{
         (async function() { try {
             var bilaraPaths = [
                 rootPath('mn/mn142'),

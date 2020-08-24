@@ -33,6 +33,7 @@
             this.root = opts.root || path.join(LOCAL_DIR, this.name);
             this.log(`root:${this.root}`);
             this.lang = opts.lang || 'en';
+            this.branch = opts.branch || 'unpublished';
             var includeUnpublished = opts.includeUnpublished == null 
                 ? false : opts.includeUnpublished;
             this.publication = opts.publication || new Publication({
@@ -101,6 +102,8 @@
                     purge,
                     initializing: true,
                 });
+                var res = await that.execGit.branch(that.branch);
+                that.log(`initialize: ${res.stdout} ${res.stderr}`);
                 await that.publication.initialize();
 
                 let authPath = path.join(that.root, `_author.json`);
@@ -228,7 +231,7 @@
             var that = this;
             var purge = opts.purge || false;
             var initializing = opts.initializing || false;
-            var branches = opts.branches || ['unpublished'];
+            var branches = opts.branches || [this.branch];
             var pbody = (resolve, reject)=>(async function() { try {
                 if (purge) {
                     var cmd = `rm -rf ${that.name}`;
@@ -812,7 +815,9 @@
                 var json = await fs.promises.readFile(fpath);
                 var blurbs = json5.parse(json);
                 var key = `${nikaya}-blurbs:${suid}`;
-                resolve(blurbs[key] || blurbs[suid] || null);
+                var blurbKey = blurbs[key];
+                var blurbSuid = blurbs[suid];
+                resolve(blurbKey || blurbSuid || null);
             } catch(e) { reject(e); } })();
             return new Promise(pbody);
         }

@@ -45,7 +45,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("bilaraPaths(suid) returns local bilara paths",done=>{
+    it("TESTTESTbilaraPaths(suid) returns local bilara paths",done=>{
         (async function() { try {
             var bpm = await new BilaraPathMap().initialize();
 
@@ -66,6 +66,7 @@
                 types: BilaraPathMap.ALL_TYPES,
             });
             should.deepEqual(bps.map(bp=>bp.bilaraPath).sort(), [
+                commentPath('an/an1/an1.1-10','de','sabbamitta'),
                 commentPath('an/an1/an1.1-10','en','sujato'),
                 translationPath('an/an1/an1.1-10','de','sabbamitta'),
                 translationPath('an/an1/an1.1-10','en','sujato'),
@@ -77,6 +78,7 @@
                 types: BilaraPathMap.ALL_TYPES,
             });
             should.deepEqual(bps.map(bp=>bp.bilaraPath).sort(), [
+                commentPath('an/an1/an1.1-10','de','sabbamitta'),
                 translationPath('an/an1/an1.1-10','de','sabbamitta'),
             ]);
 
@@ -97,6 +99,7 @@
             });
             should.deepEqual(bps.map(bp=>bp.bilaraPath), [
                 translationPath('an/an1/an1.1-10','de','sabbamitta'),
+                commentPath('an/an1/an1.1-10','de','sabbamitta'),
             ]);
 
             var bps = bpm.bilaraPaths({
