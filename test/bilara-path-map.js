@@ -36,6 +36,7 @@
 "reference/pli/ms": "reference/pli/ms/sutta/dn/dn33_reference.json",
 "root/pli/ms": "root/pli/ms/sutta/dn/dn33_root-pli-ms.json",
 "variant/pli/ms": "variant/pli/ms/sutta/dn/dn33_variant-pli-ms.json",
+"comment/de/sabbamitta": commentPath('dn/dn33', 'de','sabbamitta'),
 "comment/en/sujato": commentPath('dn/dn33', 'en','sujato'),
 "translation/en/sujato": translationPath('dn/dn33','en','sujato'),
 "translation/my/my-team": translationPath('dn/dn33','my','my-team'),
@@ -45,7 +46,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTbilaraPaths(suid) returns local bilara paths",done=>{
+    it("bilaraPaths(suid) returns local bilara paths",done=>{
         (async function() { try {
             var bpm = await new BilaraPathMap().initialize();
 

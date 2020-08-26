@@ -196,7 +196,7 @@
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTkeywordSearch(...) limits results", done=>{
+    it("keywordSearch(...) limits results", done=>{
         (async function() { try {
             var lang = 'en';
             var pattern = Seeker.normalizePattern('suffering joy faith');
@@ -238,7 +238,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTkeywordSearch(...) searches English", done=>{
+    it("keywordSearch(...) searches English", done=>{
         (async function() { try {
             var pattern = Seeker.normalizePattern('suffering joy faith');
             var skr = await new Seeker({
@@ -390,7 +390,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTkeywordSearch(...) searches Deutsch, not Pali", done=>{
+    it("keywordSearch(...) searches Deutsch, not Pali", done=>{
         (async function() { try {
             var skr = await new Seeker({
                 logLevel,
@@ -404,7 +404,7 @@
                 maxResults: 10,
                 method: 'keywords',
                 keywordsFound: {
-                    hausbesitzer: 35,
+                    hausbesitzer: 36,
                     anathapindika: 37,
                 },
                 lines: [
@@ -1235,7 +1235,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTfind(...) finds pli-tv-bi-vb-pj7", done=>{
+    it("find(...) finds pli-tv-bi-vb-pj7", done=>{
         (async function() { try {
             var maxDoc = 3;
             var bilaraData = new BilaraData({
@@ -1259,9 +1259,11 @@
             should(res.maxDoc).equal(maxDoc);
             should.deepEqual(res.suttaRefs, [
                 'pli-tv-bi-vb-pj7/en/brahmali',
+                'pli-tv-pvr2.9/en/brahmali',
                 'pli-tv-pvr2.1/en/brahmali',
                 'pli-tv-bi-vb-ss4/en/brahmali',
                 'pli-tv-pvr2.2/en/brahmali',
+                'pli-tv-pvr2.10/en/brahmali',
             ]);
             should(res.resultPattern).equal(`\\b${pattern}`);
             should(res.lang).equal('en');

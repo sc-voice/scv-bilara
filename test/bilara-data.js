@@ -121,7 +121,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("sync() purges and refreshes repo", (done) => {
+    it("TESTTESTsync() purges and refreshes repo", (done) => {
         (async function() { try {
             var name = "test-repo";
             var bd = new BilaraData({name});
@@ -780,7 +780,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTreadBlurb(...) => blurb for language", done=>{
+    it("readBlurb(...) => blurb for language", done=>{
         (async function() { try {
             var bd = new BilaraData({
                 logLevel: 'info',
