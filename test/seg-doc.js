@@ -3,29 +3,27 @@
     const fs = require('fs');
     const path = require('path');
     const tmp = require('tmp');
+    const { logger, LogInstance } = require('log-instance');
     const {
         FuzzyWordSet,
         SegDoc,
     } = require("../index");
-    const {
-        logger,
-    } = require("just-simple").JustSimple;
     this.timeout(5*1000);
-    var logLevel = false;
 
     it("default ctor", () => {
-        var trans = new SegDoc();
-        should(trans).properties({
+        var sd = new SegDoc();
+        should(sd).properties({
             author: undefined,
             lang: undefined,
-            logLevel: 'info',
             segMap: {},
             suid: undefined,
             bilaraPath: undefined,
 
         });
+        should(sd.logger).equal(logger);
     });
     it("custom ctor", () => {
+        var logger = new LogInstance();
         var suid = 'dn33';
         var lang = 'en';
         var author = 'sujato';
@@ -33,30 +31,27 @@
             'dn33:0.1': "test dn33",
         };
         var bilaraPath = 'test-path';
-        var trans = new SegDoc({
+        var sd = new SegDoc({
             author,
             lang,
-            logLevel,
+            logger,
             segMap,
             suid,
             bilaraPath,
-
         });
-        should(trans).properties({
+        should(sd).properties({
             author: 'sujato',
             lang: 'en',
-            logLevel,
             segMap,
             suid: 'dn33',
             bilaraPath,
-
         });
+        should(sd.logger).equal(logger);
     });
     it("load(...) loads SegDoc file", done=>{
         (async function() { try {
             var dn33 = new SegDoc({
                 bilaraPath: 'data/dn33.json',
-                logLevel,
             });
             var res = await dn33.load(__dirname);
             should(dn33.segMap['dn33:1.10.31'])
@@ -67,7 +62,6 @@
     it("loadSync(...) loads SegDoc file", ()=>{
         var dn33 = new SegDoc({
             bilaraPath: 'data/dn33.json',
-            logLevel,
         });
         should(dn33.loadSync(__dirname)).equal(dn33);
         should(dn33.segMap['dn33:1.10.31'])
@@ -89,7 +83,6 @@
         var tmpObj = tmp.dirSync();
         var dn33 = new SegDoc({
             bilaraPath: 'data/dn33.json',
-            logLevel,
         });
         dn33.loadSync(__dirname);
         dn33.bilaraPath = 'dn33.json';
@@ -111,7 +104,6 @@
             suid: 'sn1.1',
             lang: 'en',
             bilaraPath: 'data/en_sn1.1.json',
-            logLevel,
         }).loadSync(__dirname);
         var segments = sutta.segments();
         should.deepEqual(segments[0],{
@@ -136,7 +128,6 @@
             suid: 'an1.1-10',
             lang: 'en',
             bilaraPath: 'data/en_an1.1-10.json',
-            logLevel,
         }).loadSync(__dirname);
         var scids = sutta.scids();
         should.deepEqual(scids.slice(0,15), [
@@ -178,12 +169,10 @@
         var fws = new FuzzyWordSet();
         var dn33 = new SegDoc({
             bilaraPath: 'data/dn33.json',
-            logLevel,
         });
         dn33.loadSync(__dirname);
         var dn33pli = new SegDoc({
             bilaraPath: 'data/dn33_pli.json',
-            logLevel,
         });
         dn33pli.loadSync(__dirname);
 

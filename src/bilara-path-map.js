@@ -1,10 +1,7 @@
 (function(exports) {
     const fs = require('fs');
     const path = require('path');
-    const {
-        logger,
-        LOCAL_DIR,
-    } = require('just-simple').JustSimple;
+    const { LOCAL_DIR, } = require('just-simple').JustSimple;
     const BilaraPath = require('./bilara-path');
     const STUBFILESIZE = 5;
     const ROOTMS_FOLDER = path.join(LOCAL_DIR, "bilara-data", 

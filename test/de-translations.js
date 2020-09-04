@@ -3,13 +3,11 @@
     const fs = require('fs');
     const path = require('path');
     const tmp = require('tmp');
+    const { logger } = require('log-instance');
     const {
         DETranslation,
         SegDoc,
     } = require("../index");
-    const {
-        logger,
-    } = require("just-simple").JustSimple;
     const logLevel = false;
 
     it("default ctor", () => {
@@ -17,12 +15,12 @@
         should(trans).properties({
             author: 'sabbamitta',
             lang: 'de',
-            logLevel: 'info',
             segMap: {},
             suid: undefined,
             source: undefined,
 
         });
+        should(trans.logger).equal(logger);
     });
     it("custom ctor", () => {
         var suid = 'an1.1-10';

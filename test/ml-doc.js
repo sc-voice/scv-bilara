@@ -11,9 +11,6 @@
         BilaraData,
         BilaraPath,
     } = require("../index");
-    const {
-        logger,
-    } = require("just-simple").JustSimple;
     this.timeout(5*1000);
     var logLevel = false;
     var bd = new BilaraData();

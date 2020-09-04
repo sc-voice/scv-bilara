@@ -3,10 +3,7 @@
     const {
         SuttaCentralId,
     } = require("../index");
-    const {
-        logger,
-        LOCAL_DIR,
-    } = require("just-simple").JustSimple;
+    const { LOCAL_DIR, } = require("just-simple").JustSimple;
     const logLevel = false;
 
     const assertLess = (cmp,a,b) => {

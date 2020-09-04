@@ -1,11 +1,8 @@
 (function(exports) {
     const fs = require("fs");
     const path = require("path");
-    const {
-        js,
-        logger,
-        LOCAL_DIR,
-    } = require('just-simple').JustSimple;
+    const { logger } = require('log-instance');
+    const { js, LOCAL_DIR, } = require('just-simple').JustSimple;
     const BilaraPath = require('./bilara-path');
     const Unicode = require('./unicode');
     const Pali = require('./pali');
@@ -14,6 +11,7 @@
 
     class MLDoc {
         constructor(opts={}) {
+            (opts.logger || logger).logInstance(this, opts);
             var {
                 bilaraPaths,
             } = opts;
@@ -30,7 +28,6 @@
             Object.defineProperty(this, "unicode", {
                 value: opts.unicode || new Unicode(),
             });
-            logger.logInstance(this, opts);
         }
 
         static compare(m1,m2) {

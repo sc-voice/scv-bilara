@@ -7,9 +7,9 @@
     } = fs.promises;
     const {
         js,
-        logger,
         LOCAL_DIR,
     } = require('just-simple').JustSimple;
+    const { logger } = require("log-instance");
     const {
         execSync,
     } = require('child_process');
@@ -28,7 +28,7 @@
 
     class BilaraData {
         constructor(opts={}) {
-            logger.logInstance(this, opts);
+            (opts.logger || logger).logInstance(this, opts);
             this.name = opts.name || 'bilara-data';
             this.root = opts.root || path.join(LOCAL_DIR, this.name);
             this.log(`root:${this.root}`);
@@ -43,7 +43,7 @@
             this.bilaraPathMap = this.publication.bilaraPathMap;
             this.execGit = opts.execGit || new ExecGit({
                 repo: `https://github.com/sc-voice/${this.name}.git`,
-                logLevel: this.logLevel,
+                logger: this,
             });
             this.languages = opts.languages || [ 'pli', this.lang ];
             this.authors = {};
@@ -351,6 +351,7 @@
         }
 
         loadSegDoc(...args) {
+            var that = this;
             var loadArgs = this.loadArgs(args);
             var {
                 verbose,
@@ -376,8 +377,8 @@
                         cmp = a.author.localeCompare(b.author);
                     }
                 } catch(e) {
-                    logger.error(`a:${js.simpleString(a)} `);
-                    logger.error(`b:${js.simpleString(b)} `);
+                    that.error(`a:${js.simpleString(a)} `);
+                    that.error(`b:${js.simpleString(b)} `);
                     throw e;
                 }
             });
@@ -801,12 +802,9 @@
                 }
                 if (!fs.existsSync(fpath)) {
                     if (lang !== 'en') {
-                        var enBlurb = await 
-                            that.readBlurb({suid,lang:'en'});
+                        var enBlurb = await that.readBlurb({suid,lang:'en'});
                         if (enBlurb) {
-                            logger.info(
-                                `Not found: ${fpath}. Using en blurb`);
-
+                            that.info(`Not found: ${fpath}. Using en blurb`);
                         }
                         resolve(enBlurb);
                     }

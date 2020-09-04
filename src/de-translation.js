@@ -1,10 +1,7 @@
 (function(exports) {
     const fs = require("fs");
     const path = require("path");
-    const {
-        js,
-        logger,
-    } = require('just-simple').JustSimple;
+    const { js, } = require('just-simple').JustSimple;
     const SegDoc = require('./seg-doc');
     const RE_TAG = /^:[^:]+:/i;
 

@@ -1,24 +1,20 @@
 (function(exports) {
     const fs = require("fs");
     const path = require("path");
-    const {
-        js,
-        logger,
-    } = require('just-simple').JustSimple;
+    const { logger } = require('log-instance');
+    const { js, } = require('just-simple').JustSimple;
     const FuzzyWordSet = require('./fuzzy-word-set');
     const SuttaCentralId = require('./sutta-central-id');
     const Unicode = require('./unicode');
 
     class SegDoc {
         constructor(opts={}) {
+            (opts.logger || logger).logInstance(this, opts);
             this.suid = opts.suid;
             this.lang = opts.lang;
             this.author = opts.author;
             this.bilaraPath = opts.bilaraPath;
             this.segMap = opts.segMap || {};
-            logger.logInstance(this, {
-                logLevel: opts.logLevel === undefined ? 'info' : opts.logLevel,
-            });
         }
 
         scids() {

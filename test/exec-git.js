@@ -8,11 +8,7 @@
     const {
         ExecGit,
     } = require("../index");
-    const {
-        js,
-        logger,
-        LOCAL_DIR,
-    } = require("just-simple").JustSimple;
+    const { js, LOCAL_DIR, } = require("just-simple").JustSimple;
     const TEST_REPO = "git@github.com:sc-voice/test-repo.git";
     const TEST_REPOPATH = path.join(LOCAL_DIR, 'test-repo');
     this.timeout(10*1000);

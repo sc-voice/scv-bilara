@@ -1,11 +1,8 @@
 (function(exports) {
     const fs = require("fs");
     const path = require("path");
-    const {
-        js,
-        logger,
-        LOCAL_DIR,
-    } = require('just-simple').JustSimple;
+    const { logger } = require('log-instance');
+    const { js, LOCAL_DIR, } = require('just-simple').JustSimple;
     const {
         exec,
         execSync,
@@ -16,12 +13,12 @@
 
     class ExecGit {
         constructor(opts={}) {
+            (opts.logger || logger).logInstance(this, opts);
             this.cwd = opts.cwd || LOCAL_DIR;
             this.repo = opts.repo || BILARA_DATA_GIT;
             this.repoDir = path.basename(this.repo).replace(/\.git/,'');
             this.repoPath = opts.repoPath || 
                 path.join(LOCAL_DIR, this.repoDir);
-            logger.logInstance(this, opts);
         }
 
         static get DEFAULT_REPO() { return BILARA_DATA_GIT; }

@@ -5,11 +5,8 @@
     const {
         readFile,
     } = fs.promises;
-    const {
-        js,
-        logger,
-        LOCAL_DIR,
-    } = require('just-simple').JustSimple;
+    const { logger } = require('log-instance');
+    const { js, LOCAL_DIR, } = require('just-simple').JustSimple;
     const {
         execSync,
     } = require('child_process');
@@ -25,6 +22,7 @@
 
     class Publication {
         constructor(opts={}) {
+            (opts.logger || logger).logInstance(this, opts);
             this.name = opts.name || 'bilara-data';
             this.root = opts.root || path.join(LOCAL_DIR, this.name);
             this.bilaraPathMap = opts.bilaraPathMap || 
@@ -32,7 +30,6 @@
             this.lang = opts.lang || 'en';
             this.includeUnpublished = opts.includeUnpublished == null 
                 ? false : opts.includeUnpublished;
-            logger.logInstance(this, opts);
             this.authors = {};
             Object.defineProperty(this, "_sources", {
                 writable: true,

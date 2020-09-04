@@ -1,11 +1,8 @@
 (function(exports) {
     const fs = require('fs');
     const path = require('path');
-    const {
-        js,
-        logger,
-        LOCAL_DIR,
-    } = require('just-simple').JustSimple;
+    const { logger } = require('log-instance');
+    const { js, LOCAL_DIR, } = require('just-simple').JustSimple;
     const {
         exec,
     } = require('child_process');
@@ -27,8 +24,8 @@
 
     class Seeker {
         constructor(opts={}) {
+            (opts.logger || logger).logInstance(this, opts);
             var root = this.root = opts.root || BILARA_PATH;
-            logger.logInstance(this, opts);
             this.bilaraData = opts.bilaraData || new BilaraData(opts);
             this.includeUnpublished = opts.includeUnpublished ||
                 this.bilaraData.includeUnpublished;

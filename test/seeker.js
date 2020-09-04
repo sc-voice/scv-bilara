@@ -12,21 +12,17 @@
         Seeker,
         Unicode,
     } = require("../index");
-    const {
-        js,
-        logger,
-        LOCAL_DIR,
-    } = require("just-simple").JustSimple;
-    const logLevel = false;
+    const { js, LOCAL_DIR, } = require("just-simple").JustSimple;
+    const { logger, LogInstance } = require('log-instance');
     const SEEKEROPTS = {
-        logLevel,
     };
     var {
         translationPath,
         rootPath,
     } = BilaraPath;
     this.timeout(20*1000);
-    var bd = new BilaraData({ logLevel }); 
+    var bd = new BilaraData(); 
+    logger.level = 'warn';
     var en_suj = `translation/en/sujato/sutta/`;
     var de_sab = `translation/de/sabbamitta/sutta/`;
     var my_my = `translation/my/my-team/sutta/`;
@@ -38,25 +34,25 @@
     it("default ctor", ()=>{
         var skr = new Seeker();
         should(skr).properties({
-            logLevel: 'info',
             lang: 'en',
             root: BILARA_PATH,
             paliWords: undefined,
         });
+        should(skr.logger).equal(logger);
     });
     it("custom ctor", ()=>{
-        var logLevel = 'warn';
+        var logger = new LogInstance();
         var lang = 'de';
         var paliWords = new FuzzyWordSet();
         var skr = new Seeker({
             root: '/tmp/test',
-            logLevel,
+            logger,
             lang,
             paliWords,
         });
         should(skr.root).equal('/tmp/test');
+        should(skr.logger).equal(logger);
         should(skr).properties({
-            logLevel,
             lang,
         });
         should(skr.paliWords).instanceOf(FuzzyWordSet);
@@ -202,7 +198,6 @@
             var pattern = Seeker.normalizePattern('suffering joy faith');
             var maxResults = 3;
             var skr = await new Seeker({
-                logLevel,
                 maxResults,
                 lang,
             }).initialize(`dbg 1`);
@@ -242,7 +237,6 @@
         (async function() { try {
             var pattern = Seeker.normalizePattern('suffering joy faith');
             var skr = await new Seeker({
-                logLevel,
                 lang: 'de', // Deutsch
             }).initialize(`dbg 2`);
             var data = await skr.keywordSearch({ 
@@ -288,7 +282,6 @@
             var maxResults = 2;
             var skr = await new Seeker({
                 maxResults,
-                logLevel,
             }).initialize();
             var expected = {
                 method: 'keywords',
@@ -327,7 +320,6 @@
             var maxResults = 2;
             var skr = await new Seeker({
                 maxResults,
-                logLevel,
             }).initialize();
             var expected = {
                 method: 'keywords',
@@ -358,7 +350,6 @@
             var skr = await new Seeker({
                 lang: 'de',
                 maxResults,
-                logLevel,
             }).initialize();
             var expected = {
                 method: 'keywords',
@@ -393,7 +384,6 @@
     it("keywordSearch(...) searches Deutsch, not Pali", done=>{
         (async function() { try {
             var skr = await new Seeker({
-                logLevel,
                 lang: 'en', // English default
             }).initialize();
             var expected = {
@@ -446,7 +436,6 @@
     it("find(...) scores relevance", done=>{
         (async function() { try {
             var skr = await new Seeker({
-                logLevel,
                 lang: 'en', // English default
             }).initialize();
 
@@ -468,12 +457,12 @@
     });
     it("patternLanguage(...) => search language context",done=>{
         (async function() { try {
-            var skr = await new Seeker({
-                logLevel,
-            }).initialize();
+            var skr = await new Seeker().initialize();
 
-            should(skr.patternLanguage('buddha was staying near benares', 'de')).equal('en');
-            should(skr.patternLanguage('buddha was staying near benares', 'en')).equal('en');
+            should(skr.patternLanguage('buddha was staying near benares', 'de'))
+                .equal('en');
+            should(skr.patternLanguage('buddha was staying near benares', 'en'))
+                .equal('en');
 
             // Sutta references
             should(skr.patternLanguage('mn1','de')).equal('de');
@@ -517,7 +506,6 @@
             var pattern = 'root of suffering';
             var maxResults = 3;
             var skr = await new Seeker({
-                logLevel,
                 maxResults,
                 lang,
             }).initialize();
@@ -563,7 +551,6 @@
             var skr = await new Seeker({
                 lang,
                 maxResults,
-                logLevel,
             }).initialize();
 
             var data = await skr.phraseSearch({ 
@@ -597,7 +584,6 @@
             var skr = await new Seeker({
                 maxResults,
                 maxDoc,
-                logLevel,
             }).initialize();
             should.deepEqual(skr.languages, ['pli','en']);
 
@@ -633,9 +619,7 @@
     });
     it("find(...) finds thag1.10", done=>{
         (async function() { try {
-            var skr = await new Seeker({
-                logLevel,
-            }).initialize();
+            var skr = await new Seeker().initialize();
 
             var res = await skr.find({
                 pattern: "thag1.10",
@@ -650,9 +634,7 @@
     });
     it("find(...) orders sutta references found", done=>{
         (async function() { try {
-            var skr = await new Seeker({
-                logLevel,
-            }).initialize();
+            var skr = await new Seeker().initialize();
 
             var res = await skr.find({
                 pattern: "sn29.9-999",
@@ -672,7 +654,6 @@
             var maxResults = 3;
             var skr = await new Seeker({
                 maxResults,
-                logLevel,
             }).initialize();
 
             // lists of suttas with ranges
@@ -704,7 +685,6 @@
             var maxResults = 3;
             var skr = await new Seeker({
                 maxResults,
-                logLevel,
             }).initialize();
 
             // lists of suttas with ranges
@@ -741,7 +721,6 @@
             var maxResults = 3;
             var skr = await new Seeker({
                 maxResults,
-                logLevel,
             }).initialize();
 
             // lists of suttas with ranges
@@ -767,7 +746,7 @@
                 a[scid] = a.hasOwnProperty(scid) ? a[scid] + 1 : 1;
                 return a;
             }, {}), {
-                "an1.2:0.1" : 1,
+                "an1.2:1.0" : 1,
                 "an1.2:1.1" : 1,
                 "an1.2:1.2" : 1,
                 "an1.2:1.3" : 1,
@@ -780,7 +759,6 @@
             var maxDoc = 3;
             var skr = await new Seeker({
                 maxDoc,
-                logLevel,
             }).initialize();
 
             // lists of suttas with ranges
@@ -805,7 +783,6 @@
             var maxResults = 3;
             var skr = await new Seeker({
                 maxResults,
-                logLevel,
             }).initialize();
             should.deepEqual(skr.languages, ['pli','en']);
 
@@ -839,7 +816,6 @@
             var skr = await new Seeker({
                 maxDoc,
                 maxResults,
-                logLevel,
             }).initialize();
 
             var pattern = "jhana";
@@ -866,7 +842,6 @@
             var maxResults = 3;
             var skr = await new Seeker({
                 maxResults,
-                logLevel,
             }).initialize();
 
             var pattern = "root of suffering"; 
@@ -919,7 +894,6 @@
             var maxDoc = 3;
             var skr = await new Seeker({
                 maxDoc,
-                logLevel,
             }).initialize();
 
             var pattern = `übung`;
@@ -950,7 +924,6 @@
             var maxResults = 3;
             var skr = await new Seeker({
                 maxResults,
-                logLevel,
             }).initialize();
 
             var pattern = "sabbamitta"; 
@@ -971,7 +944,6 @@
     it("find(...) => accepts embedded options", done=>{
         (async function() { try {
             var skr = await new Seeker({
-                logLevel,
             }).initialize();
 
             var pattern = "sabbamitta -ml 3 -sl en -l de -ml 2"; 
@@ -989,7 +961,6 @@
             var maxDoc = 50;
             var skr = await new Seeker({
                 maxDoc,
-                logLevel,
             }).initialize();
 
             var pattern = "darkness light"; 
@@ -1008,7 +979,6 @@
             var maxDoc = 3;
             var skr = await new Seeker({
                 maxDoc,
-                logLevel,
             }).initialize();
 
             var pattern = "wurzel leidens"; 
@@ -1035,9 +1005,7 @@
     it("find(...) => finds segments with all keywords", done=>{
         (async function() { try {
             var maxDoc = 3;
-            var skr = await new Seeker({
-                logLevel,
-            }).initialize();
+            var skr = await new Seeker().initialize();
 
             var pattern = "red yellow"; 
             var res = await skr.find({
@@ -1083,8 +1051,7 @@
     it("find(...) => de, Benares", done=>{
         (async function() { try {
             var lang = 'de';
-            var logLevel = false;
-            var skr = await new Seeker({logLevel}).initialize();
+            var skr = await new Seeker().initialize();
             var res = await skr.find({
                 pattern: "Buddha was staying near Benares",
                 maxResults: 3,
@@ -1114,8 +1081,7 @@
     it("find(...) => no first point", done=>{
         (async function() { try {
             var lang = 'de';
-            var logLevel = 'info';
-            var skr = await new Seeker({logLevel}).initialize();
+            var skr = await new Seeker().initialize();
             var res = await skr.find({
                 pattern: "no first point",
                 maxResults: 3,
@@ -1146,7 +1112,6 @@
             var bilaraData = await bd.initialize();
             var skr = await new Seeker({
                 bilaraData,
-                logLevel,
             }).initialize();
             
             // English
@@ -1215,7 +1180,6 @@
             var skr = await new Seeker({
                 maxDoc,
                 bilaraData,
-                logLevel,
             }).initialize();
 
             // lists of suttas with ranges
@@ -1244,7 +1208,6 @@
             var skr = await new Seeker({
                 maxDoc,
                 bilaraData,
-                logLevel,
             }).initialize();
 
             // lists of suttas with ranges
@@ -1282,9 +1245,7 @@
     })
     it("find(...) finds an1.1 all types", done=>{
         (async function() { try {
-            var skr = await new Seeker({
-                logLevel,
-            }).initialize();
+            var skr = await new Seeker().initialize();
             var res = await skr.find({
                 pattern: "an1.1",
                 matchHighlight: false,
@@ -1313,9 +1274,7 @@
     });
     it("find(...) ignores translation stubs", done=>{
         (async function() { try {
-            var skr = await new Seeker({
-                logLevel,
-            }).initialize();
+            var skr = await new Seeker().initialize();
 
             var pattern = "root of suffering -ml 3 -l de"; 
             var verbose = true;
@@ -1332,9 +1291,7 @@
     });
     it("find(...) ignores chinese", done=>{
         (async function() { try {
-            var skr = await new Seeker({
-                logLevel,
-            }).initialize();
+            var skr = await new Seeker().initialize();
 
             var pattern = "wrong livelihood"; 
             var verbose = true;
@@ -1350,7 +1307,6 @@
         (async function() { try {
             var skr = await new Seeker({
                 root: TEST_BILARA_PATH,
-                logLevel,
             }).initialize();
 
             var pattern = "hindrance -ml 3 -sl en -l de"; 

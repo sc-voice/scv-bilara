@@ -3,11 +3,7 @@
     const {
         Unicode,
     } = require("../index");
-    const {
-        js,
-        logger,
-        LOCAL_DIR,
-    } = require("just-simple").JustSimple;
+    const { js, LOCAL_DIR, } = require("just-simple").JustSimple;
 
     it("default ctor", () => {
         var u = new Unicode();

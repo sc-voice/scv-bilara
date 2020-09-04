@@ -8,11 +8,8 @@ const {
     ExecGit,
 
 } = require('../../index');
-const {
-    js,
-    logger,
-    LOCAL_DIR,
-} = require('just-simple').JustSimple;
+const { js, LOCAL_DIR, } = require('just-simple').JustSimple;
+const { logger } = require('log-instance');
 
 
 (async function() { try {

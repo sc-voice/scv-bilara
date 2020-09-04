@@ -3,9 +3,6 @@
     const path = require('path');
     const FuzzyWordSet = require('./fuzzy-word-set');
     const { PaliHyphenator } = require('js-ebt');
-    const {
-        logger,
-    } = require('just-simple').JustSimple;
 
     var FWS_PALI;
 

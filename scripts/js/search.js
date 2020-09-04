@@ -1,11 +1,8 @@
 #!/usr/bin/env node
-const {
-    js,
-    logger,
-    LOCAL_DIR,
-} = require('just-simple').JustSimple;
+const { js, LOCAL_DIR, } = require('just-simple').JustSimple;
 const fs = require('fs');
 const path = require('path');
+const { logger } = require('log-instance');
 const {
     BilaraData,
     BilaraPath,
@@ -132,7 +129,7 @@ DESCRIPTION
 
 var pattern;
 var maxResults = 1000;
-var logLevel = false;
+var logLevel = 'warn';
 var color = 201;
 var outFormat = 'human';
 var showMatchesOnly = true;
@@ -401,9 +398,10 @@ function scriptEditor(res, pattern) {
     write_editor(res, `'+/${vipat}'`, 'vi');
 }
 
+logger.logLevel = logLevel;
+
 (async function() { try {
     var bilaraData = await new BilaraData({
-        logLevel,
         includeUnpublished,
     }).initialize();
 
@@ -411,7 +409,6 @@ function scriptEditor(res, pattern) {
         matchColor: color,
         maxResults,
         bilaraData,
-        logLevel,
     }).initialize();
     var matchHighlight = matchBash(color);
     var findOpts = {

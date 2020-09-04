@@ -2,9 +2,6 @@
     const fs = require('fs');
     const path = require('path');
     const FuzzyWordSet = require('./fuzzy-word-set');
-    const {
-        logger,
-    } = require('just-simple').JustSimple;
 
     var FWS_ENGLISH;
 
