@@ -6,6 +6,7 @@
         BilaraData,
         BilaraPath,
         BilaraPathMap,
+        MLDoc,
         Pali,
         English,
         FuzzyWordSet,
@@ -229,7 +230,7 @@
             `${en_suj}sn/sn12/sn12.23_translation-en-sujato.json:4`,
         ]);
     });
-    it("TESTTESTkeywordSearch(...) searches English", async()=>{
+    it("keywordSearch(...) searches English", async()=>{
         var pattern = Seeker.normalizePattern('suffering joy faith');
         var skr = await new Seeker({
             lang: 'de', // Deutsch
@@ -1017,207 +1018,6 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("findArgs(...) parses pattern string", done=>{
-        (async function() { try {
-            var bilaraData = await bd.initialize();
-            var skr = await new Seeker({
-                bilaraData,
-            }).initialize();
-            
-            // English
-            should.deepEqual(skr.findArgs(["root of suffering"]), {
-                lang: 'en',
-                languages: ['pli', 'en'],
-                matchHighlight: "\u001b[38;5;121m$&\u001b[0m",
-                maxDoc: 50,
-                maxResults: 1000,
-                minLang: 2,
-                pattern: "root of suffering",
-                searchLang: 'en',
-                showMatchesOnly: true,
-                sortLines: undefined,
-                tipitakaCategories: undefined,
-                types: ['root', 'translation'],
-                verbose: undefined,
-            });
-
-            // German
-            should.deepEqual(skr.findArgs([
-                "wurzel des leidens -ml3 -l de"
-            ]), {
-                lang: 'de',
-                languages: ['pli', 'en', 'de'],
-                matchHighlight: "\u001b[38;5;121m$&\u001b[0m",
-                maxDoc: 50,
-                maxResults: 1000,
-                minLang: 3,
-                pattern: "wurzel des leidens",
-                searchLang: 'de',
-                showMatchesOnly: true,
-                sortLines: undefined,
-                tipitakaCategories: undefined,
-                types: ['root', 'translation'],
-                verbose: undefined,
-            });
-
-            // German
-            should.deepEqual(skr.findArgs([
-                "wurzel des leidens -ml 3 -l de"
-            ]), {
-                lang: 'de',
-                languages: ['pli', 'en', 'de'],
-                matchHighlight: "\u001b[38;5;121m$&\u001b[0m",
-                maxDoc: 50,
-                maxResults: 1000,
-                minLang: 3,
-                pattern: "wurzel des leidens",
-                searchLang: 'de',
-                showMatchesOnly: true,
-                sortLines: undefined,
-                tipitakaCategories: undefined,
-                types: ['root', 'translation'],
-                verbose: undefined,
-            });
-            done(); 
-        } catch(e) {done(e);} })();
-    });
-    it("find(...) finds pli-tv-bi-vb-sk1-75", done=>{
-        (async function() { try {
-            var maxDoc = 3;
-            var bilaraData = new BilaraData({
-                includeUnpublished: true,
-            });
-            var skr = await new Seeker({
-                maxDoc,
-                bilaraData,
-            }).initialize();
-
-            // lists of suttas with ranges
-            var lang = 'en';
-            // The pattern resolves to 4 suttas, of which 3 are returned
-            var pattern = "pli-tv-bi-vb-sk1-75"; 
-            var res = await skr.find({
-                pattern,
-                lang,
-            });
-            should(res.method).equal('sutta_uid');
-            should(res.maxDoc).equal(maxDoc);
-            should.deepEqual(res.suttaRefs, ['pli-tv-bi-vb-sk1-75']);
-            should(res.resultPattern).equal(pattern);
-            should(res.lang).equal('en');
-            should(res.mlDocs.length).equal(1);
-            done(); 
-        } catch(e) {done(e);} })();
-    });
-    it("find(...) finds pli-tv-bi-vb-pj7", done=>{
-        (async function() { try {
-            var maxDoc = 3;
-            var bilaraData = new BilaraData({
-                includeUnpublished: true,
-            });
-            var skr = await new Seeker({
-                maxDoc,
-                bilaraData,
-            }).initialize();
-
-            // lists of suttas with ranges
-            var lang = 'en';
-            // The pattern resolves to 4 suttas, of which 3 are returned
-            var pattern = "ejected by a unanimous"; 
-            var res = await skr.find({
-                pattern,
-                lang,
-            });
-            should(res.method).equal('phrase');
-            should(res.maxDoc).equal(maxDoc);
-            should.deepEqual(res.suttaRefs, [
-                'pli-tv-bi-vb-pj7/en/brahmali',
-                'pli-tv-pvr2.9/en/brahmali',
-                'pli-tv-pvr2.1/en/brahmali',
-                'pli-tv-bi-vb-ss4/en/brahmali',
-                'pli-tv-pvr2.2/en/brahmali',
-                'pli-tv-pvr2.10/en/brahmali',
-            ]);
-            should(res.resultPattern).equal(`\\b${pattern}`);
-            should(res.lang).equal('en');
-            should(res.mlDocs.length).equal(3);
-            done(); 
-        } catch(e) {done(e);} })();
-    });
-    it("tipitakaRegExp(tc) => regexp for paths", ()=>{
-        var skr = new Seeker();
-        should(skr.tipitakaRegExp('su').toString())
-            .equal("/(\\/sutta\\/)/iu");
-        should(skr.tipitakaRegExp().toString())
-            .equal("/(\\/sutta\\/)/iu");
-        should(skr.tipitakaRegExp('bi,pj').toString())
-            .equal("/(-bi-|-pj)/iu");
-    })
-    it("find(...) finds an1.1 all types", done=>{
-        (async function() { try {
-            var skr = await new Seeker().initialize();
-            var res = await skr.find({
-                pattern: "an1.1",
-                matchHighlight: false,
-                lang: 'de',
-                types: BilaraPathMap.ALL_TYPES,
-            });
-            should(res.mlDocs.length).equal(1);
-            var segs = res.mlDocs[0].segments();
-            should.deepEqual(segs[0], {
-                scid: 'an1.1:0.1',
-                html: "<section class='range' id='an1.1-10'><header>"+
-                    "<ul><li class='division'>{}</li>",
-                pli: 'Aṅguttara Nikāya 1 ',
-                en: 'Numbered Discourses 1 ',
-                de: 'Nummerierte Lehrreden 1',
-                matched: true,
-            });
-
-            done(); 
-        } catch(e) {done(e);} })();
-    })
-    it("RegExp maches ubung", ()=>{
-        var re = /(?<=[\s,.:;"']|^)übung/iu;
-        var text = 'Wahrheit von der Übung, die zum Aufhören';
-        should(re.test(text)).equal(true);
-    });
-    it("find(...) ignores translation stubs", async()=>{
-        var skr = await new Seeker().initialize();
-
-        var pattern = "root of suffering -ml 3 -l de"; 
-        var verbose = true;
-        var res = await skr.find({
-            pattern,
-            //verbose,
-        });
-        should.deepEqual(res.suttaRefs, [
-            'sn42.11/en/sujato',
-        ]);
-        should(res.bilaraPaths.length).equal(3);
-    });
-    it("find(...) ignores chinese", async()=>{
-        var skr = await new Seeker().initialize();
-
-        var pattern = "wrong livelihood"; 
-        var verbose = true;
-        var res = await skr.find({
-            pattern,
-            //verbose,
-        });
-        should(res.bilaraPaths.length).equal(158);
-    });
-    it("find(...) => ignores SN46.36", async()=>{
-        var skr = await new Seeker({
-            root: TEST_BILARA_PATH,
-        }).initialize();
-
-        var pattern = "hindrance -ml 3 -sl en -l de"; 
-        var res = await skr.find({
-            pattern,
-        });
-        should.deepEqual(res.suttaRefs, []);
-    });
     it("findArgs(...) parses pattern string", async()=>{
         var bilaraData = await bd.initialize();
         var skr = await new Seeker({
@@ -1278,6 +1078,151 @@
             types: ['root', 'translation'],
             verbose: undefined,
         });
+    });
+    it("find(...) finds pli-tv-bi-vb-sk1-75", async()=>{
+        var maxDoc = 3;
+        var bilaraData = new BilaraData({
+            includeUnpublished: true,
+        });
+        var skr = await new Seeker({
+            maxDoc,
+            bilaraData,
+        }).initialize();
+
+        // lists of suttas with ranges
+        var lang = 'en';
+        // The pattern resolves to 4 suttas, of which 3 are returned
+        var pattern = "pli-tv-bi-vb-sk1-75"; 
+        var res = await skr.find({
+            pattern,
+            lang,
+        });
+        should(res.method).equal('sutta_uid');
+        should(res.maxDoc).equal(maxDoc);
+        should.deepEqual(res.suttaRefs, ['pli-tv-bi-vb-sk1-75']);
+        should(res.resultPattern).equal(pattern);
+        should(res.lang).equal('en');
+        should(res.mlDocs.length).equal(1);
+    });
+    it("find(...) finds pli-tv-bi-vb-pj7", async()=>{
+        var maxDoc = 3;
+        var bilaraData = new BilaraData({
+            includeUnpublished: true,
+        });
+        var skr = await new Seeker({
+            maxDoc,
+            bilaraData,
+        }).initialize();
+
+        // lists of suttas with ranges
+        var lang = 'en';
+        // The pattern resolves to 4 suttas, of which 3 are returned
+        var pattern = "ejected by a unanimous"; 
+        var res = await skr.find({
+            pattern,
+            lang,
+        });
+        should(res.method).equal('phrase');
+        should(res.maxDoc).equal(maxDoc);
+        should.deepEqual(res.suttaRefs, [
+            'pli-tv-bi-vb-pj7/en/brahmali',
+            'pli-tv-pvr2.9/en/brahmali',
+            'pli-tv-pvr2.1/en/brahmali',
+            'pli-tv-bi-vb-ss4/en/brahmali',
+            'pli-tv-pvr2.2/en/brahmali',
+            'pli-tv-pvr2.10/en/brahmali',
+        ]);
+        should(res.resultPattern).equal(`\\b${pattern}`);
+        should(res.lang).equal('en');
+        should(res.mlDocs.length).equal(3);
+    });
+    it("tipitakaRegExp(tc) => regexp for paths", ()=>{
+        var skr = new Seeker();
+        should(skr.tipitakaRegExp('su').toString())
+            .equal("/(\\/sutta\\/)/iu");
+        should(skr.tipitakaRegExp().toString())
+            .equal("/(\\/sutta\\/)/iu");
+        should(skr.tipitakaRegExp('bi,pj').toString())
+            .equal("/(-bi-|-pj)/iu");
+    })
+    it("find(...) finds an1.1 all types", async()=>{
+        var skr = await new Seeker().initialize();
+        var res = await skr.find({
+            pattern: "an1.1",
+            matchHighlight: false,
+            lang: 'de',
+            types: BilaraPathMap.ALL_TYPES,
+        });
+        should(res.mlDocs.length).equal(1);
+        var segs = res.mlDocs[0].segments();
+        should.deepEqual(segs[0], {
+            scid: 'an1.1:0.1',
+            html: "<section class='range' id='an1.1-10'><header>"+
+                "<ul><li class='division'>{}</li>",
+            pli: 'Aṅguttara Nikāya 1 ',
+            en: 'Numbered Discourses 1 ',
+            de: 'Nummerierte Lehrreden 1',
+            matched: true,
+        });
+    })
+    it("RegExp maches ubung", ()=>{
+        var re = /(?<=[\s,.:;"']|^)übung/iu;
+        var text = 'Wahrheit von der Übung, die zum Aufhören';
+        should(re.test(text)).equal(true);
+    });
+    it("find(...) ignores translation stubs", async()=>{
+        var skr = await new Seeker().initialize();
+
+        var pattern = "root of suffering -ml 3 -l de"; 
+        var verbose = true;
+        var res = await skr.find({
+            pattern,
+            //verbose,
+        });
+        should.deepEqual(res.suttaRefs, [
+            'sn42.11/en/sujato',
+        ]);
+        should(res.bilaraPaths.length).equal(3);
+    });
+    it("find(...) ignores chinese", async()=>{
+        var skr = await new Seeker().initialize();
+
+        var pattern = "wrong livelihood"; 
+        var verbose = true;
+        var res = await skr.find({
+            pattern,
+            //verbose,
+        });
+        should(res.bilaraPaths.length).equal(158);
+    });
+    it("find(...) => ignores SN46.36", async()=>{
+        var skr = await new Seeker({
+            root: TEST_BILARA_PATH,
+        }).initialize();
+
+        var pattern = "hindrance -ml 3 -sl en -l de"; 
+        var res = await skr.find({
+            pattern,
+        });
+        should.deepEqual(res.suttaRefs, []);
+    });
+    it("TESTTESTfind(...) finds 'alles leiden,...'", async()=>{
+        var bilaraData = await bd.initialize();
+        var verbose = 0;
+        var skr = await new Seeker({
+            bilaraData,
+        }).initialize();
+        var pattern = "alles leiden, das zustande kommt -ml3 -l de";
+        
+        var data = await skr.find({pattern, verbose});
+        should(data.resultPattern).equal(
+            '\\balles leiden, das zustande kommt');
+        should(data.method).equal('phrase');
+        should(data.mlDocs.length).equal(1);
+        var mld0 = data.mlDocs[0];
+        should(mld0.bilaraPaths[0])
+            .equal('root/pli/ms/sutta/sn/sn42/sn42.11_root-pli-ms.json');
+        should(mld0.score).equal(3.055);
     });
 
 })

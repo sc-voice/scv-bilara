@@ -256,7 +256,7 @@
             });
         }
 
-        phraseSearch(args) {
+        async phraseSearch(args) {
             this.validate();
             var that = this;
             var {
@@ -269,38 +269,34 @@
             } = args;
             lang = lang || language || this.lang;
             maxResults = maxResults == null ? this.maxResults : maxResults;
-            return new Promise((resolve, reject) => {
-                (async function() { try {
-                    if (pattern == null) {
-                        throw new Error(`phraseSearch() requires pattern`);
-                    }
-                    lang = searchLang == null
-                        ? that.patternLanguage(pattern, lang)
-                        : searchLang;
-                    if (lang === 'pli') {
-                        var romPat = that.unicode.romanize(pattern);
-                        var pat = romPat === pattern
-                            ? `\\b${Pali.romanizePattern(pattern)}` 
-                            : pattern;
-                    } else {
-                        var pat = `\\b${pattern}`;
-                    }
-                    that.log(`phraseSearch(${pat},${lang})`);
-                    var grepArgs = Object.assign({}, args, {
-                        pattern:pat,
-                        lang,
-                        maxResults,
-                        tipitakaCategories,
-                    });
-                    var lines = await that.grep(grepArgs);
-                    resolve({
-                        method: 'phrase',
-                        lang,
-                        pattern:pat,
-                        lines,
-                    });
-                } catch(e) { reject(e); }})();
+            if (pattern == null) {
+                throw new Error(`phraseSearch() requires pattern`);
+            }
+            lang = searchLang == null
+                ? that.patternLanguage(pattern, lang)
+                : searchLang;
+            if (lang === 'pli') {
+                var romPat = that.unicode.romanize(pattern);
+                var pat = romPat === pattern
+                    ? `\\b${Pali.romanizePattern(pattern)}` 
+                    : pattern;
+            } else {
+                var pat = `\\b${pattern}`;
+            }
+            that.log(`phraseSearch(${pat},${lang})`);
+            var grepArgs = Object.assign({}, args, {
+                pattern:pat,
+                lang,
+                maxResults,
+                tipitakaCategories,
             });
+            var lines = await that.grep(grepArgs);
+            return {
+                method: 'phrase',
+                lang,
+                pattern:pat,
+                lines,
+            }
         }
 
         keywordSearch(args) {
@@ -502,9 +498,10 @@
             }
         }
 
-        find(...args) {
+        async find(...args) {
+            var that = this;
             var msStart = Date.now();
-            var findArgs = this.findArgs(args);
+            var findArgs = that.findArgs(args);
             var {
                 pattern,
                 searchLang,
@@ -520,136 +517,125 @@
                 types,
                 verbose,
             } = findArgs;
-            var that = this;
             var bd = that.bilaraData;
-            var pbody = (resolve, reject) => {(async function() { try {
-                var resultPattern = pattern;
-                var scoreDoc = true;
-                if (SuttaCentralId.test(pattern)) {
-                    verbose && console.log(`findArgs SuttaCentralId`, 
-                        js.simpleString(findArgs));
-                    maxResults = maxResults || this.maxResults;
-                    var {
-                        method,
-                        uids,
-                        suttaRefs,
-                    } = bd.sutta_uidSearch(pattern, maxResults, lang);
-                    scoreDoc = false;
-                } else {
-                    var method = 'phrase';
-                    var searchOpts = {
-                        pattern, 
-                        searchLang,
-                        maxResults, 
-                        lang, 
-                        showMatchesOnly,
-                        tipitakaCategories,
-                        verbose,
-                    };
+            var resultPattern = pattern;
+            var scoreDoc = true;
+            if (SuttaCentralId.test(pattern)) {
+                verbose && console.log(`findArgs SuttaCentralId`, 
+                    js.simpleString(findArgs));
+                maxResults = maxResults || this.maxResults;
+                var {
+                    method,
+                    uids,
+                    suttaRefs,
+                } = bd.sutta_uidSearch(pattern, maxResults, lang);
+                scoreDoc = false;
+            } else {
+                var method = 'phrase';
+                var searchOpts = {
+                    pattern, 
+                    searchLang,
+                    maxResults, 
+                    lang, 
+                    showMatchesOnly,
+                    tipitakaCategories,
+                    verbose,
+                };
 
+                var {
+                    lines,
+                    pattern: resultPattern,
+                } = await that.phraseSearch(searchOpts);
+                if (lines.length) {
+                    verbose && console.log(`findArgs phrase`, 
+                        js.simpleString(findArgs), 
+                    );
+                } else {
+                    verbose && that.log(`findArgs keywords`, 
+                        js.simpleString(findArgs));
+                    var method = 'keywords';
+                    var data = await that.keywordSearch(searchOpts);
                     var {
                         lines,
-                        pattern: resultPattern,
-                    } = await that.phraseSearch(searchOpts);
-                    if (lines.length) {
-                        verbose && console.log(`findArgs phrase`, 
-                            js.simpleString(findArgs), 
-                        );
-                    } else {
-                        verbose && console.log(`findArgs keywords`, 
-                            js.simpleString(findArgs));
-                        var method = 'keywords';
-                        var data = await that.keywordSearch(searchOpts);
-                        var {
-                            lines,
-                            resultPattern,
-                        } = data;
-                    }
-                    sortLines && lines.sort(sortLines);
-                    var suttaRefs = lines.map(line => 
-                        BilaraPath.pathParts(line).suttaRef);
-                    verbose && console.log(`findArgs suttaRefs`, suttaRefs);
+                        resultPattern,
+                    } = data;
                 }
+                sortLines && lines.sort(sortLines);
+                var suttaRefs = lines.map(line => 
+                    BilaraPath.pathParts(line).suttaRef);
+                verbose && console.log(`findArgs suttaRefs`, suttaRefs);
+            }
 
-                var mlDocs = [];
-                var segsMatched = 0;
-                var bilaraPaths = [];
-                var matchingRefs = [];
-                for (var i = 0; i < suttaRefs.length; i++) {
-                    let suttaRef = suttaRefs[i];
-                    let [suid,refLang,author] = suttaRef.split('/');
-                    var suttaInfo = bd.suttaInfo(suttaRef);
-                    if (!suttaInfo) {
-                        verbose && console.log(`skipping ${suttaRef}`);
-                        continue; 
-                    }
-                    let isBilDoc = bd.isBilaraDoc({
-                        suid,
-                        lang:refLang,
-                        author
-                    });
-                    let mld = await bd.loadMLDoc({
-                        verbose,
-                        suid: isBilDoc ? suid : suttaRef,
-                        languages,
-                        lang,
-                        types,
-                    });
-                    var mldBilaraPaths = mld.bilaraPaths;
-                    if (mldBilaraPaths.length < minLang) {
-                        verbose && that.log([
-                            `skipping ${mld.suid} minLang`,
-                            `${mldBilaraPaths.length}<${minLang}`,
-                            `[${languages}]`, 
-                        ].join(' '));
-                        continue;
-                    }
-                    bilaraPaths = [...bilaraPaths, ...mldBilaraPaths];
-                    var resFilter = mld.filterSegments({
-                        pattern,
-                        resultPattern, 
-                        languages: [searchLang], 
-                        showMatchesOnly,
-                    });
-                    segsMatched += resFilter.matched;
-                    mld.segsMatched = resFilter.matched;
-                    if (matchHighlight) {
-                        mld.highlightMatch(resultPattern, matchHighlight);
-                    }
-                    //if (!resFilter.matchScid && resFilter.matched === 0) {
-                    if (resFilter.matched === 0) {
-                        //that.log(`Ignoring ${mld.suid} ${pattern}`);
-                    } else if (mld.bilaraPaths.length >= minLang) {
-                        if (Object.keys(mld.segMap).length ) {
-                            mlDocs.push(mld);
-                            matchingRefs.push(suttaRef);
-                        } else {
-                            that.log(`skipping ${mld.suid} segments:0`);
-                        }
-                    } else {
-                        that.log(`skipping ${mld.suid} minLang:${minLang}`);
-                    }
+            var mlDocs = [];
+            var segsMatched = 0;
+            var bilaraPaths = [];
+            var matchingRefs = [];
+            for (var i = 0; i < suttaRefs.length; i++) {
+                let suttaRef = suttaRefs[i];
+                let [suid,refLang,author] = suttaRef.split('/');
+                let suttaInfo = bd.suttaInfo(suttaRef);
+                if (!suttaInfo) {
+                    verbose && console.log(`skipping ${suttaRef}`);
+                    continue; 
                 }
-                scoreDoc && mlDocs.sort(MLDoc.compare);
-                mlDocs = mlDocs.slice(0, maxDoc);
-                resolve({
-                    lang,   // embeddable option
-                    searchLang, // embeddable option
-                    minLang,    // embeddable option
-                    maxDoc, // embeddable option
-                    maxResults, // embeddable option
-
-                    pattern,
-                    elapsed: (Date.now()-msStart)/1000,
-                    method,
-                    resultPattern,
-                    segsMatched,
-                    bilaraPaths,
-                    suttaRefs: matchingRefs,
-                    mlDocs,
+                let isBilDoc = bd.isBilaraDoc({ suid, lang:refLang, author });
+                let mld = await bd.loadMLDoc({
+                    verbose,
+                    suid: isBilDoc ? suid : suttaRef,
+                    languages,
+                    lang,
+                    types,
                 });
-            } catch(e) {reject(e);}})()};
-            return new Promise(pbody);
+                var mldBilaraPaths = mld.bilaraPaths;
+                if (mldBilaraPaths.length < minLang) {
+                    verbose && that.log(`skipping ${mld.suid} minLang`,
+                        `${mldBilaraPaths.length}<${minLang} [${languages}]`, 
+                    );
+                    continue;
+                }
+                bilaraPaths = [...bilaraPaths, ...mldBilaraPaths];
+                var resFilter = mld.filterSegments({
+                    pattern,
+                    resultPattern, 
+                    languages: [searchLang], 
+                    showMatchesOnly,
+                });
+                segsMatched += resFilter.matched;
+                mld.segsMatched = resFilter.matched;
+                if (matchHighlight) {
+                    mld.highlightMatch(resultPattern, matchHighlight);
+                }
+                if (resFilter.matched === 0) {
+                    //that.log(`Ignoring ${mld.suid} ${pattern}`);
+                } else if (mld.bilaraPaths.length >= minLang) {
+                    if (Object.keys(mld.segMap).length ) {
+                        mlDocs.push(mld);
+                        matchingRefs.push(suttaRef);
+                    } else {
+                        that.log(`skipping ${mld.suid} segments:0`);
+                    }
+                } else {
+                    that.log(`skipping ${mld.suid} minLang:${minLang}`);
+                }
+            }
+            scoreDoc && mlDocs.sort(MLDoc.compare);
+            mlDocs = mlDocs.slice(0, maxDoc);
+            return {
+                lang,   // embeddable option
+                searchLang, // embeddable option
+                minLang,    // embeddable option
+                maxDoc, // embeddable option
+                maxResults, // embeddable option
+
+                pattern,
+                elapsed: (Date.now()-msStart)/1000,
+                method,
+                resultPattern,
+                segsMatched,
+                bilaraPaths,
+                suttaRefs: matchingRefs,
+                mlDocs,
+            };
         }
 
     }

@@ -393,35 +393,31 @@ html: '<article id=\'sn1.1\'><header><ul><li class=\'division\'>{}</li>',
             done();
         } catch(e) { done(e); } })();
     });
-    it("filterSegments(...) => scores abhisambuddha", done=>{
-        (async function() { try {
-            var bilaraPaths = [
-                rootPath('an/an5/an5.196'),
-            ]
-            var mld = new MLDoc({
-                bilaraPaths,
-            });
-            var res = await mld.load(BILARA_PATH);
-            var pattern = "abhisambuddha";
-            var resultPattern = 
-                '\\b(a|ā)bh(i|ī)s(a|ā)(m|ṁ|ṃ)b(u|ū)(d|ḍ)(d|ḍ)h(a|ā)';
-            var res = await mld.filterSegments({
-                pattern, 
-                resultPattern,
-                languages: ['pli'],
-            });
-            var re = '\\b(a|ā)bh(i|ī)s(a|ā)(m|ṁ|ṃ)b(u|ū)(d|ḍ)(d|ḍ)h(a|ā)';
-            should(res).properties({
-                matchLow: re,
-                matchHigh: re,
-                rexList: [
-                    /(?<=[\s,.:;"']|^)abhisambuddha/iu,
-                ],
-                score: 1.031,
-            });
-
-            done();
-        } catch(e) { done(e); } })();
+    it("TESTTESTfilterSegments(...) => scores abhisambuddha", async()=>{
+        var bilaraPaths = [
+            rootPath('an/an5/an5.196'),
+        ]
+        var mld = new MLDoc({
+            bilaraPaths,
+        });
+        var res = await mld.load(BILARA_PATH);
+        var pattern = "abhisambuddha";
+        var resultPattern = 
+            '\\b(a|ā)bh(i|ī)s(a|ā)(m|ṁ|ṃ)b(u|ū)(d|ḍ)(d|ḍ)h(a|ā)';
+        var res = await mld.filterSegments({
+            pattern, 
+            resultPattern,
+            languages: ['pli'],
+        });
+        var re = '\\b(a|ā)bh(i|ī)s(a|ā)(m|ṁ|ṃ)b(u|ū)(d|ḍ)(d|ḍ)h(a|ā)';
+        should(res).properties({
+            matchLow: re,
+            matchHigh: re,
+            rexList: [
+                /(?<=[\s,.:;"'`‘„“‚]|^)abhisambuddha/iu,
+            ],
+            score: 1.031,
+        });
     });
     it("hyphenate(lang) => handles MN142", done=>{
         (async function() { try {

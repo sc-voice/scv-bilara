@@ -198,8 +198,9 @@
 
         jsPattern(pat, opts='ui') {
             var p = pat.toString();
+            const quotes = `"'\u0060\u2018\u201e\u201c\u201a`;
             var result = p.startsWith('\\b') 
-                ? new RegExp(`(?<=[\\s,.:;"']|^)${p.substring(2)}`, opts)
+                ? new RegExp(`(?<=[\\s,.:;${quotes}]|^)${p.substring(2)}`, opts)
                 : new RegExp(p, opts);
             return result;
         }
