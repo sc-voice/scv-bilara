@@ -193,7 +193,7 @@
             done();
         } catch(e) { done(e); } })();
     });
-    it("keywordSearch(...) limits results", async()=>{
+    it("TESTTESTkeywordSearch(...) limits results", async()=>{
         var lang = 'en';
         var pattern = Seeker.normalizePattern('suffering joy faith');
         var maxResults = 3;
@@ -205,9 +205,9 @@
             method: "keywords",
             lang: 'en',
             keywordsFound: {
-                faith: 403,
-                joy: 152,
-                suffering: 804,
+                faith: 404,
+                joy: 155,
+                suffering: 810,
             },
         };
 
@@ -230,7 +230,7 @@
             `${en_suj}sn/sn12/sn12.23_translation-en-sujato.json:4`,
         ]);
     });
-    it("keywordSearch(...) searches English", async()=>{
+    it("TESTTESTkeywordSearch(...) searches English", async()=>{
         var pattern = Seeker.normalizePattern('suffering joy faith');
         var skr = await new Seeker({
             lang: 'de', // Deutsch
@@ -243,9 +243,9 @@
             lang: 'en',
             method: 'keywords',
             keywordsFound: {
-                suffering: 804,
-                joy: 152,
-                faith: 403,
+                suffering: 810,
+                joy: 155,
+                faith: 404,
             },
         };
         should(data).properties(enExpected);
@@ -1206,7 +1206,7 @@
         });
         should.deepEqual(res.suttaRefs, []);
     });
-    it("TESTTESTfind(...) finds 'alles leiden,...'", async()=>{
+    it("find(...) finds 'alles leiden,...'", async()=>{
         var bilaraData = await bd.initialize();
         var verbose = 0;
         var skr = await new Seeker({
@@ -1223,6 +1223,23 @@
         should(mld0.bilaraPaths[0])
             .equal('root/pli/ms/sutta/sn/sn42/sn42.11_root-pli-ms.json');
         should(mld0.score).equal(3.055);
+    });
+    it("TESTTESTfind(...) finds Deutsch 'blind'", async()=>{
+        var bilaraData = await bd.initialize();
+        var verbose = 0;
+        var skr = await new Seeker({
+            bilaraData,
+        }).initialize();
+        var pattern = "blind -ml3 -l de";
+        
+        var data = await skr.find({pattern, verbose});
+        should(data.resultPattern).equal('\\bblind');
+        should(data.searchLang).equal('de');
+        should(data.method).equal('phrase');
+        should(data.mlDocs.length).equal(5);
+        var mld0 = data.mlDocs[0];
+        should(mld0.bilaraPaths[0]).match(/an3.29/);
+        should(mld0.score).equal(6.128);
     });
 
 })

@@ -74,24 +74,30 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("initialize(...) must be called", (done) => {
-        (async function() { try {
-            var newbd = new BilaraData();
-            should(newbd.initialized).equal(false);
-            should.throws(() => {
-                newbd.suttaInfo('dn33');
-            });
+    it("TESTTESTinitialize(...) must be called", async()=>{
+        var newbd = new BilaraData();
+        should(newbd.initialized).equal(false);
+        should.throws(() => {
+            newbd.suttaInfo('dn33');
+        });
 
-            var sync = false; // true => git clone or git pull
-            var res = await bd.initialize(sync);
-            should(res).equal(bd);
-            should(bd.initialized).equal(true);
-            should.deepEqual(Object.keys(bd.authors).sort(), [
-                'ashinsarana', 'ms', 'sabbamitta', 'sujato', 
-            ]);
-
-            done();
-        } catch(e) {done(e);} })();
+        var sync = false; // true => git clone or git pull
+        var res = await bd.initialize(sync);
+        should(res).equal(bd);
+        should(bd.initialized).equal(true);
+        should.deepEqual(Object.keys(bd.authors).sort(), [
+            'ashinsarana', 'ms', 'sabbamitta', 'sujato', 
+        ]);
+        should.deepEqual(bd.examples.en.slice(0,3), [
+            `a hardened killer`,
+            `a hateful person makes choices that hurt themselves`,
+            `a householder does enough`,
+        ]);
+        should.deepEqual(bd.examples.de.slice(0,3), [
+            `aber nicht zum eigenen`,
+            `ach,`,
+            `allein die Wahrheit`,
+        ]);
     });
     it("initialize(...) must be called", (done) => {
         (async function() { try {

@@ -120,6 +120,20 @@
                         `not found:${rootPath}`); 
                 }
 
+                that.examples = {};
+                let exPath = path.join(that.root, `.helpers`, `examples`);
+                let exEntries = await fs.promises.readdir(exPath);
+                for (let i = 0; i < exEntries.length; i++) {
+                    let entry = exEntries[i];
+                    let lang = entry.split('-')[1].split('.')[0];
+                    let entryPath = path.join(exPath, entry);
+                    let entryBuf = await fs.promises.readFile(entryPath);
+                    that.examples[lang] = entryBuf.toString()
+                        .trim().split('\n')
+                        .sort((a,b) => 
+                            a.toLowerCase().localeCompare(b.toLowerCase()));
+                };
+
                 // The following code must be synchronous
                 that.initialized = true;
                 that.rootFiles = that.dirFiles(rootPath)

@@ -518,8 +518,14 @@
                 verbose,
             } = findArgs;
             var bd = that.bilaraData;
+            var examples = bd.examples;
             var resultPattern = pattern;
             var scoreDoc = true;
+
+            if (examples[lang] && examples[lang].indexOf(pattern) >= 0) {
+                searchLang = lang;
+            }
+
             if (SuttaCentralId.test(pattern)) {
                 verbose && console.log(`findArgs SuttaCentralId`, 
                     js.simpleString(findArgs));
