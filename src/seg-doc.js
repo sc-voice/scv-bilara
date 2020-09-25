@@ -47,7 +47,7 @@
             var that = this;
             return new Promise((resolve, reject) => {
                 fs.readFile(spath, (err, data) => {
-                    this.log(`load(${spath})`);
+                    this.debug(`load(${spath})`);
                     if (err) {
                         reject(err);
                         return;
