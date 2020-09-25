@@ -193,7 +193,7 @@
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTkeywordSearch(...) limits results", async()=>{
+    it("keywordSearch(...) limits results", async()=>{
         var lang = 'en';
         var pattern = Seeker.normalizePattern('suffering joy faith');
         var maxResults = 3;
@@ -230,7 +230,7 @@
             `${en_suj}sn/sn12/sn12.23_translation-en-sujato.json:4`,
         ]);
     });
-    it("TESTTESTkeywordSearch(...) searches English", async()=>{
+    it("keywordSearch(...) searches English", async()=>{
         var pattern = Seeker.normalizePattern('suffering joy faith');
         var skr = await new Seeker({
             lang: 'de', // Deutsch
@@ -1224,7 +1224,7 @@
             .equal('root/pli/ms/sutta/sn/sn42/sn42.11_root-pli-ms.json');
         should(mld0.score).equal(3.055);
     });
-    it("TESTTESTfind(...) finds Deutsch 'blind'", async()=>{
+    it("find(...) finds Deutsch 'blind'", async()=>{
         var bilaraData = await bd.initialize();
         var verbose = 0;
         var skr = await new Seeker({
@@ -1235,6 +1235,25 @@
         var data = await skr.find({pattern, verbose});
         should(data.resultPattern).equal('\\bblind');
         should(data.searchLang).equal('de');
+        should(data.method).equal('phrase');
+        should(data.mlDocs.length).equal(5);
+        var mld0 = data.mlDocs[0];
+        should(mld0.bilaraPaths[0]).match(/an3.29/);
+        should(mld0.score).equal(6.128);
+    });
+    it("TESTTESTfind(...) finds 'pacetana'", async()=>{
+        console.log("TODO",__filename); return;
+        var bilaraData = await bd.initialize();
+        var verbose = 0;
+        var skr = await new Seeker({
+            bilaraData,
+        }).initialize();
+        var pattern = "pacetana";
+        
+        var data = await skr.find({pattern, verbose});
+        console.log(`dbg pacetana`, data);
+        should(data.resultPattern).equal('\\bpacetana');
+        should(data.searchLang).equal('en');
         should(data.method).equal('phrase');
         should(data.mlDocs.length).equal(5);
         var mld0 = data.mlDocs[0];
