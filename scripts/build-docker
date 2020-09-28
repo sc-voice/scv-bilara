@@ -1,0 +1,15 @@
+#!/bin/bash
+pushd local
+  if [ -e bilara-data ]; then
+    pushd bilara-data
+    git pull
+    popd
+  else
+    git clone https://github.com/sc-voice/bilara-data
+  fi
+  pushd bilara-data
+    git checkout unpublished
+  popd
+popd
+
+sudo docker build -t sc-voice/scv-bilara -f Dockerfile .

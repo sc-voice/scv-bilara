@@ -25,6 +25,7 @@
     const PUB_PREFIX = /^https:.*translation\//;
     const ROOT_PLI_MS = path.join("root", "pli", "ms");
     const STUBFILESIZE = 10;
+    const MAXBUFFER = 10 * 1024 * 1024;
 
     class BilaraData {
         constructor(opts={}) {
@@ -33,7 +34,7 @@
             this.root = opts.root || path.join(LOCAL_DIR, this.name);
             this.log(`root:${this.root}`);
             this.lang = opts.lang || 'en';
-            this.branch = opts.branch || 'unpublished';
+            this.branch = opts.branch;
             var includeUnpublished = opts.includeUnpublished == null 
                 ? false : opts.includeUnpublished;
             this.publication = opts.publication || new Publication({
@@ -102,8 +103,10 @@
                     purge,
                     initializing: true,
                 });
-                var res = await that.execGit.branch(that.branch);
-                that.log(`initialize: ${res.stdout} ${res.stderr}`);
+                if (that.branch) {
+                    let res = await that.execGit.branch(that.branch);
+                    that.log(`initialize: ${res.stdout} ${res.stderr}`);
+                }
                 await that.publication.initialize();
 
                 let authPath = path.join(that.root, `_author.json`);
@@ -245,7 +248,8 @@
             var that = this;
             var purge = opts.purge || false;
             var initializing = opts.initializing || false;
-            var branches = opts.branches || [this.branch];
+            var branches = opts.branches || 
+                [this.branch || "unpublished"];
             var pbody = (resolve, reject)=>(async function() { try {
                 if (purge) {
                     var cmd = `rm -rf ${that.name}`;
@@ -318,6 +322,7 @@
             var cmd = `find ${root} ${prune} -o -type f -print`;
             var execOpts = {
                 cwd: LOCAL_DIR,
+                maxBuffer: MAXBUFFER,
             };
             var res = execSync(cmd, execOpts).toString();
             return res.split('\n');

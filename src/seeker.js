@@ -6,6 +6,7 @@
     const {
         exec,
     } = require('child_process');
+    const { MerkleJson } = require("merkle-json");
     const FuzzyWordSet = require('./fuzzy-word-set');
     const BilaraPath = require('./bilara-path');
     const MLDoc = require('./ml-doc');
@@ -33,6 +34,8 @@
             this.languages = opts.languages || ['pli', 'en'];
             this.unicode = opts.unicode || new Unicode();
             this.paliWords = opts.paliWords;
+            this.mj = new MerkleJson();
+            this.cache = {};
             this.enWords = opts.enWords;
             this.matchColor = opts.matchColor == null 
                 ? 121 : opts.matchColor;
@@ -207,7 +210,14 @@
             return re;
         }
 
+
         grep(opts) {
+            var { mj, cache } = this;
+            var key = mj.hash(opts);
+            return cache[key] || (cache[key] = this.slowGrep(opts));
+        }
+
+        slowGrep(opts) {
             var {
                 pattern,
                 maxResults,
@@ -226,11 +236,17 @@
                     `searchMetadata not supported`));
             }
             var grex = pattern;
-            var cmd = `rg -c -i -e '${grex}' `+
-                `--glob='!package.json' `+
-                `--glob='!*atthakatha*' `+
-                `--glob='!_*' `+
-                `|sort -g -r -k 2,2 -k 1,1 -t ':'`;
+            var cmd = [
+                `rg -c -i -e '${grex}' `,
+                `--glob='!package.json' `,
+                `--glob='!*atthakatha*' `,
+                `--glob='!*/reference/*'`,
+                `--glob='!*/html/*'`,
+                `--glob='!*/comment/*'`,
+                `--glob='!*/variant/*'`,
+                `--glob='!_*' `,
+                `|sort -g -r -k 2,2 -k 1,1 -t ':'`,
+            ].join(' ');
             maxResults && (cmd += `|head -${maxResults}`);
             var cwd = this.langPath(lang);
             var pathPrefix = cwd.replace(root, '').replace(/^\/?/, '');

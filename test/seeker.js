@@ -66,24 +66,27 @@
         should(reAllow.test(fn)).equal(true);
         should(reDeny.test(fn)).equal(false);
     });
-    it("grep(...) finds en things", done=>{
-        (async function() { try {
-            var skr = new Seeker(SEEKEROPTS);
-            var res = await skr.grep({
-                pattern: "root of suffering",
-            });
-            should.deepEqual(res, [
-                `${en_suj}sn/sn42/sn42.11_translation-en-sujato.json:5`,
-                `${en_suj}mn/mn105_translation-en-sujato.json:3`,
-                `${en_suj}mn/mn1_translation-en-sujato.json:2`,
-                `${en_suj}sn/sn56/sn56.21_translation-en-sujato.json:1`,
-                `${en_suj}mn/mn66_translation-en-sujato.json:1`,
-                `${en_suj}mn/mn116_translation-en-sujato.json:1`,
-                `${en_suj}dn/dn16_translation-en-sujato.json:1`,
-            ]);
-
-            done();
-        } catch(e) { done(e); }})();
+    it("TESTTESTgrep(...) finds en things", async()=>{
+        var skr = new Seeker(SEEKEROPTS);
+        var ms0 = Date.now();
+        var res = await skr.grep({
+            pattern: "root of suffering",
+        });
+        var ms1 = Date.now();
+        var res = await skr.grep({
+            pattern: "root of suffering",
+        });
+        var ms2 = Date.now();
+        should.deepEqual(res, [
+            `${en_suj}sn/sn42/sn42.11_translation-en-sujato.json:5`,
+            `${en_suj}mn/mn105_translation-en-sujato.json:3`,
+            `${en_suj}mn/mn1_translation-en-sujato.json:2`,
+            `${en_suj}sn/sn56/sn56.21_translation-en-sujato.json:1`,
+            `${en_suj}mn/mn66_translation-en-sujato.json:1`,
+            `${en_suj}mn/mn116_translation-en-sujato.json:1`,
+            `${en_suj}dn/dn16_translation-en-sujato.json:1`,
+        ]);
+        should(ms2-ms1).below(5); // memoized
     });
     it("grep(...) finds maxResults things", done=>{
         (async function() { try {
@@ -1241,7 +1244,7 @@
         should(mld0.bilaraPaths[0]).match(/an3.29/);
         should(mld0.score).equal(6.128);
     });
-    it("TESTTESTfind(...) finds 'pacetana'", async()=>{
+    it("find(...) finds 'pacetana'", async()=>{
         console.log("TODO",__filename); return;
         var bilaraData = await bd.initialize();
         var verbose = 0;

@@ -418,7 +418,10 @@ logger.logLevel = logLevel;
         verbose,
     };
     verbose && console.log(`findOpts`, findOpts);
+    var msStart = Date.now();
     var res = await skr.find(findOpts);
+    var secElapsed = (Date.now() - msStart)/1000;
+    verbose && console.log(`find() ${secElapsed.toFixed(1)}s`);
     if (outFormat === 'csv') {
         outCSV(res, pattern);
     } else if (outFormat === 'json') {
