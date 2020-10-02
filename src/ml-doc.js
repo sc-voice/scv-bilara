@@ -21,10 +21,13 @@
             this.bilaraPaths = bilaraPaths;
             this.lang = opts.lang || this.languages().pop();
             this.segMap = opts.segMap || {};
-            this.score = 0; // search relevance
+            this.score = opts.score || 0; // search relevance
             this.hyphen = opts.hyphen || "\u00ad";
             this.maxWord = opts.maxWord || 30;
             this.minWord = opts.minWord || 5;
+            this.segsMatched = opts.segsMatched;
+            this.langContent = opts.langContent;
+            this.langSegs = opts.langSegs;
             Object.defineProperty(this, "unicode", {
                 value: opts.unicode || new Unicode(),
             });

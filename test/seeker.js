@@ -68,15 +68,12 @@
     });
     it("TESTTESTgrep(...) finds en things", async()=>{
         var skr = new Seeker(SEEKEROPTS);
+        skr.logLevel = 'info';
         var ms0 = Date.now();
+        await skr.clearMemo('grep');
         var res = await skr.grep({
             pattern: "root of suffering",
         });
-        var ms1 = Date.now();
-        var res = await skr.grep({
-            pattern: "root of suffering",
-        });
-        var ms2 = Date.now();
         should.deepEqual(res, [
             `${en_suj}sn/sn42/sn42.11_translation-en-sujato.json:5`,
             `${en_suj}mn/mn105_translation-en-sujato.json:3`,
@@ -86,7 +83,13 @@
             `${en_suj}mn/mn116_translation-en-sujato.json:1`,
             `${en_suj}dn/dn16_translation-en-sujato.json:1`,
         ]);
-        should(ms2-ms1).below(5); // memoized
+        var ms1 = Date.now();
+        var res2 = await skr.grep({ pattern: "root of suffering", });
+        var ms2 = Date.now();
+        should.deepEqual(res2, res);
+
+        //console.log(`dbg grep`, ms1-ms0, ms2-ms1);
+        should(ms2-ms1).below(10);
     });
     it("grep(...) finds maxResults things", done=>{
         (async function() { try {
@@ -196,7 +199,7 @@
             done();
         } catch(e) { done(e); } })();
     });
-    it("keywordSearch(...) limits results", async()=>{
+    it("TESTTESTkeywordSearch(...) limits results", async()=>{
         var lang = 'en';
         var pattern = Seeker.normalizePattern('suffering joy faith');
         var maxResults = 3;
@@ -209,8 +212,8 @@
             lang: 'en',
             keywordsFound: {
                 faith: 404,
-                joy: 155,
-                suffering: 810,
+                joy: 148,
+                suffering: 797,
             },
         };
 
@@ -233,7 +236,7 @@
             `${en_suj}sn/sn12/sn12.23_translation-en-sujato.json:4`,
         ]);
     });
-    it("keywordSearch(...) searches English", async()=>{
+    it("TESTTESTkeywordSearch(...) searches English", async()=>{
         var pattern = Seeker.normalizePattern('suffering joy faith');
         var skr = await new Seeker({
             lang: 'de', // Deutsch
@@ -246,8 +249,8 @@
             lang: 'en',
             method: 'keywords',
             keywordsFound: {
-                suffering: 810,
-                joy: 155,
+                suffering: 797,
+                joy: 148,
                 faith: 404,
             },
         };
@@ -779,6 +782,7 @@
             maxResults,
         }).initialize();
 
+        var msStart = Date.now();
         var pattern = "root of suffering"; 
         var res = await skr.find({
             pattern,
@@ -1262,6 +1266,44 @@
         var mld0 = data.mlDocs[0];
         should(mld0.bilaraPaths[0]).match(/an3.29/);
         should(mld0.score).equal(6.128);
+    });
+    it("TESTTESTfind(...) is cached", async()=>{
+        var skr = await new Seeker({
+            lang: 'en', // English default
+        }).initialize();
+        skr.logLevel = 'info';
+        var pattern = 'stuck in the middle';
+        var findOpts = { 
+            pattern,
+        };
+        await skr.clearMemo('find');
+
+        var ms0 = Date.now();
+        var data = await skr.find(findOpts);
+        var ms1 = Date.now();
+        var data2 = await skr.find(findOpts);
+        var ms2 = Date.now();
+        console.log(`dbg find ms:`, ms1-ms0, ms2-ms1);
+        should(data.method).equal('phrase');
+        var mld0 = data.mlDocs[0];
+        should(mld0.bilaraPaths[0])
+            .equal('root/pli/ms/sutta/an/an6/an6.61_root-pli-ms.json');
+        should(mld0.score).equal(2.036);
+        delete data2.elapsed;
+        delete data.elapsed;
+        should.deepEqual(data2, data);
+    });
+    it("TESTTESTisExample", async()=>{
+        var skr = await new Seeker({
+            lang: 'en', // English default
+        }).initialize();
+        should(skr.isExample('root of suffering')).equal(true);
+        should(skr.isExample('ROOT OF SUFFERING')).equal(true);
+        should(skr.isExample('\\bROOT OF SUFFERING')).equal(true);
+        should(skr.isExample('\\bROOT OF SUFFERING\\b')).equal(true);
+        should(skr.isExample('root suffering')).equal(false);
+        should(skr.isExample('Wurzel des Leidens')).equal(true);
+        should(skr.isExample('wurzel des leidens')).equal(true);
     });
 
 })

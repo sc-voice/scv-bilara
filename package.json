@@ -13,6 +13,7 @@
     "json5": "^2.1.3",
     "just-simple": "^0.1.4",
     "log-instance": "^0.2.5",
+    "memo-again": "^0.3.6",
     "merkle-json": "^1.1.6",
     "nodegit": "^0.26.2",
     "serial-memo": "^0.1.0",
