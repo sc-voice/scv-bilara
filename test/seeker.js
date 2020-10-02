@@ -41,15 +41,17 @@
         });
         should(skr.logger).equal(logger);
     });
-    it("custom ctor", ()=>{
+    it("TESTTESTcustom ctor", ()=>{
         var logger = new LogInstance();
         var lang = 'de';
+        var writeFile = false;
         var paliWords = new FuzzyWordSet();
         var skr = new Seeker({
             root: '/tmp/test',
             logger,
             lang,
             paliWords,
+            writeFile,
         });
         should(skr.root).equal('/tmp/test');
         should(skr.logger).equal(logger);
@@ -57,6 +59,7 @@
             lang,
         });
         should(skr.paliWords).instanceOf(FuzzyWordSet);
+        should(skr.memoizer.cache.writeFile).equal(writeFile);
     });
     it("grepAllow/Deny matches file names", ()=>{
         var reAllow = new RegExp("^[^/]+/sutta/(an|sn|mn|kn|dn)/","iu");

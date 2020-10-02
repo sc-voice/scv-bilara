@@ -38,6 +38,9 @@
             this.mj = new MerkleJson();
             this.memoizer = opts.memoizer || new Memoizer({
                 writeMem: false,
+                writeFile: opts.writeFile == null
+                    ? true
+                    : opts.writeFile,
                 serialize: Seeker.serialize,
                 deserialize: Seeker.deserialize,
                 storeName: opts.memoStore,
@@ -586,8 +589,9 @@
                     findMemo = memoizer.memoize(callSlowFind, Seeker);
                 }
                 var promise = findMemo(args);
+                this.debug(`find() example:${pattern}`);
             } else {
-                this.log(`find non-example:${pattern}`);
+                this.log(`find() non-example:${pattern}`);
                 var promise = callSlowFind(args);
             }
             return promise;

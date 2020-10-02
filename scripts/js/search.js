@@ -59,6 +59,9 @@ DESCRIPTION
     -mr, --maxResults NUMBER
         Maximum number of grep result files to work with (default 1000).
 
+    -nm, --no-memo
+        Don't use memoizer cache (slow search for new content)
+
     -oc, --outCSV
         Output comma-separated values.
 
@@ -137,6 +140,8 @@ var includeUnpublished = false;
 var isTTY = process.stdout.isTTY;
 var tipitakaCategories = '';
 var verbose = false;
+var writeFile = true;
+
 //var searchLang;
 
 var nargs = process.argv.length;
@@ -153,6 +158,8 @@ for (var i = 2; i < nargs; i++) {
     } else if (arg === '-f' || arg === '--filter') {
         var filter  = process.argv[++i];
         showMatchesOnly = filter === 'pattern';
+    } else if (arg === '-nm' || arg === '--no-memo') {
+        writeFile  = false;
     } else if (arg === '-c' || arg === '--color') {
         color = process.argv[++i];
     } else if (arg === '-oj' || arg === '--outJSON') {
@@ -409,6 +416,8 @@ logger.logLevel = logLevel;
         matchColor: color,
         maxResults,
         bilaraData,
+        writeFile,
+        logger,
     }).initialize();
     var matchHighlight = matchBash(color);
     var findOpts = {
