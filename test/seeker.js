@@ -92,7 +92,7 @@
         should.deepEqual(res2, res);
 
         //console.log(`dbg grep`, ms1-ms0, ms2-ms1);
-        should(ms2-ms1).below(10);
+        should(ms2-ms1).below(15);
     });
     it("grep(...) finds maxResults things", done=>{
         (async function() { try {

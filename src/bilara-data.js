@@ -13,6 +13,11 @@
     const {
         execSync,
     } = require('child_process');
+    const {
+        Memoizer,
+        MemoCache,
+        Files,
+    } = require('memo-again');
     const SegDoc = require('./seg-doc');
     const MLDoc = require('./ml-doc');
     const BilaraPath = require('./bilara-path');
@@ -244,29 +249,36 @@
             return this._suttaIds;
         }
 
-        sync(opts={}) {
+        async sync(opts={}) {
             var that = this;
             var purge = opts.purge || false;
             var initializing = opts.initializing || false;
             var branches = opts.branches || 
                 [this.branch || "unpublished"];
-            var pbody = (resolve, reject)=>(async function() { try {
-                if (purge) {
-                    var cmd = `rm -rf ${that.name}`;
-                    var execOpts = {
-                        cwd: LOCAL_DIR,
-                    };
-                    that.log(`Purging repository: ${cmd}`);
-                    var res = execSync(cmd, execOpts).toString();
-                }
-                var res = await that.execGit
-                    .sync(undefined, undefined, branches);
-                if (purge && !initializing) {
-                    await that.initialize();
-                }
-                resolve(res);
-            } catch(e) { reject(e); } })();
-            return new Promise(pbody);
+            if (purge) {
+                var cmd = `rm -rf ${that.name}`;
+                var execOpts = {
+                    cwd: LOCAL_DIR,
+                };
+                that.log(`Purging repository: ${cmd}`);
+                var res = execSync(cmd, execOpts).toString();
+            }
+            var res = await that.execGit
+                .sync(undefined, undefined, branches);
+
+            // clear memoizer
+            var mzr = new Memoizer({writeMem: false});
+            var mc = mzr.cache;
+            var volumes = mc.volumes();
+            that.info(`clearing memoizer bytes:`, 
+                await mc.fileSize(), volumes);
+            for await (let v of volumes) {
+                mc.clearVolume(v);
+            }
+
+            if (purge && !initializing) {
+                await that.initialize();
+            }
         }
 
         isSuttaPath(fpath) {

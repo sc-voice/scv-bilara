@@ -563,10 +563,11 @@
         }
 
         clearMemo(name) {
+            var cache = this.memoizer.cache;
             if (name === 'find') {
-                return this.memoizer.cache.clearVolume(`Seeker.callSlowFind`);
+                return cache.clearVolume(`Seeker.callSlowFind`);
             } else if (name === 'grep') {
-                return this.memoizer.cache.clearVolume(`Seeker.slowGrep`);
+                return cache.clearVolume(`Seeker.slowGrep`);
             }
         }
 

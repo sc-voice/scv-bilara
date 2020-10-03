@@ -7,8 +7,10 @@
         BilaraData,
         BilaraPathMap,
         MLDoc,
+        Seeker,
         SuttaCentralId,
     } = require("../index");
+    const { MemoCache, } = require('memo-again');
     const { js, LOCAL_DIR, } = require("just-simple").JustSimple;
     this.timeout(20*1000);
     var bd = new BilaraData(); 
@@ -114,53 +116,55 @@
             'ashinsarana', 'ms', 'sabbamitta', 'sujato', 
         ]);
     });
-    it("sync() purges and refreshes repo", (done) => {
-        (async function() { try {
-            var name = "test-repo";
-            var bd = new BilaraData({name});
-            var dummyPath = path.join(bd.root, "root", "dummy.txt");
+    it("TESTTESTsync() purges and refreshes repo", async()=>{
+        var name = "test-repo";
+        var mc = new MemoCache();
+        var bd = new BilaraData({name});
+        bd.logLevel = 'info';
+        var dummyPath = path.join(bd.root, "root", "dummy.txt");
 
-            // make a local change
-            fs.existsSync(dummyPath) && fs.unlinkSync(dummyPath);
-            should(fs.existsSync(dummyPath)).equal(false);
+        // put something in the memo cache
+        var volume = "test-volume";
+        mc.put({volume, guid:"test-guid",value:"test-value"});
+        should(await mc.fileSize()).above(0);
+        should(mc.volumes().find(v=>v===volume)).equal(volume);
 
-            // purge reclones repo
-            await bd.sync({purge:true});
-            should(fs.existsSync(dummyPath)).equal(true);
-            done();
-        } catch(e) {done(e);} })();
+        // make a local change
+        fs.existsSync(dummyPath) && fs.unlinkSync(dummyPath);
+        should(fs.existsSync(dummyPath)).equal(false);
+
+        // purge reclones repo
+        await bd.sync({purge:true});
+        should(fs.existsSync(dummyPath)).equal(true);
+        should(await mc.fileSize()).equal(0);
     });
-    it("sync() refreshes repo", (done) => {
-        (async function() { try {
-            var name = "test-repo";
-            var verbose = true;
-            var bd = new BilaraData({name, verbose});
-            var dummyPath = path.join(bd.root, "root", "dummy.txt");
-            var unpublishedPath = path.join(bd.root, "unpublished.txt");
-            var masterPath = path.join(bd.root, "master.txt");
+    it("sync() refreshes repo", async()=>{
+        var name = "test-repo";
+        var verbose = true;
+        var bd = new BilaraData({name, verbose});
+        var dummyPath = path.join(bd.root, "root", "dummy.txt");
+        var unpublishedPath = path.join(bd.root, "unpublished.txt");
+        var masterPath = path.join(bd.root, "master.txt");
 
-            // sync to restore, and make master current
-            await bd.sync();
-            should(fs.existsSync(dummyPath)).equal(true);
-            should(fs.existsSync(masterPath)).equal(false);
-            should(fs.existsSync(unpublishedPath)).equal(true);
+        // sync to restore, and make master current
+        await bd.sync();
+        should(fs.existsSync(dummyPath)).equal(true);
+        should(fs.existsSync(masterPath)).equal(false);
+        should(fs.existsSync(unpublishedPath)).equal(true);
 
-            // make a local change
-            fs.existsSync(dummyPath) && fs.unlinkSync(dummyPath);
-            should(fs.existsSync(dummyPath)).equal(false);
+        // make a local change
+        fs.existsSync(dummyPath) && fs.unlinkSync(dummyPath);
+        should(fs.existsSync(dummyPath)).equal(false);
 
-            // sync to restore, and make master current
-            await bd.sync({branches:['unpublished', 'master']});
-            should(fs.existsSync(dummyPath)).equal(true);
-            should(fs.existsSync(unpublishedPath)).equal(false);
+        // sync to restore, and make master current
+        await bd.sync({branches:['unpublished', 'master']});
+        should(fs.existsSync(dummyPath)).equal(true);
+        should(fs.existsSync(unpublishedPath)).equal(false);
 
-            // sync to restore, and make unpublished current
-            await bd.sync({branches:['master', 'unpublished']});
-            should(fs.existsSync(dummyPath)).equal(true);
-            should(fs.existsSync(unpublishedPath)).equal(true);
-
-            done();
-        } catch(e) {done(e);} })();
+        // sync to restore, and make unpublished current
+        await bd.sync({branches:['master', 'unpublished']});
+        should(fs.existsSync(dummyPath)).equal(true);
+        should(fs.existsSync(unpublishedPath)).equal(true);
     });
     it("authorInfo() => supported author info", done=>{
         (async function() { try {
