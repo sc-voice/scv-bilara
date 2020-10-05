@@ -41,7 +41,7 @@
         });
         should(skr.logger).equal(logger);
     });
-    it("TESTTESTcustom ctor", ()=>{
+    it("custom ctor", ()=>{
         var logger = new LogInstance();
         var lang = 'de';
         var writeFile = false;
@@ -69,7 +69,7 @@
         should(reAllow.test(fn)).equal(true);
         should(reDeny.test(fn)).equal(false);
     });
-    it("TESTTESTgrep(...) finds en things", async()=>{
+    it("grep(...) finds en things", async()=>{
         var skr = new Seeker(SEEKEROPTS);
         skr.logLevel = 'info';
         var ms0 = Date.now();
@@ -202,7 +202,7 @@
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTkeywordSearch(...) limits results", async()=>{
+    it("keywordSearch(...) limits results", async()=>{
         var lang = 'en';
         var pattern = Seeker.normalizePattern('suffering joy faith');
         var maxResults = 3;
@@ -239,7 +239,7 @@
             `${en_suj}sn/sn12/sn12.23_translation-en-sujato.json:4`,
         ]);
     });
-    it("TESTTESTkeywordSearch(...) searches English", async()=>{
+    it("keywordSearch(...) searches English", async()=>{
         var pattern = Seeker.normalizePattern('suffering joy faith');
         var skr = await new Seeker({
             lang: 'de', // Deutsch
@@ -1270,7 +1270,7 @@
         should(mld0.bilaraPaths[0]).match(/an3.29/);
         should(mld0.score).equal(6.128);
     });
-    it("TESTTESTfind(...) is cached", async()=>{
+    it("find(...) is cached", async()=>{
         var skr = await new Seeker({
             lang: 'en', // English default
         }).initialize();
@@ -1296,7 +1296,7 @@
         delete data.elapsed;
         should.deepEqual(data2, data);
     });
-    it("TESTTESTisExample", async()=>{
+    it("isExample", async()=>{
         var skr = await new Seeker({
             lang: 'en', // English default
         }).initialize();

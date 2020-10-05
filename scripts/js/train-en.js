@@ -36,6 +36,15 @@ const { logger } = require('log-instance');
         logger.info(`${lang} words:${Object.keys(foreignWords).length}`);
     });
 
+    var langs = ['en-exceptions'];
+    langs.forEach(lang => {
+        var wordsPath = path.join(__dirname, 
+            `../../src/assets/words-${lang}.txt`);
+        var wordList = fs.readFileSync(wordsPath).toString().split('\n');
+        wordList.forEach(w => foreignWords[w] = false);
+        logger.info(`${lang} words:${Object.keys(foreignWords).length}`);
+    });
+
     var langs = ['en'];
     var langWords = {};
     langs.forEach(lang => {
