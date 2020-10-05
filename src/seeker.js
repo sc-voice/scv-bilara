@@ -41,6 +41,7 @@
                 writeFile: opts.writeFile == null
                     ? true
                     : opts.writeFile,
+                readFile: opts.readFile,
                 serialize: Seeker.serialize,
                 deserialize: Seeker.deserialize,
                 storeName: opts.memoStore,
