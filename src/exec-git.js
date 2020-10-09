@@ -16,6 +16,7 @@
             (opts.logger || logger).logInstance(this, opts);
             this.cwd = opts.cwd || LOCAL_DIR;
             this.repo = opts.repo || BILARA_DATA_GIT;
+            this.lockRetries = opts.lockRetries || 10;
             this.repoDir = path.basename(this.repo).replace(/\.git/,'');
             this.repoPath = opts.repoPath || 
                 path.join(LOCAL_DIR, this.repoDir);
@@ -76,47 +77,58 @@
             });
         }
 
-        sync(repo=this.repo, repoPath=this.repoPath, branches=['master']) {
-            var that = this;
+        async sync(repo=this.repo, repoPath=this.repoPath, branches=['master']) { try {
             var {
                 cwd,
             } = this;
-            return new Promise((resolve, reject) => {
-                (async function() { try {
-                    var cmds = [];
-                    if (fs.existsSync(repoPath)) {
-                        cmds.push(`cd ${repoPath} && git fetch --all`);
-                        if (branches instanceof Array) { 
-                            branches.forEach(branch => {
-                                cmds.push([
-                                    `if git checkout ${branch};`,
-                                    `then echo git checkout ${branch};`,
-                                    `else git branch --track`,
-                                    '"${remote#origin/}" "$remote";',
-                                    'fi',
-                                ].join(' '));
-                                // checkout and discard branch changes
-                                cmds.push(`git checkout ${branch}`);
-                                cmds.push(`git checkout .`); 
-                            });
-                        }
-                        cmds.push(`git merge`);
-                    } else {
-                        var repoDir = path.basename(repoPath);
-                        cmds.push(`git clone ${repo} ${repoDir}`);
-                    }
-                    var cmd = cmds.join(' && ');
-                    that.log(cmd);
-                    var execOpts = {
-                        cwd,
-                        maxBuffer: MAXBUFFER,
-                    };
-                    var res = execSync(cmd, execOpts);
-                    that.log(`sync() ${cmd} => ${res}`);
-                    resolve(that);
-                } catch(e) {reject(e);} })();
-            });
-        } 
+            var cmds = [];
+            if (fs.existsSync(repoPath)) {
+                cmds.push(`cd ${repoPath} && git fetch --all`);
+                if (branches instanceof Array) { 
+                    branches.forEach(branch => {
+                        cmds.push([
+                            `if git checkout ${branch};`,
+                            `then echo git checkout ${branch};`,
+                            `else git branch --track`,
+                            '"${remote#origin/}" "$remote";',
+                            'fi',
+                        ].join(' '));
+                        // checkout and discard branch changes
+                        cmds.push(`git checkout ${branch}`);
+                        cmds.push(`git checkout .`); 
+                    });
+                }
+                cmds.push(`git merge`);
+            } else {
+                var repoDir = path.basename(repoPath);
+                cmds.push(`git clone ${repo} ${repoDir}`);
+            }
+            var cmd = cmds.join(' && ');
+            this.log(cmd);
+            var execOpts = {
+                cwd,
+                maxBuffer: MAXBUFFER,
+            };
+            await this.indexLock();
+            var res = execSync(cmd, execOpts);
+            this.log(`sync() ${cmd} => ${res}`);
+            return this;
+        } catch(e) {
+            this.warn(`sync(}`,{repo,repoPath,branches},e.message);
+            throw e;
+        }}
+
+        async indexLock() {
+            let indexLock = path.join(this.repoPath, '.git', 'index.lock');
+            for (let iLock=this.lockRetries; 0<iLock--;) {
+                if (!fs.existsSync(indexLock)) {
+                    break;
+                }
+                this.info("waiting on indexLock...", iLock);
+                await new Promise(r=>setTimeout(()=>r(),100));
+            }
+            return this;
+        }
 
         hasChanges() {
             var that = this;
@@ -131,6 +143,7 @@
                         cwd: repoPath,
                         maxBuffer: MAXBUFFER,
                     };
+                    await that.indexLock();
                     exec(cmd, execOpts, (error, stdout, stderr) => {
                         if (error) {
                             reject(error);
@@ -173,8 +186,7 @@
             });
         } 
 
-        branch(branch, opts=false) {
-            var that = this;
+        async branch(branch, opts=false) { try {
             if (typeof opts === 'boolean') {
                 opts = { add: opts };
             }
@@ -186,38 +198,37 @@
             var {
                 repoDir,
             } = this;
-            return new Promise((resolve, reject) => {
-                (async function() { try {
-                    var repoPath = that.validateRepoPath();
-                    var execOpts = {
-                        cwd: repoPath,
-                        maxBuffer: MAXBUFFER,
-                    };
-                    var resData = 'std';
-                    if (list) {
-                        var cmd = `git branch`;
-                    } else if (add) {
-                        var cmd = [
-                            `git checkout -b "${branch}"`,
-                            `git push -u origin ${branch}`,
-                        ].join(';');
-                        that.log(`${repoDir}: ${cmd}`);
-                        that.log(`BRANCH CREATION IN PROGRESS (WAIT...)`);
-                    } else if (deleteMerged) {
-                        that.log(`DELETING MERGED BRANCH ${branch}`);
-                        var cmd = [
-                            `git push`,
-                            `git branch -d ${branch}`,
-                            `git push origin --delete ${branch}`,
-                        ].join(' && ');
-                    } else {
-                        var cmd = `git checkout "${branch}"`;
-                        that.log(`${repoDir}: ${cmd}`);
-                    }
-                    exec(cmd, execOpts, that.onExec(resolve, reject, resData));
-                } catch(e) {reject(e);} })();
-            });
-        } 
+            var repoPath = this.validateRepoPath();
+            var execOpts = {
+                cwd: repoPath,
+                maxBuffer: MAXBUFFER,
+            };
+            var resData = 'std';
+            if (list) {
+                var cmd = `git branch`;
+            } else if (add) {
+                var cmd = [
+                    `git checkout -b "${branch}"`,
+                    `git push -u origin ${branch}`,
+                ].join(';');
+                this.log(`${repoDir}: ${cmd}`);
+                this.log(`BRANCH CREATION IN PROGRESS (WAIT...)`);
+            } else if (deleteMerged) {
+                this.log(`DELETING MERGED BRANCH ${branch}`);
+                var cmd = [
+                    `git push`,
+                    `git branch -d ${branch}`,
+                    `git push origin --delete ${branch}`,
+                ].join(' && ');
+            } else {
+                var cmd = `git checkout "${branch}"`;
+                this.log(`${repoDir}: ${cmd}`);
+            }
+            exec(cmd, execOpts, this.onExec(resolve, reject, resData));
+        } catch(e) {
+            this.warn(`branch(${branch},${JSON.stringify(opts)})`,e.message);
+            throw e;
+        }} 
 
         diff(branch, opts={}) {
             var that = this;

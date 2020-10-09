@@ -12,6 +12,7 @@
     } = require("../index");
     const { MemoCache, } = require('memo-again');
     const { js, LOCAL_DIR, } = require("just-simple").JustSimple;
+    logger.logLevel = 'warn';
     this.timeout(20*1000);
     var bd = new BilaraData(); 
     function ROOTPATH(mid,category='sutta') {
@@ -846,5 +847,28 @@
 
             done();
         } catch(e) { done(e); }})();
+    });
+    it("TESTTESTsync() waits for indexLock", async()=>{
+        let logLevel = logger.logLevel;
+        logger.logLevel = 'info';
+        let bd = new BilaraData();
+
+        // create index.lock
+        let indexLock = path.join(bd.root, '.git', 'index.lock');
+        should(fs.existsSync(indexLock)).equal(false);
+        fs.writeFileSync(indexLock, 'test');
+        let resolved = false;
+
+        // bd.sync will block
+        let syncPromise = bd.sync();
+        syncPromise.then(()=>{ resolved = true; });
+        await new Promise(r=>setTimeout(()=>r(), 200));
+        should(resolved).equal(false);
+
+        // bd.sync will continue
+        await fs.promises.unlink(indexLock);
+        await syncPromise;
+        should(resolved).equal(true);
+        logger.logLevel = logLevel;
     });
 })

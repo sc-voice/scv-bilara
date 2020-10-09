@@ -383,8 +383,8 @@
             maxResults: 10,
             method: 'keywords',
             keywordsFound: {
-                hausbesitzer: 42,
-                anathapindika: 41,
+                hausbesitzer: 43,
+                anathapindika: 43,
             },
             lines: [
 `${de_sab}sn/sn10/sn10.8_translation-de-sabbamitta.json:4`,

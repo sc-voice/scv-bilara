@@ -249,37 +249,40 @@
             return this._suttaIds;
         }
 
-        async sync(opts={}) {
-            var that = this;
+        async sync(opts={}) { try {
             var purge = opts.purge || false;
             var initializing = opts.initializing || false;
             var branches = opts.branches || 
                 [this.branch || "unpublished"];
             if (purge) {
-                var cmd = `rm -rf ${that.name}`;
+                var cmd = `rm -rf ${this.name}`;
                 var execOpts = {
                     cwd: LOCAL_DIR,
                 };
-                that.log(`Purging repository: ${cmd}`);
+                this.log(`Purging repository: ${cmd}`);
                 var res = execSync(cmd, execOpts).toString();
             }
-            var res = await that.execGit
+            var res = await this.execGit
                 .sync(undefined, undefined, branches);
 
             // clear memoizer
             var mzr = new Memoizer({writeMem: false});
             var mc = mzr.cache;
             var volumes = mc.volumes();
-            that.info(`clearing memoizer bytes:`, 
+            this.info(`clearing memoizer bytes:`, 
                 await mc.fileSize(), volumes);
             for await (let v of volumes) {
                 mc.clearVolume(v);
             }
 
             if (purge && !initializing) {
-                await that.initialize();
+                await this.initialize();
             }
-        }
+            return this;
+        } catch(e) {
+            this.warn(`sync)`, JSON.stringify(opts), e.message);
+            throw e;
+        }}
 
         isSuttaPath(fpath) {
             console.trace(`DEPRECATED: isSuttaPath => isPublishedPath`);
