@@ -848,10 +848,10 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTsync() waits for indexLock", async()=>{
+    it("initialize() waits for indexLock", async()=>{
         let logLevel = logger.logLevel;
         logger.logLevel = 'info';
-        let bd = new BilaraData();
+        let bd = new BilaraData({branch:'unpublished'});
 
         // create index.lock
         let indexLock = path.join(bd.root, '.git', 'index.lock');
@@ -860,7 +860,7 @@
         let resolved = false;
 
         // bd.sync will block
-        let syncPromise = bd.sync();
+        let syncPromise = bd.initialize(true);
         syncPromise.then(()=>{ resolved = true; });
         await new Promise(r=>setTimeout(()=>r(), 200));
         should(resolved).equal(false);

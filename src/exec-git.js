@@ -1,12 +1,14 @@
 (function(exports) {
     const fs = require("fs");
     const path = require("path");
+    const util = require('util');
     const { logger } = require('log-instance');
     const { js, LOCAL_DIR, } = require('just-simple').JustSimple;
     const {
         exec,
         execSync,
     } = require('child_process');
+    const execPromise = util.promisify(exec);
     const MAXBUFFER = 10 * 1024 * 1024;
 
     const BILARA_DATA_GIT = 'https://github.com/sc-voice/bilara-data.git';
@@ -16,7 +18,7 @@
             (opts.logger || logger).logInstance(this, opts);
             this.cwd = opts.cwd || LOCAL_DIR;
             this.repo = opts.repo || BILARA_DATA_GIT;
-            this.lockRetries = opts.lockRetries || 10;
+            this.lockRetries = opts.lockRetries || 30; // seconds
             this.repoDir = path.basename(this.repo).replace(/\.git/,'');
             this.repoPath = opts.repoPath || 
                 path.join(LOCAL_DIR, this.repoDir);
@@ -124,8 +126,8 @@
                 if (!fs.existsSync(indexLock)) {
                     break;
                 }
-                this.info("waiting on indexLock...", iLock);
-                await new Promise(r=>setTimeout(()=>r(),100));
+                this.info(`waiting on indexLock (${iLock} seconds)...`);
+                await new Promise(r=>setTimeout(()=>r(),1000));
             }
             return this;
         }
@@ -224,7 +226,12 @@
                 var cmd = `git checkout "${branch}"`;
                 this.log(`${repoDir}: ${cmd}`);
             }
-            exec(cmd, execOpts, this.onExec(resolve, reject, resData));
+            await this.indexLock();
+            var res = await execPromise(cmd, execOpts);
+            if (res.error) {
+                throw res.error;
+            }
+            return res;
         } catch(e) {
             this.warn(`branch(${branch},${JSON.stringify(opts)})`,e.message);
             throw e;

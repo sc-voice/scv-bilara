@@ -8,6 +8,7 @@
     const {
         ExecGit,
     } = require("../index");
+    const { logger } = require('log-instance');
     const { js, LOCAL_DIR, } = require("just-simple").JustSimple;
     const TEST_REPO = "git@github.com:sc-voice/test-repo.git";
     const TEST_REPOPATH = path.join(LOCAL_DIR, 'test-repo');
@@ -89,5 +90,31 @@
             should(res).equal(execGit);
             done();
         } catch(e) {done(e);} })();
+    });
+    it("TESTTESTbranch() waits for indexLock", async()=>{
+        let root = path.join(LOCAL_DIR, 'bilara-data');
+        let execGit = new ExecGit({
+            repo: `https://github.com/sc-voice/bilara-data.git`,
+        });
+        let logLevel = logger.logLevel;
+        logger.logLevel = 'info';
+
+        // create index.lock
+        let indexLock = path.join(root, '.git', 'index.lock');
+        should(fs.existsSync(indexLock)).equal(false);
+        fs.writeFileSync(indexLock, 'test');
+        let resolved = false;
+
+        // bd.sync will block
+        let branchPromise = execGit.branch('unpublished');
+        branchPromise.then(()=>{ resolved = true; });
+        await new Promise(r=>setTimeout(()=>r(), 200));
+        should(resolved).equal(false);
+
+        // bd.sync will continue
+        await fs.promises.unlink(indexLock);
+        await branchPromise;
+        should(resolved).equal(true);
+        logger.logLevel = logLevel;
     });
 })
