@@ -112,7 +112,6 @@
                         a[text_uid] = entry;
                     } else {
                         var stat = fs.statSync(rootBilPath);
-                        console.log(`dbg stat`, stat);
                         if (stat.isFile()) {
                             a[text_uid] = entry;
                         } else {

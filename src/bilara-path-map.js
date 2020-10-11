@@ -2,6 +2,7 @@
     const fs = require('fs');
     const path = require('path');
     const { LOCAL_DIR, } = require('just-simple').JustSimple;
+    const { logger } = require('log-instance');
     const BilaraPath = require('./bilara-path');
     const STUBFILESIZE = 5;
     const ROOTMS_FOLDER = path.join(LOCAL_DIR, "bilara-data", 
@@ -9,6 +10,7 @@
 
     class BilaraPathMap {
         constructor(opts = {}) {
+            (opts.logger || logger).logInstance(this);
             this.root = opts.root || 
                 path.join(LOCAL_DIR, "bilara-data");
             this.initialized = false;
@@ -23,45 +25,44 @@
             'comment',
         ]};
 
-        initialize() {
-            var that = this;
+        async initialize() { try {
             var readdir = fs.promises.readdir;
-            var pbody = (resolve,reject)=>{(async function() { try {
-                that.suidMap = {};
-                var transPath = path.join(that.root, "translation");
-                var rdOpts = {withFileTypes:true};
-                var langs = (await readdir(transPath, rdOpts))
-                    .reduce((a,e)=> (e.isDirectory() 
-                        ? [...a,e.name] : a),[]);
-                for (var il=0; il < langs.length; il++) {
-                    var l = langs[il];
-                    var authPath = path.join(transPath,l);
-                    var auths = (await readdir(authPath, rdOpts))
-                        .reduce((a,e)=>(e.isDirectory() 
-                            ? [...a,e.name] : a), []);
-                    for (var ia=0; ia < auths.length; ia++) {
-                        var key = `translation/${l}/${auths[ia]}`;
-                        await that.loadPaths({ key });
-                        var key = `comment/${l}/${auths[ia]}`;
-                        await that.loadPaths({ key });
-                    }
+            this.suidMap = {};
+            var transPath = path.join(this.root, "translation");
+            var rdOpts = {withFileTypes:true};
+            var langs = (await readdir(transPath, rdOpts))
+                .reduce((a,e)=> (e.isDirectory() 
+                    ? [...a,e.name] : a),[]);
+            for (var il=0; il < langs.length; il++) {
+                var l = langs[il];
+                var authPath = path.join(transPath,l);
+                var auths = (await readdir(authPath, rdOpts))
+                    .reduce((a,e)=>(e.isDirectory() 
+                        ? [...a,e.name] : a), []);
+                for (var ia=0; ia < auths.length; ia++) {
+                    var key = `translation/${l}/${auths[ia]}`;
+                    await this.loadPaths({ key });
+                    var key = `comment/${l}/${auths[ia]}`;
+                    await this.loadPaths({ key });
                 }
+            }
 
-                await that.loadPaths({ key: "root/pli/ms", });
-                await that.loadPaths({ 
-                    key: "html/pli/ms", 
-                    rePathSuffix:/_html.json/,
-                });
-                await that.loadPaths({ 
-                    key: "reference/pli/ms",
-                    rePathSuffix:/_reference.json/,
-                }); 
-                await that.loadPaths({ key: "variant/pli/ms"}); 
-                that.initialized = true;
-                resolve(that);
-            } catch(e) {reject(e);} })()}
-            return new Promise(pbody);
-        }
+            await this.loadPaths({ key: "root/pli/ms", });
+            await this.loadPaths({ 
+                key: "html/pli/ms", 
+                rePathSuffix:/_html.json/,
+            });
+            await this.loadPaths({ 
+                key: "reference/pli/ms",
+                rePathSuffix:/_reference.json/,
+            }); 
+            await this.loadPaths({ key: "variant/pli/ms"}); 
+            this.initialized = true;
+            return this;
+        } catch(e) {
+            this.warn(`initialize()`, e.message);
+            throw e;
+        }}
 
         bilaraPaths(opts={}) {
             if (typeof opts === 'string') {
@@ -120,7 +121,7 @@
             return pathInfo && pathInfo[key];
         }
 
-        loadPaths(opts={}) {
+        async loadPaths(opts={}) { try {
             var {
                 rePathSuffix,
                 key,
@@ -158,12 +159,12 @@
                     }
                 }
             };
-            var pbody = (resolve, reject) => {(async function() { try {
-                fs.existsSync(keyRoot) && traverse(keyRoot);
-                resolve({ nFiles, suidMap, });
-            } catch(e) {reject(e);} })()};
-            return new Promise(pbody);
-        }
+            fs.existsSync(keyRoot) && traverse(keyRoot);
+            return { nFiles, suidMap, };
+        } catch(e) {
+            this.warn(`loadPaths()`, e.message);
+            throw e;
+        }}
     }
 
     module.exports = exports.BilaraPathMap = BilaraPathMap;

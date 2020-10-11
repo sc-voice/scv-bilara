@@ -91,7 +91,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTbranch() waits for indexLock", async()=>{
+    it("branch() waits for indexLock", async()=>{ try {
         let root = path.join(LOCAL_DIR, 'bilara-data');
         let execGit = new ExecGit({
             repo: `https://github.com/sc-voice/bilara-data.git`,
@@ -100,7 +100,7 @@
         logger.logLevel = 'info';
 
         // create index.lock
-        let indexLock = path.join(root, '.git', 'index.lock');
+        var indexLock = path.join(root, '.git', 'index.lock');
         should(fs.existsSync(indexLock)).equal(false);
         fs.writeFileSync(indexLock, 'test');
         let resolved = false;
@@ -116,5 +116,7 @@
         await branchPromise;
         should(resolved).equal(true);
         logger.logLevel = logLevel;
-    });
+    } finally {
+        fs.existsSync(indexLock) &&  fs.unlinkSync(indexLock);
+    }});
 })

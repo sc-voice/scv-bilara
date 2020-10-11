@@ -357,7 +357,8 @@ function outMarkdown(res, pattern, nLang=3) {
             var scid = seg.scid;
             var langText = (seg[res.lang] || '').trim();
             var linkText = new SuttaCentralId(scid).standardForm();
-            var link = `https://suttacentral.net/${suid}/en/sujato#${scid}`;
+            var author = mld.author_uid.split(', ')[1] || mld.author_uid;
+            var link = `https://suttacentral.net/${suid}/${mld.lang}/${author}#${scid}`;
             if (nLang > 1) {
                 console.log(`> [${linkText}](${link}): ${seg.pli}`);
             }

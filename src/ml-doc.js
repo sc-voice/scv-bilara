@@ -19,6 +19,10 @@
                 throw new Error(`bilaraPaths is required`);
             }
             this.bilaraPaths = bilaraPaths;
+            this.author_uid = opts.author_uid;
+            this.type = opts.type || 'translation';
+            this.category = opts.category || 'sutta';
+            this.sutta_uid = opts.sutta_uid;
             this.lang = opts.lang || this.languages().pop();
             this.segMap = opts.segMap || {};
             this.score = opts.score || 0; // search relevance
@@ -26,7 +30,6 @@
             this.maxWord = opts.maxWord || 30;
             this.minWord = opts.minWord || 5;
             this.segsMatched = opts.segsMatched;
-            this.langContent = opts.langContent;
             this.langSegs = opts.langSegs;
             Object.defineProperty(this, "unicode", {
                 value: opts.unicode || new Unicode(),
@@ -61,8 +64,9 @@
         get suid() { 
             var {
                 bilaraPaths,
+                sutta_uid,
             } = this;
-            return bilaraPaths.reduce((a,bp) => {
+            return sutta_uid || bilaraPaths.reduce((a,bp) => {
                 var suid = BilaraPath.pathParts(bp).suid;
                 if (a && suid !== a) {
                     throw new Error(`uid mismatch `+
@@ -81,9 +85,30 @@
         }
 
         get translations() {
-            return this.bilaraPaths
-                .map(bp => BilaraPath.pathParts(bp))
-                .filter(t => t.type === 'translation');
+            let {
+                bilaraPaths,
+                author_uid,
+                lang,
+                type,
+                sutta_uid,
+                category,
+            } = this;
+            if (bilaraPaths.length) {
+                return bilaraPaths
+                    .map(bp => BilaraPath.pathParts(bp))
+                    .filter(t => t.type === 'translation');
+            } else {
+                return [{ // legacy translation
+                    type,
+                    lang,
+                    author_uid,
+                    category,
+                    collection: sutta_uid.replace(/[-0-9.]+/,''),
+                    suttaRef: `${sutta_uid}/${lang}/${author_uid}`,
+                    //bilaraPath: translationPath('an/an1/an1.1-10','en','sujato'),
+                    sutta_uid,
+                }];
+            }
         }
 
         titles(lang=this.lang) {
@@ -107,12 +132,16 @@
         }
 
         languages() {
-            return Object.keys(
-                this.bilaraPaths.reduce((a,bp) => {
-                    a[bp.split('/')[1]] = true;
-                    return a;
-                }, {})
-            ).sort(MLDoc.langCompare_pli_en);
+            let {
+                bilaraPaths,
+                lang,
+            } = this;
+            return bilaraPaths.length
+                ?   Object.keys(bilaraPaths.reduce((a,bp) => {
+                        a[bp.split('/')[1]] = true;
+                        return a;
+                    }, {})).sort(MLDoc.langCompare_pli_en)
+               : [lang];
         }
 
         load(root=BILARA_PATH) {
@@ -124,7 +153,6 @@
             return new Promise((resolve, reject) => {
                 (async function() { try {
                     // initiate file reads
-                    that.langContent = {};
                     that.langSegs = {};
                     var p_bp = [];
                     for (var ip = 0; ip < bilaraPaths.length; ip++) {

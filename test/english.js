@@ -10,7 +10,7 @@
         should(English.romanizePattern("abcdefghijklmnnopqrstuvwxyz"))
         .equal('abcdefghijklmnnopqrstuvwxyz');
     });
-    it("TESTTESTrecognizes English words", async()=>{
+    it("recognizes English words", async()=>{
         enWords = await English.wordSet();
         should.deepEqual(enWords.trace('fingerschnippen'), {
             trace: 'fingersc~',

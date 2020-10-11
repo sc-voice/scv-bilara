@@ -6,6 +6,7 @@
     const {
         exec,
     } = require('child_process');
+    const { ScApi } = require('suttacentral-api');
     const { MerkleJson } = require("merkle-json");
     const { Memoizer } = require("memo-again");
     const FuzzyWordSet = require('./fuzzy-word-set');
@@ -33,6 +34,7 @@
                 this.bilaraData.includeUnpublished;
             this.lang = opts.lang || 'en';
             this.languages = opts.languages || ['pli', 'en'];
+            this.scApi = opts.scApi || new ScApi();
             this.unicode = opts.unicode || new Unicode();
             this.paliWords = opts.paliWords;
             this.mj = new MerkleJson();
@@ -622,6 +624,7 @@
             var examples = bd.examples;
             var resultPattern = pattern;
             var scoreDoc = true;
+            let method, uids, suttaRefs;
 
             if (examples[lang] && examples[lang].indexOf(pattern) >= 0) {
                 searchLang = lang;
@@ -631,14 +634,17 @@
                 verbose && console.log(`findArgs SuttaCentralId`, 
                     js.simpleString(findArgs));
                 maxResults = maxResults || this.maxResults;
-                var {
-                    method,
-                    uids,
-                    suttaRefs,
-                } = bd.sutta_uidSearch(pattern, maxResults, lang);
+                let res = bd.sutta_uidSearch(pattern, maxResults);
+                method = res.method;
+                uids = res.uids;
+                suttaRefs = res.suttaRefs;
+                res.lang && (lang = res.lang);
+                if (!languages.includes(lang)) {
+                    languages = [...languages.filter(l=>l!=='en'), lang];
+                }
                 scoreDoc = false;
             } else {
-                var method = 'phrase';
+                method = 'phrase';
                 var searchOpts = {
                     pattern, 
                     searchLang,
@@ -660,7 +666,7 @@
                 } else {
                     verbose && that.log(`findArgs keywords`, 
                         js.simpleString(findArgs));
-                    var method = 'keywords';
+                    method = 'keywords';
                     var data = await that.keywordSearch(searchOpts);
                     var {
                         lines,
@@ -668,8 +674,7 @@
                     } = data;
                 }
                 sortLines && lines.sort(sortLines);
-                var suttaRefs = lines.map(line => 
-                    BilaraPath.pathParts(line).suttaRef);
+                suttaRefs = lines.map(line =>BilaraPath.pathParts(line).suttaRef);
                 verbose && console.log(`findArgs suttaRefs`, suttaRefs);
             }
 
@@ -686,45 +691,62 @@
                     verbose && console.log(`skipping ${suttaRef}`);
                     continue; 
                 }
-                let isBilDoc = 
-                    bd.isBilaraDoc({ suid, lang:refLang, author });
-                let mld = await bd.loadMLDoc({
-                    verbose,
-                    suid: isBilDoc ? suid : suttaRef,
-                    languages,
-                    lang,
-                    types,
-                });
-                var mldBilaraPaths = mld.bilaraPaths;
-                if (mldBilaraPaths.length < minLang) {
-                    verbose && that.log(`skipping ${mld.suid} minLang`,
-                        `${mldBilaraPaths.length}<${minLang} [${languages}]`, 
-                    );
-                    continue;
-                }
-                bilaraPaths = [...bilaraPaths, ...mldBilaraPaths];
-                var resFilter = mld.filterSegments({
-                    pattern,
-                    resultPattern, 
-                    languages: [searchLang], 
-                    showMatchesOnly,
-                });
-                segsMatched += resFilter.matched;
-                mld.segsMatched = resFilter.matched;
-                if (matchHighlight) {
-                    mld.highlightMatch(resultPattern, matchHighlight);
-                }
-                if (resFilter.matched === 0) {
-                    //that.log(`Ignoring ${mld.suid} ${pattern}`);
-                } else if (mld.bilaraPaths.length >= minLang) {
-                    if (Object.keys(mld.segMap).length ) {
-                        mlDocs.push(mld);
-                        matchingRefs.push(suttaRef);
+                let isBilDoc = bd.isBilaraDoc({ suid, lang:refLang||lang, author });
+                let mld;
+                if (isBilDoc) {
+                    mld = await bd.loadMLDoc({
+                        verbose,
+                        suid,
+                        languages,
+                        lang,
+                        types,
+                    });
+                    var mldBilaraPaths = mld.bilaraPaths;
+                    if (mldBilaraPaths.length < minLang) {
+                        verbose && that.log(`skipping ${mld.suid} minLang`,
+                            `${mldBilaraPaths.length}<${minLang} [${languages}]`, 
+                        );
+                        continue;
+                    }
+                    bilaraPaths = [...bilaraPaths, ...mldBilaraPaths];
+                    var resFilter = mld.filterSegments({
+                        pattern,
+                        resultPattern, 
+                        languages: [searchLang], 
+                        showMatchesOnly,
+                    });
+                    segsMatched += resFilter.matched;
+                    mld.segsMatched = resFilter.matched;
+                    if (matchHighlight) {
+                        mld.highlightMatch(resultPattern, matchHighlight);
+                    }
+                    if (resFilter.matched === 0) {
+                        //that.log(`Ignoring ${mld.suid} ${pattern}`);
+                    } else if (mld.bilaraPaths.length >= minLang) {
+                        if (Object.keys(mld.segMap).length ) {
+                            mlDocs.push(mld);
+                            matchingRefs.push(suttaRef);
+                        } else {
+                            that.log(`skipping ${mld.suid} segments:0`);
+                        }
                     } else {
-                        that.log(`skipping ${mld.suid} segments:0`);
+                        that.log(`skipping ${mld.suid} minLang:${minLang}`);
                     }
                 } else {
-                    that.log(`skipping ${mld.suid} minLang:${minLang}`);
+                    mld = await bd.loadMLDocLegacy(suttaRef);
+                    mlDocs.push(mld);
+                    matchingRefs.push(suttaRef);
+                    var resFilter = mld.filterSegments({
+                        pattern,
+                        resultPattern, 
+                        languages: [searchLang], 
+                        showMatchesOnly,
+                    });
+                    segsMatched += resFilter.matched;
+                    mld.segsMatched = resFilter.matched;
+                    if (matchHighlight) {
+                        mld.highlightMatch(resultPattern, matchHighlight);
+                    }
                 }
             }
             var msElapsed = Date.now()-msStart;

@@ -658,7 +658,7 @@
         should(res.maxResults).equal(maxResults);
         should.deepEqual(res.suttaRefs, ['mn1/en/sujato']);
         should(res.resultPattern).equal(pattern);
-        should(res.lang).equal('de');
+        should(res.lang).equal('en'); // pattern overrides default lang='de'
         should(res.mlDocs.length).equal(1);
         var segments = mld0.segments();
         should(segments.length).equal(334);
@@ -671,7 +671,7 @@
             en: 'But then they identify with fire … ',
         });
     });
-    it("find(...) finds an1.2 part of an1.1-10", async()=>{
+    it("find(...) finds an1.2", async()=>{
         var maxResults = 3;
         var skr = await new Seeker({
             maxResults,
@@ -694,19 +694,23 @@
         should(res.lang).equal('de');
         should(res.mlDocs.length).equal(1);
         var segments = mld0.segments();
+        should.deepEqual(segments[0],{
+            scid: 'an1.2:1.0',
+            de: '2',
+            en: '2',
+            pli: '2',
+            matched: true,
+        });
         should(segments.length).equal(4);
-        should.deepEqual(segments.reduce((a,s) => {
-            var scid = s.scid;
-            a[scid] = a.hasOwnProperty(scid) ? a[scid] + 1 : 1;
-            return a;
-        }, {}), {
-            "an1.2:1.0" : 1,
-            "an1.2:1.1" : 1,
-            "an1.2:1.2" : 1,
-            "an1.2:1.3" : 1,
+        should.deepEqual(segments[3],{ // AN1.1
+            scid: 'an1.2:1.3',
+            pli: 'Dutiyaṁ. ',
+            de: ' ',
+            en: ' ',
+            matched: true,
         });
     });
-    it("find(...) does not find legacy suttas", async()=>{
+    it("find(...) => legacy suttas", async()=>{
         var maxDoc = 3;
         var skr = await new Seeker({
             maxDoc,
@@ -722,12 +726,14 @@
         });
         should(res.method).equal('sutta_uid');
         should(res.maxDoc).equal(maxDoc);
-        should.deepEqual(res.suttaRefs, []);
+        should.deepEqual(res.suttaRefs, [ `mn1/en/bodhi` ]);
         should(res.resultPattern).equal(pattern);
-        should(res.lang).equal('de');
-        should(res.mlDocs.length).equal(0);
+        should(res.lang).equal('en');
+        should(res.mlDocs.length).equal(1);
+        let mld0 = res.mlDocs[0];
+        should(mld0.author_uid).equal('bodhi');
     });
-    it("find({minLang}) => minimum language count", async()=>{
+    it("TESTTESTfind({minLang}) => minimum language count", async()=>{
         var maxResults = 3;
         var skr = await new Seeker({
             maxResults,
@@ -752,6 +758,8 @@
         });
         should.deepEqual(res.suttaRefs, ['dn33']);
         should(res.mlDocs.length).equal(1);
+        let mld0 = res.mlDocs[0];
+        should(mld0.author_uid).equal('ms, sabbamitta, sujato');
     });
     it("find(...) => finds jhana", async()=>{
         var msStart = Date.now();
@@ -1261,7 +1269,6 @@
         var pattern = "pacetana";
         
         var data = await skr.find({pattern, verbose});
-        console.log(`dbg pacetana`, data);
         should(data.resultPattern).equal('\\bpacetana');
         should(data.searchLang).equal('en');
         should(data.method).equal('phrase');
@@ -1286,7 +1293,6 @@
         var ms1 = Date.now();
         var data2 = await skr.find(findOpts);
         var ms2 = Date.now();
-        console.log(`dbg find ms:`, ms1-ms0, ms2-ms1);
         should(data.method).equal('phrase');
         var mld0 = data.mlDocs[0];
         should(mld0.bilaraPaths[0])
@@ -1307,6 +1313,24 @@
         should(skr.isExample('root suffering')).equal(false);
         should(skr.isExample('Wurzel des Leidens')).equal(true);
         should(skr.isExample('wurzel des leidens')).equal(true);
+    });
+    it('find(...) => dn7/de', async()=>{
+        let verbose = true;
+        let bilaraData = new BilaraData();
+        bilaraData.logLevel = 'info';
+        let skr = await new Seeker({
+            bilaraData,
+            logger: bilaraData,
+        }).initialize();
+        let res = await skr.find({
+            pattern: 'dn7/de',
+            verbose,
+        });
+        should(res.lang).equal('de');
+        should(res.bilaraPaths.length).equal(0);
+        let mld0 = res.mlDocs[0];
+        should(mld0.author_uid).equal('kusalagnana-maitrimurti-traetow');
+        should(mld0.sutta_uid).equal('dn7');
     });
 
 })

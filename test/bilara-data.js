@@ -117,7 +117,7 @@
             'ashinsarana', 'ms', 'sabbamitta', 'sujato', 
         ]);
     });
-    it("sync() purges and refreshes repo", async()=>{
+    it("TESTTESTsync() purges and refreshes repo", async()=>{
         var name = "test-repo";
         var mc = new MemoCache();
         var bd = new BilaraData({name});
@@ -615,106 +615,133 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("sutta_uidSearch(...) normalizes sutta references", done=>{
-        (async function() { try {
-            await bd.initialize();
-            var maxResults = 4;
+    it("sutta_uidSearch(...) normalizes sutta references", async()=>{
+        await bd.initialize();
+        var maxResults = 4;
 
-            // minor id range AN10.1-10
-            var res = bd.sutta_uidSearch("an10.1-10");
-            should.deepEqual(res.uids, [
-                "an10.1", "an10.2", "an10.3", "an10.4", "an10.5",
-            ]);
-            should.deepEqual(res.suttaRefs, [
-                "an10.1", 
-                "an10.2", 
-                "an10.3", 
-                "an10.4", 
-                "an10.5",
-            ]);
+        // minor id range AN10.1-10
+        var res = bd.sutta_uidSearch("an10.1-10");
+        should.deepEqual(res.uids, [
+            "an10.1", "an10.2", "an10.3", "an10.4", "an10.5",
+        ]);
+        should.deepEqual(res.suttaRefs, [
+            "an10.1", 
+            "an10.2", 
+            "an10.3", 
+            "an10.4", 
+            "an10.5",
+        ]);
 
-            // major id range MN2-11
-            var res = bd.sutta_uidSearch("mn2-11", maxResults);
-            should.deepEqual(res.uids, [
-                "mn2", "mn3", "mn4", "mn5", 
-            ]);
+        // major id range MN2-11
+        var res = bd.sutta_uidSearch("mn2-11", maxResults);
+        should.deepEqual(res.uids, [
+            "mn2", "mn3", "mn4", "mn5", 
+        ]);
 
-            // minor id range of ranged suttas
-            var res = bd.sutta_uidSearch("an1.2-11");
-            should.deepEqual(res.uids, [
-                "an1.1-10", "an1.11-20",
-            ]);
+        // minor id range of ranged suttas
+        var res = bd.sutta_uidSearch("an1.2-11");
+        should.deepEqual(res.uids, [
+            "an1.1-10", "an1.11-20",
+        ]);
+        should(res.lang).equal(undefined);
 
-            // language
-            var res = bd.sutta_uidSearch("an1.2-11/de", maxResults);
-            should.deepEqual(res.uids, [
-                "an1.1-10/de", "an1.11-20/de",
-            ]);
-            should.deepEqual(res.suttaRefs, [
-                "an1.1-10/de", 
-                "an1.11-20/de", 
-            ]);
+        // language
+        var res = bd.sutta_uidSearch("an1.2-11/de", maxResults);
+        should.deepEqual(res.uids, [
+            "an1.1-10/de", "an1.11-20/de",
+        ]);
+        should.deepEqual(res.suttaRefs, [
+            "an1.1-10/de", 
+            "an1.11-20/de", 
+        ]);
+        should(res.lang).equal('de');
 
-            // author
-            var res = bd.sutta_uidSearch("an1.2-11/en/bodhi", maxResults);
-            should.deepEqual(res.uids, [
-                "an1.1-10/en/bodhi", "an1.11-20/en/bodhi",
-            ]);
-            should.deepEqual(res.suttaRefs, [
-                "an1.1-10/en/bodhi", 
-                "an1.11-20/en/bodhi", 
-            ]);
-
-            done(); 
-        } catch(e) {done(e);} })();
+        // author
+        var res = bd.sutta_uidSearch("an1.2-11/en/bodhi", maxResults);
+        should.deepEqual(res.uids, [
+            "an1.1-10/en/bodhi", "an1.11-20/en/bodhi",
+        ]);
+        should.deepEqual(res.suttaRefs, [
+            "an1.1-10/en/bodhi", 
+            "an1.11-20/en/bodhi", 
+        ]);
+        should(res.lang).equal('en');
     });
-    it("loadMLDoc(...) loads bilingual doc", done=>{
-        (async function() { try {
-            await bd.initialize();
-            var an1_9_en = {
-                scid: "an1.9:1.0",
-                pli: '9',
-                en: '9',
-            };
-            var an1_9_de = {
-                scid: "an1.9:1.0",
-                pli: '9',
-                de: '9',
-            };
+    it("loadMLDoc(...) loads bilingual doc", async()=>{
+        await bd.initialize();
+        var an1_9_en = {
+            scid: "an1.9:1.0",
+            pli: '9',
+            en: '9',
+        };
+        var an1_9_de = {
+            scid: "an1.9:1.0",
+            pli: '9',
+            de: '9',
+        };
 
-            // implicit
-            var mld = await bd.loadMLDoc({
-                suid: 'an1.2',
-            });
-            should.deepEqual(mld.segMap['an1.9:1.0'], an1_9_en);
-            var mld = await bd.loadMLDoc({
-                suid: 'an1.2',
-                lang: 'en',
-            });
-            should.deepEqual(mld.segMap['an1.9:1.0'], an1_9_en);
+        // implicit
+        var mld = await bd.loadMLDoc({
+            suid: 'an1.2',
+        });
+        should.deepEqual(mld.segMap['an1.9:1.0'], an1_9_en);
+        var mld = await bd.loadMLDoc({
+            suid: 'an1.2',
+            lang: 'en',
+        });
+        should.deepEqual(mld.segMap['an1.9:1.0'], an1_9_en);
 
-            // explicit
-            var mld = await bd.loadMLDoc("an1.2/en");
-            should.deepEqual(mld.segMap['an1.9:1.0'], an1_9_en);
-            var mld = await bd.loadMLDoc("an1.2/en/sujato");
-            should.deepEqual(mld.segMap['an1.9:1.0'], an1_9_en);
-            var mld = await bd.loadMLDoc({
-                suid: 'an1.2/en',
-            });
-            should.deepEqual(mld.segMap['an1.9:1.0'], an1_9_en);
-            var mld = await bd.loadMLDoc({
-                suid: 'an1.10',
-                languages: ['en', 'pli'],
-            });
-            should.deepEqual(mld.segMap['an1.9:1.0'], an1_9_en);
-            var mld = await bd.loadMLDoc({
-                suid: 'an1.10',
-                languages: ['de', 'pli'],
-            });
-            should.deepEqual(mld.segMap['an1.9:1.0'], an1_9_de);
+        // explicit
+        var mld = await bd.loadMLDoc("an1.2/en");
+        should.deepEqual(mld.segMap['an1.9:1.0'], an1_9_en);
+        var mld = await bd.loadMLDoc("an1.2/en/sujato");
+        should.deepEqual(mld.segMap['an1.9:1.0'], an1_9_en);
+        var mld = await bd.loadMLDoc({
+            suid: 'an1.2/en',
+        });
+        should.deepEqual(mld.segMap['an1.9:1.0'], an1_9_en);
+        var mld = await bd.loadMLDoc({
+            suid: 'an1.10',
+            languages: ['en', 'pli'],
+        });
+        should.deepEqual(mld.segMap['an1.9:1.0'], an1_9_en);
+        var mld = await bd.loadMLDoc({
+            suid: 'an1.10',
+            languages: ['de', 'pli'],
+        });
+        should.deepEqual(mld.segMap['an1.9:1.0'], an1_9_de);
+    });
+    it("loadMLDocLegacy(...) loads legacy doc", async()=>{
+        await bd.initialize();
+        var mld = await bd.loadMLDocLegacy('dn7/de');
 
-            done();
-        } catch(e) { done(e); }})();
+        should(mld.lang).equal('de');
+        should(mld.score).equal(0);
+        should(mld.suid).equal('dn7');
+        should(mld.hyphen).equal('\u00ad');
+        should(mld.maxWord).equal(30);
+        should(mld.minWord).equal(5);
+        should(mld.segsMatched).equal(undefined);
+        should.deepEqual(mld.langSegs, {
+            de: 70,
+        });
+        let segs = mld.segments();
+        should(segs[2].de).match(/Zu einer Zeit weilte der Erhabene in Kosambi/);
+        should(Object.keys(mld.segMap).length).equal(70);
+        should(mld.author_uid).equal('kusalagnana-maitrimurti-traetow');
+        should.deepEqual(mld.translations, [{
+            type: 'translation',
+            lang: 'de',
+            author_uid: 'kusalagnana-maitrimurti-traetow',
+            category: 'sutta',
+            collection: 'dn',
+            suttaRef: 'dn7/de/kusalagnana-maitrimurti-traetow',
+            sutta_uid: 'dn7',
+        }]);
+        should.deepEqual(mld.titles(),[
+            'Dīgha Nikāya 7', 'Die Lehrrede an Jāliya',
+        ]);
+        should.deepEqual(mld.languages(), [ 'de' ]);
     });
     it("loadMLDoc(...) loads trilingual doc", done=>{
         (async function() { try {
@@ -848,13 +875,13 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("initialize() waits for indexLock", async()=>{
+    it("initialize() waits for indexLock", async()=>{ try {
         let logLevel = logger.logLevel;
         logger.logLevel = 'info';
         let bd = new BilaraData({branch:'unpublished'});
 
         // create index.lock
-        let indexLock = path.join(bd.root, '.git', 'index.lock');
+        var indexLock = path.join(bd.root, '.git', 'index.lock');
         should(fs.existsSync(indexLock)).equal(false);
         fs.writeFileSync(indexLock, 'test');
         let resolved = false;
@@ -870,5 +897,7 @@
         await syncPromise;
         should(resolved).equal(true);
         logger.logLevel = logLevel;
-    });
+    } finally{
+        fs.existsSync(indexLock) && fs.unlinkSync(indexLock);
+    }});
 })

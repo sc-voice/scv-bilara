@@ -57,27 +57,24 @@
             }
         }
 
-        ls_remote(origin=true) {
-            var that = this;
+        async ls_remote(origin=true) { try {
             var {
                 repoDir,
             } = this;
-            return new Promise((resolve, reject) => {
-                (async function() { try {
-                    var repoPath = that.validateRepoPath();
-                    var cmd = origin
-                        ? `git ls-remote ${that.repo}` 
-                        : `git ls-remote`;
-                    that.log(`${repoDir}: ${cmd}`);
-                    var execOpts = {
-                        cwd: repoPath,
-                        maxBuffer: MAXBUFFER,
-                    };
-                    exec(cmd, execOpts, 
-                        that.onExec(resolve, reject, 'stdout'));
-                } catch(e) {reject(e);} })();
-            });
-        }
+            var repoPath = this.validateRepoPath();
+            var cmd = origin
+                ? `git ls-remote ${this.repo}` 
+                : `git ls-remote`;
+            this.info(`${repoDir}: ${cmd}`);
+            var execOpts = {
+                cwd: repoPath,
+                maxBuffer: MAXBUFFER,
+            };
+            return await execPromise(cmd, execOpts).stdout;
+        } catch(e) {
+            this.warn(`ls_remote(${origin})`, e.message);
+            throw e;
+        }}
 
         async sync(repo=this.repo, repoPath=this.repoPath, branches=['master']) { try {
             var {
@@ -120,17 +117,23 @@
             throw e;
         }}
 
-        async indexLock() {
+        async indexLock() { try {
             let indexLock = path.join(this.repoPath, '.git', 'index.lock');
-            for (let iLock=this.lockRetries; 0<iLock--;) {
+            for (var iLock=this.lockRetries; 0<iLock--;) {
                 if (!fs.existsSync(indexLock)) {
                     break;
                 }
                 this.info(`waiting on indexLock (${iLock} seconds)...`);
                 await new Promise(r=>setTimeout(()=>r(),1000));
             }
+            if (iLock < 0 && fs.existsSync(indexLock)) {
+                throw new Error(`index.lock timeout with retries:`, this.lockRetries);
+            }
             return this;
-        }
+        } catch(e) {
+            this.warn(`indexLock()`, e.message);
+            throw e;
+        }}
 
         hasChanges() {
             var that = this;

@@ -18,6 +18,9 @@
         MemoCache,
         Files,
     } = require('memo-again');
+    const {
+        ScApi,
+    } = require('suttacentral-api');
     const SegDoc = require('./seg-doc');
     const MLDoc = require('./ml-doc');
     const BilaraPath = require('./bilara-path');
@@ -40,6 +43,7 @@
             this.log(`root:${this.root}`);
             this.lang = opts.lang || 'en';
             this.branch = opts.branch;
+            this.scApi = opts.scApi || new ScApi();
             var includeUnpublished = opts.includeUnpublished == null 
                 ? false : opts.includeUnpublished;
             this.publication = opts.publication || new Publication({
@@ -73,15 +77,18 @@
         }
 
         isBilaraDoc({suid, lang, author}) {
-            if (this._sources == null) {
-                var sourcesPath = path.join(__dirname, 
-                    "../src/assets/sources.json");
-                var s = fs.readFileSync(sourcesPath);
-                this._sources = json5.parse(s);
+            let {
+                bilaraPathMap: bpm,
+            } = this;
+            let sp = bpm.suidPaths(suid);
+            let spKeys = Object.keys(sp);
+            if (lang) {
+                spKeys = spKeys.filter(p=>p.indexOf(`/${lang}/`) >= 0);
             }
-            var authors = this._sources[lang];
-            var result = authors && authors.indexOf(author)>=0;
-            return result;
+            if (author) {
+                spKeys = spKeys.filter(p=>p.endsWith(author));
+            }
+            return spKeys.length > 0;
         }
 
         initialize(sync=false) {
@@ -113,6 +120,7 @@
                     that.log(`initialize: ${res.stdout} ${res.stderr}`);
                 }
                 await that.publication.initialize();
+                await that.scApi.initialize();
 
                 let authPath = path.join(that.root, `_author.json`);
                 let authorJson = fs.existsSync(authPath)
@@ -280,7 +288,7 @@
             }
             return this;
         } catch(e) {
-            this.warn(`sync)`, JSON.stringify(opts), e.message);
+            this.warn(`sync()`, JSON.stringify(opts), e.message);
             throw e;
         }}
 
@@ -491,12 +499,56 @@
                     ? `No information for ${suid}/${lang}`
                     : `No information for ${suid}/${lang}/${author}`);
             }
+            let author_uid = author == null
+                ?   bilaraPaths.reduce((alist,bp)=>{
+                        let bpparts = bp.split('/');
+                        let a = bpparts[2];
+                        if (!alist.includes(a)) {
+                            alist.push(a);
+                        }
+                        return alist;
+                    },[]).join(', ')
+                : author;
             return new MLDoc({
                 logLevel,
                 lang,
+                author_uid,
                 bilaraPaths,
             }).load(this.root);
         }
+
+        async loadMLDocLegacy(suidRef) { try {
+            let suidParts = suidRef.split('/');
+            let sutta = await this.scApi.loadSutta.apply(this.scApi, suidParts);
+            let {
+                lang,
+                author_uid,
+                sutta_uid,
+                segmented,
+                suttaplex,
+            } = sutta;
+            let segMap = {};
+            let segments = sutta.segments;
+            segments.forEach(seg=>{
+                segMap[seg.scid] = seg;
+            });
+            this.info(`loadMLDocLegacy(${suidRef})`);
+            return new MLDoc({
+                bilaraPaths: [], // legacy have no paths
+                lang,
+                author_uid,
+                segMap,
+                suttaplex,
+                segmented,
+                sutta_uid,
+                langSegs: {
+                    [lang]: segments.length,
+                },
+            });
+        } catch(e) {
+            this.warn(`loadMLDocLegacy(${suidRef})`, e.message);
+            throw e;
+        }}
 
         normalizeSuttaId(id) {
             if (!this.initialized) {
@@ -779,11 +831,13 @@
         sutta_uidSearch(pattern, maxResults=5) {
             var method = 'sutta_uid';
             var uids = this.suttaList(pattern).slice(0, maxResults);
+            var lang = undefined;
             var suttaRefs = uids.map(ref => {
                 var refParts = ref.split('/');
                 var refTranslator = refParts[2];
                 var uid = refParts[0];
                 var refLang = refParts[1];
+                lang == null && (lang = refLang);
                 return refTranslator 
                     ? `${uid}/${refLang}/${refTranslator}`
                     : (refLang ? `${uid}/${refLang}` : uid);
@@ -793,6 +847,7 @@
                 method,
                 uids,
                 suttaRefs,
+                lang,
             }
         }
 
