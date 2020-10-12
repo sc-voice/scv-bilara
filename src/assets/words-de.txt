@@ -6,6 +6,7 @@ auch
 auf
 aufmerksam
 aufmerksamkeit
+auge
 außenstehenden
 bäche
 beachten
@@ -397,6 +398,7 @@ fortgesetzt
 fortgesetzter
 fortgesetztes
 fortgesetztem
+frausein
 frucht
 fruchtbar
 fruchtbarer
@@ -804,6 +806,7 @@ los
 löwengebrüll
 luft
 lügen
+makellos
 mängel
 mängeln
 mannhafter
