@@ -1,18 +1,18 @@
 (function(exports) {
     const fs = require('fs');
     const path = require('path');
-    const { LOCAL_DIR, } = require('just-simple').JustSimple;
     const { logger } = require('log-instance');
+    const { Files } = require('memo-again');
     const BilaraPath = require('./bilara-path');
     const STUBFILESIZE = 5;
-    const ROOTMS_FOLDER = path.join(LOCAL_DIR, "bilara-data", 
+    const ROOTMS_FOLDER = path.join(Files.LOCAL_DIR, "bilara-data", 
         "root", "pli", "ms");
 
     class BilaraPathMap {
         constructor(opts = {}) {
             (opts.logger || logger).logInstance(this);
             this.root = opts.root || 
-                path.join(LOCAL_DIR, "bilara-data");
+                path.join(Files.LOCAL_DIR, "bilara-data");
             this.initialized = false;
         }
 

@@ -5,10 +5,6 @@
     const {
         readFile,
     } = fs.promises;
-    const {
-        js,
-        LOCAL_DIR,
-    } = require('just-simple').JustSimple;
     const { logger } = require("log-instance");
     const {
         execSync,
@@ -39,7 +35,7 @@
         constructor(opts={}) {
             (opts.logger || logger).logInstance(this, opts);
             this.name = opts.name || 'bilara-data';
-            this.root = opts.root || path.join(LOCAL_DIR, this.name);
+            this.root = opts.root || path.join(Files.LOCAL_DIR, this.name);
             this.log(`root:${this.root}`);
             this.lang = opts.lang || 'en';
             this.branch = opts.branch;
@@ -224,7 +220,6 @@
             } = this;
             if (authors[author] == null) {
                 authors[author] = Object.assign({}, authors[author], info);
-                //this.log(`addAuthor(${author}:${js.simpleString(info)})`);
             }
         }
 
@@ -265,7 +260,7 @@
             if (purge) {
                 var cmd = `rm -rf ${this.name}`;
                 var execOpts = {
-                    cwd: LOCAL_DIR,
+                    cwd: Files.LOCAL_DIR,
                 };
                 this.log(`Purging repository: ${cmd}`);
                 var res = execSync(cmd, execOpts).toString();
@@ -344,7 +339,7 @@
             var prune = `-path '*.git*' -prune`;
             var cmd = `find ${root} ${prune} -o -type f -print`;
             var execOpts = {
-                cwd: LOCAL_DIR,
+                cwd: Files.LOCAL_DIR,
                 maxBuffer: MAXBUFFER,
             };
             var res = execSync(cmd, execOpts).toString();
@@ -403,7 +398,7 @@
                 logLevel,
                 returnNull,
             } = loadArgs;
-            verbose && console.log(`loadSegDoc`, js.simpleString(loadArgs));
+            verbose && console.log(`loadSegDoc(${JSON.stringify(loadArgs)})`);
 
             var info = this.suttaInfo(suid);
             if (info == null) {
@@ -419,8 +414,8 @@
                         cmp = a.author.localeCompare(b.author);
                     }
                 } catch(e) {
-                    that.error(`a:${js.simpleString(a)} `);
-                    that.error(`b:${js.simpleString(b)} `);
+                    that.error(`a:${JSON.stringify(a)} `);
+                    that.error(`b:${JSON.stringify(b)} `);
                     throw e;
                 }
             });
@@ -435,7 +430,7 @@
             )[0];
             if (suttaInfo == null || suttaInfo.bilaraPath == null) {
                 this.log(
-                    `loadSegDoc(${suid}) info:${js.simpleString(info)}`);
+                    `loadSegDoc(${suid}) info:${JSON.stringify(info)}`);
                 if (returnNull) {
                     return null;
                 }
@@ -473,7 +468,7 @@
                 if (returnNull) {
                     return null;
                 }
-                var msgData = js.simpleString({suidRef,suid});
+                var msgData = JSON.stringify({suidRef,suid});
                 throw new Error(`no suttaInfo(${msgData})`);
             }
             var langMap = languages.reduce((a,l) => (a[l] = true, a), {});
@@ -501,9 +496,8 @@
             }
             let author_uid = author == null
                 ?   bilaraPaths.reduce((alist,bp)=>{
-                        let bpparts = bp.split('/');
-                        let a = bpparts[2];
-                        if (!alist.includes(a)) {
+                        let [s, l, a] = bp.split('/');
+                        if (l===lang && !alist.includes(a)) {
                             alist.push(a);
                         }
                         return alist;

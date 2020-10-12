@@ -2,7 +2,6 @@
 (function(exports) {
     const fs = require('fs');
     const path = require('path');
-    const { js, LOCAL_DIR, } = require('just-simple').JustSimple;
     const BilaraPath = require("./bilara-path");
 
     const SRC_PATH = path.join(__dirname, '..', '..', 'src', 'node');

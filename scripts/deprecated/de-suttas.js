@@ -7,8 +7,8 @@ const {
     BilaraData,
     ExecGit,
 } = require('../../index');
-const { js, LOCAL_DIR, } = require('just-simple').JustSimple;
 const { logger } = require('log-instance');
+const { Files } = require('memo-again');
 
 logger.info('de-suttas');
 
@@ -18,7 +18,7 @@ var patAllow = ".*/(AN|DN|MN|KN|SN)/.*";
     var bd = await new BilaraData().initialize(true);
     logger.info(`OK: Retrieved latest from ${bd.execGit.repo}`);
     var gitDE = 'https://github.com/sabbamitta/sutta-translation';
-    var dePath = path.join(LOCAL_DIR, 'de-suttas');
+    var dePath = path.join(Files.LOCAL_DIR, 'de-suttas');
     var deGit = new ExecGit({
         repo: gitDE,
         repoPath: dePath,

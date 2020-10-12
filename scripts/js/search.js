@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-const { js, LOCAL_DIR, } = require('just-simple').JustSimple;
 const fs = require('fs');
 const path = require('path');
 const { logger } = require('log-instance');
@@ -357,7 +356,7 @@ function outMarkdown(res, pattern, nLang=3) {
             var scid = seg.scid;
             var langText = (seg[res.lang] || '').trim();
             var linkText = new SuttaCentralId(scid).standardForm();
-            var author = mld.author_uid.split(', ')[1] || mld.author_uid;
+            var author = mld.author_uid.split(', ')[0] || mld.author_uid;
             var link = `https://suttacentral.net/${suid}/${mld.lang}/${author}#${scid}`;
             if (nLang > 1) {
                 console.log(`> [${linkText}](${link}): ${seg.pli}`);

@@ -11,7 +11,6 @@
         SuttaCentralId,
     } = require("../index");
     const { MemoCache, } = require('memo-again');
-    const { js, LOCAL_DIR, } = require("just-simple").JustSimple;
     logger.logLevel = 'warn';
     this.timeout(20*1000);
     var bd = new BilaraData(); 
@@ -117,7 +116,7 @@
             'ashinsarana', 'ms', 'sabbamitta', 'sujato', 
         ]);
     });
-    it("TESTTESTsync() purges and refreshes repo", async()=>{
+    it("sync() purges and refreshes repo", async()=>{
         var name = "test-repo";
         var mc = new MemoCache();
         var bd = new BilaraData({name});
@@ -167,46 +166,43 @@
         should(fs.existsSync(dummyPath)).equal(true);
         should(fs.existsSync(unpublishedPath)).equal(true);
     });
-    it("authorInfo() => supported author info", done=>{
-        (async function() { try {
-            await bd.initialize();
-            var ms = {
-                lang: 'pli',
-                type: "root",
-                name: "Mahāsaṅgīti Tipiṭaka Buddhavasse 2500",
-            };
-            var sarana = {
-                lang: 'cs',
-                name: 'Ashin Sarana',
-                type: 'translator',
-            };
-            var sujato = {
-                lang: 'en',
-                type: "translator",
-                name: "Bhikkhu Sujato",
-            };
-            var brahmali = {
-                lang: 'en',
-                type: "translator",
-                name: "Brahmali Bhikkhu",
-            };
-            var sabbamitta = {
-                lang: 'de',
-                type: "translator",
-                name: "Anagarika Sabbamitta",
-            };
+    it("authorInfo() => supported author info", async()=>{
+        await bd.initialize();
+        var ms = {
+            lang: 'pli',
+            type: "root",
+            name: "Mahāsaṅgīti Tipiṭaka Buddhavasse 2500",
+        };
+        var sarana = {
+            lang: 'cs',
+            name: 'Ashin Sarana',
+            type: 'translator',
+        };
+        var sujato = {
+            lang: 'en',
+            type: "translator",
+            name: "Bhikkhu Sujato",
+        };
+        var brahmali = {
+            lang: 'en',
+            type: "translator",
+            name: "Brahmali Bhikkhu",
+        };
+        var sabbamitta = {
+            lang: 'de',
+            type: "translator",
+            name: "Anagarika Sabbamitta",
+        };
 
-            should.deepEqual(bd.authors, {
-                ms,
-                // brahmali, // not published yet
-                ashinsarana: sarana,
-                sabbamitta,
-                sujato,
-            });
+        should.deepEqual(bd.authors, {
+            ms,
+            // brahmali, // not published yet
+            ashinsarana: sarana,
+            sabbamitta,
+            sujato,
+        });
 
-            should.deepEqual(bd.authorInfo('sabbamitta'), sabbamitta);
-            done();
-        } catch(e) {done(e);} })();
+        should.deepEqual(bd.authorInfo('sabbamitta'), sabbamitta);
     });
     it("supportedLanguages() => segmented translations", done=>{
         (async function() { try {

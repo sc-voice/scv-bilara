@@ -9,9 +9,9 @@
         ExecGit,
     } = require("../index");
     const { logger } = require('log-instance');
-    const { js, LOCAL_DIR, } = require("just-simple").JustSimple;
+    const { Files } = require('memo-again');
     const TEST_REPO = "git@github.com:sc-voice/test-repo.git";
-    const TEST_REPOPATH = path.join(LOCAL_DIR, 'test-repo');
+    const TEST_REPOPATH = path.join(Files.LOCAL_DIR, 'test-repo');
     this.timeout(10*1000);
     var logLevel = false;
 
@@ -19,7 +19,7 @@
         var egit = new ExecGit();
         should(egit.repo)
             .equal('https://github.com/sc-voice/bilara-data.git');
-        should(egit.repoPath).equal(path.join(LOCAL_DIR, 'bilara-data'));
+        should(egit.repoPath).equal(path.join(Files.LOCAL_DIR, 'bilara-data'));
     });
     it("custom ctor", () => {
         var repo = TEST_REPO;
@@ -34,7 +34,7 @@
             var repoPath = TEST_REPOPATH;
             if (fs.existsSync(repoPath)) {
                 var cmd = "rm -rf test-repo";
-                var cwd = LOCAL_DIR;
+                var cwd = Files.LOCAL_DIR;
                 execSync(cmd, {cwd});
             }
             should(fs.existsSync(repoPath)).equal(false);
@@ -92,7 +92,7 @@
         } catch(e) {done(e);} })();
     });
     it("branch() waits for indexLock", async()=>{ try {
-        let root = path.join(LOCAL_DIR, 'bilara-data');
+        let root = path.join(Files.LOCAL_DIR, 'bilara-data');
         let execGit = new ExecGit({
             repo: `https://github.com/sc-voice/bilara-data.git`,
         });

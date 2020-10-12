@@ -2,12 +2,12 @@
     const fs = require("fs");
     const path = require("path");
     const { logger } = require('log-instance');
-    const { js, LOCAL_DIR, } = require('just-simple').JustSimple;
+    const { Files } = require('memo-again');
     const BilaraPath = require('./bilara-path');
     const Unicode = require('./unicode');
     const Pali = require('./pali');
     const SuttaCentralId = require('./sutta-central-id');
-    const BILARA_PATH = path.join(LOCAL_DIR, 'bilara-data');
+    const BILARA_PATH = path.join(Files.LOCAL_DIR, 'bilara-data');
 
     class MLDoc {
         constructor(opts={}) {

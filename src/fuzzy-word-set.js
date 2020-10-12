@@ -1,7 +1,6 @@
 (function(exports) {
     const fs = require('fs');
     const path = require('path');
-    const { js, LOCAL_DIR, } = require('just-simple').JustSimple;
     const Unicode = require('./unicode');
 
     const OTHER = '~';

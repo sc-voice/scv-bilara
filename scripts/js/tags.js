@@ -9,8 +9,8 @@ const {
     BilaraData,
     ExecGit,
 } = require('../../index');
-const { js, LOCAL_DIR, } = require('just-simple').JustSimple;
 const { logger } = require('log-instance');
+const { Files } = require('memo-again');
 
 logger.info('de-suttas');
 
@@ -49,7 +49,7 @@ function writeTags({files, tagPath}) {
 
 (async function() { try {
     var lang = 'en';
-    var tagDir = path.join(LOCAL_DIR, 'tags');
+    var tagDir = path.join(Files.LOCAL_DIR, 'tags');
     var tagPath = path.join(tagDir, `tags_${lang}.json`);
     if (fs.existsSync(tagPath)) {
         var wordMap = JSON.parse(fs.readFileSync(tagPath).toString());

@@ -7,7 +7,6 @@ const {
     SegDoc,
 
 } = require('../../index');
-const { js, LOCAL_DIR, } = require('just-simple').JustSimple;
 const { logger } = require('log-instance');
 
 

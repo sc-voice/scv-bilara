@@ -13,8 +13,8 @@
         Seeker,
         Unicode,
     } = require("../index");
-    const { js, LOCAL_DIR, } = require("just-simple").JustSimple;
     const { logger, LogInstance } = require('log-instance');
+    const { Files } = require('memo-again');
     const SEEKEROPTS = {
     };
     var {
@@ -29,7 +29,7 @@
     var my_my = `translation/my/my-team/sutta/`;
     var pli_ms = `root/pli/ms/sutta/`;
 
-    const BILARA_PATH = path.join(LOCAL_DIR, 'bilara-data');
+    const BILARA_PATH = path.join(Files.LOCAL_DIR, 'bilara-data');
     const TEST_BILARA_PATH = path.join(__dirname, 'data', 'bilara-data');
 
     it("default ctor", ()=>{
@@ -592,7 +592,7 @@
             matchHighlight: false,
         });
         should(res.method).equal('sutta_uid');
-        should.deepEqual(res.suttaRefs, ['thag1.10']);
+        should.deepEqual(res.suttaRefs, ['thag1.10/en']);
         should.deepEqual(res.mlDocs.map(mld=>mld.suid),  
             ['thag1.10']);
     });
@@ -605,7 +605,7 @@
         });
         should(res.method).equal('sutta_uid');
         should.deepEqual(res.suttaRefs,
-            ['sn29.9', 'sn29.10', 'sn29.11-20', 'sn29.21-50']);
+            ['sn29.9/en', 'sn29.10/en', 'sn29.11-20/en', 'sn29.21-50/en']);
         should.deepEqual(res.mlDocs.map(mld=>mld.score), [0,0,0,0]);
         should.deepEqual(res.mlDocs.map(mld=>mld.suid),  
             ['sn29.9', 'sn29.10', 'sn29.11-20', 'sn29.21-50']);
@@ -629,7 +629,7 @@
         should(res.method).equal('sutta_uid');
         should(res.maxResults).equal(maxResults);
         should.deepEqual(res.suttaRefs,
-            ['sn12.23', 'an1.1-10', 'an1.11-20', ]);
+            ['sn12.23/de', 'an1.1-10/de', 'an1.11-20/de', ]);
         // mlDocs are not sorted when searching by suid 
         // since the user is specifying the desired order
         should.deepEqual(res.mlDocs.map(mld=>mld.suid),
@@ -671,7 +671,7 @@
             en: 'But then they identify with fire … ',
         });
     });
-    it("find(...) finds an1.2", async()=>{
+    it("TESTTESTfind(...) finds an1.2", async()=>{
         var maxResults = 3;
         var skr = await new Seeker({
             maxResults,
@@ -689,7 +689,7 @@
         var [mld0] = res.mlDocs;
         should(res.method).equal('sutta_uid');
         should(res.maxResults).equal(maxResults);
-        should.deepEqual(res.suttaRefs, ['an1.1-10']);
+        should.deepEqual(res.suttaRefs, ['an1.1-10/de']);
         should(res.resultPattern).equal(pattern);
         should(res.lang).equal('de');
         should(res.mlDocs.length).equal(1);
@@ -733,7 +733,7 @@
         let mld0 = res.mlDocs[0];
         should(mld0.author_uid).equal('bodhi');
     });
-    it("TESTTESTfind({minLang}) => minimum language count", async()=>{
+    it("find({minLang}) => minimum language count", async()=>{
         var maxResults = 3;
         var skr = await new Seeker({
             maxResults,
@@ -746,8 +746,7 @@
             lang: 'de',
             minLang: 2,
         });
-        should.deepEqual(skr.languages, ['pli','en']);
-        should.deepEqual(res.suttaRefs, ['dn33']);
+        should.deepEqual(res.suttaRefs, ['dn33/de']);
         should(res.mlDocs.length).equal(1);
         should(res.minLang).equal(2);
 
@@ -756,10 +755,10 @@
             lang: 'de',
             minLang: 3,
         });
-        should.deepEqual(res.suttaRefs, ['dn33']);
+        should.deepEqual(res.suttaRefs, ['dn33/de']);
         should(res.mlDocs.length).equal(1);
         let mld0 = res.mlDocs[0];
-        should(mld0.author_uid).equal('ms, sabbamitta, sujato');
+        should(mld0.author_uid).equal('sabbamitta');
     });
     it("find(...) => finds jhana", async()=>{
         var msStart = Date.now();
@@ -1117,7 +1116,7 @@
         });
         should(res.method).equal('sutta_uid');
         should(res.maxDoc).equal(maxDoc);
-        should.deepEqual(res.suttaRefs, ['pli-tv-bi-vb-sk1-75']);
+        should.deepEqual(res.suttaRefs, ['pli-tv-bi-vb-sk1-75/en']);
         should(res.resultPattern).equal(pattern);
         should(res.lang).equal('en');
         should(res.mlDocs.length).equal(1);
@@ -1314,10 +1313,9 @@
         should(skr.isExample('Wurzel des Leidens')).equal(true);
         should(skr.isExample('wurzel des leidens')).equal(true);
     });
-    it('find(...) => dn7/de', async()=>{
-        let verbose = true;
+    it('find(...) => "dn7/de"', async()=>{
+        let verbose = false;
         let bilaraData = new BilaraData();
-        bilaraData.logLevel = 'info';
         let skr = await new Seeker({
             bilaraData,
             logger: bilaraData,
@@ -1332,5 +1330,23 @@
         should(mld0.author_uid).equal('kusalagnana-maitrimurti-traetow');
         should(mld0.sutta_uid).equal('dn7');
     });
-
+    it('find(...) => dn7/de', async()=>{
+        let verbose = false;
+        let bilaraData = new BilaraData();
+        bilaraData.logLevel = 'info';
+        let skr = await new Seeker({
+            bilaraData,
+            logger: bilaraData,
+        }).initialize();
+        let res = await skr.find({
+            pattern: 'dn7',
+            lang: 'de',
+            verbose,
+        });
+        should(res.lang).equal('de');
+        should(res.bilaraPaths.length).equal(0);
+        let mld0 = res.mlDocs[0];
+        should(mld0.author_uid).equal('kusalagnana-maitrimurti-traetow');
+        should(mld0.sutta_uid).equal('dn7');
+    });
 })

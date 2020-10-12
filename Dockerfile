@@ -28,7 +28,6 @@ COPY src /home/unroot/src
 COPY scripts /home/unroot/scripts
 COPY index.js /home/unroot/index.js
 COPY local/bilara-data /home/unroot/local/bilara-data
-COPY node_modules/just-simple /home/unroot/node_modules/just-simple
 COPY node_modules/log-instance /home/unroot/node_modules/log-instance
 COPY node_modules/json5 /home/unroot/node_modules/json5
 COPY node_modules/js-ebt /home/unroot/node_modules/js-ebt

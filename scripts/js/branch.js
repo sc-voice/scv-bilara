@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-const { js, LOCAL_DIR, } = require('just-simple').JustSimple;
 const { logger } = require('log-instance');
 const fs = require('fs');
 const path = require('path');

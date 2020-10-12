@@ -8,9 +8,7 @@ const {
     ExecGit,
 
 } = require('../../index');
-const { js, LOCAL_DIR, } = require('just-simple').JustSimple;
 const { logger } = require('log-instance');
-
 
 (async function() { try {
     logger.info('train-en initializing...');

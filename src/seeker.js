@@ -2,13 +2,12 @@
     const fs = require('fs');
     const path = require('path');
     const { logger } = require('log-instance');
-    const { js, LOCAL_DIR, } = require('just-simple').JustSimple;
     const {
         exec,
     } = require('child_process');
     const { ScApi } = require('suttacentral-api');
     const { MerkleJson } = require("merkle-json");
-    const { Memoizer } = require("memo-again");
+    const { Memoizer, Files } = require("memo-again");
     const FuzzyWordSet = require('./fuzzy-word-set');
     const BilaraPath = require('./bilara-path');
     const MLDoc = require('./ml-doc');
@@ -18,8 +17,7 @@
     const BilaraData = require('./bilara-data');
     const SuttaCentralId = require('./sutta-central-id');
 
-    const { Files } = require("memo-again");
-    const BILARA_PATH = path.join(LOCAL_DIR, 'bilara-data');
+    const BILARA_PATH = path.join(Files.LOCAL_DIR, 'bilara-data');
     const TRANSLATION_PATH = path.join(BILARA_PATH, 'translation');
     const MAXBUFFER = 10 * 1024 * 1024;
 
@@ -536,7 +534,7 @@
             pattern = Seeker.normalizePattern(pattern);
             (showMatchesOnly == null) && (showMatchesOnly = true);
             languages = languages || this.languages.slice() || [];
-            (lang && languages.indexOf(lang)<0) && languages.push(lang);
+            (lang && !languages.includes(lang)) && languages.push(lang);
             maxResults = Number(
                 maxResults==null ? this.maxResults : maxResults);
             if (isNaN(maxResults)) {
@@ -631,9 +629,12 @@
             }
 
             if (SuttaCentralId.test(pattern)) {
-                verbose && console.log(`findArgs SuttaCentralId`, 
-                    js.simpleString(findArgs));
                 maxResults = maxResults || this.maxResults;
+                if (pattern.indexOf('/') < 0) {
+                    pattern = pattern.split(',')
+                        .map(p=>`${p}/${lang}`)
+                        .join(',');
+                }
                 let res = bd.sutta_uidSearch(pattern, maxResults);
                 method = res.method;
                 uids = res.uids;
@@ -643,6 +644,8 @@
                     languages = [...languages.filter(l=>l!=='en'), lang];
                 }
                 scoreDoc = false;
+                verbose && console.log(`findArgs SuttaCentralId`, 
+                    JSON.stringify(findArgs), suttaRefs);
             } else {
                 method = 'phrase';
                 var searchOpts = {
@@ -661,11 +664,11 @@
                 } = await that.phraseSearch(searchOpts);
                 if (lines.length) {
                     verbose && console.log(`findArgs phrase`, 
-                        js.simpleString(findArgs), 
+                        JSON.stringify(findArgs), 
                     );
                 } else {
                     verbose && that.log(`findArgs keywords`, 
-                        js.simpleString(findArgs));
+                        JSON.stringify(findArgs));
                     method = 'keywords';
                     var data = await that.keywordSearch(searchOpts);
                     var {
@@ -694,6 +697,7 @@
                 let isBilDoc = bd.isBilaraDoc({ suid, lang:refLang||lang, author });
                 let mld;
                 if (isBilDoc) {
+                    verbose && console.log(`slowFind() -> loadMLDoc()`);
                     mld = await bd.loadMLDoc({
                         verbose,
                         suid,
@@ -733,6 +737,7 @@
                         that.log(`skipping ${mld.suid} minLang:${minLang}`);
                     }
                 } else {
+                    verbose && console.log(`slowFind() -> loadMLDocLegacy()`);
                     mld = await bd.loadMLDocLegacy(suttaRef);
                     mlDocs.push(mld);
                     matchingRefs.push(suttaRef);

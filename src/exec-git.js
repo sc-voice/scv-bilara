@@ -3,7 +3,7 @@
     const path = require("path");
     const util = require('util');
     const { logger } = require('log-instance');
-    const { js, LOCAL_DIR, } = require('just-simple').JustSimple;
+    const { Files } = require('memo-again');
     const {
         exec,
         execSync,
@@ -16,12 +16,12 @@
     class ExecGit {
         constructor(opts={}) {
             (opts.logger || logger).logInstance(this, opts);
-            this.cwd = opts.cwd || LOCAL_DIR;
+            this.cwd = opts.cwd || Files.LOCAL_DIR;
             this.repo = opts.repo || BILARA_DATA_GIT;
             this.lockRetries = opts.lockRetries || 30; // seconds
             this.repoDir = path.basename(this.repo).replace(/\.git/,'');
             this.repoPath = opts.repoPath || 
-                path.join(LOCAL_DIR, this.repoDir);
+                path.join(Files.LOCAL_DIR, this.repoDir);
         }
 
         static get DEFAULT_REPO() { return BILARA_DATA_GIT; }
@@ -103,14 +103,14 @@
                 cmds.push(`git clone ${repo} ${repoDir}`);
             }
             var cmd = cmds.join(' && ');
-            this.log(cmd);
+            this.info(cmd);
             var execOpts = {
                 cwd,
                 maxBuffer: MAXBUFFER,
             };
             await this.indexLock();
             var res = execSync(cmd, execOpts);
-            this.log(`sync() ${cmd} => ${res}`);
+            this.info(`sync() ${cmd} => ${res}`);
             return this;
         } catch(e) {
             this.warn(`sync(}`,{repo,repoPath,branches},e.message);
@@ -216,10 +216,10 @@
                     `git checkout -b "${branch}"`,
                     `git push -u origin ${branch}`,
                 ].join(';');
-                this.log(`${repoDir}: ${cmd}`);
-                this.log(`BRANCH CREATION IN PROGRESS (WAIT...)`);
+                this.info(`${repoDir}: ${cmd}`);
+                this.info(`BRANCH CREATION IN PROGRESS (WAIT...)`);
             } else if (deleteMerged) {
-                this.log(`DELETING MERGED BRANCH ${branch}`);
+                this.info(`DELETING MERGED BRANCH ${branch}`);
                 var cmd = [
                     `git push`,
                     `git branch -d ${branch}`,
@@ -227,7 +227,7 @@
                 ].join(' && ');
             } else {
                 var cmd = `git checkout "${branch}"`;
-                this.log(`${repoDir}: ${cmd}`);
+                this.info(`${repoDir}: ${cmd}`);
             }
             await this.indexLock();
             var res = await execPromise(cmd, execOpts);

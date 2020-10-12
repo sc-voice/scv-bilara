@@ -2,7 +2,6 @@
     const fs = require("fs");
     const path = require("path");
     const { logger } = require('log-instance');
-    const { js, } = require('just-simple').JustSimple;
     const FuzzyWordSet = require('./fuzzy-word-set');
     const SuttaCentralId = require('./sutta-central-id');
     const Unicode = require('./unicode');

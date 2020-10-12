@@ -6,7 +6,7 @@
         readFile,
     } = fs.promises;
     const { logger } = require('log-instance');
-    const { js, LOCAL_DIR, } = require('just-simple').JustSimple;
+    const { Files } = require('memo-again');
     const {
         execSync,
     } = require('child_process');
@@ -24,7 +24,7 @@
         constructor(opts={}) {
             (opts.logger || logger).logInstance(this, opts);
             this.name = opts.name || 'bilara-data';
-            this.root = opts.root || path.join(LOCAL_DIR, this.name);
+            this.root = opts.root || path.join(Files.LOCAL_DIR, this.name);
             this.bilaraPathMap = opts.bilaraPathMap || 
                 new BilaraPathMap({root: this.root});
             this.lang = opts.lang || 'en';

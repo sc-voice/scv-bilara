@@ -9,8 +9,8 @@ const {
     BilaraData,
     ExecGit,
 } = require('../../index');
-const { js, LOCAL_DIR, } = require('just-simple').JustSimple;
 const { logger } = require('log-instance');
+const { Files } = require('memo-again');
 
 logger.info('de-suttas');
 
@@ -19,13 +19,13 @@ var reAllow = new RegExp(patAllow);
 
 (async function() { try {
     var wordMap = {};
-    var deWordPath = path.join(LOCAL_DIR, '../src/assets/words-de.txt');
+    var deWordPath = path.join(Files.LOCAL_DIR, '../src/assets/words-de.txt');
     if (fs.existsSync(deWordPath)) {
         var deLines = fs.readFileSync(deWordPath).toString().split('\n');
         deLines.forEach(w => (wordMap[w.trim()] = true));
     }
     //fs.writeFileSync(deWordPath, ''); // clear out currrent file 
-    var dePath = path.join(LOCAL_DIR, 'de-suttas');
+    var dePath = path.join(Files.LOCAL_DIR, 'de-suttas');
     var bd = await new BilaraData().initialize();
     var skr = await new Seeker().initialize();
     var paliWords = await Pali.wordSet();
