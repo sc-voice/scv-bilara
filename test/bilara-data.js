@@ -120,7 +120,6 @@
         var name = "test-repo";
         var mc = new MemoCache();
         var bd = new BilaraData({name});
-        bd.logLevel = 'info';
         var dummyPath = path.join(bd.root, "root", "dummy.txt");
 
         // put something in the memo cache
@@ -872,8 +871,6 @@
         } catch(e) { done(e); }})();
     });
     it("initialize() waits for indexLock", async()=>{ try {
-        let logLevel = logger.logLevel;
-        logger.logLevel = 'info';
         let bd = new BilaraData({branch:'unpublished'});
 
         // create index.lock
@@ -892,8 +889,44 @@
         await fs.promises.unlink(indexLock);
         await syncPromise;
         should(resolved).equal(true);
-        logger.logLevel = logLevel;
     } finally{
         fs.existsSync(indexLock) && fs.unlinkSync(indexLock);
     }});
+    it("TESTTESTloadSuttaplexJson(...)=>an3.47", async()=>{
+        await bd.initialize();
+        var suid = 'an3.47';
+
+        if (1) {
+        var lang = 'de';
+        var lang_name = "Deutsch";
+        var author = "Anagarika Sabbamitta";
+        var author_short = "Sabbamitta";
+        var author_uid = 'sabbamitta';
+        var title = 'Characteristics of the Conditioned ';
+        }else{
+        var lang = "en";
+        var lang_name = "English";
+        var author = "Bhikkhu Sujato";
+        var author_short = "Sujato";
+        var author_uid = 'sujato';
+        var title = 'Characteristics of the Conditioned ';
+        }
+
+        var json = await bd.loadSuttaplexJson(suid, lang, author_uid);
+        should(json.acronym).equal(`AN 3.47`);
+        should(json.original_title).equal('Saṅkhatalakkhaṇa Sutta');
+        should.deepEqual(json.translations, [{
+            author,
+            author_short,
+            author_uid,
+            is_root: false,
+            lang,
+            lang_name,
+            segmented: true,
+            publication_date: null,
+            id: `${lang}_${suid}_${author_uid}`,
+            title,
+            volpage: null,
+        }]);
+    });
 })

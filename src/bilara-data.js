@@ -117,6 +117,9 @@
                 }
                 await that.publication.initialize();
                 await that.scApi.initialize();
+                let langPath = path.join(that.root, '_language.json');
+                that.languageInfo = JSON.parse(
+                    await fs.promises.readFile(langPath));
 
                 let authPath = path.join(that.root, `_author.json`);
                 let authorJson = fs.existsSync(authPath)
@@ -902,6 +905,63 @@
             } catch(e) { reject(e); } })();
             return new Promise(pbody);
         }
+
+        async loadSuttaplexJson(scid, lang, author_uid) { try {
+            let suttaplex = await this.scApi.loadSuttaplexJson(scid);
+            var translations = suttaplex && suttaplex.translations || [];
+            var allTranslations = translations;
+            if ((lang || author_uid)) {
+                const ANY_LANGUAGE = '*';
+                suttaplex.translations =
+                translations = 
+                    translations.filter(t => 
+                        (!lang || lang === ANY_LANGUAGE || t.lang === lang)
+                        &&
+                        (!author_uid || t.author_uid === author_uid)
+                    );
+                translations.sort((a,b) => {
+                    if (a.segmented === b.segmented) {
+                        return (a.author_uid||'').localeCompare(b.author_uid||'');
+                    }
+                    return a.segmented ? 1 : -1;
+                });
+                this.debug(`ScApi.loadSuttaplexJson`+
+                    `(${scid}, ${lang}, ${author_uid}) `+
+                    `${JSON.stringify(suttaplex,null,2)}`);
+            }
+            if (translations.length === 0) {
+                if (this.isBilaraDoc({suid:scid, lang, author:author_uid})) {
+                    let ainfo = this.authorInfo(author_uid);
+                    let title = allTranslations.reduce((a,t)=>{
+                        return a
+                            ? a
+                            : t.lang === 'en' && t.title;
+                    },null);
+                    let langInfo = this.languageInfo[lang];
+
+                    translations.push({
+                        author: ainfo.name,
+                        author_short: ainfo.name.split(' ').pop(),
+                        author_uid,
+                        is_root: false,
+                        lang,
+                        lang_name: langInfo && langInfo.name || lang,
+                        id: `${lang}_${scid}_${author_uid}`,
+                        segmented: true,
+                        publication_date: null,
+                        title,
+                        volpage: null,
+                    });
+                }
+            }
+            if (translations.length === 0) {
+                throw new Error(`suttaplex has no translations`);
+            }
+            return suttaplex;
+        } catch (e) {
+            this.warn(`loadSuttaplexJson()`, {scid, lang, author_uid}, e);
+            throw e;
+        }}
     }
 
     module.exports = exports.BilaraData = BilaraData;

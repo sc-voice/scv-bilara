@@ -14,6 +14,7 @@
         Unicode,
     } = require("../index");
     const { logger, LogInstance } = require('log-instance');
+    logger.logLevel = 'warn';
     const { Files } = require('memo-again');
     const SEEKEROPTS = {
     };
@@ -71,7 +72,6 @@
     });
     it("grep(...) finds en things", async()=>{
         var skr = new Seeker(SEEKEROPTS);
-        skr.logLevel = 'info';
         var ms0 = Date.now();
         await skr.clearMemo('grep');
         var res = await skr.grep({
@@ -1258,29 +1258,27 @@
         should(mld0.bilaraPaths[0]).match(/an3.29/);
         should(mld0.score).equal(6.128);
     });
-    it("find(...) finds 'pacetana'", async()=>{
-        console.log("TODO",__filename); return;
+    it("TESTTESTfind(...) finds 'king pacetana'", async()=>{
         var bilaraData = await bd.initialize();
         var verbose = 0;
         var skr = await new Seeker({
             bilaraData,
         }).initialize();
-        var pattern = "pacetana";
+        var pattern = "king pacetana";
         
         var data = await skr.find({pattern, verbose});
-        should(data.resultPattern).equal('\\bpacetana');
         should(data.searchLang).equal('en');
         should(data.method).equal('phrase');
-        should(data.mlDocs.length).equal(5);
+        should(data.mlDocs.length).equal(1);
         var mld0 = data.mlDocs[0];
-        should(mld0.bilaraPaths[0]).match(/an3.29/);
-        should(mld0.score).equal(6.128);
+        should(mld0.bilaraPaths[0]).match(/an3.15/);
+        should(mld0.score).equal(4.087);
+        should(data.resultPattern).equal('\\bking pacetana');
     });
     it("find(...) is cached", async()=>{
         var skr = await new Seeker({
             lang: 'en', // English default
         }).initialize();
-        skr.logLevel = 'info';
         var pattern = 'stuck in the middle';
         var findOpts = { 
             pattern,
@@ -1333,7 +1331,6 @@
     it('find(...) => dn7/de', async()=>{
         let verbose = false;
         let bilaraData = new BilaraData();
-        bilaraData.logLevel = 'info';
         let skr = await new Seeker({
             bilaraData,
             logger: bilaraData,
