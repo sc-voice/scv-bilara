@@ -116,6 +116,9 @@ DESCRIPTION
         Specify ISO 2-letter language code for language to search.
         Default is determined from pattern language.
 
+    -sy, --sync
+        Fetch the latest bilara-data
+
     -up, --unpublished
         Search unpublished documents
 
@@ -140,6 +143,7 @@ var isTTY = process.stdout.isTTY;
 var tipitakaCategories = '';
 var verbose = false;
 var readFile = true;
+var sync = false;
 
 //var searchLang;
 
@@ -157,6 +161,8 @@ for (var i = 2; i < nargs; i++) {
     } else if (arg === '-f' || arg === '--filter') {
         var filter  = process.argv[++i];
         showMatchesOnly = filter === 'pattern';
+    } else if (arg === '-sy' || arg === '--sync') {
+        sync = true;
     } else if (arg === '-nm' || arg === '--no-memo') {
         readFile  = false;
     } else if (arg === '-c' || arg === '--color') {
@@ -410,7 +416,7 @@ logger.logLevel = logLevel;
 (async function() { try {
     var bilaraData = await new BilaraData({
         includeUnpublished,
-    }).initialize();
+    }).initialize(sync);
 
     var skr = await new Seeker({
         matchColor: color,

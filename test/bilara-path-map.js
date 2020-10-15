@@ -13,6 +13,26 @@
         htmlPath,
     } = BilaraPath;
     this.timeout(5*1000);
+    function ROOTPATH(mid,category='sutta') {
+        var lang = 'pli';
+        var auth = 'ms';
+        return [
+            'root',
+            lang,
+            `${auth}/${category}`,
+            `${mid}_root-${lang}-${auth}.json`
+        ].join('/');
+    }
+
+    function TRANSPATH(lang,auth,mid, category='sutta') {
+        return [
+            'translation',
+            lang,
+            `${auth}/${category}`,
+            `${mid}_translation-${lang}-${auth}.json`
+        ].join('/');
+    }
+
 
     var bd = new BilaraData;
 
@@ -118,5 +138,30 @@
             rootPath('mn/mn1'),
             translationPath('mn/mn1','en','sujato'),
         ]);
+    });
+    it("suidLanguages(suid) => language info",async()=>{
+        var bpm = await new BilaraPathMap().initialize();
+        should.deepEqual(bpm.suidLanguages('thig3.8'),[{
+            author: 'ms',
+            bilaraPath: 'root/pli/ms/sutta/kn/thig/thig3.8_root-pli-ms.json',
+            category: 'sutta',
+            lang: 'pli',
+            nikaya: 'kn',
+            suid: 'thig3.8',
+        },{
+            author: 'sabbamitta',
+            bilaraPath: TRANSPATH('de','sabbamitta','thig3.8','sutta/kn/thig'),
+            category: 'sutta',
+            lang: 'de',
+            nikaya: 'kn',
+            suid: 'thig3.8',
+        },{
+            author: 'sujato',
+            bilaraPath: TRANSPATH('en','sujato','thig3.8','sutta/kn/thig'),
+            category: 'sutta',
+            lang: 'en',
+            nikaya: 'kn',
+            suid: 'thig3.8',
+        }]);
     });
 })

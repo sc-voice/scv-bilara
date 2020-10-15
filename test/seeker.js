@@ -384,7 +384,7 @@
             method: 'keywords',
             keywordsFound: {
                 hausbesitzer: 43,
-                anathapindika: 43,
+                anathapindika: 44,
             },
             lines: [
 `${de_sab}sn/sn10/sn10.8_translation-de-sabbamitta.json:4`,
@@ -671,7 +671,7 @@
             en: 'But then they identify with fire … ',
         });
     });
-    it("TESTTESTfind(...) finds an1.2", async()=>{
+    it("find(...) finds an1.2", async()=>{
         var maxResults = 3;
         var skr = await new Seeker({
             maxResults,
@@ -906,7 +906,7 @@
             minLang: 2,
             showMatchesOnly: false,
         });
-        should(res.suttaRefs.length).equal(15);
+        should(res.suttaRefs.length).equal(17);
     });
     it("find(...) => finds keywords", async()=>{
         var maxDoc = 3;
@@ -1191,7 +1191,7 @@
         var skr = await new Seeker().initialize();
 
         var pattern = "root of suffering -ml 3 -l de"; 
-        var verbose = true;
+        var verbose = 0;
         var res = await skr.find({
             pattern,
             //verbose,
@@ -1205,7 +1205,7 @@
         var skr = await new Seeker().initialize();
 
         var pattern = "wrong livelihood"; 
-        var verbose = true;
+        var verbose = 0;
         var res = await skr.find({
             pattern,
             //verbose,
@@ -1258,7 +1258,25 @@
         should(mld0.bilaraPaths[0]).match(/an3.29/);
         should(mld0.score).equal(6.128);
     });
-    it("TESTTESTfind(...) finds 'king pacetana'", async()=>{
+    it("TESTTESTfind(...) finds 'thig3.8' de", async()=>{
+        var bilaraData = await bd.initialize();
+        var verbose = 0;
+        var skr = await new Seeker({
+            bilaraData,
+        }).initialize();
+        var pattern = "thig3.8 -l de";
+        
+        var data = await skr.find({pattern, verbose});
+        should(data.searchLang).equal('de');
+        should(data.method).equal('sutta_uid');
+        should(data.mlDocs.length).equal(1);
+        var mld0 = data.mlDocs[0];
+        should(mld0.bilaraPaths[0]).match(/thig3.8/);
+        should(mld0.score).equal(0);
+        should(mld0.segments().length).equal(18);
+        should(data.resultPattern).equal('thig3.8');
+    });
+    it("find(...) finds 'king pacetana'", async()=>{
         var bilaraData = await bd.initialize();
         var verbose = 0;
         var skr = await new Seeker({

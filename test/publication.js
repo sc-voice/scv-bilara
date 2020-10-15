@@ -67,84 +67,95 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("pubPaths() => all bilara paths", done=> {
-        (async function() { try {
-            var pub = await pubTest.initialize();
+    it("pubPaths() => all bilara paths", async()=>{
+        var pub = await pubTest.initialize();
 
-            // Explicit
-            var includeUnpublished = true;
-            should.deepEqual(pub.pubPaths({includeUnpublished}).sort(),[
-                `root/pli/bj/pli-tv-kd`,
-                `root/pli/dpcv/pli-tv-kd`,
-                `${SARANA}/an`,
-                `translation/de/blurb`,
-                `${SABBAMITTA}/an`,
-                `${SABBAMITTA}/dn`,
-                `${SABBAMITTA}/mn`,
-                `${SABBAMITTA}/sn`,
-                `${BRAHMALI}`,
-                `${BRAHMALI}/pli-tv-bi-vb`,
-                `${BRAHMALI}/pli-tv-bu-vb`,
-                `${BRAHMALI}/pli-tv-kd`,
-                `${BRAHMALI}/pli-tv-pvr`,
-                `${ENCOMM}/atthakatha/dn-a`,
-                `${PATTON}/sa`,
-                `${SUJATO}/an`,
-                `${SUJATO}/dn`,
-                `${SUJATO}/kn/dhp`,
-                `${SUJATO}/kn/iti`,
-                `${SUJATO}/kn/kp`,
-                `${SUJATO}/kn/snp`,
-                `${SUJATO}/kn/thag`,
-                `${SUJATO}/kn/thig`,
-                `${SUJATO}/kn/ud`,
-                `${SUJATO}/mn`,
-                `${SUJATO}/sn`,
-                `${KAZ}/an`,
-                `${MY}/dn`,
-                `${PTTEAM}/mn`,
-                `${RUTEAM}/dn`,
-            ]);
+        // Explicit
+        var includeUnpublished = true;
+        should.deepEqual(pub.pubPaths({includeUnpublished}).sort(),[
+            `root/pli/bj/pli-tv-kd`,
+            `root/pli/dpcv/pli-tv-kd`,
+            `${SARANA}/an`,
+            `translation/de/blurb`,
+            `${SABBAMITTA}/an`,
+            `${SABBAMITTA}/dn`,
+            `${SABBAMITTA}/mn`,
+            `${SABBAMITTA}/sn`,
+            `${SABBAMITTA}/kn/dhp`,
+            `${SABBAMITTA}/kn/iti`,
+            `${SABBAMITTA}/kn/kp`,
+            `${SABBAMITTA}/kn/snp`,
+            `${SABBAMITTA}/kn/thag`,
+            `${SABBAMITTA}/kn/thig`,
+            `${SABBAMITTA}/kn/ud`,
+            `${BRAHMALI}`,
+            `${BRAHMALI}/pli-tv-bi-vb`,
+            `${BRAHMALI}/pli-tv-bu-vb`,
+            `${BRAHMALI}/pli-tv-kd`,
+            `${BRAHMALI}/pli-tv-pvr`,
+            `${ENCOMM}/atthakatha/dn-a`,
+            `${PATTON}/sa`,
+            `${SUJATO}/an`,
+            `${SUJATO}/dn`,
+            `${SUJATO}/kn/dhp`,
+            `${SUJATO}/kn/iti`,
+            `${SUJATO}/kn/kp`,
+            `${SUJATO}/kn/snp`,
+            `${SUJATO}/kn/thag`,
+            `${SUJATO}/kn/thig`,
+            `${SUJATO}/kn/ud`,
+            `${SUJATO}/mn`,
+            `${SUJATO}/sn`,
+            `${KAZ}/an`,
+            `${MY}/dn`,
+            `${PTTEAM}/mn`,
+            `${RUTEAM}/dn`,
+        ].sort());
 
-            // Implied
-            var pub = await new Publication({
-                includeUnpublished,
-            }).initialize(); 
-            should(pub.includeUnpublished).equal(true);
-            should.deepEqual(pub.pubPaths().sort(),[
-                `root/pli/bj/pli-tv-kd`,
-                `root/pli/dpcv/pli-tv-kd`,
-                `${SARANA}/an`,
-                `translation/de/blurb`,
-                `${SABBAMITTA}/an`,
-                `${SABBAMITTA}/dn`,
-                `${SABBAMITTA}/mn`,
-                `${SABBAMITTA}/sn`,
-                `${BRAHMALI}`,
-                `${BRAHMALI}/pli-tv-bi-vb`,
-                `${BRAHMALI}/pli-tv-bu-vb`,
-                `${BRAHMALI}/pli-tv-kd`,
-                `${BRAHMALI}/pli-tv-pvr`,
-                `${ENCOMM}/atthakatha/dn-a`,
-                `${PATTON}/sa`,
-                `${SUJATO}/an`,
-                `${SUJATO}/dn`,
-                `${SUJATO}/kn/dhp`,
-                `${SUJATO}/kn/iti`,
-                `${SUJATO}/kn/kp`,
-                `${SUJATO}/kn/snp`,
-                `${SUJATO}/kn/thag`,
-                `${SUJATO}/kn/thig`,
-                `${SUJATO}/kn/ud`,
-                `${SUJATO}/mn`,
-                `${SUJATO}/sn`,
-                `${KAZ}/an`,
-                `${MY}/dn`,
-                `${PTTEAM}/mn`,
-                `${RUTEAM}/dn`,
-            ]);
-            done();
-        } catch(e) {done(e);} })();
+        // Implied
+        var pub = await new Publication({
+            includeUnpublished,
+        }).initialize(); 
+        should(pub.includeUnpublished).equal(true);
+        should.deepEqual(pub.pubPaths().sort(),[
+            `root/pli/bj/pli-tv-kd`,
+            `root/pli/dpcv/pli-tv-kd`,
+            `${SARANA}/an`,
+            `translation/de/blurb`,
+            `${SABBAMITTA}/an`,
+            `${SABBAMITTA}/dn`,
+            `${SABBAMITTA}/mn`,
+            `${SABBAMITTA}/sn`,
+            `${SABBAMITTA}/kn/dhp`,
+            `${SABBAMITTA}/kn/iti`,
+            `${SABBAMITTA}/kn/kp`,
+            `${SABBAMITTA}/kn/snp`,
+            `${SABBAMITTA}/kn/thag`,
+            `${SABBAMITTA}/kn/thig`,
+            `${SABBAMITTA}/kn/ud`,
+            `${BRAHMALI}`,
+            `${BRAHMALI}/pli-tv-bi-vb`,
+            `${BRAHMALI}/pli-tv-bu-vb`,
+            `${BRAHMALI}/pli-tv-kd`,
+            `${BRAHMALI}/pli-tv-pvr`,
+            `${ENCOMM}/atthakatha/dn-a`,
+            `${PATTON}/sa`,
+            `${SUJATO}/an`,
+            `${SUJATO}/dn`,
+            `${SUJATO}/kn/dhp`,
+            `${SUJATO}/kn/iti`,
+            `${SUJATO}/kn/kp`,
+            `${SUJATO}/kn/snp`,
+            `${SUJATO}/kn/thag`,
+            `${SUJATO}/kn/thig`,
+            `${SUJATO}/kn/ud`,
+            `${SUJATO}/mn`,
+            `${SUJATO}/sn`,
+            `${KAZ}/an`,
+            `${MY}/dn`,
+            `${PTTEAM}/mn`,
+            `${RUTEAM}/dn`,
+        ].sort());
     });
     it("isPublishedPath(f) filters supported suttas", done=>{
         (async function() { try {

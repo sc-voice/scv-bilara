@@ -128,7 +128,6 @@
                 that.addAuthor('ms', Object.assign({
                     lang: 'pli'
                 }, authorJson.ms));
-                var suttaMap = that.suttaMap = {};
                 var rootPath = path.join(that.root, 'root');
                 if (!fs.existsSync(rootPath)) {
                     throw new Error(`Root document directory `+
@@ -153,25 +152,6 @@
                 that.initialized = true;
                 that.rootFiles = that.dirFiles(rootPath)
                     .filter(f => that.publication.isPublishedPath(f))
-                that.rootFiles.forEach((f,i) => {
-                    var file = f.replace(/.*\/root\//,'root/');
-                    var parts = file.split('/');
-                    var lang = parts[1];
-                    var author = parts[2];
-                    var category = parts[3];
-                    var nikaya = parts[4];
-                    var suid = parts[parts.length-1]
-                        .split('_')[0].toLowerCase();
-                    suttaMap[suid] = suttaMap[suid] || [];
-                    suttaMap[suid].push({
-                        suid,
-                        lang,
-                        category,
-                        nikaya,
-                        author,
-                        bilaraPath: file,
-                    });
-                });
 
                 var transPath = path.join(that.root, 'translation');
                 if (!fs.existsSync(transPath)) {
@@ -198,15 +178,6 @@
                     that.addAuthor(author, Object.assign({
                         lang,
                     }, authorJson[author]));
-                    suttaMap[suid] = suttaMap[suid] || [];
-                    suttaMap[suid].push({
-                        suid,
-                        lang,
-                        category,
-                        nikaya,
-                        author,
-                        bilaraPath: file,
-                    });
                 });
                 var uidExpPath = path.join(that.root, 
                     '.helpers', 'uid_expansion.json');
@@ -248,7 +219,7 @@
 
         get suttaIds() {
             if (this._suttaIds == null) {
-                this._suttaIds = Object.keys(this.suttaMap)
+                this._suttaIds = Object.keys(this.bilaraPathMap.suidMap)
                     .sort(SuttaCentralId.compareLow);
             }
 
@@ -284,6 +255,7 @@
             if (purge && !initializing) {
                 await this.initialize();
             }
+            await this.bilaraPathMap.buildSuidMap();
             return this;
         } catch(e) {
             this.warn(`sync()`, JSON.stringify(opts), e.message);
@@ -306,7 +278,7 @@
             var suid = refParts[0];
             var lang = refParts[1];
             var author = refParts[2];
-            var info = this.suttaMap[suid];
+            var info = this.bilaraPathMap.suidLanguages(suttaRef);
             if (!info) { // binary search
                 var suttaIds = this.suttaIds;
                 var j = suttaIds.length-1;
@@ -329,7 +301,7 @@
                     return null; // no information
                 }
                 
-                info = this.suttaMap[suidMaybe];
+                info = this.bilaraPathMap.suidLanguages(suidMaybe);
             }
             return info.filter(i => 
                 (!lang || i.lang === lang) &&
@@ -553,10 +525,9 @@
                     `initialize() required`);
             }
             var {
-                suttaMap,
                 uid_expansion,
             } = this;
-            var suttaIds = Object.keys(suttaMap);
+            var suttaIds = this.suttaIds;
             if (typeof id !== 'string') {
                 if (id.scid) {
                     id = id.scid;
@@ -610,7 +581,7 @@
             }
             var lang = opts.lang || 'en';
             var author = opts.author_uid;
-            var docs = this.suttaMap[sutta_uid] || []
+            var docs = this.bilaraPathMap.suidLanguages(sutta_uid);
             return docs
                 .filter(t => t.lang === lang && !author || author === t.author)
                 .map(t => path.join(this.root, t.bilaraPath));
@@ -908,38 +879,56 @@
 
         async loadSuttaplexJson(scid, lang, author_uid) { try {
             let suttaplex = await this.scApi.loadSuttaplexJson(scid);
-            var translations = suttaplex && suttaplex.translations || [];
-            var allTranslations = translations;
-            if ((lang || author_uid)) {
+            let isBilDoc = this.isBilaraDoc({suid:scid, lang, author:author_uid}); 
+            var allTranslations = suttaplex && suttaplex.translations || [];
+            var translations = allTranslations;
+            if (lang || author_uid) {
                 const ANY_LANGUAGE = '*';
                 suttaplex.translations =
                 translations = 
-                    translations.filter(t => 
+                    allTranslations.filter(t => 
                         (!lang || lang === ANY_LANGUAGE || t.lang === lang)
                         &&
                         (!author_uid || t.author_uid === author_uid)
                     );
-                translations.sort((a,b) => {
-                    if (a.segmented === b.segmented) {
-                        return (a.author_uid||'').localeCompare(b.author_uid||'');
-                    }
-                    return a.segmented ? 1 : -1;
-                });
                 this.debug(`ScApi.loadSuttaplexJson`+
                     `(${scid}, ${lang}, ${author_uid}) `+
                     `${JSON.stringify(suttaplex,null,2)}`);
             }
-            if (translations.length === 0) {
+            translations.sort((a,b) => {
+                if (a.segmented === b.segmented) {
+                    if (a.lang === 'pli') {
+                        return 1;
+                    }
+                    if (b.lang === 'pli') {
+                        return -1;
+                    }
+                    return (a.author_uid||'').localeCompare(b.author_uid||'');
+                }
+                return b.segmented ? 1 : -1;
+            });
+            if (translations.length === 0 || !translations[0].segmented) {
+                if (!author_uid) {
+                    let suidPaths = this.bilaraPathMap.suidPaths(scid);
+                    let authors = Object.keys(suidPaths).reduce((a,k)=>{
+                        let [t,l,aid] = k.split('/');
+                        if (t === 'translation' && (!lang || lang === l)) {
+                            a.push(aid);
+                        }
+                        return a;
+                    }, []);
+                    author_uid = authors[0];
+                }
                 if (this.isBilaraDoc({suid:scid, lang, author:author_uid})) {
                     let ainfo = this.authorInfo(author_uid);
                     let title = allTranslations.reduce((a,t)=>{
                         return a
                             ? a
-                            : t.lang === 'en' && t.title;
+                            : t.lang === 'pli' && t.title;
                     },null);
                     let langInfo = this.languageInfo[lang];
 
-                    translations.push({
+                    translations.unshift({
                         author: ainfo.name,
                         author_short: ainfo.name.split(' ').pop(),
                         author_uid,

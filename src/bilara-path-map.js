@@ -5,8 +5,11 @@
     const { Files } = require('memo-again');
     const BilaraPath = require('./bilara-path');
     const STUBFILESIZE = 5;
+    const SUID_MAP_FILE = path.join(Files.LOCAL_DIR, 'suid-map.json');
     const ROOTMS_FOLDER = path.join(Files.LOCAL_DIR, "bilara-data", 
         "root", "pli", "ms");
+
+    var suidMap;
 
     class BilaraPathMap {
         constructor(opts = {}) {
@@ -26,37 +29,15 @@
         ]};
 
         async initialize() { try {
-            var readdir = fs.promises.readdir;
-            this.suidMap = {};
-            var transPath = path.join(this.root, "translation");
-            var rdOpts = {withFileTypes:true};
-            var langs = (await readdir(transPath, rdOpts))
-                .reduce((a,e)=> (e.isDirectory() 
-                    ? [...a,e.name] : a),[]);
-            for (var il=0; il < langs.length; il++) {
-                var l = langs[il];
-                var authPath = path.join(transPath,l);
-                var auths = (await readdir(authPath, rdOpts))
-                    .reduce((a,e)=>(e.isDirectory() 
-                        ? [...a,e.name] : a), []);
-                for (var ia=0; ia < auths.length; ia++) {
-                    var key = `translation/${l}/${auths[ia]}`;
-                    await this.loadPaths({ key });
-                    var key = `comment/${l}/${auths[ia]}`;
-                    await this.loadPaths({ key });
-                }
+            if (!suidMap) {
+                suidMap = fs.existsSync(SUID_MAP_FILE)
+                    ? JSON.parse(await fs.readFileSync(SUID_MAP_FILE))
+                    : await this.buildSuidMap();
             }
-
-            await this.loadPaths({ key: "root/pli/ms", });
-            await this.loadPaths({ 
-                key: "html/pli/ms", 
-                rePathSuffix:/_html.json/,
-            });
-            await this.loadPaths({ 
-                key: "reference/pli/ms",
-                rePathSuffix:/_reference.json/,
-            }); 
-            await this.loadPaths({ key: "variant/pli/ms"}); 
+            if (suidMap instanceof Promise) {
+                suidMap = await suidMap;
+            }
+            this.suidMap = suidMap;
             this.initialized = true;
             return this;
         } catch(e) {
@@ -109,6 +90,30 @@
             return this.suidMap[key];
         }
 
+        suidLanguages(suid) {
+            let suidPaths = this.suidPaths(suid);
+            return !suidPaths 
+                ? undefined
+                : Object.keys(suidPaths)
+                    .sort()
+                    .reduce((a,k)=>{
+                        let bilaraPath = suidPaths[k];
+                        if (/^(translation|root)/.test(bilaraPath)) {
+                            let [type,lang,author,category,nikaya] = 
+                                bilaraPath.split('/');
+                            a.push({
+                                suid: suid.split('/')[0],
+                                lang,
+                                author,
+                                category,
+                                nikaya,
+                                bilaraPath,
+                            });
+                        }
+                        return a;
+                    },[]);
+        }
+
         suidPath(suid) {
             if (!suid) {
                 throw new Error('suid is required');
@@ -121,22 +126,25 @@
             return pathInfo && pathInfo[key];
         }
 
-        async loadPaths(opts={}) { try {
-            var {
-                rePathSuffix,
-                key,
-            } = opts;
+        async _loadPaths(suidMap, key) { try {
             var {
                 root,
-                suidMap,
             } = this;
             var keyRoot = path.join(root, key);
-            rePathSuffix = rePathSuffix || 
-                `_${key.split('/').join('-')}.json`;
-            var nFiles = 0;
             var rootPrefix = `${root}/`;
             var readOpts = {withFileTypes:true};
+            var exclude = [
+                'abhidhamma',   // (later)
+                '\bma\b',       // Chinese
+                '\bsa\b',       // Chinese
+                'blurb',
+                'playground',   // Blake
+            ].join('|');
+            var reExclude = new RegExp(`(${exclude})`,"ui");
             var traverse = (dirPath)=>{
+                if (reExclude.test(dirPath)) {
+                    return;
+                }
                 var dirKids = fs.readdirSync(dirPath, readOpts);
                 for (var i = 0; i < dirKids.length; i++) {
                     var e = dirKids[i];
@@ -147,24 +155,58 @@
                         var ePath = path.join(dirPath, e.name);
                         var stat = fs.statSync(ePath);
                         if (stat.size > STUBFILESIZE) {
-                            var suid = e.name.replace(rePathSuffix,'');
+                            var suid = e.name.replace(/_.*/,'');
                             var suidPath = dirPath.replace(rootPrefix, '')  
                                         + `/${e.name}`;
                             suidMap[suid] = Object.assign(
                                 suidMap[suid]||{}, {
                                     [key]: suidPath,
                             });
-                            nFiles++;
                         }
                     }
                 }
             };
+            let msStart = Date.now();
             fs.existsSync(keyRoot) && traverse(keyRoot);
-            return { nFiles, suidMap, };
+            return suidMap;
         } catch(e) {
-            this.warn(`loadPaths()`, e.message);
+            this.warn(`_loadPaths()`, e.message);
             throw e;
         }}
+
+        async buildSuidMap() {
+            let msStart = Date.now();
+            var readdir = fs.promises.readdir;
+            let suidMap = {};
+            this.suidMap = suidMap;
+            var transPath = path.join(this.root, "translation");
+            var rdOpts = {withFileTypes:true};
+            var langs = (await readdir(transPath, rdOpts))
+                .reduce((a,e)=> (e.isDirectory() 
+                    ? [...a,e.name] : a),[]);
+            for (var il=0; il < langs.length; il++) {
+                var l = langs[il];
+                var authPath = path.join(transPath,l);
+                var auths = (await readdir(authPath, rdOpts))
+                    .reduce((a,e)=>(e.isDirectory() 
+                        ? [...a,e.name] : a), []);
+                for (var ia=0; ia < auths.length; ia++) {
+                    var key = `translation/${l}/${auths[ia]}`;
+                    await this._loadPaths(suidMap, key);
+                    var key = `comment/${l}/${auths[ia]}`;
+                    await this._loadPaths(suidMap, key);
+                }
+            }
+
+            await this._loadPaths(suidMap, "root/pli/ms");
+            await this._loadPaths(suidMap, "html/pli/ms");
+            await this._loadPaths(suidMap, "reference/pli/ms");
+            await this._loadPaths(suidMap, "variant/pli/ms"); 
+            fs.writeFileSync(SUID_MAP_FILE, JSON.stringify(suidMap, null, 2));
+            this.suidMap = suidMap;
+            this.info(`buildSuidMap() ${Date.now()-msStart}ms`);
+            return suidMap;
+        }
     }
 
     module.exports = exports.BilaraPathMap = BilaraPathMap;

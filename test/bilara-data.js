@@ -50,32 +50,6 @@
         });
         should(bdDefault.logger).equal(logger);
     });
-    it("includeUnpublished includes all files", done=> {
-        (async function() { try {
-            var bd = await new BilaraData({
-                includeUnpublished: true,
-            }).initialize(); 
-            should(bd.includeUnpublished).equal(true);
-            should.deepEqual(bd.suttaMap['pli-tv-bi-vb-sk1-75'],[{
-                suid: 'pli-tv-bi-vb-sk1-75',
-                lang: 'pli',
-                category: 'vinaya',
-                nikaya: 'pli-tv-bi-vb',
-                author: 'ms',
-                bilaraPath: 
-                    ROOTPATH('pli-tv-bi-vb/pli-tv-bi-vb-sk1-75', 'vinaya'),
-            }, {
-                suid: 'pli-tv-bi-vb-sk1-75',
-                lang: 'en',
-                category: 'vinaya',
-                nikaya: 'pli-tv-bi-vb',
-                author: 'brahmali',
-                bilaraPath: TRANSPATH('en', 'brahmali', 
-                        'pli-tv-bi-vb/pli-tv-bi-vb-sk1-75', 'vinaya'),
-            }]);
-            done();
-        } catch(e) {done(e);} })();
-    });
     it("initialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         should(newbd.initialized).equal(false);
@@ -88,7 +62,8 @@
         should(res).equal(bd);
         should(bd.initialized).equal(true);
         should.deepEqual(Object.keys(bd.authors).sort(), [
-            'ashinsarana', 'ms', 'sabbamitta', 'sujato', 
+            //'ashinsarana', 
+            'ms', 'sabbamitta', 'sujato', 
         ]);
         should.deepEqual(bd.examples.en.slice(0,3), [
             `a hardened killer`,
@@ -113,7 +88,8 @@
         should(res).equal(bd);
         should(bd.initialized).equal(true);
         should.deepEqual(Object.keys(bd.authors).sort(), [
-            'ashinsarana', 'ms', 'sabbamitta', 'sujato', 
+           // 'ashinsarana', 
+            'ms', 'sabbamitta', 'sujato', 
         ]);
     });
     it("sync() purges and refreshes repo", async()=>{
@@ -196,7 +172,7 @@
         should.deepEqual(bd.authors, {
             ms,
             // brahmali, // not published yet
-            ashinsarana: sarana,
+            // ashinsarana: sarana,
             sabbamitta,
             sujato,
         });
@@ -207,96 +183,138 @@
         (async function() { try {
             await bd.initialize();
             should.deepEqual(bd.supportedLanguages(), [
-                'cs', 'de', 'en', 'pli', 
+                /* 'cs', */
+                'de', 'en', 'pli', 
             ]);
             done();
         } catch(e) {done(e);} })();
     });
-    it("suttaInfo(...) returns sutta metadata", done=>{
-        (async function() { try {
-            await bd.initialize();
-            var dn33Pli = {
-                author: 'ms',
-                lang: 'pli',
-                category: 'sutta',
-                nikaya: 'dn',
-                suid: 'dn33',
-                bilaraPath: ROOTPATH('dn/dn33'),
-            };
-            var dn33De = {
-                author: 'sabbamitta',
-                lang: 'de',
-                category: 'sutta',
-                nikaya: 'dn',
-                suid: 'dn33',
-                bilaraPath: TRANSPATH('de','sabbamitta', `dn/dn33`),
-            }
-            var dn33En = {
-                author: 'sujato',
-                lang: 'en',
-                category: 'sutta',
-                nikaya: 'dn',
-                suid: 'dn33',
-                bilaraPath: TRANSPATH('en','sujato', `dn/dn33`),
-            }
-            should.deepEqual(bd.suttaInfo('dn33'), 
-                [dn33Pli, dn33De, dn33En]);
-            var sn12_3pli = {
-                author: 'ms',
-                lang: 'pli',
-                category: 'sutta',
-                nikaya: 'sn',
-                suid: 'sn12.3',
-                bilaraPath: ROOTPATH('sn/sn12/sn12.3'),
-            }
-            var sn12_3en = {
-                author: 'sujato',
-                lang: 'en',
-                category: 'sutta',
-                nikaya: 'sn',
-                suid: 'sn12.3',
-                bilaraPath: TRANSPATH('en','sujato', `sn/sn12/sn12.3`),
-            };
-            var sn12_3de = {
-                author: 'sabbamitta',
-                lang: 'de',
-                category: 'sutta',
-                nikaya: 'sn',
-                suid: 'sn12.3',
-                bilaraPath: TRANSPATH('de', 'sabbamitta', `sn/sn12/sn12.3`),
-            };
-            should.deepEqual(bd.suttaInfo('sn12.3'), 
-                [sn12_3pli, sn12_3de, sn12_3en]);
-            var an2_1_10pli = {
-                author: 'ms',
-                lang: 'pli',
-                category: 'sutta',
-                nikaya: 'an',
-                suid: 'an2.1-10',
-                bilaraPath: ROOTPATH('an/an2/an2.1-10'),
-            };
-            var an2_1_10en = {
-                author: 'sujato',
-                lang: 'en',
-                category: 'sutta',
-                nikaya: 'an',
-                suid: 'an2.1-10',
-                bilaraPath: TRANSPATH('en', 'sujato', 'an/an2/an2.1-10'),
-            };
-            var an2_1_10de = {
-                author: 'sabbamitta',
-                lang: 'de',
-                category: 'sutta',
-                nikaya: 'an',
-                suid: 'an2.1-10',
-                bilaraPath: TRANSPATH('de','sabbamitta', 'an/an2/an2.1-10'),
-            };
-            should.deepEqual(bd.suttaInfo('an2.1-10'), 
-                [ an2_1_10pli, an2_1_10de, an2_1_10en ]);
-            should.deepEqual(bd.suttaInfo('an2.3'), 
-                [ an2_1_10pli, an2_1_10de, an2_1_10en ]);
-            done();
-        } catch(e) {done(e);} })();
+    it("TESTTESTsuttaInfo(...) returns sutta metadata", async()=>{
+        await bd.initialize();
+        var dn33Pli = {
+            author: 'ms',
+            lang: 'pli',
+            category: 'sutta',
+            nikaya: 'dn',
+            suid: 'dn33',
+            bilaraPath: ROOTPATH('dn/dn33'),
+        };
+        var dn33De = {
+            author: 'sabbamitta',
+            lang: 'de',
+            category: 'sutta',
+            nikaya: 'dn',
+            suid: 'dn33',
+            bilaraPath: TRANSPATH('de','sabbamitta', `dn/dn33`),
+        }
+        var dn33En = {
+            author: 'sujato',
+            lang: 'en',
+            category: 'sutta',
+            nikaya: 'dn',
+            suid: 'dn33',
+            bilaraPath: TRANSPATH('en','sujato', `dn/dn33`),
+        }
+        var dn33My = {
+            author: 'my-team',
+            lang: 'my',
+            category: 'sutta',
+            nikaya: 'dn',
+            suid: 'dn33',
+            bilaraPath: TRANSPATH('my','my-team', `dn/dn33`),
+        }
+        should.deepEqual(bd.suttaInfo('dn33'), 
+            [dn33Pli, dn33De, dn33En, dn33My]);
+        var sn12_3pli = {
+            author: 'ms',
+            lang: 'pli',
+            category: 'sutta',
+            nikaya: 'sn',
+            suid: 'sn12.3',
+            bilaraPath: ROOTPATH('sn/sn12/sn12.3'),
+        }
+        var sn12_3en = {
+            author: 'sujato',
+            lang: 'en',
+            category: 'sutta',
+            nikaya: 'sn',
+            suid: 'sn12.3',
+            bilaraPath: TRANSPATH('en','sujato', `sn/sn12/sn12.3`),
+        };
+        var sn12_3de = {
+            author: 'sabbamitta',
+            lang: 'de',
+            category: 'sutta',
+            nikaya: 'sn',
+            suid: 'sn12.3',
+            bilaraPath: TRANSPATH('de', 'sabbamitta', `sn/sn12/sn12.3`),
+        };
+        should.deepEqual(bd.suttaInfo('sn12.3'), 
+            [sn12_3pli, sn12_3de, sn12_3en]);
+        var an2_1_10pli = {
+            author: 'ms',
+            lang: 'pli',
+            category: 'sutta',
+            nikaya: 'an',
+            suid: 'an2.1-10',
+            bilaraPath: ROOTPATH('an/an2/an2.1-10'),
+        };
+        var an2_1_10en = {
+            author: 'sujato',
+            lang: 'en',
+            category: 'sutta',
+            nikaya: 'an',
+            suid: 'an2.1-10',
+            bilaraPath: TRANSPATH('en', 'sujato', 'an/an2/an2.1-10'),
+        };
+        var an2_1_10de = {
+            author: 'sabbamitta',
+            lang: 'de',
+            category: 'sutta',
+            nikaya: 'an',
+            suid: 'an2.1-10',
+            bilaraPath: TRANSPATH('de','sabbamitta', 'an/an2/an2.1-10'),
+        };
+        var an2_1_10jpn = {
+            author: 'kaz',
+            lang: 'jpn',
+            category: 'sutta',
+            nikaya: 'an',
+            suid: 'an2.1-10',
+            bilaraPath: TRANSPATH('jpn','kaz', 'an/an2/an2.1-10'),
+        };
+        should.deepEqual(bd.suttaInfo('an2.1-10'), 
+            [ an2_1_10pli, an2_1_10de, an2_1_10en, an2_1_10jpn ]);
+        should.deepEqual(bd.suttaInfo('an2.3'), 
+            [ an2_1_10pli, an2_1_10de, an2_1_10en, an2_1_10jpn ]);
+    });
+    it("TESTTESTsuttaInfo(...) => thig3.8 sutta metadata", async()=>{
+        await bd.initialize();
+        let thigInfo = {
+            suid: 'thig3.8',         
+            category: 'sutta',
+            nikaya: 'kn',   
+        };
+        let pliInfo = Object.assign({
+            lang: 'pli',
+            author: 'ms',                
+            bilaraPath: ROOTPATH('thig3.8', 'sutta/kn/thig'),
+        }, thigInfo);
+        let enInfo = Object.assign({
+            lang: 'en',
+            author: 'sujato',                
+            bilaraPath: TRANSPATH('en', 'sujato', 'thig3.8', 'sutta/kn/thig'),
+        }, thigInfo);
+        let deInfo = Object.assign({
+            lang: 'de',
+            author: 'sabbamitta',                
+            bilaraPath: TRANSPATH('de', 'sabbamitta', 'thig3.8', 'sutta/kn/thig'),
+        }, thigInfo);
+        should.deepEqual(bd.suttaInfo('thig3.8'), [
+            pliInfo, 
+            deInfo,
+            enInfo, 
+        ]);
     });
     it("loadSegDoc(...) loads translation document", done=>{
         (async function() { try {
@@ -769,36 +787,32 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("loadMLDoc(...) loads trilingual doc", done=>{
-        (async function() { try {
-            await bd.initialize();
-            var an1_9 = {
-                scid: "an1.9:1.0",
-                pli: '9',
-                en: '9',
-                de: '9',
-            };
+    it("loadMLDoc(...) loads trilingual doc", async()=>{
+        await bd.initialize();
+        var an1_9 = {
+            scid: "an1.9:1.0",
+            pli: '9',
+            en: '9',
+            de: '9',
+        };
 
-            // explicit
-            var mld = await bd.loadMLDoc({
-                suid: 'an1.10',
-                languages: ['de', 'pli', 'en'],
-            });
-            should.deepEqual(mld.segMap['an1.9:1.0'], an1_9);
+        // explicit
+        var mld = await bd.loadMLDoc({
+            suid: 'an1.10',
+            languages: ['de', 'pli', 'en'],
+        });
+        should.deepEqual(mld.segMap['an1.9:1.0'], an1_9);
 
-            // implicit
-            var mld = await bd.loadMLDoc({
-                suid: 'an1.10',
-                lang: 'de',
-            });
-            should.deepEqual(mld.segMap['an1.9:1.0'], an1_9);
-            var mld = await bd.loadMLDoc("an1.9/de");
-            should.deepEqual(mld.segMap['an1.9:1.0'], an1_9);
-            var mld = await bd.loadMLDoc("an1.9/de/sabbamitta");
-            should.deepEqual(mld.segMap['an1.9:1.0'], an1_9);
-
-            done();
-        } catch(e) { done(e); }})();
+        // implicit
+        var mld = await bd.loadMLDoc({
+            suid: 'an1.10',
+            lang: 'de',
+        });
+        should.deepEqual(mld.segMap['an1.9:1.0'], an1_9);
+        var mld = await bd.loadMLDoc("an1.9/de");
+        should.deepEqual(mld.segMap['an1.9:1.0'], an1_9);
+        var mld = await bd.loadMLDoc("an1.9/de/sabbamitta");
+        should.deepEqual(mld.segMap['an1.9:1.0'], an1_9);
     });
     it("readBlurb(...) => blurb for language", done=>{
         (async function() { try {
@@ -892,25 +906,15 @@
     } finally{
         fs.existsSync(indexLock) && fs.unlinkSync(indexLock);
     }});
-    it("TESTTESTloadSuttaplexJson(...)=>an3.47", async()=>{
+    it("loadSuttaplexJson(...)=>an3.47", async()=>{
         await bd.initialize();
         var suid = 'an3.47';
-
-        if (1) {
         var lang = 'de';
         var lang_name = "Deutsch";
         var author = "Anagarika Sabbamitta";
         var author_short = "Sabbamitta";
         var author_uid = 'sabbamitta';
-        var title = 'Characteristics of the Conditioned ';
-        }else{
-        var lang = "en";
-        var lang_name = "English";
-        var author = "Bhikkhu Sujato";
-        var author_short = "Sujato";
-        var author_uid = 'sujato';
-        var title = 'Characteristics of the Conditioned ';
-        }
+        var title = 'Saṅkhatalakkhaṇasutta ';
 
         var json = await bd.loadSuttaplexJson(suid, lang, author_uid);
         should(json.acronym).equal(`AN 3.47`);
@@ -928,5 +932,62 @@
             title,
             volpage: null,
         }]);
+    });
+    it("loadSuttaplexJson(...)=>thig3.8 de", async()=>{
+        await bd.initialize();
+        var suid = 'thig3.8';
+
+        var lang = 'de';
+        var lang_name = "Deutsch";
+        var author = "Anagarika Sabbamitta";
+        var author_short = "Sabbamitta";
+        var author_uid = 'sabbamitta';
+
+        //var json = await bd.loadSuttaplexJson(suid, lang, author_uid);
+        var json = await bd.loadSuttaplexJson(suid, lang);
+        should(json.acronym).equal(`Thig 3.8`);
+        should(json.original_title).equal('Somātherīgāthā');
+        should(json.translations[0].author_uid).equal('sabbamitta');
+        should.deepEqual(json.translations[0], {
+            author,
+            author_short,
+            author_uid,
+            is_root: false,
+            lang,
+            lang_name,
+            segmented: true,
+            publication_date: null,
+            title: "Somātherīgāthā",
+            id: `${lang}_${suid}_${author_uid}`,
+            volpage: null,
+        });
+    });
+    it("isBilaraDoc(...) => true if bilara file", async()=>{
+        await bd.initialize();
+        should(bd.isBilaraDoc({
+            suid:"thig3.8", 
+            lang:"de", 
+            author:"sabbamitta",
+        })).equal(true); 
+    });
+    it("TESTTESTsuttaIds() => [ suid ]", async()=>{
+        await bd.initialize();
+        let suids = bd.suttaIds;
+
+        should(suids.length).equal(6220);
+        should.deepEqual(suids.slice(0,5), [
+            "an1.1-10",
+            "an1.11-20",
+            "an1.21-30",
+            "an1.31-40",
+            "an1.41-50",
+        ]);
+        should.deepEqual(suids.slice(-5),[
+            "vv81",
+            "vv82",
+            "vv83",
+            "vv84",
+            "vv85",
+        ]);
     });
 })

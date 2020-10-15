@@ -97,7 +97,6 @@
             repo: `https://github.com/sc-voice/bilara-data.git`,
         });
         let logLevel = logger.logLevel;
-        logger.logLevel = 'info';
 
         // create index.lock
         var indexLock = path.join(root, '.git', 'index.lock');

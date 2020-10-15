@@ -694,7 +694,11 @@
                     verbose && console.log(`skipping ${suttaRef}`);
                     continue; 
                 }
-                let isBilDoc = bd.isBilaraDoc({ suid, lang:refLang||lang, author });
+                let isBilDoc = bd.isBilaraDoc({ 
+                    suid, 
+                    lang:refLang||lang, 
+                    author 
+                });
                 let mld;
                 if (isBilDoc) {
                     verbose && console.log(`slowFind() -> loadMLDoc()`);
