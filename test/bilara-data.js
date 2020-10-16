@@ -62,8 +62,7 @@
         should(res).equal(bd);
         should(bd.initialized).equal(true);
         should.deepEqual(Object.keys(bd.authors).sort(), [
-            //'ashinsarana', 
-            'ms', 'sabbamitta', 'sujato', 
+            'ashinsarana', 'ms', 'sabbamitta', 'sujato', 
         ]);
         should.deepEqual(bd.examples.en.slice(0,3), [
             `a hardened killer`,
@@ -88,7 +87,7 @@
         should(res).equal(bd);
         should(bd.initialized).equal(true);
         should.deepEqual(Object.keys(bd.authors).sort(), [
-           // 'ashinsarana', 
+            'ashinsarana', 
             'ms', 'sabbamitta', 'sujato', 
         ]);
     });
@@ -148,7 +147,7 @@
             type: "root",
             name: "Mahāsaṅgīti Tipiṭaka Buddhavasse 2500",
         };
-        var sarana = {
+        var ashinsarana = {
             lang: 'cs',
             name: 'Ashin Sarana',
             type: 'translator',
@@ -172,7 +171,7 @@
         should.deepEqual(bd.authors, {
             ms,
             // brahmali, // not published yet
-            // ashinsarana: sarana,
+            ashinsarana,
             sabbamitta,
             sujato,
         });
@@ -183,13 +182,12 @@
         (async function() { try {
             await bd.initialize();
             should.deepEqual(bd.supportedLanguages(), [
-                /* 'cs', */
-                'de', 'en', 'pli', 
+                'cs', 'de', 'en', 'pli', 
             ]);
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTsuttaInfo(...) returns sutta metadata", async()=>{
+    it("suttaInfo(...) returns sutta metadata", async()=>{
         await bd.initialize();
         var dn33Pli = {
             author: 'ms',
@@ -288,7 +286,7 @@
         should.deepEqual(bd.suttaInfo('an2.3'), 
             [ an2_1_10pli, an2_1_10de, an2_1_10en, an2_1_10jpn ]);
     });
-    it("TESTTESTsuttaInfo(...) => thig3.8 sutta metadata", async()=>{
+    it("suttaInfo(...) => thig3.8 sutta metadata", async()=>{
         await bd.initialize();
         let thigInfo = {
             suid: 'thig3.8',         
@@ -933,7 +931,7 @@
             volpage: null,
         }]);
     });
-    it("loadSuttaplexJson(...)=>thig3.8 de", async()=>{
+    it("TESTTESTloadSuttaplexJson(...)=>thig3.8 de", async()=>{
         await bd.initialize();
         var suid = 'thig3.8';
 
@@ -943,8 +941,8 @@
         var author_short = "Sabbamitta";
         var author_uid = 'sabbamitta';
 
-        //var json = await bd.loadSuttaplexJson(suid, lang, author_uid);
-        var json = await bd.loadSuttaplexJson(suid, lang);
+        let includeUnpublished = true;
+        var json = await bd.loadSuttaplexJson(suid, lang, undefined, includeUnpublished);
         should(json.acronym).equal(`Thig 3.8`);
         should(json.original_title).equal('Somātherīgāthā');
         should(json.translations[0].author_uid).equal('sabbamitta');
@@ -962,7 +960,7 @@
             volpage: null,
         });
     });
-    it("isBilaraDoc(...) => true if bilara file", async()=>{
+    it("TESTTESTisBilaraDoc(...) => true if bilara file", async()=>{
         await bd.initialize();
         should(bd.isBilaraDoc({
             suid:"thig3.8", 
@@ -970,7 +968,7 @@
             author:"sabbamitta",
         })).equal(true); 
     });
-    it("TESTTESTsuttaIds() => [ suid ]", async()=>{
+    it("suttaIds() => [ suid ]", async()=>{
         await bd.initialize();
         let suids = bd.suttaIds;
 

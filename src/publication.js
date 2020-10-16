@@ -53,8 +53,9 @@
                 that._publication = fs.existsSync(pubPath)
                     ? json5.parse(await readFile(pubPath))
                     : {};
-                that.pubEntries = Object.keys(that._publication)
-                    .map(k=>that._publication[k]);
+                that.pubEntries = Object.entries(that._publication)
+                    .filter(e=>!/blurb/.test(e[1].source_url))
+                    .map(e=>that._publication[e[0]]);
                 that.pubInfoMap = that.pubEntries.reduce((a,p) => {
                     var bilPath = p.source_url.replace(/.*master\//,'');
                     a[bilPath] = p;

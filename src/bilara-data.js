@@ -72,11 +72,23 @@
             return this.publication.includeUnpublished = value;
         }
 
-        isBilaraDoc({suid, lang, author}) {
+        isBilaraDoc({suid, lang, author, includeUnpublished=this.includeUnpublished}) {
             let {
                 bilaraPathMap: bpm,
+                publication,
             } = this;
             let sp = bpm.suidPaths(suid);
+            if (!includeUnpublished) {
+                let newSp = {};
+                for (let k in sp) {
+                    let v = sp[k];
+                    if (publication.isPublishedPath(v)) {
+                        newSp[k] = v;
+                    }
+                }
+                sp = newSp;
+            }
+
             let spKeys = Object.keys(sp);
             if (lang) {
                 spKeys = spKeys.filter(p=>p.indexOf(`/${lang}/`) >= 0);
@@ -877,9 +889,10 @@
             return new Promise(pbody);
         }
 
-        async loadSuttaplexJson(scid, lang, author_uid) { try {
+        async loadSuttaplexJson(scid, lang, author_uid, 
+            includeUnpublished=this.includeUnpublished) 
+        { try {
             let suttaplex = await this.scApi.loadSuttaplexJson(scid);
-            let isBilDoc = this.isBilaraDoc({suid:scid, lang, author:author_uid}); 
             var allTranslations = suttaplex && suttaplex.translations || [];
             var translations = allTranslations;
             if (lang || author_uid) {
@@ -919,7 +932,9 @@
                     }, []);
                     author_uid = authors[0];
                 }
-                if (this.isBilaraDoc({suid:scid, lang, author:author_uid})) {
+                if (this.isBilaraDoc({
+                    suid:scid, lang, author:author_uid, includeUnpublished,
+                })) {
                     let ainfo = this.authorInfo(author_uid);
                     let title = allTranslations.reduce((a,t)=>{
                         return a
@@ -948,7 +963,9 @@
             }
             return suttaplex;
         } catch (e) {
-            this.warn(`loadSuttaplexJson()`, {scid, lang, author_uid}, e);
+            this.warn(`loadSuttaplexJson()`, 
+                {scid, lang, author_uid, includeUnpublished}, 
+                e.message);
             throw e;
         }}
     }

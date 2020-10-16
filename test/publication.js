@@ -48,24 +48,28 @@
             initialized: false,
         });
     });
-    it("pubPaths() => published bilara paths", done=> {
-        (async function() { try {
-            var pub = await pubTest.initialize(); 
-            should.deepEqual(pub.pubPaths().sort(),[
-                `${SARANA}/an`,
-                `${SABBAMITTA}/an`,
-                `${SABBAMITTA}/dn`,
-                `${SABBAMITTA}/mn`,
-                `${SABBAMITTA}/sn`,
-                `${SUJATO}/an`,
-                `${SUJATO}/dn`,
-                `${SUJATO}/kn/thag`,
-                `${SUJATO}/kn/thig`,
-                `${SUJATO}/mn`,
-                `${SUJATO}/sn`,
-            ].sort());
-            done();
-        } catch(e) {done(e);} })();
+    it("TESTTESTpubPaths() => published bilara paths", async()=>{
+        var pub = await pubTest.initialize(); 
+        should.deepEqual(pub.pubPaths().sort(),[
+            `${SARANA}/an`,
+            `${SABBAMITTA}/an`,
+            `${SABBAMITTA}/dn`,
+            `${SABBAMITTA}/mn`,
+            `${SABBAMITTA}/sn`,
+            `${SABBAMITTA}/kn/dhp`,
+            `${SABBAMITTA}/kn/iti`,
+            `${SABBAMITTA}/kn/kp`,
+            `${SABBAMITTA}/kn/snp`,
+            `${SABBAMITTA}/kn/thag`,
+            `${SABBAMITTA}/kn/thig`,
+            `${SABBAMITTA}/kn/ud`,
+            `${SUJATO}/an`,
+            `${SUJATO}/dn`,
+            `${SUJATO}/kn/thag`,
+            `${SUJATO}/kn/thig`,
+            `${SUJATO}/mn`,
+            `${SUJATO}/sn`,
+        ].sort());
     });
     it("pubPaths() => all bilara paths", async()=>{
         var pub = await pubTest.initialize();
@@ -76,7 +80,6 @@
             `root/pli/bj/pli-tv-kd`,
             `root/pli/dpcv/pli-tv-kd`,
             `${SARANA}/an`,
-            `translation/de/blurb`,
             `${SABBAMITTA}/an`,
             `${SABBAMITTA}/dn`,
             `${SABBAMITTA}/mn`,
@@ -121,7 +124,6 @@
             `root/pli/bj/pli-tv-kd`,
             `root/pli/dpcv/pli-tv-kd`,
             `${SARANA}/an`,
-            `translation/de/blurb`,
             `${SABBAMITTA}/an`,
             `${SABBAMITTA}/dn`,
             `${SABBAMITTA}/mn`,
@@ -157,29 +159,29 @@
             `${RUTEAM}/dn`,
         ].sort());
     });
-    it("isPublishedPath(f) filters supported suttas", done=>{
-        (async function() { try {
-            var pub = await pubTest.initialize(); 
-        
-            should(pub.isPublishedPath('nonsense/en/nobody'))
-                .equal(false);
-            should(pub.isPublishedPath('pli-tv-bu-vb-pj1/en/brahmali'))
-                .equal(false);
-            should(pub.isPublishedPath('mn1')).equal(true);
-            should(pub.isPublishedPath('mn1/en/sujato')).equal(true);
-            should(pub.isPublishedPath('mn1/en/nobody')).equal(false);
-            should(pub.isPublishedPath(ROOTPATH('mn/mn1')))
-                .equal(true);
-            should(pub.isPublishedPath(TRANSPATH('en', 'sujato','mn/mn1')))
-                .equal(true);
-            should(pub.isPublishedPath(
-                TRANSPATH('en', 'sujato', `kn/thig/thig2.4`)))
-                .equal(true);
-            should(pub.isPublishedPath(
-                TRANSPATH('en', 'sujato', `kn/dhp/dhp21-32`)))
-                .equal(false);
-            done();
-        } catch(e) {done(e);} })();
+    it("isPublishedPath(f) filters supported suttas", async()=>{
+        var pub = await pubTest.initialize(); 
+    
+        should(pub.isPublishedPath('nonsense/en/nobody'))
+            .equal(false);
+        should(pub.isPublishedPath('pli-tv-bu-vb-pj1/en/brahmali'))
+            .equal(false);
+        should(pub.isPublishedPath('mn1')).equal(true);
+        should(pub.isPublishedPath('mn1/en/sujato')).equal(true);
+        should(pub.isPublishedPath('mn1/en/nobody')).equal(false);
+        should(pub.isPublishedPath(ROOTPATH('mn/mn1')))
+            .equal(true);
+        should(pub.isPublishedPath(TRANSPATH('en', 'sujato','mn/mn1')))
+            .equal(true);
+        should(pub.isPublishedPath(
+            TRANSPATH('en', 'sujato', `kn/thig/thig2.4`)))
+            .equal(true);
+        should(pub.isPublishedPath(
+            TRANSPATH('en', 'sujato', `kn/dhp/dhp21-32`)))
+            .equal(false);
+        should(pub.isPublishedPath(
+            TRANSPATH('de', 'sabbamitta', `kn/thig/thig3.8`)))
+            .equal(true);
     });
     it("isPublishedPath(f) allows unpublished paths", done=>{
         (async function() { try {

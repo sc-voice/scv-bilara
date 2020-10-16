@@ -893,7 +893,7 @@
             'thag2.15/en/sujato', 'dn14/en/sujato',
         ]);
     });
-    it("find(...) => finds all keywords", async()=>{
+    it("TESTTESTfind(...) => finds all keywords", async()=>{
         var maxDoc = 50;
         var skr = await new Seeker({
             maxDoc,
@@ -906,7 +906,7 @@
             minLang: 2,
             showMatchesOnly: false,
         });
-        should(res.suttaRefs.length).equal(17);
+        should(res.suttaRefs.length).equal(15);
     });
     it("find(...) => finds keywords", async()=>{
         var maxDoc = 3;
@@ -1043,6 +1043,7 @@
         
         // English
         should.deepEqual(skr.findArgs(["root of suffering"]), {
+            includeUnpublished: false,
             lang: 'en',
             languages: ['pli', 'en'],
             matchHighlight: "\u001b[38;5;121m$&\u001b[0m",
@@ -1062,6 +1063,7 @@
         should.deepEqual(skr.findArgs([
             "wurzel des leidens -ml3 -l de"
         ]), {
+            includeUnpublished: false,
             lang: 'de',
             languages: ['pli', 'en', 'de'],
             matchHighlight: "\u001b[38;5;121m$&\u001b[0m",
@@ -1081,6 +1083,7 @@
         should.deepEqual(skr.findArgs([
             "wurzel des leidens -ml 3 -l de"
         ]), {
+            includeUnpublished: false,
             lang: 'de',
             languages: ['pli', 'en', 'de'],
             matchHighlight: "\u001b[38;5;121m$&\u001b[0m",
@@ -1258,15 +1261,18 @@
         should(mld0.bilaraPaths[0]).match(/an3.29/);
         should(mld0.score).equal(6.128);
     });
-    it("TESTTESTfind(...) finds 'thig3.8' de", async()=>{
+    it("find(...) finds 'thig3.8' de unpublished", async()=>{
         var bilaraData = await bd.initialize();
         var verbose = 0;
-        var skr = await new Seeker({
-            bilaraData,
-        }).initialize();
+        var includeUnpublished = true;
+        var skr = await new Seeker({ bilaraData, }).initialize();
         var pattern = "thig3.8 -l de";
         
-        var data = await skr.find({pattern, verbose});
+        var data = await skr.find({
+            pattern, 
+            verbose,
+            includeUnpublished,
+        });
         should(data.searchLang).equal('de');
         should(data.method).equal('sutta_uid');
         should(data.mlDocs.length).equal(1);
@@ -1275,6 +1281,7 @@
         should(mld0.score).equal(0);
         should(mld0.segments().length).equal(18);
         should(data.resultPattern).equal('thig3.8');
+        should(mld0.author_uid).equal('sabbamitta');
     });
     it("find(...) finds 'king pacetana'", async()=>{
         var bilaraData = await bd.initialize();

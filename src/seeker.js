@@ -480,6 +480,7 @@
                 showMatchesOnly,
                 tipitakaCategories,
                 types,
+                includeUnpublished=this.includeUnpublished,
             } = opts;
             if (rawPattern == null) {
                 throw new Error(`pattern is required`);
@@ -560,6 +561,7 @@
                 tipitakaCategories,
                 lang,
                 types,
+                includeUnpublished,
             }
         }
 
@@ -599,21 +601,22 @@
             return promise;
         }
 
-        async slowFind(...args) {
+        async slowFind(...args) { try {
             var that = this;
             var msStart = Date.now();
             var findArgs = that.findArgs(args);
             var {
+                includeUnpublished,
+                lang,
+                languages,
+                matchHighlight,
+                maxDoc,
+                maxResults,
+                minLang,
                 pattern,
                 searchLang,
-                lang,
-                minLang,
-                languages,
-                sortLines,
-                maxResults,
-                maxDoc,
-                matchHighlight,
                 showMatchesOnly,
+                sortLines,
                 tipitakaCategories,
                 types,
                 verbose,
@@ -697,7 +700,8 @@
                 let isBilDoc = bd.isBilaraDoc({ 
                     suid, 
                     lang:refLang||lang, 
-                    author 
+                    author,
+                    includeUnpublished,
                 });
                 let mld;
                 if (isBilDoc) {
@@ -741,20 +745,30 @@
                         that.log(`skipping ${mld.suid} minLang:${minLang}`);
                     }
                 } else {
-                    verbose && console.log(`slowFind() -> loadMLDocLegacy()`);
-                    mld = await bd.loadMLDocLegacy(suttaRef);
-                    mlDocs.push(mld);
-                    matchingRefs.push(suttaRef);
-                    var resFilter = mld.filterSegments({
-                        pattern,
-                        resultPattern, 
-                        languages: [searchLang], 
-                        showMatchesOnly,
+                    let isBilDocUnpub = bd.isBilaraDoc({ 
+                        suid, 
+                        lang:refLang||lang, 
+                        author,
+                        includeUnpublished: true, 
                     });
-                    segsMatched += resFilter.matched;
-                    mld.segsMatched = resFilter.matched;
-                    if (matchHighlight) {
-                        mld.highlightMatch(resultPattern, matchHighlight);
+                    if (isBilDocUnpub) {
+                        verbose && console.log(`slowFind() -> unpublished Bilara doc`);
+                    } else {
+                        verbose && console.log(`slowFind() -> loadMLDocLegacy()`);
+                        mld = await bd.loadMLDocLegacy(suttaRef);
+                        mlDocs.push(mld);
+                        matchingRefs.push(suttaRef);
+                        var resFilter = mld.filterSegments({
+                            pattern,
+                            resultPattern, 
+                            languages: [searchLang], 
+                            showMatchesOnly,
+                        });
+                        segsMatched += resFilter.matched;
+                        mld.segsMatched = resFilter.matched;
+                        if (matchHighlight) {
+                            mld.highlightMatch(resultPattern, matchHighlight);
+                        }
                     }
                 }
             }
@@ -778,7 +792,10 @@
                 mlDocs,
             };
             return result;
-        }
+        } catch(e) {
+            this.warn(`slowFind()`, JSON.stringify(args), e.message);
+            throw e;
+        }}
 
         static serialize(obj) {
             return JSON.stringify(obj, null, 2);
