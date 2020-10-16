@@ -118,4 +118,17 @@
     } finally {
         fs.existsSync(indexLock) &&  fs.unlinkSync(indexLock);
     }});
+    it("TESTTESTbranch() waits for others", async()=>{ 
+        let root = path.join(Files.LOCAL_DIR, 'bilara-data');
+        let execGit = new ExecGit({
+            repo: `https://github.com/sc-voice/bilara-data.git`,
+        });
+
+        // bd.sync will block
+        let promises = [
+            execGit.branch('unpublished'),
+            execGit.branch('unpublished'),
+        ];
+        await Promise.all(promises);
+    });
 })

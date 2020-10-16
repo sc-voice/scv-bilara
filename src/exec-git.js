@@ -12,6 +12,8 @@
     const MAXBUFFER = 10 * 1024 * 1024;
 
     const BILARA_DATA_GIT = 'https://github.com/sc-voice/bilara-data.git';
+    var gitPromise = undefined;
+    var gitContext = '';
 
     class ExecGit {
         constructor(opts={}) {
@@ -77,6 +79,7 @@
         }}
 
         async sync(repo=this.repo, repoPath=this.repoPath, branches=['master']) { try {
+            await this.gitPromiseLock('sync()');
             var {
                 cwd,
             } = this;
@@ -108,13 +111,14 @@
                 cwd,
                 maxBuffer: MAXBUFFER,
             };
-            await this.indexLock();
-            var res = execSync(cmd, execOpts);
+            let res = await execPromise(cmd, execOpts);
             this.info(`sync() ${cmd} => ${res}`);
             return this;
         } catch(e) {
-            this.warn(`sync(}`,{repo,repoPath,branches},e.message);
+            this.warn(`sync()`,{repo,repoPath,branches},e.message);
             throw e;
+        } finally {
+            this.gitPromiseUnlock();
         }}
 
         async indexLock() { try {
@@ -191,7 +195,25 @@
             });
         } 
 
+        async gitPromiseLock(msg) {
+            const SECONDS = 60;
+            const PERSECOND = 2;
+            for (let tries=SECONDS*PERSECOND; gitPromise && 0<tries--;) {
+                this.info(`${msg} waiting on ${gitContext}...${tries/PERSECOND}`);
+                await gitPromise;
+                await new Promise(r=>setTimeout(()=>r(),1000/PERSECOND));
+            }
+            gitContext = msg;
+            gitPromise = this.indexLock();
+            await gitPromise;
+        }
+
+        gitPromiseUnlock() {
+            gitPromise = undefined;
+        }
+
         async branch(branch, opts=false) { try {
+            await this.gitPromiseLock('branch()');
             if (typeof opts === 'boolean') {
                 opts = { add: opts };
             }
@@ -229,8 +251,7 @@
                 var cmd = `git checkout "${branch}"`;
                 this.info(`${repoDir}: ${cmd}`);
             }
-            await this.indexLock();
-            var res = await execPromise(cmd, execOpts);
+            let res = await execPromise(cmd, execOpts);
             if (res.error) {
                 throw res.error;
             }
@@ -238,6 +259,8 @@
         } catch(e) {
             this.warn(`branch(${branch},${JSON.stringify(opts)})`,e.message);
             throw e;
+        } finally {
+            this.gitPromiseUnlock();
         }} 
 
         diff(branch, opts={}) {
