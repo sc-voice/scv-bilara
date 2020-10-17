@@ -143,7 +143,7 @@ var isTTY = process.stdout.isTTY;
 var tipitakaCategories = '';
 var verbose = false;
 var readFile = true;
-var sync = false;
+var sync = undefined;
 
 //var searchLang;
 

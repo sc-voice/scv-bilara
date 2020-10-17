@@ -131,4 +131,13 @@
         ];
         await Promise.all(promises);
     });
+    it("TESTTESTgitLog(opts) returns git log", async()=>{ 
+        let egit = new ExecGit();
+        var { stdout } = await egit.gitLog();
+        should(stdout).match(/^commit.*\nMerge.*\nAuthor.*\nDate/mu);
+        should(stdout.split('commit').length).equal(2);
+
+        var { stdout } = await egit.gitLog({maxCount:2});
+        should(stdout.split('commit').length).equal(3);
+    });
 })

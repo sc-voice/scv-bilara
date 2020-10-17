@@ -40,7 +40,7 @@
             var that = this;
             return (error, stdout, stderr) => {
                 if (error) {
-                    that.log(error.stack);
+                    that.info(error.stack);
                     reject(error);
                     return;
                 } 
@@ -52,8 +52,8 @@
                         stderr,
                     });
                 } else {
-                    stdout && that.log(`stdout\n${stdout}`);
-                    stderr && that.log(`stderr\n${stderr}`);
+                    stdout && that.info(`stdout\n${stdout}`);
+                    stderr && that.info(`stderr\n${stderr}`);
                     resolve(that);
                 }
             }
@@ -72,7 +72,7 @@
                 cwd: repoPath,
                 maxBuffer: MAXBUFFER,
             };
-            return await execPromise(cmd, execOpts).stdout;
+            return (await execPromise(cmd, execOpts)).stdout;
         } catch(e) {
             this.warn(`ls_remote(${origin})`, e.message);
             throw e;
@@ -158,8 +158,8 @@
                             reject(error);
                             return;
                         } 
-                        that.log(`${repoDir} hasChanges: ${cmd}\n${stdout.trim()}`);
-                        stderr && that.log(stderr);
+                        that.info(`${repoDir} hasChanges: ${cmd}\n${stdout.trim()}`);
+                        stderr && that.info(stderr);
                         var nothing = /nothing to commit/mu.test(stdout);
                         resolve(!nothing);
                     });
@@ -185,7 +185,7 @@
                     if (push) {
                         cmd += ` && git push`;
                     }
-                    that.log(`${repoDir}: ${cmd}`);
+                    that.info(`${repoDir}: ${cmd}`);
                     var execOpts = {
                         cwd: repoPath,
                         maxBuffer: MAXBUFFER,
@@ -285,7 +285,7 @@
                     } else {
                         var cmd = `git diff ${branch}` ;
                     }
-                    that.log(`${repoDir}: ${cmd}`);
+                    that.info(`${repoDir}: ${cmd}`);
                     var execOpts = {
                         cwd: repoPath,
                         maxBuffer: MAXBUFFER,
@@ -316,7 +316,7 @@
                     var cmd = `git merge ${args} ${branch}` ;
                     push && (cmd += ` && git push`);
 
-                    that.log(`${repoDir}: ${cmd}`);
+                    that.info(`${repoDir}: ${cmd}`);
                     var execOpts = {
                         cwd: repoPath,
                         maxBuffer: MAXBUFFER,
@@ -342,7 +342,7 @@
                     var cmd = newFile 
                         ? `git add ${newFile}` 
                         : `git add .`;
-                    that.log(`${repoDir}: ${cmd}`);
+                    that.info(`${repoDir}: ${cmd}`);
                     var execOpts = {
                         cwd: repoPath,
                         maxBuffer: MAXBUFFER,
@@ -351,6 +351,20 @@
                 } catch(e) {reject(e);} })();
             });
         } 
+
+        async gitLog(opts={}) { try {
+            let {
+                maxCount=1,
+            } = opts;
+            let cmd = `git log -${maxCount}`;
+            let execOpts = {
+                cwd: this.repoPath,
+            };
+            return await execPromise(cmd, execOpts);
+        } catch(e) {
+            this.warn(`gitLog(${JSON.stringify(opts)})`, e.message);
+            throw e;
+        }}
 
     }
 

@@ -36,10 +36,10 @@
             (opts.logger || logger).logInstance(this, opts);
             this.name = opts.name || 'bilara-data';
             this.root = opts.root || path.join(Files.LOCAL_DIR, this.name);
-            this.log(`root:${this.root}`);
+            this.info(`root:${this.root}`);
             this.lang = opts.lang || 'en';
             this.branch = opts.branch;
-            this.scApi = opts.scApi || new ScApi();
+            this.scApi = opts.scApi || new ScApi({logger: this});
             var includeUnpublished = opts.includeUnpublished == null 
                 ? false : opts.includeUnpublished;
             this.publication = opts.publication || new Publication({
@@ -99,106 +99,123 @@
             return spKeys.length > 0;
         }
 
-        initialize(sync=false) {
-            if (this.initialized) {
-                return Promise.resolve(this);
+        async isFresh(save=true) { try {
+            let { stdout } = await this.execGit.gitLog();
+            let gitlogPath = path.join(this.root, 'gitlog.txt');
+            let gitlog = fs.existsSync(gitlogPath) && 
+                (await fs.promises.readFile(gitlogPath)).toString();
+
+            let fresh = stdout === gitlog;
+            if (save && !fresh) {
+                await fs.promises.writeFile(gitlogPath, stdout);
             }
-            var that = this;
+            return fresh;
+        } catch(e) {
+            this.warn(`isFresh()`, e.message);
+            throw e;
+        }}
+
+        async initialize(sync) { try {
+            if (this.initialized) {
+                return this;
+            }
+            sync = sync===undefined ? !(await this.isFresh()) : sync;
+            this.info(`initialize(sync:${sync})`);
             var {
                 root,
                 authors,
-            } = that;
-            var pbody = (resolve, reject) => {(async function() { try {
-                var version = that.version();
-                var EXPECTED_VERSION = 1
-                var purge = false;
-                if (version.major < EXPECTED_VERSION) {
-                    that.log(`Expected bilara-data version `+
-                        `actual:${version.major} `+
-                        `expected:${EXPECTED_VERSION} `+
-                        `(re-cloning repository...)`);
-                    purge = true;
-                }
-                (sync || purge) && await that.sync({
-                    purge,
-                    initializing: true,
-                });
-                if (that.branch) {
-                    let res = await that.execGit.branch(that.branch);
-                    that.log(`initialize: ${res.stdout} ${res.stderr}`);
-                }
-                await that.publication.initialize();
-                await that.scApi.initialize();
-                let langPath = path.join(that.root, '_language.json');
-                that.languageInfo = JSON.parse(
-                    await fs.promises.readFile(langPath));
+            } = this;
+            var version = this.version();
+            var EXPECTED_VERSION = 1
+            var purge = false;
+            if (version.major < EXPECTED_VERSION) {
+                this.info(`Expected bilara-data version `+
+                    `actual:${version.major} `+
+                    `expected:${EXPECTED_VERSION} `+
+                    `(re-cloning repository...)`);
+                purge = true;
+            }
+            (sync || purge) && await this.sync({
+                purge,
+                initializing: true,
+            });
+            if (this.branch) {
+                let res = await this.execGit.branch(this.branch);
+                this.info(`initialize: ${res.stdout} ${res.stderr}`);
+            }
+            await this.publication.initialize();
+            await this.scApi.initialize();
+            let langPath = path.join(this.root, '_language.json');
+            this.languageInfo = JSON.parse(
+                await fs.promises.readFile(langPath));
 
-                let authPath = path.join(that.root, `_author.json`);
-                let authorJson = fs.existsSync(authPath)
-                    ? json5.parse(await readFile(authPath)) 
-                    : {};
-                that.addAuthor('ms', Object.assign({
-                    lang: 'pli'
-                }, authorJson.ms));
-                var rootPath = path.join(that.root, 'root');
-                if (!fs.existsSync(rootPath)) {
-                    throw new Error(`Root document directory `+
-                        `not found:${rootPath}`); 
+            let authPath = path.join(this.root, `_author.json`);
+            let authorJson = fs.existsSync(authPath)
+                ? json5.parse(await readFile(authPath)) 
+                : {};
+            this.addAuthor('ms', Object.assign({
+                lang: 'pli'
+            }, authorJson.ms));
+            var rootPath = path.join(this.root, 'root');
+            if (!fs.existsSync(rootPath)) {
+                throw new Error(`Root document directory `+
+                    `not found:${rootPath}`); 
+            }
+
+            this.examples = {};
+            let exPath = path.join(this.root, `.helpers`, `examples`);
+            let exEntries = await fs.promises.readdir(exPath);
+            for (let i = 0; i < exEntries.length; i++) {
+                let entry = exEntries[i];
+                let lang = entry.split('-')[1].split('.')[0];
+                let entryPath = path.join(exPath, entry);
+                let entryBuf = await fs.promises.readFile(entryPath);
+                this.examples[lang] = entryBuf.toString()
+                    .trim().split('\n')
+                    .sort((a,b) => 
+                        a.toLowerCase().localeCompare(b.toLowerCase()));
+            };
+
+            // The following code must be synchronous
+            this.initialized = true;
+            this.rootFiles = this.dirFiles(rootPath)
+                .filter(f => this.publication.isPublishedPath(f))
+
+            var transPath = path.join(this.root, 'translation');
+            if (!fs.existsSync(transPath)) {
+                throw new Error(
+                    `Translation directory not found:${transPath}`); 
+            }
+            this.translations = this.dirFiles(transPath)
+                .filter(f => this.publication.isPublishedPath(f))
+                .sort();
+            this.translations.forEach((f,i) => {
+                var file = f.replace(/.*\/translation\//,
+                    'translation/');
+                var stat = fs.statSync(path.join(root, file));
+                if (stat.size < STUBFILESIZE) {
+                    return;
                 }
-
-                that.examples = {};
-                let exPath = path.join(that.root, `.helpers`, `examples`);
-                let exEntries = await fs.promises.readdir(exPath);
-                for (let i = 0; i < exEntries.length; i++) {
-                    let entry = exEntries[i];
-                    let lang = entry.split('-')[1].split('.')[0];
-                    let entryPath = path.join(exPath, entry);
-                    let entryBuf = await fs.promises.readFile(entryPath);
-                    that.examples[lang] = entryBuf.toString()
-                        .trim().split('\n')
-                        .sort((a,b) => 
-                            a.toLowerCase().localeCompare(b.toLowerCase()));
-                };
-
-                // The following code must be synchronous
-                that.initialized = true;
-                that.rootFiles = that.dirFiles(rootPath)
-                    .filter(f => that.publication.isPublishedPath(f))
-
-                var transPath = path.join(that.root, 'translation');
-                if (!fs.existsSync(transPath)) {
-                    throw new Error(
-                        `Translation directory not found:${transPath}`); 
-                }
-                that.translations = that.dirFiles(transPath)
-                    .filter(f => that.publication.isPublishedPath(f))
-                    .sort();
-                that.translations.forEach((f,i) => {
-                    var file = f.replace(/.*\/translation\//,
-                        'translation/');
-                    var stat = fs.statSync(path.join(root, file));
-                    if (stat.size < STUBFILESIZE) {
-                        return;
-                    }
-                    var parts = file.split('/');
-                    var lang = parts[1];
-                    var author = parts[2];
-                    var category = parts[3];
-                    var nikaya = parts[4];
-                    var suid = parts[parts.length-1]
-                        .split('_')[0].toLowerCase();
-                    that.addAuthor(author, Object.assign({
-                        lang,
-                    }, authorJson[author]));
-                });
-                var uidExpPath = path.join(that.root, 
-                    '.helpers', 'uid_expansion.json');
-                that.uid_expansion = 
-                    json5.parse(fs.readFileSync(uidExpPath));
-                resolve(that);
-            } catch(e) {reject(e);} })()};
-            return new Promise(pbody);
-        }
+                var parts = file.split('/');
+                var lang = parts[1];
+                var author = parts[2];
+                var category = parts[3];
+                var nikaya = parts[4];
+                var suid = parts[parts.length-1]
+                    .split('_')[0].toLowerCase();
+                this.addAuthor(author, Object.assign({
+                    lang,
+                }, authorJson[author]));
+            });
+            var uidExpPath = path.join(this.root, 
+                '.helpers', 'uid_expansion.json');
+            this.uid_expansion = 
+                json5.parse(fs.readFileSync(uidExpPath));
+            return this;
+        } catch(e) {
+            this.warn(`initialize()`, e.message);
+            throw e;
+        }}
 
         addAuthor(author, info) {
             var {
@@ -248,8 +265,10 @@
                 var execOpts = {
                     cwd: Files.LOCAL_DIR,
                 };
-                this.log(`Purging repository: ${cmd}`);
+                this.info(`Purging repository: ${cmd}`);
                 var res = execSync(cmd, execOpts).toString();
+            } else {
+                this.info(`Updating bilara-data`);
             }
             var res = await this.execGit
                 .sync(undefined, undefined, branches);
@@ -361,7 +380,7 @@
             languages = languages || (this.languages.indexOf(lang) <= 0
                 ? [...this.languages, lang]
                 : this.languages);
-            logLevel = logLevel === undefined ? this.logLevel : logLevel;
+            logLevel = logLevel === undefined ? this.infoLevel : logLevel;
             return {
                 verbose,
                 suid,
@@ -416,7 +435,7 @@
                 (!author || i.author === author)
             )[0];
             if (suttaInfo == null || suttaInfo.bilaraPath == null) {
-                this.log(
+                this.info(
                     `loadSegDoc(${suid}) info:${JSON.stringify(info)}`);
                 if (returnNull) {
                     return null;
@@ -474,7 +493,7 @@
             }
             if (bilaraPaths.length === 0) {
                 if (returnNull) {
-                    this.log(`loadMLDoc(${suid}) no info:${languages}`);
+                    this.info(`loadMLDoc(${suid}) no info:${languages}`);
                     return null;
                 }
                 throw new Error(author 
@@ -568,7 +587,7 @@
         }
 
         suttaPath(...args) { // DEPRECATED: use docPaths
-            this.log(`DEPRECATED: suttaPath => docPaths`);
+            this.info(`DEPRECATED: suttaPath => docPaths`);
             return this.docPaths.apply(this, args)[0];
         }
 
