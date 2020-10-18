@@ -314,74 +314,68 @@
             enInfo, 
         ]);
     });
-    it("loadSegDoc(...) loads translation document", done=>{
-        (async function() { try {
-            await bd.initialize();
-            var expectedProps = {
-                suid: 'dn33',
-                author: 'sujato',
-                lang: 'en',
-            };
+    it("loadSegDoc(...) loads translation document", async()=>{
+        await bd.initialize();
+        var expectedProps = {
+            suid: 'dn33',
+            author: 'sujato',
+            lang: 'en',
+        };
 
-            // string form
-            var an1_1_10 = await bd.loadSegDoc("an1.1-10/en");
-            should(an1_1_10).properties({
-                suid: 'an1.1-10',
-                author: 'sujato',
-                lang: 'en',
-            });
-            var an1_1_10 = await bd.loadSegDoc("an1.1-10/de");
-            should(an1_1_10).properties({
-                suid: 'an1.1-10',
-                author: 'sabbamitta',
-                lang: 'de',
-            });
+        // string form
+        var an1_1_10 = await bd.loadSegDoc("an1.1-10/en");
+        should(an1_1_10).properties({
+            suid: 'an1.1-10',
+            author: 'sujato',
+            lang: 'en',
+        });
+        var an1_1_10 = await bd.loadSegDoc("an1.1-10/de");
+        should(an1_1_10).properties({
+            suid: 'an1.1-10',
+            author: 'sabbamitta',
+            lang: 'de',
+        });
 
-            // full form
-            var dn33 = await bd.loadSegDoc({
-                suid: 'dn33',
-                lang: 'en',
-            });
-            should(dn33).properties(expectedProps);
-            should(dn33.segMap['dn33:1.10.31'])
-                .equal('form, formlessness, and cessation. '); 
-            done();
-        } catch(e) {done(e);} })();
+        // full form
+        var dn33 = await bd.loadSegDoc({
+            suid: 'dn33',
+            lang: 'en',
+        });
+        should(dn33).properties(expectedProps);
+        should(dn33.segMap['dn33:1.10.31'])
+            .equal('form, formlessness, and cessation. '); 
     });
-    it("loadSegDoc(...) loads segmented document", done=>{
-        (async function() { try {
-            await bd.initialize();
+    it("loadSegDoc(...) loads segmented document", async()=>{
+        await bd.initialize();
 
-            // Object args
-            var dn33 = await bd.loadSegDoc({
-                suid: 'dn33',
-                lang: 'en',
-            });
-            should(dn33).properties({
-                suid: 'dn33',
-                author: 'sujato',
-                lang: 'en',
-            });
+        // Object args
+        var dn33 = await bd.loadSegDoc({
+            suid: 'dn33',
+            lang: 'en',
+        });
+        should(dn33).properties({
+            suid: 'dn33',
+            author: 'sujato',
+            lang: 'en',
+        });
 
-            // String args
-            should.deepEqual(await bd.loadSegDoc('dn33/en/sujato'), dn33);
+        // String args
+        should.deepEqual(await bd.loadSegDoc('dn33/en/sujato'), dn33);
 
-            should(dn33.segMap['dn33:1.10.31'])
-                .equal('form, formlessness, and cessation. '); 
-            should.deepEqual(dn33.scids().slice(0,10), [
-                'dn33:0.1',
-                'dn33:0.2',
-                'dn33:1.1.1',
-                'dn33:1.1.2',
-                'dn33:1.1.3',
-                'dn33:1.2.1',
-                'dn33:1.2.2',
-                'dn33:1.2.3',
-                'dn33:1.2.4',
-                'dn33:1.2.5',
-            ]);
-            done();
-        } catch(e) {done(e);} })();
+        should(dn33.segMap['dn33:1.10.31'])
+            .equal('form, formlessness, and cessation. '); 
+        should.deepEqual(dn33.scids().slice(0,10), [
+            'dn33:0.1',
+            'dn33:0.2',
+            'dn33:1.1.1',
+            'dn33:1.1.2',
+            'dn33:1.1.3',
+            'dn33:1.2.1',
+            'dn33:1.2.2',
+            'dn33:1.2.3',
+            'dn33:1.2.4',
+            'dn33:1.2.5',
+        ]);
     });
     it("normalizeSuttaId(id) => normalized sutta_uid", done=>{
         (async function() { try {
@@ -931,7 +925,7 @@
             volpage: null,
         }]);
     });
-    it("TESTTESTloadSuttaplexJson(...)=>thig3.8 de", async()=>{
+    it("loadSuttaplexJson(...)=>thig3.8 de", async()=>{
         await bd.initialize();
         var suid = 'thig3.8';
 
@@ -960,7 +954,7 @@
             volpage: null,
         });
     });
-    it("TESTTESTisBilaraDoc(...) => true if bilara file", async()=>{
+    it("isBilaraDoc(...) => true if bilara file", async()=>{
         await bd.initialize();
         should(bd.isBilaraDoc({
             suid:"thig3.8", 
@@ -968,11 +962,11 @@
             author:"sabbamitta",
         })).equal(true); 
     });
-    it("suttaIds() => [ suid ]", async()=>{
+    it("TESTTESTsuttaIds() => [ suid ]", async()=>{
         await bd.initialize();
         let suids = bd.suttaIds;
 
-        should(suids.length).equal(6220);
+        should(suids.length).equal(6181);
         should.deepEqual(suids.slice(0,5), [
             "an1.1-10",
             "an1.11-20",

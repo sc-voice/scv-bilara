@@ -41,7 +41,7 @@
         should(scid).instanceOf(SuttaCentralId);
         should(scid.toString()).equal('mn1:2.3.4');
     });
-    it("compareLow(a,b) compares sutta file names", function(){
+    it("TESTTESTcompareLow(a,b) compares sutta file names", function(){
         var cmp = SuttaCentralId.compareLow;
 
         // vinaya

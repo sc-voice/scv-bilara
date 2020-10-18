@@ -118,7 +118,7 @@
     } finally {
         fs.existsSync(indexLock) &&  fs.unlinkSync(indexLock);
     }});
-    it("TESTTESTbranch() waits for others", async()=>{ 
+    it("branch() waits for others", async()=>{ 
         let root = path.join(Files.LOCAL_DIR, 'bilara-data');
         let execGit = new ExecGit({
             repo: `https://github.com/sc-voice/bilara-data.git`,
@@ -131,7 +131,7 @@
         ];
         await Promise.all(promises);
     });
-    it("TESTTESTgitLog(opts) returns git log", async()=>{ 
+    it("gitLog(opts) returns git log", async()=>{ 
         let egit = new ExecGit();
         var { stdout } = await egit.gitLog();
         should(stdout).match(/^commit.*\nMerge.*\nAuthor.*\nDate/mu);

@@ -192,6 +192,9 @@
                         ? [...a,e.name] : a), []);
                 for (var ia=0; ia < auths.length; ia++) {
                     var key = `translation/${l}/${auths[ia]}`;
+                    if (/en\/(patton|comm-team)/.test(key)) {
+                        continue; // ignore lzh->en translations
+                    }
                     await this._loadPaths(suidMap, key);
                     var key = `comment/${l}/${auths[ia]}`;
                     await this._loadPaths(suidMap, key);
@@ -199,6 +202,7 @@
             }
 
             await this._loadPaths(suidMap, "root/pli/ms");
+            //await this._loadPaths(suidMap, "root/pli/vri");
             await this._loadPaths(suidMap, "html/pli/ms");
             await this._loadPaths(suidMap, "reference/pli/ms");
             await this._loadPaths(suidMap, "variant/pli/ms"); 
