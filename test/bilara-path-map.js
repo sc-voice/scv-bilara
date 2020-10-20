@@ -164,4 +164,11 @@
             suid: 'thig3.8',
         }]);
     });
+    it("buildSuidMap() => [ suid ]", async()=>{
+        let bpm = await new BilaraPathMap().initialize();
+        let suidMap = await bpm.buildSuidMap();
+        let suids = Object.keys(suidMap);
+
+        should(suids.length).equal(6181);
+    });
 })

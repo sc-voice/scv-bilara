@@ -126,39 +126,36 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("grep(...) finds de things", done=>{
-        (async function() { try {
-            var skr = new Seeker(SEEKEROPTS);
-            var maxResults = 5;
+    it("TESTTESTgrep(...) finds de things", async()=>{
+        var skr = new Seeker(SEEKEROPTS);
+        var maxResults = 5;
 
-            // diacritical word boundary
-            var res = await skr.grep({
-                pattern: "übung",
-                lang: 'de',
-                maxResults,
-            });
-            should.deepEqual(res.slice(0,4), [
-          `${de_sab}dn/dn33_translation-de-sabbamitta.json:39`,
-          `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:21`,
-          `${de_sab}an/an3/an3.156-162_translation-de-sabbamitta.json:21`,
-          `${de_sab}an/an4/an4.163_translation-de-sabbamitta.json:15`,
-          //`${de_sab}an/an3/an3.86_translation-de-sabbamitta.json:14`,
-            ]);
-            should(res.length).below(6);
+        // diacritical word boundary
+        var res = await skr.grep({
+            pattern: "übung",
+            lang: 'de',
+            maxResults,
+        });
+        should.deepEqual(res.slice(0,4), [
+      `${de_sab}dn/dn33_translation-de-sabbamitta.json:39`,
+      `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:21`,
+      `${de_sab}an/an3/an3.156-162_translation-de-sabbamitta.json:21`,
+      `${de_sab}an/an6/an6.30_translation-de-sabbamitta.json:15`,
+      //`${de_sab}an/an4/an4.163_translation-de-sabbamitta.json:15`,
+      //`${de_sab}an/an3/an3.86_translation-de-sabbamitta.json:14`,
+        ]);
+        should(res.length).below(6);
 
-            var res = await skr.grep({
-                pattern: "wie der geist",
-                lang: 'de',
-            });
-            should.deepEqual(res, [
-              `${de_sab}an/an1/an1.31-40_translation-de-sabbamitta.json:10`,
-              `${de_sab}an/an1/an1.21-30_translation-de-sabbamitta.json:10`,
-              `${de_sab}an/an3/an3.61_translation-de-sabbamitta.json:3`,
-              `${de_sab}an/an1/an1.41-50_translation-de-sabbamitta.json:2`,
-            ]);
-
-            done();
-        } catch(e) { done(e); }})();
+        var res = await skr.grep({
+            pattern: "wie der geist",
+            lang: 'de',
+        });
+        should.deepEqual(res, [
+          `${de_sab}an/an1/an1.31-40_translation-de-sabbamitta.json:10`,
+          `${de_sab}an/an1/an1.21-30_translation-de-sabbamitta.json:10`,
+          `${de_sab}an/an3/an3.61_translation-de-sabbamitta.json:3`,
+          `${de_sab}an/an1/an1.41-50_translation-de-sabbamitta.json:2`,
+        ]);
     });
     it("sanitizePattern(...) code injection guard", ()=>{
         var testPattern = (pattern,expected) => {
@@ -371,7 +368,7 @@
         });
         should(data).properties(expected);
     });
-    it("keywordSearch(...) searches Deutsch, not Pali", async()=>{
+    it("TESTTESTkeywordSearch(...) searches Deutsch, not Pali", async()=>{
         var skr = await new Seeker({
             lang: 'en', // English default
         }).initialize();
@@ -383,7 +380,7 @@
             maxResults: 10,
             method: 'keywords',
             keywordsFound: {
-                hausbesitzer: 43,
+                hausbesitzer: 44,
                 anathapindika: 44,
             },
             lines: [
@@ -835,7 +832,7 @@
             pli: "Majjhima Nikāya 1 ",
         });
     });
-    it("(...) => finds ubung", async()=>{
+    it("TESTTESTfind(...) => finds ubung", async()=>{
         var maxDoc = 3;
         var skr = await new Seeker({
             maxDoc,
