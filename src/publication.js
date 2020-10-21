@@ -215,7 +215,7 @@
                 _rePubPaths: re,
             } = this;
             var sp = bpm.suidPath(fpath);
-            var pub = re.test(sp);
+            var pub = !!(sp && re.test(sp));
 
             return re.test(sp) || re.test(fpath);
         }

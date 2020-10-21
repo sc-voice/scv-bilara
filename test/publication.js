@@ -159,9 +159,11 @@
             `${RUTEAM}/dn`,
         ].sort());
     });
-    it("isPublishedPath(f) filters supported suttas", async()=>{
+    it("TESTTESTisPublishedPath(f) filters supported suttas", async()=>{
         var pub = await pubTest.initialize(); 
     
+        should(pub.isPublishedPath('iti42/de/sabbamitta')).equal(false);
+        should(pub.isPublishedPath('iti42/en/sujato')).equal(false);
         should(pub.isPublishedPath('nonsense/en/nobody'))
             .equal(false);
         should(pub.isPublishedPath('pli-tv-bu-vb-pj1/en/brahmali'))

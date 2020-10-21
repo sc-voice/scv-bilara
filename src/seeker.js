@@ -387,7 +387,7 @@
                 maxResults: 0, // don't clip prematurely
                 lang,
             });
-            this.log(`keywordSearch(${keywords}) lang:${lang}`);
+            this.info(`keywordSearch(${keywords}) lang:${lang}`);
             var keywordsFound = {};
             return new Promise((resolve,reject) => {
                 (async function() { try {
@@ -466,7 +466,6 @@
                 var opts = args[0];
             }
             var {
-                verbose,
                 pattern: rawPattern,
                 searchLang,
                 lang,
@@ -548,7 +547,6 @@
             types = types || ['root', 'translation'];
 
             return {
-                verbose,
                 pattern,
                 showMatchesOnly,
                 languages,
@@ -595,10 +593,50 @@
                 var promise = findMemo(args);
                 this.debug(`find() example:${pattern}`);
             } else {
-                this.log(`find() non-example:${pattern}`);
+                this.info(`find() non-example:${pattern}`);
                 var promise = callSlowFind(args);
             }
             return promise;
+        }
+
+        slowFindId({ lang, languages, maxResults, pattern, }) { 
+            var bd = this.bilaraData;
+            var examples = bd.examples;
+            var resultPattern = pattern;
+            var scoreDoc = true;
+            let method, uids, suttaRefs;
+
+            if (!SuttaCentralId.test(pattern)) {
+                return undefined;
+            }
+
+            maxResults = maxResults || this.maxResults;
+            if (pattern.indexOf('/') < 0) {
+                pattern = pattern.split(',')
+                    .map(p=>`${p}/${lang}`)
+                    .join(',');
+            }
+            let res = bd.sutta_uidSearch(pattern, maxResults);
+            method = res.method;
+            uids = res.uids;
+            suttaRefs = res.suttaRefs;
+            res.lang && (lang = res.lang);
+            if (!languages.includes(lang)) {
+                languages = [...languages.filter(l=>l!=='en'), lang];
+            }
+            scoreDoc = false;
+            this.debug(`slowFindId()`, {pattern, lang}, suttaRefs);
+
+            return {
+                lang,
+                maxResults,
+                pattern,
+                method,
+                uids,
+                suttaRefs,
+                languages,
+                scoreDoc,
+            };
         }
 
         async slowFind(...args) { try {
@@ -619,7 +657,6 @@
                 sortLines,
                 tipitakaCategories,
                 types,
-                verbose,
             } = findArgs;
             var bd = that.bilaraData;
             var examples = bd.examples;
@@ -632,57 +669,24 @@
             }
 
             if (SuttaCentralId.test(pattern)) {
-                maxResults = maxResults || this.maxResults;
-                if (pattern.indexOf('/') < 0) {
-                    pattern = pattern.split(',')
-                        .map(p=>`${p}/${lang}`)
-                        .join(',');
-                }
-                let res = bd.sutta_uidSearch(pattern, maxResults);
+                let res = this.slowFindId({ lang, languages, maxResults, pattern, });
+                lang = res.lang;
+                maxResults = res.maxResults;
+                pattern = res.pattern;
                 method = res.method;
                 uids = res.uids;
                 suttaRefs = res.suttaRefs;
-                res.lang && (lang = res.lang);
-                if (!languages.includes(lang)) {
-                    languages = [...languages.filter(l=>l!=='en'), lang];
-                }
-                scoreDoc = false;
-                verbose && console.log(`findArgs SuttaCentralId`, 
-                    JSON.stringify(findArgs), suttaRefs);
+                languages = res.languages;
+                scoreDoc = res.scoreDoc;
             } else {
-                method = 'phrase';
-                var searchOpts = {
-                    pattern, 
-                    searchLang,
-                    maxResults, 
-                    lang, 
-                    showMatchesOnly,
-                    tipitakaCategories,
-                    verbose,
-                };
-
-                var {
-                    lines,
-                    pattern: resultPattern,
-                } = await that.phraseSearch(searchOpts);
-                if (lines.length) {
-                    verbose && console.log(`findArgs phrase`, 
-                        JSON.stringify(findArgs), 
-                    );
-                } else {
-                    verbose && that.log(`findArgs keywords`, 
-                        JSON.stringify(findArgs));
-                    method = 'keywords';
-                    var data = await that.keywordSearch(searchOpts);
-                    var {
-                        lines,
-                        resultPattern,
-                    } = data;
-                }
-                sortLines && lines.sort(sortLines);
-                suttaRefs = lines.map(line =>BilaraPath.pathParts(line).suttaRef);
-                verbose && console.log(`findArgs suttaRefs`, suttaRefs);
-            }
+                let res = await this.slowFindPhrase({ 
+                    lang, maxResults, pattern, searchLang, showMatchesOnly,
+                    sortLines, tipitakaCategories, });
+                method = res.method;
+                resultPattern = res.resultPattern;
+                sortLines = res.sortLines;
+                suttaRefs = res.suttaRefs;
+            } 
 
             var mlDocs = [];
             var segsMatched = 0;
@@ -694,7 +698,7 @@
                 let [suid,refLang,author] = suttaRef.split('/');
                 let suttaInfo = bd.suttaInfo(suttaRef);
                 if (!suttaInfo) {
-                    verbose && console.log(`skipping ${suttaRef}`);
+                    this.debug(`skipping ${suttaRef}`);
                     continue; 
                 }
                 let isBilDoc = bd.isBilaraDoc({ 
@@ -705,9 +709,8 @@
                 });
                 let mld;
                 if (isBilDoc) {
-                    verbose && console.log(`slowFind() -> loadMLDoc()`);
+                    this.debug(`slowFind() -> loadMLDoc(${suid},${lang})`);
                     mld = await bd.loadMLDoc({
-                        verbose,
                         suid,
                         languages,
                         lang,
@@ -715,7 +718,7 @@
                     });
                     var mldBilaraPaths = mld.bilaraPaths;
                     if (mldBilaraPaths.length < minLang) {
-                        verbose && that.log(`skipping ${mld.suid} minLang`,
+                        this.debug(`skipping ${mld.suid} minLang`,
                             `${mldBilaraPaths.length}<${minLang} [${languages}]`, 
                         );
                         continue;
@@ -752,9 +755,9 @@
                         includeUnpublished: true, 
                     });
                     if (isBilDocUnpub) {
-                        verbose && console.log(`slowFind() -> unpublished Bilara doc`);
+                        this.debug(`slowFind() -> unpublished Bilara doc`);
                     } else {
-                        verbose && console.log(`slowFind() -> loadMLDocLegacy()`);
+                        this.debug(`slowFind() -> loadMLDocLegacy(${suid}/${lang})`);
                         mld = await bd.loadMLDocLegacy(suttaRef);
                         mlDocs.push(mld);
                         matchingRefs.push(suttaRef);
@@ -794,6 +797,58 @@
             return result;
         } catch(e) {
             this.warn(`slowFind()`, JSON.stringify(args), e.message);
+            throw e;
+        }}
+
+        async slowFindPhrase({ lang, maxResults, pattern, searchLang, showMatchesOnly,
+                sortLines, tipitakaCategories, }) { try {
+            var msStart = Date.now();
+            var bd = this.bilaraData;
+            var examples = bd.examples;
+            var resultPattern = pattern;
+            var scoreDoc = true;
+            let method, uids, suttaRefs;
+
+            method = 'phrase';
+            var searchOpts = {
+                pattern, 
+                searchLang,
+                maxResults, 
+                lang, 
+                showMatchesOnly,
+                tipitakaCategories,
+            };
+
+            var {
+                lines,
+                pattern: resultPattern,
+            } = await this.phraseSearch(searchOpts);
+            if (lines.length) {
+                this.debug(`findArgs phrase`, );
+            } else {
+                this.debug(`findArgs keywords`, );
+                method = 'keywords';
+                var data = await this.keywordSearch(searchOpts);
+                var {
+                    lines,
+                    resultPattern,
+                } = data;
+            }
+            sortLines && lines.sort(sortLines);
+            suttaRefs = lines.map(line =>BilaraPath.pathParts(line).suttaRef);
+            this.debug(`findArgs suttaRefs`, suttaRefs);
+            return {
+                method,
+                resultPattern,
+                sortLines,
+                suttaRefs,
+            };
+        } catch(e) {
+            this.warn(`slowFindPhrase()`, 
+                JSON.stringify({ 
+                    lang, maxResults, pattern, searchLang, showMatchesOnly,
+                    sortLines, tipitakaCategories, }), 
+                e.message);
             throw e;
         }}
 

@@ -187,7 +187,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("suttaInfo(...) returns sutta metadata", async()=>{
+    it("TESTTESTsuttaInfo(...) returns sutta metadata", async()=>{
         await bd.initialize();
         var dn33Pli = {
             author: 'ms',
@@ -962,7 +962,7 @@
             author:"sabbamitta",
         })).equal(true); 
     });
-    it("TESTTESTsuttaIds() => [ suid ]", async()=>{
+    it("suttaIds() => [ suid ]", async()=>{
         await bd.initialize();
         let suids = bd.suttaIds;
 

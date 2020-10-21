@@ -364,7 +364,6 @@
                     author: args[0].split('/')[2],
                 };
             var {
-                verbose,
                 suid,
                 lang,
                 language,
@@ -382,7 +381,6 @@
                 : this.languages);
             logLevel = logLevel === undefined ? this.infoLevel : logLevel;
             return {
-                verbose,
                 suid,
                 lang,
                 author,
@@ -398,14 +396,13 @@
             var that = this;
             var loadArgs = this.loadArgs(args);
             var {
-                verbose,
                 suid,
                 lang,
                 author,
                 logLevel,
                 returnNull,
             } = loadArgs;
-            verbose && console.log(`loadSegDoc(${JSON.stringify(loadArgs)})`);
+            this.debug(`loadSegDoc(${JSON.stringify(loadArgs)})`);
 
             var info = this.suttaInfo(suid);
             if (info == null) {
@@ -452,7 +449,6 @@
         loadMLDoc(...args) {
             var loadArgs = this.loadArgs(args);
             var {
-                verbose,
                 suid:suidRef,
                 author,
                 lang,
@@ -481,6 +477,7 @@
             var langMap = languages.reduce((a,l) => (a[l] = true, a), {});
             var bilaraPaths = info
                 .filter(i=>langMap[i.lang])
+                .filter(i=> this.isBilaraDoc(i))
                 .filter(i=> !author ||
                     i.lang === lang && i.author === author ||
                     i.lang !== lang && this.isBilaraDoc(i))
