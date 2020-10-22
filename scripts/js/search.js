@@ -49,6 +49,7 @@ DESCRIPTION
     -ll, --logLevel LOGLEVEL
         Logging is normally turned off, but you can specificy a LOGLEVEL:
         debug, warn, info, error. The most useful will be "info".
+        The default is "warn".
 
     -ml, --minLang NUMBER
         Only show segments from documents with at least minLang languages. 
@@ -126,8 +127,6 @@ DESCRIPTION
         Restrict searches to listed categories. For example, "-tc:bi,pj"
         will search for information in the Bhikkhuni Pārājika
 
-    -v, --verbose
-        Print out more information
 `);
     process.exit(0);
 }
@@ -206,8 +205,6 @@ for (var i = 2; i < nargs; i++) {
         maxResults = Number(process.argv[++i]);
     } else if (arg === '-up' || arg === '--unpublished') {
         includeUnpublished = true;
-    } else if (arg === '-v' || arg === '--verbose') {
-        verbose = true;
     } else {
         pattern = pattern ? `${pattern} ${arg}` : arg;
     }
@@ -430,13 +427,12 @@ logger.logLevel = logLevel;
         pattern,
         matchHighlight,
         showMatchesOnly,
-        verbose,
     };
-    verbose && console.log(`findOpts`, findOpts);
+    logger.info(`findOpts`, findOpts);
     var msStart = Date.now();
     var res = await skr.find(findOpts);
     var secElapsed = (Date.now() - msStart)/1000;
-    verbose && console.log(`find() ${secElapsed.toFixed(1)}s`);
+    logger.info(`find() ${secElapsed.toFixed(1)}s`);
     if (outFormat === 'csv') {
         outCSV(res, pattern);
     } else if (outFormat === 'json') {

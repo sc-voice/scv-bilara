@@ -26,12 +26,25 @@
     var bd = new BilaraData(); 
     logger.level = 'warn';
     var en_suj = `translation/en/sujato/sutta/`;
+    var en_bra = `translation/en/brahmali/vinaya/`;
     var de_sab = `translation/de/sabbamitta/sutta/`;
     var my_my = `translation/my/my-team/sutta/`;
     var pli_ms = `root/pli/ms/sutta/`;
 
     const BILARA_PATH = path.join(Files.LOCAL_DIR, 'bilara-data');
     const TEST_BILARA_PATH = path.join(__dirname, 'data', 'bilara-data');
+    const SUTTA_ROOT_SUFF = [
+        `${en_suj}sn/sn42/sn42.11_translation-en-sujato.json:5`,
+        `${en_suj}mn/mn105_translation-en-sujato.json:3`,
+        `${en_suj}mn/mn1_translation-en-sujato.json:2`,
+        `${en_suj}sn/sn56/sn56.21_translation-en-sujato.json:1`,
+        `${en_suj}mn/mn66_translation-en-sujato.json:1`,
+        `${en_suj}mn/mn116_translation-en-sujato.json:1`,
+        `${en_suj}dn/dn16_translation-en-sujato.json:1`,
+    ];
+    const VINAYA_ROOT_SUFF = [
+        `${en_bra}pli-tv-kd/pli-tv-kd6_translation-en-brahmali.json:1`,
+    ];
 
     it("default ctor", ()=>{
         var skr = new Seeker();
@@ -77,15 +90,7 @@
         var res = await skr.grep({
             pattern: "root of suffering",
         });
-        should.deepEqual(res, [
-            `${en_suj}sn/sn42/sn42.11_translation-en-sujato.json:5`,
-            `${en_suj}mn/mn105_translation-en-sujato.json:3`,
-            `${en_suj}mn/mn1_translation-en-sujato.json:2`,
-            `${en_suj}sn/sn56/sn56.21_translation-en-sujato.json:1`,
-            `${en_suj}mn/mn66_translation-en-sujato.json:1`,
-            `${en_suj}mn/mn116_translation-en-sujato.json:1`,
-            `${en_suj}dn/dn16_translation-en-sujato.json:1`,
-        ]);
+        should.deepEqual(res, [...SUTTA_ROOT_SUFF, ...VINAYA_ROOT_SUFF]); 
         var ms1 = Date.now();
         var res2 = await skr.grep({ pattern: "root of suffering", });
         var ms2 = Date.now();
@@ -94,39 +99,27 @@
         //console.log(`dbg grep`, ms1-ms0, ms2-ms1);
         should(ms2-ms1).below(15);
     });
-    it("grep(...) finds maxResults things", done=>{
-        (async function() { try {
-            var skr = new Seeker(SEEKEROPTS);
-            var res = await skr.grep({
-                pattern: "root of suffering",
-                maxResults: 3,
-            });
-            should.deepEqual(res, [
-                `${en_suj}sn/sn42/sn42.11_translation-en-sujato.json:5`,
-                `${en_suj}mn/mn105_translation-en-sujato.json:3`,
-                `${en_suj}mn/mn1_translation-en-sujato.json:2`,
-            ]);
-
-            done();
-        } catch(e) { done(e); }})();
+    it("grep(...) finds maxResults things", async()=>{
+        var skr = new Seeker(SEEKEROPTS);
+        var res = await skr.grep({
+            pattern: "root of suffering",
+            maxResults: 3,
+        });
+        should.deepEqual(res, SUTTA_ROOT_SUFF.slice(0,3));
     });
-    it("grep(...) filters result files", done=>{
-        (async function() { try {
-            var skr = new Seeker(SEEKEROPTS);
-            var res = await skr.grep({
-                pattern: "a single day",
-                //tipitakaCategories: "dn,an",
-            });
-            should.deepEqual(res, [
-                `${en_suj}kn/dhp/dhp100-115_translation-en-sujato.json:6`,
-                `${en_suj}dn/dn9_translation-en-sujato.json:1`,
-                `${en_suj}an/an10/an10.46_translation-en-sujato.json:1`
-            ]);
-
-            done();
-        } catch(e) { done(e); }})();
+    it("grep(...) filters result files", async()=>{
+        var skr = new Seeker(SEEKEROPTS);
+        var res = await skr.grep({
+            pattern: "a single day",
+            tipitakaCategories: "su",
+        });
+        should.deepEqual(res, [
+            `${en_suj}kn/dhp/dhp100-115_translation-en-sujato.json:6`,
+            `${en_suj}dn/dn9_translation-en-sujato.json:1`,
+            `${en_suj}an/an10/an10.46_translation-en-sujato.json:1`
+        ]);
     });
-    it("grep(...) finds de things", async()=>{
+    it("TESTTESTgrep(...) finds de things", async()=>{
         var skr = new Seeker(SEEKEROPTS);
         var maxResults = 5;
 
@@ -137,10 +130,10 @@
             maxResults,
         });
         should.deepEqual(res.slice(0,4), [
-      `${de_sab}dn/dn33_translation-de-sabbamitta.json:39`,
-      `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:21`,
-      `${de_sab}an/an3/an3.156-162_translation-de-sabbamitta.json:21`,
-      `${de_sab}an/an6/an6.30_translation-de-sabbamitta.json:15`,
+            `${de_sab}dn/dn33_translation-de-sabbamitta.json:39`,
+            `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:21`,
+            `${de_sab}an/an3/an3.156-162_translation-de-sabbamitta.json:21`,
+            `${de_sab}an/an6/an6.30_translation-de-sabbamitta.json:15`,
         ]);
         should(res.length).below(6);
 
@@ -149,10 +142,10 @@
             lang: 'de',
         });
         should.deepEqual(res, [
-          `${de_sab}an/an1/an1.31-40_translation-de-sabbamitta.json:10`,
-          `${de_sab}an/an1/an1.21-30_translation-de-sabbamitta.json:10`,
-          `${de_sab}an/an3/an3.61_translation-de-sabbamitta.json:3`,
-          `${de_sab}an/an1/an1.41-50_translation-de-sabbamitta.json:2`,
+            `${de_sab}an/an1/an1.31-40_translation-de-sabbamitta.json:10`,
+            `${de_sab}an/an1/an1.21-30_translation-de-sabbamitta.json:10`,
+            `${de_sab}an/an3/an3.61_translation-de-sabbamitta.json:3`,
+            `${de_sab}an/an1/an1.41-50_translation-de-sabbamitta.json:2`,
         ]);
     });
     it("sanitizePattern(...) code injection guard", ()=>{
@@ -208,11 +201,6 @@
         var expected = {
             method: "keywords",
             lang: 'en',
-            keywordsFound: {
-                faith: 404,
-                joy: 148,
-                suffering: 797,
-            },
         };
 
         var data = await skr.keywordSearch({ 
@@ -246,11 +234,6 @@
         var enExpected = {
             lang: 'en',
             method: 'keywords',
-            keywordsFound: {
-                suffering: 797,
-                joy: 148,
-                faith: 404,
-            },
         };
         should(data).properties(enExpected);
         should.deepEqual(data.lines.slice(0,4), [
@@ -295,18 +278,12 @@
             lang: 'en', // will be ignored
         });
         should(data).properties(expected);
-        should.deepEqual(data.keywordsFound, {
-            'Anāthapiṇḍika': 280,
-        });
 
         // Single romanized Pali searches Pali
         var data = await skr.keywordSearch({ 
             pattern: 'anathapindika',
         });
         should(data).properties(expected);
-        should.deepEqual(data.keywordsFound, {
-            'anathapindika': 281,
-        });
     });
     it("keywordSearch(...) searches English, not Pali", async()=>{
         var maxResults = 2;
@@ -330,8 +307,6 @@
             lang: 'en', // will be ignored
         });
         should(data).properties(expected);
-        should(data.keywordsFound['Anāthapiṇḍika'])
-            .above(224).below(300);
     });
     it("keywordSearch(...) searches Pali, not Deutsch", async()=>{
         var maxResults = 2;
@@ -357,16 +332,13 @@
         should(data).properties(expected);
 
         // Single romanized Pali searches Pali
-        expected.keywordsFound = {
-            'anathapindika': 281,
-        };
         var data = await skr.keywordSearch({ 
             pattern: 'anathapindika',
             lang: 'de', // will be ignored
         });
         should(data).properties(expected);
     });
-    it("keywordSearch(...) searches Deutsch, not Pali", async()=>{
+    it("TESTTESTkeywordSearch(...) searches Deutsch, not Pali", async()=>{
         var skr = await new Seeker({
             lang: 'en', // English default
         }).initialize();
@@ -377,10 +349,6 @@
                 "(d|ḍ)(i|ī)k(a|ā)|\\bhausbesitzer",
             maxResults: 10,
             method: 'keywords',
-            keywordsFound: {
-                hausbesitzer: 44,
-                anathapindika: 44,
-            },
             lines: [
 `${de_sab}sn/sn10/sn10.8_translation-de-sabbamitta.json:4`,
 `${de_sab}an/an2/an2.32-41_translation-de-sabbamitta.json:2`,
@@ -390,9 +358,8 @@
 `${de_sab}an/an3/an3.110_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an4/an4.197_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an4/an4.58_translation-de-sabbamitta.json:1`,
-`${de_sab}an/an4/an4.60_translation-de-sabbamitta.json:1`,
-`${de_sab}an/an4/an4.61_translation-de-sabbamitta.json:1`,
-//`${de_sab}an/an4/an4.62_translation-de-sabbamitta.json:1`,
+`${de_sab}an/an4/an4.60_translation-de-sabbamitta.json:1`,  
+`${de_sab}an/an4/an4.61_translation-de-sabbamitta.json:1`,  
             ],
         };
 
@@ -474,6 +441,35 @@
         should(skr.patternLanguage('anathapindika gehe so', 'de'))
             .equal('en');
     });
+    it("find(...) ignores unpublished", async()=>{
+        var lang = 'en';
+        var pattern = 'root of suffering';
+        var skr = await new Seeker({
+            lang,
+        }).initialize();
+        let matchHighlight = "\u001b[38;5;201m$&\u001b[0m";
+        let showMatchesOnly = true;
+        var res = await skr.find({ pattern, matchHighlight, showMatchesOnly, });
+        should(res.method).equal('phrase');
+        should.deepEqual(res.suttaRefs, [
+            'sn42.11/en/sujato',
+            'mn105/en/sujato',
+            'mn1/en/sujato',
+            'sn56.21/en/sujato',
+            'mn66/en/sujato',   // ordered by grep count
+            'mn116/en/sujato',  // ordered by grep count
+            'dn16/en/sujato',
+        ]);
+        should.deepEqual(res.mlDocs.map(mld=>`${mld.suid}, ${mld.score}`), [
+            'sn42.11, 5.091',
+            'mn105, 3.016',
+            'mn1, 2.006',
+            'sn56.21, 1.043',
+            'mn116, 1.01',  // reordered by score
+            'mn66, 1.005',  // reordered by score
+            'dn16, 1.001',
+        ]);
+    });
     it("phraseSearch(...) limits English results", async()=>{
         var lang = 'en';
         var pattern = 'root of suffering';
@@ -486,11 +482,7 @@
             method: 'phrase',
             lang: 'en',
             pattern: `\\broot of suffering`,
-            lines: [ 
-                `${en_suj}sn/sn42/sn42.11_translation-en-sujato.json:5`,
-                `${en_suj}mn/mn105_translation-en-sujato.json:3`,
-                `${en_suj}mn/mn1_translation-en-sujato.json:2`,
-            ],
+            lines: SUTTA_ROOT_SUFF.slice(0,maxResults),
         };
 
         var data = await skr.phraseSearch({ 
@@ -633,7 +625,7 @@
         should(res.lang).equal('de');
         should(res.mlDocs.length).equal(3);
     });
-    it("TESTTESTfind(...) finds mn1/en/sujato", async()=>{
+    it("find(...) finds mn1/en/sujato", async()=>{
         var maxResults = 3;
         var skr = await new Seeker({
             maxResults,
@@ -1152,8 +1144,8 @@
         var skr = new Seeker();
         should(skr.tipitakaRegExp('su').toString())
             .equal("/(\\/sutta\\/)/iu");
-        should(skr.tipitakaRegExp().toString())
-            .equal("/(\\/sutta\\/)/iu");
+        should(skr.tipitakaRegExp())
+            .equal(undefined);
         should(skr.tipitakaRegExp('bi,pj').toString())
             .equal("/(-bi-|-pj)/iu");
     })
@@ -1319,7 +1311,7 @@
         should(skr.isExample('Wurzel des Leidens')).equal(true);
         should(skr.isExample('wurzel des leidens')).equal(true);
     });
-    it('TESTTESTfind(...) => "dn7/de"', async()=>{
+    it('find(...) => "dn7/de"', async()=>{
         let bilaraData = new BilaraData();
         let skr = await new Seeker({
             bilaraData,
@@ -1350,13 +1342,12 @@
         should(mld0.author_uid).equal('kusalagnana-maitrimurti-traetow');
         should(mld0.sutta_uid).equal('dn7');
     });
-    it('TESTTESTfind(...) => soṇasiṅgālā', async()=>{
+    it('find(...) => soṇasiṅgālā', async()=>{
         let bilaraData = new BilaraData();
         let skr = await new Seeker({
             bilaraData,
             logger: bilaraData,
         }).initialize();
-        //skr.logLevel = 'debug';
         let res = await skr.find({
             pattern: 'soṇasiṅgālā',
         });
@@ -1372,5 +1363,31 @@
         let mld0 = res.mlDocs[0];
         should(mld0.author_uid).equal('sujato');
         should(mld0.suid).equal('an2.1-10');
+    });
+    it('find(...) => nun', async()=>{
+        let bilaraData = new BilaraData();
+        let maxDoc = 5;
+        let skr = await new Seeker({
+            bilaraData,
+            logger: bilaraData,
+            maxDoc,
+        }).initialize();
+        let res = await skr.find({
+            pattern: 'nun',
+        });
+        should(res.lang).equal('en');
+        should(res.mlDocs.length).equal(maxDoc);
+        should.deepEqual(res.bilaraPaths.slice(0,6),[
+            'root/pli/ms/sutta/mn/mn146_root-pli-ms.json',
+            'translation/en/sujato/sutta/mn/mn146_translation-en-sujato.json',
+            'root/pli/ms/sutta/mn/mn68_root-pli-ms.json',
+            'translation/en/sujato/sutta/mn/mn68_translation-en-sujato.json',
+            'root/pli/ms/sutta/mn/mn21_root-pli-ms.json',
+            'translation/en/sujato/sutta/mn/mn21_translation-en-sujato.json',
+        ]);
+        let mld0 = res.mlDocs[0];
+        should(mld0.author_uid).equal('sujato');
+        should(mld0.suid).equal('mn146');
+        should(res.mlDocs.length).equal(maxDoc);
     });
 })

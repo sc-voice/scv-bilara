@@ -5,6 +5,8 @@
     const {
         exec,
     } = require('child_process');
+    const util = require('util');
+    const execPromise = util.promisify(exec);
     const { ScApi } = require('suttacentral-api');
     const { MerkleJson } = require("merkle-json");
     const { Memoizer, Files } = require("memo-again");
@@ -35,12 +37,13 @@
             this.scApi = opts.scApi || new ScApi();
             this.unicode = opts.unicode || new Unicode();
             this.paliWords = opts.paliWords;
+            this.patPrimary = opts.patPrimary || '/sutta/';
             this.mj = new MerkleJson();
             this.memoizer = opts.memoizer || new Memoizer({
-                writeMem: false,
+                writeMem: false, // avoid monotonic increasing memory usage
                 writeFile: opts.writeFile == null
                     ? true
-                    : opts.writeFile,
+                    : opts.writeFile, // only cache examples!
                 readFile: opts.readFile,
                 serialize: Seeker.serialize,
                 deserialize: Seeker.deserialize,
@@ -48,8 +51,7 @@
                 logger: this,
             });
             this.enWords = opts.enWords;
-            this.matchColor = opts.matchColor == null 
-                ? 121 : opts.matchColor;
+            this.matchColor = opts.matchColor == null ? 121 : opts.matchColor;
             this.matchHighlight = opts.matchHighlight === undefined 
                 ? `\u001b[38;5;${this.matchColor}m$&\u001b[0m`
                 : '';
@@ -221,16 +223,12 @@
                 tcMap[p] && a.push(tcMap[p]);
                 return a;
             }, []);
+            let re;
             if (pats.length) {
-                var re = new RegExp(`(${pats.join('|')})`, "iu");
-            } else {
-                var re = new RegExp(this.includeUnpublished
-                    ? '(/vinaya/|/sutta/)' : '(/sutta/)', 
-                    "iu")
+                re = new RegExp(`(${pats.join('|')})`, "iu");
             }
             return re;
         }
-
 
         grep(opts={}) {
             var {
@@ -240,8 +238,9 @@
                 language, // DEPRECATED
                 searchMetadata, // TODO
                 tipitakaCategories,
+                patPrimary,
             } = opts;
-            var grepTC = this.tipitakaRegExp(tipitakaCategories);
+            var reTipCat = this.tipitakaRegExp(tipitakaCategories);
             lang = lang || language || this.lang;
             var root = this.root.replace(`${Files.APP_DIR}/`,'');
             var slowOpts = {
@@ -251,8 +250,9 @@
                 language, // DEPRECATED
                 searchMetadata, // TODO
                 tipitakaCategories,
-                grepTC,
+                reTipCat,
                 root,
+                patPrimary,
             }
             var msStart = Date.now();
             var result;
@@ -261,27 +261,41 @@
                 this.grepMemo = 
                 grepMemo = memoizer.memoize(Seeker.slowGrep, Seeker);
             }
-            result =  grepMemo(slowOpts);
+            result = grepMemo(slowOpts);
             var msElapsed = Date.now()-msStart; // about 20ms
 
             return result;
         }
 
-        static slowGrep(opts) {
+        static orderPrimary(lines, patPrimary) {
+            let rePrimary = new RegExp(patPrimary, "ui");
+            let {primary,secondary} = lines.reduce((a, line) => {
+                if (rePrimary.test(line)) {
+                    a.primary.push(line);
+                } else {
+                    a.secondary.push(line);
+                }
+                return a;
+            },{primary:[],secondary:[]});
+            return primary.concat(secondary);
+        }
+
+        static async slowGrep(opts) { try {
             var {
                 pattern,
                 maxResults,
                 lang,
                 language, // DEPRECATED
                 searchMetadata, // TODO
-                grepTC,
+                reTipCat,
                 root,
+                patPrimary,
             } = opts;
             if (!root.startsWith("/")) {
                 root = `${Files.APP_DIR}/${root}`;
             }
 
-            logger.log(`slowGrep`,{pattern,lang, root});
+            logger.info(`slowGrep`,{pattern,lang, root});
             if (searchMetadata) {
                 return Promise.reject(new Error(
                     `searchMetadata not supported`));
@@ -292,38 +306,37 @@
                 : path.join(root, `translation/${lang}`);
             var cmd = [
                 `rg -c -i -e '${grex}' `,
-                `--glob='!*atthakatha*' `,
-                `--glob='!_*' `,
-                `-g '!*/sutta/?a**'`, // Chinese ea ka sa ma
+                `-g='!atthakatha' `,  // exclude pli/vri
+                `-g='!_*' `,            // top-level JSON files
+                `-g '!blurb'`,     // exclude blurbs
+                `-g '!ea'`,   // exclude Chinese 
+                `-g '!ka'`,   // exclude Chinese
+                `-g '!sa'`,   // exclude Chinese
+                `-g '!ma'`,   // exclude Chinese
                 `|sort -g -r -k 2,2 -k 1,1 -t ':'`,
             ].join(' ');
             maxResults && (cmd += `|head -${maxResults}`);
             var pathPrefix = cwd.replace(root, '').replace(/^\/?/, '');
             var cwdMsg = cwd.replace(`${root}/`,'');
-            logger.log(`grep(${cwdMsg}) ${cmd}`);
+            logger.info(`grep(${cwdMsg}) ${cmd}`);
             var execOpts = {
                 cwd,
                 shell: '/bin/bash',
                 maxBuffer: MAXBUFFER,
             };
-            return new Promise((resolve,reject) => {
-                exec(cmd, execOpts, (err,stdout,stderr) => {
-                    if (err) {
-                        stderr && logger.log(stderr);
-                        reject(err);
-                    } else {
-                        var raw = stdout && stdout.trim().split('\n') || [];
-                        var rawFiltered = raw.filter(f=> grepTC.test(f))
-                            .map(f => path.join(pathPrefix, f));
-                        resolve(rawFiltered);
-                    }
-                });
-            });
-        }
+            let { stdout, stderr }  = await execPromise(cmd, execOpts);
+            let lines = stdout && stdout.trim().split('\n') || [];
+            let raw = Seeker.orderPrimary(lines, patPrimary);
+            let rawTipCat = reTipCat ? raw.filter(f=>reTipCat.test(f)) : raw;
+            let paths = rawTipCat.map(f => path.join(pathPrefix, f));
+            return paths;
+        } catch(e) {
+            logger.warn(`slowGrep()`, JSON.stringify(opts), e.message);
+            throw e;
+        }}
 
         async phraseSearch(args) {
             this.validate();
-            var that = this;
             var {
                 searchLang,
                 lang,
@@ -331,31 +344,34 @@
                 pattern,
                 maxResults,
                 tipitakaCategories,
+                patPrimary,
             } = args;
             lang = lang || language || this.lang;
+            patPrimary = patPrimary || this.patPrimary;
             maxResults = maxResults == null ? this.maxResults : maxResults;
             if (pattern == null) {
                 throw new Error(`phraseSearch() requires pattern`);
             }
             lang = searchLang == null
-                ? that.patternLanguage(pattern, lang)
+                ? this.patternLanguage(pattern, lang)
                 : searchLang;
             if (lang === 'pli') {
-                var romPat = that.unicode.romanize(pattern);
+                var romPat = this.unicode.romanize(pattern);
                 var pat = romPat === pattern
                     ? `\\b${Pali.romanizePattern(pattern)}` 
                     : pattern;
             } else {
                 var pat = `\\b${pattern}`;
             }
-            that.log(`phraseSearch(${pat},${lang})`);
+            this.info(`phraseSearch(${pat},${lang})`);
             var grepArgs = Object.assign({}, args, {
                 pattern:pat,
                 lang,
                 maxResults,
                 tipitakaCategories,
+                patPrimary,
             });
-            var lines = await that.grep(grepArgs);
+            var lines = await this.grep(grepArgs);
             return {
                 method: 'phrase',
                 lang,
@@ -364,7 +380,7 @@
             }
         }
 
-        keywordSearch(args) {
+        async keywordSearch(args) { try {
             var {
                 pattern,
                 maxResults,
@@ -374,9 +390,10 @@
                 searchMetadata,
                 comparator,
                 tipitakaCategories,
+                patPrimary,
             } = args;
             comparator = comparator || this.grepComparator;
-            var that = this;
+            patPrimary = patPrimary || this.patPrimary;
             lang = lang || language || this.lang;
             maxResults = maxResults == null ? this.maxResults : maxResults;
             var keywords = this.patternKeywords(pattern);
@@ -386,72 +403,69 @@
             var wordArgs = Object.assign({}, args, {
                 maxResults: 0, // don't clip prematurely
                 lang,
+                patPrimary,
             });
             this.info(`keywordSearch(${keywords}) lang:${lang}`);
-            var keywordsFound = {};
-            return new Promise((resolve,reject) => {
-                (async function() { try {
-                    var mrgOut = [];
-                    var mrgIn = [];
-                    for (var i=0; i< keywords.length; i++) {
-                        var keyword = keywords[i];
-                        wordArgs.pattern = that
-                            .keywordPattern(keyword, lang);
-                        var wordlines = await that.grep(wordArgs);
-                        keywordsFound[keyword] = wordlines.length;
-                        wordlines.sort();
-                        mrgOut = [];
-                        for (var iw = 0; iw < wordlines.length; iw++) {
-                            var lineparts = wordlines[iw].split(':');
-                            var fpath = lineparts[0];
-                            var count = Number(lineparts[1]);
-                            if (i === 0) {
-                                mrgOut.push({
-                                    fpath,
-                                    count,
-                                });
-                            } else if (mrgIn.length) {
-                                var cmp = mrgIn[0].fpath
-                                    .localeCompare(fpath);
-                                if (cmp === 0) {
-                                    var newItem = {
-                                        fpath,
-                                        count: Math.min(
-                                            mrgIn[0].count, count),
-                                    };
-                                    mrgOut.push(newItem);
-                                    mrgIn.shift();
-                                } else if (cmp < 0) {
-                                    mrgIn.shift(); // discard left
-                                    if (mrgIn.length === 0) {
-                                        break;
-                                    }
-                                    iw--; // re-compare
-                                } else {
-                                    // discard right
-                                }
+            var mrgOut = [];
+            var mrgIn = [];
+            for (var i=0; i< keywords.length; i++) {
+                var keyword = keywords[i];
+                wordArgs.pattern = this.keywordPattern(keyword, lang);
+                var wordlines = await this.grep(wordArgs);
+                wordlines.sort();  // sort for merging path
+                mrgOut = [];
+                for (var iw = 0; iw < wordlines.length; iw++) {
+                    var lineparts = wordlines[iw].split(':');
+                    var fpath = lineparts[0];
+                    var count = Number(lineparts[1]);
+                    if (i === 0) {
+                        mrgOut.push({
+                            fpath,
+                            count,
+                        });
+                    } else if (mrgIn.length) {
+                        var cmp = mrgIn[0].fpath
+                            .localeCompare(fpath);
+                        if (cmp === 0) {
+                            var newItem = {
+                                fpath,
+                                count: Math.min(
+                                    mrgIn[0].count, count),
+                            };
+                            mrgOut.push(newItem);
+                            mrgIn.shift();
+                        } else if (cmp < 0) {
+                            mrgIn.shift(); // discard left
+                            if (mrgIn.length === 0) {
+                                break;
                             }
+                            iw--; // re-compare
+                        } else {
+                            // discard right
                         }
-                        mrgIn = mrgOut;
                     }
-                    var lines =  mrgOut.sort(comparator)
-                        .map(v => `${v.fpath}:${v.count}`);
-                    if (maxResults) {
-                        lines = lines.slice(0,maxResults);
-                    }
-                    resolve({
-                        method: 'keywords',
-                        keywordsFound,
-                        resultPattern: keywords
-                            .map(k=> that.keywordPattern(k, lang))
-                            .join('|'),
-                        lang,
-                        maxResults,
-                        lines,
-                    });
-                } catch(e) {reject(e);} })();
+                }
+                mrgIn = mrgOut;
+            }
+            var lines =  mrgOut.sort(comparator)
+                .map(v => `${v.fpath}:${v.count}`);
+            lines = Seeker.orderPrimary(lines, patPrimary);
+            if (maxResults) {
+                lines = lines.slice(0,maxResults);
+            }
+            return({
+                method: 'keywords',
+                resultPattern: keywords
+                    .map(k=> this.keywordPattern(k, lang))
+                    .join('|'),
+                lang,
+                maxResults,
+                lines,
             });
-        }
+        } catch(e) {
+            this.warn(`keywordSearch()`, JSON.stringify(args), e.message);
+            throw e;
+        }}
 
         findArgs(args) {
             if (!(args instanceof Array)) {
@@ -577,24 +591,26 @@
                 findMemo,
                 memoizer,
             } = this;
+            var findArgs = this.findArgs(args);
             var that = this;
             var callSlowFind = (args)=>{
-                return that.slowFind.apply(that, args);
+                return that.slowFind.call(that, args);
             };
             var msStart = Date.now();
-            var pattern =  typeof args === 'string'
-                ? args
-                : args[0].pattern;
+            //var pattern =  typeof args === 'string'
+                //? args
+                //: args[0].pattern;
+            var pattern = findArgs.pattern;
             if (this.isExample(pattern)) {
                 if (findMemo == null) {
                     that.findMemo = 
                     findMemo = memoizer.memoize(callSlowFind, Seeker);
                 }
-                var promise = findMemo(args);
+                var promise = findMemo(findArgs);
                 this.debug(`find() example:${pattern}`);
             } else {
                 this.info(`find() non-example:${pattern}`);
-                var promise = callSlowFind(args);
+                var promise = callSlowFind(findArgs);
             }
             return promise;
         }
@@ -603,7 +619,6 @@
             var bd = this.bilaraData;
             var examples = bd.examples;
             var resultPattern = pattern;
-            var scoreDoc = true;
             let method, uids, suttaRefs;
 
             if (!SuttaCentralId.test(pattern)) {
@@ -624,7 +639,6 @@
             if (!languages.includes(lang)) {
                 languages = [...languages.filter(l=>l!=='en'), lang];
             }
-            scoreDoc = false;
             this.debug(`slowFindId()`, {pattern, lang}, suttaRefs);
 
             return {
@@ -635,14 +649,11 @@
                 uids,
                 suttaRefs,
                 languages,
-                scoreDoc,
             };
         }
 
-        async slowFind(...args) { try {
-            var that = this;
+        async slowFind(findArgs) { try {
             var msStart = Date.now();
-            var findArgs = that.findArgs(args);
             var {
                 includeUnpublished,
                 lang,
@@ -658,7 +669,7 @@
                 tipitakaCategories,
                 types,
             } = findArgs;
-            var bd = that.bilaraData;
+            var bd = this.bilaraData;
             var examples = bd.examples;
             var resultPattern = pattern;
             var scoreDoc = true;
@@ -677,7 +688,7 @@
                 uids = res.uids;
                 suttaRefs = res.suttaRefs;
                 languages = res.languages;
-                scoreDoc = res.scoreDoc;
+                scoreDoc = false;
             } else {
                 let res = await this.slowFindPhrase({ 
                     lang, maxResults, pattern, searchLang, showMatchesOnly,
@@ -736,16 +747,16 @@
                         mld.highlightMatch(resultPattern, matchHighlight);
                     }
                     if (resFilter.matched === 0) {
-                        //that.log(`Ignoring ${mld.suid} ${pattern}`);
+                        //this.info(`Ignoring ${mld.suid} ${pattern}`);
                     } else if (mld.bilaraPaths.length >= minLang) {
                         if (Object.keys(mld.segMap).length ) {
                             mlDocs.push(mld);
                             matchingRefs.push(suttaRef);
                         } else {
-                            that.log(`skipping ${mld.suid} segments:0`);
+                            this.info(`skipping ${mld.suid} segments:0`);
                         }
                     } else {
-                        that.log(`skipping ${mld.suid} minLang:${minLang}`);
+                        this.info(`skipping ${mld.suid} minLang:${minLang}`);
                     }
                 } else {
                     let isBilDocUnpub = bd.isBilaraDoc({ 
@@ -755,7 +766,8 @@
                         includeUnpublished: true, 
                     });
                     if (isBilDocUnpub) {
-                        this.debug(`slowFind() -> unpublished Bilara doc`);
+                        this.debug(`slowFind() -> unpublished:`,
+                            `${suid}/${refLang||lang}/${author}`);
                     } else {
                         this.debug(`slowFind() -> loadMLDocLegacy(${suid}/${lang})`);
                         mld = await bd.loadMLDocLegacy(suttaRef);
@@ -796,7 +808,7 @@
             };
             return result;
         } catch(e) {
-            this.warn(`slowFind()`, JSON.stringify(args), e.message);
+            this.warn(`slowFind()`, JSON.stringify(findArgs), e.message);
             throw e;
         }}
 
@@ -819,20 +831,21 @@
                 tipitakaCategories,
             };
 
+
             var {
                 lines,
                 pattern: resultPattern,
             } = await this.phraseSearch(searchOpts);
             if (lines.length) {
-                this.debug(`findArgs phrase`, );
+                this.info(`findArgs phrase`, {resultPattern, lines:lines.length});
             } else {
-                this.debug(`findArgs keywords`, );
                 method = 'keywords';
                 var data = await this.keywordSearch(searchOpts);
                 var {
                     lines,
                     resultPattern,
                 } = data;
+                this.info(`findArgs keywords`, {resultPattern, lines:lines.length});
             }
             sortLines && lines.sort(sortLines);
             suttaRefs = lines.map(line =>BilaraPath.pathParts(line).suttaRef);

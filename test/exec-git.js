@@ -131,10 +131,10 @@
         ];
         await Promise.all(promises);
     });
-    it("TESTTESTgitLog(opts) returns git log", async()=>{ 
+    it("gitLog(opts) returns git log", async()=>{ 
         let egit = new ExecGit();
         var { stdout } = await egit.gitLog();
-        should(stdout).match(/^commit.*\nAuthor.*\nDate/mu);
+        should(stdout).match(/^commit.*\nAuthor.*\nDate/msu);
         should(stdout.split('commit').length).equal(2);
 
         var { stdout } = await egit.gitLog({maxCount:2});

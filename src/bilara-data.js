@@ -89,7 +89,7 @@
                 sp = newSp;
             }
 
-            let spKeys = Object.keys(sp);
+            let spKeys = sp && Object.keys(sp) || [];
             if (lang) {
                 spKeys = spKeys.filter(p=>p.indexOf(`/${lang}/`) >= 0);
             }
@@ -274,6 +274,7 @@
                 .sync(undefined, undefined, branches);
 
             // clear memoizer
+            // TODO: put this in seeker.js
             var mzr = new Memoizer({writeMem: false});
             var mc = mzr.cache;
             var volumes = mc.volumes();

@@ -159,9 +159,14 @@
             `${RUTEAM}/dn`,
         ].sort());
     });
-    it("TESTTESTisPublishedPath(f) filters supported suttas", async()=>{
+    it("isPublishedPath(f) filters supported suttas", async()=>{
         var pub = await pubTest.initialize(); 
     
+        should(pub.isPublishedPath(`${SUJATO}/dn/dn16_translation-en-sujato.json:1`))
+            .equal(true);
+        should(pub.isPublishedPath(
+            `${BRAHMALI}/pli-tv-kd/pli-tv-kd6_translation-en-brahmali.json:1`))
+            .equal(false);
         should(pub.isPublishedPath('iti42/de/sabbamitta')).equal(false);
         should(pub.isPublishedPath('iti42/en/sujato')).equal(false);
         should(pub.isPublishedPath('nonsense/en/nobody'))
