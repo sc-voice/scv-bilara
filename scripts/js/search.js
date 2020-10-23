@@ -107,6 +107,9 @@ DESCRIPTION
     -op, --outPaths
         Output file paths of matching suttas
 
+    -os, --outScore
+        Output sutta references and score
+
     -ot, --outTrans
         Output translation only for matching segments.
 
@@ -166,6 +169,8 @@ for (var i = 2; i < nargs; i++) {
         readFile  = false;
     } else if (arg === '-c' || arg === '--color') {
         color = process.argv[++i];
+    } else if (arg === '-os' || arg === '--outScore') {
+        outFormat = 'score';
     } else if (arg === '-oj' || arg === '--outJSON') {
         outFormat = 'json';
     } else if (arg === '-om' || arg === '--outMarkdown') {
@@ -305,6 +310,12 @@ found        : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${
                 }
             }
         });
+    });
+}
+
+function outScore(res, pattern) {
+    res.mlDocs.forEach(mld => {
+        console.log(mld.suid, mld.score);
     });
 }
 
@@ -463,6 +474,10 @@ logger.logLevel = logLevel;
         outHuman(res, pattern, 2);
     } else if (outFormat === 'human3') {
         outHuman(res, pattern, 3);
+    } else if (outFormat === 'human3') {
+        outScore(res);
+    } else if (outFormat === 'score') {
+        outScore(res);
     } else {
         outHuman(res, pattern, 3);
     }
