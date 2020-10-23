@@ -128,7 +128,8 @@ DESCRIPTION
 
     -tc:CATEGORIES
         Restrict searches to listed categories. For example, "-tc:bi,pj"
-        will search for information in the Bhikkhuni Pārājika
+        will search for information in the Bhikkhuni Pārājika.
+        To see only suttas, use "-tc:sutta" or "-tc:su"
 
 `);
     process.exit(0);
@@ -315,7 +316,7 @@ found        : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${
 
 function outScore(res, pattern) {
     res.mlDocs.forEach(mld => {
-        console.log(mld.suid, mld.score);
+        console.log(`${mld.score}\t${mld.suid}`);
     });
 }
 

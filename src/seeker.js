@@ -212,6 +212,7 @@
                 'sn': '/sn/',
                 'ss': '-ss',
                 'su': '/sutta/',
+                'sutta': '/sutta/',
                 'thag': '/thag/',
                 'thig': '/thig/',
                 'tv': '-tv-',
@@ -227,6 +228,7 @@
             if (pats.length) {
                 re = new RegExp(`(${pats.join('|')})`, "iu");
             }
+            re && this.info(`tiptakaCategories`, re.toString());
             return re;
         }
 
