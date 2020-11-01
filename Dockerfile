@@ -6,6 +6,7 @@ RUN $INSTALL ripgrep
 RUN $INSTALL sudo
 RUN $INSTALL curl
 RUN $INSTALL nodejs
+RUN $INSTALL git
 RUN echo "unroot    ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 RUN useradd unroot -s /bin/bash -m 
 RUN usermod -aG sudo unroot
@@ -27,10 +28,15 @@ LABEL maintainer="karl@oyamist.com"
 COPY src /home/unroot/src
 COPY scripts /home/unroot/scripts
 COPY index.js /home/unroot/index.js
-COPY local/bilara-data /home/unroot/local/bilara-data
 COPY node_modules/log-instance /home/unroot/node_modules/log-instance
 COPY node_modules/json5 /home/unroot/node_modules/json5
 COPY node_modules/js-ebt /home/unroot/node_modules/js-ebt
+COPY node_modules/memo-again /home/unroot/node_modules/memo-again
+COPY node_modules/merkle-json /home/unroot/node_modules/merkle-json
+COPY node_modules/suttacentral-api /home/unroot/node_modules/suttacentral-api
+
+# Caches
+COPY local /home/unroot/local
 
 # Finalize
 RUN chown -R unroot:unroot /home/unroot
