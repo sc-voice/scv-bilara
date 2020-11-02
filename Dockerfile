@@ -6,7 +6,7 @@ RUN $INSTALL ripgrep
 RUN $INSTALL sudo
 RUN $INSTALL curl
 RUN $INSTALL nodejs
-RUN $INSTALL git
+#RUN $INSTALL git
 RUN echo "unroot    ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 RUN useradd unroot -s /bin/bash -m 
 RUN usermod -aG sudo unroot

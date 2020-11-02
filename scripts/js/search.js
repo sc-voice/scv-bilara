@@ -5,6 +5,7 @@ const { logger } = require('log-instance');
 const {
     BilaraData,
     BilaraPath,
+    ExecGitMock,
     FuzzyWordSet,
     Pali,
     Seeker,
@@ -41,6 +42,9 @@ DESCRIPTION
         Filter segments according to mode: "pattern", "none".
         If mode is "pattern", then only segments matching pattern
         will be shown. If mode is "none", segments will not be filtered.
+
+    -gm, --gitMock 
+        Ignore all git operations. This option is for containers with fixed content.
 
     -l, --lang ISO_LANG_2
         Specify ISO 2-letter language code for primary translation language.
@@ -147,6 +151,7 @@ var tipitakaCategories = '';
 var verbose = false;
 var readFile = true;
 var sync = undefined;
+var execGit = undefined;
 
 //var searchLang;
 
@@ -170,6 +175,8 @@ for (var i = 2; i < nargs; i++) {
         readFile  = false;
     } else if (arg === '-c' || arg === '--color') {
         color = process.argv[++i];
+    } else if (arg === '-gm' || arg === '--gitMock') {
+        execGit = new ExecGitMock();
     } else if (arg === '-os' || arg === '--outScore') {
         outFormat = 'score';
     } else if (arg === '-oj' || arg === '--outJSON') {
@@ -424,6 +431,7 @@ logger.logLevel = logLevel;
 
 (async function() { try {
     var bilaraData = await new BilaraData({
+        execGit,
         includeUnpublished,
     }).initialize(sync);
 

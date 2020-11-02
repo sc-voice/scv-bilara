@@ -512,6 +512,7 @@
                 logLevel,
                 lang,
                 author_uid,
+                sutta_uid: suid,
                 bilaraPaths,
             }).load(this.root);
         }

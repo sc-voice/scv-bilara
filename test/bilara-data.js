@@ -6,6 +6,7 @@
     const {
         BilaraData,
         BilaraPathMap,
+        ExecGitMock,
         MLDoc,
         Seeker,
         SuttaCentralId,
@@ -64,10 +65,9 @@
         should.deepEqual(Object.keys(bd.authors).sort(), [
             'ashinsarana', 'ms', 'sabbamitta', 'sujato', 
         ]);
-        should.deepEqual(bd.examples.en.slice(0,3), [
-            `a hardened killer`,
-            `a hateful person`,
-            `a householder does enough`,
+        should.deepEqual(bd.examples.en.slice(0,2), [
+            `a beryl gem that was naturally beautiful`,
+            `a deep lake fed by spring water`,
         ]);
         should.deepEqual(bd.examples.de.slice(0,3), [
             `aber nicht zum eigenen`,
@@ -981,5 +981,13 @@
             "vv84",
             "vv85",
         ]);
+    });
+    it("TESTTESTExecGitMock initializes", async()=>{
+        var execGit = new ExecGitMock();
+        execGit.logLevel = 'debug';
+        var bd = new BilaraData({execGit});
+        bd.logLevel = 'debug';
+        should(bd.execGit).equal(execGit);
+        should(await bd.initialize()).equal(bd);
     });
 })

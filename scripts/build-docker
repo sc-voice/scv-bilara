@@ -1,5 +1,6 @@
 #!/bin/bash
 pushd local
+  echo -e "BUILD\t: refreshing bilara-data"
   if [ -e bilara-data ]; then
     pushd bilara-data
     git pull
@@ -10,6 +11,11 @@ pushd local
   pushd bilara-data
     git checkout unpublished
   popd
+
+  echo -e "BUILD\t: refreshing suid-map"
+  rm -f suid-map.json
+  ../scripts/js/search.js root of suffering -op | wc
+
 popd
 
 sudo docker build -t sc-voice/scv-bilara -f Dockerfile .

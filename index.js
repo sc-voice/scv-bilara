@@ -5,6 +5,7 @@ module.exports = {
     DETranslation: require("./src/de-translation"),
     English: require("./src/english"),
     ExecGit: require("./src/exec-git"),
+    ExecGitMock: require("./src/exec-git-mock"),
     FuzzyWordSet: require("./src/fuzzy-word-set"),
     MLDoc: require("./src/ml-doc"),
     Pali: require("./src/pali"),

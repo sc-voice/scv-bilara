@@ -119,7 +119,7 @@
             `${en_suj}an/an10/an10.46_translation-en-sujato.json:1`
         ]);
     });
-    it("TESTTESTgrep(...) finds de things", async()=>{
+    it("grep(...) finds de things", async()=>{
         var skr = new Seeker(SEEKEROPTS);
         var maxResults = 5;
 
@@ -338,7 +338,7 @@
         });
         should(data).properties(expected);
     });
-    it("TESTTESTkeywordSearch(...) searches Deutsch, not Pali", async()=>{
+    it("keywordSearch(...) searches Deutsch, not Pali", async()=>{
         var skr = await new Seeker({
             lang: 'en', // English default
         }).initialize();
@@ -1320,26 +1320,11 @@
         let res = await skr.find({
             pattern: 'dn7/de',
         });
-        should(res.bilaraPaths.length).equal(0);
+        should(res.bilaraPaths.length).equal(2);
         let mld0 = res.mlDocs[0];
-        should(mld0.author_uid).equal('kusalagnana-maitrimurti-traetow');
-        should(mld0.sutta_uid).equal('dn7');
+        should(mld0.author_uid).equal('sabbamitta');
+        should.deepEqual(mld0.langSegs, {pli:51, de:45});
         should(res.lang).equal('de');
-    });
-    it('find(...) => dn7/de', async()=>{
-        let bilaraData = new BilaraData();
-        let skr = await new Seeker({
-            bilaraData,
-            logger: bilaraData,
-        }).initialize();
-        let res = await skr.find({
-            pattern: 'dn7',
-            lang: 'de',
-        });
-        should(res.lang).equal('de');
-        should(res.bilaraPaths.length).equal(0);
-        let mld0 = res.mlDocs[0];
-        should(mld0.author_uid).equal('kusalagnana-maitrimurti-traetow');
         should(mld0.sutta_uid).equal('dn7');
     });
     it('find(...) => soṇasiṅgālā', async()=>{
