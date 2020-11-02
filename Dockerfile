@@ -1,5 +1,6 @@
 # UBUNTU slim but not sveldt (385MB)
-FROM ubuntu:latest
+#FROM ubuntu:latest
+FROM debian:buster-slim
 RUN apt-get update && apt-get upgrade -y
 ENV INSTALL="apt-get install -y"
 RUN $INSTALL ripgrep
