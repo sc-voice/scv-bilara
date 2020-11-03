@@ -112,7 +112,7 @@
                 maxBuffer: MAXBUFFER,
             };
             let res = await execPromise(cmd, execOpts);
-            this.info(`sync() ${cmd} => ${res}`);
+            this.info(`sync() ${cmd} => ${JSON.stringify(res.stderr.substring(0,100))}`);
             return this;
         } catch(e) {
             this.warn(`sync()`,{repo,repoPath,branches},e.message);
@@ -353,16 +353,22 @@
         } 
 
         async gitLog(opts={}) { try {
-            let {
+            var {
+                repoPath,
+            } = this;
+            if (!fs.existsSync(repoPath)) {
+                throw new Error(`not found:${repoPath}`);
+            }
+            var {
                 maxCount=1,
             } = opts;
-            let cmd = `git log -${maxCount}`;
-            let execOpts = {
-                cwd: this.repoPath,
+            var cmd = `git log -${maxCount}`;
+            var execOpts = {
+                cwd: repoPath,
             };
             return await execPromise(cmd, execOpts);
         } catch(e) {
-            this.warn(`gitLog(${JSON.stringify(opts)})`, e.message);
+            this.warn(`gitLog() ${JSON.stringify({cmd,execOpts})}`, e.message);
             throw e;
         }}
 

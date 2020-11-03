@@ -112,7 +112,7 @@
         should(fs.existsSync(dummyPath)).equal(true);
         should(await mc.fileSize()).equal(0);
     });
-    it("sync() refreshes repo", async()=>{
+    it("TESTTESTsync() refreshes repo", async()=>{
         var name = "test-repo";
         var verbose = true;
         var bd = new BilaraData({name, verbose});
@@ -187,7 +187,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("suttaInfo(...) returns sutta metadata", async()=>{
+    it("TESTTESTsuttaInfo(...) returns sutta metadata", async()=>{
         await bd.initialize();
         var dn33Pli = {
             author: 'ms',
@@ -982,12 +982,26 @@
             "vv85",
         ]);
     });
-    it("TESTTESTExecGitMock initializes", async()=>{
+    it("ExecGitMock initializes", async()=>{
         var execGit = new ExecGitMock();
         execGit.logLevel = 'debug';
         var bd = new BilaraData({execGit});
         bd.logLevel = 'debug';
         should(bd.execGit).equal(execGit);
         should(await bd.initialize()).equal(bd);
+    });
+    it("isFresh() => true if repo is latest", async()=>{
+        var name = "test-repo";
+        var bd = new BilaraData({name});
+        let gitlogPath = path.join(bd.root, 'gitlog.txt');
+        fs.existsSync(gitlogPath) && fs.unlinkSync(gitlogPath);
+        should(fs.existsSync(gitlogPath)).equal(false);
+        should(await bd.isFresh()).equal(false);
+        should(fs.existsSync(gitlogPath)).equal(true);
+        should(await bd.isFresh()).equal(true);
+
+        var root = '/tmp/not-there';
+        var bd = new BilaraData({name, root});
+        should(await bd.isFresh()).equal(false);
     });
 })

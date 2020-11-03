@@ -28,26 +28,49 @@
         should(egit.repo).equal(TEST_REPO);
         should(egit.repoPath).equal(TEST_REPOPATH);
     });
-    it("sync(...) syncs clones repo", (done)=>{
-        (async function() { try {
-            var repo = TEST_REPO;
-            var repoPath = TEST_REPOPATH;
-            if (fs.existsSync(repoPath)) {
-                var cmd = "rm -rf test-repo";
-                var cwd = Files.LOCAL_DIR;
-                execSync(cmd, {cwd});
-            }
-            should(fs.existsSync(repoPath)).equal(false);
-            var execGit = new ExecGit({
-                repo,
-                repoPath,
-                logLevel,
-            });
-            var res = await execGit.sync();
-            should(fs.existsSync(repoPath)).equal(true);
-            should(res).equal(execGit);
-            done();
-        } catch(e) {done(e);} })();
+    it("gitLog(save) => latest git log", async()=>{
+        var repo = TEST_REPO;
+        var repoPath = TEST_REPOPATH;
+        var execGit = new ExecGit({
+            repo,
+            repoPath,
+        });
+        var res = await execGit.gitLog();
+        should(res.stdout).match(/commit/);
+
+        // error handling
+        var repoPath = "/tmp/notthere";
+        should(fs.existsSync(repoPath)).equal(false);
+        var execGit = new ExecGit({
+            repo,
+            repoPath,
+        });
+        execGit.logLevel = 'error';
+        var eCaught = undefined;
+        try {
+            var res = await execGit.gitLog();
+        } catch(e){ 
+            eCaught = e;
+        }
+        should(eCaught.message).match(/not found.*notthere/);
+    });
+    it("TESTTESTsync(...) syncs clones repo", async()=>{
+        var repo = TEST_REPO;
+        var repoPath = TEST_REPOPATH;
+        if (fs.existsSync(repoPath)) {
+            var cmd = "rm -rf test-repo";
+            var cwd = Files.LOCAL_DIR;
+            execSync(cmd, {cwd});
+        }
+        should(fs.existsSync(repoPath)).equal(false);
+        var execGit = new ExecGit({
+            repo,
+            repoPath,
+            logLevel,
+        });
+        var res = await execGit.sync();
+        should(fs.existsSync(repoPath)).equal(true);
+        should(res).equal(execGit);
     });
     it("add(...) git add", (done)=>{
         (async function() { try {

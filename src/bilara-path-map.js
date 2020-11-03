@@ -32,7 +32,10 @@
             if (!suidMap) {
                 suidMap = fs.existsSync(SUID_MAP_FILE)
                     ? JSON.parse(await fs.readFileSync(SUID_MAP_FILE))
-                    : await this.buildSuidMap();
+                    : {};
+                if (Object.keys(suidMap).length === 0) {
+                    suidMap = await this.buildSuidMap();
+                }
             }
             if (suidMap instanceof Promise) {
                 suidMap = await suidMap;

@@ -12,7 +12,7 @@
     class SuttaCentralId { 
         constructor(scid=null) {
             if (scid == null) {
-                throw new Error(`Expected SCID`);
+                throw new Error(`required scid:${scid}`);
             }
             this.scid = scid;
         }

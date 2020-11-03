@@ -100,7 +100,12 @@
         }
 
         async isFresh(save=true) { try {
+            if (!fs.existsSync(this.root)) {
+                this.debug(`isFresh() no repository => false`);
+                return false;
+            }
             let { stdout } = await this.execGit.gitLog();
+            this.debug(`isFresh() ${stdout}`);
             let gitlogPath = path.join(this.root, 'gitlog.txt');
             let gitlog = fs.existsSync(gitlogPath) && 
                 (await fs.promises.readFile(gitlogPath)).toString();
@@ -248,8 +253,13 @@
 
         get suttaIds() {
             if (this._suttaIds == null) {
-                this._suttaIds = Object.keys(this.bilaraPathMap.suidMap)
+                let suttaIds = Object.keys(this.bilaraPathMap.suidMap)
                     .sort(SuttaCentralId.compareLow);
+                if (suttaIds.length === 0) {
+                    throw new Error(`no suttaIds`);
+                }
+                this._suttaIds = suttaIds;
+                this.info(`suttaIds:${suttaIds.length}`);
             }
 
             return this._suttaIds;
@@ -287,6 +297,7 @@
             if (purge && !initializing) {
                 await this.initialize();
             }
+            this.info(`buildSuidMap()`);
             await this.bilaraPathMap.buildSuidMap();
             return this;
         } catch(e) {
