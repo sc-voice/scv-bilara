@@ -16,7 +16,7 @@
     "merkle-json": "^1.1.6",
     "nodegit": "^0.26.2",
     "serial-memo": "^0.1.0",
-    "suttacentral-api": "^1.0.5",
+    "suttacentral-api": "^1.0.8",
     "tmp": "^0.1.0",
     "winston": "^3.0.0"
   },

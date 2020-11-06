@@ -72,7 +72,7 @@
         should.deepEqual(bd.examples.de.slice(0,3), [
             `aber nicht zum eigenen`,
             `abnehmend`,
-            `ach,`,
+            `ach du meine Güte`,
         ]);
     });
     it("initialize(...) must be called", async()=>{
@@ -475,50 +475,46 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("nikayaSuttaIds(...) returns sutta_uids", done=>{
-        (async function() { try {
-            var language = 'en';
-            var KNSTART = [
-                'bv1', 'bv2', 'bv3', 'bv4', 'bv5', 
-            ];
-            var KNEND = [
-                'vv83', 'vv84', 'vv85',
-            ];
+    it("TESTTESTnikayaSuttaIds(...) returns sutta_uids", async()=>{
+        var language = 'en';
+        var KNSTART = [
+            'bv1', 'bv2', 'bv3', 'bv4', 'bv5', 
+        ];
+        var KNEND = [
+            'vv83', 'vv84', 'vv85',
+        ];
 
-            // Root nikaya kn
-            var ids = await bd.nikayaSuttaIds('kn');
-            should(ids).instanceOf(Array);
-            should.deepEqual(ids.slice(0,KNSTART.length), KNSTART);
-            should.deepEqual(ids.slice(ids.length-3,ids.length), KNEND);
-            should(ids.length).equal(2351 );
+        // Root nikaya kn
+        var ids = await bd.nikayaSuttaIds('kn');
+        should(ids).instanceOf(Array);
+        should.deepEqual(ids.slice(0,KNSTART.length), KNSTART);
+        should.deepEqual(ids.slice(ids.length-3,ids.length), KNEND);
+        should(ids.length).equal(2351 );
 
-            // Root nikaya an
-            var ids = await bd.nikayaSuttaIds('an');
-            should(ids.length).equal(1407);
+        // Root nikaya an
+        var ids = await bd.nikayaSuttaIds('an');
+        should(ids.length).equal(1407);
 
-            // Root nikaya sn
-            var ids = await bd.nikayaSuttaIds('sn');
-            should(ids.length).equal(1819);
+        // Root nikaya sn
+        var ids = await bd.nikayaSuttaIds('sn');
+        should(ids.length).equal(1819);
 
-            // Root nikaya dn
-            var ids = await bd.nikayaSuttaIds('dn');
-            should(ids.length).equal(34);
+        // Root nikaya dn
+        var ids = await bd.nikayaSuttaIds('dn');
+        should(ids.length).equal(34);
 
-            // nikaya mn
-            var ids = await bd.nikayaSuttaIds('mn');
-            should(ids.length).equal(152);
+        // nikaya mn
+        var ids = await bd.nikayaSuttaIds('mn');
+        should(ids.length).equal(152);
 
-            // nikaya, language
-            var ids = await bd.nikayaSuttaIds('sn', 'de');
-            should(ids.length).below(1820);
+        // nikaya, language
+        var ids = await bd.nikayaSuttaIds('sn', 'de');
+        should(ids.length).below(1820);
 
-            // Bad input
-            var ids = await bd.nikayaSuttaIds('nonikaya', 'yiddish', 
-                'nobody');
-            should.deepEqual(ids, []);
-
-            done(); 
-        } catch(e) {done(e);} })();
+        // Bad input
+        var ids = await bd.nikayaSuttaIds('nonikaya', 'yiddish', 
+            'nobody');
+        should.deepEqual(ids, []);
     });
     it("suttaList(pattern) => [normalized-sutta-reference]", done=>{
         done(); return; // TODO
