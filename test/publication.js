@@ -26,6 +26,7 @@
     var SARANA = `translation/cs/ashinsarana/sutta`;
     var SABBAMITTA = 'translation/de/sabbamitta/sutta';
     var SUJATO = 'translation/en/sujato/sutta';
+    var SUJATO_N = 'translation/en/sujato/name';
     var BRAHMALI = 'translation/en/brahmali/vinaya';
     var KAZ = 'translation/jpn/kaz/sutta';
     var MY = 'translation/my/my-team/sutta';
@@ -71,7 +72,7 @@
             `${SUJATO}/sn`,
         ].sort());
     });
-    it("pubPaths() => all bilara paths", async()=>{
+    it("TESTTESTpubPaths() => all bilara paths", async()=>{
         var pub = await pubTest.initialize();
 
         // Explicit
@@ -98,6 +99,7 @@
             `${BRAHMALI}/pli-tv-pvr`,
             `${ENCOMM}/atthakatha/dn-a`,
             `${PATTON}/sa`,
+            `${SUJATO_N}`,
             `${SUJATO}/an`,
             `${SUJATO}/dn`,
             `${SUJATO}/kn/dhp`,
@@ -142,6 +144,7 @@
             `${BRAHMALI}/pli-tv-pvr`,
             `${ENCOMM}/atthakatha/dn-a`,
             `${PATTON}/sa`,
+            `${SUJATO_N}`,
             `${SUJATO}/an`,
             `${SUJATO}/dn`,
             `${SUJATO}/kn/dhp`,

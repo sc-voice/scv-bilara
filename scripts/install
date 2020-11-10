@@ -1,6 +1,6 @@
 #!/bin/bash
 DIR=`dirname $0`
-${DIR}/install-node10
+${DIR}/install-node14
 npm install
 mkdir -p local
 cd local

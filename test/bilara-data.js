@@ -51,7 +51,7 @@
         });
         should(bdDefault.logger).equal(logger);
     });
-    it("initialize(...) must be called", async()=>{
+    it("TESTTESTinitialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         should(newbd.initialized).equal(false);
         should.throws(() => {
@@ -67,12 +67,12 @@
         ]);
         should.deepEqual(bd.examples.en.slice(0,2), [
             `a beryl gem that was naturally beautiful`,
-            `a deep lake fed by spring water`,
+            `a condition for old age and death`,
         ]);
         should.deepEqual(bd.examples.de.slice(0,3), [
             `aber nicht zum eigenen`,
             `abnehmend`,
-            `ach du meine Güte`,
+            `Achtsamkeit auf den Tod`,
         ]);
     });
     it("initialize(...) must be called", async()=>{
@@ -112,7 +112,7 @@
         should(fs.existsSync(dummyPath)).equal(true);
         should(await mc.fileSize()).equal(0);
     });
-    it("TESTTESTsync() refreshes repo", async()=>{
+    it("sync() refreshes repo", async()=>{
         var name = "test-repo";
         var verbose = true;
         var bd = new BilaraData({name, verbose});
@@ -187,7 +187,7 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTsuttaInfo(...) returns sutta metadata", async()=>{
+    it("suttaInfo(...) returns sutta metadata", async()=>{
         await bd.initialize();
         var dn33Pli = {
             author: 'ms',
@@ -475,7 +475,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("TESTTESTnikayaSuttaIds(...) returns sutta_uids", async()=>{
+    it("nikayaSuttaIds(...) returns sutta_uids", async()=>{
         var language = 'en';
         var KNSTART = [
             'bv1', 'bv2', 'bv3', 'bv4', 'bv5', 
