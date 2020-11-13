@@ -958,11 +958,11 @@
             author:"sabbamitta",
         })).equal(true); 
     });
-    it("suttaIds() => [ suid ]", async()=>{
+    it("TESTTESTsuttaIds() => [ suid ]", async()=>{
         await bd.initialize();
         let suids = bd.suttaIds;
 
-        should(suids.length).equal(6181);
+        should(suids.length).above(6180);
         should.deepEqual(suids.slice(0,5), [
             "an1.1-10",
             "an1.11-20",

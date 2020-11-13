@@ -5,7 +5,6 @@
     const { Files } = require('memo-again');
     const BilaraPath = require('./bilara-path');
     const STUBFILESIZE = 5;
-    const SUID_MAP_FILE = path.join(Files.LOCAL_DIR, 'suid-map.json');
     const ROOTMS_FOLDER = path.join(Files.LOCAL_DIR, "bilara-data", 
         "root", "pli", "ms");
 
@@ -16,6 +15,9 @@
             (opts.logger || logger).logInstance(this);
             this.root = opts.root || 
                 path.join(Files.LOCAL_DIR, "bilara-data");
+            let rootDir = path.dirname(this.root);
+            let rootName = this.root.replace(rootDir,'').substring(1);
+            this.suidMapFile = path.join(rootDir, `suid-map-${rootName}.json`);
             this.initialized = false;
         }
 
@@ -30,8 +32,8 @@
 
         async initialize() { try {
             if (!suidMap) {
-                suidMap = fs.existsSync(SUID_MAP_FILE)
-                    ? JSON.parse(await fs.readFileSync(SUID_MAP_FILE))
+                suidMap = fs.existsSync(this.suidMapFile)
+                    ? JSON.parse(await fs.readFileSync(this.suidMapFile))
                     : {};
                 if (Object.keys(suidMap).length === 0) {
                     suidMap = await this.buildSuidMap();
@@ -141,11 +143,13 @@
                 '\bma\b',       // Chinese
                 '\bsa\b',       // Chinese
                 'blurb',
+                'name',         // metadata
                 'playground',   // Blake
             ].join('|');
             var reExclude = new RegExp(`(${exclude})`,"ui");
             var traverse = (dirPath)=>{
                 if (reExclude.test(dirPath)) {
+                    this.info(`_loadPaths() exclude:`, dirPath);
                     return;
                 }
                 var dirKids = fs.readdirSync(dirPath, readOpts);
@@ -209,7 +213,7 @@
             await this._loadPaths(suidMap, "html/pli/ms");
             await this._loadPaths(suidMap, "reference/pli/ms");
             await this._loadPaths(suidMap, "variant/pli/ms"); 
-            fs.writeFileSync(SUID_MAP_FILE, JSON.stringify(suidMap, null, 2));
+            fs.writeFileSync(this.suidMapFile, JSON.stringify(suidMap, null, 2));
             this.suidMap = suidMap;
             this.info(`buildSuidMap() ${Date.now()-msStart}ms`);
             return suidMap;

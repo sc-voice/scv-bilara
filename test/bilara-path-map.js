@@ -169,6 +169,6 @@
         let suidMap = await bpm.buildSuidMap();
         let suids = Object.keys(suidMap);
 
-        should(suids.length).equal(6181);
+        should(suids.length).above(6180);
     });
 })
