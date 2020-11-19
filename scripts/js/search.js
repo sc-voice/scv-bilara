@@ -53,18 +53,6 @@ DESCRIPTION
     --gitMock 
         Ignore all git operations. This option is for containers with fixed content.
 
-    -gv, --groupVerse
-        Group text by verse (vs. by line)
-
-    -gv1, --groupVerse1
-        Output matching translation verses only (e.g., English)
-
-    -gv2, --groupVerse2 
-        Output matching bilingual verses (e.g., Pali, English)
-
-    -gv3, --groupVerse3 
-        Output matching trilingual verses (e.g., Pali, English, German)
-
     -l, --lang ISO_LANG_2
         Specify ISO 2-letter language code for primary translation language.
         Default is "en" for English.
@@ -136,6 +124,18 @@ DESCRIPTION
     -ot, --outTrans
         Output translation only for matching segments.
 
+    -ov, --outVerse
+        Output text by verse (vs. by line)
+
+    -ov1, --outVerse1
+        Output matching monoligual translation verses (e.g., English)
+
+    -ov2, --outVerse2 
+        Output matching bilingual verses (e.g., Pali, English)
+
+    -ov3, --outVerse3 
+        Output matching trilingual verses (e.g., Pali, English, German)
+
     --outLegacy
         Output legacy format. (NO LONGER SUPPORTED)
 
@@ -202,19 +202,21 @@ for (var i = 2; i < nargs; i++) {
         color = process.argv[++i];
     } else if (arg === '--gitMock') {
         execGit = new ExecGitMock();
-    } else if (arg === '-gv' || arg === '--groupVerse') {
+    } else if (arg === '-ov' || arg === '--outVerse') {
         groupBy = 'verse';
         outFormat = 'verse';
         showMatchesOnly = false;
-    } else if (arg === '-gv1' || arg === '--groupVerse1') {
+    } else if (arg === '-ov1' || arg === '--outVerse1') {
         groupBy = 'verse1';
         outFormat = 'verse';
         showMatchesOnly = false;
-    } else if (arg === '-gv2' || arg === '--groupVerse2') {
+    } else if (arg === '-ov2' || arg === '--outVerse2') {
         groupBy = 'verse2';
+        outFormat = 'verse';
         showMatchesOnly = false;
-    } else if (arg === '-gv3' || arg === '--groupVerse3') {
+    } else if (arg === '-ov3' || arg === '--outVerse3') {
         groupBy = 'verse3';
+        outFormat = 'verse';
         showMatchesOnly = false;
     } else if (arg === '-os' || arg === '--outScore') {
         outFormat = 'score';
