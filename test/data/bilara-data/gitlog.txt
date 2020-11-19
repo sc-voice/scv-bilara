@@ -1,6 +1,5 @@
-commit 0251095a95dc1e8304d1590cfda841ad0f750f15
-Merge: a775cdb019 4c7c4dc1e5
-Author: sabbamitta <sabbamittaa@gmail.com>
-Date:   Wed Nov 18 23:55:34 2020 +0100
+commit 0e9a6eceb732928368340e429a96bc86fcad7b84
+Author: sabbamitta <43345786+sabbamitta@users.noreply.github.com>
+Date:   Thu Nov 19 18:26:02 2020 +0100
 
-    Merge remote-tracking branch 'suttacentral/unpublished' into unpublished
+    Update examples-de.txt

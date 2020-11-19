@@ -204,9 +204,11 @@ for (var i = 2; i < nargs; i++) {
         execGit = new ExecGitMock();
     } else if (arg === '-gv' || arg === '--groupVerse') {
         groupBy = 'verse';
+        outFormat = 'verse';
         showMatchesOnly = false;
     } else if (arg === '-gv1' || arg === '--groupVerse1') {
         groupBy = 'verse1';
+        outFormat = 'verse';
         showMatchesOnly = false;
     } else if (arg === '-gv2' || arg === '--groupVerse2') {
         groupBy = 'verse2';
@@ -393,7 +395,8 @@ function outVerse(res, pattern, n=0) {
     res.mlDocs.forEach(mld => {
         var suid = mld.suid;
         let segments = mld.segments();
-        let matched = false;
+        let anyMatched = segments.reduce((s,a)=>s.matched || a, false);
+        let matched = !anyMatched;
         let verse = [];
         let printVerseLang = (verse, lang, author_uid) => {
             let scid = verse[0].scid;
@@ -422,10 +425,10 @@ function outVerse(res, pattern, n=0) {
         };
         segments.forEach((seg,i) => {
             var scid = seg.scid;
-            if (/\.1$/.test(scid)) {
+            if (/\.1$|\.1[^.0-9:]/.test(scid)) {
                 matched && printVerse(verse, mld.author_uid);
                 verse = [];
-                matched = false;
+                matched = anyMatched;
             }
             matched = matched || seg.matched;
             verse.push(seg);
@@ -481,9 +484,6 @@ function outMarkdown(res, pattern, nLang=3) {
         mld.segments().forEach((seg,i) => {
             var scid = seg.scid;
             var langText = (seg[res.lang] || '').trim();
-            //var linkText = new SuttaCentralId(scid).standardForm();
-            //var author = mld.author_uid.split(', ')[0] || mld.author_uid;
-            //var link = `https://suttacentral.net/${suid}/${mld.lang}/${author}#${scid}`;
             var scLink = suttacentralLink(scid, mld.lang, mld.author_uid);
             if (nLang > 1) {
                 console.log(`> ${scLink}: ${seg.pli}`);
@@ -558,14 +558,16 @@ logger.logLevel = logLevel;
     var res = await skr.find(findOpts);
     var secElapsed = (Date.now() - msStart)/1000;
     logger.info(`find() ${secElapsed.toFixed(1)}s`);
-    if (groupBy === 'verse') {
-        outVerse(res, pattern);
-    } else if (groupBy === 'verse1') {
-        outVerse(res, pattern, 1);
-    } else if (groupBy === 'verse2') {
-        outVerse(res, pattern, 2);
-    } else if (groupBy === 'verse3') {
-        outVerse(res, pattern, 3);
+    if (outFormat === 'verse') {
+        if (groupBy === 'verse1') {
+            outVerse(res, pattern, 1);
+        } else if (groupBy === 'verse2') {
+            outVerse(res, pattern, 2);
+        } else if (groupBy === 'verse3') {
+            outVerse(res, pattern, 3);
+        } else {
+            outVerse(res, pattern);
+        }
     } else if (outFormat === 'csv') {
         outCSV(res, pattern);
     } else if (outFormat === 'json') {
