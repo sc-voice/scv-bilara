@@ -29,6 +29,13 @@ DESCRIPTION
         output results in JSON to stdout, highlighting matches if
         output is console.
 
+    -b0, --break0
+        By default, verse grouped lines are joined separated by a single space.
+
+    -b1, --break1
+        Separate verse grouped lines by two spaces followed by a newline. In
+        Markdown blockquotes, each line will stand alone.
+
     -c, --color COLORNUMBER
         Display matches with colors. The default color is 201.
         Use "--color auto" to remove color when stdout is not a console.
@@ -49,14 +56,14 @@ DESCRIPTION
     -gv, --groupVerse
         Group text by verse (vs. by line)
 
-    -gv1
-        Output matching translation verses only
+    -gv1, --groupVerse1
+        Output matching translation verses only (e.g., English)
 
-    -gv2 
-        Output matching translation and root verses
+    -gv2, --groupVerse2 
+        Output matching bilingual verses (e.g., Pali, English)
 
-    -gv3 
-        Output matching trilingual verses.
+    -gv3, --groupVerse3 
+        Output matching trilingual verses (e.g., Pali, English, German)
 
     -l, --lang ISO_LANG_2
         Specify ISO 2-letter language code for primary translation language.
@@ -165,6 +172,7 @@ var readFile = true;
 var sync = undefined;
 var execGit = undefined;
 var groupBy = 'line';
+var linebreak = ' ';
 
 //var searchLang;
 
@@ -177,6 +185,10 @@ for (var i = 2; i < nargs; i++) {
     if (i<2) { continue; }
     if (arg === '-?' || arg === '--help') {
         help();
+    } else if (arg === '-b0' || arg === '--break0') {
+        linebreak = ' ';
+    } else if (arg === '-b1' || arg === '--break1') {
+        linebreak = '  \n';
     } else if (arg === '-ll' || arg === '--logLevel') {
         logLevel = process.argv[++i];
     } else if (arg === '-f' || arg === '--filter') {
@@ -393,7 +405,7 @@ function outVerse(res, pattern, n=0) {
             let prefix = `> ${scLink}: `;
             let text = verse.reduce((a,seg)=>{
                 if (seg[lang]) {
-                    a +=  a ? ' ' : prefix;
+                    a +=  a ? linebreak : prefix;
                     a += seg[lang].trim();
                 }
                 return a;
