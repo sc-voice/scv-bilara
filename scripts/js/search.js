@@ -397,8 +397,8 @@ function outVerse(res, pattern, n=0) {
     res.mlDocs.forEach(mld => {
         var suid = mld.suid;
         let segments = mld.segments();
-        let anyMatched = segments.reduce((s,a)=>s.matched || a, false);
-        let matched = !anyMatched;
+        let allMatched = segments.reduce((s,a)=>s.matched ? a : false, true);
+        let matched = !allMatched;
         let verse = [];
         let printVerseLang = (verse, lang, author_uid) => {
             let scid = verse[0].scid;
@@ -430,7 +430,7 @@ function outVerse(res, pattern, n=0) {
             if (/\.1$|\.1[^.0-9:]/.test(scid)) {
                 matched && printVerse(verse, mld.author_uid);
                 verse = [];
-                matched = anyMatched;
+                matched = allMatched;
             }
             matched = matched || seg.matched;
             verse.push(seg);

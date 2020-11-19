@@ -112,8 +112,9 @@
             res.mlDocs.forEach(mld => {
                 var suid = mld.suid;
                 let segments = mld.segments();
-                let anyMatched = segments.reduce((s,a)=>s.matched || a, false);
-                let matched = !anyMatched;
+                let allMatched = segments.reduce((s,a)=>s.matched ? a : false, true);
+                console.log(`dbg allMatched`, {allMatched});
+                let matched = !allMatched;
                 let verse = [];
                 segments.forEach((seg,i) => {
                     var scid = seg.scid;
@@ -121,7 +122,7 @@
                         matched && this.printVerse(verse, mld.author_uid, 
                             lang, showPli, showEn);
                         verse = [];
-                        matched = anyMatched;
+                        matched = !allMatched;
                     }
                     matched = matched || seg.matched;
                     verse.push(seg);
