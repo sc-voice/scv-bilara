@@ -407,14 +407,14 @@ function outVerse(res, pattern, n=0) {
                 ? undefined 
                 : author_uid;
             let scLink = suttacentralLink(scid, linkLang, author);
-            let prefix = `> ${scLink}: `;
+            let prefix = `>${scLink}:`;
             let text = verse.reduce((a,seg)=>{
                 if (seg[lang]) {
-                    a +=  a ? linebreak : prefix;
+                    a +=  linebreak;
                     a += seg[lang].trim();
                 }
                 return a;
-            }, '');
+            }, prefix);
             console.log(`${text}`);
         }
         let printVerse = (verse, author_uid) => {
