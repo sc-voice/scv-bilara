@@ -43,8 +43,20 @@ DESCRIPTION
         If mode is "pattern", then only segments matching pattern
         will be shown. If mode is "none", segments will not be filtered.
 
-    -gm, --gitMock 
+    --gitMock 
         Ignore all git operations. This option is for containers with fixed content.
+
+    -gv, --groupVerse
+        Group text by verse (vs. by line)
+
+    -gv1
+        Output matching translation verses only
+
+    -gv2 
+        Output matching translation and root verses
+
+    -gv3 
+        Output matching trilingual verses.
 
     -l, --lang ISO_LANG_2
         Specify ISO 2-letter language code for primary translation language.
@@ -152,6 +164,7 @@ var verbose = false;
 var readFile = true;
 var sync = undefined;
 var execGit = undefined;
+var groupBy = 'line';
 
 //var searchLang;
 
@@ -175,8 +188,20 @@ for (var i = 2; i < nargs; i++) {
         readFile  = false;
     } else if (arg === '-c' || arg === '--color') {
         color = process.argv[++i];
-    } else if (arg === '-gm' || arg === '--gitMock') {
+    } else if (arg === '--gitMock') {
         execGit = new ExecGitMock();
+    } else if (arg === '-gv' || arg === '--groupVerse') {
+        groupBy = 'verse';
+        showMatchesOnly = false;
+    } else if (arg === '-gv1' || arg === '--groupVerse1') {
+        groupBy = 'verse1';
+        showMatchesOnly = false;
+    } else if (arg === '-gv2' || arg === '--groupVerse2') {
+        groupBy = 'verse2';
+        showMatchesOnly = false;
+    } else if (arg === '-gv3' || arg === '--groupVerse3') {
+        groupBy = 'verse3';
+        showMatchesOnly = false;
     } else if (arg === '-os' || arg === '--outScore') {
         outFormat = 'score';
     } else if (arg === '-oj' || arg === '--outJSON') {
@@ -333,6 +358,73 @@ function outPaths(res, pattern) {
     });
 }
 
+function suttacentralLink(scid, lang, author_uid) {
+    var suid = scid.split(':')[0];
+    var linkText = new SuttaCentralId(scid).standardForm();
+    var link =  `https://suttacentral.net/${suid}`;
+    if (lang) {
+        var author = author_uid.split(', ')[0] || author_uid;
+        link =  `https://suttacentral.net/${suid}/${lang}/${author}#${scid}`;
+    }
+    return `[${linkText}](${link})`;
+}
+
+function outVerse(res, pattern, n=0) {
+    var {
+        lang,
+        searchLang,
+    } = res;
+    n = Number(n);
+    let showPli = n===2 && searchLang===lang || 
+        n>2 && searchLang!=='pli' && lang!=='pli';
+    let showEn = n>2 && searchLang!=='en' && lang!=='en';
+    res.mlDocs.forEach(mld => {
+        var suid = mld.suid;
+        let segments = mld.segments();
+        let matched = false;
+        let verse = [];
+        let printVerseLang = (verse, lang, author_uid) => {
+            let scid = verse[0].scid;
+            let linkLang = lang === 'pli' ? undefined : lang;
+            let author = lang == 'pli' 
+                ? undefined 
+                : author_uid;
+            let scLink = suttacentralLink(scid, linkLang, author);
+            let prefix = `> ${scLink}: `;
+            let text = verse.reduce((a,seg)=>{
+                if (seg[lang]) {
+                    a +=  a ? ' ' : prefix;
+                    a += seg[lang].trim();
+                }
+                return a;
+            }, '');
+            console.log(`${text}`);
+        }
+        let printVerse = (verse, author_uid) => {
+            if (!verse.length) {
+                return;
+            }
+            showPli && printVerseLang(verse, 'pli', undefined);
+            showEn && printVerseLang(verse, 'en', 'sujato');
+            printVerseLang(verse, mld.lang, author_uid);
+        };
+        segments.forEach((seg,i) => {
+            var scid = seg.scid;
+            if (/\.1$/.test(scid)) {
+                matched && printVerse(verse, mld.author_uid);
+                verse = [];
+                matched = false;
+            }
+            matched = matched || seg.matched;
+            verse.push(seg);
+            if (i === segments.length && matched) {
+                printVerse(verse, mld.author_uid);
+            }
+
+        });
+    });
+}
+
 function outLines(res, pattern, n=0) {
     var {
         lang,
@@ -377,16 +469,17 @@ function outMarkdown(res, pattern, nLang=3) {
         mld.segments().forEach((seg,i) => {
             var scid = seg.scid;
             var langText = (seg[res.lang] || '').trim();
-            var linkText = new SuttaCentralId(scid).standardForm();
-            var author = mld.author_uid.split(', ')[0] || mld.author_uid;
-            var link = `https://suttacentral.net/${suid}/${mld.lang}/${author}#${scid}`;
+            //var linkText = new SuttaCentralId(scid).standardForm();
+            //var author = mld.author_uid.split(', ')[0] || mld.author_uid;
+            //var link = `https://suttacentral.net/${suid}/${mld.lang}/${author}#${scid}`;
+            var scLink = suttacentralLink(scid, mld.lang, mld.author_uid);
             if (nLang > 1) {
-                console.log(`> [${linkText}](${link}): ${seg.pli}`);
+                console.log(`> ${scLink}: ${seg.pli}`);
             }
             if (nLang > 2 && res.lang !== 'en') {
-                console.log(`> [${linkText}](${link}): ${seg.en}`);
+                console.log(`> ${scLink}: ${seg.en}`);
             }
-            langText && console.log(`> [${linkText}](${link}): ${langText}`);
+            langText && console.log(`> ${scLink}: ${langText}`);
         });
     });
 }
@@ -453,7 +546,15 @@ logger.logLevel = logLevel;
     var res = await skr.find(findOpts);
     var secElapsed = (Date.now() - msStart)/1000;
     logger.info(`find() ${secElapsed.toFixed(1)}s`);
-    if (outFormat === 'csv') {
+    if (groupBy === 'verse') {
+        outVerse(res, pattern);
+    } else if (groupBy === 'verse1') {
+        outVerse(res, pattern, 1);
+    } else if (groupBy === 'verse2') {
+        outVerse(res, pattern, 2);
+    } else if (groupBy === 'verse3') {
+        outVerse(res, pattern, 3);
+    } else if (outFormat === 'csv') {
         outCSV(res, pattern);
     } else if (outFormat === 'json') {
         outJSON(res, pattern);

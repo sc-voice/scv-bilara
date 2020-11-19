@@ -822,7 +822,7 @@
             pli: "Majjhima Nikāya 1 ",
         });
     });
-    it("find(...) => finds ubung", async()=>{
+    it("TESTTESTfind(...) => finds ubung", async()=>{
         var maxDoc = 3;
         var skr = await new Seeker({
             maxDoc,

@@ -54,7 +54,7 @@
         }
         should(eCaught.message).match(/not found.*notthere/);
     });
-    it("TESTTESTsync(...) syncs clones repo", async()=>{
+    it("sync(...) syncs clones repo", async()=>{
         var repo = TEST_REPO;
         var repoPath = TEST_REPOPATH;
         if (fs.existsSync(repoPath)) {

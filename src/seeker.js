@@ -800,7 +800,7 @@
                 maxResults, // embeddable option
 
                 pattern,
-                elapsed: (Date.now()-msStart)/1000,
+                //elapsed: (Date.now()-msStart)/1000, // NOT CACHEABLE!!!
                 method,
                 resultPattern,
                 segsMatched,
@@ -839,7 +839,7 @@
                 pattern: resultPattern,
             } = await this.phraseSearch(searchOpts);
             if (lines.length) {
-                this.info(`findArgs phrase`, {resultPattern, lines:lines.length});
+                this.debug(`findArgs phrase`, {resultPattern, lines:lines.length});
             } else {
                 method = 'keywords';
                 var data = await this.keywordSearch(searchOpts);
@@ -847,7 +847,7 @@
                     lines,
                     resultPattern,
                 } = data;
-                this.info(`findArgs keywords`, {resultPattern, lines:lines.length});
+                this.debug(`findArgs keywords`, {resultPattern, lines:lines.length});
             }
             sortLines && lines.sort(sortLines);
             suttaRefs = lines.map(line =>BilaraPath.pathParts(line).suttaRef);

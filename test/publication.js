@@ -72,7 +72,7 @@
             `${SUJATO}/sn`,
         ].sort());
     });
-    it("TESTTESTpubPaths() => all bilara paths", async()=>{
+    it("pubPaths() => all bilara paths", async()=>{
         var pub = await pubTest.initialize();
 
         // Explicit
