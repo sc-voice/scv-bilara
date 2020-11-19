@@ -342,10 +342,15 @@ found        : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${
                 let title = `doc:${im+1}/${nDocs} ${suid} score:${score}`;
                 console.log(`${sep} ${title} ${sep}`);
             }
+            let scidText = [
+                `\u001b[38;5;80m`,
+                scid,
+                `\u001b[0m`,
+            ].join('');
             if (nLang === 1) {
-                console.log(`${seg.scid}: ${seg[searchLang]}`);
+                console.log(`${scidText}: ${seg[searchLang]}`);
             } else {
-                console.log(`scid: ${seg.scid}`);
+                console.log(`scid: ${scidText}`);
                 console.log(` pli: ${seg.pli || ''}`);
                 if (nLang === 3 || searchLang==='en' || lang === 'en') {
                     console.log(`  en: ${seg.en || ''}`);
