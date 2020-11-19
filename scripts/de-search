@@ -1,3 +1,3 @@
 #!/bin/bash
 DIR=`dirname $0`
-$DIR/js/search.js -l de "$@" | fold -w 80 -s| less -Ri
+$DIR/js/search.js -l de "$@" | less -Ri
