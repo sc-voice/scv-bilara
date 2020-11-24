@@ -119,7 +119,7 @@
             `${en_suj}an/an10/an10.46_translation-en-sujato.json:1`
         ]);
     });
-    it("grep(...) finds de things", async()=>{
+    it("TESTTESTgrep(...) finds de things", async()=>{
         var skr = new Seeker(SEEKEROPTS);
         var maxResults = 5;
 
@@ -132,8 +132,8 @@
         should.deepEqual(res.slice(0,4), [
             `${de_sab}dn/dn33_translation-de-sabbamitta.json:39`,
             `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:21`,
-            `${de_sab}an/an3/an3.156-162_translation-de-sabbamitta.json:21`,
             `${de_sab}an/an6/an6.30_translation-de-sabbamitta.json:15`,
+            `${de_sab}an/an4/an4.163_translation-de-sabbamitta.json:15`,
         ]);
         should(res.length).below(6);
 
@@ -470,7 +470,7 @@
             'dn16, 1.001',
         ]);
     });
-    it("phraseSearch(...) limits English results", async()=>{
+    it("TESTTESTphraseSearch(...) limits English results", async()=>{
         var lang = 'en';
         var pattern = 'root of suffering';
         var maxResults = 3;
@@ -526,14 +526,14 @@
             lines,
         });
     });
-    it("phraseSearch(...) finds Deutsch results", async()=>{
+    it("TESTTESTphraseSearch(...) finds Deutsch results", async()=>{
         var linesWurzel = [
             `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
         ];
         var linesUber = [
           `${de_sab}dn/dn33_translation-de-sabbamitta.json:38`,
           `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:21`,
-          `${de_sab}an/an3/an3.156-162_translation-de-sabbamitta.json:21`,
+          `${de_sab}an/an6/an6.30_translation-de-sabbamitta.json:15`,
         ];
         var lang = 'de';
         var maxResults = 10;
@@ -841,12 +841,12 @@
         should.deepEqual(res.suttaRefs.slice(0,3), [
             'dn33/de/sabbamitta',
             'an4.198/de/sabbamitta',
-            'an3.156-162/de/sabbamitta',
+            'an6.30/de/sabbamitta',
         ]);
         // We only care about three documents so that 
         // is what we should get
         should.deepEqual(res.mlDocs.map(mld=>mld.score), [
-            38.033, 21.259, 21.189,
+            38.033, 21.189, 15.349,
         ]);
     });
     it("find(...) => finds searchLang phrase", async()=>{
@@ -1374,5 +1374,18 @@
         should(mld0.author_uid).equal('sujato');
         should(mld0.suid).equal('mn146');
         should(res.mlDocs.length).equal(maxDoc);
+    });
+    it("TESTTESTfind(...) handles sn46.55/cs", async()=>{
+        var skr = await new Seeker().initialize();
+        var pattern = 'sn46.55/cs';
+        var ex = undefined;
+        try {
+            var res = await skr.find({ pattern, matchHighlight: false, });
+        } catch(e) {
+            ex = e;
+        }
+        should(ex).properties({
+            suidRef:pattern
+        }); 
     });
 })

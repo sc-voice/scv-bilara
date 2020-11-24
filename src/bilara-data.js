@@ -531,15 +531,20 @@
         async loadMLDocLegacy(suidRef) { try {
             let suidParts = suidRef.split('/');
             let sutta = await this.scApi.loadSutta.apply(this.scApi, suidParts);
+            if (!sutta) {
+                let e = new Error(`loadMLDocLegacy() not found:${suidRef}`);
+                e.suidRef = suidRef;
+                throw e;
+            }
             let {
                 lang,
                 author_uid,
                 sutta_uid,
                 segmented,
+                segments,
                 suttaplex,
             } = sutta;
             let segMap = {};
-            let segments = sutta.segments;
             segments.forEach(seg=>{
                 segMap[seg.scid] = seg;
             });
