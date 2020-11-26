@@ -11,6 +11,7 @@ const {
     Seeker,
     SegDoc,
     SuttaCentralId,
+    Verse,
 
 } = require('../../index');
 const LOCAL = path.join(__dirname, '../../local');
@@ -399,51 +400,18 @@ function outVerse(res, pattern, n=0) {
     let showPli = n===2 && searchLang===lang || 
         n>2 && searchLang!=='pli' && lang!=='pli';
     let showEn = n>2 && searchLang!=='en' && lang!=='en';
+    let verse = new Verse({
+        linebreak,
+        lang,
+        searchLang,
+        showPli,
+        showEn,
+    });
     res.mlDocs.forEach(mld => {
         var suid = mld.suid;
         let segments = mld.segments();
-        let allMatched = segments.reduce((s,a)=>s.matched ? a : false, true);
-        let matched = !allMatched;
-        let verse = [];
-        let printVerseLang = (verse, lang, author_uid) => {
-            let scid = verse[0].scid;
-            let linkLang = lang === 'pli' ? undefined : lang;
-            let author = lang == 'pli' 
-                ? undefined 
-                : author_uid;
-            let scLink = suttacentralLink(scid, linkLang, author);
-            let prefix = `>${scLink}:`;
-            let text = verse.reduce((a,seg)=>{
-                if (seg[lang]) {
-                    a +=  linebreak;
-                    a += seg[lang].trim();
-                }
-                return a;
-            }, prefix);
-            console.log(`${text}`);
-        }
-        let printVerse = (verse, author_uid) => {
-            if (!verse.length) {
-                return;
-            }
-            showPli && printVerseLang(verse, 'pli', undefined);
-            showEn && printVerseLang(verse, 'en', 'sujato');
-            printVerseLang(verse, mld.lang, author_uid);
-        };
-        segments.forEach((seg,i) => {
-            var scid = seg.scid;
-            if (/\.1$|\.1[^.0-9:]/.test(scid)) {
-                matched && printVerse(verse, mld.author_uid);
-                verse = [];
-                matched = allMatched;
-            }
-            matched = matched || seg.matched;
-            verse.push(seg);
-            if (i === segments.length && matched) {
-                printVerse(verse, mld.author_uid);
-            }
-
-        });
+        let lines = verse.versify(segments, mld.lang, mld.author_uid);
+        console.log(lines.join('\n'));
     });
 }
 
