@@ -79,52 +79,48 @@
         var mldCopy = new MLDoc(mld);
         should.deepEqual(mldCopy, mld);
     });
-    it("load(...) loads MLDoc", done=>{
-        (async function() { try {
-            var mld = new MLDoc({
-                bilaraPaths: bilaraPaths_an1_1_1,
-            });
-            var res = await mld.load(BILARA_PATH);
-            should(res).equal(mld);
-            var segMap = mld.segMap;
-            should(segMap['an1.9:1.2']).properties({
+    it("load(...) loads MLDoc", async()=>{
+        var mld = new MLDoc({
+            bilaraPaths: bilaraPaths_an1_1_1,
+        });
+        var res = await mld.load(BILARA_PATH);
+        should(res).equal(mld);
+        should(mld.title).equal('Nummerierte Lehrreden 1\n1. Bilder usw.\n1');
+        var segMap = mld.segMap;
+        should(segMap['an1.9:1.2']).properties({
 pli: 'Purisaraso, bhikkhave, itthiyā cittaṃ pariyādāya tiṭṭhatī”ti. ',
 en: 'The taste of a man occupies a woman’s mind.” ', 
 de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
-            });
-            should(mld.suid).equal('an1.1-10');
-            done();
-        } catch(e) { done(e); } })();
+        });
+        should(mld.suid).equal('an1.1-10');
     });
-    it("load(...) loads markup", done=>{
-        (async function() { try {
-            var mld = new MLDoc({
-                bilaraPaths: bilaraPaths_sn1_1,
-            });
-            var res = await mld.load();
-            should(res).equal(mld);
-            var segMap = mld.segMap;
-            should.deepEqual(segMap['sn1.1:0.1'], {
+    it("load(...) loads markup", async()=>{
+        var mld = new MLDoc({
+            bilaraPaths: bilaraPaths_sn1_1,
+        });
+        var res = await mld.load();
+        should(res).equal(mld);
+        var segMap = mld.segMap;
+        should.deepEqual(segMap['sn1.1:0.1'], {
 scid: 'sn1.1:0.1',
 pli: 'Saṁyutta Nikāya 1 ',
 en: 'Linked Discourses 1 ',
 de: 'Verbundene Lehrreden 1',
 html: '<article id=\'sn1.1\'><header><ul><li class=\'division\'>{}</li>',
-            });
+        });
 
-            should(segMap["sn1.1:1.1"].reference).equal([
-                "bj13.2, cck15.1, csp1ed12.1, csp2ed12.1, dr15.1",
-                "ms12S1_2, msdiv1, ndp12.3, pts-vp-pli1ed1.1",
-                "pts-vp-pli2ed1.1, pts-vp-pli2ed1.2",
-                "sc1, sya15.1, sya15.2, vri23.1",
-                "vri23.2",
-            ].join(", "));
-            should(segMap["sn1.1:1.8"].variant)
-                .equal("nibbuyhāmi → nivuyhāmi (sya-all, km, mr)");
-            should(segMap["sn1.1:1.5"].comment).match(/BB has /);
-            should(mld.suid).equal('sn1.1');
-            done();
-        } catch(e) { done(e); } })();
+        should(segMap["sn1.1:1.1"].reference).equal([
+            "bj13.2, cck15.1, csp1ed12.1, csp2ed12.1, dr15.1",
+            "ms12S1_2, msdiv1, ndp12.3, pts-vp-pli1ed1.1",
+            "pts-vp-pli2ed1.1, pts-vp-pli2ed1.2",
+            "sc1, sya15.1, sya15.2, vri23.1",
+            "vri23.2",
+        ].join(", "));
+        should(segMap["sn1.1:1.8"].variant)
+            .equal("nibbuyhāmi → nivuyhāmi (sya-all, km, mr)");
+        should(segMap["sn1.1:1.5"].comment).match(/BB has /);
+        should(mld.suid).equal('sn1.1');
+        should(mld.title).equal('Verbundene Lehrreden 1\n1. Ein Schilfrohr\n1. Die Flut überqueren');
     });
     it("titles(...) => segment 0 text", done=>{
         (async function() { try {

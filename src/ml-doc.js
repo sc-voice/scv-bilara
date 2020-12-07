@@ -29,6 +29,7 @@
             this.hyphen = opts.hyphen || "\u00ad";
             this.maxWord = opts.maxWord || 30;
             this.minWord = opts.minWord || 5;
+            this.title = opts.title;
             this.segsMatched = opts.segsMatched;
             this.langSegs = opts.langSegs;
             Object.defineProperty(this, "unicode", {
@@ -144,57 +145,55 @@
                : [lang];
         }
 
-        load(root=BILARA_PATH) {
+        async load(root=BILARA_PATH) { try {
             var {
                 segMap,
                 bilaraPaths,
             } = this;
-            var that = this;
-            return new Promise((resolve, reject) => {
-                (async function() { try {
-                    // initiate file reads
-                    that.langSegs = {};
-                    var p_bp = [];
-                    for (var ip = 0; ip < bilaraPaths.length; ip++) {
-                        var parts = BilaraPath.pathParts(bilaraPaths[ip]);
-                        var bp = path.join(root, parts.bilaraPath);
-                        var fh = await fs.promises.open(bp);
-                        var isTrans = parts.type === 'translation';
-                        var isRoot = parts.type === 'root';
-                        var lang = isTrans || isRoot
-                            ? parts.lang
-                            : parts.type;
-                        if (fh) {
-                            var bpe = {
-                                fh,
-                                p_read: fh.readFile(),
-                                lang,
-                            };
-                            p_bp.push(bpe);
-                        } else {
-                            this.log(`MLDoc.load() path not found:${bp}`);
-                        }
-                    }
+            this.langSegs = {};
+            var p_bp = [];
+            for (var ip = 0; ip < bilaraPaths.length; ip++) {
+                var parts = BilaraPath.pathParts(bilaraPaths[ip]);
+                var bp = path.join(root, parts.bilaraPath);
+                var fh = await fs.promises.open(bp);
+                var isTrans = parts.type === 'translation';
+                var isRoot = parts.type === 'root';
+                var lang = isTrans || isRoot
+                    ? parts.lang
+                    : parts.type;
+                if (fh) {
+                    var bpe = {
+                        fh,
+                        p_read: fh.readFile(),
+                        lang,
+                    };
+                    p_bp.push(bpe);
+                } else {
+                    this.log(`MLDoc.load() path not found:${bp}`);
+                }
+            }
 
-                    // assemble content
-                    for (var ip = 0; ip < p_bp.length; ip++) {
-                        var { fh, p_read, lang, } = p_bp[ip];
-                        var strings = JSON.parse(await p_read);
-                        var keys = Object.keys(strings);
-                        that.langSegs[lang] = keys.length;
-                        keys.forEach(k => {
-                            var m = (segMap[k] = segMap[k] || {
-                                scid: k,
-                            });
-                            m[lang] = strings[k];
-                        });
-                        fh.close();
-                    }
+            // assemble content
+            for (var ip = 0; ip < p_bp.length; ip++) {
+                var { fh, p_read, lang, } = p_bp[ip];
+                var strings = JSON.parse(await p_read);
+                var keys = Object.keys(strings);
+                this.langSegs[lang] = keys.length;
+                keys.forEach(k => {
+                    var m = (segMap[k] = segMap[k] || {
+                        scid: k,
+                    });
+                    m[lang] = strings[k];
+                });
+                fh.close();
+            }
+            this.title = this.titles().join('\n');
 
-                    resolve(that);
-                } catch(e) {reject(e);} })();
-            });
-        }
+            return this;
+        } catch(e) {
+            this.warn(`load()`, e.message);
+            throw e;
+        }}
 
         segments() {
             return this.scids().map(scid => Object.assign({

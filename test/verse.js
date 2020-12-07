@@ -54,7 +54,7 @@
         de: "de 9",
     }];
 
-    it("TESTTESTdefault ctor", ()=>{
+    it("default ctor", ()=>{
         var verse = new Verse();
         should(verse).properties({
             lang: 'en',
@@ -62,7 +62,7 @@
             linebreak: '<br/>',
         });
     });
-    it("TESTTESTcustom ctor", ()=>{
+    it("custom ctor", ()=>{
         let linkBase = 'https://staging.suttacentral.net';
         let linebreak = '  \n';
         let lang = 'de';
@@ -80,7 +80,7 @@
         var verse = new Verse(opts);
         should(verse).properties(opts);
     });
-    it("TESTTESTsuttacentralLink(...)", ()=>{
+    it("suttacentralLink(...)", ()=>{
         let linkBase = 'https://test';
         let verse = new Verse({
             linkBase,
@@ -125,7 +125,7 @@
         should(res[0]).equal(`${linkText}1.1](${linkBase}):${linebreak}${text}`);
         should(res.length).equal(1);
     });
-    it("TESTTESTversify(...) => Deutsch, allMatched", ()=>{
+    it("versify(...) => Deutsch, allMatched", ()=>{
         let lang = 'de';
         let verse = new Verse({lang});
         let linkText = '>[Thag1.2:';
@@ -138,7 +138,7 @@
         should(res[1]).equal(`${linkText}1.1](${linkBase}):${linebreak}${text}`);
         should(res.length).equal(2);
     });
-    it("TESTTESTversify(...) => Deutsch, allMatched", ()=>{
+    it("versify(...) => Deutsch, allMatched", ()=>{
         let lang = 'de';
         let showPli = true;
         let showEn = true;
