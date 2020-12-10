@@ -5,9 +5,9 @@ enthaltsam
 enthaltsamkeit
 fingerschippen
 grausam
-Lotusteich
-Lotusteiche
-Lotusteichen
-Lotusteichs
+lotusteich
+lotusteiche
+lotusteichen
+lotusteichs
 makel
 methodisch
