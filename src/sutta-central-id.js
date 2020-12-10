@@ -1,13 +1,5 @@
-
 (function(exports) {
-    const fs = require('fs');
-    const path = require('path');
     const BilaraPath = require("./bilara-path");
-
-    const SRC_PATH = path.join(__dirname, '..', '..', 'src', 'node');
-    const SUTTAIDS_PATH = path.join(SRC_PATH, 'sutta-ids.json');
-
-    var suttaIds;
 
     class SuttaCentralId { 
         constructor(scid=null) {
@@ -15,6 +7,10 @@
                 throw new Error(`required scid:${scid}`);
             }
             this.scid = scid;
+        }
+
+        static basename(fp) {
+            return fp.split('/').pop();
         }
 
         static match(scid, pat) {
@@ -146,8 +142,8 @@
         }
 
         static compareHigh(a,b) {
-            var abase = path.basename(a);
-            var bbase = path.basename(b);
+            var abase = SuttaCentralId.basename(a);
+            var bbase = SuttaCentralId.basename(b);
             var aprefix = abase.substring(0,abase.search(/[0-9]/));
             var bprefix = bbase.substring(0,bbase.search(/[0-9]/));
             var cmp = aprefix.localeCompare(bprefix);
@@ -168,8 +164,8 @@
         }
 
         static compareLow(a,b) {
-            var abase = path.basename(a);
-            var bbase = path.basename(b);
+            var abase = SuttaCentralId.basename(a);
+            var bbase = SuttaCentralId.basename(b);
             var aprefix = abase.substring(0,abase.search(/[0-9]/));
             var bprefix = bbase.substring(0,bbase.search(/[0-9]/));
             var cmp = aprefix.localeCompare(bprefix);
