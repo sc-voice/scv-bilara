@@ -4,6 +4,7 @@ auge
 enthaltsam
 enthaltsamkeit
 fingerschippen
+freude
 Goldschmied
 grausam
 lotusteich
@@ -12,3 +13,4 @@ lotusteichen
 lotusteichs
 makel
 methodisch
+traurigkeit
