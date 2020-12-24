@@ -39,7 +39,7 @@
     var SUJATO = 'sujato/sutta';
     var BRAHMALI = 'brahmali/vinaya';
 
-    it(" default ctor", () => {
+    it("default ctor", () => {
         const LOCAL = path.join(__dirname, '..', 'local');
         var bdDefault = new BilaraData(); 
         should(bdDefault).instanceOf(BilaraData);
@@ -51,7 +51,7 @@
         });
         should(bdDefault.logger).equal(logger);
     });
-    it("initialize(...) must be called", async()=>{
+    it("TESTTESTinitialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         should(newbd.initialized).equal(false);
         should.throws(() => {
@@ -71,7 +71,7 @@
         ]);
         should.deepEqual(bd.examples.de.slice(0,2), [
             `aber nicht zum eigenen`,
-            `abnehmend`,
+            'Abfälle',
         ]);
     });
     it("initialize(...) must be called", async()=>{
@@ -871,7 +871,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("initialize() waits for indexLock", async()=>{ try {
+    it("TESTTESTinitialize() waits for indexLock", async()=>{ try {
         let bd = new BilaraData({branch:'unpublished'});
 
         // create index.lock

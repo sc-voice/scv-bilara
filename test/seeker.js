@@ -1300,7 +1300,7 @@
         delete data.elapsed;
         should.deepEqual(data2, data);
     });
-    it("isExample", async()=>{
+    it("TESTTESTisExample", async()=>{
         var skr = await new Seeker({
             lang: 'en', // English default
         }).initialize();
@@ -1308,9 +1308,11 @@
         should(skr.isExample('ROOT OF SUFFERING')).equal(true);
         should(skr.isExample('\\bROOT OF SUFFERING')).equal(true);
         should(skr.isExample('\\bROOT OF SUFFERING\\b')).equal(true);
-        should(skr.isExample('root suffering')).equal(false);
         should(skr.isExample('Wurzel des Leidens')).equal(true);
         should(skr.isExample('wurzel des leidens')).equal(true);
+
+        // Ordered keywords
+        should(skr.isExample('root suffering')).equal(true);
     });
     it('find(...) => "dn7/de"', async()=>{
         let bilaraData = new BilaraData();
@@ -1387,6 +1389,16 @@
         }
         should(ex).properties({
             suidRef:pattern
+        }); 
+    });
+    it("TESTTESTfind(...) handles an1.1-10/jpn", async()=>{
+        var skr = await new Seeker().initialize();
+        var pattern = 'an1.1-10/jpn';
+        var ex = undefined;
+        var res = await skr.find({ pattern, matchHighlight: false, });
+        should(res).properties({
+            pattern,
+            suttaRefs: [],
         }); 
     });
 })
