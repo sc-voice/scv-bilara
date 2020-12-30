@@ -49,7 +49,7 @@
             initialized: false,
         });
     });
-    it("pubPaths() => published bilara paths", async()=>{
+    it("TESTTESTpubPaths() => published bilara paths", async()=>{
         var pub = await pubTest.initialize(); 
         should.deepEqual(pub.pubPaths().sort(),[
             `${SARANA}/an`,
@@ -66,6 +66,7 @@
             `${SABBAMITTA}/kn/ud`,
             `${SUJATO}/an`,
             `${SUJATO}/dn`,
+            `${SUJATO}/kn/kp`,
             `${SUJATO}/kn/thag`,
             `${SUJATO}/kn/thig`,
             `${SUJATO}/mn`,

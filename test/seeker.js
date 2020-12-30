@@ -1223,7 +1223,7 @@
             .equal('root/pli/ms/sutta/sn/sn42/sn42.11_root-pli-ms.json');
         should(mld0.score).equal(3.055);
     });
-    it("TESTTESTfind(...) finds Deutsch 'blind'", async()=>{
+    it("find(...) finds Deutsch 'blind'", async()=>{
         var bilaraData = await bd.initialize();
         var skr = await new Seeker({
             bilaraData,
@@ -1275,7 +1275,7 @@
         should(mld0.score).equal(4.087);
         should(data.resultPattern).equal('\\bking pacetana');
     });
-    it("TESTTESTfind(...) is cached", async()=>{
+    it("find(...) is cached", async()=>{
         var skr = await new Seeker({
             lang: 'en', // English default
         }).initialize();
@@ -1300,7 +1300,7 @@
         delete data.elapsed;
         should.deepEqual(data2, data);
     });
-    it("TESTTESTisExample", async()=>{
+    it("isExample", async()=>{
         var skr = await new Seeker({
             lang: 'en', // English default
         }).initialize();
@@ -1391,7 +1391,7 @@
             suidRef:pattern
         }); 
     });
-    it("TESTTESTfind(...) handles an1.1-10/jpn", async()=>{
+    it("find(...) handles an1.1-10/jpn", async()=>{
         var skr = await new Seeker().initialize();
         var pattern = 'an1.1-10/jpn';
         var ex = undefined;
