@@ -3,6 +3,7 @@
     const {
         Pali,
     } = require("../index");
+    this.timeout(5*1000);
 
     it("romanizePattern(pattern) should return the Pali pattern", ()=>{
         should(Pali.romanizePattern("jhana")).equal('jh(a|ā)(n|ṅ|ñ|ṇ)(a|ā)');
@@ -11,56 +12,59 @@
         should(Pali.romanizePattern("nopqrstuvwxyz"))
         .equal('(n|ṅ|ñ|ṇ)opqrs(t|ṭ)(u|ū)vwxyz');
     });
-    it("recognizes Pali words", done=>{
-        this.timeout(5*1000);
-        (async function() { try {
-            paliWords = await Pali.wordSet();
-            should.deepEqual(paliWords.trace('kloster'), {
-                trace: 'klo~',
-                member: false,
-            });
-            should.deepEqual(paliWords.trace('buddha'), {
-                trace: 'buddha',
-                member: true,
-            });
-            should.deepEqual(paliWords.trace('ananda'), {
-                trace: 'ananda',
-                member: true,
-            });
-            should.deepEqual(paliWords.trace('an'), {
-                trace: 'an~', // Anguttara Nikaya English abbreviation
-                member: false,
-            });
-            should.deepEqual(paliWords.trace('mn'), {
-                trace: 'mn~', // Majjhima Nikaya English abbreviation
-                member: false,
-            });
-            should.deepEqual(paliWords.trace('anal'), {
-                trace: 'anal~',
-                member: false,
-            });
-            should.deepEqual(paliWords.trace('analyse'), {
-                trace: 'analy~',
-                member: false,
-            });
-            should.deepEqual(paliWords.trace('analyze'), {
-                trace: 'analy~',
-                member: false,
-            });
-            should.deepEqual(paliWords.trace('analayo'), {
-                trace: 'anala',
-                member: true,
-            });
-            should.deepEqual(paliWords.trace('bhante'), {
-                trace: 'bha',
-                member: true,
-            });
-            should.deepEqual(paliWords.trace('anataph'), {
-                trace: 'anatap',
-                member: true,
-            });
-            done(); 
-        } catch(e) {done(e);} })();
+    it("TESTTESTrecognizes Pali words", async()=>{
+        paliWords = await Pali.wordSet();
+        should.deepEqual(paliWords.trace('ye'), {
+            trace: 'ye',
+            member: true,
+        });
+        should.deepEqual(paliWords.trace('buddha'), {
+            trace: 'buddha',
+            member: true,
+        });
+        should.deepEqual(paliWords.trace('ananda'), {
+            trace: 'ananda',
+            member: true,
+        });
+        should.deepEqual(paliWords.trace('analayo'), {
+            trace: 'anala',
+            member: true,
+        });
+        should.deepEqual(paliWords.trace('bhante'), {
+            trace: 'bha',
+            member: true,
+        });
+        should.deepEqual(paliWords.trace('anataph'), {
+            trace: 'anatap',
+            member: true,
+        });
+    });
+    it("recognizes non-Pali words", async()=>{
+        paliWords = await Pali.wordSet();
+        should.deepEqual(paliWords.trace('kloster'), {
+            trace: 'klo~',
+            member: false,
+        });
+        should.deepEqual(paliWords.trace('an'), {
+            trace: 'an~', // Anguttara Nikaya English abbreviation
+            member: false,
+        });
+        should.deepEqual(paliWords.trace('mn'), {
+            trace: 'mn~', // Majjhima Nikaya English abbreviation
+            member: false,
+        });
+        should.deepEqual(paliWords.trace('anal'), {
+            trace: 'anal~',
+            member: false,
+        });
+        should.deepEqual(paliWords.trace('analyse'), {
+            trace: 'analy~',
+            member: false,
+        });
+        should.deepEqual(paliWords.trace('analyze'), {
+            trace: 'analy~',
+            member: false,
+        });
     });
     it("hyphenate(word) => handles MN142", ()=>{
         var word = [

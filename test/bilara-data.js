@@ -51,7 +51,7 @@
         });
         should(bdDefault.logger).equal(logger);
     });
-    it("TESTTESTinitialize(...) must be called", async()=>{
+    it("initialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         should(newbd.initialized).equal(false);
         should.throws(() => {
@@ -871,7 +871,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTinitialize() waits for indexLock", async()=>{ try {
+    it("initialize() waits for indexLock", async()=>{ try {
         let bd = new BilaraData({branch:'unpublished'});
 
         // create index.lock

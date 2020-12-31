@@ -43,6 +43,10 @@
     });
     it("TESTTESTrecognizes non-English words", async()=>{
         enWords = await English.wordSet();
+        should.deepEqual(enWords.trace('ye'), {
+            trace: 'ye~',
+            member: false,
+        });
         should.deepEqual(enWords.trace('fingerschnippen'), {
             trace: 'fingersc~',
             member: false,
