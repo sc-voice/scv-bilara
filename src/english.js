@@ -22,15 +22,25 @@
             } = opts;
             if (source==='https') {
                 let msElapsed = Date.now() - FWS_ENGLISH.lastFetch;
-                if (FWS_ENGLISH.https == null || msElapsed/1000 > maxAge) {
-                    let url = FWS_URL;
-                    let res = await fetch(FWS_URL);
-                    logger.info(`English.wordSet() fetch`, url);
-                    let json = res.data;
-                    FWS_ENGLISH.https = new FuzzyWordSet(json);
+                if (msElapsed/1000 > maxAge) {
+                    FWS_ENGLISH.https = new Promise((resolve, reject)=>{
+                        (async()=>{ try {
+                            let { data:json }  = await fetch(FWS_URL);
+                            logger.info(`English.wordSet() fetch`, FWS_URL);
+                            FWS_ENGLISH.https = new FuzzyWordSet(json);
+                            resolve(FWS_ENGLISH.https);
+                        } catch (e) {
+                            logger.warn(
+                              `English.wordSet()`,
+                              `fetch ${FWS_URL} => ${e.message}.`,
+                              `Loading fallback English.wordSet from file`,
+                              );
+                            resolve(await English.wordSet({source:'file'}));
+                        }})();
+                    });
                     FWS_ENGLISH.lastFetch = Date.now();
-                }
-                return FWS_ENGLISH.https; 
+                } 
+                return await FWS_ENGLISH.https;
             } else {
                 if (FWS_ENGLISH.file == null) {
                     let fwsPath = path.join(__dirname, 'assets/fws-en.json');

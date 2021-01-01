@@ -1,6 +1,7 @@
 (typeof describe === 'function') && describe("english", function() {
     const should = require("should");
     const Axios = require('axios');
+    const { logger } = require('log-instance');
     const {
         English,
     } = require("../index");
@@ -90,6 +91,7 @@
         });
     });
     it("TESTTESTwordSet(...)=>latest word set", async()=>{
+        logger.logLevel = 'info';
         let longWait = 1000;
         let msStart = Date.now();
         enWords = await English.wordSet();
