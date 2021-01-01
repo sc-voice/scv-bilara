@@ -5,6 +5,7 @@ const { logger } = require('log-instance');
 const {
     BilaraData,
     BilaraPath,
+    English,
     ExecGitMock,
     FuzzyWordSet,
     Pali,
@@ -515,12 +516,14 @@ logger.logLevel = logLevel;
         includeUnpublished,
     }).initialize(sync);
 
+    let enWords = await English.wordSet({source:'file'});
     var skr = await new Seeker({
         matchColor: color,
         maxResults,
         bilaraData,
         readFile,
         logger,
+        enWords,
     }).initialize();
     var matchHighlight = matchBash(color);
     var findOpts = {

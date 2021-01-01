@@ -1,6 +1,4 @@
 (function(exports) {
-    const fs = require('fs');
-    const path = require('path');
     const Unicode = require('./unicode');
 
     const OTHER = '~';

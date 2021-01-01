@@ -1,5 +1,6 @@
 (typeof describe === 'function') && describe("english", function() {
     const should = require("should");
+    const Axios = require('axios');
     const {
         English,
     } = require("../index");
@@ -11,7 +12,7 @@
         .equal('abcdefghijklmnnopqrstuvwxyz');
     });
     it("TESTTESTrecognizes English words", async()=>{
-        enWords = await English.wordSet();
+        enWords = await English.wordSet({source:'file'});
         should.deepEqual(enWords.trace('unbusied'), {
             trace: 'unbusi',
             member: true,
@@ -46,7 +47,7 @@
         });
     });
     it("TESTTESTrecognizes non-English words", async()=>{
-        enWords = await English.wordSet();
+        enWords = await English.wordSet({source:'file'});
         should.deepEqual(enWords.trace('ye'), {
             trace: 'ye~',
             member: false,
@@ -86,6 +87,33 @@
         should.deepEqual(enWords.trace('anataph'), {
             trace: 'anata~',
             member: false,
+        });
+    });
+    it("TESTTESTwordSet(...)=>latest word set", async()=>{
+        let longWait = 1000;
+        let msStart = Date.now();
+        enWords = await English.wordSet();
+        let msElapsed = Date.now() - msStart;
+        should(msElapsed).above(100).below(longWait);
+
+        // cached
+        msStart = Date.now();
+        enWords = await English.wordSet();
+        msElapsed = Date.now() - msStart;
+        should(msElapsed).above(-1).below(2);
+
+        // maxAge
+        let maxAge = 0.05;
+        let fetch = url=>Axios.get(url);
+        await new Promise(r=>setTimeout(()=>r(),100));
+        msStart = Date.now();
+        enWords = await English.wordSet({fetch, maxAge});
+        msElapsed = Date.now() - msStart;
+        should(msElapsed).above(100).below(longWait);
+
+        should.deepEqual(enWords.trace('unbusied'), {
+            trace: 'unbusi',
+            member: true,
         });
     });
 });
