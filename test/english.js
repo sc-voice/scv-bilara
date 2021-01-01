@@ -12,6 +12,10 @@
     });
     it("TESTTESTrecognizes English words", async()=>{
         enWords = await English.wordSet();
+        should.deepEqual(enWords.trace('unbusied'), {
+            trace: 'unbusi',
+            member: true,
+        });
         should.deepEqual(enWords.trace('unburdensome'), {
             trace: 'unburd',
             member: true,
