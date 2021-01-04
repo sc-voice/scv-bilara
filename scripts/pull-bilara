@@ -28,6 +28,11 @@ else
   git checkout --track origin/$BRANCH 
 fi
 
+if [ -e gitlog.txt ]; then
+  echo -e "BILARA\t: cleaning up gitlog.text"
+  rm gitlog.txt
+fi
+
 echo -e "BILARA\t: Refreshing sc-voice/$BRANCH ..." 
 git pull origin 
 iferr echo -e "BILARA\t: git pull origin failed (ERROR)"; exit -1; fi
