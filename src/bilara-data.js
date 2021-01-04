@@ -312,7 +312,7 @@
 
         isSuttaPath(fpath) {
             console.trace(`DEPRECATED: isSuttaPath => isPublishedPath`);
-            return this.isPublishedPath(fpath);
+            return this.publication.isPublishedPath(fpath);
         }
 
         suttaInfo(suttaRef) {
@@ -320,7 +320,7 @@
                 throw new Error('Expected preceding call to initialize()');
             }
             if (suttaRef == null) {
-                throw new Error('suid is required');
+                throw new Error('BilaraData.suttaInfo() suid is required');
             }
             var refParts = suttaRef.split('/');
             var suid = refParts[0];

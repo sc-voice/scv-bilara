@@ -88,7 +88,7 @@
                 throw new Error(`initialize() has not been called`);
             }
             if (!suid) {
-                throw new Error('suid is required');
+                throw new Error('BilaraPathMap.suidPaths() suid is required');
             }
             var suidParts = suid.split('/');
             var key = suidParts[0];
@@ -121,7 +121,7 @@
 
         suidPath(suid) {
             if (!suid) {
-                throw new Error('suid is required');
+                throw new Error('BilaraPathMap.suidPath() suid is required');
             }
             var pathInfo = this.suidPaths(suid);
             var suidParts = suid.split('/');

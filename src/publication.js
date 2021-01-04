@@ -158,7 +158,7 @@
                 pubInfoMap,
             } = this;
             if (suid == null) {
-                throw new Error(`suid is required`);
+                throw new Error(`Publication.pubInfo() suid is required`);
             }
             var suidParts = suid.split('/');
             var suidFilter = suidParts.length > 1 

@@ -957,11 +957,12 @@
             author:"sabbamitta",
         })).equal(true); 
     });
-    it("suttaIds() => [ suid ]", async()=>{
+    it("TESTTESTsuttaIds() => [ suid ]", async()=>{
         await bd.initialize();
         let suids = bd.suttaIds;
 
         should(suids.length).above(6180);
+        should(suids.filter(suid=>/iti/ui.test(suid)).length).equal(112);
         should.deepEqual(suids.slice(0,5), [
             "an1.1-10",
             "an1.11-20",
