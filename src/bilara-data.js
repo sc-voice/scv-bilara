@@ -134,7 +134,7 @@
             var EXPECTED_VERSION = 1
             var purge = false;
             if (version.major < EXPECTED_VERSION) {
-                this.info(`Expected bilara-data version `+
+                this.warn(`Expected bilara-data version `+
                     `actual:${version.major} `+
                     `expected:${EXPECTED_VERSION} `+
                     `(re-cloning repository...)`);
@@ -145,8 +145,13 @@
                 initializing: true,
             });
             if (this.branch) {
-                let res = await this.execGit.branch(this.branch);
-                this.info(`initialize: ${res.stdout} ${res.stderr}`);
+                try {
+                    let res = await this.execGit.branch(this.branch);
+                    this.info(`initialize() ${res.stdout} ${res.stderr}`);
+                } catch (e) {
+                    this.warn(`initialize() ${this.branch} failed:`, e.message);
+                    throw e;
+                }
             }
             await this.publication.initialize();
             await this.scApi.initialize();
@@ -275,7 +280,7 @@
                 var execOpts = {
                     cwd: Files.LOCAL_DIR,
                 };
-                this.info(`Purging repository: ${cmd}`);
+                this.warn(`Purging repository: ${cmd}`);
                 var res = execSync(cmd, execOpts).toString();
             } else {
                 this.info(`Updating bilara-data`);

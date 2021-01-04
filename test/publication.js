@@ -66,6 +66,8 @@
             `${SABBAMITTA}/kn/ud`,
             `${SUJATO}/an`,
             `${SUJATO}/dn`,
+            `${SUJATO}/kn/dhp`,
+            `${SUJATO}/kn/iti`,
             `${SUJATO}/kn/kp`,
             `${SUJATO}/kn/thag`,
             `${SUJATO}/kn/thig`,
@@ -172,7 +174,7 @@
             `${BRAHMALI}/pli-tv-kd/pli-tv-kd6_translation-en-brahmali.json:1`))
             .equal(false);
         should(pub.isPublishedPath('iti42/de/sabbamitta')).equal(false);
-        should(pub.isPublishedPath('iti42/en/sujato')).equal(false);
+        should(pub.isPublishedPath('iti42/en/sujato')).equal(true);
         should(pub.isPublishedPath('nonsense/en/nobody'))
             .equal(false);
         should(pub.isPublishedPath('pli-tv-bu-vb-pj1/en/brahmali'))
@@ -189,7 +191,7 @@
             .equal(true);
         should(pub.isPublishedPath(
             TRANSPATH('en', 'sujato', `kn/dhp/dhp21-32`)))
-            .equal(false);
+            .equal(true);
         should(pub.isPublishedPath(
             TRANSPATH('de', 'sabbamitta', `kn/thig/thig3.8`)))
             .equal(true);

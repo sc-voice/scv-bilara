@@ -55,6 +55,9 @@ DESCRIPTION
     --gitMock 
         Ignore all git operations. This option is for containers with fixed content.
 
+    -gb BRANCH, --gitBranch BRANCH
+        Choose git branch for bilara-data. Default is "unpublished".
+
     -l, --lang ISO_LANG_2
         Specify ISO 2-letter language code for primary translation language.
         Default is "en" for English.
@@ -149,7 +152,7 @@ DESCRIPTION
         Fetch the latest bilara-data
 
     -up, --unpublished
-        Search unpublished documents
+        Search unpublished documents in current branch
 
     -tc:CATEGORIES
         Restrict searches to listed categories. For example, "-tc:bi,pj"
@@ -175,6 +178,7 @@ var sync = undefined;
 var execGit = undefined;
 var groupBy = 'line';
 var linebreak = ' ';
+var branch = 'unpublished';
 
 //var searchLang;
 
@@ -198,6 +202,8 @@ for (var i = 2; i < nargs; i++) {
         showMatchesOnly = filter === 'pattern';
     } else if (arg === '-sy' || arg === '--sync') {
         sync = true;
+    } else if (arg === '-gb' || arg === '--gitBranch') {
+        branch = process.argv[++i];
     } else if (arg === '-nm' || arg === '--no-memo') {
         readFile  = false;
     } else if (arg === '-c' || arg === '--color') {
@@ -513,6 +519,7 @@ logger.logLevel = logLevel;
 (async function() { try {
     var bilaraData = await new BilaraData({
         execGit,
+        branch,
         includeUnpublished,
     }).initialize(sync);
 

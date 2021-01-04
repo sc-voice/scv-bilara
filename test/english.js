@@ -91,7 +91,7 @@
         });
     });
     it("TESTTESTwordSet(...)=>latest word set", async()=>{
-        logger.logLevel = 'info';
+        //logger.logLevel = 'info';
         let longWait = 1000;
         let msStart = Date.now();
         enWords = await English.wordSet();

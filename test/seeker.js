@@ -893,7 +893,7 @@
             minLang: 2,
             showMatchesOnly: false,
         });
-        should(res.suttaRefs.length).equal(15);
+        should(res.suttaRefs.length).equal(17);
     });
     it("find(...) => finds keywords", async()=>{
         var maxDoc = 3;
@@ -1330,7 +1330,7 @@
         should(res.lang).equal('de');
         should(mld0.sutta_uid).equal('dn7');
     });
-    it('find(...) => soṇasiṅgālā', async()=>{
+    it('TESTTESTfind(...) => soṇasiṅgālā', async()=>{
         let bilaraData = new BilaraData();
         let skr = await new Seeker({
             bilaraData,
@@ -1341,16 +1341,18 @@
         });
         should(res.lang).equal('en');
         should.deepEqual(res.bilaraPaths,[
-              //"root/pli/ms/sutta/kn/iti/vagga5/iti42_root-pli-ms.json",
-              //`${en_suj}kn/iti/vagga5/iti42_translation-en-sujato.json`, 
+              "root/pli/ms/sutta/kn/iti/vagga5/iti42_root-pli-ms.json",
+              `${en_suj}kn/iti/vagga5/iti42_translation-en-sujato.json`, 
               "root/pli/ms/sutta/dn/dn26_root-pli-ms.json",
               "translation/en/sujato/sutta/dn/dn26_translation-en-sujato.json",
               "root/pli/ms/sutta/an/an2/an2.1-10_root-pli-ms.json",
               "translation/en/sujato/sutta/an/an2/an2.1-10_translation-en-sujato.json",
         ]);
-        let mld0 = res.mlDocs[0];
+        let [ mld0, mld1 ]  = res.mlDocs;
         should(mld0.author_uid).equal('sujato');
-        should(mld0.suid).equal('an2.1-10');
+        should(mld0.suid).equal('iti42');
+        should(mld1.author_uid).equal('sujato');
+        should(mld1.suid).equal('an2.1-10');
     });
     it('find(...) => nun', async()=>{
         let bilaraData = new BilaraData();
