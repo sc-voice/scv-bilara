@@ -1,6 +1,5 @@
-commit 45f6a13d0967532ce1b9a4a129440a0440dadd26
-Merge: 7dd8e6a79b 40560b4b75
-Author: sabbamitta <sabbamittaa@gmail.com>
-Date:   Tue Jan 5 01:07:24 2021 +0100
+commit 3be8039c6d5aeddf6b12d516a97455f2de7d1d7b
+Author: Karl Lew <karl@firepick.org>
+Date:   Tue Jan 5 07:55:22 2021 -0800
 
-    Merge remote-tracking branch 'suttacentral/unpublished' into unpublished
+    gitignore

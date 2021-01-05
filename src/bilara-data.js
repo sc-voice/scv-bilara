@@ -1,6 +1,7 @@
 (function(exports) {
     const fs = require("fs");
     const path = require("path");
+    const Axios = require('axios');
     const json5 = require("json5");
     const {
         readFile,
@@ -30,6 +31,8 @@
     const ROOT_PLI_MS = path.join("root", "pli", "ms");
     const STUBFILESIZE = 10;
     const MAXBUFFER = 10 * 1024 * 1024;
+    const EXAMPLES_URL = 
+        'https://raw.githubusercontent.com/sc-voice/scv-static/main/api/examples.json';
 
     class BilaraData {
         constructor(opts={}) {
@@ -172,19 +175,18 @@
                     `not found:${rootPath}`); 
             }
 
-            this.examples = {};
-            let exPath = path.join(this.root, `.helpers`, `examples`);
-            let exEntries = await fs.promises.readdir(exPath);
-            for (let i = 0; i < exEntries.length; i++) {
-                let entry = exEntries[i];
-                let lang = entry.split('-')[1].split('.')[0];
-                let entryPath = path.join(exPath, entry);
-                let entryBuf = await fs.promises.readFile(entryPath);
-                this.examples[lang] = entryBuf.toString()
-                    .trim().split('\n')
-                    .sort((a,b) => 
-                        a.toLowerCase().localeCompare(b.toLowerCase()));
-            };
+            this.examples = null;
+            let examplesPath = path.join(this.root, '.helpers', 'examples.json');
+            if (sync || !fs.existsSync(examplesPath)) {
+                this.info('loading examples', EXAMPLES_URL);
+                let res = await Axios.get(EXAMPLES_URL);
+                this.examples = res.data;
+                await fs.promises.writeFile(examplesPath, 
+                    JSON.stringify(this.examples, null,2));
+            }
+            if (!this.examples) {
+                this.examples = JSON.parse(await fs.promises.readFile(examplesPath));
+            }
 
             // The following code must be synchronous
             this.initialized = true;
