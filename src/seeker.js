@@ -122,18 +122,18 @@
 
         isExample(pattern) {
             var examples = this.bilaraData.examples;
-            var reExamples = this.reExamples;
-            if (!reExamples) {
+            var reStrict = this.reStrict;
+            if (!reStrict) {
                 let patExamples = Object.keys(examples)
                     .reduce((ak,k)=>{
                         let ae = examples[k].reduce((a,e)=>[...a,e],ak);
                         return ak.concat(ae);
                     }, [])
                     .join("|");
-                this.reExamples = 
-                reExamples = new RegExp(`(\\b)?\(${patExamples}\)(\\b)?`, "iu");
+                this.reStrict = 
+                reStrict = new RegExp(`(\\b)?\(${patExamples}\)(\\b)?`, "iu");
             }
-            return reExamples.test(pattern);
+            return reStrict.test(pattern);
         }
 
         patternLanguage(pattern, lang=this.lang) {

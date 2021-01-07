@@ -1300,10 +1300,11 @@
         delete data.elapsed;
         should.deepEqual(data2, data);
     });
-    it("isExample", async()=>{
+    it("TESTTESTisExample", async()=>{
         var skr = await new Seeker({
             lang: 'en', // English default
         }).initialize();
+        let msStart = Date.now();
         should(skr.isExample('root of suffering')).equal(true);
         should(skr.isExample('ROOT OF SUFFERING')).equal(true);
         should(skr.isExample('\\bROOT OF SUFFERING')).equal(true);
@@ -1312,7 +1313,7 @@
         should(skr.isExample('wurzel des leidens')).equal(true);
 
         // Ordered keywords
-        should(skr.isExample('root suffering')).equal(true);
+        should(skr.isExample('root sufering')).equal(false);
     });
     it('find(...) => "dn7/de"', async()=>{
         let bilaraData = new BilaraData();
@@ -1330,7 +1331,7 @@
         should(res.lang).equal('de');
         should(mld0.sutta_uid).equal('dn7');
     });
-    it('TESTTESTfind(...) => soṇasiṅgālā', async()=>{
+    it('find(...) => soṇasiṅgālā', async()=>{
         let bilaraData = new BilaraData();
         let skr = await new Seeker({
             bilaraData,

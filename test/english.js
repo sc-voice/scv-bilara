@@ -12,7 +12,7 @@
         should(English.romanizePattern("abcdefghijklmnnopqrstuvwxyz"))
         .equal('abcdefghijklmnnopqrstuvwxyz');
     });
-    it("TESTTESTrecognizes English words", async()=>{
+    it("recognizes English words", async()=>{
         enWords = await English.wordSet({source:'file'});
         should.deepEqual(enWords.trace('unbusied'), {
             trace: 'unbusi',
@@ -47,7 +47,7 @@
             member: true,
         });
     });
-    it("TESTTESTrecognizes non-English words", async()=>{
+    it("recognizes non-English words", async()=>{
         enWords = await English.wordSet({source:'file'});
         should.deepEqual(enWords.trace('ye'), {
             trace: 'ye~',
@@ -90,7 +90,7 @@
             member: false,
         });
     });
-    it("TESTTESTwordSet(...)=>latest word set", async()=>{
+    it("wordSet(...)=>latest word set", async()=>{
         //logger.logLevel = 'info';
         let longWait = 1000;
         let msStart = Date.now();

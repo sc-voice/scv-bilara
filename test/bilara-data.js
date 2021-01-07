@@ -51,7 +51,7 @@
         });
         should(bdDefault.logger).equal(logger);
     });
-    it("initialize(...) must be called", async()=>{
+    it("TESTTESTinitialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         should(newbd.initialized).equal(false);
         should.throws(() => {
@@ -66,8 +66,9 @@
             'ashinsarana', 'ms', 'sabbamitta', 'sujato', 
         ]);
         should.deepEqual(bd.examples.en.slice(0,2), [
+            `acquire faith`,
             `a beryl gem that was naturally beautiful`,
-            `a condition for old age and death`,
+            //`a condition for old age and death`,
         ]);
         should.deepEqual(bd.examples.de.slice(0,2), [
             `aber nicht zum eigenen`,
@@ -957,7 +958,7 @@
             author:"sabbamitta",
         })).equal(true); 
     });
-    it("TESTTESTsuttaIds() => [ suid ]", async()=>{
+    it("suttaIds() => [ suid ]", async()=>{
         await bd.initialize();
         let suids = bd.suttaIds;
 

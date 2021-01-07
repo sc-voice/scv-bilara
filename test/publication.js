@@ -71,6 +71,7 @@
             `${SUJATO}/kn/kp`,
             `${SUJATO}/kn/thag`,
             `${SUJATO}/kn/thig`,
+            `${SUJATO}/kn/ud`,
             `${SUJATO}/mn`,
             `${SUJATO}/sn`,
         ].sort());
