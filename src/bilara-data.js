@@ -176,7 +176,7 @@
             }
 
             this.examples = null;
-            let examplesPath = path.join(this.root, '.helpers', 'examples.json');
+            let examplesPath = path.join(Files.LOCAL_DIR, 'examples.json');
             if (sync || !fs.existsSync(examplesPath)) {
                 this.info('loading examples', EXAMPLES_URL);
                 let res = await Axios.get(EXAMPLES_URL);
