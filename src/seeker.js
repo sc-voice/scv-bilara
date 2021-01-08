@@ -315,7 +315,7 @@
                 `-g '!ka'`,   // exclude Chinese
                 `-g '!sa'`,   // exclude Chinese
                 `-g '!ma'`,   // exclude Chinese
-                `|sort -k 2rn -k 1r -t ':'`,
+                `|sort -k 2rn -k 1rd -t ':'`,
             ].join(' ');
             maxResults && (cmd += `|head -${maxResults}`);
             var pathPrefix = cwd.replace(root, '').replace(/^\/?/, '');
