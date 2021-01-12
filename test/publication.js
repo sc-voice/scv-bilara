@@ -49,7 +49,7 @@
             initialized: false,
         });
     });
-    it("TESTTESTpubPaths() => published bilara paths", async()=>{
+    it("pubPaths() => published bilara paths", async()=>{
         var pub = await pubTest.initialize(); 
         should.deepEqual(pub.pubPaths().sort(),[
             `${SARANA}/an`,

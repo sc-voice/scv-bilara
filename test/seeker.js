@@ -1300,7 +1300,7 @@
         delete data.elapsed;
         should.deepEqual(data2, data);
     });
-    it("TESTTESTisExample", async()=>{
+    it("isExample", async()=>{
         var skr = await new Seeker({
             lang: 'en', // English default
         }).initialize();
