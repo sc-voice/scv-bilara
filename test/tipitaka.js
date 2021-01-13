@@ -6,38 +6,79 @@
     const {
         Tipitaka,
     } = require("../index");
-
+    const TESTSUPER_PLI = {
+        "super-name:3.dn": "Dīghanikāya",
+        "super-name:7.mn": "Majjhimanikāya",
+        "super-name:11.sn": "Saṁyuttanikāya",
+        "super-name:17.an": "Aṅguttaranikāya",
+        "super-name:22.kn": "",
+        "super-name:30.thag": "Theragāthā",
+        "super-name:31.thig": "Therīgāthā",
+    }
+    const TESTSUPER_EN = {
+        "super-name:3.dn": "Long Discourses Collection",
+        "super-name:7.mn": "Middle Discourses Collection",
+        "super-name:11.sn": "Linked Discourses Collection",
+        "super-name:17.an": "Numbered Discourses Collection",
+        "super-name:30.thag": "Verses of the Senior Monks",
+        "super-name:31.thig": "Verses of the Senior Nuns",
+    }
+    const TEST_MN_PLI = {
+        "mn-name:1.mn-mulapannasa": "Mūlapaṇṇāsa",
+        "mn-name:2.mn-mulapariyayavagga": "Mūlapariyāyavagga",
+        "mn-name:3.mn1": "Mūlapariyāyasutta",
+        "mn-name:57.mn-majjhimapannasa": "Majjhimapaṇṇāsa",
+        "mn-name:58.mn-gahapativagga": "Gahapativagga",
+        "mn-name:59.mn51": "Kandarakasutta",
+        "mn-name:102.mn-brahmanavagga": "Brāhmaṇavagga",
+        "mn-name:103.mn91": "Brahmāyusutta",
+        "mn-name:104.mn92": "Selasutta",
+        "mn-name:113.mn-uparipannasa": "Uparipaṇṇāsa",
+        "mn-name:114.mn-devadahavagga": "Devadahavagga",
+        "mn-name:115.mn101": "Devadahasutta",
+    }
+    const TEST_MN_EN ={
+        "mn-name:1.mn-mulapannasa": "The First Fifty",
+        "mn-name:2.mn-mulapariyayavagga": "The Chapter on the Root of All Things ",
+        "mn-name:3.mn1": "The Root of All Things ",
+        "mn-name:57.mn-majjhimapannasa": "The Middle Fifty",
+        "mn-name:58.mn-gahapativagga": "The Chapter on Householders",
+        "mn-name:59.mn51": "With Kandaraka ",
+        "mn-name:102.mn-brahmanavagga": "The Chapter on Brahmins",
+        "mn-name:113.mn-uparipannasa": "The Final Fifty",
+        "mn-name:114.mn-devadahavagga": "The Chapter Beginning With Devadaha",
+    }
+    const TEST_SN_PLI = {
+        "sn-name:1.sn-sagathavaggasamyutta": "Sagāthāvaggasaṁyutta",
+        "sn-name:2.sn1": "Devatāsaṁyutta",
+        "sn-name:3.sn1-nalavagga": "Naḷavagga",
+        "sn-name:4.sn1.1": "Oghataraṇasutta",
+        "sn-name:5.sn1.2": "Nimokkhasutta",
+        "sn-name:14.sn1-nandanavagga": "Nandanavagga",
+        "sn-name:15.sn1.11": "Nandanasutta",
+        "sn-name:25.sn1-sattivagga": "Sattivagga",
+        "sn-name:92.sn2": "Devaputtasaṁyutta",
+        "sn-name:93.sn2-pathamavagga": "Paṭhamavagga",
+        "sn-name:94.sn2.1": "Paṭhamakassapasutta",
+    };
+    const TEST_SN_EN = {
+        "sn-name:1.sn-sagathavaggasamyutta": 
+            "The Group of Linked Discourses With Verses",
+        "sn-name:2.sn1": "Linked Discourses With Deities",
+        "sn-name:3.sn1-nalavagga": "A Reed ",
+        "sn-name:14.sn1-nandanavagga": "The Garden of Delight ",
+        "sn-name:25.sn1-sattivagga": "A Sword ",
+        "sn-name:92.sn2": "Linked Discourses on Gods",
+        "sn-name:93.sn2-pathamavagga": "Chapter One",
+    };
 
     it("TESTTESTdefault constructor", ()=>{
         let tptk = new Tipitaka();
     });
-    it("TESTTESTaddNames(...) handles MN", ()=>{
-        const PLITEST = {
-            "mn-name:1.mn-mulapannasa": "Mūlapaṇṇāsa",
-            "mn-name:2.mn-mulapariyayavagga": "Mūlapariyāyavagga",
-            "mn-name:3.mn1": "Mūlapariyāyasutta",
-            "mn-name:57.mn-majjhimapannasa": "Majjhimapaṇṇāsa",
-            "mn-name:58.mn-gahapativagga": "Gahapativagga",
-            "mn-name:59.mn51": "Kandarakasutta",
-            "mn-name:102.mn-brahmanavagga": "Brāhmaṇavagga",
-            "mn-name:103.mn91": "Brahmāyusutta",
-            "mn-name:104.mn92": "Selasutta",
-            "mn-name:113.mn-uparipannasa": "Uparipaṇṇāsa",
-            "mn-name:114.mn-devadahavagga": "Devadahavagga",
-            "mn-name:115.mn101": "Devadahasutta",
-        };
+    it("addNames(...) handles MN", ()=>{
+        const PLITEST = TEST_MN_PLI;
         const PLIKEYS = Object.keys(PLITEST);
-        const ENTEST = {
-            "mn-name:1.mn-mulapannasa": "The First Fifty",
-            "mn-name:2.mn-mulapariyayavagga": "The Chapter on the Root of All Things ",
-            "mn-name:3.mn1": "The Root of All Things ",
-            "mn-name:57.mn-majjhimapannasa": "The Middle Fifty",
-            "mn-name:58.mn-gahapativagga": "The Chapter on Householders",
-            "mn-name:59.mn51": "With Kandaraka ",
-            "mn-name:102.mn-brahmanavagga": "The Chapter on Brahmins",
-            "mn-name:113.mn-uparipannasa": "The Final Fifty",
-            "mn-name:114.mn-devadahavagga": "The Chapter Beginning With Devadaha",
-        };
+        const ENTEST = TEST_MN_EN;
         let tptk = new Tipitaka();
         let entryMap = tptk.addNames({bdJson:PLITEST,lang:'pli'});
         should(entryMap[PLIKEYS[0]].id).equal(PLIKEYS[0]);
@@ -105,30 +146,10 @@
             }
         });
     });
-    it("addNames(...) handles SN", ()=>{
-        const PLITEST = {
-            "sn-name:1.sn-sagathavaggasamyutta": "Sagāthāvaggasaṁyutta",
-            "sn-name:2.sn1": "Devatāsaṁyutta",
-            "sn-name:3.sn1-nalavagga": "Naḷavagga",
-            "sn-name:4.sn1.1": "Oghataraṇasutta",
-            "sn-name:5.sn1.2": "Nimokkhasutta",
-            "sn-name:14.sn1-nandanavagga": "Nandanavagga",
-            "sn-name:15.sn1.11": "Nandanasutta",
-            "sn-name:92.sn2": "Devaputtasaṁyutta",
-            "sn-name:93.sn2-pathamavagga": "Paṭhamavagga",
-            "sn-name:94.sn2.1": "Paṭhamakassapasutta",
-        };
+    it("TESTTESTaddNames(...) handles SN", ()=>{
+        const PLITEST = TEST_SN_PLI;
         const PLIKEYS = Object.keys(PLITEST);
-        const ENTEST = {
-            "sn-name:1.sn-sagathavaggasamyutta": 
-                "The Group of Linked Discourses With Verses",
-            "sn-name:2.sn1": "Linked Discourses With Deities",
-            "sn-name:3.sn1-nalavagga": "A Reed ",
-            "sn-name:14.sn1-nandanavagga": "The Garden of Delight ",
-            "sn-name:25.sn1-sattivagga": "A Sword ",
-            "sn-name:92.sn2": "Linked Discourses on Gods",
-            "sn-name:93.sn2-pathamavagga": "Chapter One",
-        };
+        const ENTEST = TEST_SN_EN;;
         let tptk = new Tipitaka();
         let entryMap = tptk.addNames({bdJson:PLITEST,lang:'pli'});
         //console.log(JSON.stringify(entryMap, null,2));
@@ -174,5 +195,7 @@
                 });
             }
         });
+    });
+    it("TESTTESTaddSuper(...) adds forest roots", ()=>{
     });
 })

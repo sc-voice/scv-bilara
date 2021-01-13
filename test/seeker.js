@@ -119,7 +119,7 @@
             `${en_suj}an/an10/an10.46_translation-en-sujato.json:1`
         ]);
     });
-    it("grep(...) finds de things", async()=>{
+    it("TESTTESTgrep(...) finds de things", async()=>{
         var skr = new Seeker(SEEKEROPTS);
         var maxResults = 5;
 
@@ -132,8 +132,8 @@
         should.deepEqual(res.slice(0,4), [
             `${de_sab}dn/dn33_translation-de-sabbamitta.json:39`,
             `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:21`,
+            `${de_sab}dn/dn34_translation-de-sabbamitta.json:19`,
             `${de_sab}an/an6/an6.30_translation-de-sabbamitta.json:15`,
-            `${de_sab}an/an4/an4.163_translation-de-sabbamitta.json:15`,
         ]);
         should(res.length).below(6);
 
@@ -526,14 +526,14 @@
             lines,
         });
     });
-    it("phraseSearch(...) finds Deutsch results", async()=>{
+    it("TESTTESTphraseSearch(...) finds Deutsch results", async()=>{
         var linesWurzel = [
             `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
         ];
         var linesUber = [
           `${de_sab}dn/dn33_translation-de-sabbamitta.json:38`,
           `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:21`,
-          `${de_sab}an/an6/an6.30_translation-de-sabbamitta.json:15`,
+          `${de_sab}dn/dn34_translation-de-sabbamitta.json:19`,
         ];
         var lang = 'de';
         var maxResults = 10;
@@ -822,7 +822,7 @@
             pli: "Majjhima Nikāya 1 ",
         });
     });
-    it("find(...) => finds ubung", async()=>{
+    it("TESTTESTfind(...) => finds ubung", async()=>{
         var maxDoc = 3;
         var skr = await new Seeker({
             maxDoc,
@@ -841,12 +841,12 @@
         should.deepEqual(res.suttaRefs.slice(0,3), [
             'dn33/de/sabbamitta',
             'an4.198/de/sabbamitta',
-            'an6.30/de/sabbamitta',
+            'dn34/de/sabbamitta',
         ]);
         // We only care about three documents so that 
         // is what we should get
         should.deepEqual(res.mlDocs.map(mld=>mld.score), [
-            38.033, 21.189, 15.349,
+            38.033, 21.189, 19.021, 
         ]);
     });
     it("find(...) => finds searchLang phrase", async()=>{
