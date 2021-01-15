@@ -17,6 +17,8 @@
                 path.join(Files.LOCAL_DIR, "bilara-data");
             let rootDir = path.dirname(this.root);
             let rootName = this.root.replace(rootDir,'').substring(1);
+            this.rootLang = opts.rootLang || 'pli';
+            this.rootAuthor = opts.rootAuthor || 'ms';
             this.suidMapFile = path.join(rootDir, `suid-map-${rootName}.json`);
             this.initialized = false;
         }
@@ -49,6 +51,57 @@
             this.warn(`initialize()`, e.message);
             throw e;
         }}
+
+        async tipitakaPaths(opts={}) { try {
+            var {
+                root,
+                rootLang,
+                rootAuthor,
+            } = this;
+            let { 
+                lang=rootLang,
+                author=rootAuthor,
+            } = opts;
+            var takaPath = path.join(root, 
+                lang===rootLang ? 'root' : 'translation',
+                lang,
+                author,
+                '/',
+            );
+            var readOpts = {withFileTypes:true};
+            var exclude = [
+                '[0-9]',
+                'playground',   // Blake
+            ].join('|');
+            var reExclude = new RegExp(`(${exclude})`,"ui");
+            let pathStack = [];
+            let pathList = [];
+            if (fs.existsSync(takaPath)) {
+                pathStack.push(takaPath);
+            }
+            while (pathStack.length) {
+                let dirPath = pathStack.pop();
+                if (reExclude.test(dirPath)) {
+                    this.info(`_loadPaths() exclude:`, dirPath);
+                    continue;
+                }
+                var dirKids = fs.readdirSync(dirPath, readOpts);
+                let relativePath = dirPath.replace(takaPath, '');
+                relativePath && pathList.push(relativePath);
+                for (var i = 0; i < dirKids.length; i++) {
+                    var e = dirKids[i];
+                    if (e.isDirectory()) {
+                        let kidPath = path.join(dirPath, e.name);
+                        pathStack.push(kidPath);
+                    }
+                }
+            }
+            return pathList.sort();
+        } catch(e) {
+            this.warn(`tipitakaPaths()`, e.message);
+            throw e;
+        }}
+
 
         bilaraPaths(opts={}) {
             if (typeof opts === 'string') {

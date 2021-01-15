@@ -90,9 +90,9 @@
             member: false,
         });
     });
-    it("wordSet(...)=>latest word set", async()=>{
+    it("TESTTESTwordSet(...)=>latest word set", async()=>{
         //logger.logLevel = 'info';
-        let longWait = 1000;
+        let longWait = 1500;
         let msStart = Date.now();
         enWords = await English.wordSet();
         let msElapsed = Date.now() - msStart;

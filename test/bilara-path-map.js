@@ -178,4 +178,39 @@
             'variant/pli/ms',
         ]);
     });
+    it("TESTTESTtipitakaFolders() => root folder paths",async()=>{
+        let bpm = await new BilaraPathMap().initialize();
+        let takaPaths = await bpm.tipitakaPaths();
+        should(takaPaths.filter(p=>/abhidhamma/.test(p)).length).equal(8);
+        should(takaPaths.filter(p=>/sutta/.test(p)).length).equal(26);
+        should(takaPaths.filter(p=>/vinaya/.test(p)).length).equal(17);
+        should.deepEqual(takaPaths.filter(p=>/sutta/.test(p)), [
+            'sutta',
+            'sutta/an',
+            'sutta/dn',
+            'sutta/kn',
+            'sutta/kn/bv',
+            'sutta/kn/cnd',
+            'sutta/kn/cp',
+            'sutta/kn/dhp',
+            'sutta/kn/iti',
+            'sutta/kn/ja',
+            'sutta/kn/kp',
+            'sutta/kn/mil',
+            'sutta/kn/mnd',
+            'sutta/kn/ne',
+            'sutta/kn/pe',
+            'sutta/kn/ps',
+            'sutta/kn/pv',
+            'sutta/kn/snp',
+            'sutta/kn/tha-ap',
+            'sutta/kn/thag',
+            'sutta/kn/thi-ap',
+            'sutta/kn/thig',
+            'sutta/kn/ud',
+            'sutta/kn/vv',
+            'sutta/mn',
+            'sutta/sn',
+        ]);
+    });
 })

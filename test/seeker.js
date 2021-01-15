@@ -119,7 +119,7 @@
             `${en_suj}an/an10/an10.46_translation-en-sujato.json:1`
         ]);
     });
-    it("TESTTESTgrep(...) finds de things", async()=>{
+    it("grep(...) finds de things", async()=>{
         var skr = new Seeker(SEEKEROPTS);
         var maxResults = 5;
 
@@ -526,7 +526,7 @@
             lines,
         });
     });
-    it("TESTTESTphraseSearch(...) finds Deutsch results", async()=>{
+    it("phraseSearch(...) finds Deutsch results", async()=>{
         var linesWurzel = [
             `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
         ];
@@ -822,7 +822,7 @@
             pli: "Majjhima Nikāya 1 ",
         });
     });
-    it("TESTTESTfind(...) => finds ubung", async()=>{
+    it("find(...) => finds ubung", async()=>{
         var maxDoc = 3;
         var skr = await new Seeker({
             maxDoc,

@@ -6,7 +6,7 @@
     const {
         Tipitaka,
     } = require("../index");
-    const TESTSUPER_PLI = {
+    const TEST_SUPER_PLI = {
         "super-name:3.dn": "Dīghanikāya",
         "super-name:7.mn": "Majjhimanikāya",
         "super-name:11.sn": "Saṁyuttanikāya",
@@ -15,7 +15,8 @@
         "super-name:30.thag": "Theragāthā",
         "super-name:31.thig": "Therīgāthā",
     }
-    const TESTSUPER_EN = {
+    const TEST_SUPER_KEYS = Object.keys(TEST_SUPER_PLI);
+    const TEST_SUPER_EN = {
         "super-name:3.dn": "Long Discourses Collection",
         "super-name:7.mn": "Middle Discourses Collection",
         "super-name:11.sn": "Linked Discourses Collection",
@@ -73,55 +74,122 @@
     };
 
     it("TESTTESTdefault constructor", ()=>{
-        let tptk = new Tipitaka();
+        let taka = new Tipitaka();
+        should(taka).properties({
+            rootId: 'tipitaka',
+        });
+        should.deepEqual(taka.entryMap.tipitaka, {
+            id: 'tipitaka',
+            name: {
+                pli: 'Tipitaka',
+            },
+            entries: [ 'abhidhamma', 'sutta', 'vinaya', ],
+        });
+        should.deepEqual(taka.entryMap.thig, {
+            id: 'thig',
+            name: {
+                pli: 'Thig',
+            },
+            parent:'kn',
+            entries: [ ],
+        });
+        should.deepEqual(taka.reStructures, [
+            [ /.*paṇṇāsa$/, /.*vagga$/, /.*sutta$/, ],
+            [ /.*vaggasaṁyutta$/, /.*saṁyutta$/, /.*vagga$/, /.*sutta$/, ],
+            [ /.*/, /.*/ ],
+        ]);
     });
-    it("addNames(...) handles MN", ()=>{
+    it("TESTTESTcustom constructor", ()=>{
+        let entryMap = {
+            "sn-name:1.sn-sagathavaggasamyutta": {
+                id: "sn-name:1.sn-sagathavaggasamyutta",
+                name: {
+                    pli: "Sagāthāvaggasaṁyutta",
+                },
+            },
+        };
+        let reStructures = [
+            [ /.*paṇṇāsa$/, /.*vagga$/, /.*sutta$/ ],
+        ];
+        let taka = new Tipitaka({ entryMap, reStructures, });
+        should(taka).properties({ entryMap, reStructures, });
+    });
+    it("TESTTESTaddNames(...) handles MN", ()=>{
         const PLITEST = TEST_MN_PLI;
         const PLIKEYS = Object.keys(PLITEST);
         const ENTEST = TEST_MN_EN;
-        let tptk = new Tipitaka();
-        let entryMap = tptk.addNames({bdJson:PLITEST,lang:'pli'});
-        should(entryMap[PLIKEYS[0]].id).equal(PLIKEYS[0]);
-        should.deepEqual(entryMap[PLIKEYS[0]].name, { pli: PLITEST[PLIKEYS[0]], });
-        //console.log(JSON.stringify(entryMap, null,2));
-        entryMap = tptk.addNames({bdJson:ENTEST,lang:'en', author:'sujato'});
+        let taka = new Tipitaka();
+        let { entryMap } = taka;
+        let superId = "super-name:7.mn";
+
+        // Add root names first
+        let result = taka.addNames({
+            names:PLITEST,
+            lang:'pli',
+            superId,
+        });
+        should(result).equal(taka);
+        should(taka.entryOfId(PLIKEYS[0]).id).equal(PLIKEYS[0]);
+        should.deepEqual(taka.entryOfId(PLIKEYS[0]).name, { pli: PLITEST[PLIKEYS[0]], });
+
+        // Add other translated names after root names
+        taka.addNames({
+            names:ENTEST,
+            lang:'en', 
+            superId,
+        });
+        should.deepEqual(taka.entryOfId(PLIKEYS[0]).name, { 
+            pli: PLITEST[PLIKEYS[0]], 
+            en: ENTEST[PLIKEYS[0]],
+        });
         //console.log(JSON.stringify(entryMap, null,2));
 
-        should.deepEqual(Object.keys(entryMap[PLIKEYS[1]].entries), [
+        should.deepEqual(taka.entryOfId(superId).entries, [
+            PLIKEYS[0], 
+            PLIKEYS[3], 
+            PLIKEYS[9], 
+        ]);
+        should(taka.entryOfId(PLIKEYS[0])).properties({parent:superId});
+        should.deepEqual(taka.entryOfId(PLIKEYS[0]).entries, [
+            PLIKEYS[1], // 2
+        ]);
+        should(taka.entryOfId(PLIKEYS[1])).properties({parent:PLIKEYS[0]});
+        should.deepEqual(taka.entryOfId(PLIKEYS[1]).entries, [
             PLIKEYS[2], // 3
         ]);
-        should(entryMap[PLIKEYS[2]]).not.properties(['entries']);
-        should.deepEqual(Object.keys(entryMap[PLIKEYS[3]].entries), [
+        should(taka.entryOfId(PLIKEYS[2]).parent).equal(PLIKEYS[1]);
+        should(taka.entryOfId(PLIKEYS[2])).not.properties(['entries']);
+        should.deepEqual(taka.entryOfId(PLIKEYS[3]).entries, [
             PLIKEYS[4], // 58
             PLIKEYS[6], // 102
         ]);
-        should.deepEqual(Object.keys(entryMap[PLIKEYS[4]].entries), [
+        should.deepEqual(taka.entryOfId(PLIKEYS[4]).entries, [
             PLIKEYS[5], // 59
         ]);
-        should(entryMap[PLIKEYS[5]]).not.properties(['entries']);
-        should.deepEqual(Object.keys(entryMap[PLIKEYS[6]].entries), [
+        should(taka.entryOfId(PLIKEYS[5])).not.properties(['entries']);
+        should.deepEqual(taka.entryOfId(PLIKEYS[6]).entries, [
             PLIKEYS[7], // 103
             PLIKEYS[8], // 104
         ]);
-        should(entryMap[PLIKEYS[7]]).not.properties(['entries']);
-        should(entryMap[PLIKEYS[8]]).not.properties(['entries']);
-        should.deepEqual(Object.keys(entryMap[PLIKEYS[9]].entries), [
+        should(taka.entryOfId(PLIKEYS[7])).not.properties(['entries']);
+        should(taka.entryOfId(PLIKEYS[8])).not.properties(['entries']);
+        should.deepEqual(taka.entryOfId(PLIKEYS[9]).entries, [
             PLIKEYS[10], // 114
         ]);
-        should.deepEqual(Object.keys(entryMap[PLIKEYS[10]].entries), [
+        should.deepEqual(taka.entryOfId(PLIKEYS[10]).entries, [
             PLIKEYS[11], // 115
         ]);
-        should(entryMap[PLIKEYS[11]]).not.properties(['entries']);
+        should(taka.entryOfId(PLIKEYS[11])).not.properties(['entries']);
 
         // All nodes should self-identify
         PLIKEYS.forEach(id=>{
-            let node = entryMap[id];
+            let node = taka.entryOfId(id);
             should(node).properties({id});
         });
 
         // Leaf vs. group node properties
         PLIKEYS.forEach(id=>{
-            let node = entryMap[id];
+            let node = taka.entryOfId(id);
             let suid = id.split(':')[1].split('-')[0].split('.').slice(1).join('.');
             let isLeaf = /.*[1-9].*/.test(suid);
             if (isLeaf) {
@@ -133,7 +201,7 @@
 
         // English names are merged with Pali names
         PLIKEYS.forEach(id=>{
-            let node = entryMap[id];
+            let node = taka.entryOfId(id);
             if (ENTEST[id]) {
                 should.deepEqual(node.name, {
                     pli: PLITEST[id],
@@ -150,28 +218,33 @@
         const PLITEST = TEST_SN_PLI;
         const PLIKEYS = Object.keys(PLITEST);
         const ENTEST = TEST_SN_EN;;
-        let tptk = new Tipitaka();
-        let entryMap = tptk.addNames({bdJson:PLITEST,lang:'pli'});
+        let taka = new Tipitaka();
+        let { entryMap } = taka;
+        taka.addNames({names:PLITEST,lang:'pli'});
         //console.log(JSON.stringify(entryMap, null,2));
-        entryMap = tptk.addNames({bdJson:ENTEST,lang:'en', author:'sujato'});
+        taka.addNames({names:ENTEST,lang:'en', author:'sujato'});
         //console.log(JSON.stringify(entryMap, null,2));
 
         let rootId = 'sn-name:1.sn-sagathavaggasamyutta';
-        should(entryMap[rootId].id).equal(rootId);
-        should.deepEqual(entryMap[rootId].name, {
+        should(taka.entryOfId(rootId).id).equal(rootId);
+        should.deepEqual(taka.entryOfId(rootId).name, {
             pli: PLITEST[rootId],
             en: ENTEST[rootId],
         });
+        should.deepEqual(taka.entryOfId(rootId).entries, [
+            'sn-name:2.sn1',
+            'sn-name:92.sn2',
+        ]);
 
         // All nodes should self-identify
         PLIKEYS.forEach(id=>{
-            let node = entryMap[id];
+            let node = taka.entryOfId(id);
             should(node).properties({id});
         });
 
         // Leaf vs group node properties
         PLIKEYS.forEach(id=>{
-            let node = entryMap[id];
+            let node = taka.entryOfId(id);
             let suid = id.split(':')[1].split('-')[0].split('.').slice(1).join('.');
             let isLeaf = /.*[1-9]\..*/.test(suid);
             if (isLeaf) {
@@ -183,7 +256,7 @@
 
         // English names are merged with Pali names
         PLIKEYS.forEach(id=>{
-            let node = entryMap[id];
+            let node = taka.entryOfId(id);
             if (ENTEST[id]) {
                 should.deepEqual(node.name, {
                     pli: PLITEST[id],
@@ -196,6 +269,54 @@
             }
         });
     });
-    it("TESTTESTaddSuper(...) adds forest roots", ()=>{
+    it("TESTTESTaddNames(...) adds forest roots", ()=>{
+        let taka = new Tipitaka();
+        let { entryMap } = taka;
+        let result = taka.addSuper({
+            names:TEST_SUPER_PLI, 
+            lang:'pli',
+        });
+        should(result).equal(taka);
+        let idThag = 'super-name:30.thag';
+        should.deepEqual(taka.entryOfId('thag'), {
+            id: idThag,
+            entries: [],
+            name: {
+                pli: 'Theragāthā',
+            },
+            parent: 'kn',
+        });
+
+        let idSN = 'super-name:11.sn';
+        taka.addSuper({
+            names:TEST_SUPER_EN, 
+            lang:'en',
+        });
+        should.deepEqual(taka.entryOfId(idSN), {
+            id: idSN,
+            entries: [],
+            name: {
+                en: "Linked Discourses Collection",
+                pli: "Saṁyuttanikāya",
+            },
+            parent: 'sutta',
+        });
+
+        let idMN = "super-name:7.mn";
+        taka.addNames({names:TEST_MN_PLI, });
+        should.deepEqual(taka.entryOfId(idMN), {
+            id: idMN,
+            name: {
+                en: "Middle Discourses Collection",
+                pli: "Majjhimanikāya",
+            },
+            entries: [
+                'mn-name:1.mn-mulapannasa',                                  
+                'mn-name:57.mn-majjhimapannasa',          
+                'mn-name:113.mn-uparipannasa'  
+            ],
+            parent: 'sutta',
+        });
+        should(taka.entryOfId(idMN)).equal(taka.entryOfId('mn'));
     });
 })
