@@ -24,6 +24,37 @@
         "super-name:30.thag": "Verses of the Senior Monks",
         "super-name:31.thig": "Verses of the Senior Nuns",
     }
+    const TEST_DN_PLI = {
+        "dn-name:1.dn-silakkhandhavagga": "Sīlakkhandhavagga",
+        "dn-name:2.dn1": "Brahmajālasutta",
+        "dn-name:3.dn2": "Sāmaññaphalasutta",
+        "dn-name:15.dn-mahavagga": "Mahāvagga",
+        "dn-name:16.dn14": "Mahāpadānasutta",
+        "dn-name:17.dn15": "Mahānidānasutta",
+    }
+    const TEST_AN_PLI = {
+        "an-name:1.an1": "Ekakanipāta",
+        "an-name:2.an1-cittapariyadanavagga": "Cittapariyādānavagga",
+        "an-name:3.an1.1-10": "Cittapariyādānavagga",
+        "an-name:4.an1-nivaranappahanavagga": "Nīvaraṇappahāṇavagga",
+        "an-name:5.an1.11-20": "Nīvaraṇappahānavagga",
+        "an-name:6.an1-akammaniyavagga": "Akammaniyavagga",
+        "an-name:7.an1.21-30": "Akammaniyavagga",
+        "an-name:8.an1-adantavagga": "Adantavagga",
+        "an-name:9.an1.31-40": "Adantavagga",
+    }
+    const TEST_THAG_PLI = {
+        "thag-name:1.thag-ekakanipata": "Ekakanipāta",
+        "thag-name:2.thag-ekakanipata-pathamavagga": "Paṭhamavagga",
+        "thag-name:3.thag1.1": "Subhūtittheragāthā",
+        "thag-name:4.thag1.2": "Mahākoṭṭhikattheragāthā",
+        "thag-name:13.thag-ekakanipata-dutiyavagga": "Dutiyavagga",
+        "thag-name:14.thag1.11": "Cūḷavacchattheragāthā",
+        "thag-name:312.thag18.1": "Mahākassapattheragāthā",
+        "thag-name:313.thag-pannasanipata": "Paññāsanipāta",
+        "thag-name:314.thag-pannasanipata-pathamavagga": "Paṭhamavagga",
+        "thag-name:315.thag19.1": "Tālapuṭattheragāthā",
+    }
     const TEST_MN_PLI = {
         "mn-name:1.mn-mulapannasa": "Mūlapaṇṇāsa",
         "mn-name:2.mn-mulapariyayavagga": "Mūlapariyāyavagga",
@@ -58,9 +89,20 @@
         "sn-name:14.sn1-nandanavagga": "Nandanavagga",
         "sn-name:15.sn1.11": "Nandanasutta",
         "sn-name:25.sn1-sattivagga": "Sattivagga",
+        "sn-name:36.sn1-satullapakayikavagga": "Satullapakāyikavagga",
+        "sn-name:46.sn1.40": "Dutiyapajjunnadhītusuttaṁ",
         "sn-name:92.sn2": "Devaputtasaṁyutta",
         "sn-name:93.sn2-pathamavagga": "Paṭhamavagga",
         "sn-name:94.sn2.1": "Paṭhamakassapasutta",
+        "sn-name:312.sn-nidanavaggasamyutta": "Nidānavaggasaṁyutta", 
+        "sn-name:313.sn12": "Nidānasaṁyutta", 
+        "sn-name:393.sn12.72-81": "Jātisuttādidasaka",
+        "sn-name:394.sn12-antarapeyyala": "Antarapeyyāla",
+        "sn-name:395.sn12-satthusuttadi": "Satthusuttādi",
+        "sn-name:396.sn12.82": "Satthusutta",
+        "sn-name:601.sn22": "Khandhasaṁyutta",
+        "sn-name:602.sn22-mulapannasaka": "Mūlapaṇṇāsaka",
+        "sn-name:603.sn22-nakulapituvagga": "Nakulapituvagga",
     };
     const TEST_SN_EN = {
         "sn-name:1.sn-sagathavaggasamyutta": 
@@ -93,13 +135,28 @@
             parent:'kn',
             entries: [ ],
         });
-        should.deepEqual(taka.reStructures, [
-            [ /.*paṇṇāsa$/, /.*vagga$/, /.*sutta$/, ],
-            [ /.*vaggasaṁyutta$/, /.*saṁyutta$/, /.*vagga$/, /.*sutta$/, ],
-            [ /.*/, /.*/ ],
-        ]);
+        should.deepEqual(taka.reStructures, [[
+            /vagga$/, // group
+            /.*/, // leaf
+        ],[
+            /pannasa$/, // group
+            /vagga$/, // group
+            /.*/, // leaf
+        ],[
+            /:[0-9]+\.[a-z]+[1-9]$|pannasa$|nipata$/, // group
+            /vagga$/, // group
+            /.*/, // leaf
+        ],[
+            /.*vaggasamyutta$/, // group
+            /.*[a-z][0-9]+(-samyutta)?$/, // group
+            /.*vagga|peyyala|di|pannasaka$/, // group
+            /.*[0-9]+\.[-0-9]+$/, // leaf
+        ],[
+            /.*/, 
+            /.*/,
+        ]]);
     });
-    it("TESTTESTcustom constructor", ()=>{
+    it("custom constructor", ()=>{
         let entryMap = {
             "sn-name:1.sn-sagathavaggasamyutta": {
                 id: "sn-name:1.sn-sagathavaggasamyutta",
@@ -113,6 +170,149 @@
         ];
         let taka = new Tipitaka({ entryMap, reStructures, });
         should(taka).properties({ entryMap, reStructures, });
+    });
+    it("TESTTESTaddNames(...) handles AN", ()=>{
+        const PLITEST = TEST_AN_PLI;
+        const PLIKEYS = Object.keys(PLITEST);
+        let taka = new Tipitaka();
+        let { entryMap } = taka;
+        taka.addNames({names:PLITEST,lang:'pli'});
+        //console.log(JSON.stringify(entryMap, null,2));
+
+        let rootId = PLIKEYS[0];
+        //console.log(rootId, taka.entryOfId(rootId));
+        should(taka.entryOfId(rootId).id).equal(rootId);
+        should.deepEqual(taka.entryOfId(rootId).name, {
+            pli: PLITEST[rootId],
+        });
+        should.deepEqual(taka.entryOfId(rootId).entries, [
+            'an-name:2.an1-cittapariyadanavagga',
+            'an-name:4.an1-nivaranappahanavagga',
+            'an-name:6.an1-akammaniyavagga',
+            'an-name:8.an1-adantavagga'
+        ]);
+
+        // All nodes should self-identify
+        PLIKEYS.forEach(id=>{
+            let node = taka.entryOfId(id);
+            should(node).properties({id});
+        });
+
+        // Leaf vs group node properties
+        PLIKEYS.forEach(id=>{
+            let node = taka.entryOfId(id);
+            let suid = id.split(/:[0-9]+\./)[1]
+                .replace(/[-a-z]*$/,'');
+            let isLeaf = suid.startsWith('sn')
+                ? /.*[0-9]+\.[-0-9]+/.test(suid)
+                : /.*[0-9]\..*/.test(suid);
+            if (isLeaf) {
+                should(node).properties({suid});
+            } else {
+                should(node).not.properties({suid});
+            }
+        });
+
+        // English names are merged with Pali names
+        PLIKEYS.forEach(id=>{
+            let node = taka.entryOfId(id);
+            should.deepEqual(node.name, {
+                pli: PLITEST[id],
+            });
+        });
+    });
+    it("TESTTESTaddNames(...) handles DN", ()=>{
+        const PLITEST = TEST_DN_PLI;
+        const PLIKEYS = Object.keys(PLITEST);
+        let taka = new Tipitaka();
+        let { entryMap } = taka;
+        taka.addNames({names:PLITEST,lang:'pli'});
+        //console.log(JSON.stringify(entryMap, null,2));
+
+        let rootId = PLIKEYS[0];
+        //console.log(rootId, taka.entryOfId(rootId));
+        should(taka.entryOfId(rootId).id).equal(rootId);
+        should.deepEqual(taka.entryOfId(rootId).name, {
+            pli: PLITEST[rootId],
+        });
+        should.deepEqual(taka.entryOfId(rootId).entries, [
+            'dn-name:2.dn1', 
+            'dn-name:3.dn2',
+        ]);
+
+        // All nodes should self-identify
+        PLIKEYS.forEach(id=>{
+            let node = taka.entryOfId(id);
+            should(node).properties({id});
+        });
+
+        // Leaf vs group node properties
+        PLIKEYS.forEach(id=>{
+            let node = taka.entryOfId(id);
+            let suid = id.split(/:[0-9]+\./)[1]
+                .replace(/[-a-z]*$/,'');
+            let isLeaf = /[0-9]/.test(suid);
+            if (isLeaf) {
+                should(node).properties({suid});
+            } else {
+                should(node).not.properties({suid});
+            }
+        });
+
+        // English names are merged with Pali names
+        PLIKEYS.forEach(id=>{
+            let node = taka.entryOfId(id);
+            should.deepEqual(node.name, {
+                pli: PLITEST[id],
+            });
+        });
+    });
+    it("TESTTESTaddNames(...) handles Thag", ()=>{
+        const PLITEST = TEST_THAG_PLI;
+        const PLIKEYS = Object.keys(PLITEST);
+        let taka = new Tipitaka();
+        let { entryMap } = taka;
+        taka.addNames({names:PLITEST,lang:'pli'});
+        //console.log(JSON.stringify(entryMap, null,2));
+
+        let rootId = 'thag-name:1.thag-ekakanipata';
+        should(taka.entryOfId(rootId).id).equal(rootId);
+        should.deepEqual(taka.entryOfId(rootId).name, {
+            pli: PLITEST[rootId],
+        });
+        should.deepEqual(taka.entryOfId(rootId).entries, [
+            'thag-name:2.thag-ekakanipata-pathamavagga',
+            'thag-name:13.thag-ekakanipata-dutiyavagga',
+        ]);
+
+        // All nodes should self-identify
+        PLIKEYS.forEach(id=>{
+            let node = taka.entryOfId(id);
+            should(node).properties({id});
+        });
+
+        // Leaf vs group node properties
+        PLIKEYS.forEach(id=>{
+            let node = taka.entryOfId(id);
+            let suid = id.split(/:[0-9]+\./)[1]
+                .replace(/[-a-z]*$/,'');
+            let isLeaf = suid.startsWith('sn')
+                ? /.*[0-9]+\.[-0-9]+/.test(suid)
+                : /.*[0-9]\..*/.test(suid);
+            if (isLeaf) {
+                should(node).properties({suid});
+            } else {
+                should(node).not.properties({suid});
+            }
+        });
+
+        // English names are merged with Pali names
+        PLIKEYS.forEach(id=>{
+            let node = taka.entryOfId(id);
+            should.deepEqual(node.name, {
+                pli: PLITEST[id],
+            });
+        });
     });
     it("TESTTESTaddNames(...) handles MN", ()=>{
         const PLITEST = TEST_MN_PLI;
@@ -214,7 +414,7 @@
             }
         });
     });
-    it("TESTTESTaddNames(...) handles SN", ()=>{
+    it("addNames(...) handles SN", ()=>{
         const PLITEST = TEST_SN_PLI;
         const PLIKEYS = Object.keys(PLITEST);
         const ENTEST = TEST_SN_EN;;
@@ -245,8 +445,11 @@
         // Leaf vs group node properties
         PLIKEYS.forEach(id=>{
             let node = taka.entryOfId(id);
-            let suid = id.split(':')[1].split('-')[0].split('.').slice(1).join('.');
-            let isLeaf = /.*[1-9]\..*/.test(suid);
+            let suid = id.split(/:[0-9]+\./)[1]
+                .replace(/[-a-z]*$/,'');
+            let isLeaf = suid.startsWith('sn')
+                ? /.*[0-9]+\.[-0-9]+/.test(suid)
+                : /.*[0-9]\..*/.test(suid);
             if (isLeaf) {
                 should(node).properties({suid});
             } else {
@@ -269,7 +472,7 @@
             }
         });
     });
-    it("TESTTESTaddNames(...) adds forest roots", ()=>{
+    it("addNames(...) adds forest roots", ()=>{
         let taka = new Tipitaka();
         let { entryMap } = taka;
         let result = taka.addSuper({

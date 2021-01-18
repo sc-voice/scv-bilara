@@ -34,18 +34,27 @@
         'tipitaka/vinaya',
     ];
 
-    const RE_GROUPS_2 = [
-        /.*paṇṇāsa$/, // group
-        /.*vagga$/, // group
-        /.*sutta$/, // leaf
+    const RE_GROUPS_1 = [ // e.g., DN
+        /vagga$/, // group
+        /.*/, // leaf
     ];
-    const RE_GROUPS_3 = [
-        /.*vaggasaṁyutta$/, // group
-        /.*saṁyutta$/, // group
-        /.*vagga$/, // group
-        /.*sutta$/, // leaf
+    const RE_GROUPS_2MN = [ // e.g., MN
+        /pannasa$/, // group
+        /vagga$/, // group
+        /.*/, // leaf
     ];
-    const RE_GROUPS_1 = [ 
+    const RE_GROUPS_2 = [ // e.g., MN
+        /:[0-9]+\.[a-z]+[1-9]$|pannasa$|nipata$/, // group
+        /vagga$/, // group
+        /.*/, // leaf
+    ];
+    const RE_GROUPS_3 = [ // e.g., SN
+        /.*vaggasamyutta$/, // group
+        /.*[a-z][0-9]+(-samyutta)?$/, // group
+        /.*vagga|peyyala|di|pannasaka$/, // group
+        /.*[0-9]+\.[-0-9]+$/, // leaf
+    ];
+    const RE_GROUPS_1ANY = [ 
         /.*/, // group (always matched)
         /.*/, // leaf (never matched)
     ];
@@ -56,9 +65,11 @@
             let { 
                 entryMap,
                 reStructures = [
+                    RE_GROUPS_1,
+                    RE_GROUPS_2MN, 
                     RE_GROUPS_2, 
                     RE_GROUPS_3, 
-                    RE_GROUPS_1,
+                    RE_GROUPS_1ANY,
                 ],
                 rootId = STRUCTURE[0],
                 rootLang = 'pli',
@@ -98,7 +109,6 @@
         addSuper({names, lang=this.rootLang}) {
             let { 
                 entryMap, 
-                reStructures,
                 rootLang,
             } = this;
             let idNames = Object.entries(names);
@@ -145,7 +155,7 @@
             let reStructure;
             let name0 = node0 && node0.name[rootLang] || idNames[0][1];
             for (let i = 0; i<reStructures.length; i++) {
-                if (reStructures[i][0].test(name0)) {
+                if (reStructures[i][0].test(id0)) {
                     reStructure = reStructures[i];
                     break;
                 }
@@ -179,7 +189,7 @@
                 }
                 for (var iGroup = 0; iGroup < reStructure.length; iGroup++) {
                     let reGroup = reStructure[iGroup];
-                    if (reGroup.test(nameRoot)) {
+                    if (reGroup.test(node.id)) {
                         break;
                     }
                 }
