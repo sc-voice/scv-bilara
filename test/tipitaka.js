@@ -121,17 +121,11 @@
             rootId: 'tipitaka',
         });
         should.deepEqual(taka.entryMap.tipitaka, {
-            id: 'tipitaka',
-            name: {
-                pli: 'Tipitaka',
-            },
+            pli: 'Tipitaka',
             entries: [ 'abhidhamma', 'sutta', 'vinaya', ],
         });
         should.deepEqual(taka.entryMap.thig, {
-            id: 'thig',
-            name: {
-                pli: 'Thig',
-            },
+            pli: 'Thig',
             parent:'kn',
             entries: [ ],
         });
@@ -181,21 +175,14 @@
 
         let rootId = PLIKEYS[0];
         //console.log(rootId, taka.entryOfId(rootId));
-        should(taka.entryOfId(rootId).id).equal(rootId);
-        should.deepEqual(taka.entryOfId(rootId).name, {
-            pli: PLITEST[rootId],
-        });
-        should.deepEqual(taka.entryOfId(rootId).entries, [
-            'an-name:2.an1-cittapariyadanavagga',
-            'an-name:4.an1-nivaranappahanavagga',
-            'an-name:6.an1-akammaniyavagga',
-            'an-name:8.an1-adantavagga'
-        ]);
-
-        // All nodes should self-identify
-        PLIKEYS.forEach(id=>{
-            let node = taka.entryOfId(id);
-            should(node).properties({id});
+        should(taka.entryOfId(rootId)).properties({ 
+            pli: PLITEST[rootId], 
+            entries: [
+                'an-name:2.an1-cittapariyadanavagga',
+                'an-name:4.an1-nivaranappahanavagga',
+                'an-name:6.an1-akammaniyavagga',
+                'an-name:8.an1-adantavagga'
+            ],
         });
 
         // Leaf vs group node properties
@@ -207,18 +194,16 @@
                 ? /.*[0-9]+\.[-0-9]+/.test(suid)
                 : /.*[0-9]\..*/.test(suid);
             if (isLeaf) {
-                should(node).properties({suid});
+                should(node).not.properties(['entries']);
             } else {
-                should(node).not.properties({suid});
+                should(node).properties(['entries']);
             }
         });
 
         // English names are merged with Pali names
         PLIKEYS.forEach(id=>{
             let node = taka.entryOfId(id);
-            should.deepEqual(node.name, {
-                pli: PLITEST[id],
-            });
+            should(node).properties({ pli: PLITEST[id], });
         });
     });
     it("TESTTESTaddNames(...) handles DN", ()=>{
@@ -231,19 +216,9 @@
 
         let rootId = PLIKEYS[0];
         //console.log(rootId, taka.entryOfId(rootId));
-        should(taka.entryOfId(rootId).id).equal(rootId);
-        should.deepEqual(taka.entryOfId(rootId).name, {
-            pli: PLITEST[rootId],
-        });
-        should.deepEqual(taka.entryOfId(rootId).entries, [
-            'dn-name:2.dn1', 
-            'dn-name:3.dn2',
-        ]);
-
-        // All nodes should self-identify
-        PLIKEYS.forEach(id=>{
-            let node = taka.entryOfId(id);
-            should(node).properties({id});
+        should(taka.entryOfId(rootId)).properties({ 
+            pli: PLITEST[rootId], 
+            entries: [ 'dn-name:2.dn1', 'dn-name:3.dn2', ],
         });
 
         // Leaf vs group node properties
@@ -253,18 +228,16 @@
                 .replace(/[-a-z]*$/,'');
             let isLeaf = /[0-9]/.test(suid);
             if (isLeaf) {
-                should(node).properties({suid});
+                should(node).not.properties(['entries']);
             } else {
-                should(node).not.properties({suid});
+                should(node).properties(['entries']);
             }
         });
 
         // English names are merged with Pali names
         PLIKEYS.forEach(id=>{
             let node = taka.entryOfId(id);
-            should.deepEqual(node.name, {
-                pli: PLITEST[id],
-            });
+            should(node).properties({ pli: PLITEST[id], });
         });
     });
     it("TESTTESTaddNames(...) handles Thag", ()=>{
@@ -276,19 +249,13 @@
         //console.log(JSON.stringify(entryMap, null,2));
 
         let rootId = 'thag-name:1.thag-ekakanipata';
-        should(taka.entryOfId(rootId).id).equal(rootId);
-        should.deepEqual(taka.entryOfId(rootId).name, {
+        should(taka.entryOfId(rootId)).properties({
             pli: PLITEST[rootId],
-        });
-        should.deepEqual(taka.entryOfId(rootId).entries, [
-            'thag-name:2.thag-ekakanipata-pathamavagga',
-            'thag-name:13.thag-ekakanipata-dutiyavagga',
-        ]);
-
-        // All nodes should self-identify
-        PLIKEYS.forEach(id=>{
-            let node = taka.entryOfId(id);
-            should(node).properties({id});
+            parent: 'thag',
+            entries: [
+                'thag-name:2.thag-ekakanipata-pathamavagga',
+                'thag-name:13.thag-ekakanipata-dutiyavagga',
+            ],
         });
 
         // Leaf vs group node properties
@@ -300,18 +267,16 @@
                 ? /.*[0-9]+\.[-0-9]+/.test(suid)
                 : /.*[0-9]\..*/.test(suid);
             if (isLeaf) {
-                should(node).properties({suid});
+                should(node).not.properties(['entries']);
             } else {
-                should(node).not.properties({suid});
+                should(node).properties(['entries']);
             }
         });
 
         // English names are merged with Pali names
         PLIKEYS.forEach(id=>{
             let node = taka.entryOfId(id);
-            should.deepEqual(node.name, {
-                pli: PLITEST[id],
-            });
+            should(node).properties({ pli: PLITEST[id], });
         });
     });
     it("TESTTESTaddNames(...) handles MN", ()=>{
@@ -329,8 +294,11 @@
             superId,
         });
         should(result).equal(taka);
-        should(taka.entryOfId(PLIKEYS[0]).id).equal(PLIKEYS[0]);
-        should.deepEqual(taka.entryOfId(PLIKEYS[0]).name, { pli: PLITEST[PLIKEYS[0]], });
+        should.deepEqual(taka.entryOfId(PLIKEYS[0]), { 
+            pli: PLITEST[PLIKEYS[0]], 
+            entries: [PLIKEYS[1]],
+            parent: 'super-name:7.mn',
+        });
 
         // Add other translated names after root names
         taka.addNames({
@@ -338,7 +306,7 @@
             lang:'en', 
             superId,
         });
-        should.deepEqual(taka.entryOfId(PLIKEYS[0]).name, { 
+        should(taka.entryOfId(PLIKEYS[0])).properties({
             pli: PLITEST[PLIKEYS[0]], 
             en: ENTEST[PLIKEYS[0]],
         });
@@ -381,21 +349,15 @@
         ]);
         should(taka.entryOfId(PLIKEYS[11])).not.properties(['entries']);
 
-        // All nodes should self-identify
-        PLIKEYS.forEach(id=>{
-            let node = taka.entryOfId(id);
-            should(node).properties({id});
-        });
-
         // Leaf vs. group node properties
         PLIKEYS.forEach(id=>{
             let node = taka.entryOfId(id);
             let suid = id.split(':')[1].split('-')[0].split('.').slice(1).join('.');
             let isLeaf = /.*[1-9].*/.test(suid);
             if (isLeaf) {
-                should(node).properties({suid});
+                should(node).not.properties(['entries']);
             } else {
-                should(node).not.properties({suid});
+                should(node).properties(['entries']);
             }
         });
 
@@ -403,18 +365,14 @@
         PLIKEYS.forEach(id=>{
             let node = taka.entryOfId(id);
             if (ENTEST[id]) {
-                should.deepEqual(node.name, {
-                    pli: PLITEST[id],
-                    en: ENTEST[id],
-                });
+                should(node).properties({ pli: PLITEST[id], en: ENTEST[id], });
             } else {
-                should.deepEqual(node.name, {
-                    pli: PLITEST[id],
-                });
+                should(node).properties({ pli: PLITEST[id], });
+                should(node).not.properties({ en: ENTEST[id], });
             }
         });
     });
-    it("addNames(...) handles SN", ()=>{
+    it("TESTTESTaddNames(...) handles SN", ()=>{
         const PLITEST = TEST_SN_PLI;
         const PLIKEYS = Object.keys(PLITEST);
         const ENTEST = TEST_SN_EN;;
@@ -426,20 +384,10 @@
         //console.log(JSON.stringify(entryMap, null,2));
 
         let rootId = 'sn-name:1.sn-sagathavaggasamyutta';
-        should(taka.entryOfId(rootId).id).equal(rootId);
-        should.deepEqual(taka.entryOfId(rootId).name, {
+        should(taka.entryOfId(rootId)).properties({
             pli: PLITEST[rootId],
             en: ENTEST[rootId],
-        });
-        should.deepEqual(taka.entryOfId(rootId).entries, [
-            'sn-name:2.sn1',
-            'sn-name:92.sn2',
-        ]);
-
-        // All nodes should self-identify
-        PLIKEYS.forEach(id=>{
-            let node = taka.entryOfId(id);
-            should(node).properties({id});
+            entries: [ 'sn-name:2.sn1', 'sn-name:92.sn2',],
         });
 
         // Leaf vs group node properties
@@ -451,9 +399,9 @@
                 ? /.*[0-9]+\.[-0-9]+/.test(suid)
                 : /.*[0-9]\..*/.test(suid);
             if (isLeaf) {
-                should(node).properties({suid});
+                should(node).not.properties(['entries']);
             } else {
-                should(node).not.properties({suid});
+                should(node).properties(['entries']);
             }
         });
 
@@ -461,18 +409,19 @@
         PLIKEYS.forEach(id=>{
             let node = taka.entryOfId(id);
             if (ENTEST[id]) {
-                should.deepEqual(node.name, {
+                should(node).properties({
                     pli: PLITEST[id],
                     en: ENTEST[id],
                 });
             } else {
-                should.deepEqual(node.name, {
+                should(node).properties({
                     pli: PLITEST[id],
                 });
+                should(node).not.properties('en');
             }
         });
     });
-    it("addNames(...) adds forest roots", ()=>{
+    it("TESTTESTaddNames(...) adds forest roots", ()=>{
         let taka = new Tipitaka();
         let { entryMap } = taka;
         let result = taka.addSuper({
@@ -482,11 +431,8 @@
         should(result).equal(taka);
         let idThag = 'super-name:30.thag';
         should.deepEqual(taka.entryOfId('thag'), {
-            id: idThag,
             entries: [],
-            name: {
-                pli: 'Theragāthā',
-            },
+            pli: 'Theragāthā',
             parent: 'kn',
         });
 
@@ -496,23 +442,17 @@
             lang:'en',
         });
         should.deepEqual(taka.entryOfId(idSN), {
-            id: idSN,
             entries: [],
-            name: {
-                en: "Linked Discourses Collection",
-                pli: "Saṁyuttanikāya",
-            },
+            en: "Linked Discourses Collection",
+            pli: "Saṁyuttanikāya",
             parent: 'sutta',
         });
 
         let idMN = "super-name:7.mn";
         taka.addNames({names:TEST_MN_PLI, });
         should.deepEqual(taka.entryOfId(idMN), {
-            id: idMN,
-            name: {
-                en: "Middle Discourses Collection",
-                pli: "Majjhimanikāya",
-            },
+            en: "Middle Discourses Collection",
+            pli: "Majjhimanikāya",
             entries: [
                 'mn-name:1.mn-mulapannasa',                                  
                 'mn-name:57.mn-majjhimapannasa',          

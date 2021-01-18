@@ -87,10 +87,7 @@
                         let node = entryMap[id];
                         if (!node) {
                             node = { 
-                                id, 
-                                name:{
-                                    [rootLang]: id[0].toUpperCase()+id.slice(1),
-                                }, 
+                                [rootLang]: id[0].toUpperCase()+id.slice(1),
                                 entries:[],
                             };
                             entryMap[id] = node;
@@ -118,19 +115,16 @@
                     let shortId = id.split('.').pop();
                     node = entryMap[shortId];
                     if (node) {
-                        node.id = id;
-                        node.name[rootLang] = name;
+                        node[rootLang] = name;
                         entryMap[shortId] = id;
                     } else {
                         node = { 
-                            id, 
-                            name: {},
                             entries: [],
                         }
                     }
                     entryMap[id] = node;
                 }
-                node.name[lang] = name;
+                node[lang] = name;
             }
 
             return this;
@@ -149,11 +143,15 @@
                 rootLang,
             } = this;
             let groups = [];
+            let idStack = [];
             let idNames = Object.entries(names);
+            if (idNames.length === 0) {
+                throw new Error('names is required');
+            }
             let id0 = idNames[0][0];
             let node0 = this.entryOfId(id0);
             let reStructure;
-            let name0 = node0 && node0.name[rootLang] || idNames[0][1];
+            let name0 = node0 && node0[rootLang] || idNames[0][1];
             for (let i = 0; i<reStructures.length; i++) {
                 if (reStructures[i][0].test(id0)) {
                     reStructure = reStructures[i];
@@ -161,11 +159,10 @@
                 }
             }
             superId = superId || id0.split('-')[0];
+            idStack.push(superId);
             var superNode = this.entryOfId(superId);
             if (!superNode) {
                 superNode = { 
-                    id: superId, 
-                    name:{}, 
                     entries:[],
                 };
                 entryMap[superId] = superNode;
@@ -179,17 +176,17 @@
             for (let [id,name] of idNames) {
                 let node = this.entryOfId(id);
                 if (!node) {
-                    node = {id, name:{}};
+                    node = {};
                     entryMap[id] = node;
                 }
-                node.name[lang] = name;
-                let nameRoot = node.name[rootLang];
+                node[lang] = name;
+                let nameRoot = node[rootLang];
                 if (nameRoot == null) {
                     throw new Error(`no Pali name for ${JSON.stringify({id,name})}`);
                 }
                 for (var iGroup = 0; iGroup < reStructure.length; iGroup++) {
                     let reGroup = reStructure[iGroup];
-                    if (reGroup.test(node.id)) {
+                    if (reGroup.test(id)) {
                         break;
                     }
                 }
@@ -198,16 +195,17 @@
                 if (isLeaf) {
                     let parent = groups[groups.length-1] || superNode;
                     lang === rootLang && parent.entries.push(id);
-                    node.suid = id.split(':')[1].replace(/^[0-9]+\./,'');
-                    node.parent = parent.id;
+                    //node.suid = id.split(':')[1].replace(/^[0-9]+\./,'');
+                    node.parent = idStack[groups.length];
                 } else if (iGroup < reStructure.length) {
                     node.entries = node.entries || [];
                     groups = [...groups.slice(0,iGroup), node];
+                    idStack = [...idStack.slice(0,iGroup+1), id];
                     if (lang === rootLang) {
                         let parent = groups[groups.length-2] || superNode;
                         if (parent) {
                             parent.entries.push(id);
-                            node.parent = parent.id;
+                            node.parent = idStack[groups.length-1];
                         }
                     }
 
@@ -219,7 +217,7 @@
                         reStructure.join(','),
                     ].join(' '));
                 }
-                this.debug(id, node.name[rootLang], iGroup, groups.length, );
+                this.debug(id, node[rootLang], iGroup, groups.length, );
             }
             return this;
         }
