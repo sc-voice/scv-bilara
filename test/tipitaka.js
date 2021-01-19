@@ -115,7 +115,7 @@
         "sn-name:93.sn2-pathamavagga": "Chapter One",
     };
 
-    it("TESTTESTdefault constructor", ()=>{
+    it("default constructor", ()=>{
         let taka = new Tipitaka();
         should(taka).properties({
             rootId: 'tipitaka',
@@ -165,13 +165,30 @@
         let taka = new Tipitaka({ entryMap, reStructures, });
         should(taka).properties({ entryMap, reStructures, });
     });
+    it("TESTTESTaddSuper() adds superstructure entries", ()=>{
+        const PLITEST = TEST_AN_PLI;
+        const PLIKEYS = Object.keys(PLITEST);
+        let taka = new Tipitaka();
+        let resPli = taka.addSuper({ names:TEST_SUPER_PLI, lang:'pli', });
+        let resEn = taka.addSuper({ names:TEST_SUPER_EN, lang:'en', });
+
+        should(resPli).equal(resEn).equal(taka);
+        should(taka.addNames({names:PLITEST,lang:'pli'})).equal(taka);
+        should.deepEqual(taka.entryMap['sutta'], {
+            pli: 'Sutta',
+            parent: 'tipitaka',
+            entries: [ 'an', 'dn', 'kn', 'mn', 'sn', 'snp', ],
+        });
+    });
     it("TESTTESTaddNames(...) handles AN", ()=>{
         const PLITEST = TEST_AN_PLI;
         const PLIKEYS = Object.keys(PLITEST);
         let taka = new Tipitaka();
-        let { entryMap } = taka;
-        taka.addNames({names:PLITEST,lang:'pli'});
-        //console.log(JSON.stringify(entryMap, null,2));
+
+        taka.addSuper({ names:TEST_SUPER_PLI, lang:'pli', });
+        taka.addSuper({ names:TEST_SUPER_EN, lang:'en', });
+        should(taka.addNames({names:PLITEST,lang:'pli'})).equal(taka);
+        //console.log(JSON.stringify(taka.entryMap, null,2));
 
         let rootId = PLIKEYS[0];
         //console.log(rootId, taka.entryOfId(rootId));
@@ -210,7 +227,9 @@
         const PLITEST = TEST_DN_PLI;
         const PLIKEYS = Object.keys(PLITEST);
         let taka = new Tipitaka();
-        let { entryMap } = taka;
+
+        taka.addSuper({ names:TEST_SUPER_PLI, lang:'pli', });
+        taka.addSuper({ names:TEST_SUPER_EN, lang:'en', });
         taka.addNames({names:PLITEST,lang:'pli'});
         //console.log(JSON.stringify(entryMap, null,2));
 
@@ -218,7 +237,7 @@
         //console.log(rootId, taka.entryOfId(rootId));
         should(taka.entryOfId(rootId)).properties({ 
             pli: PLITEST[rootId], 
-            entries: [ 'dn-name:2.dn1', 'dn-name:3.dn2', ],
+            entries: [ 'dn1', 'dn2', ],
         });
 
         // Leaf vs group node properties
@@ -241,16 +260,17 @@
         });
     });
     it("TESTTESTaddNames(...) handles Thag", ()=>{
-        const PLITEST = TEST_THAG_PLI;
-        const PLIKEYS = Object.keys(PLITEST);
+        const PLIKEYS = Object.keys(TEST_THAG_PLI);
         let taka = new Tipitaka();
-        let { entryMap } = taka;
-        taka.addNames({names:PLITEST,lang:'pli'});
+
+        taka.addSuper({ names:TEST_SUPER_PLI, lang:'pli', });
+        taka.addSuper({ names:TEST_SUPER_EN, lang:'en', });
+        taka.addNames({names:TEST_THAG_PLI,lang:'pli'});
         //console.log(JSON.stringify(entryMap, null,2));
 
         let rootId = 'thag-name:1.thag-ekakanipata';
         should(taka.entryOfId(rootId)).properties({
-            pli: PLITEST[rootId],
+            pli: TEST_THAG_PLI[rootId],
             parent: 'thag',
             entries: [
                 'thag-name:2.thag-ekakanipata-pathamavagga',
@@ -276,39 +296,127 @@
         // English names are merged with Pali names
         PLIKEYS.forEach(id=>{
             let node = taka.entryOfId(id);
-            should(node).properties({ pli: PLITEST[id], });
+            should(node).properties({ pli: TEST_THAG_PLI[id], });
+        });
+
+        let idThag = 'super-name:30.thag';
+        should.deepEqual(taka.entryOfId('thag'), {
+            entries: [
+                'thag-name:1.thag-ekakanipata', 
+                'thag-name:313.thag-pannasanipata'
+            ],
+            parent: 'kn',
+            pli: 'Theragāthā',
+            en: 'Verses of the Senior Monks',
         });
     });
-    it("TESTTESTaddNames(...) handles MN", ()=>{
-        const PLITEST = TEST_MN_PLI;
-        const PLIKEYS = Object.keys(PLITEST);
-        const ENTEST = TEST_MN_EN;
+    it("TESTTESTbreadcrumbs(id) handles lead id", ()=>{
+        const PLIKEYS = Object.keys(TEST_MN_PLI);
         let taka = new Tipitaka();
-        let { entryMap } = taka;
+
+        // Build Tipitaka
+        taka.addSuper({ names:TEST_SUPER_PLI, lang:'pli', });
+        taka.addSuper({ names:TEST_SUPER_EN, lang:'en', });
+        taka.addNames({ names:TEST_MN_PLI, lang:'pli', });
+        taka.addNames({ names:TEST_MN_EN, lang:'en', });
+
+        let breadcrumbs = taka.breadcrumbs('mn92');
+        should.deepEqual(breadcrumbs.map(bc=>bc.id), [
+            'tipitaka',
+            'sutta',
+            'mn', // 'super-name:7.mn',
+            'mn-name:57.mn-majjhimapannasa',
+            'mn-name:102.mn-brahmanavagga',
+            'mn92',
+        ]);
+        should.deepEqual(breadcrumbs.map(bc=>(bc.en||bc.pli).trim()), [
+            'Tipitaka',
+            'Sutta',
+            'Middle Discourses Collection',
+            'The Middle Fifty',
+            'The Chapter on Brahmins',
+            'Selasutta',
+        ]);
+        should.deepEqual(breadcrumbs.map(bc=>bc.entries&&bc.entries.length), [
+            3, // 'Tipitaka',
+            6, // 'Sutta',
+            3, // 'Middle Discourses Collection',
+            2, // 'The First Fifty',
+            2, // 'The Chapter on the Root of All Things ',
+            undefined, // 'The Root of All Things ',
+        ]);
+    });
+    it("TESTTESTbreadcrumbs(id) handles group id", ()=>{
+        const PLIKEYS = Object.keys(TEST_MN_PLI);
+        let taka = new Tipitaka();
+
+        // Build Tipitaka
+        taka.addSuper({ names:TEST_SUPER_PLI, lang:'pli', });
+        taka.addSuper({ names:TEST_SUPER_EN, lang:'en', });
+        taka.addNames({ names:TEST_MN_PLI, lang:'pli', });
+        taka.addNames({ names:TEST_MN_EN, lang:'en', });
+
+        let breadcrumbs = taka.breadcrumbs('mn-name:57.mn-majjhimapannasa');
+        should.deepEqual(breadcrumbs.map(bc=>bc.id), [
+            'tipitaka',
+            'sutta',
+            'mn', // 'super-name:7.mn',
+            'mn-name:57.mn-majjhimapannasa',
+        ]);
+        should.deepEqual(breadcrumbs.map(bc=>(bc.en||bc.pli).trim()), [
+            'Tipitaka',
+            'Sutta',
+            'Middle Discourses Collection',
+            'The Middle Fifty',
+        ]);
+        should.deepEqual(breadcrumbs.map(bc=>bc.entries&&bc.entries.length), [
+            3, // 'Tipitaka',
+            6, // 'Sutta',
+            3, // 'Middle Discourses Collection',
+            2, // 'The First Fifty',
+        ]);
+    });
+    it("TESTTESTaddNames(...) handles MN", ()=>{
+        const PLIKEYS = Object.keys(TEST_MN_PLI);
+        let taka = new Tipitaka();
         let superId = "super-name:7.mn";
 
-        // Add root names first
-        let result = taka.addNames({
-            names:PLITEST,
-            lang:'pli',
-            superId,
+        // Build Tipitaka
+        taka.addSuper({ names:TEST_SUPER_PLI, lang:'pli', });
+        taka.addSuper({ names:TEST_SUPER_EN, lang:'en', });
+        taka.addNames({ names:TEST_MN_PLI, lang:'pli', superId, });
+        taka.addNames({ names:TEST_MN_EN, lang:'en', superId, });
+
+        let idMN = "super-name:7.mn";
+        should(taka.entryMap['mn']).equal(idMN);
+        should.deepEqual(taka.entryOfId('mn1'), {
+            pli: 'Mūlapariyāyasutta',
+            en: "The Root of All Things ",
+            parent: 'mn-name:2.mn-mulapariyayavagga',
         });
-        should(result).equal(taka);
+        should(taka.entryMap['mn-name:3.mn1']).equal('mn1');
+
         should.deepEqual(taka.entryOfId(PLIKEYS[0]), { 
-            pli: PLITEST[PLIKEYS[0]], 
+            en: TEST_MN_EN[PLIKEYS[0]],
+            pli: TEST_MN_PLI[PLIKEYS[0]], 
             entries: [PLIKEYS[1]],
             parent: 'super-name:7.mn',
         });
 
-        // Add other translated names after root names
-        taka.addNames({
-            names:ENTEST,
-            lang:'en', 
-            superId,
+        should.deepEqual(taka.entryOfId(idMN), {
+            en: "Middle Discourses Collection",
+            pli: "Majjhimanikāya",
+            entries: [
+                'mn-name:1.mn-mulapannasa',                                  
+                'mn-name:57.mn-majjhimapannasa',          
+                'mn-name:113.mn-uparipannasa'  
+            ],
+            parent: 'sutta',
         });
+
         should(taka.entryOfId(PLIKEYS[0])).properties({
-            pli: PLITEST[PLIKEYS[0]], 
-            en: ENTEST[PLIKEYS[0]],
+            pli: TEST_MN_PLI[PLIKEYS[0]], 
+            en: TEST_MN_EN[PLIKEYS[0]],
         });
         //console.log(JSON.stringify(entryMap, null,2));
 
@@ -323,7 +431,7 @@
         ]);
         should(taka.entryOfId(PLIKEYS[1])).properties({parent:PLIKEYS[0]});
         should.deepEqual(taka.entryOfId(PLIKEYS[1]).entries, [
-            PLIKEYS[2], // 3
+            'mn1',
         ]);
         should(taka.entryOfId(PLIKEYS[2]).parent).equal(PLIKEYS[1]);
         should(taka.entryOfId(PLIKEYS[2])).not.properties(['entries']);
@@ -332,12 +440,12 @@
             PLIKEYS[6], // 102
         ]);
         should.deepEqual(taka.entryOfId(PLIKEYS[4]).entries, [
-            PLIKEYS[5], // 59
+            'mn51', // PLIKEYS[5], // 59
         ]);
         should(taka.entryOfId(PLIKEYS[5])).not.properties(['entries']);
         should.deepEqual(taka.entryOfId(PLIKEYS[6]).entries, [
-            PLIKEYS[7], // 103
-            PLIKEYS[8], // 104
+            'mn91', // PLIKEYS[7], // 103
+            'mn92', // PLIKEYS[8], // 104
         ]);
         should(taka.entryOfId(PLIKEYS[7])).not.properties(['entries']);
         should(taka.entryOfId(PLIKEYS[8])).not.properties(['entries']);
@@ -345,7 +453,7 @@
             PLIKEYS[10], // 114
         ]);
         should.deepEqual(taka.entryOfId(PLIKEYS[10]).entries, [
-            PLIKEYS[11], // 115
+            'mn101', // PLIKEYS[11], // 115
         ]);
         should(taka.entryOfId(PLIKEYS[11])).not.properties(['entries']);
 
@@ -364,11 +472,11 @@
         // English names are merged with Pali names
         PLIKEYS.forEach(id=>{
             let node = taka.entryOfId(id);
-            if (ENTEST[id]) {
-                should(node).properties({ pli: PLITEST[id], en: ENTEST[id], });
+            if (TEST_MN_EN[id]) {
+                should(node).properties({ pli: TEST_MN_PLI[id], en: TEST_MN_EN[id], });
             } else {
-                should(node).properties({ pli: PLITEST[id], });
-                should(node).not.properties({ en: ENTEST[id], });
+                should(node).properties({ pli: TEST_MN_PLI[id], });
+                should(node).not.properties({ en: TEST_MN_EN[id], });
             }
         });
     });
@@ -377,7 +485,9 @@
         const PLIKEYS = Object.keys(PLITEST);
         const ENTEST = TEST_SN_EN;;
         let taka = new Tipitaka();
-        let { entryMap } = taka;
+
+        taka.addSuper({ names:TEST_SUPER_PLI, lang:'pli', });
+        taka.addSuper({ names:TEST_SUPER_EN, lang:'en', });
         taka.addNames({names:PLITEST,lang:'pli'});
         //console.log(JSON.stringify(entryMap, null,2));
         taka.addNames({names:ENTEST,lang:'en', author:'sujato'});
@@ -420,46 +530,5 @@
                 should(node).not.properties('en');
             }
         });
-    });
-    it("TESTTESTaddNames(...) adds forest roots", ()=>{
-        let taka = new Tipitaka();
-        let { entryMap } = taka;
-        let result = taka.addSuper({
-            names:TEST_SUPER_PLI, 
-            lang:'pli',
-        });
-        should(result).equal(taka);
-        let idThag = 'super-name:30.thag';
-        should.deepEqual(taka.entryOfId('thag'), {
-            entries: [],
-            pli: 'Theragāthā',
-            parent: 'kn',
-        });
-
-        let idSN = 'super-name:11.sn';
-        taka.addSuper({
-            names:TEST_SUPER_EN, 
-            lang:'en',
-        });
-        should.deepEqual(taka.entryOfId(idSN), {
-            entries: [],
-            en: "Linked Discourses Collection",
-            pli: "Saṁyuttanikāya",
-            parent: 'sutta',
-        });
-
-        let idMN = "super-name:7.mn";
-        taka.addNames({names:TEST_MN_PLI, });
-        should.deepEqual(taka.entryOfId(idMN), {
-            en: "Middle Discourses Collection",
-            pli: "Majjhimanikāya",
-            entries: [
-                'mn-name:1.mn-mulapannasa',                                  
-                'mn-name:57.mn-majjhimapannasa',          
-                'mn-name:113.mn-uparipannasa'  
-            ],
-            parent: 'sutta',
-        });
-        should(taka.entryOfId(idMN)).equal(taka.entryOfId('mn'));
     });
 })

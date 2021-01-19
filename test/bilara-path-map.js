@@ -178,7 +178,7 @@
             'variant/pli/ms',
         ]);
     });
-    it("TESTTESTtipitakaFolders() => root folder paths",async()=>{
+    it("tipitakaFolders() => root folder paths",async()=>{
         let bpm = await new BilaraPathMap().initialize();
         let takaPaths = await bpm.tipitakaPaths();
         should(takaPaths.filter(p=>/abhidhamma/.test(p)).length).equal(8);

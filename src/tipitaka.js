@@ -9,28 +9,29 @@
         'tipitaka/sutta/an',
         'tipitaka/sutta/dn',
         'tipitaka/sutta/kn',
-        'tipitaka/sutta/kn/bv',
-        'tipitaka/sutta/kn/cnd',
-        'tipitaka/sutta/kn/cp',
+        //'tipitaka/sutta/kn/bv',
+        //'tipitaka/sutta/kn/cnd',
+        //'tipitaka/sutta/kn/cp',
         'tipitaka/sutta/kn/dhp',
         'tipitaka/sutta/kn/iti',
-        'tipitaka/sutta/kn/ja',
-        'tipitaka/sutta/kn/kp',
-        'tipitaka/sutta/kn/mil',
-        'tipitaka/sutta/kn/mnd',
-        'tipitaka/sutta/kn/ne',
-        'tipitaka/sutta/kn/pe',
-        'tipitaka/sutta/kn/ps',
-        'tipitaka/sutta/kn/pv',
-        'tipitaka/sutta/kn/snp',
-        'tipitaka/sutta/kn/tha-ap',
+        //'tipitaka/sutta/kn/ja',
+        //'tipitaka/sutta/kn/kp',
+        //'tipitaka/sutta/kn/mil',
+        //'tipitaka/sutta/kn/mnd',
+        //'tipitaka/sutta/kn/ne',
+        //'tipitaka/sutta/kn/pe',
+        //'tipitaka/sutta/kn/ps',
+        //'tipitaka/sutta/kn/pv',
+        //'tipitaka/sutta/kn/snp',
+        //'tipitaka/sutta/kn/tha-ap',
         'tipitaka/sutta/kn/thag',
-        'tipitaka/sutta/kn/thi-ap',
+        //'tipitaka/sutta/kn/thi-ap',
         'tipitaka/sutta/kn/thig',
-        'tipitaka/sutta/kn/ud',
-        'tipitaka/sutta/kn/vv',
+        //'tipitaka/sutta/kn/ud',
+        //'tipitaka/sutta/kn/vv',
         'tipitaka/sutta/mn',
         'tipitaka/sutta/sn',
+        'tipitaka/sutta/snp',
         'tipitaka/vinaya',
     ];
 
@@ -136,6 +137,17 @@
             return typeof value === 'string' ? entryMap[value] : value;
         }
 
+        breadcrumbs(idLeaf) {
+            let { entryMap } = this;
+            let result = [];
+
+            for (let id=idLeaf, node; (node = this.entryOfId(id)); id = node.parent) {
+                let breadcrumb = Object.assign({id}, node);
+                result = [breadcrumb, ...result];
+            }
+            return result;
+        }
+
         addNames({names, lang=this.rootLang, simpleLeaf, superId}) {
             let { 
                 entryMap, 
@@ -193,9 +205,11 @@
                 let isLeaf = iGroup === reStructure.length - 1;
 
                 if (isLeaf) {
+                    let suid = id.split(':')[1].replace(/^[0-9]+\./,'');
+                    entryMap[id] = suid;
+                    entryMap[suid] = node;
                     let parent = groups[groups.length-1] || superNode;
-                    lang === rootLang && parent.entries.push(id);
-                    //node.suid = id.split(':')[1].replace(/^[0-9]+\./,'');
+                    lang === rootLang && parent.entries.push(suid);
                     node.parent = idStack[groups.length];
                 } else if (iGroup < reStructure.length) {
                     node.entries = node.entries || [];
