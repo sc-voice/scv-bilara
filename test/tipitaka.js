@@ -96,6 +96,8 @@
         "sn-name:94.sn2.1": "Paṭhamakassapasutta",
         "sn-name:312.sn-nidanavaggasamyutta": "Nidānavaggasaṁyutta", 
         "sn-name:313.sn12": "Nidānasaṁyutta", 
+        "sn-name:391.sn12-samanabrahmanavagga": "Samaṇabrāhmaṇavagga",
+        "sn-name:392.sn12.71": "Jarāmaraṇasutta",
         "sn-name:393.sn12.72-81": "Jātisuttādidasaka",
         "sn-name:394.sn12-antarapeyyala": "Antarapeyyāla",
         "sn-name:395.sn12-satthusuttadi": "Satthusuttādi",
@@ -165,7 +167,7 @@
         let taka = new Tipitaka({ entryMap, reStructures, });
         should(taka).properties({ entryMap, reStructures, });
     });
-    it("TESTTESTaddSuper() adds superstructure entries", ()=>{
+    it("addSuper() adds superstructure entries", ()=>{
         const PLITEST = TEST_AN_PLI;
         const PLIKEYS = Object.keys(PLITEST);
         let taka = new Tipitaka();
@@ -190,6 +192,12 @@
         should(taka.addNames({names:PLITEST,lang:'pli'})).equal(taka);
         //console.log(JSON.stringify(taka.entryMap, null,2));
 
+        should.deepEqual(taka.leaves('an'),[
+            'an1.1-10',
+            'an1.11-20',
+            'an1.21-30',
+            'an1.31-40',
+        ]);
         let rootId = PLIKEYS[0];
         //console.log(rootId, taka.entryOfId(rootId));
         should(taka.entryOfId(rootId)).properties({ 
@@ -233,6 +241,10 @@
         taka.addNames({names:PLITEST,lang:'pli'});
         //console.log(JSON.stringify(entryMap, null,2));
 
+        should.deepEqual(taka.leaves('dn'), [
+            'dn1', 'dn2', 'dn14', 'dn15',
+        ]);
+
         let rootId = PLIKEYS[0];
         //console.log(rootId, taka.entryOfId(rootId));
         should(taka.entryOfId(rootId)).properties({ 
@@ -267,6 +279,14 @@
         taka.addSuper({ names:TEST_SUPER_EN, lang:'en', });
         taka.addNames({names:TEST_THAG_PLI,lang:'pli'});
         //console.log(JSON.stringify(entryMap, null,2));
+
+        should.deepEqual(taka.leaves('thag'), [
+            'thag1.1',
+            'thag1.2',
+            'thag1.11',
+            'thag18.1',
+            'thag19.1',
+        ]);
 
         let rootId = 'thag-name:1.thag-ekakanipata';
         should(taka.entryOfId(rootId)).properties({
@@ -308,9 +328,10 @@
             parent: 'kn',
             pli: 'Theragāthā',
             en: 'Verses of the Senior Monks',
+            group: 'thag',
         });
     });
-    it("TESTTESTbreadcrumbs(id) handles lead id", ()=>{
+    it("breadcrumbs(id) handles lead id", ()=>{
         const PLIKEYS = Object.keys(TEST_MN_PLI);
         let taka = new Tipitaka();
 
@@ -346,7 +367,7 @@
             undefined, // 'The Root of All Things ',
         ]);
     });
-    it("TESTTESTbreadcrumbs(id) handles group id", ()=>{
+    it("breadcrumbs(id) handles group id", ()=>{
         const PLIKEYS = Object.keys(TEST_MN_PLI);
         let taka = new Tipitaka();
 
@@ -379,13 +400,12 @@
     it("TESTTESTaddNames(...) handles MN", ()=>{
         const PLIKEYS = Object.keys(TEST_MN_PLI);
         let taka = new Tipitaka();
-        let superId = "super-name:7.mn";
 
         // Build Tipitaka
         taka.addSuper({ names:TEST_SUPER_PLI, lang:'pli', });
         taka.addSuper({ names:TEST_SUPER_EN, lang:'en', });
-        taka.addNames({ names:TEST_MN_PLI, lang:'pli', superId, });
-        taka.addNames({ names:TEST_MN_EN, lang:'en', superId, });
+        taka.addNames({ names:TEST_MN_PLI, lang:'pli', });
+        taka.addNames({ names:TEST_MN_EN, lang:'en', });
 
         let idMN = "super-name:7.mn";
         should(taka.entryMap['mn']).equal(idMN);
@@ -400,7 +420,7 @@
             en: TEST_MN_EN[PLIKEYS[0]],
             pli: TEST_MN_PLI[PLIKEYS[0]], 
             entries: [PLIKEYS[1]],
-            parent: 'super-name:7.mn',
+            parent: 'mn',
         });
 
         should.deepEqual(taka.entryOfId(idMN), {
@@ -412,6 +432,7 @@
                 'mn-name:113.mn-uparipannasa'  
             ],
             parent: 'sutta',
+            group: 'mn',
         });
 
         should(taka.entryOfId(PLIKEYS[0])).properties({
@@ -420,12 +441,12 @@
         });
         //console.log(JSON.stringify(entryMap, null,2));
 
-        should.deepEqual(taka.entryOfId(superId).entries, [
+        should.deepEqual(taka.entryOfId('mn').entries, [
             PLIKEYS[0], 
             PLIKEYS[3], 
             PLIKEYS[9], 
         ]);
-        should(taka.entryOfId(PLIKEYS[0])).properties({parent:superId});
+        should(taka.entryOfId(PLIKEYS[0])).properties({parent:'mn'});
         should.deepEqual(taka.entryOfId(PLIKEYS[0]).entries, [
             PLIKEYS[1], // 2
         ]);
@@ -493,6 +514,16 @@
         taka.addNames({names:ENTEST,lang:'en', author:'sujato'});
         //console.log(JSON.stringify(entryMap, null,2));
 
+        should.deepEqual(taka.groupLeaves('sn'), [
+            'sn1.1',
+            'sn1.2',
+            'sn1.11',
+            'sn1.40',
+            'sn2.1',
+            'sn12.71',
+            'sn12.72-81',
+            'sn12.82',
+        ]);
         let rootId = 'sn-name:1.sn-sagathavaggasamyutta';
         should(taka.entryOfId(rootId)).properties({
             pli: PLITEST[rootId],
@@ -530,5 +561,47 @@
                 should(node).not.properties('en');
             }
         });
+    });
+    it("TESTTESTnextId(id) => successor", ()=>{
+        const PLITEST = TEST_SN_PLI;
+        const PLIKEYS = Object.keys(PLITEST);
+        const ENTEST = TEST_SN_EN;;
+        let taka = new Tipitaka();
+
+        taka.addSuper({ names:TEST_SUPER_PLI, lang:'pli', });
+        taka.addSuper({ names:TEST_SUPER_EN, lang:'en', });
+        taka.addNames({names:PLITEST,lang:'pli'});
+        taka.addNames({names:ENTEST,lang:'en', author:'sujato'});
+
+        should(taka.nextId('sn12.72-81')).equal('sn12.82');
+        should(taka.nextId('sn12.82')).equal(null);
+    });
+    it("TESTTESTnextId(id) => successor", ()=>{
+        const PLITEST = TEST_SN_PLI;
+        const PLIKEYS = Object.keys(PLITEST);
+        const ENTEST = TEST_SN_EN;;
+        let taka = new Tipitaka();
+
+        taka.addSuper({ names:TEST_SUPER_PLI, lang:'pli', });
+        taka.addSuper({ names:TEST_SUPER_EN, lang:'en', });
+        taka.addNames({names:PLITEST,lang:'pli'});
+        taka.addNames({names:ENTEST,lang:'en', author:'sujato'});
+
+        should(taka.nextId('sn12.72-81')).equal('sn12.82');
+        should(taka.nextId('sn12.82')).equal(null);
+    });
+    it("TESTTESTpreviousId(id) => predecessor", ()=>{
+        const PLITEST = TEST_SN_PLI;
+        const PLIKEYS = Object.keys(PLITEST);
+        const ENTEST = TEST_SN_EN;;
+        let taka = new Tipitaka();
+
+        taka.addSuper({ names:TEST_SUPER_PLI, lang:'pli', });
+        taka.addSuper({ names:TEST_SUPER_EN, lang:'en', });
+        taka.addNames({names:PLITEST,lang:'pli'});
+        taka.addNames({names:ENTEST,lang:'en', author:'sujato'});
+
+        should(taka.previousId('sn1.2')).equal('sn1.1');
+        should(taka.previousId('sn1.1')).equal(null);
     });
 })

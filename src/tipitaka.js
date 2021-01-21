@@ -102,6 +102,7 @@
                 });
             }
             this.entryMap = entryMap;
+            this.groupMap = {};
         }
 
         addSuper({names, lang=this.rootLang}) {
@@ -179,6 +180,7 @@
                 };
                 entryMap[superId] = superNode;
             }
+            superNode.group = superId;
             if (!reStructure) {
                 throw new Error([
                     `could not classify structure for`,
@@ -234,6 +236,59 @@
                 this.debug(id, node[rootLang], iGroup, groups.length, );
             }
             return this;
+        }
+
+        groupId(id) {
+            let node = this.entryOfId(id);
+            if (!node || node.parent === this.rootId) {
+                throw new Error(`groupId(${id}) not implemented`);
+            }
+            return node.group || this.groupId(node.parent);
+        }
+
+        leaves(id) {
+            let node = this.entryOfId(id);
+            if (!node) {
+                return [];
+            }
+            if (!node.entries) {
+                return [id];
+            }
+
+            return node.entries.reduce((a,entry) => {
+                return [...a, ...this.leaves(entry)];
+            }, []);
+        }
+
+        groupLeaves(id) {
+            let groupId = this.groupId(id);
+            if (!groupId) {
+                return [];
+            }
+            let leaves = this.groupMap[groupId];
+            if (!leaves) {
+                leaves = this.leaves(groupId);
+                this.groupMap[groupId] = leaves;
+            }
+            return leaves;
+        }
+
+        nextId(id) {
+            let leaves = this.groupLeaves(id);
+            if (!leaves) {
+                throw new Error(`nextId(${id}) no group`);
+            }
+            let iLeaf = leaves.findIndex(en=>en===id);
+            return iLeaf>=0 && leaves[iLeaf+1] || null;
+        }
+
+        previousId(id) {
+            let leaves = this.groupLeaves(id);
+            if (!leaves) {
+                throw new Error(`nextId(${id}) no group`);
+            }
+            let iLeaf = leaves.findIndex(en=>en===id);
+            return iLeaf>0 && leaves[iLeaf-1] || null;
         }
     }
 

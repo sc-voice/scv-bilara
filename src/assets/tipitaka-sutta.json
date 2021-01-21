@@ -43,7 +43,8 @@
       "dn-name:15.dn-mahavagga",
       "dn-name:26.dn-pathikavagga"
     ],
-    "parent": "sutta"
+    "parent": "sutta",
+    "group": "dn"
   },
   "super-name:4.da": {
     "entries": [],
@@ -64,7 +65,8 @@
       "mn-name:57.mn-majjhimapannasa",
       "mn-name:113.mn-uparipannasa"
     ],
-    "parent": "sutta"
+    "parent": "sutta",
+    "group": "mn"
   },
   "super-name:8.ma": {
     "entries": [],
@@ -87,7 +89,8 @@
       "sn-name:986.sn-salayatanavaggasamyutta",
       "sn-name:1378.sn-mahavaggasamyutta"
     ],
-    "parent": "sutta"
+    "parent": "sutta",
+    "group": "sn"
   },
   "super-name:12.sa": {
     "entries": [],
@@ -122,7 +125,8 @@
       "an-name:1151.an8",
       "an-name:1261.an9"
     ],
-    "parent": "sutta"
+    "parent": "sutta",
+    "group": "an"
   },
   "super-name:18.ea": {
     "entries": [],
@@ -184,7 +188,8 @@
       "dhp-name:25.dhp360-382",
       "dhp-name:26.dhp383-423"
     ],
-    "parent": "kn"
+    "parent": "kn",
+    "group": "dhp"
   },
   "super-name:25.ud": {
     "entries": [],
@@ -207,7 +212,8 @@
       "iti-name:57.iti-tikanipata",
       "iti-name:113.iti-catukkanipata"
     ],
-    "parent": "kn"
+    "parent": "kn",
+    "group": "iti"
   },
   "super-name:27.snp": {
     "pli": "Suttanipāta",
@@ -218,7 +224,8 @@
       "snp-name:42.snp-atthakavagga",
       "snp-name:59.snp-parayanavagga"
     ],
-    "parent": "sutta"
+    "parent": "sutta",
+    "group": "snp"
   },
   "super-name:28.vv": {
     "entries": [],
@@ -253,7 +260,8 @@
       "thag-name:316.thag-satthinipata",
       "thag-name:319.thag-mahanipata"
     ],
-    "parent": "kn"
+    "parent": "kn",
+    "group": "thag"
   },
   "super-name:31.thig": {
     "pli": "Therīgāthā",
@@ -275,7 +283,8 @@
       "thig-name:86.thig-cattalisanipata",
       "thig-name:88.thig-mahanipata"
     ],
-    "parent": "kn"
+    "parent": "kn",
+    "group": "thig"
   },
   "super-name:32.tha-ap": {
     "entries": [],
@@ -578,7 +587,7 @@
     "entries": [],
     "pli": "Mahāvastu"
   },
-  "super-name:107.san-mi-vi": {
+  "super-name:107.lzh-mi-vi": {
     "entries": [],
     "pli": "Mahīśāsaka Vinaya"
   },
