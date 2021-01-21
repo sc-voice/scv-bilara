@@ -1,6 +1,5 @@
 (function(exports) {
-    const fs = require("fs");
-    const path = require("path");
+    const SUTTA_ENTRIES = require('./assets/tipitaka-sutta.json');
     const { logger } = require('log-instance');
     const STRUCTURE = [
         'tipitaka',
@@ -103,6 +102,12 @@
             }
             this.entryMap = entryMap;
             this.groupMap = {};
+        }
+
+        static create(opts={}) {
+            return new Tipitaka({
+                entryMap: SUTTA_ENTRIES,
+            });
         }
 
         addSuper({names, lang=this.rootLang}) {
@@ -289,6 +294,11 @@
             }
             let iLeaf = leaves.findIndex(en=>en===id);
             return iLeaf>0 && leaves[iLeaf-1] || null;
+        }
+
+        parentOfId(id) {
+            let node = this.entryOfId(id);
+            return node && this.entryOfId(node.parent);
         }
     }
 

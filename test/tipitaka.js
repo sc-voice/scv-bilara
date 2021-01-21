@@ -604,4 +604,29 @@
         should(taka.previousId('sn1.2')).equal('sn1.1');
         should(taka.previousId('sn1.1')).equal(null);
     });
+    it("TESTTESTcreate(...) => pre-built Tipitaka", ()=>{
+        /*
+         * This example demonstrates the simplest use case,
+         * which relies on a pre-built Tipitaka.
+         *
+         * NOTE: The pre-built Tipitaka can be updated by 
+         * running `scripts/build-tipitaka.js`
+         */
+        let taka = Tipitaka.create();
+        should(taka.nextId('mn1')).equal('mn2');
+        should(taka.nextId('sn12.23')).equal('sn12.24');
+        should(taka.previousId('sn12.24')).equal('sn12.23');
+        should(taka.rootId).equal('tipitaka');
+        should.deepEqual(taka.entryOfId('an1.1-10'), {
+            en: 'What Occupies the Mind',
+            parent: 'an-name:2.an1-cittapariyadanavagga',
+            pli: 'Cittapariyādānavagga',
+        });
+        should.deepEqual(taka.parentOfId('an1.1-10'), {
+            en: 'What Occupies the Mind',
+            parent: 'an-name:1.an1',
+            pli: 'Cittapariyādānavagga',
+            entries: [ 'an1.1-10' ],
+        });
+    });
 })
