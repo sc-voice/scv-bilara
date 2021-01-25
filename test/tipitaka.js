@@ -24,6 +24,11 @@
         "super-name:30.thag": "Verses of the Senior Monks",
         "super-name:31.thig": "Verses of the Senior Nuns",
     }
+    const TEST_DHP_PLI = {
+        "dhp-name:1.dhp1-20": "Yamakavagga",
+        "dhp-name:2.dhp21-32": "Appamādavagga",
+        "dhp-name:3.dhp33-43": "Cittavagga",
+    }
     const TEST_DN_PLI = {
         "dn-name:1.dn-silakkhandhavagga": "Sīlakkhandhavagga",
         "dn-name:2.dn1": "Brahmajālasutta",

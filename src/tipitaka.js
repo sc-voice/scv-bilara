@@ -14,7 +14,7 @@
         'tipitaka/sutta/kn/dhp',
         'tipitaka/sutta/kn/iti',
         //'tipitaka/sutta/kn/ja',
-        //'tipitaka/sutta/kn/kp',
+        'tipitaka/sutta/kn/kp',
         //'tipitaka/sutta/kn/mil',
         //'tipitaka/sutta/kn/mnd',
         //'tipitaka/sutta/kn/ne',
@@ -26,7 +26,7 @@
         'tipitaka/sutta/kn/thag',
         //'tipitaka/sutta/kn/thi-ap',
         'tipitaka/sutta/kn/thig',
-        //'tipitaka/sutta/kn/ud',
+        'tipitaka/sutta/kn/ud',
         //'tipitaka/sutta/kn/vv',
         'tipitaka/sutta/mn',
         'tipitaka/sutta/sn',
@@ -53,6 +53,9 @@
         /.*[a-z][0-9]+(-samyutta)?$/, // group
         /.*vagga|peyyala|di|pannasaka$/, // group
         /.*[0-9]+\.[-0-9]+$/, // leaf
+    ];
+    const RE_GROUPS_1DHP = [
+        /.*vagga$/,
     ];
     const RE_GROUPS_1ANY = [ 
         /.*/, // group (always matched)

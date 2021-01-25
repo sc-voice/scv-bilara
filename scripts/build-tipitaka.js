@@ -36,6 +36,7 @@ const OUT_PATH = path.join(APP_DIR, 'src', 'assets', 'tipitaka-sutta.json');
         }
         let id = fname.split('-name')[0];
         if (entryMap[id]) {
+            console.log(`processing: ${fname}`);
             let pliFilePath = path.join(pliNamesDir, fname);
             let names = JSON.parse(await fs.promises.readFile(pliFilePath));
             taka.addNames({names, lang:'pli'});

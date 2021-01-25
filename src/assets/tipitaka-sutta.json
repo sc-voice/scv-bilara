@@ -14,8 +14,10 @@
   "kn": "super-name:22.kn",
   "dhp": "super-name:24.dhp",
   "iti": "super-name:26.iti",
+  "kp": "super-name:23.kp",
   "thag": "super-name:30.thag",
   "thig": "super-name:31.thig",
+  "ud": "super-name:25.ud",
   "mn": "super-name:7.mn",
   "sn": "super-name:11.sn",
   "snp": "super-name:27.snp",
@@ -149,14 +151,28 @@
     "entries": [
       "dhp",
       "iti",
+      "kp",
       "thag",
-      "thig"
+      "thig",
+      "ud"
     ],
     "parent": "sutta"
   },
   "super-name:23.kp": {
-    "entries": [],
-    "pli": "Khuddakapāṭha"
+    "pli": "Khuddakapāṭha",
+    "entries": [
+      "kp-name:1.kp1",
+      "kp-name:2.kp2",
+      "kp-name:3.kp3",
+      "kp-name:4.kp4",
+      "kp-name:5.kp5",
+      "kp-name:6.kp6",
+      "kp-name:7.kp7",
+      "kp-name:8.kp8",
+      "kp-name:9.kp9"
+    ],
+    "parent": "kn",
+    "group": "kp"
   },
   "super-name:24.dhp": {
     "pli": "Dhammapada",
@@ -192,8 +208,19 @@
     "group": "dhp"
   },
   "super-name:25.ud": {
-    "entries": [],
-    "pli": "Udāna"
+    "pli": "Udāna",
+    "entries": [
+      "ud-name:1.ud-bodhivagga",
+      "ud-name:12.ud-mucalindavagga",
+      "ud-name:23.ud-nandavagga",
+      "ud-name:34.ud-meghiyavagga",
+      "ud-name:45.ud-sonavagga",
+      "ud-name:56.ud-jaccandhavagga",
+      "ud-name:67.ud-culavagga",
+      "ud-name:78.ud-pataligamiyavagga"
+    ],
+    "parent": "kn",
+    "group": "ud"
   },
   "super-name:26.iti": {
     "pli": "Itivuttaka",
@@ -12539,6 +12566,60 @@
   "iti112": {
     "pli": "Lokasutta",
     "parent": "iti-name:114.iti-brahmanadhammayagavagga"
+  },
+  "kp-name:1.kp1": {
+    "pli": "Saraṇattaya",
+    "entries": [],
+    "parent": "kp",
+    "en": "The Three Refuges"
+  },
+  "kp-name:2.kp2": {
+    "pli": "Dasasikkhāpada",
+    "entries": [],
+    "parent": "kp",
+    "en": "The Ten Precepts"
+  },
+  "kp-name:3.kp3": {
+    "pli": "Dvattiṁsākāra",
+    "entries": [],
+    "parent": "kp",
+    "en": "The Thirty-two Parts of the Body"
+  },
+  "kp-name:4.kp4": {
+    "pli": "Kumārapañhā",
+    "entries": [],
+    "parent": "kp",
+    "en": "The Boy’s Questions"
+  },
+  "kp-name:5.kp5": {
+    "pli": "Maṅgalasutta",
+    "entries": [],
+    "parent": "kp",
+    "en": "True Blessings"
+  },
+  "kp-name:6.kp6": {
+    "pli": "Ratanasutta",
+    "entries": [],
+    "parent": "kp",
+    "en": "Gems"
+  },
+  "kp-name:7.kp7": {
+    "pli": "Tirokuṭṭasutta",
+    "entries": [],
+    "parent": "kp",
+    "en": "Without the Walls"
+  },
+  "kp-name:8.kp8": {
+    "pli": "Nidhikaṇḍasutta",
+    "entries": [],
+    "parent": "kp",
+    "en": "Storing Your Savings"
+  },
+  "kp-name:9.kp9": {
+    "pli": "Mettāsutta",
+    "entries": [],
+    "parent": "kp",
+    "en": "The Teaching on Love"
   },
   "mn-name:1.mn-mulapannasa": {
     "pli": "Mūlapaṇṇāsa",
@@ -30123,5 +30204,541 @@
   "thig16.1": {
     "pli": "Sumedhātherīgāthā",
     "parent": "thig-name:88.thig-mahanipata"
+  },
+  "ud-name:1.ud-bodhivagga": {
+    "pli": "Bodhivagga",
+    "entries": [
+      "ud1.1",
+      "ud1.2",
+      "ud1.3",
+      "ud1.4",
+      "ud1.5",
+      "ud1.6",
+      "ud1.7",
+      "ud1.8",
+      "ud1.9",
+      "ud1.10"
+    ],
+    "parent": "ud",
+    "en": "Awakening "
+  },
+  "ud-name:2.ud1.1": "ud1.1",
+  "ud1.1": {
+    "pli": "Paṭhamabodhisutta",
+    "parent": "ud-name:1.ud-bodhivagga"
+  },
+  "ud-name:3.ud1.2": "ud1.2",
+  "ud1.2": {
+    "pli": "Dutiyabodhisutta",
+    "parent": "ud-name:1.ud-bodhivagga"
+  },
+  "ud-name:4.ud1.3": "ud1.3",
+  "ud1.3": {
+    "pli": "Tatiyabodhisutta",
+    "parent": "ud-name:1.ud-bodhivagga"
+  },
+  "ud-name:5.ud1.4": "ud1.4",
+  "ud1.4": {
+    "pli": "Huṁhuṅkasutta",
+    "parent": "ud-name:1.ud-bodhivagga"
+  },
+  "ud-name:6.ud1.5": "ud1.5",
+  "ud1.5": {
+    "pli": "Brāhmaṇasutta",
+    "parent": "ud-name:1.ud-bodhivagga"
+  },
+  "ud-name:7.ud1.6": "ud1.6",
+  "ud1.6": {
+    "pli": "Mahākassapasutta",
+    "parent": "ud-name:1.ud-bodhivagga"
+  },
+  "ud-name:8.ud1.7": "ud1.7",
+  "ud1.7": {
+    "pli": "Ajakalāpakasutta",
+    "parent": "ud-name:1.ud-bodhivagga"
+  },
+  "ud-name:9.ud1.8": "ud1.8",
+  "ud1.8": {
+    "pli": "Saṅgāmajisutta",
+    "parent": "ud-name:1.ud-bodhivagga"
+  },
+  "ud-name:10.ud1.9": "ud1.9",
+  "ud1.9": {
+    "pli": "Jaṭilasutta",
+    "parent": "ud-name:1.ud-bodhivagga"
+  },
+  "ud-name:11.ud1.10": "ud1.10",
+  "ud1.10": {
+    "pli": "Bāhiyasutta",
+    "parent": "ud-name:1.ud-bodhivagga"
+  },
+  "ud-name:12.ud-mucalindavagga": {
+    "pli": "Mucalindavagga",
+    "entries": [
+      "ud2.1",
+      "ud2.2",
+      "ud2.3",
+      "ud2.4",
+      "ud2.5",
+      "ud2.6",
+      "ud2.7",
+      "ud2.8",
+      "ud2.9",
+      "ud2.10"
+    ],
+    "parent": "ud",
+    "en": "With Mucalinda"
+  },
+  "ud-name:13.ud2.1": "ud2.1",
+  "ud2.1": {
+    "pli": "Mucalindasutta",
+    "parent": "ud-name:12.ud-mucalindavagga"
+  },
+  "ud-name:14.ud2.2": "ud2.2",
+  "ud2.2": {
+    "pli": "Rājasutta",
+    "parent": "ud-name:12.ud-mucalindavagga"
+  },
+  "ud-name:15.ud2.3": "ud2.3",
+  "ud2.3": {
+    "pli": "Daṇḍasutta",
+    "parent": "ud-name:12.ud-mucalindavagga"
+  },
+  "ud-name:16.ud2.4": "ud2.4",
+  "ud2.4": {
+    "pli": "Sakkārasutta",
+    "parent": "ud-name:12.ud-mucalindavagga"
+  },
+  "ud-name:17.ud2.5": "ud2.5",
+  "ud2.5": {
+    "pli": "Upāsakasutta",
+    "parent": "ud-name:12.ud-mucalindavagga"
+  },
+  "ud-name:18.ud2.6": "ud2.6",
+  "ud2.6": {
+    "pli": "Gabbhinīsutta",
+    "parent": "ud-name:12.ud-mucalindavagga"
+  },
+  "ud-name:19.ud2.7": "ud2.7",
+  "ud2.7": {
+    "pli": "Ekaputtakasutta",
+    "parent": "ud-name:12.ud-mucalindavagga"
+  },
+  "ud-name:20.ud2.8": "ud2.8",
+  "ud2.8": {
+    "pli": "Suppavāsāsutta",
+    "parent": "ud-name:12.ud-mucalindavagga"
+  },
+  "ud-name:21.ud2.9": "ud2.9",
+  "ud2.9": {
+    "pli": "Visākhāsutta",
+    "parent": "ud-name:12.ud-mucalindavagga"
+  },
+  "ud-name:22.ud2.10": "ud2.10",
+  "ud2.10": {
+    "pli": "Bhaddiyasutta",
+    "parent": "ud-name:12.ud-mucalindavagga"
+  },
+  "ud-name:23.ud-nandavagga": {
+    "pli": "Nandavagga",
+    "entries": [
+      "ud3.1",
+      "ud3.2",
+      "ud3.3",
+      "ud3.4",
+      "ud3.5",
+      "ud3.6",
+      "ud3.7",
+      "ud3.8",
+      "ud3.9",
+      "ud3.10"
+    ],
+    "parent": "ud",
+    "en": "With Nanda "
+  },
+  "ud-name:24.ud3.1": "ud3.1",
+  "ud3.1": {
+    "pli": "Kammavipākajasutta",
+    "parent": "ud-name:23.ud-nandavagga"
+  },
+  "ud-name:25.ud3.2": "ud3.2",
+  "ud3.2": {
+    "pli": "Nandasutta",
+    "parent": "ud-name:23.ud-nandavagga"
+  },
+  "ud-name:26.ud3.3": "ud3.3",
+  "ud3.3": {
+    "pli": "Yasojasutta",
+    "parent": "ud-name:23.ud-nandavagga"
+  },
+  "ud-name:27.ud3.4": "ud3.4",
+  "ud3.4": {
+    "pli": "Sāriputtasutta",
+    "parent": "ud-name:23.ud-nandavagga"
+  },
+  "ud-name:28.ud3.5": "ud3.5",
+  "ud3.5": {
+    "pli": "Mahāmoggallānasutta",
+    "parent": "ud-name:23.ud-nandavagga"
+  },
+  "ud-name:29.ud3.6": "ud3.6",
+  "ud3.6": {
+    "pli": "Pilindavacchasutta",
+    "parent": "ud-name:23.ud-nandavagga"
+  },
+  "ud-name:30.ud3.7": "ud3.7",
+  "ud3.7": {
+    "pli": "Sakkudānasutta",
+    "parent": "ud-name:23.ud-nandavagga"
+  },
+  "ud-name:31.ud3.8": "ud3.8",
+  "ud3.8": {
+    "pli": "Piṇḍapātikasutta",
+    "parent": "ud-name:23.ud-nandavagga"
+  },
+  "ud-name:32.ud3.9": "ud3.9",
+  "ud3.9": {
+    "pli": "Sippasutta",
+    "parent": "ud-name:23.ud-nandavagga"
+  },
+  "ud-name:33.ud3.10": "ud3.10",
+  "ud3.10": {
+    "pli": "Lokasutta",
+    "parent": "ud-name:23.ud-nandavagga"
+  },
+  "ud-name:34.ud-meghiyavagga": {
+    "pli": "Meghiyavagga",
+    "entries": [
+      "ud4.1",
+      "ud4.2",
+      "ud4.3",
+      "ud4.4",
+      "ud4.5",
+      "ud4.6",
+      "ud4.7",
+      "ud4.8",
+      "ud4.9",
+      "ud4.10"
+    ],
+    "parent": "ud",
+    "en": "With Meghiya "
+  },
+  "ud-name:35.ud4.1": "ud4.1",
+  "ud4.1": {
+    "pli": "Meghiyasutta",
+    "parent": "ud-name:34.ud-meghiyavagga"
+  },
+  "ud-name:36.ud4.2": "ud4.2",
+  "ud4.2": {
+    "pli": "Uddhatasutta",
+    "parent": "ud-name:34.ud-meghiyavagga"
+  },
+  "ud-name:37.ud4.3": "ud4.3",
+  "ud4.3": {
+    "pli": "Gopālakasutta",
+    "parent": "ud-name:34.ud-meghiyavagga"
+  },
+  "ud-name:38.ud4.4": "ud4.4",
+  "ud4.4": {
+    "pli": "Yakkhapahārasutta",
+    "parent": "ud-name:34.ud-meghiyavagga"
+  },
+  "ud-name:39.ud4.5": "ud4.5",
+  "ud4.5": {
+    "pli": "Nāgasutta",
+    "parent": "ud-name:34.ud-meghiyavagga"
+  },
+  "ud-name:40.ud4.6": "ud4.6",
+  "ud4.6": {
+    "pli": "Piṇḍolasutta",
+    "parent": "ud-name:34.ud-meghiyavagga"
+  },
+  "ud-name:41.ud4.7": "ud4.7",
+  "ud4.7": {
+    "pli": "Sāriputtasutta",
+    "parent": "ud-name:34.ud-meghiyavagga"
+  },
+  "ud-name:42.ud4.8": "ud4.8",
+  "ud4.8": {
+    "pli": "Sundarīsutta",
+    "parent": "ud-name:34.ud-meghiyavagga"
+  },
+  "ud-name:43.ud4.9": "ud4.9",
+  "ud4.9": {
+    "pli": "Upasenasutta",
+    "parent": "ud-name:34.ud-meghiyavagga"
+  },
+  "ud-name:44.ud4.10": "ud4.10",
+  "ud4.10": {
+    "pli": "Sāriputtaupasamasutta",
+    "parent": "ud-name:34.ud-meghiyavagga"
+  },
+  "ud-name:45.ud-sonavagga": {
+    "pli": "Soṇavagga",
+    "entries": [
+      "ud5.1",
+      "ud5.2",
+      "ud5.3",
+      "ud5.4",
+      "ud5.5",
+      "ud5.6",
+      "ud5.7",
+      "ud5.8",
+      "ud5.9",
+      "ud5.10"
+    ],
+    "parent": "ud",
+    "en": "With Soṇa"
+  },
+  "ud-name:46.ud5.1": "ud5.1",
+  "ud5.1": {
+    "pli": "Piyatarasutta",
+    "parent": "ud-name:45.ud-sonavagga"
+  },
+  "ud-name:47.ud5.2": "ud5.2",
+  "ud5.2": {
+    "pli": "Appāyukasutta",
+    "parent": "ud-name:45.ud-sonavagga"
+  },
+  "ud-name:48.ud5.3": "ud5.3",
+  "ud5.3": {
+    "pli": "Suppabuddhakuṭṭhisutta",
+    "parent": "ud-name:45.ud-sonavagga"
+  },
+  "ud-name:49.ud5.4": "ud5.4",
+  "ud5.4": {
+    "pli": "Kumārakasutta",
+    "parent": "ud-name:45.ud-sonavagga"
+  },
+  "ud-name:50.ud5.5": "ud5.5",
+  "ud5.5": {
+    "pli": "Uposathasutta",
+    "parent": "ud-name:45.ud-sonavagga"
+  },
+  "ud-name:51.ud5.6": "ud5.6",
+  "ud5.6": {
+    "pli": "Soṇasutta",
+    "parent": "ud-name:45.ud-sonavagga"
+  },
+  "ud-name:52.ud5.7": "ud5.7",
+  "ud5.7": {
+    "pli": "Kaṅkhārevatasutta",
+    "parent": "ud-name:45.ud-sonavagga"
+  },
+  "ud-name:53.ud5.8": "ud5.8",
+  "ud5.8": {
+    "pli": "Saṁghabhedasutta",
+    "parent": "ud-name:45.ud-sonavagga"
+  },
+  "ud-name:54.ud5.9": "ud5.9",
+  "ud5.9": {
+    "pli": "Sadhāyamānasutta",
+    "parent": "ud-name:45.ud-sonavagga"
+  },
+  "ud-name:55.ud5.10": "ud5.10",
+  "ud5.10": {
+    "pli": "Cūḷapanthakasutta",
+    "parent": "ud-name:45.ud-sonavagga"
+  },
+  "ud-name:56.ud-jaccandhavagga": {
+    "pli": "Jaccandhavagga",
+    "entries": [
+      "ud6.1",
+      "ud6.2",
+      "ud6.3",
+      "ud6.4",
+      "ud6.5",
+      "ud6.6",
+      "ud6.7",
+      "ud6.8",
+      "ud6.9",
+      "ud6.10"
+    ],
+    "parent": "ud",
+    "en": "Blind From Birth "
+  },
+  "ud-name:57.ud6.1": "ud6.1",
+  "ud6.1": {
+    "pli": "Āyusaṅkhārossajjanasutta",
+    "parent": "ud-name:56.ud-jaccandhavagga"
+  },
+  "ud-name:58.ud6.2": "ud6.2",
+  "ud6.2": {
+    "pli": "Sattajaṭilasutta",
+    "parent": "ud-name:56.ud-jaccandhavagga"
+  },
+  "ud-name:59.ud6.3": "ud6.3",
+  "ud6.3": {
+    "pli": "Paccavekkhaṇasutta",
+    "parent": "ud-name:56.ud-jaccandhavagga"
+  },
+  "ud-name:60.ud6.4": "ud6.4",
+  "ud6.4": {
+    "pli": "Paṭhamanānātitthiyasutta",
+    "parent": "ud-name:56.ud-jaccandhavagga"
+  },
+  "ud-name:61.ud6.5": "ud6.5",
+  "ud6.5": {
+    "pli": "Dutiyanānātitthiyasutta",
+    "parent": "ud-name:56.ud-jaccandhavagga"
+  },
+  "ud-name:62.ud6.6": "ud6.6",
+  "ud6.6": {
+    "pli": "Tatiyanānātitthiyasutta",
+    "parent": "ud-name:56.ud-jaccandhavagga"
+  },
+  "ud-name:63.ud6.7": "ud6.7",
+  "ud6.7": {
+    "pli": "Subhūtisutta",
+    "parent": "ud-name:56.ud-jaccandhavagga"
+  },
+  "ud-name:64.ud6.8": "ud6.8",
+  "ud6.8": {
+    "pli": "Gaṇikāsutta",
+    "parent": "ud-name:56.ud-jaccandhavagga"
+  },
+  "ud-name:65.ud6.9": "ud6.9",
+  "ud6.9": {
+    "pli": "Upātidhāvantisutta",
+    "parent": "ud-name:56.ud-jaccandhavagga"
+  },
+  "ud-name:66.ud6.10": "ud6.10",
+  "ud6.10": {
+    "pli": "Uppajjantisutta",
+    "parent": "ud-name:56.ud-jaccandhavagga"
+  },
+  "ud-name:67.ud-culavagga": {
+    "pli": "Cūḷavagga",
+    "entries": [
+      "ud7.1",
+      "ud7.2",
+      "ud7.3",
+      "ud7.4",
+      "ud7.5",
+      "ud7.6",
+      "ud7.7",
+      "ud7.8",
+      "ud7.9",
+      "ud7.10"
+    ],
+    "parent": "ud",
+    "en": "The Lesser Chapter "
+  },
+  "ud-name:68.ud7.1": "ud7.1",
+  "ud7.1": {
+    "pli": "Paṭhamalakuṇḍakabhaddiyasutta",
+    "parent": "ud-name:67.ud-culavagga"
+  },
+  "ud-name:69.ud7.2": "ud7.2",
+  "ud7.2": {
+    "pli": "Dutiyalakuṇḍakabhaddiyasutta",
+    "parent": "ud-name:67.ud-culavagga"
+  },
+  "ud-name:70.ud7.3": "ud7.3",
+  "ud7.3": {
+    "pli": "Paṭhamasattasutta",
+    "parent": "ud-name:67.ud-culavagga"
+  },
+  "ud-name:71.ud7.4": "ud7.4",
+  "ud7.4": {
+    "pli": "Dutiyasattasutta",
+    "parent": "ud-name:67.ud-culavagga"
+  },
+  "ud-name:72.ud7.5": "ud7.5",
+  "ud7.5": {
+    "pli": "Aparalakuṇḍakabhaddiyasutta",
+    "parent": "ud-name:67.ud-culavagga"
+  },
+  "ud-name:73.ud7.6": "ud7.6",
+  "ud7.6": {
+    "pli": "Taṇhāsaṅkhayasutta",
+    "parent": "ud-name:67.ud-culavagga"
+  },
+  "ud-name:74.ud7.7": "ud7.7",
+  "ud7.7": {
+    "pli": "Papañcakhayasutta",
+    "parent": "ud-name:67.ud-culavagga"
+  },
+  "ud-name:75.ud7.8": "ud7.8",
+  "ud7.8": {
+    "pli": "Kaccānasutta",
+    "parent": "ud-name:67.ud-culavagga"
+  },
+  "ud-name:76.ud7.9": "ud7.9",
+  "ud7.9": {
+    "pli": "Udapānasutta",
+    "parent": "ud-name:67.ud-culavagga"
+  },
+  "ud-name:77.ud7.10": "ud7.10",
+  "ud7.10": {
+    "pli": "Utenasutta",
+    "parent": "ud-name:67.ud-culavagga"
+  },
+  "ud-name:78.ud-pataligamiyavagga": {
+    "pli": "Pāṭaligāmiyavagga",
+    "entries": [
+      "ud8.1",
+      "ud8.2",
+      "ud8.3",
+      "ud8.4",
+      "ud8.5",
+      "ud8.6",
+      "ud8.7",
+      "ud8.8",
+      "ud8.9",
+      "ud8.10"
+    ],
+    "parent": "ud",
+    "en": "About the Pāṭali Villagers"
+  },
+  "ud-name:79.ud8.1": "ud8.1",
+  "ud8.1": {
+    "pli": "Paṭhamanibbānapaṭisaṁyuttasutta",
+    "parent": "ud-name:78.ud-pataligamiyavagga"
+  },
+  "ud-name:80.ud8.2": "ud8.2",
+  "ud8.2": {
+    "pli": "Dutiyanibbānapaṭisaṁyuttasutta",
+    "parent": "ud-name:78.ud-pataligamiyavagga"
+  },
+  "ud-name:81.ud8.3": "ud8.3",
+  "ud8.3": {
+    "pli": "Tatiyanibbānapaṭisaṁyuttasutta",
+    "parent": "ud-name:78.ud-pataligamiyavagga"
+  },
+  "ud-name:82.ud8.4": "ud8.4",
+  "ud8.4": {
+    "pli": "Catutthanibbānapaṭisaṁyuttasutta",
+    "parent": "ud-name:78.ud-pataligamiyavagga"
+  },
+  "ud-name:83.ud8.5": "ud8.5",
+  "ud8.5": {
+    "pli": "Cundasutta",
+    "parent": "ud-name:78.ud-pataligamiyavagga"
+  },
+  "ud-name:84.ud8.6": "ud8.6",
+  "ud8.6": {
+    "pli": "Pāṭaligāmiyasutta",
+    "parent": "ud-name:78.ud-pataligamiyavagga"
+  },
+  "ud-name:85.ud8.7": "ud8.7",
+  "ud8.7": {
+    "pli": "Dvidhāpathasutta",
+    "parent": "ud-name:78.ud-pataligamiyavagga"
+  },
+  "ud-name:86.ud8.8": "ud8.8",
+  "ud8.8": {
+    "pli": "Visākhāsutta",
+    "parent": "ud-name:78.ud-pataligamiyavagga"
+  },
+  "ud-name:87.ud8.9": "ud8.9",
+  "ud8.9": {
+    "pli": "Paṭhamadabbasutta",
+    "parent": "ud-name:78.ud-pataligamiyavagga"
+  },
+  "ud-name:88.ud8.10": "ud8.10",
+  "ud8.10": {
+    "pli": "Dutiyadabbasutta",
+    "parent": "ud-name:78.ud-pataligamiyavagga"
   }
 }
