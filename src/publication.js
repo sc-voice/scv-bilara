@@ -93,15 +93,17 @@
                 return that.pubEntries.reduce( (a,p) => {
                     let {
                         is_published,
+                        published,
                         text_uid,
                         source_url,
                         publication_number,
                         parent_publication,
                     } = p;
                     var bilPath = source_url.replace(/.*master\//,'');
-                    if (!includeUnpublished &&
-                        is_published!=="true" && p.is_published!==true){
-                        return a;
+                    if (!includeUnpublished) { 
+                        if (is_published!=="true" && p.is_published!==true) {
+                            return a;
+                        }
                     }
                     if (a[text_uid]) {
                         return a;
@@ -140,10 +142,16 @@
                 this.includeUnpublished;
             var pubEntries = this.pubEntries || [];
             return pubEntries.reduce((a,p) => {
-                if (includeUnpublished ||
-                    p.is_published==="true" || p.is_published===true) {
-                    var bp = p.source_url.replace(PUB_PREFIX, ''); 
+                let is_published = p.is_published==="true" || p.is_published===true;
+                if (includeUnpublished || is_published) {
+                    let bp = p.source_url.replace(PUB_PREFIX, ''); 
                     bp && a.push(bp);
+                } else if (p.publish) {
+                    let bp = p.source_url.replace(PUB_PREFIX, ''); 
+                    bp && p.publish.forEach(pub=>{
+                        let bpException = `${bp}/${pub}`;
+                        a.push(bpException);
+                    });
                 }
                 return a;
             }, []).sort();
@@ -215,9 +223,10 @@
                 _rePubPaths: re,
             } = this;
             var sp = bpm.suidPath(fpath);
-            var pub = !!(sp && re.test(sp));
-
-            return re.test(sp) || re.test(fpath);
+            let isSuid = re.test(sp);
+            let pub = re.test(sp) || re.test(fpath);
+            this.debug(`isPublishedPath`, {fpath, pub})
+            return pub;
         }
 
     }

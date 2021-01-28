@@ -49,7 +49,7 @@
             initialized: false,
         });
     });
-    it("pubPaths() => published bilara paths", async()=>{
+    it("TESTTESTpubPaths() => published bilara paths", async()=>{
         var pub = await pubTest.initialize(); 
         should.deepEqual(pub.pubPaths().sort(),[
             `${SARANA}/an`,
@@ -74,6 +74,9 @@
             `${SUJATO}/kn/ud`,
             `${SUJATO}/mn`,
             `${SUJATO}/sn`,
+            `${KAZ}/an/an4/an4.182`,
+            `${KAZ}/an/an4/an4.58`,
+            `${KAZ}/an/an11/an11.15`,
         ].sort());
     });
     it("pubPaths() => all bilara paths", async()=>{
@@ -166,9 +169,11 @@
             `${RUTEAM}/dn`,
         ].sort());
     });
-    it("isPublishedPath(f) filters supported suttas", async()=>{
+    it("TESTTESTisPublishedPath(f) filters supported suttas", async()=>{
         var pub = await pubTest.initialize(); 
     
+        should(pub.isPublishedPath(`${KAZ}/an/an4/an4.182_translation-jpn-kaz.json`))
+            .equal(true);
         should(pub.isPublishedPath(`${SUJATO}/dn/dn16_translation-en-sujato.json:1`))
             .equal(true);
         should(pub.isPublishedPath(
@@ -197,30 +202,27 @@
             TRANSPATH('de', 'sabbamitta', `kn/thig/thig3.8`)))
             .equal(true);
     });
-    it("isPublishedPath(f) allows unpublished paths", done=>{
-        (async function() { try {
-            var pub = await new Publication({
-                includeUnpublished: true,
-            }).initialize(); 
-        
-            should(pub.isPublishedPath('nonsense/en/nobody'))
-                .equal(false);
-            should(pub.isPublishedPath(ROOTPATH('mn/mn1')))
-                .equal(true);
-            should(pub.isPublishedPath(ROOTPATH('mn1')))
-                .equal(true);
-            should(pub.isPublishedPath('pli-tv-bu-vb-pj1/en/brahmali'))
-                .equal(true);
-            should(pub.isPublishedPath(TRANSPATH('en', 'sujato','mn/mn1')))
-                .equal(true);
-            should(pub.isPublishedPath(
-                TRANSPATH('en', 'sujato', `kn/thig/thig2.4`)))
-                .equal(true);
-            should(pub.isPublishedPath(
-                TRANSPATH('en', 'sujato', `kn/dhp/dhp21-32`)))
-                .equal(true);
-            done();
-        } catch(e) {done(e);} })();
+    it("isPublishedPath(f) allows unpublished paths", async()=>{
+        var pub = await new Publication({
+            includeUnpublished: true,
+        }).initialize(); 
+    
+        should(pub.isPublishedPath('nonsense/en/nobody'))
+            .equal(false);
+        should(pub.isPublishedPath(ROOTPATH('mn/mn1')))
+            .equal(true);
+        should(pub.isPublishedPath(ROOTPATH('mn1')))
+            .equal(true);
+        should(pub.isPublishedPath('pli-tv-bu-vb-pj1/en/brahmali'))
+            .equal(true);
+        should(pub.isPublishedPath(TRANSPATH('en', 'sujato','mn/mn1')))
+            .equal(true);
+        should(pub.isPublishedPath(
+            TRANSPATH('en', 'sujato', `kn/thig/thig2.4`)))
+            .equal(true);
+        should(pub.isPublishedPath(
+            TRANSPATH('en', 'sujato', `kn/dhp/dhp21-32`)))
+            .equal(true);
     });
     it("isPublishedPath(f) handles pieces of a nikaya", done=>{
         (async function() { try {

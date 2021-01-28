@@ -187,7 +187,7 @@
             entries: [ 'an', 'dn', 'kn', 'mn', 'sn', 'snp', ],
         });
     });
-    it("TESTTESTaddNames(...) handles AN", ()=>{
+    it("addNames(...) handles AN", ()=>{
         const PLITEST = TEST_AN_PLI;
         const PLIKEYS = Object.keys(PLITEST);
         let taka = new Tipitaka();
@@ -236,7 +236,7 @@
             should(node).properties({ pli: PLITEST[id], });
         });
     });
-    it("TESTTESTaddNames(...) handles DN", ()=>{
+    it("addNames(...) handles DN", ()=>{
         const PLITEST = TEST_DN_PLI;
         const PLIKEYS = Object.keys(PLITEST);
         let taka = new Tipitaka();
@@ -276,7 +276,7 @@
             should(node).properties({ pli: PLITEST[id], });
         });
     });
-    it("TESTTESTaddNames(...) handles Thag", ()=>{
+    it("addNames(...) handles Thag", ()=>{
         const PLIKEYS = Object.keys(TEST_THAG_PLI);
         let taka = new Tipitaka();
 
@@ -402,7 +402,7 @@
             2, // 'The First Fifty',
         ]);
     });
-    it("TESTTESTaddNames(...) handles MN", ()=>{
+    it("addNames(...) handles MN", ()=>{
         const PLIKEYS = Object.keys(TEST_MN_PLI);
         let taka = new Tipitaka();
 
@@ -506,7 +506,7 @@
             }
         });
     });
-    it("TESTTESTaddNames(...) handles SN", ()=>{
+    it("addNames(...) handles SN", ()=>{
         const PLITEST = TEST_SN_PLI;
         const PLIKEYS = Object.keys(PLITEST);
         const ENTEST = TEST_SN_EN;;
@@ -567,7 +567,7 @@
             }
         });
     });
-    it("TESTTESTnextId(id) => successor", ()=>{
+    it("nextId(id) => successor", ()=>{
         const PLITEST = TEST_SN_PLI;
         const PLIKEYS = Object.keys(PLITEST);
         const ENTEST = TEST_SN_EN;;
@@ -581,7 +581,7 @@
         should(taka.nextId('sn12.72-81')).equal('sn12.82');
         should(taka.nextId('sn12.82')).equal(null);
     });
-    it("TESTTESTnextId(id) => successor", ()=>{
+    it("nextId(id) => successor", ()=>{
         const PLITEST = TEST_SN_PLI;
         const PLIKEYS = Object.keys(PLITEST);
         const ENTEST = TEST_SN_EN;;
@@ -595,7 +595,7 @@
         should(taka.nextId('sn12.72-81')).equal('sn12.82');
         should(taka.nextId('sn12.82')).equal(null);
     });
-    it("TESTTESTpreviousId(id) => predecessor", ()=>{
+    it("previousId(id) => predecessor", ()=>{
         const PLITEST = TEST_SN_PLI;
         const PLIKEYS = Object.keys(PLITEST);
         const ENTEST = TEST_SN_EN;;
@@ -609,7 +609,7 @@
         should(taka.previousId('sn1.2')).equal('sn1.1');
         should(taka.previousId('sn1.1')).equal(null);
     });
-    it("TESTTESTcreate(...) => pre-built Tipitaka", ()=>{
+    it("create(...) => pre-built Tipitaka", ()=>{
         /*
          * This example demonstrates the simplest use case,
          * which relies on a pre-built Tipitaka.

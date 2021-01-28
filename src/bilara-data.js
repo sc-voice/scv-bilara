@@ -131,7 +131,6 @@
             this.info(`initialize(sync:${sync})`);
             var {
                 root,
-                authors,
             } = this;
             var version = this.version();
             var EXPECTED_VERSION = 1
@@ -201,6 +200,8 @@
             this.translations = this.dirFiles(transPath)
                 .filter(f => this.publication.isPublishedPath(f))
                 .sort();
+            this.log(`initialize() translations ${transPath}:`, 
+                this.translations.length);
             this.translations.forEach((f,i) => {
                 var file = f.replace(/.*\/translation\//,
                     'translation/');

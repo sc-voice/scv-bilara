@@ -63,7 +63,7 @@
         should(res).equal(bd);
         should(bd.initialized).equal(true);
         should.deepEqual(Object.keys(bd.authors).sort(), [
-            'ashinsarana', 'ms', 'sabbamitta', 'sujato', 
+            'ashinsarana', 'kaz', 'ms', 'sabbamitta', 'sujato', 
         ]);
         should.deepEqual(bd.examples.en.slice(0,2), [
             //`acquire faith`,
@@ -76,7 +76,7 @@
             'Abfälle',
         ]);
     });
-    it("initialize(...) must be called", async()=>{
+    it("TESTTESTinitialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         should(newbd.initialized).equal(false);
         should.throws(() => {
@@ -89,7 +89,10 @@
         should(bd.initialized).equal(true);
         should.deepEqual(Object.keys(bd.authors).sort(), [
             'ashinsarana', 
-            'ms', 'sabbamitta', 'sujato', 
+            'kaz',
+            'ms', 
+            'sabbamitta', 
+            'sujato', 
         ]);
     });
     it("sync() purges and refreshes repo", async()=>{
@@ -141,7 +144,7 @@
         should(fs.existsSync(dummyPath)).equal(true);
         should(fs.existsSync(unpublishedPath)).equal(true);
     });
-    it("authorInfo() => supported author info", async()=>{
+    it("TESTTESTauthorInfo() => supported author info", async()=>{
         await bd.initialize();
         var ms = {
             lang: 'pli',
@@ -168,25 +171,28 @@
             type: "translator",
             name: "Anagarika Sabbamitta",
         };
+        var kaz = {
+            lang: 'jpn',
+            name: 'Kaz Takehara',
+            type: 'translator',
+        };
 
         should.deepEqual(bd.authors, {
             ms,
             // brahmali, // not published yet
             ashinsarana,
+            kaz,
             sabbamitta,
             sujato,
         });
 
         should.deepEqual(bd.authorInfo('sabbamitta'), sabbamitta);
     });
-    it("supportedLanguages() => segmented translations", done=>{
-        (async function() { try {
-            await bd.initialize();
-            should.deepEqual(bd.supportedLanguages(), [
-                'cs', 'de', 'en', 'pli', 
-            ]);
-            done();
-        } catch(e) {done(e);} })();
+    it("TESTTESTsupportedLanguages() => segmented translations", async()=>{
+        await bd.initialize();
+        should.deepEqual(bd.supportedLanguages(), [
+            'cs', 'de', 'en', 'jpn', 'pli', 
+        ]);
     });
     it("suttaInfo(...) returns sutta metadata", async()=>{
         await bd.initialize();
