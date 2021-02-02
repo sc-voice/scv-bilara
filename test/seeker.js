@@ -1023,30 +1023,35 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("findArgs(...) parses pattern string", async()=>{
+    it("TESTTESTfindArgs(...) handls jpn ", async()=>{
         var bilaraData = await bd.initialize();
         var skr = await new Seeker({
             bilaraData,
         }).initialize();
+        let pattern = '食べ物を贈る';
         
-        // English
-        should.deepEqual(skr.findArgs(["root of suffering"]), {
+        should(skr.findArgs([`-l jpn ${pattern}`])).properties({
             includeUnpublished: false,
-            lang: 'en',
-            languages: ['pli', 'en'],
+            lang: 'jpn',
+            languages: ['pli', 'en', 'jpn'],
             matchHighlight: "\u001b[38;5;121m$&\u001b[0m",
             maxDoc: 50,
             maxResults: 1000,
-            minLang: 2,
-            pattern: "root of suffering",
-            searchLang: 'en',
+            minLang: 3,
+            pattern,
+            searchLang: 'jpn',
             showMatchesOnly: true,
             sortLines: undefined,
             tipitakaCategories: undefined,
             types: ['root', 'translation'],
         });
+    });
+    it("findArgs(...) handles German", async()=>{
+        var bilaraData = await bd.initialize();
+        var skr = await new Seeker({
+            bilaraData,
+        }).initialize();
 
-        // German
         should.deepEqual(skr.findArgs([
             "wurzel des leidens -ml3 -l de"
         ]), {
@@ -1065,7 +1070,6 @@
             types: ['root', 'translation'],
         });
 
-        // German
         should.deepEqual(skr.findArgs([
             "wurzel des leidens -ml 3 -l de"
         ]), {
@@ -1078,6 +1082,28 @@
             minLang: 3,
             pattern: "wurzel des leidens",
             searchLang: 'de',
+            showMatchesOnly: true,
+            sortLines: undefined,
+            tipitakaCategories: undefined,
+            types: ['root', 'translation'],
+        });
+    });
+    it("findArgs(...) handles English", async()=>{
+        var bilaraData = await bd.initialize();
+        var skr = await new Seeker({
+            bilaraData,
+        }).initialize();
+        
+        should.deepEqual(skr.findArgs(["root of suffering"]), {
+            includeUnpublished: false,
+            lang: 'en',
+            languages: ['pli', 'en'],
+            matchHighlight: "\u001b[38;5;121m$&\u001b[0m",
+            maxDoc: 50,
+            maxResults: 1000,
+            minLang: 2,
+            pattern: "root of suffering",
+            searchLang: 'en',
             showMatchesOnly: true,
             sortLines: undefined,
             tipitakaCategories: undefined,
@@ -1395,7 +1421,7 @@
             suidRef:pattern
         }); 
     });
-    it("TESTTESTfind(...) handles an1.1-10/jpn", async()=>{
+    it("find(...) handles an1.1-10/jpn", async()=>{
         var skr = await new Seeker().initialize();
         //skr.logLevel = 'debug';
         var pattern = 'an4.182/jpn';

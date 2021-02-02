@@ -62,6 +62,13 @@
             this.minLang = opts.minLang || 2;
         }
 
+        static reWord(lang = this.lang) {
+            if (lang === 'jpn') {
+                return '';
+            }
+            return '\\b';
+        }
+
         static sanitizePattern(pattern) {
             if (!pattern) {
                 throw new Error("search pattern is required");
@@ -144,7 +151,7 @@
                     ? lang : langs[0];
             }
             var keywords = pattern.split(/ +/);
-            return keywords.reduce((a,k) => {
+            let searchLang = keywords.reduce((a,k) => {
                 if (this.enWords.contains(k)) {
                     (!a || a === 'pli') && (a = 'en');
                 } else if (this.paliWords.contains(k)) {
@@ -153,7 +160,8 @@
                     a = lang;
                 }
                 return a;
-            }, null) || lang;
+            }, null);
+            return searchLang || lang;
         }
 
         validate() {
@@ -363,7 +371,7 @@
                     ? `\\b${Pali.romanizePattern(pattern)}` 
                     : pattern;
             } else {
-                var pat = `\\b${pattern}`;
+                var pat = `${Seeker.reWord(lang)}${pattern}`;
             }
             this.info(`phraseSearch(${pat},${lang})`);
             var grepArgs = Object.assign({}, args, {

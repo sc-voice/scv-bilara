@@ -18,9 +18,13 @@ const { logger } = require('log-instance');
     }).initialize();
     var pliWords = {};
     for (var i = 0; i < bd.suttaIds.length; i++) {
-        suid = bd.suttaIds[i];
-        var sdpli = await bd.loadSegDoc({suid, lang:'pli'});
-        sdpli.fillWordMap(pliWords, false);
+        let suid = bd.suttaIds[i];
+        try {
+            var sdpli = await bd.loadSegDoc({suid, lang:'pli'});
+            sdpli.fillWordMap(pliWords, false);
+        } catch(e) {
+            logger.warn(`Cannot train`, {suid}, e.message);
+        }
     }
     logger.info(`Pali words:${Object.keys(pliWords).length}`);
     
@@ -29,7 +33,7 @@ const { logger } = require('log-instance');
     langs.forEach(lang => {
         var wordsPath = path.join(__dirname, 
             `../../src/assets/words-${lang}.txt`);
-        var wordList = fs.readFileSync(wordsPath).toString().split('\n');
+        var wordList = fs.readFileSync(wordsPath).toString().toLowerCase().split('\n');
         wordList.forEach(w => foreignWords[w] = false);
         logger.info(`${lang} words:${Object.keys(foreignWords).length}`);
     });
@@ -38,7 +42,7 @@ const { logger } = require('log-instance');
     langs.forEach(lang => {
         var wordsPath = path.join(__dirname, 
             `../../src/assets/words-${lang}.txt`);
-        var wordList = fs.readFileSync(wordsPath).toString().split('\n');
+        var wordList = fs.readFileSync(wordsPath).toString().toLowerCase().split('\n');
         wordList.forEach(w => foreignWords[w] = false);
         logger.info(`${lang} words:${Object.keys(foreignWords).length}`);
     });
@@ -48,7 +52,7 @@ const { logger } = require('log-instance');
     langs.forEach(lang => {
         var wordsPath = path.join(__dirname, 
             `../../src/assets/words-${lang}.txt`);
-        var wordList = fs.readFileSync(wordsPath).toString().split('\n');
+        var wordList = fs.readFileSync(wordsPath).toString().toLowerCase().split('\n');
         wordList.forEach(w => langWords[w] = true);
         logger.info(`${lang} words:${Object.keys(langWords).length}`);
     });
@@ -58,7 +62,8 @@ const { logger } = require('log-instance');
     var fws = new FuzzyWordSet({
         maxTrain: 50,
     });
-    var iterations = fws.train(wordMap, true);
+    var iterations = fws.train(langWords);
+    iterations += fws.train(wordMap);
     logger.info([
         `iterations:${iterations}`,
         `fws:${JSON.stringify(fws).length}C`,

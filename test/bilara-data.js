@@ -51,7 +51,7 @@
         });
         should(bdDefault.logger).equal(logger);
     });
-    it("TESTTESTinitialize(...) must be called", async()=>{
+    it("initialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         should(newbd.initialized).equal(false);
         should.throws(() => {
@@ -76,7 +76,7 @@
             'Abfälle',
         ]);
     });
-    it("TESTTESTinitialize(...) must be called", async()=>{
+    it("initialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         should(newbd.initialized).equal(false);
         should.throws(() => {
@@ -144,7 +144,7 @@
         should(fs.existsSync(dummyPath)).equal(true);
         should(fs.existsSync(unpublishedPath)).equal(true);
     });
-    it("TESTTESTauthorInfo() => supported author info", async()=>{
+    it("authorInfo() => supported author info", async()=>{
         await bd.initialize();
         var ms = {
             lang: 'pli',
@@ -188,7 +188,7 @@
 
         should.deepEqual(bd.authorInfo('sabbamitta'), sabbamitta);
     });
-    it("TESTTESTsupportedLanguages() => segmented translations", async()=>{
+    it("supportedLanguages() => segmented translations", async()=>{
         await bd.initialize();
         should.deepEqual(bd.supportedLanguages(), [
             'cs', 'de', 'en', 'jpn', 'pli', 
@@ -965,10 +965,13 @@
             author:"sabbamitta",
         })).equal(true); 
     });
-    it("suttaIds() => [ suid ]", async()=>{
+    it("TESTTESTsuttaIds() => [ suid ]", async()=>{
         await bd.initialize();
         let suids = bd.suttaIds;
 
+        for (let suid of suids) {
+            should(SuttaCentralId.test(suid)).equal(true, `Expected suid: "${suid}"`);
+        }
         should(suids.length).above(6180);
         should(suids.filter(suid=>/iti/ui.test(suid)).length).equal(112);
         should.deepEqual(suids.slice(0,5), [

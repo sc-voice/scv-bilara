@@ -18,7 +18,7 @@ const { logger } = require('log-instance');
     langs.forEach(lang => {
         var wordsPath = path.join(__dirname, 
             `../../src/assets/words-${lang}.txt`);
-        var wordList = fs.readFileSync(wordsPath).toString().split('\n');
+        var wordList = fs.readFileSync(wordsPath).toString().toLowerCase().split('\n');
         wordList.forEach(w => langWords[w] = false);
         logger.info(`${lang} words:${Object.keys(langWords).length}`);
     });
@@ -47,7 +47,8 @@ const { logger } = require('log-instance');
     var fws = new FuzzyWordSet({
         maxTrain: 50,
     });
-    var iterations = fws.train(wordMap, true);
+    var iterations = fws.train(pliWords);
+    iterations += fws.train(wordMap);
     logger.info([
         `iterations:${iterations}`,
         `fws:${JSON.stringify(fws).length}C`,

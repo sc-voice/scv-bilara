@@ -50,19 +50,24 @@
         should(fws.contains('hello')).equal(true);
         should(fws.contains('howdy')).equal(false); 
     });
-    it("train(...) handles prefixes", ()=>{
+    it("TESTTESTtrain(...) handles prefixes", ()=>{
         var fws = new FuzzyWordSet();
         var iterations = fws.train({
-            hello: true,
-            howdy: false,
-            hell: false,
+            abc: true,
+            a: false,
+            'übung': false,
         });
-        should(fws.contains('hello')).equal(true);
-        should(fws.contains('hell')).equal(false);
-        should(fws.contains('howdy')).equal(false);
-        should(iterations).equal(3);
+        should(fws.contains('abc')).equal(true);
+        should(fws.contains('a')).equal(false);
+        should(fws.contains('b')).equal(false);
+        should(fws.contains('übung')).equal(false);
+        should(fws.contains('ü')).equal(false);
+        should(JSON.stringify(fws.states)).equal(
+            '{"a":{"":0,"★":0,"b":{"c":1,"★":0}}}'
+        );
+        should(iterations).equal(2);
     });
-    it("trace(...) shows detail", ()=>{
+    it("TESTTESTtrace(...) shows detail", ()=>{
         var fws = new FuzzyWordSet();
         for (var i = 0; i < 3; i++) {
             fws.train({
@@ -74,7 +79,7 @@
                 andhakavinda: false,
                 and: false,
                 an: false,
-            }, true);
+            });
         }
         should.deepEqual(fws.trace('ananda'), {
             trace: 'ana',
@@ -85,15 +90,15 @@
             member: true,
         });
         should.deepEqual(fws.trace('an'), {
-            trace: 'an~',
+            trace: 'an★',
             member: false,
         });
         should.deepEqual(fws.trace('and'), {
-            trace: 'and~',
+            trace: 'and★',
             member: false,
         });
     });
-    it("can be serialized", ()=>{
+    it("TESTTESTcan be serialized", ()=>{
         var fws = new FuzzyWordSet();
         var iterations = fws.train({
             hello: true,

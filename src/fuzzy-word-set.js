@@ -1,7 +1,7 @@
 (function(exports) {
     const Unicode = require('./unicode');
 
-    const OTHER = '~';
+    const OTHER = '\u2605';
     const TRUE = 1;
     const FALSE = 0;
 

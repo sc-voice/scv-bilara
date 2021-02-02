@@ -262,6 +262,7 @@
         get suttaIds() {
             if (this._suttaIds == null) {
                 let suttaIds = Object.keys(this.bilaraPathMap.suidMap)
+                    .filter(suid=>SuttaCentralId.test(suid))
                     .sort(SuttaCentralId.compareLow);
                 if (suttaIds.length === 0) {
                     throw new Error(`no suttaIds`);

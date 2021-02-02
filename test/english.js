@@ -12,8 +12,13 @@
         should(English.romanizePattern("abcdefghijklmnnopqrstuvwxyz"))
         .equal('abcdefghijklmnnopqrstuvwxyz');
     });
+    it("TESTTESTrecognizes English initial characters", async()=>{
+        let enWords = await English.wordSet({source:'file'});
+        should(Object.keys(enWords.states).sort().join(''))
+            .equal(`abcdefghijklmnopqrstuvwxyzʻ`);
+    });
     it("recognizes English words", async()=>{
-        enWords = await English.wordSet({source:'file'});
+        let enWords = await English.wordSet({source:'file'});
         should.deepEqual(enWords.trace('unbusied'), {
             trace: 'unbusi',
             member: true,
@@ -47,14 +52,19 @@
             member: true,
         });
     });
-    it("recognizes non-English words", async()=>{
-        enWords = await English.wordSet({source:'file'});
+    it("TESTTESTrecognizes non-English words", async()=>{
+        let enWords = await English.wordSet({source:'file'});
+
+        should.deepEqual(enWords.trace('食べ物を贈る'), {
+            trace: '食★',
+            member: false,
+        });
         should.deepEqual(enWords.trace('ye'), {
-            trace: 'ye~',
+            trace: 'ye★',
             member: false,
         });
         should.deepEqual(enWords.trace('fingerschnippen'), {
-            trace: 'fingersc~',
+            trace: 'fingersc★',
             member: false,
         });
         should.deepEqual(enWords.trace('makel'), {
@@ -70,23 +80,23 @@
             member: true,
         });
         should.deepEqual(enWords.trace('wurzel'), {
-            trace: 'wu~',
+            trace: 'wu★',
             member: false,
         });
         should.deepEqual(enWords.trace('ananda'), {
-            trace: 'anand~',
+            trace: 'anand★',
             member: false,
         });
         should.deepEqual(enWords.trace('analayo'), {
-            trace: 'anala~',
+            trace: 'anala★',
             member: false,
         });
         should.deepEqual(enWords.trace('bhante'), {
-            trace: 'bhan~',
+            trace: 'bhan★',
             member: false,
         });
         should.deepEqual(enWords.trace('anataph'), {
-            trace: 'anata~',
+            trace: 'anata★',
             member: false,
         });
     });
@@ -94,7 +104,7 @@
         //logger.logLevel = 'info';
         let longWait = 1500;
         let msStart = Date.now();
-        enWords = await English.wordSet();
+        let enWords = await English.wordSet();
         let msElapsed = Date.now() - msStart;
         should(msElapsed).above(100).below(longWait);
 

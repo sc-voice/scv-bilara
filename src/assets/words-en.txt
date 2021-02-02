@@ -11554,7 +11554,6 @@ cover
 coverage
 coverages
 coveralls
-~covered
 covered
 covering
 coverings
@@ -24165,7 +24164,6 @@ hatchet
 hatchets
 hatching
 hatchway
-~hate
 hate
 hated
 hateful
@@ -30654,7 +30652,6 @@ litter
 littered
 littering
 litters
-~little
 little
 littleness
 littler
@@ -31044,7 +31041,6 @@ louvre
 louvred
 louvres
 lovable
-~love
 love
 loveable
 lovebirds
@@ -34010,7 +34006,6 @@ mrs
 ms
 mt
 mu
-~much
 much
 muchness
 muck
@@ -35802,7 +35797,6 @@ once
 once-return
 once-returner
 once-returners
-~one
 one
 one-cloth
 one-eyed
@@ -36881,7 +36875,6 @@ pail
 pails
 pain
 pained
-~painful
 painful
 painfully
 painfulness
@@ -38990,7 +38983,6 @@ pleadingly
 pleadings
 pleads
 pleas
-~pleasant
 pleasant
 pleasanter
 pleasantest
@@ -53216,7 +53208,6 @@ thaw
 thawed
 thawing
 thaws
-~the
 the
 theatre
 theatres
@@ -55777,7 +55768,6 @@ uncoupled
 uncouth
 uncouthness
 uncover
-~uncovered
 uncovered
 uncovering
 uncovers
