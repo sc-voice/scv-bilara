@@ -318,6 +318,7 @@
                 `rg -c -i -e '${grex}' `,
                 `-g='!atthakatha' `,  // exclude pli/vri
                 `-g='!_*' `,            // top-level JSON files
+                `-g '!name'`,     // exclude name
                 `-g '!blurb'`,     // exclude blurbs
                 `-g '!ea'`,   // exclude Chinese 
                 `-g '!ka'`,   // exclude Chinese

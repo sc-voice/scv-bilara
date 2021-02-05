@@ -10,8 +10,9 @@ const {
 const APP_DIR = path.join(__dirname, '..');
 const BILARA_DIR = path.join(APP_DIR, 'local', 'bilara-data');
 const ROOT_NAME_DIR = path.join(BILARA_DIR, 'root/misc/site/name');
-const TRANS_NAME_DIR = path.join(BILARA_DIR, 'translation/en/sujato/name');
+const TRANS_DIR = path.join(BILARA_DIR, 'translation');
 const EN_NAME_DIR = path.join(BILARA_DIR, 'translation/en/sujato/name');
+const DE_NAME_DIR = path.join(BILARA_DIR, 'translation/de/sabbamitta/name');
 const OUT_PATH = path.join(APP_DIR, 'src', 'assets', 'tipitaka-sutta.json');
 
 (async function() { try {
@@ -43,18 +44,20 @@ const OUT_PATH = path.join(APP_DIR, 'src', 'assets', 'tipitaka-sutta.json');
         }
     }
 
-    // English
-    let enNamesDir = path.join(TRANS_NAME_DIR, 'sutta');
-    let enNameFiles = await fs.promises.readdir(enNamesDir);
-    for (let [i, fname] of enNameFiles.entries()) {
-        if (filterName && !filterName.test(fname)) {
-            continue;
-        }
-        let id = fname.split('-name')[0];
-        if (entryMap[id]) {
-            let enFilePath = path.join(enNamesDir, fname);
-            let names = JSON.parse(await fs.promises.readFile(enFilePath));
-            Object.keys(names).length && taka.addNames({names, lang:'en'});
+    let translations = ['en/sujato', 'de/site'];
+    for (let trans of translations) {
+        let namesDir = path.join(TRANS_DIR, trans, 'name', 'sutta');
+        let nameFiles = await fs.promises.readdir(namesDir);
+        for (let [i, fname] of nameFiles.entries()) {
+            if (filterName && !filterName.test(fname)) {
+                continue;
+            }
+            let id = fname.split('-name')[0];
+            if (entryMap[id]) {
+                let namePath = path.join(namesDir, fname);
+                let names = JSON.parse(await fs.promises.readFile(namePath));
+                Object.keys(names).length && taka.addNames({names, lang:trans.split('/')[0]});
+            }
         }
     }
 

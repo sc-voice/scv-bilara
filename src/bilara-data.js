@@ -32,7 +32,7 @@
     const STUBFILESIZE = 10;
     const MAXBUFFER = 10 * 1024 * 1024;
     const EXAMPLES_URL = 
-        'https://raw.githubusercontent.com/sc-voice/scv-static/main/api/examples.json';
+        'https://raw.githubusercontent.com/sc-voice/scv-static/main/src/examples.js';
 
     class BilaraData {
         constructor(opts={}) {
@@ -179,7 +179,11 @@
             if (sync || !fs.existsSync(examplesPath)) {
                 this.info('loading examples', EXAMPLES_URL);
                 let res = await Axios.get(EXAMPLES_URL);
-                this.examples = res.data;
+                this.examples = JSON.parse(
+                    res.data.toString()
+                        .replace(/.*JSONSTART/sum,'')
+                        .replace(/..JSONEND.*/sum,'')
+                );
                 await fs.promises.writeFile(examplesPath, 
                     JSON.stringify(this.examples, null,2));
             }

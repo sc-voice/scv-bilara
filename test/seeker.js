@@ -339,7 +339,7 @@
         });
         should(data).properties(expected);
     });
-    it("keywordSearch(...) searches Deutsch, not Pali", async()=>{
+    it("TESTTESTkeywordSearch(...) searches Deutsch, not Pali", async()=>{
         var skr = await new Seeker({
             lang: 'en', // English default
         }).initialize();
