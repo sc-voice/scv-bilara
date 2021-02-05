@@ -609,7 +609,7 @@
         should(taka.previousId('sn1.2')).equal('sn1.1');
         should(taka.previousId('sn1.1')).equal(null);
     });
-    it("create(...) => pre-built Tipitaka", ()=>{
+    it("TESTTESTcreate(...) => pre-built Tipitaka", ()=>{
         /*
          * This example demonstrates the simplest use case,
          * which relies on a pre-built Tipitaka.
@@ -624,11 +624,13 @@
         should(taka.rootId).equal('tipitaka');
         should.deepEqual(taka.entryOfId('an1.1-10'), {
             en: 'What Occupies the Mind',
+            de: 'Was den Geist gefangen hält ',
             parent: 'an-name:2.an1-cittapariyadanavagga',
             pli: 'Cittapariyādānavagga',
         });
         should.deepEqual(taka.parentOfId('an1.1-10'), {
             en: 'What Occupies the Mind',
+            de: 'Was den Geist gefangen hält ',
             parent: 'an-name:1.an1',
             pli: 'Cittapariyādānavagga',
             entries: [ 'an1.1-10' ],
