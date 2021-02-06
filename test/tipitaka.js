@@ -47,6 +47,13 @@
         "an-name:7.an1.21-30": "Akammaniyavagga",
         "an-name:8.an1-adantavagga": "Adantavagga",
         "an-name:9.an1.31-40": "Adantavagga",
+        //"an-name:276.an4": "Catukkanipāta",
+        //"an-name:277.an4-pathamapannasaka": "Paṭhamapaṇṇāsaka",
+        //"an-name:278.an4-bhandagamavagga": "Bhaṇḍagāmavagga",
+        //"an-name:279.an4.1": "Anubuddhasutta",
+        //"an-name:378.an4-asuravagga": "Asuravagga",
+        //"an-name:387.an4.99": "Sikkhāpadasutta",
+        //"an-name:388.an4.100": "Potaliyasutta",
     }
     const TEST_THAG_PLI = {
         "thag-name:1.thag-ekakanipata": "Ekakanipāta",
@@ -187,7 +194,7 @@
             entries: [ 'an', 'dn', 'kn', 'mn', 'sn', 'snp', ],
         });
     });
-    it("addNames(...) handles AN", ()=>{
+    it("TESTTESTaddNames(...) handles AN", ()=>{
         const PLITEST = TEST_AN_PLI;
         const PLIKEYS = Object.keys(PLITEST);
         let taka = new Tipitaka();
@@ -202,6 +209,10 @@
             'an1.11-20',
             'an1.21-30',
             'an1.31-40',
+            //'an4-pathamapannasaka',
+            //'an4.1',
+            //'an4.99',
+            //'an4.100'
         ]);
         let rootId = PLIKEYS[0];
         //console.log(rootId, taka.entryOfId(rootId));
@@ -567,49 +578,34 @@
             }
         });
     });
-    it("nextId(id) => successor", ()=>{
-        const PLITEST = TEST_SN_PLI;
-        const PLIKEYS = Object.keys(PLITEST);
-        const ENTEST = TEST_SN_EN;;
+    it("TESTTESTnextId(id), previousId(id) handles AN", ()=>{
         let taka = new Tipitaka();
 
         taka.addSuper({ names:TEST_SUPER_PLI, lang:'pli', });
         taka.addSuper({ names:TEST_SUPER_EN, lang:'en', });
-        taka.addNames({names:PLITEST,lang:'pli'});
-        taka.addNames({names:ENTEST,lang:'en', author:'sujato'});
+        taka.addNames({names:TEST_AN_PLI,lang:'pli'});
 
-        should(taka.nextId('sn12.72-81')).equal('sn12.82');
-        should(taka.nextId('sn12.82')).equal(null);
+        //should(taka.nextId('an4.99')).equal('an4.100');
+        //should(taka.previousId('an4.100')).equal('an4.99');
     });
-    it("nextId(id) => successor", ()=>{
-        const PLITEST = TEST_SN_PLI;
-        const PLIKEYS = Object.keys(PLITEST);
-        const ENTEST = TEST_SN_EN;;
+    it("TESTTESTnextId(id), previousId(id) handles SN", ()=>{
         let taka = new Tipitaka();
 
         taka.addSuper({ names:TEST_SUPER_PLI, lang:'pli', });
         taka.addSuper({ names:TEST_SUPER_EN, lang:'en', });
-        taka.addNames({names:PLITEST,lang:'pli'});
-        taka.addNames({names:ENTEST,lang:'en', author:'sujato'});
+        taka.addNames({names:TEST_SN_PLI,lang:'pli'});
+        taka.addNames({names:TEST_SN_EN,lang:'en', author:'sujato'});
 
+        // inverse
         should(taka.nextId('sn12.72-81')).equal('sn12.82');
-        should(taka.nextId('sn12.82')).equal(null);
-    });
-    it("previousId(id) => predecessor", ()=>{
-        const PLITEST = TEST_SN_PLI;
-        const PLIKEYS = Object.keys(PLITEST);
-        const ENTEST = TEST_SN_EN;;
-        let taka = new Tipitaka();
-
-        taka.addSuper({ names:TEST_SUPER_PLI, lang:'pli', });
-        taka.addSuper({ names:TEST_SUPER_EN, lang:'en', });
-        taka.addNames({names:PLITEST,lang:'pli'});
-        taka.addNames({names:ENTEST,lang:'en', author:'sujato'});
-
+        should(taka.previousId('sn12.82')).equal('sn12.72-81');
         should(taka.previousId('sn1.2')).equal('sn1.1');
+
+        // boundaries
+        should(taka.nextId('sn12.82')).equal(null);
         should(taka.previousId('sn1.1')).equal(null);
     });
-    it("TESTTESTcreate(...) => pre-built Tipitaka", ()=>{
+    it("create(...) => pre-built Tipitaka", ()=>{
         /*
          * This example demonstrates the simplest use case,
          * which relies on a pre-built Tipitaka.

@@ -234,8 +234,14 @@
             throw e;
         }}
 
-        async buildSuidMap() {
+        async buildSuidMap(opts={}) {
             let msStart = Date.now();
+            let {
+                loadHtml = false,
+                loadVariant = false,
+                loadReference = false,
+                loadComment = false,
+            } = opts;
             var readdir = fs.promises.readdir;
             let suidMap = {};
             this.suidMap = suidMap;
@@ -256,16 +262,18 @@
                         continue; // ignore lzh->en translations
                     }
                     await this._loadPaths(suidMap, key);
-                    var key = `comment/${l}/${auths[ia]}`;
-                    await this._loadPaths(suidMap, key);
+                    if (loadComment) {
+                        let key = `comment/${l}/${auths[ia]}`;
+                        await this._loadPaths(suidMap, key);
+                    }
                 }
             }
 
             await this._loadPaths(suidMap, "root/pli/ms");
             //await this._loadPaths(suidMap, "root/pli/vri");
-            await this._loadPaths(suidMap, "html/pli/ms");
-            await this._loadPaths(suidMap, "reference/pli/ms");
-            await this._loadPaths(suidMap, "variant/pli/ms"); 
+            loadHtml && await this._loadPaths(suidMap, "html/pli/ms");
+            loadReference &&await this._loadPaths(suidMap, "reference/pli/ms");
+            loadVariant && await this._loadPaths(suidMap, "variant/pli/ms"); 
             fs.writeFileSync(this.suidMapFile, JSON.stringify(suidMap, null, 2));
             this.suidMap = suidMap;
             this.info(`buildSuidMap() ${Date.now()-msStart}ms`);

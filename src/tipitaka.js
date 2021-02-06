@@ -249,7 +249,7 @@
         groupId(id) {
             let node = this.entryOfId(id);
             if (!node || node.parent === this.rootId) {
-                throw new Error(`groupId(${id}) not implemented`);
+                throw new Error(`groupId(${id}) not implemented (node:${node})`);
             }
             return node.group || this.groupId(node.parent);
         }

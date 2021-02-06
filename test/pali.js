@@ -12,7 +12,7 @@
         should(Pali.romanizePattern("nopqrstuvwxyz"))
         .equal('(n|ṅ|ñ|ṇ)opqrs(t|ṭ)(u|ū)vwxyz');
     });
-    it("TESTTESTrecognizes Pali words", async()=>{
+    it("recognizes Pali words", async()=>{
         paliWords = await Pali.wordSet();
         should.deepEqual(paliWords.trace('ye'), {
             trace: 'ye',
@@ -39,7 +39,7 @@
             member: false,
         });
     });
-    it("TESTTESTrecognizes non-Pali words", async()=>{
+    it("recognizes non-Pali words", async()=>{
         paliWords = await Pali.wordSet();
         should.deepEqual(paliWords.trace('kloster'), {
             trace: 'klo★',

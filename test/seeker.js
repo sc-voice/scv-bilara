@@ -339,7 +339,7 @@
         });
         should(data).properties(expected);
     });
-    it("TESTTESTkeywordSearch(...) searches Deutsch, not Pali", async()=>{
+    it("keywordSearch(...) searches Deutsch, not Pali", async()=>{
         var skr = await new Seeker({
             lang: 'en', // English default
         }).initialize();
@@ -823,7 +823,7 @@
             pli: "Majjhima Nikāya 1 ",
         });
     });
-    it("find(...) => finds ubung", async()=>{
+    it("TESTTESTfind(...) => finds ubung", async()=>{
         var maxDoc = 3;
         var skr = await new Seeker({
             maxDoc,
@@ -1023,7 +1023,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTfindArgs(...) handls jpn ", async()=>{
+    it("findArgs(...) handls jpn ", async()=>{
         var bilaraData = await bd.initialize();
         var skr = await new Seeker({
             bilaraData,
@@ -1176,7 +1176,7 @@
         should(skr.tipitakaRegExp('bi,pj').toString())
             .equal("/(-bi-|-pj)/iu");
     })
-    it("find(...) finds an1.1 all types", async()=>{
+    it("TESTTESTfind(...) finds an1.1 all types", async()=>{
         var skr = await new Seeker().initialize();
         var res = await skr.find({
             pattern: "an1.1",
@@ -1188,8 +1188,8 @@
         var segs = res.mlDocs[0].segments();
         should.deepEqual(segs[0], {
             scid: 'an1.1:0.1',
-            html: "<section class='range' id='an1.1-10'><header>"+
-                "<ul><li class='division'>{}</li>",
+            //html: "<section class='range' id='an1.1-10'><header>"+
+                //"<ul><li class='division'>{}</li>",
             pli: 'Aṅguttara Nikāya 1 ',
             en: 'Numbered Discourses 1 ',
             de: 'Nummerierte Lehrreden 1',

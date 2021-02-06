@@ -50,7 +50,7 @@
         should(fws.contains('hello')).equal(true);
         should(fws.contains('howdy')).equal(false); 
     });
-    it("TESTTESTtrain(...) handles prefixes", ()=>{
+    it("train(...) handles prefixes", ()=>{
         var fws = new FuzzyWordSet();
         var iterations = fws.train({
             abc: true,
@@ -67,7 +67,7 @@
         );
         should(iterations).equal(2);
     });
-    it("TESTTESTtrace(...) shows detail", ()=>{
+    it("trace(...) shows detail", ()=>{
         var fws = new FuzzyWordSet();
         for (var i = 0; i < 3; i++) {
             fws.train({
@@ -98,7 +98,7 @@
             member: false,
         });
     });
-    it("TESTTESTcan be serialized", ()=>{
+    it("can be serialized", ()=>{
         var fws = new FuzzyWordSet();
         var iterations = fws.train({
             hello: true,

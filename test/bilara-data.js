@@ -51,7 +51,7 @@
         });
         should(bdDefault.logger).equal(logger);
     });
-    it("TESTTESTinitialize(...) must be called", async()=>{
+    it("initialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         should(newbd.initialized).equal(false);
         should.throws(() => {
@@ -860,24 +860,21 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("loadMLDoc(...) loads all types", done=>{
-        (async function() { try {
-            await bd.initialize();
-            var mld = await bd.loadMLDoc({
-                suid: 'thag1.113',
-                types: BilaraPathMap.ALL_TYPES,
-            });
-            var segs = mld.segments();
-            should.deepEqual(segs[0],{
-                scid: 'thag1.113:0.1',
-                html: "<article id='thag1.113'><header>"+
-                    "<ul><li class='division'>{}</li>",
-                en: 'Verses of the Senior Monks',
-                pli: 'Theragāthā',
-            });
-
-            done();
-        } catch(e) { done(e); }})();
+    it("TESTTESTloadMLDoc(...) loads all types", async()=>{ 
+        return; // ALL_TYPES is deprecated
+        await bd.initialize();
+        var mld = await bd.loadMLDoc({
+            suid: 'thag1.113',
+            types: BilaraPathMap.ALL_TYPES,
+        });
+        var segs = mld.segments();
+        should.deepEqual(segs[0],{
+            scid: 'thag1.113:0.1',
+            html: "<article id='thag1.113'><header>"+
+                "<ul><li class='division'>{}</li>",
+            en: 'Verses of the Senior Monks',
+            pli: 'Theragāthā',
+        });
     });
     it("initialize() waits for indexLock", async()=>{ try {
         let bd = new BilaraData({branch:'unpublished'});
@@ -965,7 +962,7 @@
             author:"sabbamitta",
         })).equal(true); 
     });
-    it("TESTTESTsuttaIds() => [ suid ]", async()=>{
+    it("suttaIds() => [ suid ]", async()=>{
         await bd.initialize();
         let suids = bd.suttaIds;
 

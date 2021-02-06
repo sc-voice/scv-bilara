@@ -12,7 +12,7 @@
         should(English.romanizePattern("abcdefghijklmnnopqrstuvwxyz"))
         .equal('abcdefghijklmnnopqrstuvwxyz');
     });
-    it("TESTTESTrecognizes English initial characters", async()=>{
+    it("recognizes English initial characters", async()=>{
         let enWords = await English.wordSet({source:'file'});
         should(Object.keys(enWords.states).sort().join(''))
             .equal(`abcdefghijklmnopqrstuvwxyzʻ`);
@@ -52,7 +52,7 @@
             member: true,
         });
     });
-    it("TESTTESTrecognizes non-English words", async()=>{
+    it("recognizes non-English words", async()=>{
         let enWords = await English.wordSet({source:'file'});
 
         should.deepEqual(enWords.trace('食べ物を贈る'), {
