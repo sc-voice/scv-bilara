@@ -209,7 +209,7 @@
             var reExclude = new RegExp(`(${exclude})`,"ui");
             var traverse = (dirPath)=>{
                 if (reExclude.test(dirPath)) {
-                    this.info(`_loadPaths() exclude:`, dirPath);
+                    this.debug(`_loadPaths() exclude:`, dirPath);
                     return;
                 }
                 var dirKids = fs.readdirSync(dirPath, readOpts);
