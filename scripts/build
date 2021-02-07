@@ -2,8 +2,7 @@
 DIR=`dirname $0`
 pushd $DIR/..
 
-js/build.js
-
+$DIR/js/build.js
 
 git status | grep 'nothing to commit' > /dev/null; RC=$?
 if [ "$RC" == "0" ]; then
