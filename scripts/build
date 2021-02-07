@@ -14,4 +14,5 @@ else
     VERSION=`json version < package.json`
     git reset --soft HEAD~1
     git commit --amend -m "v$VERSION build"
+    git push
 fi
