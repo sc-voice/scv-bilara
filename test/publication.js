@@ -247,11 +247,23 @@
             done();
         } catch(e) {done(e);} })();
     });
-    it("pubInfo(suid) => publication information", done=>{
+    it("TESTTESTpubInfo(suid) => publication information", done=>{
         (async function() { try {
             var pub = await new Publication({
                 includeUnpublished: true,
             }).initialize();
+
+            // multiply published
+            var pi = pub.pubInfo("an1.1-10/de/sabbamitta");
+            should(pi[0].subchapters).equal(true);
+            should(pi[0]).properties({
+                publication_number: "scpub11",
+                author_name: "Anagarika Sabbamitta",
+                text_uid: "an",
+                subchapters: true,
+                is_published: "true",
+            });
+            should(pi.length).equal(1);
 
             // vinaya
             var pi = pub.pubInfo("pli-tv-bu-vb-pj4");
@@ -261,18 +273,6 @@
                 text_uid: "pli-tv-bu-vb",
                 subchapters: false,
                 is_published: "false",
-            });
-            should(pi.length).equal(1);
-
-
-            // multiply published
-            var pi = pub.pubInfo("an1.1-10/de/sabbamitta");
-            should(pi[0]).properties({
-                publication_number: "scpub11",
-                author_name: "Anagarika Sabbamitta",
-                text_uid: "an",
-                subchapters: true,
-                is_published: "true",
             });
             should(pi.length).equal(1);
 

@@ -19,7 +19,7 @@
             let rootName = this.root.replace(rootDir,'').substring(1);
             this.rootLang = opts.rootLang || 'pli';
             this.rootAuthor = opts.rootAuthor || 'ms';
-            this.suidMapFile = path.join(rootDir, `suid-map-${rootName}.json`);
+            this.suidMapFile = path.join(rootDir, `suidmap-${rootName}.json`);
             this.initialized = false;
         }
 
@@ -82,7 +82,7 @@
             while (pathStack.length) {
                 let dirPath = pathStack.pop();
                 if (reExclude.test(dirPath)) {
-                    this.info(`_loadPaths() exclude:`, dirPath);
+                    this.info(`tipitakaPaths() exclude:`, dirPath);
                     continue;
                 }
                 var dirKids = fs.readdirSync(dirPath, readOpts);
@@ -101,7 +101,6 @@
             this.warn(`tipitakaPaths()`, e.message);
             throw e;
         }}
-
 
         bilaraPaths(opts={}) {
             if (typeof opts === 'string') {
@@ -145,7 +144,15 @@
             }
             var suidParts = suid.split('/');
             var key = suidParts[0];
-            return this.suidMap[key];
+            let map = this.suidMap[key];
+            return map && Object.keys(map).reduce((a,k) => {
+                let v = map[k];
+                let kParts = k.split('/');
+                let vParts = v.split('/');
+                let suidParts = suid.split('/');
+                a[k] = `${k}/${v}/${suidParts[0]}_${kParts.join('-')}.json`;
+                return a;
+            }, {});
         }
 
         suidLanguages(suid) {
@@ -215,12 +222,15 @@
                         var ePath = path.join(dirPath, e.name);
                         var stat = fs.statSync(ePath);
                         if (stat.size > STUBFILESIZE) {
-                            var suid = e.name.replace(/_.*/,'');
-                            var suidPath = dirPath.replace(rootPrefix, '')  
+                            let suid = e.name.replace(/_.*/,'');
+                            let suidPath = dirPath.replace(rootPrefix, '')  
                                         + `/${e.name}`;
-                            suidMap[suid] = Object.assign(
-                                suidMap[suid]||{}, {
-                                    [key]: suidPath,
+                            let valueParts = suidPath
+                                .replace(new RegExp(`${key}/`),'')
+                                .split('/');
+                            valueParts.pop();
+                            suidMap[suid] = Object.assign( suidMap[suid]||{}, {
+                                [key]: valueParts.join('/'),
                             });
                         }
                     }
@@ -274,7 +284,7 @@
             loadHtml && await this._loadPaths(suidMap, "html/pli/ms");
             loadReference &&await this._loadPaths(suidMap, "reference/pli/ms");
             loadVariant && await this._loadPaths(suidMap, "variant/pli/ms"); 
-            fs.writeFileSync(this.suidMapFile, JSON.stringify(suidMap, null, 2));
+            fs.writeFileSync(this.suidMapFile, JSON.stringify(suidMap, null, '\t'));
             this.suidMap = suidMap;
             this.info(`buildSuidMap() ${Date.now()-msStart}ms`);
             return suidMap;

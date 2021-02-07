@@ -823,7 +823,7 @@
             pli: "Majjhima Nikāya 1 ",
         });
     });
-    it("TESTTESTfind(...) => finds ubung", async()=>{
+    it("find(...) => finds ubung", async()=>{
         var maxDoc = 3;
         var skr = await new Seeker({
             maxDoc,
@@ -1176,7 +1176,7 @@
         should(skr.tipitakaRegExp('bi,pj').toString())
             .equal("/(-bi-|-pj)/iu");
     })
-    it("TESTTESTfind(...) finds an1.1 all types", async()=>{
+    it("find(...) finds an1.1 all types", async()=>{
         var skr = await new Seeker().initialize();
         var res = await skr.find({
             pattern: "an1.1",

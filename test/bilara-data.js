@@ -860,7 +860,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("TESTTESTloadMLDoc(...) loads all types", async()=>{ 
+    it("loadMLDoc(...) loads all types", async()=>{ 
         return; // ALL_TYPES is deprecated
         await bd.initialize();
         var mld = await bd.loadMLDoc({
