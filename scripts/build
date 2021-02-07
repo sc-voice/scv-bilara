@@ -2,7 +2,7 @@
 DIR=`dirname $0`
 
 $DIR/js/build.js
-VERSION=`json version < ../../package.json`
+VERSION=`json version < $DIR/../package.json`
 
 git status | grep 'nothing to commit' > /dev/null; RC=$?
 if [ "$RC" == "0" ]; then
@@ -10,5 +10,5 @@ if [ "$RC" == "0" ]; then
 else
     echo -e "BUILD\t: committing..."
     git commit -am "v$VERSION build"
-    npm version minor
+    npm version patch
 fi
