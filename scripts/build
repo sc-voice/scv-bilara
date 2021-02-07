@@ -13,5 +13,6 @@ else
     git commit -am "build"
     npm version patch
     VERSION=`json version < package.json`
-    git commit --amend -m "v$VERSION build"
+    git reset --soft HEAD~1
+    git commit -m "v$VERSION build"
 fi
