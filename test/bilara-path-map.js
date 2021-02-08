@@ -1,10 +1,12 @@
 (typeof describe === 'function') && describe("bilara-path-map", function() {
     const should = require("should");
+    const fs = require('fs');
     const {
         BilaraData,
         BilaraPath,
         BilaraPathMap,
     } = require("../index");
+    const tmp = require('tmp');
     var {
         commentPath,
         referencePath,
@@ -40,7 +42,7 @@
         var bpm = new BilaraPathMap();
         should(bpm.initialized).equal(false);
     });
-    it("TESTTESTsuidPath(suid) => local bilara paths", async()=>{
+    it("suidPath(suid) => local bilara paths", async()=>{
         var bpm = new BilaraPathMap()
         should.throws(()=>{bpm.suidPaths('dn33');});
         await bpm.initialize();
@@ -60,7 +62,7 @@
 "translation/de/sabbamitta": translationPath('dn/dn33','de','sabbamitta'),
         });
     });
-    it("TESTTESTbilaraPaths(suid) returns local bilara paths",async()=>{
+    it("bilaraPaths(suid) returns local bilara paths",async()=>{
         var bpm = await new BilaraPathMap().initialize();
 
         var bps = bpm.bilaraPaths({
@@ -164,12 +166,13 @@
             suid: 'thig3.8',
         }]);
     });
-    it("TESTTESTbuildSuidMap() => [ suid ]", async()=>{
+    it("buildSuidMap() => [ suid ]", async()=>{
         let bpm = await new BilaraPathMap().initialize();
+        bpm.logLevel = 'info';
         let suidMap = await bpm.buildSuidMap();
         let suids = Object.keys(suidMap);
 
-        should(suids.length).above(6180);
+        should(suids.length).above(5500);
         should.deepEqual(Object.keys(suidMap.iti42),[
             'translation/en/sujato',
             'root/pli/ms',
@@ -212,5 +215,24 @@
             'sutta/mn',
             'sutta/sn',
         ]);
+    });
+    it("TESTTESTcustom suid map", async()=>{
+        let suidMapFile = tmp.tmpNameSync();
+        let validatePath = (key,value,suid) => {
+            return suid === 'sn12.23';
+        };
+        let bpm = await new BilaraPathMap({
+            suidMapFile,
+            validatePath,
+        }).initialize();
+        console.log('reading suidMapFile', suidMapFile);
+        let json = JSON.parse(await fs.promises.readFile(suidMapFile));
+        should.deepEqual(json, {
+            'sn12.23': {
+                'translation/de/sabbamitta': 'sutta/sn/sn12',
+                'translation/en/sujato': 'sutta/sn/sn12',
+                'root/pli/ms': 'sutta/sn/sn12'
+            }
+        });
     });
 })

@@ -8,8 +8,6 @@
     const ROOTMS_FOLDER = path.join(Files.LOCAL_DIR, "bilara-data", 
         "root", "pli", "ms");
 
-    var suidMap;
-
     class BilaraPathMap {
         constructor(opts = {}) {
             (opts.logger || logger).logInstance(this);
@@ -19,7 +17,9 @@
             let rootName = this.root.replace(rootDir,'').substring(1);
             this.rootLang = opts.rootLang || 'pli';
             this.rootAuthor = opts.rootAuthor || 'ms';
-            this.suidMapFile = path.join(rootDir, `suidmap-${rootName}.json`);
+            this.suidMapFile = opts.suidMapFile ||
+                path.join(rootDir, `suidmap-${rootName}.json`);
+            this.validatePath = opts.validatePath || ((key,value,suid)=>true);
             this.initialized = false;
         }
 
@@ -33,22 +33,15 @@
         ]};
 
         async initialize() { try {
-            if (!suidMap) {
-                suidMap = fs.existsSync(this.suidMapFile)
-                    ? JSON.parse(await fs.readFileSync(this.suidMapFile))
-                    : {};
-                if (Object.keys(suidMap).length === 0) {
-                    suidMap = await this.buildSuidMap();
-                }
-            }
-            if (suidMap instanceof Promise) {
-                suidMap = await suidMap;
-            }
-            this.suidMap = suidMap;
+            var { suidMapFile } = this;
+            let suidMap = fs.existsSync(suidMapFile)
+                ? JSON.parse(await fs.promises.readFile(suidMapFile))
+                : this.buildSuidMap();
+            this.suidMap = await suidMap;
             this.initialized = true;
             return this;
         } catch(e) {
-            this.warn(`initialize()`, e.message);
+            this.warn(`initialize()`, suidMapFile, e.message);
             throw e;
         }}
 
@@ -191,9 +184,11 @@
             return pathInfo && pathInfo[key];
         }
 
-        async _loadPaths(suidMap, key) { try {
+        async _loadPaths(key) { try {
             var {
                 root,
+                suidMap,
+                validatePath,
             } = this;
             var keyRoot = path.join(root, key);
             var rootPrefix = `${root}/`;
@@ -202,6 +197,8 @@
                 'abhidhamma',   // (later)
                 '\bma\b',       // Chinese
                 '\bsa\b',       // Chinese
+                'site',
+                'sc-page',
                 'blurb',
                 'name',         // metadata
                 'playground',   // Blake
@@ -209,7 +206,7 @@
             var reExclude = new RegExp(`(${exclude})`,"ui");
             var traverse = (dirPath)=>{
                 if (reExclude.test(dirPath)) {
-                    this.debug(`_loadPaths() exclude:`, dirPath);
+                    this.debug(`_loadPaths(${key}) exclude:`, dirPath);
                     return;
                 }
                 var dirKids = fs.readdirSync(dirPath, readOpts);
@@ -229,9 +226,10 @@
                                 .replace(new RegExp(`${key}/`),'')
                                 .split('/');
                             valueParts.pop();
-                            suidMap[suid] = Object.assign( suidMap[suid]||{}, {
-                                [key]: valueParts.join('/'),
-                            });
+                            let value = valueParts.join('/');
+                            if (validatePath(key,value,suid)) {
+                                (suidMap[suid] = suidMap[suid] || {})[key] = value;
+                            }
                         }
                     }
                 }
@@ -240,7 +238,7 @@
             fs.existsSync(keyRoot) && traverse(keyRoot);
             return suidMap;
         } catch(e) {
-            this.warn(`_loadPaths()`, e.message);
+            this.warn(`_loadPaths(${key})`, e.message);
             throw e;
         }}
 
@@ -271,22 +269,23 @@
                     if (/en\/(patton|comm-team)/.test(key)) {
                         continue; // ignore lzh->en translations
                     }
-                    await this._loadPaths(suidMap, key);
+                    await this._loadPaths(key);
                     if (loadComment) {
                         let key = `comment/${l}/${auths[ia]}`;
-                        await this._loadPaths(suidMap, key);
+                        await this._loadPaths(key);
                     }
                 }
             }
 
-            await this._loadPaths(suidMap, "root/pli/ms");
-            //await this._loadPaths(suidMap, "root/pli/vri");
-            loadHtml && await this._loadPaths(suidMap, "html/pli/ms");
-            loadReference &&await this._loadPaths(suidMap, "reference/pli/ms");
-            loadVariant && await this._loadPaths(suidMap, "variant/pli/ms"); 
-            fs.writeFileSync(this.suidMapFile, JSON.stringify(suidMap, null, '\t'));
-            this.suidMap = suidMap;
-            this.info(`buildSuidMap() ${Date.now()-msStart}ms`);
+            await this._loadPaths("root/pli/ms");
+            loadHtml && await this._loadPaths("html/pli/ms");
+            loadReference &&await this._loadPaths("reference/pli/ms");
+            loadVariant && await this._loadPaths("variant/pli/ms"); 
+            let { suidMapFile } = this;
+            console.log(`writing`, suidMapFile);
+            await fs.promises.writeFile(suidMapFile, JSON.stringify(suidMap, null, '\t'));
+            console.log(`writing done`, suidMapFile);
+            this.info(`buildSuidMap() ${suidMapFile} ${Date.now()-msStart}ms`);
             return suidMap;
         }
     }

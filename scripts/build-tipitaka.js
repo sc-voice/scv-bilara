@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+// DEPRECATED
+
 const fs = require('fs');
 const path = require('path');
 const { logger, LogInstance } = require('log-instance');

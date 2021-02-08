@@ -25,11 +25,13 @@
             (opts.logger || logger).logInstance(this, opts);
             this.name = opts.name || 'bilara-data';
             this.root = opts.root || path.join(Files.LOCAL_DIR, this.name);
-            this.bilaraPathMap = opts.bilaraPathMap || 
-                new BilaraPathMap({root: this.root});
-            this.lang = opts.lang || 'en';
             this.includeUnpublished = opts.includeUnpublished == null 
                 ? false : opts.includeUnpublished;
+            let bpOpts = this.includeUnpublished
+                ? { root: this.root, rePath: /sutta|vinaya/ }
+                : { root: this.root };
+            this.bilaraPathMap = opts.bilaraPathMap || new BilaraPathMap(bpOpts);
+            this.lang = opts.lang || 'en';
             this.authors = {};
             Object.defineProperty(this, "_sources", {
                 writable: true,

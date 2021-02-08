@@ -9781,6 +9781,10 @@
 		"translation/en/sujato": "sutta/kn/snp/vagga3",
 		"root/pli/ms": "sutta/kn/snp/vagga3"
 	},
+	"snp3.2": {
+		"translation/en/sujato": "sutta/kn/snp/vagga3",
+		"root/pli/ms": "sutta/kn/snp/vagga3"
+	},
 	"snp4.2": {
 		"translation/en/sujato": "sutta/kn/snp/vagga4",
 		"root/pli/ms": "sutta/kn/snp/vagga4"
@@ -19002,196 +19006,6 @@
 		"translation/en/sujato": "sutta/sn/sn9",
 		"root/pli/ms": "sutta/sn/sn9"
 	},
-	"action-items": {
-		"translation/pl/site": "sc-page",
-		"translation/pt/site": "sc-page",
-		"translation/zh/site": "sc-page"
-	},
-	"donate-now": {
-		"translation/pl/site": "sc-page",
-		"translation/pt/site": "sc-page",
-		"translation/zh/site": "sc-page"
-	},
-	"donation-success": {
-		"translation/pl/site": "sc-page"
-	},
-	"error-icon": {
-		"translation/pl/site": "sc-page",
-		"translation/pt/site": "sc-page",
-		"translation/zh/site": "sc-page"
-	},
-	"language-base-menu": {
-		"translation/pl/site": "sc-page",
-		"translation/pt/site": "sc-page",
-		"translation/zh/site": "sc-page"
-	},
-	"more-menu": {
-		"translation/pl/site": "sc-page",
-		"translation/pt/site": "sc-page",
-		"translation/zh/site": "sc-page"
-	},
-	"navigation-menu": {
-		"translation/pl/site": "sc-page",
-		"translation/pt/site": "sc-page",
-		"translation/zh/site": "sc-page"
-	},
-	"offline": {
-		"translation/pl/site": "sc-page",
-		"translation/pt/site": "sc-page",
-		"translation/zh/site": "sc-page"
-	},
-	"page-dictionary": {
-		"translation/pl/site": "sc-page",
-		"translation/pt/site": "sc-page",
-		"translation/zh/site": "sc-page"
-	},
-	"page-search": {
-		"translation/pl/site": "sc-page",
-		"translation/pt/site": "sc-page",
-		"translation/zh/site": "sc-page"
-	},
-	"page-selector": {
-		"translation/pl/site": "sc-page",
-		"translation/pt/site": "sc-page",
-		"translation/zh/site": "sc-page"
-	},
-	"parallel-item": {
-		"translation/pl/site": "sc-page",
-		"translation/pt/site": "sc-page",
-		"translation/zh/site": "sc-page"
-	},
-	"parallel-list": {
-		"translation/pl/site": "sc-page",
-		"translation/pt/site": "sc-page",
-		"translation/zh/site": "sc-page"
-	},
-	"search-filter-menu": {
-		"translation/pl/site": "sc-page",
-		"translation/pt/site": "sc-page",
-		"translation/zh/site": "sc-page"
-	},
-	"site-layout": {
-		"translation/pl/site": "sc-page",
-		"translation/pt/site": "sc-page",
-		"translation/zh/site": "sc-page"
-	},
-	"static-page-selector": {
-		"translation/pl/site": "sc-page",
-		"translation/pt/site": "sc-page",
-		"translation/zh/site": "sc-page"
-	},
-	"suttaplex-share-menu": {
-		"translation/pl/site": "sc-page",
-		"translation/pt/site": "sc-page",
-		"translation/zh/site": "sc-page"
-	},
-	"suttaplex": {
-		"translation/pl/site": "sc-page",
-		"translation/pt/site": "sc-page",
-		"translation/zh/site": "sc-page"
-	},
-	"text": {
-		"translation/pl/site": "sc-page",
-		"translation/pt/site": "sc-page",
-		"translation/zh/site": "sc-page"
-	},
-	"top-sheet": {
-		"translation/pl/site": "sc-page",
-		"translation/pt/site": "sc-page",
-		"translation/zh/site": "sc-page"
-	},
-	"universal-action-items": {
-		"translation/pl/site": "sc-page",
-		"translation/pt/site": "sc-page",
-		"translation/zh/site": "sc-page"
-	},
-	"stripe-card": {
-		"translation/pl/site": "",
-		"translation/pt/site": "",
-		"translation/zh/site": ""
-	},
-	"a-new-beginning": {
-		"translation/pt/site": "static-page",
-		"translation/zh/site": "static-page"
-	},
-	"abbreviations": {
-		"translation/pt/site": "static-page",
-		"translation/zh/site": "static-page"
-	},
-	"abhidhamma": {
-		"translation/pt/site": "static-page",
-		"translation/zh/site": "static-page"
-	},
-	"about": {
-		"translation/pt/site": "static-page",
-		"translation/zh/site": "static-page"
-	},
-	"acknowledgments": {
-		"translation/pt/site": "static-page",
-		"translation/zh/site": "static-page"
-	},
-	"discourses": {
-		"translation/pt/site": "static-page",
-		"translation/zh/site": "static-page"
-	},
-	"donations": {
-		"translation/pt/site": "static-page",
-		"translation/zh/site": "static-page"
-	},
-	"downloads": {
-		"translation/pt/site": "static-page",
-		"translation/zh/site": "static-page"
-	},
-	"home": {
-		"translation/pt/site": "static-page",
-		"translation/zh/site": "static-page"
-	},
-	"introduction": {
-		"translation/pt/site": "static-page",
-		"translation/zh/site": "static-page"
-	},
-	"licensing": {
-		"translation/pt/site": "static-page",
-		"translation/zh/site": "static-page"
-	},
-	"methodology": {
-		"translation/pt/site": "static-page",
-		"translation/zh/site": "static-page"
-	},
-	"names": {
-		"translation/pt/site": "static-page",
-		"translation/zh/site": "static-page"
-	},
-	"numbering": {
-		"translation/pt/site": "static-page",
-		"translation/zh/site": "static-page"
-	},
-	"similes": {
-		"translation/pt/site": "static-page",
-		"translation/zh/site": "static-page"
-	},
-	"start": {
-		"translation/pt/site": "static-page",
-		"translation/zh/site": "static-page"
-	},
-	"subjects": {
-		"translation/pt/site": "static-page",
-		"translation/zh/site": "static-page"
-	},
-	"terminology": {
-		"translation/pt/site": "static-page",
-		"translation/zh/site": "static-page"
-	},
-	"vinaya": {
-		"translation/pt/site": "static-page",
-		"translation/zh/site": "static-page"
-	},
-	"navigation": {
-		"translation/zh/site": "sc-page"
-	},
-	"text-carousel": {
-		"translation/zh/site": ""
-	},
 	"bv10": {
 		"root/pli/ms": "sutta/kn/bv"
 	},
@@ -22277,9 +22091,6 @@
 		"root/pli/ms": "sutta/kn/snp/vagga3"
 	},
 	"snp3.12": {
-		"root/pli/ms": "sutta/kn/snp/vagga3"
-	},
-	"snp3.2": {
 		"root/pli/ms": "sutta/kn/snp/vagga3"
 	},
 	"snp3.3": {
