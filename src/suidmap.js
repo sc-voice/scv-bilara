@@ -4351,6 +4351,11 @@
 		"translation/en/sujato": "sutta/an/an6",
 		"root/pli/ms": "sutta/an/an6"
 	},
+	"an6.58": {
+		"translation/de/sabbamitta": "sutta/an/an6",
+		"translation/en/sujato": "sutta/an/an6",
+		"root/pli/ms": "sutta/an/an6"
+	},
 	"an6.5": {
 		"translation/de/sabbamitta": "sutta/an/an6",
 		"translation/en/sujato": "sutta/an/an6",
@@ -7761,10 +7766,6 @@
 		"root/pli/ms": "sutta/an/an6"
 	},
 	"an6.57": {
-		"translation/en/sujato": "sutta/an/an6",
-		"root/pli/ms": "sutta/an/an6"
-	},
-	"an6.58": {
 		"translation/en/sujato": "sutta/an/an6",
 		"root/pli/ms": "sutta/an/an6"
 	},
