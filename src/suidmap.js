@@ -4480,6 +4480,12 @@
 		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
+	"dn30": {
+		"translation/de/sabbamitta": "sutta/dn",
+		"translation/en/sujato": "sutta/dn",
+		"translation/my/my-team": "sutta/dn",
+		"root/pli/ms": "sutta/dn"
+	},
 	"dn33": {
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
@@ -9076,11 +9082,6 @@
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn2": {
-		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
-		"root/pli/ms": "sutta/dn"
-	},
-	"dn30": {
 		"translation/en/sujato": "sutta/dn",
 		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
