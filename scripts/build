@@ -2,8 +2,6 @@
 DIR=`dirname $0`
 pushd $DIR/..
 
-echo `$DIR/version` >> README.md
-
 $DIR/js/build.js
 
 git status | grep 'nothing to commit' > /dev/null; RC=$?

@@ -105,6 +105,3 @@ The `scv-bilara` library has Javascript classes for
 * **SuttaCentralId** utility for matching and parsing SuttaCentral Ids
 * **Unicode** multilingual helper
 
-
-1.7.7
-1.7.9
