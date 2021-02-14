@@ -1,7 +1,7 @@
 name: schedule-actions
 on: 
   schedule:
-    - cron: 0 21 * * *
+    - cron: 0 12 * * *
 jobs:
   build-job:
     runs-on: ubuntu-latest
