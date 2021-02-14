@@ -7,11 +7,13 @@ if [ "$TEST_TOKEN" != "test-token" ]; then
   exit -1
 fi
 echo -e "TEST_TOKEN is test-token (ok)"
+find . -name .npmrc
+find ~ -name .npmrc
  
 if [ -e .npmrc ]; then
   echo -e "BUILD\t: .npmrc found (ok)"
-  if [ "$NPM_AUTH_TOKEN" == "" ]; then
-    echo -e "BUILD\t: NPM_AUTH_TOKEN is required (FAIL)"
+  if [ "$NODE_AUTH_TOKEN" == "" ]; then
+    echo -e "BUILD\t: NODE_AUTH_TOKEN is required (FAIL)"
     exit -1
   fi
 else
