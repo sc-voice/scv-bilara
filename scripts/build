@@ -3,14 +3,19 @@ DIR=`dirname $0`
 pushd $DIR/..
 
 if [ "$TEST_TOKEN" != "test-token" ]; then
-  echo TEST_TOKEN is not test-token (FAIL)
+  echo -e "BUILD\t: TEST_TOKEN is not test-token (FAIL)"
   exit -1
 fi
 echo -e "TEST_TOKEN is test-token (ok)"
  
-if [ "$NPM_AUTH_TOKEN" == "" ]; then
-  echo -e "BUILD\t: NPM_AUTH_TOKEN is required (FAIL)"
-  exit -1
+if [ -e .npmrc ]; then
+  echo -e "BUILD\t: .npmrc found (ok)"
+  if [ "$NPM_AUTH_TOKEN" == "" ]; then
+    echo -e "BUILD\t: NPM_AUTH_TOKEN is required (FAIL)"
+    exit -1
+  fi
+else
+  echo -e "BUILD\t: .npmrc not found (ok)"
 fi
 
 # DEBUG
