@@ -106,3 +106,4 @@ The `scv-bilara` library has Javascript classes for
 * **Unicode** multilingual helper
 
 
+1.7.7
