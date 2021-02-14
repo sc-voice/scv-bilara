@@ -6,7 +6,7 @@ if [ "$TEST_TOKEN" != "test-token" ]; then
   echo TEST_TOKEN is not test-token (FAIL)
   exit -1
 fi
-echo TEST_TOKEN is test-token (ok)
+echo -e "TEST_TOKEN is test-token (ok)"
  
 if [ "$NPM_AUTH_TOKEN" == "" ]; then
   echo -e "BUILD\t: NPM_AUTH_TOKEN is required (FAIL)"
