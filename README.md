@@ -107,3 +107,4 @@ The `scv-bilara` library has Javascript classes for
 
 
 1.7.7
+1.7.9
