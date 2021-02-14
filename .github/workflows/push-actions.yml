@@ -16,4 +16,5 @@ jobs:
       - run: git config user.email github-actions@github.com
       - run: npm run build
         env: 
+          TEST_TOKEN: ${{ secrets.TEST_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

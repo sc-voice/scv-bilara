@@ -2,14 +2,13 @@
 DIR=`dirname $0`
 pushd $DIR/..
 
+# DEBUG
+echo TEST_TOKEN $TEST_TOKEN
+exit 0
+
 $DIR/js/build.js
 
 git status | grep 'nothing to commit' > /dev/null; RC=$?
-
-# DEBUG
-cat $DIR/../.npmrc
-exit 0
-
 if [ "$RC" == "0" ]; then
     echo -e "BUILD\t: Nothing to commit"
 else
