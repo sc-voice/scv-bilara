@@ -1,9 +1,6 @@
-name: schedule-actions
-on: 
-  schedule:
-    - cron: 0 12 * * *
+name: push-actions
 jobs:
-  build-job:
+  push-job:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
