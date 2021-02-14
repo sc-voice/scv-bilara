@@ -2,15 +2,20 @@
 DIR=`dirname $0`
 pushd $DIR/..
 
-# DEBUG
-MSG="TEST_TOKEN $TEST_TOKEN"
-echo "hello $MSG"
-if [ "$TEST_TOKEN" == "test-token" ]; then
-  echo ok
-else
-  echo sadness
+if [ "$TEST_TOKEN" != "test-token" ]; then
+  echo TEST_TOKEN is not test-token (FAIL)
+  exit -1
 fi
+echo TEST_TOKEN is test-token (ok)
  
+if [ "$NPM_AUTH_TOKEN" == "" ]; then
+  echo -e "BUILD\t: NPM_AUTH_TOKEN is required (FAIL)"
+  exit -1
+fi
+
+# DEBUG
+VERSION=`$DIR/version`
+echo VERSION $VERSION ok
 exit 0
 
 $DIR/js/build.js
