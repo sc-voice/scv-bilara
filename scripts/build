@@ -3,7 +3,14 @@ DIR=`dirname $0`
 pushd $DIR/..
 
 # DEBUG
-echo TEST_TOKEN $TEST_TOKEN
+MSG="TEST_TOKEN $TEST_TOKEN"
+echo "hello $MSG"
+if [ "$TEST_TOKEN" == "test-token" ]; then
+  echo ok
+else
+  echo sadness
+fi
+ 
 exit 0
 
 $DIR/js/build.js
