@@ -1,5 +1,5 @@
-(function(exports) { // DEPRECATED
-    const { suidmap:SUID_MAP } = require('./suidmap');
+(function(exports) { 
+    const { suidmap:SUID_MAP } = require('./auto/suidmap');
     const { logger } = require('log-instance');
     const SuttaCentralId = require('./sutta-central-id');
 

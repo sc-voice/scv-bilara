@@ -12,7 +12,7 @@ module.exports = {
     Publication: require("./src/publication"),
     Seeker: require("./src/seeker"),
     SegDoc: require("./src/seg-doc"),
-    SuidMap: require("./src/suidmap"),
+    SuidMap: require("./src/auto/suidmap"),
     SuttaCentralId: require("./src/sutta-central-id"),
     Tipitaka: require('./src/tipitaka'),
     Unicode: require("./src/unicode.js"),
