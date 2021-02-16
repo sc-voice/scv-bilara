@@ -18,7 +18,7 @@ else
     if [ "$NODE_AUTH_TOKEN" != "" ]; then
       $DIR/can-publish; CANPUBLISH=?$
       if [ "$CANPUBLISH" == "1" ]; then
-        echo npm publish
+        npm publish
       fi
     fi
 fi

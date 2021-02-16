@@ -1,0 +1,10 @@
+#!/bin/bash
+PUBVER=`npm view | grep latest | sed s/^.*:.//`
+PKGVER=`grep version package.json | head -1 | sed s/[^0-9.]//g`
+if [ "$PUBVER" == "PKGVER" ]; then
+  echo "current version $PKGVER is published"
+  exit 0
+else
+  echo "can publish $PKGVER (current $PUBVER)"
+  exit 1
+fi
