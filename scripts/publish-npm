@@ -8,12 +8,9 @@ if [ "$PUBVER" == "PKGVER" ]; then
   echo -1
 elif [ "$NODE_AUTH_TOKEN" != "" ]; then
     echo "PUBLISH-NPM: $PUBVER updated to $PKGVER "
-    $DIR/can-publish; CANPUBLISH=?$
-    if [ "$CANPUBLISH" == "1" ]; then
-      npm publish
-    fi
+    npm publish
   fi
   exit 0
 else 
-    echo "PUBLISH-NPM: cannot update npm (unauthenticated)"
+    echo "PUBLISH-NPM: cannot publish v$PKGVER (NODE_AUTH_TOKEN?)"
 fi
