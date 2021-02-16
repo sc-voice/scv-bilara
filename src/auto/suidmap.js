@@ -17318,6 +17318,10 @@
 		"translation/en/sujato": "sutta/kn/snp/vagga3",
 		"root/pli/ms": "sutta/kn/snp/vagga3"
 	},
+	"snp3.4": {
+		"translation/en/sujato": "sutta/kn/snp/vagga3",
+		"root/pli/ms": "sutta/kn/snp/vagga3"
+	},
 	"snp4.2": {
 		"translation/en/sujato": "sutta/kn/snp/vagga4",
 		"root/pli/ms": "sutta/kn/snp/vagga4"
@@ -22097,9 +22101,6 @@
 		"root/pli/ms": "sutta/kn/snp/vagga3"
 	},
 	"snp3.12": {
-		"root/pli/ms": "sutta/kn/snp/vagga3"
-	},
-	"snp3.4": {
 		"root/pli/ms": "sutta/kn/snp/vagga3"
 	},
 	"snp3.5": {
