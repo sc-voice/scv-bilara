@@ -7,9 +7,6 @@
 	"an1.61-70": {
 		"translation/de/sabbamitta": "sutta/an/an1"
 	},
-	"an1.616-627": {
-		"translation/de/sabbamitta": "sutta/an/an1"
-	},
 	"an1.71-81": {
 		"translation/de/sabbamitta": "sutta/an/an1"
 	},
@@ -17,6 +14,9 @@
 		"translation/de/sabbamitta": "sutta/an/an1"
 	},
 	"an1.98-139": {
+		"translation/de/sabbamitta": "sutta/an/an1"
+	},
+	"an1.616-627": {
 		"translation/de/sabbamitta": "sutta/an/an1"
 	},
 	"an2.1-10": {
@@ -30,11 +30,6 @@
 		"translation/en/sujato": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
-	"sn12.23": {
-		"translation/de/sabbamitta": "sutta/sn/sn12",
-		"translation/en/sujato": "sutta/sn/sn12",
-		"root/pli/ms": "sutta/sn/sn12"
-	},
 	"dn1": {
 		"translation/en/sujato": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
@@ -43,15 +38,32 @@
 		"translation/en/sujato": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
+	"mn118": {
+		"translation/en/sujato": "sutta/mn",
+		"root/pli/ms": "sutta/mn"
+	},
+	"sn10.8": {
+		"translation/en/sujato": "sutta/sn/sn10",
+		"root/pli/ms": "sutta/sn/sn10"
+	},
+	"sn12.23": {
+		"translation/de/sabbamitta": "sutta/sn/sn12",
+		"translation/en/sujato": "sutta/sn/sn12",
+		"root/pli/ms": "sutta/sn/sn12"
+	},
+	"sn46.36": {
+		"translation/en/sujato": "sutta/sn/sn46",
+		"root/pli/ms": "sutta/sn/sn46"
+	},
+	"thag1.1": {
+		"translation/en/sujato": "sutta/kn/thag",
+		"root/pli/ms": "sutta/kn/thag"
+	},
 	"thag1.10": {
 		"translation/en/sujato": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.113": {
-		"translation/en/sujato": "sutta/kn/thag",
-		"root/pli/ms": "sutta/kn/thag"
-	},
-	"thag1.1": {
 		"translation/en/sujato": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
@@ -70,18 +82,6 @@
 	"thig16.1": {
 		"translation/en/sujato": "sutta/kn/thig",
 		"root/pli/ms": "sutta/kn/thig"
-	},
-	"mn118": {
-		"translation/en/sujato": "sutta/mn",
-		"root/pli/ms": "sutta/mn"
-	},
-	"sn10.8": {
-		"translation/en/sujato": "sutta/sn/sn10",
-		"root/pli/ms": "sutta/sn/sn10"
-	},
-	"sn46.36": {
-		"translation/en/sujato": "sutta/sn/sn46",
-		"root/pli/ms": "sutta/sn/sn46"
 	},
 	"an5.196": {
 		"root/pli/ms": "sutta/an/an5"

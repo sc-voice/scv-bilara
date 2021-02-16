@@ -4,6 +4,7 @@
     const { logger } = require('log-instance');
     const { Files } = require('memo-again');
     const BilaraPath = require('./bilara-path');
+    const SuttaCentralId = require('./sutta-central-id');
     const STUBFILESIZE = 5;
     const ROOTMS_FOLDER = path.join(Files.LOCAL_DIR, "bilara-data", 
         "root", "pli", "ms");
@@ -251,8 +252,7 @@
                 loadComment = false,
             } = opts;
             var readdir = fs.promises.readdir;
-            let suidMap = {};
-            this.suidMap = suidMap;
+            let suidMap = this.suidMap = {};
             var transPath = path.join(this.root, "translation");
             var rdOpts = {withFileTypes:true};
             var langs = (await readdir(transPath, rdOpts))
@@ -276,6 +276,13 @@
                     }
                 }
             }
+            suidMap = Object.keys(suidMap)
+                .sort(SuttaCentralId.compareLow)
+                .reduce((a,k) =>{
+                    a[k] = suidMap[k]; 
+                    return a;
+                }, {});
+            this.suidMap = suidMap;
 
             await this._loadPaths("root/pli/ms");
             loadHtml && await this._loadPaths("html/pli/ms");

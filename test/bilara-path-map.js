@@ -216,7 +216,7 @@
             'sutta/sn',
         ]);
     });
-    it("TESTTESTcustom suid map", async()=>{
+    it("custom suid map", async()=>{
         let suidMapFile = tmp.tmpNameSync();
         let validatePath = (key,value,suid) => {
             return suid === 'sn12.23';
