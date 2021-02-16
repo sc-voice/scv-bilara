@@ -1,0 +1,19 @@
+#!/bin/bash
+DIR=`dirname $0`; pushd $DIR/..
+
+PUBVER=`npm view | grep latest | sed s/^.*:.//`
+PKGVER=`grep version package.json | head -1 | sed s/[^0-9.]//g`
+if [ "$PUBVER" == "PKGVER" ]; then
+  echo "PUBLISH-NPM: $PKGVER no change"
+  echo -1
+elif [ "$NODE_AUTH_TOKEN" != "" ]; then
+    echo "PUBLISH-NPM: $PUBVER updated to $PKGVER "
+    $DIR/can-publish; CANPUBLISH=?$
+    if [ "$CANPUBLISH" == "1" ]; then
+      npm publish
+    fi
+  fi
+  exit 0
+else 
+    echo "PUBLISH-NPM: cannot update npm (unauthenticated)"
+fi
