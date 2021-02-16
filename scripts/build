@@ -16,7 +16,7 @@ else
     git commit --amend -m "v$VERSION build"
     git push
     if [ "$NODE_AUTH_TOKEN" != "" ]; then
-      $DIR/scripts/can-publish; CANPUBLISH=?$
+      $DIR/can-publish; CANPUBLISH=?$
       if [ "$CANPUBLISH" == "1" ]; then
         echo npm publish
       fi
