@@ -6,284 +6,236 @@
 	"an1.1-10": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.11-20": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.21-30": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.31-40": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.41-50": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.51-60": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.61-70": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.71-81": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.82-97": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.98-139": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.140-149": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.150-169": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.170-187": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.188-197": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.198-208": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.209-218": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.219-234": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.235-247": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.248-257": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.258-267": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.268-277": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.278-286": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.287-295": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.296-305": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.306-315": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.316-332": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.333-377": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.378-393": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.394-574": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
-		"translation/pt/team": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.575-615": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.616-627": {
 		"translation/de/sabbamitta": "sutta/an/an1",
 		"translation/en/sujato": "sutta/an/an1",
-		"translation/jpn/kaz": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an2.1-10": {
 		"translation/de/sabbamitta": "sutta/an/an2",
 		"translation/en/sujato": "sutta/an/an2",
-		"translation/jpn/kaz": "sutta/an/an2",
 		"root/pli/ms": "sutta/an/an2"
 	},
 	"an2.11-20": {
 		"translation/de/sabbamitta": "sutta/an/an2",
 		"translation/en/sujato": "sutta/an/an2",
-		"translation/jpn/kaz": "sutta/an/an2",
 		"root/pli/ms": "sutta/an/an2"
 	},
 	"an2.21-31": {
 		"translation/de/sabbamitta": "sutta/an/an2",
 		"translation/en/sujato": "sutta/an/an2",
-		"translation/jpn/kaz": "sutta/an/an2",
 		"root/pli/ms": "sutta/an/an2"
 	},
 	"an2.32-41": {
 		"translation/de/sabbamitta": "sutta/an/an2",
 		"translation/en/sujato": "sutta/an/an2",
-		"translation/jpn/kaz": "sutta/an/an2",
 		"root/pli/ms": "sutta/an/an2"
 	},
 	"an2.42-51": {
 		"translation/de/sabbamitta": "sutta/an/an2",
 		"translation/en/sujato": "sutta/an/an2",
-		"translation/jpn/kaz": "sutta/an/an2",
 		"root/pli/ms": "sutta/an/an2"
 	},
 	"an2.52-63": {
 		"translation/de/sabbamitta": "sutta/an/an2",
 		"translation/en/sujato": "sutta/an/an2",
-		"translation/jpn/kaz": "sutta/an/an2",
 		"root/pli/ms": "sutta/an/an2"
 	},
 	"an2.64-76": {
 		"translation/de/sabbamitta": "sutta/an/an2",
 		"translation/en/sujato": "sutta/an/an2",
-		"translation/jpn/kaz": "sutta/an/an2",
 		"root/pli/ms": "sutta/an/an2"
 	},
 	"an2.77-86": {
 		"translation/de/sabbamitta": "sutta/an/an2",
 		"translation/en/sujato": "sutta/an/an2",
-		"translation/jpn/kaz": "sutta/an/an2",
 		"root/pli/ms": "sutta/an/an2"
 	},
 	"an2.87-97": {
 		"translation/de/sabbamitta": "sutta/an/an2",
 		"translation/en/sujato": "sutta/an/an2",
-		"translation/jpn/kaz": "sutta/an/an2",
 		"root/pli/ms": "sutta/an/an2"
 	},
 	"an2.98-117": {
 		"translation/de/sabbamitta": "sutta/an/an2",
 		"translation/en/sujato": "sutta/an/an2",
-		"translation/jpn/kaz": "sutta/an/an2",
 		"root/pli/ms": "sutta/an/an2"
 	},
 	"an2.118-129": {
 		"translation/de/sabbamitta": "sutta/an/an2",
 		"translation/en/sujato": "sutta/an/an2",
-		"translation/jpn/kaz": "sutta/an/an2",
 		"root/pli/ms": "sutta/an/an2"
 	},
 	"an2.130-140": {
 		"translation/de/sabbamitta": "sutta/an/an2",
 		"translation/en/sujato": "sutta/an/an2",
-		"translation/jpn/kaz": "sutta/an/an2",
 		"root/pli/ms": "sutta/an/an2"
 	},
 	"an2.141-150": {
 		"translation/de/sabbamitta": "sutta/an/an2",
 		"translation/en/sujato": "sutta/an/an2",
-		"translation/jpn/kaz": "sutta/an/an2",
 		"root/pli/ms": "sutta/an/an2"
 	},
 	"an2.151-162": {
 		"translation/de/sabbamitta": "sutta/an/an2",
 		"translation/en/sujato": "sutta/an/an2",
-		"translation/jpn/kaz": "sutta/an/an2",
 		"root/pli/ms": "sutta/an/an2"
 	},
 	"an2.163-179": {
 		"translation/de/sabbamitta": "sutta/an/an2",
 		"translation/en/sujato": "sutta/an/an2",
-		"translation/jpn/kaz": "sutta/an/an2",
 		"root/pli/ms": "sutta/an/an2"
 	},
 	"an2.180-229": {
 		"translation/de/sabbamitta": "sutta/an/an2",
 		"translation/en/sujato": "sutta/an/an2",
-		"translation/jpn/kaz": "sutta/an/an2",
 		"root/pli/ms": "sutta/an/an2"
 	},
 	"an2.230-279": {
@@ -294,7 +246,6 @@
 	"an2.280-309": {
 		"translation/de/sabbamitta": "sutta/an/an2",
 		"translation/en/sujato": "sutta/an/an2",
-		"translation/jpn/kaz": "sutta/an/an2",
 		"root/pli/ms": "sutta/an/an2"
 	},
 	"an2.310-479": {
@@ -380,7 +331,6 @@
 	"an3.16": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
-		"translation/jpn/kaz": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.17": {
@@ -421,13 +371,11 @@
 	"an3.24": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
-		"translation/jpn/kaz": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.25": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
-		"translation/jpn/kaz": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.26": {
@@ -453,25 +401,21 @@
 	"an3.30": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
-		"translation/jpn/kaz": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.31": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
-		"translation/jpn/kaz": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.32": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
-		"translation/jpn/kaz": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.33": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
-		"translation/jpn/kaz": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.34": {
@@ -502,7 +446,6 @@
 	"an3.39": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
-		"translation/jpn/kaz": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.40": {
@@ -593,13 +536,11 @@
 	"an3.57": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
-		"translation/jpn/kaz": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.58": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
-		"translation/jpn/kaz": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.59": {
@@ -615,7 +556,6 @@
 	"an3.61": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
-		"translation/jpn/kaz": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.62": {
@@ -636,7 +576,6 @@
 	"an3.65": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
-		"translation/jpn/kaz": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.66": {
@@ -692,7 +631,6 @@
 	"an3.76": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
-		"translation/jpn/kaz": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.77": {
@@ -818,7 +756,6 @@
 	"an3.101": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
-		"translation/jpn/kaz": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.102": {
@@ -1187,7 +1124,6 @@
 		"translation/cs/ashinsarana": "sutta/an/an4",
 		"translation/de/sabbamitta": "sutta/an/an4",
 		"translation/en/sujato": "sutta/an/an4",
-		"translation/jpn/kaz": "sutta/an/an4",
 		"root/pli/ms": "sutta/an/an4"
 	},
 	"an4.15": {
@@ -1471,7 +1407,6 @@
 		"translation/cs/ashinsarana": "sutta/an/an4",
 		"translation/de/sabbamitta": "sutta/an/an4",
 		"translation/en/sujato": "sutta/an/an4",
-		"translation/jpn/kaz": "sutta/an/an4",
 		"root/pli/ms": "sutta/an/an4"
 	},
 	"an4.62": {
@@ -1484,7 +1419,6 @@
 		"translation/cs/ashinsarana": "sutta/an/an4",
 		"translation/de/sabbamitta": "sutta/an/an4",
 		"translation/en/sujato": "sutta/an/an4",
-		"translation/jpn/kaz": "sutta/an/an4",
 		"root/pli/ms": "sutta/an/an4"
 	},
 	"an4.64": {
@@ -3010,7 +2944,6 @@
 	"an5.48": {
 		"translation/de/sabbamitta": "sutta/an/an5",
 		"translation/en/sujato": "sutta/an/an5",
-		"translation/jpn/kaz": "sutta/an/an5",
 		"root/pli/ms": "sutta/an/an5"
 	},
 	"an5.49": {
@@ -3056,7 +2989,6 @@
 	"an5.57": {
 		"translation/de/sabbamitta": "sutta/an/an5",
 		"translation/en/sujato": "sutta/an/an5",
-		"translation/jpn/kaz": "sutta/an/an5",
 		"root/pli/ms": "sutta/an/an5"
 	},
 	"an5.58": {
@@ -3627,25 +3559,21 @@
 	"an5.171": {
 		"translation/de/sabbamitta": "sutta/an/an5",
 		"translation/en/sujato": "sutta/an/an5",
-		"translation/jpn/kaz": "sutta/an/an5",
 		"root/pli/ms": "sutta/an/an5"
 	},
 	"an5.172": {
 		"translation/de/sabbamitta": "sutta/an/an5",
 		"translation/en/sujato": "sutta/an/an5",
-		"translation/jpn/kaz": "sutta/an/an5",
 		"root/pli/ms": "sutta/an/an5"
 	},
 	"an5.173": {
 		"translation/de/sabbamitta": "sutta/an/an5",
 		"translation/en/sujato": "sutta/an/an5",
-		"translation/jpn/kaz": "sutta/an/an5",
 		"root/pli/ms": "sutta/an/an5"
 	},
 	"an5.174": {
 		"translation/de/sabbamitta": "sutta/an/an5",
 		"translation/en/sujato": "sutta/an/an5",
-		"translation/jpn/kaz": "sutta/an/an5",
 		"root/pli/ms": "sutta/an/an5"
 	},
 	"an5.175": {
@@ -3661,7 +3589,6 @@
 	"an5.177": {
 		"translation/de/sabbamitta": "sutta/an/an5",
 		"translation/en/sujato": "sutta/an/an5",
-		"translation/jpn/kaz": "sutta/an/an5",
 		"root/pli/ms": "sutta/an/an5"
 	},
 	"an5.178": {
@@ -4282,7 +4209,6 @@
 	"an6.30": {
 		"translation/de/sabbamitta": "sutta/an/an6",
 		"translation/en/sujato": "sutta/an/an6",
-		"translation/jpn/kaz": "sutta/an/an6",
 		"root/pli/ms": "sutta/an/an6"
 	},
 	"an6.31": {
@@ -5087,7 +5013,6 @@
 	},
 	"an8.1": {
 		"translation/en/sujato": "sutta/an/an8",
-		"translation/jpn/kaz": "sutta/an/an8",
 		"root/pli/ms": "sutta/an/an8"
 	},
 	"an8.2": {
@@ -6899,195 +6824,156 @@
 	},
 	"dn1": {
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
-		"translation/ru/team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn2": {
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn3": {
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
-		"translation/ru/team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn4": {
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn5": {
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn6": {
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn7": {
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn8": {
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn9": {
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
-		"translation/ru/team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn10": {
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn11": {
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn12": {
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn13": {
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
-		"translation/ru/team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn14": {
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn15": {
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn16": {
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn17": {
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn18": {
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn19": {
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn20": {
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn21": {
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn22": {
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn23": {
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn24": {
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn25": {
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn26": {
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn27": {
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn28": {
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn29": {
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn30": {
-		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn31": {
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn32": {
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn33": {
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn34": {
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
-		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"iti1": {
@@ -8058,7 +7944,6 @@
 	},
 	"mn118": {
 		"translation/en/sujato": "sutta/mn",
-		"translation/pt/team": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn119": {
@@ -8196,1678 +8081,6 @@
 	"mn152": {
 		"translation/en/sujato": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
-	},
-	"pli-tv-bi-vb-as1-7": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb"
-	},
-	"pli-tv-bi-vb-np1": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
-	},
-	"pli-tv-bi-vb-np2": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
-	},
-	"pli-tv-bi-vb-np3": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
-	},
-	"pli-tv-bi-vb-np4": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
-	},
-	"pli-tv-bi-vb-np5": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
-	},
-	"pli-tv-bi-vb-np6": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
-	},
-	"pli-tv-bi-vb-np7": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
-	},
-	"pli-tv-bi-vb-np8": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
-	},
-	"pli-tv-bi-vb-np9": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
-	},
-	"pli-tv-bi-vb-np10": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
-	},
-	"pli-tv-bi-vb-np11": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
-	},
-	"pli-tv-bi-vb-np12": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
-	},
-	"pli-tv-bi-vb-pc1": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc2": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc3": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc4": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc5": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc6": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc7": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc8": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc9": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc10": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc11": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc12": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc13": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc14": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc15": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc16": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc17": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc18": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc19": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc20": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc21": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc22": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc23": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc24": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc25": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc26": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc27": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc28": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc29": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc30": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc31": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc32": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc33": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc34": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc35": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc36": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc37": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc38": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc39": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc40": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc41": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc42": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc43": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc44": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc45": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc46": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc47": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc48": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc49": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc50": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc51": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc52": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc53": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc54": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc55": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc56": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc57": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc58": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc59": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc60": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc61": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc62": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc63": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc64": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc65": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc66": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc67": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc68": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc69": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc70": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc71": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc72": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc73": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc74": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc75": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc76": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc77": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc78": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc79": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc80": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc81": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc82": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc83": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc84": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc85": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc86": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc87": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc88": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc89": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc90": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc91-93": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc94": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc95": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pc96": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
-	},
-	"pli-tv-bi-vb-pd1": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pd",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pd"
-	},
-	"pli-tv-bi-vb-pd2-8": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pd",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pd"
-	},
-	"pli-tv-bi-vb-pj5": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pj",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pj"
-	},
-	"pli-tv-bi-vb-pj6": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pj",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pj"
-	},
-	"pli-tv-bi-vb-pj7": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pj",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pj"
-	},
-	"pli-tv-bi-vb-pj8": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pj",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pj"
-	},
-	"pli-tv-bi-vb-sk1-75": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb"
-	},
-	"pli-tv-bi-vb-ss1": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss"
-	},
-	"pli-tv-bi-vb-ss2": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss"
-	},
-	"pli-tv-bi-vb-ss3": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss"
-	},
-	"pli-tv-bi-vb-ss4": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss"
-	},
-	"pli-tv-bi-vb-ss5": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss"
-	},
-	"pli-tv-bi-vb-ss6": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss"
-	},
-	"pli-tv-bi-vb-ss10": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss"
-	},
-	"pli-tv-bi-vb-ss11": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss"
-	},
-	"pli-tv-bi-vb-ss12": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss"
-	},
-	"pli-tv-bi-vb-ss13": {
-		"translation/en/brahmali": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss"
-	},
-	"pli-tv-bu-vb-as1-7": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb"
-	},
-	"pli-tv-bu-vb-ay1": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ay",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ay"
-	},
-	"pli-tv-bu-vb-ay2": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ay",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ay"
-	},
-	"pli-tv-bu-vb-np1": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np2": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np3": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np4": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np5": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np6": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np7": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np8": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np9": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np10": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np11": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np12": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np13": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np14": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np15": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np16": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np17": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np18": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np19": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np20": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np21": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np22": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np23": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np24": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np25": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np26": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np27": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np28": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np29": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-np30": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
-	},
-	"pli-tv-bu-vb-pc1": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc2": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc3": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc4": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc5": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc6": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc7": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc8": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc9": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc10": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc11": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc12": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc13": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc14": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc15": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc16": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc17": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc18": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc19": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc20": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc21": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc22": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc23": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc24": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc25": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc26": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc27": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc28": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc29": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc30": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc31": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc32": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc33": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc34": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc35": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc36": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc37": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc38": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc39": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc40": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc41": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc42": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc43": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc44": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc45": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc46": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc47": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc48": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc49": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc50": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc51": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc52": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc53": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc54": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc55": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc56": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc57": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc58": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc59": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc60": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc61": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc62": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc63": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc64": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc65": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc66": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc67": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc68": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc69": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc70": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc71": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc72": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc73": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc74": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc75": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc76": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc77": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc78": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc79": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc80": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc81": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc82": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc83": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc84": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc85": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc86": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc87": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc88": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc89": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc90": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc91": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pc92": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
-	},
-	"pli-tv-bu-vb-pd1": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pd",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pd"
-	},
-	"pli-tv-bu-vb-pd2": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pd",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pd"
-	},
-	"pli-tv-bu-vb-pd3": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pd",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pd"
-	},
-	"pli-tv-bu-vb-pd4": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pd",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pd"
-	},
-	"pli-tv-bu-vb-pj1": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pj",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pj"
-	},
-	"pli-tv-bu-vb-pj2": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pj",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pj"
-	},
-	"pli-tv-bu-vb-pj3": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pj",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pj"
-	},
-	"pli-tv-bu-vb-pj4": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pj",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pj"
-	},
-	"pli-tv-bu-vb-sk1": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk2": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk3": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk4": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk5": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk6": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk7": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk8": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk9": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk10": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk11": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk12": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk13": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk14": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk15": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk16": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk17": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk18": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk19": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk20": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk21": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk22": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk23": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk24": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk25": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk26": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk27": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk28": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk29": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk30": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk31": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk32": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk33": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk34": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk35": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk36": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk37": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk38": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk39": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk40": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk41": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk42": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk43": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk44": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk45": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk46": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk47": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk48": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk49": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk50": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk51": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk52": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk53": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk54": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk55": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk56": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk57": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk58": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk59": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk60": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk61": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk62": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk63": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk64": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk65": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk66": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk67": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk68": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk69": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk70": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk71": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk72": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk73": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk74": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-sk75": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
-	},
-	"pli-tv-bu-vb-ss1": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
-	},
-	"pli-tv-bu-vb-ss2": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
-	},
-	"pli-tv-bu-vb-ss3": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
-	},
-	"pli-tv-bu-vb-ss4": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
-	},
-	"pli-tv-bu-vb-ss5": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
-	},
-	"pli-tv-bu-vb-ss6": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
-	},
-	"pli-tv-bu-vb-ss7": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
-	},
-	"pli-tv-bu-vb-ss8": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
-	},
-	"pli-tv-bu-vb-ss9": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
-	},
-	"pli-tv-bu-vb-ss10": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
-	},
-	"pli-tv-bu-vb-ss11": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
-	},
-	"pli-tv-bu-vb-ss12": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
-	},
-	"pli-tv-bu-vb-ss13": {
-		"translation/en/brahmali": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss",
-		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
-	},
-	"pli-tv-kd1": {
-		"translation/en/brahmali": "vinaya/pli-tv-kd",
-		"root/pli/ms": "vinaya/pli-tv-kd"
-	},
-	"pli-tv-kd2": {
-		"translation/en/brahmali": "vinaya/pli-tv-kd",
-		"root/pli/ms": "vinaya/pli-tv-kd"
-	},
-	"pli-tv-kd3": {
-		"translation/en/brahmali": "vinaya/pli-tv-kd",
-		"root/pli/ms": "vinaya/pli-tv-kd"
-	},
-	"pli-tv-kd4": {
-		"translation/en/brahmali": "vinaya/pli-tv-kd",
-		"root/pli/ms": "vinaya/pli-tv-kd"
-	},
-	"pli-tv-kd5": {
-		"translation/en/brahmali": "vinaya/pli-tv-kd",
-		"root/pli/ms": "vinaya/pli-tv-kd"
-	},
-	"pli-tv-kd6": {
-		"translation/en/brahmali": "vinaya/pli-tv-kd",
-		"root/pli/ms": "vinaya/pli-tv-kd"
-	},
-	"pli-tv-kd7": {
-		"translation/en/brahmali": "vinaya/pli-tv-kd",
-		"root/pli/ms": "vinaya/pli-tv-kd"
-	},
-	"pli-tv-kd8": {
-		"translation/en/brahmali": "vinaya/pli-tv-kd",
-		"root/pli/ms": "vinaya/pli-tv-kd"
-	},
-	"pli-tv-kd9": {
-		"translation/en/brahmali": "vinaya/pli-tv-kd",
-		"root/pli/ms": "vinaya/pli-tv-kd"
-	},
-	"pli-tv-kd10": {
-		"translation/en/brahmali": "vinaya/pli-tv-kd",
-		"root/pli/ms": "vinaya/pli-tv-kd"
-	},
-	"pli-tv-kd11": {
-		"translation/en/brahmali": "vinaya/pli-tv-kd",
-		"root/pli/ms": "vinaya/pli-tv-kd"
-	},
-	"pli-tv-kd12": {
-		"translation/en/brahmali": "vinaya/pli-tv-kd",
-		"root/pli/ms": "vinaya/pli-tv-kd"
-	},
-	"pli-tv-kd13": {
-		"translation/en/brahmali": "vinaya/pli-tv-kd",
-		"root/pli/ms": "vinaya/pli-tv-kd"
-	},
-	"pli-tv-kd14": {
-		"translation/en/brahmali": "vinaya/pli-tv-kd",
-		"root/pli/ms": "vinaya/pli-tv-kd"
-	},
-	"pli-tv-kd15": {
-		"translation/en/brahmali": "vinaya/pli-tv-kd",
-		"root/pli/ms": "vinaya/pli-tv-kd"
-	},
-	"pli-tv-kd16": {
-		"translation/en/brahmali": "vinaya/pli-tv-kd",
-		"root/pli/ms": "vinaya/pli-tv-kd"
-	},
-	"pli-tv-kd17": {
-		"translation/en/brahmali": "vinaya/pli-tv-kd",
-		"root/pli/ms": "vinaya/pli-tv-kd"
-	},
-	"pli-tv-kd18": {
-		"translation/en/brahmali": "vinaya/pli-tv-kd",
-		"root/pli/ms": "vinaya/pli-tv-kd"
-	},
-	"pli-tv-kd19": {
-		"translation/en/brahmali": "vinaya/pli-tv-kd",
-		"root/pli/ms": "vinaya/pli-tv-kd"
-	},
-	"pli-tv-kd20": {
-		"translation/en/brahmali": "vinaya/pli-tv-kd",
-		"root/pli/ms": "vinaya/pli-tv-kd"
-	},
-	"pli-tv-kd21": {
-		"translation/en/brahmali": "vinaya/pli-tv-kd",
-		"root/pli/ms": "vinaya/pli-tv-kd"
-	},
-	"pli-tv-kd22": {
-		"translation/en/brahmali": "vinaya/pli-tv-kd",
-		"root/pli/ms": "vinaya/pli-tv-kd"
-	},
-	"pli-tv-pvr1.1": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr1.2": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr1.3": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr1.4": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr1.5": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr1.6": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr1.7": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr1.8": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr1.9": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr1.10": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr1.11": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr1.12": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr1.13": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr1.14": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr1.15": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr1.16": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr2.1": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr2.2": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr2.3": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr2.4": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr2.5": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr2.6": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr2.7": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr2.8": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr2.9": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr2.10": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr2.11": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr2.12": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr2.13": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr2.14": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr2.15": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr2.16": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr3": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr4": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr5": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr6": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr7": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr8": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr9": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr10": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr11": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr12": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr13": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr14": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr15": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr16": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr17": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr18": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr19": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr20": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
-	},
-	"pli-tv-pvr21": {
-		"translation/en/brahmali": "vinaya/pli-tv-pvr",
-		"root/pli/ms": "vinaya/pli-tv-pvr"
 	},
 	"sn1.1": {
 		"translation/de/sabbamitta": "sutta/sn/sn1",
@@ -17202,130 +15415,6 @@
 		"translation/en/sujato": "sutta/sn/sn56",
 		"root/pli/ms": "sutta/sn/sn56"
 	},
-	"snp1.1": {
-		"translation/en/sujato": "sutta/kn/snp/vagga1",
-		"root/pli/ms": "sutta/kn/snp/vagga1"
-	},
-	"snp1.2": {
-		"translation/en/sujato": "sutta/kn/snp/vagga1",
-		"root/pli/ms": "sutta/kn/snp/vagga1"
-	},
-	"snp1.3": {
-		"translation/en/sujato": "sutta/kn/snp/vagga1",
-		"root/pli/ms": "sutta/kn/snp/vagga1"
-	},
-	"snp1.4": {
-		"translation/en/sujato": "sutta/kn/snp/vagga1",
-		"root/pli/ms": "sutta/kn/snp/vagga1"
-	},
-	"snp1.5": {
-		"translation/en/sujato": "sutta/kn/snp/vagga1",
-		"root/pli/ms": "sutta/kn/snp/vagga1"
-	},
-	"snp1.6": {
-		"translation/en/sujato": "sutta/kn/snp/vagga1",
-		"root/pli/ms": "sutta/kn/snp/vagga1"
-	},
-	"snp1.7": {
-		"translation/en/sujato": "sutta/kn/snp/vagga1",
-		"root/pli/ms": "sutta/kn/snp/vagga1"
-	},
-	"snp1.8": {
-		"translation/en/sujato": "sutta/kn/snp/vagga1",
-		"root/pli/ms": "sutta/kn/snp/vagga1"
-	},
-	"snp1.9": {
-		"translation/en/sujato": "sutta/kn/snp/vagga1",
-		"root/pli/ms": "sutta/kn/snp/vagga1"
-	},
-	"snp1.10": {
-		"translation/en/sujato": "sutta/kn/snp/vagga1",
-		"root/pli/ms": "sutta/kn/snp/vagga1"
-	},
-	"snp1.11": {
-		"translation/en/sujato": "sutta/kn/snp/vagga1",
-		"root/pli/ms": "sutta/kn/snp/vagga1"
-	},
-	"snp1.12": {
-		"translation/en/sujato": "sutta/kn/snp/vagga1",
-		"root/pli/ms": "sutta/kn/snp/vagga1"
-	},
-	"snp2.1": {
-		"translation/en/sujato": "sutta/kn/snp/vagga2",
-		"root/pli/ms": "sutta/kn/snp/vagga2"
-	},
-	"snp2.2": {
-		"translation/en/sujato": "sutta/kn/snp/vagga2",
-		"root/pli/ms": "sutta/kn/snp/vagga2"
-	},
-	"snp2.3": {
-		"translation/en/sujato": "sutta/kn/snp/vagga2",
-		"root/pli/ms": "sutta/kn/snp/vagga2"
-	},
-	"snp2.4": {
-		"translation/en/sujato": "sutta/kn/snp/vagga2",
-		"root/pli/ms": "sutta/kn/snp/vagga2"
-	},
-	"snp2.5": {
-		"translation/en/sujato": "sutta/kn/snp/vagga2",
-		"root/pli/ms": "sutta/kn/snp/vagga2"
-	},
-	"snp2.6": {
-		"translation/en/sujato": "sutta/kn/snp/vagga2",
-		"root/pli/ms": "sutta/kn/snp/vagga2"
-	},
-	"snp2.7": {
-		"translation/en/sujato": "sutta/kn/snp/vagga2",
-		"root/pli/ms": "sutta/kn/snp/vagga2"
-	},
-	"snp2.8": {
-		"translation/en/sujato": "sutta/kn/snp/vagga2",
-		"root/pli/ms": "sutta/kn/snp/vagga2"
-	},
-	"snp2.9": {
-		"translation/en/sujato": "sutta/kn/snp/vagga2",
-		"root/pli/ms": "sutta/kn/snp/vagga2"
-	},
-	"snp2.10": {
-		"translation/en/sujato": "sutta/kn/snp/vagga2",
-		"root/pli/ms": "sutta/kn/snp/vagga2"
-	},
-	"snp2.11": {
-		"translation/en/sujato": "sutta/kn/snp/vagga2",
-		"root/pli/ms": "sutta/kn/snp/vagga2"
-	},
-	"snp2.12": {
-		"translation/en/sujato": "sutta/kn/snp/vagga2",
-		"root/pli/ms": "sutta/kn/snp/vagga2"
-	},
-	"snp2.13": {
-		"translation/en/sujato": "sutta/kn/snp/vagga2",
-		"root/pli/ms": "sutta/kn/snp/vagga2"
-	},
-	"snp2.14": {
-		"translation/en/sujato": "sutta/kn/snp/vagga2",
-		"root/pli/ms": "sutta/kn/snp/vagga2"
-	},
-	"snp3.1": {
-		"translation/en/sujato": "sutta/kn/snp/vagga3",
-		"root/pli/ms": "sutta/kn/snp/vagga3"
-	},
-	"snp3.2": {
-		"translation/en/sujato": "sutta/kn/snp/vagga3",
-		"root/pli/ms": "sutta/kn/snp/vagga3"
-	},
-	"snp3.3": {
-		"translation/en/sujato": "sutta/kn/snp/vagga3",
-		"root/pli/ms": "sutta/kn/snp/vagga3"
-	},
-	"snp3.4": {
-		"translation/en/sujato": "sutta/kn/snp/vagga3",
-		"root/pli/ms": "sutta/kn/snp/vagga3"
-	},
-	"snp4.2": {
-		"translation/en/sujato": "sutta/kn/snp/vagga4",
-		"root/pli/ms": "sutta/kn/snp/vagga4"
-	},
 	"thag1.1": {
 		"translation/en/sujato": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
@@ -22094,6 +20183,84 @@
 	"pv9": {
 		"root/pli/ms": "sutta/kn/pv"
 	},
+	"snp1.10": {
+		"root/pli/ms": "sutta/kn/snp/vagga1"
+	},
+	"snp1.11": {
+		"root/pli/ms": "sutta/kn/snp/vagga1"
+	},
+	"snp1.12": {
+		"root/pli/ms": "sutta/kn/snp/vagga1"
+	},
+	"snp1.1": {
+		"root/pli/ms": "sutta/kn/snp/vagga1"
+	},
+	"snp1.2": {
+		"root/pli/ms": "sutta/kn/snp/vagga1"
+	},
+	"snp1.3": {
+		"root/pli/ms": "sutta/kn/snp/vagga1"
+	},
+	"snp1.4": {
+		"root/pli/ms": "sutta/kn/snp/vagga1"
+	},
+	"snp1.5": {
+		"root/pli/ms": "sutta/kn/snp/vagga1"
+	},
+	"snp1.6": {
+		"root/pli/ms": "sutta/kn/snp/vagga1"
+	},
+	"snp1.7": {
+		"root/pli/ms": "sutta/kn/snp/vagga1"
+	},
+	"snp1.8": {
+		"root/pli/ms": "sutta/kn/snp/vagga1"
+	},
+	"snp1.9": {
+		"root/pli/ms": "sutta/kn/snp/vagga1"
+	},
+	"snp2.10": {
+		"root/pli/ms": "sutta/kn/snp/vagga2"
+	},
+	"snp2.11": {
+		"root/pli/ms": "sutta/kn/snp/vagga2"
+	},
+	"snp2.12": {
+		"root/pli/ms": "sutta/kn/snp/vagga2"
+	},
+	"snp2.13": {
+		"root/pli/ms": "sutta/kn/snp/vagga2"
+	},
+	"snp2.14": {
+		"root/pli/ms": "sutta/kn/snp/vagga2"
+	},
+	"snp2.1": {
+		"root/pli/ms": "sutta/kn/snp/vagga2"
+	},
+	"snp2.2": {
+		"root/pli/ms": "sutta/kn/snp/vagga2"
+	},
+	"snp2.3": {
+		"root/pli/ms": "sutta/kn/snp/vagga2"
+	},
+	"snp2.4": {
+		"root/pli/ms": "sutta/kn/snp/vagga2"
+	},
+	"snp2.5": {
+		"root/pli/ms": "sutta/kn/snp/vagga2"
+	},
+	"snp2.6": {
+		"root/pli/ms": "sutta/kn/snp/vagga2"
+	},
+	"snp2.7": {
+		"root/pli/ms": "sutta/kn/snp/vagga2"
+	},
+	"snp2.8": {
+		"root/pli/ms": "sutta/kn/snp/vagga2"
+	},
+	"snp2.9": {
+		"root/pli/ms": "sutta/kn/snp/vagga2"
+	},
 	"snp3.10": {
 		"root/pli/ms": "sutta/kn/snp/vagga3"
 	},
@@ -22101,6 +20268,18 @@
 		"root/pli/ms": "sutta/kn/snp/vagga3"
 	},
 	"snp3.12": {
+		"root/pli/ms": "sutta/kn/snp/vagga3"
+	},
+	"snp3.1": {
+		"root/pli/ms": "sutta/kn/snp/vagga3"
+	},
+	"snp3.2": {
+		"root/pli/ms": "sutta/kn/snp/vagga3"
+	},
+	"snp3.3": {
+		"root/pli/ms": "sutta/kn/snp/vagga3"
+	},
+	"snp3.4": {
 		"root/pli/ms": "sutta/kn/snp/vagga3"
 	},
 	"snp3.5": {
@@ -22140,6 +20319,9 @@
 		"root/pli/ms": "sutta/kn/snp/vagga4"
 	},
 	"snp4.1": {
+		"root/pli/ms": "sutta/kn/snp/vagga4"
+	},
+	"snp4.2": {
 		"root/pli/ms": "sutta/kn/snp/vagga4"
 	},
 	"snp4.3": {
@@ -24283,6 +22465,1260 @@
 	},
 	"vv9": {
 		"root/pli/ms": "sutta/kn/vv"
+	},
+	"pli-tv-bi-vb-as1-7": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb"
+	},
+	"pli-tv-bi-vb-np10": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
+	},
+	"pli-tv-bi-vb-np11": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
+	},
+	"pli-tv-bi-vb-np12": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
+	},
+	"pli-tv-bi-vb-np1": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
+	},
+	"pli-tv-bi-vb-np2": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
+	},
+	"pli-tv-bi-vb-np3": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
+	},
+	"pli-tv-bi-vb-np4": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
+	},
+	"pli-tv-bi-vb-np5": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
+	},
+	"pli-tv-bi-vb-np6": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
+	},
+	"pli-tv-bi-vb-np7": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
+	},
+	"pli-tv-bi-vb-np8": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
+	},
+	"pli-tv-bi-vb-np9": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-np"
+	},
+	"pli-tv-bi-vb-pc10": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc11": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc12": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc13": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc14": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc15": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc16": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc17": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc18": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc19": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc1": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc20": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc21": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc22": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc23": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc24": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc25": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc26": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc27": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc28": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc29": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc2": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc30": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc31": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc32": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc33": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc34": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc35": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc36": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc37": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc38": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc39": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc3": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc40": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc41": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc42": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc43": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc44": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc45": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc46": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc47": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc48": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc49": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc4": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc50": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc51": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc52": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc53": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc54": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc55": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc56": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc57": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc58": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc59": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc5": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc60": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc61": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc62": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc63": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc64": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc65": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc66": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc67": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc68": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc69": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc6": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc70": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc71": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc72": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc73": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc74": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc75": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc76": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc77": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc78": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc79": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc7": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc80": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc81": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc82": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc83": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc84": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc85": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc86": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc87": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc88": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc89": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc8": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc90": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc91-93": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc94": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc95": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc96": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pc9": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pc"
+	},
+	"pli-tv-bi-vb-pd1": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pd"
+	},
+	"pli-tv-bi-vb-pd2-8": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pd"
+	},
+	"pli-tv-bi-vb-pj5": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pj"
+	},
+	"pli-tv-bi-vb-pj6": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pj"
+	},
+	"pli-tv-bi-vb-pj7": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pj"
+	},
+	"pli-tv-bi-vb-pj8": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-pj"
+	},
+	"pli-tv-bi-vb-sk1-75": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb"
+	},
+	"pli-tv-bi-vb-ss10": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss"
+	},
+	"pli-tv-bi-vb-ss11": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss"
+	},
+	"pli-tv-bi-vb-ss12": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss"
+	},
+	"pli-tv-bi-vb-ss13": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss"
+	},
+	"pli-tv-bi-vb-ss1": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss"
+	},
+	"pli-tv-bi-vb-ss2": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss"
+	},
+	"pli-tv-bi-vb-ss3": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss"
+	},
+	"pli-tv-bi-vb-ss4": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss"
+	},
+	"pli-tv-bi-vb-ss5": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss"
+	},
+	"pli-tv-bi-vb-ss6": {
+		"root/pli/ms": "vinaya/pli-tv-bi-vb/pli-tv-bi-vb-ss"
+	},
+	"pli-tv-bu-vb-as1-7": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb"
+	},
+	"pli-tv-bu-vb-ay1": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ay"
+	},
+	"pli-tv-bu-vb-ay2": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ay"
+	},
+	"pli-tv-bu-vb-np10": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np11": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np12": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np13": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np14": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np15": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np16": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np17": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np18": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np19": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np1": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np20": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np21": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np22": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np23": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np24": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np25": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np26": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np27": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np28": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np29": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np2": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np30": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np3": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np4": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np5": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np6": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np7": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np8": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-np9": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-np"
+	},
+	"pli-tv-bu-vb-pc10": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc11": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc12": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc13": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc14": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc15": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc16": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc17": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc18": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc19": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc1": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc20": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc21": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc22": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc23": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc24": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc25": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc26": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc27": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc28": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc29": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc2": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc30": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc31": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc32": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc33": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc34": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc35": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc36": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc37": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc38": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc39": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc3": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc40": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc41": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc42": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc43": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc44": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc45": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc46": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc47": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc48": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc49": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc4": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc50": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc51": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc52": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc53": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc54": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc55": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc56": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc57": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc58": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc59": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc5": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc60": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc61": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc62": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc63": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc64": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc65": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc66": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc67": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc68": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc69": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc6": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc70": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc71": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc72": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc73": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc74": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc75": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc76": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc77": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc78": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc79": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc7": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc80": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc81": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc82": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc83": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc84": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc85": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc86": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc87": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc88": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc89": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc8": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc90": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc91": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc92": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pc9": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc"
+	},
+	"pli-tv-bu-vb-pd1": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pd"
+	},
+	"pli-tv-bu-vb-pd2": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pd"
+	},
+	"pli-tv-bu-vb-pd3": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pd"
+	},
+	"pli-tv-bu-vb-pd4": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pd"
+	},
+	"pli-tv-bu-vb-pj1": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pj"
+	},
+	"pli-tv-bu-vb-pj2": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pj"
+	},
+	"pli-tv-bu-vb-pj3": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pj"
+	},
+	"pli-tv-bu-vb-pj4": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pj"
+	},
+	"pli-tv-bu-vb-sk10": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk11": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk12": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk13": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk14": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk15": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk16": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk17": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk18": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk19": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk1": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk20": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk21": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk22": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk23": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk24": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk25": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk26": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk27": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk28": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk29": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk2": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk30": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk31": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk32": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk33": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk34": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk35": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk36": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk37": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk38": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk39": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk3": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk40": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk41": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk42": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk43": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk44": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk45": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk46": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk47": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk48": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk49": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk4": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk50": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk51": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk52": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk53": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk54": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk55": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk56": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk57": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk58": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk59": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk5": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk60": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk61": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk62": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk63": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk64": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk65": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk66": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk67": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk68": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk69": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk6": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk70": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk71": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk72": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk73": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk74": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk75": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk7": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk8": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-sk9": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-sk"
+	},
+	"pli-tv-bu-vb-ss10": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
+	},
+	"pli-tv-bu-vb-ss11": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
+	},
+	"pli-tv-bu-vb-ss12": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
+	},
+	"pli-tv-bu-vb-ss13": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
+	},
+	"pli-tv-bu-vb-ss1": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
+	},
+	"pli-tv-bu-vb-ss2": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
+	},
+	"pli-tv-bu-vb-ss3": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
+	},
+	"pli-tv-bu-vb-ss4": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
+	},
+	"pli-tv-bu-vb-ss5": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
+	},
+	"pli-tv-bu-vb-ss6": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
+	},
+	"pli-tv-bu-vb-ss7": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
+	},
+	"pli-tv-bu-vb-ss8": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
+	},
+	"pli-tv-bu-vb-ss9": {
+		"root/pli/ms": "vinaya/pli-tv-bu-vb/pli-tv-bu-vb-ss"
+	},
+	"pli-tv-kd10": {
+		"root/pli/ms": "vinaya/pli-tv-kd"
+	},
+	"pli-tv-kd11": {
+		"root/pli/ms": "vinaya/pli-tv-kd"
+	},
+	"pli-tv-kd12": {
+		"root/pli/ms": "vinaya/pli-tv-kd"
+	},
+	"pli-tv-kd13": {
+		"root/pli/ms": "vinaya/pli-tv-kd"
+	},
+	"pli-tv-kd14": {
+		"root/pli/ms": "vinaya/pli-tv-kd"
+	},
+	"pli-tv-kd15": {
+		"root/pli/ms": "vinaya/pli-tv-kd"
+	},
+	"pli-tv-kd16": {
+		"root/pli/ms": "vinaya/pli-tv-kd"
+	},
+	"pli-tv-kd17": {
+		"root/pli/ms": "vinaya/pli-tv-kd"
+	},
+	"pli-tv-kd18": {
+		"root/pli/ms": "vinaya/pli-tv-kd"
+	},
+	"pli-tv-kd19": {
+		"root/pli/ms": "vinaya/pli-tv-kd"
+	},
+	"pli-tv-kd1": {
+		"root/pli/ms": "vinaya/pli-tv-kd"
+	},
+	"pli-tv-kd20": {
+		"root/pli/ms": "vinaya/pli-tv-kd"
+	},
+	"pli-tv-kd21": {
+		"root/pli/ms": "vinaya/pli-tv-kd"
+	},
+	"pli-tv-kd22": {
+		"root/pli/ms": "vinaya/pli-tv-kd"
+	},
+	"pli-tv-kd2": {
+		"root/pli/ms": "vinaya/pli-tv-kd"
+	},
+	"pli-tv-kd3": {
+		"root/pli/ms": "vinaya/pli-tv-kd"
+	},
+	"pli-tv-kd4": {
+		"root/pli/ms": "vinaya/pli-tv-kd"
+	},
+	"pli-tv-kd5": {
+		"root/pli/ms": "vinaya/pli-tv-kd"
+	},
+	"pli-tv-kd6": {
+		"root/pli/ms": "vinaya/pli-tv-kd"
+	},
+	"pli-tv-kd7": {
+		"root/pli/ms": "vinaya/pli-tv-kd"
+	},
+	"pli-tv-kd8": {
+		"root/pli/ms": "vinaya/pli-tv-kd"
+	},
+	"pli-tv-kd9": {
+		"root/pli/ms": "vinaya/pli-tv-kd"
+	},
+	"pli-tv-pvr1.10": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr1.11": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr1.12": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr1.13": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr1.14": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr1.15": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr1.16": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr1.1": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr1.2": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr1.3": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr1.4": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr1.5": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr1.6": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr1.7": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr1.8": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr1.9": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr10": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr11": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr12": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr13": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr14": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr15": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr16": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr17": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr18": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr19": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr2.10": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr2.11": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr2.12": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr2.13": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr2.14": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr2.15": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr2.16": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr2.1": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr2.2": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr2.3": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr2.4": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr2.5": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr2.6": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr2.7": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr2.8": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr2.9": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr20": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr21": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr3": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr4": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr5": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr6": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr7": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr8": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pli-tv-pvr9": {
+		"root/pli/ms": "vinaya/pli-tv-pvr"
 	}
 } 
 //JSONEND

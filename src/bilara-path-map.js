@@ -21,6 +21,7 @@
             this.suidMapFile = opts.suidMapFile ||
                 path.join(rootDir, `suidmap-${rootName}.json`);
             this.validatePath = opts.validatePath || ((key,value,suid)=>true);
+            this.publication = opts.publication;
             this.initialized = false;
         }
 
@@ -190,6 +191,7 @@
                 root,
                 suidMap,
                 validatePath,
+                publication,
             } = this;
             var keyRoot = path.join(root, key);
             var rootPrefix = `${root}/`;
@@ -219,7 +221,11 @@
                     } else if (/.*json$/u.test(e.name)) {
                         var ePath = path.join(dirPath, e.name);
                         var stat = fs.statSync(ePath);
-                        if (stat.size > STUBFILESIZE) {
+                        if (stat.size <= STUBFILESIZE) {
+                            // ignore stub file
+                        } else if (publication && !publication.isPublishedPath(ePath)) {
+                            console.log(`skipping ${ePath}`);
+                        } else {
                             let suid = e.name.replace(/_.*/,'');
                             let suidPath = dirPath.replace(rootPrefix, '')  
                                         + `/${e.name}`;

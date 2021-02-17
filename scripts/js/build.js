@@ -7,6 +7,8 @@ const { logger } = require('log-instance');
 const { Memoizer } = require('memo-again');
 const {
     BilaraData,
+    Publication,
+    BilaraPathMap,
 } = require('../../index');
 const APP_DIR = path.join(__dirname, '..', '..');
 const API_DIR = path.join(APP_DIR, 'api');
@@ -32,7 +34,10 @@ ${json}
 
 (async function(){ try {
     let bilaraData = await new BilaraData().initialize(true);
-    let suidJson = JSON.stringify(bilaraData.bilaraPathMap.suidMap, null, '\t');
+    let publication = await new Publication().initialize();
+    let bilaraPathMap = await new BilaraPathMap({publication}).initialize();
+    let suidMap = await bilaraPathMap.buildSuidMap();
+    let suidJson = JSON.stringify(suidMap, null, '\t');
     await writeJsonModule('SuidMap', SRC_SUIDMAP, suidJson);
 } catch(e) {
     logger.warn(e);

@@ -194,7 +194,7 @@
             'cs', 'de', 'en', 'jpn', 'pli', 
         ]);
     });
-    it("suttaInfo(...) returns sutta metadata", async()=>{
+    it("TESTTESTsuttaInfo(...) returns sutta metadata", async()=>{
         await bd.initialize();
         var dn33Pli = {
             author: 'ms',
