@@ -95,7 +95,7 @@
             'sujato', 
         ]);
     });
-    it("TESTTESTsync() purges and refreshes repo", async()=>{
+    it("sync() purges and refreshes repo", async()=>{
         var name = "test-repo";
         var mc = new MemoCache();
         var bd = new BilaraData({name});

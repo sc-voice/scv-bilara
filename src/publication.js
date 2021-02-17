@@ -63,6 +63,31 @@
                     a[bilPath] = p;
                     return a;
                 }, {});
+                that.unpublished = that.pubEntries.reduce((a,p) => {
+                    if (!that.includeUnpublished && p.unpublish) {
+                        let {
+                            translation_lang_iso: lang,
+                            author_uid: author,
+                            text_uid,
+                        } = p;
+                        p.unpublish.forEach(u => {
+                            a.push(`${lang}/${author}/.*/${u}_`);
+                        });
+                    }
+                    return a;
+                }, []);
+                that.reUnpublished = new RegExp(
+                    that.unpublished.join('|')||'unpublished', "ui");
+                if (that._rePubPaths == null) {
+                    var published = [
+                        ...that.pubPaths(), 
+                        'root/pli/ms/sutta',
+                        'root/pli/ms/vinaya',
+                    ];
+                    Object.defineProperty(that, "_rePubPaths", {
+                        value: new RegExp(`(${published.join("|")}).*`,'u'),
+                    });
+                }
 
                 that.initialized = true;
                 resolve(that);
@@ -210,24 +235,17 @@
             if (!fpath) {
                 return false;
             }
-            if (this._rePubPaths == null) {
-                var published = [
-                    ...this.pubPaths(), 
-                    'root/pli/ms/sutta',
-                    'root/pli/ms/vinaya',
-                ];
-                Object.defineProperty(this, "_rePubPaths", {
-                    value: new RegExp(`(${published.join("|")}).*`,'u'),
-                });
-            }
             let {
                 bilaraPathMap: bpm,
-                _rePubPaths: re,
+                _rePubPaths: rePublished,
+                reUnpublished,
             } = this;
             var sp = bpm.suidPath(fpath);
-            let isSuid = re.test(sp);
-            let pub = re.test(sp) || re.test(fpath);
-            this.debug(`isPublishedPath`, {fpath, pub})
+            let isSuid = rePublished.test(sp);
+            let isPub = rePublished.test(sp) || rePublished.test(fpath);
+            let isUnpub = reUnpublished.test(sp) || reUnpublished.test(fpath);
+            let pub = isPub && !isUnpub;
+            this.debug(`isPublishedPath`, {sp, fpath, isPub, isUnpub})
             return pub;
         }
 
