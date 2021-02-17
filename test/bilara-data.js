@@ -954,13 +954,12 @@
             volpage: null,
         });
     });
-    it("isBilaraDoc(...) => true if bilara file", async()=>{
+    it("TESTTESTisBilaraDoc(...) => true if bilara file", async()=>{
         await bd.initialize();
-        should(bd.isBilaraDoc({
-            suid:"thig3.8", 
-            lang:"de", 
-            author:"sabbamitta",
-        })).equal(true); 
+        should(bd.isBilaraDoc({ suid:"dn30", lang:"de", author:"sabbamitta" }))
+            .equal(false); 
+        should(bd.isBilaraDoc({ suid:"thig3.8", lang:"de", author:"sabbamitta" }))
+            .equal(true); 
     });
     it("suttaIds() => [ suid ]", async()=>{
         await bd.initialize();
