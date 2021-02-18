@@ -7,7 +7,7 @@ alias iferr='if [ "$?" != "0" ]; then '
 
 echo -e "BILARA\t: $0 DIR:$DIR"
 if [ "$BRANCH" == "" ]; then BRANCH=unpublished; fi
-cd ${DIR}/../local/bilara-data > /dev/null
+pushd ${DIR}/../local/bilara-data > /dev/null
 echo -e "BILARA\t: BRANCH:$BRANCH pwd:"`pwd`
 
 git remote -v | grep "upstream" > /dev/null
@@ -47,3 +47,10 @@ echo -e "BILARA\t: Committing $BRANCH changes to bilara-data..."
 git commit -am "SuttaCentral Update" 
 git push
 iferr echo -e "BILARA\t: push suttacentral/$BRANCH (ERROR)"; exit -1; fi
+
+popd
+pushd $DIR/..
+echo -e "BILARA\t: warming up search"
+scripts/js/search.js root of suffering -op
+
+echo -e "BILARA\t: DONE"
