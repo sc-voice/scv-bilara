@@ -400,9 +400,16 @@
             .equal('root/pli/ms/sutta/dn/dn34_root-pli-ms.json');
         should(mld0.score).equal(10.011);
     });
-    it("patternLanguage(...) => search language context",async()=>{
-        var skr = await new Seeker().initialize();
+    it("TESTTESTpatternLanguage(...) => search language context",async()=>{
+        let enWords = await English.wordSet({source:'file'});
+        var skr = await new Seeker({enWords}).initialize();
 
+        // "gehe" and "so" are both German and Pali
+        should(skr.patternLanguage('anathapindika gehe so', 'de'))
+            .equal('pli');
+
+        should(skr.patternLanguage('rat', 'de')) .equal('de');
+        should(skr.patternLanguage('blind', 'de')).equal('de');
         should(skr.patternLanguage('buddha was staying near benares', 'de'))
             .equal('en');
         should(skr.patternLanguage('buddha was staying near benares', 'en'))
@@ -438,9 +445,6 @@
         should(skr.patternLanguage('anathapindika kloster'))
             .equal('en');
 
-        // "gehe" and "so" are both German and Pali
-        should(skr.patternLanguage('anathapindika gehe so', 'de'))
-            .equal('en');
     });
     it("find(...) ignores unpublished", async()=>{
         var lang = 'en';
@@ -1265,6 +1269,24 @@
         var mld0 = data.mlDocs[0];
         should(mld0.bilaraPaths[0]).match(/an3.29/);
         should(mld0.score).equal(6.128);
+    });
+    it("TESTTESTfind(...) finds Deutsch 'rat'", async()=>{
+        let enWords = await English.wordSet({source:'file'});
+        var bilaraData = await bd.initialize();
+        var skr = await new Seeker({
+            bilaraData,
+            enWords,
+        }).initialize();
+        var pattern = "rat -ml3 -l de";
+        
+        var data = await skr.find({pattern });
+        should(data.resultPattern).equal('\\brat');
+        should(data.searchLang).equal('de');
+        should(data.method).equal('phrase');
+        should(data.mlDocs.length).equal(16);
+        var mld0 = data.mlDocs[0];
+        should(mld0.bilaraPaths[0]).match(/an1.51-60/);
+        should(mld0.score).equal(3.056);
     });
     it("find(...) finds 'thig3.8' de unpublished", async()=>{
         var bilaraData = await bd.initialize();

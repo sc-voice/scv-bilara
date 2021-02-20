@@ -58,7 +58,11 @@ const { logger } = require('log-instance');
     });
 
     logger.info(`Training English FuzzyWordSet...`);
-    var wordMap = Object.assign({}, pliWords, foreignWords, langWords);
+    var wordMap = Object.assign({}, 
+        pliWords, // by default Pali words are false
+        langWords,  // include Pali words used in English (e.g., 'an')
+        foreignWords, // exclude foreign words used in English (e.g., 'rat' and 'blind')
+    );
     var fws = new FuzzyWordSet({
         maxTrain: 50,
     });

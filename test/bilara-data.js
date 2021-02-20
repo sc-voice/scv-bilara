@@ -194,7 +194,7 @@
             'cs', 'de', 'en', 'jpn', 'pli', 
         ]);
     });
-    it("TESTTESTsuttaInfo(...) returns sutta metadata", async()=>{
+    it("suttaInfo(...) returns sutta metadata", async()=>{
         await bd.initialize();
         var dn33Pli = {
             author: 'ms',
@@ -954,7 +954,7 @@
             volpage: null,
         });
     });
-    it("TESTTESTisBilaraDoc(...) => true if bilara file", async()=>{
+    it("isBilaraDoc(...) => true if bilara file", async()=>{
         await bd.initialize();
         should(bd.isBilaraDoc({ suid:"dn30", lang:"de", author:"sabbamitta" }))
             .equal(false); 

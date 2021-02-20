@@ -19,6 +19,10 @@
     });
     it("recognizes English words", async()=>{
         let enWords = await English.wordSet({source:'file'});
+        should.deepEqual(enWords.trace('rather'), {
+            trace: 'rather',
+            member: true,
+        });
         should.deepEqual(enWords.trace('unbusied'), {
             trace: 'unbusi',
             member: true,
@@ -55,6 +59,14 @@
     it("recognizes non-English words", async()=>{
         let enWords = await English.wordSet({source:'file'});
 
+        should.deepEqual(enWords.trace('blind'), {
+            trace: 'blind★',
+            member: false,
+        });
+        should.deepEqual(enWords.trace('rat'), {
+            trace: 'rat★',
+            member: false,
+        });
         should.deepEqual(enWords.trace('食べ物を贈る'), {
             trace: '食★',
             member: false,

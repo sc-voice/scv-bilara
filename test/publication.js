@@ -214,7 +214,7 @@
             TRANSPATH('de', 'sabbamitta', `kn/thig/thig3.8`)))
             .equal(true);
     });
-    it("TESTTESTisPublishedPath(f) allows unpublished paths", async()=>{
+    it("isPublishedPath(f) allows unpublished paths", async()=>{
         var pub = await new Publication({
             includeUnpublished: true,
         }).initialize(); 
