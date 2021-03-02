@@ -6960,6 +6960,7 @@
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn31": {
+		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
