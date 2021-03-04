@@ -13743,6 +13743,7 @@
 		"root/pli/ms": "sutta/sn/sn47"
 	},
 	"sn47.2": {
+		"translation/de/sabbamitta": "sutta/sn/sn47",
 		"translation/en/sujato": "sutta/sn/sn47",
 		"root/pli/ms": "sutta/sn/sn47"
 	},
