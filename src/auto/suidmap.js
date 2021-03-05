@@ -6955,14 +6955,17 @@
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn30": {
+		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn31": {
+		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn32": {
+		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
@@ -13735,14 +13738,17 @@
 		"root/pli/ms": "sutta/sn/sn46"
 	},
 	"sn47.1": {
+		"translation/de/sabbamitta": "sutta/sn/sn47",
 		"translation/en/sujato": "sutta/sn/sn47",
 		"root/pli/ms": "sutta/sn/sn47"
 	},
 	"sn47.2": {
+		"translation/de/sabbamitta": "sutta/sn/sn47",
 		"translation/en/sujato": "sutta/sn/sn47",
 		"root/pli/ms": "sutta/sn/sn47"
 	},
 	"sn47.3": {
+		"translation/de/sabbamitta": "sutta/sn/sn47",
 		"translation/en/sujato": "sutta/sn/sn47",
 		"root/pli/ms": "sutta/sn/sn47"
 	},
