@@ -15,7 +15,7 @@ Now install `scv-bilara`:
 ```bash
 git clone https://github.com/sc-voice/scv-bilara
 cd scv-bilara
-./scripts/install.sh
+./scripts/install
 ```
 
 The installation script has been known to fail if it cannot install 
