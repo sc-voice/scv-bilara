@@ -4941,6 +4941,7 @@
 		"root/pli/ms": "sutta/an/an7"
 	},
 	"an7.66": {
+		"translation/de/sabbamitta": "sutta/an/an7",
 		"translation/en/sujato": "sutta/an/an7",
 		"root/pli/ms": "sutta/an/an7"
 	},
