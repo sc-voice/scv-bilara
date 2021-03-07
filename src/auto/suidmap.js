@@ -4941,6 +4941,7 @@
 		"root/pli/ms": "sutta/an/an7"
 	},
 	"an7.66": {
+		"translation/de/sabbamitta": "sutta/an/an7",
 		"translation/en/sujato": "sutta/an/an7",
 		"root/pli/ms": "sutta/an/an7"
 	},
@@ -13728,10 +13729,12 @@
 		"root/pli/ms": "sutta/sn/sn47"
 	},
 	"sn47.5": {
+		"translation/de/sabbamitta": "sutta/sn/sn47",
 		"translation/en/sujato": "sutta/sn/sn47",
 		"root/pli/ms": "sutta/sn/sn47"
 	},
 	"sn47.6": {
+		"translation/de/sabbamitta": "sutta/sn/sn47",
 		"translation/en/sujato": "sutta/sn/sn47",
 		"root/pli/ms": "sutta/sn/sn47"
 	},

@@ -9,6 +9,7 @@ where you want to install `scv-bilara`. For example:
 mkdir -p ~/dev
 cd ~/dev
 ```
+If you haven't installed git yet on your computer, follow this instruction: https://github.com/git-guides/install-git.
 
 Now install `scv-bilara`:
 
