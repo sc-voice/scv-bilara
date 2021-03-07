@@ -51,6 +51,7 @@
     });
     it("TESTTESTpubPaths() => published bilara paths", async()=>{
         var pub = await pubTest.initialize(); 
+        pub.logLevel = 'debug';
         should.deepEqual(pub.pubPaths().sort(),[
             `${SARANA}/an`,
             `${SABBAMITTA}/an`,
@@ -74,12 +75,10 @@
             `${SUJATO}/kn/ud`,
             `${SUJATO}/mn`,
             `${SUJATO}/sn`,
-            `${KAZ}/an/an4/an4.182`,
-            `${KAZ}/an/an4/an4.58`,
-            `${KAZ}/an/an11/an11.15`,
+            `${KAZ}/an`,
         ].sort());
     });
-    it("TESTTESTpubPaths() => all bilara paths", async()=>{
+    it("pubPaths() => all bilara paths", async()=>{
         var pub = await pubTest.initialize();
 
         // Explicit
@@ -169,20 +168,7 @@
             `${RUTEAM}/dn`,
         ].sort());
     });
-    it("TESTTESTisPublishedPath(f) handles unpublished", async()=>{
-        return; // TODO no unpublished suttas
-        var pub = await pubTest.initialize();
-        should.deepEqual(pub.unpublished, [
-            'de/sabbamitta/.*/dn30_',
-        ]);
-        should(pub.isPublishedPath(
-            `${SABBAMITTA}/dn/dn30_translation-de-sabbamitta.json`))
-            .equal(false);
-        should(pub.isPublishedPath(
-            `${KAZ}/an/an1/an1.1-10_translation-jpn-kaz.json`))
-            .equal(false);
-    });
-    it("TESTTESTisPublishedPath(f) filters supported suttas", async()=>{
+    it("isPublishedPath(f) filters supported suttas", async()=>{
         var pub = await pubTest.initialize(); 
     
         should(pub.isPublishedPath(`${KAZ}/an/an4/an4.182_translation-jpn-kaz.json`))
@@ -254,7 +240,7 @@
         const bv1_trans_path = TRANSPATH('en', 'sujato', `bv/bv1`);
         should(pub.isPublishedPath(bv1_trans_path)).equal(false);
     });
-    it("TESTTESTpubInfo(suid) => publication information", async()=>{
+    it("pubInfo(suid) => publication information", async()=>{
         var pub = await new Publication({
             includeUnpublished: true,
         }).initialize();

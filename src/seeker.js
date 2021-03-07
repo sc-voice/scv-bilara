@@ -342,7 +342,7 @@
             let paths = rawTipCat.map(f => path.join(pathPrefix, f));
             return paths;
         } catch(e) {
-            logger.warn(`slowGrep()`, JSON.stringify(opts), e.message);
+            logger.warn(`slowGrep()`, JSON.stringify(opts), e.message, cmd);
             throw e;
         }}
 

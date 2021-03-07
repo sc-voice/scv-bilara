@@ -400,9 +400,11 @@
             .equal('root/pli/ms/sutta/dn/dn34_root-pli-ms.json');
         should(mld0.score).equal(10.011);
     });
-    it("TESTTESTpatternLanguage(...) => search language context",async()=>{
+    it("patternLanguage(...) => search language context",async()=>{
         let enWords = await English.wordSet({source:'file'});
         var skr = await new Seeker({enWords}).initialize();
+
+        skr.logLevel = 'info';
 
         // "gehe" and "so" are both German and Pali
         should(skr.patternLanguage('anathapindika gehe so', 'de'))
@@ -1161,15 +1163,11 @@
         should(res.maxDoc).equal(maxDoc);
         should.deepEqual(res.suttaRefs, [
             'pli-tv-bi-vb-pj7/en/brahmali',
-            'pli-tv-pvr2.9/en/brahmali',
-            'pli-tv-pvr2.1/en/brahmali',
             'pli-tv-bi-vb-ss4/en/brahmali',
-            'pli-tv-pvr2.2/en/brahmali',
-            'pli-tv-pvr2.10/en/brahmali',
         ]);
         should(res.resultPattern).equal(`\\b${pattern}`);
         should(res.lang).equal('en');
-        should(res.mlDocs.length).equal(3);
+        should(res.mlDocs.length).equal(2);
     });
     it("tipitakaRegExp(tc) => regexp for paths", ()=>{
         var skr = new Seeker();
@@ -1270,7 +1268,7 @@
         should(mld0.bilaraPaths[0]).match(/an3.29/);
         should(mld0.score).equal(6.128);
     });
-    it("TESTTESTfind(...) finds Deutsch 'rat'", async()=>{
+    it("find(...) finds Deutsch 'rat'", async()=>{
         let enWords = await English.wordSet({source:'file'});
         var bilaraData = await bd.initialize();
         var skr = await new Seeker({
@@ -1283,7 +1281,7 @@
         should(data.resultPattern).equal('\\brat');
         should(data.searchLang).equal('de');
         should(data.method).equal('phrase');
-        should(data.mlDocs.length).equal(17);
+        should(data.mlDocs.length).equal(18);
         var mld0 = data.mlDocs[0];
         should(mld0.bilaraPaths[0]).match(/an1.51-60/);
         should(mld0.score).equal(3.056);

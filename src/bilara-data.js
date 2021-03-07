@@ -41,7 +41,7 @@
             this.root = opts.root || path.join(Files.LOCAL_DIR, this.name);
             this.info(`root:${this.root}`);
             this.lang = opts.lang || 'en';
-            this.branch = opts.branch;
+            this.branch = opts.branch || 'published';
             this.scApi = opts.scApi || new ScApi({logger: this});
             var includeUnpublished = opts.includeUnpublished == null 
                 ? false : opts.includeUnpublished;
@@ -224,8 +224,9 @@
                     lang,
                 }, authorJson[author]));
             });
-            var uidExpPath = path.join(this.root, 
-                '.helpers', 'uid_expansion.json');
+            //var uidExpPath = path.join(this.root, '.helpers', 'uid_expansion.json');
+            var uidExpPath = path.join(__dirname, '..', 'src', 'auto',
+                'uid_expansion.json');
             this.uid_expansion = 
                 json5.parse(fs.readFileSync(uidExpPath));
             return this;
@@ -240,6 +241,7 @@
             } = this;
             if (authors[author] == null) {
                 authors[author] = Object.assign({}, authors[author], info);
+                this.debug(`dbg addAuthor ${author}`, authors[author]);
             }
         }
 
@@ -882,7 +884,7 @@
         version() {
             var pkgPath = path.join(this.root, "package.json");
             var result = {
-                major: 0,
+                major: 1,
                 minor: 0,
                 patch: 0,
             };
