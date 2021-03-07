@@ -13,7 +13,8 @@ const {
 const APP_DIR = path.join(__dirname, '..', '..');
 const API_DIR = path.join(APP_DIR, 'api');
 const SRC_DIR = path.join(APP_DIR, 'src');
-const SRC_SUIDMAP = path.join(SRC_DIR, 'auto', 'suidmap.js');
+const SRC_SUIDMAPJS = path.join(SRC_DIR, 'auto', 'suidmap.js');
+const SRC_SUIDMAPJSON = path.join(SRC_DIR, 'auto', 'suidmap.json');
 
 logger.logLevel = 'info';
 
@@ -38,7 +39,8 @@ ${json}
     let bilaraPathMap = await new BilaraPathMap({publication}).initialize();
     let suidMap = await bilaraPathMap.buildSuidMap();
     let suidJson = JSON.stringify(suidMap, null, '\t');
-    await writeJsonModule('SuidMap', SRC_SUIDMAP, suidJson);
+    await writeJsonModule('SuidMap', SRC_SUIDMAPJS, suidJson);
+    await fs.promises.writeFile(SRC_SUIDMAPJSON, suidJson);
 } catch(e) {
     logger.warn(e);
 }})();

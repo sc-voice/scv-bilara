@@ -30,7 +30,7 @@
     var BRAHMALI = 'translation/en/brahmali/vinaya';
     var KAZ = 'translation/jpn/kaz/sutta';
     var MY = 'translation/my/my-team/sutta';
-    var PTTEAM = 'translation/pt/team/sutta';
+    var PTTEAM = 'translation/pt/laera-quaresma/sutta';
     var ENCOMM = 'translation/en/comm-team/sutta';
     var RUTEAM = 'translation/ru/team/sutta';
     var PATTON = 'translation/en/patton/sutta';
@@ -49,7 +49,7 @@
             initialized: false,
         });
     });
-    it("pubPaths() => published bilara paths", async()=>{
+    it("TESTTESTpubPaths() => published bilara paths", async()=>{
         var pub = await pubTest.initialize(); 
         should.deepEqual(pub.pubPaths().sort(),[
             `${SARANA}/an`,
@@ -66,7 +66,7 @@
             `${SABBAMITTA}/kn/ud`,
             `${SUJATO}/an`,
             `${SUJATO}/dn`,
-            `${SUJATO}/kn/dhp`,
+            //`${SUJATO}/kn/dhp`,
             `${SUJATO}/kn/iti`,
             `${SUJATO}/kn/kp`,
             `${SUJATO}/kn/thag`,
@@ -79,7 +79,7 @@
             `${KAZ}/an/an11/an11.15`,
         ].sort());
     });
-    it("pubPaths() => all bilara paths", async()=>{
+    it("TESTTESTpubPaths() => all bilara paths", async()=>{
         var pub = await pubTest.initialize();
 
         // Explicit
@@ -105,7 +105,7 @@
             `${BRAHMALI}/pli-tv-kd`,
             `${BRAHMALI}/pli-tv-pvr`,
             `${ENCOMM}/atthakatha/dn-a`,
-            `${PATTON}/sa`,
+            //`${PATTON}/sa`,
             `${SUJATO_N}`,
             `${SUJATO}/an`,
             `${SUJATO}/dn`,
@@ -120,7 +120,7 @@
             `${SUJATO}/sn`,
             `${KAZ}/an`,
             `${MY}/dn`,
-            `${PTTEAM}/mn`,
+            "translation/pt/laera-quaresma/",
             `${RUTEAM}/dn`,
         ].sort());
 
@@ -150,7 +150,7 @@
             `${BRAHMALI}/pli-tv-kd`,
             `${BRAHMALI}/pli-tv-pvr`,
             `${ENCOMM}/atthakatha/dn-a`,
-            `${PATTON}/sa`,
+            //`${PATTON}/sa`,
             `${SUJATO_N}`,
             `${SUJATO}/an`,
             `${SUJATO}/dn`,
@@ -165,11 +165,12 @@
             `${SUJATO}/sn`,
             `${KAZ}/an`,
             `${MY}/dn`,
-            `${PTTEAM}/mn`,
+            "translation/pt/laera-quaresma/",
             `${RUTEAM}/dn`,
         ].sort());
     });
-    it("isPublishedPath(f) handles unpublished", async()=>{
+    it("TESTTESTisPublishedPath(f) handles unpublished", async()=>{
+        return; // TODO no unpublished suttas
         var pub = await pubTest.initialize();
         should.deepEqual(pub.unpublished, [
             'de/sabbamitta/.*/dn30_',
@@ -181,7 +182,7 @@
             `${KAZ}/an/an1/an1.1-10_translation-jpn-kaz.json`))
             .equal(false);
     });
-    it("isPublishedPath(f) filters supported suttas", async()=>{
+    it("TESTTESTisPublishedPath(f) filters supported suttas", async()=>{
         var pub = await pubTest.initialize(); 
     
         should(pub.isPublishedPath(`${KAZ}/an/an4/an4.182_translation-jpn-kaz.json`))
@@ -209,7 +210,7 @@
             .equal(true);
         should(pub.isPublishedPath(
             TRANSPATH('en', 'sujato', `kn/dhp/dhp21-32`)))
-            .equal(true);
+            .equal(false);
         should(pub.isPublishedPath(
             TRANSPATH('de', 'sabbamitta', `kn/thig/thig3.8`)))
             .equal(true);
@@ -253,7 +254,7 @@
         const bv1_trans_path = TRANSPATH('en', 'sujato', `bv/bv1`);
         should(pub.isPublishedPath(bv1_trans_path)).equal(false);
     });
-    it("pubInfo(suid) => publication information", async()=>{
+    it("TESTTESTpubInfo(suid) => publication information", async()=>{
         var pub = await new Publication({
             includeUnpublished: true,
         }).initialize();
@@ -266,7 +267,7 @@
             author_name: "Anagarika Sabbamitta",
             text_uid: "an",
             subchapters: true,
-            is_published: "true",
+            is_published: true,
         });
         should(pi.length).equal(1);
 
@@ -277,7 +278,7 @@
             author_name: "Bhikkhu Brahmali",
             text_uid: "pli-tv-bu-vb",
             subchapters: false,
-            is_published: "false",
+            is_published: false,
         });
         should(pi.length).equal(1);
 
@@ -289,7 +290,7 @@
             author_name: "Bhikkhu Brahmali",
             text_uid: "pli-tv-bi-vb",
             subchapters: false,
-            is_published: "false",
+            is_published: false,
         });
 
         // published generic
@@ -300,7 +301,7 @@
             author_name: "Bhikkhu Sujato",
             text_uid: "mn",
             subchapters: false,
-            is_published: "true",
+            is_published: true,
         });
 
         // published specific
@@ -311,7 +312,7 @@
             author_name: "Bhikkhu Sujato",
             text_uid: "mn",
             subchapters: false,
-            is_published: "true",
+            is_published: true,
         });
 
         // unavailable

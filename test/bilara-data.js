@@ -51,7 +51,7 @@
         });
         should(bdDefault.logger).equal(logger);
     });
-    it("initialize(...) must be called", async()=>{
+    it("TESTTESTinitialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         should(newbd.initialized).equal(false);
         should.throws(() => {
@@ -76,7 +76,7 @@
             'Abfälle',
         ]);
     });
-    it("initialize(...) must be called", async()=>{
+    it("TESTTESTinitialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         should(newbd.initialized).equal(false);
         should.throws(() => {
@@ -144,7 +144,7 @@
         should(fs.existsSync(dummyPath)).equal(true);
         should(fs.existsSync(unpublishedPath)).equal(true);
     });
-    it("authorInfo() => supported author info", async()=>{
+    it("TESTTESTauthorInfo() => supported author info", async()=>{
         await bd.initialize();
         var ms = {
             lang: 'pli',
@@ -954,7 +954,7 @@
             volpage: null,
         });
     });
-    it("isBilaraDoc(...) => true if bilara file", async()=>{
+    it("TESTTESTisBilaraDoc(...) => true if bilara file", async()=>{
         await bd.initialize();
         should(bd.isBilaraDoc({ suid:"dn30", lang:"de", author:"sabbamitta" }))
             .equal(false); 

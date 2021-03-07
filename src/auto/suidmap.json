@@ -1,7 +1,3 @@
- 
-// DO NOT EDIT THIS GENERATED FILE
-(function(exports) { class SuidMap { static get suidmap() { return (
-//JSONSTART
 {
 	"an1.1-10": {
 		"translation/de/sabbamitta": "sutta/an/an1",
@@ -23775,8 +23771,4 @@
 	"pli-tv-pvr9": {
 		"root/pli/ms": "vinaya/pli-tv-pvr"
 	}
-} 
-//JSONEND
-)}} module.exports = exports.SuidMap = SuidMap;
-})(typeof exports === "object" ? exports : (exports={}));
-// DO NOT EDIT THIS GENERATED FILE
+}

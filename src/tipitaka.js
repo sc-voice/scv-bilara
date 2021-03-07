@@ -1,5 +1,5 @@
 (function(exports) { 
-    const { suidmap:SUID_MAP } = require('./auto/suidmap');
+    const SUID_MAP  = require('./auto/suidmap.json');
     const { logger } = require('log-instance');
     const SuttaCentralId = require('./sutta-central-id');
 

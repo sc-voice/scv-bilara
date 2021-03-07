@@ -56,7 +56,11 @@
                     ? json5.parse(await readFile(pubPath))
                     : {};
                 that.pubEntries = Object.entries(that._publication)
-                    .filter(e=>!/blurb/.test(e[1].source_url))
+                    .filter(e=>{
+                        // EXCLUDE NON-PALI TRANSLATIONS
+                        return !/blurb/.test(e[1].source_url) &&
+                            !/sutta\/[dems]a/.test(e[1].source_url);
+                    })
                     .map(e=>that._publication[e[0]]);
                 that.pubInfoMap = that.pubEntries.reduce((a,p) => {
                     var bilPath = p.source_url.replace(/.*master\//,'');

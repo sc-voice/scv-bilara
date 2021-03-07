@@ -5,7 +5,7 @@
         Tipitaka,
     } = require("../index");
 
-    it("default constructor", ()=>{
+    it("TESTTESTdefault constructor", ()=>{
         let taka = new Tipitaka();
 
         should.deepEqual(taka.suids.slice(0,3),[
@@ -14,7 +14,7 @@
             'an1.21-30',
         ]);
     });
-    it("nextSuid(id), previousSuid(id) traverses nikaya", ()=>{
+    it("TESTTESTnextSuid(id), previousSuid(id) traverses nikaya", ()=>{
         let taka = new Tipitaka();
 
         // within nikaya

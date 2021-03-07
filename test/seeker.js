@@ -1283,7 +1283,7 @@
         should(data.resultPattern).equal('\\brat');
         should(data.searchLang).equal('de');
         should(data.method).equal('phrase');
-        should(data.mlDocs.length).equal(16);
+        should(data.mlDocs.length).equal(17);
         var mld0 = data.mlDocs[0];
         should(mld0.bilaraPaths[0]).match(/an1.51-60/);
         should(mld0.score).equal(3.056);
