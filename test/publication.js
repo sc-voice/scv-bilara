@@ -51,9 +51,9 @@
     });
     it("TESTTESTpubPaths() => published bilara paths", async()=>{
         var pub = await pubTest.initialize(); 
-        pub.logLevel = 'debug';
+        //pub.logLevel = 'debug';
         should.deepEqual(pub.pubPaths().sort(),[
-            `${SARANA}/an`,
+        //    `${SARANA}/an`,
             `${SABBAMITTA}/an`,
             `${SABBAMITTA}/dn`,
             `${SABBAMITTA}/mn`,

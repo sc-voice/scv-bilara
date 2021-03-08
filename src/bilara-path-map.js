@@ -295,9 +295,7 @@
             loadReference &&await this._loadPaths("reference/pli/ms");
             loadVariant && await this._loadPaths("variant/pli/ms"); 
             let { suidMapFile } = this;
-            console.log(`writing`, suidMapFile);
             await fs.promises.writeFile(suidMapFile, JSON.stringify(suidMap, null, '\t'));
-            console.log(`writing done`, suidMapFile);
             this.info(`buildSuidMap() ${suidMapFile} ${Date.now()-msStart}ms`);
             return suidMap;
         }
