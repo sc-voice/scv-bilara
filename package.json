@@ -15,7 +15,7 @@
     "memo-again": "^0.4.0",
     "merkle-json": "^1.1.6",
     "serial-memo": "^0.1.0",
-    "suttacentral-api": "^1.0.11",
+    "suttacentral-api": "^2.1.0",
     "tmp": "^0.1.0"
   },
   "devDependencies": {

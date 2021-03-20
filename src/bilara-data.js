@@ -556,7 +556,7 @@
                 author_uid,
                 sutta_uid,
                 segmented,
-                segments,
+                segments=[],
                 suttaplex,
             } = sutta;
             let segMap = {};

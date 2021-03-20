@@ -49,11 +49,13 @@
             initialized: false,
         });
     });
-    it("TESTTESTpubPaths() => published bilara paths", async()=>{
+    it("pubPaths() => published bilara paths", async()=>{
         var pub = await pubTest.initialize(); 
         //pub.logLevel = 'debug';
         should.deepEqual(pub.pubPaths().sort(),[
         //    `${SARANA}/an`,
+            'root/lzh/sct',
+            'root/pli/ms',
             `${SABBAMITTA}/an`,
             `${SABBAMITTA}/dn`,
             `${SABBAMITTA}/mn`,
@@ -65,6 +67,11 @@
             `${SABBAMITTA}/kn/thag`,
             `${SABBAMITTA}/kn/thig`,
             `${SABBAMITTA}/kn/ud`,
+            `${BRAHMALI}`,
+            `${BRAHMALI}/pli-tv-bi-vb`,
+            `${BRAHMALI}/pli-tv-bu-vb`,
+            `${BRAHMALI}/pli-tv-kd`,
+            `${BRAHMALI}/pli-tv-pvr`,
             `${SUJATO}/an`,
             `${SUJATO}/dn`,
             //`${SUJATO}/kn/dhp`,
@@ -84,8 +91,10 @@
         // Explicit
         var includeUnpublished = true;
         should.deepEqual(pub.pubPaths({includeUnpublished}).sort(),[
+            'root/lzh/sct',
             `root/pli/bj/pli-tv-kd`,
             `root/pli/dpcv/pli-tv-kd`,
+            'root/pli/ms',
             `${SARANA}/an`,
             `${SABBAMITTA}/an`,
             `${SABBAMITTA}/dn`,
@@ -129,8 +138,10 @@
         }).initialize(); 
         should(pub.includeUnpublished).equal(true);
         should.deepEqual(pub.pubPaths().sort(),[
+            'root/lzh/sct',
             `root/pli/bj/pli-tv-kd`,
             `root/pli/dpcv/pli-tv-kd`,
+            'root/pli/ms',
             `${SARANA}/an`,
             `${SABBAMITTA}/an`,
             `${SABBAMITTA}/dn`,
@@ -177,13 +188,13 @@
             .equal(true);
         should(pub.isPublishedPath(
             `${BRAHMALI}/pli-tv-kd/pli-tv-kd6_translation-en-brahmali.json:1`))
-            .equal(false);
+            .equal(true);
         should(pub.isPublishedPath('iti42/de/sabbamitta')).equal(false);
         should(pub.isPublishedPath('iti42/en/sujato')).equal(true);
         should(pub.isPublishedPath('nonsense/en/nobody'))
             .equal(false);
         should(pub.isPublishedPath('pli-tv-bu-vb-pj1/en/brahmali'))
-            .equal(false);
+            .equal(true);
         should(pub.isPublishedPath('mn1')).equal(true);
         should(pub.isPublishedPath('mn1/en/sujato')).equal(true);
         should(pub.isPublishedPath('mn1/en/nobody')).equal(false);
@@ -240,7 +251,7 @@
         const bv1_trans_path = TRANSPATH('en', 'sujato', `bv/bv1`);
         should(pub.isPublishedPath(bv1_trans_path)).equal(false);
     });
-    it("pubInfo(suid) => publication information", async()=>{
+    it("TESTTTESTpubInfo(suid) => publication information", async()=>{
         var pub = await new Publication({
             includeUnpublished: true,
         }).initialize();
@@ -264,24 +275,22 @@
             author_name: "Bhikkhu Brahmali",
             text_uid: "pli-tv-bu-vb",
             subchapters: false,
-            is_published: false,
+            is_published: true,
         });
-        should(pi.length).equal(1);
+        should(pi.length).equal(2);
 
-        // unpublished
-        var pi = pub.pubInfo("pli-tv-bi-vb-sk1-75");
-        should(pi.length).equal(1);
-        should(pi[0]).properties({
+        var [ pi0, pi1 ] = pub.pubInfo("pli-tv-bi-vb-sk1-75");
+        should(pi0).properties({
             publication_number: "scpub8.1",
             author_name: "Bhikkhu Brahmali",
             text_uid: "pli-tv-bi-vb",
             subchapters: false,
-            is_published: false,
+            is_published: true,
         });
+        should(pi.length).equal(2);
 
         // published generic
         var pi = pub.pubInfo("mn1");
-        should(pi.length).equal(1);
         should(pi[0]).properties({
             publication_number: "scpub3",
             author_name: "Bhikkhu Sujato",
@@ -289,6 +298,7 @@
             subchapters: false,
             is_published: true,
         });
+        should(pi.length).equal(2);
 
         // published specific
         var pi = pub.pubInfo("mn1/en/sujato");

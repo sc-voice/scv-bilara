@@ -466,6 +466,7 @@
             'mn66/en/sujato',   // ordered by grep count
             'mn116/en/sujato',  // ordered by grep count
             'dn16/en/sujato',
+            'pli-tv-kd6/en/brahmali',
         ]);
         should.deepEqual(res.mlDocs.map(mld=>`${mld.suid}, ${mld.score}`), [
             'sn42.11, 5.091',
@@ -475,6 +476,7 @@
             'mn116, 1.01',  // reordered by score
             'mn66, 1.005',  // reordered by score
             'dn16, 1.001',
+            'pli-tv-kd6, 1.001',
         ]);
     });
     it("phraseSearch(...) limits English results", async()=>{
@@ -900,7 +902,7 @@
             minLang: 2,
             showMatchesOnly: false,
         });
-        should(res.suttaRefs.length).equal(17);
+        should(res.suttaRefs.length).equal(19);
     });
     it("find(...) => finds keywords", async()=>{
         var maxDoc = 3;
@@ -945,7 +947,7 @@
             'dn16/en/sujato',
             'dn23/en/sujato',
         ]);
-        should(res.suttaRefs.length).equal(15);
+        should(res.suttaRefs.length).equal(19);
         var [
             mld0,
             mld1,
@@ -953,8 +955,8 @@
         ] = res.mlDocs;
         should(res.mlDocs.length).equal(3);
         should(res.minLang).equal(2);
-        should(res.suttaRefs.length).equal(15);
-        should(res.segsMatched).equal(25);
+        should(res.suttaRefs.length).equal(19);
+        should(res.segsMatched).equal(32);
         should(mld0.score).above(mld1.score);
     });
     it("RegExp knows about word boundaries", () => {
@@ -1222,7 +1224,7 @@
         var res = await skr.find({
             pattern,
         });
-        should(res.bilaraPaths.length).equal(158);
+        should(res.bilaraPaths.length).equal(164);
     });
     it("find(...) => ignores SN46.36", async()=>{
         var skr = await new Seeker({
@@ -1281,7 +1283,7 @@
         should(data.resultPattern).equal('\\brat');
         should(data.searchLang).equal('de');
         should(data.method).equal('phrase');
-        should(data.mlDocs.length).equal(18);
+        should(data.mlDocs.length).equal(19);
         var mld0 = data.mlDocs[0];
         should(mld0.bilaraPaths[0]).match(/an1.51-60/);
         should(mld0.score).equal(3.056);
@@ -1423,9 +1425,9 @@
             'root/pli/ms/sutta/mn/mn21_root-pli-ms.json',
             'translation/en/sujato/sutta/mn/mn21_translation-en-sujato.json',
         ]);
-        let mld0 = res.mlDocs[0];
-        should(mld0.author_uid).equal('sujato');
-        should(mld0.suid).equal('mn146');
+        let [ mld0 ]  = res.mlDocs;
+        should(mld0.suid).equal('pli-tv-kd20');
+        should(mld0.author_uid).equal('brahmali');
         should(res.mlDocs.length).equal(maxDoc);
     });
     it("find(...) handles sn46.55/cs", async()=>{

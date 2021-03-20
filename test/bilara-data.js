@@ -64,7 +64,7 @@
         should(bd.initialized).equal(true);
         should.deepEqual(Object.keys(bd.authors).sort(), [
             // 'ashinsarana', TODO20210307: Carmi
-            'kaz', 'ms', 'sabbamitta', 'sujato', 
+            'brahmali', 'kaz', 'ms', 'sabbamitta', 'sujato', 
         ]);
         should.deepEqual(bd.examples.en.slice(0,2), [
             //`acquire faith`,
@@ -90,6 +90,7 @@
         should(bd.initialized).equal(true);
         should.deepEqual(Object.keys(bd.authors).sort(), [
             // 'ashinsarana',  // TODO20210307: Carmi
+            'brahmali',
             'kaz',
             'ms', 
             'sabbamitta', 
@@ -165,7 +166,7 @@
         var brahmali = {
             lang: 'en',
             type: "translator",
-            name: "Brahmali Bhikkhu",
+            name: "Bhikkhu Brahmali",
         };
         var sabbamitta = {
             lang: 'de',
@@ -180,7 +181,7 @@
 
         should.deepEqual(bd.authors, {
             ms,
-            // brahmali,    // TODO20210307: Vinaya
+            brahmali,    // TODO20210307: Vinaya
             // ashinsarana, // TODO20210307: Carmi
             kaz,
             sabbamitta,
@@ -189,7 +190,7 @@
 
         should.deepEqual(bd.authorInfo('sabbamitta'), sabbamitta);
     });
-    it("TESTTESTsupportedLanguages() => segmented translations", async()=>{
+    it("supportedLanguages() => segmented translations", async()=>{
         return; // TODO20210307: Carmi
         await bd.initialize();
         should.deepEqual(bd.supportedLanguages(), [
@@ -197,7 +198,7 @@
             'de', 'en', 'jpn', 'pli', 
         ]);
     });
-    it("TESTTESTsuttaInfo(...) returns sutta metadata", async()=>{
+    it("suttaInfo(...) returns sutta metadata", async()=>{
         await bd.initialize();
         var dn33Pli = {
             author: 'ms',
@@ -718,35 +719,35 @@
         });
         should.deepEqual(mld.segMap['an1.9:1.0'], an1_9_de);
     });
-    it("loadMLDocLegacy(...) loads legacy doc", async()=>{
+    it("TESTTESTloadMLDocLegacy(...) loads legacy doc", async()=>{
         await bd.initialize();
-        var mld = await bd.loadMLDocLegacy('dn7/de');
+        var mld = await bd.loadMLDocLegacy('dn1/de');
 
         should(mld.lang).equal('de');
         should(mld.score).equal(0);
-        should(mld.suid).equal('dn7');
+        should(mld.suid).equal('dn1');
         should(mld.hyphen).equal('\u00ad');
         should(mld.maxWord).equal(30);
         should(mld.minWord).equal(5);
         should(mld.segsMatched).equal(undefined);
         should.deepEqual(mld.langSegs, {
-            de: 70,
+            de: 194,
         });
         let segs = mld.segments();
-        should(segs[2].de).match(/Zu einer Zeit weilte der Erhabene in Kosambi/);
-        should(Object.keys(mld.segMap).length).equal(70);
-        should(mld.author_uid).equal('kusalagnana-maitrimurti-traetow');
+        should(segs[2].de).match(/So habe ich berichten hören/);
+        should(Object.keys(mld.segMap).length).equal(194);
+        should(mld.author_uid).equal('franke');
         should.deepEqual(mld.translations, [{
             type: 'translation',
             lang: 'de',
-            author_uid: 'kusalagnana-maitrimurti-traetow',
+            author_uid: 'franke',
             category: 'sutta',
             collection: 'dn',
-            suttaRef: 'dn7/de/kusalagnana-maitrimurti-traetow',
-            sutta_uid: 'dn7',
+            suttaRef: 'dn1/de/franke',
+            sutta_uid: 'dn1',
         }]);
         should.deepEqual(mld.titles(),[
-            'Dīgha Nikāya 7', 'Die Lehrrede an Jāliya',
+            'Dīgha Nikāya 1', 'Das Netz des umfassenden Wissens'
         ]);
         should.deepEqual(mld.languages(), [ 'de' ]);
     });
@@ -897,7 +898,7 @@
     } finally{
         fs.existsSync(indexLock) && fs.unlinkSync(indexLock);
     }});
-    it("loadSuttaplexJson(...)=>an3.47", async()=>{
+    it("TESTTESTloadSuttaplexJson(...)=>an3.47", async()=>{
         await bd.initialize();
         var suid = 'an3.47';
         var lang = 'de';
@@ -905,11 +906,11 @@
         var author = "Anagarika Sabbamitta";
         var author_short = "Sabbamitta";
         var author_uid = 'sabbamitta';
-        var title = 'Saṅkhatalakkhaṇasutta ';
+        var title = 'Kennzeichen des Bedingten ';
 
         var json = await bd.loadSuttaplexJson(suid, lang, author_uid);
         should(json.acronym).equal(`AN 3.47`);
-        should(json.original_title).equal('Saṅkhatalakkhaṇa Sutta');
+        should(json.original_title).equal('Saṅkhatalakkhaṇasutta');
         should.deepEqual(json.translations, [{
             author,
             author_short,
@@ -919,12 +920,12 @@
             lang_name,
             segmented: true,
             publication_date: null,
-            id: `${lang}_${suid}_${author_uid}`,
+            id: `${suid}_translation-${lang}-${author_uid}`,
             title,
             volpage: null,
         }]);
     });
-    it("loadSuttaplexJson(...)=>thig3.8 de", async()=>{
+    it("TESTTESTloadSuttaplexJson(...)=>thig3.8 de", async()=>{
         await bd.initialize();
         var suid = 'thig3.8';
 
@@ -948,8 +949,8 @@
             lang_name,
             segmented: true,
             publication_date: null,
-            title: "Somātherīgāthā",
-            id: `${lang}_${suid}_${author_uid}`,
+            title: "Somā ",
+            id: `${suid}_translation-${lang}-${author_uid}`,
             volpage: null,
         });
     });
