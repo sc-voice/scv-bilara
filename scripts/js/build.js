@@ -17,21 +17,6 @@ const SRC_SUIDMAPJSON = path.join(SRC_DIR, 'auto', 'suidmap.json');
 
 logger.logLevel = 'info';
 
-async function writeJsonModule(name, filePath, json) {
-    await fs.promises.writeFile(filePath, 
-` 
-// DO NOT EDIT THIS GENERATED FILE
-(function(exports) { class ${name} { static get ${name.toLowerCase()}() { return (
-//JSONSTART
-${json} 
-//JSONEND
-)}} module.exports = exports.${name} = ${name};
-})(typeof exports === "object" ? exports : (exports={}));
-// DO NOT EDIT THIS GENERATED FILE
-`
-    );
-}
-
 (async function(){ try {
     let bilaraData = await new BilaraData().initialize(true);
     let publication = await new Publication().initialize();

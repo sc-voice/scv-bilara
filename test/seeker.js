@@ -580,6 +580,21 @@
             lines: linesWurzel,
         });
     });
+    it("TESTTESTfind(...) finds dhp2", async()=>{
+        var skr = await new Seeker().initialize();
+        skr.logLevel = 'debug';
+
+        var res = await skr.find({
+            pattern: "dhp2",
+            matchHighlight: false,
+        });
+        should(res.method).equal('sutta_uid');
+        should.deepEqual(res.suttaRefs, ['dhp1-20/en']);
+        should.deepEqual(res.mlDocs.map(mld=>mld.suid),  
+            ['dhp1-20']);
+        let [ mld0 ] = res.mlDocs;
+        console.log(mld0.segments());
+    });
     it("find(...) finds thag1.10", async()=>{
         var skr = await new Seeker().initialize();
 

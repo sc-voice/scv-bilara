@@ -166,13 +166,20 @@
             suid: 'thig3.8',
         }]);
     });
-    it("buildSuidMap() => [ suid ]", async()=>{
+    it("TESTTESTbuildSuidMap() => [ suid ]", async()=>{
         let bpm = await new BilaraPathMap().initialize();
         bpm.logLevel = 'info';
         let suidMap = await bpm.buildSuidMap();
         let suids = Object.keys(suidMap);
 
         should(suids.length).above(5500);
+        should.deepEqual(Object.keys(suidMap["dhp1-20"]),[
+            'translation/en/sujato',
+            'root/pli/ms',
+            //'html/pli/ms',
+            //'reference/pli/ms',
+            //'variant/pli/ms',
+        ]);
         should.deepEqual(Object.keys(suidMap.iti42),[
             'translation/en/sujato',
             'root/pli/ms',

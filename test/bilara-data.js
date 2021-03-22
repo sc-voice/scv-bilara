@@ -719,7 +719,7 @@
         });
         should.deepEqual(mld.segMap['an1.9:1.0'], an1_9_de);
     });
-    it("TESTTESTloadMLDocLegacy(...) loads legacy doc", async()=>{
+    it("loadMLDocLegacy(...) loads legacy doc", async()=>{
         await bd.initialize();
         var mld = await bd.loadMLDocLegacy('dn1/de');
 
@@ -898,7 +898,7 @@
     } finally{
         fs.existsSync(indexLock) && fs.unlinkSync(indexLock);
     }});
-    it("TESTTESTloadSuttaplexJson(...)=>an3.47", async()=>{
+    it("loadSuttaplexJson(...)=>an3.47", async()=>{
         await bd.initialize();
         var suid = 'an3.47';
         var lang = 'de';
@@ -925,7 +925,7 @@
             volpage: null,
         }]);
     });
-    it("TESTTESTloadSuttaplexJson(...)=>thig3.8 de", async()=>{
+    it("loadSuttaplexJson(...)=>thig3.8 de", async()=>{
         await bd.initialize();
         var suid = 'thig3.8';
 
