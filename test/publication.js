@@ -49,7 +49,7 @@
             initialized: false,
         });
     });
-    it("pubPaths() => published bilara paths", async()=>{
+    it("TESTTESTpubPaths() => published bilara paths", async()=>{
         var pub = await pubTest.initialize(); 
         //pub.logLevel = 'debug';
         should.deepEqual(pub.pubPaths().sort(),[
@@ -74,7 +74,7 @@
             `${BRAHMALI}/pli-tv-pvr`,
             `${SUJATO}/an`,
             `${SUJATO}/dn`,
-            //`${SUJATO}/kn/dhp`,
+            `${SUJATO}/kn/dhp`,
             `${SUJATO}/kn/iti`,
             `${SUJATO}/kn/kp`,
             `${SUJATO}/kn/thag`,
@@ -179,7 +179,7 @@
             `${RUTEAM}/dn`,
         ].sort());
     });
-    it("isPublishedPath(f) filters supported suttas", async()=>{
+    it("TESTTESTisPublishedPath(f) filters supported suttas", async()=>{
         var pub = await pubTest.initialize(); 
     
         should(pub.isPublishedPath(`${KAZ}/an/an4/an4.182_translation-jpn-kaz.json`))
@@ -207,7 +207,7 @@
             .equal(true);
         should(pub.isPublishedPath(
             TRANSPATH('en', 'sujato', `kn/dhp/dhp21-32`)))
-            .equal(false);
+            .equal(true);
         should(pub.isPublishedPath(
             TRANSPATH('de', 'sabbamitta', `kn/thig/thig3.8`)))
             .equal(true);

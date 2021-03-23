@@ -99,7 +99,8 @@
             if (author) {
                 spKeys = spKeys.filter(p=>p.endsWith(author));
             }
-            return spKeys.length > 0;
+            let result = spKeys.length > 0;
+            return result
         }
 
         async isFresh(save=true) { try {

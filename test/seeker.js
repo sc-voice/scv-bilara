@@ -49,9 +49,19 @@
     it("default ctor", ()=>{
         var skr = new Seeker();
         should(skr).properties({
+            languages: [ 'pli', 'en'],
+            includeUnpublished: false,
             lang: 'en',
-            root: BILARA_PATH,
+            enWords: undefined,
+            lang: 'en',
+            matchColor: 121,
+            matchHighlight: '\x1B[38;5;121m$&\x1B[0m',
+            maxDoc: 50,
+            maxResults: 1000,
+            minLang: 2,
             paliWords: undefined,
+            root: BILARA_PATH,
+
         });
         should(skr.logger).equal(logger);
     });
@@ -580,9 +590,8 @@
             lines: linesWurzel,
         });
     });
-    it("TESTTESTfind(...) finds dhp2", async()=>{
+    it("find(...) finds dhp2", async()=>{
         var skr = await new Seeker().initialize();
-        skr.logLevel = 'debug';
 
         var res = await skr.find({
             pattern: "dhp2",
@@ -593,7 +602,13 @@
         should.deepEqual(res.mlDocs.map(mld=>mld.suid),  
             ['dhp1-20']);
         let [ mld0 ] = res.mlDocs;
-        console.log(mld0.segments());
+        let segs0 = mld0.segments();
+        should.deepEqual(segs0[4], {
+            scid: 'dhp2:4',
+            en: 'you speak or act,',
+            matched: true,
+            pli: 'bhāsati vā karoti vā;',
+        });
     });
     it("find(...) finds thag1.10", async()=>{
         var skr = await new Seeker().initialize();

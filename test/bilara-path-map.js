@@ -166,7 +166,7 @@
             suid: 'thig3.8',
         }]);
     });
-    it("TESTTESTbuildSuidMap() => [ suid ]", async()=>{
+    it("buildSuidMap() => [ suid ]", async()=>{
         let bpm = await new BilaraPathMap().initialize();
         bpm.logLevel = 'info';
         let suidMap = await bpm.buildSuidMap();
