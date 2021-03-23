@@ -93,14 +93,15 @@
         should(reAllow.test(fn)).equal(true);
         should(reDeny.test(fn)).equal(false);
     });
-    it("grep(...) finds en things", async()=>{
-        var skr = new Seeker(SEEKEROPTS);
+    it("TESTTESTgrep(...) finds sutta things", async()=>{
+        var skr = new Seeker({});
         var ms0 = Date.now();
         await skr.clearMemo('grep');
         var res = await skr.grep({
             pattern: "root of suffering",
         });
-        should.deepEqual(res, [...SUTTA_ROOT_SUFF, ...VINAYA_ROOT_SUFF]); 
+        //should.deepEqual(res, [...SUTTA_ROOT_SUFF, ...VINAYA_ROOT_SUFF]); 
+        should.deepEqual(res, SUTTA_ROOT_SUFF);
         var ms1 = Date.now();
         var res2 = await skr.grep({ pattern: "root of suffering", });
         var ms2 = Date.now();
@@ -201,7 +202,7 @@
             done();
         } catch(e) { done(e); } })();
     });
-    it("keywordSearch(...) limits results", async()=>{
+    it("TESTTESTkeywordSearch(...) limits results", async()=>{
         var lang = 'en';
         var pattern = Seeker.normalizePattern('suffering joy faith');
         var maxResults = 3;
@@ -458,7 +459,7 @@
             .equal('en');
 
     });
-    it("find(...) ignores unpublished", async()=>{
+    it("TESTTESTfind(...) ignores unpublished", async()=>{
         var lang = 'en';
         var pattern = 'root of suffering';
         var skr = await new Seeker({
@@ -476,7 +477,7 @@
             'mn66/en/sujato',   // ordered by grep count
             'mn116/en/sujato',  // ordered by grep count
             'dn16/en/sujato',
-            'pli-tv-kd6/en/brahmali',
+            //'pli-tv-kd6/en/brahmali',
         ]);
         should.deepEqual(res.mlDocs.map(mld=>`${mld.suid}, ${mld.score}`), [
             'sn42.11, 5.091',
@@ -486,7 +487,7 @@
             'mn116, 1.01',  // reordered by score
             'mn66, 1.005',  // reordered by score
             'dn16, 1.001',
-            'pli-tv-kd6, 1.001',
+            //'pli-tv-kd6, 1.001',
         ]);
     });
     it("phraseSearch(...) limits English results", async()=>{
@@ -919,7 +920,7 @@
             'thag2.15/en/sujato', 'dn14/en/sujato',
         ]);
     });
-    it("find(...) => finds all keywords", async()=>{
+    it("TESTTESTfind(...) => finds all keywords", async()=>{
         var maxDoc = 50;
         var skr = await new Seeker({
             maxDoc,
@@ -932,7 +933,7 @@
             minLang: 2,
             showMatchesOnly: false,
         });
-        should(res.suttaRefs.length).equal(19);
+        should(res.suttaRefs.length).equal(17);
     });
     it("find(...) => finds keywords", async()=>{
         var maxDoc = 3;
@@ -959,7 +960,7 @@
             en: 'For desire is the root of suffering. ',
         });
     });
-    it("find(...) => finds segments with all keywords", async()=>{
+    it("TESTTESTfind(...) => finds segments with all keywords", async()=>{
         var maxDoc = 3;
         var skr = await new Seeker().initialize();
 
@@ -977,7 +978,7 @@
             'dn16/en/sujato',
             'dn23/en/sujato',
         ]);
-        should(res.suttaRefs.length).equal(19);
+        should(res.suttaRefs.length).equal(15);
         var [
             mld0,
             mld1,
@@ -985,8 +986,8 @@
         ] = res.mlDocs;
         should(res.mlDocs.length).equal(3);
         should(res.minLang).equal(2);
-        should(res.suttaRefs.length).equal(19);
-        should(res.segsMatched).equal(32);
+        should(res.suttaRefs.length).equal(15);
+        should(res.segsMatched).equal(25);
         should(mld0.score).above(mld1.score);
     });
     it("RegExp knows about word boundaries", () => {
@@ -1173,7 +1174,7 @@
         should(res.lang).equal('en');
         should(res.mlDocs.length).equal(1);
     });
-    it("find(...) finds pli-tv-bi-vb-pj7", async()=>{
+    it("TESTTESTfind(...) finds pli-tv-bi-vb-pj7", async()=>{
         var maxDoc = 3;
         var bilaraData = new BilaraData({
             includeUnpublished: true,
@@ -1186,10 +1187,11 @@
         // lists of suttas with ranges
         var lang = 'en';
         // The pattern resolves to 4 suttas, of which 3 are returned
-        var pattern = "ejected by a unanimous"; 
+        var pattern = "ejected by a unanimous";
         var res = await skr.find({
             pattern,
             lang,
+            tipitakaCategories: 'vinaya',
         });
         should(res.method).equal('phrase');
         should(res.maxDoc).equal(maxDoc);
@@ -1201,12 +1203,12 @@
         should(res.lang).equal('en');
         should(res.mlDocs.length).equal(2);
     });
-    it("tipitakaRegExp(tc) => regexp for paths", ()=>{
+    it("TESTTESTtipitakaRegExp(tc) => regexp for paths", ()=>{
         var skr = new Seeker();
         should(skr.tipitakaRegExp('su').toString())
             .equal("/(\\/sutta\\/)/iu");
-        should(skr.tipitakaRegExp())
-            .equal(undefined);
+        should(skr.tipitakaRegExp().toString())
+            .equal('/(\\/sutta\\/)/iu');
         should(skr.tipitakaRegExp('bi,pj').toString())
             .equal("/(-bi-|-pj)/iu");
     })
@@ -1247,14 +1249,14 @@
         ]);
         should(res.bilaraPaths.length).equal(3);
     });
-    it("find(...) ignores chinese", async()=>{
+    it("TESTTESTfind(...) ignores chinese", async()=>{
         var skr = await new Seeker().initialize();
 
         var pattern = "wrong livelihood"; 
         var res = await skr.find({
             pattern,
         });
-        should(res.bilaraPaths.length).equal(164);
+        should(res.bilaraPaths.length).equal(158);
     });
     it("find(...) => ignores SN46.36", async()=>{
         var skr = await new Seeker({
@@ -1434,7 +1436,7 @@
         should(mld1.author_uid).equal('sujato');
         should(mld1.suid).equal('an2.1-10');
     });
-    it('find(...) => nun', async()=>{
+    it('TESTTESTfind(...) => nun', async()=>{
         let bilaraData = new BilaraData();
         let maxDoc = 5;
         let skr = await new Seeker({
@@ -1454,6 +1456,32 @@
             'translation/en/sujato/sutta/mn/mn68_translation-en-sujato.json',
             'root/pli/ms/sutta/mn/mn21_root-pli-ms.json',
             'translation/en/sujato/sutta/mn/mn21_translation-en-sujato.json',
+        ]);
+        let [ mld0 ]  = res.mlDocs;
+        should(mld0.suid).equal('mn146');
+        should(mld0.author_uid).equal('sujato');
+        should(res.mlDocs.length).equal(maxDoc);
+    });
+    it('TESTTESTfind(...) => nun -tc:vinaya', async()=>{
+        let bilaraData = new BilaraData();
+        let maxDoc = 5;
+        let skr = await new Seeker({
+            bilaraData,
+            logger: bilaraData,
+            maxDoc,
+        }).initialize();
+        let res = await skr.find({
+            pattern: 'nun -tc:vinaya',
+        });
+        should(res.lang).equal('en');
+        should(res.mlDocs.length).equal(maxDoc);
+        should.deepEqual(res.bilaraPaths.slice(0,6),[
+            'root/pli/ms/vinaya/pli-tv-kd/pli-tv-kd20_root-pli-ms.json',
+            'translation/en/brahmali/vinaya/pli-tv-kd/pli-tv-kd20_translation-en-brahmali.json',
+            'root/pli/ms/vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc/pli-tv-bu-vb-pc21_root-pli-ms.json',
+            'translation/en/brahmali/vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc/pli-tv-bu-vb-pc21_translation-en-brahmali.json',
+            'root/pli/ms/vinaya/pli-tv-kd/pli-tv-kd3_root-pli-ms.json',
+            'translation/en/brahmali/vinaya/pli-tv-kd/pli-tv-kd3_translation-en-brahmali.json'   
         ]);
         let [ mld0 ]  = res.mlDocs;
         should(mld0.suid).equal('pli-tv-kd20');

@@ -22,6 +22,7 @@
     const BILARA_PATH = path.join(Files.LOCAL_DIR, 'bilara-data');
     const TRANSLATION_PATH = path.join(BILARA_PATH, 'translation');
     const MAXBUFFER = 10 * 1024 * 1024;
+    const TCMAP = require('./seeker-tcmap.json');
 
     var wscount = 0;
 
@@ -198,38 +199,10 @@
             return pat;
         }
 
-        tipitakaRegExp(tc='') {
+        tipitakaRegExp(tc='sutta') {
             var tcParts = tc.toLowerCase().split(',');
-            var tcMap = {
-                'ab': '/abhidhamma/',
-                'as': '-as',
-                'ay': '-ay',
-                'bi': '-bi-',
-                'bu': '-bu-',
-                'dn': '/dn/',
-                'kd': '-kd',
-                'kn': '/kn/',
-                'mn': '/mn/',
-                'ms': '-ms',
-                'np': '-np',
-                'pc': '-pc',
-                'pd': '-pd',
-                'pj': '-pj',
-                'pvr': '-pvr',
-                'sk': '-sk',
-                'sn': '/sn/',
-                'ss': '-ss',
-                'su': '/sutta/',
-                'sutta': '/sutta/',
-                'thag': '/thag/',
-                'thig': '/thig/',
-                'tv': '-tv-',
-                'vb': '-vb-',
-                'vin': '/vinaya/',
-
-            }
             var pats = tcParts.reduce((a,p) => {
-                tcMap[p] && a.push(tcMap[p]);
+                TCMAP[p] && a.push(TCMAP[p]);
                 return a;
             }, []);
             let re;
@@ -329,7 +302,7 @@
             maxResults && (cmd += `|head -${maxResults}`);
             var pathPrefix = cwd.replace(root, '').replace(/^\/?/, '');
             var cwdMsg = cwd.replace(`${root}/`,'');
-            logger.info(`grep(${cwdMsg}) ${cmd}`);
+            logger.info(`slowGrep(${cwdMsg}) ${cmd}`);
             var execOpts = {
                 cwd,
                 shell: '/bin/bash',
