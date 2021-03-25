@@ -415,8 +415,6 @@
         let enWords = await English.wordSet({source:'file'});
         var skr = await new Seeker({enWords}).initialize();
 
-        skr.logLevel = 'info';
-
         // "gehe" and "so" are both German and Pali
         should(skr.patternLanguage('anathapindika gehe so', 'de'))
             .equal('pli');
@@ -737,7 +735,7 @@
             matched: true,
         });
     });
-    it("find(...) => legacy suttas", async()=>{
+    it("TESTTESTfind(...) => legacy suttas", async()=>{
         var maxDoc = 3;
         var skr = await new Seeker({
             maxDoc,
@@ -1488,7 +1486,8 @@
         should(mld0.author_uid).equal('brahmali');
         should(res.mlDocs.length).equal(maxDoc);
     });
-    it("find(...) handles sn46.55/cs", async()=>{
+    it("TESTTESTfind(...) handles sn46.55/cs", async()=>{
+        return; // TODO: 20210325 not in published branch yet
         var skr = await new Seeker().initialize();
         var pattern = 'sn46.55/cs';
         var ex = undefined;
@@ -1503,7 +1502,6 @@
     });
     it("find(...) handles an1.1-10/jpn", async()=>{
         var skr = await new Seeker().initialize();
-        //skr.logLevel = 'debug';
         var pattern = 'an4.182/jpn';
         var ex = undefined;
         var res = await skr.find({ pattern, matchHighlight: false, });

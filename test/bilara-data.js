@@ -719,7 +719,7 @@
         });
         should.deepEqual(mld.segMap['an1.9:1.0'], an1_9_de);
     });
-    it("loadMLDocLegacy(...) loads legacy doc", async()=>{
+    it("TESTTESTloadMLDocLegacy(...) loads legacy doc", async()=>{
         await bd.initialize();
         var mld = await bd.loadMLDocLegacy('dn1/de');
 
@@ -987,9 +987,9 @@
     });
     it("ExecGitMock initializes", async()=>{
         var execGit = new ExecGitMock();
-        execGit.logLevel = 'debug';
+        //execGit.logLevel = 'debug';
         var bd = new BilaraData({execGit});
-        bd.logLevel = 'debug';
+        //bd.logLevel = 'debug';
         should(bd.execGit).equal(execGit);
         should(await bd.initialize()).equal(bd);
     });

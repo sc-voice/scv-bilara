@@ -546,7 +546,7 @@
 
         async loadMLDocLegacy(suidRef) { try {
             let suidParts = suidRef.split('/');
-            let sutta = await this.scApi.loadSutta.apply(this.scApi, suidParts);
+            let sutta = await this.scApi.loadLegacySutta.apply(this.scApi, suidParts);
             if (!sutta) {
                 let e = new Error(`loadMLDocLegacy() not found:${suidRef}`);
                 e.suidRef = suidRef;
