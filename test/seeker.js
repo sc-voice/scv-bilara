@@ -93,7 +93,7 @@
         should(reAllow.test(fn)).equal(true);
         should(reDeny.test(fn)).equal(false);
     });
-    it("TESTTESTgrep(...) finds sutta things", async()=>{
+    it("grep(...) finds sutta things", async()=>{
         var skr = new Seeker({});
         var ms0 = Date.now();
         await skr.clearMemo('grep');
@@ -202,7 +202,7 @@
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTkeywordSearch(...) limits results", async()=>{
+    it("keywordSearch(...) limits results", async()=>{
         var lang = 'en';
         var pattern = Seeker.normalizePattern('suffering joy faith');
         var maxResults = 3;
@@ -459,7 +459,7 @@
             .equal('en');
 
     });
-    it("TESTTESTfind(...) ignores unpublished", async()=>{
+    it("find(...) ignores unpublished", async()=>{
         var lang = 'en';
         var pattern = 'root of suffering';
         var skr = await new Seeker({
@@ -920,7 +920,7 @@
             'thag2.15/en/sujato', 'dn14/en/sujato',
         ]);
     });
-    it("TESTTESTfind(...) => finds all keywords", async()=>{
+    it("find(...) => finds all keywords", async()=>{
         var maxDoc = 50;
         var skr = await new Seeker({
             maxDoc,
@@ -960,7 +960,7 @@
             en: 'For desire is the root of suffering. ',
         });
     });
-    it("TESTTESTfind(...) => finds segments with all keywords", async()=>{
+    it("find(...) => finds segments with all keywords", async()=>{
         var maxDoc = 3;
         var skr = await new Seeker().initialize();
 
@@ -1174,7 +1174,7 @@
         should(res.lang).equal('en');
         should(res.mlDocs.length).equal(1);
     });
-    it("TESTTESTfind(...) finds pli-tv-bi-vb-pj7", async()=>{
+    it("find(...) finds pli-tv-bi-vb-pj7", async()=>{
         var maxDoc = 3;
         var bilaraData = new BilaraData({
             includeUnpublished: true,
@@ -1203,7 +1203,7 @@
         should(res.lang).equal('en');
         should(res.mlDocs.length).equal(2);
     });
-    it("TESTTESTtipitakaRegExp(tc) => regexp for paths", ()=>{
+    it("tipitakaRegExp(tc) => regexp for paths", ()=>{
         var skr = new Seeker();
         should(skr.tipitakaRegExp('su').toString())
             .equal("/(\\/sutta\\/)/iu");
@@ -1249,7 +1249,7 @@
         ]);
         should(res.bilaraPaths.length).equal(3);
     });
-    it("TESTTESTfind(...) ignores chinese", async()=>{
+    it("find(...) ignores chinese", async()=>{
         var skr = await new Seeker().initialize();
 
         var pattern = "wrong livelihood"; 
@@ -1436,7 +1436,7 @@
         should(mld1.author_uid).equal('sujato');
         should(mld1.suid).equal('an2.1-10');
     });
-    it('TESTTESTfind(...) => nun', async()=>{
+    it('find(...) => nun', async()=>{
         let bilaraData = new BilaraData();
         let maxDoc = 5;
         let skr = await new Seeker({
@@ -1462,7 +1462,7 @@
         should(mld0.author_uid).equal('sujato');
         should(res.mlDocs.length).equal(maxDoc);
     });
-    it('TESTTESTfind(...) => nun -tc:vinaya', async()=>{
+    it('find(...) => nun -tc:vinaya', async()=>{
         let bilaraData = new BilaraData();
         let maxDoc = 5;
         let skr = await new Seeker({

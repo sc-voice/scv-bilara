@@ -198,7 +198,7 @@
             'de', 'en', 'jpn', 'pli', 
         ]);
     });
-    it("TESTTESTsuttaInfo(...) returns sutta metadata", async()=>{
+    it("suttaInfo(...) returns sutta metadata", async()=>{
         await bd.initialize();
         var dn33Pli = {
             author: 'ms',
@@ -234,7 +234,7 @@
         }
         should.deepEqual(bd.suttaInfo('dn33'), [
             dn33Pli, dn33De, dn33En, 
-            // dn33My, // TODO20210307: scpub26 is not published
+            //dn33My, // TODO20210307: scpub26 is not published
         ]);
         var sn12_3pli = {
             author: 'ms',

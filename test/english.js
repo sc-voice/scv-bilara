@@ -17,6 +17,13 @@
         should(Object.keys(enWords.states).sort().join(''))
             .equal(`abcdefghijklmnopqrstuvwxyzʻ`);
     });
+    it("TESTTESTrecognizes English punctuation", async()=>{
+        let enWords = await English.wordSet({source:'file'});
+        should.deepEqual(enWords.trace('!'), {
+            trace: 'rather',
+            member: true,
+        });
+    });
     it("recognizes English words", async()=>{
         let enWords = await English.wordSet({source:'file'});
         should.deepEqual(enWords.trace('rather'), {
