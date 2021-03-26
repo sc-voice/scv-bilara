@@ -16,3 +16,6 @@ methodisch
 rat
 stamm
 traurigkeit
+widerwärtig
+widerwärtige
+widerwärtiges
