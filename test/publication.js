@@ -29,6 +29,7 @@
     var SUJATO_N = 'translation/en/sujato/name';
     var BRAHMALI = 'translation/en/brahmali/vinaya';
     var KAZ = 'translation/jpn/kaz/sutta';
+    var MADHU = 'translation/si/madhu/sutta';
     var MY = 'translation/my/my-team/sutta';
     var PTTEAM = 'translation/pt/laera-quaresma/sutta';
     var ENCOMM = 'translation/en/comm-team/sutta';
@@ -85,7 +86,7 @@
             `${KAZ}/an`,
         ].sort());
     });
-    it("pubPaths() => all bilara paths", async()=>{
+    it("TESTTESTpubPaths() => all bilara paths", async()=>{
         var pub = await pubTest.initialize();
 
         // Explicit
@@ -130,6 +131,7 @@
             `${MY}/dn`,
             "translation/pt/laera-quaresma/",
             `${RUTEAM}/dn`,
+            `${MADHU}/`,
         ].sort());
 
         // Implied
@@ -177,6 +179,7 @@
             `${MY}/dn`,
             "translation/pt/laera-quaresma/",
             `${RUTEAM}/dn`,
+            `${MADHU}/`,
         ].sort());
     });
     it("isPublishedPath(f) filters supported suttas", async()=>{

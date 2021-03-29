@@ -1,7 +1,6 @@
 #!/bin/bash
 DIR=`dirname $0`; pushd $DIR/..
 
-$DIR/pull-bilara published
 $DIR/js/build.js
 
 git status | grep 'nothing to commit' > /dev/null; RC=$?

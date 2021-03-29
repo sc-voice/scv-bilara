@@ -1284,7 +1284,7 @@
             .equal('root/pli/ms/sutta/sn/sn42/sn42.11_root-pli-ms.json');
         should(mld0.score).equal(3.055);
     });
-    it("find(...) finds Deutsch 'blind'", async()=>{
+    it("TESTTESTfind(...) finds Deutsch 'blind'", async()=>{
         var bilaraData = await bd.initialize();
         var skr = await new Seeker({
             bilaraData,
@@ -1295,7 +1295,7 @@
         should(data.resultPattern).equal('\\bblind');
         should(data.searchLang).equal('de');
         should(data.method).equal('phrase');
-        should(data.mlDocs.length).equal(7);
+        should(data.mlDocs.length).equal(8);
         var mld0 = data.mlDocs[0];
         should(mld0.bilaraPaths[0]).match(/an3.29/);
         should(mld0.score).equal(6.128);
