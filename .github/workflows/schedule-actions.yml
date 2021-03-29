@@ -14,8 +14,8 @@ jobs:
           node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
       - run: scripts/install
-      - run: git config user.name github-actions
-      - run: git config user.email github-actions@github.com
+      - run: git config --global user.name github-actions
+      - run: git config --global user.email github-actions@github.com
       - run: npm run build
         env: 
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
