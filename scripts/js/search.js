@@ -517,13 +517,18 @@ function scriptEditor(res, pattern) {
 logger.logLevel = logLevel;
 
 (async function() { try {
-    var bilaraData = await new BilaraData({
+    logger.info('SEARCH: creating BilaraData');
+    var bilaraData = new BilaraData({
         execGit,
         branch,
         includeUnpublished,
-    }).initialize(sync);
+    });
+    logger.info('SEARCH: initializing BilaraData', {sync});
+    await bilaraData.initialize(sync);
 
+    logger.info('SEARCH: load English.wordSet');
     let enWords = await English.wordSet({source:'file'});
+    logger.info('SEARCH: creating Seeker');
     var skr = await new Seeker({
         matchColor: color,
         maxResults,
@@ -538,11 +543,11 @@ logger.logLevel = logLevel;
         matchHighlight,
         showMatchesOnly,
     };
-    logger.info(`findOpts`, findOpts);
+    logger.info(`SEARCH: findOpts`, findOpts);
     var msStart = Date.now();
     var res = await skr.find(findOpts);
     var secElapsed = (Date.now() - msStart)/1000;
-    logger.info(`find() ${secElapsed.toFixed(1)}s`);
+    logger.info(`SEARCH: find() ${secElapsed.toFixed(1)}s`);
     if (outFormat === 'verse') {
         if (groupBy === 'verse1') {
             outVerse(res, pattern, 1);

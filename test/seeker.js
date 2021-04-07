@@ -130,7 +130,7 @@
             `${en_suj}an/an10/an10.46_translation-en-sujato.json:1`
         ]);
     });
-    it("grep(...) finds de things", async()=>{
+    it("TESTTESTgrep(...) finds de things", async()=>{
         var skr = new Seeker(SEEKEROPTS);
         var maxResults = 5;
 
@@ -142,9 +142,9 @@
         });
         should.deepEqual(res.slice(0,4), [
             `${de_sab}dn/dn25_translation-de-sabbamitta.json:52`,
-            `${de_sab}dn/dn33_translation-de-sabbamitta.json:39`,
-            `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:21`,
-            `${de_sab}dn/dn34_translation-de-sabbamitta.json:19`,
+            `${de_sab}dn/dn33_translation-de-sabbamitta.json:37`,
+            `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:20`,
+            `${de_sab}dn/dn34_translation-de-sabbamitta.json:18`,
             //`${de_sab}an/an6/an6.30_translation-de-sabbamitta.json:15`,
         ]);
         should(res.length).below(6);
@@ -544,14 +544,14 @@
             lines,
         });
     });
-    it("phraseSearch(...) finds Deutsch results", async()=>{
+    it("TESTTESTphraseSearch(...) finds Deutsch results", async()=>{
         var linesWurzel = [
             `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
         ];
         var linesUber = [
-          `${de_sab}dn/dn33_translation-de-sabbamitta.json:38`,
-          `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:21`,
-          `${de_sab}dn/dn34_translation-de-sabbamitta.json:19`,
+          `${de_sab}dn/dn33_translation-de-sabbamitta.json:36`,
+          `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:20`,
+          `${de_sab}dn/dn34_translation-de-sabbamitta.json:18`,
         ];
         var lang = 'de';
         var maxResults = 10;
@@ -735,7 +735,7 @@
             matched: true,
         });
     });
-    it("TESTTESTfind(...) => legacy suttas", async()=>{
+    it("find(...) => legacy suttas", async()=>{
         var maxDoc = 3;
         var skr = await new Seeker({
             maxDoc,
@@ -860,7 +860,7 @@
             pli: "Majjhima Nikāya 1 ",
         });
     });
-    it("find(...) => finds ubung", async()=>{
+    it("TESTTESTfind(...) => finds ubung", async()=>{
         var maxDoc = 3;
         var skr = await new Seeker({
             maxDoc,
@@ -884,7 +884,7 @@
         // We only care about three documents so that 
         // is what we should get
         should.deepEqual(res.mlDocs.map(mld=>mld.score), [
-            38.033, 21.189, 19.021, 
+            36.031, 20.18, 18.02,
         ]);
     });
     it("find(...) => finds searchLang phrase", async()=>{
@@ -1285,7 +1285,10 @@
         should(mld0.score).equal(3.055);
     });
     it("TESTTESTfind(...) finds Deutsch 'blind'", async()=>{
+        bd.logLevel = 'info'
+        bd.log('initializing');
         var bilaraData = await bd.initialize();
+        bd.log('initializing done');
         var skr = await new Seeker({
             bilaraData,
         }).initialize();
@@ -1486,7 +1489,7 @@
         should(mld0.author_uid).equal('brahmali');
         should(res.mlDocs.length).equal(maxDoc);
     });
-    it("TESTTESTfind(...) handles sn46.55/cs", async()=>{
+    it("find(...) handles sn46.55/cs", async()=>{
         return; // TODO: 20210325 not in published branch yet
         var skr = await new Seeker().initialize();
         var pattern = 'sn46.55/cs';

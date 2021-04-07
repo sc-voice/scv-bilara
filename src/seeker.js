@@ -209,7 +209,7 @@
             if (pats.length) {
                 re = new RegExp(`(${pats.join('|')})`, "iu");
             }
-            re && this.info(`tiptakaCategories`, re.toString());
+            re && this.debug(`tiptakaCategories`, re.toString());
             return re;
         }
 

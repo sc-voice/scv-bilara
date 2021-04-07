@@ -719,7 +719,7 @@
         });
         should.deepEqual(mld.segMap['an1.9:1.0'], an1_9_de);
     });
-    it("TESTTESTloadMLDocLegacy(...) loads legacy doc", async()=>{
+    it("loadMLDocLegacy(...) loads legacy doc", async()=>{
         await bd.initialize();
         var mld = await bd.loadMLDocLegacy('dn1/de');
 
