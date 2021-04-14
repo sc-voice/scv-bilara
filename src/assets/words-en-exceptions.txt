@@ -15,6 +15,7 @@ makel
 methodisch
 rat
 stamm
+strudel
 traurigkeit
 widerwärtig
 widerwärtige
