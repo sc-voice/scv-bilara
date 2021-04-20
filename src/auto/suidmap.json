@@ -5913,6 +5913,7 @@
 		"root/pli/ms": "sutta/an/an10"
 	},
 	"an10.109": {
+		"translation/de/sabbamitta": "sutta/an/an10",
 		"translation/en/sujato": "sutta/an/an10",
 		"root/pli/ms": "sutta/an/an10"
 	},
@@ -18416,6 +18417,9 @@
 	"ud8.10": {
 		"translation/en/sujato": "sutta/kn/ud/vagga8",
 		"root/pli/ms": "sutta/kn/ud/vagga8"
+	},
+	"an4.106": {
+		"root/pli/ms": "sutta/an/an4"
 	},
 	"bv10": {
 		"root/pli/ms": "sutta/kn/bv"
