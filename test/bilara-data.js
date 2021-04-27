@@ -51,7 +51,7 @@
         });
         should(bdDefault.logger).equal(logger);
     });
-    it("initialize(...) must be called", async()=>{
+    it("TESTTESTinitialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         should(newbd.initialized).equal(false);
         should.throws(() => {
@@ -66,12 +66,8 @@
             // 'ashinsarana', TODO20210307: Carmi
             'brahmali', 'kaz', 'ms', 'sabbamitta', 'sujato', 
         ]);
-        should.deepEqual(bd.examples.en.slice(0,2), [
-            //`acquire faith`,
-            `a beryl gem that was naturally beautiful`,
-            `accept my mistake`,
-            //`a condition for old age and death`,
-        ]);
+        let eg_en = 'like a cow';
+        should.deepEqual(bd.examples.en.filter(x=>x === eg_en), [eg_en]);
         should.deepEqual(bd.examples.de.slice(0,2), [
             `aber nicht zum eigenen`,
             'Abfälle',
@@ -198,7 +194,7 @@
             'de', 'en', 'jpn', 'pli', 
         ]);
     });
-    it("TESTTESTsuttaInfo(...) returns sutta metadata", async()=>{
+    it("suttaInfo(...) returns sutta metadata", async()=>{
         await bd.initialize();
         var dn33Pli = {
             author: 'ms',
@@ -505,7 +501,7 @@
 
         // Root nikaya an
         var ids = await bd.nikayaSuttaIds('an');
-        should(ids.length).equal(1407);
+        should(ids.length).equal(1408);
 
         // Root nikaya sn
         var ids = await bd.nikayaSuttaIds('sn');

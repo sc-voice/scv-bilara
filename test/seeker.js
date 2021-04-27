@@ -130,7 +130,7 @@
             `${en_suj}an/an10/an10.46_translation-en-sujato.json:1`
         ]);
     });
-    it("TESTTESTgrep(...) finds de things", async()=>{
+    it("grep(...) finds de things", async()=>{
         var skr = new Seeker(SEEKEROPTS);
         var maxResults = 5;
 
@@ -544,7 +544,7 @@
             lines,
         });
     });
-    it("TESTTESTphraseSearch(...) finds Deutsch results", async()=>{
+    it("phraseSearch(...) finds Deutsch results", async()=>{
         var linesWurzel = [
             `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
         ];
@@ -860,7 +860,7 @@
             pli: "Majjhima Nikāya 1 ",
         });
     });
-    it("TESTTESTfind(...) => finds ubung", async()=>{
+    it("find(...) => finds ubung", async()=>{
         var maxDoc = 3;
         var skr = await new Seeker({
             maxDoc,
@@ -1284,7 +1284,7 @@
             .equal('root/pli/ms/sutta/sn/sn42/sn42.11_root-pli-ms.json');
         should(mld0.score).equal(3.055);
     });
-    it("TESTTESTfind(...) finds Deutsch 'blind'", async()=>{
+    it("find(...) finds Deutsch 'blind'", async()=>{
         bd.logLevel = 'info'
         bd.log('initializing');
         var bilaraData = await bd.initialize();
@@ -1316,7 +1316,7 @@
         should(data.resultPattern).equal('\\brat');
         should(data.searchLang).equal('de');
         should(data.method).equal('phrase');
-        should(data.mlDocs.length).equal(19);
+        should(data.mlDocs.length).equal(20);
         var mld0 = data.mlDocs[0];
         should(mld0.bilaraPaths[0]).match(/an1.51-60/);
         should(mld0.score).equal(3.056);
