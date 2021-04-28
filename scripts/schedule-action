@@ -1,6 +1,6 @@
-
 #!/bin/bash
-DIR=`dirname $0`; pushd $DIR/..
+DIR=`dirname $0`; 
+pushd $DIR/..
 SCRIPT=`basename $0 | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ`
 
 git pull
