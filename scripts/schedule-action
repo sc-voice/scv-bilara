@@ -6,7 +6,8 @@ cd $DIR/..
 
 git pull
 
-$DIR/js/example-json.js
+echo "$SCRIPT: bulding examples-json.js"
+$DIR/js/examples-json.js; RC=$? || exit $RC
 
 git status | grep 'nothing to commit' > /dev/null; RC=$?
 if [ "$RC" == "0" ]; then
