@@ -18,6 +18,7 @@
     const {
         ScApi,
     } = require('suttacentral-api');
+    const Examples = require('./examples.json');
     const SegDoc = require('./seg-doc');
     const MLDoc = require('./ml-doc');
     const BilaraPath = require('./bilara-path');
@@ -31,8 +32,6 @@
     const ROOT_PLI_MS = path.join("root", "pli", "ms");
     const STUBFILESIZE = 10;
     const MAXBUFFER = 10 * 1024 * 1024;
-    const EXAMPLES_URL = 
-        'https://raw.githubusercontent.com/ebt-site/ebt-vue/main/api/examples.json';
 
     class BilaraData {
         constructor(opts={}) {
@@ -188,20 +187,7 @@
                     `not found:${rootPath}`); 
             }
 
-            this.examples = null;
-            let examplesPath = path.join(Files.LOCAL_DIR, 'examples.json');
-            if (sync || !fs.existsSync(examplesPath)) {
-                this.info('loading examples', EXAMPLES_URL);
-                let res = await Axios.get(EXAMPLES_URL);
-                this.examples = typeof res.data == 'string'
-                    ? JSON.parse(res.data)
-                    : res.data;
-                await fs.promises.writeFile(examplesPath, 
-                    JSON.stringify(this.examples, null,2));
-            }
-            if (!this.examples) {
-                this.examples = JSON.parse(await fs.promises.readFile(examplesPath));
-            }
+            this.examples = Examples;
 
             // The following code must be synchronous
             this.initialized = true;
