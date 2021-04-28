@@ -1,0 +1,22 @@
+
+#!/bin/bash
+DIR=`dirname $0`; pushd $DIR/..
+SCRIPT=`basename $0 | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ`
+cd $DIR/..
+
+$DIR/js/example-json.js
+
+git status | grep 'nothing to commit' > /dev/null; RC=$?
+if [ "$RC" == "0" ]; then
+    echo "$SCRIPT: Nothing to commit"
+else
+    echo "$SCRIPT: committing..."
+    git commit -am "$SCRIPT updating examples"
+    npm version patch
+    VERSION=`$DIR/version`
+    git reset --soft HEAD~1
+    git commit --amend -m "$SCRIPT: v$VERSION"
+    git push
+    $DIR/publish-npm
+fi
+
