@@ -36,9 +36,19 @@
 
         async initialize() { try {
             var { suidMapFile } = this;
-            let suidMap = fs.existsSync(suidMapFile)
-                ? JSON.parse(await fs.promises.readFile(suidMapFile))
-                : this.buildSuidMap();
+            let suidMap;
+
+            if (fs.existsSync(suidMapFile)) {
+                try {
+                    suidMap = JSON.parse(await fs.promises.readFile(suidMapFile))
+                } catch (e) {
+                    this.warn(`initialize() ${e.message} => rebuilding ${suidMapFile}`);
+                }
+            } 
+            if (!suidMap) {
+                this.info(`initialize() building ${suidMapFile}`);
+                suidMap = this.buildSuidMap();
+            }
             this.suidMap = await suidMap;
             this.initialized = true;
             return this;
