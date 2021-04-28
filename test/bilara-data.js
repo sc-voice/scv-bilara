@@ -12,6 +12,7 @@
         SuttaCentralId,
     } = require("../index");
     const { MemoCache, } = require('memo-again');
+    const LOCAL_DIR = path.join(__dirname, '..', 'local');
     logger.logLevel = 'warn';
     this.timeout(20*1000);
     var bd = new BilaraData(); 
@@ -51,7 +52,7 @@
         });
         should(bdDefault.logger).equal(logger);
     });
-    it("TESTTESTinitialize(...) must be called", async()=>{
+    it("initialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         should(newbd.initialized).equal(false);
         should.throws(() => {
@@ -92,6 +93,15 @@
             'sabbamitta', 
             'sujato', 
         ]);
+    });
+    it("TESTTESTsyncEbtData() loads EBT-data", async() =>{
+        var bd = new BilaraData();
+        //bd.logLevel = 'info';
+        let res = await bd.syncEbtData();
+        should(res).properties({
+            repo: 'https://github.com/ebt-site/ebt-data.git',
+            repoPath: path.join(`${LOCAL_DIR}/ebt-data`),
+        });
     });
     it("sync() purges and refreshes repo", async()=>{
         var name = "test-repo";

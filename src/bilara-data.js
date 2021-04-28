@@ -67,6 +67,18 @@
             this.initialized = false;
         }
 
+        async syncEbtData() {
+            this.info('syncEbtData()');
+            let repo = 'https://github.com/ebt-site/ebt-data.git';
+            let execGit = new ExecGit({
+                repo,
+                logger: this,
+            });
+            let branches = ['published'];
+            var res = await execGit.sync(undefined, undefined, branches);
+            return res;
+        }
+
         get includeUnpublished() {
             return this.publication.includeUnpublished;
         }
@@ -130,6 +142,7 @@
             }
             sync = sync===undefined ? !(await this.isFresh()) : sync;
             this.info(`initialize(sync:${sync})`);
+            sync && await this.syncEbtData();
             var {
                 root,
             } = this;
