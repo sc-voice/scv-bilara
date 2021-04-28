@@ -4,6 +4,8 @@ DIR=`dirname $0`; pushd $DIR/..
 SCRIPT=`basename $0 | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ`
 cd $DIR/..
 
+git pull
+
 $DIR/js/example-json.js
 
 git status | grep 'nothing to commit' > /dev/null; RC=$?
