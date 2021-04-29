@@ -1,16 +1,17 @@
 #!/bin/bash
-DIR=`dirname $0`; pushd $DIR/..
+DIR=`dirname $0`
+pushd $DIR/..
+SCRIPT=`basename $0 | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ`
 
 PUBVER=`npm view | grep latest | sed s/^.*:.//`
 PKGVER=`grep version package.json | head -1 | sed s/[^0-9.]//g`
 if [ "$PUBVER" == "PKGVER" ]; then
-  echo "PUBLISH-NPM: $PKGVER no change"
+  echo "$SCRIPT: $PKGVER no change"
   echo -1
 elif [ "$NODE_AUTH_TOKEN" != "" ]; then
-    echo "PUBLISH-NPM: $PUBVER updated to $PKGVER "
-    npm publish
-  fi
+  echo "$SCRIPT: $PUBVER updated to $PKGVER "
+  npm publish
   exit 0
 else 
-    echo "PUBLISH-NPM: cannot publish v$PKGVER (NODE_AUTH_TOKEN?)"
+    echo "$SCRIPT: cannot publish v$PKGVER (NODE_AUTH_TOKEN?)"
 fi
