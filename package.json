@@ -1,6 +1,6 @@
 {
   "name": "scv-bilara",
-  "version": "2.1.29",
+  "version": "2.1.30",
   "description": "SuttaCentral bilara-data library",
   "main": "index.js",
   "directories": {
@@ -25,6 +25,7 @@
   },
   "scripts": {
     "schedule-action": "scripts/schedule-action",
+    "push-action": "scripts/push-action",
     "test": "npm run test:verbose",
     "test:test": "mocha -w --watch-ignore node_modules,.git,local -R min --inline-diffs -g TEST './@(src|test)/**/*.js'",
     "test:verbose": "mocha --inline-diffs",
