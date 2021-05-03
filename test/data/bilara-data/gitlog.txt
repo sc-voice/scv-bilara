@@ -1,6 +1,5 @@
-commit dbab4776facbe6c0874c649701d04d3d0ed02867
-Merge: cb7ac4081f0 924eff48452
-Author: sabbamitta <sabbamittaa@gmail.com>
-Date:   Wed Apr 28 09:42:26 2021 +0200
+commit 6be93f8574312fb50386a79c42f4dea4ed0b6e7f
+Author: sc-translatatron <42136882+sc-translatatron@users.noreply.github.com>
+Date:   Mon May 3 13:03:04 2021 +0300
 
-    Merge remote-tracking branch 'suttacentral/published' into published
+    Publishing translations for translation/de/blurb (#682)

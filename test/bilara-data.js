@@ -14,7 +14,7 @@
     const { MemoCache, } = require('memo-again');
     const LOCAL_DIR = path.join(__dirname, '..', 'local');
     logger.logLevel = 'warn';
-    this.timeout(20*1000);
+    this.timeout(120*1000);
     var bd = new BilaraData(); 
     function ROOTPATH(mid,category='sutta') {
         var lang = 'pli';
@@ -46,14 +46,16 @@
         should(bdDefault).instanceOf(BilaraData);
         should(bdDefault.root).equal(`${LOCAL}/bilara-data`);
         should(bdDefault).properties({
+            branch: 'published',
             lang: 'en',
             languages: ['pli', 'en'],
             includeUnpublished: false,
         });
         should(bdDefault.logger).equal(logger);
     });
-    it("initialize(...) must be called", async()=>{
+    it("TESTTESTinitialize(...) must be called", async()=>{
         var newbd = new BilaraData();
+        newbd.logLevel = 'info';
         should(newbd.initialized).equal(false);
         should.throws(() => {
             newbd.suttaInfo('dn33');
@@ -94,7 +96,7 @@
             'sujato', 
         ]);
     });
-    it("TESTTESTsyncEbtData() loads EBT-data", async() =>{
+    it("syncEbtData() loads EBT-data", async() =>{
         var bd = new BilaraData();
         //bd.logLevel = 'info';
         let res = await bd.syncEbtData();
@@ -105,8 +107,10 @@
     });
     it("sync() purges and refreshes repo", async()=>{
         var name = "test-repo";
+        var gitAccount = "sc-voice";
         var mc = new MemoCache();
-        var bd = new BilaraData({name});
+        var bd = new BilaraData({name, gitAccount});
+        //bd.logLevel = 'info';
         var dummyPath = path.join(bd.root, "root", "dummy.txt");
 
         // put something in the memo cache
@@ -126,8 +130,9 @@
     });
     it("sync() refreshes repo", async()=>{
         var name = "test-repo";
+        var gitAccount = "sc-voice";
         var verbose = true;
-        var bd = new BilaraData({name, verbose});
+        var bd = new BilaraData({name, gitAccount, verbose});
         var dummyPath = path.join(bd.root, "root", "dummy.txt");
         var unpublishedPath = path.join(bd.root, "unpublished.txt");
         var masterPath = path.join(bd.root, "master.txt");
@@ -1001,7 +1006,8 @@
     });
     it("isFresh() => true if repo is latest", async()=>{
         var name = "test-repo";
-        var bd = new BilaraData({name});
+        var gitAccount = "sc-voice";
+        var bd = new BilaraData({name,gitAccount});
         let gitlogPath = path.join(bd.root, 'gitlog.txt');
         fs.existsSync(gitlogPath) && fs.unlinkSync(gitlogPath);
         should(fs.existsSync(gitlogPath)).equal(false);

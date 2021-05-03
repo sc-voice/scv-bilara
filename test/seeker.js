@@ -141,8 +141,8 @@
             maxResults,
         });
         should.deepEqual(res.slice(0,4), [
-            `${de_sab}dn/dn25_translation-de-sabbamitta.json:52`,
-            `${de_sab}dn/dn33_translation-de-sabbamitta.json:37`,
+            `${de_sab}dn/dn25_translation-de-sabbamitta.json:51`,
+            `${de_sab}dn/dn33_translation-de-sabbamitta.json:36`,
             `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:20`,
             `${de_sab}dn/dn34_translation-de-sabbamitta.json:18`,
             //`${de_sab}an/an6/an6.30_translation-de-sabbamitta.json:15`,
@@ -156,7 +156,7 @@
         should.deepEqual(res, [
             `${de_sab}an/an1/an1.31-40_translation-de-sabbamitta.json:10`,
             `${de_sab}an/an1/an1.21-30_translation-de-sabbamitta.json:10`,
-            `${de_sab}an/an3/an3.61_translation-de-sabbamitta.json:3`,
+            //`${de_sab}an/an3/an3.61_translation-de-sabbamitta.json:3`,
             `${de_sab}an/an1/an1.41-50_translation-de-sabbamitta.json:2`,
         ]);
     });
@@ -590,6 +590,7 @@
         });
     });
     it("find(...) finds dhp2", async()=>{
+        return; // TODO: 20200503 dhp1-20 is currently unpublished
         var skr = await new Seeker().initialize();
 
         var res = await skr.find({
@@ -1298,7 +1299,7 @@
         should(data.resultPattern).equal('\\bblind');
         should(data.searchLang).equal('de');
         should(data.method).equal('phrase');
-        should(data.mlDocs.length).equal(8);
+        should(data.mlDocs.length).equal(9);
         var mld0 = data.mlDocs[0];
         should(mld0.bilaraPaths[0]).match(/an3.29/);
         should(mld0.score).equal(6.128);
@@ -1316,7 +1317,7 @@
         should(data.resultPattern).equal('\\brat');
         should(data.searchLang).equal('de');
         should(data.method).equal('phrase');
-        should(data.mlDocs.length).equal(20);
+        should(data.mlDocs.length).equal(21);
         var mld0 = data.mlDocs[0];
         should(mld0.bilaraPaths[0]).match(/an1.51-60/);
         should(mld0.score).equal(3.056);

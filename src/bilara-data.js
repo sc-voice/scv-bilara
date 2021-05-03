@@ -42,6 +42,9 @@
             this.lang = opts.lang || 'en';
             this.branch = opts.branch || 'published';
             this.scApi = opts.scApi || new ScApi({logger: this});
+            this.gitAccount = opts.gitAccount || "suttacentral";
+            let repo = this.repo = opts.repo ||
+                `https://github.com/${this.gitAccount}/${this.name}.git`;
             var includeUnpublished = opts.includeUnpublished == null 
                 ? false : opts.includeUnpublished;
             this.publication = opts.publication || new Publication({
@@ -50,7 +53,7 @@
             });
             this.bilaraPathMap = this.publication.bilaraPathMap;
             this.execGit = opts.execGit || new ExecGit({
-                repo: `https://github.com/sc-voice/${this.name}.git`,
+                repo,
                 logger: this,
             });
             this.languages = opts.languages || [ 'pli', this.lang ];
@@ -147,7 +150,7 @@
             } = this;
             var version = this.version();
             var EXPECTED_VERSION = 1
-            var purge = false;
+            var purge = !fs.existsSync(this.root);;
             if (version.major < EXPECTED_VERSION) {
                 this.warn(`Expected bilara-data version `+
                     `actual:${version.major} `+

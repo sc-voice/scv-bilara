@@ -31,7 +31,7 @@
         validateRepoPath(repoPath = this.repoPath) {
             if (!fs.existsSync(path.join(repoPath,'.git'))) {
                 throw new Error(
-                    `Expected git repository:${repoPath}`);
+                    `Expected git repository:${repoPath} repo:${this.repo}`);
             }
             return repoPath;
         }

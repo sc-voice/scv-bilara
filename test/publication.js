@@ -75,7 +75,7 @@
             `${BRAHMALI}/pli-tv-pvr`,
             `${SUJATO}/an`,
             `${SUJATO}/dn`,
-            `${SUJATO}/kn/dhp`,
+            //`${SUJATO}/kn/dhp`,
             `${SUJATO}/kn/iti`,
             `${SUJATO}/kn/kp`,
             `${SUJATO}/kn/thag`,
@@ -210,7 +210,7 @@
             .equal(true);
         should(pub.isPublishedPath(
             TRANSPATH('en', 'sujato', `kn/dhp/dhp21-32`)))
-            .equal(true);
+            .equal(false);
         should(pub.isPublishedPath(
             TRANSPATH('de', 'sabbamitta', `kn/thig/thig3.8`)))
             .equal(true);
