@@ -17,6 +17,7 @@ lotusteichs
 makel
 methodisch
 rat
+reichweite
 stamm
 strudel
 traurigkeit
