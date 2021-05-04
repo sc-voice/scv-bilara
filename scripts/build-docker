@@ -6,7 +6,7 @@ pushd local
     git pull
     popd
   else
-    git clone https://github.com/sc-voice/bilara-data
+    git clone https://github.com/suttacentral/bilara-data
   fi
   pushd bilara-data
     git checkout unpublished

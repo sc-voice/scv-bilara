@@ -130,7 +130,7 @@
             `${en_suj}an/an10/an10.46_translation-en-sujato.json:1`
         ]);
     });
-    it("grep(...) finds de things", async()=>{
+    it("TESTTESTgrep(...) finds de things", async()=>{
         var skr = new Seeker(SEEKEROPTS);
         var maxResults = 5;
 
@@ -143,8 +143,9 @@
         should.deepEqual(res.slice(0,4), [
             `${de_sab}dn/dn25_translation-de-sabbamitta.json:51`,
             `${de_sab}dn/dn33_translation-de-sabbamitta.json:36`,
+            `${de_sab}an/an6/an6.63_translation-de-sabbamitta.json:26`,
             `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:20`,
-            `${de_sab}dn/dn34_translation-de-sabbamitta.json:18`,
+            //`${de_sab}dn/dn34_translation-de-sabbamitta.json:18`,
             //`${de_sab}an/an6/an6.30_translation-de-sabbamitta.json:15`,
         ]);
         should(res.length).below(6);

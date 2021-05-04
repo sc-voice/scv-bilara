@@ -18,7 +18,7 @@
     it("default ctor", () => {
         var egit = new ExecGit();
         should(egit.repo)
-            .equal('https://github.com/sc-voice/bilara-data.git');
+            .equal('https://github.com/suttacentral/bilara-data.git');
         should(egit.repoPath).equal(path.join(Files.LOCAL_DIR, 'bilara-data'));
     });
     it("custom ctor", () => {
@@ -117,7 +117,7 @@
     it("branch() waits for indexLock", async()=>{ try {
         let root = path.join(Files.LOCAL_DIR, 'bilara-data');
         let execGit = new ExecGit({
-            repo: `https://github.com/sc-voice/bilara-data.git`,
+            repo: `https://github.com/suttacentral/bilara-data.git`,
         });
         let logLevel = logger.logLevel;
 
@@ -144,7 +144,7 @@
     it("branch() waits for others", async()=>{ 
         let root = path.join(Files.LOCAL_DIR, 'bilara-data');
         let execGit = new ExecGit({
-            repo: `https://github.com/sc-voice/bilara-data.git`,
+            repo: `https://github.com/suttacentral/bilara-data.git`,
         });
 
         // bd.sync will block

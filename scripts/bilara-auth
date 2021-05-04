@@ -2,9 +2,9 @@
 DIR=`dirname $0`
 pushd $DIR/../local/bilara-data
 if [ "$1" == "ssh" ]; then
-    git config remote.origin.url git@github.com:sc-voice/bilara-data
+    git config remote.origin.url git@github.com:suttacentral/bilara-data
 elif [ "$1" == "https" ]; then
-    git config remote.origin.url https://github.com/sc-voice/bilara-data
+    git config remote.origin.url https://github.com/suttacentral/bilara-data
 else 
     cat <<HELP
 NAME

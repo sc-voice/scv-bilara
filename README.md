@@ -24,8 +24,10 @@ NodeJS v10.17.0. If you encounter this, install NodeJS v10.17.0 manually
 and repeat the installation above.
 
 ##### bilara-data
-By default, `scv-bilara` works with the `sc-voice/bilara-data` fork of 
-[SuttaCentral bilara-data](https://github.com/suttacentral/bilara-data). 
+By default, `scv-bilara` works with 
+[bilara-data](https://github.com/suttacentral/bilara-data)
+and
+[ebt-data](https://github.com/ebt-site/ebt-data). 
 To use `scv-bilara` with any other fork of `bilara-data`, simply clone
 the desired repository into the `local` subdirectory before using any scripts. Notice that
 any existing bilara-data must be removed.
@@ -65,21 +67,6 @@ Example:
 <img src="https://raw.githubusercontent.com/sc-voice/scv-bilara/master/src/assets/search-nandi.png" height=400px></a>
 
 For more information, `./scripts/search --help`.
-
-#### bilara-auth
-Scv-bilara normally clones `sc-voice/bilara-data` into `local/bilara-data` 
-using HTTPS authentication. This may become annoying to enter username/password
-for every scv-bilara script that authenticates with Github. You can also use
-[Github SSH authentication](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
-to painlessly avoid username/password entry. To use SSH authentication,
-you'll need to use `bilara-auth ssh`. We recommend SSH authentication
-unless you like typing your username/password a lot.
-And if you choose SSH authentication, we recommend using an ssh-agent
-so that you don't have to keep typing in the passphrase:
-
-```
-eval `ssh-agent -s`; ssh-add ~/.ssh/id_rsa
-```
 
 #### branch SUTTA LANG TRANSLATOR
 Create a Github bilara-data branch for working on an unpublished translation.

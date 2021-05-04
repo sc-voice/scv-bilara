@@ -11,7 +11,7 @@
     const execPromise = util.promisify(exec);
     const MAXBUFFER = 10 * 1024 * 1024;
 
-    const BILARA_DATA_GIT = 'https://github.com/sc-voice/bilara-data.git';
+    const BILARA_DATA_GIT = 'https://github.com/suttacentral/bilara-data.git';
     var gitPromise = undefined;
     var gitContext = '';
 
