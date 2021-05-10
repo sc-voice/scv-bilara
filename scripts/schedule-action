@@ -3,5 +3,6 @@ DIR=`dirname $0`;
 pushd $DIR/..
 SCRIPT=`basename $0 | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ`
 
+npm install --save suttacentral-api@latest
 $DIR/js/suidmap.js
 $DIR/examples
