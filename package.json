@@ -1,6 +1,6 @@
 {
   "name": "scv-bilara",
-  "version": "2.1.77",
+  "version": "2.1.78",
   "description": "SuttaCentral bilara-data library",
   "main": "index.js",
   "directories": {
