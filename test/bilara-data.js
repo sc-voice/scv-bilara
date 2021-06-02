@@ -53,7 +53,7 @@
         });
         should(bdDefault.logger).equal(logger);
     });
-    it("TESTTESTinitialize(...) must be called", async()=>{
+    it("initialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         newbd.logLevel = 'info';
         should(newbd.initialized).equal(false);
@@ -72,8 +72,9 @@
         let eg_en = 'like a cow';
         should.deepEqual(bd.examples.en.filter(x=>x === eg_en), [eg_en]);
         should.deepEqual(bd.examples.de.slice(0,2), [
+            `aber meine Dame`,
             `aber nicht zum eigenen`,
-            'Abfälle',
+            //'Abfälle',
         ]);
     });
     it("initialize(...) must be called", async()=>{

@@ -11,6 +11,7 @@ const {
 } = require(`${APP_DIR}/index.js`);
 const SRC_DIR = path.join(APP_DIR, 'src');
 const EXAMPLES_PATH = path.join(SRC_DIR, 'examples.json');
+const IS_EXAMPLE_PATH = path.join(SRC_DIR, 'isExample.json');
 const EBT_DATA_DIR = path.join(LOCAL_DIR, 'ebt-data');
 const EXAMPLES_DIR = path.join(EBT_DATA_DIR, 'examples');
 
@@ -44,7 +45,12 @@ logger.logLevel = 'info';
     }
     let examplesJson = JSON.stringify(examples,null,2) + '\n';
     await fs.promises.writeFile(EXAMPLES_PATH, examplesJson);
-    logger.info(`DONE: updated ${EXAMPLES_PATH} (OK)`);
+    logger.info(`updated ${EXAMPLES_PATH} (OK)`);
+    let exampleCache = Seeker.buildExampeCache(examples);
+    await fs.promises.writeFile(IS_EXAMPLE_PATH, 
+        JSON.stringify(exampleCache,null,'\t')+'\n');
+    logger.info(`updated ${IS_EXAMPLE_PATH} (OK)`);
+    logger.info(`DONE`);
 } catch(e) {
     logger.warn(e);
 }})();

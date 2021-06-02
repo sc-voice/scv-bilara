@@ -113,7 +113,7 @@ html: '<article id=\'sn1.1\'><header><ul><li class=\'division\'>{}</li>',
             "bj13.2, cck15.1, csp1ed12.1, csp2ed12.1, dr15.1",
             "ms12S1_2, msdiv1, ndp12.3, pts-vp-pli1ed1.1",
             "pts-vp-pli2ed1.1, pts-vp-pli2ed1.2",
-            "sc1, sya15.1, sya15.2, vri23.1",
+            "sya15.1, sya15.2, vri23.1",
             "vri23.2",
         ].join(", "));
         should(segMap["sn1.1:1.8"].variant)

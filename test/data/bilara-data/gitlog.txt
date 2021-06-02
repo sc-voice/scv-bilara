@@ -1,5 +1,5 @@
-commit 6be93f8574312fb50386a79c42f4dea4ed0b6e7f
+commit 6db936a7f6439fedd0b6f5fb2e167e425ae18d94
 Author: sc-translatatron <42136882+sc-translatatron@users.noreply.github.com>
-Date:   Mon May 3 13:03:04 2021 +0300
+Date:   Tue Jun 1 16:14:10 2021 +0300
 
-    Publishing translations for translation/de/blurb (#682)
+    Publishing translations for translation/pt/site/introduction_translation-pt-site (#774)

@@ -128,20 +128,26 @@
             });
         }
 
-        isExample(pattern) {
+        static buildExampleCache(examples) {
+            let exampleCache = {};
+            Object.keys(examples).map(lang=>{
+                let eg = examples[lang];
+                return eg.reduce((a,e) => {
+                    let eLower = e.toLowerCase();
+                    a[eLower] = true;
+                    return a;
+                }, exampleCache);
+            });
+            return exampleCache;
+        }
+
+        isExample(pattern="") {
             var examples = this.bilaraData.examples;
-            var reStrict = this.reStrict;
-            if (!reStrict) {
-                let patExamples = Object.keys(examples)
-                    .reduce((ak,k)=>{
-                        let ae = examples[k].reduce((a,e)=>[...a,e],ak);
-                        return ak.concat(ae);
-                    }, [])
-                    .join("|");
-                this.reStrict = 
-                reStrict = new RegExp(`(\\b)?\(${patExamples}\)(\\b)?`, "iu");
+            let { exampleCache } = this;
+            if (!exampleCache) {
+                this.exampleCache = exampleCache = Seeker.buildExampleCache(examples);
             }
-            return reStrict.test(pattern);
+            return !!exampleCache[pattern.toLowerCase()];
         }
 
         patternLanguage(pattern, lang=this.lang) {

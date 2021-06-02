@@ -130,7 +130,7 @@
             `${en_suj}an/an10/an10.46_translation-en-sujato.json:1`
         ]);
     });
-    it("TESTTESTgrep(...) finds de things", async()=>{
+    it("grep(...) finds de things", async()=>{
         var skr = new Seeker(SEEKEROPTS);
         var maxResults = 5;
 
@@ -545,14 +545,15 @@
             lines,
         });
     });
-    it("phraseSearch(...) finds Deutsch results", async()=>{
+    it("TESTTESTphraseSearch(...) finds Deutsch results", async()=>{
         var linesWurzel = [
             `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
         ];
         var linesUber = [
           `${de_sab}dn/dn33_translation-de-sabbamitta.json:36`,
+          `${de_sab}an/an6/an6.63_translation-de-sabbamitta.json:26`,
           `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:20`,
-          `${de_sab}dn/dn34_translation-de-sabbamitta.json:18`,
+          //`${de_sab}dn/dn34_translation-de-sabbamitta.json:18`,
         ];
         var lang = 'de';
         var maxResults = 10;
@@ -880,13 +881,14 @@
         // search files
         should.deepEqual(res.suttaRefs.slice(0,3), [
             'dn33/de/sabbamitta',
+            'an6.63/de/sabbamitta',
             'an4.198/de/sabbamitta',
-            'dn34/de/sabbamitta',
+            //'dn34/de/sabbamitta',
         ]);
         // We only care about three documents so that 
         // is what we should get
         should.deepEqual(res.mlDocs.map(mld=>mld.score), [
-            36.031, 20.18, 18.02,
+            36.031, 26.183, 20.18, 
         ]);
     });
     it("find(...) => finds searchLang phrase", async()=>{
@@ -1300,7 +1302,7 @@
         should(data.resultPattern).equal('\\bblind');
         should(data.searchLang).equal('de');
         should(data.method).equal('phrase');
-        should(data.mlDocs.length).equal(9);
+        should(data.mlDocs.length).equal(10);
         var mld0 = data.mlDocs[0];
         should(mld0.bilaraPaths[0]).match(/an3.29/);
         should(mld0.score).equal(6.128);
@@ -1384,20 +1386,26 @@
         delete data.elapsed;
         should.deepEqual(data2, data);
     });
-    it("isExample", async()=>{
+    it("TESTTESTisExample", async()=>{
+        let msStart = Date.now();
         var skr = await new Seeker({
             lang: 'en', // English default
         }).initialize();
-        let msStart = Date.now();
+        //console.log(`elapsed initialize`, (Date.now() - msStart)/1000);
+        should(skr.isExample("but ma'am")).equal(true);
+        //console.log(`elapsed but ma'am`, (Date.now() - msStart)/1000);
         should(skr.isExample('root of suffering')).equal(true);
+        //console.log(`elapsed root of suffering`, (Date.now() - msStart)/1000);
         should(skr.isExample('ROOT OF SUFFERING')).equal(true);
-        should(skr.isExample('\\bROOT OF SUFFERING')).equal(true);
-        should(skr.isExample('\\bROOT OF SUFFERING\\b')).equal(true);
+        should(skr.isExample('\\bROOT OF SUFFERING')).equal(false);
+        should(skr.isExample('\\bROOT OF SUFFERING\\b')).equal(false);
         should(skr.isExample('Wurzel des Leidens')).equal(true);
         should(skr.isExample('wurzel des leidens')).equal(true);
 
         // Ordered keywords
         should(skr.isExample('root sufering')).equal(false);
+        //console.log(`elapsed`, (Date.now() - msStart)/1000);
+        should((Date.now() - msStart)/1000).below(1);
     });
     it('find(...) => "dn7/de"', async()=>{
         let bilaraData = new BilaraData();

@@ -25,6 +25,7 @@
     }
     var SARANA = `translation/cs/ashinsarana/sutta`;
     var SABBAMITTA = 'translation/de/sabbamitta/sutta';
+    var SENIYA = 'translation/id/seniya/sutta';
     var SUJATO = 'translation/en/sujato/sutta';
     var SUJATO_N = 'translation/en/sujato/name';
     var BRAHMALI = 'translation/en/brahmali/vinaya';
@@ -50,7 +51,7 @@
             initialized: false,
         });
     });
-    it("pubPaths() => published bilara paths", async()=>{
+    it("TESTTESTpubPaths() => published bilara paths", async()=>{
         var pub = await pubTest.initialize(); 
         //pub.logLevel = 'debug';
         should.deepEqual(pub.pubPaths().sort(),[
@@ -83,10 +84,11 @@
             `${SUJATO}/kn/ud`,
             `${SUJATO}/mn`,
             `${SUJATO}/sn`,
+            //`${SENIYA}`,
             `${KAZ}/an`,
         ].sort());
     });
-    it("pubPaths() => all bilara paths", async()=>{
+    it("TESTTESTpubPaths() => all bilara paths", async()=>{
         var pub = await pubTest.initialize();
 
         // Explicit
@@ -127,6 +129,7 @@
             `${SUJATO}/kn/ud`,
             `${SUJATO}/mn`,
             `${SUJATO}/sn`,
+            `${SENIYA}/`,
             `${KAZ}/an`,
             `${MY}/dn`,
             "translation/pt/laera-quaresma/",
@@ -179,6 +182,7 @@
             `${MY}/dn`,
             "translation/pt/laera-quaresma/",
             `${RUTEAM}/dn`,
+            `${SENIYA}/`,
             `${MADHU}/`,
         ].sort());
     });
