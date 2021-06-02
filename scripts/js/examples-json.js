@@ -46,7 +46,7 @@ logger.logLevel = 'info';
     let examplesJson = JSON.stringify(examples,null,2) + '\n';
     await fs.promises.writeFile(EXAMPLES_PATH, examplesJson);
     logger.info(`updated ${EXAMPLES_PATH} (OK)`);
-    let exampleCache = Seeker.buildExampeCache(examples);
+    let exampleCache = Seeker.buildExampleCache(examples);
     await fs.promises.writeFile(IS_EXAMPLE_PATH, 
         JSON.stringify(exampleCache,null,'\t')+'\n');
     logger.info(`updated ${IS_EXAMPLE_PATH} (OK)`);
