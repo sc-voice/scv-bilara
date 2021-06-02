@@ -916,7 +916,7 @@
         var lang = 'de';
         var lang_name = "Deutsch";
         var author = "Anagarika Sabbamitta";
-        var author_short = "Sabbamitta";
+        var author_short = "sabbamitta";
         var author_uid = 'sabbamitta';
         var title = 'Kennzeichen des Bedingten ';
 
@@ -944,7 +944,7 @@
         var lang = 'de';
         var lang_name = "Deutsch";
         var author = "Anagarika Sabbamitta";
-        var author_short = "Sabbamitta";
+        var author_short = "sabbamitta";
         var author_uid = 'sabbamitta';
 
         let includeUnpublished = true;

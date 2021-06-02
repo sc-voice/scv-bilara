@@ -545,7 +545,7 @@
             lines,
         });
     });
-    it("TESTTESTphraseSearch(...) finds Deutsch results", async()=>{
+    it("phraseSearch(...) finds Deutsch results", async()=>{
         var linesWurzel = [
             `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
         ];
@@ -1387,25 +1387,27 @@
         should.deepEqual(data2, data);
     });
     it("TESTTESTisExample", async()=>{
-        let msStart = Date.now();
+        let exampleCache = require(`../src/is-example.json`);
         var skr = await new Seeker({
             lang: 'en', // English default
-        }).initialize();
-        //console.log(`elapsed initialize`, (Date.now() - msStart)/1000);
+            exampleCache,
+        });
+        await skr.initialize();
+        let msStart = Date.now();
         should(skr.isExample("but ma'am")).equal(true);
-        //console.log(`elapsed but ma'am`, (Date.now() - msStart)/1000);
         should(skr.isExample('root of suffering')).equal(true);
-        //console.log(`elapsed root of suffering`, (Date.now() - msStart)/1000);
         should(skr.isExample('ROOT OF SUFFERING')).equal(true);
-        should(skr.isExample('\\bROOT OF SUFFERING')).equal(false);
-        should(skr.isExample('\\bROOT OF SUFFERING\\b')).equal(false);
         should(skr.isExample('Wurzel des Leidens')).equal(true);
         should(skr.isExample('wurzel des leidens')).equal(true);
 
+        //similar but not an example
+        should(skr.isExample('\\bROOT OF SUFFERING')).equal(false);
+        should(skr.isExample('\\bROOT OF SUFFERING\\b')).equal(false);
+
         // Ordered keywords
         should(skr.isExample('root sufering')).equal(false);
-        //console.log(`elapsed`, (Date.now() - msStart)/1000);
-        should((Date.now() - msStart)/1000).below(1);
+        //console.log(`isExample elapsed`, (Date.now() - msStart)/1000);
+        should(Date.now() - msStart).below(200);
     });
     it('find(...) => "dn7/de"', async()=>{
         let bilaraData = new BilaraData();

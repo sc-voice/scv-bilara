@@ -40,6 +40,7 @@
             this.paliWords = opts.paliWords;
             this.patPrimary = opts.patPrimary || '/sutta/';
             this.mj = new MerkleJson();
+            this.exampleCache = opts.exampleCache;
             this.memoizer = opts.memoizer || new Memoizer({
                 writeMem: false, // avoid monotonic increasing memory usage
                 writeFile: opts.writeFile == null
@@ -134,7 +135,7 @@
                 let eg = examples[lang];
                 return eg.reduce((a,e) => {
                     let eLower = e.toLowerCase();
-                    a[eLower] = true;
+                    a[eLower] = 1;
                     return a;
                 }, exampleCache);
             });
