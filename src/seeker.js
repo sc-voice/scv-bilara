@@ -136,6 +136,8 @@
                 return eg.reduce((a,e) => {
                     let eLower = e.toLowerCase();
                     a[eLower] = 1;
+                    let eClean = Seeker.normalizePattern(Seeker.sanitizePattern(e));
+                    a[eClean] = 1;
                     return a;
                 }, exampleCache);
             });

@@ -1387,6 +1387,28 @@
         should.deepEqual(data2, data);
     });
     it("TESTTESTisExample", async()=>{
+        var skr = await new Seeker({
+            lang: 'en', // English default
+        });
+        await skr.initialize();
+        let msStart = Date.now();
+        should(skr.isExample("but ma'am")).equal(true);
+        should(skr.isExample("but ma.am")).equal(true); // sanitized
+        should(skr.isExample('root of suffering')).equal(true);
+        should(skr.isExample('ROOT OF SUFFERING')).equal(true);
+        should(skr.isExample('Wurzel des Leidens')).equal(true);
+        should(skr.isExample('wurzel des leidens')).equal(true);
+
+        //similar but not an example
+        should(skr.isExample('\\bROOT OF SUFFERING')).equal(false);
+        should(skr.isExample('\\bROOT OF SUFFERING\\b')).equal(false);
+
+        // Ordered keywords
+        should(skr.isExample('root sufering')).equal(false);
+        //console.log(`isExample elapsed`, (Date.now() - msStart)/1000);
+        should(Date.now() - msStart).below(200);
+    });
+    it("TESTTESTisExample (cached)", async()=>{
         let exampleCache = require(`../src/is-example.json`);
         var skr = await new Seeker({
             lang: 'en', // English default
@@ -1395,6 +1417,7 @@
         await skr.initialize();
         let msStart = Date.now();
         should(skr.isExample("but ma'am")).equal(true);
+        should(skr.isExample("but ma.am")).equal(true); // sanitized
         should(skr.isExample('root of suffering')).equal(true);
         should(skr.isExample('ROOT OF SUFFERING')).equal(true);
         should(skr.isExample('Wurzel des Leidens')).equal(true);
