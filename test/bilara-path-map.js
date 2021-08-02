@@ -62,7 +62,7 @@
 "translation/de/sabbamitta": translationPath('dn/dn33','de','sabbamitta'),
         });
     });
-    it("bilaraPaths(suid) returns local bilara paths",async()=>{
+    it("TESTTESTbilaraPaths(suid) returns local bilara paths",async()=>{
         var bpm = await new BilaraPathMap().initialize();
 
         var bps = bpm.bilaraPaths({
@@ -81,9 +81,11 @@
             lang: ['en','de'],
             types: BilaraPathMap.ALL_TYPES,
         });
-        should.deepEqual(bps.map(bp=>bp.bilaraPath).sort(), [
-            //commentPath('an/an1/an1.1-10','de','sabbamitta'),
-            //commentPath('an/an1/an1.1-10','en','sujato'),
+        let bilPaths = bps
+          .map(bp=>bp.bilaraPath)
+          .filter(bp=>/sabbamitta|sujato/.test(bp))
+          .sort();
+        should.deepEqual(bilPaths, [
             translationPath('an/an1/an1.1-10','de','sabbamitta'),
             translationPath('an/an1/an1.1-10','en','sujato'),
         ]);
@@ -103,9 +105,8 @@
             lang: 'en',
             types: BilaraPathMap.ALL_TYPES,
         });
-        should.deepEqual(bps.map(bp=>bp.bilaraPath), [
+        should.deepEqual(bps.map(bp=>bp.bilaraPath).filter(bp=>/sujato/.test(bp)), [
             translationPath('an/an1/an1.1-10','en','sujato'),
-        //    commentPath('an/an1/an1.1-10','en','sujato'),
         ]);
 
         var bps = bpm.bilaraPaths({
@@ -143,28 +144,31 @@
     });
     it("suidLanguages(suid) => language info",async()=>{
         var bpm = await new BilaraPathMap().initialize();
-        should.deepEqual(bpm.suidLanguages('thig3.8'),[{
+        let suidLanguages = bpm.suidLanguages('thig3.8');
+        should.deepEqual(suidLanguages.filter(l=>l.author==='ms')[0], {
             author: 'ms',
             bilaraPath: 'root/pli/ms/sutta/kn/thig/thig3.8_root-pli-ms.json',
             category: 'sutta',
             lang: 'pli',
             nikaya: 'kn',
             suid: 'thig3.8',
-        },{
+        });
+        should.deepEqual(suidLanguages.filter(l=>l.author==='sabbamitta')[0], {
             author: 'sabbamitta',
             bilaraPath: TRANSPATH('de','sabbamitta','thig3.8','sutta/kn/thig'),
             category: 'sutta',
             lang: 'de',
             nikaya: 'kn',
             suid: 'thig3.8',
-        },{
+        });
+        should.deepEqual(suidLanguages.filter(l=>l.author==='sujato')[0], {
             author: 'sujato',
             bilaraPath: TRANSPATH('en','sujato','thig3.8','sutta/kn/thig'),
             category: 'sutta',
             lang: 'en',
             nikaya: 'kn',
             suid: 'thig3.8',
-        }]);
+        });
     });
     it("buildSuidMap() => [ suid ]", async()=>{
         let bpm = await new BilaraPathMap().initialize();
@@ -174,6 +178,7 @@
         should(suids.length).above(5500);
         should.deepEqual(Object.keys(suidMap["dhp1-20"]),[
             'translation/en/sujato',
+            'translation/vi/phantuananh',
             'root/pli/ms',
             //'html/pli/ms',
             //'reference/pli/ms',

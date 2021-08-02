@@ -1,5 +1,5 @@
-commit 6db936a7f6439fedd0b6f5fb2e167e425ae18d94
-Author: sc-translatatron <42136882+sc-translatatron@users.noreply.github.com>
-Date:   Tue Jun 1 16:14:10 2021 +0300
+commit 670b10e1d5ec86d4fbd3537b953daf4719340d5a
+Author: dayunbao <11196050+dayunbao@users.noreply.github.com>
+Date:   Sun Aug 1 23:33:04 2021 +0200
 
-    Publishing translations for translation/pt/site/introduction_translation-pt-site (#774)
+    Allowing manual triggering of workflow. (#902)

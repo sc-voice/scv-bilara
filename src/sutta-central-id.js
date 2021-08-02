@@ -194,7 +194,7 @@
             return this.sutta.replace(/[-0-9.]*$/,'');
         }
 
-        get nikayaFolder() {
+        get nikayaFolder() { // DEPRECATED
             var majorid = this.sutta.split('.')[0];
             var prefix = majorid.replace(/[0-9-.:]*$/,'');
             var folder = {

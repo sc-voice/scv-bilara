@@ -248,7 +248,7 @@
         var scid = new SuttaCentralId('sn1.11-20:2.3.4');
         should(scid.nikaya).equal('sn');
     });
-    it("nikayaFolder => nikaya folder", function() {
+    it("nikayaFolder => nikaya folder", function() { // DEPRECATED
         var scid = new SuttaCentralId('thag21.7');
         should(scid.nikayaFolder).equal('kn/thag');
 

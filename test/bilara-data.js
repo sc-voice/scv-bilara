@@ -53,7 +53,7 @@
         });
         should(bdDefault.logger).equal(logger);
     });
-    it("initialize(...) must be called", async()=>{
+    it("TESTTESTinitialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         newbd.logLevel = 'info';
         should(newbd.initialized).equal(false);
@@ -67,7 +67,7 @@
         should(bd.initialized).equal(true);
         should.deepEqual(Object.keys(bd.authors).sort(), [
             // 'ashinsarana', TODO20210307: Carmi
-            'brahmali', 'kaz', 'ms', 'sabbamitta', 'sujato', 
+            'brahmali', 'kaz', 'ms', 'phantuananh', 'sabbamitta', 'sujato', 
         ]);
         let eg_en = 'like a cow';
         should.deepEqual(bd.examples.en.filter(x=>x === eg_en), [eg_en]);
@@ -77,7 +77,7 @@
             //'Abfälle',
         ]);
     });
-    it("initialize(...) must be called", async()=>{
+    it("TESTTESTinitialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         should(newbd.initialized).equal(false);
         should.throws(() => {
@@ -93,6 +93,7 @@
             'brahmali',
             'kaz',
             'ms', 
+            'phantuananh',
             'sabbamitta', 
             'sujato', 
         ]);
@@ -180,6 +181,11 @@
             type: "translator",
             name: "Bhikkhu Brahmali",
         };
+        var phantuananh = {
+           "lang": "vi",
+           "name": "Phan Tuấn Anh",
+           "type": "translator",
+        };
         var sabbamitta = {
             lang: 'de',
             type: "translator",
@@ -196,6 +202,7 @@
             brahmali,    // TODO20210307: Vinaya
             // ashinsarana, // TODO20210307: Carmi
             kaz,
+            phantuananh,
             sabbamitta,
             sujato,
         });
@@ -540,7 +547,7 @@
             'nobody');
         should.deepEqual(ids, []);
     });
-    it("suttaList(pattern) => [normalized-sutta-reference]", async()=>{
+    it("TESTTESTsuttaList(pattern) => [normalized-sutta-reference]", async()=>{
         await bd.initialize();
 
         // Expand ranges an normalize sutta references

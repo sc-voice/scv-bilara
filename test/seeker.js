@@ -141,10 +141,10 @@
             maxResults,
         });
         should.deepEqual(res.slice(0,4), [
-            `${de_sab}dn/dn25_translation-de-sabbamitta.json:51`,
-            `${de_sab}dn/dn33_translation-de-sabbamitta.json:36`,
-            `${de_sab}an/an6/an6.63_translation-de-sabbamitta.json:26`,
-            `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:20`,
+            `${de_sab}dn/dn25_translation-de-sabbamitta.json:50`,
+            `${de_sab}dn/dn33_translation-de-sabbamitta.json:25`,
+            `${de_sab}an/an6/an6.63_translation-de-sabbamitta.json:25`,
+            `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:18`,
             //`${de_sab}dn/dn34_translation-de-sabbamitta.json:18`,
             //`${de_sab}an/an6/an6.30_translation-de-sabbamitta.json:15`,
         ]);
@@ -364,6 +364,7 @@
             method: 'keywords',
             lines: [
 `${de_sab}sn/sn10/sn10.8_translation-de-sabbamitta.json:4`,
+`${de_sab}an/an7/an7.63_translation-de-sabbamitta.json:3`,
 `${de_sab}an/an2/an2.32-41_translation-de-sabbamitta.json:2`,
 `${de_sab}an/an5/an5.41_translation-de-sabbamitta.json:2`,
 `${de_sab}an/an1/an1.248-257_translation-de-sabbamitta.json:1`,
@@ -371,8 +372,8 @@
 `${de_sab}an/an3/an3.110_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an4/an4.197_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an4/an4.58_translation-de-sabbamitta.json:1`,
-`${de_sab}an/an4/an4.60_translation-de-sabbamitta.json:1`,  
-`${de_sab}an/an4/an4.61_translation-de-sabbamitta.json:1`,  
+`${de_sab}an/an4/an4.60_translation-de-sabbamitta.json:1`,
+
             ],
         };
 
@@ -550,9 +551,9 @@
             `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
         ];
         var linesUber = [
-          `${de_sab}dn/dn33_translation-de-sabbamitta.json:36`,
-          `${de_sab}an/an6/an6.63_translation-de-sabbamitta.json:26`,
-          `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:20`,
+          `${de_sab}dn/dn33_translation-de-sabbamitta.json:25`,
+          `${de_sab}an/an6/an6.63_translation-de-sabbamitta.json:25`,
+          `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:18`,
           //`${de_sab}dn/dn34_translation-de-sabbamitta.json:18`,
         ];
         var lang = 'de';
@@ -592,7 +593,6 @@
         });
     });
     it("find(...) finds dhp2", async()=>{
-        return; // TODO: 20200503 dhp1-20 is currently unpublished
         var skr = await new Seeker().initialize();
 
         var res = await skr.find({
@@ -888,7 +888,7 @@
         // We only care about three documents so that 
         // is what we should get
         should.deepEqual(res.mlDocs.map(mld=>mld.score), [
-            36.031, 26.183, 20.18, 
+           25.176, 25.021, 18.162,
         ]);
     });
     it("find(...) => finds searchLang phrase", async()=>{
@@ -1035,34 +1035,31 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("find(...) => no first point", done=>{
-        (async function() { try {
-            var lang = 'de';
-            var skr = await new Seeker().initialize();
-            var res = await skr.find({
-                pattern: "no first point",
-                maxResults: 3,
-                lang,
-                minLang: 2,
-            });
-            let {
-                bilaraPaths,
-                method,
-                searchLang,
-            } = res;
-            should(method).equal('phrase');
-            should(searchLang).equal(searchLang);
-            should.deepEqual(bilaraPaths, [
-                `${pli_ms}sn/sn15/sn15.2_root-pli-ms.json`,
-                `${en_suj}sn/sn15/sn15.2_translation-en-sujato.json`,
-                `${pli_ms}sn/sn15/sn15.1_root-pli-ms.json`,
-                `${en_suj}sn/sn15/sn15.1_translation-en-sujato.json`,
-                `${pli_ms}sn/sn15/sn15.19_root-pli-ms.json`,
-                `${en_suj}sn/sn15/sn15.19_translation-en-sujato.json`,
-            ]);
-
-            done();
-        } catch(e) { done(e); }})();
+    it("find(...) => no first point", async()=>{
+      var lang = 'de';
+      var skr = await new Seeker().initialize();
+      var res = await skr.find({
+          pattern: "no first point",
+          maxResults: 3,
+          lang,
+          minLang: 2,
+      });
+      let {
+          bilaraPaths,
+          method,
+          searchLang,
+      } = res;
+      should(method).equal('phrase');
+      should(searchLang).equal(searchLang);
+      should.deepEqual(bilaraPaths, [
+          `${pli_ms}sn/sn15/sn15.2_root-pli-ms.json`,
+          `${en_suj}sn/sn15/sn15.2_translation-en-sujato.json`,
+          `${pli_ms}sn/sn15/sn15.1_root-pli-ms.json`,
+          `${de_sab}sn/sn15/sn15.1_translation-de-sabbamitta.json`,
+          `${en_suj}sn/sn15/sn15.1_translation-en-sujato.json`,
+          `${pli_ms}sn/sn15/sn15.19_root-pli-ms.json`,
+          `${en_suj}sn/sn15/sn15.19_translation-en-sujato.json`,
+      ]);
     });
     it("findArgs(...) handls jpn ", async()=>{
         var bilaraData = await bd.initialize();
@@ -1198,12 +1195,16 @@
         should(res.method).equal('phrase');
         should(res.maxDoc).equal(maxDoc);
         should.deepEqual(res.suttaRefs, [
-            'pli-tv-bi-vb-pj7/en/brahmali',
-            'pli-tv-bi-vb-ss4/en/brahmali',
+          'pli-tv-bi-vb-pj7/en/brahmali',                                                        
+          'pli-tv-pvr2.9/en/brahmali',                                                         
+          'pli-tv-pvr2.1/en/brahmali',                                                                                
+          'pli-tv-bi-vb-ss4/en/brahmali',                                                                             
+          'pli-tv-pvr2.2/en/brahmali',                                                                                                               
+          'pli-tv-pvr2.10/en/brahmali',   
         ]);
         should(res.resultPattern).equal(`\\b${pattern}`);
         should(res.lang).equal('en');
-        should(res.mlDocs.length).equal(2);
+        should(res.mlDocs.length).equal(3);
     });
     it("tipitakaRegExp(tc) => regexp for paths", ()=>{
         var skr = new Seeker();
@@ -1302,7 +1303,7 @@
         should(data.resultPattern).equal('\\bblind');
         should(data.searchLang).equal('de');
         should(data.method).equal('phrase');
-        should(data.mlDocs.length).equal(10);
+        should(data.mlDocs.length).equal(11);
         var mld0 = data.mlDocs[0];
         should(mld0.bilaraPaths[0]).match(/an3.29/);
         should(mld0.score).equal(6.128);
@@ -1386,7 +1387,7 @@
         delete data.elapsed;
         should.deepEqual(data2, data);
     });
-    it("TESTTESTisExample", async()=>{
+    it("isExample", async()=>{
         var skr = await new Seeker({
             lang: 'en', // English default
         });
@@ -1408,7 +1409,7 @@
         //console.log(`isExample elapsed`, (Date.now() - msStart)/1000);
         should(Date.now() - msStart).below(200);
     });
-    it("TESTTESTisExample (cached)", async()=>{
+    it("isExample (cached)", async()=>{
         let exampleCache = require(`../src/is-example.json`);
         var skr = await new Seeker({
             lang: 'en', // English default
@@ -1512,12 +1513,12 @@
         should(res.lang).equal('en');
         should(res.mlDocs.length).equal(maxDoc);
         should.deepEqual(res.bilaraPaths.slice(0,6),[
-            'root/pli/ms/vinaya/pli-tv-kd/pli-tv-kd20_root-pli-ms.json',
-            'translation/en/brahmali/vinaya/pli-tv-kd/pli-tv-kd20_translation-en-brahmali.json',
-            'root/pli/ms/vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc/pli-tv-bu-vb-pc21_root-pli-ms.json',
-            'translation/en/brahmali/vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc/pli-tv-bu-vb-pc21_translation-en-brahmali.json',
-            'root/pli/ms/vinaya/pli-tv-kd/pli-tv-kd3_root-pli-ms.json',
-            'translation/en/brahmali/vinaya/pli-tv-kd/pli-tv-kd3_translation-en-brahmali.json'   
+          'root/pli/ms/vinaya/pli-tv-kd/pli-tv-kd20_root-pli-ms.json',
+          'translation/en/brahmali/vinaya/pli-tv-kd/pli-tv-kd20_translation-en-brahmali.json',
+          'root/pli/ms/vinaya/pli-tv-pvr/pli-tv-pvr2.1_root-pli-ms.json',
+          'translation/en/brahmali/vinaya/pli-tv-pvr/pli-tv-pvr2.1_translation-en-brahmali.json',
+          'root/pli/ms/vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc/pli-tv-bu-vb-pc21_root-pli-ms.json',
+          'translation/en/brahmali/vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc/pli-tv-bu-vb-pc21_translation-en-brahmali.json',
         ]);
         let [ mld0 ]  = res.mlDocs;
         should(mld0.suid).equal('pli-tv-kd20');
