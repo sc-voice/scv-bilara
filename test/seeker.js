@@ -1289,17 +1289,21 @@
             .equal('root/pli/ms/sutta/sn/sn42/sn42.11_root-pli-ms.json');
         should(mld0.score).equal(3.055);
     });
-    it("find(...) finds Deutsch 'abnehmend'", async()=>{
+    it("TESTTESTfind(...) finds Deutsch 'abnehmend'", async()=>{
         //bd.logLevel = 'info'
         bd.log('initializing');
         var bilaraData = await bd.initialize();
         bd.log('initializing done');
+        var lang = 'de';
         var skr = await new Seeker({
             bilaraData,
+            lang,
         }).initialize();
-        var pattern = "abnehmend -ml3 -l de";
+        var pattern = "abnehmend";
+        let matchHighlight = '<span class="ebt-matched">$&</span>'; 
+        should(skr.patternLanguage(pattern)).equal(lang);
         
-        var data = await skr.find({pattern });
+        var data = await skr.find({pattern, lang, matchHighlight });
         should(data.resultPattern).equal('\\babnehmend');
         should(data.searchLang).equal('de');
         should(data.method).equal('phrase');

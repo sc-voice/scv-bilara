@@ -56,9 +56,14 @@
             member: true,
         });
     });
-    it("recognizes non-English words", async()=>{
+    it("TESTTESTrecognizes non-English words", async()=>{
         let enWords = await English.wordSet({source:'file'});
 
+        should.deepEqual(enWords.trace('abnehmend'), {
+            trace: 'abneh',
+            member: false,
+        });
+        should(enWords.contains('abnehmend')).equal(false);
         should.deepEqual(enWords.trace('blind'), {
             trace: 'blind★',
             member: false,

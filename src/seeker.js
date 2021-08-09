@@ -356,7 +356,7 @@
             } else {
                 var pat = `${Seeker.reWord(lang)}${pattern}`;
             }
-            this.info(`phraseSearch(${pat},${lang})`);
+            this.info(`phraseSearch(${pat},${lang},${searchLang})`);
             var grepArgs = Object.assign({}, args, {
                 pattern:pat,
                 lang,

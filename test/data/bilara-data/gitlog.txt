@@ -1,5 +1,5 @@
-commit 670b10e1d5ec86d4fbd3537b953daf4719340d5a
-Author: dayunbao <11196050+dayunbao@users.noreply.github.com>
-Date:   Sun Aug 1 23:33:04 2021 +0200
+commit 6f1ff9e9eead6c19614945575475c0911eaaa069
+Author: sc-translatatron <42136882+sc-translatatron@users.noreply.github.com>
+Date:   Tue Aug 3 11:43:38 2021 +0300
 
-    Allowing manual triggering of workflow. (#902)
+    Publishing translations for translation/de/blurb (#903)
