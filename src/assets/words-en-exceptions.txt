@@ -7,6 +7,8 @@ blitz
 enthaltsam
 enthaltsamkeit
 fingerschippen
+flamme
+flammen
 freigiebig
 freude
 Galaxis
@@ -18,6 +20,7 @@ lotusteiche
 lotusteichen
 lotusteichs
 makel
+Manifestation
 methodisch
 Nymphe
 Nymphen
