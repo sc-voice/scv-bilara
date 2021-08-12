@@ -56,7 +56,7 @@
             member: true,
         });
     });
-    it("TESTTESTrecognizes non-English words", async()=>{
+    it("recognizes non-English words", async()=>{
         let enWords = await English.wordSet({source:'file'});
 
         should.deepEqual(enWords.trace('abnehmend'), {

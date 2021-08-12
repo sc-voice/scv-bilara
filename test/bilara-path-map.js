@@ -62,7 +62,7 @@
 "translation/de/sabbamitta": translationPath('dn/dn33','de','sabbamitta'),
         });
     });
-    it("TESTTESTbilaraPaths(suid) returns local bilara paths",async()=>{
+    it("bilaraPaths(suid) returns local bilara paths",async()=>{
         var bpm = await new BilaraPathMap().initialize();
 
         var bps = bpm.bilaraPaths({

@@ -53,7 +53,7 @@
         });
         should(bdDefault.logger).equal(logger);
     });
-    it("TESTTESTinitialize(...) must be called", async()=>{
+    it("initialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         newbd.logLevel = 'info';
         should(newbd.initialized).equal(false);
@@ -77,7 +77,7 @@
             //'Abfälle',
         ]);
     });
-    it("TESTTESTinitialize(...) must be called", async()=>{
+    it("initialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         should(newbd.initialized).equal(false);
         should.throws(() => {
@@ -217,7 +217,7 @@
             'de', 'en', 'jpn', 'pli', 
         ]);
     });
-    it("suttaInfo(...) returns sutta metadata", async()=>{
+    it("TESTTESTsuttaInfo(...) returns sutta metadata", async()=>{
         await bd.initialize();
         var dn33Pli = {
             author: 'ms',
@@ -317,7 +317,7 @@
         should.deepEqual(bd.suttaInfo('an4.58'), 
             [ an4_58pli, an4_58de, an4_58en, an4_58jpn ]);
     });
-    it("suttaInfo(...) => thig3.8 sutta metadata", async()=>{
+    it("TESTTESTsuttaInfo(...) => thig3.8 sutta metadata", async()=>{
         await bd.initialize();
         let thigInfo = {
             suid: 'thig3.8',         
@@ -345,7 +345,7 @@
             enInfo, 
         ]);
     });
-    it("loadSegDoc(...) loads translation document", async()=>{
+    it("TESTTESTloadSegDoc(...) loads translation document", async()=>{
         await bd.initialize();
         var expectedProps = {
             suid: 'dn33',
@@ -547,7 +547,7 @@
             'nobody');
         should.deepEqual(ids, []);
     });
-    it("TESTTESTsuttaList(pattern) => [normalized-sutta-reference]", async()=>{
+    it("suttaList(pattern) => [normalized-sutta-reference]", async()=>{
         await bd.initialize();
 
         // Expand ranges an normalize sutta references

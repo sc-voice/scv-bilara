@@ -1,5 +1,5 @@
-commit 6f1ff9e9eead6c19614945575475c0911eaaa069
+commit f4197cafef06bff8dd14b77c22f4b17318a125ad
 Author: sc-translatatron <42136882+sc-translatatron@users.noreply.github.com>
-Date:   Tue Aug 3 11:43:38 2021 +0300
+Date:   Tue Aug 10 00:22:14 2021 +0300
 
-    Publishing translations for translation/de/blurb (#903)
+    Publishing translations for translation/de/sabbamitta/sutta/sn (#916)

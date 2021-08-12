@@ -272,6 +272,7 @@
                 resultPattern,
                 languages,
                 showMatchesOnly,
+                method,
             } = opts;
             showMatchesOnly = showMatchesOnly===undefined 
                 ? true : showMatchesOnly;
@@ -282,6 +283,8 @@
             var suid = this.suid;
             if (resultPattern instanceof RegExp) {
                 var rexList = [ this.jsPattern(resultPattern) ];
+            } else if ( 1 && method === 'phrase' ) {
+                var rexList = [ this.jsPattern(resultPattern, 'imu') ];
             } else {
                 var resultPatterns = resultPattern.split('|');
                 var patterns = pattern.split(' ').map(p=>{

@@ -733,6 +733,7 @@
                         resultPattern, 
                         languages: [searchLang], 
                         showMatchesOnly,
+                        method,
                     });
                     segsMatched += resFilter.matched;
                     mld.segsMatched = resFilter.matched;

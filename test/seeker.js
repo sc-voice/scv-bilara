@@ -413,6 +413,23 @@
             .equal('root/pli/ms/sutta/dn/dn34_root-pli-ms.json');
         should(mld0.score).equal(10.011);
     });
+    it("find(...) scores relevance: on fire", async()=>{
+        var skr = await new Seeker({
+            lang: 'en', // English default
+        }).initialize();
+
+        // Mixed Pali/Deutsch keywords initial cap
+        var pattern = 'on fire';
+        var data = await skr.find({ 
+            pattern,
+        });
+        should(data.resultPattern).equal('\\bon fire');
+        should(data.method).equal('phrase');
+        var [mld0, mld1] = data.mlDocs;
+        should(mld1.bilaraPaths[0])
+            .equal('root/pli/ms/sutta/sn/sn56/sn56.34_root-pli-ms.json');
+        should(mld1.score).equal(2.2);
+    });
     it("patternLanguage(...) => search language context",async()=>{
         let enWords = await English.wordSet({source:'file'});
         var skr = await new Seeker({enWords}).initialize();
@@ -863,11 +880,12 @@
             pli: "Majjhima Nikāya 1 ",
         });
     });
-    it("find(...) => finds ubung", async()=>{
+    it("TESTTESTfind(...) => finds ubung", async()=>{
         var maxDoc = 3;
         var skr = await new Seeker({
             maxDoc,
         }).initialize();
+        //skr.logLevel = 'info';
 
         var pattern = `übung`;
         var res = await skr.find({
@@ -1289,7 +1307,7 @@
             .equal('root/pli/ms/sutta/sn/sn42/sn42.11_root-pli-ms.json');
         should(mld0.score).equal(3.055);
     });
-    it("TESTTESTfind(...) finds Deutsch 'abnehmend'", async()=>{
+    it("find(...) finds Deutsch 'abnehmend'", async()=>{
         //bd.logLevel = 'info'
         bd.log('initializing');
         var bilaraData = await bd.initialize();
@@ -1327,7 +1345,7 @@
         should(data.resultPattern).equal('\\bblind');
         should(data.searchLang).equal('de');
         should(data.method).equal('phrase');
-        should(data.mlDocs.length).equal(11);
+        should(data.mlDocs.length).equal(12);
         var mld0 = data.mlDocs[0];
         should(mld0.bilaraPaths[0]).match(/an3.29/);
         should(mld0.score).equal(6.128);
@@ -1383,7 +1401,7 @@
         should(data.mlDocs.length).equal(1);
         var mld0 = data.mlDocs[0];
         should(mld0.bilaraPaths[0]).match(/an3.15/);
-        should(mld0.score).equal(4.087);
+        should(mld0.score).equal(3.065);
         should(data.resultPattern).equal('\\bking pacetana');
     });
     it("find(...) is cached", async()=>{
