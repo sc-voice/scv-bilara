@@ -1541,7 +1541,9 @@
         should(mld0.author_uid).equal('sujato');
         should(res.mlDocs.length).equal(maxDoc);
     });
-    it('TESTTESTfind(...) => Discourse on Love -tc:snp', async()=>{
+    it('find(...) => Discourse on Love -tc:snp', async()=>{
+        let MANUAL_TEST = 0;
+        if (!MANUAL_TEST) return; // test this manually--it messes up the other tests
         let includeUnpublished = true;
         let branch = 'unpublished';
         let bilaraData = new BilaraData({includeUnpublished, branch});
