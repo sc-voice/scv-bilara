@@ -171,7 +171,6 @@ var outFormat = 'human';
 var showMatchesOnly = true;
 var includeUnpublished = false;
 var isTTY = process.stdout.isTTY;
-var tipitakaCategories = '';
 var verbose = false;
 var readFile = true;
 var sync = undefined;

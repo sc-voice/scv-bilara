@@ -217,7 +217,7 @@
             'de', 'en', 'jpn', 'pli', 
         ]);
     });
-    it("TESTTESTsuttaInfo(...) returns sutta metadata", async()=>{
+    it("suttaInfo(...) returns sutta metadata", async()=>{
         await bd.initialize();
         var dn33Pli = {
             author: 'ms',
@@ -317,7 +317,7 @@
         should.deepEqual(bd.suttaInfo('an4.58'), 
             [ an4_58pli, an4_58de, an4_58en, an4_58jpn ]);
     });
-    it("TESTTESTsuttaInfo(...) => thig3.8 sutta metadata", async()=>{
+    it("suttaInfo(...) => thig3.8 sutta metadata", async()=>{
         await bd.initialize();
         let thigInfo = {
             suid: 'thig3.8',         
@@ -339,13 +339,19 @@
             author: 'sabbamitta',                
             bilaraPath: TRANSPATH('de', 'sabbamitta', 'thig3.8', 'sutta/kn/thig'),
         }, thigInfo);
+        let somaInfo = Object.assign({
+            lang: 'en',
+            author: 'soma',                
+            bilaraPath: TRANSPATH('de', 'soma', 'thig3.8', 'sutta/kn/thig'),
+        }, thigInfo);
         should.deepEqual(bd.suttaInfo('thig3.8'), [
             pliInfo, 
             deInfo,
+            //somaInfo,
             enInfo, 
         ]);
     });
-    it("TESTTESTloadSegDoc(...) loads translation document", async()=>{
+    it("loadSegDoc(...) loads translation document", async()=>{
         await bd.initialize();
         var expectedProps = {
             suid: 'dn33',

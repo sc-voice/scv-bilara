@@ -1541,6 +1541,32 @@
         should(mld0.author_uid).equal('sujato');
         should(res.mlDocs.length).equal(maxDoc);
     });
+    it('TESTTESTfind(...) => Discourse on Love -tc:snp', async()=>{
+        let includeUnpublished = true;
+        let branch = 'unpublished';
+        let bilaraData = new BilaraData({includeUnpublished, branch});
+        //bilaraData.logLevel = 'info';
+        let maxDoc = 5;
+        let skr = await new Seeker({
+            bilaraData,
+            logger: bilaraData,
+            maxDoc,
+        }).initialize();
+        let res = await skr.find({
+            pattern: 'Discourse on Love -tc:snp',
+        });
+        should(res.lang).equal('en');
+        should.deepEqual(res.bilaraPaths.slice(0,6),[
+          'root/pli/ms/sutta/kn/snp/vagga1/snp1.8_root-pli-ms.json',
+          'translation/en/sujato/sutta/kn/snp/vagga1/snp1.8_translation-en-sujato.json',
+          //'root/pli/ms/sutta/kn/kp/kp9_root-pli-ms.json',
+          //'translation/en/sujato/sutta/kn/kp/kp9_translation-en-sujato.json',
+        ]);
+        should(res.mlDocs.length).equal(1);
+        let [ mld0 ]  = res.mlDocs;
+        should(mld0.suid).equal('snp1.8');
+        should(mld0.author_uid).equal('sujato');
+    });
     it('find(...) => nun -tc:vinaya', async()=>{
         let bilaraData = new BilaraData();
         let maxDoc = 5;
