@@ -6,6 +6,7 @@ beliebtheit
 blitz
 enthaltsam
 enthaltsamkeit
+Feigheit
 fingerschippen
 flamme
 flammen
