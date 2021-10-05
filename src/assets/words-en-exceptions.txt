@@ -17,6 +17,7 @@ Giftschlange
 Goldschmied
 grausam
 hindernis
+Klarsicht
 lotusteich
 lotusteiche
 lotusteichen
