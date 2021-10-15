@@ -367,12 +367,13 @@
 `${de_sab}an/an7/an7.63_translation-de-sabbamitta.json:3`,
 `${de_sab}an/an2/an2.32-41_translation-de-sabbamitta.json:2`,
 `${de_sab}an/an5/an5.41_translation-de-sabbamitta.json:2`,
+`${de_sab}an/an9/an9.20_translation-de-sabbamitta.json:2`,
 `${de_sab}an/an1/an1.248-257_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an3/an3.109_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an3/an3.110_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an4/an4.197_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an4/an4.58_translation-de-sabbamitta.json:1`,
-`${de_sab}an/an4/an4.60_translation-de-sabbamitta.json:1`,
+//`${de_sab}an/an4/an4.60_translation-de-sabbamitta.json:1`,
 
             ],
         };
@@ -880,7 +881,7 @@
             pli: "Majjhima Nikāya 1 ",
         });
     });
-    it("TESTTESTfind(...) => finds ubung", async()=>{
+    it("find(...) => finds ubung", async()=>{
         var maxDoc = 3;
         var skr = await new Seeker({
             maxDoc,
@@ -953,7 +954,7 @@
             minLang: 2,
             showMatchesOnly: false,
         });
-        should(res.suttaRefs.length).equal(17);
+        should(res.suttaRefs.length).equal(16);
     });
     it("find(...) => finds keywords", async()=>{
         var maxDoc = 3;
@@ -1325,11 +1326,11 @@
         should(data.resultPattern).equal('\\babnehmend');
         should(data.searchLang).equal('de');
         should(data.method).equal('phrase');
-        should(data.mlDocs.length).equal(5);
+        should(data.mlDocs.length).equal(11);
         //data.mlDocs.forEach(mld=>console.log(mld.bilaraPaths));
         var mld0 = data.mlDocs[0];
-        should(mld0.bilaraPaths[1]).match(/de.*dn31/);
-        should(mld0.score).equal(2.007);
+        should(mld0.bilaraPaths[1]).match(/de.*an10.68/);
+        should(mld0.score).equal(2.027);
     });
     it("find(...) finds Deutsch 'blind'", async()=>{
         bd.logLevel = 'info'
@@ -1345,7 +1346,7 @@
         should(data.resultPattern).equal('\\bblind');
         should(data.searchLang).equal('de');
         should(data.method).equal('phrase');
-        should(data.mlDocs.length).equal(12);
+        should(data.mlDocs.length).equal(13);
         var mld0 = data.mlDocs[0];
         should(mld0.bilaraPaths[0]).match(/an3.29/);
         should(mld0.score).equal(6.128);
@@ -1423,8 +1424,9 @@
         should(data.method).equal('phrase');
         var mld0 = data.mlDocs[0];
         should(mld0.bilaraPaths[0])
-            .equal('root/pli/ms/sutta/an/an6/an6.61_root-pli-ms.json');
-        should(mld0.score).equal(2.036);
+            .equal('root/pli/ms/sutta/kn/snp/vagga5/snp5.3_root-pli-ms.json');
+            //.equal('root/pli/ms/sutta/an/an6/an6.61_root-pli-ms.json');
+        should(mld0.score).equal(2.105);
         delete data2.elapsed;
         delete data.elapsed;
         should.deepEqual(data2, data);

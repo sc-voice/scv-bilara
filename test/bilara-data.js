@@ -53,7 +53,7 @@
         });
         should(bdDefault.logger).equal(logger);
     });
-    it("initialize(...) must be called", async()=>{
+    it("TESTTESTinitialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         newbd.logLevel = 'info';
         should(newbd.initialized).equal(false);
@@ -66,8 +66,9 @@
         should(res).equal(bd);
         should(bd.initialized).equal(true);
         should.deepEqual(Object.keys(bd.authors).sort(), [
-            // 'ashinsarana', TODO20210307: Carmi
-            'brahmali', 'kaz', 'ms', 'phantuananh', 'sabbamitta', 'sujato', 
+            'ashinsarana', 
+            'brahmali', 'kaz', 
+            'laera-quaresma', 'ms', 'phantuananh', 'sabbamitta', 'sujato', 
         ]);
         let eg_en = 'like a cow';
         should.deepEqual(bd.examples.en.filter(x=>x === eg_en), [eg_en]);
@@ -77,7 +78,7 @@
             //'Abfälle',
         ]);
     });
-    it("initialize(...) must be called", async()=>{
+    it("TESTTESTinitialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         should(newbd.initialized).equal(false);
         should.throws(() => {
@@ -89,9 +90,10 @@
         should(res).equal(bd);
         should(bd.initialized).equal(true);
         should.deepEqual(Object.keys(bd.authors).sort(), [
-            // 'ashinsarana',  // TODO20210307: Carmi
+            'ashinsarana',  
             'brahmali',
             'kaz',
+            'laera-quaresma',
             'ms', 
             'phantuananh',
             'sabbamitta', 
@@ -159,7 +161,7 @@
         should(fs.existsSync(dummyPath)).equal(true);
         should(fs.existsSync(unpublishedPath)).equal(true);
     });
-    it("authorInfo() => supported author info", async()=>{
+    it("TESTTESTauthorInfo() => supported author info", async()=>{
         await bd.initialize();
         var ms = {
             lang: 'pli',
@@ -170,6 +172,9 @@
             lang: 'cs',
             name: 'Ashin Sarana',
             type: 'translator',
+        };
+        var laera_quaresma = {
+            lang: 'pt',
         };
         var sujato = {
             lang: 'en',
@@ -199,9 +204,10 @@
 
         should.deepEqual(bd.authors, {
             ms,
-            brahmali,    // TODO20210307: Vinaya
-            // ashinsarana, // TODO20210307: Carmi
+            ashinsarana, 
+            brahmali,    
             kaz,
+            "laera-quaresma": laera_quaresma,
             phantuananh,
             sabbamitta,
             sujato,
@@ -217,7 +223,7 @@
             'de', 'en', 'jpn', 'pli', 
         ]);
     });
-    it("suttaInfo(...) returns sutta metadata", async()=>{
+    it("TESTTESTsuttaInfo(...) returns sutta metadata", async()=>{
         await bd.initialize();
         var dn33Pli = {
             author: 'ms',
@@ -290,6 +296,14 @@
             suid: 'an4.58',
             bilaraPath: ROOTPATH(AN4_58),
         };
+        var an4_58cs = {
+            author: 'ashinsarana',
+            lang: 'cs',
+            category: 'sutta',
+            nikaya: 'an',
+            suid: 'an4.58',
+            bilaraPath: TRANSPATH('cs', 'ashinsarana', AN4_58),
+        };
         var an4_58en = {
             author: 'sujato',
             lang: 'en',
@@ -315,9 +329,9 @@
             bilaraPath: TRANSPATH('jpn','kaz', 'an/an4/an4.58'),
         };
         should.deepEqual(bd.suttaInfo('an4.58'), 
-            [ an4_58pli, an4_58de, an4_58en, an4_58jpn ]);
+            [ an4_58pli, an4_58cs,  an4_58de, an4_58en, an4_58jpn ]);
     });
-    it("suttaInfo(...) => thig3.8 sutta metadata", async()=>{
+    it("TESTTESTsuttaInfo(...) => thig3.8 sutta metadata", async()=>{
         await bd.initialize();
         let thigInfo = {
             suid: 'thig3.8',         
@@ -351,7 +365,7 @@
             enInfo, 
         ]);
     });
-    it("loadSegDoc(...) loads translation document", async()=>{
+    it("TESTTESTloadSegDoc(...) loads translation document", async()=>{
         await bd.initialize();
         var expectedProps = {
             suid: 'dn33',

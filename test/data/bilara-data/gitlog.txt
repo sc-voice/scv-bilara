@@ -1,5 +1,9 @@
-commit f4197cafef06bff8dd14b77c22f4b17318a125ad
-Author: sc-translatatron <42136882+sc-translatatron@users.noreply.github.com>
-Date:   Tue Aug 10 00:22:14 2021 +0300
+commit c6a0fce451ec52c14cc2d7a8ba26c6a84ae21168
+Author: sujato <sujato@gmail.com>
+Date:   Fri Oct 15 18:57:53 2021 +1100
 
-    Publishing translations for translation/de/sabbamitta/sutta/sn (#916)
+    Fix snp1.3 (#1041)
+    
+    * update publication.json
+    
+    * update snp1.3
