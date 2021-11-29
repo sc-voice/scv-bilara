@@ -6725,18 +6725,22 @@
 		"root/pli/ms": "sutta/an/an10"
 	},
 	"an10.113": {
+		"translation/de/sabbamitta": "sutta/an/an10",
 		"translation/en/sujato": "sutta/an/an10",
 		"root/pli/ms": "sutta/an/an10"
 	},
 	"an10.114": {
+		"translation/de/sabbamitta": "sutta/an/an10",
 		"translation/en/sujato": "sutta/an/an10",
 		"root/pli/ms": "sutta/an/an10"
 	},
 	"an10.115": {
+		"translation/de/sabbamitta": "sutta/an/an10",
 		"translation/en/sujato": "sutta/an/an10",
 		"root/pli/ms": "sutta/an/an10"
 	},
 	"an10.116": {
+		"translation/de/sabbamitta": "sutta/an/an10",
 		"translation/en/sujato": "sutta/an/an10",
 		"root/pli/ms": "sutta/an/an10"
 	},
@@ -8072,6 +8076,7 @@
 	},
 	"mn5": {
 		"translation/en/sujato": "sutta/mn",
+		"translation/pl/hardao": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn6": {
