@@ -5542,6 +5542,7 @@
 	"an8.54": {
 		"translation/de/sabbamitta": "sutta/an/an8",
 		"translation/en/sujato": "sutta/an/an8",
+		"translation/pl/hardao": "sutta/an/an8",
 		"root/pli/ms": "sutta/an/an8"
 	},
 	"an8.55": {
@@ -7302,6 +7303,7 @@
 		"root/pli/ms": "sutta/kn/dhp"
 	},
 	"dhp60-75": {
+		"translation/en/suddhaso": "sutta/kn/dhp",
 		"translation/en/sujato": "sutta/kn/dhp",
 		"translation/vi/phantuananh": "sutta/kn/dhp",
 		"root/pli/ms": "sutta/kn/dhp"
@@ -7414,10 +7416,12 @@
 	},
 	"dn1": {
 		"translation/en/sujato": "sutta/dn",
+		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn2": {
 		"translation/en/sujato": "sutta/dn",
+		"translation/my/my-team": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn3": {
@@ -7552,6 +7556,7 @@
 	"dn31": {
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
+		"translation/pl/hardao": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
 	"dn32": {
@@ -17872,6 +17877,7 @@
 	},
 	"snp1.6": {
 		"translation/en/sujato": "sutta/kn/snp/vagga1",
+		"translation/pl/hardao": "sutta/kn/snp/vagga1",
 		"root/pli/ms": "sutta/kn/snp/vagga1"
 	},
 	"snp1.7": {
@@ -17915,6 +17921,7 @@
 	"snp2.4": {
 		"translation/de/sabbamitta": "sutta/kn/snp/vagga2",
 		"translation/en/sujato": "sutta/kn/snp/vagga2",
+		"translation/pl/hardao": "sutta/kn/snp/vagga2",
 		"root/pli/ms": "sutta/kn/snp/vagga2"
 	},
 	"snp2.5": {
