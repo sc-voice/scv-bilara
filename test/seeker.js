@@ -141,7 +141,7 @@
             maxResults,
         });
         should.deepEqual(res.slice(0,4), [
-            `${de_sab}dn/dn25_translation-de-sabbamitta.json:50`,
+            `${de_sab}dn/dn25_translation-de-sabbamitta.json:49`,
             `${de_sab}dn/dn33_translation-de-sabbamitta.json:25`,
             `${de_sab}an/an6/an6.63_translation-de-sabbamitta.json:25`,
             `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:18`,
@@ -363,16 +363,19 @@
             maxResults: 10,
             method: 'keywords',
             lines: [
+`${de_sab}an/an10/an10.93_translation-de-sabbamitta.json:10`,
 `${de_sab}sn/sn10/sn10.8_translation-de-sabbamitta.json:4`,
 `${de_sab}an/an7/an7.63_translation-de-sabbamitta.json:3`,
 `${de_sab}an/an2/an2.32-41_translation-de-sabbamitta.json:2`,
 `${de_sab}an/an5/an5.41_translation-de-sabbamitta.json:2`,
 `${de_sab}an/an9/an9.20_translation-de-sabbamitta.json:2`,
 `${de_sab}an/an1/an1.248-257_translation-de-sabbamitta.json:1`,
+`${de_sab}an/an10/an10.91_translation-de-sabbamitta.json:1`,
+`${de_sab}an/an10/an10.92_translation-de-sabbamitta.json:1`,
 `${de_sab}an/an3/an3.109_translation-de-sabbamitta.json:1`,
-`${de_sab}an/an3/an3.110_translation-de-sabbamitta.json:1`,
-`${de_sab}an/an4/an4.197_translation-de-sabbamitta.json:1`,
-`${de_sab}an/an4/an4.58_translation-de-sabbamitta.json:1`,
+//`${de_sab}an/an3/an3.110_translation-de-sabbamitta.json:1`,
+//`${de_sab}an/an4/an4.197_translation-de-sabbamitta.json:1`,
+//`${de_sab}an/an4/an4.58_translation-de-sabbamitta.json:1`,
 //`${de_sab}an/an4/an4.60_translation-de-sabbamitta.json:1`,
 
             ],
@@ -564,9 +567,11 @@
             lines,
         });
     });
-    it("phraseSearch(...) finds Deutsch results", async()=>{
+    it("TESTTESTphraseSearch(...) finds Deutsch results", async()=>{
         var linesWurzel = [
             `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
+            `${de_sab}sn/sn56/sn56.21_translation-de-sabbamitta.json:1`,
+            `${de_sab}dn/dn16_translation-de-sabbamitta.json:1`,
         ];
         var linesUber = [
           `${de_sab}dn/dn33_translation-de-sabbamitta.json:25`,
@@ -956,7 +961,7 @@
         });
         should(res.suttaRefs.length).equal(16);
     });
-    it("find(...) => finds keywords", async()=>{
+    it("TESTTESTfind(...) => finds keywords", async()=>{
         var maxDoc = 3;
         var skr = await new Seeker({
             maxDoc,
@@ -970,11 +975,13 @@
         });
         should.deepEqual(res.suttaRefs, [
             'sn42.11/de/sabbamitta',
+            'dn16/de/sabbamitta',
+            'sn56.21/de/sabbamitta',
         ]);
         var [
             mld0,
         ] = res.mlDocs;
-        should(res.mlDocs.length).equal(1);
+        should(res.mlDocs.length).equal(3);
         should(res.minLang).equal(2);
         should(mld0.segments()[0]).properties({
             scid: 'sn42.11:2.11',
@@ -1268,8 +1275,10 @@
         });
         should.deepEqual(res.suttaRefs, [
             'sn42.11/en/sujato',
+            'sn56.21/en/sujato',
+            'dn16/en/sujato',
         ]);
-        should(res.bilaraPaths.length).equal(3);
+        should(res.bilaraPaths.length).equal(9);
     });
     it("find(...) ignores chinese", async()=>{
         var skr = await new Seeker().initialize();
@@ -1291,16 +1300,16 @@
         });
         should.deepEqual(res.suttaRefs, []);
     });
-    it("find(...) finds 'alles leiden,...'", async()=>{
+    it("TESTTESTfind(...) finds 'alles leiden,...'", async()=>{
         var bilaraData = await bd.initialize();
         var skr = await new Seeker({
             bilaraData,
         }).initialize();
-        var pattern = "alles leiden, das zustande kommt -ml3 -l de";
+        var pattern = "alles leiden, das entsteht -ml3 -l de";
         
         var data = await skr.find({pattern});
         should(data.resultPattern).equal(
-            '\\balles leiden, das zustande kommt');
+            '\\balles leiden, das entsteht');
         should(data.method).equal('phrase');
         should(data.mlDocs.length).equal(1);
         var mld0 = data.mlDocs[0];
@@ -1346,7 +1355,7 @@
         should(data.resultPattern).equal('\\bblind');
         should(data.searchLang).equal('de');
         should(data.method).equal('phrase');
-        should(data.mlDocs.length).equal(13);
+        should(data.mlDocs.length).equal(14);
         var mld0 = data.mlDocs[0];
         should(mld0.bilaraPaths[0]).match(/an3.29/);
         should(mld0.score).equal(6.128);
@@ -1364,7 +1373,7 @@
         should(data.resultPattern).equal('\\brat');
         should(data.searchLang).equal('de');
         should(data.method).equal('phrase');
-        should(data.mlDocs.length).equal(21);
+        should(data.mlDocs.length).equal(25);
         var mld0 = data.mlDocs[0];
         should(mld0.bilaraPaths[0]).match(/an1.51-60/);
         should(mld0.score).equal(3.056);

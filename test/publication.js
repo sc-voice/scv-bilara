@@ -146,7 +146,7 @@
         const bv1_trans_path = TRANSPATH('en', 'sujato', `bv/bv1`);
         should(pub.isPublishedPath(bv1_trans_path)).equal(false);
     });
-    it("pubInfo(suid) => publication information", async()=>{
+    it("TESTTESTpubInfo(suid) => publication information", async()=>{
         var pub = await new Publication({
             includeUnpublished: true,
         }).initialize();
@@ -156,7 +156,7 @@
         should(pi[0].subchapters).equal(true);
         should(pi[0]).properties({
             publication_number: "scpub11",
-            author_name: "Anagarika Sabbamitta",
+            author_name: "Sabbamitta",
             text_uid: "an",
             subchapters: true,
             is_published: true,
@@ -193,7 +193,7 @@
             subchapters: false,
             is_published: true,
         });
-        should(pi.length).equal(2);
+        should(pi.length).equal(4);
 
         // published specific
         var pi = pub.pubInfo("mn1/en/sujato");

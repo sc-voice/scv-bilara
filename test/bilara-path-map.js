@@ -177,6 +177,7 @@
 
         should(suids.length).above(5500);
         should.deepEqual(Object.keys(suidMap["dhp1-20"]),[
+            'translation/en/suddhaso',
             'translation/en/sujato',
             'translation/vi/phantuananh',
             'root/pli/ms',
@@ -185,6 +186,7 @@
             //'variant/pli/ms',
         ]);
         should.deepEqual(Object.keys(suidMap.iti42),[
+            //'translation/en/suddhaso',
             'translation/en/sujato',
             'root/pli/ms',
             //'html/pli/ms',

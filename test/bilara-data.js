@@ -67,8 +67,11 @@
         should(bd.initialized).equal(true);
         should.deepEqual(Object.keys(bd.authors).sort(), [
             'ashinsarana', 
-            'brahmali', 'kaz', 
-            'laera-quaresma', 'ms', 'phantuananh', 'sabbamitta', 'sujato', 
+            'brahmali', 'hardao', 'kaz', 
+            'laera-quaresma', 'ms', 'phantuananh', 'sabbamitta', 
+            'soma',
+            'suddhaso',
+            'sujato', 
         ]);
         let eg_en = 'like a cow';
         should.deepEqual(bd.examples.en.filter(x=>x === eg_en), [eg_en]);
@@ -92,11 +95,14 @@
         should.deepEqual(Object.keys(bd.authors).sort(), [
             'ashinsarana',  
             'brahmali',
+            'hardao',
             'kaz',
             'laera-quaresma',
             'ms', 
             'phantuananh',
             'sabbamitta', 
+            'soma',
+            'suddhaso',
             'sujato', 
         ]);
     });
@@ -161,7 +167,7 @@
         should(fs.existsSync(dummyPath)).equal(true);
         should(fs.existsSync(unpublishedPath)).equal(true);
     });
-    it("TESTTESTauthorInfo() => supported author info", async()=>{
+    it("authorInfo() => supported author info", async()=>{
         await bd.initialize();
         var ms = {
             lang: 'pli',
@@ -186,6 +192,11 @@
             type: "translator",
             name: "Bhikkhu Brahmali",
         };
+        var hardao = {
+            lang: 'pl',
+            type: "translator",
+            name: "Piotr Jagodziński",
+        };
         var phantuananh = {
            "lang": "vi",
            "name": "Phan Tuấn Anh",
@@ -194,22 +205,35 @@
         var sabbamitta = {
             lang: 'de',
             type: "translator",
-            name: "Anagarika Sabbamitta",
+            name: "Sabbamitta",
         };
         var kaz = {
             lang: 'jpn',
             name: 'Kaz Takehara',
             type: 'translator',
         };
+        var soma = {
+            lang: 'en',
+            type: "translator",
+            name: "Ayya Soma",
+        };
+        var suddhaso = {
+            lang: 'en',
+            type: "translator",
+            name: "Bhante Suddhāso",
+        };
 
         should.deepEqual(bd.authors, {
             ms,
             ashinsarana, 
             brahmali,    
+            hardao,
             kaz,
             "laera-quaresma": laera_quaresma,
             phantuananh,
             sabbamitta,
+            soma,
+            suddhaso,
             sujato,
         });
 
@@ -255,7 +279,7 @@
             category: 'sutta',
             nikaya: 'dn',
             suid: 'dn33',
-            bilaraPath: TRANSPATH('my','my-team', `dn/dn33`),
+            //bilaraPath: TRANSPATH('my','my-team', `dn/dn33`),
         }
         should.deepEqual(bd.suttaInfo('dn33'), [
             dn33Pli, dn33De, dn33En, 
@@ -343,7 +367,7 @@
             author: 'ms',                
             bilaraPath: ROOTPATH('thig3.8', 'sutta/kn/thig'),
         }, thigInfo);
-        let enInfo = Object.assign({
+        let sujatoInfo = Object.assign({
             lang: 'en',
             author: 'sujato',                
             bilaraPath: TRANSPATH('en', 'sujato', 'thig3.8', 'sutta/kn/thig'),
@@ -356,13 +380,13 @@
         let somaInfo = Object.assign({
             lang: 'en',
             author: 'soma',                
-            bilaraPath: TRANSPATH('de', 'soma', 'thig3.8', 'sutta/kn/thig'),
+            bilaraPath: TRANSPATH('en', 'soma', 'thig3.8', 'sutta/kn/thig'),
         }, thigInfo);
         should.deepEqual(bd.suttaInfo('thig3.8'), [
             pliInfo, 
             deInfo,
-            //somaInfo,
-            enInfo, 
+            somaInfo,
+            sujatoInfo, 
         ]);
     });
     it("TESTTESTloadSegDoc(...) loads translation document", async()=>{

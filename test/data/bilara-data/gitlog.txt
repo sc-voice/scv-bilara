@@ -1,9 +1,5 @@
-commit c6a0fce451ec52c14cc2d7a8ba26c6a84ae21168
-Author: sujato <sujato@gmail.com>
-Date:   Fri Oct 15 18:57:53 2021 +1100
+commit 1c677a70d2bef6e45bf9b2ecf3911455e0242a6b
+Author: sc-translatatron <42136882+sc-translatatron@users.noreply.github.com>
+Date:   Mon Jan 17 11:47:19 2022 +0100
 
-    Fix snp1.3 (#1041)
-    
-    * update publication.json
-    
-    * update snp1.3
+    Publishing translations for translation/de/blurb (#1274)
