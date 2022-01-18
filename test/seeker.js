@@ -567,7 +567,7 @@
             lines,
         });
     });
-    it("TESTTESTphraseSearch(...) finds Deutsch results", async()=>{
+    it("phraseSearch(...) finds Deutsch results", async()=>{
         var linesWurzel = [
             `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
             `${de_sab}sn/sn56/sn56.21_translation-de-sabbamitta.json:1`,
@@ -961,7 +961,7 @@
         });
         should(res.suttaRefs.length).equal(16);
     });
-    it("TESTTESTfind(...) => finds keywords", async()=>{
+    it("find(...) => finds keywords", async()=>{
         var maxDoc = 3;
         var skr = await new Seeker({
             maxDoc,
@@ -1300,7 +1300,7 @@
         });
         should.deepEqual(res.suttaRefs, []);
     });
-    it("TESTTESTfind(...) finds 'alles leiden,...'", async()=>{
+    it("find(...) finds 'alles leiden,...'", async()=>{
         var bilaraData = await bd.initialize();
         var skr = await new Seeker({
             bilaraData,
@@ -1335,7 +1335,7 @@
         should(data.resultPattern).equal('\\babnehmend');
         should(data.searchLang).equal('de');
         should(data.method).equal('phrase');
-        should(data.mlDocs.length).equal(11);
+        should(data.mlDocs.length).equal(12);
         //data.mlDocs.forEach(mld=>console.log(mld.bilaraPaths));
         var mld0 = data.mlDocs[0];
         should(mld0.bilaraPaths[1]).match(/de.*an10.68/);

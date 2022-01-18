@@ -1,5 +1,7 @@
-commit 1c677a70d2bef6e45bf9b2ecf3911455e0242a6b
+commit e1a676495f623dede531ff5c89bae1d6ccdb3dde
 Author: sc-translatatron <42136882+sc-translatatron@users.noreply.github.com>
-Date:   Mon Jan 17 11:47:19 2022 +0100
+Date:   Tue Jan 18 08:58:45 2022 +0100
 
-    Publishing translations for translation/de/blurb (#1274)
+    Publishing translations for translation/de/site (#1280)
+    
+    Co-authored-by: carmi cronje <ccronje@users.noreply.github.com>

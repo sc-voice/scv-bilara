@@ -131,7 +131,8 @@
 
         static buildExampleCache(examples) {
             let exampleCache = {};
-            Object.keys(examples).map(lang=>{
+            let keys = Object.keys(examples).filter(k=> k !== 'authors' && k !== 'comment');
+            keys.map(lang=>{
                 let eg = examples[lang];
                 return eg.reduce((a,e) => {
                     let eLower = e.toLowerCase();

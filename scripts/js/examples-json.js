@@ -27,8 +27,10 @@ logger.logLevel = 'info';
     logger.info(`exampleFiles`, exampleFiles);
 
     let now = new Date();
+    let authors = [];
     let examples = {
         comment: COMMENT,
+        authors,
     };
     let languages = [];
     for (exampleFile of exampleFiles) {
@@ -38,16 +40,29 @@ logger.logLevel = 'info';
             .split('\n')
             .filter(ex=>!!ex);
         if (langExamples.length) {
-            let lang = exampleFile.split('-')[1].split('.')[0];
-            languages.push(lang);
-            examples[lang] = langExamples;
-            logger.log(`${exampleFile}: ${langExamples.length}`);
+            let fileKeys = exampleFile.replace('.txt', '').split('-');
+            let [prefix, lang, category='sutta', version, ] = fileKeys;
+            if (version == null) {
+              logger.log(`${exampleFile}: ignored (deprecated file name)`);
+              continue;
+            }
+            let author = fileKeys.slice(4).join('-');
+            if (author) {
+              languages.push(lang);
+              authors.push({lang, category, version, author});
+              examples[lang] = langExamples;
+              logger.log(`${exampleFile}: ${langExamples.length}`, 
+                JSON.stringify({lang, category, version, author}));
+            } else {
+              logger.warn(`${exampleFile}: ignored (no author?)`);
+            }
         }
     }
     let examplesJson = JSON.stringify(examples,null,2) + '\n';
     await fs.promises.writeFile(EXAMPLES_PATH, examplesJson);
     logger.info(`updated ${EXAMPLES_PATH} (OK)`);
     delete examples.comment;
+    delete examples.authors;
     let exampleCache = Seeker.buildExampleCache(examples);
     await fs.promises.writeFile(IS_EXAMPLE_PATH, 
         JSON.stringify(exampleCache,null,'\t')+'\n');

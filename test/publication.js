@@ -146,7 +146,7 @@
         const bv1_trans_path = TRANSPATH('en', 'sujato', `bv/bv1`);
         should(pub.isPublishedPath(bv1_trans_path)).equal(false);
     });
-    it("TESTTESTpubInfo(suid) => publication information", async()=>{
+    it("pubInfo(suid) => publication information", async()=>{
         var pub = await new Publication({
             includeUnpublished: true,
         }).initialize();
