@@ -992,12 +992,12 @@
     } finally{
         fs.existsSync(indexLock) && fs.unlinkSync(indexLock);
     }});
-    it("loadSuttaplexJson(...)=>an3.47", async()=>{
+    it("TESTTESTloadSuttaplexJson(...)=>an3.47", async()=>{
         await bd.initialize();
         var suid = 'an3.47';
         var lang = 'de';
         var lang_name = "Deutsch";
-        var author = "Anagarika Sabbamitta";
+        var author = "Sabbamitta";
         var author_short = "sabbamitta";
         var author_uid = 'sabbamitta';
         var title = 'Kennzeichen des Bedingten ';
@@ -1019,13 +1019,13 @@
             volpage: null,
         }]);
     });
-    it("loadSuttaplexJson(...)=>thig3.8 de", async()=>{
+    it("TESTTESTloadSuttaplexJson(...)=>thig3.8 de", async()=>{
         await bd.initialize();
         var suid = 'thig3.8';
 
         var lang = 'de';
         var lang_name = "Deutsch";
-        var author = "Anagarika Sabbamitta";
+        var author = "Sabbamitta";
         var author_short = "sabbamitta";
         var author_uid = 'sabbamitta';
 
