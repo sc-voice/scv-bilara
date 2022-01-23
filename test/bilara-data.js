@@ -167,60 +167,71 @@
         should(fs.existsSync(dummyPath)).equal(true);
         should(fs.existsSync(unpublishedPath)).equal(true);
     });
-    it("authorInfo() => supported author info", async()=>{
+    it("TESTTESTauthorInfo() => supported author info", async()=>{
         await bd.initialize();
         var ms = {
             lang: 'pli',
             type: "root",
             name: "Mahāsaṅgīti Tipiṭaka Buddhavasse 2500",
+            exampleVersion: 999999,
         };
         var ashinsarana = { 
             lang: 'cs',
             name: 'Ashin Sarana',
             type: 'translator',
+            exampleVersion: 0,
         };
         var laera_quaresma = {
             lang: 'pt',
+            exampleVersion: 0,
         };
         var sujato = {
             lang: 'en',
             type: "translator",
             name: "Bhikkhu Sujato",
+            exampleVersion: 1,
         };
         var brahmali = {
             lang: 'en',
             type: "translator",
             name: "Bhikkhu Brahmali",
+            exampleVersion: 0,
         };
         var hardao = {
             lang: 'pl',
             type: "translator",
             name: "Piotr Jagodziński",
+            exampleVersion: 0,
         };
         var phantuananh = {
            "lang": "vi",
            "name": "Phan Tuấn Anh",
            "type": "translator",
+            exampleVersion: 0,
         };
         var sabbamitta = {
             lang: 'de',
             type: "translator",
             name: "Sabbamitta",
+            exampleVersion: 1,
         };
         var kaz = {
             lang: 'jpn',
             name: 'Kaz Takehara',
             type: 'translator',
+            exampleVersion: 1,
         };
         var soma = {
             lang: 'en',
             type: "translator",
             name: "Ayya Soma",
+            exampleVersion: 0,
         };
         var suddhaso = {
             lang: 'en',
             type: "translator",
             name: "Bhante Suddhāso",
+            exampleVersion: 0,
         };
 
         should.deepEqual(bd.authors, {
@@ -256,6 +267,7 @@
             nikaya: 'dn',
             suid: 'dn33',
             bilaraPath: ROOTPATH('dn/dn33'),
+            exampleVersion: 999999,
         };
         var dn33De = {
             author: 'sabbamitta',
@@ -264,6 +276,7 @@
             nikaya: 'dn',
             suid: 'dn33',
             bilaraPath: TRANSPATH('de','sabbamitta', `dn/dn33`),
+            exampleVersion: 1,
         }
         var dn33En = {
             author: 'sujato',
@@ -272,6 +285,7 @@
             nikaya: 'dn',
             suid: 'dn33',
             bilaraPath: TRANSPATH('en','sujato', `dn/dn33`),
+            exampleVersion: 1,
         }
         var dn33My = {
             author: 'my-team',
@@ -292,6 +306,7 @@
             nikaya: 'sn',
             suid: 'sn12.3',
             bilaraPath: ROOTPATH('sn/sn12/sn12.3'),
+            exampleVersion: 999999,
         }
         var sn12_3en = {
             author: 'sujato',
@@ -300,6 +315,7 @@
             nikaya: 'sn',
             suid: 'sn12.3',
             bilaraPath: TRANSPATH('en','sujato', `sn/sn12/sn12.3`),
+            exampleVersion: 1,
         };
         var sn12_3de = {
             author: 'sabbamitta',
@@ -308,6 +324,7 @@
             nikaya: 'sn',
             suid: 'sn12.3',
             bilaraPath: TRANSPATH('de', 'sabbamitta', `sn/sn12/sn12.3`),
+            exampleVersion: 1,
         };
         should.deepEqual(bd.suttaInfo('sn12.3'), 
             [sn12_3pli, sn12_3de, sn12_3en]);
@@ -319,6 +336,7 @@
             nikaya: 'an',
             suid: 'an4.58',
             bilaraPath: ROOTPATH(AN4_58),
+            exampleVersion: 999999,
         };
         var an4_58cs = {
             author: 'ashinsarana',
@@ -327,6 +345,7 @@
             nikaya: 'an',
             suid: 'an4.58',
             bilaraPath: TRANSPATH('cs', 'ashinsarana', AN4_58),
+            exampleVersion: 0,
         };
         var an4_58en = {
             author: 'sujato',
@@ -335,6 +354,7 @@
             nikaya: 'an',
             suid: 'an4.58',
             bilaraPath: TRANSPATH('en', 'sujato', AN4_58),
+            exampleVersion: 1,
         };
         var an4_58de = {
             author: 'sabbamitta',
@@ -343,6 +363,7 @@
             nikaya: 'an',
             suid: 'an4.58',
             bilaraPath: TRANSPATH('de','sabbamitta', AN4_58),
+            exampleVersion: 1,
         };
         var an4_58jpn = {
             author: 'kaz',
@@ -351,9 +372,15 @@
             nikaya: 'an',
             suid: 'an4.58',
             bilaraPath: TRANSPATH('jpn','kaz', 'an/an4/an4.58'),
+            exampleVersion: 1,
         };
-        should.deepEqual(bd.suttaInfo('an4.58'), 
-            [ an4_58pli, an4_58cs,  an4_58de, an4_58en, an4_58jpn ]);
+        should.deepEqual(bd.suttaInfo('an4.58'), [ 
+          an4_58pli, 
+          an4_58de, 
+          an4_58en, 
+          an4_58jpn, 
+          an4_58cs,  
+        ]);
     });
     it("TESTTESTsuttaInfo(...) => thig3.8 sutta metadata", async()=>{
         await bd.initialize();
@@ -366,30 +393,34 @@
             lang: 'pli',
             author: 'ms',                
             bilaraPath: ROOTPATH('thig3.8', 'sutta/kn/thig'),
+            exampleVersion: 999999,
         }, thigInfo);
         let sujatoInfo = Object.assign({
             lang: 'en',
             author: 'sujato',                
             bilaraPath: TRANSPATH('en', 'sujato', 'thig3.8', 'sutta/kn/thig'),
+            exampleVersion: 1,
         }, thigInfo);
         let deInfo = Object.assign({
             lang: 'de',
             author: 'sabbamitta',                
             bilaraPath: TRANSPATH('de', 'sabbamitta', 'thig3.8', 'sutta/kn/thig'),
+            exampleVersion: 1,
         }, thigInfo);
         let somaInfo = Object.assign({
             lang: 'en',
             author: 'soma',                
             bilaraPath: TRANSPATH('en', 'soma', 'thig3.8', 'sutta/kn/thig'),
+            exampleVersion: 0,
         }, thigInfo);
         should.deepEqual(bd.suttaInfo('thig3.8'), [
             pliInfo, 
             deInfo,
-            somaInfo,
             sujatoInfo, 
+            somaInfo,
         ]);
     });
-    it("TESTTESTloadSegDoc(...) loads translation document", async()=>{
+    it("loadSegDoc(...) loads translation document", async()=>{
         await bd.initialize();
         var expectedProps = {
             suid: 'dn33',

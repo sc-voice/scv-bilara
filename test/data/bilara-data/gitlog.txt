@@ -1,7 +1,7 @@
-commit e1a676495f623dede531ff5c89bae1d6ccdb3dde
+commit e92dbb38a89c1ef1d71b046aef322bde82c07967
 Author: sc-translatatron <42136882+sc-translatatron@users.noreply.github.com>
-Date:   Tue Jan 18 08:58:45 2022 +0100
+Date:   Fri Jan 21 09:23:35 2022 +0100
 
-    Publishing translations for translation/de/site (#1280)
+    Publishing translations for translation/en/suddhaso/sutta/kn/dhp/dhp90-99_translation-en-suddhaso (#1283)
     
     Co-authored-by: carmi cronje <ccronje@users.noreply.github.com>

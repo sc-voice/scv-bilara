@@ -511,7 +511,7 @@
             //'pli-tv-kd6, 1.001',
         ]);
     });
-    it("phraseSearch(...) limits English results", async()=>{
+    it("TESTTESTphraseSearch(...) limits English results", async()=>{
         var lang = 'en';
         var pattern = 'root of suffering';
         var maxResults = 3;
@@ -615,7 +615,7 @@
             lines: linesWurzel,
         });
     });
-    it("find(...) finds dhp2", async()=>{
+    it("TESTTESTfind(...) finds dhp2", async()=>{
         var skr = await new Seeker().initialize();
 
         var res = await skr.find({
@@ -630,7 +630,7 @@
         let segs0 = mld0.segments();
         should.deepEqual(segs0[4], {
             scid: 'dhp2:4',
-            en: 'you speak or act,',
+            en: 'with a pure mind,',
             matched: true,
             pli: 'bhāsati vā karoti vā;',
         });
@@ -1300,7 +1300,7 @@
         });
         should.deepEqual(res.suttaRefs, []);
     });
-    it("find(...) finds 'alles leiden,...'", async()=>{
+    it("TESTTESTfind(...) finds 'alles leiden,...'", async()=>{
         var bilaraData = await bd.initialize();
         var skr = await new Seeker({
             bilaraData,
@@ -1631,5 +1631,22 @@
                 'an4.182/jpn',
             ],
         }); 
+    });
+    it('TESTTESTfind(...) => thig1.1', async()=>{
+        let bilaraData = new BilaraData();
+        let skr = await new Seeker({
+            bilaraData,
+            logger: bilaraData,
+        }).initialize();
+        let res = await skr.find({
+            pattern: 'thig1.1',
+        });
+        should(res.method).equal('sutta_uid');
+        should(res.bilaraPaths.length).equal(3);
+        let mld0 = res.mlDocs[0];
+        should(mld0.author_uid).equal('sujato');
+        should.deepEqual(mld0.langSegs, {pli:9, en:9});
+        should(res.lang).equal('en');
+        should(mld0.sutta_uid).equal('thig1.1');
     });
 })

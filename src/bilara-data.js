@@ -177,6 +177,8 @@
             this.languageInfo = JSON.parse(
                 await fs.promises.readFile(langPath));
 
+            this.examples = Examples;
+
             let authPath = path.join(this.root, `_author.json`);
             let authorJson = fs.existsSync(authPath)
                 ? json5.parse(await readFile(authPath)) 
@@ -189,8 +191,6 @@
                 throw new Error(`Root document directory `+
                     `not found:${rootPath}`); 
             }
-
-            this.examples = Examples;
 
             // The following code must be synchronous
             this.initialized = true;
@@ -239,9 +239,14 @@
         addAuthor(author, info) {
             var {
                 authors,
+                examples,
             } = this;
             if (authors[author] == null) {
-                authors[author] = Object.assign({}, authors[author], info);
+                let authoredExample = examples.authors.filter(ea=>ea.author === author)[0];
+                let exampleVersion = author === 'ms' 
+                  ? 999999
+                  : authoredExample && Number(authoredExample.version) || 0;
+                authors[author] = Object.assign({exampleVersion}, authors[author], info);
                 this.debug(`dbg addAuthor ${author}`, authors[author]);
             }
         }
@@ -339,7 +344,7 @@
             var author = refParts[2];
             var info = this.bilaraPathMap.suidLanguages(suttaRef);
             if (!info) { // binary search
-                var suttaIds = this.suttaIds;
+                let { suttaIds } = this;
                 var j = suttaIds.length-1;
                 for (var i = 0; i<j; ) {
                     var k = Math.floor((i+j)/2);
@@ -362,10 +367,24 @@
                 
                 info = this.bilaraPathMap.suidLanguages(suidMaybe);
             }
-            return info.filter(i => 
+            info = info.filter(i => 
                 (!lang || i.lang === lang) &&
                 (!author || i.author === author)
             );
+            let { authors } = this;
+            info.forEach(ai => ai.exampleVersion = Number(authors[ai.author].exampleVersion));
+            info.sort((a,b) => { // sort by exampleVersion DSC, lang ASC, author ASC
+              let cmp = b.exampleVersion - a.exampleVersion;
+              if (cmp === 0) {
+                cmp = a.lang < b.lang ? -1 : (b.lang < a.lang ? 1 : 0);
+              }
+              if (cmp === 0) {
+                cmp = a.author < b.author ? -1 : (b.author < a.author ? 1 : 0);
+              }
+              return cmp;
+            });
+
+            return info;
         }
 
         dirFiles(root) {
@@ -526,19 +545,19 @@
                     ? `No information for ${suid}/${lang}`
                     : `No information for ${suid}/${lang}/${author}`);
             }
-            let author_uid = author == null
-                ?   bilaraPaths.reduce((alist,bp)=>{
+            let authors = author == null
+                ? bilaraPaths.reduce((alist,bp)=>{
                         let [s, l, a] = bp.split('/');
                         if (l===lang && !alist.includes(a)) {
                             alist.push(a);
                         }
                         return alist;
-                    },[]).join(', ')
-                : author;
+                    },[])
+                : [ author ] ;
             return new MLDoc({
                 logLevel,
                 lang,
-                author_uid,
+                author_uid: authors[0],
                 sutta_uid: suid,
                 bilaraPaths,
             }).load(this.root);
