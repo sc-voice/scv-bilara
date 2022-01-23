@@ -511,7 +511,7 @@
             //'pli-tv-kd6, 1.001',
         ]);
     });
-    it("TESTTESTphraseSearch(...) limits English results", async()=>{
+    it("phraseSearch(...) limits English results", async()=>{
         var lang = 'en';
         var pattern = 'root of suffering';
         var maxResults = 3;
@@ -615,7 +615,7 @@
             lines: linesWurzel,
         });
     });
-    it("TESTTESTfind(...) finds dhp2", async()=>{
+    it("find(...) finds dhp2", async()=>{
         var skr = await new Seeker().initialize();
 
         var res = await skr.find({
@@ -1300,7 +1300,7 @@
         });
         should.deepEqual(res.suttaRefs, []);
     });
-    it("TESTTESTfind(...) finds 'alles leiden,...'", async()=>{
+    it("find(...) finds 'alles leiden,...'", async()=>{
         var bilaraData = await bd.initialize();
         var skr = await new Seeker({
             bilaraData,
@@ -1632,7 +1632,7 @@
             ],
         }); 
     });
-    it('TESTTESTfind(...) => thig1.1', async()=>{
+    it('find(...) => thig1.1', async()=>{
         let bilaraData = new BilaraData();
         let skr = await new Seeker({
             bilaraData,
@@ -1648,5 +1648,44 @@
         should.deepEqual(mld0.langSegs, {pli:9, en:9});
         should(res.lang).equal('en');
         should(mld0.sutta_uid).equal('thig1.1');
+    });
+    it("TESTTESTfind(...) finds mind with greed", async()=>{
+        var skr = await new Seeker().initialize();
+
+        var res = await skr.find({
+            pattern: "mind with greed",
+            matchHighlight: false,
+        });
+        should(res.method).equal('phrase');
+        should.deepEqual(res.mlDocs.map(mld=>mld.suid).sort(), [
+          "sn52.14",
+          "sn51.11",
+          "sn16.9",
+          "sn12.70",
+          "mn77",
+          "mn73",
+          "mn6",
+          "mn12",
+          "mn10",
+          "mn108",
+          "dn2",
+          "dn22",
+          "dn10",
+          "an9.35",
+          "an6.70",
+          "an6.2",
+          "an5.28",
+          "an5.23",
+          "an3.101",
+          "an10.97",
+        ].sort());
+        let [ mld0 ] = res.mlDocs;
+        let segs0 = mld0.segments();
+        should.deepEqual(segs0[0], {
+             scid: 'sn52.14:1.2',
+             pli: 'sarāgaṁ vā cittaṁ ‘sarāgaṁ cittan’ti pajānāmi …pe…',
+             en: 'I understand mind with greed as ‘mind with greed’ …',
+             matched: true,
+        });
     });
 })

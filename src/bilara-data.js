@@ -372,7 +372,12 @@
                 (!author || i.author === author)
             );
             let { authors } = this;
-            info.forEach(ai => ai.exampleVersion = Number(authors[ai.author].exampleVersion));
+            info.forEach(ai => {
+              let aia = authors[ai.author] || {};
+              if (ai) {
+                ai.exampleVersion = Number(aia.exampleVersion) || 0;
+              }
+            });
             info.sort((a,b) => { // sort by exampleVersion DSC, lang ASC, author ASC
               let cmp = b.exampleVersion - a.exampleVersion;
               if (cmp === 0) {
