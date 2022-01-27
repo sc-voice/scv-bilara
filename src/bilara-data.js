@@ -554,18 +554,21 @@
                 ? bilaraPaths.reduce((alist,bp)=>{
                         let [s, l, a] = bp.split('/');
                         if (l===lang && !alist.includes(a)) {
+                        //if (langMap[l] && !alist.includes(a) && l !== 'pli') {
                             alist.push(a);
                         }
                         return alist;
                     },[])
                 : [ author ] ;
-            return new MLDoc({
+            let mldOpts = {
                 logLevel,
                 lang,
                 author_uid: authors[0],
                 sutta_uid: suid,
                 bilaraPaths,
-            }).load(this.root);
+            }
+            this.debug(`loadMLDoc mldOpts`, {mldOpts, authors});
+            return new MLDoc(mldOpts).load(this.root);
         }
 
         async loadMLDocLegacy(suidRef) { try {

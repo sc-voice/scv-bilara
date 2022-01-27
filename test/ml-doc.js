@@ -454,4 +454,38 @@ html: '<article id=\'sn1.1\'><header><ul><li class=\'division\'>{}</li>',
             done();
         } catch(e) { done(e); } })();
     });
+    it("load(...) loads tri-lingual", async()=>{
+      let mldOpts = {            
+        lang: 'de',
+        author_uid: 'ms',
+        sutta_uid: 'sn42.11',
+        bilaraPaths: [                                  
+          'root/pli/ms/sutta/sn/sn42/sn42.11_root-pli-ms.json',
+          'translation/de/sabbamitta/sutta/sn/sn42/sn42.11_translation-de-sabbamitta.json',
+          'translation/en/sujato/sutta/sn/sn42/sn42.11_translation-en-sujato.json',
+        ]                        
+      }
+      var mld = new MLDoc(mldOpts);
+      var res = await mld.load(BILARA_PATH);
+      should(res).equal(mld);
+      let keys = Object.keys(mld).filter(k=>k !== 'segments' && k !== 'segMap').sort();
+      let mldMeta = Object.assign({}, mld);
+      delete mldMeta.segMap;
+      should.deepEqual(mldMeta, Object.assign({
+        category: 'sutta',
+        hyphen: '\u00ad',
+        langSegs: { de:54, en:54, pli:55 },
+        maxWord: 30,
+        minWord: 5,
+        score: 0,
+        segsMatched: undefined,
+        title: 'Verbundene Lehrreden 42\n1. Ortsvorsteher\n11. Mit Bhadraka',
+        type: 'translation',
+      }, mldOpts));
+      var segMap = mld.segMap;
+      let seg1_2 = segMap['sn42.11:1.2'];
+      should(seg1_2.pli).match(/Atha kho bhadrako gāmaṇi yena bhagavā/);
+      should(seg1_2.de).match(/Da ging der Ortsvorsteher Bhadraka zum Buddha/);
+      should(seg1_2.en).match(/Then Bhadraka the village chief went up to the Buddha/);
+    });
 })

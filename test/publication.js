@@ -193,7 +193,7 @@
             subchapters: false,
             is_published: true,
         });
-        should(pi.length).equal(4);
+        should(pi.length).above(2);
 
         // published specific
         var pi = pub.pubInfo("mn1/en/sujato");

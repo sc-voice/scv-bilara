@@ -837,7 +837,7 @@
             'mn66/pli/ms',
         ]);
     });
-    it("find(...) => finds phrase", async()=>{
+    it("TESTTESTfind(...) => finds phrase", async()=>{
         var maxResults = 3;
         var skr = await new Seeker({
             maxResults,
@@ -845,12 +845,13 @@
 
         var msStart = Date.now();
         var pattern = "root of suffering"; 
-        var res = await skr.find({
+        let findArgs = skr.findArgs([{
             pattern,
             lang: 'de',
             minLang: 2,
             showMatchesOnly: false, // return entire sutta
-        });
+        }]);
+        var res = await skr.slowFind(findArgs);
         should.deepEqual(res.suttaRefs, [
             'sn42.11/en/sujato',
             'mn105/en/sujato',
@@ -1318,7 +1319,6 @@
         should(mld0.score).equal(3.055);
     });
     it("find(...) finds Deutsch 'abnehmend'", async()=>{
-        //bd.logLevel = 'info'
         bd.log('initializing');
         var bilaraData = await bd.initialize();
         bd.log('initializing done');
@@ -1649,7 +1649,7 @@
         should(res.lang).equal('en');
         should(mld0.sutta_uid).equal('thig1.1');
     });
-    it("TESTTESTfind(...) finds mind with greed", async()=>{
+    it("find(...) finds mind with greed", async()=>{
         var skr = await new Seeker().initialize();
 
         var res = await skr.find({
@@ -1687,5 +1687,84 @@
              en: 'I understand mind with greed as ‘mind with greed’ …',
              matched: true,
         });
+    });
+    it("find(...) finds mind with greed", async()=>{
+        var skr = await new Seeker().initialize();
+
+        var res = await skr.find({
+            pattern: "mind with greed",
+            matchHighlight: false,
+        });
+        should(res.method).equal('phrase');
+        should.deepEqual(res.mlDocs.map(mld=>mld.suid).sort(), [
+          "sn52.14",
+          "sn51.11",
+          "sn16.9",
+          "sn12.70",
+          "mn77",
+          "mn73",
+          "mn6",
+          "mn12",
+          "mn10",
+          "mn108",
+          "dn2",
+          "dn22",
+          "dn10",
+          "an9.35",
+          "an6.70",
+          "an6.2",
+          "an5.28",
+          "an5.23",
+          "an3.101",
+          "an10.97",
+        ].sort());
+        let [ mld0 ] = res.mlDocs;
+        let segs0 = mld0.segments();
+        should.deepEqual(segs0[0], {
+             scid: 'sn52.14:1.2',
+             pli: 'sarāgaṁ vā cittaṁ ‘sarāgaṁ cittan’ti pajānāmi …pe…',
+             en: 'I understand mind with greed as ‘mind with greed’ …',
+             matched: true,
+        });
+    });
+    it('TESTTESTfind(...) => thig1.1/en/soma', async()=>{
+      let bilaraData = new BilaraData();
+      let skr = await new Seeker({
+          bilaraData,
+          logger: bilaraData,
+      }).initialize();
+      let findArgs = skr.findArgs([{
+          pattern: 'thig1.1/en/soma',
+      }]);
+      let res = await skr.slowFind(findArgs);
+      should(res.method).equal('sutta_uid');
+      should(res.mlDocs.length).above(0);
+      let mld0 = res.mlDocs[0];
+      should(mld0.author_uid).equal('soma');
+      should(res.bilaraPaths.length).equal(2);
+      let segments = mld0.segments();
+      should(segments[4].en).match(/“Sleep with ease, Elder,/);
+      should.deepEqual(mld0.langSegs, {pli:9, en:9});
+      should(res.lang).equal('en');
+      should(mld0.sutta_uid).equal('thig1.1');
+    });
+    it("slowFindPhrase(...) => trilingual", async()=>{
+        let maxResults = 3;
+        let msStart = Date.now();
+        let pattern = "root of suffering"; 
+        let lang = 'de';
+        let searchLang = 'en';
+        let showMatchesOnly = false;
+        let skr = await new Seeker({
+            maxResults,
+        }).initialize();
+        let findArgs = { lang, maxResults, pattern, searchLang, showMatchesOnly };
+        var res = await skr.slowFindPhrase(findArgs);
+        should.deepEqual(res.suttaRefs, [
+            //'sn42.11/de/sabbamitta', // the English search phrase does not appear here 
+            'sn42.11/en/sujato',
+            'mn105/en/sujato',
+            'mn1/en/sujato',
+        ]);
     });
 })

@@ -1,7 +1,7 @@
-commit e92dbb38a89c1ef1d71b046aef322bde82c07967
+commit 8f23a550adc3ca4db61d5a24e549d740a521734d
 Author: sc-translatatron <42136882+sc-translatatron@users.noreply.github.com>
-Date:   Fri Jan 21 09:23:35 2022 +0100
+Date:   Tue Jan 25 21:58:32 2022 +0100
 
-    Publishing translations for translation/en/suddhaso/sutta/kn/dhp/dhp90-99_translation-en-suddhaso (#1283)
+    Publishing translations for translation/pl/hardao/sutta/kn/kp/kp9_translation-pl-hardao (#1303)
     
     Co-authored-by: carmi cronje <ccronje@users.noreply.github.com>

@@ -167,7 +167,7 @@
         should(fs.existsSync(dummyPath)).equal(true);
         should(fs.existsSync(unpublishedPath)).equal(true);
     });
-    it("TESTTESTauthorInfo() => supported author info", async()=>{
+    it("authorInfo() => supported author info", async()=>{
         await bd.initialize();
         var ms = {
             lang: 'pli',
@@ -258,7 +258,7 @@
             'de', 'en', 'jpn', 'pli', 
         ]);
     });
-    it("TESTTESTsuttaInfo(...) returns sutta metadata", async()=>{
+    it("suttaInfo(...) returns sutta metadata", async()=>{
         await bd.initialize();
         var dn33Pli = {
             author: 'ms',
@@ -382,7 +382,7 @@
           an4_58cs,  
         ]);
     });
-    it("TESTTESTsuttaInfo(...) => thig3.8 sutta metadata", async()=>{
+    it("suttaInfo(...) => thig3.8 sutta metadata", async()=>{
         await bd.initialize();
         let thigInfo = {
             suid: 'thig3.8',         
@@ -992,7 +992,7 @@
     } finally{
         fs.existsSync(indexLock) && fs.unlinkSync(indexLock);
     }});
-    it("TESTTESTloadSuttaplexJson(...)=>an3.47", async()=>{
+    it("loadSuttaplexJson(...)=>an3.47", async()=>{
         await bd.initialize();
         var suid = 'an3.47';
         var lang = 'de';
@@ -1019,7 +1019,7 @@
             volpage: null,
         }]);
     });
-    it("TESTTESTloadSuttaplexJson(...)=>thig3.8 de", async()=>{
+    it("loadSuttaplexJson(...)=>thig3.8 de", async()=>{
         await bd.initialize();
         var suid = 'thig3.8';
 

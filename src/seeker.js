@@ -714,14 +714,19 @@
                 });
                 let mld;
                 if (isBilDoc) {
-                    this.debug(`slowFind() -> loadMLDoc(${suid},${lang})`);
-                    mld = await bd.loadMLDoc({
+                    let mldOpts = {
                         suid,
                         languages,
                         lang,
                         types,
-                    });
+                    };
+                    if (method === 'sutta_uid' && author != null && author !== 'ms') {
+                      mldOpts.author = author;
+                    }
+                    this.debug(`slowFind() -> loadMLDoc`, {mldOpts});
+                    mld = await bd.loadMLDoc(mldOpts);
                     var mldBilaraPaths = mld.bilaraPaths;
+                    this.debug(`slowFind() -> loadMLDoc`, {mldBilaraPaths});
                     if (mldBilaraPaths.length < minLang) {
                         this.debug(`skipping ${mld.suid} minLang`,
                             `${mldBilaraPaths.length}<${minLang} [${languages}]`, 
@@ -807,17 +812,17 @@
             throw e;
         }}
 
-        async slowFindPhrase({ lang, maxResults, pattern, searchLang, showMatchesOnly,
-                sortLines, tipitakaCategories, }) { try {
-            var msStart = Date.now();
-            var bd = this.bilaraData;
-            var examples = bd.examples;
+        async slowFindPhrase(args={}) { try {
+            let { lang, maxResults, pattern, searchLang, showMatchesOnly,
+                sortLines, tipitakaCategories, } = args;
+            let msStart = Date.now();
+            let bd = this.bilaraData;
+            let examples = bd.examples;
             var resultPattern = pattern;
-            var scoreDoc = true;
-            let method, uids, suttaRefs;
-
-            method = 'phrase';
-            var searchOpts = {
+            let scoreDoc = true;
+            let method = 'phrase';
+            let uids, suttaRefs;
+            let searchOpts = {
                 pattern, 
                 searchLang,
                 maxResults, 
@@ -825,7 +830,6 @@
                 showMatchesOnly,
                 tipitakaCategories,
             };
-
 
             var {
                 lines,
@@ -835,11 +839,8 @@
                 this.debug(`findArgs phrase`, {resultPattern, lines:lines.length});
             } else {
                 method = 'keywords';
-                var data = await this.keywordSearch(searchOpts);
-                var {
-                    lines,
-                    resultPattern,
-                } = data;
+                let data = await this.keywordSearch(searchOpts);
+                var { lines, resultPattern, } = data;
                 this.debug(`findArgs keywords`, {resultPattern, lines:lines.length});
             }
             sortLines && lines.sort(sortLines);
