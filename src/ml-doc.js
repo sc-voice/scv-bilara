@@ -113,12 +113,17 @@
         }
 
         titles(lang=this.lang) {
-            var titles = this.segments().slice(0,4).reduce((a,s)=>{
-                if (s.scid.split(':')[1].match(/^0/)) {
-                    var text = (s[lang] || s.en || s.pli || '');
-                    text.length && a.push(text.trim());
+            var titles = this.segments().slice(0,4).reduce((a,s,i)=>{
+              if (s) {
+                let text = (s[lang] || s.en || s.pli || '');
+                let segNum = s.scid.split(':')[1];
+                if (segNum.match(/^0/)) {
+                  text.length && a.push(text.trim());
+                } else {
+                  this.debug(`titles() ignoring segments[${i}] with segNum:${segNum}`, s);
                 }
-                return a;
+              }
+              return a;
             },[]);
             if (titles.length === 0) {
                 titles = [`(no-title-${this.suid})`];
@@ -151,6 +156,7 @@
                 bilaraPaths,
             } = this;
             this.langSegs = {};
+            let langMap = {};
             var p_bp = [];
             for (var ip = 0; ip < bilaraPaths.length; ip++) {
                 var parts = BilaraPath.pathParts(bilaraPaths[ip]);
@@ -161,6 +167,11 @@
                 var lang = isTrans || isRoot
                     ? parts.lang
                     : parts.type;
+                if (langMap[lang]) {
+                  this.debug(`skipping ${lang} translation: ${bilaraPaths[ip]}`);
+                  continue;
+                }
+                langMap[lang] = true;
                 if (fh) {
                     var bpe = {
                         fh,

@@ -615,7 +615,7 @@
             lines: linesWurzel,
         });
     });
-    it("find(...) finds dhp2", async()=>{
+    it("TESTTESTfind(...) finds dhp2", async()=>{
         var skr = await new Seeker().initialize();
 
         var res = await skr.find({
@@ -630,7 +630,7 @@
         let segs0 = mld0.segments();
         should.deepEqual(segs0[4], {
             scid: 'dhp2:4',
-            en: 'with a pure mind,',
+            en: 'you speak or act,',
             matched: true,
             pli: 'bhāsati vā karoti vā;',
         });
@@ -837,7 +837,7 @@
             'mn66/pli/ms',
         ]);
     });
-    it("TESTTESTfind(...) => finds phrase", async()=>{
+    it("find(...) => finds phrase", async()=>{
         var maxResults = 3;
         var skr = await new Seeker({
             maxResults,
@@ -1727,7 +1727,33 @@
              matched: true,
         });
     });
-    it('TESTTESTfind(...) => thig1.1/en/soma', async()=>{
+    it('find(...) => thig1.1 (sujato)', async()=>{
+      let bilaraData = new BilaraData();
+      let skr = await new Seeker({
+          bilaraData,
+          logger: bilaraData,
+      }).initialize();
+      let findArgs = skr.findArgs([{
+          pattern: 'thig1.1',
+      }]);
+      let res = await skr.slowFind(findArgs);
+      console.log(res);
+      should(res.method).equal('sutta_uid');
+      should(res.mlDocs.length).above(0);
+      let mld0 = res.mlDocs[0];
+      should(mld0.author_uid).equal('sujato');
+      should.deepEqual(res.bilaraPaths, [
+        'root/pli/ms/sutta/kn/thig/thig1.1_root-pli-ms.json',
+        'translation/en/sujato/sutta/kn/thig/thig1.1_translation-en-sujato.json',
+        'translation/en/soma/sutta/kn/thig/thig1.1_translation-en-soma.json',
+      ]);
+      let segments = mld0.segments();
+      should(segments[4].en).match(/Sleep softly, little nun,/);
+      should.deepEqual(mld0.langSegs, {pli:9, en:9});
+      should(res.lang).equal('en');
+      should(mld0.sutta_uid).equal('thig1.1');
+    });
+    it('find(...) => thig1.1/en/soma', async()=>{
       let bilaraData = new BilaraData();
       let skr = await new Seeker({
           bilaraData,

@@ -488,4 +488,38 @@ html: '<article id=\'sn1.1\'><header><ul><li class=\'division\'>{}</li>',
       should(seg1_2.de).match(/Da ging der Ortsvorsteher Bhadraka zum Buddha/);
       should(seg1_2.en).match(/Then Bhadraka the village chief went up to the Buddha/);
     });
+    it("TESTTESTload(...) loads thig1.1 sujato/soma", async()=>{
+      let mldOpts = {            
+        lang: 'en',
+        author_uid: 'ms',
+        sutta_uid: 'thig1.1',
+        bilaraPaths: [                                  
+          'root/pli/ms/sutta/kn/thig/thig1.1_root-pli-ms.json',
+          'translation/en/sujato/sutta/kn/thig/thig1.1_translation-en-sujato.json',
+          'translation/en/soma/sutta/kn/thig/thig1.1_translation-en-soma.json',
+        ]                        
+      }
+      var mld = new MLDoc(mldOpts);
+      0 && (mld.logLevel = 'debug');
+      var res = await mld.load(BILARA_PATH);
+      should(res).equal(mld);
+      let keys = Object.keys(mld).filter(k=>k !== 'segments' && k !== 'segMap').sort();
+      let mldMeta = Object.assign({}, mld);
+      delete mldMeta.segMap;
+      should.deepEqual(mldMeta, Object.assign({
+        category: 'sutta',
+        hyphen: '\u00ad',
+        langSegs: { en:9, pli:9 },
+        maxWord: 30,
+        minWord: 5,
+        score: 0,
+        segsMatched: undefined,
+        title: 'Verses of the Senior Nuns\nThe Book of the Ones\nAn Unnamed Nun (1st)',
+        type: 'translation',
+      }, mldOpts));
+      var segMap = mld.segMap;
+      let seg1_1 = segMap['thig1.1:1.1'];
+      should(seg1_1.pli).match(/Sukhaṁ supāhi therike/);
+      should(seg1_1.en).match(/Sleep softly, little nun/);
+    });
 })
