@@ -40,7 +40,7 @@
     var SUJATO = 'sujato/sutta';
     var BRAHMALI = 'brahmali/vinaya';
 
-    it("default ctor", () => {
+    it("TESTTESTdefault ctor", () => {
         const LOCAL = path.join(__dirname, '..', 'local');
         var bdDefault = new BilaraData(); 
         should(bdDefault).instanceOf(BilaraData);
@@ -68,7 +68,9 @@
         should.deepEqual(Object.keys(bd.authors).sort(), [
             'ashinsarana', 
             'brahmali', 'hardao', 'kaz', 
-            'laera-quaresma', 'ms', 'phantuananh', 'sabbamitta', 
+            'laera-quaresma', 'ms', 'phantuananh', 
+            'piyadassi',
+            'sabbamitta', 
             'soma',
             'suddhaso',
             'sujato', 
@@ -100,6 +102,7 @@
             'laera-quaresma',
             'ms', 
             'phantuananh',
+            'piyadassi',
             'sabbamitta', 
             'soma',
             'suddhaso',
@@ -209,6 +212,12 @@
            "type": "translator",
             exampleVersion: 0,
         };
+        var piyadassi = {
+           "lang": "lt",
+           "name": "Sayalay Piyadassi",
+           "type": "translator",
+            exampleVersion: 0,
+        };
         var sabbamitta = {
             lang: 'de',
             type: "translator",
@@ -242,6 +251,7 @@
             kaz,
             "laera-quaresma": laera_quaresma,
             phantuananh,
+            piyadassi,
             sabbamitta,
             soma,
             suddhaso,
@@ -258,7 +268,7 @@
             'de', 'en', 'jpn', 'pli', 
         ]);
     });
-    it("suttaInfo(...) returns sutta metadata", async()=>{
+    it("TESTTESTsuttaInfo(...) returns sutta metadata", async()=>{
         await bd.initialize();
         var dn33Pli = {
             author: 'ms',
@@ -382,7 +392,7 @@
           an4_58cs,  
         ]);
     });
-    it("suttaInfo(...) => thig3.8 sutta metadata", async()=>{
+    it("TESTTESTsuttaInfo(...) => thig3.8 sutta metadata", async()=>{
         await bd.initialize();
         let thigInfo = {
             suid: 'thig3.8',         
