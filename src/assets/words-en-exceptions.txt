@@ -33,6 +33,8 @@ Nymphen
 Orchideenbaum
 rat
 reichweite
+Reitertruppe
+Reitertruppen
 Sonnenschirm
 Sonnenschirm-Orchideenbaum
 stamm
