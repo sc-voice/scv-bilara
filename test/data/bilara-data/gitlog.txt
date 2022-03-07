@@ -1,7 +1,9 @@
-commit 65d30dd74a37ac88937dd564f3eeaaf99da71e05
-Author: sc-translatatron <42136882+sc-translatatron@users.noreply.github.com>
-Date:   Tue Feb 8 09:52:25 2022 +0100
+commit 1c31d55caba15b2708aaca4617609bb472528b59
+Author: carmi cronje <ccronje@users.noreply.github.com>
+Date:   Mon Mar 7 22:29:55 2022 +1100
 
-    Publishing translations for translation/de/sabbamitta/sutta/an (#1317)
+    Add Piyadassi's DN publication details (#1360)
     
-    Co-authored-by: carmi cronje <ccronje@users.noreply.github.com>
+    * Add Piyadassi's DN translation
+    
+    * Add Piyadassi's DN translation

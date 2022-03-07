@@ -488,7 +488,7 @@ html: '<article id=\'sn1.1\'><header><ul><li class=\'division\'>{}</li>',
       should(seg1_2.de).match(/Da ging der Ortsvorsteher Bhadraka zum Buddha/);
       should(seg1_2.en).match(/Then Bhadraka the village chief went up to the Buddha/);
     });
-    it("TESTTESTload(...) loads thig1.1 sujato/soma", async()=>{
+    it("load(...) loads thig1.1 sujato/soma", async()=>{
       let mldOpts = {            
         lang: 'en',
         author_uid: 'ms',

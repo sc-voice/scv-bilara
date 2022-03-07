@@ -13,6 +13,7 @@ module.exports = {
     Seeker: require("./src/seeker"),
     SegDoc: require("./src/seg-doc"),
     SuttaCentralId: require("./src/sutta-central-id"),
+    SuttaRef: require('./src/sutta-ref'),
     Tipitaka: require('./src/tipitaka'),
     Unicode: require("./src/unicode.js"),
     Verse: require("./src/verse.js"),

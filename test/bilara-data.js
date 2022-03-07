@@ -40,7 +40,7 @@
     var SUJATO = 'sujato/sutta';
     var BRAHMALI = 'brahmali/vinaya';
 
-    it("TESTTESTdefault ctor", () => {
+    it("default ctor", () => {
         const LOCAL = path.join(__dirname, '..', 'local');
         var bdDefault = new BilaraData(); 
         should(bdDefault).instanceOf(BilaraData);
@@ -53,7 +53,7 @@
         });
         should(bdDefault.logger).equal(logger);
     });
-    it("TESTTESTinitialize(...) must be called", async()=>{
+    it("initialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         newbd.logLevel = 'info';
         should(newbd.initialized).equal(false);
@@ -83,7 +83,7 @@
             //'Abfälle',
         ]);
     });
-    it("TESTTESTinitialize(...) must be called", async()=>{
+    it("initialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         should(newbd.initialized).equal(false);
         should.throws(() => {
@@ -417,17 +417,24 @@
             bilaraPath: TRANSPATH('de', 'sabbamitta', 'thig3.8', 'sutta/kn/thig'),
             exampleVersion: 1,
         }, thigInfo);
-        let somaInfo = Object.assign({
+        let somaEnInfo = Object.assign({
             lang: 'en',
             author: 'soma',                
             bilaraPath: TRANSPATH('en', 'soma', 'thig3.8', 'sutta/kn/thig'),
+            exampleVersion: 0,
+        }, thigInfo);
+        let somaItInfo = Object.assign({
+            lang: 'it',
+            author: 'soma',                
+            bilaraPath: TRANSPATH('it', 'soma', 'thig3.8', 'sutta/kn/thig'),
             exampleVersion: 0,
         }, thigInfo);
         should.deepEqual(bd.suttaInfo('thig3.8'), [
             pliInfo, 
             deInfo,
             sujatoInfo, 
-            somaInfo,
+            somaEnInfo,
+            //somaItInfo,
         ]);
     });
     it("loadSegDoc(...) loads translation document", async()=>{
