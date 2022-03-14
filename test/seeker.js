@@ -1793,4 +1793,24 @@
             'mn1/en/sujato',
         ]);
     });
+    it("TESTTESTslowFindPhrase(...) bhaggava", async()=>{
+        let maxResults = 5;
+        let msStart = Date.now();
+        let pattern = "bhaggava"; 
+        let lang = 'de';
+        let searchLang = 'en';
+        let showMatchesOnly = false;
+        let skr = await new Seeker({
+            maxResults,
+        }).initialize();
+        let findArgs = { lang, maxResults, pattern, searchLang, showMatchesOnly };
+        var res = await skr.slowFindPhrase(findArgs);
+        should.deepEqual(res.suttaRefs, [
+            'dn24/en/sujato',
+            'mn81/en/sujato',
+            'mn140/en/sujato',
+            'sn2.24/en/sujato',
+            'sn1.50/en/sujato',
+        ]);
+    });
 })

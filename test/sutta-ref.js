@@ -7,7 +7,7 @@
   it("default ctor", ()=>{
       should.throws(()=>new SuttaRef());
   });
-  it("TESTTESTcustom ctor", ()=>{
+  it("custom ctor", ()=>{
     let sutta_uid = 'thig1.1';
     let lang = 'test-lang';
     let defaultLang = 'default-lang';
@@ -19,7 +19,7 @@
     let suttaRef2 = new SuttaRef(suttaRef);
     should(suttaRef2).properties({sutta_uid, lang, author, segnum});
   });
-  it("TESTTESTcreate(...) => SuttaRef", ()=>{
+  it("create(...) => SuttaRef", ()=>{
     let defaultLang = 'default-lang';
     let author = 'test-author';
     let lang = 'test-lang';
@@ -54,7 +54,7 @@
     should(SuttaRef.create(`${sutta_uid}:${segnum}`, defaultLang))
       .properties({ sutta_uid, lang: defaultLang, author: undefined, segnum, });
   });
-  it("TESTTESTcreate(object) => SuttaRef", ()=>{
+  it("create(object) => SuttaRef", ()=>{
     let defaultLang = 'default-lang';
     let author = 'test-author';
     let lang = 'test-lang';
