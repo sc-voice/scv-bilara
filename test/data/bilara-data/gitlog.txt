@@ -1,5 +1,7 @@
-commit 86dff216abb5774fd35a4b2a557f0fb1a10139f4
-Author: Blake Walsh <blakeofthepath@gmail.com>
-Date:   Fri Mar 11 10:32:53 2022 +0100
+commit 30cf761c78c9d53b601a56c0613f1479e58f0f5f
+Author: sc-translatatron <42136882+sc-translatatron@users.noreply.github.com>
+Date:   Tue Mar 22 09:44:09 2022 +0100
 
-    Moved some stuff around
+    Publishing translations for translation/lt/piyadassi/sutta (#1386)
+    
+    Co-authored-by: carmi cronje <ccronje@users.noreply.github.com>

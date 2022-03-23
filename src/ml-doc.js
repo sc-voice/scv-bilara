@@ -168,7 +168,8 @@
                     ? parts.lang
                     : parts.type;
                 if (langMap[lang]) {
-                  this.debug(`skipping ${lang} translation: ${bilaraPaths[ip]}`);
+                  this.debug(`MLDoc.load skipping: ${bilaraPaths[ip]}`);
+                  fh.close();
                   continue;
                 }
                 langMap[lang] = true;
@@ -188,6 +189,7 @@
             for (var ip = 0; ip < p_bp.length; ip++) {
                 var { fh, p_read, lang, } = p_bp[ip];
                 var strings = JSON.parse(await p_read);
+                fh.close();
                 var keys = Object.keys(strings);
                 this.langSegs[lang] = keys.length;
                 keys.forEach(k => {
@@ -196,7 +198,6 @@
                     });
                     m[lang] = strings[k];
                 });
-                fh.close();
             }
             this.title = this.titles().join('\n');
 

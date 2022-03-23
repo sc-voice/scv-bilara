@@ -130,7 +130,7 @@
             `${en_suj}an/an10/an10.46_translation-en-sujato.json:1`
         ]);
     });
-    it("grep(...) finds de things", async()=>{
+    it("TESTTESTgrep(...) finds de things", async()=>{
         var skr = new Seeker(SEEKEROPTS);
         var maxResults = 5;
 
@@ -142,7 +142,7 @@
         });
         should.deepEqual(res.slice(0,4), [
             `${de_sab}dn/dn25_translation-de-sabbamitta.json:49`,
-            `${de_sab}dn/dn33_translation-de-sabbamitta.json:25`,
+            `${de_sab}dn/dn33_translation-de-sabbamitta.json:26`,
             `${de_sab}an/an6/an6.63_translation-de-sabbamitta.json:25`,
             `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:18`,
             //`${de_sab}dn/dn34_translation-de-sabbamitta.json:18`,
@@ -1032,7 +1032,7 @@
         should(utext[1].replace(re,'ANICCA')).equal(
             `sotam niccam va ANICCAm va”ti?`);
     });
-    it("find(...) => de, Benares", done=>{
+    it("TESTTESTfind(...) => de, Benares", done=>{
         (async function() { try {
             var lang = 'de';
             var skr = await new Seeker().initialize();
@@ -1056,6 +1056,7 @@
                 `${pli_ms}sn/sn55/sn55.53_root-pli-ms.json`,
                 `${en_suj}sn/sn55/sn55.53_translation-en-sujato.json`,
                 `${pli_ms}sn/sn4/sn4.5_root-pli-ms.json`,
+                `${de_sab}sn/sn4/sn4.5_translation-de-sabbamitta.json`,
                 `${en_suj}sn/sn4/sn4.5_translation-en-sujato.json`,
             ]);
 
@@ -1341,7 +1342,7 @@
         should(mld0.bilaraPaths[1]).match(/de.*an10.68/);
         should(mld0.score).equal(2.027);
     });
-    it("find(...) finds Deutsch 'blind'", async()=>{
+    it("TESTTESTfind(...) finds Deutsch 'blind'", async()=>{
         bd.logLevel = 'info'
         bd.log('initializing');
         var bilaraData = await bd.initialize();
@@ -1355,12 +1356,12 @@
         should(data.resultPattern).equal('\\bblind');
         should(data.searchLang).equal('de');
         should(data.method).equal('phrase');
-        should(data.mlDocs.length).equal(14);
+        should(data.mlDocs.length).equal(15);
         var mld0 = data.mlDocs[0];
         should(mld0.bilaraPaths[0]).match(/an3.29/);
         should(mld0.score).equal(6.128);
     });
-    it("find(...) finds Deutsch 'rat'", async()=>{
+    it("TESTTESTfind(...) finds Deutsch 'rat'", async()=>{
         let enWords = await English.wordSet({source:'file'});
         var bilaraData = await bd.initialize();
         var skr = await new Seeker({
@@ -1373,10 +1374,10 @@
         should(data.resultPattern).equal('\\brat');
         should(data.searchLang).equal('de');
         should(data.method).equal('phrase');
-        should(data.mlDocs.length).equal(26);
+        should(data.mlDocs.length).equal(28);
         var mld0 = data.mlDocs[0];
-        should(mld0.bilaraPaths[0]).match(/an1.51-60/);
-        should(mld0.score).equal(3.056);
+        should(mld0.bilaraPaths[0]).match(/sn2.29/);
+        should(mld0.score).equal(4.056);
     });
     it("find(...) finds 'thig3.8' de unpublished", async()=>{
         var bilaraData = await bd.initialize();
