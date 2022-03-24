@@ -4,6 +4,7 @@ auge
 Banyanbaum
 beliebt
 beliebtheit
+besorgnis
 blitz
 enthaltsam
 enthaltsamkeit
