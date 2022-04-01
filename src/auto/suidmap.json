@@ -294,6 +294,7 @@
 	"an3.2": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
+		"translation/pt/laera-quaresma": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.3": {
@@ -1754,6 +1755,10 @@
 		"translation/cs/ashinsarana": "sutta/an/an4",
 		"translation/de/sabbamitta": "sutta/an/an4",
 		"translation/en/sujato": "sutta/an/an4",
+		"root/pli/ms": "sutta/an/an4"
+	},
+	"an4.106": {
+		"translation/pt/laera-quaresma": "sutta/an/an4",
 		"root/pli/ms": "sutta/an/an4"
 	},
 	"an4.107": {
@@ -20438,9 +20443,6 @@
 	"ud8.10": {
 		"translation/en/sujato": "sutta/kn/ud/vagga8",
 		"root/pli/ms": "sutta/kn/ud/vagga8"
-	},
-	"an4.106": {
-		"root/pli/ms": "sutta/an/an4"
 	},
 	"bv10": {
 		"root/pli/ms": "sutta/kn/bv"
