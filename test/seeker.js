@@ -130,7 +130,7 @@
             `${en_suj}an/an10/an10.46_translation-en-sujato.json:1`
         ]);
     });
-    it("TESTTESTgrep(...) finds de things", async()=>{
+    it("grep(...) finds de things", async()=>{
         var skr = new Seeker(SEEKEROPTS);
         var maxResults = 5;
 
@@ -873,7 +873,7 @@
         should.deepEqual(mld0.segments()[0], {
             scid: 'sn42.11:0.1',
             de: "Verbundene Lehrreden 42",
-            en: "Linked Discourses 42 ",
+            en: "Linked Discourses 42.11",
             pli: "Saṁyutta Nikāya 42 ",
         });
         should.deepEqual(mld1.segments()[0], {
@@ -947,7 +947,7 @@
             'thag2.15/en/sujato', 'dn14/en/sujato',
         ]);
     });
-    it("find(...) => finds all keywords", async()=>{
+    it("TESTTESTfind(...) => finds all keywords", async()=>{
         var maxDoc = 50;
         var skr = await new Seeker({
             maxDoc,
@@ -1032,7 +1032,7 @@
         should(utext[1].replace(re,'ANICCA')).equal(
             `sotam niccam va ANICCAm va”ti?`);
     });
-    it("TESTTESTfind(...) => de, Benares", done=>{
+    it("find(...) => de, Benares", done=>{
         (async function() { try {
             var lang = 'de';
             var skr = await new Seeker().initialize();
@@ -1258,7 +1258,7 @@
             //html: "<section class='range' id='an1.1-10'><header>"+
                 //"<ul><li class='division'>{}</li>",
             pli: 'Aṅguttara Nikāya 1 ',
-            en: 'Numbered Discourses 1 ',
+            en: 'Numbered Discourses 1.1–10',
             de: 'Nummerierte Lehrreden 1',
             matched: true,
         });
@@ -1342,7 +1342,7 @@
         should(mld0.bilaraPaths[1]).match(/de.*an10.68/);
         should(mld0.score).equal(2.027);
     });
-    it("TESTTESTfind(...) finds Deutsch 'blind'", async()=>{
+    it("find(...) finds Deutsch 'blind'", async()=>{
         bd.logLevel = 'info'
         bd.log('initializing');
         var bilaraData = await bd.initialize();
@@ -1361,7 +1361,7 @@
         should(mld0.bilaraPaths[0]).match(/an3.29/);
         should(mld0.score).equal(6.128);
     });
-    it("TESTTESTfind(...) finds Deutsch 'rat'", async()=>{
+    it("find(...) finds Deutsch 'rat'", async()=>{
         let enWords = await English.wordSet({source:'file'});
         var bilaraData = await bd.initialize();
         var skr = await new Seeker({
@@ -1374,7 +1374,7 @@
         should(data.resultPattern).equal('\\brat');
         should(data.searchLang).equal('de');
         should(data.method).equal('phrase');
-        should(data.mlDocs.length).equal(28);
+        should(data.mlDocs.length).equal(30);
         var mld0 = data.mlDocs[0];
         should(mld0.bilaraPaths[0]).match(/sn2.29/);
         should(mld0.score).equal(4.056);
@@ -1794,7 +1794,7 @@
             'mn1/en/sujato',
         ]);
     });
-    it("TESTTESTslowFindPhrase(...) bhaggava", async()=>{
+    it("slowFindPhrase(...) bhaggava", async()=>{
         let maxResults = 5;
         let msStart = Date.now();
         let pattern = "bhaggava"; 

@@ -66,9 +66,12 @@
         should(res).equal(bd);
         should(bd.initialized).equal(true);
         should.deepEqual(Object.keys(bd.authors).sort(), [
+            'anandajoti',
             'ashinsarana', 
             'brahmali', 'hardao', 'kaz', 
-            'laera-quaresma', 'ms', 'phantuananh', 
+            'laera-quaresma', 'ms', 
+            'noeismet',
+            'phantuananh', 
             'piyadassi',
             'sabbamitta', 
             'soma',
@@ -95,12 +98,14 @@
         should(res).equal(bd);
         should(bd.initialized).equal(true);
         should.deepEqual(Object.keys(bd.authors).sort(), [
+            'anandajoti',
             'ashinsarana',  
             'brahmali',
             'hardao',
             'kaz',
             'laera-quaresma',
             'ms', 
+            'noeismet',
             'phantuananh',
             'piyadassi',
             'sabbamitta', 
@@ -236,20 +241,32 @@
             name: "Ayya Soma",
             exampleVersion: 0,
         };
+        var anandajoti = {
+            lang: 'en',
+            exampleVersion: 0,
+        };
         var suddhaso = {
             lang: 'en',
             type: "translator",
             name: "Bhante Suddhāso",
             exampleVersion: 0,
         };
+        var noeismet = {
+            lang: 'fr',
+            type: "translator",
+            name: "Noé Ismet",
+            exampleVersion: 0,
+        };
 
         should.deepEqual(bd.authors, {
             ms,
+            anandajoti,
             ashinsarana, 
             brahmali,    
             hardao,
             kaz,
             "laera-quaresma": laera_quaresma,
+            noeismet,
             phantuananh,
             piyadassi,
             sabbamitta,
@@ -268,7 +285,7 @@
             'de', 'en', 'jpn', 'pli', 
         ]);
     });
-    it("TESTTESTsuttaInfo(...) returns sutta metadata", async()=>{
+    it("suttaInfo(...) returns sutta metadata", async()=>{
         await bd.initialize();
         var dn33Pli = {
             author: 'ms',
@@ -392,7 +409,7 @@
           an4_58cs,  
         ]);
     });
-    it("TESTTESTsuttaInfo(...) => thig3.8 sutta metadata", async()=>{
+    it("suttaInfo(...) => thig3.8 sutta metadata", async()=>{
         await bd.initialize();
         let thigInfo = {
             suid: 'thig3.8',         
