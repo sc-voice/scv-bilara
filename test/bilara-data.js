@@ -285,7 +285,7 @@
             'de', 'en', 'jpn', 'pli', 
         ]);
     });
-    it("suttaInfo(...) returns sutta metadata", async()=>{
+    it("TESTTESTsuttaInfo(...) returns sutta metadata", async()=>{
         await bd.initialize();
         var dn33Pli = {
             author: 'ms',
@@ -409,7 +409,7 @@
           an4_58cs,  
         ]);
     });
-    it("suttaInfo(...) => thig3.8 sutta metadata", async()=>{
+    it("TESTTESTsuttaInfo(...) => thig3.8 sutta metadata", async()=>{
         await bd.initialize();
         let thigInfo = {
             suid: 'thig3.8',         

@@ -947,7 +947,7 @@
             'thag2.15/en/sujato', 'dn14/en/sujato',
         ]);
     });
-    it("TESTTESTfind(...) => finds all keywords", async()=>{
+    it("find(...) => finds all keywords", async()=>{
         var maxDoc = 50;
         var skr = await new Seeker({
             maxDoc,
