@@ -1,6 +1,7 @@
 const { 
   BilaraPath,
   SuttaCentralId,
+  SuttaRef,
 } = require('scv-esm');
 
 module.exports = {
@@ -18,7 +19,7 @@ module.exports = {
     Seeker: require("./src/seeker"),
     SegDoc: require("./src/seg-doc"),
     SuttaCentralId,
-    SuttaRef: require('./src/sutta-ref'),
+    SuttaRef,
     Tipitaka: require('./src/tipitaka'),
     Unicode: require("./src/unicode.js"),
     Verse: require("./src/verse.js"),
