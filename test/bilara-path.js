@@ -1,9 +1,9 @@
 (typeof describe === 'function') && describe("bilara-path", function() {
     const should = require("should");
     const {
-        BilaraPath,
         BilaraData,
     } = require("../index");
+    const { BilaraPath } = require("scv-esm");
     var {
         translationPath,
     } = BilaraPath;

@@ -4,7 +4,6 @@ const fs = require('fs');
 const path = require('path');
 const {
     BilaraData,
-    BilaraPath,
     FuzzyWordSet,
     Pali,
     Seeker,
@@ -12,6 +11,7 @@ const {
     SuttaCentralId,
 
 } = require('../../index');
+const { BilaraPath } = require("scv-esm");
 const LOCAL = path.join(__dirname, '../../local');
 const BILARA_DATA = path.join(LOCAL, '/bilara-data');
 

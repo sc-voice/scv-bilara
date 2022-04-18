@@ -11,7 +11,7 @@
     const { MerkleJson } = require("merkle-json");
     const { Memoizer, Files } = require("memo-again");
     const FuzzyWordSet = require('./fuzzy-word-set');
-    const BilaraPath = require('./bilara-path');
+    const { BilaraPath } = require("scv-esm");
     const MLDoc = require('./ml-doc');
     const Pali = require('./pali');
     const Unicode = require('./unicode');

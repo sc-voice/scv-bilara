@@ -3,7 +3,7 @@
     const path = require("path");
     const { logger } = require('log-instance');
     const { Files } = require('memo-again');
-    const BilaraPath = require('./bilara-path');
+    const { BilaraPath } = require("scv-esm");
     const Unicode = require('./unicode');
     const Pali = require('./pali');
     const SuttaCentralId = require('./sutta-central-id');

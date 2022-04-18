@@ -4,7 +4,6 @@
     const path = require('path');
     const {
         BilaraData,
-        BilaraPath,
         BilaraPathMap,
         MLDoc,
         Pali,
@@ -13,6 +12,7 @@
         Seeker,
         Unicode,
     } = require("../index");
+    const { BilaraPath } = require("scv-esm");
     const { logger, LogInstance } = require('log-instance');
     logger.logLevel = 'warn';
     const { Files } = require('memo-again');

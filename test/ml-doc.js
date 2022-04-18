@@ -9,8 +9,8 @@
         SegDoc,
         MLDoc,
         BilaraData,
-        BilaraPath,
     } = require("../index");
+    const { BilaraPath } = require("scv-esm");
     this.timeout(5*1000);
     var logLevel = false;
     var bd = new BilaraData();

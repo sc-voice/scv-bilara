@@ -4,7 +4,6 @@ const path = require('path');
 const { logger } = require('log-instance');
 const {
     BilaraData,
-    BilaraPath,
     English,
     ExecGitMock,
     FuzzyWordSet,
@@ -15,6 +14,7 @@ const {
     Verse,
 
 } = require('../../index');
+const { BilaraPath } = require("scv-esm");
 const LOCAL = path.join(__dirname, '../../local');
 const BILARA_DATA = path.join(LOCAL, '/bilara-data');
 

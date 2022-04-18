@@ -1,6 +1,6 @@
 module.exports = {
     BilaraData: require("./src/bilara-data"),
-    BilaraPath: require("./src/bilara-path"),
+    BilaraPath: require("scv-esm").BilaraPath,
     BilaraPathMap: require("./src/bilara-path-map"),
     DETranslation: require("./src/de-translation"),
     English: require("./src/english"),

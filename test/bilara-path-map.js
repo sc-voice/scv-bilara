@@ -3,9 +3,9 @@
     const fs = require('fs');
     const {
         BilaraData,
-        BilaraPath,
         BilaraPathMap,
     } = require("../index");
+    const { BilaraPath } = require("scv-esm");
     const tmp = require('tmp');
     var {
         commentPath,

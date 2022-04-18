@@ -1,5 +1,5 @@
 (function(exports) {
-    const BilaraPath = require("./bilara-path");
+    const { BilaraPath } = require("scv-esm");
 
     class SuttaCentralId { 
         constructor(scid=null) {
