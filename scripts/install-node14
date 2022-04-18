@@ -1,5 +1,5 @@
 #!/bin/bash
-RQDVER=14.15.0
+RQDVER=14.19.1
 if [ ! -x /usr/bin/curl ]; then
     echo -e "NODE\t: apt-get install curl"
     sudo apt-get install -y curl
