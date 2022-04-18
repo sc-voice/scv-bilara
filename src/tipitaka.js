@@ -1,7 +1,7 @@
 (function(exports) { 
     const SUID_MAP  = require('./auto/suidmap.json');
     const { logger } = require('log-instance');
-    const SuttaCentralId = require('./sutta-central-id');
+    const { SuttaCentralId } = require('scv-esm');
 
     class Tipitaka {
         constructor(opts={}) {

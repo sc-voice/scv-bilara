@@ -22,7 +22,7 @@
     const SegDoc = require('./seg-doc');
     const MLDoc = require('./ml-doc');
     const { BilaraPath } = require("scv-esm");
-    const SuttaCentralId = require('./sutta-central-id');
+    const { SuttaCentralId } = require('scv-esm');
     const FuzzyWordSet = require('./fuzzy-word-set');
     const Publication = require('./publication');
     const Pali = require('./pali');

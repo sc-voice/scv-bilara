@@ -1,6 +1,11 @@
+const { 
+  BilaraPath,
+  SuttaCentralId,
+} = require('scv-esm');
+
 module.exports = {
     BilaraData: require("./src/bilara-data"),
-    BilaraPath: require("scv-esm").BilaraPath,
+    BilaraPath,
     BilaraPathMap: require("./src/bilara-path-map"),
     DETranslation: require("./src/de-translation"),
     English: require("./src/english"),
@@ -12,7 +17,7 @@ module.exports = {
     Publication: require("./src/publication"),
     Seeker: require("./src/seeker"),
     SegDoc: require("./src/seg-doc"),
-    SuttaCentralId: require("./src/sutta-central-id"),
+    SuttaCentralId,
     SuttaRef: require('./src/sutta-ref'),
     Tipitaka: require('./src/tipitaka'),
     Unicode: require("./src/unicode.js"),

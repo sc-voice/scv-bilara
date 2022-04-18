@@ -4,7 +4,7 @@
     const { logger } = require('log-instance');
     const { Files } = require('memo-again');
     const { BilaraPath } = require("scv-esm");
-    const SuttaCentralId = require('./sutta-central-id');
+    const { SuttaCentralId } = require('scv-esm');
     const STUBFILESIZE = 5;
     const ROOTMS_FOLDER = path.join(Files.LOCAL_DIR, "bilara-data", 
         "root", "pli", "ms");

@@ -17,7 +17,7 @@
     const Unicode = require('./unicode');
     const English = require('./english');
     const BilaraData = require('./bilara-data');
-    const SuttaCentralId = require('./sutta-central-id');
+    const { SuttaCentralId } = require('scv-esm');
 
     const BILARA_PATH = path.join(Files.LOCAL_DIR, 'bilara-data');
     const TRANSLATION_PATH = path.join(BILARA_PATH, 'translation');

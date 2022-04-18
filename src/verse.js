@@ -1,5 +1,5 @@
 (function(exports) {
-    const SuttaCentralId = require('./sutta-central-id');
+    const { SuttaCentralId } = require('scv-esm');
 
     class Verse { 
         constructor(opts={}) {

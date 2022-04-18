@@ -6,7 +6,7 @@
     const { BilaraPath } = require("scv-esm");
     const Unicode = require('./unicode');
     const Pali = require('./pali');
-    const SuttaCentralId = require('./sutta-central-id');
+    const { SuttaCentralId } = require('scv-esm');
     const BILARA_PATH = path.join(Files.LOCAL_DIR, 'bilara-data');
 
     class MLDoc {

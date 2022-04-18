@@ -1,5 +1,5 @@
 (function(exports) {
-  const SuttaCentralId = require('./sutta-central-id');
+  const { SuttaCentralId } = require('scv-esm');
   const assert = require('assert');
   const SUID_MAP = require('./auto/suidmap.json');
   const SUIDS = Object.keys(SUID_MAP).sort(SuttaCentralId.compareLow);

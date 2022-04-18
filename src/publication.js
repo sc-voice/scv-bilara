@@ -13,7 +13,7 @@
     const SegDoc = require('./seg-doc');
     const MLDoc = require('./ml-doc');
     const BilaraPathMap = require('./bilara-path-map');
-    const SuttaCentralId = require('./sutta-central-id');
+    const { SuttaCentralId } = require('scv-esm');
     const FuzzyWordSet = require('./fuzzy-word-set');
     const Pali = require('./pali');
     const English = require('./english');

@@ -3,7 +3,7 @@
     const path = require("path");
     const { logger } = require('log-instance');
     const FuzzyWordSet = require('./fuzzy-word-set');
-    const SuttaCentralId = require('./sutta-central-id');
+    const { SuttaCentralId } = require('scv-esm');
     const Unicode = require('./unicode');
 
     class SegDoc {
