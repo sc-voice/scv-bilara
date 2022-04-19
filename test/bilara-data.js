@@ -53,7 +53,7 @@
         });
         should(bdDefault.logger).equal(logger);
     });
-    it("initialize(...) must be called", async()=>{
+    it("TESTTESTinitialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         newbd.logLevel = 'info';
         should(newbd.initialized).equal(false);
@@ -65,19 +65,11 @@
         var res = await bd.initialize(sync);
         should(res).equal(bd);
         should(bd.initialized).equal(true);
-        should.deepEqual(Object.keys(bd.authors).sort(), [
-            'anandajoti',
-            'ashinsarana', 
-            'brahmali', 'hardao', 'kaz', 
-            'laera-quaresma', 'ms', 
-            'noeismet',
-            'phantuananh', 
-            'piyadassi',
-            'sabbamitta', 
-            'soma',
-            'suddhaso',
-            'sujato', 
-        ]);
+        let authors = Object.keys(bd.authors);
+        should(authors.indexOf('ms')).above(-1);
+        should(authors.indexOf('sujato')).above(-1);
+        should(authors.indexOf('sabbamitta')).above(-1);
+
         let eg_en = 'like a cow';
         should.deepEqual(bd.examples.en.filter(x=>x === eg_en), [eg_en]);
         should.deepEqual(bd.examples.de.slice(0,2), [
@@ -86,7 +78,7 @@
             //'Abfälle',
         ]);
     });
-    it("initialize(...) must be called", async()=>{
+    it("TESTTESTinitialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         should(newbd.initialized).equal(false);
         should.throws(() => {
@@ -97,22 +89,10 @@
         var res = await bd.initialize(sync);
         should(res).equal(bd);
         should(bd.initialized).equal(true);
-        should.deepEqual(Object.keys(bd.authors).sort(), [
-            'anandajoti',
-            'ashinsarana',  
-            'brahmali',
-            'hardao',
-            'kaz',
-            'laera-quaresma',
-            'ms', 
-            'noeismet',
-            'phantuananh',
-            'piyadassi',
-            'sabbamitta', 
-            'soma',
-            'suddhaso',
-            'sujato', 
-        ]);
+        let authors = Object.keys(bd.authors);
+        should(bd.authors.ms.type).equal('root');
+        should(bd.authors.sujato.type).equal('translator');
+        should(bd.authors.sabbamitta.type).equal('translator');
     });
     it("syncEbtData() loads EBT-data", async() =>{
         var bd = new BilaraData();
@@ -175,7 +155,7 @@
         should(fs.existsSync(dummyPath)).equal(true);
         should(fs.existsSync(unpublishedPath)).equal(true);
     });
-    it("authorInfo() => supported author info", async()=>{
+    it("TESTTESTauthorInfo() => supported author info", async()=>{
         await bd.initialize();
         var ms = {
             lang: 'pli',
@@ -258,22 +238,9 @@
             exampleVersion: 0,
         };
 
-        should.deepEqual(bd.authors, {
-            ms,
-            anandajoti,
-            ashinsarana, 
-            brahmali,    
-            hardao,
-            kaz,
-            "laera-quaresma": laera_quaresma,
-            noeismet,
-            phantuananh,
-            piyadassi,
-            sabbamitta,
-            soma,
-            suddhaso,
-            sujato,
-        });
+        should.deepEqual(bd.authors.ms, ms);
+        should.deepEqual(bd.authors.sujato, sujato);
+        should.deepEqual(bd.authors.sabbamitta, sabbamitta);
 
         should.deepEqual(bd.authorInfo('sabbamitta'), sabbamitta);
     });
@@ -313,14 +280,6 @@
             suid: 'dn33',
             bilaraPath: TRANSPATH('en','sujato', `dn/dn33`),
             exampleVersion: 1,
-        }
-        var dn33My = {
-            author: 'my-team',
-            lang: 'my',
-            category: 'sutta',
-            nikaya: 'dn',
-            suid: 'dn33',
-            //bilaraPath: TRANSPATH('my','my-team', `dn/dn33`),
         }
         should.deepEqual(bd.suttaInfo('dn33'), [
             dn33Pli, dn33De, dn33En, 
@@ -365,15 +324,6 @@
             bilaraPath: ROOTPATH(AN4_58),
             exampleVersion: 999999,
         };
-        var an4_58cs = {
-            author: 'ashinsarana',
-            lang: 'cs',
-            category: 'sutta',
-            nikaya: 'an',
-            suid: 'an4.58',
-            bilaraPath: TRANSPATH('cs', 'ashinsarana', AN4_58),
-            exampleVersion: 0,
-        };
         var an4_58en = {
             author: 'sujato',
             lang: 'en',
@@ -392,22 +342,10 @@
             bilaraPath: TRANSPATH('de','sabbamitta', AN4_58),
             exampleVersion: 1,
         };
-        var an4_58jpn = {
-            author: 'kaz',
-            lang: 'jpn',
-            category: 'sutta',
-            nikaya: 'an',
-            suid: 'an4.58',
-            bilaraPath: TRANSPATH('jpn','kaz', 'an/an4/an4.58'),
-            exampleVersion: 1,
-        };
-        should.deepEqual(bd.suttaInfo('an4.58'), [ 
-          an4_58pli, 
-          an4_58de, 
-          an4_58en, 
-          an4_58jpn, 
-          an4_58cs,  
-        ]);
+        let suttaInfo = bd.suttaInfo('an4.58');
+        should.deepEqual(suttaInfo[0], an4_58pli);
+        should.deepEqual(suttaInfo[1], an4_58de);
+        should.deepEqual(suttaInfo[2], an4_58en);
     });
     it("TESTTESTsuttaInfo(...) => thig3.8 sutta metadata", async()=>{
         await bd.initialize();
@@ -434,25 +372,10 @@
             bilaraPath: TRANSPATH('de', 'sabbamitta', 'thig3.8', 'sutta/kn/thig'),
             exampleVersion: 1,
         }, thigInfo);
-        let somaEnInfo = Object.assign({
-            lang: 'en',
-            author: 'soma',                
-            bilaraPath: TRANSPATH('en', 'soma', 'thig3.8', 'sutta/kn/thig'),
-            exampleVersion: 0,
-        }, thigInfo);
-        let somaItInfo = Object.assign({
-            lang: 'it',
-            author: 'soma',                
-            bilaraPath: TRANSPATH('it', 'soma', 'thig3.8', 'sutta/kn/thig'),
-            exampleVersion: 0,
-        }, thigInfo);
-        should.deepEqual(bd.suttaInfo('thig3.8'), [
-            pliInfo, 
-            deInfo,
-            sujatoInfo, 
-            somaEnInfo,
-            //somaItInfo,
-        ]);
+        let suttaInfo = bd.suttaInfo('thig3.8');
+        should.deepEqual(suttaInfo[0], pliInfo);
+        should.deepEqual(suttaInfo[1], deInfo);
+        should.deepEqual(suttaInfo[2], sujatoInfo);
     });
     it("loadSegDoc(...) loads translation document", async()=>{
         await bd.initialize();
