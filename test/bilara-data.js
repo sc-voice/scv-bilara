@@ -252,7 +252,7 @@
             'de', 'en', 'jpn', 'pli', 
         ]);
     });
-    it("suttaInfo(...) returns sutta metadata", async()=>{
+    it("TESTTESTsuttaInfo(...) returns sutta metadata", async()=>{
         await bd.initialize();
         var dn33Pli = {
             author: 'ms',
@@ -281,10 +281,11 @@
             bilaraPath: TRANSPATH('en','sujato', `dn/dn33`),
             exampleVersion: 1,
         }
-        should.deepEqual(bd.suttaInfo('dn33'), [
-            dn33Pli, dn33De, dn33En, 
-            //dn33My, // TODO20210307: scpub26 is not published
-        ]);
+        let dn33 = bd.suttaInfo('dn33');
+        should.deepEqual(dn33.find(info=>info.author==='ms'), dn33Pli);
+        should.deepEqual(dn33.find(info=>info.author==='sujato'), dn33En);
+        should.deepEqual(dn33.find(info=>info.author==='sabbamitta'), dn33De);
+
         var sn12_3pli = {
             author: 'ms',
             lang: 'pli',
