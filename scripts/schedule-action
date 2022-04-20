@@ -4,5 +4,6 @@ pushd $DIR/..
 SCRIPT=`basename $0 | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ`
 
 npm install --save suttacentral-api@latest
+npm install --save scv-esm@latest
 $DIR/js/suidmap.js
 $DIR/examples
