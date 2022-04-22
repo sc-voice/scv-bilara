@@ -3,6 +3,7 @@ DIR=`dirname $0`;
 pushd $DIR/..
 SCRIPT=`basename $0 | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ`
 
+echo "npm version:" `npm -v`
 npm install --save suttacentral-api@latest
 npm install --save scv-esm@latest
 $DIR/js/suidmap.js
