@@ -155,7 +155,7 @@
         should(fs.existsSync(dummyPath)).equal(true);
         should(fs.existsSync(unpublishedPath)).equal(true);
     });
-    it("authorInfo() => supported author info", async()=>{
+    it("TESTTESTauthorInfo() => supported author info", async()=>{
         await bd.initialize();
         var ms = {
             lang: 'pli',
@@ -243,6 +243,7 @@
         should.deepEqual(bd.authors.sabbamitta, sabbamitta);
 
         should.deepEqual(bd.authorInfo('sabbamitta'), sabbamitta);
+        should.deepEqual(bd.authorInfo('sujato'), sujato);
     });
     it("supportedLanguages() => segmented translations", async()=>{
         return; // TODO20210307: Carmi
@@ -252,7 +253,7 @@
             'de', 'en', 'jpn', 'pli', 
         ]);
     });
-    it("TESTTESTsuttaInfo(...) returns sutta metadata", async()=>{
+    it("suttaInfo(...) returns sutta metadata", async()=>{
         await bd.initialize();
         var dn33Pli = {
             author: 'ms',
