@@ -159,91 +159,42 @@
         await bd.initialize();
         var ms = {
             lang: 'pli',
+            author: 'ms',
+            category: ['sutta', 'vinaya'],
             type: "root",
             name: "Mahāsaṅgīti Tipiṭaka Buddhavasse 2500",
             exampleVersion: 999999,
         };
-        var ashinsarana = { 
-            lang: 'cs',
-            name: 'Ashin Sarana',
-            type: 'translator',
-            exampleVersion: 0,
-        };
-        var laera_quaresma = {
-            lang: 'pt',
-            exampleVersion: 0,
-        };
         var sujato = {
             lang: 'en',
             type: "translator",
+            author: "sujato",
+            category: ["sutta"],
             name: "Bhikkhu Sujato",
             exampleVersion: 1,
         };
         var brahmali = {
-            lang: 'en',
             type: "translator",
+            author: "brahmali",
             name: "Bhikkhu Brahmali",
-            exampleVersion: 0,
-        };
-        var hardao = {
-            lang: 'pl',
-            type: "translator",
-            name: "Piotr Jagodziński",
-            exampleVersion: 0,
-        };
-        var phantuananh = {
-           "lang": "vi",
-           "name": "Phan Tuấn Anh",
-           "type": "translator",
-            exampleVersion: 0,
-        };
-        var piyadassi = {
-           "lang": "lt",
-           "name": "Sayalay Piyadassi",
-           "type": "translator",
             exampleVersion: 0,
         };
         var sabbamitta = {
             lang: 'de',
             type: "translator",
+            category: ["sutta"],
+            author: "sabbamitta",
             name: "Sabbamitta",
             exampleVersion: 1,
         };
-        var kaz = {
-            lang: 'jpn',
-            name: 'Kaz Takehara',
-            type: 'translator',
-            exampleVersion: 1,
-        };
-        var soma = {
-            lang: 'en',
-            type: "translator",
-            name: "Ayya Soma",
-            exampleVersion: 0,
-        };
-        var anandajoti = {
-            lang: 'en',
-            exampleVersion: 0,
-        };
-        var suddhaso = {
-            lang: 'en',
-            type: "translator",
-            name: "Bhante Suddhāso",
-            exampleVersion: 0,
-        };
-        var noeismet = {
-            lang: 'fr',
-            type: "translator",
-            name: "Noé Ismet",
-            exampleVersion: 0,
-        };
+
+        should.deepEqual(bd.authorInfo('sabbamitta'), sabbamitta);
+        should.deepEqual(bd.authorInfo('sujato'), sujato);
 
         should.deepEqual(bd.authors.ms, ms);
         should.deepEqual(bd.authors.sujato, sujato);
         should.deepEqual(bd.authors.sabbamitta, sabbamitta);
 
-        should.deepEqual(bd.authorInfo('sabbamitta'), sabbamitta);
-        should.deepEqual(bd.authorInfo('sujato'), sujato);
     });
     it("supportedLanguages() => segmented translations", async()=>{
         return; // TODO20210307: Carmi

@@ -11,7 +11,7 @@
   const Examples = require("./examples.json");
   const SegDoc = require("./seg-doc");
   const MLDoc = require("./ml-doc");
-  const { BilaraPath } = require("scv-esm");
+  const { BilaraPath, Authors } = require("scv-esm");
   const { SuttaCentralId } = require("scv-esm");
   const FuzzyWordSet = require("./fuzzy-word-set");
   const Publication = require("./publication");
@@ -51,7 +51,7 @@
           logger: this,
         });
       this.languages = opts.languages || ["pli", this.lang];
-      this.authors = {};
+      this.authors = Authors.authors;
       Object.defineProperty(this, "_sources", {
         writable: true,
         value: null,
@@ -179,19 +179,6 @@
 
         this.examples = Examples;
 
-        let authPath = path.join(this.root, `_author.json`);
-        let authorJson = fs.existsSync(authPath)
-          ? json5.parse(await readFile(authPath))
-          : {};
-        this.addAuthor(
-          "ms",
-          Object.assign(
-            {
-              lang: "pli",
-            },
-            authorJson.ms
-          )
-        );
         var rootPath = path.join(this.root, "root");
         if (!fs.existsSync(rootPath)) {
           throw new Error(`Root document directory ` + `not found:${rootPath}`);
@@ -226,15 +213,6 @@
           var category = parts[3];
           var nikaya = parts[4];
           var suid = parts[parts.length - 1].split("_")[0].toLowerCase();
-          this.addAuthor(
-            author,
-            Object.assign(
-              {
-                lang,
-              },
-              authorJson[author]
-            )
-          );
         });
         //var uidExpPath = path.join(this.root, '.helpers', 'uid_expansion.json');
         var uidExpPath = path.join(
@@ -249,25 +227,6 @@
       } catch (e) {
         this.warn(`initialize()`, e.message);
         throw e;
-      }
-    }
-
-    addAuthor(author, info) {
-      var { authors, examples } = this;
-      if (authors[author] == null) {
-        let authoredExample = examples.authors.filter(
-          (ea) => ea.author === author
-        )[0];
-        let exampleVersion =
-          author === "ms"
-            ? 999999
-            : (authoredExample && Number(authoredExample.version)) || 0;
-        authors[author] = Object.assign(
-          { exampleVersion },
-          authors[author],
-          info
-        );
-        this.debug(`dbg addAuthor ${author}`, authors[author]);
       }
     }
 
@@ -903,7 +862,7 @@
     }
 
     authorInfo(author) {
-      return this.authors[author];
+      return Authors.authorInfo(author);
     }
 
     sutta_uidSearch(pattern, maxResults = 5) {
