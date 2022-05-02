@@ -7418,6 +7418,7 @@
 		"root/pli/ms": "sutta/an/an11"
 	},
 	"dhp1-20": {
+		"translation/de/sabbamitta": "sutta/kn/dhp",
 		"translation/en/suddhaso": "sutta/kn/dhp",
 		"translation/en/sujato": "sutta/kn/dhp",
 		"translation/vi/phantuananh": "sutta/kn/dhp",
@@ -13460,6 +13461,7 @@
 		"root/pli/ms": "sutta/sn/sn22"
 	},
 	"sn22.90": {
+		"translation/de/sabbamitta": "sutta/sn/sn22",
 		"translation/en/sujato": "sutta/sn/sn22",
 		"root/pli/ms": "sutta/sn/sn22"
 	},
@@ -19066,6 +19068,7 @@
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.69": {
+		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
@@ -20508,6 +20511,7 @@
 		"root/pli/ms": "sutta/kn/ud/vagga5"
 	},
 	"ud5.4": {
+		"translation/de/sabbamitta": "sutta/kn/ud/vagga5",
 		"translation/en/sujato": "sutta/kn/ud/vagga5",
 		"root/pli/ms": "sutta/kn/ud/vagga5"
 	},
