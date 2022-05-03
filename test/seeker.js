@@ -1374,7 +1374,7 @@
         should(data.resultPattern).equal('\\brat');
         should(data.searchLang).equal('de');
         should(data.method).equal('phrase');
-        should(data.mlDocs.length).equal(30);
+        should(data.mlDocs.length).equal(31);
         var mld0 = data.mlDocs[0];
         should(mld0.bilaraPaths[0]).match(/sn2.29/);
         should(mld0.score).equal(4.056);

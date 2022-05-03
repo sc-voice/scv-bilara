@@ -177,6 +177,7 @@
 
         should(suids.length).above(5500);
         should.deepEqual(Object.keys(suidMap["dhp1-20"]),[
+            'translation/de/sabbamitta',
             'translation/en/suddhaso',
             'translation/en/sujato',
             'translation/vi/phantuananh',
