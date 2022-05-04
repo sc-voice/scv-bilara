@@ -2,9 +2,9 @@
 
 DIR=`dirname $0`
 SCRIPT=`basename $0 | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ`
-cd $DIR/..
+mkdir -p $DIR/local; pushd $DIR/local > /dev/null
 
-type rg 2>&1 > /dev/null; RC=$?
+type rg >& /dev/null; RC=$?
 if [ "$RC" == "0" ]; then
   echo "$SCRIPT:" `rg --version 2>&1 | head -1` "(OK)"
 else
