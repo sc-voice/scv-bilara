@@ -30,6 +30,8 @@ In addition, new translations are constantly being added for multiple languages.
 scripts/get-content
 ```
 
+For low-bandwidth users, the initial content transfer will take a long time since it is almost 1GB of data.  Subsequent updates are incremental.
+
 ### Scripts
 
 #### search
