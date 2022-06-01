@@ -1356,10 +1356,9 @@
         should(data.resultPattern).equal('\\bblind');
         should(data.searchLang).equal('de');
         should(data.method).equal('phrase');
-        should(data.mlDocs.length).equal(15);
+        should(data.mlDocs.length).equal(17);
         var mld0 = data.mlDocs[0];
-        should(mld0.bilaraPaths[0]).match(/an3.29/);
-        should(mld0.score).equal(6.128);
+        should(mld0.bilaraPaths[0]).match(/ud6.4/);
     });
     it("find(...) finds Deutsch 'rat'", async()=>{
         let enWords = await English.wordSet({source:'file'});
@@ -1374,10 +1373,9 @@
         should(data.resultPattern).equal('\\brat');
         should(data.searchLang).equal('de');
         should(data.method).equal('phrase');
-        should(data.mlDocs.length).equal(31);
+        should(data.mlDocs.length).equal(33);
         var mld0 = data.mlDocs[0];
-        should(mld0.bilaraPaths[0]).match(/sn2.29/);
-        should(mld0.score).equal(4.056);
+        should(mld0.bilaraPaths[0]).match(/sn7.22/);
     });
     it("find(...) finds 'thig3.8' de unpublished", async()=>{
         var bilaraData = await bd.initialize();
