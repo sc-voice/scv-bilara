@@ -93,7 +93,7 @@ Create a Github bilara-data branch for working on an unpublished translation.
 
 For more information, './scripts/bilara-auth --help'
 
-#### publish SUTTA
+#### publish SUTTA _(DEPRECATED)_
 Merge the contents of the unpublished SUTTA branch into `master`. 
 Upon success, delete the merged SUTTA branch, which will be empty of changes.
 
