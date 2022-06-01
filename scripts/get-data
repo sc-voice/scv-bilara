@@ -1,0 +1,47 @@
+#/bin/bash
+#!/bin/bash
+
+DIR=`dirname $0`
+SCRIPT=`basename $0 | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ`
+
+start_time=$(date +%s)
+echo -e "$SCRIPT: checking local data..."
+cd local
+
+echo -e "\n$SCRIPT: getting ebt-data"
+if [ -e "ebt-data" ]; then
+  cd ebt-data &&
+  git pull &&
+  cd .. &&
+  RC=$?
+  if [ "$RC" != "0" ]; then
+    echo ERROR: ebt-data update failed [$RC]
+    exit $RC
+  fi
+else 
+  echo "$SCRIPT: downloading ebt-data (SLOW!)"
+  git clone https://github.com/ebt-site/ebt-data.git
+  echo "ebt-data has been downloaded"
+fi
+
+echo -e "\n$SCRIPT: getting bilara-data"
+if [ -e "bilara-data" ]; then
+  cd bilara-data &&
+  git pull &&
+  cd .. &&
+  RC=$?
+  if [ "$RC" != "0" ]; then
+    echo ERROR: bilara-data update failed [$RC]
+    exit $RC
+  fi
+else 
+  echo "$SCRIPT: downloading bilara-data (SLOW!)"
+  git clone https://github.com/suttacentral/bilara-data.git
+  echo "bilara-data has been downloaded"
+fi
+
+
+echo
+end_time=$(date +%s)
+elapsed=$((end_time - start_time))
+echo -e "${SCRIPT}: COMPLETED IN ${elapsed}s"

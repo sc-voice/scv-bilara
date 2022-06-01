@@ -19,29 +19,15 @@ cd scv-bilara
 ./scripts/install
 ```
 
-The installation script has been known to fail if it cannot install 
-NodeJS v10.17.0. If you encounter this, install NodeJS v10.17.0 manually
-and repeat the installation above.
-
-##### bilara-data
-By default, `scv-bilara` works with 
-[bilara-data](https://github.com/suttacentral/bilara-data)
-and
-[ebt-data](https://github.com/ebt-site/ebt-data). 
-To use `scv-bilara` with any other fork of `bilara-data`, simply clone
-the desired repository into the `local` subdirectory before using any scripts. Notice that
-any existing bilara-data must be removed.
+### Get the latest data
+Once your software has been installed, you'll want the latest data. 
+You can run this as frequently as you wish, 
+since SuttaCentral has an ongoing review process that
+results in frequent updates to existing translations.
+In addition, new translations are constantly being added for multiple languages.
 
 ```
-rm -rf local/bilara-data
-git clone https://github.com/suttacentral/bilara-data local/bilara-data
-```
-
-For those who prefer Git over SSH:
-
-```
-rm -rf local/bilara-data
-git clone git@github.com:suttacentral/bilara-data local/bilara-data
+scripts/get-data
 ```
 
 ### Scripts
