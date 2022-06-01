@@ -1,0 +1,23 @@
+#/bin/basu
+echo ENVIRONMENT VERSION INFORMATION
+echo ===============================
+function CHECK() {
+  TITLE=$1
+  shift
+  echo -e "  " $* "\t=>" EXPECTED:${TITLE} ACTUAL:`$*` 
+}
+CHECK 8.x.x npm --version
+CHECK v16.x.x node --version
+CHECK "ripgrep 12.x.x ..." rg "--version"
+CHECK "Release: 10" sudo lsb_release -r
+
+echo
+echo SEARCH TIMES FOR \"root of suffering\"
+echo ====================================
+echo Checking grep...
+time OUT=`grep -r "root of suffering"` 
+
+echo 
+echo Checking ripgrep...
+time OUT=`rg "root of suffering"` 
+
