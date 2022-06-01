@@ -19,15 +19,15 @@ cd scv-bilara
 ./scripts/install
 ```
 
-### Get the latest data
-Once your software has been installed, you'll want the latest data. 
+### Get the latest content
+Once your software has been installed, you'll want the latest content. 
 You can run this as frequently as you wish, 
 since SuttaCentral has an ongoing review process that
 results in frequent updates to existing translations.
 In addition, new translations are constantly being added for multiple languages.
 
 ```
-scripts/get-data
+scripts/get-content
 ```
 
 ### Scripts
