@@ -24,13 +24,45 @@ Once your software has been installed, you'll want the latest content.
 You can run this as frequently as you wish, 
 since SuttaCentral has an ongoing review process that
 results in frequent updates to existing translations.
-In addition, new translations are constantly being added for multiple languages.
+In addition, new translations are constantly being 
+added for multiple languages.
 
 ```
 scripts/get-content
 ```
 
 For low-bandwidth users, the initial content transfer will take a long time since it is almost 1GB of data.  Subsequent updates are incremental.
+
+
+### Verify your installation:
+```
+scripts/env-info
+```
+
+You should see something like this:
+```
+ENVIRONMENT VERSION INFORMATION
+===============================
+   npm --version        => EXPECTED:8.x.x ACTUAL:8.6.0
+   node --version       => EXPECTED:v16.x.x ACTUAL:v16.15.0
+   rg --version         => EXPECTED:ripgrep 12.x.x ... ACTUAL:ripgrep 12.1.1 (rev 7cb211378a) -SIMD -AVX (compiled) +SIMD +AVX (runtime)                               
+   sudo lsb_release -r  => EXPECTED:Release: 10 ACTUAL:Release: 10
+
+SEARCH TIMES FOR "root of suffering"
+====================================
+Checking grep...
+
+real    0m2.358s
+user    0m0.879s
+sys     0m1.073s
+
+Checking ripgrep...
+
+real    0m0.039s
+user    0m0.025s
+sys     0m0.031s
+```
+
 
 ### Scripts
 
