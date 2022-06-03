@@ -6,7 +6,7 @@ mkdir -p $DIR/local; pushd $DIR/local > /dev/null
 
 RQDVER=$1
 if [ "${RQDVER}" == "" ]; then
-  RQDVER=12.1.1
+  RQDVER=13.0.0
 fi
 VER=`rg --version | head -1 | sed -e 's/[^ ]* \([0-9.]*\).*/\1/'`
 if [ "$VER" == "${RQDVER}" ]; then

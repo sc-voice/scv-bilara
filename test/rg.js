@@ -8,10 +8,10 @@
   const util = require("node:util");
   const execPromise = util.promisify(exec);
   const MAXBUFFER = 10 * 1024 * 1024;
-  const TIMEOUT = 5*1000;
+  const TIMEOUT = 2*1000;
   this.timeout(TIMEOUT);
 
-  it("TESTTESTversion", async()=>{
+  it("version", async()=>{
     should(fs.existsSync(CWD)).equal(true);
     var cwd = CWD;
     var cmd = `rg --version`;
@@ -24,33 +24,19 @@
     let lines = stdout && stdout.trim().split('\n') || [];
     should(lines[0]).match(/ripgrep.*rev/);
   });
-  it("TESTTESTtestRg => root of suffering", async()=>{
-    logger.warn([
-      "WARNING!!!",
-      "\n",
-      "testRg: Ripgrep integration is fragile:",
-      "              Node 16   Node 18",
-      "            +=========+=========+",
-      " ripgrep 12 | OK      | OK      |",
-      " ripgrep 13 | TIMEOUT | TIMEOUT | HELP!!!",
-      "            +=========+=========+",
-    ].join('\n'));
+  it("testRg => root of suffering", async()=>{
     let pattern = 'root of suffering';
     var cwd = path.join(CWD, `translation/en`);
     should(fs.existsSync(cwd)).equal(true);
     var cmd = [
       `rg -c`,
-      `--debug`,
-      //`--line-buffered`,  // DOES NOT HELP
-      //`--no-mmap`,        // DOES NOT HELP
-      //`--threads 1`,      // DOES NOT HELP
-      //`--with-filename`,  // DOES NOT HELP
       `-e '${pattern}'`,
+      `./`,
     ].join(' ');
     var execOpts = {
         cwd,
         shell: '/bin/sh',       // shell does not matter
-        maxBuffer: 5*MAXBUFFER, // increasing maxBuffer does not matter
+        maxBuffer: MAXBUFFER, // increasing maxBuffer does not matter
         timeout: TIMEOUT,       // given more time does not matter
     };
     console.log(`testRg`, 

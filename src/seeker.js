@@ -307,6 +307,7 @@
                 `-g '!ka'`,   // exclude Chinese
                 `-g '!sa'`,   // exclude Chinese
                 `-g '!ma'`,   // exclude Chinese
+                `./`,         // Must be explicit for Node (https://github.com/BurntSushi/ripgrep/issues/2227)
                 `|sort -k 2rn -k 1rd -t ':'`,
             ].join(' ');
             maxResults && (cmd += `|head -${maxResults}`);
