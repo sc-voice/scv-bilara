@@ -4,14 +4,16 @@
   const path = require('path');
   const { exec, } = require('child_process');
   const { logger } = require('log-instance');
-  const util = require('util');
+  const CWD = path.join(__dirname, '..', 'local', 'ebt-data');
+  const util = require("node:util");
   const execPromise = util.promisify(exec);
-  const ROOT = path.join(__dirname, '..', 'local', 'ebt-data');
   const MAXBUFFER = 10 * 1024 * 1024;
+  const TIMEOUT = 5*1000;
+  this.timeout(TIMEOUT);
 
   it("TESTTESTversion", async()=>{
-    should(fs.existsSync(ROOT)).equal(true);
-    var cwd = ROOT;
+    should(fs.existsSync(CWD)).equal(true);
+    var cwd = CWD;
     var cmd = `rg --version`;
     var execOpts = {
         cwd,
@@ -23,45 +25,46 @@
     should(lines[0]).match(/ripgrep.*rev/);
   });
   it("TESTTESTtestRg => root of suffering", async()=>{
-    // TBD: This test will fail with ripgrep 13 and node 16
+    logger.warn([
+      "WARNING!!!",
+      "\n",
+      "testRg: Ripgrep integration is fragile:",
+      "              Node 16   Node 18",
+      "            +=========+=========+",
+      " ripgrep 12 | OK      | OK      |",
+      " ripgrep 13 | TIMEOUT | TIMEOUT | HELP!!!",
+      "            +=========+=========+",
+    ].join('\n'));
     let pattern = 'root of suffering';
-    let lang = 'en';
-    let root = 'translation';
-
-    console.log(`testRg`,{pattern, lang, root});
-    var cwd = path.join(ROOT, `translation/${lang}`);
+    var cwd = path.join(CWD, `translation/en`);
     should(fs.existsSync(cwd)).equal(true);
-    var cmd = `rg -c -i -e '${pattern}'`;
+    var cmd = [
+      `rg -c`,
+      `--debug`,
+      //`--line-buffered`,  // DOES NOT HELP
+      //`--no-mmap`,        // DOES NOT HELP
+      //`--threads 1`,      // DOES NOT HELP
+      //`--with-filename`,  // DOES NOT HELP
+      `-e '${pattern}'`,
+    ].join(' ');
     var execOpts = {
         cwd,
-        shell: '/bin/sh',
-        maxBuffer: 90*MAXBUFFER,
-        timeout: 5*1000,
+        shell: '/bin/sh',       // shell does not matter
+        maxBuffer: 5*MAXBUFFER, // increasing maxBuffer does not matter
+        timeout: TIMEOUT,       // given more time does not matter
     };
-    console.log(`testRg`, execOpts);
-    let p = new Promise((resolve, reject) =>{
-      try {
-        exec(cmd, execOpts, (err,stdout,stderr)=>{
-          let res = {err, stdout, stderr};
-          if (err) {
-            console.log(`exec() err[${err}]`);
-            console.log(`stdout[${stdout}] stderr[${stderr}]`);
-            reject(err);
-          } else {
-            console.log(`testRg() OK => ${res}`);
-            resolve(res);
-          }
-        });
-      } catch (e) {
-        console.log("unexpected error", e);
-        reject(e);
-      }
+    console.log(`testRg`, 
+      JSON.stringify({pattern, cmd, execOpts}, null,2));
+    let p = new Promise((resolve, reject) => {
+      exec(cmd, execOpts, (err, stdout, stderr)=> {
+        let res = {err,stdout,stderr};
+        resolve(res);
+      });
     });
-    //let { stdout, stderr } = await execPromise(cmd, execOpts);
-    let { stdout, stderr } = await p;
+    let res = await p;
+    let { err, stdout, stderr } = res;
     let lines = stdout && stdout.trim().split('\n') || [];
-    console.log(lines);
-    console.log('stderr', stderr);
+    console.log({lines, res});
     should(lines.length).above(7);
   });
 })

@@ -4,11 +4,15 @@ DIR=`dirname $0`
 SCRIPT=`basename $0 | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ`
 mkdir -p $DIR/local; pushd $DIR/local > /dev/null
 
-VER=`rg --version | head -1 | sed -e 's/\..*//'`
-if [ "$VER" == "ripgrep 12" ]; then
-  echo "$SCRIPT:" $VER "(OK)"
+RQDVER=$1
+if [ "${RQDVER}" == "" ]; then
+  RQDVER=12.1.1
+fi
+VER=`rg --version | head -1 | sed -e 's/[^ ]* \([0-9.]*\).*/\1/'`
+if [ "$VER" == "${RQDVER}" ]; then
+  echo "$SCRIPT:" Expected:${RQDVER} Actual:$VER "(OK)"
 else
-  echo "$SCRIPT: installing ripgrep 12.1.1"
-  curl -LO https://github.com/BurntSushi/ripgrep/releases/download/12.1.1/ripgrep_12.1.1_amd64.deb
-  sudo dpkg -i ripgrep_12.1.1_amd64.deb
+  echo "$SCRIPT: installing ripgrep ${RQDVER}"
+  curl -LO https://github.com/BurntSushi/ripgrep/releases/download/${RQDVER}/ripgrep_${RQDVER}_amd64.deb
+  sudo dpkg -i ripgrep_${RQDVER}_amd64.deb
 fi
