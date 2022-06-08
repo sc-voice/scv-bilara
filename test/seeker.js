@@ -108,7 +108,7 @@
         should.deepEqual(res2, res);
 
         //console.log(`dbg grep`, ms1-ms0, ms2-ms1);
-        should(ms2-ms1).below(15);
+        should(ms2-ms1).below(20);
     });
     it("grep(...) finds maxResults things", async()=>{
         var skr = new Seeker(SEEKEROPTS);
