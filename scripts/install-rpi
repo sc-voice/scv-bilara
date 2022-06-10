@@ -18,6 +18,7 @@ if [ -e /usr/bin/node ]; then
     sudo apt autoremove -y
 fi
 echo -e "${SCRIPT}: apt-get install nodejs@${RQDVER} "
-curl -fsSL https://deb.nodesource.com/setup_${RQDVER}.x | bash -
+curl -fsSL https://deb.nodesource.com/setup_${RQDVER}.x | sudo -E bash -
 sudo apt-get install -y nodejs
+sudo ln -s /usr/bin/node /usr/sbin/node
 
