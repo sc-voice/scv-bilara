@@ -39,8 +39,8 @@
         maxBuffer: MAXBUFFER, // increasing maxBuffer does not matter
         timeout: TIMEOUT,       // given more time does not matter
     };
-    console.log(`testRg`, 
-      JSON.stringify({pattern, cmd, execOpts}, null,2));
+    //console.log(`testRg`, 
+      //JSON.stringify({pattern, cmd, execOpts}, null,2));
     let p = new Promise((resolve, reject) => {
       exec(cmd, execOpts, (err, stdout, stderr)=> {
         let res = {err,stdout,stderr};
@@ -50,7 +50,7 @@
     let res = await p;
     let { err, stdout, stderr } = res;
     let lines = stdout && stdout.trim().split('\n') || [];
-    console.log({lines, res});
+    //console.log({lines, res});
     should(lines.length).above(7);
   });
 })
