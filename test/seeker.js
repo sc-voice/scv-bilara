@@ -1242,11 +1242,11 @@ typeof describe === "function" &&
       {
         let eCaught;
         try {
-          skr.tipitakaRegExp("an11");
+          skr.tipitakaRegExp("an101");
         } catch(e) {
           eCaught = e;
         }
-        should(eCaught.message).match(/invalid category:an11/i);
+        should(eCaught.message).match(/invalid category:an101/i);
       }
 
       // valid
