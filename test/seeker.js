@@ -205,7 +205,7 @@ typeof describe === "function" &&
         }
       })();
     });
-    it("TESTTESTkeywordSearch(...) limits results", async () => {
+    it("keywordSearch(...) limits results", async () => {
       var lang = "en";
       var pattern = Seeker.normalizePattern("suffering joy faith");
       var maxResults = 3;
@@ -237,7 +237,7 @@ typeof describe === "function" &&
         `${en_suj}sn/sn12/sn12.23_translation-en-sujato.json:4`,
       ]);
     });
-    it("TESTTESTkeywordSearch(...) searches English", async () => {
+    it("keywordSearch(...) searches English", async () => {
       var pattern = Seeker.normalizePattern("suffering joy faith");
       var skr = await new Seeker({
         lang: "de", // Deutsch
@@ -1251,6 +1251,10 @@ typeof describe === "function" &&
 
       // valid
       should(skr.tipitakaRegExp("an").toString()).equal("/(\\/an\\/)/iu");
+      should(skr.tipitakaRegExp("an1").toString()).equal("/(\\/an1\\/)/iu");
+      should(skr.tipitakaRegExp("an11").toString()).equal("/(\\/an11\\/)/iu");
+      should(skr.tipitakaRegExp("sn5").toString()).equal("/(\\/sn5\\/)/iu");
+      should(skr.tipitakaRegExp("sn56").toString()).equal("/(\\/sn56\\/)/iu");
       should(skr.tipitakaRegExp("su").toString()).equal("/(\\/sutta\\/)/iu");
       should(skr.tipitakaRegExp().toString()).equal("/(\\/sutta\\/)/iu");
       should(skr.tipitakaRegExp("bi,pj").toString()).equal("/(-bi-|-pj)/iu");
@@ -1618,7 +1622,7 @@ typeof describe === "function" &&
       should(mld0.author_uid).equal("brahmali");
       should(res.mlDocs.length).equal(maxDoc);
     });
-    it("TESTTESTfind(...) => nun -tc:badcategory", async () => {
+    it("find(...) => nun -tc:badcategory", async () => {
       let bilaraData = new BilaraData();
       let maxDoc = 5;
       let skr = await new Seeker({
