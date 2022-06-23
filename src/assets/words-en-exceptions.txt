@@ -38,6 +38,7 @@ rat
 reichweite
 Reitertruppe
 Reitertruppen
+Skelett
 Sonnenschirm
 Sonnenschirm-Orchideenbaum
 stamm
