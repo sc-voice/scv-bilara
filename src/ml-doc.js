@@ -161,7 +161,7 @@
             for (var ip = 0; ip < bilaraPaths.length; ip++) {
                 var parts = BilaraPath.pathParts(bilaraPaths[ip]);
                 var bp = path.join(root, parts.bilaraPath);
-                var fh = await fs.promises.open(bp);
+                var fh = fs.existsSync(bp) && await fs.promises.open(bp);
                 var isTrans = parts.type === 'translation';
                 var isRoot = parts.type === 'root';
                 var lang = isTrans || isRoot

@@ -89,7 +89,7 @@ typeof describe === "function" &&
       should(reAllow.test(fn)).equal(true);
       should(reDeny.test(fn)).equal(false);
     });
-    it("grep(...) finds sutta things", async () => {
+    it("TESTTESTgrep(...) finds sutta things", async () => {
       var skr = new Seeker({});
       var ms0 = Date.now();
       await skr.clearMemo("grep");
@@ -855,7 +855,7 @@ typeof describe === "function" &&
         "mn66/pli/ms",
       ]);
     });
-    it("find(...) => finds phrase", async () => {
+    it("TESTTESTfind(...) => finds phrase", async () => {
       var maxResults = 3;
       var skr = await new Seeker({
         maxResults,
@@ -892,7 +892,7 @@ typeof describe === "function" &&
         scid: "sn42.11:0.1",
         de: "Verbundene Lehrreden 42",
         en: "Linked Discourses 42.11",
-        pli: "Saṁyutta Nikāya 42 ",
+        pli: "Saṁyutta Nikāya 42.11 ",
       });
       should.deepEqual(mld1.segments()[0], {
         scid: "mn105:0.1",
@@ -1335,7 +1335,7 @@ typeof describe === "function" &&
       );
       should(mld0.score).equal(3.055);
     });
-    it("find(...) finds Deutsch 'abnehmend'", async () => {
+    it("TESTTESTfind(...) finds Deutsch 'abnehmend'", async () => {
       bd.log("initializing");
       var bilaraData = await bd.initialize();
       bd.log("initializing done");
@@ -1352,11 +1352,11 @@ typeof describe === "function" &&
       should(data.resultPattern).equal("\\babnehmend");
       should(data.searchLang).equal("de");
       should(data.method).equal("phrase");
-      should(data.mlDocs.length).equal(12);
+      should(data.mlDocs.length).equal(6);
       //data.mlDocs.forEach(mld=>console.log(mld.bilaraPaths));
       var mld0 = data.mlDocs[0];
-      should(mld0.bilaraPaths[1]).match(/de.*an10.68/);
-      should(mld0.score).equal(2.027);
+      should(mld0.bilaraPaths[1]).match(/de.*sn12.27/);
+      should(mld0.score).equal(1.026);
     });
     it("find(...) finds Deutsch 'blind'", async () => {
       //bd.logLevel = 'info'

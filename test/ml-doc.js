@@ -1,4 +1,4 @@
-(typeof describe === 'function') && describe("MLDoc", function() {
+(typeof describe === 'function') && describe("ml-doc", function() {
     const should = require("should");
     const fs = require('fs');
     const path = require('path');
@@ -94,7 +94,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
         });
         should(mld.suid).equal('an1.1-10');
     });
-    it("load(...) loads markup", async()=>{
+    it("TESTTESTload(...) loads markup", async()=>{
         var mld = new MLDoc({
             bilaraPaths: bilaraPaths_sn1_1,
         });
@@ -103,7 +103,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
         var segMap = mld.segMap;
         should.deepEqual(segMap['sn1.1:0.1'], {
 scid: 'sn1.1:0.1',
-pli: 'Saṁyutta Nikāya 1 ',
+pli: 'Saṁyutta Nikāya 1.1 ',
 en: 'Linked Discourses 1.1',
 de: 'Verbundene Lehrreden 1',
 html: '<article id=\'sn1.1\'><header><ul><li class=\'division\'>{}</li>',
@@ -118,9 +118,11 @@ html: '<article id=\'sn1.1\'><header><ul><li class=\'division\'>{}</li>',
         ].join(", "));
         should(segMap["sn1.1:1.8"].variant)
             .equal("nibbuyhāmi → nivuyhāmi (sya-all, km, mr)");
-        should(segMap["sn1.1:1.5"].comment).match(/BB has /);
         should(mld.suid).equal('sn1.1');
-        should(mld.title).equal('Verbundene Lehrreden 1\n1. Ein Schilfrohr\n1. Die Flut überqueren');
+        should(mld.title).equal([
+          'Verbundene Lehrreden 1',
+          '1. Das Kapitel über ein Schilfrohr',
+          '1. Die Flut überqueren'].join('\n'));
     });
     it("titles(...) => segment 0 text", done=>{
         (async function() { try {
