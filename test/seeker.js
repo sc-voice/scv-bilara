@@ -855,7 +855,7 @@ typeof describe === "function" &&
         "mn66/pli/ms",
       ]);
     });
-    it("TESTTESTfind(...) => finds phrase", async () => {
+    it("find(...) => finds phrase", async () => {
       var maxResults = 3;
       var skr = await new Seeker({
         maxResults,
@@ -890,8 +890,8 @@ typeof describe === "function" &&
       should(res.minLang).equal(2);
       should.deepEqual(mld0.segments()[0], {
         scid: "sn42.11:0.1",
-        de: "Verbundene Lehrreden 42",
-        en: "Linked Discourses 42.11",
+        de: "Verbundene Lehrreden 42 ",
+        en: "Linked Discourses 42.11 ",
         pli: "Saṁyutta Nikāya 42.11 ",
       });
       should.deepEqual(mld1.segments()[0], {

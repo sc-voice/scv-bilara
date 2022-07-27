@@ -94,7 +94,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
         });
         should(mld.suid).equal('an1.1-10');
     });
-    it("TESTTESTload(...) loads markup", async()=>{
+    it("load(...) loads markup", async()=>{
         var mld = new MLDoc({
             bilaraPaths: bilaraPaths_sn1_1,
         });
@@ -102,11 +102,11 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
         should(res).equal(mld);
         var segMap = mld.segMap;
         should.deepEqual(segMap['sn1.1:0.1'], {
-scid: 'sn1.1:0.1',
-pli: 'Saṁyutta Nikāya 1.1 ',
-en: 'Linked Discourses 1.1',
-de: 'Verbundene Lehrreden 1',
-html: '<article id=\'sn1.1\'><header><ul><li class=\'division\'>{}</li>',
+          scid: 'sn1.1:0.1',
+          pli: 'Saṁyutta Nikāya 1.1 ',
+          en: 'Linked Discourses 1.1 ',
+          de: 'Verbundene Lehrreden 1 ',
+          html: '<article id=\'sn1.1\'><header><ul><li class=\'division\'>{}</li>',
         });
 
         should(segMap["sn1.1:1.1"].reference).equal([
@@ -117,7 +117,7 @@ html: '<article id=\'sn1.1\'><header><ul><li class=\'division\'>{}</li>',
             "vri23.2",
         ].join(", "));
         should(segMap["sn1.1:1.8"].variant)
-            .equal("nibbuyhāmi → nivuyhāmi (sya-all, km, mr)");
+            .equal("nibbuyhāmi → nivuyhāmi (sya-all, km, mr) ");
         should(mld.suid).equal('sn1.1');
         should(mld.title).equal([
           'Verbundene Lehrreden 1',
