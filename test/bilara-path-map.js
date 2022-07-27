@@ -200,7 +200,7 @@
         let takaPaths = await bpm.tipitakaPaths();
         should(takaPaths.filter(p=>/abhidhamma/.test(p)).length).equal(8);
         should(takaPaths.filter(p=>/sutta/.test(p)).length).equal(26);
-        should(takaPaths.filter(p=>/vinaya/.test(p)).length).equal(17);
+        should(takaPaths.filter(p=>/vinaya/.test(p)).length).equal(18);
         should.deepEqual(takaPaths.filter(p=>/sutta/.test(p)), [
             'sutta',
             'sutta/an',

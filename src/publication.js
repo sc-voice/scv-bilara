@@ -18,7 +18,7 @@
     const Pali = require('./pali');
     const English = require('./english');
     const ExecGit = require('./exec-git');
-    const PUB_PREFIX = /^https:.*master\//;
+    const PUB_PREFIX = /^https:.*(master|published)\//;
 
     class Publication {
         constructor(opts={}) {
@@ -63,7 +63,7 @@
                     })
                     .map(e=>that._publication[e[0]]);
                 that.pubInfoMap = that.pubEntries.reduce((a,p) => {
-                    var bilPath = p.source_url.replace(/.*master\//,'');
+                    var bilPath = p.source_url.replace(/.*(master|published)\//,'');
                     a[bilPath] = p;
                     return a;
                 }, {});
@@ -130,7 +130,7 @@
                         publication_number,
                         parent_publication,
                     } = p;
-                    var bilPath = source_url.replace(/.*master\//,'');
+                    var bilPath = source_url.replace(/.*(master|published)\//,'');
                     if (!includeUnpublished) { 
                         if (is_published!=="true" && p.is_published!==true) {
                             return a;
@@ -249,7 +249,7 @@
             let isPub = rePublished.test(sp) || rePublished.test(fpath);
             let isUnpub = reUnpublished.test(sp) || reUnpublished.test(fpath);
             let pub = isPub && !isUnpub;
-            //this.debug(`isPublishedPath`, {sp, fpath, isPub, isUnpub})
+            this.debug(`isPublishedPath`, {sp, fpath, isPub, isUnpub, })
             return pub;
         }
 

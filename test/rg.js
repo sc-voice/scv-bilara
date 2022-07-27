@@ -22,7 +22,7 @@
     };
     let { stdout, stderr }  = await execPromise(cmd, execOpts);
     let lines = stdout && stdout.trim().split('\n') || [];
-    should(lines[0]).match(/ripgrep.*rev/);
+    should(lines[0]).match(/ripgrep.*[0-9]+.[0-9]+/);
   });
   it("testRg => root of suffering", async()=>{
     let pattern = 'root of suffering';

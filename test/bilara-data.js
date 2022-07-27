@@ -599,33 +599,30 @@
             ['mn9-11', 'mn10-12']), // major number range
             ['mn9','mn10','mn11','mn10','mn11','mn12']); 
     });
-    it("sutta_uidSuccessor(sutta_uid) => next sutta_uid", done=>{
-        (async function() { try {
-            await bd.initialize();
+    it("sutta_uidSuccessor(sutta_uid) => next sutta_uid", async()=>{
+      await bd.initialize();
 
-            // vinaya
-            should(bd.sutta_uidSuccessor('pli-tv-bi-vb-sk1',true))
-                .equal('pli-tv-bi-vb-sk2');
-            should(bd.sutta_uidSuccessor('pli-tv-bi-vb-sk1-75',true))
-                .equal('pli-tv-bi-vb-sk76');
-            should(bd.sutta_uidSuccessor('pli-tv-bi-vb-sk1',false))
-                .equal('pli-tv-bi-vb-ss1');
-            should(bd.sutta_uidSuccessor('pli-tv-bi-vb-sk1-75',false))
-                .equal('pli-tv-bi-vb-ss1');
+      // vinaya
+      should(bd.sutta_uidSuccessor('pli-tv-bi-vb-sk1',true))
+          .equal('pli-tv-bi-vb-sk2');
+      should(bd.sutta_uidSuccessor('pli-tv-bi-vb-sk1-75',true))
+          .equal('pli-tv-bi-vb-sk76');
+      should(bd.sutta_uidSuccessor('pli-tv-bi-vb-sk1',false))
+          .equal('pli-tv-bi-vb-sk75');
+      should(bd.sutta_uidSuccessor('pli-tv-bi-vb-sk75',false))
+          .equal('pli-tv-bi-vb-ss1');
 
-            // logical
-            should(bd.sutta_uidSuccessor('mn33',true)).equal('mn34');
-            should(bd.sutta_uidSuccessor('sn29.10-21',true))
-                .equal('sn29.22');
-            should(bd.sutta_uidSuccessor('sn29.10-21')).equal('sn30.1');
+      // logical
+      should(bd.sutta_uidSuccessor('mn33',true)).equal('mn34');
+      should(bd.sutta_uidSuccessor('sn29.10-21',true))
+          .equal('sn29.22');
+      should(bd.sutta_uidSuccessor('sn29.10-21')).equal('sn30.1');
 
-            should(bd.sutta_uidSuccessor('mn33',false)).equal('mn34');
-            should(bd.sutta_uidSuccessor('sn29.10-21',false))
-                .equal('sn30.1');
-            should(bd.sutta_uidSuccessor('thag16.1')).equal('thag16.2');
-            should(bd.sutta_uidSuccessor('thag16.1-10')).equal('thag17.1');
-            done(); 
-        } catch(e) {done(e);} })();
+      should(bd.sutta_uidSuccessor('mn33',false)).equal('mn34');
+      should(bd.sutta_uidSuccessor('sn29.10-21',false))
+          .equal('sn30.1');
+      should(bd.sutta_uidSuccessor('thag16.1')).equal('thag16.2');
+      should(bd.sutta_uidSuccessor('thag16.1-10')).equal('thag17.1');
     });
     it("sutta_uidSearch(...) normalizes sutta references", async()=>{
         await bd.initialize();
@@ -683,13 +680,13 @@
         await bd.initialize();
         var an1_9_en = {
             scid: "an1.9:1.0",
-            pli: '9',
-            en: '9',
+            pli: '9 ',
+            en: '9 ',
         };
         var an1_9_de = {
             scid: "an1.9:1.0",
-            pli: '9',
-            de: '9',
+            pli: '9 ',
+            de: '9 ',
         };
 
         // implicit
@@ -760,9 +757,9 @@
             await bd.initialize();
             var an1_9 = {
                 scid: "an1.9:1.0",
-                pli: '9',
-                de: '9',
-                en: '9',
+                pli: '9 ',
+                de: '9 ',
+                en: '9 ',
             };
 
             // explicit
@@ -790,9 +787,9 @@
         await bd.initialize();
         var an1_9 = {
             scid: "an1.9:1.0",
-            pli: '9',
-            en: '9',
-            de: '9',
+            pli: '9 ',
+            en: '9 ',
+            de: '9 ',
         };
 
         // explicit

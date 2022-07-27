@@ -117,7 +117,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
             "vri23.2",
         ].join(", "));
         should(segMap["sn1.1:1.8"].variant)
-            .equal("nibbuyhāmi → nivuyhāmi (sya-all, km, mr) ");
+            .equal("nibbuyhāmi → nivuyhāmi (sya-all, km, mr)");
         should(mld.suid).equal('sn1.1');
         should(mld.title).equal([
           'Verbundene Lehrreden 1',

@@ -659,7 +659,7 @@
           matchHighlight,
           maxDoc,
           maxResults,
-          minLang,
+          minLang=2,
           pattern,
           searchLang,
           showMatchesOnly,

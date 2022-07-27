@@ -89,7 +89,7 @@ typeof describe === "function" &&
       should(reAllow.test(fn)).equal(true);
       should(reDeny.test(fn)).equal(false);
     });
-    it("TESTTESTgrep(...) finds sutta things", async () => {
+    it("grep(...) finds sutta things", async () => {
       var skr = new Seeker({});
       var ms0 = Date.now();
       await skr.clearMemo("grep");
@@ -630,9 +630,9 @@ typeof describe === "function" &&
       let segs0 = mld0.segments();
       should.deepEqual(segs0[4], {
         scid: "dhp2:4",
-        en: "you speak or act,",
+        en: "you speak or act, ",
         matched: true,
-        pli: "bhāsati vā karoti vā;",
+        pli: "bhāsati vā karoti vā; ",
       });
     });
     it("find(...) finds thag1.10", async () => {
@@ -764,9 +764,9 @@ typeof describe === "function" &&
       var segments = mld0.segments();
       should.deepEqual(segments[0], {
         scid: "an1.2:1.0",
-        de: "2",
-        en: "2",
-        pli: "2",
+        de: "2 ",
+        en: "2 ",
+        pli: "2 ",
         matched: true,
       });
       should(segments.length).equal(4);
@@ -775,7 +775,7 @@ typeof describe === "function" &&
         scid: "an1.2:1.3",
         pli: "Dutiyaṁ. ",
         de: " ",
-        en: " ",
+        en: "",
         matched: true,
       });
     });
@@ -1086,11 +1086,13 @@ typeof describe === "function" &&
       should(searchLang).equal(searchLang);
       should.deepEqual(bilaraPaths, [
         `${pli_ms}sn/sn15/sn15.2_root-pli-ms.json`,
+        `${de_sab}sn/sn15/sn15.2_translation-de-sabbamitta.json`,
         `${en_suj}sn/sn15/sn15.2_translation-en-sujato.json`,
         `${pli_ms}sn/sn15/sn15.1_root-pli-ms.json`,
         `${de_sab}sn/sn15/sn15.1_translation-de-sabbamitta.json`,
         `${en_suj}sn/sn15/sn15.1_translation-en-sujato.json`,
         `${pli_ms}sn/sn15/sn15.19_root-pli-ms.json`,
+        `${de_sab}sn/sn15/sn15.19_translation-de-sabbamitta.json`,
         `${en_suj}sn/sn15/sn15.19_translation-en-sujato.json`,
       ]);
     });
@@ -1197,10 +1199,13 @@ typeof describe === "function" &&
       });
       should(res.method).equal("sutta_uid");
       should(res.maxDoc).equal(maxDoc);
-      should.deepEqual(res.suttaRefs, ["pli-tv-bi-vb-sk1-75/en"]);
+      should.deepEqual(res.suttaRefs, [
+        "pli-tv-bi-vb-sk1/en",
+        "pli-tv-bi-vb-sk75/en",
+      ]);
       should(res.resultPattern).equal(pattern);
       should(res.lang).equal("en");
-      should(res.mlDocs.length).equal(1);
+      should(res.mlDocs.length).equal(2);
     });
     it("find(...) finds pli-tv-bi-vb-pj7", async () => {
       var maxDoc = 3;
@@ -1235,7 +1240,7 @@ typeof describe === "function" &&
       should(res.lang).equal("en");
       should(res.mlDocs.length).equal(3);
     });
-    it("TESTTESTtipitakaRegExp(tc) => regexp for paths", () => {
+    it("tipitakaRegExp(tc) => regexp for paths", () => {
       var skr = new Seeker();
 
       // invalid
@@ -1274,8 +1279,8 @@ typeof describe === "function" &&
         //html: "<section class='range' id='an1.1-10'><header>"+
         //"<ul><li class='division'>{}</li>",
         pli: "Aṅguttara Nikāya 1 ",
-        en: "Numbered Discourses 1.1–10",
-        de: "Nummerierte Lehrreden 1",
+        en: "Numbered Discourses 1.1–10 ",
+        de: "Nummerierte Lehrreden 1 ",
         matched: true,
       });
     });
@@ -1336,6 +1341,7 @@ typeof describe === "function" &&
       should(mld0.score).equal(3.055);
     });
     it("TESTTESTfind(...) finds Deutsch 'abnehmend'", async () => {
+      //bd.logLevel = 'info';
       bd.log("initializing");
       var bilaraData = await bd.initialize();
       bd.log("initializing done");
@@ -1344,15 +1350,16 @@ typeof describe === "function" &&
         bilaraData,
         lang,
       }).initialize();
+      //skr.logLevel = 'info';
       var pattern = "abnehmend";
       let matchHighlight = '<span class="ebt-matched">$&</span>';
       should(skr.patternLanguage(pattern)).equal(lang);
 
-      var data = await skr.find({ pattern, lang, matchHighlight });
+      var data = await skr.slowFind({ pattern, lang, matchHighlight });
       should(data.resultPattern).equal("\\babnehmend");
       should(data.searchLang).equal("de");
       should(data.method).equal("phrase");
-      should(data.mlDocs.length).equal(6);
+      should(data.mlDocs.length).equal(7);
       //data.mlDocs.forEach(mld=>console.log(mld.bilaraPaths));
       var mld0 = data.mlDocs[0];
       should(mld0.bilaraPaths[1]).match(/de.*sn12.27/);
@@ -1389,7 +1396,7 @@ typeof describe === "function" &&
       should(data.resultPattern).equal("\\brat");
       should(data.searchLang).equal("de");
       should(data.method).equal("phrase");
-      should(data.mlDocs.length).equal(33);
+      should(data.mlDocs.length).equal(34);
       var mld0 = data.mlDocs[0];
       should(mld0.bilaraPaths[0]).match(/sn7.22/);
     });
@@ -1722,8 +1729,8 @@ typeof describe === "function" &&
       let segs0 = mld0.segments();
       should.deepEqual(segs0[0], {
         scid: "sn52.14:1.2",
-        pli: "sarāgaṁ vā cittaṁ ‘sarāgaṁ cittan’ti pajānāmi …pe…",
-        en: "I understand mind with greed as ‘mind with greed’ …",
+        pli: "sarāgaṁ vā cittaṁ ‘sarāgaṁ cittan’ti pajānāmi …pe… ",
+        en: "I understand mind with greed as ‘mind with greed’ … ",
         matched: true,
       });
     });
@@ -1764,8 +1771,8 @@ typeof describe === "function" &&
       let segs0 = mld0.segments();
       should.deepEqual(segs0[0], {
         scid: "sn52.14:1.2",
-        pli: "sarāgaṁ vā cittaṁ ‘sarāgaṁ cittan’ti pajānāmi …pe…",
-        en: "I understand mind with greed as ‘mind with greed’ …",
+        pli: "sarāgaṁ vā cittaṁ ‘sarāgaṁ cittan’ti pajānāmi …pe… ",
+        en: "I understand mind with greed as ‘mind with greed’ … ",
         matched: true,
       });
     });

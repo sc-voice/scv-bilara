@@ -38,7 +38,7 @@
     var ENSOMA = 'translation/en/soma/sutta';
     var RUTEAM = 'translation/ru/team/sutta';
     var PATTON = 'translation/en/patton/sutta';
-    var logLevel = false;
+    var logLevel = 'warn';
 
     var pubTest = new Publication({
         logLevel,
@@ -76,7 +76,11 @@
     });
     it("isPublishedPath(f) filters supported suttas", async()=>{
         var pub = await pubTest.initialize(); 
+        //pub.logLevel = 'debug';
     
+        should(pub.isPublishedPath(
+            TRANSPATH('de', 'sabbamitta', `kn/thig/thig3.8`)))
+            .equal(true);
         should(pub.isPublishedPath(`${KAZ}/an/an4/an4.182_translation-jpn-kaz.json`))
             .equal(true);
         should(pub.isPublishedPath(`${SUJATO}/dn/dn16_translation-en-sujato.json:1`))
@@ -102,9 +106,6 @@
             .equal(true);
         should(pub.isPublishedPath(
             TRANSPATH('en', 'sujato', `kn/dhp/dhp21-32`)))
-            .equal(true);
-        should(pub.isPublishedPath(
-            TRANSPATH('de', 'sabbamitta', `kn/thig/thig3.8`)))
             .equal(true);
     });
     it("isPublishedPath(f) allows unpublished paths", async()=>{
@@ -174,7 +175,7 @@
         });
         should(pi.length).equal(2);
 
-        var [ pi0, pi1 ] = pub.pubInfo("pli-tv-bi-vb-sk1-75");
+        var [ pi0, pi1 ] = pub.pubInfo("pli-tv-bi-vb-sk1");
         should(pi0).properties({
             publication_number: "scpub8.1",
             author_name: "Bhikkhu Brahmali",
