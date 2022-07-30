@@ -317,61 +317,60 @@ function outJSON(res) {
 }
 
 function outHuman(res, pattern, nLang=1) {
-    var {
-        mlDocs,
-        suttaRefs,
-        elapsed,
-        searchLang,
-        method,
-        minLang,
-        lang,
-        segsMatched,
-    } = res;
-    var refs = res.suttaRefs.map(s=>s.split('/')[0])
-        .sort(SuttaCentralId.compareLow)
-        .join(',');
-    var nRefs = res.suttaRefs.length;
-    var nDocs = mlDocs.length;
-    console.log(
+  var {
+      mlDocs,
+      suttaRefs,
+      elapsed,
+      searchLang,
+      method,
+      minLang,
+      lang,
+      segsMatched,
+  } = res;
+  var refs = res.suttaRefs.map(s=>s.split('/')[0])
+      .sort(SuttaCentralId.compareLow)
+      .join(',');
+  var nRefs = res.suttaRefs.length;
+  var nDocs = mlDocs.length;
+  console.log(
 `pattern      : "${res.pattern}" grep:${res.resultPattern}
 languages    : translation:${res.lang} search:${searchLang} minLang:${res.minLang}
 output       : ${outFormat} color:${color} elapsed:${elapsed}s maxDoc:${res.maxDoc}
 found        : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${refs}`);
-    mlDocs.forEach((mld,im) => {
-        var suid = mld.suid;
-        mld.segments().forEach((seg,i) => {
-            var scid = seg.scid;
-            var sep = '-----------------------';
-            if (i === 0) {
-                let sm = mld.hasOwnProperty('segsMatched')
-                    ? mld.segsMatched : '';
-                let score = mld.score.toFixed(3);
-                let title = `doc:${im+1}/${nDocs} ${suid} score:${score}`;
-                console.log(`${sep} ${title} ${sep}`);
-            }
-            let scidText = [
-                `\u001b[38;5;80m`,
-                scid,
-                `\u001b[0m`,
-            ].join('');
-            if (nLang === 1) {
-                console.log(`${scidText}: ${seg[searchLang]}`);
-            } else {
-                console.log(`scid: ${scidText}`);
-                console.log(` pli: ${seg.pli || ''}`);
-                if (nLang === 3 || searchLang==='en' || lang === 'en') {
-                    console.log(`  en: ${seg.en || ''}`);
-                }
-                if (searchLang !== 'pli' && searchLang !== 'en') {
-                    var text = seg[searchLang] || '';
-                    console.log(`  ${searchLang}: ${text}`);
-                } else if (lang !== 'pli' && lang !== 'en') {
-                    var text = seg[lang] || '';
-                    console.log(`  ${lang}: ${text}`);
-                }
-            }
-        });
+  mlDocs.forEach((mld,im) => {
+    let {suid, author_uid, lang} = mld;
+    mld.segments().forEach((seg,i) => {
+      var scid = seg.scid;
+      var sep = '-----------------------';
+      if (i === 0) {
+        let sm = mld.hasOwnProperty('segsMatched') ? mld.segsMatched : '';
+        let score = mld.score.toFixed(3);
+        let title = `doc:${im+1}/${nDocs} ${suid}/${lang}/${author_uid} score:${score}`;
+        console.log(`${sep} ${title} ${sep}`);
+      }
+      let scidText = [
+        `\u001b[38;5;80m`,
+        scid,
+        `\u001b[0m`,
+      ].join('');
+      if (nLang === 1) {
+        console.log(`${scidText}: ${seg[searchLang]}`);
+      } else {
+        console.log(`scid: ${scidText}`);
+        console.log(` pli: ${seg.pli || ''}`);
+        if (nLang === 3 || searchLang==='en' || lang === 'en') {
+          console.log(`  en: ${seg.en || ''}`);
+        }
+        if (searchLang !== 'pli' && searchLang !== 'en') {
+          var text = seg[searchLang] || '';
+          console.log(`  ${searchLang}: ${text}`);
+        } else if (lang !== 'pli' && lang !== 'en') {
+          var text = seg[lang] || '';
+          console.log(`  ${lang}: ${text}`);
+        }
+      }
     });
+  });
 }
 
 function outScore(res, pattern) {
