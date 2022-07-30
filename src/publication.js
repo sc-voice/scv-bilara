@@ -249,7 +249,7 @@
             let isPub = rePublished.test(sp) || rePublished.test(fpath);
             let isUnpub = reUnpublished.test(sp) || reUnpublished.test(fpath);
             let pub = isPub && !isUnpub;
-            this.debug(`isPublishedPath`, {sp, fpath, isPub, isUnpub, })
+            //this.debug(`isPublishedPath`, {sp, fpath, isPub, isUnpub, })
             return pub;
         }
 

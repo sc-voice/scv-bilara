@@ -628,6 +628,7 @@
           .map((p) => `${p}/${lang}`)
           .join(",");
       }
+      pattern = pattern.replace(/:[^/,]*/g, ''); // remove segment refs
       let res = bd.sutta_uidSearch(pattern, maxResults);
       method = res.method;
       uids = res.uids;
@@ -682,7 +683,6 @@
           let res = this.slowFindId({ lang, languages, maxResults, pattern });
           lang = res.lang;
           maxResults = res.maxResults;
-          pattern = res.pattern;
           method = res.method;
           uids = res.uids;
           suttaRefs = res.suttaRefs;

@@ -1367,6 +1367,37 @@ typeof describe === "function" &&
       );
       should(mld0.score).equal(3.055);
     });
+    it("TESTTESTfind(...) => thig1.1:1.1/en/soma", async () => {
+      bd.log("initializing");
+      var bilaraData = await bd.initialize();
+      bd.log("initializing done");
+      var lang = "en";
+      var skr = await new Seeker({
+        bilaraData,
+        lang,
+      }).initialize();
+      //skr.logLevel = 'debug';
+      var pattern = "thig1.1:1.1/en/soma, thig1.1:1.1/en/sujato";
+
+      var res = await skr.slowFind({ pattern, lang});
+      should(res.resultPattern).equal(pattern);
+      should(res.method).equal("sutta_uid");
+      should(res.mlDocs.length).equal(2);
+      should(res.segsMatched).equal(2);
+      var [ mld0, mld1 ] = res.mlDocs;
+
+      // Soma
+      should(mld0.bilaraPaths[1]).match(/thig1.1.*soma/);
+      should(mld0.score).equal(0);
+      let segs0 = mld0.segments();
+      should(segs0[0].en).match(/Sleep with ease, Elder,/);
+
+      // Sujato
+      should(mld1.score).equal(0);
+      should(mld1.bilaraPaths[1]).match(/thig1.1.*sujato/);
+      let segs1 = mld1.segments();
+      should(segs1[0].en).match(/Sleep softly, little nun,/);
+    });
     it("find(...) => thig1.1/en/soma,thig12/en/soma'", async () => {
       //bd.logLevel = 'info';
       bd.log("initializing");

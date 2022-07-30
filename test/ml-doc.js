@@ -363,11 +363,10 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTfilterSegments(...) => sutta id with spaces", async()=>{
+    it("filterSegments(...) => sutta id with spaces", async()=>{
       var mld = new MLDoc({ bilaraPaths: bilaraPaths_an1_1_1, });
       var resLoad = await mld.load(BILARA_PATH)
       let resFilter = mld.filterSegments('an 1.2', ['en']);
-      console.log({resFilter});
       var segments = mld.segments();
       should(segments.length).equal(4);
       should.deepEqual(segments.map(s => s.scid), [
