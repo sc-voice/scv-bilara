@@ -615,8 +615,9 @@ typeof describe === "function" &&
     });
     it("find(...) finds dhp2", async () => {
       var skr = await new Seeker().initialize();
+      //skr.logLevel = 'debug';
 
-      var res = await skr.find({
+      var res = await skr.slowFind({
         pattern: "dhp2",
         matchHighlight: false,
       });
@@ -860,6 +861,7 @@ typeof describe === "function" &&
       var skr = await new Seeker({
         maxResults,
       }).initialize();
+      //skr.logLevel = 'debug';
 
       var msStart = Date.now();
       var pattern = "root of suffering";
@@ -872,6 +874,7 @@ typeof describe === "function" &&
         },
       ]);
       var res = await skr.slowFind(findArgs);
+      should(res.segsMatched).equal(10);
       should.deepEqual(res.suttaRefs, [
         "sn42.11/en/sujato",
         "mn105/en/sujato",
@@ -1095,6 +1098,30 @@ typeof describe === "function" &&
         `${de_sab}sn/sn15/sn15.19_translation-de-sabbamitta.json`,
         `${en_suj}sn/sn15/sn15.19_translation-en-sujato.json`,
       ]);
+    });
+    it("findArgs(...) => thig1.1/en/soma, thig1.2/en/soma ", async () => {
+      var bilaraData = await bd.initialize();
+      var skr = await new Seeker({
+        bilaraData,
+      }).initialize();
+      let pattern = "thig1.1/en/soma, thig1.2/en/soma";
+
+      let res = skr.findArgs([`${pattern}`]);
+      should(res).properties({
+        includeUnpublished: false,
+        lang: "en",
+        languages: ["pli", "en"],
+        matchHighlight: "\u001b[38;5;121m$&\u001b[0m",
+        maxDoc: 50,
+        maxResults: 1000,
+        minLang: 2,
+        pattern,
+        searchLang: "en",
+        showMatchesOnly: true,
+        sortLines: undefined,
+        tipitakaCategories: undefined,
+        types: ["root", "translation"],
+      });
     });
     it("findArgs(...) handls jpn ", async () => {
       var bilaraData = await bd.initialize();
@@ -1340,7 +1367,31 @@ typeof describe === "function" &&
       );
       should(mld0.score).equal(3.055);
     });
-    it("TESTTESTfind(...) finds Deutsch 'abnehmend'", async () => {
+    it("find(...) => thig1.1/en/soma,thig12/en/soma'", async () => {
+      //bd.logLevel = 'info';
+      bd.log("initializing");
+      var bilaraData = await bd.initialize();
+      bd.log("initializing done");
+      var lang = "en";
+      var skr = await new Seeker({
+        bilaraData,
+        lang,
+      }).initialize();
+      //skr.logLevel = 'debug';
+      var pattern = "thig1.1/en/soma, thig1.2/en/soma";
+
+      var data = await skr.slowFind({ pattern, lang});
+      should(data.resultPattern).equal(pattern);
+      should(data.method).equal("sutta_uid");
+      should(data.mlDocs.length).equal(2);
+      //data.mlDocs.forEach(mld=>console.log(mld.bilaraPaths));
+      var [ mld0, mld1 ] = data.mlDocs;
+      should(mld0.bilaraPaths[1]).match(/thig1.1.*soma/);
+      should(mld1.bilaraPaths[1]).match(/thig1.2.*soma/);
+      should(mld0.score).equal(0);
+      should(mld1.score).equal(0);
+    });
+    it("find(...) finds Deutsch 'abnehmend'", async () => {
       //bd.logLevel = 'info';
       bd.log("initializing");
       var bilaraData = await bd.initialize();

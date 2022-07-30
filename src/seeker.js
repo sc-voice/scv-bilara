@@ -611,7 +611,7 @@
       return promise;
     }
 
-    slowFindId({ lang, languages, maxResults, pattern }) {
+    slowFindId({ lang='en', languages=['pli','en'], maxResults, pattern }) {
       var bd = this.bilaraData;
       var examples = bd.examples;
       var resultPattern = pattern;
@@ -672,12 +672,13 @@
         var resultPattern = pattern;
         var scoreDoc = true;
         let method, uids, suttaRefs;
+        let isSuidPattern = SuttaCentralId.test(pattern);
 
         if (examples[lang] && examples[lang].indexOf(pattern) >= 0) {
           searchLang = lang;
         }
 
-        if (SuttaCentralId.test(pattern)) {
+        if (isSuidPattern) {
           let res = this.slowFindId({ lang, languages, maxResults, pattern });
           lang = res.lang;
           maxResults = res.maxResults;
@@ -713,7 +714,7 @@
           let [suid, refLang, author] = suttaRef.split("/");
           let suttaInfo = bd.suttaInfo(suttaRef);
           if (!suttaInfo) {
-            this.debug(`skipping ${suttaRef}`);
+            this.info(`skipping ${suttaRef}`);
             continue;
           }
           let isBilDoc = bd.isBilaraDoc({
@@ -733,7 +734,6 @@
             if (method === "sutta_uid" && author != null && author !== "ms") {
               mldOpts.author = author;
             }
-            this.debug(`slowFind() -> loadMLDoc`, { mldOpts });
             mld = await bd.loadMLDoc(mldOpts);
             var mldBilaraPaths = mld.bilaraPaths;
             this.debug(`slowFind() -> loadMLDoc`, { mldBilaraPaths });
@@ -752,15 +752,16 @@
               showMatchesOnly,
               method,
             });
-            segsMatched += resFilter.matched;
             mld.segsMatched = resFilter.matched;
+            segsMatched += mld.segsMatched;
             if (matchHighlight) {
               mld.highlightMatch(resultPattern, matchHighlight);
             }
             if (resFilter.matched === 0) {
-              //this.info(`Ignoring ${mld.suid} ${pattern}`);
+              this.info(`Ignoring ${mld.suid} ${pattern}`);
             } else if (mld.bilaraPaths.length >= minLang) {
-              if (Object.keys(mld.segMap).length) {
+              let segIds = Object.keys(mld.segMap);
+              if (segIds.length) {
                 mlDocs.push(mld);
                 matchingRefs.push(suttaRef);
               } else {

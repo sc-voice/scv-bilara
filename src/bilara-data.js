@@ -396,9 +396,8 @@
         logLevel,
         returnNull,
         languages,
-        types,
+        types = ["root", "translation" ],
       } = opts;
-      types = types || ["root", "translation"];
       var thisLang = this.lang;
       lang = lang || language || thisLang;
       languages =
@@ -478,7 +477,6 @@
         types,
       } = loadArgs;
       var { bilaraPathMap: bpm, root } = this;
-
       var suidParts = suidRef.split("/");
       var suid = suidParts[0];
       suidParts.length > 1 && (lang = suidParts[1]);

@@ -628,6 +628,10 @@
         await bd.initialize();
         var maxResults = 4;
 
+        var res = bd.sutta_uidSearch("thig1.1/en/soma, thig1.2/en/soma");
+        should.deepEqual(res.uids, [ "thig1.1/en/soma", "thig1.2/en/soma", ]);
+        should.deepEqual(res.suttaRefs, [ "thig1.1/en/soma", "thig1.2/en/soma", ]);
+
         // minor id range AN10.1-10
         var res = bd.sutta_uidSearch("an10.1-10");
         should.deepEqual(res.uids, [
