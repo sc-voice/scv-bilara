@@ -993,6 +993,7 @@ typeof describe === "function" &&
       });
       should.deepEqual(res.suttaRefs, [
         "sn42.11/de/sabbamitta",
+        "dn34/de/sabbamitta",
         "dn16/de/sabbamitta",
         "sn56.21/de/sabbamitta",
       ]);
@@ -1367,7 +1368,7 @@ typeof describe === "function" &&
       );
       should(mld0.score).equal(3.055);
     });
-    it("TESTTESTfind(...) => thig1.1:1.1/en/soma", async () => {
+    it("find(...) => thig1.1:1.1/en/soma", async () => {
       bd.log("initializing");
       var bilaraData = await bd.initialize();
       bd.log("initializing done");
@@ -1447,7 +1448,7 @@ typeof describe === "function" &&
       should(mld0.bilaraPaths[1]).match(/de.*sn12.27/);
       should(mld0.score).equal(1.026);
     });
-    it("find(...) finds Deutsch 'blind'", async () => {
+    it("TESTTESTfind(...) finds Deutsch 'blind'", async () => {
       //bd.logLevel = 'info'
       bd.log("initializing");
       var bilaraData = await bd.initialize();
@@ -1461,7 +1462,7 @@ typeof describe === "function" &&
       should(data.resultPattern).equal("\\bblind");
       should(data.searchLang).equal("de");
       should(data.method).equal("phrase");
-      should(data.mlDocs.length).equal(17);
+      should(data.mlDocs.length).equal(18);
       var mld0 = data.mlDocs[0];
       should(mld0.bilaraPaths[0]).match(/ud6.4/);
     });
