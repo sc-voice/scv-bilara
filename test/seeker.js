@@ -740,6 +740,32 @@ typeof describe === "function" &&
         en: "But then they identify with fire … ",
       });
     });
+    it("TESRTTESTfind(maxdoc)", async () => {
+      var maxResults = 5;
+      var maxDoc = 2;
+      var skr = await new Seeker({
+        maxResults,
+      }).initialize();
+
+      // lists of suttas with ranges
+      var lang = "en";
+      // The pattern resolves to 4 suttas, of which 3 are returned
+      var pattern = "thig1.1-3/en/soma"; // three suttas
+      var res = await skr.find({
+        pattern,
+        lang,
+        matchHighlight: false,
+        maxDoc,
+      });
+      var [mld0] = res.mlDocs;
+      should(res.method).equal("sutta_uid");
+      should(res.maxResults).equal(maxResults);
+      should.deepEqual(res.suttaRefs, [
+        "thig1.1/en/soma", "thig1.2/en/soma", "thig1.3/en/soma"]);
+      should(res.mlDocs.length).equal(2); // maxdDoc limit
+      should.deepEqual(res.mlDocs.map(md=>md.suid), ["thig1.1", "thig1.2"]);
+      should.deepEqual(res.mlDocs.map(md=>md.author_uid), ["soma", "soma"]);
+    });
     it("find(...) finds an1.2", async () => {
       var maxResults = 3;
       var skr = await new Seeker({
