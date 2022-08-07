@@ -1,5 +1,6 @@
 abscheiden
 abscheidet
+arm
 auge
 Banyanbaum
 beliebt
@@ -39,6 +40,7 @@ Nymphen
 Orchideenbaum
 prachtvoll
 rat
+reich
 reichweite
 Reitertruppe
 Reitertruppen
