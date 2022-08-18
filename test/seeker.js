@@ -766,7 +766,7 @@ typeof describe === "function" &&
       should.deepEqual(res.mlDocs.map(md=>md.suid), ["thig1.1", "thig1.2"]);
       should.deepEqual(res.mlDocs.map(md=>md.author_uid), ["soma", "soma"]);
     });
-    it("find(...) finds an1.2", async () => {
+    it("TESTTESTfind(...) finds an1.2", async () => {
       var maxResults = 3;
       var skr = await new Seeker({
         maxResults,
@@ -801,7 +801,7 @@ typeof describe === "function" &&
         // AN1.1
         scid: "an1.2:1.3",
         pli: "Dutiyaṁ. ",
-        de: " ",
+        de: "",
         en: "",
         matched: true,
       });
