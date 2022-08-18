@@ -53,7 +53,7 @@
         });
         should(bdDefault.logger).equal(logger);
     });
-    it("initialize(...) must be called", async()=>{
+    it("TESTTESTinitialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         newbd.logLevel = 'info';
         should(newbd.initialized).equal(false);
@@ -74,7 +74,7 @@
         should.deepEqual(bd.examples.en.filter(x=>x === eg_en), [eg_en]);
         should.deepEqual(bd.examples.de.slice(0,2), [
             `aber meine Dame`,
-            `aber nicht zum eigenen`,
+            `aber zum Erwachen entschlossen`,
             //'Abfälle',
         ]);
     });
