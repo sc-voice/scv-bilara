@@ -740,7 +740,7 @@ typeof describe === "function" &&
         en: "But then they identify with fire … ",
       });
     });
-    it("TESRTTESTfind(maxdoc)", async () => {
+    it("find(maxdoc)", async () => {
       var maxResults = 5;
       var maxDoc = 2;
       var skr = await new Seeker({
@@ -749,7 +749,7 @@ typeof describe === "function" &&
 
       // lists of suttas with ranges
       var lang = "en";
-      // The pattern resolves to 4 suttas, of which 3 are returned
+      // The pattern resolves to 3 suttas, of which 2 are returned
       var pattern = "thig1.1-3/en/soma"; // three suttas
       var res = await skr.find({
         pattern,
