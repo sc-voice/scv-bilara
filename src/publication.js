@@ -23,8 +23,8 @@
     class Publication {
         constructor(opts={}) {
             (opts.logger || logger).logInstance(this, opts);
-            this.name = opts.name || 'bilara-data';
-            this.root = opts.root || path.join(Files.LOCAL_DIR, this.name);
+            let name = opts.name || 'bilara-data';
+            this.root = opts.root || path.join(Files.LOCAL_DIR, name);
             this.includeUnpublished = opts.includeUnpublished == null 
                 ? false : opts.includeUnpublished;
             let bpOpts = this.includeUnpublished

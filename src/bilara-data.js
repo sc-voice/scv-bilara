@@ -151,7 +151,7 @@
         var purge = !fs.existsSync(this.root);
         if (version.major < EXPECTED_VERSION) {
           this.warn(
-            `Expected bilara-data version ` +
+            `Expected ${this.name} data version ` +
               `actual:${version.major} ` +
               `expected:${EXPECTED_VERSION} ` +
               `(re-cloning repository...)`
@@ -271,7 +271,7 @@
           this.warn(`Purging repository: ${cmd}`);
           var res = execSync(cmd, execOpts).toString();
         } else {
-          this.info(`Updating bilara-data`);
+          this.info(`Updating ${this.name}`);
         }
         var res = await this.execGit.sync(undefined, undefined, branches);
 
