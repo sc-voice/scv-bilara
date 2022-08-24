@@ -111,13 +111,12 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
         var res = await mld.load();
         should(res).equal(mld);
         var segMap = mld.segMap;
-        should.deepEqual(segMap['sn1.1:0.1'], {
-          scid: 'sn1.1:0.1',
-          pli: 'Saṁyutta Nikāya 1.1 ',
-          en: 'Linked Discourses 1.1 ',
-          de: 'Verbundene Lehrreden 1.1 ',
-          html: '<article id=\'sn1.1\'><header><ul><li class=\'division\'>{}</li>',
-        });
+        let seg01 = segMap['sn1.1:0.1'];
+        should(seg01.scid).match('sn1\.1:0\.1');
+        should(seg01.pli).match(/Saṁyutta Nikāya 1.1/);
+        should(seg01.en).match(/Linked Discourses 1.1/);
+        should(seg01.html)
+          .match(/article id='sn1.1'><header><ul><li class='division'>{}<\/li>/);
 
         should(segMap["sn1.1:1.1"].reference).equal([
             "bj13.2, cck15.1, csp1ed12.1, csp2ed12.1, dr15.1",
@@ -127,12 +126,12 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
             "vri23.2",
         ].join(", "));
         should(segMap["sn1.1:1.8"].variant)
-            .match(/nibbuyhāmi → nivuyhāmi (sya-all, km, mr)/);
+            .match(/nibbuyhāmi → nivuyhāmi \(sya-all, km, mr\)/);
         should(mld.suid).equal('sn1.1');
         should(mld.title).equal([
-          'Verbundene Lehrreden 1',
+          'Verbundene Lehrreden 1.1',
           '1. Das Kapitel über ein Schilfrohr',
-          '1. Die Flut überqueren'].join('\n'));
+          'Die Flut überqueren'].join('\n'));
     });
     it("titles(...) => segment 0 text", done=>{
         (async function() { try {
