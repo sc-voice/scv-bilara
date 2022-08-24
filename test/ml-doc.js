@@ -115,7 +115,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
           scid: 'sn1.1:0.1',
           pli: 'Saṁyutta Nikāya 1.1 ',
           en: 'Linked Discourses 1.1 ',
-          de: 'Verbundene Lehrreden 1 ',
+          de: 'Verbundene Lehrreden 1.1 ',
           html: '<article id=\'sn1.1\'><header><ul><li class=\'division\'>{}</li>',
         });
 
@@ -127,7 +127,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
             "vri23.2",
         ].join(", "));
         should(segMap["sn1.1:1.8"].variant)
-            .equal("nibbuyhāmi → nivuyhāmi (sya-all, km, mr) ");
+            .match(/nibbuyhāmi → nivuyhāmi (sya-all, km, mr)/);
         should(mld.suid).equal('sn1.1');
         should(mld.title).equal([
           'Verbundene Lehrreden 1',
