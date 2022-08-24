@@ -53,7 +53,7 @@
         });
         should(bdDefault.logger).equal(logger);
     });
-    it("TESTTESTinitialize(...) must be called", async()=>{
+    it("initialize(...) must be called", async()=>{
         var newbd = new BilaraData();
         newbd.logLevel = 'info';
         should(newbd.initialized).equal(false);

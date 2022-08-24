@@ -104,7 +104,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
         });
         should(mld.suid).equal('an1.1-10');
     });
-    it("load(...) loads markup", async()=>{
+    it("TESTTESTload(...) loads markup", async()=>{
         var mld = new MLDoc({
             bilaraPaths: bilaraPaths_sn1_1,
         });
@@ -127,7 +127,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
             "vri23.2",
         ].join(", "));
         should(segMap["sn1.1:1.8"].variant)
-            .equal("nibbuyhāmi → nivuyhāmi (sya-all, km, mr)");
+            .equal("nibbuyhāmi → nivuyhāmi (sya-all, km, mr) ");
         should(mld.suid).equal('sn1.1');
         should(mld.title).equal([
           'Verbundene Lehrreden 1',
@@ -253,7 +253,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
         });
         should(mld.lang).equal('en');
     });
-    it("filterSegments(...) => the dark light", async()=>{
+    it("TESTTESTfilterSegments(...) => the dark light", async()=>{
       var mld = new MLDoc({ bilaraPaths: bilaraPaths_sn10_8, });
       var resLoad = await mld.load(BILARA_PATH);
       var pattern = "the dark light";
@@ -263,7 +263,6 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
         resultPattern,
         languages: ['pli','en'],
       });
-      console.log({resFilter});
       should(resFilter).properties({
         matched: 4,
         matchLow: '\b(t|ṭ)he|\bdark|\blight',

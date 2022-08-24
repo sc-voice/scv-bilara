@@ -766,7 +766,7 @@ typeof describe === "function" &&
       should.deepEqual(res.mlDocs.map(md=>md.suid), ["thig1.1", "thig1.2"]);
       should.deepEqual(res.mlDocs.map(md=>md.author_uid), ["soma", "soma"]);
     });
-    it("TESTTESTfind(...) finds an1.2", async () => {
+    it("find(...) finds an1.2", async () => {
       var maxResults = 3;
       var skr = await new Seeker({
         maxResults,
@@ -1474,7 +1474,7 @@ typeof describe === "function" &&
       should(mld0.bilaraPaths[1]).match(/de.*sn12.27/);
       should(mld0.score).equal(1.026);
     });
-    it("TESTTESTfind(...) finds Deutsch 'blind'", async () => {
+    it("find(...) finds Deutsch 'blind'", async () => {
       //bd.logLevel = 'info'
       bd.log("initializing");
       var bilaraData = await bd.initialize();
