@@ -16,8 +16,13 @@
             let rootName = this.root.replace(rootDir,'').substring(1);
             this.rootLang = opts.rootLang || 'pli';
             this.rootAuthor = opts.rootAuthor || 'ms';
-            this.suidMapFile = opts.suidMapFile ||
-                path.join(rootDir, `suidmap-${rootName}.json`);
+            if (opts.suidMapFile) {
+              this.suidMapFile = opts.suidMapFile;
+            } else if ( rootName === 'ebt-data') {
+              this.suidMapFile = path.join(__dirname, "auto", "suidmap.json");
+            } else {
+              this.suidMapFile = path.join(rootDir, `suidmap-${rootName}.json`);
+            }
             this.validatePath = opts.validatePath || ((key,value,suid)=>true);
             this.publication = opts.publication;
             this.initialized = false;
@@ -232,7 +237,7 @@
                         if (stat.size <= STUBFILESIZE) {
                             // ignore stub file
                         } else if (publication && !publication.isPublishedPath(ePath)) {
-                            console.log(`skipping ${ePath}`);
+                            this.debug(`skipping ${ePath}`);
                         } else {
                             let suid = e.name.replace(/_.*/,'');
                             let suidPath = dirPath.replace(rootPrefix, '')  

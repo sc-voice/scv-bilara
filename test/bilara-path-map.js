@@ -1,5 +1,6 @@
 (typeof describe === 'function') && describe("bilara-path-map", function() {
     const should = require("should");
+    const path = require('path');
     const fs = require('fs');
     const {
         BilaraData,
@@ -25,6 +26,7 @@
             `${mid}_root-${lang}-${auth}.json`
         ].join('/');
     }
+    const LOCALDIR = path.join(__dirname, '..', 'local');
 
     function TRANSPATH(lang,auth,mid, category='sutta') {
         return [
@@ -128,6 +130,18 @@
             translationPath('an/an1/an1.1-10','en','sujato'),
             //commentPath('an/an1/an1.1-10','en','sujato'),
         ]);
+    });
+    it("TESTTESTbilaraPaths() uses scv-esm suidmap",async()=>{
+        let rootName = 'ebt-data';
+        let root = path.join(LOCALDIR, rootName);
+        var bpm = await new BilaraPathMap({root}).initialize();
+        should(bpm.root).equal(root);
+        should(bpm.suidMapFile).equal(path.join(__dirname, '../src/auto/suidmap.json'));
+        should.deepEqual(bpm.suidPaths('sn22.56/de'), {
+          'translation/en/sujato': 'translation/en/sujato/sutta/sn/sn22/sn22.56_translation-en-sujato.json',
+          'translation/de/sabbamitta': 'translation/de/sabbamitta/sutta/sn/sn22/sn22.56_translation-de-sabbamitta.json',
+          'root/pli/ms': 'root/pli/ms/sutta/sn/sn22/sn22.56_root-pli-ms.json'
+        });
     });
     it("bilaraPaths(suid) ignores stub translations",async()=>{
         var bpm = await new BilaraPathMap().initialize();

@@ -104,7 +104,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
         });
         should(mld.suid).equal('an1.1-10');
     });
-    it("TESTTESTload(...) loads markup", async()=>{
+    it("load(...) loads markup", async()=>{
         var mld = new MLDoc({
             bilaraPaths: bilaraPaths_sn1_1,
         });
@@ -252,7 +252,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
         });
         should(mld.lang).equal('en');
     });
-    it("TESTTESTfilterSegments(...) => the dark light", async()=>{
+    it("filterSegments(...) => the dark light", async()=>{
       var mld = new MLDoc({ bilaraPaths: bilaraPaths_sn10_8, });
       var resLoad = await mld.load(BILARA_PATH);
       var pattern = "the dark light";
