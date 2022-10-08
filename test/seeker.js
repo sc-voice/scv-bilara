@@ -797,12 +797,10 @@ typeof describe === "function" &&
         matched: true,
       });
       should(segments.length).equal(4);
-      should.deepEqual(segments[3], {
+      should(segments[3]).properties({
         // AN1.1
         scid: "an1.2:1.3",
         pli: "Dutiyaṁ. ",
-        de: "",
-        en: "",
         matched: true,
       });
     });
@@ -882,7 +880,7 @@ typeof describe === "function" &&
         "mn66/pli/ms",
       ]);
     });
-    it("TESTTESTfind(...) => finds phrase", async () => {
+    it("find(...) => finds phrase", async () => {
       var maxResults = 3;
       var skr = await new Seeker({
         maxResults,
@@ -1334,7 +1332,7 @@ typeof describe === "function" &&
         //"<ul><li class='division'>{}</li>",
         pli: "Aṅguttara Nikāya 1 ",
         en: "Numbered Discourses 1.1–10 ",
-        de: "Nummerierte Lehrreden 1 ",
+        de: "Nummerierte Lehrreden 1.1–10 ",
         matched: true,
       });
     });
@@ -1488,7 +1486,7 @@ typeof describe === "function" &&
       should(data.resultPattern).equal("\\bblind");
       should(data.searchLang).equal("de");
       should(data.method).equal("phrase");
-      should(data.mlDocs.length).equal(18);
+      should(data.mlDocs.length).equal(19);
       var mld0 = data.mlDocs[0];
       should(mld0.bilaraPaths[0]).match(/ud6.4/);
     });
@@ -1505,7 +1503,7 @@ typeof describe === "function" &&
       should(data.resultPattern).equal("\\brat");
       should(data.searchLang).equal("de");
       should(data.method).equal("phrase");
-      should(data.mlDocs.length).equal(34);
+      should(data.mlDocs.length).equal(36);
       var mld0 = data.mlDocs[0];
       should(mld0.bilaraPaths[0]).match(/sn7.22/);
     });
