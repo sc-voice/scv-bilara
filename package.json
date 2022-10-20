@@ -29,8 +29,9 @@
     "schedule-action": "scripts/schedule-action",
     "push-action": "scripts/push-action",
     "test": "npm run test:verbose",
-    "test:test": "mocha -w --watch-ignore node_modules,.git,local -R min --inline-diffs -g TEST './@(src|test)/**/*.js'",
-    "test:verbose": "mocha --inline-diffs",
+    "test:test": "scripts/clean-test; mocha -w --watch-ignore node_modules,.git,local -R min --inline-diffs -g TEST './@(src|test)/**/*.js'",
+    "test:verbose": "scripts/clean-test; mocha --inline-diffs",
+    "test:one": "scripts/clean-test; mocha --inline-diffs -g TEST",
     "test:watch": "mocha -w --inline-diffs",
     "version": "node -e \"console.log(require('./package.json').version);\""
   },

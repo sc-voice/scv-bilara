@@ -1,0 +1,29 @@
+#!/bin/bash
+DIR=`dirname $0`
+SCRIPT=`basename $0 | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ`
+
+set -e
+
+echo -e "$SCRIPT: BEGIN `date`"
+
+if [ -e local/memo ]; then
+  echo -e "$SCRIPT: cleaning memo"
+  rm -rf local/memo
+fi
+
+if [ -e local/bilara-data ]; then
+  pushd local/bilara-data > /dev/null
+  echo -e "$SCRIPT: cleaning bilara-data"
+  git clean -f .
+  git pull
+  popd > /dev/null
+fi
+if [ -e local/ebt-data ]; then
+  pushd local/ebt-data > /dev/null
+  echo -e "$SCRIPT: cleaning ebt-data"
+  git clean -f .
+  git pull
+  popd > /dev/null
+fi
+
+echo -e "$SCRIPT: END `date`"

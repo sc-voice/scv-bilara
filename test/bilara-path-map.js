@@ -1,4 +1,5 @@
-(typeof describe === 'function') && describe("bilara-path-map", function() {
+(typeof describe === 'function') && 
+  describe("bilara-path-map", function() {
     const should = require("should");
     const path = require('path');
     const fs = require('fs');

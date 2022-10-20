@@ -1,4 +1,5 @@
-(typeof describe === 'function') && describe("bilara-data", function() {
+(typeof describe === 'function') 
+  && describe("TESTTESTbilara-data", function() {
     const should = require("should");
     const fs = require('fs');
     const path = require('path');
@@ -265,7 +266,7 @@
             bilaraPath: TRANSPATH('de', 'sabbamitta', `sn/sn12/sn12.3`),
             exampleVersion: 1,
         };
-        should.deepEqual(bd.suttaInfo('sn12.3'), 
+        should.deepEqual(bd.suttaInfo('sn12.3').slice(0,3), 
             [sn12_3pli, sn12_3de, sn12_3en]);
         var AN4_58 = 'an/an4/an4.58';
         var an4_58pli = {
@@ -409,7 +410,7 @@
             done();
         } catch(e) { done(e); } })();
     });
-    it("docPaths(...) filepath for scid", function(done) {
+    it("TESTTESTdocPaths(...) filepath for scid", function(done) {
         (async function() { try {
             await bd.initialize();
 
@@ -455,7 +456,7 @@
             done(); 
         } catch(e) {done(e);} })();
     });
-    it("docPaths(...) bad input", function(done) {
+    it("TESTTESTdocPaths(...) bad input", function(done) {
         (async function() { try {
             // No file
             var spath = bd.docPaths('mn1','en','no-author')[0];

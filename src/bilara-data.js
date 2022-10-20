@@ -648,9 +648,24 @@
       var lang = opts.lang || "en";
       var author = opts.author_uid;
       var docs = this.bilaraPathMap.suidLanguages(sutta_uid);
-      return docs
-        .filter((t) => (t.lang === lang && !author) || author === t.author)
-        .map((t) => path.join(this.root, t.bilaraPath));
+      if (docs.length === 0) {
+        return [];
+      }
+      let authorDocs = docs.filter(t => t.author === author);
+      if (authorDocs.length) {
+        docs = authorDocs;
+        //console.log("DEBUG", {authorDocs});
+      } else if (!author) {
+        let langDocs = docs.filter(t => t.lang === lang);
+        docs = langDocs;
+        //console.log("DEBUG", {langDocs, author});
+      } else {
+        docs = [];
+        //console.log("DEBUG nomatch");
+      }
+      return docs.map((t) => path.join(this.root, t.bilaraPath));
+        //.filter((t) => (t.lang === lang && !author) || author === t.author)
+        //.map((t) => path.join(this.root, t.bilaraPath));
     }
 
     nikayaSuttaIds(nikaya, lang = "pli", author) {
