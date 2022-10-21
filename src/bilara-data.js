@@ -646,26 +646,22 @@
         throw new Error("sutta_uid is required");
       }
       var lang = opts.lang || "en";
-      var author = opts.author_uid;
+      var author = opts.author_uid || opts.author;
       var docs = this.bilaraPathMap.suidLanguages(sutta_uid);
       if (docs.length === 0) {
         return [];
       }
-      let authorDocs = docs.filter(t => t.author === author);
+      docs.sort((a,b)=>Authors.compare(b.author, a.author));
+      let authorDocs = docs.filter(doc => doc.author === author);
       if (authorDocs.length) {
         docs = authorDocs;
-        //console.log("DEBUG", {authorDocs});
       } else if (!author) {
         let langDocs = docs.filter(t => t.lang === lang);
         docs = langDocs;
-        //console.log("DEBUG", {langDocs, author});
       } else {
         docs = [];
-        //console.log("DEBUG nomatch");
       }
       return docs.map((t) => path.join(this.root, t.bilaraPath));
-        //.filter((t) => (t.lang === lang && !author) || author === t.author)
-        //.map((t) => path.join(this.root, t.bilaraPath));
     }
 
     nikayaSuttaIds(nikaya, lang = "pli", author) {

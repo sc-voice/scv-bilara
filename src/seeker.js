@@ -43,7 +43,9 @@
         opts.memoizer ||
         new Memoizer({
           writeMem: false, // avoid monotonic increasing memory usage
-          writeFile: opts.writeFile == null ? true : opts.writeFile, // only cache examples!
+          writeFile: opts.writeFile == null 
+            ? true 
+            : opts.writeFile, // only cache examples!
           readFile: opts.readFile,
           serialize: Seeker.serialize,
           deserialize: Seeker.deserialize,

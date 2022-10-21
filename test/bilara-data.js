@@ -1,9 +1,10 @@
 (typeof describe === 'function') 
-  && describe("TESTTESTbilara-data", function() {
+  && describe("bilara-data", function() {
     const should = require("should");
     const fs = require('fs');
     const path = require('path');
     const { logger, LogInstance } = require('log-instance');
+    const { Authors } = require('scv-esm');
     const {
         BilaraData,
         BilaraPathMap,
@@ -410,53 +411,60 @@
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTdocPaths(...) filepath for scid", function(done) {
-        (async function() { try {
-            await bd.initialize();
+    it("docPaths(...) filepath for scid", async()=>{
+      await bd.initialize();
 
-            // Object args
-            var sutta_uid = 'mn1';
-            var lang = 'en';
-            var author = 'sujato';
-            var spath = bd.docPaths({
-                sutta_uid,
-                lang,
-                author,
-            })[0];
-            var mn1 = TRANSPATH('en','sujato', 'mn/mn1');
-            should(spath).equal(path.join(bd.root, mn1));
-            should(fs.existsSync(spath)).equal(true);
-            
-            // argument list
-            var spath = bd.docPaths(sutta_uid, lang, author)[0];
-            should(spath).equal(path.join(bd.root, mn1));
+      // Object args
+      var sutta_uid = 'mn1';
+      var lang = 'en';
+      var author = 'sujato';
+      var spath = bd.docPaths({
+          sutta_uid,
+          lang,
+          author,
+      })[0];
+      var mn1 = TRANSPATH('en','sujato', 'mn/mn1');
+      should(spath).equal(path.join(bd.root, mn1));
+      should(fs.existsSync(spath)).equal(true);
+      
+      should(Authors.compare('davis', 'sujato')).equal(-1);
+      //DEBUG
+      var spath = bd.docPaths(sutta_uid, lang, author)[0];
+      should(spath).equal(path.join(bd.root, mn1));
 
-            // default args
-            var spath = bd.docPaths(sutta_uid, lang)[0];
-            should(spath).equal(path.join(bd.root, mn1));
-            var spath = bd.docPaths(sutta_uid)[0];
-            should(spath).equal(path.join(bd.root, mn1));
+      // argument list
+      var spath = bd.docPaths(sutta_uid, lang, author)[0];
+      should(spath).equal(path.join(bd.root, mn1));
 
-            // variants
-            var spath = bd.docPaths('MN 1')[0];
-            should(spath).equal(path.join(bd.root, mn1));
+      // default args
+      var spath = bd.docPaths(sutta_uid, lang, author)[0];
+      should(spath).equal(path.join(bd.root, mn1));
 
-            // By language
-            var spath = bd.docPaths('an1.2','de')[0];
-            should(spath).equal(path.join(bd.root, 
-                TRANSPATH('de','sabbamitta', 'an/an1/an1.1-10')));
-            should(fs.existsSync(spath)).equal(true);
+      // author unspecified
+      var spath = bd.docPaths(sutta_uid, lang, )[0];
+      should(spath).equal(path.join(bd.root, mn1));
 
-            // By SuttaCentralId
-            var an1_1 = TRANSPATH('de','sabbamitta','an/an1/an1.1-10');
-            var spath = bd.docPaths('an1.2:0.3','de')[0];
-            should(spath).equal(path.join(bd.root,an1_1));
-            should(fs.existsSync(spath)).equal(true);
+      // lang, author unspecified
+      var spath = bd.docPaths(sutta_uid)[0];
+      should(spath).equal(path.join(bd.root, mn1));
 
-            done(); 
-        } catch(e) {done(e);} })();
+      // variants
+      var spath = bd.docPaths('MN 1')[0];
+      should(spath).equal(path.join(bd.root, mn1));
+
+      // By language
+      var spath = bd.docPaths('an1.2','de')[0];
+      should(spath).equal(path.join(bd.root, 
+          TRANSPATH('de','sabbamitta', 'an/an1/an1.1-10')));
+      should(fs.existsSync(spath)).equal(true);
+
+      // By SuttaCentralId
+      var an1_1 = TRANSPATH('de','sabbamitta','an/an1/an1.1-10');
+      var spath = bd.docPaths('an1.2:0.3','de')[0];
+      should(spath).equal(path.join(bd.root,an1_1));
+      should(fs.existsSync(spath)).equal(true);
     });
-    it("TESTTESTdocPaths(...) bad input", function(done) {
+    it("docPaths(...) bad input", function(done) {
         (async function() { try {
             // No file
             var spath = bd.docPaths('mn1','en','no-author')[0];
@@ -816,6 +824,7 @@
         should.deepEqual(mld.segMap['an1.9:1.0'], an1_9);
     });
     it("readBlurb(...) => blurb for language", done=>{
+    // TODO
         (async function() { try {
             var bd = new BilaraData();
             await bd.initialize();
@@ -856,6 +865,7 @@
         } catch(e) { done(e); }})();
     });
     it("version() => bilara-data package version", done=>{
+        // TODO
         (async function() { try {
             await bd.initialize();
             should(bd.version()).properties({
@@ -866,7 +876,7 @@
             done();
         } catch(e) { done(e); }})();
     });
-    it("loadMLDoc(...) loads all types", async()=>{ 
+    it("TESTTESloadMLDoc(...) loads all types", async()=>{ 
         return; // ALL_TYPES is deprecated
         await bd.initialize();
         var mld = await bd.loadMLDoc({
@@ -882,7 +892,7 @@
             pli: 'Theragāthā',
         });
     });
-    it("initialize() waits for indexLock", async()=>{ try {
+    it("TESTTESinitialize() waits for indexLock", async()=>{ try {
         let bd = new BilaraData({branch:'unpublished'});
 
         // create index.lock
@@ -904,7 +914,8 @@
     } finally{
         fs.existsSync(indexLock) && fs.unlinkSync(indexLock);
     }});
-    it("loadSuttaplexJson(...)=>an3.47", async()=>{
+    it("oadSuttaplexJson(...)=>an3.47", async()=>{
+      //TODO
         await bd.initialize();
         var suid = 'an3.47';
         var lang = 'de';
@@ -932,6 +943,7 @@
         }]);
     });
     it("loadSuttaplexJson(...)=>thig3.8 de", async()=>{
+      //TODO
         await bd.initialize();
         var suid = 'thig3.8';
 
@@ -960,7 +972,7 @@
             volpage: null,
         });
     });
-    it("isBilaraDoc(...) => true if bilara file", async()=>{
+    it("TESTTESisBilaraDoc(...) => true if bilara file", async()=>{
         await bd.initialize();
         should(bd.isBilaraDoc({ suid:"dn30", lang:"de", author:"sabbamitta" }))
             .equal(true); 

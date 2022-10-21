@@ -114,7 +114,7 @@ typeof describe === "function" &&
       });
       should.deepEqual(res, SUTTA_ROOT_SUFF.slice(0, 3));
     });
-    it("grep(...) filters result files", async () => {
+    it("TESTTESTgrep(...) filters result files", async () => {
       var skr = new Seeker(SEEKEROPTS);
       var res = await skr.grep({
         pattern: "a single day",

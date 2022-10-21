@@ -154,6 +154,7 @@
         });
         should.deepEqual(bps.map(bp=>bp.bilaraPath).sort(), [
             rootPath('mn/mn1'),
+            translationPath('mn/mn1','en','davis'),
             translationPath('mn/mn1','en','sujato'),
         ]);
     });

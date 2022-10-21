@@ -15,7 +15,7 @@
     "log-instance": "^1.3.0",
     "memo-again": "^0.6.0",
     "merkle-json": "^2.2.0",
-    "scv-esm": "^1.38.1",
+    "scv-esm": "^1.44.0",
     "serial-memo": "^0.1.0",
     "suttacentral-api": "^2.2.74",
     "tmp": "^0.1.0"
@@ -29,9 +29,9 @@
     "schedule-action": "scripts/schedule-action",
     "push-action": "scripts/push-action",
     "test": "npm run test:verbose",
-    "test:test": "scripts/clean-test; mocha -w --watch-ignore node_modules,.git,local -R min --inline-diffs -g TEST './@(src|test)/**/*.js'",
+    "test:test": "scripts/clean-test; mocha -w --watch-ignore node_modules,.git,local -R min --inline-diffs -g TESTTEST './@(src|test)/**/*.js'",
     "test:verbose": "scripts/clean-test; mocha --inline-diffs",
-    "test:one": "scripts/clean-test; mocha --inline-diffs -g TEST",
+    "test:one": "scripts/clean-test; mocha --inline-diffs -g TESTTEST",
     "test:watch": "mocha -w --inline-diffs",
     "version": "node -e \"console.log(require('./package.json').version);\""
   },
