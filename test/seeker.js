@@ -18,6 +18,7 @@ typeof describe === "function" &&
     logger.logLevel = "warn";
     const { Files } = require("memo-again");
     const SEEKEROPTS = {};
+    const TEST_UNPUBLISHED = false;
     var { translationPath, rootPath } = BilaraPath;
     this.timeout(20 * 1000);
     var bd = new BilaraData();
@@ -1232,6 +1233,7 @@ typeof describe === "function" &&
       });
     });
     it("find(...) finds pli-tv-bi-vb-sk1-75", async () => {
+      if (!TEST_UNPUBLISHED) { return; }
       var maxDoc = 3;
       var bilaraData = new BilaraData({
         includeUnpublished: true,
@@ -1260,6 +1262,7 @@ typeof describe === "function" &&
       should(res.mlDocs.length).equal(2);
     });
     it("find(...) finds pli-tv-bi-vb-pj7", async () => {
+      if (!TEST_UNPUBLISHED) { return; }
       var maxDoc = 3;
       var bilaraData = new BilaraData({
         includeUnpublished: true,
@@ -1508,6 +1511,7 @@ typeof describe === "function" &&
       should(mld0.bilaraPaths[0]).match(/sn7.22/);
     });
     it("find(...) finds 'thig3.8' de unpublished", async () => {
+      if (!TEST_UNPUBLISHED) { return; }
       var bilaraData = await bd.initialize();
       var includeUnpublished = true;
       var skr = await new Seeker({ bilaraData }).initialize();

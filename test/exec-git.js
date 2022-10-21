@@ -12,6 +12,7 @@
     const { Files } = require('memo-again');
     const TEST_REPO = "git@github.com:sc-voice/test-repo.git";
     const TEST_REPOPATH = path.join(Files.LOCAL_DIR, 'test-repo');
+    const TEST_UNPUBLISHED = false;
     this.timeout(10*1000);
     var logLevel = false;
 
@@ -115,44 +116,46 @@
         } catch(e) {done(e);} })();
     });
     it("branch() waits for indexLock", async()=>{ try {
-        let root = path.join(Files.LOCAL_DIR, 'bilara-data');
-        let execGit = new ExecGit({
-            repo: `https://github.com/suttacentral/bilara-data.git`,
-        });
-        let logLevel = logger.logLevel;
+      if (!TEST_UNPUBLISHED) { return; }
+      let root = path.join(Files.LOCAL_DIR, 'bilara-data');
+      let execGit = new ExecGit({
+          repo: `https://github.com/suttacentral/bilara-data.git`,
+      });
+      let logLevel = logger.logLevel;
 
-        // create index.lock
-        var indexLock = path.join(root, '.git', 'index.lock');
-        should(fs.existsSync(indexLock)).equal(false);
-        fs.writeFileSync(indexLock, 'test');
-        let resolved = false;
+      // create index.lock
+      var indexLock = path.join(root, '.git', 'index.lock');
+      should(fs.existsSync(indexLock)).equal(false);
+      fs.writeFileSync(indexLock, 'test');
+      let resolved = false;
 
-        // bd.sync will block
-        let branchPromise = execGit.branch('unpublished');
-        branchPromise.then(()=>{ resolved = true; });
-        await new Promise(r=>setTimeout(()=>r(), 200));
-        should(resolved).equal(false);
+      // bd.sync will block
+      let branchPromise = execGit.branch('unpublished');
+      branchPromise.then(()=>{ resolved = true; });
+      await new Promise(r=>setTimeout(()=>r(), 200));
+      should(resolved).equal(false);
 
-        // bd.sync will continue
-        await fs.promises.unlink(indexLock);
-        await branchPromise;
-        should(resolved).equal(true);
-        logger.logLevel = logLevel;
+      // bd.sync will continue
+      await fs.promises.unlink(indexLock);
+      await branchPromise;
+      should(resolved).equal(true);
+      logger.logLevel = logLevel;
     } finally {
         fs.existsSync(indexLock) &&  fs.unlinkSync(indexLock);
     }});
     it("branch() waits for others", async()=>{ 
-        let root = path.join(Files.LOCAL_DIR, 'bilara-data');
-        let execGit = new ExecGit({
-            repo: `https://github.com/suttacentral/bilara-data.git`,
-        });
+      if (!TEST_UNPUBLISHED) { return; }
+      let root = path.join(Files.LOCAL_DIR, 'bilara-data');
+      let execGit = new ExecGit({
+          repo: `https://github.com/suttacentral/bilara-data.git`,
+      });
 
-        // bd.sync will block
-        let promises = [
-            execGit.branch('unpublished'),
-            execGit.branch('unpublished'),
-        ];
-        await Promise.all(promises);
+      // bd.sync will block
+      let promises = [
+          execGit.branch('unpublished'),
+          execGit.branch('unpublished'),
+      ];
+      await Promise.all(promises);
     });
     it("gitLog(opts) returns git log", async()=>{ 
         let egit = new ExecGit();

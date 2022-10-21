@@ -23,6 +23,7 @@
             `${mid}_translation-${lang}-${auth}.json`
         ].join('/');
     }
+    const TEST_UNPUBLISHED = false;
     var SARANA = `translation/cs/ashinsarana/sutta`;
     var SABBAMITTA = 'translation/de/sabbamitta/sutta';
     var SENIYA = 'translation/id/seniya/sutta';
@@ -63,7 +64,7 @@
         should(pubPaths.indexOf(`${MADHU}`)).below(0);
     });
     it("pubPaths() => all bilara paths", async()=>{
-      return; // DEPRECATED
+      if (!TEST_UNPUBLISHED) { return; }
       var pub = await pubTest.initialize();
 
       // Explicit
@@ -109,6 +110,7 @@
             .equal(true);
     });
     it("isPublishedPath(f) allows unpublished paths", async()=>{
+        if (!TEST_UNPUBLISHED) { return; }
         var pub = await new Publication({
             includeUnpublished: true,
         }).initialize(); 
@@ -148,67 +150,68 @@
         should(pub.isPublishedPath(bv1_trans_path)).equal(false);
     });
     it("pubInfo(suid) => publication information", async()=>{
-        var pub = await new Publication({
-            includeUnpublished: true,
-        }).initialize();
+      if (!TEST_UNPUBLISHED) { return; }
+      var pub = await new Publication({
+          includeUnpublished: true,
+      }).initialize();
 
-        // multiply published
-        var pi = pub.pubInfo("an1.1-10/de/sabbamitta");
-        should(pi[0].subchapters).equal(true);
-        should(pi[0]).properties({
-            publication_number: "scpub11",
-            author_name: "Sabbamitta",
-            text_uid: "an",
-            subchapters: true,
-            is_published: true,
-        });
-        should(pi.length).equal(1);
+      // multiply published
+      var pi = pub.pubInfo("an1.1-10/de/sabbamitta");
+      should(pi[0].subchapters).equal(true);
+      should(pi[0]).properties({
+          publication_number: "scpub11",
+          author_name: "Sabbamitta",
+          text_uid: "an",
+          subchapters: true,
+          is_published: true,
+      });
+      should(pi.length).equal(1);
 
-        // vinaya
-        var pi = pub.pubInfo("pli-tv-bu-vb-pj4");
-        should(pi[0]).properties({
-            publication_number: "scpub8.2",
-            author_name: "Bhikkhu Brahmali",
-            text_uid: "pli-tv-bu-vb",
-            subchapters: false,
-            is_published: true,
-        });
-        should(pi.length).equal(2);
+      // vinaya
+      var pi = pub.pubInfo("pli-tv-bu-vb-pj4");
+      should(pi[0]).properties({
+          publication_number: "scpub8.2",
+          author_name: "Bhikkhu Brahmali",
+          text_uid: "pli-tv-bu-vb",
+          subchapters: false,
+          is_published: true,
+      });
+      should(pi.length).equal(2);
 
-        var [ pi0, pi1 ] = pub.pubInfo("pli-tv-bi-vb-sk1");
-        should(pi0).properties({
-            publication_number: "scpub8.1",
-            author_name: "Bhikkhu Brahmali",
-            text_uid: "pli-tv-bi-vb",
-            subchapters: false,
-            is_published: true,
-        });
-        should(pi.length).equal(2);
+      var [ pi0, pi1 ] = pub.pubInfo("pli-tv-bi-vb-sk1");
+      should(pi0).properties({
+          publication_number: "scpub8.1",
+          author_name: "Bhikkhu Brahmali",
+          text_uid: "pli-tv-bi-vb",
+          subchapters: false,
+          is_published: true,
+      });
+      should(pi.length).equal(2);
 
-        // published generic
-        var pi = pub.pubInfo("mn1");
-        should(pi[0]).properties({
-            publication_number: "scpub3",
-            author_name: "Bhikkhu Sujato",
-            text_uid: "mn",
-            subchapters: false,
-            is_published: true,
-        });
-        should(pi.length).above(2);
+      // published generic
+      var pi = pub.pubInfo("mn1");
+      should(pi[0]).properties({
+          publication_number: "scpub3",
+          author_name: "Bhikkhu Sujato",
+          text_uid: "mn",
+          subchapters: false,
+          is_published: true,
+      });
+      should(pi.length).above(2);
 
-        // published specific
-        var pi = pub.pubInfo("mn1/en/sujato");
-        should(pi.length).equal(1);
-        should(pi[0]).properties({
-            publication_number: "scpub3",
-            author_name: "Bhikkhu Sujato",
-            text_uid: "mn",
-            subchapters: false,
-            is_published: true,
-        });
+      // published specific
+      var pi = pub.pubInfo("mn1/en/sujato");
+      should(pi.length).equal(1);
+      should(pi[0]).properties({
+          publication_number: "scpub3",
+          author_name: "Bhikkhu Sujato",
+          text_uid: "mn",
+          subchapters: false,
+          is_published: true,
+      });
 
-        // unavailable
-        var pi = pub.pubInfo("mn1/de/sabbamitta");
-        should(pi.length).equal(0);
+      // unavailable
+      var pi = pub.pubInfo("mn1/de/sabbamitta");
+      should(pi.length).equal(0);
     });
 });

@@ -60,7 +60,7 @@
 //"comment/de/sabbamitta": commentPath('dn/dn33', 'de','sabbamitta'),
 //"comment/en/sujato": commentPath('dn/dn33', 'en','sujato'),
 "translation/en/sujato": translationPath('dn/dn33','en','sujato'),
-"translation/my/my-team": translationPath('dn/dn33','my','my-team'),
+//"translation/my/my-team": translationPath('dn/dn33','my','my-team'),
 //"translation/ru/team": translationPath('dn/dn33','ru','team'),
 "translation/de/sabbamitta": translationPath('dn/dn33','de','sabbamitta'),
         });
@@ -154,7 +154,6 @@
         });
         should.deepEqual(bps.map(bp=>bp.bilaraPath).sort(), [
             rootPath('mn/mn1'),
-            translationPath('mn/mn1','en','davis'),
             translationPath('mn/mn1','en','sujato'),
         ]);
     });

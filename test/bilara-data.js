@@ -15,6 +15,7 @@
     } = require("../index");
     const { MemoCache, } = require('memo-again');
     const LOCAL_DIR = path.join(__dirname, '..', 'local');
+    const TEST_UNPUBLISHED = false;
     logger.logLevel = 'warn';
     this.timeout(120*1000);
     var bd = new BilaraData(); 
@@ -893,26 +894,27 @@
         });
     });
     it("TESTTESinitialize() waits for indexLock", async()=>{ try {
-        let bd = new BilaraData({branch:'unpublished'});
+      if (!TEST_UNPUBLISHED) { return; }
+      let bd = new BilaraData({branch:'unpublished'});
 
-        // create index.lock
-        var indexLock = path.join(bd.root, '.git', 'index.lock');
-        should(fs.existsSync(indexLock)).equal(false);
-        fs.writeFileSync(indexLock, 'test');
-        let resolved = false;
+      // create index.lock
+      var indexLock = path.join(bd.root, '.git', 'index.lock');
+      should(fs.existsSync(indexLock)).equal(false);
+      fs.writeFileSync(indexLock, 'test');
+      let resolved = false;
 
-        // bd.sync will block
-        let syncPromise = bd.initialize(true);
-        syncPromise.then(()=>{ resolved = true; });
-        await new Promise(r=>setTimeout(()=>r(), 200));
-        should(resolved).equal(false);
+      // bd.sync will block
+      let syncPromise = bd.initialize(true);
+      syncPromise.then(()=>{ resolved = true; });
+      await new Promise(r=>setTimeout(()=>r(), 200));
+      should(resolved).equal(false);
 
-        // bd.sync will continue
-        await fs.promises.unlink(indexLock);
-        await syncPromise;
-        should(resolved).equal(true);
+      // bd.sync will continue
+      await fs.promises.unlink(indexLock);
+      await syncPromise;
+      should(resolved).equal(true);
     } finally{
-        fs.existsSync(indexLock) && fs.unlinkSync(indexLock);
+      fs.existsSync(indexLock) && fs.unlinkSync(indexLock);
     }});
     it("oadSuttaplexJson(...)=>an3.47", async()=>{
       //TODO
@@ -943,34 +945,34 @@
         }]);
     });
     it("loadSuttaplexJson(...)=>thig3.8 de", async()=>{
-      //TODO
-        await bd.initialize();
-        var suid = 'thig3.8';
+      if (!TEST_UNPUBLISHED) { return; }
+      await bd.initialize();
+      var suid = 'thig3.8';
 
-        var lang = 'de';
-        var lang_name = "Deutsch";
-        var author = "Sabbamitta";
-        var author_short = "sabbamitta";
-        var author_uid = 'sabbamitta';
+      var lang = 'de';
+      var lang_name = "Deutsch";
+      var author = "Sabbamitta";
+      var author_short = "sabbamitta";
+      var author_uid = 'sabbamitta';
 
-        let includeUnpublished = true;
-        var json = await bd.loadSuttaplexJson(suid, lang, undefined, includeUnpublished);
-        should(json.acronym).equal(`Thig 3.8`);
-        should(json.original_title).equal('Somātherīgāthā');
-        should(json.translations[0].author_uid).equal('sabbamitta');
-        should.deepEqual(json.translations[0], {
-            author,
-            author_short,
-            author_uid,
-            is_root: false,
-            lang,
-            lang_name,
-            segmented: true,
-            publication_date: null,
-            title: "Somā ",
-            id: `${suid}_translation-${lang}-${author_uid}`,
-            volpage: null,
-        });
+      let includeUnpublished = true;
+      var json = await bd.loadSuttaplexJson(suid, lang, undefined, includeUnpublished);
+      should(json.acronym).equal(`Thig 3.8`);
+      should(json.original_title).equal('Somātherīgāthā');
+      should(json.translations[0].author_uid).equal('sabbamitta');
+      should.deepEqual(json.translations[0], {
+          author,
+          author_short,
+          author_uid,
+          is_root: false,
+          lang,
+          lang_name,
+          segmented: true,
+          publication_date: null,
+          title: "Somā ",
+          id: `${suid}_translation-${lang}-${author_uid}`,
+          volpage: null,
+      });
     });
     it("TESTTESisBilaraDoc(...) => true if bilara file", async()=>{
         await bd.initialize();
