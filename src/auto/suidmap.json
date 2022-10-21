@@ -7395,6 +7395,7 @@
 		"translation/de/sabbamitta": "sutta/an/an11",
 		"translation/en/sujato": "sutta/an/an11",
 		"translation/jpn/kaz": "sutta/an/an11",
+		"translation/lt/piyadassi": "sutta/an/an11",
 		"root/pli/ms": "sutta/an/an11"
 	},
 	"an11.16": {
@@ -7670,6 +7671,7 @@
 	},
 	"dn2": {
 		"translation/en/sujato": "sutta/dn",
+		"translation/lt/piyadassi": "sutta/dn",
 		"translation/sr/brankokovacevic": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
@@ -10820,6 +10822,7 @@
 	"sn1.3": {
 		"translation/de/sabbamitta": "sutta/sn/sn1",
 		"translation/en/sujato": "sutta/sn/sn1",
+		"translation/lt/piyadassi": "sutta/sn/sn1",
 		"root/pli/ms": "sutta/sn/sn1"
 	},
 	"sn1.4": {
@@ -11379,6 +11382,7 @@
 	"sn2.19": {
 		"translation/de/sabbamitta": "sutta/sn/sn2",
 		"translation/en/sujato": "sutta/sn/sn2",
+		"translation/lt/piyadassi": "sutta/sn/sn2",
 		"translation/pt/laera-quaresma": "sutta/sn/sn2",
 		"root/pli/ms": "sutta/sn/sn2"
 	},
@@ -17191,6 +17195,7 @@
 	"sn46.55": {
 		"translation/de/sabbamitta": "sutta/sn/sn46",
 		"translation/en/sujato": "sutta/sn/sn46",
+		"translation/lt/piyadassi": "sutta/sn/sn46",
 		"root/pli/ms": "sutta/sn/sn46"
 	},
 	"sn46.56": {
@@ -18563,6 +18568,7 @@
 	},
 	"sn55.54": {
 		"translation/en/sujato": "sutta/sn/sn55",
+		"translation/lt/piyadassi": "sutta/sn/sn55",
 		"root/pli/ms": "sutta/sn/sn55"
 	},
 	"sn55.55": {
