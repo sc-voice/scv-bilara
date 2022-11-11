@@ -8746,6 +8746,7 @@
 	},
 	"mn95": {
 		"translation/en/sujato": "sutta/mn",
+		"translation/lt/piyadassi": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn96": {
@@ -18871,6 +18872,7 @@
 	"sn56.31": {
 		"translation/de/sabbamitta": "sutta/sn/sn56",
 		"translation/en/sujato": "sutta/sn/sn56",
+		"translation/lt/piyadassi": "sutta/sn/sn56",
 		"root/pli/ms": "sutta/sn/sn56"
 	},
 	"sn56.32": {
