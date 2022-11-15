@@ -245,7 +245,7 @@
             'sutta/sn',
         ]);
     });
-    it("custom suid map", async()=>{
+    it("TESTTESTcustom suid map", async()=>{
         let suidMapFile = tmp.tmpNameSync();
         let validatePath = (key,value,suid) => {
             return suid === 'sn12.23';
@@ -260,6 +260,7 @@
             'sn12.23': {
                 'translation/de/sabbamitta': 'sutta/sn/sn12',
                 'translation/en/sujato': 'sutta/sn/sn12',
+                'translation/en/davis': 'sutta/sn/sn12',
                 'root/pli/ms': 'sutta/sn/sn12'
             }
         });
