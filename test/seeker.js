@@ -904,24 +904,24 @@ typeof describe === "function" &&
         },
       ]);
       var res = await skr.slowFind(findArgs);
-      should(res.segsMatched).equal(8);
+      should(res.segsMatched).equal(10);
       should.deepEqual(res.suttaRefs, [
         "sn42.11/en/sujato",
         "mn105/en/sujato",
-        //TODO "mn1/en/sujato",
+        "mn1/en/sujato",
       ]);
       should.deepEqual( res.mlDocs.map((mld) => mld.score), [
         5.091, 3.016, 
-        //TODO 2.006
+        2.006
         ]
       );
       should.deepEqual( res.mlDocs.map((mld) => mld.suid), [
         "sn42.11", "mn105", 
-        //TODO "mn1"
+        "mn1"
         ]
       );
       var [mld0, mld1, mld2] = res.mlDocs;
-      should(res.mlDocs.length).equal(2); //TODO 3);
+      should(res.mlDocs.length).equal(3);
       should(res.minLang).equal(2);
       should.deepEqual(mld0.segments()[0], {
         scid: "sn42.11:0.1",
@@ -1037,7 +1037,7 @@ typeof describe === "function" &&
         en: "For desire is the root of suffering. ",
       });
     });
-    it("find(...) => finds segments with all keywords", async () => {
+    it("TESTTESTfind(...) => finds segments with all keywords", async () => {
       var maxDoc = 3;
       var skr = await new Seeker().initialize();
 
@@ -1055,12 +1055,12 @@ typeof describe === "function" &&
         "dn16/en/sujato",
         "dn23/en/sujato",
       ]);
-      should(res.suttaRefs.length).equal(15);
+      should(res.suttaRefs.length).equal(16);
       var [mld0, mld1, mld2] = res.mlDocs;
       should(res.mlDocs.length).equal(3);
       should(res.minLang).equal(2);
-      should(res.suttaRefs.length).equal(15);
-      should(res.segsMatched).equal(25);
+      should(res.suttaRefs.length).equal(16);
+      should(res.segsMatched).equal(26);
       should(mld0.score).above(mld1.score);
     });
     it("RegExp knows about word boundaries", () => {
@@ -1500,7 +1500,7 @@ typeof describe === "function" &&
       var mld0 = data.mlDocs[0];
       should(mld0.bilaraPaths[0]).match(/ud6.4/);
     });
-    it("find(...) finds Deutsch 'rat'", async () => {
+    it("TESTTESTfind(...) finds Deutsch 'rat'", async () => {
       let enWords = await English.wordSet({ source: "file" });
       var bilaraData = await bd.initialize();
       var skr = await new Seeker({
@@ -1513,9 +1513,9 @@ typeof describe === "function" &&
       should(data.resultPattern).equal("\\brat");
       should(data.searchLang).equal("de");
       should(data.method).equal("phrase");
-      should(data.mlDocs.length).equal(45);
+      should(data.mlDocs.length).equal(46);
       var mld0 = data.mlDocs[0];
-      should(mld0.bilaraPaths[0]).match(/dn33/);
+      should(mld0.bilaraPaths[0]).match(/sn35/);
     });
     it("find(...) finds 'thig3.8' de unpublished", async () => {
       if (!TEST_UNPUBLISHED) { return; }
