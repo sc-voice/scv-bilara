@@ -90,7 +90,7 @@ typeof describe === "function" &&
       should(reAllow.test(fn)).equal(true);
       should(reDeny.test(fn)).equal(false);
     });
-    it("TESTTESTgrep(...) finds sutta things", async () => {
+    it("grep(...) finds sutta things", async () => {
       var skr = new Seeker({});
       var ms0 = Date.now();
       var maxResults = 1;
@@ -109,7 +109,7 @@ typeof describe === "function" &&
       //console.log(`dbg grep`, ms1-ms0, ms2-ms1);
       should(ms2 - ms1).below(20);
     });
-    it("TESTTESTgrep(...) finds maxResults things", async () => {
+    it("grep(...) finds maxResults things", async () => {
       var skr = new Seeker(SEEKEROPTS);
       var maxResults = 1;
       var res = await skr.grep({
@@ -130,7 +130,7 @@ typeof describe === "function" &&
         `${en_suj}an/an10/an10.46_translation-en-sujato.json:1`,
       ]);
     });
-    it("grep(...) finds de things", async () => {
+    it("TESTTESTgrep(...) finds de things", async () => {
       var skr = new Seeker(SEEKEROPTS);
       var maxResults = 5;
 
@@ -142,9 +142,9 @@ typeof describe === "function" &&
       });
       should.deepEqual(res.slice(0, 4), [
         `${de_sab}dn/dn25_translation-de-sabbamitta.json:49`,
-        `${de_sab}dn/dn33_translation-de-sabbamitta.json:26`,
         `${de_sab}an/an6/an6.63_translation-de-sabbamitta.json:25`,
-        `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:18`,
+        `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:17`,
+        `${de_sab}dn/dn33_translation-de-sabbamitta.json:15`,
         //`${de_sab}dn/dn34_translation-de-sabbamitta.json:18`,
         //`${de_sab}an/an6/an6.30_translation-de-sabbamitta.json:15`,
       ]);
@@ -571,16 +571,17 @@ typeof describe === "function" &&
         lines,
       });
     });
-    it("phraseSearch(...) finds Deutsch results", async () => {
+    it("TESTTESTphraseSearch(...) finds Deutsch results", async () => {
       var linesWurzel = [
         `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
         `${de_sab}sn/sn56/sn56.21_translation-de-sabbamitta.json:1`,
         `${de_sab}dn/dn16_translation-de-sabbamitta.json:1`,
       ];
       var linesUber = [
-        `${de_sab}dn/dn33_translation-de-sabbamitta.json:25`,
+        //`${de_sab}dn/dn33_translation-de-sabbamitta.json:25`,
         `${de_sab}an/an6/an6.63_translation-de-sabbamitta.json:25`,
-        `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:18`,
+        `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:17`,
+        `${de_sab}an/an4/an4.163_translation-de-sabbamitta.json:15`,
         //`${de_sab}dn/dn34_translation-de-sabbamitta.json:18`,
       ];
       var lang = "de";
@@ -940,7 +941,7 @@ typeof describe === "function" &&
         //TODO pli: "Majjhima Nikāya 1 ",
       //TODO });
     });
-    it("find(...) => finds ubung", async () => {
+    it("TESTTESTfind(...) => finds ubung", async () => {
       var maxDoc = 3;
       var skr = await new Seeker({
         maxDoc,
@@ -958,16 +959,17 @@ typeof describe === "function" &&
       // suttaRefs will be many since grep/ripgrep
       // search files
       should.deepEqual(res.suttaRefs.slice(0, 3), [
-        "dn33/de/sabbamitta",
+        //"dn33/de/sabbamitta",
         "an6.63/de/sabbamitta",
         "an4.198/de/sabbamitta",
+        "an4.163/de/sabbamitta",
         //'dn34/de/sabbamitta',
       ]);
       // We only care about three documents so that
       // is what we should get
       should.deepEqual(
         res.mlDocs.map((mld) => mld.score),
-        [25.176, 25.021, 18.162]
+        [25.176, 17.153, 15.349],
       );
     });
     it("find(...) => finds searchLang phrase", async () => {
@@ -1482,7 +1484,7 @@ typeof describe === "function" &&
       should(mld0.bilaraPaths[1]).match(/de.*sn12.27/);
       should(mld0.score).equal(1.026);
     });
-    it("find(...) finds Deutsch 'blind'", async () => {
+    it("TESTTESTfind(...) finds Deutsch 'blind'", async () => {
       //bd.logLevel = 'info'
       bd.log("initializing");
       var bilaraData = await bd.initialize();
@@ -1496,11 +1498,11 @@ typeof describe === "function" &&
       should(data.resultPattern).equal("\\bblind");
       should(data.searchLang).equal("de");
       should(data.method).equal("phrase");
-      should(data.mlDocs.length).equal(19);
+      should(data.mlDocs.length).equal(20);
       var mld0 = data.mlDocs[0];
       should(mld0.bilaraPaths[0]).match(/ud6.4/);
     });
-    it("TESTTESTfind(...) finds Deutsch 'rat'", async () => {
+    it("find(...) finds Deutsch 'rat'", async () => {
       let enWords = await English.wordSet({ source: "file" });
       var bilaraData = await bd.initialize();
       var skr = await new Seeker({
@@ -1945,7 +1947,7 @@ typeof describe === "function" &&
       should(res.lang).equal("en");
       should(mld0.sutta_uid).equal("thig1.1");
     });
-    it("TESTTESTslowFindPhrase(...) => trilingual", async () => {
+    it("slowFindPhrase(...) => trilingual", async () => {
       let maxResults = 1;
       let msStart = Date.now();
       let pattern = "root of suffering";
