@@ -130,7 +130,7 @@ typeof describe === "function" &&
         `${en_suj}an/an10/an10.46_translation-en-sujato.json:1`,
       ]);
     });
-    it("TESTTESTgrep(...) finds de things", async () => {
+    it("grep(...) finds de things", async () => {
       var skr = new Seeker(SEEKEROPTS);
       var maxResults = 5;
 
@@ -209,7 +209,7 @@ typeof describe === "function" &&
         }
       })();
     });
-    it("TESTTESTkeywordSearch(...) limits results", async () => {
+    it("keywordSearch(...) limits results", async () => {
       var lang = "en";
       var pattern = Seeker.normalizePattern("suffering joy faith");
       var maxResults = 1;
@@ -241,7 +241,7 @@ typeof describe === "function" &&
         //`${en_suj}sn/sn12/sn12.23_translation-en-sujato.json:4`,
       ]);
     });
-    it("TESTTESTkeywordSearch(...) searches English", async () => {
+    it("keywordSearch(...) searches English", async () => {
       var pattern = Seeker.normalizePattern("suffering joy faith");
       var skr = await new Seeker({
         lang: "de", // Deutsch
@@ -571,7 +571,7 @@ typeof describe === "function" &&
         lines,
       });
     });
-    it("TESTTESTphraseSearch(...) finds Deutsch results", async () => {
+    it("phraseSearch(...) finds Deutsch results", async () => {
       var linesWurzel = [
         `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
         `${de_sab}sn/sn56/sn56.21_translation-de-sabbamitta.json:1`,
@@ -887,7 +887,7 @@ typeof describe === "function" &&
         "mn66/pli/ms",
       ]);
     });
-    it("TESTTESTfind(...) => finds phrase", async () => {
+    it("find(...) => finds phrase", async () => {
       var maxResults = 3;
       var skr = await new Seeker({
         maxResults,
@@ -941,7 +941,7 @@ typeof describe === "function" &&
         //TODO pli: "Majjhima Nikāya 1 ",
       //TODO });
     });
-    it("TESTTESTfind(...) => finds ubung", async () => {
+    it("find(...) => finds ubung", async () => {
       var maxDoc = 3;
       var skr = await new Seeker({
         maxDoc,
@@ -1039,7 +1039,7 @@ typeof describe === "function" &&
         en: "For desire is the root of suffering. ",
       });
     });
-    it("TESTTESTfind(...) => finds segments with all keywords", async () => {
+    it("find(...) => finds segments with all keywords", async () => {
       var maxDoc = 3;
       var skr = await new Seeker().initialize();
 
@@ -1484,7 +1484,7 @@ typeof describe === "function" &&
       should(mld0.bilaraPaths[1]).match(/de.*sn12.27/);
       should(mld0.score).equal(1.026);
     });
-    it("TESTTESTfind(...) finds Deutsch 'blind'", async () => {
+    it("find(...) finds Deutsch 'blind'", async () => {
       //bd.logLevel = 'info'
       bd.log("initializing");
       var bilaraData = await bd.initialize();
