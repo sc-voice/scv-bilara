@@ -178,6 +178,7 @@
             try {
               var bpe = {
                 fh,
+                bp,
                 p_read: fh.readFile(),
                 lang,
               };
@@ -193,17 +194,23 @@
 
         // assemble content
         for (var ip = 0; ip < p_bp.length; ip++) {
-          var { fh, p_read, lang, } = p_bp[ip];
-          var strings = JSON.parse(await p_read);
-          fh.close();
-          var keys = Object.keys(strings);
-          this.langSegs[lang] = keys.length;
-          keys.forEach(k => {
-            var m = (segMap[k] = segMap[k] || {
-              scid: k,
+          var { fh, bp, p_read, lang, } = p_bp[ip];
+          var json = await p_read;
+          try {
+            var strings = JSON.parse(json);
+            fh.close();
+            var keys = Object.keys(strings);
+            this.langSegs[lang] = keys.length;
+            keys.forEach(k => {
+              var m = (segMap[k] = segMap[k] || {
+                scid: k,
+              });
+              m[lang] = strings[k];
             });
-            m[lang] = strings[k];
-          });
+          } catch(e) {
+            this.warn(`Could not read Bilara file:`, bp);
+            throw e;
+          }
         }
         this.title = this.titles().join('\n');
 
