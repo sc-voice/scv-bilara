@@ -175,12 +175,17 @@
           }
           langMap[lang] = true;
           if (fh) {
-            var bpe = {
-              fh,
-              p_read: fh.readFile(),
-              lang,
-            };
-            p_bp.push(bpe);
+            try {
+              var bpe = {
+                fh,
+                p_read: fh.readFile(),
+                lang,
+              };
+              p_bp.push(bpe);
+            } catch(e) {
+              this.warn(`Could not read Bilara file:`, bp);
+              throw e;
+            }
           } else {
             this.log(`MLDoc.load() path not found:${bp}`);
           }
