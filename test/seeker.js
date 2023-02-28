@@ -1502,7 +1502,7 @@ typeof describe === "function" &&
       var mld0 = data.mlDocs[0];
       should(mld0.bilaraPaths[0]).match(/ud6.4/);
     });
-    it("find(...) finds Deutsch 'rat'", async () => {
+    it("TESTTESTfind(...) finds Deutsch 'rat'", async () => {
       let enWords = await English.wordSet({ source: "file" });
       var bilaraData = await bd.initialize();
       var skr = await new Seeker({
@@ -1515,7 +1515,7 @@ typeof describe === "function" &&
       should(data.resultPattern).equal("\\brat");
       should(data.searchLang).equal("de");
       should(data.method).equal("phrase");
-      should(data.mlDocs.length).equal(46);
+      should(data.mlDocs.length).equal(47);
       var mld0 = data.mlDocs[0];
       should(mld0.bilaraPaths[0]).match(/sn35/);
     });
