@@ -7837,6 +7837,7 @@
 		"root/pli/ms": "sutta/kn/dhp"
 	},
 	"dn1": {
+		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
 		"translation/sr/brankokovacevic": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
@@ -8722,11 +8723,13 @@
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn19": {
+		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
 		"translation/lt/piyadassi": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn20": {
+		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
 		"translation/lt/piyadassi": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
