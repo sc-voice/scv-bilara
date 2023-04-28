@@ -8637,6 +8637,7 @@
 	"mn1": {
 		"translation/en/sujato": "sutta/mn",
 		"translation/pl/hardao": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn2": {
@@ -8644,26 +8645,31 @@
 		"translation/en/sujato": "sutta/mn",
 		"translation/lt/piyadassi": "sutta/mn",
 		"translation/pl/hardao": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn3": {
 		"translation/en/sujato": "sutta/mn",
 		"translation/pl/hardao": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn4": {
 		"translation/en/sujato": "sutta/mn",
 		"translation/pl/hardao": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn5": {
 		"translation/en/sujato": "sutta/mn",
 		"translation/pl/hardao": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn6": {
 		"translation/en/sujato": "sutta/mn",
 		"translation/pl/hardao": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn7": {
@@ -8671,17 +8677,20 @@
 		"translation/en/sujato": "sutta/mn",
 		"translation/lt/piyadassi": "sutta/mn",
 		"translation/pl/hardao": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn8": {
 		"translation/en/sujato": "sutta/mn",
 		"translation/pl/hardao": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn9": {
 		"translation/en/sujato": "sutta/mn",
 		"translation/lt/piyadassi": "sutta/mn",
 		"translation/pl/hardao": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn10": {
@@ -8689,14 +8698,17 @@
 		"translation/en/sujato": "sutta/mn",
 		"translation/lt/piyadassi": "sutta/mn",
 		"translation/pl/hardao": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn11": {
 		"translation/en/sujato": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn12": {
 		"translation/en/sujato": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn13": {
