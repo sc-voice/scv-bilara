@@ -75,7 +75,7 @@
       should(unpubPaths.indexOf(`${BRAHMALI}`)).above(-1);
       should(unpubPaths.indexOf(`${MADHU}/kn`)).above(-1);
     });
-    it("isPublishedPath(f) filters supported suttas", async()=>{
+    it("TESTTESTisPublishedPath(f) filters supported suttas", async()=>{
         var pub = await pubTest.initialize(); 
         //pub.logLevel = 'debug';
     
@@ -89,7 +89,7 @@
         should(pub.isPublishedPath(
             `${BRAHMALI}/pli-tv-kd/pli-tv-kd6_translation-en-brahmali.json:1`))
             .equal(true);
-        should(pub.isPublishedPath('iti42/de/sabbamitta')).equal(false);
+        should(pub.isPublishedPath('iti42/de/sabbamitta')).equal(true);
         should(pub.isPublishedPath('iti42/en/sujato')).equal(true);
         should(pub.isPublishedPath('nonsense/en/nobody'))
             .equal(false);

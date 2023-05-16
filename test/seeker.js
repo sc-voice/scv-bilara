@@ -359,7 +359,7 @@ typeof describe === "function" &&
       });
       should(data).properties(expected);
     });
-    it("keywordSearch(...) searches Deutsch, not Pali", async () => {
+    it("TESTTESTkeywordSearch(...) searches Deutsch, not Pali", async () => {
       var skr = await new Seeker({
         lang: "en", // English default
       }).initialize();
@@ -372,6 +372,8 @@ typeof describe === "function" &&
         method: "keywords",
         lines: [
           `${de_sab}an/an10/an10.93_translation-de-sabbamitta.json:10`,
+          `${de_sab}sn/sn55/sn55.26_translation-de-sabbamitta.json:6`,
+          `${de_sab}sn/sn55/sn55.27_translation-de-sabbamitta.json:5`,
           `${de_sab}sn/sn10/sn10.8_translation-de-sabbamitta.json:4`,
           `${de_sab}an/an7/an7.63_translation-de-sabbamitta.json:3`,
           `${de_sab}an/an2/an2.32-41_translation-de-sabbamitta.json:2`,
@@ -379,8 +381,8 @@ typeof describe === "function" &&
           `${de_sab}an/an9/an9.20_translation-de-sabbamitta.json:2`,
           `${de_sab}an/an1/an1.248-257_translation-de-sabbamitta.json:1`,
           `${de_sab}an/an10/an10.91_translation-de-sabbamitta.json:1`,
-          `${de_sab}an/an10/an10.92_translation-de-sabbamitta.json:1`,
-          `${de_sab}an/an3/an3.109_translation-de-sabbamitta.json:1`,
+          //`${de_sab}an/an10/an10.92_translation-de-sabbamitta.json:1`,
+          //`${de_sab}an/an3/an3.109_translation-de-sabbamitta.json:1`,
           //`${de_sab}an/an3/an3.110_translation-de-sabbamitta.json:1`,
           //`${de_sab}an/an4/an4.197_translation-de-sabbamitta.json:1`,
           //`${de_sab}an/an4/an4.58_translation-de-sabbamitta.json:1`,
@@ -1079,36 +1081,29 @@ typeof describe === "function" &&
         `sotam niccam va ANICCAm va”ti?`
       );
     });
-    it("find(...) => de, Benares", (done) => {
-      (async function () {
-        try {
-          var lang = "de";
-          var skr = await new Seeker().initialize();
-          var res = await skr.find({
-            pattern: "Buddha was staying near Benares",
-            maxResults: 3,
-            lang,
-            minLang: 2,
-          });
-          let { bilaraPaths, method, searchLang } = res;
-          should(method).equal("phrase");
-          should(searchLang).equal(searchLang);
-          should.deepEqual(bilaraPaths, [
-            `${pli_ms}sn/sn56/sn56.11_root-pli-ms.json`,
-            `${de_sab}sn/sn56/sn56.11_translation-de-sabbamitta.json`,
-            `${en_suj}sn/sn56/sn56.11_translation-en-sujato.json`,
-            `${pli_ms}sn/sn55/sn55.53_root-pli-ms.json`,
-            `${en_suj}sn/sn55/sn55.53_translation-en-sujato.json`,
-            `${pli_ms}sn/sn4/sn4.5_root-pli-ms.json`,
-            `${de_sab}sn/sn4/sn4.5_translation-de-sabbamitta.json`,
-            `${en_suj}sn/sn4/sn4.5_translation-en-sujato.json`,
-          ]);
-
-          done();
-        } catch (e) {
-          done(e);
-        }
-      })();
+    it("TESTTESTfind(...) => de, Benares", async() => {
+      var lang = "de";
+      var skr = await new Seeker().initialize();
+      var res = await skr.find({
+        pattern: "Buddha was staying near Varanasi",
+        maxResults: 3,
+        lang,
+        minLang: 2,
+      });
+      let { bilaraPaths, method, searchLang } = res;
+      should(method).equal("phrase");
+      should(searchLang).equal(searchLang);
+      should.deepEqual(bilaraPaths, [
+        `${pli_ms}sn/sn56/sn56.11_root-pli-ms.json`,
+        `${de_sab}sn/sn56/sn56.11_translation-de-sabbamitta.json`,
+        `${en_suj}sn/sn56/sn56.11_translation-en-sujato.json`,
+        `${pli_ms}sn/sn55/sn55.53_root-pli-ms.json`,
+        `${de_sab}sn/sn55/sn55.53_translation-de-sabbamitta.json`,
+        `${en_suj}sn/sn55/sn55.53_translation-en-sujato.json`,
+        `${pli_ms}sn/sn4/sn4.5_root-pli-ms.json`,
+        `${de_sab}sn/sn4/sn4.5_translation-de-sabbamitta.json`,
+        `${en_suj}sn/sn4/sn4.5_translation-en-sujato.json`,
+      ]);
     });
     it("find(...) => no first point", async () => {
       var lang = "de";
@@ -1498,7 +1493,7 @@ typeof describe === "function" &&
       should(data.resultPattern).equal("\\bblind");
       should(data.searchLang).equal("de");
       should(data.method).equal("phrase");
-      should(data.mlDocs.length).equal(21);
+      should(data.mlDocs.length).equal(23);
       var mld0 = data.mlDocs[0];
       should(mld0.bilaraPaths[0]).match(/ud6.4/);
     });
@@ -1515,7 +1510,7 @@ typeof describe === "function" &&
       should(data.resultPattern).equal("\\brat");
       should(data.searchLang).equal("de");
       should(data.method).equal("phrase");
-      should(data.mlDocs.length).equal(47);
+      should(data.mlDocs.length).equal(50);
       var mld0 = data.mlDocs[0];
       should(mld0.bilaraPaths[0]).match(/sn35/);
     });

@@ -185,7 +185,7 @@
             suid: 'thig3.8',
         });
     });
-    it("buildSuidMap() => [ suid ]", async()=>{
+    it("TESTTESTbuildSuidMap() => [ suid ]", async()=>{
         let bpm = await new BilaraPathMap().initialize();
         let suidMap = await bpm.buildSuidMap();
         let suids = Object.keys(suidMap);
@@ -203,6 +203,7 @@
         ]);
         should.deepEqual(Object.keys(suidMap.iti42),[
             //'translation/en/suddhaso',
+            'translation/de/sabbamitta',
             'translation/en/sujato',
             'root/pli/ms',
             //'html/pli/ms',
@@ -245,7 +246,7 @@
             'sutta/sn',
         ]);
     });
-    it("custom suid map", async()=>{
+    it("TESTTESTcustom suid map", async()=>{
         let suidMapFile = tmp.tmpNameSync();
         let validatePath = (key,value,suid) => {
             return suid === 'sn12.23';
@@ -260,6 +261,7 @@
             'sn12.23': {
                 'translation/de/sabbamitta': 'sutta/sn/sn12',
                 'translation/en/sujato': 'sutta/sn/sn12',
+                'translation/lt/piyadassi': 'sutta/sn/sn12',
         //        'translation/en/davis': 'sutta/sn/sn13',
                 'root/pli/ms': 'sutta/sn/sn12'
             }
