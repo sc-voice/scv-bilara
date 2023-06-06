@@ -16,7 +16,6 @@
     "memo-again": "^0.7.0",
     "merkle-json": "^2.2.0",
     "scv-esm": "^1.62.1",
-    "serial-memo": "^0.1.0",
     "suttacentral-api": "^2.3.0",
     "tmp": "^0.1.0"
   },
