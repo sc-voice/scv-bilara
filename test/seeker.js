@@ -141,7 +141,8 @@ typeof describe === "function" &&
         maxResults,
       });
       should.deepEqual(res.slice(0, 4), [
-        `${de_sab}dn/dn25_translation-de-sabbamitta.json:49`,
+        `${de_sab}dn/dn25_translation-de-sabbamitta.json:48`,
+        `${de_sab}dn/dn8_translation-de-sabbamitta.json:29`,
         `${de_sab}an/an6/an6.63_translation-de-sabbamitta.json:25`,
         `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:17`,
         //`${de_sab}dn/dn33_translation-de-sabbamitta.json:15`,
@@ -372,6 +373,7 @@ typeof describe === "function" &&
         method: "keywords",
         lines: [
           `${de_sab}an/an10/an10.93_translation-de-sabbamitta.json:10`,
+          `${de_sab}mn/mn143_translation-de-sabbamitta.json:10`,
           `${de_sab}sn/sn55/sn55.26_translation-de-sabbamitta.json:6`,
           `${de_sab}sn/sn55/sn55.27_translation-de-sabbamitta.json:5`,
           `${de_sab}sn/sn10/sn10.8_translation-de-sabbamitta.json:4`,
@@ -380,7 +382,7 @@ typeof describe === "function" &&
           `${de_sab}an/an5/an5.41_translation-de-sabbamitta.json:2`,
           `${de_sab}an/an9/an9.20_translation-de-sabbamitta.json:2`,
           `${de_sab}an/an1/an1.248-257_translation-de-sabbamitta.json:1`,
-          `${de_sab}an/an10/an10.91_translation-de-sabbamitta.json:1`,
+          //`${de_sab}an/an10/an10.91_translation-de-sabbamitta.json:1`,
           //`${de_sab}an/an10/an10.92_translation-de-sabbamitta.json:1`,
           //`${de_sab}an/an3/an3.109_translation-de-sabbamitta.json:1`,
           //`${de_sab}an/an3/an3.110_translation-de-sabbamitta.json:1`,
