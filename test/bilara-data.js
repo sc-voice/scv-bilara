@@ -921,6 +921,7 @@
             author,
             author_short,
             author_uid,
+            has_comment: false,
             is_root: false,
             lang,
             lang_name,
