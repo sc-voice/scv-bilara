@@ -13,7 +13,7 @@
     "js-ebt": "^1.0.1",
     "json5": "^2.1.3",
     "log-instance": "^1.4.0",
-    "memo-again": "^0.7.0",
+    "memo-again": "^0.8.0",
     "merkle-json": "^2.2.0",
     "scv-esm": "^1.63.3",
     "suttacentral-api": "^2.3.1",
