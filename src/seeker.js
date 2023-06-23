@@ -589,6 +589,7 @@
     }
 
     find(...args) {
+      const msg = "Seeker.find() ";
       var { findMemo, memoizer } = this;
       var findArgs = this.findArgs(args);
       var that = this;
@@ -605,21 +606,23 @@
           that.findMemo = findMemo = memoizer.memoize(callSlowFind, Seeker);
         }
         var promise = findMemo(findArgs);
-        this.debug(`find() example:${pattern}`);
+        this.debug(`${msg} example:${pattern}`);
       } else {
-        this.info(`find() non-example:${pattern}`);
+        this.info(`${msg} non-example:${pattern}`);
         var promise = callSlowFind(findArgs);
       }
       return promise;
     }
 
     slowFindId({ lang='en', languages=['pli','en'], maxResults, pattern }) {
+      const msg = "Seeker.slowFindId() ";
       var bd = this.bilaraData;
       var examples = bd.examples;
       var resultPattern = pattern;
       let method, uids, suttaRefs;
 
       if (!SuttaCentralId.test(pattern)) {
+        this.debug(msg, 'not sutta id', {pattern});
         return undefined;
       }
 
@@ -632,6 +635,7 @@
       }
       pattern = pattern.replace(/:[^/,]*/g, ''); // remove segment refs
       let res = bd.sutta_uidSearch(pattern, maxResults);
+      //console.log(msg, 'sutta_uidSearch', {res});
       method = res.method;
       uids = res.uids;
       suttaRefs = res.suttaRefs;
@@ -653,6 +657,7 @@
     }
 
     async slowFind(findArgs) {
+      const msg = "Seeker.slowFind() ";
       try {
         var msStart = Date.now();
         var {
@@ -682,6 +687,7 @@
         }
 
         if (isSuidPattern) {
+          //console.log(msg, {findArgs});
           let res = this.slowFindId({ lang, languages, maxResults, pattern });
           lang = res.lang;
           maxResults = res.maxResults;

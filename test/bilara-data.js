@@ -734,7 +734,7 @@
         });
         should.deepEqual(mld.segMap['an1.9:1.0'], an1_9_de);
     });
-    it("TESTTESTloadMLDocLegacy(...) loads legacy doc", async()=>{
+    it("loadMLDocLegacy(...) loads legacy doc", async()=>{
         await bd.initialize();
         var mld = await bd.loadMLDocLegacy('mn120/de');
 
@@ -1015,5 +1015,25 @@
         var root = '/tmp/not-there';
         var bd = new BilaraData({name, root});
         should(await bd.isFresh()).equal(false);
+    });
+    it("TESTTESTexpandRange()", async()=>{
+      const msg = "test/BilaraData.expandRange() ";
+      let bd = new BilaraData();
+      let res = await bd.initialize();
+
+      // MIL
+      should.deepEqual(bd.expandRange("mil3.1.2"), [ 'mil3.1.2', ]);
+
+      // MN, DN
+      should.deepEqual(bd.expandRange("mn2"), [ 'mn2', ]);
+      should.deepEqual(bd.expandRange("dn2-4"), [ 'dn2', 'dn3', 'dn4' ]);
+
+      // SN, AN
+      should.deepEqual(bd.expandRange("sn1.2"), [ 'sn1.2', ]);
+      should.deepEqual(bd.expandRange("sn1.2-4"), [
+        'sn1.2', 'sn1.3', 'sn1.4',
+      ]);
+      should.deepEqual(bd.expandRange("an1.2-4"), [ 'an1.1-10', ]);
+
     });
 })

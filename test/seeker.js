@@ -130,7 +130,7 @@ typeof describe === "function" &&
         `${en_suj}an/an10/an10.46_translation-en-sujato.json:1`,
       ]);
     });
-    it("TESTTESTgrep(...) finds de things", async () => {
+    it("grep(...) finds de things", async () => {
       var skr = new Seeker(SEEKEROPTS);
       var maxResults = 5;
 
@@ -360,7 +360,7 @@ typeof describe === "function" &&
       });
       should(data).properties(expected);
     });
-    it("TESTTESTkeywordSearch(...) searches Deutsch, not Pali", async () => {
+    it("keywordSearch(...) searches Deutsch, not Pali", async () => {
       var skr = await new Seeker({
         lang: "en", // English default
       }).initialize();
@@ -1083,7 +1083,7 @@ typeof describe === "function" &&
         `sotam niccam va ANICCAm va”ti?`
       );
     });
-    it("TESTTESTfind(...) => de, Benares", async() => {
+    it("find(...) => de, Benares", async() => {
       var lang = "de";
       var skr = await new Seeker().initialize();
       var res = await skr.find({
@@ -1481,7 +1481,7 @@ typeof describe === "function" &&
       should(mld0.bilaraPaths[1]).match(/de.*sn12.27/);
       should(mld0.score).equal(1.026);
     });
-    it("TESTTESTfind(...) finds Deutsch 'blind'", async () => {
+    it("find(...) finds Deutsch 'blind'", async () => {
       //bd.logLevel = 'info'
       bd.log("initializing");
       var bilaraData = await bd.initialize();
@@ -1495,11 +1495,11 @@ typeof describe === "function" &&
       should(data.resultPattern).equal("\\bblind");
       should(data.searchLang).equal("de");
       should(data.method).equal("phrase");
-      should(data.mlDocs.length).equal(23);
+      should(data.mlDocs.length).equal(24);
       var mld0 = data.mlDocs[0];
       should(mld0.bilaraPaths[0]).match(/ud6.4/);
     });
-    it("TESTTESTfind(...) finds Deutsch 'rat'", async () => {
+    it("find(...) finds Deutsch 'rat'", async () => {
       let enWords = await English.wordSet({ source: "file" });
       var bilaraData = await bd.initialize();
       var skr = await new Seeker({

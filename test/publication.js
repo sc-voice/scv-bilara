@@ -75,7 +75,7 @@
       should(unpubPaths.indexOf(`${BRAHMALI}`)).above(-1);
       should(unpubPaths.indexOf(`${MADHU}/kn`)).above(-1);
     });
-    it("TESTTESTisPublishedPath(f) filters supported suttas", async()=>{
+    it("isPublishedPath(f) filters supported suttas", async()=>{
         var pub = await pubTest.initialize(); 
         //pub.logLevel = 'debug';
     
