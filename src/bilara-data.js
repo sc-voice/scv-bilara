@@ -809,26 +809,23 @@
       }
       var rangeParts = range.split("-");
       var dotParts = rangeParts[0].split(".");
-      if (dotParts.length > 3) {
+      let dpLast = dotParts.length - 1;
+      if (dpLast > 2) {
         throw new Error(`Invalid sutta reference: ${suttaRef} [E3]`);
       }
-      if (dotParts.length > 1 || coll[0].subchapters) {
+      if (dpLast > 0 || coll[0].subchapters) {
         // SN, AN, KN
-        if (dotParts.length === 1) {
+        if (dpLast === 0) {
           // e.g. SN50
           var prefix = `${sref}.`;
           var first = rangeParts.length === 1 ? 1 : Number(rangeParts[0]);
           var last = rangeParts.length === 1 ? 999 : Number(rangeParts[1]);
-        } else if (rangeParts.length === 1) {
-          var prefix = `${collName}${dotParts[0]}.`;
-          rangeParts[0] = dotParts[1];
-          var first = Number(rangeParts[0]);
-          var last = first;
         } else {
-          // e.g., SN50.1
-          var prefix = `${collName}${dotParts[0]}.`;
-          var first = Number(dotParts[1]);
-          var last = Number(rangeParts[1]);
+          var prefix = `${collName}${dotParts.slice(0,dpLast).join('.')}.`;
+          var first = Number(dotParts[dpLast]);
+          var last = rangeParts.length === 1 
+            ? first
+            : Number(rangeParts[1]);
         }
         if (isNaN(first) || isNaN(last)) {
           throw new Error(`Invalid sutta reference: ${suttaRef} [E1]`);
