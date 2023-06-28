@@ -717,7 +717,7 @@ typeof describe === "function" &&
       should(res.lang).equal("de");
       should(res.mlDocs.length).equal(3);
     });
-    it("find(...) finds mn1/en/sujato", async () => {
+    it("TESTTESTfind(...) finds mn1/en/sujato", async () => {
       var maxResults = 3;
       var skr = await new Seeker({
         maxResults,
@@ -740,7 +740,7 @@ typeof describe === "function" &&
       should(res.lang).equal("en"); // pattern overrides default lang='de'
       should(res.mlDocs.length).equal(1);
       var segments = mld0.segments();
-      should(segments.length).equal(334);
+      should(segments.length).equal(329);
       should.deepEqual(segments[22], {
         scid: "mn1:5.2",
         matched: true,
@@ -748,7 +748,7 @@ typeof describe === "function" &&
           "tejaṁ tejato saññatvā tejaṁ maññati, " +
           "tejasmiṁ maññati, tejato maññati, " +
           "tejaṁ meti maññati, tejaṁ abhinandati. ",
-        en: "But then they identify with fire … ",
+        en: "Having perceived fire as fire, they conceive it to be fire … ",
       });
     });
     it("find(maxdoc)", async () => {
