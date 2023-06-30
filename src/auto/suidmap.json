@@ -8663,6 +8663,10 @@
 		"translation/pl/hardao": "sutta/kn/kp",
 		"root/pli/ms": "sutta/kn/kp"
 	},
+	"mil3.1.1": {
+		"translation/de/sabbamitta": "sutta/kn/mil",
+		"root/pli/ms": "sutta/kn/mil"
+	},
 	"mn1": {
 		"translation/en/sujato": "sutta/mn",
 		"translation/pl/hardao": "sutta/mn",
@@ -24673,9 +24677,6 @@
 		"root/pli/ms": "sutta/kn/mil"
 	},
 	"mil3.1.16": {
-		"root/pli/ms": "sutta/kn/mil"
-	},
-	"mil3.1.1": {
 		"root/pli/ms": "sutta/kn/mil"
 	},
 	"mil3.1.2": {
