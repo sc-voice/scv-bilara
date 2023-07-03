@@ -740,7 +740,7 @@ typeof describe === "function" &&
       should(res.lang).equal("en"); // pattern overrides default lang='de'
       should(res.mlDocs.length).equal(1);
       var segments = mld0.segments();
-      should(segments.length).equal(329);
+      should(segments.length).equal(334);
       should.deepEqual(segments[22], {
         scid: "mn1:5.2",
         matched: true,
@@ -1982,5 +1982,28 @@ typeof describe === "function" &&
         "sn2.24/en/sujato",
         "sn1.50/en/sujato",
       ]);
+    });
+    it("TESTTESTfind(...) => mil3.1.1.1/de", async () => {
+      let bilaraData = new BilaraData();
+      let skr = await new Seeker({
+        bilaraData,
+        logger: bilaraData,
+      }).initialize();
+      let findArgs = skr.findArgs([
+        {
+          pattern: "mil3.1.1/de",
+        },
+      ]);
+      let res = await skr.slowFind(findArgs);
+      should(res.method).equal("sutta_uid");
+      should(res.mlDocs.length).above(0);
+      let mld0 = res.mlDocs[0];
+      should(mld0.author_uid).equal("sabbamitta");
+      should(res.bilaraPaths.length).equal(2);
+      let segments = mld0.segments();
+      should(segments[4].de).match(/Und der Ehrwürdige Nāgasena/);
+      should.deepEqual(mld0.langSegs, { pli: 108, de: 96 });
+      should(res.lang).equal("de");
+      should(mld0.sutta_uid).equal("mil3.1.1");
     });
   });

@@ -515,6 +515,7 @@ function scriptEditor(res, pattern) {
 logger.logLevel = logLevel;
 
 (async function() { try {
+    const msg = "scripts.js.search ";
     logger.info('SEARCH: creating BilaraData');
     var bilaraData = new BilaraData({
         execGit,
@@ -544,6 +545,7 @@ logger.logLevel = logLevel;
     logger.info(`SEARCH: findOpts`, findOpts);
     var msStart = Date.now();
     var res = await skr.find(findOpts);
+    //console.log(msg, res);
     var secElapsed = (Date.now() - msStart)/1000;
     logger.info(`SEARCH: find() ${secElapsed.toFixed(1)}s`);
     if (outFormat === 'verse') {

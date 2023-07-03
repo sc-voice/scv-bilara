@@ -216,6 +216,7 @@
 
     tipitakaRegExp(tc = "sutta") {
       var tcParts = tc.toLowerCase().split(",");
+      console.log({tc});
       var pats = tcParts.reduce((a, p) => {
         let pat = TCMAP[p];
         if (pat == null) {
@@ -635,7 +636,7 @@
       }
       pattern = pattern.replace(/:[^/,]*/g, ''); // remove segment refs
       let res = bd.sutta_uidSearch(pattern, maxResults);
-      //console.log(msg, 'sutta_uidSearch', {res});
+      //console.trace(msg, 'sutta_uidSearch', {res});
       method = res.method;
       uids = res.uids;
       suttaRefs = res.suttaRefs;
@@ -643,7 +644,7 @@
       if (!languages.includes(lang)) {
         languages = [...languages.filter((l) => l !== "en"), lang];
       }
-      this.debug(`slowFindId()`, { pattern, lang }, suttaRefs);
+      this.debug(msg, { pattern, lang }, suttaRefs);
 
       return {
         lang,
@@ -687,8 +688,8 @@
         }
 
         if (isSuidPattern) {
-          //console.log(msg, {findArgs});
           let res = this.slowFindId({ lang, languages, maxResults, pattern });
+          //console.log(msg, {findArgs, res});
           lang = res.lang;
           maxResults = res.maxResults;
           method = res.method;
