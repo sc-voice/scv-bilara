@@ -858,7 +858,7 @@ typeof describe === "function" &&
       var res = await skr.find({
         pattern,
         lang: "de",
-        minLang: 3,
+        minLang: 2,
       });
       should.deepEqual(res.suttaRefs, ["dn33/de"]);
       should(res.mlDocs.length).equal(1);
@@ -1169,7 +1169,7 @@ typeof describe === "function" &&
         matchHighlight: "\u001b[38;5;121m$&\u001b[0m",
         maxDoc: 50,
         maxResults: 1000,
-        minLang: 3,
+        minLang: 2,
         pattern,
         searchLang: "jpn",
         showMatchesOnly: true,
@@ -1178,7 +1178,7 @@ typeof describe === "function" &&
         types: ["root", "translation"],
       });
     });
-    it("findArgs(...) handles German", async () => {
+    it("TESTTESTfindArgs(...) handles German", async () => {
       var bilaraData = await bd.initialize();
       var skr = await new Seeker({
         bilaraData,

@@ -548,7 +548,8 @@
       lang = lang || language || thisLang;
       searchLang =
         searchLang == null ? this.patternLanguage(pattern, lang) : searchLang;
-      minLang = minLang || (lang === "en" || searchLang === "en" ? 2 : 3);
+      //minLang = minLang || (lang === "en" || searchLang === "en" ? 2 : 3);
+      minLang = minLang || 2;
       pattern = Seeker.sanitizePattern(pattern);
       pattern = Seeker.normalizePattern(pattern);
       showMatchesOnly == null && (showMatchesOnly = true);
