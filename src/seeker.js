@@ -216,7 +216,7 @@
 
     tipitakaRegExp(tc = "sutta") {
       var tcParts = tc.toLowerCase().split(",");
-      console.log({tc});
+      //console.log({tc});
       var pats = tcParts.reduce((a, p) => {
         let pat = TCMAP[p];
         if (pat == null) {
