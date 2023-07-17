@@ -717,7 +717,7 @@ typeof describe === "function" &&
       should(res.lang).equal("de");
       should(res.mlDocs.length).equal(3);
     });
-    it("TESTTESTfind(...) finds mn1/en/sujato", async () => {
+    it("find(...) finds mn1/en/sujato", async () => {
       var maxResults = 3;
       var skr = await new Seeker({
         maxResults,
@@ -1178,7 +1178,7 @@ typeof describe === "function" &&
         types: ["root", "translation"],
       });
     });
-    it("TESTTESTfindArgs(...) handles German", async () => {
+    it("findArgs(...) handles German", async () => {
       var bilaraData = await bd.initialize();
       var skr = await new Seeker({
         bilaraData,
@@ -1983,7 +1983,7 @@ typeof describe === "function" &&
         "sn1.50/en/sujato",
       ]);
     });
-    it("TESTTESTfind(...) => mil3.1.1.1/de", async () => {
+    it("find(...) => mil3.1.1.1/de", async () => {
       let bilaraData = new BilaraData();
       let skr = await new Seeker({
         bilaraData,

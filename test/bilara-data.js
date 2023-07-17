@@ -1016,7 +1016,7 @@
         var bd = new BilaraData({name, root});
         should(await bd.isFresh()).equal(false);
     });
-    it("TESTTESTexpandRange()", async()=>{
+    it("expandRange()", async()=>{
       const msg = "test/BilaraData.expandRange() ";
       let bd = new BilaraData();
       let res = await bd.initialize();

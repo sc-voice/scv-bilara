@@ -45,7 +45,7 @@
         var bpm = new BilaraPathMap();
         should(bpm.initialized).equal(false);
     });
-    it("suidPath(suid) => local bilara paths", async()=>{
+    it("TESTTESTsuidPath(suid) => local bilara paths", async()=>{
         var bpm = new BilaraPathMap()
         should.throws(()=>{bpm.suidPaths('dn33');});
         await bpm.initialize();
@@ -63,6 +63,7 @@
 //"translation/my/my-team": translationPath('dn/dn33','my','my-team'),
 //"translation/ru/team": translationPath('dn/dn33','ru','team'),
 "translation/de/sabbamitta": translationPath('dn/dn33','de','sabbamitta'),
+"translation/sr/brankokovacevic": "translation/sr/brankokovacevic/sutta/dn/dn33_translation-sr-brankokovacevic.json",
         });
     });
     it("bilaraPaths(suid) returns local bilara paths",async()=>{
@@ -246,7 +247,7 @@
             'sutta/sn',
         ]);
     });
-    it("TESTTESTcustom suid map", async()=>{
+    it("custom suid map", async()=>{
         let suidMapFile = tmp.tmpNameSync();
         let validatePath = (key,value,suid) => {
             return suid === 'sn12.23';
