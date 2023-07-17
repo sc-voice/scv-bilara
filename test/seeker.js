@@ -27,6 +27,7 @@ typeof describe === "function" &&
     var en_bra = `translation/en/brahmali/vinaya/`;
     var de_sab = `translation/de/sabbamitta/sutta/`;
     var my_my = `translation/my/my-team/sutta/`;
+    var en_dav = `translation/en/davis/sutta/`;
     var pli_ms = `root/pli/ms/sutta/`;
 
     const BILARA_PATH = path.join(Files.LOCAL_DIR, "bilara-data");
@@ -118,7 +119,7 @@ typeof describe === "function" &&
       });
       should.deepEqual(res, SUTTA_ROOT_SUFF.slice(0, maxResults));
     });
-    it("grep(...) filters result files", async () => {
+    it("TESTTESTgrep(...) filters result files", async () => {
       var skr = new Seeker(SEEKEROPTS);
       var res = await skr.grep({
         pattern: "a single day",
@@ -128,6 +129,7 @@ typeof describe === "function" &&
         `${en_suj}kn/dhp/dhp100-115_translation-en-sujato.json:6`,
         `${en_suj}dn/dn9_translation-en-sujato.json:1`,
         `${en_suj}an/an10/an10.46_translation-en-sujato.json:1`,
+        //`${en_dav}dn/dn9_translation-en-davis.json:1`,
       ]);
     });
     it("grep(...) finds de things", async () => {
