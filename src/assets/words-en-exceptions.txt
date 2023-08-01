@@ -6,7 +6,13 @@ Banyanbaum
 beliebt
 beliebtheit
 besorgnis
+betrachten
+betrachte
+betrachtet
 blitz
+element
+elemente
+elementen
 enthaltsam
 enthaltsamkeit
 Feigheit
