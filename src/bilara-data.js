@@ -92,16 +92,6 @@
       const msg = "BilaraData.isBilaraDoc() ";
       let { bilaraPathMap: bpm, publication } = this;
       let sp = bpm.suidPaths(suid);
-      if (1 && !includeUnpublished) {
-        let newSp = {};
-        for (let k in sp) {
-          let v = sp[k];
-          if (publication.isPublishedPath(v)) {
-            newSp[k] = v;
-          }
-        }
-        sp = newSp;
-      }
 
       let spKeys = (sp && Object.keys(sp)) || [];
       if (lang) {

@@ -133,7 +133,7 @@
             //commentPath('an/an1/an1.1-10','en','sujato'),
         ]);
     });
-    it("TESTTESTbilaraPaths() uses scv-esm suidmap",async()=>{
+    it("bilaraPaths() uses scv-esm suidmap",async()=>{
         let rootName = 'ebt-data';
         let root = path.join(LOCALDIR, rootName);
         var bpm = await new BilaraPathMap({root}).initialize();
