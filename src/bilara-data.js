@@ -89,9 +89,10 @@
       author,
       includeUnpublished = this.includeUnpublished,
     }) {
+      const msg = "BilaraData.isBilaraDoc() ";
       let { bilaraPathMap: bpm, publication } = this;
       let sp = bpm.suidPaths(suid);
-      if (!includeUnpublished) {
+      if (1 && !includeUnpublished) {
         let newSp = {};
         for (let k in sp) {
           let v = sp[k];

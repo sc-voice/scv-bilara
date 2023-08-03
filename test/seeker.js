@@ -119,7 +119,7 @@ typeof describe === "function" &&
       });
       should.deepEqual(res, SUTTA_ROOT_SUFF.slice(0, maxResults));
     });
-    it("TESTTESTgrep(...) filters result files", async () => {
+    it("grep(...) filters result files", async () => {
       var skr = new Seeker(SEEKEROPTS);
       var res = await skr.grep({
         pattern: "a single day",
@@ -577,7 +577,7 @@ typeof describe === "function" &&
         lines,
       });
     });
-    it("TESTTESTphraseSearch(...) finds Deutsch results", async () => {
+    it("phraseSearch(...) finds Deutsch results", async () => {
       var linesWurzel = [
         `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
         `${de_sab}sn/sn56/sn56.21_translation-de-sabbamitta.json:1`,
@@ -592,9 +592,7 @@ typeof describe === "function" &&
         //`${de_sab}dn/dn34_translation-de-sabbamitta.json:18`,
       ];
       var lang = "de";
-      var maxResults = 10;
-      var maxDoc = 3;
-      var skr = await new Seeker({
+      var maxResults = 10; var maxDoc = 3; var skr = await new Seeker({
         maxResults,
         maxDoc,
       }).initialize();
@@ -1020,7 +1018,7 @@ typeof describe === "function" &&
       });
       should(res.suttaRefs.length).equal(16);
     });
-    it("TESTTESTfind(...) => finds keywords", async () => {
+    it("find(...) => finds keywords", async () => {
       var maxDoc = 3;
       var skr = await new Seeker({
         maxDoc,
@@ -1354,7 +1352,7 @@ typeof describe === "function" &&
       var text = "Wahrheit von der Übung, die zum Aufhören";
       should(re.test(text)).equal(true);
     });
-    it("TESTTESTfind(...) ignores translation stubs", async () => {
+    it("find(...) ignores translation stubs", async () => {
       var skr = await new Seeker().initialize();
 
       var pattern = "root of suffering -ml 3 -l de";
@@ -2010,5 +2008,30 @@ typeof describe === "function" &&
       should.deepEqual(mld0.langSegs, { pli: 108, de: 96 });
       should(res.lang).equal("de");
       should(mld0.sutta_uid).equal("mil3.1.1");
+    });
+    it("TESTTESTphraseSearch(...) finds Autorität (de)", async () => {
+      var lang = "de";
+      var maxResults = 10;
+      var maxDoc = 3;
+      var skr = await new Seeker({ maxResults, maxDoc, }).initialize();
+      var pattern = `Autorität`;
+
+      skr.logLevel = 'info'; // TODO
+      var data = await skr.phraseSearch({ pattern, lang, });
+      should.deepEqual(skr.languages, ["pli", "en"]);
+      should.deepEqual(data, {
+        method: "phrase",
+        lang,
+        pattern: "\\bAutorität",
+        lines: [
+          `${de_sab}an/an3/an3.66_translation-de-sabbamitta.json:4`,
+          `${de_sab}an/an3/an3.65_translation-de-sabbamitta.json:4`,
+          `${de_sab}an/an5/an5.133_translation-de-sabbamitta.json:3`,
+          `${de_sab}an/an4/an4.193_translation-de-sabbamitta.json:3`,
+          `${de_sab}an/an3/an3.14_translation-de-sabbamitta.json:2`,
+          `${de_sab}kn/cp/cp2_translation-de-sabbamitta.json:1`,
+          `${de_sab}dn/dn26_translation-de-sabbamitta.json:1`,
+        ],
+      });
     });
   });

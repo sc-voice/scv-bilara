@@ -45,7 +45,7 @@
         var bpm = new BilaraPathMap();
         should(bpm.initialized).equal(false);
     });
-    it("TESTTESTsuidPath(suid) => local bilara paths", async()=>{
+    it("suidPath(suid) => local bilara paths", async()=>{
         var bpm = new BilaraPathMap()
         should.throws(()=>{bpm.suidPaths('dn33');});
         await bpm.initialize();
@@ -133,7 +133,7 @@
             //commentPath('an/an1/an1.1-10','en','sujato'),
         ]);
     });
-    it("bilaraPaths() uses scv-esm suidmap",async()=>{
+    it("TESTTESTbilaraPaths() uses scv-esm suidmap",async()=>{
         let rootName = 'ebt-data';
         let root = path.join(LOCALDIR, rootName);
         var bpm = await new BilaraPathMap({root}).initialize();
@@ -142,6 +142,7 @@
         should.deepEqual(bpm.suidPaths('sn22.56/de'), {
           'translation/en/sujato': 'translation/en/sujato/sutta/sn/sn22/sn22.56_translation-en-sujato.json',
           'translation/de/sabbamitta': 'translation/de/sabbamitta/sutta/sn/sn22/sn22.56_translation-de-sabbamitta.json',
+          'translation/en/davis': 'translation/en/davis/sutta/sn/sn22/sn22.56_translation-en-davis.json',
           'root/pli/ms': 'root/pli/ms/sutta/sn/sn22/sn22.56_root-pli-ms.json'
         });
     });
