@@ -577,10 +577,11 @@ typeof describe === "function" &&
         lines,
       });
     });
-    it("phraseSearch(...) finds Deutsch results", async () => {
+    it("TESTTESTphraseSearch(...) finds Deutsch results", async () => {
       var linesWurzel = [
         `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
         `${de_sab}sn/sn56/sn56.21_translation-de-sabbamitta.json:1`,
+        `${de_sab}mn/mn116_translation-de-sabbamitta.json:1`,
         `${de_sab}dn/dn16_translation-de-sabbamitta.json:1`,
       ];
       var linesUber = [
@@ -1019,7 +1020,7 @@ typeof describe === "function" &&
       });
       should(res.suttaRefs.length).equal(16);
     });
-    it("find(...) => finds keywords", async () => {
+    it("TESTTESTfind(...) => finds keywords", async () => {
       var maxDoc = 3;
       var skr = await new Seeker({
         maxDoc,
@@ -1034,6 +1035,7 @@ typeof describe === "function" &&
       should.deepEqual(res.suttaRefs, [
         "sn42.11/de/sabbamitta",
         "dn34/de/sabbamitta",
+        "mn116/de/sabbamitta",
         "dn16/de/sabbamitta",
         "sn56.21/de/sabbamitta",
       ]);
@@ -1352,7 +1354,7 @@ typeof describe === "function" &&
       var text = "Wahrheit von der Übung, die zum Aufhören";
       should(re.test(text)).equal(true);
     });
-    it("find(...) ignores translation stubs", async () => {
+    it("TESTTESTfind(...) ignores translation stubs", async () => {
       var skr = await new Seeker().initialize();
 
       var pattern = "root of suffering -ml 3 -l de";
@@ -1362,9 +1364,10 @@ typeof describe === "function" &&
       should.deepEqual(res.suttaRefs, [
         "sn42.11/en/sujato",
         "sn56.21/en/sujato",
+        "mn116/en/sujato",
         "dn16/en/sujato",
       ]);
-      should(res.bilaraPaths.length).equal(9);
+      should(res.bilaraPaths.length).equal(12);
     });
     it("find(...) ignores chinese", async () => {
       var skr = await new Seeker().initialize();
