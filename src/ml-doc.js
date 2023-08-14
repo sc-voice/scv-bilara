@@ -170,7 +170,7 @@
             : parts.type;
           if (langMap[lang]) {
             this.debug(`MLDoc.load skipping: ${bilaraPaths[ip]}`);
-            fh.close();
+            fh && fh.close();
             continue;
           }
           langMap[lang] = true;
