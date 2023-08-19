@@ -3,7 +3,7 @@
     const path = require('path');
     const { logger } = require('log-instance');
     const { Files } = require('memo-again');
-    const { Authors, BilaraPath, SuttaCentralId } = require("scv-esm");
+    const { AuthorsV2, BilaraPath, SuttaCentralId } = require("scv-esm");
     const STUBFILESIZE = 5;
 
     class BilaraPathMap {

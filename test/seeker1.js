@@ -1484,7 +1484,7 @@ typeof describe === "function" &&
       should(mld0.bilaraPaths[1]).match(/de.*sn12.27/);
       should(mld0.score).equal(1.026);
     });
-    it("TESTTESTfind(...) finds Deutsch 'blind'", async () => {
+    it("find(...) finds Deutsch 'blind'", async () => {
       //bd.logLevel = 'info'
       bd.log("initializing");
       var bilaraData = await bd.initialize();

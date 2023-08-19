@@ -901,14 +901,12 @@ typeof describe === "function" &&
 
       var msStart = Date.now();
       var pattern = "root of suffering";
-      let findArgs = skr.findArgs([
-        {
-          pattern,
-          lang: "de",
-          minLang: 2,
-          showMatchesOnly: false, // return entire sutta
-        },
-      ]);
+      let findArgs = skr.findArgs([ {
+        pattern,
+        lang: "de",
+        minLang: 2,
+        showMatchesOnly: false, // return entire sutta
+      }]);
       var res = await skr.slowFind(findArgs);
       should(res.segsMatched).equal(10);
       should.deepEqual(res.suttaRefs, [
@@ -1187,6 +1185,7 @@ typeof describe === "function" &&
       }).initialize();
 
       should.deepEqual(skr.findArgs(["wurzel des leidens -ml3 -l de"]), {
+        author: "sabbamitta",
         includeUnpublished: false,
         lang: "de",
         languages: ["pli", "en", "de"],
@@ -1203,6 +1202,7 @@ typeof describe === "function" &&
       });
 
       should.deepEqual(skr.findArgs(["wurzel des leidens -ml 3 -l de"]), {
+        author: "sabbamitta",
         includeUnpublished: false,
         lang: "de",
         languages: ["pli", "en", "de"],
@@ -1218,27 +1218,25 @@ typeof describe === "function" &&
         types: ["root", "translation"],
       });
     });
-    it("findArgs(...) handles English", async () => {
-      var bilaraData = await bd.initialize();
-      var skr = await new Seeker({
+    it("findArgs(...) author", async () => {
+      let bilaraData = await bd.initialize();
+      let pattern = "root of suffering";
+      let skr = await new Seeker({
         bilaraData,
       }).initialize();
 
-      should.deepEqual(skr.findArgs(["root of suffering"]), {
-        includeUnpublished: false,
-        lang: "en",
-        languages: ["pli", "en"],
-        matchHighlight: "\u001b[38;5;121m$&\u001b[0m",
-        maxDoc: 50,
-        maxResults: 1000,
-        minLang: 2,
-        pattern: "root of suffering",
-        searchLang: "en",
-        showMatchesOnly: true,
-        sortLines: undefined,
-        tipitakaCategories: undefined,
-        types: ["root", "translation"],
-      });
+      should(skr.findArgs([{ pattern, lang:"pt"}]))
+        .properties({ author: "sujato", searchLang:'en'});
+      should(skr.findArgs([{ pattern:"assim ouvi", lang:"pt"}]))
+        .properties({ author: "laera-quaresma", searchLang:'pt'});
+      should(skr.findArgs([{ pattern, }]))
+        .properties({ author: "sujato", });
+      should(skr.findArgs([{ pattern, author:"brahmali"}]))
+        .properties({ author: "brahmali", });
+      should(skr.findArgs([{ pattern, lang:"de"}]))
+        .properties({ author: "sujato", });
+      should(skr.findArgs([{ pattern:"wurzel des leidens", lang:"de"}]))
+        .properties({ author: "sabbamitta", });
     });
     it("find(...) finds pli-tv-bi-vb-sk1-75", async () => {
       if (!TEST_UNPUBLISHED) { return; }
@@ -1484,7 +1482,7 @@ typeof describe === "function" &&
       should(mld0.bilaraPaths[1]).match(/de.*sn12.27/);
       should(mld0.score).equal(1.026);
     });
-    it("TESTTESTfind(...) finds Deutsch 'blind'", async () => {
+    it("find(...) finds Deutsch 'blind'", async () => {
       //bd.logLevel = 'info'
       bd.log("initializing");
       var bilaraData = await bd.initialize();
@@ -1723,7 +1721,7 @@ typeof describe === "function" &&
       should(mld0.suid).equal("snp1.8");
       should(mld0.author_uid).equal("sujato");
     });
-    it("find(...) => nun -tc:vinaya", async () => {
+    it("TESTTESTfind(...) => nun -tc:vinaya", async () => {
       let bilaraData = new BilaraData();
       let maxDoc = 5;
       let skr = await new Seeker({

@@ -9,7 +9,7 @@
   const { MerkleJson } = require("merkle-json");
   const { Memoizer, Files } = require("memo-again");
   const FuzzyWordSet = require("./fuzzy-word-set");
-  const { BilaraPath } = require("scv-esm");
+  const { BilaraPath, AuthorsV2 } = require("scv-esm");
   const MLDoc = require("./ml-doc");
   const Pali = require("./pali");
   const Unicode = require("./unicode");
@@ -32,6 +32,7 @@
       this.includeUnpublished =
         opts.includeUnpublished || this.bilaraData.includeUnpublished;
       this.lang = opts.lang || "en";
+      this.author = opts.author;
       this.languages = opts.languages || ["pli", "en"];
       this.scApi = opts.scApi || new ScApi();
       this.unicode = opts.unicode || new Unicode();
@@ -160,6 +161,7 @@
     }
 
     patternLanguage(pattern, lang = this.lang) {
+      const msg = "Seeker.patternLanguage() ";
       this.validate();
       if (SuttaCentralId.test(pattern)) {
         var langs = SuttaCentralId.languages(pattern);
@@ -234,7 +236,9 @@
     }
 
     grep(opts = {}) {
+      const msg = "Seeker.grep() ";
       var {
+        author,
         pattern,
         maxResults,
         lang,
@@ -247,6 +251,7 @@
       lang = lang || language || this.lang;
       var root = this.root.replace(`${Files.APP_DIR}/`, "");
       var slowOpts = {
+        author,
         pattern,
         maxResults,
         lang,
@@ -286,8 +291,10 @@
     }
 
     static async slowGrep(opts) {
+      const msg = "Seeker.slowGrep ";
       try {
         var {
+          author,
           pattern,
           maxResults,
           lang,
@@ -301,7 +308,7 @@
           root = `${Files.APP_DIR}/${root}`;
         }
 
-        logger.info(`slowGrep`, { pattern, lang, root });
+        logger.info(msg, { pattern, lang, root });
         if (searchMetadata) {
           return Promise.reject(new Error(`searchMetadata not supported`));
         }
@@ -310,8 +317,10 @@
           lang === "pli"
             ? path.join(root, "root/pli")
             : path.join(root, `translation/${lang}`);
-        var cmd = [
-          `rg -c -i -e '${grex}' `,
+        var rgGlob2 = [
+          `-g='*-${lang}-${author}.json'`,
+        ];
+        var rgGlob1 = [
           `-g='!atthakatha' `, // exclude pli/vri
           `-g='!_*' `, // top-level JSON files
           `-g '!name'`, // exclude name
@@ -320,13 +329,20 @@
           `-g '!ka'`, // exclude Chinese
           `-g '!sa'`, // exclude Chinese
           `-g '!ma'`, // exclude Chinese
-          `./`, // Must be explicit for Node (https://github.com/BurntSushi/ripgrep/issues/2227)
+        ];
+        var rgGlob = rgGlob2;
+        var cmd = [
+          `rg -c -i -e '${grex}' `,
+          ...rgGlob,
+          `./`, // Must be explicit for Node 
+                // (https://github.com/BurntSushi/ripgrep/issues/2227)
           `|sort -k 2rn -k 1rd -t ':'`,
         ].join(" ");
+        console.log(msg, {author, lang, cmd});
         maxResults && (cmd += `|head -${maxResults}`);
         var pathPrefix = cwd.replace(root, "").replace(/^\/?/, "");
         var cwdMsg = cwd.replace(`${root}/`, "");
-        logger.info(`slowGrep(${cwdMsg}) ${cmd}`);
+        logger.info(msg, `(${cwdMsg}) ${cmd}`);
         var execOpts = {
           cwd,
           shell: "/bin/bash",
@@ -348,6 +364,7 @@
       const msg = "Seeker.phraseSearch() ";
       this.validate();
       var {
+        author,
         searchLang,
         lang,
         language,
@@ -371,8 +388,10 @@
       } else {
         var pat = `${Seeker.reWord(lang)}${pattern}`;
       }
-      this.info(msg, `(${pat},${lang},${searchLang})`);
+      author = author || AuthorsV2.langAuthor(lang);
+      this.info(msg, `(${pat},${lang},${author})`);
       var grepArgs = Object.assign({}, args, {
+        author,
         pattern: pat,
         lang,
         maxResults,
@@ -476,6 +495,7 @@
     }
 
     findArgs(args) {
+      const msg = "Seeker.findArgs() ";
       if (!(args instanceof Array)) {
         throw new Error("findArgs(?ARRAY-OF-ARGS?)");
       }
@@ -488,6 +508,7 @@
         var opts = args[0];
       }
       var {
+        author,
         pattern: rawPattern,
         searchLang,
         lang,
@@ -545,10 +566,10 @@
       }
 
       // STEP 2. Assign default values
-      var thisLang = this.lang;
-      lang = lang || language || thisLang;
-      searchLang =
-        searchLang == null ? this.patternLanguage(pattern, lang) : searchLang;
+      lang = lang || language || this.lang;
+      searchLang = searchLang == null 
+        ? this.patternLanguage(pattern, lang) 
+        : searchLang;
       //minLang = minLang || (lang === "en" || searchLang === "en" ? 2 : 3);
       minLang = minLang || 2;
       pattern = Seeker.sanitizePattern(pattern);
@@ -562,10 +583,12 @@
       }
       maxDoc = Number(maxDoc == null ? this.maxDoc : maxDoc);
       matchHighlight == null && (matchHighlight = this.matchHighlight);
+      author = author || searchLang && AuthorsV2.langAuthor(searchLang) || this.author;
 
       types = types || ["root", "translation"];
 
       return {
+        author,
         pattern,
         showMatchesOnly,
         languages,
@@ -594,7 +617,7 @@
     find(...args) {
       const msg = "Seeker.find() ";
       var { findMemo, memoizer } = this;
-      console.log(msg, args);
+      //console.log(msg, args);
       var findArgs = this.findArgs(args);
       var that = this;
       var callSlowFind = (args) => {
@@ -665,6 +688,7 @@
       try {
         var msStart = Date.now();
         var {
+          author,
           includeUnpublished,
           lang,
           languages,
@@ -702,6 +726,7 @@
           scoreDoc = false;
         } else {
           let res = await this.slowFindPhrase({
+            author,
             lang,
             maxResults,
             pattern,
@@ -821,6 +846,7 @@
         scoreDoc && mlDocs.sort(MLDoc.compare);
         mlDocs = mlDocs.slice(0, maxDoc);
         var result = {
+          author,
           lang, // embeddable option
           searchLang, // embeddable option
           minLang, // embeddable option
@@ -844,15 +870,19 @@
     }
 
     async slowFindPhrase(args = {}) {
+      const msg = "Seeker.slowFindPhrase() ";
       let {
+        author,
         lang,
         maxResults,
         pattern,
-        searchLang,
+        searchLang = args.lang,
         showMatchesOnly,
         sortLines,
         tipitakaCategories,
       } = args;
+      author = author || AuthorsV2.langAuthor(searchLang);
+      console.log(msg, {author, searchLang, lang});
       try {
         let msStart = Date.now();
         let bd = this.bilaraData;
@@ -862,6 +892,7 @@
         let method = "phrase";
         let uids, suttaRefs;
         let searchOpts = {
+          author,
           pattern,
           searchLang,
           maxResults,
@@ -874,19 +905,19 @@
           searchOpts
         );
         if (lines.length) {
-          this.debug(`findArgs phrase`, { resultPattern, lines: lines.length });
+          this.debug(msg, `phrase`, { resultPattern, lines: lines.length });
         } else {
           method = "keywords";
           let data = await this.keywordSearch(searchOpts);
           var { lines, resultPattern } = data;
-          this.debug(`findArgs keywords`, {
+          this.debug(msg, `keywords`, {
             resultPattern,
             lines: lines.length,
           });
         }
         sortLines && lines.sort(sortLines);
         suttaRefs = lines.map((line) => BilaraPath.pathParts(line).suttaRef);
-        this.debug(`findArgs suttaRefs`, suttaRefs);
+        this.debug(msg, `suttaRefs`, suttaRefs);
         return {
           method,
           resultPattern,
@@ -895,8 +926,7 @@
         };
       } catch (e) {
       this.warn('logLevel', this.logLevel);
-        this.warn(
-          `slowFindPhrase()`,
+        this.warn(msg,
           JSON.stringify({
             lang,
             maxResults,

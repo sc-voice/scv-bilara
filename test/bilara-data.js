@@ -4,7 +4,7 @@
     const fs = require('fs');
     const path = require('path');
     const { logger, LogInstance } = require('log-instance');
-    const { Authors } = require('scv-esm');
+    const { AuthorsV2 } = require('scv-esm');
     const {
         BilaraData,
         BilaraPathMap,
@@ -94,8 +94,8 @@
         should(bd.initialized).equal(true);
         let authors = Object.keys(bd.authors);
         should(bd.authors.ms.type).equal('root');
-        should(bd.authors.sujato.type).equal('translator');
-        should(bd.authors.sabbamitta.type).equal('translator');
+        should(bd.authors.sujato.type).equal('translation');
+        should(bd.authors.sabbamitta.type).equal('translation');
     });
     it("syncEbtData() loads EBT-data", async() =>{
         var bd = new BilaraData();
@@ -163,31 +163,31 @@
         var ms = {
             lang: 'pli',
             author: 'ms',
-            category: ['sutta', 'vinaya'],
+            //category: ['sutta', 'vinaya'],
             type: "root",
-            name: "Mahāsaṅgīti Tipiṭaka Buddhavasse 2500",
+            name: ["The M.L. Maniratana Bunnag Dhamma Society Fund"],
             exampleVersion: 999999,
         };
         var sujato = {
             lang: 'en',
-            type: "translator",
+            type: "translation",
             author: "sujato",
             category: ["sutta"],
-            name: "Bhikkhu Sujato",
+            name: ["Bhikkhu Sujato"],
             exampleVersion: 1,
         };
         var brahmali = {
-            type: "translator",
+            type: "translation",
             author: "brahmali",
-            name: "Bhikkhu Brahmali",
+            name: ["Bhikkhu Brahmali"],
             exampleVersion: 0,
         };
         var sabbamitta = {
             lang: 'de',
-            type: "translator",
+            type: "translation",
             category: ["sutta"],
             author: "sabbamitta",
-            name: "Sabbamitta",
+            name: ["Sabbamitta"],
             exampleVersion: 1,
         };
 
@@ -428,7 +428,7 @@
       should(spath).equal(path.join(bd.root, mn1));
       should(fs.existsSync(spath)).equal(true);
       
-      should(Authors.compare('davis', 'sujato')).equal(-1);
+      should(AuthorsV2.compare('davis', 'sujato')).equal(-1);
       //DEBUG
       var spath = bd.docPaths(sutta_uid, lang, author)[0];
       should(spath).equal(path.join(bd.root, mn1));

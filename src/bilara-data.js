@@ -11,7 +11,7 @@
   const Examples = require("./examples.json");
   const SegDoc = require("./seg-doc");
   const MLDoc = require("./ml-doc");
-  const { BilaraPath, Authors } = require("scv-esm");
+  const { BilaraPath, AuthorsV2 } = require("scv-esm");
   const { SuttaCentralId } = require("scv-esm");
   const FuzzyWordSet = require("./fuzzy-word-set");
   const Publication = require("./publication");
@@ -51,7 +51,7 @@
           logger: this,
         });
       this.languages = opts.languages || ["pli", this.lang];
-      this.authors = Authors.authors;
+      this.authors = AuthorsV2.authors;
       Object.defineProperty(this, "_sources", {
         writable: true,
         value: null,
@@ -642,7 +642,7 @@
       if (docs.length === 0) {
         return [];
       }
-      docs.sort((a,b)=>Authors.compare(b.author, a.author));
+      docs.sort((a,b)=>AuthorsV2.compare(b.author, a.author));
       let authorDocs = docs.filter(doc => doc.author === author);
       if (authorDocs.length) {
         docs = authorDocs;
@@ -859,7 +859,7 @@
     }
 
     authorInfo(author) {
-      return Authors.authorInfo(author);
+      return AuthorsV2.authorInfo(author);
     }
 
     sutta_uidSearch(pattern, maxResults = 5) {
