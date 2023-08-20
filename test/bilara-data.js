@@ -10,7 +10,7 @@
         BilaraPathMap,
         ExecGitMock,
         MLDoc,
-        Seeker,
+        Seeker1:Seeker,
         SuttaCentralId,
     } = require("../index");
     const { MemoCache, } = require('memo-again');
