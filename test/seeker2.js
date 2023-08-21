@@ -225,18 +225,18 @@ typeof describe === "function" &&
         lang: "en",
       };
 
-      var data = await skr.keywordSearch({
+      var data = await skr.keywordSearch(skr.findArgs([{
         pattern,
         // maxResults taken from Seeker2.maxResults
-      });
+      }]));
       should(data).properties(expected);
 
       skr.maxResults = 100; // keywordSearch will override
       should(skr.maxResults).equal(100);
-      var data = await skr.keywordSearch({
+      var data = await skr.keywordSearch(skr.findArgs([{
         pattern,
         maxResults, // explicit specification
-      });
+      }]));
       should(data).properties(expected);
       should.deepEqual(data.lines, [
         `${en_suj}dn/dn34_translation-en-sujato.json:5`,
@@ -250,11 +250,11 @@ typeof describe === "function" &&
         lang: "de", // Deutsch
       }).initialize(`dbg 2`);
       var maxResults = 1;
-      var data = await skr.keywordSearch({
+      var data = await skr.keywordSearch(skr.findArgs([{
         pattern,
         lang: "en", // overrides Seeker2 default lang
         maxResults,
-      });
+      }]));
       var enExpected = {
         lang: "en",
         method: "keywords",
@@ -268,17 +268,17 @@ typeof describe === "function" &&
       ]);
 
       // Using Seeker2 default lang still returns English
-      var data = await skr.keywordSearch({
+      var data = await skr.keywordSearch(skr.findArgs([{
         pattern,
-      });
+      }]));
       should(data).properties(enExpected);
 
       // Change Seeker2 default language to English
       skr.lang = "en"; // Not advisable for multiple users
       should(skr.lang).equal("en");
-      var data = await skr.keywordSearch({
+      var data = await skr.keywordSearch(skr.findArgs([{
         pattern,
-      });
+      }]));
       should(data).properties(enExpected);
     });
     it("keywordSearch(...) searches Pali, not English", async () => {
@@ -297,16 +297,16 @@ typeof describe === "function" &&
       };
 
       // Single Pali keyword searches Pali
-      var data = await skr.keywordSearch({
+      var data = await skr.keywordSearch(skr.findArgs([{
         pattern: "Anāthapiṇḍika",
         lang: "en", // will be ignored
-      });
+      }]));
       should(data).properties(expected);
 
       // Single romanized Pali searches Pali
-      var data = await skr.keywordSearch({
+      var data = await skr.keywordSearch(skr.findArgs([{
         pattern: "anathapindika",
-      });
+      }]));
       should(data).properties(expected);
     });
     it("keywordSearch(...) searches English, not Pali", async () => {
@@ -325,20 +325,20 @@ typeof describe === "function" &&
       };
 
       // Single Pali keyword searches Pali
-      var data = await skr.keywordSearch({
+      var data = await skr.keywordSearch(skr.findArgs([{
         pattern: "Anāthapiṇḍika",
         searchLang: "en", // will not be ignored
         lang: "en", // will be ignored
-      });
+      }]));
       should(data).properties(expected);
     });
     it("keywordSearch(...) searches Pali, not Deutsch", async () => {
-      var maxResults = 2;
-      var skr = await new Seeker2({
+      let maxResults = 2;
+      let skr = await new Seeker2({
         lang: "de",
         maxResults,
       }).initialize();
-      var expected = {
+      let expected = {
         method: "keywords",
         maxResults,
         lang: "pli", // searching bilara-data/root/pli
@@ -349,20 +349,20 @@ typeof describe === "function" &&
       };
 
       // Single Pali keyword searches Pali
-      var data = await skr.keywordSearch({
+      let data = await skr.keywordSearch(skr.findArgs([{
         pattern: "Anāthapiṇḍika",
         lang: "de", // will be ignored
-      });
+      }]));
       should(data).properties(expected);
 
       // Single romanized Pali searches Pali
-      var data = await skr.keywordSearch({
+      data = await skr.keywordSearch(skr.findArgs([{
         pattern: "anathapindika",
         lang: "de", // will be ignored
-      });
+      }]));
       should(data).properties(expected);
     });
-    it("keywordSearch(...) searches Deutsch, not Pali", async () => {
+    it("TESTTESTkeywordSearch(...) searches Deutsch, not Pali", async () => {
       var skr = await new Seeker2({
         lang: "en", // English default
       }).initialize();
@@ -395,19 +395,19 @@ typeof describe === "function" &&
       };
 
       // Mixed Pali/Deutsch keywords initial cap
-      var data = await skr.keywordSearch({
+      var data = await skr.keywordSearch(skr.findArgs([{
         pattern: Seeker2.normalizePattern("Anathapindika Hausbesitzer"),
         maxResults: 10,
         lang: "de", // Requesting Deutsch search
-      });
+      }]));
       should.deepEqual(data, expected);
 
       // Mixed Pali/Deutsch keywords lowercase
-      var data = await skr.keywordSearch({
+      var data = await skr.keywordSearch(skr.findArgs([{
         pattern: Seeker2.normalizePattern("anathapindika hausbesitzer"),
         maxResults: 10,
         lang: "de", // Requesting Deutsch search
-      });
+      }]));
       should.deepEqual(data, expected);
     });
     it("find(...) scores relevance", async () => {
@@ -629,10 +629,11 @@ typeof describe === "function" &&
       var skr = await new Seeker2().initialize();
       //skr.logLevel = 'debug';
 
-      var res = await skr.slowFind({
+      let findArgs = skr.findArgs([{
         pattern: "dhp2",
         matchHighlight: false,
-      });
+      }]);
+      var res = await skr.slowFind(findArgs);
       should(res.method).equal("sutta_uid");
       should.deepEqual(res.suttaRefs, ["dhp1-20/en"]);
       should.deepEqual(
@@ -1721,7 +1722,7 @@ typeof describe === "function" &&
       should(mld0.suid).equal("snp1.8");
       should(mld0.author_uid).equal("sujato");
     });
-    it("TESTTESTfind(...) => nun -tc:vinaya", async () => {
+    it("find(...) => nun -tc:vinaya", async () => {
       let bilaraData = new BilaraData();
       let maxDoc = 5;
       let skr = await new Seeker2({
@@ -1793,7 +1794,7 @@ typeof describe === "function" &&
         suttaRefs: ["an4.182/jpn"],
       });
     });
-    it("find(...) => thig1.1", async () => {
+    it("TESTTESfind(...) => thig1.1", async () => {
       let bilaraData = new BilaraData();
       let skr = await new Seeker2({
         bilaraData,
@@ -1803,7 +1804,7 @@ typeof describe === "function" &&
         pattern: "thig1.1",
       });
       should(res.method).equal("sutta_uid");
-      should(res.bilaraPaths.length).equal(3);
+      should(res.bilaraPaths.length).equal(2);
       let mld0 = res.mlDocs[0];
       should(mld0.author_uid).equal("sujato");
       should.deepEqual(mld0.langSegs, { pli: 9, en: 9 });
@@ -1914,7 +1915,7 @@ typeof describe === "function" &&
       should.deepEqual(res.bilaraPaths, [
         "root/pli/ms/sutta/kn/thig/thig1.1_root-pli-ms.json",
         "translation/en/sujato/sutta/kn/thig/thig1.1_translation-en-sujato.json",
-        "translation/en/soma/sutta/kn/thig/thig1.1_translation-en-soma.json",
+        //"translation/en/soma/sutta/kn/thig/thig1.1_translation-en-soma.json",
       ]);
       let segments = mld0.segments();
       should(segments[4].en).match(/Sleep softly, little nun,/);
@@ -2003,7 +2004,7 @@ typeof describe === "function" &&
       should(res.bilaraPaths.length).equal(2);
       let segments = mld0.segments();
       should(segments[4].de).match(/Und der Ehrwürdige Nāgasena/);
-      should.deepEqual(mld0.langSegs, { pli: 108, de: 96 });
+      should.deepEqual(mld0.langSegs, { pli: 108, de: 97 });
       should(res.lang).equal("de");
       should(mld0.sutta_uid).equal("mil3.1.1");
     });

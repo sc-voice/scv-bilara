@@ -10,7 +10,7 @@
         BilaraPathMap,
         ExecGitMock,
         MLDoc,
-        Seeker1:Seeker,
+        Seeker,
         SuttaCentralId,
     } = require("../index");
     const { MemoCache, } = require('memo-again');
@@ -94,8 +94,8 @@
         should(bd.initialized).equal(true);
         let authors = Object.keys(bd.authors);
         should(bd.authors.ms.type).equal('root');
-        should(bd.authors.sujato.type).equal('translation');
-        should(bd.authors.sabbamitta.type).equal('translation');
+        should(bd.authors.sujato.type).equal('translator');
+        should(bd.authors.sabbamitta.type).equal('translator');
     });
     it("syncEbtData() loads EBT-data", async() =>{
         var bd = new BilaraData();
@@ -198,14 +198,6 @@
         should.deepEqual(bd.authors.sujato, sujato);
         should.deepEqual(bd.authors.sabbamitta, sabbamitta);
 
-    });
-    it("supportedLanguages() => segmented translations", async()=>{
-        return; // TODO20210307: Carmi
-        await bd.initialize();
-        should.deepEqual(bd.supportedLanguages(), [
-            'cs', 
-            'de', 'en', 'jpn', 'pli', 
-        ]);
     });
     it("suttaInfo(...) returns sutta metadata", async()=>{
         await bd.initialize();

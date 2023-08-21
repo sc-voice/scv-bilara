@@ -338,7 +338,7 @@
                 // (https://github.com/BurntSushi/ripgrep/issues/2227)
           `|sort -k 2rn -k 1rd -t ':'`,
         ].join(" ");
-        console.log(msg, {author, lang, cmd});
+        //console.log(msg, {author, lang, cmd});
         maxResults && (cmd += `|head -${maxResults}`);
         var pathPrefix = cwd.replace(root, "").replace(/^\/?/, "");
         var cwdMsg = cwd.replace(`${root}/`, "");
@@ -388,7 +388,9 @@
       } else {
         var pat = `${Seeker.reWord(lang)}${pattern}`;
       }
-      author = author || AuthorsV2.langAuthor(lang);
+      author = author || AuthorsV2.langAuthor(lang, {
+        category:tipitakaCategories,
+      });
       this.info(msg, `(${pat},${lang},${author})`);
       var grepArgs = Object.assign({}, args, {
         author,
@@ -408,9 +410,11 @@
     }
 
     async keywordSearch(args) {
+      const msg  = "Seeker2.keywordSearch() ";
       try {
         var {
           pattern,
+          author,
           maxResults,
           lang,
           searchLang,
@@ -434,12 +438,13 @@
           lang,
           patPrimary,
         });
-        this.info(`keywordSearch(${keywords}) lang:${lang}`);
+        this.info(msg, `(${keywords}) lang:${lang}`);
         var mrgOut = [];
         var mrgIn = [];
         for (var i = 0; i < keywords.length; i++) {
           var keyword = keywords[i];
           wordArgs.pattern = this.keywordPattern(keyword, lang);
+          //console.log(msg, wordArgs);
           var wordlines = await this.grep(wordArgs);
           wordlines.sort(); // sort for merging path
           mrgOut = [];
@@ -489,7 +494,7 @@
           lines,
         };
       } catch (e) {
-        this.warn(`keywordSearch()`, JSON.stringify(args), e.message);
+        this.warn(msg, JSON.stringify(args), e.message);
         throw e;
       }
     }
@@ -583,7 +588,14 @@
       }
       maxDoc = Number(maxDoc == null ? this.maxDoc : maxDoc);
       matchHighlight == null && (matchHighlight = this.matchHighlight);
-      author = author || searchLang && AuthorsV2.langAuthor(searchLang) || this.author;
+      if (!author) {
+        author = searchLang && AuthorsV2.langAuthor(searchLang, {
+          category: tipitakaCategories,
+        });
+      }
+      if (!author) {
+        author = this.author;
+      }
 
       types = types || ["root", "translation"];
 
@@ -641,8 +653,15 @@
       return promise;
     }
 
-    slowFindId({ lang='en', languages=['pli','en'], maxResults, pattern }) {
+    slowFindId(opts={}) {
       const msg = "Seeker.slowFindId() ";
+      let { 
+        lang='en', 
+        languages=['pli','en'], 
+        maxResults, 
+        pattern,
+        author,
+      } = opts;
       var bd = this.bilaraData;
       var examples = bd.examples;
       var resultPattern = pattern;
@@ -662,7 +681,6 @@
       }
       pattern = pattern.replace(/:[^/,]*/g, ''); // remove segment refs
       let res = bd.sutta_uidSearch(pattern, maxResults);
-      //console.trace(msg, 'sutta_uidSearch', {res});
       method = res.method;
       uids = res.uids;
       suttaRefs = res.suttaRefs;
@@ -715,8 +733,7 @@
         }
 
         if (isSuidPattern) {
-          let res = this.slowFindId({ lang, languages, maxResults, pattern });
-          //console.log(msg, {findArgs, res});
+          let res = this.slowFindId({ author, lang, languages, maxResults, pattern });
           lang = res.lang;
           maxResults = res.maxResults;
           method = res.method;
@@ -748,7 +765,8 @@
         var msStart = Date.now();
         for (var i = 0; i < suttaRefs.length; i++) {
           let suttaRef = suttaRefs[i];
-          let [suid, refLang, author] = suttaRef.split("/");
+          let [suid, refLang, authorId] = suttaRef.split("/");
+          author = authorId || author;
           let suttaInfo = bd.suttaInfo(suttaRef);
           if (!suttaInfo) {
             this.info(`skipping ${suttaRef}`);
@@ -772,7 +790,7 @@
               mldOpts.author = author;
             }
             mld = await bd.loadMLDoc(mldOpts);
-            var mldBilaraPaths = mld.bilaraPaths;
+            var mldBilaraPaths = mld.bilaraPaths.sort();
             this.debug(`slowFind() -> loadMLDoc`, { mldBilaraPaths });
             if (mldBilaraPaths.length < minLang) {
               this.debug(
@@ -881,8 +899,10 @@
         sortLines,
         tipitakaCategories,
       } = args;
-      author = author || AuthorsV2.langAuthor(searchLang);
-      console.log(msg, {author, searchLang, lang});
+      author = author || AuthorsV2.langAuthor(searchLang, {
+        category: tipitakaCategories,
+      });
+      //console.log(msg, {author, searchLang, lang});
       try {
         let msStart = Date.now();
         let bd = this.bilaraData;

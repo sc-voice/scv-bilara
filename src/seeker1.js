@@ -24,7 +24,7 @@
 
   var wscount = 0;
 
-  class Seeker1 {
+  class Seeker {
     constructor(opts = {}) {
       (opts.logger || logger).logInstance(this, opts);
       var root = (this.root = opts.root || BILARA_PATH);
@@ -47,8 +47,8 @@
             ? true 
             : opts.writeFile, // only cache examples!
           readFile: opts.readFile,
-          serialize: Seeker1.serialize,
-          deserialize: Seeker1.deserialize,
+          serialize: Seeker.serialize,
+          deserialize: Seeker.deserialize,
           storeName: opts.memoStore,
           logger: this,
         });
@@ -123,7 +123,7 @@
             that.paliWords = paliWords;
             that.enWords = enWords;
             await that.bilaraData.initialize();
-            //that.log(`Seeker1.initialize resolve ${msg}`);
+            //that.log(`Seeker.initialize resolve ${msg}`);
             resolve(that);
           } catch (e) {
             reject(e);
@@ -142,7 +142,7 @@
         return eg.reduce((a, e) => {
           let eLower = e.toLowerCase();
           a[eLower] = 1;
-          let eClean = Seeker1.normalizePattern(Seeker1.sanitizePattern(e));
+          let eClean = Seeker.normalizePattern(Seeker.sanitizePattern(e));
           a[eClean] = 1;
           return a;
         }, exampleCache);
@@ -154,7 +154,7 @@
       var examples = this.bilaraData.examples;
       let { exampleCache } = this;
       if (!exampleCache) {
-        this.exampleCache = exampleCache = Seeker1.buildExampleCache(examples);
+        this.exampleCache = exampleCache = Seeker.buildExampleCache(examples);
       }
       return !!exampleCache[pattern.toLowerCase()];
     }
@@ -261,7 +261,7 @@
       var result;
       var { memoizer, grepMemo } = this;
       if (grepMemo == null) {
-        this.grepMemo = grepMemo = memoizer.memoize(Seeker1.slowGrep, Seeker1);
+        this.grepMemo = grepMemo = memoizer.memoize(Seeker.slowGrep, Seeker);
       }
       result = grepMemo(slowOpts);
       var msElapsed = Date.now() - msStart; // about 20ms
@@ -334,7 +334,7 @@
         };
         let { stdout, stderr } = await execPromise(cmd, execOpts);
         let lines = (stdout && stdout.trim().split("\n")) || [];
-        let raw = Seeker1.orderPrimary(lines, patPrimary);
+        let raw = Seeker.orderPrimary(lines, patPrimary);
         let rawTipCat = reTipCat ? raw.filter((f) => reTipCat.test(f)) : raw;
         let paths = rawTipCat.map((f) => path.join(pathPrefix, f));
         return paths;
@@ -345,7 +345,7 @@
     }
 
     async phraseSearch(args) {
-      const msg = "Seeker1.phraseSearch() ";
+      const msg = "Seeker.phraseSearch() ";
       this.validate();
       var {
         searchLang,
@@ -369,7 +369,7 @@
         var pat =
           romPat === pattern ? `\\b${Pali.romanizePattern(pattern)}` : pattern;
       } else {
-        var pat = `${Seeker1.reWord(lang)}${pattern}`;
+        var pat = `${Seeker.reWord(lang)}${pattern}`;
       }
       this.info(msg, `(${pat},${lang},${searchLang})`);
       var grepArgs = Object.assign({}, args, {
@@ -456,7 +456,7 @@
           mrgIn = mrgOut;
         }
         var lines = mrgOut.sort(comparator).map((v) => `${v.fpath}:${v.count}`);
-        lines = Seeker1.orderPrimary(lines, patPrimary);
+        lines = Seeker.orderPrimary(lines, patPrimary);
         if (maxResults) {
           lines = lines.slice(0, maxResults);
         }
@@ -551,8 +551,8 @@
         searchLang == null ? this.patternLanguage(pattern, lang) : searchLang;
       //minLang = minLang || (lang === "en" || searchLang === "en" ? 2 : 3);
       minLang = minLang || 2;
-      pattern = Seeker1.sanitizePattern(pattern);
-      pattern = Seeker1.normalizePattern(pattern);
+      pattern = Seeker.sanitizePattern(pattern);
+      pattern = Seeker.normalizePattern(pattern);
       showMatchesOnly == null && (showMatchesOnly = true);
       languages = languages || this.languages.slice() || [];
       lang && !languages.includes(lang) && languages.push(lang);
@@ -585,14 +585,14 @@
     clearMemo(name) {
       var cache = this.memoizer.cache;
       if (name === "find") {
-        return cache.clearVolume(`Seeker1.callSlowFind`);
+        return cache.clearVolume(`Seeker.callSlowFind`);
       } else if (name === "grep") {
-        return cache.clearVolume(`Seeker1.slowGrep`);
+        return cache.clearVolume(`Seeker.slowGrep`);
       }
     }
 
     find(...args) {
-      const msg = "Seeker1.find() ";
+      const msg = "Seeker.find() ";
       var { findMemo, memoizer } = this;
       var findArgs = this.findArgs(args);
       var that = this;
@@ -606,7 +606,7 @@
       var pattern = findArgs.pattern;
       if (this.isExample(pattern)) {
         if (findMemo == null) {
-          that.findMemo = findMemo = memoizer.memoize(callSlowFind, Seeker1);
+          that.findMemo = findMemo = memoizer.memoize(callSlowFind, Seeker);
         }
         var promise = findMemo(findArgs);
         this.debug(`${msg} example:${pattern}`);
@@ -618,7 +618,7 @@
     }
 
     slowFindId({ lang='en', languages=['pli','en'], maxResults, pattern }) {
-      const msg = "Seeker1.slowFindId() ";
+      const msg = "Seeker.slowFindId() ";
       var bd = this.bilaraData;
       var examples = bd.examples;
       var resultPattern = pattern;
@@ -660,7 +660,7 @@
     }
 
     async slowFind(findArgs) {
-      const msg = "Seeker1.slowFind() ";
+      const msg = "Seeker.slowFind() ";
       try {
         var msStart = Date.now();
         var {
@@ -918,12 +918,12 @@
     static deserialize(buf) {
       var json = JSON.parse(buf);
       var { volume, args, value } = json;
-      if (volume === "Seeker1.callSlowFind") {
+      if (volume === "Seeker.callSlowFind") {
         json.value.mlDocs = json.value.mlDocs.map((m) => new MLDoc(m));
       }
       return json;
     }
   }
 
-  module.exports = exports.Seeker1 = Seeker1;
+  module.exports = exports.Seeker1 = Seeker;
 })(typeof exports === "object" ? exports : (exports = {}));

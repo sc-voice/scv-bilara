@@ -11,7 +11,7 @@
   const Examples = require("./examples.json");
   const SegDoc = require("./seg-doc");
   const MLDoc = require("./ml-doc");
-  const { BilaraPath, AuthorsV2 } = require("scv-esm");
+  const { BilaraPath, Authors, AuthorsV2 } = require("scv-esm");
   const { SuttaCentralId } = require("scv-esm");
   const FuzzyWordSet = require("./fuzzy-word-set");
   const Publication = require("./publication");
@@ -51,7 +51,8 @@
           logger: this,
         });
       this.languages = opts.languages || ["pli", this.lang];
-      this.authors = AuthorsV2.authors;
+      this.authors = Authors.authors;
+      this.authorsV2 = AuthorsV2.authors;
       Object.defineProperty(this, "_sources", {
         writable: true,
         value: null,
@@ -219,19 +220,6 @@
         this.warn(`initialize()`, e.message);
         throw e;
       }
-    }
-
-    supportedLanguages() {
-      if (!this.initialized) {
-        throw new Error("Expected preceding call to initialize()");
-      }
-      var authors = this.authors;
-      return Object.keys(
-        Object.keys(authors).reduce((a, auth) => {
-          a[authors[auth].lang] = true;
-          return a;
-        }, {})
-      ).sort();
     }
 
     get suttaIds() {
