@@ -389,7 +389,7 @@ function suttacentralLink(scid, lang, author_uid) {
     var suid = scid.split(':')[0];
     var linkText = new SuttaCentralId(scid).standardForm();
     var link =  `https://suttacentral.net/${suid}`;
-    if (lang) {
+    if (lang && author_uid) {
         var author = author_uid.split(', ')[0] || author_uid;
         link =  `https://suttacentral.net/${suid}/${lang}/${author}#${scid}`;
     }
