@@ -247,6 +247,11 @@
         tipitakaCategories,
         patPrimary,
       } = opts;
+      if (!author) {
+        let emsg = `${msg} author is required`;
+        console.trace(emsg);
+        throw new Error(emsg);
+      }
       var reTipCat = this.tipitakaRegExp(tipitakaCategories);
       lang = lang || language || this.lang;
       var root = this.root.replace(`${Files.APP_DIR}/`, "");

@@ -158,36 +158,36 @@
         should(fs.existsSync(dummyPath)).equal(true);
         should(fs.existsSync(unpublishedPath)).equal(true);
     });
-    it("authorInfo() => supported author info", async()=>{
+    it("TESTTESTauthorInfo() => supported author info (DEPRECATED)", async()=>{
         await bd.initialize();
         var ms = {
             lang: 'pli',
             author: 'ms',
-            //category: ['sutta', 'vinaya'],
+            category: ['sutta', 'vinaya'],
             type: "root",
-            name: ["The M.L. Maniratana Bunnag Dhamma Society Fund"],
+            name: "Mahāsaṅgīti Tipiṭaka Buddhavasse 2500",
             exampleVersion: 999999,
         };
         var sujato = {
             lang: 'en',
-            type: "translation",
+            type: "translator",
             author: "sujato",
             category: ["sutta"],
-            name: ["Bhikkhu Sujato"],
+            name: "Bhikkhu Sujato",
             exampleVersion: 1,
         };
         var brahmali = {
-            type: "translation",
+            type: "translator",
             author: "brahmali",
-            name: ["Bhikkhu Brahmali"],
+            name: "Bhikkhu Brahmali",
             exampleVersion: 0,
         };
         var sabbamitta = {
             lang: 'de',
-            type: "translation",
+            type: "translator",
             category: ["sutta"],
             author: "sabbamitta",
-            name: ["Sabbamitta"],
+            name: "Sabbamitta",
             exampleVersion: 1,
         };
 

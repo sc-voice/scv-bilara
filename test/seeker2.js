@@ -91,19 +91,21 @@ typeof describe === "function" &&
       should(reAllow.test(fn)).equal(true);
       should(reDeny.test(fn)).equal(false);
     });
-    it("grep(...) finds sutta things", async () => {
+    it("TESTTESTgrep(...) finds sutta things", async () => {
       var skr = new Seeker2({});
       var ms0 = Date.now();
       var maxResults = 1;
+      let author = 'sujato';
       await skr.clearMemo("grep");
       var res = await skr.grep({
+        author,
         pattern: "root of suffering",
         maxResults,
       });
       //should.deepEqual(res, [...SUTTA_ROOT_SUFF, ...VINAYA_ROOT_SUFF]);
       should.deepEqual(res, SUTTA_ROOT_SUFF.slice(0,maxResults));
       var ms1 = Date.now();
-      var res2 = await skr.grep({ pattern: "root of suffering", maxResults });
+      var res2 = await skr.grep({ author, pattern: "root of suffering", maxResults });
       var ms2 = Date.now();
       should.deepEqual(res2, res);
 
@@ -114,6 +116,7 @@ typeof describe === "function" &&
       var skr = new Seeker2(SEEKEROPTS);
       var maxResults = 1;
       var res = await skr.grep({
+        author: "sujato",
         pattern: "root of suffering",
         maxResults,
       });
@@ -122,6 +125,7 @@ typeof describe === "function" &&
     it("grep(...) filters result files", async () => {
       var skr = new Seeker2(SEEKEROPTS);
       var res = await skr.grep({
+        author: "sujato",
         pattern: "a single day",
         tipitakaCategories: "su",
       });
@@ -132,14 +136,15 @@ typeof describe === "function" &&
         //`${en_dav}dn/dn9_translation-en-davis.json:1`,
       ]);
     });
-    it("grep(...) finds de things", async () => {
+    it("TESTTESTgrep(...) finds de things", async () => {
       var skr = new Seeker2(SEEKEROPTS);
       var maxResults = 5;
+      let author = 'sabbamitta';
+      let lang = 'de';
 
       // diacritical word boundary
-      var res = await skr.grep({
+      var res = await skr.grep({ author, lang,
         pattern: "übung",
-        lang: "de",
         maxResults,
       });
       should.deepEqual(res.slice(0, 4), [
@@ -153,9 +158,8 @@ typeof describe === "function" &&
       ]);
       should(res.length).below(6);
 
-      var res = await skr.grep({
+      var res = await skr.grep({author, lang,
         pattern: "wie der geist",
-        lang: "de",
       });
       should.deepEqual(res, [
         `${de_sab}an/an1/an1.31-40_translation-de-sabbamitta.json:10`,
@@ -362,7 +366,7 @@ typeof describe === "function" &&
       }]));
       should(data).properties(expected);
     });
-    it("TESTTESTkeywordSearch(...) searches Deutsch, not Pali", async () => {
+    it("keywordSearch(...) searches Deutsch, not Pali", async () => {
       var skr = await new Seeker2({
         lang: "en", // English default
       }).initialize();
@@ -2004,7 +2008,7 @@ typeof describe === "function" &&
       should(res.bilaraPaths.length).equal(2);
       let segments = mld0.segments();
       should(segments[4].de).match(/Und der Ehrwürdige Nāgasena/);
-      should.deepEqual(mld0.langSegs, { pli: 108, de: 97 });
+      should.deepEqual(mld0.langSegs, { pli: 108, de: 99 });
       should(res.lang).equal("de");
       should(mld0.sutta_uid).equal("mil3.1.1");
     });

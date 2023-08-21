@@ -847,7 +847,7 @@
     }
 
     authorInfo(author) {
-      return AuthorsV2.authorInfo(author);
+      return Authors.authorInfo(author);
     }
 
     sutta_uidSearch(pattern, maxResults = 5) {
