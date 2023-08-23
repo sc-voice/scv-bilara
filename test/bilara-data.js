@@ -158,7 +158,7 @@
         should(fs.existsSync(dummyPath)).equal(true);
         should(fs.existsSync(unpublishedPath)).equal(true);
     });
-    it("TESTTESTauthorInfo() => supported author info (DEPRECATED)", async()=>{
+    it("authorInfo() => supported author info (DEPRECATED)", async()=>{
         await bd.initialize();
         var ms = {
             lang: 'pli',

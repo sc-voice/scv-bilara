@@ -91,7 +91,7 @@ typeof describe === "function" &&
       should(reAllow.test(fn)).equal(true);
       should(reDeny.test(fn)).equal(false);
     });
-    it("TESTTESTgrep(...) finds sutta things", async () => {
+    it("grep(...) finds sutta things", async () => {
       var skr = new Seeker2({});
       var ms0 = Date.now();
       var maxResults = 1;
@@ -136,7 +136,7 @@ typeof describe === "function" &&
         //`${en_dav}dn/dn9_translation-en-davis.json:1`,
       ]);
     });
-    it("TESTTESTgrep(...) finds de things", async () => {
+    it("grep(...) finds de things", async () => {
       var skr = new Seeker2(SEEKEROPTS);
       var maxResults = 5;
       let author = 'sabbamitta';
@@ -844,7 +844,7 @@ typeof describe === "function" &&
       let mld0 = res.mlDocs[0];
       should(mld0.author_uid).equal("bodhi");
     });
-    it("find({minLang}) => minimum language count", async () => {
+    it("find({minLang}) => minLang 2", async () => {
       var maxResults = 3;
       var skr = await new Seeker2({
         maxResults,
@@ -868,6 +868,44 @@ typeof describe === "function" &&
       });
       should.deepEqual(res.suttaRefs, ["dn33/de"]);
       should(res.mlDocs.length).equal(1);
+      let mld0 = res.mlDocs[0];
+      should(mld0.author_uid).equal("sabbamitta");
+    });
+    it("TESTTESTfind({minLang:3}) root of suffering", async () => {
+      var maxResults = 1000;
+      let minLang = 3;
+      let lang = 'de';
+      let pattern = "root of suffering";
+      var skr = await new Seeker2({ maxResults, }).initialize();
+      should.deepEqual(skr.languages, ["pli", "en"]);
+
+      var res = await skr.find({ pattern, lang, minLang });
+      should.deepEqual(res.suttaRefs, [
+        "sn42.11/en/sujato",
+        "sn56.21/en/sujato",
+        "mn116/en/sujato",
+        "dn16/en/sujato",
+      ]);
+      should(res.mlDocs.length).equal(4);
+      should(res.minLang).equal(3);
+    });
+    it("find({minLang:2}) root of suffering", async () => {
+      let maxResults = 10;
+      let lang = 'de';
+      let minLang = 2;
+      let pattern = "root of suffering";
+      var skr = await new Seeker2({ maxResults, }).initialize();
+      var res = await skr.find({ pattern, lang, minLang });
+      should.deepEqual(res.suttaRefs, [
+        "sn42.11/en/sujato",
+        "mn105/en/sujato",
+        "mn1/en/sujato",
+        "sn56.21/en/sujato",
+        "mn66/en/sujato",
+        "mn116/en/sujato",
+        "dn16/en/sujato",
+      ]);
+      should(res.mlDocs.length).equal(7);
       let mld0 = res.mlDocs[0];
       should(mld0.author_uid).equal("sabbamitta");
     });

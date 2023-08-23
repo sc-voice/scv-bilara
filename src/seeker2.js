@@ -634,7 +634,6 @@
     find(...args) {
       const msg = "Seeker.find() ";
       var { findMemo, memoizer } = this;
-      //console.log(msg, args);
       var findArgs = this.findArgs(args);
       var that = this;
       var callSlowFind = (args) => {
@@ -795,6 +794,7 @@
               mldOpts.author = author;
             }
             mld = await bd.loadMLDoc(mldOpts);
+            //console.log(msg, mldOpts, { author }, findArgs.author);
             var mldBilaraPaths = mld.bilaraPaths.sort();
             this.debug(`slowFind() -> loadMLDoc`, { mldBilaraPaths });
             if (mldBilaraPaths.length < minLang) {
@@ -907,7 +907,6 @@
       author = author || AuthorsV2.langAuthor(searchLang, {
         category: tipitakaCategories,
       });
-      //console.log(msg, {author, searchLang, lang});
       try {
         let msStart = Date.now();
         let bd = this.bilaraData;
@@ -943,6 +942,7 @@
         sortLines && lines.sort(sortLines);
         suttaRefs = lines.map((line) => BilaraPath.pathParts(line).suttaRef);
         this.debug(msg, `suttaRefs`, suttaRefs);
+        //console.log(msg, args, suttaRefs);
         return {
           method,
           resultPattern,
@@ -950,7 +950,7 @@
           suttaRefs,
         };
       } catch (e) {
-      this.warn('logLevel', this.logLevel);
+        this.warn('logLevel', this.logLevel);
         this.warn(msg,
           JSON.stringify({
             lang,
