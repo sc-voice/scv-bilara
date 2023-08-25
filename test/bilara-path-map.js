@@ -133,7 +133,52 @@
             //commentPath('an/an1/an1.1-10','en','sujato'),
         ]);
     });
-    it("bilaraPaths() uses scv-esm suidmap",async()=>{
+    it("TESTTESTtrilingualPaths(suid) sujato/soma",async()=>{
+      var bpm = await new BilaraPathMap().initialize();
+      let suid = "thig1.1";
+      let pathRoot = rootPath('kn/thig/thig1.1');
+      let sujatoPath = translationPath('kn/thig/thig1.1','en','sujato');
+      let somaPath = translationPath('kn/thig/thig1.1','en','soma');
+
+      should.deepEqual(bpm.trilingualPaths({ suid, 
+        refLang: "en",
+        refAuthor: "sujato", 
+        lang: 'en',
+        langAuthor: "soma",
+      }), [pathRoot, sujatoPath, somaPath]);
+
+      should.deepEqual(bpm.trilingualPaths({ suid, 
+        lang: 'en',
+        langAuthor: "soma",
+      }), [pathRoot, sujatoPath, somaPath]);
+
+      should.deepEqual(bpm.trilingualPaths({ suid, 
+        refLang: 'en',
+        refAuthor: 'soma',
+        lang: 'en',
+        langAuthor: 'sujato',
+      }), [pathRoot, somaPath, sujatoPath]);
+
+      // eliminate duplicates
+      should.deepEqual(bpm.trilingualPaths({ suid, 
+        refLang: 'en',
+        refAuthor: 'soma',
+        lang: 'pli',
+        langAuthor: 'ms',
+      }), [pathRoot, somaPath]);
+      should.deepEqual(bpm.trilingualPaths({ suid, 
+        refLang: 'en',
+        refAuthor: 'soma',
+        lang: 'en',
+        langAuthor: 'soma',
+      }), [pathRoot, somaPath]);
+      should.deepEqual(bpm.trilingualPaths({ suid, 
+        refLang: 'pli',
+        refAuthor: 'ms',
+      }), [pathRoot, ]);
+
+    });
+    it("bilaraPaths(k) uses scv-esm suidmap",async()=>{
         let rootName = 'ebt-data';
         let root = path.join(LOCALDIR, rootName);
         var bpm = await new BilaraPathMap({root}).initialize();
@@ -268,5 +313,23 @@
                 'root/pli/ms': 'sutta/sn/sn12'
             }
         });
+    });
+    it("TESTTESTlangAuthorRegExp()", () => {
+      let reSoma = BilaraPathMap.langAuthorRegExp("en", "soma");
+      should(reSoma.test("a/b/c/d/eeeeee-en-soma.json")).equal(true);
+      should(reSoma.test("a/b/c/d/eeeeee-it-soma.json")).equal(false);
+      should(reSoma.test("a/b/c/d/eeeeee-en-somax.json")).equal(false);
+      should(reSoma.test("a/b/c/d/eeeeee-en-xsomax.json")).equal(false);
+      should(reSoma.test("a/b/c/d/eeeeee-enx-soma.json")).equal(false);
+      should(reSoma.test("a/b/c/d/eeeeee-xen-soma.json")).equal(false);
+      should(reSoma.test("a/b/c/d/eeeeee-en-sujato.json")).equal(false);
+      should(reSoma.test("a/b/c/d/eeeeee-en-soma.xml")).equal(false);
+
+      should(BilaraPathMap.langAuthorRegExp("en"))
+        .equal(undefined);
+      should(BilaraPathMap.langAuthorRegExp(null, "sujato"))
+        .equal(undefined);
+      should(BilaraPathMap.langAuthorRegExp(undefined, "sujato"))
+        .equal(undefined);
     });
 })

@@ -36,13 +36,20 @@
             'comment',
         ]};
 
+        static langAuthorRegExp(lang, author) {
+          return lang && author
+            ? new RegExp(`-${lang}-${author}.json`, "i")
+            : undefined;
+        }
+
         async initialize() { try {
             var { suidMapFile } = this;
             let suidMap;
 
             if (fs.existsSync(suidMapFile)) {
                 try {
-                    suidMap = JSON.parse(await fs.promises.readFile(suidMapFile))
+                    suidMap = JSON.parse(
+                      await fs.promises.readFile(suidMapFile))
                 } catch (e) {
                     this.warn(`initialize() ${e.message} => rebuilding ${suidMapFile}`);
                 }
@@ -118,6 +125,7 @@
                 lang,
                 author,
                 types,
+                refAuthor,
             } = opts;
             types = types || ['root','translation'];
             var reTypes = new RegExp(`^(${types.join('|')})`, 'u');
@@ -140,6 +148,43 @@
             }
 
             return bps.map(bp => new BilaraPath(bp));;
+        }
+
+        trilingualPaths(opts={}) {
+          const msg = "BilaraPathMap.trilingualPaths() ";
+          let {
+            suid,
+            rootLang = 'pli',
+            rootAuthor = 'ms',
+            refLang,
+            refAuthor,
+            lang,
+            langAuthor,
+          } = opts;
+          if (!refAuthor && !refLang) {
+            refLang = 'en';
+            refAuthor = 'sujato';
+          }
+          
+          let pathMap = this.suidPaths(suid);
+          let paths = Object.keys(pathMap).reduce((a,k)=>{
+            a.push(pathMap[k]);
+            return a;
+          }, []);
+          let { langAuthorRegExp } = BilaraPathMap;
+          let reRoot = langAuthorRegExp(rootLang, rootAuthor);
+          let reRef = langAuthorRegExp(refLang, refAuthor);
+          let reLang = (refLang !== lang || refAuthor !== langAuthor) &&
+            langAuthorRegExp(lang, langAuthor);
+
+          return Object.keys([
+            ...paths.filter(p=>reRoot && reRoot.test(p)),
+            ...paths.filter(p=>reRef && reRef.test(p)),
+            ...paths.filter(p=>reLang && reLang.test(p)),
+          ].reduce((a,p)=>{
+            a[p] = 1;
+            return a;
+          }, {}));
         }
 
         suidPaths(suid) {

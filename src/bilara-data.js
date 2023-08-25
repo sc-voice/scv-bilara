@@ -12,7 +12,8 @@
   const SegDoc = require("./seg-doc");
   const MLDoc = require("./ml-doc");
   const { BilaraPath, Authors, AuthorsV2 } = require("scv-esm");
-  const { SuttaCentralId } = require("scv-esm");
+  const { SuttaCentralId, SuttaRef } = require("scv-esm");
+  const BilaraPathMap = require("./bilara-path-map");
   const FuzzyWordSet = require("./fuzzy-word-set");
   const Publication = require("./publication");
   const Pali = require("./pali");
@@ -445,6 +446,7 @@
     }
 
     loadMLDoc(...args) {
+      const msg = "BilaraData.loadMLDoc() ";
       var loadArgs = this.loadArgs(args);
       var {
         suid: suidRef,
@@ -500,7 +502,6 @@
           ? bilaraPaths.reduce((alist, bp) => {
               let [s, l, a] = bp.split("/");
               if (l === lang && !alist.includes(a)) {
-                //if (langMap[l] && !alist.includes(a) && l !== 'pli') {
                 alist.push(a);
               }
               return alist;
@@ -515,6 +516,48 @@
       };
       this.debug(`loadMLDoc mldOpts`, { mldOpts, authors });
       return new MLDoc(mldOpts).load(this.root);
+    }
+
+    trilingualDoc(suttaRef, opts={}) {
+      const msg = "BilaraData.trilingualDoc() ";
+      let { bilaraPathMap: bpm, root } = this;
+      suttaRef = SuttaRef.create(suttaRef); 
+      let {
+        rootLang = 'pli',
+        rootAuthor = 'ms',
+        refLang = 'en',
+        refAuthor = 'sujato',
+        lang = suttaRef.lang,
+        langAuthor = suttaRef.author,
+        logLevel,
+      } = opts;
+      let suid = suttaRef.sutta_uid;
+      let info = this.suttaInfo(suid);
+      if (info == null) {
+        let msgData = JSON.stringify({ suidRef, suid });
+        throw new Error(`${msg} no suttaInfo(${msgData})`);
+      }
+      let bilaraPaths = bpm.trilingualPaths({
+        suid,
+        rootLang,
+        rootAuthor,
+        refLang,
+        refAuthor,
+        lang,
+        langAuthor,
+      });
+      if (bilaraPaths.length === 0) {
+        throw new Error(`${msg} ${suttaRef} not found`);
+      }
+      let mldOpts = {
+        logLevel,
+        lang: lang || refLang,
+        author_uid: langAuthor || refAuthor,
+        sutta_uid: suid,
+        bilaraPaths,
+      };
+      this.debug(msg, { mldOpts });
+      return new MLDoc(mldOpts).load(root);
     }
 
     async loadMLDocLegacy(suidRef) {

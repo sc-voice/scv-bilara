@@ -871,7 +871,7 @@ typeof describe === "function" &&
       let mld0 = res.mlDocs[0];
       should(mld0.author_uid).equal("sabbamitta");
     });
-    it("TESTTESTfind({minLang:3}) root of suffering", async () => {
+    it("find({minLang:3}) root of suffering", async () => {
       var maxResults = 1000;
       let minLang = 3;
       let lang = 'de';

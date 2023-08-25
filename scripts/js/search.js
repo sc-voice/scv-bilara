@@ -545,7 +545,6 @@ logger.logLevel = logLevel;
     logger.info(`SEARCH: findOpts`, findOpts);
     var msStart = Date.now();
     var res = await skr.find(findOpts);
-    console.log(msg, res.mlDocs[1].bilaraPaths);
     var secElapsed = (Date.now() - msStart)/1000;
     logger.info(`SEARCH: find() ${secElapsed.toFixed(1)}s`);
     if (outFormat === 'verse') {
