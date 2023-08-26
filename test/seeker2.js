@@ -1191,6 +1191,8 @@ typeof describe === "function" &&
         maxResults: 1000,
         minLang: 2,
         pattern,
+        refLang: 'en',
+        refAuthor: 'sujato',
         searchLang: "en",
         showMatchesOnly: true,
         sortLines: undefined,
@@ -1210,6 +1212,7 @@ typeof describe === "function" &&
         author: 'kaz',
         includeUnpublished: false,
         lang: "jpn",
+        langAuthor: 'kaz',
         languages: ["pli", "en", "jpn"],
         matchHighlight: "\u001b[38;5;121m$&\u001b[0m",
         maxDoc: 50,
@@ -1235,6 +1238,7 @@ typeof describe === "function" &&
         author: "sabbamitta",
         includeUnpublished: false,
         lang: "de",
+        langAuthor: 'sabbamitta',
         languages: ["pli", "en", "de"],
         matchHighlight: "\u001b[38;5;121m$&\u001b[0m",
         maxDoc: 50,
@@ -1255,6 +1259,7 @@ typeof describe === "function" &&
         author: "sabbamitta",
         includeUnpublished: false,
         lang: "de",
+        langAuthor: 'sabbamitta',
         languages: ["pli", "en", "de"],
         matchHighlight: "\u001b[38;5;121m$&\u001b[0m",
         maxDoc: 50,
@@ -1278,7 +1283,14 @@ typeof describe === "function" &&
       }).initialize();
 
       should(skr.findArgs([{ pattern, lang:"pt"}]))
-        .properties({ author: "sujato", searchLang:'en'});
+        .properties({ 
+          author: "sujato", 
+          searchLang:'en',
+          refAuthor: 'sujato',
+          refLang: 'en',
+          lang: 'pt',
+          langAuthor: 'laera-quaresma',
+        });
       should(skr.findArgs([{ pattern:"assim ouvi", lang:"pt"}]))
         .properties({ author: "laera-quaresma", searchLang:'pt'});
       should(skr.findArgs([{ pattern, }]))

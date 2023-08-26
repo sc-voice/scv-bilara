@@ -522,6 +522,7 @@
         pattern: rawPattern,
         searchLang,
         lang,
+        langAuthor,
         language, // DEPRECATED
         languages,
         minLang, // minimum number of languages
@@ -580,6 +581,8 @@
 
       // STEP 2. Assign default values
       lang = lang || language || this.lang;
+      langAuthor = langAuthor || 
+        AuthorsV2.langAuthor(lang, {tipitakaCategories});
       searchLang = searchLang == null 
         ? this.patternLanguage(pattern, lang) 
         : searchLang;
@@ -609,21 +612,22 @@
 
       return {
         author,
-        pattern,
-        showMatchesOnly,
+        includeUnpublished,
+        lang,
+        langAuthor,
         languages,
-        maxResults,
-        searchLang,
-        maxDoc,
-        minLang,
         matchHighlight,
-        refLang,
+        maxDoc,
+        maxResults,
+        minLang,
+        pattern,
         refAuthor,
+        refLang,
+        searchLang,
+        showMatchesOnly,
         sortLines,
         tipitakaCategories,
-        lang,
         types,
-        includeUnpublished,
       };
     }
 

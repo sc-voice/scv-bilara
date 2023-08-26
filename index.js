@@ -18,7 +18,7 @@ module.exports = {
     Pali: require("./src/pali"),
     Publication: require("./src/publication"),
     Seeker: require("./src/seeker2"),
-    Seeker1: require("./src/seeker1"),
+    //Seeker1: require("./src/seeker1"),
     Seeker2: require("./src/seeker2"),
     SegDoc: require("./src/seg-doc"),
     SuttaCentralId,
