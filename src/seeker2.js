@@ -528,11 +528,14 @@
         maxResults, // maximum number of grep files
         maxDoc, // maximum number of returned documents
         matchHighlight,
+        refLang = 'en',
+        refAuthor = 'sujato',
         sortLines,
         showMatchesOnly,
         tipitakaCategories,
         types,
         includeUnpublished = this.includeUnpublished,
+
       } = opts;
       if (rawPattern == null) {
         throw new Error(`pattern is required`);
@@ -793,8 +796,17 @@
             if (method === "sutta_uid" && author != null && author !== "ms") {
               mldOpts.author = author;
             }
+            if (0) {
+              mldOpts = {
+                refLang: "en",
+                refAuthor: "sujato",
+                lang,
+                langAuthor: "sabbamitta",
+              }
+              mld = await bd.trilingualDoc(suttaRef, mldOpts);
+            }
             mld = await bd.loadMLDoc(mldOpts);
-            //console.log(msg, mldOpts, { author }, findArgs.author);
+            suid === 'mn1' && console.log(msg, mldOpts, findArgs, !!mld);
             var mldBilaraPaths = mld.bilaraPaths.sort();
             this.debug(`slowFind() -> loadMLDoc`, { mldBilaraPaths });
             if (mldBilaraPaths.length < minLang) {
