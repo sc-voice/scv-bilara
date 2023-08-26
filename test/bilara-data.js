@@ -803,20 +803,20 @@
         var mld = await bd.loadMLDoc("an1.9/de/sabbamitta");
         should.deepEqual(mld.segMap['an1.9:1.0'], an1_9);
     });
-    it("trilingualDoc(...) ", async()=>{
+    it("TESTTESTtrilingualDoc(...) ", async()=>{
         await bd.initialize();
         let rootLang = "pli";
         let rootAuthor = "ms";
         let refLang = "en";
         let refAuthor = "soma";
-        let lang = "de";
-        let langAuthor = "sabbamitta";
+        let docLang = "de";
+        let docAuthor = "sabbamitta";
 
         let mld = await bd.trilingualDoc("thig1.1", {
+          docLang, 
+          docAuthor,
           refLang,
           refAuthor,
-          lang,
-          langAuthor,
         });
         let seg2_1 = mld.segMap['thig1.1:1.1'];
         should.deepEqual(seg2_1, {

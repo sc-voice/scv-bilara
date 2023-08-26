@@ -783,7 +783,7 @@ typeof describe === "function" &&
       should.deepEqual(res.mlDocs.map(md=>md.suid), ["thig1.1", "thig1.2"]);
       should.deepEqual(res.mlDocs.map(md=>md.author_uid), ["soma", "soma"]);
     });
-    it("find(...) finds an1.2", async () => {
+    it("TESTTESTfind(...) finds an1.2", async () => {
       var maxResults = 3;
       var skr = await new Seeker2({
         maxResults,
@@ -1210,6 +1210,8 @@ typeof describe === "function" &&
       let args = skr.findArgs([`-l jpn ${pattern}`]);
       should.deepEqual(args, {
         author: 'kaz',
+        docAuthor: undefined,
+        docLang: undefined,
         includeUnpublished: false,
         lang: "jpn",
         langAuthor: 'kaz',
@@ -1236,6 +1238,8 @@ typeof describe === "function" &&
 
       should.deepEqual(skr.findArgs(["wurzel des leidens -ml3 -l de"]), {
         author: "sabbamitta",
+        docAuthor: undefined,
+        docLang: undefined,
         includeUnpublished: false,
         lang: "de",
         langAuthor: 'sabbamitta',
@@ -1257,6 +1261,8 @@ typeof describe === "function" &&
       let args = skr.findArgs(["wurzel des leidens -ml 3 -l de"]);
       should.deepEqual(args, {
         author: "sabbamitta",
+        docAuthor: undefined,
+        docLang: undefined,
         includeUnpublished: false,
         lang: "de",
         langAuthor: 'sabbamitta',
@@ -1286,6 +1292,8 @@ typeof describe === "function" &&
         .properties({ 
           author: "sujato", 
           searchLang:'en',
+          docAuthor: undefined,
+          docLang: undefined,
           refAuthor: 'sujato',
           refLang: 'en',
           lang: 'pt',

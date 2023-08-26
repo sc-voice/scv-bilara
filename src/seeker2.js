@@ -531,6 +531,8 @@
         matchHighlight,
         refLang = 'en',
         refAuthor = 'sujato',
+        docLang,
+        docAuthor,
         sortLines,
         showMatchesOnly,
         tipitakaCategories,
@@ -612,6 +614,8 @@
 
       return {
         author,
+        docLang,
+        docAuthor,
         includeUnpublished,
         lang,
         langAuthor,
@@ -721,6 +725,8 @@
         var {
           author,
           includeUnpublished,
+          docLang,
+          docAuthor,
           lang,
           languages,
           matchHighlight,
@@ -808,8 +814,8 @@
               mldOpts = {
                 refLang,
                 refAuthor,
-                lang,
-                langAuthor: "sabbamitta",
+                docLang,
+                docAuthor,
               }
               mld = await bd.trilingualDoc(suttaRef, mldOpts);
               suid === 'mn1' && 

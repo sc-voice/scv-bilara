@@ -158,8 +158,8 @@
             rootAuthor = 'ms',
             refLang,
             refAuthor,
-            lang,
-            langAuthor,
+            docLang,
+            docAuthor,
           } = opts;
           if (!refAuthor && !refLang) {
             refLang = 'en';
@@ -174,13 +174,13 @@
           let { langAuthorRegExp } = BilaraPathMap;
           let reRoot = langAuthorRegExp(rootLang, rootAuthor);
           let reRef = langAuthorRegExp(refLang, refAuthor);
-          let reLang = (refLang !== lang || refAuthor !== langAuthor) &&
-            langAuthorRegExp(lang, langAuthor);
+          let reDoc = (refLang !== docLang || refAuthor !== docAuthor) &&
+            langAuthorRegExp(docLang, docAuthor);
 
           return Object.keys([
             ...paths.filter(p=>reRoot && reRoot.test(p)),
             ...paths.filter(p=>reRef && reRef.test(p)),
-            ...paths.filter(p=>reLang && reLang.test(p)),
+            ...paths.filter(p=>reDoc && reDoc.test(p)),
           ].reduce((a,p)=>{
             a[p] = 1;
             return a;

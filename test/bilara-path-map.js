@@ -143,34 +143,34 @@
       should.deepEqual(bpm.trilingualPaths({ suid, 
         refLang: "en",
         refAuthor: "sujato", 
-        lang: 'en',
-        langAuthor: "soma",
+        docLang: 'en',
+        docAuthor: "soma",
       }), [pathRoot, sujatoPath, somaPath]);
 
       should.deepEqual(bpm.trilingualPaths({ suid, 
-        lang: 'en',
-        langAuthor: "soma",
+        docLang: 'en',
+        docAuthor: "soma",
       }), [pathRoot, sujatoPath, somaPath]);
 
       should.deepEqual(bpm.trilingualPaths({ suid, 
         refLang: 'en',
         refAuthor: 'soma',
-        lang: 'en',
-        langAuthor: 'sujato',
+        docLang: 'en',
+        docAuthor: 'sujato',
       }), [pathRoot, somaPath, sujatoPath]);
 
       // eliminate duplicates
       should.deepEqual(bpm.trilingualPaths({ suid, 
         refLang: 'en',
         refAuthor: 'soma',
-        lang: 'pli',
-        langAuthor: 'ms',
+        docLang: 'pli',
+        docAuthor: 'ms',
       }), [pathRoot, somaPath]);
       should.deepEqual(bpm.trilingualPaths({ suid, 
         refLang: 'en',
         refAuthor: 'soma',
-        lang: 'en',
-        langAuthor: 'soma',
+        docLang: 'en',
+        docAuthor: 'soma',
       }), [pathRoot, somaPath]);
       should.deepEqual(bpm.trilingualPaths({ suid, 
         refLang: 'pli',

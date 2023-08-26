@@ -527,8 +527,8 @@
         rootAuthor = 'ms',
         refLang = 'en',
         refAuthor = 'sujato',
-        lang = suttaRef.lang,
-        langAuthor = suttaRef.author,
+        docLang = suttaRef.lang,
+        docAuthor = suttaRef.author,
         logLevel,
       } = opts;
       let suid = suttaRef.sutta_uid;
@@ -543,16 +543,16 @@
         rootAuthor,
         refLang,
         refAuthor,
-        lang,
-        langAuthor,
+        docLang,
+        docAuthor,
       });
       if (bilaraPaths.length === 0) {
         throw new Error(`${msg} ${suttaRef} not found`);
       }
       let mldOpts = {
         logLevel,
-        lang: lang || refLang,
-        author_uid: langAuthor || refAuthor,
+        lang: docLang || refLang,
+        author_uid: docAuthor || refAuthor,
         sutta_uid: suid,
         bilaraPaths,
       };
