@@ -519,25 +519,25 @@
       }
       var {
         author,
-        pattern: rawPattern,
-        searchLang,
+        docAuthor,
+        docLang,
+        includeUnpublished = this.includeUnpublished,
         lang,
         langAuthor,
         language, // DEPRECATED
         languages,
-        minLang, // minimum number of languages
-        maxResults, // maximum number of grep files
-        maxDoc, // maximum number of returned documents
         matchHighlight,
-        refLang = 'en',
+        maxDoc, // maximum number of returned documents
+        maxResults, // maximum number of grep files
+        minLang, // minimum number of languages
+        pattern: rawPattern,
         refAuthor = 'sujato',
-        docLang,
-        docAuthor,
-        sortLines,
+        refLang = 'en',
+        searchLang,
         showMatchesOnly,
+        sortLines,
         tipitakaCategories,
         types,
-        includeUnpublished = this.includeUnpublished,
 
       } = opts;
       if (rawPattern == null) {

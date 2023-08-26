@@ -905,9 +905,7 @@
         lang == null && (lang = refLang);
         return refTranslator
           ? `${uid}/${refLang}/${refTranslator}`
-          : refLang
-          ? `${uid}/${refLang}`
-          : uid;
+          : refLang ? `${uid}/${refLang}` : uid;
       });
 
       return {
