@@ -1,5 +1,5 @@
 typeof describe === "function" &&
-  describe("seeker2", function () {
+  describe("Seeker", function () {
     const should = require("should");
     const fs = require("fs");
     const path = require("path");
@@ -10,7 +10,7 @@ typeof describe === "function" &&
       Pali,
       English,
       FuzzyWordSet,
-      Seeker2,
+      Seeker,
       Unicode,
     } = require("../index");
     const { BilaraPath } = require("scv-esm");
@@ -46,7 +46,7 @@ typeof describe === "function" &&
     ];
 
     it("default ctor", () => {
-      var skr = new Seeker2();
+      var skr = new Seeker();
       should(skr).properties({
         languages: ["pli", "en"],
         includeUnpublished: false,
@@ -69,7 +69,7 @@ typeof describe === "function" &&
       var lang = "de";
       var writeFile = false;
       var paliWords = new FuzzyWordSet();
-      var skr = new Seeker2({
+      var skr = new Seeker({
         root: "/tmp/test",
         logger: logger2,
         lang,
@@ -92,7 +92,7 @@ typeof describe === "function" &&
       should(reDeny.test(fn)).equal(false);
     });
     it("grep(...) finds sutta things", async () => {
-      var skr = new Seeker2({});
+      var skr = new Seeker({});
       var ms0 = Date.now();
       var maxResults = 1;
       let author = 'sujato';
@@ -113,7 +113,7 @@ typeof describe === "function" &&
       should(ms2 - ms1).below(20);
     });
     it("grep(...) finds maxResults things", async () => {
-      var skr = new Seeker2(SEEKEROPTS);
+      var skr = new Seeker(SEEKEROPTS);
       var maxResults = 1;
       var res = await skr.grep({
         author: "sujato",
@@ -123,7 +123,7 @@ typeof describe === "function" &&
       should.deepEqual(res, SUTTA_ROOT_SUFF.slice(0, maxResults));
     });
     it("grep(...) filters result files", async () => {
-      var skr = new Seeker2(SEEKEROPTS);
+      var skr = new Seeker(SEEKEROPTS);
       var res = await skr.grep({
         author: "sujato",
         pattern: "a single day",
@@ -137,7 +137,7 @@ typeof describe === "function" &&
       ]);
     });
     it("grep(...) finds de things", async () => {
-      var skr = new Seeker2(SEEKEROPTS);
+      var skr = new Seeker(SEEKEROPTS);
       var maxResults = 5;
       let author = 'sabbamitta';
       let lang = 'de';
@@ -170,7 +170,7 @@ typeof describe === "function" &&
     });
     it("sanitizePattern(...) code injection guard", () => {
       var testPattern = (pattern, expected) => {
-        should(Seeker2.sanitizePattern(pattern)).equal(expected);
+        should(Seeker.sanitizePattern(pattern)).equal(expected);
       };
       testPattern('"doublequote"', ".doublequote.");
       testPattern("'singlequote'", ".singlequote.");
@@ -186,7 +186,7 @@ typeof describe === "function" &&
     });
     it("normalizePattern(...) code injection guard", () => {
       var testPattern = (pattern, expected) => {
-        should(Seeker2.normalizePattern(pattern)).equal(expected);
+        should(Seeker.normalizePattern(pattern)).equal(expected);
       };
       testPattern("root of suffering", "root of suffering");
       testPattern(" root  of  suffering ", "root of suffering");
@@ -201,7 +201,7 @@ typeof describe === "function" &&
     it("keywordPattern(...) returns grep pattern", (done) => {
       (async function () {
         try {
-          var skr = await new Seeker2(SEEKEROPTS).initialize();
+          var skr = await new Seeker(SEEKEROPTS).initialize();
           should(skr.keywordPattern("anathapindika", "en")).equal(
             "\\b(a|ā)(n|ṅ|ñ|ṇ)(a|ā)(t|ṭ)h(a|ā)p" +
               "(i|ī)(n|ṅ|ñ|ṇ)(d|ḍ)(i|ī)k(a|ā)"
@@ -218,9 +218,9 @@ typeof describe === "function" &&
     });
     it("keywordSearch(...) limits results", async () => {
       var lang = "en";
-      var pattern = Seeker2.normalizePattern("suffering joy faith");
+      var pattern = Seeker.normalizePattern("suffering joy faith");
       var maxResults = 1;
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         maxResults,
         lang,
       }).initialize(`dbg 1`);
@@ -231,7 +231,7 @@ typeof describe === "function" &&
 
       var data = await skr.keywordSearch(skr.findArgs([{
         pattern,
-        // maxResults taken from Seeker2.maxResults
+        // maxResults taken from Seeker.maxResults
       }]));
       should(data).properties(expected);
 
@@ -249,14 +249,14 @@ typeof describe === "function" &&
       ]);
     });
     it("keywordSearch(...) searches English", async () => {
-      var pattern = Seeker2.normalizePattern("suffering joy faith");
-      var skr = await new Seeker2({
+      var pattern = Seeker.normalizePattern("suffering joy faith");
+      var skr = await new Seeker({
         lang: "de", // Deutsch
       }).initialize(`dbg 2`);
       var maxResults = 1;
       var data = await skr.keywordSearch(skr.findArgs([{
         pattern,
-        lang: "en", // overrides Seeker2 default lang
+        lang: "en", // overrides Seeker default lang
         maxResults,
       }]));
       var enExpected = {
@@ -271,13 +271,13 @@ typeof describe === "function" &&
         //`${en_suj}dn/dn10_translation-en-sujato.json:2`,
       ]);
 
-      // Using Seeker2 default lang still returns English
+      // Using Seeker default lang still returns English
       var data = await skr.keywordSearch(skr.findArgs([{
         pattern,
       }]));
       should(data).properties(enExpected);
 
-      // Change Seeker2 default language to English
+      // Change Seeker default language to English
       skr.lang = "en"; // Not advisable for multiple users
       should(skr.lang).equal("en");
       var data = await skr.keywordSearch(skr.findArgs([{
@@ -287,7 +287,7 @@ typeof describe === "function" &&
     });
     it("keywordSearch(...) searches Pali, not English", async () => {
       var maxResults = 2;
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         maxResults,
       }).initialize();
       var expected = {
@@ -315,7 +315,7 @@ typeof describe === "function" &&
     });
     it("keywordSearch(...) searches English, not Pali", async () => {
       var maxResults = 2;
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         maxResults,
       }).initialize();
       var expected = {
@@ -338,7 +338,7 @@ typeof describe === "function" &&
     });
     it("keywordSearch(...) searches Pali, not Deutsch", async () => {
       let maxResults = 2;
-      let skr = await new Seeker2({
+      let skr = await new Seeker({
         lang: "de",
         maxResults,
       }).initialize();
@@ -367,7 +367,7 @@ typeof describe === "function" &&
       should(data).properties(expected);
     });
     it("keywordSearch(...) searches Deutsch, not Pali", async () => {
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         lang: "en", // English default
       }).initialize();
       var expected = {
@@ -400,7 +400,7 @@ typeof describe === "function" &&
 
       // Mixed Pali/Deutsch keywords initial cap
       var data = await skr.keywordSearch(skr.findArgs([{
-        pattern: Seeker2.normalizePattern("Anathapindika Hausbesitzer"),
+        pattern: Seeker.normalizePattern("Anathapindika Hausbesitzer"),
         maxResults: 10,
         lang: "de", // Requesting Deutsch search
       }]));
@@ -408,14 +408,14 @@ typeof describe === "function" &&
 
       // Mixed Pali/Deutsch keywords lowercase
       var data = await skr.keywordSearch(skr.findArgs([{
-        pattern: Seeker2.normalizePattern("anathapindika hausbesitzer"),
+        pattern: Seeker.normalizePattern("anathapindika hausbesitzer"),
         maxResults: 10,
         lang: "de", // Requesting Deutsch search
       }]));
       should.deepEqual(data, expected);
     });
     it("find(...) scores relevance", async () => {
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         lang: "en", // English default
       }).initialize();
 
@@ -435,7 +435,7 @@ typeof describe === "function" &&
       should(mld0.score).equal(10.011);
     });
     it("find(...) scores relevance: on fire", async () => {
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         lang: "en", // English default
       }).initialize();
 
@@ -454,7 +454,7 @@ typeof describe === "function" &&
     });
     it("patternLanguage(...) => search language context", async () => {
       let enWords = await English.wordSet({ source: "file" });
-      var skr = await new Seeker2({ enWords }).initialize();
+      var skr = await new Seeker({ enWords }).initialize();
 
       // "gehe" and "so" are both German and Pali
       should(skr.patternLanguage("anathapindika gehe so", "de")).equal("pli");
@@ -494,7 +494,7 @@ typeof describe === "function" &&
     it("find(...) ignores unpublished", async () => {
       var lang = "en";
       var pattern = "root of suffering";
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         lang,
       }).initialize();
       let matchHighlight = "\u001b[38;5;201m$&\u001b[0m";
@@ -529,7 +529,7 @@ typeof describe === "function" &&
       var lang = "en";
       var pattern = "root of suffering";
       var maxResults = 1;
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         maxResults,
         lang,
       }).initialize();
@@ -542,7 +542,7 @@ typeof describe === "function" &&
 
       var data = await skr.phraseSearch({
         pattern,
-        // maxResults taken from Seeker2.maxResults
+        // maxResults taken from Seeker.maxResults
       });
       should.deepEqual(data, expected);
 
@@ -564,7 +564,7 @@ typeof describe === "function" &&
       var lang = "de";
       var pattern = `sabbamitta`;
       var maxResults = 3;
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         lang,
         maxResults,
       }).initialize();
@@ -596,7 +596,7 @@ typeof describe === "function" &&
         //`${de_sab}dn/dn34_translation-de-sabbamitta.json:18`,
       ];
       var lang = "de";
-      var maxResults = 10; var maxDoc = 3; var skr = await new Seeker2({
+      var maxResults = 10; var maxDoc = 3; var skr = await new Seeker({
         maxResults,
         maxDoc,
       }).initialize();
@@ -630,7 +630,7 @@ typeof describe === "function" &&
       });
     });
     it("find(...) finds dhp2", async () => {
-      var skr = await new Seeker2().initialize();
+      var skr = await new Seeker().initialize();
       //skr.logLevel = 'debug';
 
       let findArgs = skr.findArgs([{
@@ -654,7 +654,7 @@ typeof describe === "function" &&
       });
     });
     it("find(...) finds thag1.10", async () => {
-      var skr = await new Seeker2().initialize();
+      var skr = await new Seeker().initialize();
 
       var res = await skr.find({
         pattern: "thag1.10",
@@ -668,7 +668,7 @@ typeof describe === "function" &&
       );
     });
     it("find(...) orders sutta references found", async () => {
-      var skr = await new Seeker2().initialize();
+      var skr = await new Seeker().initialize();
 
       var res = await skr.find({
         pattern: "sn29.9-999",
@@ -692,7 +692,7 @@ typeof describe === "function" &&
     });
     it("find(...) finds sutta references", async () => {
       var maxResults = 3;
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         maxResults,
       }).initialize();
 
@@ -725,7 +725,7 @@ typeof describe === "function" &&
     });
     it("find(...) finds mn1/en/sujato", async () => {
       var maxResults = 3;
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         maxResults,
       }).initialize();
 
@@ -760,7 +760,7 @@ typeof describe === "function" &&
     it("find(maxdoc)", async () => {
       var maxResults = 5;
       var maxDoc = 2;
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         maxResults,
       }).initialize();
 
@@ -785,7 +785,7 @@ typeof describe === "function" &&
     });
     it("TESTTESTfind(...) finds an1.2", async () => {
       var maxResults = 3;
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         maxResults,
       }).initialize();
 
@@ -823,7 +823,7 @@ typeof describe === "function" &&
     });
     it("find(...) => legacy suttas", async () => {
       var maxDoc = 3;
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         maxDoc,
       }).initialize();
 
@@ -846,7 +846,7 @@ typeof describe === "function" &&
     });
     it("find({minLang}) => minLang 2", async () => {
       var maxResults = 3;
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         maxResults,
       }).initialize();
       should.deepEqual(skr.languages, ["pli", "en"]);
@@ -876,7 +876,7 @@ typeof describe === "function" &&
       let minLang = 3;
       let lang = 'de';
       let pattern = "root of suffering";
-      var skr = await new Seeker2({ maxResults, }).initialize();
+      var skr = await new Seeker({ maxResults, }).initialize();
       should.deepEqual(skr.languages, ["pli", "en"]);
 
       var res = await skr.find({ pattern, lang, minLang });
@@ -894,7 +894,7 @@ typeof describe === "function" &&
       let lang = 'de';
       let minLang = 2;
       let pattern = "root of suffering";
-      var skr = await new Seeker2({ maxResults, }).initialize();
+      var skr = await new Seeker({ maxResults, }).initialize();
       var res = await skr.find({ pattern, lang, minLang });
       should.deepEqual(res.suttaRefs, [
         "sn42.11/en/sujato",
@@ -913,7 +913,7 @@ typeof describe === "function" &&
       var msStart = Date.now();
       var maxDoc = 5;
       var maxResults = 50;
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         maxDoc,
         maxResults,
       }).initialize();
@@ -937,7 +937,7 @@ typeof describe === "function" &&
     });
     it("find(...) => finds phrase", async () => {
       var maxResults = 3;
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         maxResults,
       }).initialize();
       //skr.logLevel = 'debug';
@@ -989,7 +989,7 @@ typeof describe === "function" &&
     });
     it("find(...) => finds ubung", async () => {
       var maxDoc = 3;
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         maxDoc,
       }).initialize();
       //skr.logLevel = 'info';
@@ -1020,7 +1020,7 @@ typeof describe === "function" &&
     });
     it("find(...) => finds searchLang phrase", async () => {
       var maxResults = 3;
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         maxResults,
       }).initialize();
 
@@ -1036,7 +1036,7 @@ typeof describe === "function" &&
       should(res.mlDocs[0].lang).equal("de");
     });
     it("find(...) => accepts embedded options", async () => {
-      var skr = await new Seeker2({}).initialize();
+      var skr = await new Seeker({}).initialize();
 
       var pattern = "sabbamitta -ml 3 -sl en -l de -ml 2";
       var res = await skr.find({
@@ -1046,7 +1046,7 @@ typeof describe === "function" &&
     });
     it("find(...) => finds all keywords", async () => {
       var maxDoc = 50;
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         maxDoc,
       }).initialize();
 
@@ -1061,7 +1061,7 @@ typeof describe === "function" &&
     });
     it("find(...) => finds keywords", async () => {
       var maxDoc = 3;
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         maxDoc,
       }).initialize();
 
@@ -1088,7 +1088,7 @@ typeof describe === "function" &&
     });
     it("find(...) => finds segments with all keywords", async () => {
       var maxDoc = 3;
-      var skr = await new Seeker2().initialize();
+      var skr = await new Seeker().initialize();
 
       var pattern = "red yellow";
       var res = await skr.find({
@@ -1128,7 +1128,7 @@ typeof describe === "function" &&
     });
     it("find(...) => de, Benares", async() => {
       var lang = "de";
-      var skr = await new Seeker2().initialize();
+      var skr = await new Seeker().initialize();
       var res = await skr.find({
         pattern: "Buddha was staying near Varanasi",
         maxResults: 3,
@@ -1152,7 +1152,7 @@ typeof describe === "function" &&
     });
     it("find(...) => no first point", async () => {
       var lang = "de";
-      var skr = await new Seeker2().initialize();
+      var skr = await new Seeker().initialize();
       var res = await skr.find({
         pattern: "no first point",
         maxResults: 3,
@@ -1176,7 +1176,7 @@ typeof describe === "function" &&
     });
     it("TESTTESTfindArgs(...) => thig1.1/en/soma, thig1.2/en/soma ", async () => {
       var bilaraData = await bd.initialize();
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         bilaraData,
       }).initialize();
       let pattern = "thig1.1/en/soma, thig1.2/en/soma";
@@ -1202,7 +1202,7 @@ typeof describe === "function" &&
     });
     it("TESTTESTfindArgs(...) handls jpn ", async () => {
       var bilaraData = await bd.initialize();
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         bilaraData,
       }).initialize();
       let pattern = "食べ物を贈る";
@@ -1232,7 +1232,7 @@ typeof describe === "function" &&
     });
     it("TESTTESTfindArgs(...) handles German", async () => {
       var bilaraData = await bd.initialize();
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         bilaraData,
       }).initialize();
 
@@ -1284,7 +1284,7 @@ typeof describe === "function" &&
     it("TESTTESTfindArgs(...) author", async () => {
       let bilaraData = await bd.initialize();
       let pattern = "root of suffering";
-      let skr = await new Seeker2({
+      let skr = await new Seeker({
         bilaraData,
       }).initialize();
 
@@ -1316,7 +1316,7 @@ typeof describe === "function" &&
       var bilaraData = new BilaraData({
         includeUnpublished: true,
       });
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         maxDoc,
         bilaraData,
       }).initialize();
@@ -1345,7 +1345,7 @@ typeof describe === "function" &&
       var bilaraData = new BilaraData({
         includeUnpublished: true,
       });
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         maxDoc,
         bilaraData,
       }).initialize();
@@ -1374,7 +1374,7 @@ typeof describe === "function" &&
       should(res.mlDocs.length).equal(3);
     });
     it("tipitakaRegExp(tc) => regexp for paths", () => {
-      var skr = new Seeker2();
+      var skr = new Seeker();
 
       // invalid
       {
@@ -1398,7 +1398,7 @@ typeof describe === "function" &&
       should(skr.tipitakaRegExp("bi,pj").toString()).equal("/(-bi-|-pj)/iu");
     });
     it("find(...) finds an1.1 all types", async () => {
-      var skr = await new Seeker2().initialize();
+      var skr = await new Seeker().initialize();
       var res = await skr.find({
         pattern: "an1.1",
         matchHighlight: false,
@@ -1423,7 +1423,7 @@ typeof describe === "function" &&
       should(re.test(text)).equal(true);
     });
     it("find(...) ignores translation stubs", async () => {
-      var skr = await new Seeker2().initialize();
+      var skr = await new Seeker().initialize();
 
       var pattern = "root of suffering -ml 3 -l de";
       var res = await skr.find({
@@ -1438,7 +1438,7 @@ typeof describe === "function" &&
       should(res.bilaraPaths.length).equal(12);
     });
     it("find(...) ignores chinese", async () => {
-      var skr = await new Seeker2().initialize();
+      var skr = await new Seeker().initialize();
 
       var pattern = "wrong livelihood";
       var res = await skr.find({
@@ -1447,7 +1447,7 @@ typeof describe === "function" &&
       should(res.bilaraPaths.length).equal(158);
     });
     it("find(...) => ignores SN46.36", async () => {
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         root: TEST_BILARA_PATH,
       }).initialize();
 
@@ -1459,7 +1459,7 @@ typeof describe === "function" &&
     });
     it("find(...) finds 'alles leiden,...'", async () => {
       var bilaraData = await bd.initialize();
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         bilaraData,
       }).initialize();
       var pattern = "alles leiden, das entsteht -ml3 -l de";
@@ -1479,7 +1479,7 @@ typeof describe === "function" &&
       var bilaraData = await bd.initialize();
       bd.log("initializing done");
       var lang = "en";
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         bilaraData,
         lang,
       }).initialize();
@@ -1511,7 +1511,7 @@ typeof describe === "function" &&
       var bilaraData = await bd.initialize();
       bd.log("initializing done");
       var lang = "en";
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         bilaraData,
         lang,
       }).initialize();
@@ -1535,7 +1535,7 @@ typeof describe === "function" &&
       var bilaraData = await bd.initialize();
       bd.log("initializing done");
       var lang = "de";
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         bilaraData,
         lang,
       }).initialize();
@@ -1559,7 +1559,7 @@ typeof describe === "function" &&
       bd.log("initializing");
       var bilaraData = await bd.initialize();
       bd.log("initializing done");
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         bilaraData,
       }).initialize();
       var pattern = "blind -ml3 -l de";
@@ -1575,7 +1575,7 @@ typeof describe === "function" &&
     it("find(...) finds Deutsch 'rat'", async () => {
       let enWords = await English.wordSet({ source: "file" });
       var bilaraData = await bd.initialize();
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         bilaraData,
         enWords,
       }).initialize();
@@ -1593,7 +1593,7 @@ typeof describe === "function" &&
       if (!TEST_UNPUBLISHED) { return; }
       var bilaraData = await bd.initialize();
       var includeUnpublished = true;
-      var skr = await new Seeker2({ bilaraData }).initialize();
+      var skr = await new Seeker({ bilaraData }).initialize();
       var pattern = "thig3.8 -l de";
 
       var data = await skr.find({
@@ -1612,7 +1612,7 @@ typeof describe === "function" &&
     });
     it("find(...) finds 'king pacetana'", async () => {
       var bilaraData = await bd.initialize();
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         bilaraData,
       }).initialize();
       var pattern = "king pacetana";
@@ -1627,7 +1627,7 @@ typeof describe === "function" &&
       should(data.resultPattern).equal("\\bking pacetana");
     });
     it("find(...) is cached", async () => {
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         lang: "en", // English default
       }).initialize();
       var pattern = "stuck in the middle";
@@ -1654,7 +1654,7 @@ typeof describe === "function" &&
       should.deepEqual(data2, data);
     });
     it("isExample", async () => {
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         lang: "en", // English default
       });
       await skr.initialize();
@@ -1677,7 +1677,7 @@ typeof describe === "function" &&
     });
     it("isExample (cached)", async () => {
       let exampleCache = require(`../src/is-example.json`);
-      var skr = await new Seeker2({
+      var skr = await new Seeker({
         lang: "en", // English default
         exampleCache,
       });
@@ -1701,7 +1701,7 @@ typeof describe === "function" &&
     });
     it('find(...) => "dn7/de"', async () => {
       let bilaraData = new BilaraData();
-      let skr = await new Seeker2({
+      let skr = await new Seeker({
         bilaraData,
         logger: bilaraData,
       }).initialize();
@@ -1717,7 +1717,7 @@ typeof describe === "function" &&
     });
     it("find(...) => soṇasiṅgālā", async () => {
       let bilaraData = new BilaraData();
-      let skr = await new Seeker2({
+      let skr = await new Seeker({
         bilaraData,
         logger: bilaraData,
       }).initialize();
@@ -1742,7 +1742,7 @@ typeof describe === "function" &&
     it("find(...) => nun", async () => {
       let bilaraData = new BilaraData();
       let maxDoc = 5;
-      let skr = await new Seeker2({
+      let skr = await new Seeker({
         bilaraData,
         logger: bilaraData,
         maxDoc,
@@ -1773,7 +1773,7 @@ typeof describe === "function" &&
       let bilaraData = new BilaraData({ includeUnpublished, branch });
       //bilaraData.logLevel = 'info';
       let maxDoc = 5;
-      let skr = await new Seeker2({
+      let skr = await new Seeker({
         bilaraData,
         logger: bilaraData,
         maxDoc,
@@ -1796,7 +1796,7 @@ typeof describe === "function" &&
     it("find(...) => nun -tc:vinaya", async () => {
       let bilaraData = new BilaraData();
       let maxDoc = 5;
-      let skr = await new Seeker2({
+      let skr = await new Seeker({
         bilaraData,
         logger: bilaraData,
         maxDoc,
@@ -1822,7 +1822,7 @@ typeof describe === "function" &&
     it("find(...) => nun -tc:badcategory", async () => {
       let bilaraData = new BilaraData();
       let maxDoc = 5;
-      let skr = await new Seeker2({
+      let skr = await new Seeker({
         bilaraData,
         logger: bilaraData,
         maxDoc,
@@ -1843,7 +1843,7 @@ typeof describe === "function" &&
     });
     it("find(...) handles sn46.55/cs", async () => {
       return; // TODO: 20210325 not in published branch yet
-      var skr = await new Seeker2().initialize();
+      var skr = await new Seeker().initialize();
       var pattern = "sn46.55/cs";
       var ex = undefined;
       try {
@@ -1856,7 +1856,7 @@ typeof describe === "function" &&
       });
     });
     it("find(...) handles an1.1-10/jpn", async () => {
-      var skr = await new Seeker2().initialize();
+      var skr = await new Seeker().initialize();
       var pattern = "an4.182/jpn";
       var ex = undefined;
       var res = await skr.find({ pattern, matchHighlight: false });
@@ -1867,7 +1867,7 @@ typeof describe === "function" &&
     });
     it("TESTTESfind(...) => thig1.1", async () => {
       let bilaraData = new BilaraData();
-      let skr = await new Seeker2({
+      let skr = await new Seeker({
         bilaraData,
         logger: bilaraData,
       }).initialize();
@@ -1883,7 +1883,7 @@ typeof describe === "function" &&
       should(mld0.sutta_uid).equal("thig1.1");
     });
     it("find(...) finds mind with greed", async () => {
-      var skr = await new Seeker2().initialize();
+      var skr = await new Seeker().initialize();
 
       var res = await skr.find({
         pattern: "mind with greed",
@@ -1925,7 +1925,7 @@ typeof describe === "function" &&
       });
     });
     it("find(...) finds mind with greed", async () => {
-      var skr = await new Seeker2().initialize();
+      var skr = await new Seeker().initialize();
 
       var res = await skr.find({
         pattern: "mind with greed",
@@ -1968,7 +1968,7 @@ typeof describe === "function" &&
     });
     it("find(...) => thig1.1 (sujato)", async () => {
       let bilaraData = new BilaraData();
-      let skr = await new Seeker2({
+      let skr = await new Seeker({
         bilaraData,
         logger: bilaraData,
       }).initialize();
@@ -1996,7 +1996,7 @@ typeof describe === "function" &&
     });
     it("find(...) => thig1.1/en/soma", async () => {
       let bilaraData = new BilaraData();
-      let skr = await new Seeker2({
+      let skr = await new Seeker({
         bilaraData,
         logger: bilaraData,
       }).initialize();
@@ -2024,7 +2024,7 @@ typeof describe === "function" &&
       let lang = "de";
       let searchLang = "en";
       let showMatchesOnly = false;
-      let skr = await new Seeker2({
+      let skr = await new Seeker({
         maxResults,
       }).initialize();
       let findArgs = { lang, maxResults, pattern, searchLang, showMatchesOnly };
@@ -2043,7 +2043,7 @@ typeof describe === "function" &&
       let lang = "de";
       let searchLang = "en";
       let showMatchesOnly = false;
-      let skr = await new Seeker2({
+      let skr = await new Seeker({
         maxResults,
       }).initialize();
       let findArgs = { lang, maxResults, pattern, searchLang, showMatchesOnly };
@@ -2058,7 +2058,7 @@ typeof describe === "function" &&
     });
     it("find(...) => mil3.1.1.1/de", async () => {
       let bilaraData = new BilaraData();
-      let skr = await new Seeker2({
+      let skr = await new Seeker({
         bilaraData,
         logger: bilaraData,
       }).initialize();
@@ -2083,7 +2083,7 @@ typeof describe === "function" &&
       var lang = "de";
       var maxResults = 10;
       var maxDoc = 3;
-      var skr = await new Seeker2({ maxResults, maxDoc, }).initialize();
+      var skr = await new Seeker({ maxResults, maxDoc, }).initialize();
       var pattern = `Autorität`;
 
       skr.logLevel = 'info'; // TODO

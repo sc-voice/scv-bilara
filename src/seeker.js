@@ -9,7 +9,7 @@
   const { MerkleJson } = require("merkle-json");
   const { Memoizer, Files } = require("memo-again");
   const FuzzyWordSet = require("./fuzzy-word-set");
-  const { BilaraPath } = require("scv-esm");
+  const { BilaraPath, AuthorsV2 } = require("scv-esm");
   const MLDoc = require("./ml-doc");
   const Pali = require("./pali");
   const Unicode = require("./unicode");
@@ -32,6 +32,7 @@
       this.includeUnpublished =
         opts.includeUnpublished || this.bilaraData.includeUnpublished;
       this.lang = opts.lang || "en";
+      this.author = opts.author;
       this.languages = opts.languages || ["pli", "en"];
       this.scApi = opts.scApi || new ScApi();
       this.unicode = opts.unicode || new Unicode();
@@ -160,6 +161,7 @@
     }
 
     patternLanguage(pattern, lang = this.lang) {
+      const msg = "Seeker.patternLanguage() ";
       this.validate();
       if (SuttaCentralId.test(pattern)) {
         var langs = SuttaCentralId.languages(pattern);
@@ -234,7 +236,9 @@
     }
 
     grep(opts = {}) {
+      const msg = "Seeker.grep() ";
       var {
+        author,
         pattern,
         maxResults,
         lang,
@@ -243,10 +247,16 @@
         tipitakaCategories,
         patPrimary,
       } = opts;
+      if (!author) {
+        let emsg = `${msg} author is required`;
+        console.trace(emsg);
+        throw new Error(emsg);
+      }
       var reTipCat = this.tipitakaRegExp(tipitakaCategories);
       lang = lang || language || this.lang;
       var root = this.root.replace(`${Files.APP_DIR}/`, "");
       var slowOpts = {
+        author,
         pattern,
         maxResults,
         lang,
@@ -286,8 +296,10 @@
     }
 
     static async slowGrep(opts) {
+      const msg = "Seeker.slowGrep ";
       try {
         var {
+          author,
           pattern,
           maxResults,
           lang,
@@ -301,7 +313,7 @@
           root = `${Files.APP_DIR}/${root}`;
         }
 
-        logger.info(`slowGrep`, { pattern, lang, root });
+        logger.info(msg, { pattern, lang, root });
         if (searchMetadata) {
           return Promise.reject(new Error(`searchMetadata not supported`));
         }
@@ -310,8 +322,10 @@
           lang === "pli"
             ? path.join(root, "root/pli")
             : path.join(root, `translation/${lang}`);
-        var cmd = [
-          `rg -c -i -e '${grex}' `,
+        var rgGlob2 = [
+          `-g='*-${lang}-${author}.json'`,
+        ];
+        var rgGlob1 = [
           `-g='!atthakatha' `, // exclude pli/vri
           `-g='!_*' `, // top-level JSON files
           `-g '!name'`, // exclude name
@@ -320,13 +334,20 @@
           `-g '!ka'`, // exclude Chinese
           `-g '!sa'`, // exclude Chinese
           `-g '!ma'`, // exclude Chinese
-          `./`, // Must be explicit for Node (https://github.com/BurntSushi/ripgrep/issues/2227)
+        ];
+        var rgGlob = rgGlob2;
+        var cmd = [
+          `rg -c -i -e '${grex}' `,
+          ...rgGlob,
+          `./`, // Must be explicit for Node 
+                // (https://github.com/BurntSushi/ripgrep/issues/2227)
           `|sort -k 2rn -k 1rd -t ':'`,
         ].join(" ");
+        //console.log(msg, {author, lang, cmd});
         maxResults && (cmd += `|head -${maxResults}`);
         var pathPrefix = cwd.replace(root, "").replace(/^\/?/, "");
         var cwdMsg = cwd.replace(`${root}/`, "");
-        logger.info(`slowGrep(${cwdMsg}) ${cmd}`);
+        logger.info(msg, `(${cwdMsg}) ${cmd}`);
         var execOpts = {
           cwd,
           shell: "/bin/bash",
@@ -348,6 +369,7 @@
       const msg = "Seeker.phraseSearch() ";
       this.validate();
       var {
+        author,
         searchLang,
         lang,
         language,
@@ -371,8 +393,12 @@
       } else {
         var pat = `${Seeker.reWord(lang)}${pattern}`;
       }
-      this.info(msg, `(${pat},${lang},${searchLang})`);
+      author = author || AuthorsV2.langAuthor(lang, {
+        category:tipitakaCategories,
+      });
+      this.info(msg, `(${pat},${lang},${author})`);
       var grepArgs = Object.assign({}, args, {
+        author,
         pattern: pat,
         lang,
         maxResults,
@@ -389,9 +415,11 @@
     }
 
     async keywordSearch(args) {
+      const msg  = "Seeker.keywordSearch() ";
       try {
         var {
           pattern,
+          author,
           maxResults,
           lang,
           searchLang,
@@ -415,12 +443,13 @@
           lang,
           patPrimary,
         });
-        this.info(`keywordSearch(${keywords}) lang:${lang}`);
+        this.info(msg, `(${keywords}) lang:${lang}`);
         var mrgOut = [];
         var mrgIn = [];
         for (var i = 0; i < keywords.length; i++) {
           var keyword = keywords[i];
           wordArgs.pattern = this.keywordPattern(keyword, lang);
+          //console.log(msg, wordArgs);
           var wordlines = await this.grep(wordArgs);
           wordlines.sort(); // sort for merging path
           mrgOut = [];
@@ -470,12 +499,13 @@
           lines,
         };
       } catch (e) {
-        this.warn(`keywordSearch()`, JSON.stringify(args), e.message);
+        this.warn(msg, JSON.stringify(args), e.message);
         throw e;
       }
     }
 
     findArgs(args) {
+      const msg = "Seeker.findArgs() ";
       if (!(args instanceof Array)) {
         throw new Error("findArgs(?ARRAY-OF-ARGS?)");
       }
@@ -488,20 +518,27 @@
         var opts = args[0];
       }
       var {
+        author,
         pattern: rawPattern,
         searchLang,
         lang,
+        langAuthor,
         language, // DEPRECATED
         languages,
         minLang, // minimum number of languages
         maxResults, // maximum number of grep files
         maxDoc, // maximum number of returned documents
         matchHighlight,
+        refLang = 'en',
+        refAuthor = 'sujato',
+        docLang,
+        docAuthor,
         sortLines,
         showMatchesOnly,
         tipitakaCategories,
         types,
         includeUnpublished = this.includeUnpublished,
+
       } = opts;
       if (rawPattern == null) {
         throw new Error(`pattern is required`);
@@ -545,10 +582,12 @@
       }
 
       // STEP 2. Assign default values
-      var thisLang = this.lang;
-      lang = lang || language || thisLang;
-      searchLang =
-        searchLang == null ? this.patternLanguage(pattern, lang) : searchLang;
+      lang = lang || language || this.lang;
+      langAuthor = langAuthor || 
+        AuthorsV2.langAuthor(lang, {tipitakaCategories});
+      searchLang = searchLang == null 
+        ? this.patternLanguage(pattern, lang) 
+        : searchLang;
       //minLang = minLang || (lang === "en" || searchLang === "en" ? 2 : 3);
       minLang = minLang || 2;
       pattern = Seeker.sanitizePattern(pattern);
@@ -562,23 +601,37 @@
       }
       maxDoc = Number(maxDoc == null ? this.maxDoc : maxDoc);
       matchHighlight == null && (matchHighlight = this.matchHighlight);
+      if (!author) {
+        author = searchLang && AuthorsV2.langAuthor(searchLang, {
+          category: tipitakaCategories,
+        });
+      }
+      if (!author) {
+        author = this.author;
+      }
 
       types = types || ["root", "translation"];
 
       return {
-        pattern,
-        showMatchesOnly,
+        author,
+        docLang,
+        docAuthor,
+        includeUnpublished,
+        lang,
+        langAuthor,
         languages,
-        maxResults,
-        searchLang,
-        maxDoc,
-        minLang,
         matchHighlight,
+        maxDoc,
+        maxResults,
+        minLang,
+        pattern,
+        refAuthor,
+        refLang,
+        searchLang,
+        showMatchesOnly,
         sortLines,
         tipitakaCategories,
-        lang,
         types,
-        includeUnpublished,
       };
     }
 
@@ -617,8 +670,15 @@
       return promise;
     }
 
-    slowFindId({ lang='en', languages=['pli','en'], maxResults, pattern }) {
+    slowFindId(opts={}) {
       const msg = "Seeker.slowFindId() ";
+      let { 
+        lang='en', 
+        languages=['pli','en'], 
+        maxResults, 
+        pattern,
+        author,
+      } = opts;
       var bd = this.bilaraData;
       var examples = bd.examples;
       var resultPattern = pattern;
@@ -638,7 +698,6 @@
       }
       pattern = pattern.replace(/:[^/,]*/g, ''); // remove segment refs
       let res = bd.sutta_uidSearch(pattern, maxResults);
-      //console.trace(msg, 'sutta_uidSearch', {res});
       method = res.method;
       uids = res.uids;
       suttaRefs = res.suttaRefs;
@@ -664,7 +723,10 @@
       try {
         var msStart = Date.now();
         var {
+          author,
           includeUnpublished,
+          docLang,
+          docAuthor,
           lang,
           languages,
           matchHighlight,
@@ -672,6 +734,8 @@
           maxResults,
           minLang=2,
           pattern,
+          refAuthor = "sujato",
+          refLang = "en",
           searchLang,
           showMatchesOnly,
           sortLines,
@@ -690,8 +754,7 @@
         }
 
         if (isSuidPattern) {
-          let res = this.slowFindId({ lang, languages, maxResults, pattern });
-          //console.log(msg, {findArgs, res});
+          let res = this.slowFindId({ author, lang, languages, maxResults, pattern });
           lang = res.lang;
           maxResults = res.maxResults;
           method = res.method;
@@ -701,6 +764,7 @@
           scoreDoc = false;
         } else {
           let res = await this.slowFindPhrase({
+            author,
             lang,
             maxResults,
             pattern,
@@ -722,7 +786,8 @@
         var msStart = Date.now();
         for (var i = 0; i < suttaRefs.length; i++) {
           let suttaRef = suttaRefs[i];
-          let [suid, refLang, author] = suttaRef.split("/");
+          let [suid, refLang, authorId] = suttaRef.split("/");
+          author = authorId || author;
           let suttaInfo = bd.suttaInfo(suttaRef);
           if (!suttaInfo) {
             this.info(`skipping ${suttaRef}`);
@@ -745,8 +810,20 @@
             if (method === "sutta_uid" && author != null && author !== "ms") {
               mldOpts.author = author;
             }
-            mld = await bd.loadMLDoc(mldOpts);
-            var mldBilaraPaths = mld.bilaraPaths;
+            if (0) {
+              mldOpts = {
+                refLang,
+                refAuthor,
+                docLang,
+                docAuthor,
+              }
+              mld = await bd.trilingualDoc(suttaRef, mldOpts);
+              suid === 'mn1' && 
+                console.log(msg, mldOpts, findArgs, !!mld);
+            } else {
+              mld = await bd.loadMLDoc(mldOpts);
+            }
+            var mldBilaraPaths = mld.bilaraPaths.sort();
             this.debug(`slowFind() -> loadMLDoc`, { mldBilaraPaths });
             if (mldBilaraPaths.length < minLang) {
               this.debug(
@@ -820,6 +897,7 @@
         scoreDoc && mlDocs.sort(MLDoc.compare);
         mlDocs = mlDocs.slice(0, maxDoc);
         var result = {
+          author,
           lang, // embeddable option
           searchLang, // embeddable option
           minLang, // embeddable option
@@ -843,15 +921,20 @@
     }
 
     async slowFindPhrase(args = {}) {
+      const msg = "Seeker.slowFindPhrase() ";
       let {
+        author,
         lang,
         maxResults,
         pattern,
-        searchLang,
+        searchLang = args.lang,
         showMatchesOnly,
         sortLines,
         tipitakaCategories,
       } = args;
+      author = author || AuthorsV2.langAuthor(searchLang, {
+        category: tipitakaCategories,
+      });
       try {
         let msStart = Date.now();
         let bd = this.bilaraData;
@@ -861,6 +944,7 @@
         let method = "phrase";
         let uids, suttaRefs;
         let searchOpts = {
+          author,
           pattern,
           searchLang,
           maxResults,
@@ -873,19 +957,20 @@
           searchOpts
         );
         if (lines.length) {
-          this.debug(`findArgs phrase`, { resultPattern, lines: lines.length });
+          this.debug(msg, `phrase`, { resultPattern, lines: lines.length });
         } else {
           method = "keywords";
           let data = await this.keywordSearch(searchOpts);
           var { lines, resultPattern } = data;
-          this.debug(`findArgs keywords`, {
+          this.debug(msg, `keywords`, {
             resultPattern,
             lines: lines.length,
           });
         }
         sortLines && lines.sort(sortLines);
         suttaRefs = lines.map((line) => BilaraPath.pathParts(line).suttaRef);
-        this.debug(`findArgs suttaRefs`, suttaRefs);
+        this.debug(msg, `suttaRefs`, suttaRefs);
+        //console.log(msg, args, suttaRefs);
         return {
           method,
           resultPattern,
@@ -893,9 +978,8 @@
           suttaRefs,
         };
       } catch (e) {
-      this.warn('logLevel', this.logLevel);
-        this.warn(
-          `slowFindPhrase()`,
+        this.warn('logLevel', this.logLevel);
+        this.warn(msg,
           JSON.stringify({
             lang,
             maxResults,
@@ -925,5 +1009,5 @@
     }
   }
 
-  module.exports = exports.Seeker1 = Seeker;
+  module.exports = exports.Seeker = Seeker;
 })(typeof exports === "object" ? exports : (exports = {}));
