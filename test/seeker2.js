@@ -1174,7 +1174,7 @@ typeof describe === "function" &&
         `${en_suj}sn/sn15/sn15.19_translation-en-sujato.json`,
       ]);
     });
-    it("findArgs(...) => thig1.1/en/soma, thig1.2/en/soma ", async () => {
+    it("TESTTESTfindArgs(...) => thig1.1/en/soma, thig1.2/en/soma ", async () => {
       var bilaraData = await bd.initialize();
       var skr = await new Seeker2({
         bilaraData,
@@ -1198,14 +1198,16 @@ typeof describe === "function" &&
         types: ["root", "translation"],
       });
     });
-    it("findArgs(...) handls jpn ", async () => {
+    it("TESTTESTfindArgs(...) handls jpn ", async () => {
       var bilaraData = await bd.initialize();
       var skr = await new Seeker2({
         bilaraData,
       }).initialize();
       let pattern = "食べ物を贈る";
 
-      should(skr.findArgs([`-l jpn ${pattern}`])).properties({
+      let args = skr.findArgs([`-l jpn ${pattern}`]);
+      should.deepEqual(args, {
+        author: 'kaz',
         includeUnpublished: false,
         lang: "jpn",
         languages: ["pli", "en", "jpn"],
@@ -1214,6 +1216,8 @@ typeof describe === "function" &&
         maxResults: 1000,
         minLang: 2,
         pattern,
+        refAuthor: "sujato",
+        refLang: "en",
         searchLang: "jpn",
         showMatchesOnly: true,
         sortLines: undefined,
@@ -1221,7 +1225,7 @@ typeof describe === "function" &&
         types: ["root", "translation"],
       });
     });
-    it("findArgs(...) handles German", async () => {
+    it("TESTTESTfindArgs(...) handles German", async () => {
       var bilaraData = await bd.initialize();
       var skr = await new Seeker2({
         bilaraData,
@@ -1237,6 +1241,8 @@ typeof describe === "function" &&
         maxResults: 1000,
         minLang: 3,
         pattern: "wurzel des leidens",
+        refAuthor: "sujato",
+        refLang: "en",
         searchLang: "de",
         showMatchesOnly: true,
         sortLines: undefined,
@@ -1244,7 +1250,8 @@ typeof describe === "function" &&
         types: ["root", "translation"],
       });
 
-      should.deepEqual(skr.findArgs(["wurzel des leidens -ml 3 -l de"]), {
+      let args = skr.findArgs(["wurzel des leidens -ml 3 -l de"]);
+      should.deepEqual(args, {
         author: "sabbamitta",
         includeUnpublished: false,
         lang: "de",
@@ -1255,13 +1262,15 @@ typeof describe === "function" &&
         minLang: 3,
         pattern: "wurzel des leidens",
         searchLang: "de",
+        refAuthor: "sujato",
+        refLang: "en",
         showMatchesOnly: true,
         sortLines: undefined,
         tipitakaCategories: undefined,
         types: ["root", "translation"],
       });
     });
-    it("findArgs(...) author", async () => {
+    it("TESTTESTfindArgs(...) author", async () => {
       let bilaraData = await bd.initialize();
       let pattern = "root of suffering";
       let skr = await new Seeker2({
@@ -1525,7 +1534,7 @@ typeof describe === "function" &&
       should(mld0.bilaraPaths[1]).match(/de.*sn12.27/);
       should(mld0.score).equal(1.026);
     });
-    it("TESTTESTfind(...) finds Deutsch 'blind'", async () => {
+    it("find(...) finds Deutsch 'blind'", async () => {
       //bd.logLevel = 'info'
       bd.log("initializing");
       var bilaraData = await bd.initialize();

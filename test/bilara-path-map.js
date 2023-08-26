@@ -133,7 +133,7 @@
             //commentPath('an/an1/an1.1-10','en','sujato'),
         ]);
     });
-    it("TESTTESTtrilingualPaths(suid) sujato/soma",async()=>{
+    it("trilingualPaths(suid) sujato/soma",async()=>{
       var bpm = await new BilaraPathMap().initialize();
       let suid = "thig1.1";
       let pathRoot = rootPath('kn/thig/thig1.1');
@@ -314,7 +314,7 @@
             }
         });
     });
-    it("TESTTESTlangAuthorRegExp()", () => {
+    it("langAuthorRegExp()", () => {
       let reSoma = BilaraPathMap.langAuthorRegExp("en", "soma");
       should(reSoma.test("a/b/c/d/eeeeee-en-soma.json")).equal(true);
       should(reSoma.test("a/b/c/d/eeeeee-it-soma.json")).equal(false);

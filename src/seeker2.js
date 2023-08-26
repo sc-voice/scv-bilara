@@ -617,6 +617,8 @@
         maxDoc,
         minLang,
         matchHighlight,
+        refLang,
+        refAuthor,
         sortLines,
         tipitakaCategories,
         lang,
@@ -722,6 +724,8 @@
           maxResults,
           minLang=2,
           pattern,
+          refAuthor = "sujato",
+          refLang = "en",
           searchLang,
           showMatchesOnly,
           sortLines,
@@ -798,15 +802,17 @@
             }
             if (0) {
               mldOpts = {
-                refLang: "en",
-                refAuthor: "sujato",
+                refLang,
+                refAuthor,
                 lang,
                 langAuthor: "sabbamitta",
               }
               mld = await bd.trilingualDoc(suttaRef, mldOpts);
+              suid === 'mn1' && 
+                console.log(msg, mldOpts, findArgs, !!mld);
+            } else {
+              mld = await bd.loadMLDoc(mldOpts);
             }
-            mld = await bd.loadMLDoc(mldOpts);
-            suid === 'mn1' && console.log(msg, mldOpts, findArgs, !!mld);
             var mldBilaraPaths = mld.bilaraPaths.sort();
             this.debug(`slowFind() -> loadMLDoc`, { mldBilaraPaths });
             if (mldBilaraPaths.length < minLang) {

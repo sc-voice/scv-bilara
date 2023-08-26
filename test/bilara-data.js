@@ -97,7 +97,7 @@
         should(bd.authors.sujato.type).equal('translator');
         should(bd.authors.sabbamitta.type).equal('translator');
     });
-    it("TESTTESTsyncEbtData() loads EBT-data", async() =>{
+    it("syncEbtData() loads EBT-data", async() =>{
         var bd = new BilaraData();
         //bd.logLevel = 'info';
         let res = await bd.syncEbtData();
@@ -404,7 +404,7 @@
             done();
         } catch(e) { done(e); } })();
     });
-    it("TESTTESTdocPaths(...) filepath for scid", async()=>{
+    it("docPaths(...) filepath for scid", async()=>{
       await bd.initialize();
 
       // Object args
@@ -803,7 +803,7 @@
         var mld = await bd.loadMLDoc("an1.9/de/sabbamitta");
         should.deepEqual(mld.segMap['an1.9:1.0'], an1_9);
     });
-    it("TESTTESTtrilingualDoc(...) ", async()=>{
+    it("trilingualDoc(...) ", async()=>{
         await bd.initialize();
         let rootLang = "pli";
         let rootAuthor = "ms";
