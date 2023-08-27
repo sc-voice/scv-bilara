@@ -9,7 +9,7 @@
   const { MerkleJson } = require("merkle-json");
   const { Memoizer, Files } = require("memo-again");
   const FuzzyWordSet = require("./fuzzy-word-set");
-  const { BilaraPath, AuthorsV2 } = require("scv-esm");
+  const { BilaraPath, SuttaRef, AuthorsV2 } = require("scv-esm");
   const MLDoc = require("./ml-doc");
   const Pali = require("./pali");
   const Unicode = require("./unicode");
@@ -612,6 +612,19 @@
 
       types = types || ["root", "translation"];
 
+      if (docLang == null) {
+        if (SuttaCentralId.test(pattern)) {
+          let pats = pattern.split(',');
+          let [ segref, patLang, patAuthor ] = pats[0].split("/");
+          patLang && (docLang = patLang);
+          docLang = patLang || lang;
+          patAuthor && (docAuthor = patAuthor);
+        } else {
+          docLang = lang;
+        }
+      }
+      docAuthor = docAuthor || AuthorsV2.langAuthor(docLang);;
+
       return {
         author,
         docLang,
@@ -740,6 +753,7 @@
           showMatchesOnly,
           sortLines,
           tipitakaCategories,
+          trilingual,
           types,
         } = findArgs;
         var bd = this.bilaraData;
@@ -818,8 +832,6 @@
                 docAuthor,
               }
               mld = await bd.trilingualDoc(suttaRef, mldOpts);
-              suid === 'mn1' && 
-                console.log(msg, mldOpts, findArgs, !!mld);
             } else {
               mld = await bd.loadMLDoc(mldOpts);
             }

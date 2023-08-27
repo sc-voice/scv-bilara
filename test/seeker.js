@@ -783,7 +783,7 @@ typeof describe === "function" &&
       should.deepEqual(res.mlDocs.map(md=>md.suid), ["thig1.1", "thig1.2"]);
       should.deepEqual(res.mlDocs.map(md=>md.author_uid), ["soma", "soma"]);
     });
-    it("TESTTESTfind(...) finds an1.2", async () => {
+    it("find(...) finds an1.2", async () => {
       var maxResults = 3;
       var skr = await new Seeker({
         maxResults,
@@ -1174,7 +1174,7 @@ typeof describe === "function" &&
         `${en_suj}sn/sn15/sn15.19_translation-en-sujato.json`,
       ]);
     });
-    it("TESTTESTfindArgs(...) => thig1.1/en/soma, thig1.2/en/soma ", async () => {
+    it("findArgs(...) => thig1.1..., thig1.2...", async () => {
       var bilaraData = await bd.initialize();
       var skr = await new Seeker({
         bilaraData,
@@ -1184,6 +1184,8 @@ typeof describe === "function" &&
       let res = skr.findArgs([`${pattern}`]);
       should(res).properties({
         includeUnpublished: false,
+        docLang: 'en',
+        docAuthor: 'soma',
         lang: "en",
         languages: ["pli", "en"],
         matchHighlight: "\u001b[38;5;121m$&\u001b[0m",
@@ -1210,8 +1212,8 @@ typeof describe === "function" &&
       let args = skr.findArgs([`-l jpn ${pattern}`]);
       should.deepEqual(args, {
         author: 'kaz',
-        docAuthor: undefined,
-        docLang: undefined,
+        docAuthor: 'kaz',
+        docLang: 'jpn',
         includeUnpublished: false,
         lang: "jpn",
         langAuthor: 'kaz',
@@ -1238,8 +1240,8 @@ typeof describe === "function" &&
 
       should.deepEqual(skr.findArgs(["wurzel des leidens -ml3 -l de"]), {
         author: "sabbamitta",
-        docAuthor: undefined,
-        docLang: undefined,
+        docAuthor: 'sabbamitta',
+        docLang: 'de',
         includeUnpublished: false,
         lang: "de",
         langAuthor: 'sabbamitta',
@@ -1261,8 +1263,8 @@ typeof describe === "function" &&
       let args = skr.findArgs(["wurzel des leidens -ml 3 -l de"]);
       should.deepEqual(args, {
         author: "sabbamitta",
-        docAuthor: undefined,
-        docLang: undefined,
+        docAuthor: 'sabbamitta',
+        docLang: 'de',
         includeUnpublished: false,
         lang: "de",
         langAuthor: 'sabbamitta',
@@ -1292,8 +1294,8 @@ typeof describe === "function" &&
         .properties({ 
           author: "sujato", 
           searchLang:'en',
-          docAuthor: undefined,
-          docLang: undefined,
+          docAuthor: 'laera-quaresma',
+          docLang: 'pt',
           refAuthor: 'sujato',
           refLang: 'en',
           lang: 'pt',
