@@ -63,6 +63,7 @@
       this.maxResults = opts.maxResults == null ? 1000 : opts.maxResults;
       this.maxDoc = opts.maxDoc == null ? 50 : opts.maxDoc;
       this.minLang = opts.minLang || 2;
+      this.trilingual = opts.trilingual || false;
     }
 
     static reWord(lang = this.lang) {
@@ -537,6 +538,7 @@
         showMatchesOnly,
         sortLines,
         tipitakaCategories,
+        trilingual = this.trilingual,
         types,
 
       } = opts;
@@ -644,6 +646,7 @@
         showMatchesOnly,
         sortLines,
         tipitakaCategories,
+        trilingual,
         types,
       };
     }
@@ -753,7 +756,7 @@
           showMatchesOnly,
           sortLines,
           tipitakaCategories,
-          trilingual,
+          trilingual=0,
           types,
         } = findArgs;
         var bd = this.bilaraData;
@@ -824,12 +827,13 @@
             if (method === "sutta_uid" && author != null && author !== "ms") {
               mldOpts.author = author;
             }
-            if (0) {
+            if (trilingual) {
               mldOpts = {
                 refLang,
                 refAuthor,
                 docLang,
                 docAuthor,
+                trilingual,
               }
               mld = await bd.trilingualDoc(suttaRef, mldOpts);
             } else {

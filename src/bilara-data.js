@@ -555,6 +555,11 @@
         author_uid: docAuthor || refAuthor,
         sutta_uid: suid,
         bilaraPaths,
+        refAuthor,
+        refLang,
+        docAuthor,
+        docLang,
+        trilingual:true,
       };
       this.debug(msg, { mldOpts });
       return new MLDoc(mldOpts).load(root);

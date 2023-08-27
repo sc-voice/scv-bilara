@@ -1199,10 +1199,11 @@ typeof describe === "function" &&
         showMatchesOnly: true,
         sortLines: undefined,
         tipitakaCategories: undefined,
+        trilingual: false,
         types: ["root", "translation"],
       });
     });
-    it("TESTTESTfindArgs(...) handls jpn ", async () => {
+    it("findArgs(...) handls jpn ", async () => {
       var bilaraData = await bd.initialize();
       var skr = await new Seeker({
         bilaraData,
@@ -1229,10 +1230,11 @@ typeof describe === "function" &&
         showMatchesOnly: true,
         sortLines: undefined,
         tipitakaCategories: undefined,
+        trilingual: false,
         types: ["root", "translation"],
       });
     });
-    it("TESTTESTfindArgs(...) handles German", async () => {
+    it("findArgs(...) handles German", async () => {
       var bilaraData = await bd.initialize();
       var skr = await new Seeker({
         bilaraData,
@@ -1257,6 +1259,7 @@ typeof describe === "function" &&
         showMatchesOnly: true,
         sortLines: undefined,
         tipitakaCategories: undefined,
+        trilingual: false,
         types: ["root", "translation"],
       });
 
@@ -1280,10 +1283,11 @@ typeof describe === "function" &&
         showMatchesOnly: true,
         sortLines: undefined,
         tipitakaCategories: undefined,
+        trilingual: false,
         types: ["root", "translation"],
       });
     });
-    it("TESTTESTfindArgs(...) author", async () => {
+    it("findArgs(...) author", async () => {
       let bilaraData = await bd.initialize();
       let pattern = "root of suffering";
       let skr = await new Seeker({
@@ -2012,12 +2016,12 @@ typeof describe === "function" &&
       should(res.mlDocs.length).above(0);
       let mld0 = res.mlDocs[0];
       should(mld0.author_uid).equal("soma");
-      should(res.bilaraPaths.length).equal(2);
       let segments = mld0.segments();
       should(segments[4].en).match(/“Sleep with ease, Elder,/);
       should.deepEqual(mld0.langSegs, { pli: 9, en: 9 });
       should(res.lang).equal("en");
       should(mld0.sutta_uid).equal("thig1.1");
+      should(res.bilaraPaths.length).equal(2);
     });
     it("slowFindPhrase(...) => trilingual", async () => {
       let maxResults = 1;
@@ -2105,5 +2109,33 @@ typeof describe === "function" &&
           `${de_sab}dn/dn26_translation-de-sabbamitta.json:1`,
         ],
       });
+    });
+    it("TESTTESTfind(...) trilingual thig1.1/en/soma", async () => {
+      let bilaraData = new BilaraData();
+      let skr = await new Seeker({
+        bilaraData,
+        logger: bilaraData,
+        trilingual: true,
+      }).initialize();
+      let findArgs = skr.findArgs([
+        {
+          pattern: "thig1.1/en/soma",
+        },
+      ]);
+      let res = await skr.slowFind(findArgs);
+      should(res.method).equal("sutta_uid");
+      should(res.mlDocs.length).above(0);
+      let mld0 = res.mlDocs[0];
+      should(mld0.author_uid).equal("soma");
+      let segments = mld0.segments();
+      should(segments[4]).properties({
+        en: '“Sleep with ease, Elder, ',
+        ref: 'Sleep softly, little nun, ',
+        pli: '“Sukhaṁ supāhi therike, ',
+      });
+      should.deepEqual(mld0.langSegs, { pli: 9, en: 9, ref: 9});
+      should(res.lang).equal("en");
+      should(mld0.sutta_uid).equal("thig1.1");
+      should(res.bilaraPaths.length).equal(3);
     });
   });

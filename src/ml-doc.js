@@ -32,6 +32,13 @@
       this.title = opts.title;
       this.segsMatched = opts.segsMatched;
       this.langSegs = opts.langSegs;
+      if (opts.trilingual) {
+        this.trilingual = true;
+        this.docLang = opts.docLang;
+        this.docAuthor = opts.docAuthor;
+        this.refLang = opts.refLang || 'en';
+        this.refAuthor = opts.refAuthor || 'sujato';
+      }
       Object.defineProperty(this, "unicode", {
         value: opts.unicode || new Unicode(),
       });
@@ -151,10 +158,16 @@
     }
 
     async load(root = BILARA_PATH) {
+      const msg = "MLDoc.load() ";
       try {
         var {
           segMap,
           bilaraPaths,
+          docLang,
+          docAuthor,
+          refLang,
+          refAuthor,
+          trilingual,
         } = this;
         this.langSegs = {};
         let langMap = {};
@@ -168,8 +181,11 @@
           var lang = isTrans || isRoot
             ? parts.lang
             : parts.type;
+          if (trilingual && parts.author_uid === refAuthor) {
+            lang = 'ref';
+          }
           if (langMap[lang]) {
-            this.debug(`MLDoc.load skipping: ${bilaraPaths[ip]}`);
+            this.debug(`${msg} skipping: ${bilaraPaths[ip]}`);
             fh && fh.close();
             continue;
           }
@@ -184,11 +200,11 @@
               };
               p_bp.push(bpe);
             } catch(e) {
-              this.warn(`Could not read Bilara file:`, bp);
+              this.warn(`${msg} Could not read Bilara file:`, bp);
               throw e;
             }
           } else {
-            this.log(`MLDoc.load() path not found:${bp}`);
+            this.log(`${msg} path not found:${bp}`);
           }
         }
 
@@ -208,7 +224,7 @@
               m[lang] = strings[k];
             });
           } catch(e) {
-            this.warn(`Could not read Bilara file:`, bp);
+            this.warn(`${msg} Could not read Bilara file:`, bp);
             throw e;
           }
         }
@@ -216,7 +232,7 @@
 
         return this;
       } catch (e) {
-        this.warn(`load()`, e.message);
+        this.warn(msg, e.message);
         throw e;
       }
     }

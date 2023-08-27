@@ -822,7 +822,7 @@
         should.deepEqual(seg2_1, {
           scid: 'thig1.1:1.1',
           pli: "“Sukhaṁ supāhi therike, ",
-          en: '“Sleep with ease, Elder, ',
+          ref: '“Sleep with ease, Elder, ',
           de: 'Schlafe sanft, kleine Nonne, ',
         });
     });
