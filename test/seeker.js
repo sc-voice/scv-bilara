@@ -1287,6 +1287,24 @@ typeof describe === "function" &&
         types: ["root", "translation"],
       });
     });
+    it("findArgs(...) -l de root of suffering", async()=>{
+      let bilaraData = new BilaraData();
+      let skr = await new Seeker({
+        bilaraData,
+        logger: bilaraData,
+        trilingual: true,
+      }).initialize();
+      let findArgs = skr.findArgs([{
+        pattern: "-l de root of suffering -ra soma",
+        lang: "de",
+      }]);
+      should(findArgs).properties({
+        docLang: 'de',
+        docAuthor: 'sabbamitta',
+        refLang: 'en',
+        refAuthor: 'soma',
+      });
+    });
     it("findArgs(...) author", async () => {
       let bilaraData = await bd.initialize();
       let pattern = "root of suffering";
@@ -2110,7 +2128,34 @@ typeof describe === "function" &&
         ],
       });
     });
-    it("TESTTESTfind(...) trilingual thig1.1/en/soma", async () => {
+    it("TESTTESTfind(...) trilingual -l de root of suffering", async()=>{
+      let bilaraData = new BilaraData();
+      let skr = await new Seeker({
+        bilaraData,
+        logger: bilaraData,
+        trilingual: true,
+      }).initialize();
+      let findArgs = skr.findArgs([{
+        pattern: "root of suffering",
+        docLang: "de",
+      }]);
+      let res = await skr.slowFind(findArgs);
+      should(res.method).equal("phrase");
+      should(res.mlDocs.length).above(0);
+      let mld0 = res.mlDocs[0];
+      should(mld0.author_uid).equal("sabbamitta");
+      let segments = mld0.segments();
+      should(segments[4]).properties({
+        ref: 'For desire is the \u001b[38;5;121mroot of suffering\u001b[0m.’” ',
+        de: 'Denn Sehnen ist die Wurzel des Leidens.‘“ ',
+        pli: 'Chando hi mūlaṁ dukkhassā’”ti. ',
+      });
+      should.deepEqual(mld0.langSegs, { pli: 55, de: 54, ref: 54});
+      should(mld0.sutta_uid).equal("sn42.11");
+      should(res.bilaraPaths.length).equal(18);
+      should(res.lang).equal("en");
+    });
+    it("find(...) trilingual thig1.1/en/soma", async () => {
       let bilaraData = new BilaraData();
       let skr = await new Seeker({
         bilaraData,
@@ -2131,6 +2176,62 @@ typeof describe === "function" &&
       should(segments[4]).properties({
         en: '“Sleep with ease, Elder, ',
         ref: 'Sleep softly, little nun, ',
+        pli: '“Sukhaṁ supāhi therike, ',
+      });
+      should.deepEqual(mld0.langSegs, { pli: 9, en: 9, ref: 9});
+      should(res.lang).equal("en");
+      should(mld0.sutta_uid).equal("thig1.1");
+      should(res.bilaraPaths.length).equal(3);
+    });
+    it("find(...) thig1.1 -ra soma", async () => {
+      let bilaraData = new BilaraData();
+      let skr = await new Seeker({
+        bilaraData,
+        logger: bilaraData,
+        trilingual: true,
+      }).initialize();
+      let findArgs = skr.findArgs([
+        {
+          pattern: "thig1.1 -ra soma",
+        },
+      ]);
+      let res = await skr.slowFind(findArgs);
+      should(res.method).equal("sutta_uid");
+      should(res.mlDocs.length).above(0);
+      let mld0 = res.mlDocs[0];
+      should(mld0.author_uid).equal("sujato");
+      let segments = mld0.segments();
+      should(segments[4]).properties({
+        en: 'Sleep softly, little nun, ',
+        ref: '“Sleep with ease, Elder, ',
+        pli: '“Sukhaṁ supāhi therike, ',
+      });
+      should.deepEqual(mld0.langSegs, { pli: 9, en: 9, ref: 9});
+      should(res.lang).equal("en");
+      should(mld0.sutta_uid).equal("thig1.1");
+      should(res.bilaraPaths.length).equal(3);
+    });
+    it("find(...) thig1.1 -ra sabbamitta", async () => {
+      let bilaraData = new BilaraData();
+      let skr = await new Seeker({
+        bilaraData,
+        logger: bilaraData,
+        trilingual: true,
+      }).initialize();
+      let findArgs = skr.findArgs([
+        {
+          pattern: "thig1.1 -ra sabbamitta",
+        },
+      ]);
+      let res = await skr.slowFind(findArgs);
+      should(res.method).equal("sutta_uid");
+      should(res.mlDocs.length).above(0);
+      let mld0 = res.mlDocs[0];
+      should(mld0.author_uid).equal("sujato");
+      let segments = mld0.segments();
+      should(segments[4]).properties({
+        en: 'Sleep softly, little nun, ',
+        ref: 'Schlafe sanft, kleine Nonne, ',
         pli: '“Sukhaṁ supāhi therike, ',
       });
       should.deepEqual(mld0.langSegs, { pli: 9, en: 9, ref: 9});

@@ -144,6 +144,12 @@ DESCRIPTION
     --outLegacy
         Output legacy format. (NO LONGER SUPPORTED)
 
+    -ra, --ref-author AUTHOR
+        Specify reference author (e.g., sujato)
+
+    -rl, --ref-lang ISO_LANG_2
+        Specify reference language (e.g., en)
+
     -sl, --searchLang ISO_LANG_2
         Specify ISO 2-letter language code for language to search.
         Default is determined from pattern language.
@@ -178,6 +184,7 @@ var execGit = undefined;
 var groupBy = 'line';
 var linebreak = ' ';
 var branch = 'unpublished';
+var trilingual = true;
 
 //var searchLang;
 
@@ -317,6 +324,7 @@ function outJSON(res) {
 }
 
 function outHuman(res, pattern, nLang=1) {
+  const msg = "search.outHuman() ";
   var {
       mlDocs,
       suttaRefs,
@@ -326,6 +334,10 @@ function outHuman(res, pattern, nLang=1) {
       minLang,
       lang,
       segsMatched,
+      refLang = '',
+      refAuthor = '',
+      docLang = '',
+      docAuthor = '',
   } = res;
   var refs = res.suttaRefs.map(s=>s.split('/')[0])
       .sort(SuttaCentralId.compareLow)
@@ -337,6 +349,10 @@ function outHuman(res, pattern, nLang=1) {
 languages    : translation:${res.lang} search:${searchLang} minLang:${res.minLang}
 output       : ${outFormat} color:${color} elapsed:${elapsed}s maxDoc:${res.maxDoc}
 found        : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${refs}`);
+  if (trilingual) {
+    console.log(
+`trilingual   : ${refLang}/${refAuthor} ${docLang}/${docAuthor}`);
+  }
   mlDocs.forEach((mld,im) => {
     let {suid, author_uid, lang} = mld;
     mld.segments().forEach((seg,i) => {
@@ -358,7 +374,9 @@ found        : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${
       } else {
         console.log(`scid: ${scidText}`);
         console.log(` pli: ${seg.pli || ''}`);
-        if (nLang === 3 || searchLang==='en' || lang === 'en') {
+        if (trilingual) {
+          console.log(` ref: ${seg.ref || ''}`);
+        } else if (nLang === 3 || searchLang==='en' || lang === 'en') {
           console.log(`  en: ${seg.en || ''}`);
         }
         if (searchLang !== 'pli' && searchLang !== 'en') {
@@ -421,10 +439,17 @@ function outVerse(res, pattern, n=0) {
 }
 
 function outLines(res, pattern, n=0) {
+    const msg = "search.outLines() ";
     var {
         lang,
         searchLang,
+        docLang, 
+        docAuthor,
+        refLang,
+        refAuthor,
     } = res;
+    console.log(
+      `---:pli/ms doc:${docLang}/${docAuthor} ref:${refLang}/${refAuthor}`);
     n = Number(n);
     res.mlDocs.forEach(mld => {
         var suid = mld.suid;
@@ -446,11 +471,17 @@ function outLines(res, pattern, n=0) {
                 ) &&
                 lang!=='pli' && seg.pli 
                 || '';
+            var docText = seg[docLang] || '';
+            var refText = (
+              n > 2
+            ) && seg[refLang] || '';
 
-            pliText && console.log(`${scid}: ${pliText}`);
-            enText && console.log(`${scid}: ${enText}`);
-            searchText && console.log(`${scid}: ${searchText}`);
-            langText && console.log(`${scid}: ${langText}`);
+            pliText && console.log(`${scid} ---: ${pliText}`);
+            refText && console.log(`${scid} ref: ${refText}`);
+            docText && console.log(`${scid} doc: ${docText}`);
+            //enText && console.log(`${scid}   en: ${enText}`);
+            //searchText && console.log(`${scid} find: ${searchText}`);
+            //langText && console.log(`${scid} lang: ${langText}`);
             if (!pliText && !searchText && !langText) {
                 console.log(seg);
             }
@@ -515,19 +546,19 @@ function scriptEditor(res, pattern) {
 logger.logLevel = logLevel;
 
 (async function() { try {
-    const msg = "scripts.js.search ";
-    logger.info('SEARCH: creating BilaraData');
+    const msg = "js/search() ";
+    logger.info(msg, 'creating BilaraData');
     var bilaraData = new BilaraData({
         execGit,
         branch,
         includeUnpublished,
     });
-    logger.info('SEARCH: initializing BilaraData', {sync});
+    logger.info(msg, 'initializing BilaraData', {sync});
     await bilaraData.initialize(sync);
 
-    logger.info('SEARCH: load English.wordSet');
+    logger.info(msg, 'load English.wordSet');
     let enWords = await English.wordSet({source:'file'});
-    logger.info('SEARCH: creating Seeker');
+    logger.info(msg, 'creating Seeker');
     var skr = await new Seeker({
         matchColor: color,
         maxResults,
@@ -541,12 +572,13 @@ logger.logLevel = logLevel;
         pattern,
         matchHighlight,
         showMatchesOnly,
+        trilingual,
     };
-    logger.info(`SEARCH: findOpts`, findOpts);
+    logger.info(msg, `findOpts`, findOpts);
     var msStart = Date.now();
     var res = await skr.find(findOpts);
     var secElapsed = (Date.now() - msStart)/1000;
-    logger.info(`SEARCH: find() ${secElapsed.toFixed(1)}s`);
+    logger.info(msg, `find() ${secElapsed.toFixed(1)}s`);
     if (outFormat === 'verse') {
         if (groupBy === 'verse1') {
             outVerse(res, pattern, 1);

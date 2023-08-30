@@ -803,7 +803,7 @@
         var mld = await bd.loadMLDoc("an1.9/de/sabbamitta");
         should.deepEqual(mld.segMap['an1.9:1.0'], an1_9);
     });
-    it("TESTTESTtrilingualDoc(...) ", async()=>{
+    it("trilingualDoc(...) ", async()=>{
         await bd.initialize();
         let rootLang = "pli";
         let rootAuthor = "ms";

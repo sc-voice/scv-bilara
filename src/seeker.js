@@ -533,7 +533,7 @@
         minLang, // minimum number of languages
         pattern: rawPattern,
         refAuthor = 'sujato',
-        refLang = 'en',
+        refLang,
         searchLang,
         showMatchesOnly,
         sortLines,
@@ -574,13 +574,26 @@
           if (!isNaN(n) && 0 < n && n <= 3) {
             minLang = n;
           }
+        } else if (arg === "-ra" || arg === "--ref-author") {
+          refAuthor = argv[++i];
+          trilingual = true;
+        } else if (arg === "-rl" || arg === "--ref-lang") {
+          refLang = argv[++i];
+          trilingual = true;
         } else if (arg === "-l" || arg === "--lang") {
-          (arg = argv[++i]) && (lang = arg);
+          if ((arg = argv[++i])) {
+            lang = arg;
+            docLang = arg;
+          }
         } else if (arg === "-sl" || arg === "--searchLang") {
           (arg = argv[++i]) && (searchLang = arg);
         } else {
           pattern = pattern ? `${pattern} ${arg}` : arg;
         }
+      }
+      if (refLang == null) {
+        let info = AuthorsV2.authorInfo(refAuthor);
+        refLang = info && info.lang;
       }
 
       // STEP 2. Assign default values
@@ -611,11 +624,32 @@
       if (!author) {
         author = this.author;
       }
+      let isSuttaRef = SuttaCentralId.test(pattern);
+      if (trilingual) {
+        if (docAuthor == null) {
+          if (isSuttaRef) {
+            let [ patSuid, patLang, patAuthor ] = pattern.split('/');
+            let info = AuthorsV2.authorInfo(patAuthor);
+            if (info) {
+              docAuthor = info.author;
+              docLang = docLang || info.lang;
+            }
+          }
+          docAuthor = docAuthor || 
+            AuthorsV2.langAuthor(docLang) || 
+            'sujato';
+        }
+        if (docLang == null) {
+          let info = AuthorsV2.authorInfo(docAuthor);
+          docLang = info && info.lang;
+        }
+      }
 
       types = types || ["root", "translation"];
 
+      //console.log(msg, {docLang, docAuthor, isSuttaRef});
       if (docLang == null) {
-        if (SuttaCentralId.test(pattern)) {
+        if (isSuttaRef) {
           let pats = pattern.split(',');
           let [ segref, patLang, patAuthor ] = pats[0].split("/");
           patLang && (docLang = patLang);
@@ -694,6 +728,10 @@
         maxResults, 
         pattern,
         author,
+        docLang,
+        docAuthor,
+        refLang, 
+        refAuthor,
       } = opts;
       var bd = this.bilaraData;
       var examples = bd.examples;
@@ -721,8 +759,7 @@
       if (!languages.includes(lang)) {
         languages = [...languages.filter((l) => l !== "en"), lang];
       }
-      this.debug(msg, { pattern, lang }, suttaRefs);
-
+      //console.log(msg, {suttaRefs, pattern, lang});
       return {
         lang,
         maxResults,
@@ -731,6 +768,10 @@
         uids,
         suttaRefs,
         languages,
+        docLang,
+        docAuthor,
+        refLang, 
+        refAuthor,
       };
     }
 
@@ -751,12 +792,12 @@
           minLang=2,
           pattern,
           refAuthor = "sujato",
-          refLang = "en",
+          refLang,
           searchLang,
           showMatchesOnly,
           sortLines,
           tipitakaCategories,
-          trilingual=0,
+          trilingual,
           types,
         } = findArgs;
         var bd = this.bilaraData;
@@ -771,7 +812,10 @@
         }
 
         if (isSuidPattern) {
-          let res = this.slowFindId({ author, lang, languages, maxResults, pattern });
+          let res = this.slowFindId({ 
+            author, lang, languages, maxResults, pattern,
+            docLang, docAuthor, refLang, refAuthor,
+          });
           lang = res.lang;
           maxResults = res.maxResults;
           method = res.method;
@@ -801,9 +845,10 @@
         var bilaraPaths = [];
         var matchingRefs = [];
         var msStart = Date.now();
+        //console.log(msg, suttaRefs);
         for (var i = 0; i < suttaRefs.length; i++) {
           let suttaRef = suttaRefs[i];
-          let [suid, refLang, authorId] = suttaRef.split("/");
+          let [suid, srLang, authorId] = suttaRef.split("/");
           author = authorId || author;
           let suttaInfo = bd.suttaInfo(suttaRef);
           if (!suttaInfo) {
@@ -812,7 +857,7 @@
           }
           let isBilDoc = bd.isBilaraDoc({
             suid,
-            lang: refLang || lang,
+            lang: srLang || docLang || lang,
             author,
             includeUnpublished,
           });
@@ -840,8 +885,8 @@
               mld = await bd.loadMLDoc(mldOpts);
             }
             var mldBilaraPaths = mld.bilaraPaths.sort();
-            this.debug(`slowFind() -> loadMLDoc`, { mldBilaraPaths });
             if (mldBilaraPaths.length < minLang) {
+              //console.log(msg, `skipping ${mld.suid} ${mld.title}`);
               this.debug(
                 `skipping ${mld.suid} minLang`,
                 `${mldBilaraPaths.length}<${minLang} [${languages}]`
@@ -849,10 +894,13 @@
               continue;
             }
             bilaraPaths = [...bilaraPaths, ...mldBilaraPaths];
+            let filterLang = trilingual && searchLang === refLang
+              ? 'ref'
+              : searchLang;
             var resFilter = mld.filterSegments({
               pattern,
               resultPattern,
-              languages: [searchLang],
+              languages: [filterLang],
               showMatchesOnly,
               method,
             });
@@ -928,7 +976,18 @@
           bilaraPaths,
           suttaRefs: matchingRefs,
           mlDocs,
+          refLang,
+          refAuthor,
+          docLang,
+          docAuthor,
         };
+        if (trilingual) {
+          result.trilingual = true;
+          result.refLang = refLang;
+          result.refAuthor = refAuthor;
+          result.docLang = docLang;
+          result.docAuthor = docAuthor;
+        }
         return result;
       } catch (e) {
         this.warn(`slowFind()`, JSON.stringify(findArgs), e.message);

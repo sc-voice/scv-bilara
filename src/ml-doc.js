@@ -172,6 +172,7 @@
         this.langSegs = {};
         let langMap = {};
         var p_bp = [];
+        //console.log(msg, {bilaraPaths, docAuthor, refAuthor});
         for (var ip = 0; ip < bilaraPaths.length; ip++) {
           var parts = BilaraPath.pathParts(bilaraPaths[ip]);
           var bp = path.join(root, parts.bilaraPath);
@@ -185,7 +186,7 @@
             lang = 'ref';
           }
           if (langMap[lang]) {
-            this.debug(`${msg} skipping: ${bilaraPaths[ip]}`);
+            //console.log(msg, `skipping: ${bilaraPaths[ip]}`, {lang});
             fh && fh.close();
             continue;
           }

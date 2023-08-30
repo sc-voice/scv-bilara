@@ -525,7 +525,7 @@
       let {
         rootLang = 'pli',
         rootAuthor = 'ms',
-        refLang = 'en',
+        refLang,
         refAuthor = 'sujato',
         docLang = suttaRef.lang,
         docAuthor = suttaRef.author,
@@ -562,7 +562,8 @@
         trilingual:true,
       };
       this.debug(msg, { mldOpts });
-      return new MLDoc(mldOpts).load(root);
+      let mld =  new MLDoc(mldOpts).load(root);
+      return mld;
     }
 
     async loadMLDocLegacy(suidRef) {
@@ -899,6 +900,7 @@
     }
 
     sutta_uidSearch(pattern, maxResults = 5) {
+      const msg = 'BilaraData.sutta_uidSearch() ';
       var method = "sutta_uid";
       var uids = this.suttaList(pattern).slice(0, maxResults);
       var lang = undefined;

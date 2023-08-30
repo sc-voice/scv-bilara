@@ -166,6 +166,7 @@
             refAuthor = 'sujato';
           }
           
+          //console.log(msg, {docLang, docAuthor, refLang, refAuthor});
           let pathMap = this.suidPaths(suid);
           let paths = Object.keys(pathMap).reduce((a,k)=>{
             a.push(pathMap[k]);
@@ -177,7 +178,7 @@
           let reDoc = (refLang !== docLang || refAuthor !== docAuthor) &&
             langAuthorRegExp(docLang, docAuthor);
 
-          return Object.keys([
+          let bilaraPaths =  Object.keys([
             ...paths.filter(p=>reRoot && reRoot.test(p)),
             ...paths.filter(p=>reRef && reRef.test(p)),
             ...paths.filter(p=>reDoc && reDoc.test(p)),
@@ -185,6 +186,8 @@
             a[p] = 1;
             return a;
           }, {}));
+
+          return bilaraPaths;
         }
 
         suidPaths(suid) {
