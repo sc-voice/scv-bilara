@@ -223,6 +223,9 @@
                 scid: k,
               });
               m[lang] = strings[k];
+              if (trilingual && refAuthor === docAuthor) {
+                m[docLang] = strings[k];
+              }
             });
           } catch(e) {
             this.warn(`${msg} Could not read Bilara file:`, bp);

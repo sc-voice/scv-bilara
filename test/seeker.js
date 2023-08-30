@@ -2128,7 +2128,33 @@ typeof describe === "function" &&
         ],
       });
     });
-    it("TESTTESTfind(...) trilingual -l de root of suffering", async()=>{
+    it("TESTTESTfind(...) trilingual root of suffering", async()=>{
+      let bilaraData = new BilaraData();
+      let skr = await new Seeker({
+        bilaraData,
+        logger: bilaraData,
+        trilingual: true,
+      }).initialize();
+      let findArgs = skr.findArgs([{
+        pattern: "root of suffering",
+      }]);
+      let res = await skr.slowFind(findArgs);
+      should(res.method).equal("phrase");
+      should(res.mlDocs.length).above(0);
+      let mld0 = res.mlDocs[0];
+      should(mld0.author_uid).equal("sujato");
+      let segments = mld0.segments();
+      should(segments[4]).properties({
+        ref: 'For desire is the \u001b[38;5;121mroot of suffering\u001b[0m.’” ',
+        en: 'For desire is the \u001b[38;5;121mroot of suffering\u001b[0m.’” ',
+        pli: 'Chando hi mūlaṁ dukkhassā’”ti. ',
+      });
+      should.deepEqual(mld0.langSegs, { pli: 55, ref: 54});
+      should(mld0.sutta_uid).equal("sn42.11");
+      should(res.bilaraPaths.length).equal(14);
+      should(res.lang).equal("en");
+    });
+    it("find(...) trilingual -l de root of suffering", async()=>{
       let bilaraData = new BilaraData();
       let skr = await new Seeker({
         bilaraData,
