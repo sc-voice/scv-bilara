@@ -77,6 +77,7 @@
             // htmlPath('kn/thag/thag1.113'),
             // referencePath('kn/thag/thag1.113'),
             rootPath('kn/thag/thag1.113'),
+            translationPath('kn/thag/thag1.113','de','sabbamitta'),
             translationPath('kn/thag/thag1.113','en','sujato'),
         ]);
 

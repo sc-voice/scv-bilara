@@ -1305,6 +1305,25 @@ typeof describe === "function" &&
         refAuthor: 'soma',
       });
     });
+    it("TESTTESTfindArgs(...) -l de -ra soma schlafe sanft", async () => {
+      let bilaraData = await bd.initialize();
+      let pattern = "-l de -ra soma schlafe sanft";
+      let skr = await new Seeker({
+        bilaraData,
+      }).initialize();
+
+      should(skr.findArgs([{ pattern, lang:"pt"}]))
+        .properties({ 
+          searchLang:'de',
+          docAuthor: 'sabbamitta',
+          docLang: 'de',
+          refAuthor: 'soma',
+          refLang: 'en',
+          lang: 'de',
+          langAuthor: 'sabbamitta',
+          trilingual: true,
+        });
+    });
     it("findArgs(...) author", async () => {
       let bilaraData = await bd.initialize();
       let pattern = "root of suffering";
@@ -1578,7 +1597,7 @@ typeof describe === "function" &&
       should(mld0.bilaraPaths[1]).match(/de.*sn12.27/);
       should(mld0.score).equal(1.026);
     });
-    it("find(...) finds Deutsch 'blind'", async () => {
+    it("TESTTESTfind(...) finds Deutsch 'blind'", async () => {
       //bd.logLevel = 'info'
       bd.log("initializing");
       var bilaraData = await bd.initialize();
@@ -1592,7 +1611,7 @@ typeof describe === "function" &&
       should(data.resultPattern).equal("\\bblind");
       should(data.searchLang).equal("de");
       should(data.method).equal("phrase");
-      should(data.mlDocs.length).equal(27);
+      should(data.mlDocs.length).equal(28);
       var mld0 = data.mlDocs[0];
       should(mld0.bilaraPaths[0]).match(/ud6.4/);
     });
@@ -2128,7 +2147,7 @@ typeof describe === "function" &&
         ],
       });
     });
-    it("TESTTESTfind(...) trilingual root of suffering", async()=>{
+    it("find(...) trilingual root of suffering", async()=>{
       let bilaraData = new BilaraData();
       let skr = await new Seeker({
         bilaraData,
