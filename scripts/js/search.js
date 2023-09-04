@@ -144,6 +144,12 @@ DESCRIPTION
     --outLegacy
         Output legacy format. (NO LONGER SUPPORTED)
 
+    -da, --doc-author AUTHOR
+        Specify document author (e.g., sujato)
+
+    -dl, --doc-lang ISO_LANG_2
+        Specify document language (e.g., en)
+
     -ra, --ref-author AUTHOR
         Specify reference author (e.g., sujato)
 
@@ -369,16 +375,65 @@ found        : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${
         scid,
         `\u001b[0m`,
       ].join('');
+      switch (nLang) {
+        case 1:
+          console.log(`${scidText}: ${seg[searchLang]}`);
+          break;
+        case 2: 
+          if (trilingual) {
+            console.log(`scid: ${scidText}`);
+            if (docAuthor !== refAuthor) {
+              console.log(` ref: ${seg.ref || ''}`);
+              console.log(` ${docLang}: ${seg[docLang] || ''}`);
+            } else {
+              console.log(` pli: ${seg.pli || ''}`);
+              console.log(` ${docLang}: ${seg[docLang] || ''}`);
+            }
+          } else {
+            console.log(`scid: ${scidText}`);
+            console.log(` pli: ${seg.pli || ''}`);
+            console.log(`  en: ${seg.en || ''}`);
+            if (searchLang !== 'pli' && searchLang !== 'en') {
+              var text = seg[searchLang] || '';
+              console.log(`  ${searchLang}: ${text}`);
+            } else if (lang !== 'pli' && lang !== 'en') {
+              var text = seg[lang] || '';
+              console.log(`  ${lang}: ${text}`);
+            }
+          }
+          break;
+        case 3:
+        default:
+          if (trilingual) {
+            console.log(`scid: ${scidText}`);
+            console.log(` pli: ${seg.pli || ''}`);
+            console.log(` ref: ${seg.ref || ''}`);
+            console.log(` ${docLang}: ${seg[docLang] || ''}`);
+          } else {
+            console.log(`scid: ${scidText}`);
+            console.log(` pli: ${seg.pli || ''}`);
+            console.log(`  en: ${seg.en || ''}`);
+            if (searchLang !== 'pli' && searchLang !== 'en') {
+              var text = seg[searchLang] || '';
+              console.log(`  ${searchLang}: ${text}`);
+            } else if (lang !== 'pli' && lang !== 'en') {
+              var text = seg[lang] || '';
+              console.log(`  ${lang}: ${text}`);
+            }
+          }
+          break;
+      }
       if (nLang === 1) {
         console.log(`${scidText}: ${seg[searchLang]}`);
+      } else if (trilingual) {
+        console.log(`scid: ${scidText}`);
+        console.log(` pli: ${seg.pli || ''}`);
+        docAuthor !== refAuthor && console.log(` ref: ${seg.ref || ''}`);
+        console.log(` ${docLang}: ${seg[docLang] || ''}`);
       } else {
         console.log(`scid: ${scidText}`);
         console.log(` pli: ${seg.pli || ''}`);
-        if (trilingual) {
-          console.log(` ref: ${seg.ref || ''}`);
-        } else if (nLang === 3 || searchLang==='en' || lang === 'en') {
-          console.log(`  en: ${seg.en || ''}`);
-        }
+        console.log(`  en: ${seg.en || ''}`);
         if (searchLang !== 'pli' && searchLang !== 'en') {
           var text = seg[searchLang] || '';
           console.log(`  ${searchLang}: ${text}`);
