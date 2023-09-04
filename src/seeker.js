@@ -521,7 +521,7 @@
       var {
         author,
         docAuthor,
-        docLang,
+        docLang = opts.lang,
         includeUnpublished = this.includeUnpublished,
         lang,
         langAuthor,
@@ -574,6 +574,12 @@
           if (!isNaN(n) && 0 < n && n <= 3) {
             minLang = n;
           }
+        } else if (arg === "-da" || arg === "--doc-author") {
+          docAuthor = argv[++i];
+          trilingual = true;
+        } else if (arg === "-dl" || arg === "--doc-lang") {
+          docLang = argv[++i];
+          trilingual = true;
         } else if (arg === "-ra" || arg === "--ref-author") {
           refAuthor = argv[++i];
           trilingual = true;
@@ -732,6 +738,7 @@
         docAuthor,
         refLang, 
         refAuthor,
+        trilingual,
       } = opts;
       var bd = this.bilaraData;
       var examples = bd.examples;
@@ -751,6 +758,11 @@
           .join(",");
       }
       pattern = pattern.replace(/:[^/,]*/g, ''); // remove segment refs
+      if (trilingual) { 
+        // trilingual always uses pli, so remove language bias
+        // triglingual relies on docAuthor, docLang, refLang, refAuthor
+        pattern = pattern.replace(/\/[-a-z0-9.]*/ig, '');
+      }
       let res = bd.sutta_uidSearch(pattern, maxResults);
       method = res.method;
       uids = res.uids;
@@ -759,7 +771,6 @@
       if (!languages.includes(lang)) {
         languages = [...languages.filter((l) => l !== "en"), lang];
       }
-      //console.log(msg, {suttaRefs, pattern, lang});
       return {
         lang,
         maxResults,
@@ -814,7 +825,7 @@
         if (isSuidPattern) {
           let res = this.slowFindId({ 
             author, lang, languages, maxResults, pattern,
-            docLang, docAuthor, refLang, refAuthor,
+            docLang, docAuthor, refLang, refAuthor, trilingual,
           });
           lang = res.lang;
           maxResults = res.maxResults;
@@ -845,7 +856,6 @@
         var bilaraPaths = [];
         var matchingRefs = [];
         var msStart = Date.now();
-        //console.log(msg, suttaRefs);
         for (var i = 0; i < suttaRefs.length; i++) {
           let suttaRef = suttaRefs[i];
           let [suid, srLang, authorId] = suttaRef.split("/");
@@ -857,8 +867,8 @@
           }
           let isBilDoc = bd.isBilaraDoc({
             suid,
-            lang: srLang || docLang || lang,
-            author,
+            lang: trilingual ? 'pli' : srLang || docLang || lang,
+            author: trilingual ? 'ms' : author,
             includeUnpublished,
           });
           let mld;

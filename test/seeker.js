@@ -653,6 +653,30 @@ typeof describe === "function" &&
         pli: "bhāsati vā karoti vā; ",
       });
     });
+    it("find(...) finds cp35/de", async () => {
+      var skr = await new Seeker().initialize();
+
+      let findArgs = skr.findArgs([{
+        pattern: "cp35 -ra sujato",
+        matchHighlight: false,
+        lang:"de",
+      }]);
+      var res = await skr.slowFind(findArgs);
+      should(res.method).equal("sutta_uid");
+      should.deepEqual(res.suttaRefs, ["cp35"]);
+      should.deepEqual(
+        res.mlDocs.map((mld) => mld.suid),
+        ["cp35"]
+      );
+      let [mld0] = res.mlDocs;
+      let segs0 = mld0.segments();
+      should.deepEqual(segs0[4], {
+        scid: "cp35:1.1",
+        matched: true,
+        pli: '“Susāne seyyaṁ kappemi, ',
+        ref: '“I made my bed in a charnel ground, ',
+      });
+    });
     it("find(...) finds thag1.10", async () => {
       var skr = await new Seeker().initialize();
 
@@ -1305,7 +1329,7 @@ typeof describe === "function" &&
         refAuthor: 'soma',
       });
     });
-    it("TESTTESTfindArgs(...) -l de -ra soma schlafe sanft", async () => {
+    it("findArgs(...) -l de -ra soma schlafe sanft", async () => {
       let bilaraData = await bd.initialize();
       let pattern = "-l de -ra soma schlafe sanft";
       let skr = await new Seeker({
@@ -1597,7 +1621,7 @@ typeof describe === "function" &&
       should(mld0.bilaraPaths[1]).match(/de.*sn12.27/);
       should(mld0.score).equal(1.026);
     });
-    it("TESTTESTfind(...) finds Deutsch 'blind'", async () => {
+    it("find(...) finds Deutsch 'blind'", async () => {
       //bd.logLevel = 'info'
       bd.log("initializing");
       var bilaraData = await bd.initialize();
@@ -1908,7 +1932,7 @@ typeof describe === "function" &&
         suttaRefs: ["an4.182/jpn"],
       });
     });
-    it("TESTTESfind(...) => thig1.1", async () => {
+    it("ind(...) => thig1.1", async () => {
       let bilaraData = new BilaraData();
       let skr = await new Seeker({
         bilaraData,
@@ -1924,6 +1948,37 @@ typeof describe === "function" &&
       should.deepEqual(mld0.langSegs, { pli: 9, en: 9 });
       should(res.lang).equal("en");
       should(mld0.sutta_uid).equal("thig1.1");
+    });
+    it("TESTTESTfind(...) => thig1.1 -ra soma -da sujato", async () => {
+      let bilaraData = new BilaraData();
+      let skr = await new Seeker({
+        bilaraData,
+        logger: bilaraData,
+      }).initialize();
+      let res = await skr.find({
+        pattern: "thig1.1 -ra soma -da sujato",
+      });
+      should(res.method).equal("sutta_uid");
+      should(res.bilaraPaths.length).equal(3);
+      let mld0 = res.mlDocs[0];
+      should(mld0).properties({
+        suid: 'thig1.1',
+        sutta_uid: 'thig1.1',
+        refAuthor: 'soma',
+        docAuthor: 'sujato',
+        refLang: 'en',
+        docLang: 'en',
+      });
+      should(mld0.author_uid).equal("sujato");
+      should.deepEqual(mld0.langSegs, { pli: 9, en: 9, ref:9 });
+      should(res.lang).equal("en");
+      should(mld0.sutta_uid).equal("thig1.1");
+      let segments = mld0.segments();
+      should(segments[4]).properties({
+        ref: '“Sleep with ease, Elder, ',
+        en: 'Sleep softly, little nun, ',
+        pli: '“Sukhaṁ supāhi therike, ',
+      });
     });
     it("find(...) finds mind with greed", async () => {
       var skr = await new Seeker().initialize();
