@@ -576,9 +576,11 @@
           }
         } else if (arg === "-da" || arg === "--doc-author") {
           docAuthor = argv[++i];
+          author = docAuthor; // override legacy 
           trilingual = true;
         } else if (arg === "-dl" || arg === "--doc-lang") {
           docLang = argv[++i];
+          lang = docLang; // override legacy 
           trilingual = true;
         } else if (arg === "-ra" || arg === "--ref-author") {
           refAuthor = argv[++i];
@@ -603,7 +605,7 @@
       }
 
       // STEP 2. Assign default values
-      lang = lang || language || this.lang;
+      lang = lang || language || docLang || this.lang;
       langAuthor = langAuthor || 
         AuthorsV2.langAuthor(lang, {tipitakaCategories});
       searchLang = searchLang == null 
@@ -783,6 +785,7 @@
         docAuthor,
         refLang, 
         refAuthor,
+        trilingual,
       };
     }
 
@@ -833,6 +836,7 @@
           uids = res.uids;
           suttaRefs = res.suttaRefs;
           languages = res.languages;
+          trilingual = res.trilingual;
           scoreDoc = false;
         } else {
           let res = await this.slowFindPhrase({
