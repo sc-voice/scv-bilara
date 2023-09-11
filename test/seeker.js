@@ -2390,7 +2390,7 @@ typeof describe === "function" &&
       should(mld0.sutta_uid).equal("thig1.1");
       should(res.bilaraPaths.length).equal(3);
     });
-    it("TESTTESTfind(...) sn1.2 docRefArgs en/pt", async () => {
+    it("find(...) sn1.2 docRefArgs en/pt", async () => {
       let bilaraData = new BilaraData();
       let skr = await new Seeker({
         bilaraData,
@@ -2465,6 +2465,45 @@ typeof describe === "function" &&
         pt: 'Em Savatthi. ',
       });
       should.deepEqual(mld0.langSegs, { pli: 13, pt: 13, ref: 13});
+      should(mld0.sutta_uid).equal("sn1.2");
+      should(res.bilaraPaths.length).equal(3);
+    });
+    it("TESTTESTfind(...) sn1.2 docRefArgs en/de", async () => {
+      let bilaraData = new BilaraData();
+      let skr = await new Seeker({
+        bilaraData,
+        logger: bilaraData,
+      }).initialize();
+      let docRefArgs = [
+        //'-dl pt',
+        //'-da laera-quaresma',
+        '-rl de',
+        //'-ra sujato',
+      ].join(' ');
+      let findArgs = skr.findArgs([{
+          pattern: `sn1.2 ${docRefArgs}`,
+      }]);
+      should(findArgs).properties({
+        lang: 'en',
+        author: 'sujato',
+        docLang: 'en',
+        docAuthor: 'sujato',
+        refLang: 'de',
+        refAuthor: 'sabbamitta',
+        trilingual: true,
+      });
+      let res = await skr.slowFind(findArgs);
+      should(res.method).equal("sutta_uid");
+      should(res.mlDocs.length).above(0);
+      let mld0 = res.mlDocs[0];
+      should(mld0.author_uid).equal("sujato");
+      let segments = mld0.segments();
+      should(segments[3]).properties({
+        pli: 'Sāvatthinidānaṁ. ',
+        ref: 'In Sāvatthī. ',
+        en: 'At Sāvatthī. ',
+      });
+      should.deepEqual(mld0.langSegs, { pli: 13, en: 13, ref: 13});
       should(mld0.sutta_uid).equal("sn1.2");
       should(res.bilaraPaths.length).equal(3);
     });

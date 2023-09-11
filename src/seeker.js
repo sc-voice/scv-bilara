@@ -532,7 +532,7 @@
         maxResults, // maximum number of grep files
         minLang, // minimum number of languages
         pattern: rawPattern,
-        refAuthor = 'sujato',
+        refAuthor,
         refLang,
         searchLang,
         showMatchesOnly,
@@ -599,12 +599,15 @@
           pattern = pattern ? `${pattern} ${arg}` : arg;
         }
       }
-      if (refLang == null) {
-        let info = AuthorsV2.authorInfo(refAuthor);
-        refLang = info && info.lang;
-      }
 
       // STEP 2. Assign default values
+      if (refLang == null) {
+        let info = AuthorsV2.authorInfo(refAuthor);
+        refLang = info && info.lang || 'en';
+      }
+      if (refAuthor == null) {
+        refAuthor = AuthorsV2.langAuthor(refLang);
+      }
       lang = lang || language || docLang || this.lang;
       langAuthor = langAuthor || 
         AuthorsV2.langAuthor(lang, {tipitakaCategories});
