@@ -322,9 +322,9 @@
       info = info.filter(
         (i) => (!lang || i.lang === lang) && (!author || i.author === author)
       );
-      let { authors } = this;
+      let { authorsV2 } = this;
       info.forEach((ai) => {
-        let aia = authors[ai.author] || {};
+        let aia = this.authorV2Info(ai.author) || {};
         if (ai) {
           ai.exampleVersion = Number(aia.exampleVersion) || 0;
         }
@@ -899,6 +899,10 @@
       return Authors.authorInfo(author);
     }
 
+    authorV2Info(author) {
+      return AuthorsV2.authorInfo(author);
+    }
+
     sutta_uidSearch(pattern, maxResults = 5) {
       const msg = 'BilaraData.sutta_uidSearch() ';
       var method = "sutta_uid";
@@ -1039,7 +1043,7 @@
               includeUnpublished,
             })
           ) {
-            let ainfo = this.authorInfo(author_uid);
+            let ainfo = this.authorV2Info(author_uid);
             let title = allTranslations.reduce((a, t) => {
               return a ? a : t.lang === "pli" && t.title;
             }, null);

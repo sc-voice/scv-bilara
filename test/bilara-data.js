@@ -158,7 +158,7 @@
         should(fs.existsSync(dummyPath)).equal(true);
         should(fs.existsSync(unpublishedPath)).equal(true);
     });
-    it("authorInfo() => supported author info (DEPRECATED)", async()=>{
+    it("TESTTESTauthorInfo() => supported author info (DEPRECATED)", async()=>{
         await bd.initialize();
         var ms = {
             lang: 'pli',
@@ -191,6 +191,7 @@
             exampleVersion: 1,
         };
 
+        should.deepEqual(bd.authorInfo('laera-quaresma'), undefined);
         should.deepEqual(bd.authorInfo('sabbamitta'), sabbamitta);
         should.deepEqual(bd.authorInfo('sujato'), sujato);
 
@@ -199,7 +200,35 @@
         should.deepEqual(bd.authors.sabbamitta, sabbamitta);
 
     });
-    it("suttaInfo(...) returns sutta metadata", async()=>{
+    it("TESTTESTauthorV2Info() => supported author info", async()=>{
+        await bd.initialize();
+        var sujato = {
+            lang: 'en',
+            type: "translation",
+            author: "sujato",
+            name: ["Bhikkhu Sujato"],
+            examples: ["sutta"],
+            exampleVersion: 1,
+            sutta: true,
+            vinaya: false,
+        };
+        var gnlaera = {
+            type: "translation",
+            author: "laera-quaresma",
+            examples: ["sutta"],
+            name: [
+              "Gabriel Laera", "Marco Quaresma", 'Vitor Guimarães'
+            ],
+            lang: 'pt',
+            exampleVersion: 1,
+            sutta: true,
+            vinaya: false,
+        };
+
+        should.deepEqual(bd.authorV2Info(gnlaera.author), gnlaera);
+        should.deepEqual(bd.authorV2Info(sujato.author), sujato);
+    });
+    it("TESTTESTsuttaInfo(...) returns sutta metadata", async()=>{
         await bd.initialize();
         var dn33Pli = {
             author: 'ms',
@@ -295,7 +324,7 @@
         should.deepEqual(suttaInfo[1], an4_58de);
         should.deepEqual(suttaInfo[2], an4_58en);
     });
-    it("suttaInfo(...) => thig3.8 sutta metadata", async()=>{
+    it("TESTTESTsuttaInfo(...) => thig3.8 sutta metadata", async()=>{
         await bd.initialize();
         let thigInfo = {
             suid: 'thig3.8',         
