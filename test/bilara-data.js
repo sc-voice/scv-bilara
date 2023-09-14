@@ -947,7 +947,7 @@
     } finally{
       fs.existsSync(indexLock) && fs.unlinkSync(indexLock);
     }});
-    it("oadSuttaplexJson(...)=>an3.47", async()=>{
+    it("loadSuttaplexJson(...)=>an3.47", async()=>{
       //TODO
         await bd.initialize();
         var suid = 'an3.47';

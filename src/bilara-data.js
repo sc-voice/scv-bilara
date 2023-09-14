@@ -1050,8 +1050,8 @@
             let langInfo = this.languageInfo[lang];
 
             translations.unshift({
-              author: ainfo.name,
-              author_short: ainfo.name.split(" ").pop(),
+              author: ainfo.author,
+              author_short: ainfo.name[0],
               author_uid,
               is_root: false,
               lang,
