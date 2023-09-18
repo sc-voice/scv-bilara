@@ -17,6 +17,8 @@ const {
 const { BilaraPath } = require("scv-esm");
 const LOCAL = path.join(__dirname, '../../local');
 const BILARA_DATA = path.join(LOCAL, '/bilara-data');
+var bdName = '';
+var bilaraData;
 
 function help() {
     console.log(`
@@ -43,6 +45,10 @@ DESCRIPTION
         Use "--color auto" to remove color when stdout is not a console.
         Use "--color none" to remove color.
         See https://misc.flogisoft.com/bash/tip_colors_and_formatting
+
+    -bd, --bilara-data DATA_NAME
+        specifiy name of Bilara data directory (e.g., "ebt-data"). 
+        Default is 'bilara-data'
 
     -d, --maxDoc NUMBER
         specify maximum number of documents to display. Default is 50.
@@ -207,6 +213,11 @@ for (var i = 2; i < nargs; i++) {
         linebreak = ' ';
     } else if (arg === '-b1' || arg === '--break1') {
         linebreak = '  \n';
+    } else if (arg === '-bd' || arg === '--bilara-data') {
+        bdName = process.argv[++i];
+        if (bdName === 'ebt-data') {
+          branch = 'published';
+        }
     } else if (arg === '-ll' || arg === '--logLevel') {
         logLevel = process.argv[++i];
     } else if (arg === '-f' || arg === '--filter') {
@@ -357,7 +368,12 @@ output       : ${outFormat} color:${color} elapsed:${elapsed}s maxDoc:${res.maxD
 found        : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${refs}`);
   if (trilingual) {
     console.log(
-`trilingual   : ${refLang}/${refAuthor} ${docLang}/${docAuthor}`);
+      `trilingual   :`,
+      `${refLang}/${refAuthor}`,
+      `${docLang}/${docAuthor}`,
+      bilaraData.name,
+      branch,
+    );
   }
   mlDocs.forEach((mld,im) => {
     let {suid, author_uid, lang} = mld;
@@ -381,6 +397,7 @@ found        : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${
           break;
         case 2: 
           if (trilingual) {
+            let { name } = bilaraData;
             console.log(`scid: ${scidText}`);
             if (docAuthor !== refAuthor) {
               console.log(` ref: ${seg.ref || ''}`);
@@ -583,8 +600,9 @@ logger.logLevel = logLevel;
 
 (async function() { try {
     const msg = "js/search() ";
-    logger.info(msg, 'creating BilaraData');
-    var bilaraData = new BilaraData({
+    logger.info(msg, `creating BilaraData ${bdName} ${branch}`);
+    bilaraData = new BilaraData({
+        name: bdName,
         execGit,
         branch,
         includeUnpublished,

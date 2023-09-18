@@ -8,5 +8,5 @@ npm install --save suttacentral-api@latest
 npm install --save scv-esm@latest
 npm install --save log-instance@latest
 npm install --save memo-again@latest
-#LEGACY   $DIR/js/suidmap.js
+$DIR/js/suidmap.js
 $DIR/examples
