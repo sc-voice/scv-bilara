@@ -378,10 +378,11 @@
     highlightMatch(pattern, matchHighlight) {
       var scids = this.scids();
       if (SuttaCentralId.test(pattern)) {
-        scids.forEach(scid => {
-          var seg = this.segMap[scid];
-          seg.scid = seg.scid.replace(/^.*$/, matchHighlight);
-        });
+        // scids are semantic and should never be highlighted
+        //scids.forEach(scid => {
+          //var seg = this.segMap[scid];
+          //seg.scid = seg.scid.replace(/^.*$/, matchHighlight);
+        //});
       } else {
         var rex = pattern instanceof RegExp
           ? rex : new RegExp(pattern, "gui");
