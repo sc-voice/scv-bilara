@@ -362,17 +362,16 @@ function outHuman(res, pattern, nLang=1) {
   var nRefs = res.suttaRefs.length;
   var nDocs = mlDocs.length;
   console.log(
-`pattern      : "${res.pattern}" grep:${res.resultPattern}
-languages    : translation:${res.lang} search:${searchLang} minLang:${res.minLang}
-output       : ${outFormat} color:${color} elapsed:${elapsed}s maxDoc:${res.maxDoc}
-found        : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${refs}`);
+`pattern   : "${res.pattern}" grep:${res.resultPattern}
+languages : translation:${res.lang} search:${searchLang} minLang:${res.minLang}
+output    : ${outFormat} color:${color} elapsed:${elapsed}s maxDoc:${res.maxDoc}
+found     : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${refs}`);
   if (trilingual) {
     console.log(
-      `trilingual   :`,
-      `${refLang}/${refAuthor}`,
-      `${docLang}/${docAuthor}`,
-      bilaraData.name,
-      branch,
+      `trilingual:`,
+      `doc:${docLang}/${docAuthor}`,
+      `ref:${refLang}/${refAuthor}`,
+      `src:${bilaraData.name}@${branch}`,
     );
   }
   mlDocs.forEach((mld,im) => {
