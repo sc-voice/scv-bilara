@@ -1311,6 +1311,24 @@ typeof describe === "function" &&
         types: ["root", "translation"],
       });
     });
+    it("TESTTESTfindArgs(...) -dl en sn3.3/pt ", async()=>{
+      let bilaraData = new BilaraData();
+      let lang = 'de';
+      let pattern = `-dl ${lang} sn3.3/pt`;
+      let skr = await new Seeker({
+        bilaraData,
+        logger: bilaraData,
+        trilingual: true,
+      }).initialize();
+      let findArgs = skr.findArgs([{ pattern, lang, }]);
+      should(findArgs).properties({
+        docLang: 'pt',
+        docAuthor: 'laera-quaresma',
+        refLang: 'en',
+        refAuthor: 'sujato',
+        trilingual: true,
+      });
+    });
     it("findArgs(...) -l de root of suffering", async()=>{
       let bilaraData = new BilaraData();
       let skr = await new Seeker({
@@ -2468,7 +2486,7 @@ typeof describe === "function" &&
       should(mld0.sutta_uid).equal("sn1.2");
       should(res.bilaraPaths.length).equal(3);
     });
-    it("TESTTESTfind(...) sn1.2 docRefArgs en/de", async () => {
+    it("find(...) sn1.2 docRefArgs en/de", async () => {
       let bilaraData = new BilaraData();
       let skr = await new Seeker({
         bilaraData,

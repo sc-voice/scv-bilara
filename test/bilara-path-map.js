@@ -179,7 +179,7 @@
       }), [pathRoot, ]);
 
     });
-    it("TESTTESTbilaraPaths(k) uses scv-esm suidmap",async()=>{
+    it("bilaraPaths(k) uses scv-esm suidmap",async()=>{
         let rootName = 'ebt-data';
         let root = path.join(LOCALDIR, rootName);
         var bpm = await new BilaraPathMap({root}).initialize();

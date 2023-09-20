@@ -637,19 +637,20 @@
       }
       let isSuttaRef = SuttaCentralId.test(pattern);
       if (trilingual) {
-        if (docAuthor == null) {
-          if (isSuttaRef) {
-            let [ patSuid, patLang, patAuthor ] = pattern.split('/');
-            let info = AuthorsV2.authorInfo(patAuthor);
-            if (info) {
-              docAuthor = info.author;
-              docLang = docLang || info.lang;
-            }
-          }
-          docAuthor = docAuthor || 
-            AuthorsV2.langAuthor(docLang) || 
-            'sujato';
+        if (isSuttaRef) {
+          let [ patSuid, patLang, patAuthor ] = pattern.split('/');
+          if (patLang) {
+            patAuthor = patAuthor || AuthorsV2.langAuthor(patLang);
+            docAuthor = docLang === patLang
+              ? docAuthor || patAuthor
+              : patAuthor;
+            docLang = patLang;
+          } 
+          docAuthor = docAuthor || patAuthor;
         }
+        docAuthor = docAuthor || 
+          AuthorsV2.langAuthor(docLang) || 
+          'sujato';
         if (docLang == null) {
           let info = AuthorsV2.authorInfo(docAuthor);
           docLang = info && info.lang;
