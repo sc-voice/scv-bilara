@@ -1311,7 +1311,7 @@ typeof describe === "function" &&
         types: ["root", "translation"],
       });
     });
-    it("TESTTESTfindArgs(...) -dl en sn3.3/pt ", async()=>{
+    it("findArgs(...) -dl en sn3.3/pt ", async()=>{
       let bilaraData = new BilaraData();
       let lang = 'de';
       let pattern = `-dl ${lang} sn3.3/pt`;
@@ -1324,6 +1324,24 @@ typeof describe === "function" &&
       should(findArgs).properties({
         docLang: 'pt',
         docAuthor: 'laera-quaresma',
+        refLang: 'en',
+        refAuthor: 'sujato',
+        trilingual: true,
+      });
+    });
+    it("TESTTESTfindArgs(...) -dl pt thig1.1/en/soma", async()=>{
+      let bilaraData = new BilaraData();
+      let lang = 'pt';
+      let pattern = `-dl ${lang} thig1.1/en/soma`;
+      let skr = await new Seeker({
+        bilaraData,
+        logger: bilaraData,
+        trilingual: true,
+      }).initialize();
+      let findArgs = skr.findArgs([{ pattern, lang, }]);
+      should(findArgs).properties({
+        docLang: 'en',
+        docAuthor: 'soma',
         refLang: 'en',
         refAuthor: 'sujato',
         trilingual: true,
