@@ -1198,6 +1198,16 @@ typeof describe === "function" &&
         `${en_suj}sn/sn15/sn15.19_translation-en-sujato.json`,
       ]);
     });
+    it("TESTTESTfindArgs(...) => aggaḷaṃ,", async () => {
+      var bilaraData = await bd.initialize();
+      var skr = await new Seeker({
+        bilaraData,
+      }).initialize();
+      let pattern = 'aggaḷaṃ';
+
+      let res = skr.findArgs([`${pattern}`]);
+      should(res.pattern).equal('aggaḷaṁ');
+    });
     it("findArgs(...) => thig1.1..., thig1.2...", async () => {
       var bilaraData = await bd.initialize();
       var skr = await new Seeker({
@@ -1329,7 +1339,7 @@ typeof describe === "function" &&
         trilingual: true,
       });
     });
-    it("TESTTESTfindArgs(...) -dl pt thig1.1/en/soma", async()=>{
+    it("findArgs(...) -dl pt thig1.1/en/soma", async()=>{
       let bilaraData = new BilaraData();
       let lang = 'pt';
       let pattern = `-dl ${lang} thig1.1/en/soma`;

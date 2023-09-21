@@ -545,8 +545,10 @@
       if (rawPattern == null) {
         throw new Error(`pattern is required`);
       }
+      // STEP 1. Transform Pali diacriticals
+      rawPattern = rawPattern.replace(/ṃ/gi, "ṁ");
 
-      // STEP 1. extract embeddable options
+      // STEP 2. extract embeddable options
       var argv = rawPattern.split(" ");
       var pattern = "";
       for (var i = 0; i < argv.length; i++) {
@@ -600,7 +602,7 @@
         }
       }
 
-      // STEP 2. Assign default values
+      // STEP 3. Assign default values
       if (refLang == null) {
         let info = AuthorsV2.authorInfo(refAuthor);
         refLang = info && info.lang || 'en';
