@@ -2558,8 +2558,9 @@ typeof describe === "function" &&
       let skr = await new Seeker({ bilaraData, logger: bilaraData, })
         .initialize();
       let findArgs = skr.findArgs([{
-          pattern: `thig1.1/pt -rl en -ml1`, // trilingual
+          pattern: `cnd1/pt -ra sujato -ml1`, // trilingual
       }]);
+      should(findArgs.minLang).equal(1);
       should(findArgs.docLang).equal('pt');
       should(findArgs.docAuthor).equal('laera-quaresma');
       should(findArgs.trilingual).equal(true);
@@ -2568,7 +2569,14 @@ typeof describe === "function" &&
 
       // There is no PT translation of thig1.1
       let mld0 = res.mlDocs[0];
-      should.deepEqual(mld0?.langSegs, { pli:9, ref:9 });
-      //console.log("TESTTEST", mld0);
+      should.deepEqual(mld0?.langSegs, { pli:235 });
+      let [ seg0 ] = mld0.segments();
+      should.deepEqual(seg0, {
+        scid: 'cnd1:0.1',
+        pli: 'Cūḷaniddesa ',
+        // no ref
+        // no pt
+        matched: true,
+      });
     });
   });
