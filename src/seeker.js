@@ -799,220 +799,380 @@
       const msg = "Seeker.slowFind() ";
       try {
         var msStart = Date.now();
-        var {
+        let result = findArgs.trilingual
+          ? this.slowFindTrilingual(findArgs)
+          : this.slowFindLegacy(findArgs);
+        var msElapsed = Date.now() - msStart;
+        let secs = `${(msElapsed/1000).toFixed(3)}s`;
+        logger.info(msg, findArgs.pattern, secs);
+        return result;
+      } catch (e) {
+        this.warn(msg, JSON.stringify(findArgs), e.message);
+        throw e;
+      }
+    }
+
+    async slowFindLegacy(findArgs) {
+      const msg = "Seeker.slowFindLegacy() ";
+      var msStart = Date.now();
+      var {
+        author,
+        includeUnpublished,
+        docLang,
+        docAuthor,
+        lang,
+        languages,
+        matchHighlight,
+        maxDoc,
+        maxResults,
+        minLang=2,
+        pattern,
+        refAuthor = "sujato",
+        refLang,
+        searchLang,
+        showMatchesOnly,
+        sortLines,
+        tipitakaCategories,
+        trilingual,
+        types,
+      } = findArgs;
+      var bd = this.bilaraData;
+      var examples = bd.examples;
+      var resultPattern = pattern;
+      var scoreDoc = true;
+      let method, uids, suttaRefs;
+      let isSuidPattern = SuttaCentralId.test(pattern);
+
+      if (examples[lang] && examples[lang].indexOf(pattern) >= 0) {
+        searchLang = lang;
+      }
+
+      if (isSuidPattern) {
+        let res = this.slowFindId({ 
+          author, lang, languages, maxResults, pattern,
+          docLang, docAuthor, refLang, refAuthor, trilingual,
+        });
+        lang = res.lang;
+        maxResults = res.maxResults;
+        method = res.method;
+        uids = res.uids;
+        suttaRefs = res.suttaRefs;
+        languages = res.languages;
+        scoreDoc = false;
+      } else {
+        let res = await this.slowFindPhrase({
           author,
-          includeUnpublished,
-          docLang,
-          docAuthor,
           lang,
-          languages,
-          matchHighlight,
-          maxDoc,
           maxResults,
-          minLang=2,
           pattern,
-          refAuthor = "sujato",
-          refLang,
           searchLang,
           showMatchesOnly,
           sortLines,
           tipitakaCategories,
-          trilingual,
-          types,
-        } = findArgs;
-        var bd = this.bilaraData;
-        var examples = bd.examples;
-        var resultPattern = pattern;
-        var scoreDoc = true;
-        let method, uids, suttaRefs;
-        let isSuidPattern = SuttaCentralId.test(pattern);
+        });
+        method = res.method;
+        resultPattern = res.resultPattern;
+        sortLines = res.sortLines;
+        suttaRefs = res.suttaRefs;
+      }
 
-        if (examples[lang] && examples[lang].indexOf(pattern) >= 0) {
-          searchLang = lang;
+      var mlDocs = [];
+      var segsMatched = 0;
+      var bilaraPaths = [];
+      var matchingRefs = [];
+      var msStart = Date.now();
+      for (var i = 0; i < suttaRefs.length; i++) {
+        let suttaRef = suttaRefs[i];
+        let [suid, srLang, authorId] = suttaRef.split("/");
+        author = authorId || author;
+        let suttaInfo = bd.suttaInfo(suttaRef);
+        if (!suttaInfo) {
+          this.info(`skipping ${suttaRef}`);
+          continue;
         }
-
-        if (isSuidPattern) {
-          let res = this.slowFindId({ 
-            author, lang, languages, maxResults, pattern,
-            docLang, docAuthor, refLang, refAuthor, trilingual,
-          });
-          lang = res.lang;
-          maxResults = res.maxResults;
-          method = res.method;
-          uids = res.uids;
-          suttaRefs = res.suttaRefs;
-          languages = res.languages;
-          trilingual = res.trilingual;
-          scoreDoc = false;
-        } else {
-          let res = await this.slowFindPhrase({
-            author,
+        let isBilDoc = bd.isBilaraDoc({
+          suid,
+          lang: srLang || docLang || lang,
+          author: author,
+          includeUnpublished,
+        });
+        let mld;
+        if (isBilDoc) {
+          let mldOpts = {
+            suid,
+            languages,
             lang,
-            maxResults,
-            pattern,
-            searchLang,
-            showMatchesOnly,
-            sortLines,
-            tipitakaCategories,
-          });
-          method = res.method;
-          resultPattern = res.resultPattern;
-          sortLines = res.sortLines;
-          suttaRefs = res.suttaRefs;
-        }
-
-        var mlDocs = [];
-        var segsMatched = 0;
-        var bilaraPaths = [];
-        var matchingRefs = [];
-        var msStart = Date.now();
-        for (var i = 0; i < suttaRefs.length; i++) {
-          let suttaRef = suttaRefs[i];
-          let [suid, srLang, authorId] = suttaRef.split("/");
-          author = authorId || author;
-          let suttaInfo = bd.suttaInfo(suttaRef);
-          if (!suttaInfo) {
-            this.info(`skipping ${suttaRef}`);
+            types,
+          };
+          if (method === "sutta_uid" && author != null && author !== "ms") {
+            mldOpts.author = author;
+          }
+          mld = await bd.loadMLDoc(mldOpts);
+          var mldBilaraPaths = mld.bilaraPaths.sort();
+          if (mldBilaraPaths.length < minLang) {
+            //console.log(msg, `skipping ${mld.suid} ${mld.title}`);
+            this.debug(
+              `skipping ${mld.suid} minLang`,
+              `${mldBilaraPaths.length}<${minLang} [${languages}]`
+            );
             continue;
           }
-          let isBilDoc = bd.isBilaraDoc({
-            suid,
-            lang: trilingual ? 'pli' : srLang || docLang || lang,
-            author: trilingual ? 'ms' : author,
-            includeUnpublished,
+          bilaraPaths = [...bilaraPaths, ...mldBilaraPaths];
+          let filterLang = searchLang;
+          var resFilter = mld.filterSegments({
+            pattern,
+            resultPattern,
+            languages: [filterLang],
+            showMatchesOnly,
+            method,
           });
-          let mld;
-          if (isBilDoc) {
-            let mldOpts = {
-              suid,
-              languages,
-              lang,
-              types,
-            };
-            if (method === "sutta_uid" && author != null && author !== "ms") {
-              mldOpts.author = author;
-            }
-            if (trilingual) {
-              mldOpts = {
-                refLang,
-                refAuthor,
-                docLang,
-                docAuthor,
-                trilingual,
-              }
-              mld = await bd.trilingualDoc(suttaRef, mldOpts);
+          mld.segsMatched = resFilter.matched;
+          segsMatched += mld.segsMatched;
+          if (matchHighlight) {
+            mld.highlightMatch(resultPattern, matchHighlight);
+          }
+          if (resFilter.matched === 0) {
+            this.info(`Ignoring ${mld.suid} ${pattern}`);
+          } else if (mld.bilaraPaths.length >= minLang) {
+            let segIds = Object.keys(mld.segMap);
+            if (segIds.length) {
+              mlDocs.push(mld);
+              matchingRefs.push(suttaRef);
             } else {
-              mld = await bd.loadMLDoc(mldOpts);
-            }
-            var mldBilaraPaths = mld.bilaraPaths.sort();
-            if (mldBilaraPaths.length < minLang) {
-              //console.log(msg, `skipping ${mld.suid} ${mld.title}`);
-              this.debug(
-                `skipping ${mld.suid} minLang`,
-                `${mldBilaraPaths.length}<${minLang} [${languages}]`
-              );
-              continue;
-            }
-            bilaraPaths = [...bilaraPaths, ...mldBilaraPaths];
-            let filterLang = trilingual && searchLang === refLang
-              ? 'ref'
-              : searchLang;
-            var resFilter = mld.filterSegments({
-              pattern,
-              resultPattern,
-              languages: [filterLang],
-              showMatchesOnly,
-              method,
-            });
-            mld.segsMatched = resFilter.matched;
-            segsMatched += mld.segsMatched;
-            if (matchHighlight) {
-              mld.highlightMatch(resultPattern, matchHighlight);
-            }
-            if (resFilter.matched === 0) {
-              this.info(`Ignoring ${mld.suid} ${pattern}`);
-            } else if (mld.bilaraPaths.length >= minLang) {
-              let segIds = Object.keys(mld.segMap);
-              if (segIds.length) {
-                mlDocs.push(mld);
-                matchingRefs.push(suttaRef);
-              } else {
-                this.info(`skipping ${mld.suid} segments:0`);
-              }
-            } else {
-              this.info(`skipping ${mld.suid} minLang:${minLang}`);
+              this.info(`skipping ${mld.suid} segments:0`);
             }
           } else {
-            let isBilDocUnpub = bd.isBilaraDoc({
-              suid,
-              lang: refLang || lang,
-              author,
-              includeUnpublished: true,
-            });
-            if (isBilDocUnpub) {
-              this.debug(
-                `slowFind() -> unpublished:`,
-                `${suid}/${refLang || lang}/${author}`
-              );
-            } else {
-              this.debug(`slowFind() -> loadMLDocLegacy(${suid}/${lang})`);
-              try {
-                mld = await bd.loadMLDocLegacy(suttaRef);
-                mlDocs.push(mld);
-                matchingRefs.push(suttaRef);
-                var resFilter = mld.filterSegments({
-                  pattern,
-                  resultPattern,
-                  languages: [searchLang],
-                  showMatchesOnly,
-                });
-                segsMatched += resFilter.matched;
-                mld.segsMatched = resFilter.matched;
-                if (matchHighlight) {
-                  mld.highlightMatch(resultPattern, matchHighlight);
-                }
-              } catch (e) {
-                this.warn(`suid:${suid} =>`, e.message);
+            this.info(`skipping ${mld.suid} minLang:${minLang}`);
+          }
+        } else {
+          let isBilDocUnpub = bd.isBilaraDoc({
+            suid,
+            lang: refLang || lang,
+            author,
+            includeUnpublished: true,
+          });
+          if (isBilDocUnpub) {
+            this.debug(
+              `slowFind() -> unpublished:`,
+              `${suid}/${refLang || lang}/${author}`
+            );
+          } else {
+            this.debug(`slowFind() -> loadMLDocLegacy(${suid}/${lang})`);
+            try {
+              mld = await bd.loadMLDocLegacy(suttaRef);
+              mlDocs.push(mld);
+              matchingRefs.push(suttaRef);
+              var resFilter = mld.filterSegments({
+                pattern,
+                resultPattern,
+                languages: [searchLang],
+                showMatchesOnly,
+              });
+              segsMatched += resFilter.matched;
+              mld.segsMatched = resFilter.matched;
+              if (matchHighlight) {
+                mld.highlightMatch(resultPattern, matchHighlight);
               }
+            } catch (e) {
+              this.warn(`suid:${suid} =>`, e.message);
             }
           }
         }
-        var msElapsed = Date.now() - msStart;
-        scoreDoc && mlDocs.sort(MLDoc.compare);
-        mlDocs = mlDocs.slice(0, maxDoc);
-        var result = {
-          author,
-          lang, // embeddable option
-          searchLang, // embeddable option
-          minLang, // embeddable option
-          maxDoc, // embeddable option
-          maxResults, // embeddable option
-
-          pattern,
-          //elapsed: (Date.now()-msStart)/1000, // NOT CACHEABLE!!!
-          method,
-          resultPattern,
-          segsMatched,
-          bilaraPaths,
-          suttaRefs: matchingRefs,
-          mlDocs,
-          refLang,
-          refAuthor,
-          docLang,
-          docAuthor,
-        };
-        if (trilingual) {
-          result.trilingual = true;
-          result.refLang = refLang;
-          result.refAuthor = refAuthor;
-          result.docLang = docLang;
-          result.docAuthor = docAuthor;
-        }
-        return result;
-      } catch (e) {
-        this.warn(`slowFind()`, JSON.stringify(findArgs), e.message);
-        throw e;
       }
+      scoreDoc && mlDocs.sort(MLDoc.compare);
+      mlDocs = mlDocs.slice(0, maxDoc);
+      var result = {
+        author,
+        lang, // embeddable option
+        searchLang, // embeddable option
+        minLang, // embeddable option
+        maxDoc, // embeddable option
+        maxResults, // embeddable option
+
+        pattern,
+        method,
+        resultPattern,
+        segsMatched,
+        bilaraPaths,
+        suttaRefs: matchingRefs,
+        mlDocs,
+        refLang,
+        refAuthor,
+        docLang,
+        docAuthor,
+      };
+      return result;
+    }
+
+    async slowFindTrilingual(findArgs) {
+      const msg = "Seeker.slowFindTrilingual() ";
+      var msStart = Date.now();
+      var {
+        author,
+        includeUnpublished,
+        docLang,
+        docAuthor,
+        lang,
+        languages,
+        matchHighlight,
+        maxDoc,
+        maxResults,
+        minLang=2,
+        pattern,
+        refAuthor = "sujato",
+        refLang,
+        searchLang,
+        showMatchesOnly,
+        sortLines,
+        tipitakaCategories,
+        trilingual,
+        types,
+      } = findArgs;
+      var bd = this.bilaraData;
+      var examples = bd.examples;
+      var resultPattern = pattern;
+      var scoreDoc = true;
+      let method, uids, suttaRefs;
+      let isSuidPattern = SuttaCentralId.test(pattern);
+
+      if (examples[lang] && examples[lang].indexOf(pattern) >= 0) {
+        searchLang = lang;
+      }
+
+      if (isSuidPattern) {
+        let res = this.slowFindId({ 
+          author, lang, languages, maxResults, pattern,
+          docLang, docAuthor, refLang, refAuthor, trilingual,
+        });
+        lang = res.lang;
+        maxResults = res.maxResults;
+        method = res.method;
+        uids = res.uids;
+        suttaRefs = res.suttaRefs;
+        languages = res.languages;
+        scoreDoc = false;
+      } else {
+        let res = await this.slowFindPhrase({
+          author,
+          lang,
+          maxResults,
+          pattern,
+          searchLang,
+          showMatchesOnly,
+          sortLines,
+          tipitakaCategories,
+        });
+        method = res.method;
+        resultPattern = res.resultPattern;
+        sortLines = res.sortLines;
+        suttaRefs = res.suttaRefs;
+      }
+
+      var mlDocs = [];
+      var segsMatched = 0;
+      var bilaraPaths = [];
+      var matchingRefs = [];
+      var msStart = Date.now();
+      for (var i = 0; i < suttaRefs.length; i++) {
+        let suttaRef = suttaRefs[i];
+        let [suid, srLang, authorId] = suttaRef.split("/");
+        author = authorId || author;
+        let suttaInfo = bd.suttaInfo(suttaRef);
+        if (!suttaInfo) {
+          this.info(`skipping ${suttaRef}`);
+          continue;
+        }
+        let isBilDoc = bd.isBilaraDoc({
+          suid,
+          lang: 'pli',
+          author: 'ms',
+          includeUnpublished,
+        });
+        let mld;
+        if (isBilDoc) {
+          let mldOpts = {
+            refLang,
+            refAuthor,
+            docLang,
+            docAuthor,
+            trilingual,
+          }
+          mld = await bd.trilingualDoc(suttaRef, mldOpts);
+          var mldBilaraPaths = mld.bilaraPaths.sort();
+          if (mldBilaraPaths.length < minLang) {
+            //console.log(msg, `skipping ${mld.suid} ${mld.title}`);
+            this.debug(
+              `skipping ${mld.suid} minLang`,
+              `${mldBilaraPaths.length}<${minLang} [${languages}]`
+            );
+            continue;
+          }
+          bilaraPaths = [...bilaraPaths, ...mldBilaraPaths];
+          let filterLang = searchLang === refLang ? 'ref' : searchLang;
+          var resFilter = mld.filterSegments({
+            pattern,
+            resultPattern,
+            languages: [filterLang],
+            showMatchesOnly,
+            method,
+          });
+          mld.segsMatched = resFilter.matched;
+          segsMatched += mld.segsMatched;
+          if (matchHighlight) {
+            mld.highlightMatch(resultPattern, matchHighlight);
+          }
+          if (resFilter.matched === 0) {
+            this.info(`Ignoring ${mld.suid} ${pattern}`);
+          } else if (mld.bilaraPaths.length >= minLang) {
+            let segIds = Object.keys(mld.segMap);
+            if (segIds.length) {
+              mlDocs.push(mld);
+              matchingRefs.push(suttaRef);
+            } else {
+              this.info(`skipping ${mld.suid} segments:0`);
+            }
+          } else {
+            this.info(`skipping ${mld.suid} minLang:${minLang}`);
+          }
+        } else {
+          let isBilDocUnpub = bd.isBilaraDoc({
+            suid,
+            lang: refLang || lang,
+            author,
+            includeUnpublished: true,
+          });
+          if (isBilDocUnpub) {
+            this.debug(
+              `slowFind() -> unpublished:`,
+              `${suid}/${refLang || lang}/${author}`
+            );
+          } 
+        }
+      }
+      scoreDoc && mlDocs.sort(MLDoc.compare);
+      mlDocs = mlDocs.slice(0, maxDoc);
+      var result = {
+        author,
+        lang, // embeddable option
+        searchLang, // embeddable option
+        minLang, // embeddable option
+        maxDoc, // embeddable option
+        maxResults, // embeddable option
+
+        pattern,
+        method,
+        resultPattern,
+        segsMatched,
+        bilaraPaths,
+        suttaRefs: matchingRefs,
+        mlDocs,
+        refLang,
+        refAuthor,
+        docLang,
+        docAuthor,
+        trilingual,
+      };
+      return result;
     }
 
     async slowFindPhrase(args = {}) {

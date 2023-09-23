@@ -1198,7 +1198,7 @@ typeof describe === "function" &&
         `${en_suj}sn/sn15/sn15.19_translation-en-sujato.json`,
       ]);
     });
-    it("TESTTESTfindArgs(...) => aggaḷaṃ,", async () => {
+    it("findArgs(...) => aggaḷaṃ,", async () => {
       var bilaraData = await bd.initialize();
       var skr = await new Seeker({
         bilaraData,
@@ -1731,7 +1731,7 @@ typeof describe === "function" &&
       should(data.resultPattern).equal("\\bblind");
       should(data.searchLang).equal("de");
       should(data.method).equal("phrase");
-      should(data.mlDocs.length).equal(30);
+      should(data.mlDocs.length).equal(31);
       var mld0 = data.mlDocs[0];
       should(mld0.bilaraPaths[0]).match(/ud6.4/);
     });
@@ -2552,5 +2552,23 @@ typeof describe === "function" &&
       should.deepEqual(mld0.langSegs, { pli: 13, en: 13, ref: 13});
       should(mld0.sutta_uid).equal("sn1.2");
       should(res.bilaraPaths.length).equal(3);
+    });
+    it("TESTTESTfind() untranslated sutta", async () => {
+      let bilaraData = new BilaraData();
+      let skr = await new Seeker({ bilaraData, logger: bilaraData, })
+        .initialize();
+      let findArgs = skr.findArgs([{
+          pattern: `thig1.1/pt -rl en -ml1`, // trilingual
+      }]);
+      should(findArgs.docLang).equal('pt');
+      should(findArgs.docAuthor).equal('laera-quaresma');
+      should(findArgs.trilingual).equal(true);
+      let res = await skr.slowFind(findArgs);
+      should(res.trilingual).equal(true);
+
+      // There is no PT translation of thig1.1
+      let mld0 = res.mlDocs[0];
+      should.deepEqual(mld0?.langSegs, { pli:9, ref:9 });
+      //console.log("TESTTEST", mld0);
     });
   });
