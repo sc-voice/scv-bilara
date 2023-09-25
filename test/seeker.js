@@ -2553,7 +2553,7 @@ typeof describe === "function" &&
       should(mld0.sutta_uid).equal("sn1.2");
       should(res.bilaraPaths.length).equal(3);
     });
-    it("TESTTESTfind() untranslated sutta", async () => {
+    it("find() untranslated sutta", async () => {
       let bilaraData = new BilaraData();
       let skr = await new Seeker({ bilaraData, logger: bilaraData, })
         .initialize();
@@ -2568,6 +2568,31 @@ typeof describe === "function" &&
       should(res.trilingual).equal(true);
 
       // There is no PT translation of thig1.1
+      let mld0 = res.mlDocs[0];
+      should.deepEqual(mld0?.langSegs, { pli:235 });
+      let [ seg0 ] = mld0.segments();
+      should.deepEqual(seg0, {
+        scid: 'cnd1:0.1',
+        pli: 'Cūḷaniddesa ',
+        // no ref
+        // no pt
+        matched: true,
+      });
+    });
+    it("TESTTESTfind() cnd1/pli/ms", async () => {
+      let bilaraData = new BilaraData();
+      let skr = await new Seeker({ bilaraData, logger: bilaraData, })
+        .initialize();
+      let findArgs = skr.findArgs([{
+          pattern: `cnd1/pli/ms -dl de -ra sujato -ml1`, // trilingual
+      }]);
+      should(findArgs.minLang).equal(1);
+      should(findArgs.docLang).equal('pli');
+      should(findArgs.docAuthor).equal('ms');
+      should(findArgs.trilingual).equal(true);
+      let res = await skr.slowFind(findArgs);
+      should(res.trilingual).equal(true);
+
       let mld0 = res.mlDocs[0];
       should.deepEqual(mld0?.langSegs, { pli:235 });
       let [ seg0 ] = mld0.segments();
