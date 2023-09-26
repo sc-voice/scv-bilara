@@ -1473,6 +1473,32 @@ typeof describe === "function" &&
           langAuthor: 'sujato',
         });
     });
+    it("TESTTESTfindArgs(...) docRefArgs thig1.1/en/soma", async () => {
+      let bilaraData = await bd.initialize();
+      let suid = 'thig1.1';
+      let docRefArgs = [
+        '-dl en',
+        '-da sujato',
+        '-rl pt',
+        '-ra laera-quaresma',
+      ].join(' ');
+      let pattern = `${suid}/en/soma ${docRefArgs}`;
+      let skr = await new Seeker({
+        bilaraData,
+      }).initialize();
+
+      should(skr.findArgs([{ pattern, lang:'de' }]))
+        .properties({ 
+          author: "soma", 
+          searchLang:'en',
+          refAuthor: 'laera-quaresma',
+          refLang: 'pt',
+          docAuthor: 'soma',
+          docLang: 'en',
+          lang: 'en',
+          langAuthor: 'sujato',
+        });
+    });
     it("find(...) finds pli-tv-bi-vb-sk1-75", async () => {
       if (!TEST_UNPUBLISHED) { return; }
       var maxDoc = 3;
@@ -2579,7 +2605,7 @@ typeof describe === "function" &&
         matched: true,
       });
     });
-    it("TESTTESTfind() cnd1/pli/ms", async () => {
+    it("find() cnd1/pli/ms", async () => {
       let bilaraData = new BilaraData();
       let skr = await new Seeker({ bilaraData, logger: bilaraData, })
         .initialize();

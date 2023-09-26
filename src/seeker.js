@@ -642,10 +642,10 @@
         if (isSuttaRef) {
           let [ patSuid, patLang, patAuthor ] = pattern.split('/');
           if (patLang) {
+            author = docAuthor;
             patAuthor = patAuthor || AuthorsV2.langAuthor(patLang);
-            docAuthor = docLang === patLang
-              ? docAuthor || patAuthor
-              : patAuthor;
+            docAuthor = patAuthor || docAuthor;
+            author = docAuthor;
             docLang = patLang;
           } 
           docAuthor = docAuthor || patAuthor;
