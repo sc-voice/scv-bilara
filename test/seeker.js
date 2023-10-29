@@ -1982,7 +1982,7 @@ typeof describe === "function" &&
       should(mld0.suid).equal("snp1.8");
       should(mld0.author_uid).equal("sujato");
     });
-    it("find(...) => nun -tc:vinaya", async () => {
+    it("TESTTESTfind(...) => nun -tc:vinaya", async () => {
       let bilaraData = new BilaraData();
       let maxDoc = 5;
       let skr = await new Seeker({
@@ -2000,8 +2000,10 @@ typeof describe === "function" &&
         "translation/en/brahmali/vinaya/pli-tv-kd/pli-tv-kd20_translation-en-brahmali.json",
         "root/pli/ms/vinaya/pli-tv-pvr/pli-tv-pvr2.1_root-pli-ms.json",
         "translation/en/brahmali/vinaya/pli-tv-pvr/pli-tv-pvr2.1_translation-en-brahmali.json",
-        "root/pli/ms/vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc/pli-tv-bu-vb-pc21_root-pli-ms.json",
-        "translation/en/brahmali/vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc/pli-tv-bu-vb-pc21_translation-en-brahmali.json",
+        "root/pli/ms/vinaya/pli-tv-bi-pm_root-pli-ms.json",
+        "translation/en/brahmali/vinaya/pli-tv-bi-pm_translation-en-brahmali.json",
+        //"root/pli/ms/vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc/pli-tv-bu-vb-pc21_root-pli-ms.json",
+        //"translation/en/brahmali/vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc/pli-tv-bu-vb-pc21_translation-en-brahmali.json",
       ]);
       let [mld0] = res.mlDocs;
       should(mld0.suid).equal("pli-tv-kd20");
