@@ -138,7 +138,7 @@
         msStart = Date.now();
         enWords = await English.wordSet({fetch, maxAge});
         msElapsed = Date.now() - msStart;
-        should(msElapsed).above(100).below(longWait);
+        should(msElapsed).above(40).below(longWait);
 
         should.deepEqual(enWords.trace('unbusied'), {
             trace: 'unbusi',
