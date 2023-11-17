@@ -1523,6 +1523,7 @@
 		"translation/cs/ashinsarana": "sutta/an/an4",
 		"translation/de/sabbamitta": "sutta/an/an4",
 		"translation/en/sujato": "sutta/an/an4",
+		"translation/fr/noeismet": "sutta/an/an4",
 		"translation/jpn/kaz": "sutta/an/an4",
 		"root/pli/ms": "sutta/an/an4"
 	},
@@ -1537,6 +1538,7 @@
 		"translation/cs/ashinsarana": "sutta/an/an4",
 		"translation/de/sabbamitta": "sutta/an/an4",
 		"translation/en/sujato": "sutta/an/an4",
+		"translation/fr/noeismet": "sutta/an/an4",
 		"root/pli/ms": "sutta/an/an4"
 	},
 	"an4.56": {
@@ -8825,6 +8827,10 @@
 		"root/pli/ms": "sutta/kn/mil"
 	},
 	"mil3.3.5": {
+		"translation/en/kelly": "sutta/kn/mil",
+		"root/pli/ms": "sutta/kn/mil"
+	},
+	"mil3.3.6": {
 		"translation/en/kelly": "sutta/kn/mil",
 		"root/pli/ms": "sutta/kn/mil"
 	},
@@ -22455,6 +22461,7 @@
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag17.3": {
+		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
@@ -22464,6 +22471,7 @@
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag19.1": {
+		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
@@ -25131,9 +25139,6 @@
 		"root/pli/ms": "sutta/kn/mil"
 	},
 	"mil3.3.14": {
-		"root/pli/ms": "sutta/kn/mil"
-	},
-	"mil3.3.6": {
 		"root/pli/ms": "sutta/kn/mil"
 	},
 	"mil3.3.7": {
