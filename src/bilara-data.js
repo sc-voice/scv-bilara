@@ -609,6 +609,25 @@
       }
     }
 
+    canonicalSuttaId(id, type="acro") {
+      const msg = 'BilaraData.canonicalSuttaId()';
+      if (!this.initialized) {
+        let emsg = `${msg}, initialize() required`;
+        throw new Error(emsg);
+      }
+      var { uid_expansion } = this;
+      id = this.normalizeSuttaId(id.toLowerCase());
+      let nikaya = id.replace(/[-0-9:.]+/, '');
+      let [ue] = uid_expansion.filter((ue) => ue.uid === nikaya);
+      switch (type) {
+        case "name":
+          return id.replace(nikaya, ue.name+' ');
+        case "acro":
+        default:
+          return id.replace(nikaya, ue.acro);
+      }
+    }
+
     normalizeSuttaId(id) {
       if (!this.initialized) {
         throw new Error(`${this.constructor.name}.` + `initialize() required`);

@@ -417,6 +417,37 @@
             'dn33:1.2.5',
         ]);
     });
+    it("TESTTESTcanonicalSuttaId(id)", async()=>{
+      await bd.initialize();
+      should(bd.canonicalSuttaId('an2.12')).equal('AN2.11-20');
+      should(bd.canonicalSuttaId('AN2.12')).equal('AN2.11-20');
+      should(bd.canonicalSuttaId('An2.12')).equal('AN2.11-20');
+      should(bd.canonicalSuttaId('An 2.12')).equal('AN2.11-20');
+
+      // name
+      should(bd.canonicalSuttaId('an2.12', 'name'))
+        .equal('Aṅguttara Nikāya 2.11-20');
+      should(bd.canonicalSuttaId('AN2.12', 'name'))
+        .equal('Aṅguttara Nikāya 2.11-20');
+      should(bd.canonicalSuttaId('An2.12', 'name'))
+        .equal('Aṅguttara Nikāya 2.11-20');
+      should(bd.canonicalSuttaId('An 2.12', 'name'))
+        .equal('Aṅguttara Nikāya 2.11-20');
+
+      // MN44
+      should(bd.canonicalSuttaId('mn44')).equal('MN44');
+      should(bd.canonicalSuttaId('mn44', 'acro')).equal('MN44');
+      should(bd.canonicalSuttaId('mn44', 'name'))
+        .equal('Majjhima Nikāya 44');
+
+      // other
+      should(bd.canonicalSuttaId('thig1.1')).equal('Thig1.1');
+      should(bd.canonicalSuttaId('thig1.1', 'name'))
+        .equal('Therīgāthā 1.1');
+      should(bd.canonicalSuttaId('snp1.1')).equal('Snp1.1');
+      should(bd.canonicalSuttaId('snp1.1', 'name'))
+        .equal('Sutta Nipāta 1.1');
+    });
     it("normalizeSuttaId(id) => normalized sutta_uid", done=>{
         (async function() { try {
             await bd.initialize();

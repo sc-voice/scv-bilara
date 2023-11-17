@@ -1473,7 +1473,7 @@ typeof describe === "function" &&
           langAuthor: 'sujato',
         });
     });
-    it("TESTTESTfindArgs(...) docRefArgs thig1.1/en/soma", async () => {
+    it("findArgs(...) docRefArgs thig1.1/en/soma", async () => {
       let bilaraData = await bd.initialize();
       let suid = 'thig1.1';
       let docRefArgs = [
@@ -1743,7 +1743,7 @@ typeof describe === "function" &&
       should(mld0.bilaraPaths[1]).match(/de.*sn12.27/);
       should(mld0.score).equal(1.026);
     });
-    it("TESTTESTfind(...) finds Deutsch 'blind'", async () => {
+    it("find(...) finds Deutsch 'blind'", async () => {
       //bd.logLevel = 'info'
       bd.log("initializing");
       var bilaraData = await bd.initialize();
@@ -1982,7 +1982,7 @@ typeof describe === "function" &&
       should(mld0.suid).equal("snp1.8");
       should(mld0.author_uid).equal("sujato");
     });
-    it("TESTTESTfind(...) => nun -tc:vinaya", async () => {
+    it("find(...) => nun -tc:vinaya", async () => {
       let bilaraData = new BilaraData();
       let maxDoc = 5;
       let skr = await new Seeker({
