@@ -9191,43 +9191,53 @@
 		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
 		"translation/lt/piyadassi": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn63": {
 		"translation/en/sujato": "sutta/mn",
 		"translation/lt/piyadassi": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn64": {
 		"translation/en/sujato": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn65": {
 		"translation/en/sujato": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn66": {
 		"translation/en/sujato": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn67": {
 		"translation/en/sujato": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn68": {
 		"translation/en/sujato": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn69": {
 		"translation/en/sujato": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn70": {
 		"translation/en/sujato": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn71": {
 		"translation/en/sujato": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn72": {
@@ -9252,6 +9262,7 @@
 	},
 	"mn77": {
 		"translation/en/sujato": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn78": {
@@ -9269,6 +9280,7 @@
 	"mn81": {
 		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn82": {
@@ -9310,6 +9322,7 @@
 	"mn91": {
 		"translation/en/sujato": "sutta/mn",
 		"translation/lt/piyadassi": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn92": {
@@ -9419,18 +9432,21 @@
 	"mn117": {
 		"translation/en/sujato": "sutta/mn",
 		"translation/lt/piyadassi": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn118": {
 		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
 		"translation/pt/laera-quaresma": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn119": {
 		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
 		"translation/lt/piyadassi": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn120": {
@@ -9559,6 +9575,7 @@
 	},
 	"mn148": {
 		"translation/en/sujato": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn149": {
@@ -9575,6 +9592,7 @@
 	},
 	"mn152": {
 		"translation/en/sujato": "sutta/mn",
+		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"pdhp1-13": {
