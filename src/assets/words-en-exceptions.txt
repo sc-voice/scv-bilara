@@ -1,5 +1,7 @@
 abscheiden
 abscheidet
+Antilope
+Antilopenhaut
 arm
 auge
 Banyanbaum
@@ -43,6 +45,8 @@ majestätisch
 methodisch
 Motivation
 Mutter
+Nomade
+Nomaden
 Nymphe
 Nymphen
 Orchideenbaum
@@ -66,6 +70,8 @@ traurigkeit
 vorteilhaft
 vorteilhafte
 vorteilhaften
+wandernd
+Wandernde
 widerwärtig
 widerwärtige
 widerwärtiges
