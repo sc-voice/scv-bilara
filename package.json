@@ -1,6 +1,6 @@
 {
   "name": "scv-bilara",
-  "version": "3.107.33",
+  "version": "3.107.34",
   "description": "SuttaCentral bilara-data library",
   "main": "index.js",
   "directories": {
@@ -15,7 +15,7 @@
     "log-instance": "^1.5.0",
     "memo-again": "^0.8.0",
     "merkle-json": "^2.2.0",
-    "scv-esm": "^1.84.32",
+    "scv-esm": "^1.84.33",
     "suttacentral-api": "^2.9.12",
     "tmp": "^0.1.0"
   },
