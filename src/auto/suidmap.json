@@ -8910,6 +8910,7 @@
 	},
 	"mn1": {
 		"translation/en/sujato": "sutta/mn",
+		"translation/fr/noeismet": "sutta/mn",
 		"translation/pl/hardao": "sutta/mn",
 		"translation/ru/sv": "sutta/mn",
 		"translation/sr/brankokovacevic": "sutta/mn",
@@ -8925,6 +8926,7 @@
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn3": {
+		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
 		"translation/pl/hardao": "sutta/mn",
 		"translation/ru/sv": "sutta/mn",
@@ -8932,6 +8934,7 @@
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn4": {
+		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
 		"translation/pl/hardao": "sutta/mn",
 		"translation/ru/sv": "sutta/mn",
@@ -9184,6 +9187,7 @@
 	},
 	"mn47": {
 		"translation/en/sujato": "sutta/mn",
+		"translation/fr/noeismet": "sutta/mn",
 		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
@@ -9408,6 +9412,7 @@
 	"mn93": {
 		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
+		"translation/fr/noeismet": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn94": {
@@ -9416,6 +9421,7 @@
 	},
 	"mn95": {
 		"translation/en/sujato": "sutta/mn",
+		"translation/fr/noeismet": "sutta/mn",
 		"translation/lt/piyadassi": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
@@ -9453,6 +9459,7 @@
 	},
 	"mn104": {
 		"translation/en/sujato": "sutta/mn",
+		"translation/fr/noeismet": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn105": {
@@ -9539,6 +9546,7 @@
 	},
 	"mn123": {
 		"translation/en/sujato": "sutta/mn",
+		"translation/fr/noeismet": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn124": {
@@ -9670,138 +9678,6 @@
 		"translation/en/sujato": "sutta/mn",
 		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
-	},
-	"pdhp1-13": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp1-13.json": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp14-33": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp14-33.json": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp34-49": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp34-49.json": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp50-64": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp50-64.json": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp65-83": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp65-83.json": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp84-95": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp84-95.json": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp96-120": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp96-120.json": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp121-136": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp121-136.json": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp137-156": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp137-156.json": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp157-173": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp157-173.json": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp174-194": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp174-194.json": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp195-215": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp195-215.json": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp216-238": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp216-238.json": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp239-260": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp239-260.json": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp261-277": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp261-277.json": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp278-305": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp278-305.json": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp306-326": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp306-326.json": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp327-341": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp327-341.json": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp342-357": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp342-357.json": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp358-375": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp358-375.json": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp376-397": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp376-397.json": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp398-414": {
-		"translation/en/anandajoti": "sutta/pdhp"
-	},
-	"pdhp398-414.json": {
-		"translation/en/anandajoti": "sutta/pdhp"
 	},
 	"pli-tv-bi-pm": {
 		"translation/en/brahmali": "vinaya",
@@ -21045,6 +20921,7 @@
 		"root/pli/ms": "sutta/kn/snp/vagga2"
 	},
 	"snp2.10": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga2",
 		"translation/en/sujato": "sutta/kn/snp/vagga2",
 		"root/pli/ms": "sutta/kn/snp/vagga2"
 	},
@@ -21106,6 +20983,7 @@
 		"root/pli/ms": "sutta/kn/snp/vagga3"
 	},
 	"snp3.11": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga3",
 		"translation/en/sujato": "sutta/kn/snp/vagga3",
 		"root/pli/ms": "sutta/kn/snp/vagga3"
 	},
@@ -21193,6 +21071,7 @@
 		"root/pli/ms": "sutta/kn/snp/vagga5"
 	},
 	"snp5.4": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga5",
 		"translation/en/sujato": "sutta/kn/snp/vagga5",
 		"translation/lt/piyadassi": "sutta/kn/snp/vagga5",
 		"root/pli/ms": "sutta/kn/snp/vagga5"
@@ -21243,6 +21122,7 @@
 		"root/pli/ms": "sutta/kn/snp/vagga5"
 	},
 	"snp5.16": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga5",
 		"translation/en/sujato": "sutta/kn/snp/vagga5",
 		"root/pli/ms": "sutta/kn/snp/vagga5"
 	},
@@ -21255,6 +21135,7 @@
 		"root/pli/ms": "sutta/kn/snp/vagga5"
 	},
 	"snp5.19": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga5",
 		"translation/en/sujato": "sutta/kn/snp/vagga5",
 		"translation/pt/laera-quaresma": "sutta/kn/snp/vagga5",
 		"root/pli/ms": "sutta/kn/snp/vagga5"
