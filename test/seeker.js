@@ -2607,7 +2607,7 @@ typeof describe === "function" &&
         matched: true,
       });
     });
-    it("find() cnd1/pli/ms", async () => {
+    it("TESTTESTfind() cnd1/pli/ms", async () => {
       let bilaraData = new BilaraData();
       let skr = await new Seeker({ bilaraData, logger: bilaraData, })
         .initialize();

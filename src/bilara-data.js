@@ -256,7 +256,7 @@
         var res = await this.execGit.sync(undefined, undefined, branches);
 
         // clear memoizer
-        // TODO: put this in seeker.js
+        // TODO: put this in seeker.cjs
         var mzr = new Memoizer({ writeMem: false });
         var mc = mzr.cache;
         var volumes = mc.volumes();

@@ -417,7 +417,7 @@
             'dn33:1.2.5',
         ]);
     });
-    it("TESTTESTcanonicalSuttaId(id)", async()=>{
+    it("canonicalSuttaId(id)", async()=>{
       await bd.initialize();
       should(bd.canonicalSuttaId('an2.12')).equal('AN2.11-20');
       should(bd.canonicalSuttaId('AN2.12')).equal('AN2.11-20');

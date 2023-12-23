@@ -21,14 +21,15 @@
   },
   "devDependencies": {
     "eslint-plugin-html": "^4.0.5",
-    "mocha": "^9.2.0",
-    "should": "^11.2.0"
+    "mocha": "^10.2.0",
+    "should": "^13.2.3"
   },
   "scripts": {
     "schedule-action": "scripts/schedule-action",
     "push-action": "scripts/push-action",
     "test": "npm run test:verbose",
-    "test:test": "scripts/clean-test; mocha -w --watch-ignore node_modules,.git,local -R min --inline-diffs -g TESTTEST './@(src|test)/**/*.js'",
+    "test:test": "scripts/clean-test; mocha -w --watch-ignore node_modules,.git,local -R min --inline-diffs -g TESTTEST './@(src|test)/**/*.*js'",
+    "test:testx": "scripts/clean-test; mocha --config test/mocha-config.json -g TESTTEST",
     "test:verbose": "scripts/clean-test; mocha --inline-diffs",
     "test:one": "scripts/clean-test; mocha --inline-diffs -g TESTTEST",
     "test:watch": "mocha -w --inline-diffs",

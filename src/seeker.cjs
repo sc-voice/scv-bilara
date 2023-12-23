@@ -22,6 +22,10 @@
   const MAXBUFFER = 10 * 1024 * 1024;
   const TCMAP = require("./seeker-tcmap.json");
 
+  const { 
+    DBG_SEEKER, DBG_GREP,
+  } = require("./defines.cjs");
+  
   var wscount = 0;
 
   class Seeker {
@@ -238,6 +242,7 @@
 
     grep(opts = {}) {
       const msg = "Seeker.grep() ";
+      const dbg = DBG_GREP;
       var {
         author,
         pattern,
@@ -268,11 +273,13 @@
         root,
         patPrimary,
       };
+      dbg && console.log(msg, slowOpts);
       var msStart = Date.now();
       var result;
       var { memoizer, grepMemo } = this;
       if (grepMemo == null) {
-        this.grepMemo = grepMemo = memoizer.memoize(Seeker.slowGrep, Seeker);
+        this.grepMemo = 
+        grepMemo = memoizer.memoize(Seeker.slowGrep, Seeker);
       }
       result = grepMemo(slowOpts);
       var msElapsed = Date.now() - msStart; // about 20ms

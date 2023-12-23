@@ -17,7 +17,7 @@ module.exports = {
     MLDoc: require("./src/ml-doc"),
     Pali: require("./src/pali"),
     Publication: require("./src/publication"),
-    Seeker: require("./src/seeker"),
+    Seeker: require("./src/seeker.cjs"),
     SegDoc: require("./src/seg-doc"),
     SuttaCentralId,
     SuttaRef,
