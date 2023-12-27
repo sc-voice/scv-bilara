@@ -151,7 +151,8 @@ typeof describe === "function" &&
         `${de_sab}dn/dn25_translation-de-sabbamitta.json:48`,
         `${de_sab}dn/dn8_translation-de-sabbamitta.json:29`,
         `${de_sab}an/an6/an6.63_translation-de-sabbamitta.json:25`,
-        `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:17`,
+        `${de_sab}an/an3/an3.156-162_translation-de-sabbamitta.json:24`,
+        //`${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:17`,
         //`${de_sab}dn/dn33_translation-de-sabbamitta.json:15`,
         //`${de_sab}dn/dn34_translation-de-sabbamitta.json:18`,
         //`${de_sab}an/an6/an6.30_translation-de-sabbamitta.json:15`,
@@ -591,8 +592,9 @@ typeof describe === "function" &&
       var linesUber = [
         //`${de_sab}dn/dn33_translation-de-sabbamitta.json:25`,
         `${de_sab}an/an6/an6.63_translation-de-sabbamitta.json:25`,
+        `${de_sab}an/an3/an3.156-162_translation-de-sabbamitta.json:23`,
         `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:17`,
-        `${de_sab}an/an4/an4.163_translation-de-sabbamitta.json:15`,
+        //`${de_sab}an/an4/an4.163_translation-de-sabbamitta.json:15`,
         //`${de_sab}dn/dn34_translation-de-sabbamitta.json:18`,
       ];
       var lang = "de";
@@ -1031,15 +1033,16 @@ typeof describe === "function" &&
       should.deepEqual(res.suttaRefs.slice(0, 3), [
         //"dn33/de/sabbamitta",
         "an6.63/de/sabbamitta",
+        "an3.156-162/de/sabbamitta",
+        //"an4.198/de/sabbamitta",
         "an4.198/de/sabbamitta",
-        "an4.163/de/sabbamitta",
         //'dn34/de/sabbamitta',
       ]);
       // We only care about three documents so that
       // is what we should get
       should.deepEqual(
         res.mlDocs.map((mld) => mld.score),
-        [25.176, 17.153, 15.349],
+        [25.176, 23.28, 17.153],
       );
     });
     it("find(...) => finds searchLang phrase", async () => {
@@ -2607,7 +2610,7 @@ typeof describe === "function" &&
         matched: true,
       });
     });
-    it("TESTTESTfind() cnd1/pli/ms", async () => {
+    it("find() cnd1/pli/ms", async () => {
       let bilaraData = new BilaraData();
       let skr = await new Seeker({ bilaraData, logger: bilaraData, })
         .initialize();
