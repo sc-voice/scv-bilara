@@ -23,7 +23,8 @@
   const TCMAP = require("./seeker-tcmap.json");
 
   const { 
-    DBG_SEEKER, DBG_GREP,
+    DBG_SEEKER, DBG_GREP, DBG_FINDARGS, DBG_TRILINGUAL, 
+    DBG_VERBOSE,
   } = require("./defines.cjs");
   
   var wscount = 0;
@@ -160,7 +161,8 @@
       var examples = this.bilaraData.examples;
       let { exampleCache } = this;
       if (!exampleCache) {
-        this.exampleCache = exampleCache = Seeker.buildExampleCache(examples);
+        this.exampleCache = exampleCache = 
+          Seeker.buildExampleCache(examples);
       }
       return !!exampleCache[pattern.toLowerCase()];
     }
@@ -170,7 +172,8 @@
       this.validate();
       if (SuttaCentralId.test(pattern)) {
         var langs = SuttaCentralId.languages(pattern);
-        return langs.length === 0 || langs.indexOf(lang) >= 0 ? lang : langs[0];
+        return langs.length === 0 || langs.indexOf(lang) >= 0 
+          ? lang : langs[0];
       }
       var keywords = pattern.split(/ +/);
       let searchLang = keywords.reduce((a, k) => {
@@ -520,6 +523,7 @@
 
     findArgs(args) {
       const msg = "Seeker.findArgs() ";
+      const dbg = DBG_SEEKER || DBG_FINDARGS;
       if (!(args instanceof Array)) {
         throw new Error("findArgs(?ARRAY-OF-ARGS?)");
       }
@@ -627,6 +631,10 @@
       lang = lang || language || docLang || this.lang;
       langAuthor = langAuthor || author ||
         AuthorsV2.langAuthor(lang, {tipitakaCategories});
+      if (searchLang == null) {
+        searchLang = this.patternLanguage(pattern, lang) 
+        dbg && console.log(msg, '[1]patternLanguage', searchLang);
+      }
       searchLang = searchLang == null 
         ? this.patternLanguage(pattern, lang) 
         : searchLang;
@@ -637,6 +645,8 @@
       showMatchesOnly == null && (showMatchesOnly = true);
       languages = languages || this.languages.slice() || [];
       lang && !languages.includes(lang) && languages.push(lang);
+      refLang === searchLang && 
+        !languages.includes('ref') && languages.push('ref');
       maxResults = Number(maxResults == null ? this.maxResults : maxResults);
       if (isNaN(maxResults)) {
         throw new Error("maxResults must be a number");
@@ -688,9 +698,13 @@
         }
       }
       docAuthor = docAuthor || AuthorsV2.langAuthor(docLang);;
-      searchAuthor = searchAuthor || docAuthor;
+      searchAuthor = searchAuthor || 
+        docLang === searchLang && docAuthor ||
+        refLang === searchLang && refAuthor ||
+        AuthorsV2.langAuthor(searchLang) ||
+        docAuthor;
 
-      return {
+      let result = {
         author,
         docLang,
         docAuthor,
@@ -713,6 +727,8 @@
         trilingual,
         types,
       };
+      dbg && console.log(msg, '[2]', result);
+      return result;
     }
 
     clearMemo(name) {
@@ -934,11 +950,10 @@
             continue;
           }
           bilaraPaths = [...bilaraPaths, ...mldBilaraPaths];
-          let filterLang = searchLang;
           var resFilter = mld.filterSegments({
             pattern,
             resultPattern,
-            languages: [filterLang],
+            languages: [searchLang],
             showMatchesOnly,
             method,
           });
@@ -1022,7 +1037,8 @@
 
     async slowFindTrilingual(findArgs) {
       const msg = "Seeker.slowFindTrilingual()";
-      const dbg = DBG_SEEKER;
+      const dbg = DBG_SEEKER || DBG_TRILINGUAL;
+      const dbgv = DBG_VERBOSE && dbg;
       var msStart = Date.now();
       var {
         author,
@@ -1128,34 +1144,41 @@
             continue;
           }
           bilaraPaths = [...bilaraPaths, ...mldBilaraPaths];
-          //let filterLang = searchLang === refLang ? 'ref' : searchLang;
-          var resFilter = mld.filterSegments({
+          let filterLangs = [searchLang];
+          if (searchLang === refLang) {
+            filterLangs.push('ref');
+          }
+          let filterOpts = {
             pattern,
             resultPattern,
-            languages: [searchLang],
+            languages: filterLangs,
             showMatchesOnly,
             method,
-          });
+          }
+          var resFilter = mld.filterSegments(filterOpts);
+          dbg && console.log(msg, '[4]filterSegments', 
+            resFilter.matched, filterOpts);
+
           mld.segsMatched = resFilter.matched;
           segsMatched += mld.segsMatched;
           if (matchHighlight) {
             mld.highlightMatch(resultPattern, matchHighlight);
           }
           if (resFilter.matched === 0) {
-            dbg && console.log(msg, '[4]ignoring', suttaRef, resFilter);
+            dbg && console.log(msg, '[5]ignoring', suttaRef, resFilter);
             this.info(`Ignoring ${mld.suid} ${pattern}`);
           } else if (mld.bilaraPaths.length >= minLang) {
             let segIds = Object.keys(mld.segMap);
             if (segIds.length) {
-              dbg && console.log(msg, '[5]mlDocs', suttaRef);
+              dbg && console.log(msg, '[6]mlDocs', suttaRef);
               mlDocs.push(mld);
               matchingRefs.push(suttaRef);
             } else {
-              dbg && console.log(msg, '[6]skipping', suttaRef);
+              dbg && console.log(msg, '[7]skipping', suttaRef);
               this.info(`skipping ${mld.suid} segments:0`);
             }
           } else {
-            dbg && console.log(msg, '[7]ignoring', suttaRef);
+            dbg && console.log(msg, '[8]ignoring', suttaRef);
             this.info(`skipping ${mld.suid} minLang:${minLang}`);
           }
         } else {
@@ -1165,7 +1188,7 @@
             author,
             includeUnpublished: true,
           });
-          dbg && console.log(msg, '[4]isBilDocUnpub', isBilDocUnpub);
+          dbg && console.log(msg, '[9]isBilDocUnpub', isBilDocUnpub);
           if (isBilDocUnpub) {
             dbg && console.log(msg,
               `slowFind() -> unpublished:`,

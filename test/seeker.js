@@ -1242,7 +1242,7 @@ typeof describe === "function" &&
         types: ["root", "translation"],
       });
     });
-    it("TESTTESTfindArgs(...) handls jpn ", async () => {
+    it("findArgs(...) handls jpn ", async () => {
       var bilaraData = await bd.initialize();
       var skr = await new Seeker({
         bilaraData,
@@ -1274,7 +1274,7 @@ typeof describe === "function" &&
         types: ["root", "translation"],
       });
     });
-    it("TESTTESTfindArgs(...) handles German", async () => {
+    it("findArgs(...) handles German", async () => {
       var bilaraData = await bd.initialize();
       var skr = await new Seeker({
         bilaraData,
@@ -1481,7 +1481,7 @@ typeof describe === "function" &&
           langAuthor: 'sujato',
         });
     });
-    it("TESTTESTfindArgs(...) docRefArgs thig1.1/en/soma", async () => {
+    it("findArgs(...) docRefArgs thig1.1/en/soma", async () => {
       let bilaraData = await bd.initialize();
       let suid = 'thig1.1';
       let docRefArgs = [
@@ -1508,7 +1508,7 @@ typeof describe === "function" &&
         langAuthor: 'sujato',
       });
     });
-    it("TESTTESTfindArgs() SLEEP/en/soma/en/sujato", async () => {
+    it("findArgs() SLEEP/en/soma/en/sujato", async () => {
       let bilaraData = await bd.initialize();
       let pat = SLEEP_SOMA;
       let lang = 'en';
@@ -1543,7 +1543,7 @@ typeof describe === "function" &&
         langAuthor,
       });
     });
-    it("TESTTESTfindArgs() SLEEP/en/sujato/en/soma", async () => {
+    it("findArgs() SLEEP/en/sujato/en/soma", async () => {
       let bilaraData = await bd.initialize();
       let pat = SLEEP_SOMA;
       let lang = 'en'
@@ -2430,7 +2430,7 @@ typeof describe === "function" &&
       should(res.bilaraPaths.length).equal(14);
       should(res.lang).equal("en");
     });
-    it("find(...) trilingual -l de root of suffering", async()=>{
+    it("TESTTESTfind(...) trilingual -dl de", async()=>{
       let bilaraData = new BilaraData();
       let skr = await new Seeker({
         bilaraData,

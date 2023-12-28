@@ -373,7 +373,8 @@
           showMatchesOnly && delete this.segMap[scid];
         }
       });
-      dbg && console.log(msg, '[3]', {pattern, suid, matched});
+      dbg && console.log(msg, '[3]', {
+        matched, pattern, suid, languages,});
       var score = matchScid
         ? 0
         : Number((matched + matched / scids.length).toFixed(3));
