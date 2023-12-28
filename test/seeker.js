@@ -1213,7 +1213,7 @@ typeof describe === "function" &&
       let res = skr.findArgs([`${pattern}`]);
       should(res.pattern).equal('aggaḷaṁ');
     });
-    it("findArgs(...) => thig1.1..., thig1.2...", async () => {
+    it("TESTTESTfindArgs(...) => thig1.1..., thig1.2...", async () => {
       var bilaraData = await bd.initialize();
       var skr = await new Seeker({
         bilaraData,
@@ -1226,7 +1226,7 @@ typeof describe === "function" &&
         docLang: 'en',
         docAuthor: 'soma',
         lang: "en",
-        languages: ["pli", "en"],
+        languages: ["pli", "en", 'ref'],
         matchHighlight: "\u001b[38;5;121m$&\u001b[0m",
         maxDoc: 50,
         maxResults: 1000,
