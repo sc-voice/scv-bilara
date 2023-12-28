@@ -305,6 +305,7 @@
 
     static async slowGrep(opts) {
       const msg = "Seeker.slowGrep ";
+      const dbg = DBG_GREP;
       try {
         var {
           author,
@@ -351,7 +352,6 @@
                 // (https://github.com/BurntSushi/ripgrep/issues/2227)
           `|sort -k 2rn -k 1rd -t ':'`,
         ].join(" ");
-        //console.log(msg, {author, lang, cmd});
         maxResults && (cmd += `|head -${maxResults}`);
         var pathPrefix = cwd.replace(root, "").replace(/^\/?/, "");
         var cwdMsg = cwd.replace(`${root}/`, "");
@@ -366,6 +366,7 @@
         let raw = Seeker.orderPrimary(lines, patPrimary);
         let rawTipCat = reTipCat ? raw.filter((f) => reTipCat.test(f)) : raw;
         let paths = rawTipCat.map((f) => path.join(pathPrefix, f));
+        dbg && console.log(msg, {cmd, execOpts, lines, paths});
         return paths;
       } catch (e) {
         logger.warn(`slowGrep()`, JSON.stringify(opts), e.message, cmd);
@@ -379,6 +380,7 @@
       var {
         author,
         searchLang,
+        searchAuthor,
         lang,
         language,
         pattern,
@@ -393,11 +395,15 @@
         throw new Error(`${msg} requires pattern`);
       }
       lang =
-        searchLang == null ? this.patternLanguage(pattern, lang) : searchLang;
+        searchLang == null 
+          ? this.patternLanguage(pattern, lang) 
+          : searchLang;
       if (lang === "pli") {
         var romPat = this.unicode.romanize(pattern);
         var pat =
-          romPat === pattern ? `\\b${Pali.romanizePattern(pattern)}` : pattern;
+          romPat === pattern 
+            ? `\\b${Pali.romanizePattern(pattern)}` 
+            : pattern;
       } else {
         var pat = `${Seeker.reWord(lang)}${pattern}`;
       }
@@ -406,7 +412,7 @@
       });
       this.info(msg, `(${pat},${lang},${author})`);
       var grepArgs = Object.assign({}, args, {
-        author,
+        author: searchAuthor || author,
         pattern: pat,
         lang,
         maxResults,
@@ -542,6 +548,7 @@
         refAuthor,
         refLang,
         searchLang,
+        searchAuthor,
         showMatchesOnly,
         sortLines,
         tipitakaCategories,
@@ -618,7 +625,7 @@
         refAuthor = AuthorsV2.langAuthor(refLang);
       }
       lang = lang || language || docLang || this.lang;
-      langAuthor = langAuthor || 
+      langAuthor = langAuthor || author ||
         AuthorsV2.langAuthor(lang, {tipitakaCategories});
       searchLang = searchLang == null 
         ? this.patternLanguage(pattern, lang) 
@@ -681,6 +688,7 @@
         }
       }
       docAuthor = docAuthor || AuthorsV2.langAuthor(docLang);;
+      searchAuthor = searchAuthor || docAuthor;
 
       return {
         author,
@@ -698,6 +706,7 @@
         refAuthor,
         refLang,
         searchLang,
+        searchAuthor,
         showMatchesOnly,
         sortLines,
         tipitakaCategories,
@@ -911,7 +920,7 @@
             lang,
             types,
           };
-          if (method === "sutta_uid" && author != null && author !== "ms") {
+          if (method==="sutta_uid" && author!=null && author!=="ms") {
             mldOpts.author = author;
           }
           mld = await bd.loadMLDoc(mldOpts);
@@ -1012,7 +1021,8 @@
     }
 
     async slowFindTrilingual(findArgs) {
-      const msg = "Seeker.slowFindTrilingual() ";
+      const msg = "Seeker.slowFindTrilingual()";
+      const dbg = DBG_SEEKER;
       var msStart = Date.now();
       var {
         author,
@@ -1047,6 +1057,7 @@
       }
 
       if (isSuidPattern) {
+        dbg && console.log(msg, '[1]slowFindId');
         let res = this.slowFindId({ 
           author, lang, languages, maxResults, pattern,
           docLang, docAuthor, refLang, refAuthor, trilingual,
@@ -1059,6 +1070,7 @@
         languages = res.languages;
         scoreDoc = false;
       } else {
+        dbg && console.log(msg, '[2]slowFindPhrase');
         let res = await this.slowFindPhrase({
           author,
           lang,
@@ -1105,6 +1117,7 @@
             trilingual,
           }
           mld = await bd.trilingualDoc(suttaRef, mldOpts);
+          dbg && console.log(msg, '[3]trilingualDoc', suttaRef, !!mld);
           var mldBilaraPaths = mld.bilaraPaths.sort();
           if (mldBilaraPaths.length < minLang) {
             //console.log(msg, `skipping ${mld.suid} ${mld.title}`);
@@ -1115,11 +1128,11 @@
             continue;
           }
           bilaraPaths = [...bilaraPaths, ...mldBilaraPaths];
-          let filterLang = searchLang === refLang ? 'ref' : searchLang;
+          //let filterLang = searchLang === refLang ? 'ref' : searchLang;
           var resFilter = mld.filterSegments({
             pattern,
             resultPattern,
-            languages: [filterLang],
+            languages: [searchLang],
             showMatchesOnly,
             method,
           });
@@ -1129,16 +1142,20 @@
             mld.highlightMatch(resultPattern, matchHighlight);
           }
           if (resFilter.matched === 0) {
+            dbg && console.log(msg, '[4]ignoring', suttaRef, resFilter);
             this.info(`Ignoring ${mld.suid} ${pattern}`);
           } else if (mld.bilaraPaths.length >= minLang) {
             let segIds = Object.keys(mld.segMap);
             if (segIds.length) {
+              dbg && console.log(msg, '[5]mlDocs', suttaRef);
               mlDocs.push(mld);
               matchingRefs.push(suttaRef);
             } else {
+              dbg && console.log(msg, '[6]skipping', suttaRef);
               this.info(`skipping ${mld.suid} segments:0`);
             }
           } else {
+            dbg && console.log(msg, '[7]ignoring', suttaRef);
             this.info(`skipping ${mld.suid} minLang:${minLang}`);
           }
         } else {
@@ -1148,8 +1165,9 @@
             author,
             includeUnpublished: true,
           });
+          dbg && console.log(msg, '[4]isBilDocUnpub', isBilDocUnpub);
           if (isBilDocUnpub) {
-            this.debug(
+            dbg && console.log(msg,
               `slowFind() -> unpublished:`,
               `${suid}/${refLang || lang}/${author}`
             );
@@ -1184,12 +1202,14 @@
 
     async slowFindPhrase(args = {}) {
       const msg = "Seeker.slowFindPhrase() ";
+      const dbg = DBG_SEEKER;
       let {
         author,
         lang,
         maxResults,
         pattern,
         searchLang = args.lang,
+        searchAuthor = args.author,
         showMatchesOnly,
         sortLines,
         tipitakaCategories,
@@ -1219,7 +1239,9 @@
           searchOpts
         );
         if (lines.length) {
-          this.debug(msg, `phrase`, { resultPattern, lines: lines.length });
+          dbg && console.log(msg, {resultPattern, lines});
+          this.debug(msg, `phrase`, { 
+            resultPattern, lines: lines.length });
         } else {
           method = "keywords";
           let data = await this.keywordSearch(searchOpts);
@@ -1230,9 +1252,9 @@
           });
         }
         sortLines && lines.sort(sortLines);
-        suttaRefs = lines.map((line) => BilaraPath.pathParts(line).suttaRef);
-        this.debug(msg, `suttaRefs`, suttaRefs);
-        //console.log(msg, args, suttaRefs);
+        suttaRefs = 
+          lines.map((line) => BilaraPath.pathParts(line).suttaRef);
+        dbg && console.log(msg, `suttaRefs`, suttaRefs);
         return {
           method,
           resultPattern,

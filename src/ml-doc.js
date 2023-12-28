@@ -8,6 +8,9 @@
   const Pali = require('./pali');
   const { SuttaCentralId } = require('scv-esm');
   const BILARA_PATH = path.join(Files.LOCAL_DIR, 'bilara-data');
+  const { 
+    DBG_MLD, DBG_VERBOSE,
+  } = require("./defines.cjs");
 
   class MLDoc {
     constructor(opts = {}) {
@@ -302,6 +305,9 @@
     }
 
     filterSegments(...args) {
+      const msg = "MLDoc.filterSegments()";
+      const dbg = DBG_MLD;
+      const dbgv = DBG_VERBOSE && dbg;
       if (typeof args[0] === 'string') {
         var opts = {
           resultPattern: args[0],
@@ -350,9 +356,16 @@
       var matched = 0;
       scids.forEach((scid, i) => {
         var seg = this.segMap[scid];
-        var match = matchScid
-          ? SuttaCentralId.match(seg.scid, pattern)
-          : this.matchText({ seg, languages, rexList });
+        var match;
+        if (matchScid) {
+          match = SuttaCentralId.match(seg.scid, pattern);
+          dbgv && console.log(msg, '[1]matchScid', {
+            pattern, seg, match});
+        } else {
+          match = this.matchText({ seg, languages, rexList });
+          dbgv && console.log(msg, '[2]matchScid', {
+            pattern, seg, match, languages});
+        }
         if (match) {
           matched++;
           seg.matched = true;
@@ -360,6 +373,7 @@
           showMatchesOnly && delete this.segMap[scid];
         }
       });
+      dbg && console.log(msg, '[3]', {pattern, suid, matched});
       var score = matchScid
         ? 0
         : Number((matched + matched / scids.length).toFixed(3));

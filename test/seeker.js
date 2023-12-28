@@ -30,6 +30,8 @@ typeof describe === "function" &&
     var en_dav = `translation/en/davis/sutta/`;
     var pli_ms = `root/pli/ms/sutta/`;
 
+    const SLEEP_SOMA = "sleep with ease";
+    const SLEEP_SUJATO = "sleep softly";
     const BILARA_PATH = path.join(Files.LOCAL_DIR, "bilara-data");
     const TEST_BILARA_PATH = path.join(__dirname, "data", "bilara-data");
     const SUTTA_ROOT_SUFF = [
@@ -1240,7 +1242,7 @@ typeof describe === "function" &&
         types: ["root", "translation"],
       });
     });
-    it("findArgs(...) handls jpn ", async () => {
+    it("TESTTESTfindArgs(...) handls jpn ", async () => {
       var bilaraData = await bd.initialize();
       var skr = await new Seeker({
         bilaraData,
@@ -1264,6 +1266,7 @@ typeof describe === "function" &&
         refAuthor: "sujato",
         refLang: "en",
         searchLang: "jpn",
+        searchAuthor: 'kaz',
         showMatchesOnly: true,
         sortLines: undefined,
         tipitakaCategories: undefined,
@@ -1271,7 +1274,7 @@ typeof describe === "function" &&
         types: ["root", "translation"],
       });
     });
-    it("findArgs(...) handles German", async () => {
+    it("TESTTESTfindArgs(...) handles German", async () => {
       var bilaraData = await bd.initialize();
       var skr = await new Seeker({
         bilaraData,
@@ -1293,6 +1296,7 @@ typeof describe === "function" &&
         refAuthor: "sujato",
         refLang: "en",
         searchLang: "de",
+        searchAuthor: 'sabbamitta',
         showMatchesOnly: true,
         sortLines: undefined,
         tipitakaCategories: undefined,
@@ -1317,6 +1321,7 @@ typeof describe === "function" &&
         searchLang: "de",
         refAuthor: "sujato",
         refLang: "en",
+        searchAuthor: 'sabbamitta',
         showMatchesOnly: true,
         sortLines: undefined,
         tipitakaCategories: undefined,
@@ -1476,7 +1481,7 @@ typeof describe === "function" &&
           langAuthor: 'sujato',
         });
     });
-    it("findArgs(...) docRefArgs thig1.1/en/soma", async () => {
+    it("TESTTESTfindArgs(...) docRefArgs thig1.1/en/soma", async () => {
       let bilaraData = await bd.initialize();
       let suid = 'thig1.1';
       let docRefArgs = [
@@ -1489,18 +1494,88 @@ typeof describe === "function" &&
       let skr = await new Seeker({
         bilaraData,
       }).initialize();
+      let res = skr.findArgs([{ pattern, lang:'de' }]);
 
-      should(skr.findArgs([{ pattern, lang:'de' }]))
-        .properties({ 
-          author: "soma", 
-          searchLang:'en',
-          refAuthor: 'laera-quaresma',
-          refLang: 'pt',
-          docAuthor: 'soma',
-          docLang: 'en',
-          lang: 'en',
-          langAuthor: 'sujato',
-        });
+      should(res).properties({
+        author: "soma", 
+        searchLang:'en',
+        searchAuthor:'soma',
+        refAuthor: 'laera-quaresma',
+        refLang: 'pt',
+        docAuthor: 'soma',
+        docLang: 'en',
+        lang: 'en',
+        langAuthor: 'sujato',
+      });
+    });
+    it("TESTTESTfindArgs() SLEEP/en/soma/en/sujato", async () => {
+      let bilaraData = await bd.initialize();
+      let pat = SLEEP_SOMA;
+      let lang = 'en';
+      let docLang = lang;
+      let docAuthor = "soma";
+      let refLang = lang;
+      let refAuthor = "sujato";
+      let author = docAuthor;
+      let searchLang = lang;
+      let searchAuthor = docAuthor;
+      let langAuthor = docAuthor;
+      let pattern = [
+        pat,
+        `-dl ${docLang}`,
+        `-da ${docAuthor}`,
+        `-rl ${refLang}`,
+        `-ra ${refAuthor}`,
+      ].join(' ');
+      let skr = await new Seeker({ bilaraData, }).initialize();
+      let res = skr.findArgs([{ pattern, lang:docLang }]);
+      console.log(res);
+
+      should(res).properties({
+        author,
+        searchLang,
+        searchAuthor,
+        refAuthor,
+        refLang,
+        docAuthor,
+        docLang,
+        lang,
+        langAuthor,
+      });
+    });
+    it("TESTTESTfindArgs() SLEEP/en/sujato/en/soma", async () => {
+      let bilaraData = await bd.initialize();
+      let pat = SLEEP_SOMA;
+      let lang = 'en'
+      let docLang = lang;
+      let docAuthor = "sujato";
+      let refLang = lang;
+      let refAuthor = "soma";
+      let author = docAuthor;
+      let searchLang = lang;
+      let searchAuthor = docAuthor;
+      let langAuthor = docAuthor;
+      let pattern = [
+        pat,
+        `-dl ${docLang}`,
+        `-da ${docAuthor}`,
+        `-rl ${refLang}`,
+        `-ra ${refAuthor}`,
+      ].join(' ');
+      let skr = await new Seeker({ bilaraData, }).initialize();
+      let res = skr.findArgs([{ pattern, lang:docLang }]);
+
+      should(res).properties({
+        author,
+        searchLang,
+        searchAuthor,
+        refAuthor,
+        refLang,
+        docAuthor,
+        docLang,
+        lang,
+        langAuthor,
+      });
     });
     it("find(...) finds pli-tv-bi-vb-sk1-75", async () => {
       if (!TEST_UNPUBLISHED) { return; }
