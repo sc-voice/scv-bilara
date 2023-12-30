@@ -2714,15 +2714,23 @@ typeof describe === "function" &&
       let bilaraData = new BilaraData();
       let skr = await new Seeker({ bilaraData, logger: bilaraData, })
         .initialize();
-      let pattern = [
-        SLEEP_SOMA,
-        `-dl en`,
-        `-da soma`,
-        `-rl en`,
-        `-ra sujato`,
-        '-ml1',
-      ].join(' ');
-      let findArgs = skr.findArgs([{ pattern, }]);
+      let lang = 'en';
+      let docLang = 'en';
+      let refLang = 'en';
+      let docAuthor = 'soma';
+      let refAuthor = 'sujato';
+      let pattern = SLEEP_SOMA;
+      let findArgs = skr.findArgs([{ 
+        lang: 'en', 
+        pattern, 
+        docLang,
+        docAuthor,
+        refLang,
+        refAuthor,
+        minLang:1,
+        trilingual: true,
+      }]);
+      should(findArgs.author).equal('soma');
       should(findArgs.minLang).equal(1);
       should(findArgs.trilingual).equal(true);
       let res = await skr.slowFind(findArgs);

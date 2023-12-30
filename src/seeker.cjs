@@ -597,7 +597,6 @@
           }
         } else if (arg === "-da" || arg === "--doc-author") {
           docAuthor = argv[++i];
-          author = docAuthor; // override legacy 
           trilingual = true;
         } else if (arg === "-dl" || arg === "--doc-lang") {
           docLang = argv[++i];
@@ -622,6 +621,7 @@
       }
 
       // STEP 3. Assign default values
+      author = author || docAuthor; // override legacy 
       if (refLang == null) {
         let info = AuthorsV2.authorInfo(refAuthor);
         refLang = info && info.lang || 'en';
