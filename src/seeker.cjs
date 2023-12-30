@@ -621,7 +621,9 @@
       }
 
       // STEP 3. Assign default values
-      author = author || docAuthor; // override legacy 
+      if (trilingual) {
+        author = author || docAuthor; // override legacy 
+      }
       if (refLang == null) {
         let info = AuthorsV2.authorInfo(refAuthor);
         refLang = info && info.lang || 'en';
