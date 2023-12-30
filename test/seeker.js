@@ -1213,7 +1213,7 @@ typeof describe === "function" &&
       let res = skr.findArgs([`${pattern}`]);
       should(res.pattern).equal('aggaḷaṁ');
     });
-    it("TESTTESTfindArgs(...) => thig1.1..., thig1.2...", async () => {
+    it("findArgs(...) => thig1.1..., thig1.2...", async () => {
       var bilaraData = await bd.initialize();
       var skr = await new Seeker({
         bilaraData,
@@ -1526,10 +1526,10 @@ typeof describe === "function" &&
         `-da ${docAuthor}`,
         `-rl ${refLang}`,
         `-ra ${refAuthor}`,
+        '-ml1',
       ].join(' ');
       let skr = await new Seeker({ bilaraData, }).initialize();
       let res = skr.findArgs([{ pattern, lang:docLang }]);
-      console.log(res);
 
       should(res).properties({
         author,
@@ -2430,7 +2430,7 @@ typeof describe === "function" &&
       should(res.bilaraPaths.length).equal(14);
       should(res.lang).equal("en");
     });
-    it("TESTTESTfind(...) trilingual -dl de", async()=>{
+    it("find(...) trilingual -dl de", async()=>{
       let bilaraData = new BilaraData();
       let skr = await new Seeker({
         bilaraData,
@@ -2709,5 +2709,28 @@ typeof describe === "function" &&
         // no pt
         matched: true,
       });
+    });
+    it("TESTTESTfind() SLEEP_SOMA", async () => {
+      let bilaraData = new BilaraData();
+      let skr = await new Seeker({ bilaraData, logger: bilaraData, })
+        .initialize();
+      let pattern = [
+        SLEEP_SOMA,
+        `-dl en`,
+        `-da soma`,
+        `-rl en`,
+        `-ra sujato`,
+        '-ml1',
+      ].join(' ');
+      let findArgs = skr.findArgs([{ pattern, }]);
+      should(findArgs.minLang).equal(1);
+      should(findArgs.trilingual).equal(true);
+      let res = await skr.slowFind(findArgs);
+      should(res.trilingual).equal(true);
+
+      let mld0 = res.mlDocs[0];
+      should(res.mlDocs.length).equal(1);
+      should(res.method).equal('phrase');
+      should(res.bilaraPaths.length).equal(3);
     });
   });

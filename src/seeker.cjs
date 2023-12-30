@@ -367,7 +367,8 @@
         let { stdout, stderr } = await execPromise(cmd, execOpts);
         let lines = (stdout && stdout.trim().split("\n")) || [];
         let raw = Seeker.orderPrimary(lines, patPrimary);
-        let rawTipCat = reTipCat ? raw.filter((f) => reTipCat.test(f)) : raw;
+        let rawTipCat = reTipCat 
+          ? raw.filter((f) => reTipCat.test(f)) : raw;
         let paths = rawTipCat.map((f) => path.join(pathPrefix, f));
         dbg && console.log(msg, {cmd, execOpts, lines, paths});
         return paths;
