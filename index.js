@@ -11,6 +11,7 @@ module.exports = {
     BilaraPathMap: require("./src/bilara-path-map"),
     DETranslation: require("./src/de-translation"),
     English: require("./src/english"),
+    ExampleV2: require("./src/example-v2.cjs"),
     ExecGit: require("./src/exec-git"),
     ExecGitMock: require("./src/exec-git-mock"),
     FuzzyWordSet: require("./src/fuzzy-word-set"),
