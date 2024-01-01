@@ -2710,7 +2710,7 @@ typeof describe === "function" &&
         matched: true,
       });
     });
-    it("TESTTESTfind() SLEEP_SOMA", async () => {
+    it("find() SLEEP_SOMA", async () => {
       let bilaraData = new BilaraData();
       let skr = await new Seeker({ bilaraData, logger: bilaraData, })
         .initialize();
