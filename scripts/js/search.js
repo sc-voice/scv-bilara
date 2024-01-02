@@ -5,6 +5,7 @@ const { logger } = require('log-instance');
 const {
     BilaraData,
     English,
+    ExampleV2,
     ExecGitMock,
     FuzzyWordSet,
     Pali,
@@ -14,7 +15,10 @@ const {
     Verse,
 
 } = require('../../index');
-const { BilaraPath } = require("scv-esm");
+const { 
+  AuthorsV2,
+  BilaraPath, 
+} = require("scv-esm");
 const LOCAL = path.join(__dirname, '../../local');
 const BILARA_DATA = path.join(LOCAL, '/bilara-data');
 var bdName = '';
@@ -53,6 +57,16 @@ DESCRIPTION
     -d, --maxDoc NUMBER
         specify maximum number of documents to display. Default is 50.
 
+    -da, --doc-author AUTHOR
+        Specify document author (e.g., sujato)
+
+    -dl, --doc-lang ISO_LANG_2
+        Specify document language (e.g., en)
+
+    -es, --exampleSuttas
+        Return JSON map of examples to matching suttas. Use examples
+        for given docAuthor and docLang values.
+        
     -f, --filter MODE
         Filter segments according to mode: "pattern", "none".
         If mode is "pattern", then only segments matching pattern
@@ -150,12 +164,6 @@ DESCRIPTION
     --outLegacy
         Output legacy format. (NO LONGER SUPPORTED)
 
-    -da, --doc-author AUTHOR
-        Specify document author (e.g., sujato)
-
-    -dl, --doc-lang ISO_LANG_2
-        Specify document language (e.g., en)
-
     -ra, --ref-author AUTHOR
         Specify reference author (e.g., sujato)
 
@@ -197,6 +205,9 @@ var groupBy = 'line';
 var linebreak = ' ';
 var branch = 'unpublished';
 var trilingual = true;
+var exampleSuttas = false;
+var docLang = 'en';
+var docAuthor;
 
 //var searchLang;
 
@@ -207,6 +218,15 @@ if (nargs < 3) {
 for (var i = 2; i < nargs; i++) {
     var arg = process.argv[i];
     if (i<2) { continue; }
+
+    // peek
+    if (arg === '-dl' || arg === '--docLang') {
+        docLang = process.argv[i+1];
+    } else if (arg === '-da' || arg === '--docAuthor') {
+        docAuthor = process.argv[i+1];
+    }
+
+    // shift
     if (arg === '-?' || arg === '--help') {
         help();
     } else if (arg === '-b0' || arg === '--break0') {
@@ -218,6 +238,8 @@ for (var i = 2; i < nargs; i++) {
         if (bdName === 'ebt-data') {
           branch = 'published';
         }
+    } else if (arg === '-es' || arg === '--exampleSuttas') {
+        exampleSuttas = true;
     } else if (arg === '-ll' || arg === '--logLevel') {
         logLevel = process.argv[++i];
     } else if (arg === '-f' || arg === '--filter') {
@@ -595,6 +617,22 @@ function scriptEditor(res, pattern) {
     write_editor(res, `'+/${vipat}'`, 'vi');
 }
 
+async function outExampleSuttas() {
+  let lang = docLang;
+  let author = docAuthor || AuthorsV2.langAuthor(lang);
+  let ev2 = await new ExampleV2({lang, author, }).initialize();
+  //let examples = ['wurzel des leidens'];
+  let examples = await ev2.examples();
+  examples = examples.filter(eg=>!!eg);
+  let exampleSuttas = await ev2.suttasOfExamples(examples);
+  for (let i=0; i < examples.length; i++) {
+    let key = examples[i];
+    let value = exampleSuttas[key];
+    exampleSuttas[key] = value.join(' ');
+  }
+  console.log(JSON.stringify(exampleSuttas, null, 2));
+}
+
 logger.logLevel = logLevel;
 
 (async function() { try {
@@ -608,6 +646,10 @@ logger.logLevel = logLevel;
     });
     logger.info(msg, 'initializing BilaraData', {sync});
     await bilaraData.initialize(sync);
+    if (exampleSuttas) {
+      outExampleSuttas();
+      return;
+    }
 
     logger.info(msg, 'load English.wordSet');
     let enWords = await English.wordSet({source:'file'});
