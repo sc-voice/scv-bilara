@@ -122,7 +122,7 @@
 
     async suttasOfExamples(examples) {
       let map = {}
-      examples = examples.toSorted();
+      examples = [...examples].sort().filter(e=>!!e);
       for (let i=0; i < examples.length; i++) {
         let example = examples[i];
         let suttas = await this.exampleSuttas(example);
