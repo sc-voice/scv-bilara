@@ -4,6 +4,11 @@ const {
   BilaraData,
 } = PKG_INDEX;
 import should from 'should';
+import fs from 'fs';
+import path from 'path';
+
+const deExamples = await new ExampleV2({lang:'de'}).initialize();
+const bilaraData = deExamples.bilaraData;
 
 (typeof describe==='function') && describe("example-v2", function () {
   it("default ctor", ()=>{
@@ -61,17 +66,28 @@ import should from 'should';
     should.deepEqual(res.map(s=>s.sutta_uid), 
       ['sn42.11', 'sn56.21', 'mn116', 'dn16']);
   });
-  it("TESTTESTexampleSuttaMap()", async()=>{
+  it("TESTTESTsuttasOfExamples()", async()=>{
     let lang = 'de';
-    let es = await new ExampleV2({lang}).initialize();
     let examples = [
       'wurzel des leidens',
       'ein schlectes Beispeil',
     ];
-    let res = await es.exampleSuttaMap(examples);
+    let res = await deExamples.suttasOfExamples(examples);
     should.deepEqual(res, {
       'ein schlectes Beispeil': [],
       'wurzel des leidens': ['sn42.11', 'sn56.21', 'mn116', 'dn16'],
     });
+  });
+  it("TESTTESTlangAuthorPath()", async ()=>{
+    let egPath = deExamples.langAuthorPath();
+    let text = (await fs.promises.readFile(egPath)).toString();
+    let lines = text.split('\n');
+    should(lines[0]).equal('aber meine Dame');
+    should(lines[lines.length-2]).equal('zwei Toren');
+  });
+  it("TESTTESTexamples()", async ()=>{
+    let lines = await deExamples.examples();
+    should(lines[0]).equal('aber meine Dame');
+    should(lines[lines.length-2]).equal('zwei Toren');
   });
 });

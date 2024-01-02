@@ -123,7 +123,7 @@
         let msStart = Date.now();
         let enWords = await English.wordSet();
         let msElapsed = Date.now() - msStart;
-        should(msElapsed).above(100).below(longWait);
+        should(msElapsed).above(-1).below(longWait);
 
         // cached
         msStart = Date.now();

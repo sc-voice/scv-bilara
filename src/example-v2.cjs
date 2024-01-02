@@ -1,4 +1,6 @@
 (function (exports) {
+  const path = require('path');
+  const fs = require('fs');
   const { BilaraPath, AuthorsV2 } = require('scv-esm');
   const BilaraData = require('./bilara-data.js');
   const Seeker = require('./seeker.cjs');
@@ -43,6 +45,29 @@
 
     get initialized() {
       return this.bilaraData.initialized;
+    }
+
+    langAuthorPath() {
+      let { lang, author, category, bilaraData } = this;
+      let { root } = bilaraData;
+      author = author || AuthorsV2.langAuthor(lang);
+      let authorInfo = AuthorsV2.authorInfo(author);
+      let { exampleVersion:egVer } = authorInfo;
+      let pathDir = `${root}/examples`;
+      let fname = [
+        'examples',
+        lang,
+        category,
+        egVer,
+        `${author}.txt`,
+      ].join('-');
+      return path.join(root, 'examples', fname);
+    }
+
+    async examples() {
+      let egPath = this.langAuthorPath();
+      let text = (await fs.promises.readFile(egPath)).toString();
+      return text.split('\n');
     }
 
     async initialize() {
@@ -95,7 +120,7 @@
       return results;
     }
 
-    async exampleSuttaMap(examples) {
+    async suttasOfExamples(examples) {
       let map = {}
       examples = examples.toSorted();
       for (let i=0; i < examples.length; i++) {
