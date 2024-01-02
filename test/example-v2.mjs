@@ -20,6 +20,7 @@ const bilaraData = deExamples.bilaraData;
       branch: 'published',
       repository: 'ebt-data',
       gitAccount: 'ebt-site',
+      memoize: true,
     });
   });
   it("custom ctor", ()=>{
@@ -29,11 +30,14 @@ const bilaraData = deExamples.bilaraData;
     let category = 'test-category';
     let gitAccount = 'suttacentral';
     let repository = 'bilara-data';
+    let memoize = false;
     let es = new ExampleV2({
-      lang, author, category, gitAccount, repository, bilaraData,
+      lang, author, category, gitAccount, repository, bilaraData, 
+      memoize,
     });
     should(es).properties({
       lang, author, category, gitAccount, repository, bilaraData,
+      memoize,
     });
   });
   it("custom ctor de", async()=>{

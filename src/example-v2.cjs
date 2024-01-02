@@ -19,6 +19,7 @@
         branch='published',
         repository='ebt-data',
         gitAccount='ebt-site',
+        memoize=true,
         bilaraData,
       } = opts;
       author = author || AuthorsV2.langAuthor(lang, {
@@ -39,6 +40,7 @@
         branch,
         gitAccount,
         bilaraData,
+        memoize,
         repository,
       });
     }
@@ -73,12 +75,13 @@
     async initialize() {
       const msg = 'ExampleV2.initialize()';
       const dbg = DBG_EXAMPLES;
-      let { author, lang, bilaraData } = this;
+      let { author, lang, memoize, bilaraData } = this;
       let seekerOpts = {
         lang,
         author,
         maxDoc: 100,
         minLang: 2,
+        readFile: memoize,
         trilingual: true,
       }
       dbg && console.log(msg, '[1]new Seeker', seekerOpts);

@@ -65,7 +65,10 @@ DESCRIPTION
 
     -es, --exampleSuttas
         Return JSON map of examples to matching suttas. Use examples
-        for given docAuthor and docLang values.
+        for given docAuthor and docLang values. Matching suttas
+        are listed in descending order of relevant scores.  Suttas
+        with the highest score are "definitional suttas" that
+        provide the most explanation for a given example.
         
     -f, --filter MODE
         Filter segments according to mode: "pattern", "none".
@@ -620,7 +623,8 @@ function scriptEditor(res, pattern) {
 async function outExampleSuttas() {
   let lang = docLang;
   let author = docAuthor || AuthorsV2.langAuthor(lang);
-  let ev2 = await new ExampleV2({lang, author, }).initialize();
+  let memoize = readFile;
+  let ev2 = await new ExampleV2({lang, author, memoize}).initialize();
   //let examples = ['wurzel des leidens'];
   let examples = await ev2.examples();
   examples = examples.filter(eg=>!!eg);
