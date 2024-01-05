@@ -12,6 +12,7 @@ betrachten
 betrachte
 betrachtet
 blitz
+Bodensatz
 element
 elemente
 elementen
