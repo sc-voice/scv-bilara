@@ -502,7 +502,8 @@
           }
           mrgIn = mrgOut;
         }
-        var lines = mrgOut.sort(comparator).map((v) => `${v.fpath}:${v.count}`);
+        var lines = mrgOut.sort(comparator)
+          .map((v) => `${v.fpath}:${v.count}`);
         lines = Seeker.orderPrimary(lines, patPrimary);
         if (maxResults) {
           lines = lines.slice(0, maxResults);

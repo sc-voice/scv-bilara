@@ -70,6 +70,14 @@ DESCRIPTION
         with the highest score are "definitional suttas" that
         provide the most explanation for a given example.
         
+    -esk, --exampleSuttaKeywords
+        Like "-es" option but only returns results for 
+        keyword searches only.
+
+    -esp, --exampleSuttaPhrases
+        Like "-es" option but only returns results for 
+        phrase searches only.
+        
     -f, --filter MODE
         Filter segments according to mode: "pattern", "none".
         If mode is "pattern", then only segments matching pattern
@@ -209,6 +217,8 @@ var linebreak = ' ';
 var branch = 'unpublished';
 var trilingual = true;
 var exampleSuttas = false;
+var exampleSuttaKeywords = false;
+var exampleSuttaPhrases = false;
 var docLang = 'en';
 var docAuthor;
 
@@ -241,6 +251,10 @@ for (var i = 2; i < nargs; i++) {
         if (bdName === 'ebt-data') {
           branch = 'published';
         }
+    } else if (arg === '-esk' || arg === '--exampleSuttaKeywords') {
+        exampleSuttaKeywords = true;
+    } else if (arg === '-esp' || arg === '--exampleSuttaPhrases') {
+        exampleSuttaPhrases = true;
     } else if (arg === '-es' || arg === '--exampleSuttas') {
         exampleSuttas = true;
     } else if (arg === '-ll' || arg === '--logLevel') {
@@ -620,7 +634,7 @@ function scriptEditor(res, pattern) {
     write_editor(res, `'+/${vipat}'`, 'vi');
 }
 
-async function outExampleSuttas() {
+async function outExampleSuttas(opts={}) {
   let lang = docLang;
   let author = docAuthor || AuthorsV2.langAuthor(lang);
   let memoize = readFile;
@@ -628,13 +642,13 @@ async function outExampleSuttas() {
   //let examples = ['wurzel des leidens'];
   let examples = await ev2.examples();
   examples = examples.filter(eg=>!!eg);
-  let exampleSuttas = await ev2.suttasOfExamples(examples);
+  let suttas = await ev2.suttasOfExamples(examples, opts);
   for (let i=0; i < examples.length; i++) {
     let key = examples[i];
-    let value = exampleSuttas[key];
-    exampleSuttas[key] = value.join(' ');
+    let value = suttas[key];
+    suttas[key] = value.join(' ');
   }
-  console.log(JSON.stringify(exampleSuttas, null, 2));
+  console.log(JSON.stringify(suttas, null, 2));
 }
 
 logger.logLevel = logLevel;
@@ -650,7 +664,13 @@ logger.logLevel = logLevel;
     });
     logger.info(msg, 'initializing BilaraData', {sync});
     await bilaraData.initialize(sync);
-    if (exampleSuttas) {
+    if (exampleSuttaPhrases) {
+      outExampleSuttas({method:"phrase"});
+      return;
+    } else if (exampleSuttaKeywords) {
+      outExampleSuttas({method:"keywords"});
+      return;
+    } else if (exampleSuttas) {
       outExampleSuttas();
       return;
     }

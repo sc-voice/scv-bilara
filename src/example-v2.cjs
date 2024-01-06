@@ -94,9 +94,12 @@
       return this;
     }
 
-    async exampleSuttas(pattern) {
+    async exampleSuttas(pattern, opts={}) {
       const msg = 'ExampleV2.findExample()';
       const dbg = DBG_EXAMPLES;
+      let {
+        method
+      } = opts;
       let { 
         lang, minLang, author, initialized, bilaraData, seeker 
       } = this;
@@ -115,20 +118,22 @@
       }]);
       dbg && console.log(msg, '[1]findArgs', findArgs);
       let res = await seeker.find(findArgs);
+      let results = !!method && (res.method !== method)
+        ? []
+        : res.mlDocs.map(mld=>{
+            let { sutta_uid, segsMatched, langSegs } = mld;
+            return { sutta_uid, segsMatched, segsTotal: langSegs.pli };
+          });
       dbg && console.log(msg, '[2]', results);
-      let results = res.mlDocs.map(mld=>{
-        let { sutta_uid, segsMatched, langSegs } = mld;
-        return { sutta_uid, segsMatched, segsTotal: langSegs.pli };
-      });
       return results;
     }
 
-    async suttasOfExamples(examples) {
+    async suttasOfExamples(examples, opts={}) {
       let map = {}
       examples = [...examples].sort().filter(e=>!!e);
       for (let i=0; i < examples.length; i++) {
         let example = examples[i];
-        let suttas = await this.exampleSuttas(example);
+        let suttas = await this.exampleSuttas(example, opts);
         map[example] = suttas.map(s=>s.sutta_uid);
       }
       return map;
