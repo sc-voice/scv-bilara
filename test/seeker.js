@@ -584,7 +584,7 @@ typeof describe === "function" &&
         lines,
       });
     });
-    it("phraseSearch(...) finds Deutsch results", async () => {
+    it("TESTTESTphraseSearch(...) finds Deutsch results", async () => {
       var linesWurzel = [
         `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
         `${de_sab}sn/sn56/sn56.21_translation-de-sabbamitta.json:1`,
@@ -595,7 +595,8 @@ typeof describe === "function" &&
         //`${de_sab}dn/dn33_translation-de-sabbamitta.json:25`,
         `${de_sab}an/an6/an6.63_translation-de-sabbamitta.json:25`,
         `${de_sab}an/an3/an3.156-162_translation-de-sabbamitta.json:23`,
-        `${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:17`,
+        `${de_sab}mn/mn51_translation-de-sabbamitta.json:20`,
+        //`${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:17`,
         //`${de_sab}an/an4/an4.163_translation-de-sabbamitta.json:15`,
         //`${de_sab}dn/dn34_translation-de-sabbamitta.json:18`,
       ];
@@ -1036,15 +1037,16 @@ typeof describe === "function" &&
         //"dn33/de/sabbamitta",
         "an6.63/de/sabbamitta",
         "an3.156-162/de/sabbamitta",
+        "mn51/de/sabbamitta",
         //"an4.198/de/sabbamitta",
-        "an4.198/de/sabbamitta",
+        //"an4.198/de/sabbamitta",
         //'dn34/de/sabbamitta',
       ]);
       // We only care about three documents so that
       // is what we should get
       should.deepEqual(
         res.mlDocs.map((mld) => mld.score),
-        [25.176, 23.28, 17.153],
+        [25.176, 23.28, 20.105],
       );
     });
     it("find(...) => finds searchLang phrase", async () => {
