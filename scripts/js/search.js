@@ -652,28 +652,28 @@ async function outExampleSuttaD3(opts={}) {
 
   examples = examples.filter(eg=>!!eg);
   let egSuttaMap = await ev2.suttasOfExamples(examples, opts);
-  let sutta_uidMap = {};
+  let suidMap = {};
   for (let i=0; i < examples.length; i++) {
     let eg = examples[i];
     let egSuttas = egSuttaMap[eg];
     nodes.push({ 
       id: eg, 
       group: "Examples", 
-      rank: 0,
+      links: egSuttas.length,
     });
-    egSuttas.forEach(egs=>{
-      sutta_uidMap[egs] = sutta_uidMap[egs] || 0;
-      sutta_uidMap[egs]++;
-      links.push({ source: eg, target: egs, });
-    });
-    Object.keys(sutta_uidMap).forEach(sutta_uid=>{
-      nodes.push({
-        id: sutta_uid,
-        group: sutta_uid.replace(/[^a-z]*/i, ''),
-        rank: sutta_uidMap[sutta_uid],
-      });
+    egSuttas.forEach((egs,i)=>{
+      suidMap[egs] = suidMap[egs] || 0;
+      suidMap[egs]++;
+      links.push({ source: eg, target: egs, rank:i+1});
     });
   }
+  Object.keys(suidMap).forEach(sutta_uid=>{
+    nodes.push({
+      id: sutta_uid,
+      group: sutta_uid.replace(/[^a-z]+/i, ''),
+      links: suidMap[sutta_uid],
+    });
+  });
   let graph = { nodes, links }
   console.log(JSON.stringify(graph, null, 2));
 }

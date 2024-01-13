@@ -4,6 +4,15 @@ SCRIPT=`basename $0`
 
 echo $SCRIPT: BEGIN `date -R`
 
+echo $SCRIPT: ebt-data-esd3-pt-laera-quaresma.json
+$DIR/js/search.js -bd ebt-data -dl pt -da laera-quaresma -esd3 > src/assets/ebt-data-esd3-pt-laera-quaresma.json
+
+echo $SCRIPT: ebt-data-esd3-en-sujato.json
+$DIR/js/search.js -bd ebt-data -dl en -da sujato -esd3 > src/assets/ebt-data-esd3-en-sujato.json
+
+echo $SCRIPT: ebt-data-esd3-de-sabbamitta.json
+$DIR/js/search.js -bd ebt-data -dl de -da sabbamitta -esd3 > src/assets/ebt-data-esd3-de-sabbamitta.json
+
 echo $SCRIPT: ebt-data-es-en-sujato.json
 $DIR/js/search.js -bd ebt-data -dl en -da sujato -es > src/assets/ebt-data-es-en-sujato.json
 
