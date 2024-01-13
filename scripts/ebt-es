@@ -1,0 +1,13 @@
+#!/bin/bash
+DIR=`dirname $0`
+SCRIPT=`basename $0`
+
+echo $SCRIPT: BEGIN `date -R`
+
+echo $SCRIPT: ebt-data-es-en-sujato.json
+$DIR/js/search.js -bd ebt-data -dl en -da sujato -es > src/assets/ebt-data-es-en-sujato.json
+
+echo $SCRIPT: ebt-data-es-de-sabbamitta.json
+$DIR/js/search.js -bd ebt-data -dl de -da sabbamitta -es > src/assets/ebt-data-es-de-sabbamitta.json
+
+echo $SCRIPT: END `date -R`
