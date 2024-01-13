@@ -36,7 +36,7 @@
     {
       "lang": "pt",
       "category": "sutta",
-      "version": "2",
+      "version": "1",
       "author": "laera-quaresma"
     }
   ],
@@ -1823,6 +1823,6 @@
   ],
   "pt": [
     "dardo do anseio",
-    "em suprotar"
+    "em suportar"
   ]
 }
