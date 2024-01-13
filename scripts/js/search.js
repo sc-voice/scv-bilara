@@ -78,6 +78,10 @@ DESCRIPTION
         Like "-es" option but only returns results for 
         phrase searches only.
         
+    -esd3, --exampleSuttaD3
+        Return JSON D3 graph of examples and matching suttas. 
+        Use examples for given docAuthor and docLang values. 
+        
     -f, --filter MODE
         Filter segments according to mode: "pattern", "none".
         If mode is "pattern", then only segments matching pattern
@@ -217,6 +221,7 @@ var linebreak = ' ';
 var branch = 'unpublished';
 var trilingual = true;
 var exampleSuttas = false;
+var exampleSuttaD3 = false;
 var exampleSuttaKeywords = false;
 var exampleSuttaPhrases = false;
 var docLang = 'en';
@@ -251,6 +256,8 @@ for (var i = 2; i < nargs; i++) {
         if (bdName === 'ebt-data') {
           branch = 'published';
         }
+    } else if (arg === '-esd3' || arg === '--exampleSuttaD3') {
+        exampleSuttaD3 = true;
     } else if (arg === '-esk' || arg === '--exampleSuttaKeywords') {
         exampleSuttaKeywords = true;
     } else if (arg === '-esp' || arg === '--exampleSuttaPhrases') {
@@ -634,6 +641,43 @@ function scriptEditor(res, pattern) {
     write_editor(res, `'+/${vipat}'`, 'vi');
 }
 
+async function outExampleSuttaD3(opts={}) {
+  let lang = docLang;
+  let author = docAuthor || AuthorsV2.langAuthor(lang);
+  let memoize = readFile;
+  let ev2 = await new ExampleV2({lang, author, memoize}).initialize();
+  let examples = await ev2.examples();
+  let links = [];
+  let nodes = [];
+
+  examples = examples.filter(eg=>!!eg);
+  let egSuttaMap = await ev2.suttasOfExamples(examples, opts);
+  let sutta_uidMap = {};
+  for (let i=0; i < examples.length; i++) {
+    let eg = examples[i];
+    let egSuttas = egSuttaMap[eg];
+    nodes.push({ 
+      id: eg, 
+      group: "Examples", 
+      rank: 0,
+    });
+    egSuttas.forEach(egs=>{
+      sutta_uidMap[egs] = sutta_uidMap[egs] || 0;
+      sutta_uidMap[egs]++;
+      links.push({ source: eg, target: egs, });
+    });
+    Object.keys(sutta_uidMap).forEach(sutta_uid=>{
+      nodes.push({
+        id: sutta_uid,
+        group: sutta_uid.replace(/[^a-z]*/i, ''),
+        rank: sutta_uidMap[sutta_uid],
+      });
+    });
+  }
+  let graph = { nodes, links }
+  console.log(JSON.stringify(graph, null, 2));
+}
+
 async function outExampleSuttas(opts={}) {
   let lang = docLang;
   let author = docAuthor || AuthorsV2.langAuthor(lang);
@@ -664,7 +708,10 @@ logger.logLevel = logLevel;
     });
     logger.info(msg, 'initializing BilaraData', {sync});
     await bilaraData.initialize(sync);
-    if (exampleSuttaPhrases) {
+    if (exampleSuttaD3) {
+      outExampleSuttaD3();
+      return;
+    } else if (exampleSuttaPhrases) {
       outExampleSuttas({method:"phrase"});
       return;
     } else if (exampleSuttaKeywords) {

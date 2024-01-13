@@ -1,5 +1,5 @@
 typeof describe === "function" &&
-  describe("Seeker", function () {
+  describe("TESTTESTSeeker", function () {
     const should = require("should");
     const fs = require("fs");
     const path = require("path");
@@ -964,7 +964,7 @@ typeof describe === "function" &&
         "mn66/pli/ms",
       ]);
     });
-    it("find(...) => finds phrase", async () => {
+    it("TESTTESTfind(...) => finds phrase", async () => {
       var maxResults = 3;
       var skr = await new Seeker({
         maxResults,
@@ -1404,7 +1404,7 @@ typeof describe === "function" &&
           trilingual: true,
         });
     });
-    it("findArgs(...) author", async () => {
+    it("TESTTESTfindArgs(...) author", async () => {
       let bilaraData = await bd.initialize();
       let pattern = "root of suffering";
       let skr = await new Seeker({
@@ -1413,8 +1413,8 @@ typeof describe === "function" &&
 
       should(skr.findArgs([{ pattern, lang:"pt"}]))
         .properties({ 
-          author: "sujato", 
-          searchLang:'en',
+          author: "laera-quaresma", 
+          searchLang:'pt',
           docAuthor: 'laera-quaresma',
           docLang: 'pt',
           refAuthor: 'sujato',

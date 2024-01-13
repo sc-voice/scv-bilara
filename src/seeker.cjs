@@ -636,13 +636,20 @@
       langAuthor = langAuthor || author ||
         AuthorsV2.langAuthor(lang, {tipitakaCategories});
       if (searchLang == null) {
-        searchLang = this.patternLanguage(pattern, lang) 
-        dbg && console.log(msg, '[1]patternLanguage', searchLang);
+        switch (docLang) {
+          case undefined:
+          case null:
+          case 'de':
+          case 'en':
+            searchLang = this.patternLanguage(pattern, lang) 
+            dbg && console.log(msg, '[1]searchLang', searchLang);
+            break;
+          default:
+            searchLang = docLang;
+            dbg && console.log(msg, '[2]searchLangDoc', searchLang);
+            break;
+        }
       }
-      searchLang = searchLang == null 
-        ? this.patternLanguage(pattern, lang) 
-        : searchLang;
-      //minLang = minLang || (lang === "en" || searchLang === "en" ? 2 : 3);
       minLang = minLang || 2;
       pattern = Seeker.sanitizePattern(pattern);
       pattern = Seeker.normalizePattern(pattern);
@@ -651,7 +658,8 @@
       lang && !languages.includes(lang) && languages.push(lang);
       refLang === searchLang && 
         !languages.includes('ref') && languages.push('ref');
-      maxResults = Number(maxResults == null ? this.maxResults : maxResults);
+      maxResults = Number(maxResults == null 
+        ? this.maxResults : maxResults);
       if (isNaN(maxResults)) {
         throw new Error("maxResults must be a number");
       }
@@ -731,7 +739,7 @@
         trilingual,
         types,
       };
-      dbg && console.log(msg, '[2]', result);
+      dbg && console.log(msg, '[4]', result);
       return result;
     }
 
@@ -759,7 +767,8 @@
       var pattern = findArgs.pattern;
       if (this.isExample(pattern)) {
         if (findMemo == null) {
-          that.findMemo = findMemo = memoizer.memoize(callSlowFind, Seeker);
+          that.findMemo = 
+          findMemo = memoizer.memoize(callSlowFind, Seeker);
         }
         var promise = findMemo(findArgs);
         this.debug(`${msg} example:${pattern}`);
