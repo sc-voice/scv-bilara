@@ -831,6 +831,11 @@
       "links": 2
     },
     {
+      "id": "die Welt ist brüchig und wird fortgerissen",
+      "group": "Examples",
+      "links": 1
+    },
+    {
       "id": "die Welt streitet mit mir",
       "group": "Examples",
       "links": 1
@@ -1919,6 +1924,11 @@
       "id": "ich fühle ein angenehmes Gefühl",
       "group": "Examples",
       "links": 3
+    },
+    {
+      "id": "ich komme von Osten",
+      "group": "Examples",
+      "links": 2
     },
     {
       "id": "ich lege mich lieber ein bisschen hin",
@@ -3821,6 +3831,11 @@
       "links": 1
     },
     {
+      "id": "Weisheit viel besser als Reichtum",
+      "group": "Examples",
+      "links": 2
+    },
+    {
       "id": "weit weg von der tollen Menge",
       "group": "Examples",
       "links": 4
@@ -4483,7 +4498,7 @@
     {
       "id": "thag16.4",
       "group": "thag",
-      "links": 3
+      "links": 4
     },
     {
       "id": "thag20.1",
@@ -4503,7 +4518,7 @@
     {
       "id": "mn82",
       "group": "mn",
-      "links": 5
+      "links": 8
     },
     {
       "id": "dn14",
@@ -7958,7 +7973,7 @@
     {
       "id": "sn3.25",
       "group": "sn",
-      "links": 2
+      "links": 3
     },
     {
       "id": "sn45.170",
@@ -20253,6 +20268,11 @@
       "rank": 2
     },
     {
+      "source": "die Welt ist brüchig und wird fortgerissen",
+      "target": "mn82",
+      "rank": 1
+    },
+    {
       "source": "die Welt streitet mit mir",
       "target": "sn22.94",
       "rank": 1
@@ -28031,6 +28051,16 @@
       "source": "ich fühle ein angenehmes Gefühl",
       "target": "dn22",
       "rank": 3
+    },
+    {
+      "source": "ich komme von Osten",
+      "target": "sn3.25",
+      "rank": 1
+    },
+    {
+      "source": "ich komme von Osten",
+      "target": "mn82",
+      "rank": 2
     },
     {
       "source": "ich lege mich lieber ein bisschen hin",
@@ -39601,6 +39631,16 @@
       "source": "Weisheit auf dem Schoß",
       "target": "an3.30",
       "rank": 1
+    },
+    {
+      "source": "Weisheit viel besser als Reichtum",
+      "target": "thag16.4",
+      "rank": 1
+    },
+    {
+      "source": "Weisheit viel besser als Reichtum",
+      "target": "mn82",
+      "rank": 2
     },
     {
       "source": "weit weg von der tollen Menge",

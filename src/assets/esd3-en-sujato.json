@@ -1796,6 +1796,11 @@
       "links": 13
     },
     {
+      "id": "I come from the east",
+      "group": "Examples",
+      "links": 2
+    },
+    {
       "id": "I don't rely on faith",
       "group": "Examples",
       "links": 2
@@ -3776,6 +3781,11 @@
       "links": 2
     },
     {
+      "id": "the world is unstable and swept away",
+      "group": "Examples",
+      "links": 1
+    },
+    {
       "id": "they’re happy with that",
       "group": "Examples",
       "links": 9
@@ -4359,6 +4369,11 @@
       "id": "wisdom on their lap",
       "group": "Examples",
       "links": 1
+    },
+    {
+      "id": "wisdom’s much better than wealth",
+      "group": "Examples",
+      "links": 2
     },
     {
       "id": "wish of an ethical person",
@@ -5583,7 +5598,7 @@
     {
       "id": "thag16.4",
       "group": "thag",
-      "links": 5
+      "links": 6
     },
     {
       "id": "sn4.25",
@@ -5598,7 +5613,7 @@
     {
       "id": "mn82",
       "group": "mn",
-      "links": 8
+      "links": 11
     },
     {
       "id": "sn10.12",
@@ -11596,6 +11611,11 @@
       "links": 1
     },
     {
+      "id": "sn3.25",
+      "group": "sn",
+      "links": 3
+    },
+    {
       "id": "thag1.9",
       "group": "thag",
       "links": 1
@@ -12587,11 +12607,6 @@
     },
     {
       "id": "sn47.2",
-      "group": "sn",
-      "links": 2
-    },
-    {
-      "id": "sn3.25",
       "group": "sn",
       "links": 2
     },
@@ -29918,6 +29933,16 @@
       "rank": 13
     },
     {
+      "source": "I come from the east",
+      "target": "sn3.25",
+      "rank": 1
+    },
+    {
+      "source": "I come from the east",
+      "target": "mn82",
+      "rank": 2
+    },
+    {
       "source": "I don't rely on faith",
       "target": "sn48.44",
       "rank": 1
@@ -43278,6 +43303,11 @@
       "rank": 2
     },
     {
+      "source": "the world is unstable and swept away",
+      "target": "mn82",
+      "rank": 1
+    },
+    {
       "source": "they’re happy with that",
       "target": "mn29",
       "rank": 1
@@ -47536,6 +47566,16 @@
       "source": "wisdom on their lap",
       "target": "an3.30",
       "rank": 1
+    },
+    {
+      "source": "wisdom’s much better than wealth",
+      "target": "thag16.4",
+      "rank": 1
+    },
+    {
+      "source": "wisdom’s much better than wealth",
+      "target": "mn82",
+      "rank": 2
     },
     {
       "source": "wish of an ethical person",
