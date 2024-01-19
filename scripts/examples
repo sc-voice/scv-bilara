@@ -5,9 +5,11 @@ SCRIPT=`basename $0 | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ`
 
 git pull
 
-echo "$SCRIPT: bulding examples-json.js"
+echo "$SCRIPT: building examples-json.js"
 $DIR/js/examples-json.js; RC=$? || exit $RC
-echo "$SCRIPT: bulding esd3 example graphs"
+
+echo "$SCRIPT: building esd3 example graphs"
+$DIR/ebt-es
 
 git status | grep 'nothing to commit' > /dev/null; RC=$?
 if [ "$RC" == "0" ]; then

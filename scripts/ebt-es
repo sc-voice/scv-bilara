@@ -1,22 +1,26 @@
 #!/bin/bash
 DIR=`dirname $0`
 SCRIPT=`basename $0`
+ASSETS=$DIR/../src/assets
 
 echo $SCRIPT: BEGIN `date -R`
 
+echo ASSETS=$ASSETS
+echo DIR=$DIR
+
 echo $SCRIPT: esd3-pt-laera-quaresma.json
-$DIR/js/search.js -bd ebt-data -dl pt -da laera-quaresma -esd3 > src/assets/esd3-pt-laera-quaresma.json
+$DIR/js/search.js -bd ebt-data -dl pt -da laera-quaresma -esd3 > $ASSETS/esd3-pt-laera-quaresma.json
 
 echo $SCRIPT: esd3-en-sujato.json
-$DIR/js/search.js -bd ebt-data -dl en -da sujato -esd3 > src/assets/esd3-en-sujato.json
+$DIR/js/search.js -bd ebt-data -dl en -da sujato -esd3 > $ASSETS/esd3-en-sujato.json
 
 echo $SCRIPT: esd3-de-sabbamitta.json
-$DIR/js/search.js -bd ebt-data -dl de -da sabbamitta -esd3 > src/assets/esd3-de-sabbamitta.json
+$DIR/js/search.js -bd ebt-data -dl de -da sabbamitta -esd3 > $ASSETS/esd3-de-sabbamitta.json
 
 #echo $SCRIPT: ebt-data-es-en-sujato.json
-#$DIR/js/search.js -bd ebt-data -dl en -da sujato -es > src/assets/en-sujato.json
+#$DIR/js/search.js -bd ebt-data -dl en -da sujato -es > $ASSETS/en-sujato.json
  
 #echo $SCRIPT: ebt-data-es-de-sabbamitta.json
-#$DIR/js/search.js -bd ebt-data -dl de -da sabbamitta -es > src/assets/de-sabbamitta.json
+#$DIR/js/search.js -bd ebt-data -dl de -da sabbamitta -es > $ASSETS/de-sabbamitta.json
 
 echo $SCRIPT: END `date -R`

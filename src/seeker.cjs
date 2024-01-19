@@ -31,9 +31,14 @@
 
   class Seeker {
     constructor(opts = {}) {
+      const msg = "Seeker.ctor()";
+      const dbg = DBG_SEEKER;
       (opts.logger || logger).logInstance(this, opts);
-      var root = (this.root = opts.root || BILARA_PATH);
-      this.bilaraData = opts.bilaraData || new BilaraData(opts);
+      let bilaraData =
+        (this.bilaraData = opts.bilaraData || new BilaraData(opts));
+      let root = 
+        (this.root = opts.root || bilaraData.root || BILARA_PATH);
+      dbg && console.log(msg, '[1]root', root, this.bilaraData.root);
       this.includeUnpublished =
         opts.includeUnpublished || this.bilaraData.includeUnpublished;
       this.lang = opts.lang || "en";
