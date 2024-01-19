@@ -3,4 +3,4 @@ DIR=`dirname $0`;
 pushd $DIR/..
 SCRIPT=`basename $0 | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ`
 
-$DIR/examples
+$DIR/examples PUSH

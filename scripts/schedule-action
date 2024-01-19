@@ -9,4 +9,4 @@ npm install --save scv-esm@latest
 npm install --save log-instance@latest
 npm install --save memo-again@latest
 $DIR/js/suidmap.js
-$DIR/examples
+$DIR/examples PUSH
