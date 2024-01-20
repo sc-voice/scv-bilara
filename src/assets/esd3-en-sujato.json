@@ -1571,6 +1571,11 @@
       "links": 3
     },
     {
+      "id": "happy and pleased",
+      "group": "Examples",
+      "links": 8
+    },
+    {
       "id": "hard to comprehend",
       "group": "Examples",
       "links": 1
@@ -4551,7 +4556,7 @@
       "id": "dn2",
       "group": "dn",
       "rank": 1,
-      "links": 63
+      "links": 64
     },
     {
       "id": "dn17",
@@ -4647,7 +4652,7 @@
       "id": "an4.61",
       "group": "an",
       "rank": 1,
-      "links": 2
+      "links": 3
     },
     {
       "id": "an3.117",
@@ -5559,7 +5564,7 @@
       "id": "sn42.12",
       "group": "sn",
       "rank": 1,
-      "links": 7
+      "links": 8
     },
     {
       "id": "sn42.13",
@@ -8931,7 +8936,7 @@
       "id": "dn29",
       "group": "dn",
       "rank": 2,
-      "links": 15
+      "links": 16
     },
     {
       "id": "ud4.3",
@@ -9051,7 +9056,7 @@
       "id": "an10.91",
       "group": "an",
       "rank": 1,
-      "links": 4
+      "links": 5
     },
     {
       "id": "ud1.4",
@@ -12261,6 +12266,24 @@
       "id": "thag6.1",
       "group": "thag",
       "rank": 4,
+      "links": 2
+    },
+    {
+      "id": "sn3.19",
+      "group": "sn",
+      "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "an5.227",
+      "group": "an",
+      "rank": 6,
+      "links": 1
+    },
+    {
+      "id": "an5.41",
+      "group": "an",
+      "rank": 3,
       "links": 2
     },
     {
@@ -16521,12 +16544,6 @@
       "id": "an9.82",
       "group": "an",
       "rank": 15,
-      "links": 1
-    },
-    {
-      "id": "an5.41",
-      "group": "an",
-      "rank": 3,
       "links": 1
     },
     {
@@ -30139,6 +30156,46 @@
       "source": "happiness or sadness or equanimity",
       "target": "mn140",
       "rank": 3
+    },
+    {
+      "source": "happy and pleased",
+      "target": "an10.91",
+      "rank": 1
+    },
+    {
+      "source": "happy and pleased",
+      "target": "sn42.12",
+      "rank": 2
+    },
+    {
+      "source": "happy and pleased",
+      "target": "dn29",
+      "rank": 3
+    },
+    {
+      "source": "happy and pleased",
+      "target": "sn3.19",
+      "rank": 4
+    },
+    {
+      "source": "happy and pleased",
+      "target": "dn2",
+      "rank": 5
+    },
+    {
+      "source": "happy and pleased",
+      "target": "an5.227",
+      "rank": 6
+    },
+    {
+      "source": "happy and pleased",
+      "target": "an5.41",
+      "rank": 7
+    },
+    {
+      "source": "happy and pleased",
+      "target": "an4.61",
+      "rank": 8
     },
     {
       "source": "hard to comprehend",
