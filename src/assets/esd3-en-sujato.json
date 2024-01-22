@@ -1041,6 +1041,11 @@
       "links": 3
     },
     {
+      "id": "entire spectrum",
+      "group": "Examples",
+      "links": 28
+    },
+    {
       "id": "Equanimity and immersion",
       "group": "Examples",
       "links": 1
@@ -3371,11 +3376,6 @@
       "links": 16
     },
     {
-      "id": "spectrum of wisdom",
-      "group": "Examples",
-      "links": 7
-    },
-    {
       "id": "spectrums of the teaching",
       "group": "Examples",
       "links": 2
@@ -4561,7 +4561,7 @@
       "id": "dn2",
       "group": "dn",
       "rank": 1,
-      "links": 64
+      "links": 65
     },
     {
       "id": "dn17",
@@ -4645,7 +4645,7 @@
       "id": "dn8",
       "group": "dn",
       "rank": 1,
-      "links": 16
+      "links": 17
     },
     {
       "id": "an3.118",
@@ -4861,7 +4861,7 @@
       "id": "mn38",
       "group": "mn",
       "rank": 1,
-      "links": 25
+      "links": 26
     },
     {
       "id": "sn12.34",
@@ -5737,43 +5737,43 @@
       "id": "an4.198",
       "group": "an",
       "rank": 1,
-      "links": 19
+      "links": 20
     },
     {
       "id": "an10.99",
       "group": "an",
       "rank": 1,
-      "links": 15
+      "links": 16
     },
     {
       "id": "mn112",
       "group": "mn",
       "rank": 1,
-      "links": 15
+      "links": 16
     },
     {
       "id": "mn27",
       "group": "mn",
       "rank": 4,
-      "links": 12
+      "links": 13
     },
     {
       "id": "mn51",
       "group": "mn",
       "rank": 1,
-      "links": 21
+      "links": 22
     },
     {
       "id": "mn94",
       "group": "mn",
       "rank": 1,
-      "links": 20
+      "links": 21
     },
     {
       "id": "mn101",
       "group": "mn",
       "rank": 2,
-      "links": 18
+      "links": 19
     },
     {
       "id": "dn31",
@@ -7801,7 +7801,7 @@
       "id": "mn44",
       "group": "mn",
       "rank": 1,
-      "links": 11
+      "links": 10
     },
     {
       "id": "an5.196",
@@ -8935,7 +8935,7 @@
       "id": "thag16.7",
       "group": "thag",
       "rank": 12,
-      "links": 1
+      "links": 2
     },
     {
       "id": "dn29",
@@ -10520,6 +10520,84 @@
       "group": "sn",
       "rank": 3,
       "links": 2
+    },
+    {
+      "id": "an5.22",
+      "group": "an",
+      "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "an3.26",
+      "group": "an",
+      "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "an5.108",
+      "group": "an",
+      "rank": 15,
+      "links": 1
+    },
+    {
+      "id": "an5.252",
+      "group": "an",
+      "rank": 16,
+      "links": 1
+    },
+    {
+      "id": "an5.253",
+      "group": "an",
+      "rank": 17,
+      "links": 1
+    },
+    {
+      "id": "an5.251",
+      "group": "an",
+      "rank": 18,
+      "links": 1
+    },
+    {
+      "id": "an3.143",
+      "group": "an",
+      "rank": 19,
+      "links": 1
+    },
+    {
+      "id": "iti59",
+      "group": "iti",
+      "rank": 20,
+      "links": 1
+    },
+    {
+      "id": "an10.12",
+      "group": "an",
+      "rank": 5,
+      "links": 4
+    },
+    {
+      "id": "an11.10",
+      "group": "an",
+      "rank": 22,
+      "links": 1
+    },
+    {
+      "id": "sn47.13",
+      "group": "sn",
+      "rank": 3,
+      "links": 5
+    },
+    {
+      "id": "sn3.24",
+      "group": "sn",
+      "rank": 6,
+      "links": 2
+    },
+    {
+      "id": "an3.57",
+      "group": "an",
+      "rank": 1,
+      "links": 4
     },
     {
       "id": "sn45.4",
@@ -12796,12 +12874,6 @@
       "links": 3
     },
     {
-      "id": "sn47.13",
-      "group": "sn",
-      "rank": 3,
-      "links": 4
-    },
-    {
       "id": "iti74",
       "group": "iti",
       "rank": 1,
@@ -12998,12 +13070,6 @@
       "group": "sn",
       "rank": 65,
       "links": 1
-    },
-    {
-      "id": "an10.12",
-      "group": "an",
-      "rank": 5,
-      "links": 3
     },
     {
       "id": "sn45.149",
@@ -15268,12 +15334,6 @@
       "links": 3
     },
     {
-      "id": "an3.57",
-      "group": "an",
-      "rank": 1,
-      "links": 3
-    },
-    {
       "id": "iti12",
       "group": "iti",
       "rank": 1,
@@ -15685,12 +15745,6 @@
       "id": "iti75",
       "group": "iti",
       "rank": 4,
-      "links": 1
-    },
-    {
-      "id": "sn3.24",
-      "group": "sn",
-      "rank": 6,
       "links": 1
     },
     {
@@ -16363,18 +16417,6 @@
       "id": "sn11.12",
       "group": "sn",
       "rank": 4,
-      "links": 1
-    },
-    {
-      "id": "an5.22",
-      "group": "an",
-      "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "an3.26",
-      "group": "an",
-      "rank": 3,
       "links": 1
     },
     {
@@ -26317,6 +26359,146 @@
       "source": "enjoying the eye",
       "target": "sn35.9",
       "rank": 3
+    },
+    {
+      "source": "entire spectrum",
+      "target": "dn10",
+      "rank": 1
+    },
+    {
+      "source": "entire spectrum",
+      "target": "an5.22",
+      "rank": 2
+    },
+    {
+      "source": "entire spectrum",
+      "target": "sn6.2",
+      "rank": 3
+    },
+    {
+      "source": "entire spectrum",
+      "target": "an3.26",
+      "rank": 4
+    },
+    {
+      "source": "entire spectrum",
+      "target": "an4.21",
+      "rank": 5
+    },
+    {
+      "source": "entire spectrum",
+      "target": "an4.198",
+      "rank": 6
+    },
+    {
+      "source": "entire spectrum",
+      "target": "an10.99",
+      "rank": 7
+    },
+    {
+      "source": "entire spectrum",
+      "target": "mn112",
+      "rank": 8
+    },
+    {
+      "source": "entire spectrum",
+      "target": "mn51",
+      "rank": 9
+    },
+    {
+      "source": "entire spectrum",
+      "target": "mn27",
+      "rank": 10
+    },
+    {
+      "source": "entire spectrum",
+      "target": "mn101",
+      "rank": 11
+    },
+    {
+      "source": "entire spectrum",
+      "target": "mn77",
+      "rank": 12
+    },
+    {
+      "source": "entire spectrum",
+      "target": "mn38",
+      "rank": 13
+    },
+    {
+      "source": "entire spectrum",
+      "target": "dn2",
+      "rank": 14
+    },
+    {
+      "source": "entire spectrum",
+      "target": "an5.108",
+      "rank": 15
+    },
+    {
+      "source": "entire spectrum",
+      "target": "an5.252",
+      "rank": 16
+    },
+    {
+      "source": "entire spectrum",
+      "target": "an5.253",
+      "rank": 17
+    },
+    {
+      "source": "entire spectrum",
+      "target": "an5.251",
+      "rank": 18
+    },
+    {
+      "source": "entire spectrum",
+      "target": "an3.143",
+      "rank": 19
+    },
+    {
+      "source": "entire spectrum",
+      "target": "iti59",
+      "rank": 20
+    },
+    {
+      "source": "entire spectrum",
+      "target": "an10.12",
+      "rank": 21
+    },
+    {
+      "source": "entire spectrum",
+      "target": "an11.10",
+      "rank": 22
+    },
+    {
+      "source": "entire spectrum",
+      "target": "sn47.13",
+      "rank": 23
+    },
+    {
+      "source": "entire spectrum",
+      "target": "sn3.24",
+      "rank": 24
+    },
+    {
+      "source": "entire spectrum",
+      "target": "an3.57",
+      "rank": 25
+    },
+    {
+      "source": "entire spectrum",
+      "target": "thag16.7",
+      "rank": 26
+    },
+    {
+      "source": "entire spectrum",
+      "target": "mn94",
+      "rank": 27
+    },
+    {
+      "source": "entire spectrum",
+      "target": "dn8",
+      "rank": 28
     },
     {
       "source": "Equanimity and immersion",
@@ -42737,41 +42919,6 @@
       "source": "speak the truth",
       "target": "mn82",
       "rank": 16
-    },
-    {
-      "source": "spectrum of wisdom",
-      "target": "dn10",
-      "rank": 1
-    },
-    {
-      "source": "spectrum of wisdom",
-      "target": "an5.22",
-      "rank": 2
-    },
-    {
-      "source": "spectrum of wisdom",
-      "target": "an3.26",
-      "rank": 3
-    },
-    {
-      "source": "spectrum of wisdom",
-      "target": "sn6.2",
-      "rank": 4
-    },
-    {
-      "source": "spectrum of wisdom",
-      "target": "an4.21",
-      "rank": 5
-    },
-    {
-      "source": "spectrum of wisdom",
-      "target": "mn44",
-      "rank": 6
-    },
-    {
-      "source": "spectrum of wisdom",
-      "target": "mn77",
-      "rank": 7
     },
     {
       "source": "spectrums of the teaching",
