@@ -1341,6 +1341,11 @@
       "links": 8
     },
     {
+      "id": "from the foolish",
+      "group": "Examples",
+      "links": 2
+    },
+    {
       "id": "from the soles of the feet",
       "group": "Examples",
       "links": 9
@@ -5012,7 +5017,7 @@
       "id": "mn115",
       "group": "mn",
       "rank": 1,
-      "links": 10
+      "links": 11
     },
     {
       "id": "mn75",
@@ -11691,6 +11696,12 @@
       "group": "sn",
       "rank": 1,
       "links": 5
+    },
+    {
+      "id": "an3.1",
+      "group": "an",
+      "rank": 1,
+      "links": 1
     },
     {
       "id": "thig2.8",
@@ -28711,6 +28722,16 @@
       "source": "from a cow comes milk",
       "target": "dn9",
       "rank": 8
+    },
+    {
+      "source": "from the foolish",
+      "target": "an3.1",
+      "rank": 1
+    },
+    {
+      "source": "from the foolish",
+      "target": "mn115",
+      "rank": 2
     },
     {
       "source": "from the soles of the feet",
