@@ -70,7 +70,7 @@ const bilaraData = deExamples.bilaraData;
     should.deepEqual(res.map(s=>s.sutta_uid), 
       ['sn42.11', 'sn56.21', 'mn116', 'dn16']);
   });
-  it("TESTTESTsuttasOfExamples()", async()=>{
+  it("suttasOfExamples()", async()=>{
     let lang = 'de';
     let examples = [
       'wurzel des leidens',
@@ -82,14 +82,14 @@ const bilaraData = deExamples.bilaraData;
       'wurzel des leidens': ['sn42.11', 'sn56.21', 'mn116', 'dn16'],
     });
   });
-  it("TESTTESTlangAuthorPath()", async ()=>{
+  it("langAuthorPath()", async ()=>{
     let egPath = deExamples.langAuthorPath();
     let text = (await fs.promises.readFile(egPath)).toString();
     let lines = text.split('\n');
     should(lines[0]).equal('aber meine Dame');
     should(lines[lines.length-2]).equal('zwei Toren');
   });
-  it("TESTTESTexamples()", async ()=>{
+  it("examples()", async ()=>{
     let lines = await deExamples.examples();
     should(lines[0]).equal('aber meine Dame');
     should(lines[lines.length-2]).equal('zwei Toren');

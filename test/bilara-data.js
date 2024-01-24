@@ -200,7 +200,7 @@
         should.deepEqual(bd.authors.sabbamitta, sabbamitta);
 
     });
-    it("authorV2Info() => supported author info", async()=>{
+    it("TESTTESTauthorV2Info() => supported author info", async()=>{
         await bd.initialize();
         var sujato = {
             lang: 'en',
@@ -220,7 +220,7 @@
               "Gabriel Laera", "Marco Quaresma", 'Vitor Guimarães'
             ],
             lang: 'pt',
-            exampleVersion: 1,
+            exampleVersion: 2,
             sutta: true,
             vinaya: false,
         };
