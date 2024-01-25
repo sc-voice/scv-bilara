@@ -26,6 +26,86 @@
       "links": 1
     },
     {
+      "id": "devem? ser abandonad.s?",
+      "group": "Examples",
+      "links": 0
+    },
+    {
+      "id": "incondicional",
+      "group": "Examples",
+      "links": 0
+    },
+    {
+      "id": "esta é outra forma",
+      "group": "Examples",
+      "links": 0
+    },
+    {
+      "id": "três características",
+      "group": "Examples",
+      "links": 2
+    },
+    {
+      "id": "sem sinais",
+      "group": "Examples",
+      "links": 0
+    },
+    {
+      "id": "não dirigida",
+      "group": "Examples",
+      "links": 0
+    },
+    {
+      "id": "desenvolver estes três",
+      "group": "Examples",
+      "links": 0
+    },
+    {
+      "id": "visão substancialista",
+      "group": "Examples",
+      "links": 0
+    },
+    {
+      "id": "forma como o eu",
+      "group": "Examples",
+      "links": 2
+    },
+    {
+      "id": "escolhas como o eu",
+      "group": "Examples",
+      "links": 0
+    },
+    {
+      "id": "como é que um bhikkhu",
+      "group": "Examples",
+      "links": 1
+    },
+    {
+      "id": "conceito",
+      "group": "Examples",
+      "links": 0
+    },
+    {
+      "id": "três processos",
+      "group": "Examples",
+      "links": 0
+    },
+    {
+      "id": "serenidade e discernimento",
+      "group": "Examples",
+      "links": 0
+    },
+    {
+      "id": "coisas são úteis",
+      "group": "Examples",
+      "links": 0
+    },
+    {
+      "id": "três espectros de prática",
+      "group": "Examples",
+      "links": 0
+    },
+    {
       "id": "sn1.66",
       "group": "sn",
       "rank": 1,
@@ -100,8 +180,8 @@
     {
       "id": "an3.63",
       "group": "an",
-      "rank": 11,
-      "links": 1
+      "rank": 1,
+      "links": 2
     },
     {
       "id": "an3.36",
@@ -123,6 +203,30 @@
     },
     {
       "id": "an3.1",
+      "group": "an",
+      "rank": 1,
+      "links": 1
+    },
+    {
+      "id": "an3.11",
+      "group": "an",
+      "rank": 1,
+      "links": 1
+    },
+    {
+      "id": "an3.3",
+      "group": "an",
+      "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "an3.64",
+      "group": "an",
+      "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "an1.150-169",
       "group": "an",
       "rank": 1,
       "links": 1
@@ -212,6 +316,31 @@
     {
       "source": "vêm do tolo",
       "target": "an3.1",
+      "rank": 1
+    },
+    {
+      "source": "três características",
+      "target": "an3.11",
+      "rank": 1
+    },
+    {
+      "source": "três características",
+      "target": "an3.3",
+      "rank": 2
+    },
+    {
+      "source": "forma como o eu",
+      "target": "an3.63",
+      "rank": 1
+    },
+    {
+      "source": "forma como o eu",
+      "target": "an3.64",
+      "rank": 2
+    },
+    {
+      "source": "como é que um bhikkhu",
+      "target": "an1.150-169",
       "rank": 1
     }
   ]
