@@ -8,6 +8,9 @@ echo $SCRIPT: BEGIN `date -R`
 echo ASSETS=$ASSETS
 echo DIR=$DIR
 
+echo $SCRIPT: esd3-pt-ebt-deepl.json
+$DIR/js/search.js -bd ebt-data -dl pt -da ebt-deepl -esd3 > $ASSETS/esd3-pt-ebt-deepl.json
+
 echo $SCRIPT: esd3-pt-laera-quaresma.json
 $DIR/js/search.js -bd ebt-data -dl pt -da laera-quaresma -esd3 > $ASSETS/esd3-pt-laera-quaresma.json
 
