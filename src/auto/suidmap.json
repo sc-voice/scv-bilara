@@ -9031,6 +9031,7 @@
 		"root/pli/ms": "sutta/kn/mil"
 	},
 	"mn1": {
+		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
 		"translation/fr/noeismet": "sutta/mn",
 		"translation/pl/hardao": "sutta/mn",
@@ -9067,6 +9068,7 @@
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn5": {
+		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
 		"translation/fr/noeismet": "sutta/mn",
 		"translation/pl/hardao": "sutta/mn",
@@ -9075,6 +9077,7 @@
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn6": {
+		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
 		"translation/fr/noeismet": "sutta/mn",
 		"translation/pl/hardao": "sutta/mn",
@@ -9102,6 +9105,7 @@
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn9": {
+		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
 		"translation/fr/noeismet": "sutta/mn",
 		"translation/lt/piyadassi": "sutta/mn",
