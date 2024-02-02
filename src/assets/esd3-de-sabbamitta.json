@@ -148,7 +148,7 @@
     {
       "id": "Arten der Fortpflanzung",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "Art von Lehrer",
@@ -213,7 +213,7 @@
     {
       "id": "auf materiellen Besitz",
       "group": "Examples",
-      "links": 1
+      "links": 14
     },
     {
       "id": "auf Schönheit",
@@ -308,7 +308,7 @@
     {
       "id": "beide.* Enden",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "bei der besten angekommen",
@@ -448,7 +448,7 @@
     {
       "id": "Dachsparren",
       "group": "Examples",
-      "links": 11
+      "links": 12
     },
     {
       "id": "da ist ein Entrinnen",
@@ -1058,7 +1058,7 @@
     {
       "id": "einfältige.* Mann",
       "group": "Examples",
-      "links": 12
+      "links": 13
     },
     {
       "id": "ein hasserfüllter Mensch",
@@ -1078,7 +1078,7 @@
     {
       "id": "einen gierigen Geist",
       "group": "Examples",
-      "links": 16
+      "links": 17
     },
     {
       "id": "einen Schilfhalm aus seiner Scheide",
@@ -1183,7 +1183,7 @@
     {
       "id": "entsprechend ihrer Taten wiedergeboren",
       "group": "Examples",
-      "links": 36
+      "links": 37
     },
     {
       "id": "entwickelt die Grundlage übersinnlicher Kraft",
@@ -1458,7 +1458,7 @@
     {
       "id": "fünf Bestimmungsorte",
       "group": "Examples",
-      "links": 14
+      "links": 15
     },
     {
       "id": "fünf Dinge.* entwickelt werden",
@@ -1573,7 +1573,7 @@
     {
       "id": "genießt.*Arbeit",
       "group": "Examples",
-      "links": 14
+      "links": 12
     },
     {
       "id": "Genügsamkeit",
@@ -1793,7 +1793,7 @@
     {
       "id": "haarsträubend",
       "group": "Examples",
-      "links": 9
+      "links": 10
     },
     {
       "id": "haltlos werden",
@@ -2003,7 +2003,7 @@
     {
       "id": "inbrünstige.* Bußübung",
       "group": "Examples",
-      "links": 12
+      "links": 13
     },
     {
       "id": "in den drei Zeiten",
@@ -2283,7 +2283,7 @@
     {
       "id": "Kräuter, Hirse",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "Kreislauf der Wiedergeburten",
@@ -2308,7 +2308,7 @@
     {
       "id": "Kuhhirt",
       "group": "Examples",
-      "links": 20
+      "links": 21
     },
     {
       "id": "kühl geworden, voller Seligkeit",
@@ -2568,7 +2568,7 @@
     {
       "id": "Mögliche als möglich",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "möglich zu entwickeln",
@@ -2583,7 +2583,7 @@
     {
       "id": "mörderisch",
       "group": "Examples",
-      "links": 5
+      "links": 6
     },
     {
       "id": "muss aufgegeben werden",
@@ -2728,7 +2728,7 @@
     {
       "id": "nur einen Bissen",
       "group": "Examples",
-      "links": 5
+      "links": 6
     },
     {
       "id": "nur mir sollte man Gaben",
@@ -2853,7 +2853,7 @@
     {
       "id": "Roben aus Hanf",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "Rosenapfel",
@@ -3748,7 +3748,7 @@
     {
       "id": "wahrhaftig versteht: ‚Das ist das Leiden‘",
       "group": "Examples",
-      "links": 6
+      "links": 4
     },
     {
       "id": "Wahrnehmung des Abstoßenden",
@@ -4033,7 +4033,7 @@
     {
       "id": "wieder und wieder",
       "group": "Examples",
-      "links": 32
+      "links": 33
     },
     {
       "id": "wie ein Blitz",
@@ -4053,7 +4053,7 @@
     {
       "id": "wie ein Vogel",
       "group": "Examples",
-      "links": 24
+      "links": 25
     },
     {
       "id": "wie entwickelt ein Mönch",
@@ -4268,7 +4268,7 @@
     {
       "id": "zwei Arten von",
       "group": "Examples",
-      "links": 11
+      "links": 12
     },
     {
       "id": "zwei Arten von Glück",
@@ -4435,13 +4435,13 @@
       "id": "an8.77",
       "group": "an",
       "rank": 1,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an8.61",
       "group": "an",
       "rank": 2,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an4.2",
@@ -4669,7 +4669,7 @@
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 97
+      "links": 98
     },
     {
       "id": "dn34",
@@ -5344,6 +5344,12 @@
       "links": 4
     },
     {
+      "id": "mn12",
+      "group": "mn",
+      "rank": 1,
+      "links": 16
+    },
+    {
       "id": "dn12",
       "group": "dn",
       "rank": 1,
@@ -5608,10 +5614,70 @@
       "links": 1
     },
     {
-      "id": "an4.157",
+      "id": "an5.115",
       "group": "an",
+      "rank": 3,
+      "links": 1
+    },
+    {
+      "id": "an5.224",
+      "group": "an",
+      "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "an5.256",
+      "group": "an",
+      "rank": 5,
+      "links": 1
+    },
+    {
+      "id": "an5.257-263",
+      "group": "an",
+      "rank": 6,
+      "links": 1
+    },
+    {
+      "id": "an5.264",
+      "group": "an",
+      "rank": 2,
+      "links": 2
+    },
+    {
+      "id": "an5.265-271",
+      "group": "an",
+      "rank": 3,
+      "links": 2
+    },
+    {
+      "id": "an5.254",
+      "group": "an",
+      "rank": 9,
+      "links": 1
+    },
+    {
+      "id": "an5.255",
+      "group": "an",
+      "rank": 10,
+      "links": 1
+    },
+    {
+      "id": "an9.69",
+      "group": "an",
+      "rank": 11,
+      "links": 1
+    },
+    {
+      "id": "mn113",
+      "group": "mn",
       "rank": 1,
       "links": 2
+    },
+    {
+      "id": "dn28",
+      "group": "dn",
+      "rank": 1,
+      "links": 28
     },
     {
       "id": "an1.394-574",
@@ -5786,12 +5852,6 @@
       "group": "an",
       "rank": 2,
       "links": 10
-    },
-    {
-      "id": "dn28",
-      "group": "dn",
-      "rank": 1,
-      "links": 27
     },
     {
       "id": "an2.32-41",
@@ -6118,9 +6178,15 @@
       "links": 2
     },
     {
+      "id": "mn11",
+      "group": "mn",
+      "rank": 2,
+      "links": 2
+    },
+    {
       "id": "an4.95",
       "group": "an",
-      "rank": 2,
+      "rank": 3,
       "links": 4
     },
     {
@@ -6132,7 +6198,7 @@
     {
       "id": "sn22.80",
       "group": "sn",
-      "rank": 4,
+      "rank": 5,
       "links": 6
     },
     {
@@ -6696,7 +6762,7 @@
     {
       "id": "an6.118",
       "group": "an",
-      "rank": 12,
+      "rank": 10,
       "links": 2
     },
     {
@@ -7226,18 +7292,6 @@
       "group": "an",
       "rank": 2,
       "links": 7
-    },
-    {
-      "id": "an5.264",
-      "group": "an",
-      "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "an5.265-271",
-      "group": "an",
-      "rank": 3,
-      "links": 1
     },
     {
       "id": "an3.114",
@@ -11286,79 +11340,79 @@
     {
       "id": "sn56.103",
       "group": "sn",
-      "rank": 2,
+      "rank": 3,
       "links": 1
     },
     {
       "id": "sn56.104",
       "group": "sn",
-      "rank": 3,
+      "rank": 4,
       "links": 1
     },
     {
       "id": "sn56.105-107",
       "group": "sn",
-      "rank": 4,
+      "rank": 5,
       "links": 1
     },
     {
       "id": "sn56.108-110",
       "group": "sn",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
       "id": "sn56.111-113",
       "group": "sn",
-      "rank": 6,
+      "rank": 7,
       "links": 1
     },
     {
       "id": "sn56.114-116",
       "group": "sn",
-      "rank": 7,
+      "rank": 8,
       "links": 1
     },
     {
       "id": "sn56.117-119",
       "group": "sn",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
       "id": "sn56.120-122",
       "group": "sn",
-      "rank": 9,
+      "rank": 10,
       "links": 1
     },
     {
       "id": "sn56.123-125",
       "group": "sn",
-      "rank": 10,
+      "rank": 11,
       "links": 1
     },
     {
       "id": "sn56.126-128",
       "group": "sn",
-      "rank": 11,
+      "rank": 12,
       "links": 1
     },
     {
       "id": "sn56.129-130",
       "group": "sn",
-      "rank": 12,
+      "rank": 13,
       "links": 1
     },
     {
       "id": "sn56.102",
       "group": "sn",
-      "rank": 13,
+      "rank": 14,
       "links": 1
     },
     {
       "id": "sn56.131",
       "group": "sn",
-      "rank": 14,
+      "rank": 15,
       "links": 1
     },
     {
@@ -11548,21 +11602,9 @@
       "links": 1
     },
     {
-      "id": "an6.14",
-      "group": "an",
-      "rank": 6,
-      "links": 2
-    },
-    {
-      "id": "an6.15",
-      "group": "an",
-      "rank": 7,
-      "links": 2
-    },
-    {
       "id": "iti79",
       "group": "iti",
-      "rank": 10,
+      "rank": 8,
       "links": 1
     },
     {
@@ -11580,7 +11622,7 @@
     {
       "id": "an10.86",
       "group": "an",
-      "rank": 14,
+      "rank": 12,
       "links": 1
     },
     {
@@ -12493,7 +12535,7 @@
       "id": "an3.20",
       "group": "an",
       "rank": 6,
-      "links": 2
+      "links": 1
     },
     {
       "id": "an5.51",
@@ -13098,7 +13140,7 @@
     {
       "id": "an3.133",
       "group": "an",
-      "rank": 5,
+      "rank": 4,
       "links": 2
     },
     {
@@ -15244,12 +15286,6 @@
       "links": 1
     },
     {
-      "id": "mn113",
-      "group": "mn",
-      "rank": 1,
-      "links": 1
-    },
-    {
       "id": "an10.78",
       "group": "an",
       "rank": 5,
@@ -16486,21 +16522,15 @@
       "links": 1
     },
     {
-      "id": "an3.140",
-      "group": "an",
-      "rank": 1,
-      "links": 2
-    },
-    {
       "id": "sn56.40",
       "group": "sn",
-      "rank": 2,
+      "rank": 1,
       "links": 1
     },
     {
       "id": "an9.22",
       "group": "an",
-      "rank": 3,
+      "rank": 2,
       "links": 2
     },
     {
@@ -16573,6 +16603,18 @@
       "id": "an5.180",
       "group": "an",
       "rank": 16,
+      "links": 1
+    },
+    {
+      "id": "an6.14",
+      "group": "an",
+      "rank": 6,
+      "links": 1
+    },
+    {
+      "id": "an6.15",
+      "group": "an",
+      "rank": 7,
       "links": 1
     },
     {
@@ -17290,6 +17332,12 @@
       "links": 1
     },
     {
+      "id": "an3.140",
+      "group": "an",
+      "rank": 2,
+      "links": 1
+    },
+    {
       "id": "an10.87",
       "group": "an",
       "rank": 5,
@@ -17485,6 +17533,12 @@
       "id": "an9.6",
       "group": "an",
       "rank": 1,
+      "links": 1
+    },
+    {
+      "id": "an4.157",
+      "group": "an",
+      "rank": 5,
       "links": 1
     },
     {
@@ -18491,8 +18545,13 @@
     },
     {
       "source": "Arten der Fortpflanzung",
-      "target": "dn33",
+      "target": "mn12",
       "rank": 1
+    },
+    {
+      "source": "Arten der Fortpflanzung",
+      "target": "dn33",
+      "rank": 2
     },
     {
       "source": "Art von Lehrer",
@@ -18746,8 +18805,73 @@
     },
     {
       "source": "auf materiellen Besitz",
-      "target": "an4.157",
+      "target": "an8.77",
       "rank": 1
+    },
+    {
+      "source": "auf materiellen Besitz",
+      "target": "an8.61",
+      "rank": 2
+    },
+    {
+      "source": "auf materiellen Besitz",
+      "target": "an5.115",
+      "rank": 3
+    },
+    {
+      "source": "auf materiellen Besitz",
+      "target": "an5.224",
+      "rank": 4
+    },
+    {
+      "source": "auf materiellen Besitz",
+      "target": "an5.256",
+      "rank": 5
+    },
+    {
+      "source": "auf materiellen Besitz",
+      "target": "an5.257-263",
+      "rank": 6
+    },
+    {
+      "source": "auf materiellen Besitz",
+      "target": "an5.264",
+      "rank": 7
+    },
+    {
+      "source": "auf materiellen Besitz",
+      "target": "an5.265-271",
+      "rank": 8
+    },
+    {
+      "source": "auf materiellen Besitz",
+      "target": "an5.254",
+      "rank": 9
+    },
+    {
+      "source": "auf materiellen Besitz",
+      "target": "an5.255",
+      "rank": 10
+    },
+    {
+      "source": "auf materiellen Besitz",
+      "target": "an9.69",
+      "rank": 11
+    },
+    {
+      "source": "auf materiellen Besitz",
+      "target": "mn113",
+      "rank": 12
+    },
+    {
+      "source": "auf materiellen Besitz",
+      "target": "dn28",
+      "rank": 13
+    },
+    {
+      "source": "auf materiellen Besitz",
+      "target": "dn33",
+      "rank": 14
     },
     {
       "source": "auf Schönheit",
@@ -19376,18 +19500,23 @@
     },
     {
       "source": "beide.* Enden",
-      "target": "an4.95",
+      "target": "mn11",
       "rank": 2
     },
     {
       "source": "beide.* Enden",
-      "target": "iti91",
+      "target": "an4.95",
       "rank": 3
     },
     {
       "source": "beide.* Enden",
-      "target": "sn22.80",
+      "target": "iti91",
       "rank": 4
+    },
+    {
+      "source": "beide.* Enden",
+      "target": "sn22.80",
+      "rank": 5
     },
     {
       "source": "bei der besten angekommen",
@@ -20568,6 +20697,11 @@
       "source": "Dachsparren",
       "target": "dhp146-156",
       "rank": 11
+    },
+    {
+      "source": "Dachsparren",
+      "target": "mn12",
+      "rank": 12
     },
     {
       "source": "da ist ein Entrinnen",
@@ -24110,6 +24244,11 @@
       "rank": 12
     },
     {
+      "source": "einfältige.* Mann",
+      "target": "mn12",
+      "rank": 13
+    },
+    {
       "source": "ein hasserfüllter Mensch",
       "target": "iti88",
       "rank": 1
@@ -24256,13 +24395,18 @@
     },
     {
       "source": "einen gierigen Geist",
-      "target": "dn2",
+      "target": "mn12",
       "rank": 15
     },
     {
       "source": "einen gierigen Geist",
-      "target": "dn22",
+      "target": "dn2",
       "rank": 16
+    },
+    {
+      "source": "einen gierigen Geist",
+      "target": "dn22",
+      "rank": 17
     },
     {
       "source": "einen Schilfhalm aus seiner Scheide",
@@ -25186,13 +25330,18 @@
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "mn60",
+      "target": "mn12",
       "rank": 35
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "dn34",
+      "target": "mn60",
       "rank": 36
+    },
+    {
+      "source": "entsprechend ihrer Taten wiedergeboren",
+      "target": "dn34",
+      "rank": 37
     },
     {
       "source": "entwickelt die Grundlage übersinnlicher Kraft",
@@ -27296,68 +27445,73 @@
     },
     {
       "source": "fünf Bestimmungsorte",
-      "target": "sn56.103",
+      "target": "mn12",
       "rank": 2
     },
     {
       "source": "fünf Bestimmungsorte",
-      "target": "sn56.104",
+      "target": "sn56.103",
       "rank": 3
     },
     {
       "source": "fünf Bestimmungsorte",
-      "target": "sn56.105-107",
+      "target": "sn56.104",
       "rank": 4
     },
     {
       "source": "fünf Bestimmungsorte",
-      "target": "sn56.108-110",
+      "target": "sn56.105-107",
       "rank": 5
     },
     {
       "source": "fünf Bestimmungsorte",
-      "target": "sn56.111-113",
+      "target": "sn56.108-110",
       "rank": 6
     },
     {
       "source": "fünf Bestimmungsorte",
-      "target": "sn56.114-116",
+      "target": "sn56.111-113",
       "rank": 7
     },
     {
       "source": "fünf Bestimmungsorte",
-      "target": "sn56.117-119",
+      "target": "sn56.114-116",
       "rank": 8
     },
     {
       "source": "fünf Bestimmungsorte",
-      "target": "sn56.120-122",
+      "target": "sn56.117-119",
       "rank": 9
     },
     {
       "source": "fünf Bestimmungsorte",
-      "target": "sn56.123-125",
+      "target": "sn56.120-122",
       "rank": 10
     },
     {
       "source": "fünf Bestimmungsorte",
-      "target": "sn56.126-128",
+      "target": "sn56.123-125",
       "rank": 11
     },
     {
       "source": "fünf Bestimmungsorte",
-      "target": "sn56.129-130",
+      "target": "sn56.126-128",
       "rank": 12
     },
     {
       "source": "fünf Bestimmungsorte",
-      "target": "sn56.102",
+      "target": "sn56.129-130",
       "rank": 13
     },
     {
       "source": "fünf Bestimmungsorte",
-      "target": "sn56.131",
+      "target": "sn56.102",
       "rank": 14
+    },
+    {
+      "source": "fünf Bestimmungsorte",
+      "target": "sn56.131",
+      "rank": 15
     },
     {
       "source": "fünf Dinge.* entwickelt werden",
@@ -27916,38 +28070,28 @@
     },
     {
       "source": "genießt.*Arbeit",
-      "target": "an6.14",
+      "target": "iti79",
       "rank": 8
     },
     {
       "source": "genießt.*Arbeit",
-      "target": "an6.15",
+      "target": "an6.22",
       "rank": 9
     },
     {
       "source": "genießt.*Arbeit",
-      "target": "iti79",
+      "target": "an6.118",
       "rank": 10
     },
     {
       "source": "genießt.*Arbeit",
-      "target": "an6.22",
+      "target": "an6.21",
       "rank": 11
     },
     {
       "source": "genießt.*Arbeit",
-      "target": "an6.118",
-      "rank": 12
-    },
-    {
-      "source": "genießt.*Arbeit",
-      "target": "an6.21",
-      "rank": 13
-    },
-    {
-      "source": "genießt.*Arbeit",
       "target": "an10.86",
-      "rank": 14
+      "rank": 12
     },
     {
       "source": "Genügsamkeit",
@@ -29815,6 +29959,11 @@
       "rank": 9
     },
     {
+      "source": "haarsträubend",
+      "target": "mn12",
+      "rank": 10
+    },
+    {
       "source": "haltlos werden",
       "target": "iti42",
       "rank": 1
@@ -30741,38 +30890,43 @@
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "sn1.38",
+      "target": "mn12",
       "rank": 6
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "an3.74",
+      "target": "sn1.38",
       "rank": 7
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "sn2.30",
+      "target": "an3.74",
       "rank": 8
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "an3.156-162",
+      "target": "sn2.30",
       "rank": 9
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "sn42.12",
+      "target": "an3.156-162",
       "rank": 10
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn51",
+      "target": "sn42.12",
       "rank": 11
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn60",
+      "target": "mn51",
       "rank": 12
+    },
+    {
+      "source": "inbrünstige.* Bußübung",
+      "target": "mn60",
+      "rank": 13
     },
     {
       "source": "in den drei Zeiten",
@@ -32805,6 +32959,11 @@
       "rank": 6
     },
     {
+      "source": "Kräuter, Hirse",
+      "target": "mn12",
+      "rank": 7
+    },
+    {
       "source": "Kreislauf der Wiedergeburten",
       "target": "sn22.56",
       "rank": 1
@@ -32993,6 +33152,11 @@
       "source": "Kuhhirt",
       "target": "dhp1-20",
       "rank": 20
+    },
+    {
+      "source": "Kuhhirt",
+      "target": "mn12",
+      "rank": 21
     },
     {
       "source": "kühl geworden, voller Seligkeit",
@@ -34520,6 +34684,11 @@
       "rank": 4
     },
     {
+      "source": "Mögliche als möglich",
+      "target": "mn12",
+      "rank": 5
+    },
+    {
       "source": "möglich zu entwickeln",
       "target": "an2.11-20",
       "rank": 1
@@ -34563,6 +34732,11 @@
       "source": "mörderisch",
       "target": "dhp383-423",
       "rank": 5
+    },
+    {
+      "source": "mörderisch",
+      "target": "mn12",
+      "rank": 6
     },
     {
       "source": "muss aufgegeben werden",
@@ -35343,6 +35517,11 @@
       "source": "nur einen Bissen",
       "target": "dn25",
       "rank": 5
+    },
+    {
+      "source": "nur einen Bissen",
+      "target": "mn12",
+      "rank": 6
     },
     {
       "source": "Nymphen",
@@ -36293,6 +36472,11 @@
       "source": "Roben aus Hanf",
       "target": "dn25",
       "rank": 6
+    },
+    {
+      "source": "Roben aus Hanf",
+      "target": "mn12",
+      "rank": 7
     },
     {
       "source": "Rosenapfel",
@@ -38971,27 +39155,27 @@
     },
     {
       "source": "um die Wesen zu läutern",
-      "target": "an6.26",
+      "target": "an3.74",
       "rank": 5
     },
     {
       "source": "um die Wesen zu läutern",
-      "target": "an6.30",
+      "target": "an6.26",
       "rank": 6
     },
     {
       "source": "um die Wesen zu läutern",
-      "target": "mn10",
+      "target": "an6.30",
       "rank": 7
     },
     {
       "source": "um die Wesen zu läutern",
-      "target": "dn22",
+      "target": "mn10",
       "rank": 8
     },
     {
       "source": "um die Wesen zu läutern",
-      "target": "an3.74",
+      "target": "dn22",
       "rank": 9
     },
     {
@@ -41536,33 +41720,23 @@
     },
     {
       "source": "wahrhaftig versteht: ‚Das ist das Leiden‘",
-      "target": "an3.140",
+      "target": "sn56.40",
       "rank": 1
     },
     {
       "source": "wahrhaftig versteht: ‚Das ist das Leiden‘",
-      "target": "sn56.40",
+      "target": "an9.22",
       "rank": 2
     },
     {
       "source": "wahrhaftig versteht: ‚Das ist das Leiden‘",
-      "target": "an9.22",
+      "target": "an3.25",
       "rank": 3
     },
     {
       "source": "wahrhaftig versteht: ‚Das ist das Leiden‘",
-      "target": "an3.25",
-      "rank": 4
-    },
-    {
-      "source": "wahrhaftig versteht: ‚Das ist das Leiden‘",
       "target": "an3.133",
-      "rank": 5
-    },
-    {
-      "source": "wahrhaftig versteht: ‚Das ist das Leiden‘",
-      "target": "an3.20",
-      "rank": 6
+      "rank": 4
     },
     {
       "source": "Wahrnehmung des Abstoßenden",
@@ -43596,13 +43770,18 @@
     },
     {
       "source": "wieder und wieder",
-      "target": "thag20.1",
+      "target": "mn12",
       "rank": 31
     },
     {
       "source": "wieder und wieder",
-      "target": "dn33",
+      "target": "thag20.1",
       "rank": 32
+    },
+    {
+      "source": "wieder und wieder",
+      "target": "dn33",
+      "rank": 33
     },
     {
       "source": "wie ein Blitz",
@@ -43761,13 +43940,18 @@
     },
     {
       "source": "wie ein Vogel",
-      "target": "mn38",
+      "target": "mn12",
       "rank": 23
     },
     {
       "source": "wie ein Vogel",
-      "target": "dn34",
+      "target": "mn38",
       "rank": 24
+    },
+    {
+      "source": "wie ein Vogel",
+      "target": "dn34",
+      "rank": 25
     },
     {
       "source": "wie entwickelt ein Mönch",
@@ -45006,8 +45190,13 @@
     },
     {
       "source": "zwei Arten von",
-      "target": "mn19",
+      "target": "mn11",
       "rank": 11
+    },
+    {
+      "source": "zwei Arten von",
+      "target": "mn19",
+      "rank": 12
     },
     {
       "source": "zwei Arten von Glück",
