@@ -1,9 +1,34 @@
 {
   "nodes": [
     {
+      "id": "coisas são úteis",
+      "group": "Examples",
+      "links": 1
+    },
+    {
+      "id": "como é que um bhikkhu",
+      "group": "Examples",
+      "links": 0
+    },
+    {
+      "id": "conceito",
+      "group": "Examples",
+      "links": 2
+    },
+    {
       "id": "dardo do anseio",
       "group": "Examples",
       "links": 0
+    },
+    {
+      "id": "desenvolver estes três",
+      "group": "Examples",
+      "links": 1
+    },
+    {
+      "id": "devem? ser abandonad.s?",
+      "group": "Examples",
+      "links": 2
     },
     {
       "id": "em suportar",
@@ -11,7 +36,12 @@
       "links": 0
     },
     {
-      "id": "raiva",
+      "id": "escolhas como o eu",
+      "group": "Examples",
+      "links": 1
+    },
+    {
+      "id": "esta é outra forma",
       "group": "Examples",
       "links": 1
     },
@@ -21,12 +51,7 @@
       "links": 1
     },
     {
-      "id": "vêm do tolo",
-      "group": "Examples",
-      "links": 0
-    },
-    {
-      "id": "devem? ser abandonad.s?",
+      "id": "forma como o eu",
       "group": "Examples",
       "links": 2
     },
@@ -36,12 +61,17 @@
       "links": 0
     },
     {
-      "id": "esta é outra forma",
+      "id": "não dirigida",
       "group": "Examples",
       "links": 1
     },
     {
-      "id": "três características",
+      "id": "queixa",
+      "group": "Examples",
+      "links": 1
+    },
+    {
+      "id": "raiva",
       "group": "Examples",
       "links": 1
     },
@@ -51,52 +81,12 @@
       "links": 1
     },
     {
-      "id": "não dirigida",
-      "group": "Examples",
-      "links": 1
-    },
-    {
-      "id": "desenvolver estes três",
-      "group": "Examples",
-      "links": 1
-    },
-    {
-      "id": "visão substancialista",
-      "group": "Examples",
-      "links": 2
-    },
-    {
-      "id": "forma como o eu",
-      "group": "Examples",
-      "links": 2
-    },
-    {
-      "id": "escolhas como o eu",
-      "group": "Examples",
-      "links": 1
-    },
-    {
-      "id": "como é que um bhikkhu",
-      "group": "Examples",
-      "links": 1
-    },
-    {
-      "id": "conceito",
-      "group": "Examples",
-      "links": 2
-    },
-    {
-      "id": "três processos",
-      "group": "Examples",
-      "links": 2
-    },
-    {
       "id": "serenidade e discernimento",
       "group": "Examples",
       "links": 1
     },
     {
-      "id": "coisas são úteis",
+      "id": "três características",
       "group": "Examples",
       "links": 1
     },
@@ -106,22 +96,49 @@
       "links": 1
     },
     {
+      "id": "três processos",
+      "group": "Examples",
+      "links": 2
+    },
+    {
+      "id": "vêm do tolo",
+      "group": "Examples",
+      "links": 0
+    },
+    {
+      "id": "visão substancialista",
+      "group": "Examples",
+      "links": 2
+    },
+    {
+      "id": "sn41.6",
+      "group": "sn",
+      "rank": 1,
+      "links": 3
+    },
+    {
+      "id": "an4.200",
+      "group": "an",
+      "rank": 1,
+      "links": 3
+    },
+    {
       "id": "an3.183-352",
       "group": "an",
       "rank": 1,
       "links": 5
     },
     {
+      "id": "an4.188",
+      "group": "an",
+      "rank": 1,
+      "links": 3
+    },
+    {
       "id": "mn44",
       "group": "mn",
       "rank": 1,
       "links": 6
-    },
-    {
-      "id": "an4.188",
-      "group": "an",
-      "rank": 1,
-      "links": 2
     },
     {
       "id": "an3.47",
@@ -134,29 +151,27 @@
       "group": "an",
       "rank": 2,
       "links": 1
-    },
-    {
-      "id": "an4.200",
-      "group": "an",
-      "rank": 1,
-      "links": 4
-    },
-    {
-      "id": "sn41.6",
-      "group": "sn",
-      "rank": 1,
-      "links": 3
     }
   ],
   "links": [
     {
-      "source": "raiva",
-      "target": "an3.183-352",
+      "source": "coisas são úteis",
+      "target": "sn41.6",
       "rank": 1
     },
     {
-      "source": "este nobre caminho óctuplo",
-      "target": "mn44",
+      "source": "conceito",
+      "target": "an4.200",
+      "rank": 1
+    },
+    {
+      "source": "conceito",
+      "target": "an3.183-352",
+      "rank": 2
+    },
+    {
+      "source": "desenvolver estes três",
+      "target": "an3.183-352",
       "rank": 1
     },
     {
@@ -170,13 +185,43 @@
       "rank": 2
     },
     {
+      "source": "escolhas como o eu",
+      "target": "an4.200",
+      "rank": 1
+    },
+    {
       "source": "esta é outra forma",
       "target": "an4.188",
       "rank": 1
     },
     {
-      "source": "três características",
-      "target": "an3.47",
+      "source": "este nobre caminho óctuplo",
+      "target": "mn44",
+      "rank": 1
+    },
+    {
+      "source": "forma como o eu",
+      "target": "an4.200",
+      "rank": 1
+    },
+    {
+      "source": "forma como o eu",
+      "target": "mn44",
+      "rank": 2
+    },
+    {
+      "source": "não dirigida",
+      "target": "an3.183-352",
+      "rank": 1
+    },
+    {
+      "source": "queixa",
+      "target": "an4.188",
+      "rank": 1
+    },
+    {
+      "source": "raiva",
+      "target": "an3.183-352",
       "rank": 1
     },
     {
@@ -185,14 +230,29 @@
       "rank": 1
     },
     {
-      "source": "não dirigida",
-      "target": "an3.183-352",
+      "source": "serenidade e discernimento",
+      "target": "sn41.6",
       "rank": 1
     },
     {
-      "source": "desenvolver estes três",
-      "target": "an3.183-352",
+      "source": "três características",
+      "target": "an3.47",
       "rank": 1
+    },
+    {
+      "source": "três espectros de prática",
+      "target": "mn44",
+      "rank": 1
+    },
+    {
+      "source": "três processos",
+      "target": "sn41.6",
+      "rank": 1
+    },
+    {
+      "source": "três processos",
+      "target": "mn44",
+      "rank": 2
     },
     {
       "source": "visão substancialista",
@@ -203,61 +263,6 @@
       "source": "visão substancialista",
       "target": "an3.94",
       "rank": 2
-    },
-    {
-      "source": "forma como o eu",
-      "target": "an4.200",
-      "rank": 1
-    },
-    {
-      "source": "forma como o eu",
-      "target": "mn44",
-      "rank": 2
-    },
-    {
-      "source": "escolhas como o eu",
-      "target": "an4.200",
-      "rank": 1
-    },
-    {
-      "source": "como é que um bhikkhu",
-      "target": "an4.200",
-      "rank": 1
-    },
-    {
-      "source": "conceito",
-      "target": "an4.200",
-      "rank": 1
-    },
-    {
-      "source": "conceito",
-      "target": "an3.183-352",
-      "rank": 2
-    },
-    {
-      "source": "três processos",
-      "target": "sn41.6",
-      "rank": 1
-    },
-    {
-      "source": "três processos",
-      "target": "mn44",
-      "rank": 2
-    },
-    {
-      "source": "serenidade e discernimento",
-      "target": "sn41.6",
-      "rank": 1
-    },
-    {
-      "source": "coisas são úteis",
-      "target": "sn41.6",
-      "rank": 1
-    },
-    {
-      "source": "três espectros de prática",
-      "target": "mn44",
-      "rank": 1
     }
   ]
 }
