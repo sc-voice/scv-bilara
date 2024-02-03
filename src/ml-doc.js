@@ -162,6 +162,7 @@
 
     async load(root = BILARA_PATH) {
       const msg = "MLDoc.load() ";
+      const dbg = 0;
       try {
         var {
           segMap,
@@ -175,7 +176,7 @@
         this.langSegs = {};
         let langMap = {};
         var p_bp = [];
-        //console.log(msg, {bilaraPaths, docAuthor, refAuthor});
+        dbg && console.log(msg, {bilaraPaths, docAuthor, refAuthor});
         for (var ip = 0; ip < bilaraPaths.length; ip++) {
           var parts = BilaraPath.pathParts(bilaraPaths[ip]);
           var bp = path.join(root, parts.bilaraPath);

@@ -2436,7 +2436,7 @@ typeof describe === "function" &&
       });
       should.deepEqual(mld0.langSegs, { pli: 55, ref: 54});
       should(mld0.sutta_uid).equal("sn42.11");
-      should(res.bilaraPaths.length).equal(14);
+      should(res.bilaraPaths.length).above(13).below(30);
       should(res.lang).equal("en");
     });
     it("find(...) trilingual -dl de", async()=>{

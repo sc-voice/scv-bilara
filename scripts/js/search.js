@@ -2,6 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const { logger } = require('log-instance');
+const { Files } = require("memo-again");
 const {
     BilaraData,
     English,
@@ -21,7 +22,7 @@ const {
 } = require("scv-esm");
 const LOCAL = path.join(__dirname, '../../local');
 const BILARA_DATA = path.join(LOCAL, '/bilara-data');
-var bdName = '';
+var bdName = 'bilara-data';
 var bilaraData;
 
 function help() {
@@ -205,6 +206,7 @@ DESCRIPTION
 }
 
 var pattern;
+var root;
 var maxResults = 1000;
 var logLevel = 'warn';
 var color = 201;
@@ -409,6 +411,7 @@ function outHuman(res, pattern, nLang=1) {
   var nDocs = mlDocs.length;
   console.log(
 `pattern   : "${res.pattern}" grep:${res.resultPattern}
+source    : ${root}@${branch}
 languages : translation:${res.lang} search:${searchLang} minLang:${res.minLang}
 output    : ${outFormat} color:${color} elapsed:${elapsed}s maxDoc:${res.maxDoc}
 found     : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${refs}`);
@@ -417,7 +420,6 @@ found     : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${ref
       `trilingual:`,
       `doc:${docLang}/${docAuthor}`,
       `ref:${refLang}/${refAuthor}`,
-      `src:${bilaraData.name}@${branch}`,
     );
   }
   mlDocs.forEach((mld,im) => {
@@ -704,8 +706,13 @@ logger.logLevel = logLevel;
 (async function() { try {
     const msg = "js/search() ";
     logger.info(msg, `creating BilaraData ${bdName} ${branch}`);
+    let localRoot = path.join(process.cwd(), 'local', bdName);
+    let libRoot = path.join(Files.LOCAL_DIR, bdName);
+    root = fs.existsSync(localRoot) ? localRoot : libRoot;
+    //console.log(msg, {root, localRoot, libRoot});
     bilaraData = new BilaraData({
         name: bdName,
+        root,
         execGit,
         branch,
         includeUnpublished,

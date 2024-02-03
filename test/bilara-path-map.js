@@ -134,7 +134,7 @@
             //commentPath('an/an1/an1.1-10','en','sujato'),
         ]);
     });
-    it("trilingualPaths(suid) sujato/soma",async()=>{
+    it("TESTTESTtrilingualPaths(suid) sujato/soma",async()=>{
       var bpm = await new BilaraPathMap().initialize();
       let suid = "thig1.1";
       let pathRoot = rootPath('kn/thig/thig1.1');
@@ -146,19 +146,19 @@
         refAuthor: "sujato", 
         docLang: 'en',
         docAuthor: "soma",
-      }), [pathRoot, sujatoPath, somaPath]);
-
-      should.deepEqual(bpm.trilingualPaths({ suid, 
-        docLang: 'en',
-        docAuthor: "soma",
-      }), [pathRoot, sujatoPath, somaPath]);
+      }), [pathRoot, somaPath, sujatoPath]);
 
       should.deepEqual(bpm.trilingualPaths({ suid, 
         refLang: 'en',
         refAuthor: 'soma',
         docLang: 'en',
         docAuthor: 'sujato',
-      }), [pathRoot, somaPath, sujatoPath]);
+      }), [pathRoot, sujatoPath, somaPath ]);
+
+      should.deepEqual(bpm.trilingualPaths({ suid, 
+        docLang: 'en',
+        docAuthor: "soma",
+      }), [pathRoot, somaPath, sujatoPath, ]);
 
       // eliminate duplicates
       should.deepEqual(bpm.trilingualPaths({ suid, 

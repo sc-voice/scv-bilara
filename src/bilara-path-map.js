@@ -117,6 +117,8 @@
         }}
 
         bilaraPaths(opts={}) {
+            const msg = 'BilaraPathMap.bilaraPaths()';
+            const dbg = 0;
             if (typeof opts === 'string') {
                 opts = { suid: opts };
             }
@@ -130,6 +132,7 @@
             types = types || ['root','translation'];
             var reTypes = new RegExp(`^(${types.join('|')})`, 'u');
             var paths = this.suidPaths(suid) || [];
+            dbg && console.log(msg, {paths});
             var bps = Object.keys(paths).reduce((a,k) => {
                 var bp = paths[k];
                 reTypes.test(bp) && a.push(bp);
@@ -152,6 +155,7 @@
 
         trilingualPaths(opts={}) {
           const msg = "BilaraPathMap.trilingualPaths() ";
+          const dbg = 0;
           let {
             suid,
             rootLang = 'pli',
@@ -161,33 +165,41 @@
             docLang,
             docAuthor,
           } = opts;
+          let { root } = this;
           if (!refAuthor && !refLang) {
             refLang = 'en';
             refAuthor = 'sujato';
           }
           
-          //console.log(msg, {docLang, docAuthor, refLang, refAuthor});
           let pathMap = this.suidPaths(suid);
           let paths = Object.keys(pathMap).reduce((a,k)=>{
             a.push(pathMap[k]);
             return a;
           }, []);
+
           let { langAuthorRegExp } = BilaraPathMap;
           let reRoot = langAuthorRegExp(rootLang, rootAuthor);
-          let reRef = langAuthorRegExp(refLang, refAuthor);
-          let reDoc = (refLang !== docLang || refAuthor !== docAuthor) &&
-            langAuthorRegExp(docLang, docAuthor);
-
-          let bilaraPaths =  Object.keys([
-            ...paths.filter(p=>reRoot && reRoot.test(p)),
-            ...paths.filter(p=>reRef && reRef.test(p)),
-            ...paths.filter(p=>reDoc && reDoc.test(p)),
-          ].reduce((a,p)=>{
-            a[p] = 1;
-            return a;
-          }, {}));
-
-          return bilaraPaths;
+          let mldPaths = paths.filter(p=>reRoot && reRoot.test(p));
+          let rootPath = mldPaths[0];
+          if (rootPath) {
+            let docPath = rootPath
+              .replace(/root/g, 'translation')
+              .replace(/pli/g, docLang)
+              .replace(/ms/g, docAuthor);
+            let refPath = rootPath
+              .replace(/root/g, 'translation')
+              .replace(/pli/g, refLang)
+              .replace(/ms/g, refAuthor);
+            let docPathRoot = path.join(root, docPath);
+            let refPathRoot = path.join(root, refPath);
+            fs.existsSync(docPathRoot) && mldPaths.push(docPath);
+            if (refPath !== docPath) {
+              fs.existsSync(refPathRoot) && mldPaths.push(refPath);
+            }
+            dbg && console.log(msg, {docPathRoot, refPathRoot});
+          }
+          dbg && console.log(msg, {mldPaths});
+          return mldPaths;
         }
 
         suidPaths(suid) {

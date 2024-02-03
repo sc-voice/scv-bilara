@@ -26,12 +26,11 @@
 
   class BilaraData {
     constructor(opts = {}) {
+      const msg = "BilaraData.ctor()";
       (opts.logger || logger).logInstance(this, opts);
       this.name = opts.name || "bilara-data";
-      let localRoot = path.join(process.cwd(), 'local', this.name);
-      let libRoot = path.join(Files.LOCAL_DIR, this.name);
-      let rootDefault = fs.existsSync(localRoot) ? localRoot : libRoot;
-      this.root = opts.root || rootDefault;
+      let root = this.root = opts.root || 
+        path.join(Files.LOCAL_DIR, this.name);
       this.info(`root:${this.root}`);
       this.lang = opts.lang || "en";
       this.branch = opts.branch || "published";
