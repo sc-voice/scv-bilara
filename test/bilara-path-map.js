@@ -202,6 +202,7 @@
         });
         should.deepEqual(bps.map(bp=>bp.bilaraPath).sort(), [
             rootPath('mn/mn1'),
+            translationPath('mn/mn1','de','sabbamitta'),
             translationPath('mn/mn1','en','sujato'),
         ]);
     });
