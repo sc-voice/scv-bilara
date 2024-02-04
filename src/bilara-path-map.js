@@ -153,6 +153,30 @@
             return bps.map(bp => new BilaraPath(bp));;
         }
 
+
+        transPath(rootPath, lang, author) {
+          const msg = "BilaraPathMap.transPat()";
+          const dbg = 0;
+          let { root } = this;
+          let bilaraPath = rootPath
+            .replace(/root/g, 'translation')
+            .replace(/pli/g, lang)
+            .replace(/ms/g, author);
+          let fullPath = path.join(root, bilaraPath);
+          if (!fs.existsSync(fullPath)) {
+            dbg && console.log(msg, '[1]!existsSync', {fullPath});
+            return null;
+          }
+          let stats = fs.statSync(fullPath);
+          if (stats.size < 5) {
+            dbg && console.log(msg, '[2]!size', {fullPath});
+            return null;
+          }
+
+          dbg && console.log(msg, '[3]ok', bilaraPath);
+          return bilaraPath;
+        }
+
         trilingualPaths(opts={}) {
           const msg = "BilaraPathMap.trilingualPaths() ";
           const dbg = 0;
@@ -182,21 +206,15 @@
           let mldPaths = paths.filter(p=>reRoot && reRoot.test(p));
           let rootPath = mldPaths[0];
           if (rootPath) {
-            let docPath = rootPath
-              .replace(/root/g, 'translation')
-              .replace(/pli/g, docLang)
-              .replace(/ms/g, docAuthor);
-            let refPath = rootPath
-              .replace(/root/g, 'translation')
-              .replace(/pli/g, refLang)
-              .replace(/ms/g, refAuthor);
-            let docPathRoot = path.join(root, docPath);
-            let refPathRoot = path.join(root, refPath);
-            fs.existsSync(docPathRoot) && mldPaths.push(docPath);
-            if (refPath !== docPath) {
-              fs.existsSync(refPathRoot) && mldPaths.push(refPath);
+            let docPath = this.transPath(rootPath, docLang, docAuthor);
+            let refPath = this.transPath(rootPath, refLang, refAuthor);
+            if (docPath) {
+              mldPaths.push(docPath);
             }
-            dbg && console.log(msg, {docPathRoot, refPathRoot});
+            if (refPath && refPath !== docPath) {
+              mldPaths.push(refPath);
+            }
+            dbg && console.log(msg, mldPaths);
           }
           dbg && console.log(msg, {mldPaths});
           return mldPaths;
