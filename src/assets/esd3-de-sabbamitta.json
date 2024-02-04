@@ -601,6 +601,11 @@
       "links": 13
     },
     {
+      "id": "das vollständige Verstehen aller Arten des Ergreifens",
+      "group": "Examples",
+      "links": 1
+    },
+    {
       "id": "das war meine Ordination",
       "group": "Examples",
       "links": 3
@@ -6185,8 +6190,8 @@
     {
       "id": "mn11",
       "group": "mn",
-      "rank": 2,
-      "links": 2
+      "rank": 1,
+      "links": 3
     },
     {
       "id": "an4.95",
@@ -21660,6 +21665,11 @@
       "source": "das unübertreffliche Rad des Dhamma",
       "target": "thag16.6",
       "rank": 13
+    },
+    {
+      "source": "das vollständige Verstehen aller Arten des Ergreifens",
+      "target": "mn11",
+      "rank": 1
     },
     {
       "source": "das war meine Ordination",
