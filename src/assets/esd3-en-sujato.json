@@ -3966,6 +3966,11 @@
       "links": 10
     },
     {
+      "id": "ties",
+      "group": "Examples",
+      "links": 35
+    },
+    {
       "id": "to a strong post",
       "group": "Examples",
       "links": 4
@@ -4800,7 +4805,7 @@
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 98
+      "links": 99
     },
     {
       "id": "dn16",
@@ -5136,7 +5141,7 @@
       "id": "sn1.20",
       "group": "sn",
       "rank": 2,
-      "links": 4
+      "links": 5
     },
     {
       "id": "mn49",
@@ -5448,7 +5453,7 @@
       "id": "thag20.1",
       "group": "thag",
       "rank": 7,
-      "links": 10
+      "links": 11
     },
     {
       "id": "iti109",
@@ -6102,7 +6107,7 @@
       "id": "thag19.1",
       "group": "thag",
       "rank": 7,
-      "links": 7
+      "links": 8
     },
     {
       "id": "dn32",
@@ -6714,7 +6719,7 @@
       "id": "sn1.34",
       "group": "sn",
       "rank": 3,
-      "links": 1
+      "links": 2
     },
     {
       "id": "an11.7",
@@ -7062,7 +7067,7 @@
       "id": "dn34",
       "group": "dn",
       "rank": 1,
-      "links": 83
+      "links": 84
     },
     {
       "id": "sn56.29",
@@ -8340,7 +8345,7 @@
       "id": "dn21",
       "group": "dn",
       "rank": 1,
-      "links": 20
+      "links": 21
     },
     {
       "id": "an5.83",
@@ -8598,7 +8603,7 @@
       "id": "dhp273-289",
       "group": "dhp",
       "rank": 3,
-      "links": 3
+      "links": 4
     },
     {
       "id": "sn34.10",
@@ -9240,7 +9245,7 @@
       "id": "snp1.12",
       "group": "snp",
       "rank": 4,
-      "links": 2
+      "links": 3
     },
     {
       "id": "dhp360-382",
@@ -9270,7 +9275,7 @@
       "id": "thag21.1",
       "group": "thag",
       "rank": 2,
-      "links": 10
+      "links": 11
     },
     {
       "id": "dn4",
@@ -9660,7 +9665,7 @@
       "id": "sn9.4",
       "group": "sn",
       "rank": 3,
-      "links": 1
+      "links": 2
     },
     {
       "id": "sn9.7",
@@ -10296,13 +10301,13 @@
       "id": "an4.23",
       "group": "an",
       "rank": 4,
-      "links": 3
+      "links": 4
     },
     {
       "id": "iti112",
       "group": "iti",
       "rank": 5,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an8.19",
@@ -11429,8 +11434,8 @@
     {
       "id": "thag10.5",
       "group": "thag",
-      "rank": 25,
-      "links": 1
+      "rank": 19,
+      "links": 2
     },
     {
       "id": "sn46.56",
@@ -11772,7 +11777,7 @@
       "id": "snp4.9",
       "group": "snp",
       "rank": 8,
-      "links": 3
+      "links": 4
     },
     {
       "id": "an10.109",
@@ -11946,7 +11951,7 @@
       "id": "thag4.6",
       "group": "thag",
       "rank": 7,
-      "links": 1
+      "links": 2
     },
     {
       "id": "sn1.37",
@@ -12816,7 +12821,7 @@
       "id": "sn10.10",
       "group": "sn",
       "rank": 1,
-      "links": 1
+      "links": 2
     },
     {
       "id": "sn10.11",
@@ -12828,7 +12833,7 @@
       "id": "thig5.9",
       "group": "thig",
       "rank": 1,
-      "links": 2
+      "links": 3
     },
     {
       "id": "sn35.135",
@@ -14526,7 +14531,7 @@
       "id": "dhp209-220",
       "group": "dhp",
       "rank": 7,
-      "links": 1
+      "links": 2
     },
     {
       "id": "an5.219",
@@ -14820,7 +14825,7 @@
       "id": "sn10.7",
       "group": "sn",
       "rank": 6,
-      "links": 2
+      "links": 3
     },
     {
       "id": "mn68",
@@ -15648,25 +15653,25 @@
       "id": "sn48.169-178",
       "group": "sn",
       "rank": 7,
-      "links": 1
+      "links": 2
     },
     {
       "id": "sn48.115-124",
       "group": "sn",
       "rank": 8,
-      "links": 1
+      "links": 2
     },
     {
       "id": "sn50.99-108",
       "group": "sn",
       "rank": 9,
-      "links": 1
+      "links": 2
     },
     {
       "id": "sn49.45-54",
       "group": "sn",
       "rank": 10,
-      "links": 1
+      "links": 2
     },
     {
       "id": "sn46.130",
@@ -15678,19 +15683,19 @@
       "id": "sn51.77-86",
       "group": "sn",
       "rank": 12,
-      "links": 1
+      "links": 2
     },
     {
       "id": "sn53.45-54",
       "group": "sn",
       "rank": 13,
-      "links": 1
+      "links": 2
     },
     {
       "id": "sn47.95-104",
       "group": "sn",
       "rank": 14,
-      "links": 1
+      "links": 2
     },
     {
       "id": "an9.26",
@@ -15876,7 +15881,7 @@
       "id": "snp4.10",
       "group": "snp",
       "rank": 11,
-      "links": 1
+      "links": 2
     },
     {
       "id": "snp4.13",
@@ -16248,7 +16253,7 @@
       "id": "dhp90-99",
       "group": "dhp",
       "rank": 10,
-      "links": 1
+      "links": 2
     },
     {
       "id": "sn43.4",
@@ -17387,8 +17392,8 @@
     {
       "id": "sn45.174",
       "group": "sn",
-      "rank": 12,
-      "links": 1
+      "rank": 1,
+      "links": 2
     },
     {
       "id": "an7.15",
@@ -17472,6 +17477,36 @@
       "id": "sn11.18",
       "group": "sn",
       "rank": 5,
+      "links": 1
+    },
+    {
+      "id": "sn1.25",
+      "group": "sn",
+      "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "thag1.89",
+      "group": "thag",
+      "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "sn10.2",
+      "group": "sn",
+      "rank": 7,
+      "links": 1
+    },
+    {
+      "id": "iti102",
+      "group": "iti",
+      "rank": 17,
+      "links": 1
+    },
+    {
+      "id": "snp2.12",
+      "group": "snp",
+      "rank": 28,
       "links": 1
     },
     {
@@ -46731,6 +46766,181 @@
       "source": "thriving underwater",
       "target": "dn14",
       "rank": 10
+    },
+    {
+      "source": "ties",
+      "target": "sn45.174",
+      "rank": 1
+    },
+    {
+      "source": "ties",
+      "target": "sn1.25",
+      "rank": 2
+    },
+    {
+      "source": "ties",
+      "target": "dn33",
+      "rank": 3
+    },
+    {
+      "source": "ties",
+      "target": "thag1.89",
+      "rank": 4
+    },
+    {
+      "source": "ties",
+      "target": "sn10.10",
+      "rank": 5
+    },
+    {
+      "source": "ties",
+      "target": "sn9.4",
+      "rank": 6
+    },
+    {
+      "source": "ties",
+      "target": "sn10.2",
+      "rank": 7
+    },
+    {
+      "source": "ties",
+      "target": "sn48.169-178",
+      "rank": 8
+    },
+    {
+      "source": "ties",
+      "target": "sn48.115-124",
+      "rank": 9
+    },
+    {
+      "source": "ties",
+      "target": "sn50.99-108",
+      "rank": 10
+    },
+    {
+      "source": "ties",
+      "target": "sn49.45-54",
+      "rank": 11
+    },
+    {
+      "source": "ties",
+      "target": "thag4.6",
+      "rank": 12
+    },
+    {
+      "source": "ties",
+      "target": "sn51.77-86",
+      "rank": 13
+    },
+    {
+      "source": "ties",
+      "target": "sn53.45-54",
+      "rank": 14
+    },
+    {
+      "source": "ties",
+      "target": "sn47.95-104",
+      "rank": 15
+    },
+    {
+      "source": "ties",
+      "target": "thig5.9",
+      "rank": 16
+    },
+    {
+      "source": "ties",
+      "target": "iti102",
+      "rank": 17
+    },
+    {
+      "source": "ties",
+      "target": "sn1.34",
+      "rank": 18
+    },
+    {
+      "source": "ties",
+      "target": "thag10.5",
+      "rank": 19
+    },
+    {
+      "source": "ties",
+      "target": "sn10.7",
+      "rank": 20
+    },
+    {
+      "source": "ties",
+      "target": "an4.23",
+      "rank": 21
+    },
+    {
+      "source": "ties",
+      "target": "dhp90-99",
+      "rank": 22
+    },
+    {
+      "source": "ties",
+      "target": "snp4.10",
+      "rank": 23
+    },
+    {
+      "source": "ties",
+      "target": "dhp209-220",
+      "rank": 24
+    },
+    {
+      "source": "ties",
+      "target": "snp4.9",
+      "rank": 25
+    },
+    {
+      "source": "ties",
+      "target": "iti112",
+      "rank": 26
+    },
+    {
+      "source": "ties",
+      "target": "snp1.12",
+      "rank": 27
+    },
+    {
+      "source": "ties",
+      "target": "snp2.12",
+      "rank": 28
+    },
+    {
+      "source": "ties",
+      "target": "dhp273-289",
+      "rank": 29
+    },
+    {
+      "source": "ties",
+      "target": "sn1.20",
+      "rank": 30
+    },
+    {
+      "source": "ties",
+      "target": "thag19.1",
+      "rank": 31
+    },
+    {
+      "source": "ties",
+      "target": "thag20.1",
+      "rank": 32
+    },
+    {
+      "source": "ties",
+      "target": "thag21.1",
+      "rank": 33
+    },
+    {
+      "source": "ties",
+      "target": "dn21",
+      "rank": 34
+    },
+    {
+      "source": "ties",
+      "target": "dn34",
+      "rank": 35
     },
     {
       "source": "to a strong post",
