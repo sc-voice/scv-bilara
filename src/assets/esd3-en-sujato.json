@@ -531,6 +531,11 @@
       "links": 2
     },
     {
+      "id": "check.* reflection",
+      "group": "Examples",
+      "links": 13
+    },
+    {
       "id": "choices are suffering",
       "group": "Examples",
       "links": 2
@@ -774,6 +779,11 @@
       "id": "deity haunting that forest",
       "group": "Examples",
       "links": 13
+    },
+    {
+      "id": "deliberate lie",
+      "group": "Examples",
+      "links": 15
     },
     {
       "id": "dependent origination is deep",
@@ -4559,19 +4569,19 @@
       "id": "dn10",
       "group": "dn",
       "rank": 1,
-      "links": 41
+      "links": 42
     },
     {
       "id": "mn77",
       "group": "mn",
       "rank": 1,
-      "links": 30
+      "links": 31
     },
     {
       "id": "dn2",
       "group": "dn",
       "rank": 1,
-      "links": 65
+      "links": 66
     },
     {
       "id": "dn17",
@@ -4631,7 +4641,7 @@
       "id": "dn25",
       "group": "dn",
       "rank": 1,
-      "links": 28
+      "links": 29
     },
     {
       "id": "an8.55",
@@ -4805,7 +4815,7 @@
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 99
+      "links": 100
     },
     {
       "id": "dn16",
@@ -5483,7 +5493,7 @@
       "id": "mn86",
       "group": "mn",
       "rank": 1,
-      "links": 9
+      "links": 10
     },
     {
       "id": "an10.211",
@@ -6149,43 +6159,43 @@
       "id": "an10.52",
       "group": "an",
       "rank": 1,
-      "links": 5
+      "links": 6
     },
     {
       "id": "an10.51",
       "group": "an",
       "rank": 2,
-      "links": 5
+      "links": 6
     },
     {
       "id": "an10.53",
       "group": "an",
       "rank": 3,
-      "links": 5
+      "links": 6
     },
     {
       "id": "sn22.83",
       "group": "sn",
       "rank": 4,
-      "links": 2
+      "links": 3
     },
     {
       "id": "an10.55",
       "group": "an",
       "rank": 1,
-      "links": 7
+      "links": 8
     },
     {
       "id": "an10.54",
       "group": "an",
       "rank": 2,
-      "links": 9
+      "links": 10
     },
     {
       "id": "mn15",
       "group": "mn",
       "rank": 4,
-      "links": 3
+      "links": 4
     },
     {
       "id": "mn93",
@@ -7672,14 +7682,14 @@
     {
       "id": "sn17.11",
       "group": "sn",
-      "rank": 10,
-      "links": 1
+      "rank": 2,
+      "links": 2
     },
     {
       "id": "sn17.12",
       "group": "sn",
-      "rank": 11,
-      "links": 1
+      "rank": 3,
+      "links": 2
     },
     {
       "id": "sn17.4",
@@ -7708,8 +7718,8 @@
     {
       "id": "sn17.37",
       "group": "sn",
-      "rank": 16,
-      "links": 1
+      "rank": 4,
+      "links": 2
     },
     {
       "id": "sn17.2",
@@ -7744,8 +7754,8 @@
     {
       "id": "sn17.38-43",
       "group": "sn",
-      "rank": 22,
-      "links": 1
+      "rank": 9,
+      "links": 2
     },
     {
       "id": "sn17.10",
@@ -7768,8 +7778,8 @@
     {
       "id": "sn17.13-20",
       "group": "sn",
-      "rank": 26,
-      "links": 2
+      "rank": 8,
+      "links": 3
     },
     {
       "id": "sn17.35",
@@ -7979,7 +7989,7 @@
       "id": "mn76",
       "group": "mn",
       "rank": 1,
-      "links": 17
+      "links": 18
     },
     {
       "id": "sn12.47",
@@ -8358,6 +8368,24 @@
       "group": "mn",
       "rank": 1,
       "links": 9
+    },
+    {
+      "id": "an5.193",
+      "group": "an",
+      "rank": 1,
+      "links": 6
+    },
+    {
+      "id": "sn46.55",
+      "group": "sn",
+      "rank": 2,
+      "links": 6
+    },
+    {
+      "id": "mn61",
+      "group": "mn",
+      "rank": 1,
+      "links": 2
     },
     {
       "id": "sn22.16",
@@ -8968,8 +8996,8 @@
     {
       "id": "an9.7",
       "group": "an",
-      "rank": 7,
-      "links": 4
+      "rank": 5,
+      "links": 5
     },
     {
       "id": "an5.273-285",
@@ -8993,7 +9021,7 @@
       "id": "dn29",
       "group": "dn",
       "rank": 2,
-      "links": 16
+      "links": 17
     },
     {
       "id": "ud4.3",
@@ -9720,6 +9748,24 @@
       "group": "sn",
       "rank": 4,
       "links": 2
+    },
+    {
+      "id": "an9.8",
+      "group": "an",
+      "rank": 6,
+      "links": 1
+    },
+    {
+      "id": "sn3.7",
+      "group": "sn",
+      "rank": 4,
+      "links": 2
+    },
+    {
+      "id": "iti25",
+      "group": "iti",
+      "rank": 11,
+      "links": 1
     },
     {
       "id": "an8.77",
@@ -13880,12 +13926,6 @@
       "links": 5
     },
     {
-      "id": "sn3.7",
-      "group": "sn",
-      "rank": 4,
-      "links": 1
-    },
-    {
       "id": "snp4.12",
       "group": "snp",
       "rank": 5,
@@ -17862,18 +17902,6 @@
       "group": "an",
       "rank": 5,
       "links": 1
-    },
-    {
-      "id": "an5.193",
-      "group": "an",
-      "rank": 1,
-      "links": 5
-    },
-    {
-      "id": "sn46.55",
-      "group": "sn",
-      "rank": 2,
-      "links": 5
     },
     {
       "id": "snp5.18",
@@ -23118,6 +23146,71 @@
       "rank": 2
     },
     {
+      "source": "check.* reflection",
+      "target": "an5.193",
+      "rank": 1
+    },
+    {
+      "source": "check.* reflection",
+      "target": "sn46.55",
+      "rank": 2
+    },
+    {
+      "source": "check.* reflection",
+      "target": "an10.52",
+      "rank": 3
+    },
+    {
+      "source": "check.* reflection",
+      "target": "an10.51",
+      "rank": 4
+    },
+    {
+      "source": "check.* reflection",
+      "target": "an10.53",
+      "rank": 5
+    },
+    {
+      "source": "check.* reflection",
+      "target": "sn22.83",
+      "rank": 6
+    },
+    {
+      "source": "check.* reflection",
+      "target": "an10.55",
+      "rank": 7
+    },
+    {
+      "source": "check.* reflection",
+      "target": "an10.54",
+      "rank": 8
+    },
+    {
+      "source": "check.* reflection",
+      "target": "mn61",
+      "rank": 9
+    },
+    {
+      "source": "check.* reflection",
+      "target": "dn10",
+      "rank": 10
+    },
+    {
+      "source": "check.* reflection",
+      "target": "mn15",
+      "rank": 11
+    },
+    {
+      "source": "check.* reflection",
+      "target": "mn77",
+      "rank": 12
+    },
+    {
+      "source": "check.* reflection",
+      "target": "dn2",
+      "rank": 13
+    },
+    {
       "source": "choices are suffering",
       "target": "sn22.16",
       "rank": 1
@@ -24941,6 +25034,81 @@
       "source": "deity haunting that forest",
       "target": "sn9.14",
       "rank": 13
+    },
+    {
+      "source": "deliberate lie",
+      "target": "mn61",
+      "rank": 1
+    },
+    {
+      "source": "deliberate lie",
+      "target": "sn17.11",
+      "rank": 2
+    },
+    {
+      "source": "deliberate lie",
+      "target": "sn17.12",
+      "rank": 3
+    },
+    {
+      "source": "deliberate lie",
+      "target": "sn17.37",
+      "rank": 4
+    },
+    {
+      "source": "deliberate lie",
+      "target": "an9.7",
+      "rank": 5
+    },
+    {
+      "source": "deliberate lie",
+      "target": "an9.8",
+      "rank": 6
+    },
+    {
+      "source": "deliberate lie",
+      "target": "sn3.7",
+      "rank": 7
+    },
+    {
+      "source": "deliberate lie",
+      "target": "sn17.13-20",
+      "rank": 8
+    },
+    {
+      "source": "deliberate lie",
+      "target": "sn17.38-43",
+      "rank": 9
+    },
+    {
+      "source": "deliberate lie",
+      "target": "dn25",
+      "rank": 10
+    },
+    {
+      "source": "deliberate lie",
+      "target": "iti25",
+      "rank": 11
+    },
+    {
+      "source": "deliberate lie",
+      "target": "mn86",
+      "rank": 12
+    },
+    {
+      "source": "deliberate lie",
+      "target": "mn76",
+      "rank": 13
+    },
+    {
+      "source": "deliberate lie",
+      "target": "dn29",
+      "rank": 14
+    },
+    {
+      "source": "deliberate lie",
+      "target": "dn33",
+      "rank": 15
     },
     {
       "source": "dependent origination is deep",

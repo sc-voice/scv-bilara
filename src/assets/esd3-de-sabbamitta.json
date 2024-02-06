@@ -406,6 +406,11 @@
       "links": 20
     },
     {
+      "id": "bewusste Lüge",
+      "group": "Examples",
+      "links": 12
+    },
+    {
       "id": "Bezugspunkte",
       "group": "Examples",
       "links": 2
@@ -2251,6 +2256,11 @@
       "links": 7
     },
     {
+      "id": "Knoten",
+      "group": "Examples",
+      "links": 27
+    },
+    {
       "id": "Kopfhaare, Körperhaare",
       "group": "Examples",
       "links": 13
@@ -3186,7 +3196,7 @@
       "links": 14
     },
     {
-      "id": "Spiegelbild betrachten",
+      "id": "Spiegelbild",
       "group": "Examples",
       "links": 10
     },
@@ -4679,7 +4689,7 @@
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 98
+      "links": 100
     },
     {
       "id": "dn34",
@@ -4847,7 +4857,7 @@
       "id": "dn2",
       "group": "dn",
       "rank": 1,
-      "links": 62
+      "links": 63
     },
     {
       "id": "sn22.123",
@@ -5051,7 +5061,7 @@
       "id": "dhp334-359",
       "group": "dhp",
       "rank": 1,
-      "links": 8
+      "links": 9
     },
     {
       "id": "iti7",
@@ -5063,7 +5073,7 @@
       "id": "iti8",
       "group": "iti",
       "rank": 8,
-      "links": 1
+      "links": 2
     },
     {
       "id": "an5.35",
@@ -5261,7 +5271,7 @@
       "id": "sn35.247",
       "group": "sn",
       "rank": 3,
-      "links": 2
+      "links": 3
     },
     {
       "id": "sn41.2",
@@ -5345,7 +5355,7 @@
       "id": "thag21.1",
       "group": "thag",
       "rank": 1,
-      "links": 13
+      "links": 14
     },
     {
       "id": "thag18.1",
@@ -5939,7 +5949,7 @@
       "id": "dn29",
       "group": "dn",
       "rank": 1,
-      "links": 14
+      "links": 15
     },
     {
       "id": "sn22.7",
@@ -5963,7 +5973,7 @@
       "id": "dn1",
       "group": "dn",
       "rank": 1,
-      "links": 25
+      "links": 26
     },
     {
       "id": "sn22.43",
@@ -6161,7 +6171,7 @@
       "id": "an9.7",
       "group": "an",
       "rank": 2,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an5.273-285",
@@ -6455,7 +6465,7 @@
       "id": "sn49.45-54",
       "group": "sn",
       "rank": 11,
-      "links": 2
+      "links": 3
     },
     {
       "id": "an7.61",
@@ -6671,7 +6681,7 @@
       "id": "dn25",
       "group": "dn",
       "rank": 1,
-      "links": 27
+      "links": 29
     },
     {
       "id": "an4.24",
@@ -6914,6 +6924,54 @@
       "links": 11
     },
     {
+      "id": "sn17.11",
+      "group": "sn",
+      "rank": 1,
+      "links": 2
+    },
+    {
+      "id": "sn17.12",
+      "group": "sn",
+      "rank": 2,
+      "links": 2
+    },
+    {
+      "id": "sn17.37",
+      "group": "sn",
+      "rank": 3,
+      "links": 2
+    },
+    {
+      "id": "an9.8",
+      "group": "an",
+      "rank": 3,
+      "links": 2
+    },
+    {
+      "id": "sn3.7",
+      "group": "sn",
+      "rank": 1,
+      "links": 2
+    },
+    {
+      "id": "sn17.13-20",
+      "group": "sn",
+      "rank": 7,
+      "links": 3
+    },
+    {
+      "id": "sn17.38-43",
+      "group": "sn",
+      "rank": 8,
+      "links": 2
+    },
+    {
+      "id": "dn26",
+      "group": "dn",
+      "rank": 1,
+      "links": 12
+    },
+    {
       "id": "an4.180",
       "group": "an",
       "rank": 1,
@@ -7124,18 +7182,6 @@
       "links": 1
     },
     {
-      "id": "sn17.11",
-      "group": "sn",
-      "rank": 10,
-      "links": 1
-    },
-    {
-      "id": "sn17.12",
-      "group": "sn",
-      "rank": 11,
-      "links": 1
-    },
-    {
       "id": "sn17.4",
       "group": "sn",
       "rank": 12,
@@ -7157,12 +7203,6 @@
       "id": "sn17.8",
       "group": "sn",
       "rank": 15,
-      "links": 1
-    },
-    {
-      "id": "sn17.37",
-      "group": "sn",
-      "rank": 16,
       "links": 1
     },
     {
@@ -7196,12 +7236,6 @@
       "links": 2
     },
     {
-      "id": "sn17.38-43",
-      "group": "sn",
-      "rank": 22,
-      "links": 1
-    },
-    {
       "id": "sn17.10",
       "group": "sn",
       "rank": 23,
@@ -7223,12 +7257,6 @@
       "id": "sn17.30",
       "group": "sn",
       "rank": 21,
-      "links": 2
-    },
-    {
-      "id": "sn17.13-20",
-      "group": "sn",
-      "rank": 23,
       "links": 2
     },
     {
@@ -7462,8 +7490,8 @@
     {
       "id": "sn45.174",
       "group": "sn",
-      "rank": 11,
-      "links": 1
+      "rank": 1,
+      "links": 2
     },
     {
       "id": "sn35.28",
@@ -7967,7 +7995,7 @@
       "id": "thig5.9",
       "group": "thig",
       "rank": 1,
-      "links": 2
+      "links": 3
     },
     {
       "id": "thag7.3",
@@ -8232,12 +8260,6 @@
       "group": "ud",
       "rank": 2,
       "links": 9
-    },
-    {
-      "id": "dn26",
-      "group": "dn",
-      "rank": 1,
-      "links": 11
     },
     {
       "id": "sn29.4",
@@ -10061,7 +10083,7 @@
       "id": "sn22.54",
       "group": "sn",
       "rank": 8,
-      "links": 1
+      "links": 2
     },
     {
       "id": "iti51",
@@ -10415,7 +10437,7 @@
       "id": "sn24.8",
       "group": "sn",
       "rank": 1,
-      "links": 5
+      "links": 6
     },
     {
       "id": "an11.9",
@@ -11578,8 +11600,8 @@
     {
       "id": "thag10.5",
       "group": "thag",
-      "rank": 24,
-      "links": 1
+      "rank": 19,
+      "links": 2
     },
     {
       "id": "an5.75",
@@ -12629,7 +12651,7 @@
       "id": "thag16.3",
       "group": "thag",
       "rank": 11,
-      "links": 3
+      "links": 4
     },
     {
       "id": "an3.48",
@@ -13544,6 +13566,78 @@
       "links": 2
     },
     {
+      "id": "sn1.25",
+      "group": "sn",
+      "rank": 3,
+      "links": 1
+    },
+    {
+      "id": "thag1.72",
+      "group": "thag",
+      "rank": 5,
+      "links": 1
+    },
+    {
+      "id": "thag1.89",
+      "group": "thag",
+      "rank": 6,
+      "links": 1
+    },
+    {
+      "id": "sn48.169-178",
+      "group": "sn",
+      "rank": 7,
+      "links": 2
+    },
+    {
+      "id": "sn48.115-124",
+      "group": "sn",
+      "rank": 9,
+      "links": 2
+    },
+    {
+      "id": "sn50.99-108",
+      "group": "sn",
+      "rank": 10,
+      "links": 3
+    },
+    {
+      "id": "sn3.10",
+      "group": "sn",
+      "rank": 12,
+      "links": 1
+    },
+    {
+      "id": "sn51.77-86",
+      "group": "sn",
+      "rank": 13,
+      "links": 2
+    },
+    {
+      "id": "sn53.45-54",
+      "group": "sn",
+      "rank": 14,
+      "links": 2
+    },
+    {
+      "id": "sn47.95-104",
+      "group": "sn",
+      "rank": 15,
+      "links": 2
+    },
+    {
+      "id": "dhp209-220",
+      "group": "dhp",
+      "rank": 21,
+      "links": 1
+    },
+    {
+      "id": "snp2.12",
+      "group": "snp",
+      "rank": 22,
+      "links": 2
+    },
+    {
       "id": "kp3",
       "group": "kp",
       "rank": 1,
@@ -13674,12 +13768,6 @@
       "group": "an",
       "rank": 17,
       "links": 1
-    },
-    {
-      "id": "sn50.99-108",
-      "group": "sn",
-      "rank": 10,
-      "links": 2
     },
     {
       "id": "sn23.1",
@@ -15806,12 +15894,6 @@
       "links": 1
     },
     {
-      "id": "snp2.12",
-      "group": "snp",
-      "rank": 43,
-      "links": 1
-    },
-    {
       "id": "ud7.9",
       "group": "ud",
       "rank": 1,
@@ -16043,12 +16125,6 @@
       "id": "an7.96-614",
       "group": "an",
       "rank": 6,
-      "links": 1
-    },
-    {
-      "id": "an9.8",
-      "group": "an",
-      "rank": 3,
       "links": 1
     },
     {
@@ -17126,39 +17202,9 @@
       "links": 1
     },
     {
-      "id": "sn48.169-178",
-      "group": "sn",
-      "rank": 8,
-      "links": 1
-    },
-    {
-      "id": "sn48.115-124",
-      "group": "sn",
-      "rank": 9,
-      "links": 1
-    },
-    {
       "id": "sn46.130",
       "group": "sn",
       "rank": 12,
-      "links": 1
-    },
-    {
-      "id": "sn51.77-86",
-      "group": "sn",
-      "rank": 13,
-      "links": 1
-    },
-    {
-      "id": "sn53.45-54",
-      "group": "sn",
-      "rank": 14,
-      "links": 1
-    },
-    {
-      "id": "sn47.95-104",
-      "group": "sn",
-      "rank": 15,
       "links": 1
     },
     {
@@ -17447,12 +17493,6 @@
       "id": "sn1.17",
       "group": "sn",
       "rank": 5,
-      "links": 1
-    },
-    {
-      "id": "sn3.7",
-      "group": "sn",
-      "rank": 1,
       "links": 1
     },
     {
@@ -20345,6 +20385,66 @@
       "source": "bewerte",
       "target": "dn34",
       "rank": 20
+    },
+    {
+      "source": "bewusste Lüge",
+      "target": "sn17.11",
+      "rank": 1
+    },
+    {
+      "source": "bewusste Lüge",
+      "target": "sn17.12",
+      "rank": 2
+    },
+    {
+      "source": "bewusste Lüge",
+      "target": "sn17.37",
+      "rank": 3
+    },
+    {
+      "source": "bewusste Lüge",
+      "target": "an9.7",
+      "rank": 4
+    },
+    {
+      "source": "bewusste Lüge",
+      "target": "an9.8",
+      "rank": 5
+    },
+    {
+      "source": "bewusste Lüge",
+      "target": "sn3.7",
+      "rank": 6
+    },
+    {
+      "source": "bewusste Lüge",
+      "target": "sn17.13-20",
+      "rank": 7
+    },
+    {
+      "source": "bewusste Lüge",
+      "target": "sn17.38-43",
+      "rank": 8
+    },
+    {
+      "source": "bewusste Lüge",
+      "target": "dn25",
+      "rank": 9
+    },
+    {
+      "source": "bewusste Lüge",
+      "target": "dn26",
+      "rank": 10
+    },
+    {
+      "source": "bewusste Lüge",
+      "target": "dn29",
+      "rank": 11
+    },
+    {
+      "source": "bewusste Lüge",
+      "target": "dn33",
+      "rank": 12
     },
     {
       "source": "Bezugspunkte",
@@ -32562,6 +32662,141 @@
       "rank": 7
     },
     {
+      "source": "Knoten",
+      "target": "sn45.174",
+      "rank": 1
+    },
+    {
+      "source": "Knoten",
+      "target": "dn2",
+      "rank": 2
+    },
+    {
+      "source": "Knoten",
+      "target": "sn1.25",
+      "rank": 3
+    },
+    {
+      "source": "Knoten",
+      "target": "dn25",
+      "rank": 4
+    },
+    {
+      "source": "Knoten",
+      "target": "thag1.72",
+      "rank": 5
+    },
+    {
+      "source": "Knoten",
+      "target": "thag1.89",
+      "rank": 6
+    },
+    {
+      "source": "Knoten",
+      "target": "sn48.169-178",
+      "rank": 7
+    },
+    {
+      "source": "Knoten",
+      "target": "iti8",
+      "rank": 8
+    },
+    {
+      "source": "Knoten",
+      "target": "sn48.115-124",
+      "rank": 9
+    },
+    {
+      "source": "Knoten",
+      "target": "sn50.99-108",
+      "rank": 10
+    },
+    {
+      "source": "Knoten",
+      "target": "sn49.45-54",
+      "rank": 11
+    },
+    {
+      "source": "Knoten",
+      "target": "sn3.10",
+      "rank": 12
+    },
+    {
+      "source": "Knoten",
+      "target": "sn51.77-86",
+      "rank": 13
+    },
+    {
+      "source": "Knoten",
+      "target": "sn53.45-54",
+      "rank": 14
+    },
+    {
+      "source": "Knoten",
+      "target": "sn47.95-104",
+      "rank": 15
+    },
+    {
+      "source": "Knoten",
+      "target": "thig5.9",
+      "rank": 16
+    },
+    {
+      "source": "Knoten",
+      "target": "sn22.54",
+      "rank": 17
+    },
+    {
+      "source": "Knoten",
+      "target": "sn24.8",
+      "rank": 18
+    },
+    {
+      "source": "Knoten",
+      "target": "thag10.5",
+      "rank": 19
+    },
+    {
+      "source": "Knoten",
+      "target": "sn35.247",
+      "rank": 20
+    },
+    {
+      "source": "Knoten",
+      "target": "dhp209-220",
+      "rank": 21
+    },
+    {
+      "source": "Knoten",
+      "target": "snp2.12",
+      "rank": 22
+    },
+    {
+      "source": "Knoten",
+      "target": "thag16.3",
+      "rank": 23
+    },
+    {
+      "source": "Knoten",
+      "target": "dhp334-359",
+      "rank": 24
+    },
+    {
+      "source": "Knoten",
+      "target": "thag21.1",
+      "rank": 25
+    },
+    {
+      "source": "Knoten",
+      "target": "dn1",
+      "rank": 26
+    },
+    {
+      "source": "Knoten",
+      "target": "dn33",
+      "rank": 27
+    },
+    {
       "source": "Kopfhaare, Körperhaare",
       "target": "kp3",
       "rank": 1
@@ -38277,52 +38512,52 @@
       "rank": 14
     },
     {
-      "source": "Spiegelbild betrachten",
+      "source": "Spiegelbild",
       "target": "an5.193",
       "rank": 1
     },
     {
-      "source": "Spiegelbild betrachten",
+      "source": "Spiegelbild",
       "target": "sn46.55",
       "rank": 2
     },
     {
-      "source": "Spiegelbild betrachten",
+      "source": "Spiegelbild",
       "target": "an10.52",
       "rank": 3
     },
     {
-      "source": "Spiegelbild betrachten",
+      "source": "Spiegelbild",
       "target": "an10.51",
       "rank": 4
     },
     {
-      "source": "Spiegelbild betrachten",
+      "source": "Spiegelbild",
       "target": "an10.53",
       "rank": 5
     },
     {
-      "source": "Spiegelbild betrachten",
+      "source": "Spiegelbild",
       "target": "sn22.83",
       "rank": 6
     },
     {
-      "source": "Spiegelbild betrachten",
+      "source": "Spiegelbild",
       "target": "an10.55",
       "rank": 7
     },
     {
-      "source": "Spiegelbild betrachten",
+      "source": "Spiegelbild",
       "target": "an10.54",
       "rank": 8
     },
     {
-      "source": "Spiegelbild betrachten",
+      "source": "Spiegelbild",
       "target": "dn10",
       "rank": 9
     },
     {
-      "source": "Spiegelbild betrachten",
+      "source": "Spiegelbild",
       "target": "dn2",
       "rank": 10
     },
