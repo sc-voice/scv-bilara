@@ -8,6 +8,7 @@ dist/
 # Logs
 logs
 *.log
+.old
 gitlog.txt
 npm-debug.log*
 yarn-debug.log*

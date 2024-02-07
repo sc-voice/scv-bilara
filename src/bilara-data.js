@@ -67,6 +67,8 @@
       this.initialized = false;
     }
 
+    static get GITLOG_FNAME() { return ".old" }
+
     async syncEbtData() {
       this.info("syncEbtData()");
       let repo = "https://github.com/ebt-site/ebt-data.git";
@@ -116,7 +118,7 @@
         }
         let { stdout } = await this.execGit.gitLog();
         this.debug(`isFresh() ${stdout}`);
-        let gitlogPath = path.join(this.root, "gitlog.txt");
+        let gitlogPath = path.join(this.root, BilaraData.GITLOG_FNAME);
         let gitlog =
           fs.existsSync(gitlogPath) &&
           (await fs.promises.readFile(gitlogPath)).toString();

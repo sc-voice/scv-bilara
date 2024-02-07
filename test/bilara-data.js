@@ -1080,7 +1080,7 @@
         var name = "test-repo";
         var gitAccount = "sc-voice";
         var bd = new BilaraData({name,gitAccount});
-        let gitlogPath = path.join(bd.root, 'gitlog.txt');
+        let gitlogPath = path.join(bd.root, BilaraData.GITLOG_FNAME);
         fs.existsSync(gitlogPath) && fs.unlinkSync(gitlogPath);
         should(fs.existsSync(gitlogPath)).equal(false);
         should(await bd.isFresh()).equal(false);

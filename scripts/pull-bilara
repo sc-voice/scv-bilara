@@ -28,9 +28,10 @@ else
   git checkout --track origin/$BRANCH 
 fi
 
-if [ -e gitlog.txt ]; then
-  echo -e "BILARA\t: cleaning up gitlog.text"
-  rm gitlog.txt
+GITLOG_FNAME=.old
+if [ -e $GITLOG_FNAME ]; then
+  echo -e "BILARA\t: cleaning up $GITLOG_FNAME"
+  rm $GITLOG_FNAME
 fi
 
 echo -e "BILARA\t: Refreshing sc-voice/$BRANCH ..." 
