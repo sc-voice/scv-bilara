@@ -8,6 +8,9 @@
         exec,
         execSync,
     } = require('child_process');
+    const {
+      DBG_EXEC,
+    } = require('./defines.cjs');
     const execPromise = util.promisify(exec);
     const MAXBUFFER = 10 * 1024 * 1024;
 
@@ -18,6 +21,8 @@
 
     class ExecGit {
         constructor(opts={}) {
+            const msg = 'ExecGit.ctor()';
+            const dbg = DBG_EXEC;
             (opts.logger || logger).logInstance(this, opts);
             this.cwd = opts.cwd || Files.LOCAL_DIR;
             this.repo = opts.repo || BILARA_DATA_GIT;
@@ -25,14 +30,18 @@
             this.repoDir = path.basename(this.repo).replace(/\.git/,'');
             this.repoPath = opts.repoPath || 
                 path.join(Files.LOCAL_DIR, this.repoDir);
+            dbg && console.log(msg, this);
         }
 
         static get DEFAULT_REPO() { return BILARA_DATA_GIT; }
 
         validateRepoPath(repoPath = this.repoPath) {
             if (!fs.existsSync(path.join(repoPath,'.git'))) {
-                throw new Error(
-                    `Expected git repository:${repoPath} repo:${this.repo}`);
+              let emsg = [
+                `Expected git repository:${repoPath}`,
+                `repo:${this.repo}`,
+              ].join(' ');
+              throw new Error(emsg);
             }
             return repoPath;
         }

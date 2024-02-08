@@ -16,6 +16,9 @@ const {
     Verse,
 
 } = require('../../index');
+const {
+  DBG_SEARCH, DBG_VERBOSE,
+} = require('../../src/defines.cjs');
 const { 
   AuthorsV2,
   BilaraPath, 
@@ -88,11 +91,14 @@ DESCRIPTION
         If mode is "pattern", then only segments matching pattern
         will be shown. If mode is "none", segments will not be filtered.
 
-    --gitMock 
-        Ignore all git operations. This option is for containers with fixed content.
+    -ga ACCOUNT, --gitAccount ACCOUNT
+        Choose GitHub account name. Default is "suttacentral".
 
     -gb BRANCH, --gitBranch BRANCH
         Choose git branch for bilara-data. Default is "unpublished".
+
+    --gitMock 
+        Ignore all git operations. This option is for containers with fixed content.
 
     -l, --lang ISO_LANG_2
         Specify ISO 2-letter language code for primary translation language.
@@ -205,6 +211,7 @@ DESCRIPTION
     process.exit(0);
 }
 
+var gitAccount = "suttacentral";
 var pattern;
 var root;
 var maxResults = 1000;
@@ -273,6 +280,8 @@ for (var i = 2; i < nargs; i++) {
         showMatchesOnly = filter === 'pattern';
     } else if (arg === '-sy' || arg === '--sync') {
         sync = true;
+    } else if (arg === '-ga' || arg === '--gitAccount') {
+        gitAccount = process.argv[++i];
     } else if (arg === '-gb' || arg === '--gitBranch') {
         branch = process.argv[++i];
     } else if (arg === '-nm' || arg === '--no-memo') {
@@ -705,16 +714,19 @@ logger.logLevel = logLevel;
 
 (async function() { try {
     const msg = "js/search() ";
+    const dbg = DBG_SEARCH;
+    const dbgv = DBG_VERBOSE && dbg;
     logger.info(msg, `creating BilaraData ${bdName} ${branch}`);
     let localRoot = path.join(process.cwd(), 'local', bdName);
     let libRoot = path.join(Files.LOCAL_DIR, bdName);
     root = fs.existsSync(localRoot) ? localRoot : libRoot;
-    //console.log(msg, {root, localRoot, libRoot});
+    dbgv && console.warn(msg, '[1]root', root, '@', branch);
     bilaraData = new BilaraData({
         name: bdName,
         root,
         execGit,
         branch,
+        gitAccount,
         includeUnpublished,
     });
     logger.info(msg, 'initializing BilaraData', {sync});

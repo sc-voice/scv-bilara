@@ -1722,9 +1722,10 @@ typeof describe === "function" &&
       });
       should(res.bilaraPaths.length).equal(158);
     });
-    it("find(...) => ignores SN46.36", async () => {
+    it("TESTTESTfind(...) => ignores SN46.36", async () => {
       var skr = await new Seeker({
         root: TEST_BILARA_PATH,
+        repoPath: BILARA_PATH,
       }).initialize();
 
       var pattern = "hindrance -ml 3 -sl en -l de";

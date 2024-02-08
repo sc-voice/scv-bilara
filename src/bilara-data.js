@@ -13,6 +13,9 @@
   const MLDoc = require("./ml-doc");
   const { BilaraPath, Authors, AuthorsV2 } = require("scv-esm");
   const { SuttaCentralId, SuttaRef } = require("scv-esm");
+  const {
+    DBG_BD_INIT,
+  } = require('./defines.cjs');
   const BilaraPathMap = require("./bilara-path-map");
   const FuzzyWordSet = require("./fuzzy-word-set");
   const Publication = require("./publication");
@@ -27,13 +30,15 @@
   class BilaraData {
     constructor(opts = {}) {
       const msg = "BilaraData.ctor()";
+      const dbg = DBG_BD_INIT;
       (opts.logger || logger).logInstance(this, opts);
       this.name = opts.name || "bilara-data";
+      this.branch = opts.branch || "published";
       let root = this.root = opts.root || 
         path.join(Files.LOCAL_DIR, this.name);
+      dbg && console.warn(msg, '[1]root', root, '@', this.branch);
       this.info(`root:${this.root}`);
       this.lang = opts.lang || "en";
-      this.branch = opts.branch || "published";
       this.scApi = opts.scApi || new ScApi({ logger: this });
       this.gitAccount = opts.gitAccount || "suttacentral";
       let repo = (this.repo =
@@ -51,6 +56,7 @@
         opts.execGit ||
         new ExecGit({
           repo,
+          repoPath: opts.repoPath || root,
           logger: this,
         });
       this.languages = opts.languages || ["pli", this.lang];

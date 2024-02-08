@@ -200,7 +200,7 @@
         should.deepEqual(bd.authors.sabbamitta, sabbamitta);
 
     });
-    it("TESTTESTauthorV2Info() => supported author info", async()=>{
+    it("authorV2Info() => supported author info", async()=>{
         await bd.initialize();
         var sujato = {
             lang: 'en',
