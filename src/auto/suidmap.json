@@ -8375,6 +8375,7 @@
 	"iti37": {
 		"translation/de/sabbamitta": "sutta/kn/iti/vagga4",
 		"translation/en/sujato": "sutta/kn/iti/vagga4",
+		"translation/lt/piyadassi": "sutta/kn/iti/vagga4",
 		"root/pli/ms": "sutta/kn/iti/vagga4"
 	},
 	"iti38": {
@@ -9162,6 +9163,7 @@
 	"mn12": {
 		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
+		"translation/fr/noeismet": "sutta/mn",
 		"translation/ru/sv": "sutta/mn",
 		"translation/sr/brankokovacevic": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
@@ -19889,36 +19891,42 @@
 		"translation/de/sabbamitta": "sutta/sn/sn54",
 		"translation/en/sujato": "sutta/sn/sn54",
 		"translation/fr/sekha": "sutta/sn/sn54",
+		"translation/lt/piyadassi": "sutta/sn/sn54",
 		"root/pli/ms": "sutta/sn/sn54"
 	},
 	"sn54.2": {
 		"translation/de/sabbamitta": "sutta/sn/sn54",
 		"translation/en/sujato": "sutta/sn/sn54",
 		"translation/fr/sekha": "sutta/sn/sn54",
+		"translation/lt/piyadassi": "sutta/sn/sn54",
 		"root/pli/ms": "sutta/sn/sn54"
 	},
 	"sn54.3": {
 		"translation/de/sabbamitta": "sutta/sn/sn54",
 		"translation/en/sujato": "sutta/sn/sn54",
 		"translation/fr/sekha": "sutta/sn/sn54",
+		"translation/lt/piyadassi": "sutta/sn/sn54",
 		"root/pli/ms": "sutta/sn/sn54"
 	},
 	"sn54.4": {
 		"translation/de/sabbamitta": "sutta/sn/sn54",
 		"translation/en/sujato": "sutta/sn/sn54",
 		"translation/fr/sekha": "sutta/sn/sn54",
+		"translation/lt/piyadassi": "sutta/sn/sn54",
 		"root/pli/ms": "sutta/sn/sn54"
 	},
 	"sn54.5": {
 		"translation/de/sabbamitta": "sutta/sn/sn54",
 		"translation/en/sujato": "sutta/sn/sn54",
 		"translation/fr/sekha": "sutta/sn/sn54",
+		"translation/lt/piyadassi": "sutta/sn/sn54",
 		"root/pli/ms": "sutta/sn/sn54"
 	},
 	"sn54.6": {
 		"translation/de/sabbamitta": "sutta/sn/sn54",
 		"translation/en/sujato": "sutta/sn/sn54",
 		"translation/fr/sekha": "sutta/sn/sn54",
+		"translation/lt/piyadassi": "sutta/sn/sn54",
 		"root/pli/ms": "sutta/sn/sn54"
 	},
 	"sn54.7": {
@@ -19931,6 +19939,7 @@
 		"translation/de/sabbamitta": "sutta/sn/sn54",
 		"translation/en/sujato": "sutta/sn/sn54",
 		"translation/fr/sekha": "sutta/sn/sn54",
+		"translation/lt/piyadassi": "sutta/sn/sn54",
 		"root/pli/ms": "sutta/sn/sn54"
 	},
 	"sn54.9": {
