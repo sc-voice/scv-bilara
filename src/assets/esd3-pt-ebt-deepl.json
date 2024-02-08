@@ -66,6 +66,11 @@
       "links": 1
     },
     {
+      "id": "portas dos sentidos",
+      "group": "Examples",
+      "links": 1
+    },
+    {
       "id": "queixa",
       "group": "Examples",
       "links": 1
@@ -141,6 +146,12 @@
       "links": 6
     },
     {
+      "id": "an1.219-234",
+      "group": "an",
+      "rank": 1,
+      "links": 1
+    },
+    {
       "id": "an3.47",
       "group": "an",
       "rank": 1,
@@ -212,6 +223,11 @@
     {
       "source": "não dirigida",
       "target": "an3.183-352",
+      "rank": 1
+    },
+    {
+      "source": "portas dos sentidos",
+      "target": "an1.219-234",
       "rank": 1
     },
     {
