@@ -156,11 +156,6 @@
       "links": 3
     },
     {
-      "id": "and they check their own reflection",
-      "group": "Examples",
-      "links": 10
-    },
-    {
       "id": "an embryo is conceived",
       "group": "Examples",
       "links": 3
@@ -4569,19 +4564,19 @@
       "id": "dn10",
       "group": "dn",
       "rank": 1,
-      "links": 42
+      "links": 41
     },
     {
       "id": "mn77",
       "group": "mn",
       "rank": 1,
-      "links": 31
+      "links": 30
     },
     {
       "id": "dn2",
       "group": "dn",
       "rank": 1,
-      "links": 66
+      "links": 65
     },
     {
       "id": "dn17",
@@ -6156,48 +6151,6 @@
       "links": 5
     },
     {
-      "id": "an10.52",
-      "group": "an",
-      "rank": 1,
-      "links": 6
-    },
-    {
-      "id": "an10.51",
-      "group": "an",
-      "rank": 2,
-      "links": 6
-    },
-    {
-      "id": "an10.53",
-      "group": "an",
-      "rank": 3,
-      "links": 6
-    },
-    {
-      "id": "sn22.83",
-      "group": "sn",
-      "rank": 4,
-      "links": 3
-    },
-    {
-      "id": "an10.55",
-      "group": "an",
-      "rank": 1,
-      "links": 8
-    },
-    {
-      "id": "an10.54",
-      "group": "an",
-      "rank": 2,
-      "links": 10
-    },
-    {
-      "id": "mn15",
-      "group": "mn",
-      "rank": 4,
-      "links": 4
-    },
-    {
       "id": "mn93",
       "group": "mn",
       "rank": 1,
@@ -6417,6 +6370,12 @@
       "id": "an8.14",
       "group": "an",
       "rank": 1,
+      "links": 3
+    },
+    {
+      "id": "mn15",
+      "group": "mn",
+      "rank": 4,
       "links": 3
     },
     {
@@ -8380,6 +8339,42 @@
       "group": "sn",
       "rank": 2,
       "links": 6
+    },
+    {
+      "id": "an10.52",
+      "group": "an",
+      "rank": 3,
+      "links": 5
+    },
+    {
+      "id": "an10.51",
+      "group": "an",
+      "rank": 4,
+      "links": 5
+    },
+    {
+      "id": "an10.53",
+      "group": "an",
+      "rank": 5,
+      "links": 5
+    },
+    {
+      "id": "sn22.83",
+      "group": "sn",
+      "rank": 6,
+      "links": 2
+    },
+    {
+      "id": "an10.55",
+      "group": "an",
+      "rank": 1,
+      "links": 7
+    },
+    {
+      "id": "an10.54",
+      "group": "an",
+      "rank": 2,
+      "links": 9
     },
     {
       "id": "mn61",
@@ -20234,56 +20229,6 @@
       "source": "and if I died from that",
       "target": "an6.20",
       "rank": 3
-    },
-    {
-      "source": "and they check their own reflection",
-      "target": "an10.52",
-      "rank": 1
-    },
-    {
-      "source": "and they check their own reflection",
-      "target": "an10.51",
-      "rank": 2
-    },
-    {
-      "source": "and they check their own reflection",
-      "target": "an10.53",
-      "rank": 3
-    },
-    {
-      "source": "and they check their own reflection",
-      "target": "sn22.83",
-      "rank": 4
-    },
-    {
-      "source": "and they check their own reflection",
-      "target": "an10.55",
-      "rank": 5
-    },
-    {
-      "source": "and they check their own reflection",
-      "target": "an10.54",
-      "rank": 6
-    },
-    {
-      "source": "and they check their own reflection",
-      "target": "dn10",
-      "rank": 7
-    },
-    {
-      "source": "and they check their own reflection",
-      "target": "mn15",
-      "rank": 8
-    },
-    {
-      "source": "and they check their own reflection",
-      "target": "mn77",
-      "rank": 9
-    },
-    {
-      "source": "and they check their own reflection",
-      "target": "dn2",
-      "rank": 10
     },
     {
       "source": "an embryo is conceived",

@@ -3036,9 +3036,9 @@
       "links": 4
     },
     {
-      "id": "seelische.* unfruchtbarkeit",
+      "id": "seelische.* Kargheit",
       "group": "Examples",
-      "links": 0
+      "links": 7
     },
     {
       "id": "Sehen der Gesetzmäßigkeiten",
@@ -4700,13 +4700,13 @@
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 101
+      "links": 102
     },
     {
       "id": "dn34",
       "group": "dn",
       "rank": 1,
-      "links": 81
+      "links": 82
     },
     {
       "id": "an8.118",
@@ -5480,7 +5480,7 @@
       "id": "sn22.90",
       "group": "sn",
       "rank": 2,
-      "links": 7
+      "links": 8
     },
     {
       "id": "sn7.3",
@@ -6295,8 +6295,8 @@
     {
       "id": "an10.14",
       "group": "an",
-      "rank": 3,
-      "links": 5
+      "rank": 2,
+      "links": 6
     },
     {
       "id": "an6.84",
@@ -10339,8 +10339,8 @@
     {
       "id": "mn16",
       "group": "mn",
-      "rank": 2,
-      "links": 3
+      "rank": 1,
+      "links": 4
     },
     {
       "id": "sn51.1",
@@ -15422,6 +15422,18 @@
       "id": "an6.170-649",
       "group": "an",
       "rank": 5,
+      "links": 1
+    },
+    {
+      "id": "an5.205",
+      "group": "an",
+      "rank": 3,
+      "links": 1
+    },
+    {
+      "id": "an9.71",
+      "group": "an",
+      "rank": 4,
       "links": 1
     },
     {
@@ -37829,6 +37841,41 @@
       "source": "sechs Gegenstände zur Besinnung",
       "target": "dn34",
       "rank": 4
+    },
+    {
+      "source": "seelische.* Kargheit",
+      "target": "mn16",
+      "rank": 1
+    },
+    {
+      "source": "seelische.* Kargheit",
+      "target": "an10.14",
+      "rank": 2
+    },
+    {
+      "source": "seelische.* Kargheit",
+      "target": "an5.205",
+      "rank": 3
+    },
+    {
+      "source": "seelische.* Kargheit",
+      "target": "an9.71",
+      "rank": 4
+    },
+    {
+      "source": "seelische.* Kargheit",
+      "target": "dn33",
+      "rank": 5
+    },
+    {
+      "source": "seelische.* Kargheit",
+      "target": "dn34",
+      "rank": 6
+    },
+    {
+      "source": "seelische.* Kargheit",
+      "target": "sn22.90",
+      "rank": 7
     },
     {
       "source": "Sehen der Gesetzmäßigkeiten",
