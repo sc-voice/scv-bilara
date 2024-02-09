@@ -956,6 +956,11 @@
       "links": 7
     },
     {
+      "id": "durch Glück gewonnen",
+      "group": "Examples",
+      "links": 2
+    },
+    {
       "id": "durch Nahrung erhalten",
       "group": "Examples",
       "links": 6
@@ -4437,7 +4442,7 @@
       "id": "mn14",
       "group": "mn",
       "rank": 1,
-      "links": 9
+      "links": 10
     },
     {
       "id": "an9.41",
@@ -9423,6 +9428,12 @@
       "id": "sn34.46-49",
       "group": "sn",
       "rank": 7,
+      "links": 1
+    },
+    {
+      "id": "thag3.1",
+      "group": "thag",
+      "rank": 2,
       "links": 1
     },
     {
@@ -23713,6 +23724,16 @@
       "source": "durch die Versenkung geläutert",
       "target": "sn34.46-49",
       "rank": 7
+    },
+    {
+      "source": "durch Glück gewonnen",
+      "target": "mn14",
+      "rank": 1
+    },
+    {
+      "source": "durch Glück gewonnen",
+      "target": "thag3.1",
+      "rank": 2
     },
     {
       "source": "durch Nahrung erhalten",
