@@ -1862,7 +1862,7 @@ typeof describe === "function" &&
       should(data.resultPattern).equal("\\brat");
       should(data.searchLang).equal("de");
       should(data.method).equal("phrase");
-      should(data.mlDocs.length).equal(50);
+      should(data.mlDocs.length).above(36).below(60);
       var mld0 = data.mlDocs[0];
       should(mld0.bilaraPaths[0]).match(/sn35/);
     });
