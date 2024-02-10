@@ -176,6 +176,11 @@
       "links": 9
     },
     {
+      "id": "auf die Vergangenheit und Zukunft",
+      "group": "Examples",
+      "links": 2
+    },
+    {
       "id": "auf einen zornigen Menschen",
       "group": "Examples",
       "links": 6
@@ -4526,7 +4531,7 @@
       "id": "sn12.33",
       "group": "sn",
       "rank": 1,
-      "links": 3
+      "links": 4
     },
     {
       "id": "sn12.2",
@@ -5048,7 +5053,7 @@
       "id": "sn42.11",
       "group": "sn",
       "rank": 1,
-      "links": 7
+      "links": 8
     },
     {
       "id": "sn35.83",
@@ -18806,6 +18811,16 @@
       "source": "auf die mittlere Art",
       "target": "sn22.90",
       "rank": 9
+    },
+    {
+      "source": "auf die Vergangenheit und Zukunft",
+      "target": "sn12.33",
+      "rank": 1
+    },
+    {
+      "source": "auf die Vergangenheit und Zukunft",
+      "target": "sn42.11",
+      "rank": 2
     },
     {
       "source": "auf einen zornigen Menschen",

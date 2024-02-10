@@ -1936,6 +1936,11 @@
       "links": 4
     },
     {
+      "id": "infer to the past and future",
+      "group": "Examples",
+      "links": 2
+    },
+    {
       "id": "back to the past",
       "group": "Examples",
       "links": 6
@@ -6124,7 +6129,7 @@
       "id": "sn42.11",
       "group": "sn",
       "rank": 1,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an9.41",
@@ -9862,7 +9867,7 @@
       "id": "sn12.33",
       "group": "sn",
       "rank": 1,
-      "links": 3
+      "links": 4
     },
     {
       "id": "an4.160",
@@ -33184,6 +33189,16 @@
       "source": "in charge",
       "target": "dn23",
       "rank": 4
+    },
+    {
+      "source": "infer to the past and future",
+      "target": "sn12.33",
+      "rank": 1
+    },
+    {
+      "source": "infer to the past and future",
+      "target": "sn42.11",
+      "rank": 2
     },
     {
       "source": "back to the past",
