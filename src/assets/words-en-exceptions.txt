@@ -38,6 +38,7 @@ glanzvoll
 goldschmied
 grausam
 hindernis
+insofern
 klarsicht
 lotusteich
 lotusteiche
@@ -57,6 +58,8 @@ nymphen
 orchideenbaum
 perfekt
 perfekte
+person
+personen
 prachtvoll
 pulsadern
 puppe
@@ -64,6 +67,8 @@ puppenstück
 quelle
 quellwasser
 rat
+redner
+rednerin
 reich
 reichweite
 reitertruppe
