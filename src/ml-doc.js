@@ -214,8 +214,12 @@
         }
 
         // assemble content
+        let sameAuthor = trilingual &&
+          refLang === docLang && 
+          refAuthor === docAuthor;
         for (var ip = 0; ip < p_bp.length; ip++) {
           var { fh, bp, p_read, lang, } = p_bp[ip];
+          let copyRefDoc = lang === 'ref' && sameAuthor;
           var json = await p_read;
           try {
             var strings = JSON.parse(json);
@@ -227,7 +231,7 @@
                 scid: k,
               });
               m[lang] = strings[k];
-              if (trilingual && refAuthor === docAuthor) {
+              if (copyRefDoc) {
                 m[docLang] = strings[k];
               }
             });

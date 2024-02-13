@@ -1722,7 +1722,7 @@ typeof describe === "function" &&
       });
       should(res.bilaraPaths.length).equal(158);
     });
-    it("TESTTESTfind(...) => ignores SN46.36", async () => {
+    it("find(...) => ignores SN46.36", async () => {
       var skr = await new Seeker({
         root: TEST_BILARA_PATH,
         repoPath: BILARA_PATH,
@@ -2414,7 +2414,7 @@ typeof describe === "function" &&
         ],
       });
     });
-    it("find(...) trilingual root of suffering", async()=>{
+    it("TESTTESTfind(...) trilingual root of suffering", async()=>{
       let bilaraData = new BilaraData();
       let skr = await new Seeker({
         bilaraData,
@@ -2750,5 +2750,33 @@ typeof describe === "function" &&
       should(res.mlDocs.length).equal(1);
       should(res.method).equal('phrase');
       should(res.bilaraPaths.length).equal(3);
+    });
+    it("TESTTESTfind() mil2 Pali only", async () => {
+      const msg = 'test.seeker.find()';
+      const dbg = 1;
+      let bilaraData = new BilaraData();
+      let skr = await new Seeker({ bilaraData, logger: bilaraData, })
+        .initialize();
+      let pattern = 'mil2';
+      let findArgs = skr.findArgs([{ 
+        pattern, 
+        minLang:1,
+        trilingual: true,
+      }]);
+      let res = await skr.slowFind(findArgs);
+
+      let mld0 = res.mlDocs[0];
+      should(res.mlDocs.length).equal(1);
+      should(res.method).equal('sutta_uid');
+      should(res.bilaraPaths.length).equal(1);
+      let scid1_1 = `${pattern}:1.1`;
+      let seg1_1 = mld0.segMap[scid1_1];
+
+      // Should not have en
+      should.deepEqual(seg1_1, {
+        scid: scid1_1,
+        pli: '<b>Pubbayogo</b>ti tesaṁ pubbakammaṁ. ',
+        matched: true,
+      });
     });
   });
