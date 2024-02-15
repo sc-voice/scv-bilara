@@ -62,6 +62,7 @@
 		"translation/en/sujato": "sutta/an/an1",
 		"translation/fr/sekha": "sutta/an/an1",
 		"translation/jpn/kaz": "sutta/an/an1",
+		"translation/pt/ebt-deepl": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.82-97": {
@@ -9205,6 +9206,7 @@
 	"mn14": {
 		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
+		"translation/fr/noeismet": "sutta/mn",
 		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
