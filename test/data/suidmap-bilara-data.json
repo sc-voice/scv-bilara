@@ -98,6 +98,9 @@
 	"bv1": {
 		"root/pli/ms": "sutta/kn/bv"
 	},
+	"mil2": {
+		"root/pli/ms": "sutta/kn/mil"
+	},
 	"mn142": {
 		"root/pli/ms": "sutta/mn"
 	},

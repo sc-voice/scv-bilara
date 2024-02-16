@@ -2414,7 +2414,7 @@ typeof describe === "function" &&
         ],
       });
     });
-    it("TESTTESTfind(...) trilingual root of suffering", async()=>{
+    it("find(...) trilingual root of suffering", async()=>{
       let bilaraData = new BilaraData();
       let skr = await new Seeker({
         bilaraData,

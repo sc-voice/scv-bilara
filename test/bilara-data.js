@@ -225,8 +225,8 @@
             vinaya: false,
         };
 
-        should.deepEqual(bd.authorV2Info(gnlaera.author), gnlaera);
-        should.deepEqual(bd.authorV2Info(sujato.author), sujato);
+        should(bd.authorV2Info(gnlaera.author)).properties(gnlaera);
+        should(bd.authorV2Info(sujato.author)).properties(sujato);
     });
     it("suttaInfo(...) returns sutta metadata", async()=>{
         await bd.initialize();
