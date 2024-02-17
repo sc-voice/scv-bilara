@@ -413,7 +413,7 @@
     {
       "id": "bewusste Lüge",
       "group": "Examples",
-      "links": 13
+      "links": 14
     },
     {
       "id": "Bezugspunkte",
@@ -638,7 +638,7 @@
     {
       "id": "das Zusammentreffen der drei ist Kontakt",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "davon genährt",
@@ -753,7 +753,7 @@
     {
       "id": "die ausführliche Bedeutung",
       "group": "Examples",
-      "links": 31
+      "links": 32
     },
     {
       "id": "die bedingen könnten",
@@ -1058,7 +1058,7 @@
     {
       "id": "eine Himmelsrichtung mit einem Herzen voller Liebe",
       "group": "Examples",
-      "links": 23
+      "links": 24
     },
     {
       "id": "ein Embryo.* empfangen",
@@ -1283,7 +1283,7 @@
     {
       "id": "Erlöschen durch Nicht-Ergreifen",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "Erlösung des Herzens durch Liebe",
@@ -1603,7 +1603,7 @@
     {
       "id": "Genügsamkeit",
       "group": "Examples",
-      "links": 20
+      "links": 21
     },
     {
       "id": "Genussmensch",
@@ -1728,7 +1728,7 @@
     {
       "id": "Gleichnis von der Säge",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "Glück, das ohne Tadel ist",
@@ -1878,7 +1878,7 @@
     {
       "id": "Herr de[rs]",
       "group": "Examples",
-      "links": 15
+      "links": 16
     },
     {
       "id": "Herr.* des Waldes",
@@ -2148,7 +2148,7 @@
     {
       "id": "ist es wirklich wahr",
       "group": "Examples",
-      "links": 25
+      "links": 26
     },
     {
       "id": "ist etwas anderes",
@@ -2368,7 +2368,7 @@
     {
       "id": "Läuterung der Ansicht",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "leere.* Brahmāpalast",
@@ -2418,7 +2418,7 @@
     {
       "id": "liebevolle.* Herz",
       "group": "Examples",
-      "links": 15
+      "links": 16
     },
     {
       "id": "lodert Freude auf",
@@ -2448,7 +2448,7 @@
     {
       "id": "Manifestation",
       "group": "Examples",
-      "links": 26
+      "links": 27
     },
     {
       "id": "Maßhalten beim Essen",
@@ -2533,7 +2533,7 @@
     {
       "id": "mit einem Stock",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "mit einem Zauber besungen",
@@ -2563,12 +2563,12 @@
     {
       "id": "mithilfe eines Gleichnisses",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "mit ihrem Geist erfasst",
       "group": "Examples",
-      "links": 2
+      "links": 1
     },
     {
       "id": "mit Keuschheit als fünfter",
@@ -2798,7 +2798,7 @@
     {
       "id": "ohne Verlangen",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "ohne Wahrnehmung",
@@ -2878,7 +2878,7 @@
     {
       "id": "Riese",
       "group": "Examples",
-      "links": 15
+      "links": 16
     },
     {
       "id": "Roben aus Hanf",
@@ -3118,7 +3118,7 @@
     {
       "id": "sicher nicht",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "sieben Dinge.* entwickelt werden",
@@ -3593,7 +3593,7 @@
     {
       "id": "verstecktem Hass",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "Vertrauen als Partner",
@@ -3778,7 +3778,7 @@
     {
       "id": "wahrhaftig versteht: ‚Das ist das Leiden‘",
       "group": "Examples",
-      "links": 4
+      "links": 3
     },
     {
       "id": "Wahrnehmung des Abstoßenden",
@@ -4854,7 +4854,7 @@
     {
       "id": "an1.575-615",
       "group": "an",
-      "rank": 3,
+      "rank": 4,
       "links": 3
     },
     {
@@ -7012,6 +7012,12 @@
       "links": 2
     },
     {
+      "id": "iti25",
+      "group": "iti",
+      "rank": 11,
+      "links": 1
+    },
+    {
       "id": "dn26",
       "group": "dn",
       "rank": 1,
@@ -7668,7 +7674,7 @@
     {
       "id": "sn42.13",
       "group": "sn",
-      "rank": 1,
+      "rank": 2,
       "links": 6
     },
     {
@@ -8186,6 +8192,12 @@
       "group": "sn",
       "rank": 8,
       "links": 1
+    },
+    {
+      "id": "mn18",
+      "group": "mn",
+      "rank": 2,
+      "links": 5
     },
     {
       "id": "sn12.54",
@@ -8940,7 +8952,7 @@
     {
       "id": "an5.167",
       "group": "an",
-      "rank": 1,
+      "rank": 2,
       "links": 3
     },
     {
@@ -9736,9 +9748,15 @@
       "links": 2
     },
     {
+      "id": "mn21",
+      "group": "mn",
+      "rank": 1,
+      "links": 6
+    },
+    {
       "id": "an4.125",
       "group": "an",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
@@ -9900,8 +9918,8 @@
     {
       "id": "an10.97",
       "group": "an",
-      "rank": 1,
-      "links": 5
+      "rank": 4,
+      "links": 4
     },
     {
       "id": "an5.23",
@@ -10708,9 +10726,15 @@
       "links": 2
     },
     {
+      "id": "mn24",
+      "group": "mn",
+      "rank": 1,
+      "links": 6
+    },
+    {
       "id": "sn45.48",
       "group": "sn",
-      "rank": 1,
+      "rank": 2,
       "links": 2
     },
     {
@@ -11280,7 +11304,7 @@
     {
       "id": "cp22",
       "group": "cp",
-      "rank": 11,
+      "rank": 12,
       "links": 2
     },
     {
@@ -12684,19 +12708,19 @@
     {
       "id": "sn3.16",
       "group": "sn",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
       "id": "cp32",
       "group": "cp",
-      "rank": 9,
+      "rank": 10,
       "links": 1
     },
     {
       "id": "sn3.1",
       "group": "sn",
-      "rank": 12,
+      "rank": 13,
       "links": 1
     },
     {
@@ -13284,7 +13308,7 @@
     {
       "id": "an3.133",
       "group": "an",
-      "rank": 4,
+      "rank": 3,
       "links": 2
     },
     {
@@ -14070,13 +14094,13 @@
     {
       "id": "an5.198",
       "group": "an",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
       "id": "thag3.7",
       "group": "thag",
-      "rank": 10,
+      "rank": 11,
       "links": 1
     },
     {
@@ -14172,31 +14196,31 @@
     {
       "id": "sn26.5",
       "group": "sn",
-      "rank": 17,
+      "rank": 18,
       "links": 1
     },
     {
       "id": "sn26.6",
       "group": "sn",
-      "rank": 18,
+      "rank": 19,
       "links": 1
     },
     {
       "id": "sn26.7",
       "group": "sn",
-      "rank": 19,
+      "rank": 20,
       "links": 1
     },
     {
       "id": "sn26.8",
       "group": "sn",
-      "rank": 20,
+      "rank": 21,
       "links": 1
     },
     {
       "id": "iti68",
       "group": "iti",
-      "rank": 21,
+      "rank": 22,
       "links": 1
     },
     {
@@ -14892,25 +14916,25 @@
     {
       "id": "ud7.7",
       "group": "ud",
-      "rank": 2,
+      "rank": 3,
       "links": 1
     },
     {
       "id": "an4.9",
       "group": "an",
-      "rank": 3,
+      "rank": 4,
       "links": 1
     },
     {
       "id": "iti15",
       "group": "iti",
-      "rank": 4,
+      "rank": 5,
       "links": 1
     },
     {
       "id": "iti105",
       "group": "iti",
-      "rank": 6,
+      "rank": 7,
       "links": 1
     },
     {
@@ -15498,7 +15522,7 @@
     {
       "id": "an9.13",
       "group": "an",
-      "rank": 1,
+      "rank": 2,
       "links": 1
     },
     {
@@ -16708,12 +16732,6 @@
       "links": 1
     },
     {
-      "id": "an9.22",
-      "group": "an",
-      "rank": 2,
-      "links": 2
-    },
-    {
       "id": "sn46.67",
       "group": "sn",
       "rank": 4,
@@ -17485,6 +17503,12 @@
       "id": "an3.140",
       "group": "an",
       "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "an9.22",
+      "group": "an",
+      "rank": 3,
       "links": 1
     },
     {
@@ -20569,18 +20593,23 @@
     },
     {
       "source": "bewusste Lüge",
-      "target": "dn26",
+      "target": "iti25",
       "rank": 11
     },
     {
       "source": "bewusste Lüge",
-      "target": "dn29",
+      "target": "dn26",
       "rank": 12
     },
     {
       "source": "bewusste Lüge",
-      "target": "dn33",
+      "target": "dn29",
       "rank": 13
+    },
+    {
+      "source": "bewusste Lüge",
+      "target": "dn33",
+      "rank": 14
     },
     {
       "source": "Bezugspunkte",
@@ -22088,6 +22117,11 @@
       "rank": 8
     },
     {
+      "source": "das Zusammentreffen der drei ist Kontakt",
+      "target": "mn18",
+      "rank": 9
+    },
+    {
       "source": "davon genährt",
       "target": "sn12.54",
       "rank": 1
@@ -22704,28 +22738,33 @@
     },
     {
       "source": "die ausführliche Bedeutung",
-      "target": "mn133",
+      "target": "mn18",
       "rank": 27
     },
     {
       "source": "die ausführliche Bedeutung",
-      "target": "dn21",
+      "target": "mn133",
       "rank": 28
     },
     {
       "source": "die ausführliche Bedeutung",
-      "target": "an4.171",
+      "target": "dn21",
       "rank": 29
     },
     {
       "source": "die ausführliche Bedeutung",
-      "target": "an10.115",
+      "target": "an4.171",
       "rank": 30
     },
     {
       "source": "die ausführliche Bedeutung",
-      "target": "an10.172",
+      "target": "an10.115",
       "rank": 31
+    },
+    {
+      "source": "die ausführliche Bedeutung",
+      "target": "an10.172",
+      "rank": 32
     },
     {
       "source": "die bedingen könnten",
@@ -24334,118 +24373,123 @@
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "sn42.13",
+      "target": "mn21",
       "rank": 1
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn25",
+      "target": "sn42.13",
       "rank": 2
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an4.126",
+      "target": "dn25",
       "rank": 3
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an9.18",
+      "target": "an4.126",
       "rank": 4
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an4.125",
+      "target": "an9.18",
       "rank": 5
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an4.190",
+      "target": "an4.125",
       "rank": 6
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an10.219",
+      "target": "an4.190",
       "rank": 7
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "sn41.7",
+      "target": "an10.219",
       "rank": 8
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an11.16",
+      "target": "sn41.7",
       "rank": 9
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "mn52",
+      "target": "an11.16",
       "rank": 10
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an3.63",
+      "target": "mn52",
       "rank": 11
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an3.66",
+      "target": "an3.63",
       "rank": 12
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "sn46.54",
+      "target": "an3.66",
       "rank": 13
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "sn42.8",
+      "target": "sn46.54",
       "rank": 14
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an3.65",
+      "target": "sn42.8",
       "rank": 15
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an5.192",
+      "target": "an3.65",
       "rank": 16
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "mn7",
+      "target": "an5.192",
       "rank": 17
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "mn43",
+      "target": "mn7",
       "rank": 18
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn13",
+      "target": "mn43",
       "rank": 19
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn26",
+      "target": "dn13",
       "rank": 20
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn17",
+      "target": "dn26",
       "rank": 21
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn19",
+      "target": "dn17",
       "rank": 22
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn33",
+      "target": "dn19",
       "rank": 23
+    },
+    {
+      "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
+      "target": "dn33",
+      "rank": 24
     },
     {
       "source": "ein Embryo.* empfangen",
@@ -26359,23 +26403,28 @@
     },
     {
       "source": "Erlöschen durch Nicht-Ergreifen",
-      "target": "sn45.48",
+      "target": "mn24",
       "rank": 1
     },
     {
       "source": "Erlöschen durch Nicht-Ergreifen",
-      "target": "an7.55",
+      "target": "sn45.48",
       "rank": 2
     },
     {
       "source": "Erlöschen durch Nicht-Ergreifen",
-      "target": "an1.575-615",
+      "target": "an7.55",
       "rank": 3
     },
     {
       "source": "Erlöschen durch Nicht-Ergreifen",
-      "target": "an10.29",
+      "target": "an1.575-615",
       "rank": 4
+    },
+    {
+      "source": "Erlöschen durch Nicht-Ergreifen",
+      "target": "an10.29",
+      "rank": 5
     },
     {
       "source": "Erlösung des Herzens durch Liebe",
@@ -28543,6 +28592,11 @@
       "rank": 20
     },
     {
+      "source": "Genügsamkeit",
+      "target": "mn24",
+      "rank": 21
+    },
+    {
       "source": "Genussmensch",
       "target": "an10.91",
       "rank": 1
@@ -29289,13 +29343,18 @@
     },
     {
       "source": "Gleichnis von der Säge",
-      "target": "mn28",
+      "target": "mn21",
       "rank": 1
     },
     {
       "source": "Gleichnis von der Säge",
-      "target": "thag6.12",
+      "target": "mn28",
       "rank": 2
+    },
+    {
+      "source": "Gleichnis von der Säge",
+      "target": "thag6.12",
+      "rank": 3
     },
     {
       "source": "Glück, das ohne Tadel ist",
@@ -30544,48 +30603,53 @@
     },
     {
       "source": "Herr de[rs]",
-      "target": "mn133",
+      "target": "mn18",
       "rank": 7
     },
     {
       "source": "Herr de[rs]",
-      "target": "sn3.16",
+      "target": "mn133",
       "rank": 8
     },
     {
       "source": "Herr de[rs]",
-      "target": "cp32",
+      "target": "sn3.16",
       "rank": 9
     },
     {
       "source": "Herr de[rs]",
-      "target": "an7.62",
+      "target": "cp32",
       "rank": 10
     },
     {
       "source": "Herr de[rs]",
-      "target": "cp22",
+      "target": "an7.62",
       "rank": 11
     },
     {
       "source": "Herr de[rs]",
-      "target": "sn3.1",
+      "target": "cp22",
       "rank": 12
     },
     {
       "source": "Herr de[rs]",
-      "target": "thag16.3",
+      "target": "sn3.1",
       "rank": 13
     },
     {
       "source": "Herr de[rs]",
-      "target": "snp3.11",
+      "target": "thag16.3",
       "rank": 14
     },
     {
       "source": "Herr de[rs]",
-      "target": "dn27",
+      "target": "snp3.11",
       "rank": 15
+    },
+    {
+      "source": "Herr de[rs]",
+      "target": "dn27",
+      "rank": 16
     },
     {
       "source": "Herr.* des Waldes",
@@ -31929,28 +31993,33 @@
     },
     {
       "source": "ist es wirklich wahr",
-      "target": "dn4",
+      "target": "mn21",
       "rank": 21
     },
     {
       "source": "ist es wirklich wahr",
-      "target": "dn5",
+      "target": "dn4",
       "rank": 22
     },
     {
       "source": "ist es wirklich wahr",
-      "target": "dn25",
+      "target": "dn5",
       "rank": 23
     },
     {
       "source": "ist es wirklich wahr",
-      "target": "dn9",
+      "target": "dn25",
       "rank": 24
     },
     {
       "source": "ist es wirklich wahr",
-      "target": "dn23",
+      "target": "dn9",
       "rank": 25
+    },
+    {
+      "source": "ist es wirklich wahr",
+      "target": "dn23",
+      "rank": 26
     },
     {
       "source": "ist etwas anderes",
@@ -33799,13 +33868,18 @@
     },
     {
       "source": "Läuterung der Ansicht",
-      "target": "an2.163-179",
+      "target": "mn24",
       "rank": 1
     },
     {
       "source": "Läuterung der Ansicht",
-      "target": "dn33",
+      "target": "an2.163-179",
       "rank": 2
+    },
+    {
+      "source": "Läuterung der Ansicht",
+      "target": "dn33",
+      "rank": 3
     },
     {
       "source": "leere.* Brahmāpalast",
@@ -33984,78 +34058,83 @@
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "an5.167",
+      "target": "mn21",
       "rank": 1
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "an1.51-60",
+      "target": "an5.167",
       "rank": 2
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "dn8",
+      "target": "an1.51-60",
       "rank": 3
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "iti22",
+      "target": "dn8",
       "rank": 4
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "an4.67",
+      "target": "iti22",
       "rank": 5
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "an7.62",
+      "target": "an4.67",
       "rank": 6
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "mn93",
+      "target": "an7.62",
       "rank": 7
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "an5.198",
+      "target": "mn93",
       "rank": 8
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "sn20.4",
+      "target": "an5.198",
       "rank": 9
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "thag3.7",
+      "target": "sn20.4",
       "rank": 10
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "iti60",
+      "target": "thag3.7",
       "rank": 11
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "an10.44",
+      "target": "iti60",
       "rank": 12
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "an9.20",
+      "target": "an10.44",
       "rank": 13
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "thag14.1",
+      "target": "an9.20",
       "rank": 14
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "dn33",
+      "target": "thag14.1",
       "rank": 15
+    },
+    {
+      "source": "liebevolle.* Herz",
+      "target": "dn33",
+      "rank": 16
     },
     {
       "source": "lodert Freude auf",
@@ -34234,58 +34313,63 @@
     },
     {
       "source": "Manifestation",
-      "target": "mn133",
+      "target": "mn18",
       "rank": 16
     },
     {
       "source": "Manifestation",
-      "target": "sn26.5",
+      "target": "mn133",
       "rank": 17
     },
     {
       "source": "Manifestation",
-      "target": "sn26.6",
+      "target": "sn26.5",
       "rank": 18
     },
     {
       "source": "Manifestation",
-      "target": "sn26.7",
+      "target": "sn26.6",
       "rank": 19
     },
     {
       "source": "Manifestation",
-      "target": "sn26.8",
+      "target": "sn26.7",
       "rank": 20
     },
     {
       "source": "Manifestation",
-      "target": "iti68",
+      "target": "sn26.8",
       "rank": 21
     },
     {
       "source": "Manifestation",
-      "target": "sn12.2",
+      "target": "iti68",
       "rank": 22
     },
     {
       "source": "Manifestation",
-      "target": "mn141",
+      "target": "sn12.2",
       "rank": 23
     },
     {
       "source": "Manifestation",
-      "target": "mn9",
+      "target": "mn141",
       "rank": 24
     },
     {
       "source": "Manifestation",
-      "target": "dn27",
+      "target": "mn9",
       "rank": 25
     },
     {
       "source": "Manifestation",
-      "target": "dn22",
+      "target": "dn27",
       "rank": 26
+    },
+    {
+      "source": "Manifestation",
+      "target": "dn22",
+      "rank": 27
     },
     {
       "source": "Maßhalten beim Essen",
@@ -34734,18 +34818,23 @@
     },
     {
       "source": "mit einem Stock",
-      "target": "sn4.24",
+      "target": "mn21",
       "rank": 4
     },
     {
       "source": "mit einem Stock",
-      "target": "thig13.3",
+      "target": "sn4.24",
       "rank": 5
     },
     {
       "source": "mit einem Stock",
-      "target": "sn4.25",
+      "target": "thig13.3",
       "rank": 6
+    },
+    {
+      "source": "mit einem Stock",
+      "target": "sn4.25",
+      "rank": 7
     },
     {
       "source": "mit einem Zauber besungen",
@@ -35154,18 +35243,18 @@
     },
     {
       "source": "mithilfe eines Gleichnisses",
-      "target": "mn43",
+      "target": "mn24",
       "rank": 6
     },
     {
-      "source": "mit ihrem Geist erfasst",
-      "target": "an10.97",
-      "rank": 1
+      "source": "mithilfe eines Gleichnisses",
+      "target": "mn43",
+      "rank": 7
     },
     {
       "source": "mit ihrem Geist erfasst",
       "target": "dn34",
-      "rank": 2
+      "rank": 1
     },
     {
       "source": "mit Keuschheit als fünfter",
@@ -36199,38 +36288,43 @@
     },
     {
       "source": "ohne Verlangen",
-      "target": "ud7.7",
+      "target": "mn18",
       "rank": 2
     },
     {
       "source": "ohne Verlangen",
-      "target": "an4.9",
+      "target": "ud7.7",
       "rank": 3
     },
     {
       "source": "ohne Verlangen",
-      "target": "iti15",
+      "target": "an4.9",
       "rank": 4
     },
     {
       "source": "ohne Verlangen",
-      "target": "iti58",
+      "target": "iti15",
       "rank": 5
     },
     {
       "source": "ohne Verlangen",
-      "target": "iti105",
+      "target": "iti58",
       "rank": 6
     },
     {
       "source": "ohne Verlangen",
-      "target": "iti49",
+      "target": "iti105",
       "rank": 7
     },
     {
       "source": "ohne Verlangen",
-      "target": "thag16.8",
+      "target": "iti49",
       "rank": 8
+    },
+    {
+      "source": "ohne Verlangen",
+      "target": "thag16.8",
+      "rank": 9
     },
     {
       "source": "ohne Wahrnehmung",
@@ -36984,18 +37078,23 @@
     },
     {
       "source": "Riese",
-      "target": "snp5.19",
+      "target": "mn24",
       "rank": 13
     },
     {
       "source": "Riese",
-      "target": "mn5",
+      "target": "snp5.19",
       "rank": 14
     },
     {
       "source": "Riese",
-      "target": "dn20",
+      "target": "mn5",
       "rank": 15
+    },
+    {
+      "source": "Riese",
+      "target": "dn20",
+      "rank": 16
     },
     {
       "source": "Roben aus Hanf",
@@ -38234,8 +38333,13 @@
     },
     {
       "source": "sicher nicht",
-      "target": "an9.13",
+      "target": "mn24",
       "rank": 1
+    },
+    {
+      "source": "sicher nicht",
+      "target": "an9.13",
+      "rank": 2
     },
     {
       "source": "sieben Dinge.* entwickelt werden",
@@ -40999,18 +41103,23 @@
     },
     {
       "source": "verstecktem Hass",
-      "target": "an5.167",
+      "target": "mn21",
       "rank": 1
     },
     {
       "source": "verstecktem Hass",
-      "target": "an10.44",
+      "target": "an5.167",
       "rank": 2
     },
     {
       "source": "verstecktem Hass",
-      "target": "dn33",
+      "target": "an10.44",
       "rank": 3
+    },
+    {
+      "source": "verstecktem Hass",
+      "target": "dn33",
+      "rank": 4
     },
     {
       "source": "Vertrauen als Partner",
@@ -42349,18 +42458,13 @@
     },
     {
       "source": "wahrhaftig versteht: ‚Das ist das Leiden‘",
-      "target": "an9.22",
+      "target": "an3.25",
       "rank": 2
     },
     {
       "source": "wahrhaftig versteht: ‚Das ist das Leiden‘",
-      "target": "an3.25",
-      "rank": 3
-    },
-    {
-      "source": "wahrhaftig versteht: ‚Das ist das Leiden‘",
       "target": "an3.133",
-      "rank": 4
+      "rank": 3
     },
     {
       "source": "Wahrnehmung des Abstoßenden",
