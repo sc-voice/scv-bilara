@@ -3,8 +3,8 @@
 DIR=`dirname $0`
 SCRIPT=`basename $0 | tr abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ`
 
-${DIR}/install-node16 &&
-${DIR}/update-npm &&
+${DIR}/install-node 20 &&
+${DIR}/update-npm 10 &&
 ${DIR}/install-ripgrep &&
 npm install && 
 echo -e "${SCRIPT}: completed (OK)"
