@@ -71,6 +71,11 @@
       "links": 21
     },
     {
+      "id": "Achtsamkeit verankert",
+      "group": "Examples",
+      "links": 6
+    },
+    {
       "id": "achtsam leben, der Situation bewusst",
       "group": "Examples",
       "links": 3
@@ -3101,7 +3106,7 @@
       "links": 5
     },
     {
-      "id": "selbst wenn er ihn weggeschickt wird",
+      "id": "selbst wenn er fortgeschickt wird",
       "group": "Examples",
       "links": 1
     },
@@ -3479,6 +3484,11 @@
       "id": "Ursprung der Welt",
       "group": "Examples",
       "links": 11
+    },
+    {
+      "id": "Urteile",
+      "group": "Examples",
+      "links": 4
     },
     {
       "id": "Urteil über Menschen",
@@ -4651,7 +4661,7 @@
       "id": "dn21",
       "group": "dn",
       "rank": 1,
-      "links": 23
+      "links": 24
     },
     {
       "id": "mn82",
@@ -4669,7 +4679,7 @@
       "id": "dn16",
       "group": "dn",
       "rank": 1,
-      "links": 66
+      "links": 67
     },
     {
       "id": "an4.89",
@@ -4922,6 +4932,36 @@
       "group": "dn",
       "rank": 1,
       "links": 40
+    },
+    {
+      "id": "mn17",
+      "group": "mn",
+      "rank": 1,
+      "links": 2
+    },
+    {
+      "id": "sn54.13",
+      "group": "sn",
+      "rank": 2,
+      "links": 4
+    },
+    {
+      "id": "mn118",
+      "group": "mn",
+      "rank": 1,
+      "links": 7
+    },
+    {
+      "id": "an7.23",
+      "group": "an",
+      "rank": 4,
+      "links": 2
+    },
+    {
+      "id": "thig7.2",
+      "group": "thig",
+      "rank": 5,
+      "links": 2
     },
     {
       "id": "sn47.35",
@@ -6256,12 +6296,6 @@
       "links": 6
     },
     {
-      "id": "mn118",
-      "group": "mn",
-      "rank": 1,
-      "links": 6
-    },
-    {
       "id": "sn54.1",
       "group": "sn",
       "rank": 2,
@@ -6272,12 +6306,6 @@
       "group": "sn",
       "rank": 3,
       "links": 1
-    },
-    {
-      "id": "sn54.13",
-      "group": "sn",
-      "rank": 2,
-      "links": 3
     },
     {
       "id": "mn62",
@@ -6997,7 +7025,7 @@
       "id": "sn3.7",
       "group": "sn",
       "rank": 1,
-      "links": 2
+      "links": 3
     },
     {
       "id": "sn17.13-20",
@@ -7082,12 +7110,6 @@
       "group": "thig",
       "rank": 7,
       "links": 2
-    },
-    {
-      "id": "thig7.2",
-      "group": "thig",
-      "rank": 10,
-      "links": 1
     },
     {
       "id": "thig7.3",
@@ -7819,7 +7841,7 @@
       "id": "mn122",
       "group": "mn",
       "rank": 1,
-      "links": 14
+      "links": 13
     },
     {
       "id": "sn45.165",
@@ -8196,8 +8218,8 @@
     {
       "id": "mn18",
       "group": "mn",
-      "rank": 2,
-      "links": 5
+      "rank": 1,
+      "links": 6
     },
     {
       "id": "sn12.54",
@@ -14917,7 +14939,7 @@
       "id": "ud7.7",
       "group": "ud",
       "rank": 3,
-      "links": 1
+      "links": 2
     },
     {
       "id": "an4.9",
@@ -16642,12 +16664,6 @@
       "links": 4
     },
     {
-      "id": "an7.23",
-      "group": "an",
-      "rank": 4,
-      "links": 1
-    },
-    {
       "id": "an7.24",
       "group": "an",
       "rank": 9,
@@ -18275,6 +18291,36 @@
       "source": "Achtsamkeit und Situationsbewusstsein",
       "target": "dn34",
       "rank": 21
+    },
+    {
+      "source": "Achtsamkeit verankert",
+      "target": "mn17",
+      "rank": 1
+    },
+    {
+      "source": "Achtsamkeit verankert",
+      "target": "sn54.13",
+      "rank": 2
+    },
+    {
+      "source": "Achtsamkeit verankert",
+      "target": "mn118",
+      "rank": 3
+    },
+    {
+      "source": "Achtsamkeit verankert",
+      "target": "an7.23",
+      "rank": 4
+    },
+    {
+      "source": "Achtsamkeit verankert",
+      "target": "thig7.2",
+      "rank": 5
+    },
+    {
+      "source": "Achtsamkeit verankert",
+      "target": "dn16",
+      "rank": 6
     },
     {
       "source": "achtsam leben, der Situation bewusst",
@@ -38302,8 +38348,8 @@
       "rank": 5
     },
     {
-      "source": "selbst wenn er ihn weggeschickt wird",
-      "target": "mn122",
+      "source": "selbst wenn er fortgeschickt wird",
+      "target": "mn17",
       "rank": 1
     },
     {
@@ -40620,6 +40666,26 @@
       "source": "Ursprung der Welt",
       "target": "sn22.90",
       "rank": 11
+    },
+    {
+      "source": "Urteile",
+      "target": "mn18",
+      "rank": 1
+    },
+    {
+      "source": "Urteile",
+      "target": "dn21",
+      "rank": 2
+    },
+    {
+      "source": "Urteile",
+      "target": "ud7.7",
+      "rank": 3
+    },
+    {
+      "source": "Urteile",
+      "target": "sn3.7",
+      "rank": 4
     },
     {
       "source": "Urteil über Menschen",
