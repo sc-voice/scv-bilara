@@ -2926,9 +2926,9 @@
       "links": 15
     },
     {
-      "id": "Sanfteste der Sanften",
+      "id": "Sanfteste unter den Sanften",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "schädlichen Irrglauben",
@@ -4124,6 +4124,11 @@
       "id": "wie ein Affe",
       "group": "Examples",
       "links": 5
+    },
+    {
+      "id": "wie ein.* Katze",
+      "group": "Examples",
+      "links": 2
     },
     {
       "id": "wie Menschen ein Haus betreten oder verlassen",
@@ -9773,7 +9778,7 @@
       "id": "mn21",
       "group": "mn",
       "rank": 1,
-      "links": 6
+      "links": 8
     },
     {
       "id": "an4.125",
@@ -14782,8 +14787,8 @@
     {
       "id": "thag19.1",
       "group": "thag",
-      "rank": 4,
-      "links": 7
+      "rank": 2,
+      "links": 8
     },
     {
       "id": "sn35.101",
@@ -37408,9 +37413,14 @@
       "rank": 15
     },
     {
-      "source": "Sanfteste der Sanften",
+      "source": "Sanfteste unter den Sanften",
       "target": "an6.60",
       "rank": 1
+    },
+    {
+      "source": "Sanfteste unter den Sanften",
+      "target": "mn21",
+      "rank": 2
     },
     {
       "source": "schädlichen Irrglauben",
@@ -44976,6 +44986,16 @@
       "source": "wie ein Affe",
       "target": "thag19.1",
       "rank": 5
+    },
+    {
+      "source": "wie ein.* Katze",
+      "target": "mn21",
+      "rank": 1
+    },
+    {
+      "source": "wie ein.* Katze",
+      "target": "thag19.1",
+      "rank": 2
     },
     {
       "source": "wie Menschen ein Haus betreten oder verlassen",
