@@ -13,7 +13,7 @@
     {
       "id": "conceito",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "dardo do anseio",
@@ -128,6 +128,12 @@
       "links": 3
     },
     {
+      "id": "an1.575-615",
+      "group": "an",
+      "rank": 2,
+      "links": 1
+    },
+    {
       "id": "an3.183-352",
       "group": "an",
       "rank": 1,
@@ -177,8 +183,13 @@
     },
     {
       "source": "conceito",
-      "target": "an3.183-352",
+      "target": "an1.575-615",
       "rank": 2
+    },
+    {
+      "source": "conceito",
+      "target": "an3.183-352",
+      "rank": 3
     },
     {
       "source": "desenvolver estes três",
