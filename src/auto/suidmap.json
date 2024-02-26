@@ -9130,6 +9130,18 @@
 		"translation/en/kelly": "sutta/kn/mil",
 		"root/pli/ms": "sutta/kn/mil"
 	},
+	"mil3.6.9": {
+		"translation/en/kelly": "sutta/kn/mil",
+		"root/pli/ms": "sutta/kn/mil"
+	},
+	"mil3.6.10": {
+		"translation/en/kelly": "sutta/kn/mil",
+		"root/pli/ms": "sutta/kn/mil"
+	},
+	"mil3.6.11": {
+		"translation/en/kelly": "sutta/kn/mil",
+		"root/pli/ms": "sutta/kn/mil"
+	},
 	"mn1": {
 		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
@@ -13402,11 +13414,13 @@
 	"sn12.52": {
 		"translation/de/sabbamitta": "sutta/sn/sn12",
 		"translation/en/sujato": "sutta/sn/sn12",
+		"translation/pl/hardao": "sutta/sn/sn12",
 		"root/pli/ms": "sutta/sn/sn12"
 	},
 	"sn12.53": {
 		"translation/de/sabbamitta": "sutta/sn/sn12",
 		"translation/en/sujato": "sutta/sn/sn12",
+		"translation/pl/hardao": "sutta/sn/sn12",
 		"root/pli/ms": "sutta/sn/sn12"
 	},
 	"sn12.54": {
@@ -25480,15 +25494,6 @@
 		"root/pli/ms": "sutta/kn/mil"
 	},
 	"mil2": {
-		"root/pli/ms": "sutta/kn/mil"
-	},
-	"mil3.6.10": {
-		"root/pli/ms": "sutta/kn/mil"
-	},
-	"mil3.6.11": {
-		"root/pli/ms": "sutta/kn/mil"
-	},
-	"mil3.6.9": {
 		"root/pli/ms": "sutta/kn/mil"
 	},
 	"mil3.7.10": {
