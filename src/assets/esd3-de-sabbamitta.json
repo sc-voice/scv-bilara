@@ -3241,6 +3241,11 @@
       "links": 2
     },
     {
+      "id": "Stock und Schwert",
+      "group": "Examples",
+      "links": 27
+    },
+    {
       "id": "Straße durch die Wüste",
       "group": "Examples",
       "links": 3
@@ -3629,11 +3634,6 @@
       "id": "verwirklicht werden",
       "group": "Examples",
       "links": 17
-    },
-    {
-      "id": "verzichtet auf Stock und Schwert",
-      "group": "Examples",
-      "links": 14
     },
     {
       "id": "viel Leiden und Bedrängnis",
@@ -4528,7 +4528,7 @@
       "id": "dn15",
       "group": "dn",
       "rank": 1,
-      "links": 14
+      "links": 15
     },
     {
       "id": "sn12.27",
@@ -4666,7 +4666,7 @@
       "id": "dn21",
       "group": "dn",
       "rank": 1,
-      "links": 23
+      "links": 24
     },
     {
       "id": "mn82",
@@ -4726,7 +4726,7 @@
       "id": "dn34",
       "group": "dn",
       "rank": 1,
-      "links": 81
+      "links": 82
     },
     {
       "id": "an8.118",
@@ -6934,7 +6934,7 @@
       "id": "an9.23",
       "group": "an",
       "rank": 3,
-      "links": 1
+      "links": 2
     },
     {
       "id": "sn6.7",
@@ -7006,7 +7006,7 @@
       "id": "dn30",
       "group": "dn",
       "rank": 1,
-      "links": 11
+      "links": 12
     },
     {
       "id": "mn61",
@@ -7576,7 +7576,7 @@
       "id": "mn60",
       "group": "mn",
       "rank": 1,
-      "links": 16
+      "links": 17
     },
     {
       "id": "sn45.174",
@@ -7966,13 +7966,13 @@
       "id": "an8.41",
       "group": "an",
       "rank": 1,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an3.70",
       "group": "an",
       "rank": 1,
-      "links": 5
+      "links": 6
     },
     {
       "id": "an8.39",
@@ -8242,7 +8242,7 @@
       "id": "mn18",
       "group": "mn",
       "rank": 1,
-      "links": 6
+      "links": 7
     },
     {
       "id": "sn12.54",
@@ -8290,19 +8290,19 @@
       "id": "an8.42",
       "group": "an",
       "rank": 2,
-      "links": 3
+      "links": 4
     },
     {
       "id": "an8.43",
       "group": "an",
       "rank": 4,
-      "links": 3
+      "links": 4
     },
     {
       "id": "an8.45",
       "group": "an",
       "rank": 3,
-      "links": 3
+      "links": 4
     },
     {
       "id": "an10.46",
@@ -8338,7 +8338,7 @@
       "id": "an9.18",
       "group": "an",
       "rank": 1,
-      "links": 5
+      "links": 6
     },
     {
       "id": "ud5.8",
@@ -39215,6 +39215,141 @@
       "rank": 2
     },
     {
+      "source": "Stock und Schwert",
+      "target": "an9.18",
+      "rank": 1
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "an8.41",
+      "rank": 2
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "an8.45",
+      "rank": 3
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "an8.43",
+      "rank": 4
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "an8.42",
+      "rank": 5
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "mn18",
+      "rank": 6
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "an3.70",
+      "rank": 7
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "dn15",
+      "rank": 8
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "dn21",
+      "rank": 9
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "an9.23",
+      "rank": 10
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "an10.211",
+      "rank": 11
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "an10.212",
+      "rank": 12
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "an10.217",
+      "rank": 13
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "an10.216",
+      "rank": 14
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "an10.176",
+      "rank": 15
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "an4.198",
+      "rank": 16
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "an10.99",
+      "rank": 17
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "mn27",
+      "rank": 18
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "mn51",
+      "rank": 19
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "dn8",
+      "rank": 20
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "dn10",
+      "rank": 21
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "mn60",
+      "rank": 22
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "dn1",
+      "rank": 23
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "dn2",
+      "rank": 24
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "mn38",
+      "rank": 25
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "dn30",
+      "rank": 26
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "dn34",
+      "rank": 27
+    },
+    {
       "source": "Straße durch die Wüste",
       "target": "mn39",
       "rank": 1
@@ -41688,76 +41823,6 @@
       "source": "verwirklicht werden",
       "target": "thag20.1",
       "rank": 17
-    },
-    {
-      "source": "verzichtet auf Stock und Schwert",
-      "target": "an10.211",
-      "rank": 1
-    },
-    {
-      "source": "verzichtet auf Stock und Schwert",
-      "target": "an10.212",
-      "rank": 2
-    },
-    {
-      "source": "verzichtet auf Stock und Schwert",
-      "target": "an10.217",
-      "rank": 3
-    },
-    {
-      "source": "verzichtet auf Stock und Schwert",
-      "target": "an10.216",
-      "rank": 4
-    },
-    {
-      "source": "verzichtet auf Stock und Schwert",
-      "target": "an10.176",
-      "rank": 5
-    },
-    {
-      "source": "verzichtet auf Stock und Schwert",
-      "target": "an4.198",
-      "rank": 6
-    },
-    {
-      "source": "verzichtet auf Stock und Schwert",
-      "target": "an10.99",
-      "rank": 7
-    },
-    {
-      "source": "verzichtet auf Stock und Schwert",
-      "target": "mn27",
-      "rank": 8
-    },
-    {
-      "source": "verzichtet auf Stock und Schwert",
-      "target": "mn51",
-      "rank": 9
-    },
-    {
-      "source": "verzichtet auf Stock und Schwert",
-      "target": "dn8",
-      "rank": 10
-    },
-    {
-      "source": "verzichtet auf Stock und Schwert",
-      "target": "dn10",
-      "rank": 11
-    },
-    {
-      "source": "verzichtet auf Stock und Schwert",
-      "target": "dn1",
-      "rank": 12
-    },
-    {
-      "source": "verzichtet auf Stock und Schwert",
-      "target": "dn2",
-      "rank": 13
-    },
-    {
-      "source": "verzichtet auf Stock und Schwert",
-      "target": "mn38",
-      "rank": 14
     },
     {
       "source": "viel Leiden und Bedrängnis",

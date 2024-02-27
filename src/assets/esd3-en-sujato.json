@@ -3086,11 +3086,6 @@
       "links": 4
     },
     {
-      "id": "renounce the rod and the sword",
-      "group": "Examples",
-      "links": 10
-    },
-    {
       "id": "repulsive in the unrepulsive",
       "group": "Examples",
       "links": 6
@@ -3764,6 +3759,11 @@
       "id": "there is the earth element",
       "group": "Examples",
       "links": 3
+    },
+    {
+      "id": "the rod and the sword",
+      "group": "Examples",
+      "links": 34
     },
     {
       "id": "the sabbath",
@@ -4581,7 +4581,7 @@
       "id": "dn2",
       "group": "dn",
       "rank": 1,
-      "links": 65
+      "links": 66
     },
     {
       "id": "dn17",
@@ -4881,7 +4881,7 @@
       "id": "mn38",
       "group": "mn",
       "rank": 1,
-      "links": 26
+      "links": 27
     },
     {
       "id": "sn12.34",
@@ -4893,7 +4893,7 @@
       "id": "dn15",
       "group": "dn",
       "rank": 1,
-      "links": 13
+      "links": 14
     },
     {
       "id": "sn12.53",
@@ -5049,7 +5049,7 @@
       "id": "dn1",
       "group": "dn",
       "rank": 1,
-      "links": 25
+      "links": 26
     },
     {
       "id": "an6.30",
@@ -5073,7 +5073,7 @@
       "id": "mn60",
       "group": "mn",
       "rank": 1,
-      "links": 15
+      "links": 16
     },
     {
       "id": "an9.37",
@@ -5493,7 +5493,7 @@
       "id": "mn86",
       "group": "mn",
       "rank": 1,
-      "links": 10
+      "links": 11
     },
     {
       "id": "an10.211",
@@ -5504,7 +5504,7 @@
     {
       "id": "an10.212",
       "group": "an",
-      "rank": 2,
+      "rank": 3,
       "links": 5
     },
     {
@@ -5607,7 +5607,7 @@
       "id": "an9.18",
       "group": "an",
       "rank": 1,
-      "links": 5
+      "links": 6
     },
     {
       "id": "an4.125",
@@ -5757,43 +5757,43 @@
       "id": "an4.198",
       "group": "an",
       "rank": 1,
-      "links": 20
+      "links": 21
     },
     {
       "id": "an10.99",
       "group": "an",
       "rank": 1,
-      "links": 16
+      "links": 17
     },
     {
       "id": "mn112",
       "group": "mn",
       "rank": 1,
-      "links": 16
+      "links": 17
     },
     {
       "id": "mn27",
       "group": "mn",
       "rank": 4,
-      "links": 13
+      "links": 14
     },
     {
       "id": "mn51",
       "group": "mn",
       "rank": 1,
-      "links": 22
+      "links": 23
     },
     {
       "id": "mn94",
       "group": "mn",
       "rank": 1,
-      "links": 21
+      "links": 22
     },
     {
       "id": "mn101",
       "group": "mn",
       "rank": 2,
-      "links": 19
+      "links": 20
     },
     {
       "id": "dn31",
@@ -5817,7 +5817,7 @@
       "id": "dn30",
       "group": "dn",
       "rank": 1,
-      "links": 15
+      "links": 16
     },
     {
       "id": "iti22",
@@ -6633,13 +6633,13 @@
       "id": "an8.41",
       "group": "an",
       "rank": 1,
-      "links": 5
+      "links": 6
     },
     {
       "id": "an3.70",
       "group": "an",
       "rank": 1,
-      "links": 7
+      "links": 8
     },
     {
       "id": "sn35.127",
@@ -6657,19 +6657,19 @@
       "id": "an8.45",
       "group": "an",
       "rank": 3,
-      "links": 3
+      "links": 4
     },
     {
       "id": "an8.43",
       "group": "an",
       "rank": 3,
-      "links": 3
+      "links": 4
     },
     {
       "id": "an8.42",
       "group": "an",
       "rank": 4,
-      "links": 3
+      "links": 4
     },
     {
       "id": "mn89",
@@ -7041,7 +7041,7 @@
       "id": "dn34",
       "group": "dn",
       "rank": 1,
-      "links": 84
+      "links": 85
     },
     {
       "id": "sn56.29",
@@ -8319,7 +8319,7 @@
       "id": "dn21",
       "group": "dn",
       "rank": 1,
-      "links": 21
+      "links": 22
     },
     {
       "id": "an5.83",
@@ -13923,7 +13923,7 @@
       "id": "mn18",
       "group": "mn",
       "rank": 3,
-      "links": 5
+      "links": 6
     },
     {
       "id": "snp4.12",
@@ -17079,6 +17079,12 @@
       "id": "an11.11",
       "group": "an",
       "rank": 3,
+      "links": 1
+    },
+    {
+      "id": "an9.23",
+      "group": "an",
+      "rank": 10,
       "links": 1
     },
     {
@@ -40856,56 +40862,6 @@
       "rank": 4
     },
     {
-      "source": "renounce the rod and the sword",
-      "target": "an10.211",
-      "rank": 1
-    },
-    {
-      "source": "renounce the rod and the sword",
-      "target": "an10.212",
-      "rank": 2
-    },
-    {
-      "source": "renounce the rod and the sword",
-      "target": "an10.217",
-      "rank": 3
-    },
-    {
-      "source": "renounce the rod and the sword",
-      "target": "an10.216",
-      "rank": 4
-    },
-    {
-      "source": "renounce the rod and the sword",
-      "target": "an10.176",
-      "rank": 5
-    },
-    {
-      "source": "renounce the rod and the sword",
-      "target": "mn41",
-      "rank": 6
-    },
-    {
-      "source": "renounce the rod and the sword",
-      "target": "mn135",
-      "rank": 7
-    },
-    {
-      "source": "renounce the rod and the sword",
-      "target": "dn8",
-      "rank": 8
-    },
-    {
-      "source": "renounce the rod and the sword",
-      "target": "dn10",
-      "rank": 9
-    },
-    {
-      "source": "renounce the rod and the sword",
-      "target": "mn114",
-      "rank": 10
-    },
-    {
       "source": "repulsive in the unrepulsive",
       "target": "sn46.54",
       "rank": 1
@@ -45389,6 +45345,176 @@
       "source": "there is the earth element",
       "target": "dn22",
       "rank": 3
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "an9.18",
+      "rank": 1
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "an8.41",
+      "rank": 2
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "an8.45",
+      "rank": 3
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "an8.43",
+      "rank": 4
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "an8.42",
+      "rank": 5
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "mn18",
+      "rank": 6
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "an3.70",
+      "rank": 7
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "dn15",
+      "rank": 8
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "dn21",
+      "rank": 9
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "an9.23",
+      "rank": 10
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "an10.211",
+      "rank": 11
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "an10.212",
+      "rank": 12
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "an10.217",
+      "rank": 13
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "an10.216",
+      "rank": 14
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "an10.176",
+      "rank": 15
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "an4.198",
+      "rank": 16
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "mn41",
+      "rank": 17
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "an10.99",
+      "rank": 18
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "mn112",
+      "rank": 19
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "mn135",
+      "rank": 20
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "mn27",
+      "rank": 21
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "mn51",
+      "rank": 22
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "mn86",
+      "rank": 23
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "mn94",
+      "rank": 24
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "dn8",
+      "rank": 25
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "dn10",
+      "rank": 26
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "mn60",
+      "rank": 27
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "mn101",
+      "rank": 28
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "mn114",
+      "rank": 29
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "dn1",
+      "rank": 30
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "dn2",
+      "rank": 31
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "mn38",
+      "rank": 32
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "dn30",
+      "rank": 33
+    },
+    {
+      "source": "the rod and the sword",
+      "target": "dn34",
+      "rank": 34
     },
     {
       "source": "the sabbath",
