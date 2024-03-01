@@ -8,7 +8,7 @@
     {
       "id": "aber zum Erwachen entschlossen",
       "group": "Examples",
-      "links": 21
+      "links": 22
     },
     {
       "id": "abgefallen",
@@ -98,7 +98,7 @@
     {
       "id": "allein zu wandern",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "alles Leiden",
@@ -383,7 +383,7 @@
     {
       "id": "besser.* erlesener",
       "group": "Examples",
-      "links": 14
+      "links": 15
     },
     {
       "id": "besteht ein Klargewordener",
@@ -703,7 +703,7 @@
     {
       "id": "der Hass",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "der keine Freude empfindet",
@@ -1083,7 +1083,7 @@
     {
       "id": "eine Straße entlangwanderte",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "einfältige.* Mann",
@@ -1183,7 +1183,7 @@
     {
       "id": "Elefant in der Wildnis",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "Element de",
@@ -1363,7 +1363,7 @@
     {
       "id": "ewige Wahrheit",
       "group": "Examples",
-      "links": 1
+      "links": 5
     },
     {
       "id": "Fähigkeit des Gleichmuts",
@@ -1618,7 +1618,7 @@
     {
       "id": "gepackt",
       "group": "Examples",
-      "links": 13
+      "links": 14
     },
     {
       "id": "gepflegt werden sollte, und",
@@ -1883,7 +1883,7 @@
     {
       "id": "Herr de[rs]",
       "group": "Examples",
-      "links": 16
+      "links": 17
     },
     {
       "id": "Herr.* des Waldes",
@@ -2383,7 +2383,7 @@
     {
       "id": "leere.* Hütten",
       "group": "Examples",
-      "links": 17
+      "links": 18
     },
     {
       "id": "Leiden bringen",
@@ -2498,7 +2498,7 @@
     {
       "id": "Milch und Wasser",
       "group": "Examples",
-      "links": 8
+      "links": 10
     },
     {
       "id": "mir hinterherzulaufen",
@@ -2548,7 +2548,7 @@
     {
       "id": "mit freundlichen Augen",
       "group": "Examples",
-      "links": 9
+      "links": 11
     },
     {
       "id": "mit ganzem Herzen",
@@ -3193,7 +3193,7 @@
     {
       "id": "sowohl öffentlich als insgeheim",
       "group": "Examples",
-      "links": 8
+      "links": 10
     },
     {
       "id": "Spaltung des Saṅgha herbei",
@@ -4303,7 +4303,7 @@
     {
       "id": "zu fest",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "zu studieren",
@@ -4475,6 +4475,12 @@
       "group": "mn",
       "rank": 1,
       "links": 7
+    },
+    {
+      "id": "mn128",
+      "group": "mn",
+      "rank": 2,
+      "links": 12
     },
     {
       "id": "mn26",
@@ -5422,7 +5428,7 @@
       "id": "thag21.1",
       "group": "thag",
       "rank": 1,
-      "links": 14
+      "links": 15
     },
     {
       "id": "thag18.1",
@@ -6763,6 +6769,12 @@
       "links": 4
     },
     {
+      "id": "mn31",
+      "group": "mn",
+      "rank": 1,
+      "links": 4
+    },
+    {
       "id": "dn25",
       "group": "dn",
       "rank": 1,
@@ -6771,7 +6783,7 @@
     {
       "id": "an4.24",
       "group": "an",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
@@ -11173,6 +11185,18 @@
       "links": 6
     },
     {
+      "id": "sn8.5",
+      "group": "sn",
+      "rank": 1,
+      "links": 2
+    },
+    {
+      "id": "sn1.32",
+      "group": "sn",
+      "rank": 2,
+      "links": 2
+    },
+    {
       "id": "sn48.40",
       "group": "sn",
       "rank": 1,
@@ -12387,7 +12411,7 @@
     {
       "id": "an3.124",
       "group": "an",
-      "rank": 3,
+      "rank": 5,
       "links": 3
     },
     {
@@ -12461,12 +12485,6 @@
       "group": "an",
       "rank": 5,
       "links": 2
-    },
-    {
-      "id": "sn1.32",
-      "group": "sn",
-      "rank": 37,
-      "links": 1
     },
     {
       "id": "an3.40",
@@ -12753,19 +12771,19 @@
     {
       "id": "sn3.16",
       "group": "sn",
-      "rank": 9,
+      "rank": 10,
       "links": 1
     },
     {
       "id": "cp32",
       "group": "cp",
-      "rank": 10,
+      "rank": 11,
       "links": 1
     },
     {
       "id": "sn3.1",
       "group": "sn",
-      "rank": 13,
+      "rank": 14,
       "links": 1
     },
     {
@@ -14077,6 +14095,12 @@
       "links": 3
     },
     {
+      "id": "mn32",
+      "group": "mn",
+      "rank": 18,
+      "links": 1
+    },
+    {
       "id": "sn1.24",
       "group": "sn",
       "rank": 1,
@@ -14373,19 +14397,19 @@
     {
       "id": "an3.95",
       "group": "an",
-      "rank": 1,
+      "rank": 3,
       "links": 4
     },
     {
       "id": "sn36.20",
       "group": "sn",
-      "rank": 2,
+      "rank": 4,
       "links": 3
     },
     {
       "id": "an5.54",
       "group": "an",
-      "rank": 4,
+      "rank": 6,
       "links": 2
     },
     {
@@ -14417,12 +14441,6 @@
       "group": "sn",
       "rank": 4,
       "links": 2
-    },
-    {
-      "id": "sn8.5",
-      "group": "sn",
-      "rank": 6,
-      "links": 1
     },
     {
       "id": "an4.191",
@@ -17911,8 +17929,13 @@
     },
     {
       "source": "aber zum Erwachen entschlossen",
-      "target": "mn26",
+      "target": "mn128",
       "rank": 21
+    },
+    {
+      "source": "aber zum Erwachen entschlossen",
+      "target": "mn26",
+      "rank": 22
     },
     {
       "source": "abgefallen",
@@ -18513,6 +18536,11 @@
       "source": "allein zu wandern",
       "target": "dhp60-75",
       "rank": 2
+    },
+    {
+      "source": "allein zu wandern",
+      "target": "mn128",
+      "rank": 3
     },
     {
       "source": "alles Leiden",
@@ -20351,43 +20379,48 @@
     },
     {
       "source": "besser.* erlesener",
-      "target": "dn25",
+      "target": "mn31",
       "rank": 7
     },
     {
       "source": "besser.* erlesener",
-      "target": "an4.24",
+      "target": "dn25",
       "rank": 8
     },
     {
       "source": "besser.* erlesener",
-      "target": "an10.22",
+      "target": "an4.24",
       "rank": 9
     },
     {
       "source": "besser.* erlesener",
-      "target": "an5.106",
+      "target": "an10.22",
       "rank": 10
     },
     {
       "source": "besser.* erlesener",
-      "target": "dn8",
+      "target": "an5.106",
       "rank": 11
     },
     {
       "source": "besser.* erlesener",
-      "target": "dn15",
+      "target": "dn8",
       "rank": 12
     },
     {
       "source": "besser.* erlesener",
-      "target": "dn5",
+      "target": "dn15",
       "rank": 13
     },
     {
       "source": "besser.* erlesener",
-      "target": "dn3",
+      "target": "dn5",
       "rank": 14
+    },
+    {
+      "source": "besser.* erlesener",
+      "target": "dn3",
+      "rank": 15
     },
     {
       "source": "besteht ein Klargewordener",
@@ -22585,6 +22618,11 @@
       "rank": 1
     },
     {
+      "source": "der Hass",
+      "target": "mn128",
+      "rank": 2
+    },
+    {
       "source": "der keine Freude empfindet",
       "target": "an10.3",
       "rank": 1
@@ -24701,18 +24739,23 @@
     },
     {
       "source": "eine Straße entlangwanderte",
-      "target": "mn22",
+      "target": "mn128",
       "rank": 2
     },
     {
       "source": "eine Straße entlangwanderte",
-      "target": "dn2",
+      "target": "mn22",
       "rank": 3
     },
     {
       "source": "eine Straße entlangwanderte",
-      "target": "dn16",
+      "target": "dn2",
       "rank": 4
+    },
+    {
+      "source": "eine Straße entlangwanderte",
+      "target": "dn16",
+      "rank": 5
     },
     {
       "source": "einfältige.* Mann",
@@ -25368,6 +25411,11 @@
       "source": "Elefant in der Wildnis",
       "target": "dhp320-333",
       "rank": 1
+    },
+    {
+      "source": "Elefant in der Wildnis",
+      "target": "mn128",
+      "rank": 2
     },
     {
       "source": "Element de",
@@ -27216,8 +27264,28 @@
     },
     {
       "source": "ewige Wahrheit",
-      "target": "dhp1-20",
+      "target": "sn8.5",
       "rank": 1
+    },
+    {
+      "source": "ewige Wahrheit",
+      "target": "sn1.32",
+      "rank": 2
+    },
+    {
+      "source": "ewige Wahrheit",
+      "target": "dhp1-20",
+      "rank": 3
+    },
+    {
+      "source": "ewige Wahrheit",
+      "target": "mn128",
+      "rank": 4
+    },
+    {
+      "source": "ewige Wahrheit",
+      "target": "thag21.1",
+      "rank": 5
     },
     {
       "source": "Fähigkeit des Gleichmuts",
@@ -28841,13 +28909,18 @@
     },
     {
       "source": "gepackt",
-      "target": "dn2",
+      "target": "mn128",
       "rank": 12
     },
     {
       "source": "gepackt",
-      "target": "dn19",
+      "target": "dn2",
       "rank": 13
+    },
+    {
+      "source": "gepackt",
+      "target": "dn19",
+      "rank": 14
     },
     {
       "source": "gepflegt werden sollte, und",
@@ -30781,43 +30854,48 @@
     },
     {
       "source": "Herr de[rs]",
-      "target": "sn3.16",
+      "target": "mn128",
       "rank": 9
     },
     {
       "source": "Herr de[rs]",
-      "target": "cp32",
+      "target": "sn3.16",
       "rank": 10
     },
     {
       "source": "Herr de[rs]",
-      "target": "an7.62",
+      "target": "cp32",
       "rank": 11
     },
     {
       "source": "Herr de[rs]",
-      "target": "cp22",
+      "target": "an7.62",
       "rank": 12
     },
     {
       "source": "Herr de[rs]",
-      "target": "sn3.1",
+      "target": "cp22",
       "rank": 13
     },
     {
       "source": "Herr de[rs]",
-      "target": "thag16.3",
+      "target": "sn3.1",
       "rank": 14
     },
     {
       "source": "Herr de[rs]",
-      "target": "snp3.11",
+      "target": "thag16.3",
       "rank": 15
     },
     {
       "source": "Herr de[rs]",
-      "target": "dn27",
+      "target": "snp3.11",
       "rank": 16
+    },
+    {
+      "source": "Herr de[rs]",
+      "target": "dn27",
+      "rank": 17
     },
     {
       "source": "Herr.* des Waldes",
@@ -34185,6 +34263,11 @@
       "rank": 17
     },
     {
+      "source": "leere.* Hütten",
+      "target": "mn32",
+      "rank": 18
+    },
+    {
       "source": "Leiden bringen",
       "target": "sn1.24",
       "rank": 1
@@ -34846,43 +34929,53 @@
     },
     {
       "source": "Milch und Wasser",
-      "target": "an3.95",
+      "target": "mn31",
       "rank": 1
     },
     {
       "source": "Milch und Wasser",
-      "target": "sn36.20",
+      "target": "mn128",
       "rank": 2
     },
     {
       "source": "Milch und Wasser",
-      "target": "an3.124",
+      "target": "an3.95",
       "rank": 3
     },
     {
       "source": "Milch und Wasser",
-      "target": "an5.54",
+      "target": "sn36.20",
       "rank": 4
     },
     {
       "source": "Milch und Wasser",
-      "target": "an5.78",
+      "target": "an3.124",
       "rank": 5
     },
     {
       "source": "Milch und Wasser",
-      "target": "mn59",
+      "target": "an5.54",
       "rank": 6
     },
     {
       "source": "Milch und Wasser",
-      "target": "an2.42-51",
+      "target": "an5.78",
       "rank": 7
     },
     {
       "source": "Milch und Wasser",
-      "target": "sn36.19",
+      "target": "mn59",
       "rank": 8
+    },
+    {
+      "source": "Milch und Wasser",
+      "target": "an2.42-51",
+      "rank": 9
+    },
+    {
+      "source": "Milch und Wasser",
+      "target": "sn36.19",
+      "rank": 10
     },
     {
       "source": "mir hinterherzulaufen",
@@ -35056,43 +35149,53 @@
     },
     {
       "source": "mit freundlichen Augen",
-      "target": "an3.95",
+      "target": "mn31",
       "rank": 2
     },
     {
       "source": "mit freundlichen Augen",
-      "target": "sn36.20",
+      "target": "mn128",
       "rank": 3
     },
     {
       "source": "mit freundlichen Augen",
-      "target": "an3.124",
+      "target": "an3.95",
       "rank": 4
     },
     {
       "source": "mit freundlichen Augen",
-      "target": "an5.54",
+      "target": "sn36.20",
       "rank": 5
     },
     {
       "source": "mit freundlichen Augen",
-      "target": "an5.78",
+      "target": "an3.124",
       "rank": 6
     },
     {
       "source": "mit freundlichen Augen",
-      "target": "mn59",
+      "target": "an5.54",
       "rank": 7
     },
     {
       "source": "mit freundlichen Augen",
-      "target": "an2.42-51",
+      "target": "an5.78",
       "rank": 8
     },
     {
       "source": "mit freundlichen Augen",
-      "target": "sn36.19",
+      "target": "mn59",
       "rank": 9
+    },
+    {
+      "source": "mit freundlichen Augen",
+      "target": "an2.42-51",
+      "rank": 10
+    },
+    {
+      "source": "mit freundlichen Augen",
+      "target": "sn36.19",
+      "rank": 11
     },
     {
       "source": "mit ganzem Herzen",
@@ -38983,6 +39086,16 @@
       "source": "sowohl öffentlich als insgeheim",
       "target": "mn33",
       "rank": 8
+    },
+    {
+      "source": "sowohl öffentlich als insgeheim",
+      "target": "mn31",
+      "rank": 9
+    },
+    {
+      "source": "sowohl öffentlich als insgeheim",
+      "target": "mn128",
+      "rank": 10
     },
     {
       "source": "Spaltung des Saṅgha herbei",
@@ -46258,6 +46371,11 @@
       "source": "zu fest",
       "target": "an6.55",
       "rank": 1
+    },
+    {
+      "source": "zu fest",
+      "target": "mn128",
+      "rank": 2
     },
     {
       "source": "zu studieren",
