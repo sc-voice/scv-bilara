@@ -1526,9 +1526,9 @@
       "links": 4
     },
     {
-      "id": "Galaxis",
+      "id": "Galaxie",
       "group": "Examples",
-      "links": 1
+      "links": 10
     },
     {
       "id": "ganz allein von dir begangen",
@@ -1791,9 +1791,9 @@
       "links": 3
     },
     {
-      "id": "Grundlage für die Versenkung",
+      "id": "Grundlage der",
       "group": "Examples",
-      "links": 7
+      "links": 6
     },
     {
       "id": "gut befreit",
@@ -2411,9 +2411,9 @@
       "links": 2
     },
     {
-      "id": "Licht wahrnehmen",
+      "id": "Licht wahr",
       "group": "Examples",
-      "links": 1
+      "links": 13
     },
     {
       "id": "lieber hast als dich selbst",
@@ -4413,7 +4413,7 @@
     {
       "id": "an8.64",
       "group": "an",
-      "rank": 1,
+      "rank": 2,
       "links": 3
     },
     {
@@ -4479,8 +4479,8 @@
     {
       "id": "mn128",
       "group": "mn",
-      "rank": 2,
-      "links": 12
+      "rank": 1,
+      "links": 13
     },
     {
       "id": "mn26",
@@ -4684,7 +4684,7 @@
       "id": "dn14",
       "group": "dn",
       "rank": 1,
-      "links": 30
+      "links": 31
     },
     {
       "id": "dn16",
@@ -4888,13 +4888,13 @@
       "id": "mn39",
       "group": "mn",
       "rank": 1,
-      "links": 24
+      "links": 25
     },
     {
       "id": "dn2",
       "group": "dn",
       "rank": 1,
-      "links": 64
+      "links": 65
     },
     {
       "id": "sn22.123",
@@ -4942,7 +4942,7 @@
       "id": "dn10",
       "group": "dn",
       "rank": 1,
-      "links": 40
+      "links": 41
     },
     {
       "id": "mn17",
@@ -5206,7 +5206,7 @@
       "id": "mn140",
       "group": "mn",
       "rank": 1,
-      "links": 23
+      "links": 24
     },
     {
       "id": "dn32",
@@ -5992,25 +5992,25 @@
       "id": "an4.198",
       "group": "an",
       "rank": 1,
-      "links": 18
+      "links": 19
     },
     {
       "id": "an10.99",
       "group": "an",
       "rank": 2,
-      "links": 15
+      "links": 16
     },
     {
       "id": "mn27",
       "group": "mn",
       "rank": 3,
-      "links": 13
+      "links": 14
     },
     {
       "id": "mn51",
       "group": "mn",
       "rank": 1,
-      "links": 22
+      "links": 23
     },
     {
       "id": "mn119",
@@ -6022,7 +6022,7 @@
       "id": "mn38",
       "group": "mn",
       "rank": 1,
-      "links": 25
+      "links": 26
     },
     {
       "id": "dn29",
@@ -6052,7 +6052,7 @@
       "id": "dn1",
       "group": "dn",
       "rank": 1,
-      "links": 26
+      "links": 25
     },
     {
       "id": "sn22.43",
@@ -6412,7 +6412,7 @@
       "id": "sn6.14",
       "group": "sn",
       "rank": 5,
-      "links": 2
+      "links": 3
     },
     {
       "id": "an8.27",
@@ -6778,7 +6778,7 @@
       "id": "dn25",
       "group": "dn",
       "rank": 1,
-      "links": 29
+      "links": 30
     },
     {
       "id": "an4.24",
@@ -7870,7 +7870,7 @@
       "id": "mn122",
       "group": "mn",
       "rank": 1,
-      "links": 14
+      "links": 13
     },
     {
       "id": "sn45.165",
@@ -8056,7 +8056,7 @@
       "id": "sn56.11",
       "group": "sn",
       "rank": 1,
-      "links": 10
+      "links": 11
     },
     {
       "id": "an4.118",
@@ -9136,7 +9136,7 @@
       "id": "an3.102",
       "group": "an",
       "rank": 1,
-      "links": 2
+      "links": 3
     },
     {
       "id": "an8.36",
@@ -10798,7 +10798,7 @@
       "id": "an10.29",
       "group": "an",
       "rank": 1,
-      "links": 8
+      "links": 9
     },
     {
       "id": "sn20.3",
@@ -11734,7 +11734,7 @@
       "id": "an9.40",
       "group": "an",
       "rank": 1,
-      "links": 4
+      "links": 5
     },
     {
       "id": "sn47.12",
@@ -11752,7 +11752,7 @@
       "id": "an5.75",
       "group": "an",
       "rank": 2,
-      "links": 3
+      "links": 4
     },
     {
       "id": "an5.76",
@@ -11765,6 +11765,42 @@
       "group": "sn",
       "rank": 2,
       "links": 5
+    },
+    {
+      "id": "an3.80",
+      "group": "an",
+      "rank": 1,
+      "links": 3
+    },
+    {
+      "id": "mn32",
+      "group": "mn",
+      "rank": 2,
+      "links": 2
+    },
+    {
+      "id": "an3.130",
+      "group": "an",
+      "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "sn47.28",
+      "group": "sn",
+      "rank": 7,
+      "links": 1
+    },
+    {
+      "id": "sn52.6",
+      "group": "sn",
+      "rank": 8,
+      "links": 1
+    },
+    {
+      "id": "an3.125",
+      "group": "an",
+      "rank": 9,
+      "links": 1
     },
     {
       "id": "an6.52",
@@ -12483,8 +12519,8 @@
     {
       "id": "an4.14",
       "group": "an",
-      "rank": 5,
-      "links": 2
+      "rank": 34,
+      "links": 1
     },
     {
       "id": "an3.40",
@@ -12493,22 +12529,16 @@
       "links": 3
     },
     {
-      "id": "an3.19",
+      "id": "an8.80",
       "group": "an",
-      "rank": 2,
-      "links": 1
+      "rank": 1,
+      "links": 3
     },
     {
-      "id": "an5.26",
-      "group": "an",
-      "rank": 2,
-      "links": 2
-    },
-    {
-      "id": "an6.28",
-      "group": "an",
-      "rank": 6,
-      "links": 2
+      "id": "sn47.10",
+      "group": "sn",
+      "rank": 1,
+      "links": 4
     },
     {
       "id": "sn35.232",
@@ -12983,12 +13013,6 @@
       "group": "sn",
       "rank": 11,
       "links": 1
-    },
-    {
-      "id": "an8.80",
-      "group": "an",
-      "rank": 1,
-      "links": 2
     },
     {
       "id": "sn48.53",
@@ -14089,18 +14113,6 @@
       "links": 2
     },
     {
-      "id": "sn47.10",
-      "group": "sn",
-      "rank": 1,
-      "links": 3
-    },
-    {
-      "id": "mn32",
-      "group": "mn",
-      "rank": 18,
-      "links": 1
-    },
-    {
       "id": "sn1.24",
       "group": "sn",
       "rank": 1,
@@ -14170,6 +14182,12 @@
       "id": "thag3.7",
       "group": "thag",
       "rank": 11,
+      "links": 1
+    },
+    {
+      "id": "an5.26",
+      "group": "an",
+      "rank": 2,
       "links": 1
     },
     {
@@ -15247,12 +15265,6 @@
       "links": 1
     },
     {
-      "id": "an3.80",
-      "group": "an",
-      "rank": 2,
-      "links": 2
-    },
-    {
       "id": "thag4.6",
       "group": "thag",
       "rank": 5,
@@ -16192,6 +16204,12 @@
       "id": "an6.27",
       "group": "an",
       "rank": 9,
+      "links": 1
+    },
+    {
+      "id": "an6.28",
+      "group": "an",
+      "rank": 10,
       "links": 1
     },
     {
@@ -28413,9 +28431,54 @@
       "rank": 4
     },
     {
-      "source": "Galaxis",
-      "target": "dn1",
+      "source": "Galaxie",
+      "target": "an3.80",
       "rank": 1
+    },
+    {
+      "source": "Galaxie",
+      "target": "mn32",
+      "rank": 2
+    },
+    {
+      "source": "Galaxie",
+      "target": "an10.29",
+      "rank": 3
+    },
+    {
+      "source": "Galaxie",
+      "target": "an3.130",
+      "rank": 4
+    },
+    {
+      "source": "Galaxie",
+      "target": "sn6.14",
+      "rank": 5
+    },
+    {
+      "source": "Galaxie",
+      "target": "dn14",
+      "rank": 6
+    },
+    {
+      "source": "Galaxie",
+      "target": "sn47.28",
+      "rank": 7
+    },
+    {
+      "source": "Galaxie",
+      "target": "sn52.6",
+      "rank": 8
+    },
+    {
+      "source": "Galaxie",
+      "target": "an3.125",
+      "rank": 9
+    },
+    {
+      "source": "Galaxie",
+      "target": "sn56.11",
+      "rank": 10
     },
     {
       "source": "ganz allein von dir begangen",
@@ -30108,39 +30171,34 @@
       "rank": 3
     },
     {
-      "source": "Grundlage für die Versenkung",
+      "source": "Grundlage der",
       "target": "dn33",
       "rank": 1
     },
     {
-      "source": "Grundlage für die Versenkung",
-      "target": "an3.19",
+      "source": "Grundlage der",
+      "target": "an8.80",
       "rank": 2
     },
     {
-      "source": "Grundlage für die Versenkung",
-      "target": "an5.26",
+      "source": "Grundlage der",
+      "target": "dn34",
       "rank": 3
     },
     {
-      "source": "Grundlage für die Versenkung",
-      "target": "dn34",
+      "source": "Grundlage der",
+      "target": "an3.102",
       "rank": 4
     },
     {
-      "source": "Grundlage für die Versenkung",
-      "target": "an4.14",
+      "source": "Grundlage der",
+      "target": "mn140",
       "rank": 5
     },
     {
-      "source": "Grundlage für die Versenkung",
-      "target": "an6.28",
+      "source": "Grundlage der",
+      "target": "sn47.10",
       "rank": 6
-    },
-    {
-      "source": "Grundlage für die Versenkung",
-      "target": "mn122",
-      "rank": 7
     },
     {
       "source": "gut befreit",
@@ -34318,9 +34376,69 @@
       "rank": 2
     },
     {
-      "source": "Licht wahrnehmen",
-      "target": "an8.64",
+      "source": "Licht wahr",
+      "target": "mn128",
       "rank": 1
+    },
+    {
+      "source": "Licht wahr",
+      "target": "an8.64",
+      "rank": 2
+    },
+    {
+      "source": "Licht wahr",
+      "target": "an9.40",
+      "rank": 3
+    },
+    {
+      "source": "Licht wahr",
+      "target": "an5.75",
+      "rank": 4
+    },
+    {
+      "source": "Licht wahr",
+      "target": "an4.198",
+      "rank": 5
+    },
+    {
+      "source": "Licht wahr",
+      "target": "an10.99",
+      "rank": 6
+    },
+    {
+      "source": "Licht wahr",
+      "target": "mn27",
+      "rank": 7
+    },
+    {
+      "source": "Licht wahr",
+      "target": "mn39",
+      "rank": 8
+    },
+    {
+      "source": "Licht wahr",
+      "target": "mn51",
+      "rank": 9
+    },
+    {
+      "source": "Licht wahr",
+      "target": "dn10",
+      "rank": 10
+    },
+    {
+      "source": "Licht wahr",
+      "target": "dn25",
+      "rank": 11
+    },
+    {
+      "source": "Licht wahr",
+      "target": "dn2",
+      "rank": 12
+    },
+    {
+      "source": "Licht wahr",
+      "target": "mn38",
+      "rank": 13
     },
     {
       "source": "lieber hast als dich selbst",
