@@ -426,6 +426,11 @@
       "links": 2
     },
     {
+      "id": "bis mein Geist",
+      "group": "Examples",
+      "links": 1
+    },
+    {
       "id": "bist du, Zerstörer",
       "group": "Examples",
       "links": 13
@@ -7087,6 +7092,12 @@
       "links": 4
     },
     {
+      "id": "mn32",
+      "group": "mn",
+      "rank": 1,
+      "links": 3
+    },
+    {
       "id": "sn4.15",
       "group": "sn",
       "rank": 1,
@@ -11771,12 +11782,6 @@
       "group": "an",
       "rank": 1,
       "links": 3
-    },
-    {
-      "id": "mn32",
-      "group": "mn",
-      "rank": 2,
-      "links": 2
     },
     {
       "id": "an3.130",
@@ -20784,6 +20789,11 @@
       "source": "Bezugspunkte",
       "target": "dn16",
       "rank": 2
+    },
+    {
+      "source": "bis mein Geist",
+      "target": "mn32",
+      "rank": 1
     },
     {
       "source": "bist du, Zerstörer",
