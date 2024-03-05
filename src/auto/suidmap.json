@@ -322,6 +322,7 @@
 		"translation/de/sabbamitta": "sutta/an/an2",
 		"translation/en/sujato": "sutta/an/an2",
 		"translation/jpn/kaz": "sutta/an/an2",
+		"translation/pt/ebt-deepl": "sutta/an/an2",
 		"root/pli/ms": "sutta/an/an2"
 	},
 	"an2.32-41": {
@@ -9300,6 +9301,7 @@
 	"mn19": {
 		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
+		"translation/fr/noeismet": "sutta/mn",
 		"translation/lt/piyadassi": "sutta/mn",
 		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
