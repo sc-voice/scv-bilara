@@ -303,7 +303,7 @@
     {
       "id": "Bedingungen sind unbeständig",
       "group": "Examples",
-      "links": 12
+      "links": 13
     },
     {
       "id": "Begehren, Abneigung, Dummheit",
@@ -503,7 +503,7 @@
     {
       "id": "das allein ist die Wahrheit",
       "group": "Examples",
-      "links": 14
+      "links": 15
     },
     {
       "id": "das Auge brennt",
@@ -1163,7 +1163,7 @@
     {
       "id": "ein paar Jungen",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "ein paar Palisanderblätter",
@@ -1533,7 +1533,7 @@
     {
       "id": "Galaxie",
       "group": "Examples",
-      "links": 10
+      "links": 11
     },
     {
       "id": "ganz allein von dir begangen",
@@ -1723,7 +1723,7 @@
     {
       "id": "Giftschlange",
       "group": "Examples",
-      "links": 16
+      "links": 17
     },
     {
       "id": "glaubst du",
@@ -1823,7 +1823,7 @@
     {
       "id": "Haare.* sträub",
       "group": "Examples",
-      "links": 23
+      "links": 24
     },
     {
       "id": "haarsträubend",
@@ -2178,7 +2178,7 @@
     {
       "id": "jegliche Art von Form",
       "group": "Examples",
-      "links": 25
+      "links": 26
     },
     {
       "id": "jemand anderen vom Geben abhält",
@@ -2303,7 +2303,7 @@
     {
       "id": "Krabbe",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "Kraft der Weisheit",
@@ -2318,7 +2318,7 @@
     {
       "id": "Krankheit.* Eiterherd.* Pfeil",
       "group": "Examples",
-      "links": 11
+      "links": 12
     },
     {
       "id": "Kräuter, Hirse",
@@ -2348,7 +2348,7 @@
     {
       "id": "Kuhhirt",
       "group": "Examples",
-      "links": 21
+      "links": 22
     },
     {
       "id": "kühl geworden, voller Seligkeit",
@@ -2398,7 +2398,7 @@
     {
       "id": "Leiden vieler Menschen",
       "group": "Examples",
-      "links": 4
+      "links": 9
     },
     {
       "id": "lernbegierig",
@@ -2483,7 +2483,7 @@
     {
       "id": "meine Form sei so",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "mein unübertreffliches vollkommenes Erwachen erklärt",
@@ -2543,7 +2543,7 @@
     {
       "id": "mit einem Stock",
       "group": "Examples",
-      "links": 7
+      "links": 8
     },
     {
       "id": "mit einem Zauber besungen",
@@ -2568,7 +2568,7 @@
     {
       "id": "mit hängenden Schultern",
       "group": "Examples",
-      "links": 9
+      "links": 10
     },
     {
       "id": "mithilfe eines Gleichnisses",
@@ -2653,7 +2653,7 @@
     {
       "id": "Nachfolger durch Vertrauen",
       "group": "Examples",
-      "links": 24
+      "links": 25
     },
     {
       "id": "nackt, wahrt den Anstand nicht",
@@ -2938,7 +2938,7 @@
     {
       "id": "schädlichen Irrglauben",
       "group": "Examples",
-      "links": 10
+      "links": 11
     },
     {
       "id": "Schale umdrehen",
@@ -3308,7 +3308,7 @@
     {
       "id": "Tor zur Unsterblichkeit",
       "group": "Examples",
-      "links": 10
+      "links": 11
     },
     {
       "id": "töte ich",
@@ -3828,7 +3828,7 @@
     {
       "id": "was einen Anfang hat, hat auch ein Ende",
       "group": "Examples",
-      "links": 11
+      "links": 12
     },
     {
       "id": "was ein Verstoß ist",
@@ -4318,7 +4318,7 @@
     {
       "id": "zwei Arten von",
       "group": "Examples",
-      "links": 12
+      "links": 13
     },
     {
       "id": "zwei Arten von Glück",
@@ -4328,7 +4328,7 @@
     {
       "id": "zwei Menschen",
       "group": "Examples",
-      "links": 9
+      "links": 10
     },
     {
       "id": "zwei Dinge.* entwickelt werden",
@@ -4652,7 +4652,7 @@
     {
       "id": "sn15.20",
       "group": "sn",
-      "rank": 6,
+      "rank": 7,
       "links": 4
     },
     {
@@ -4725,7 +4725,7 @@
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 113
+      "links": 114
     },
     {
       "id": "an4.189",
@@ -6057,7 +6057,7 @@
       "id": "dn1",
       "group": "dn",
       "rank": 1,
-      "links": 25
+      "links": 26
     },
     {
       "id": "sn22.43",
@@ -6180,9 +6180,15 @@
       "links": 2
     },
     {
+      "id": "mn35",
+      "group": "mn",
+      "rank": 2,
+      "links": 10
+    },
+    {
       "id": "sn1.11",
       "group": "sn",
-      "rank": 3,
+      "rank": 4,
       "links": 2
     },
     {
@@ -7570,6 +7576,12 @@
       "group": "an",
       "rank": 1,
       "links": 10
+    },
+    {
+      "id": "mn74",
+      "group": "mn",
+      "rank": 5,
+      "links": 4
     },
     {
       "id": "dn9",
@@ -9836,13 +9848,13 @@
     {
       "id": "an11.16",
       "group": "an",
-      "rank": 8,
+      "rank": 9,
       "links": 3
     },
     {
       "id": "mn52",
       "group": "mn",
-      "rank": 9,
+      "rank": 10,
       "links": 3
     },
     {
@@ -9873,12 +9885,12 @@
       "id": "an3.137",
       "group": "an",
       "rank": 4,
-      "links": 1
+      "links": 2
     },
     {
       "id": "an1.316-332",
       "group": "an",
-      "rank": 3,
+      "rank": 1,
       "links": 3
     },
     {
@@ -11907,7 +11919,7 @@
       "id": "an1.98-139",
       "group": "an",
       "rank": 3,
-      "links": 2
+      "links": 3
     },
     {
       "id": "an5.97",
@@ -12710,7 +12722,7 @@
     {
       "id": "sn4.6",
       "group": "sn",
-      "rank": 2,
+      "rank": 3,
       "links": 4
     },
     {
@@ -13406,7 +13418,7 @@
     {
       "id": "an4.181",
       "group": "an",
-      "rank": 13,
+      "rank": 14,
       "links": 1
     },
     {
@@ -13418,7 +13430,7 @@
     {
       "id": "sn24.96",
       "group": "sn",
-      "rank": 15,
+      "rank": 16,
       "links": 2
     },
     {
@@ -13436,7 +13448,7 @@
     {
       "id": "sn44.2",
       "group": "sn",
-      "rank": 21,
+      "rank": 22,
       "links": 1
     },
     {
@@ -13586,7 +13598,7 @@
     {
       "id": "an11.22-29",
       "group": "an",
-      "rank": 5,
+      "rank": 6,
       "links": 2
     },
     {
@@ -14010,51 +14022,57 @@
       "links": 1
     },
     {
+      "id": "mn34",
+      "group": "mn",
+      "rank": 4,
+      "links": 3
+    },
+    {
       "id": "an11.502-981",
       "group": "an",
-      "rank": 6,
+      "rank": 7,
       "links": 1
     },
     {
       "id": "an11.30-69",
       "group": "an",
-      "rank": 9,
+      "rank": 10,
       "links": 1
     },
     {
       "id": "an11.70-117",
       "group": "an",
-      "rank": 10,
+      "rank": 11,
       "links": 1
     },
     {
       "id": "an11.118-165",
       "group": "an",
-      "rank": 11,
+      "rank": 12,
       "links": 1
     },
     {
       "id": "an11.166-213",
       "group": "an",
-      "rank": 12,
+      "rank": 13,
       "links": 1
     },
     {
       "id": "an11.214-261",
       "group": "an",
-      "rank": 13,
+      "rank": 14,
       "links": 1
     },
     {
       "id": "an11.262-309",
       "group": "an",
-      "rank": 14,
+      "rank": 15,
       "links": 1
     },
     {
       "id": "an11.310-357",
       "group": "an",
-      "rank": 15,
+      "rank": 16,
       "links": 1
     },
     {
@@ -14066,13 +14084,13 @@
     {
       "id": "an11.406-453",
       "group": "an",
-      "rank": 17,
+      "rank": 18,
       "links": 1
     },
     {
       "id": "an11.454-501",
       "group": "an",
-      "rank": 18,
+      "rank": 19,
       "links": 1
     },
     {
@@ -14136,15 +14154,27 @@
       "links": 4
     },
     {
-      "id": "an3.11",
+      "id": "an1.150-169",
       "group": "an",
-      "rank": 1,
-      "links": 1
+      "rank": 2,
+      "links": 2
     },
     {
       "id": "an5.88",
       "group": "an",
-      "rank": 2,
+      "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "an6.36",
+      "group": "an",
+      "rank": 5,
+      "links": 1
+    },
+    {
+      "id": "iti18",
+      "group": "iti",
+      "rank": 8,
       "links": 1
     },
     {
@@ -16914,12 +16944,6 @@
       "links": 2
     },
     {
-      "id": "an1.150-169",
-      "group": "an",
-      "rank": 2,
-      "links": 1
-    },
-    {
       "id": "an10.43",
       "group": "an",
       "rank": 3,
@@ -17814,15 +17838,21 @@
       "links": 1
     },
     {
+      "id": "sn16.5",
+      "group": "sn",
+      "rank": 7,
+      "links": 1
+    },
+    {
       "id": "an2.141-150",
       "group": "an",
-      "rank": 7,
+      "rank": 8,
       "links": 1
     },
     {
       "id": "an2.151-162",
       "group": "an",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
@@ -17834,7 +17864,7 @@
     {
       "id": "iti48",
       "group": "iti",
-      "rank": 7,
+      "rank": 8,
       "links": 1
     },
     {
@@ -19722,53 +19752,58 @@
     },
     {
       "source": "Bedingungen sind unbeständig",
-      "target": "sn1.11",
+      "target": "mn35",
       "rank": 3
     },
     {
       "source": "Bedingungen sind unbeständig",
-      "target": "sn9.6",
+      "target": "sn1.11",
       "rank": 4
     },
     {
       "source": "Bedingungen sind unbeständig",
-      "target": "sn6.15",
+      "target": "sn9.6",
       "rank": 5
     },
     {
       "source": "Bedingungen sind unbeständig",
-      "target": "sn15.20",
+      "target": "sn6.15",
       "rank": 6
     },
     {
       "source": "Bedingungen sind unbeständig",
-      "target": "thag15.1",
+      "target": "sn15.20",
       "rank": 7
     },
     {
       "source": "Bedingungen sind unbeständig",
-      "target": "dhp273-289",
+      "target": "thag15.1",
       "rank": 8
     },
     {
       "source": "Bedingungen sind unbeständig",
-      "target": "an7.66",
+      "target": "dhp273-289",
       "rank": 9
     },
     {
       "source": "Bedingungen sind unbeständig",
-      "target": "sn22.90",
+      "target": "an7.66",
       "rank": 10
     },
     {
       "source": "Bedingungen sind unbeständig",
-      "target": "thag20.1",
+      "target": "sn22.90",
       "rank": 11
     },
     {
       "source": "Bedingungen sind unbeständig",
-      "target": "dn17",
+      "target": "thag20.1",
       "rank": 12
+    },
+    {
+      "source": "Bedingungen sind unbeständig",
+      "target": "dn17",
+      "rank": 13
     },
     {
       "source": "Begehren, Abneigung, Dummheit",
@@ -21392,53 +21427,58 @@
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "dn9",
+      "target": "mn74",
       "rank": 5
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "ud6.5",
+      "target": "dn9",
       "rank": 6
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "ud6.6",
+      "target": "ud6.5",
       "rank": 7
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "ud6.4",
+      "target": "ud6.6",
       "rank": 8
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "an2.42-51",
+      "target": "ud6.4",
       "rank": 9
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "mn60",
+      "target": "an2.42-51",
       "rank": 10
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "sn45.174",
+      "target": "mn60",
       "rank": 11
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "mn139",
+      "target": "sn45.174",
       "rank": 12
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "dn21",
+      "target": "mn139",
       "rank": 13
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "dn33",
+      "target": "dn21",
       "rank": 14
+    },
+    {
+      "source": "das allein ist die Wahrheit",
+      "target": "dn33",
+      "rank": 15
     },
     {
       "source": "das Auge brennt",
@@ -25301,6 +25341,11 @@
       "rank": 3
     },
     {
+      "source": "ein paar Jungen",
+      "target": "mn35",
+      "rank": 4
+    },
+    {
       "source": "ein paar Palisanderblätter",
       "target": "sn56.31",
       "rank": 1
@@ -28491,6 +28536,11 @@
       "rank": 10
     },
     {
+      "source": "Galaxie",
+      "target": "dn1",
+      "rank": 11
+    },
+    {
       "source": "ganz allein von dir begangen",
       "target": "an3.36",
       "rank": 1
@@ -29596,6 +29646,11 @@
       "rank": 16
     },
     {
+      "source": "Giftschlange",
+      "target": "mn35",
+      "rank": 17
+    },
+    {
       "source": "glaubst du",
       "target": "dn16",
       "rank": 1
@@ -30612,23 +30667,28 @@
     },
     {
       "source": "Haare.* sträub",
-      "target": "dn2",
+      "target": "mn35",
       "rank": 20
     },
     {
       "source": "Haare.* sträub",
-      "target": "dn19",
+      "target": "dn2",
       "rank": 21
     },
     {
       "source": "Haare.* sträub",
-      "target": "dn21",
+      "target": "dn19",
       "rank": 22
     },
     {
       "source": "Haare.* sträub",
-      "target": "dn24",
+      "target": "dn21",
       "rank": 23
+    },
+    {
+      "source": "Haare.* sträub",
+      "target": "dn24",
+      "rank": 24
     },
     {
       "source": "haarsträubend",
@@ -32462,113 +32522,118 @@
     },
     {
       "source": "jegliche Art von Form",
-      "target": "sn18.21",
+      "target": "mn35",
       "rank": 4
     },
     {
       "source": "jegliche Art von Form",
-      "target": "sn22.124",
+      "target": "sn18.21",
       "rank": 5
     },
     {
       "source": "jegliche Art von Form",
-      "target": "sn22.71",
+      "target": "sn22.124",
       "rank": 6
     },
     {
       "source": "jegliche Art von Form",
-      "target": "sn22.91",
+      "target": "sn22.71",
       "rank": 7
     },
     {
       "source": "jegliche Art von Form",
-      "target": "sn22.92",
+      "target": "sn22.91",
       "rank": 8
     },
     {
       "source": "jegliche Art von Form",
-      "target": "sn22.125",
+      "target": "sn22.92",
       "rank": 9
     },
     {
       "source": "jegliche Art von Form",
-      "target": "sn18.22",
+      "target": "sn22.125",
       "rank": 10
     },
     {
       "source": "jegliche Art von Form",
-      "target": "sn22.72",
+      "target": "sn18.22",
       "rank": 11
     },
     {
       "source": "jegliche Art von Form",
-      "target": "an3.133",
+      "target": "sn22.72",
       "rank": 12
     },
     {
       "source": "jegliche Art von Form",
-      "target": "an4.181",
+      "target": "an3.133",
       "rank": 13
     },
     {
       "source": "jegliche Art von Form",
-      "target": "sn24.71",
+      "target": "an4.181",
       "rank": 14
     },
     {
       "source": "jegliche Art von Form",
-      "target": "sn24.96",
+      "target": "sn24.71",
       "rank": 15
     },
     {
       "source": "jegliche Art von Form",
-      "target": "sn22.95",
+      "target": "sn24.96",
       "rank": 16
     },
     {
       "source": "jegliche Art von Form",
-      "target": "sn22.59",
+      "target": "sn22.95",
       "rank": 17
     },
     {
       "source": "jegliche Art von Form",
-      "target": "sn22.49",
+      "target": "sn22.59",
       "rank": 18
     },
     {
       "source": "jegliche Art von Form",
-      "target": "an4.196",
+      "target": "sn22.49",
       "rank": 19
     },
     {
       "source": "jegliche Art von Form",
-      "target": "sn22.80",
+      "target": "an4.196",
       "rank": 20
     },
     {
       "source": "jegliche Art von Form",
-      "target": "sn44.2",
+      "target": "sn22.80",
       "rank": 21
     },
     {
       "source": "jegliche Art von Form",
-      "target": "mn62",
+      "target": "sn44.2",
       "rank": 22
     },
     {
       "source": "jegliche Art von Form",
-      "target": "sn22.79",
+      "target": "mn62",
       "rank": 23
     },
     {
       "source": "jegliche Art von Form",
-      "target": "sn12.70",
+      "target": "sn22.79",
       "rank": 24
     },
     {
       "source": "jegliche Art von Form",
-      "target": "mn22",
+      "target": "sn12.70",
       "rank": 25
+    },
+    {
+      "source": "jegliche Art von Form",
+      "target": "mn22",
+      "rank": 26
     },
     {
       "source": "jemand anderen vom Geben abhält",
@@ -33647,8 +33712,13 @@
     },
     {
       "source": "Krabbe",
-      "target": "sn4.6",
+      "target": "mn35",
       "rank": 2
+    },
+    {
+      "source": "Krabbe",
+      "target": "sn4.6",
+      "rank": 3
     },
     {
       "source": "Kraft der Weisheit",
@@ -33867,13 +33937,18 @@
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "mn140",
+      "target": "mn74",
       "rank": 10
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "dn21",
+      "target": "mn140",
       "rank": 11
+    },
+    {
+      "source": "Krankheit.* Eiterherd.* Pfeil",
+      "target": "dn21",
+      "rank": 12
     },
     {
       "source": "Kräuter, Hirse",
@@ -34022,93 +34097,98 @@
     },
     {
       "source": "Kuhhirt",
-      "target": "an3.70",
+      "target": "mn34",
       "rank": 4
     },
     {
       "source": "Kuhhirt",
-      "target": "an11.22-29",
+      "target": "an3.70",
       "rank": 5
     },
     {
       "source": "Kuhhirt",
-      "target": "an11.502-981",
+      "target": "an11.22-29",
       "rank": 6
     },
     {
       "source": "Kuhhirt",
-      "target": "sn35.241",
+      "target": "an11.502-981",
       "rank": 7
     },
     {
       "source": "Kuhhirt",
-      "target": "mn19",
+      "target": "sn35.241",
       "rank": 8
     },
     {
       "source": "Kuhhirt",
-      "target": "an11.30-69",
+      "target": "mn19",
       "rank": 9
     },
     {
       "source": "Kuhhirt",
-      "target": "an11.70-117",
+      "target": "an11.30-69",
       "rank": 10
     },
     {
       "source": "Kuhhirt",
-      "target": "an11.118-165",
+      "target": "an11.70-117",
       "rank": 11
     },
     {
       "source": "Kuhhirt",
-      "target": "an11.166-213",
+      "target": "an11.118-165",
       "rank": 12
     },
     {
       "source": "Kuhhirt",
-      "target": "an11.214-261",
+      "target": "an11.166-213",
       "rank": 13
     },
     {
       "source": "Kuhhirt",
-      "target": "an11.262-309",
+      "target": "an11.214-261",
       "rank": 14
     },
     {
       "source": "Kuhhirt",
-      "target": "an11.310-357",
+      "target": "an11.262-309",
       "rank": 15
     },
     {
       "source": "Kuhhirt",
-      "target": "an11.358-405",
+      "target": "an11.310-357",
       "rank": 16
     },
     {
       "source": "Kuhhirt",
-      "target": "an11.406-453",
+      "target": "an11.358-405",
       "rank": 17
     },
     {
       "source": "Kuhhirt",
-      "target": "an11.454-501",
+      "target": "an11.406-453",
       "rank": 18
     },
     {
       "source": "Kuhhirt",
-      "target": "dhp129-145",
+      "target": "an11.454-501",
       "rank": 19
     },
     {
       "source": "Kuhhirt",
-      "target": "dhp1-20",
+      "target": "dhp129-145",
       "rank": 20
     },
     {
       "source": "Kuhhirt",
-      "target": "mn12",
+      "target": "dhp1-20",
       "rank": 21
+    },
+    {
+      "source": "Kuhhirt",
+      "target": "mn12",
+      "rank": 22
     },
     {
       "source": "kühl geworden, voller Seligkeit",
@@ -34352,23 +34432,48 @@
     },
     {
       "source": "Leiden vieler Menschen",
-      "target": "an3.11",
+      "target": "an1.316-332",
       "rank": 1
     },
     {
       "source": "Leiden vieler Menschen",
-      "target": "an5.88",
+      "target": "an1.150-169",
       "rank": 2
     },
     {
       "source": "Leiden vieler Menschen",
-      "target": "an2.32-41",
+      "target": "an1.98-139",
       "rank": 3
     },
     {
       "source": "Leiden vieler Menschen",
-      "target": "an1.316-332",
+      "target": "an5.88",
       "rank": 4
+    },
+    {
+      "source": "Leiden vieler Menschen",
+      "target": "an6.36",
+      "rank": 5
+    },
+    {
+      "source": "Leiden vieler Menschen",
+      "target": "an2.32-41",
+      "rank": 6
+    },
+    {
+      "source": "Leiden vieler Menschen",
+      "target": "an3.137",
+      "rank": 7
+    },
+    {
+      "source": "Leiden vieler Menschen",
+      "target": "iti18",
+      "rank": 8
+    },
+    {
+      "source": "Leiden vieler Menschen",
+      "target": "dn33",
+      "rank": 9
     },
     {
       "source": "lernt die Hymnen",
@@ -34851,6 +34956,11 @@
       "rank": 1
     },
     {
+      "source": "meine Form sei so",
+      "target": "mn35",
+      "rank": 2
+    },
+    {
       "source": "mein unübertreffliches vollkommenes Erwachen erklärt",
       "target": "sn48.21",
       "rank": 1
@@ -35251,6 +35361,11 @@
       "rank": 7
     },
     {
+      "source": "mit einem Stock",
+      "target": "mn35",
+      "rank": 8
+    },
+    {
       "source": "mit einem Zauber besungen",
       "target": "sn7.8",
       "rank": 1
@@ -35627,18 +35742,23 @@
     },
     {
       "source": "mit hängenden Schultern",
-      "target": "mn93",
+      "target": "mn35",
       "rank": 7
     },
     {
       "source": "mit hängenden Schultern",
-      "target": "mn22",
+      "target": "mn93",
       "rank": 8
     },
     {
       "source": "mit hängenden Schultern",
-      "target": "mn38",
+      "target": "mn22",
       "rank": 9
+    },
+    {
+      "source": "mit hängenden Schultern",
+      "target": "mn38",
+      "rank": 10
     },
     {
       "source": "mithilfe eines Gleichnisses",
@@ -35972,23 +36092,28 @@
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "an8.22",
+      "target": "mn34",
       "rank": 21
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "dn28",
+      "target": "an8.22",
       "rank": 22
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "mn22",
+      "target": "dn28",
       "rank": 23
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "dn33",
+      "target": "mn22",
       "rank": 24
+    },
+    {
+      "source": "Nachfolger durch Vertrauen",
+      "target": "dn33",
+      "rank": 25
     },
     {
       "source": "nackt, wahrt den Anstand nicht",
@@ -37844,6 +37969,11 @@
       "source": "schädlichen Irrglauben",
       "target": "sn6.5",
       "rank": 10
+    },
+    {
+      "source": "schädlichen Irrglauben",
+      "target": "mn35",
+      "rank": 11
     },
     {
       "source": "Schale umdrehen",
@@ -39952,28 +40082,33 @@
     },
     {
       "source": "Tor zur Unsterblichkeit",
-      "target": "sn6.1",
+      "target": "mn34",
       "rank": 6
     },
     {
       "source": "Tor zur Unsterblichkeit",
-      "target": "sn12.28",
+      "target": "sn6.1",
       "rank": 7
     },
     {
       "source": "Tor zur Unsterblichkeit",
-      "target": "an11.16",
+      "target": "sn12.28",
       "rank": 8
     },
     {
       "source": "Tor zur Unsterblichkeit",
-      "target": "mn52",
+      "target": "an11.16",
       "rank": 9
     },
     {
       "source": "Tor zur Unsterblichkeit",
-      "target": "mn26",
+      "target": "mn52",
       "rank": 10
+    },
+    {
+      "source": "Tor zur Unsterblichkeit",
+      "target": "mn26",
+      "rank": 11
     },
     {
       "source": "töte ich",
@@ -43377,23 +43512,28 @@
     },
     {
       "source": "was einen Anfang hat, hat auch ein Ende",
-      "target": "an8.12",
+      "target": "mn74",
       "rank": 8
     },
     {
       "source": "was einen Anfang hat, hat auch ein Ende",
-      "target": "dn5",
+      "target": "an8.12",
       "rank": 9
     },
     {
       "source": "was einen Anfang hat, hat auch ein Ende",
-      "target": "dn3",
+      "target": "dn5",
       "rank": 10
     },
     {
       "source": "was einen Anfang hat, hat auch ein Ende",
-      "target": "dn21",
+      "target": "dn3",
       "rank": 11
+    },
+    {
+      "source": "was einen Anfang hat, hat auch ein Ende",
+      "target": "dn21",
+      "rank": 12
     },
     {
       "source": "was ein Verstoß ist",
@@ -46542,33 +46682,38 @@
     },
     {
       "source": "zwei Arten von",
-      "target": "an2.141-150",
+      "target": "sn16.5",
       "rank": 7
     },
     {
       "source": "zwei Arten von",
-      "target": "an2.151-162",
+      "target": "an2.141-150",
       "rank": 8
     },
     {
       "source": "zwei Arten von",
-      "target": "sn22.80",
+      "target": "an2.151-162",
       "rank": 9
     },
     {
       "source": "zwei Arten von",
-      "target": "an2.52-63",
+      "target": "sn22.80",
       "rank": 10
     },
     {
       "source": "zwei Arten von",
-      "target": "mn11",
+      "target": "an2.52-63",
       "rank": 11
     },
     {
       "source": "zwei Arten von",
-      "target": "mn19",
+      "target": "mn11",
       "rank": 12
+    },
+    {
+      "source": "zwei Arten von",
+      "target": "mn19",
+      "rank": 13
     },
     {
       "source": "zwei Arten von Glück",
@@ -46607,23 +46752,28 @@
     },
     {
       "source": "zwei Menschen",
-      "target": "an2.32-41",
+      "target": "mn74",
       "rank": 6
     },
     {
       "source": "zwei Menschen",
-      "target": "iti48",
+      "target": "an2.32-41",
       "rank": 7
     },
     {
       "source": "zwei Menschen",
-      "target": "an7.57",
+      "target": "iti48",
       "rank": 8
     },
     {
       "source": "zwei Menschen",
-      "target": "sn22.84",
+      "target": "an7.57",
       "rank": 9
+    },
+    {
+      "source": "zwei Menschen",
+      "target": "sn22.84",
+      "rank": 10
     },
     {
       "source": "zwei Dinge.* entwickelt werden",
