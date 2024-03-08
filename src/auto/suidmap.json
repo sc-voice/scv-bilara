@@ -396,18 +396,21 @@
 		"translation/de/sabbamitta": "sutta/an/an2",
 		"translation/en/sujato": "sutta/an/an2",
 		"translation/jpn/kaz": "sutta/an/an2",
+		"translation/pt/ebt-deepl": "sutta/an/an2",
 		"root/pli/ms": "sutta/an/an2"
 	},
 	"an2.151-162": {
 		"translation/de/sabbamitta": "sutta/an/an2",
 		"translation/en/sujato": "sutta/an/an2",
 		"translation/jpn/kaz": "sutta/an/an2",
+		"translation/pt/ebt-deepl": "sutta/an/an2",
 		"translation/pt/laera-quaresma": "sutta/an/an2",
 		"root/pli/ms": "sutta/an/an2"
 	},
 	"an2.163-179": {
 		"translation/de/sabbamitta": "sutta/an/an2",
 		"translation/en/sujato": "sutta/an/an2",
+		"translation/pt/ebt-deepl": "sutta/an/an2",
 		"root/pli/ms": "sutta/an/an2"
 	},
 	"an2.180-229": {
@@ -9318,6 +9321,7 @@
 	"mn20": {
 		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
+		"translation/fr/noeismet": "sutta/mn",
 		"translation/lt/piyadassi": "sutta/mn",
 		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"

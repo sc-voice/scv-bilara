@@ -2446,6 +2446,11 @@
       "links": 1
     },
     {
+      "id": "Macht über diese Entscheidungen",
+      "group": "Examples",
+      "links": 1
+    },
+    {
       "id": "man das Auge ergreift",
       "group": "Examples",
       "links": 2
@@ -6182,8 +6187,8 @@
     {
       "id": "mn35",
       "group": "mn",
-      "rank": 2,
-      "links": 10
+      "rank": 1,
+      "links": 11
     },
     {
       "id": "sn1.11",
@@ -34703,6 +34708,11 @@
     {
       "source": "Macht der Weisheit",
       "target": "thag10.3",
+      "rank": 1
+    },
+    {
+      "source": "Macht über diese Entscheidungen",
+      "target": "mn35",
       "rank": 1
     },
     {
