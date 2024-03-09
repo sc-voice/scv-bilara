@@ -88,7 +88,7 @@
     {
       "id": "serenidade e discernimento",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "três características",
@@ -170,9 +170,15 @@
       "links": 1
     },
     {
+      "id": "an2.310-479",
+      "group": "an",
+      "rank": 1,
+      "links": 1
+    },
+    {
       "id": "an2.21-31",
       "group": "an",
-      "rank": 2,
+      "rank": 3,
       "links": 1
     },
     {
@@ -286,18 +292,23 @@
     },
     {
       "source": "serenidade e discernimento",
-      "target": "sn41.6",
+      "target": "an2.310-479",
       "rank": 1
     },
     {
       "source": "serenidade e discernimento",
-      "target": "an2.21-31",
+      "target": "sn41.6",
       "rank": 2
     },
     {
       "source": "serenidade e discernimento",
-      "target": "an2.163-179",
+      "target": "an2.21-31",
       "rank": 3
+    },
+    {
+      "source": "serenidade e discernimento",
+      "target": "an2.163-179",
+      "rank": 4
     },
     {
       "source": "três características",
