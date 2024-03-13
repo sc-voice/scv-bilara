@@ -3281,9 +3281,9 @@
       "links": 22
     },
     {
-      "id": "Suche nach den vorteilhaften Folgen",
+      "id": "Suche nach Befriedigung",
       "group": "Examples",
-      "links": 5
+      "links": 0
     },
     {
       "id": "süße Spitze",
@@ -5929,8 +5929,8 @@
     {
       "id": "sn35.16",
       "group": "sn",
-      "rank": 2,
-      "links": 3
+      "rank": 7,
+      "links": 2
     },
     {
       "id": "sn35.241",
@@ -13297,8 +13297,8 @@
     {
       "id": "sn35.15",
       "group": "sn",
-      "rank": 3,
-      "links": 3
+      "rank": 6,
+      "links": 2
     },
     {
       "id": "sn10.7",
@@ -14396,19 +14396,19 @@
       "id": "an3.104",
       "group": "an",
       "rank": 4,
-      "links": 2
+      "links": 1
     },
     {
       "id": "sn14.32",
       "group": "sn",
-      "rank": 1,
-      "links": 2
+      "rank": 5,
+      "links": 1
     },
     {
       "id": "sn22.27",
       "group": "sn",
-      "rank": 4,
-      "links": 2
+      "rank": 10,
+      "links": 1
     },
     {
       "id": "sn40.9",
@@ -39929,31 +39929,6 @@
       "source": "substanzialistische Ansicht",
       "target": "mn2",
       "rank": 22
-    },
-    {
-      "source": "Suche nach den vorteilhaften Folgen",
-      "target": "sn14.32",
-      "rank": 1
-    },
-    {
-      "source": "Suche nach den vorteilhaften Folgen",
-      "target": "sn35.16",
-      "rank": 2
-    },
-    {
-      "source": "Suche nach den vorteilhaften Folgen",
-      "target": "sn35.15",
-      "rank": 3
-    },
-    {
-      "source": "Suche nach den vorteilhaften Folgen",
-      "target": "sn22.27",
-      "rank": 4
-    },
-    {
-      "source": "Suche nach den vorteilhaften Folgen",
-      "target": "an3.104",
-      "rank": 5
     },
     {
       "source": "süße Spitze",
