@@ -2596,9 +2596,9 @@
       "links": 4
     },
     {
-      "id": "mittlere.* Weg",
+      "id": "mittlere.* übungsweg",
       "group": "Examples",
-      "links": 1
+      "links": 5
     },
     {
       "id": "mit ungezügeltem Sehvermögen",
@@ -6530,7 +6530,7 @@
       "id": "an3.156-162",
       "group": "an",
       "rank": 1,
-      "links": 10
+      "links": 11
     },
     {
       "id": "sn43.12",
@@ -8084,7 +8084,7 @@
       "id": "sn56.11",
       "group": "sn",
       "rank": 1,
-      "links": 11
+      "links": 12
     },
     {
       "id": "an4.118",
@@ -9962,7 +9962,7 @@
       "id": "sn42.12",
       "group": "sn",
       "rank": 1,
-      "links": 8
+      "links": 9
     },
     {
       "id": "an7.45",
@@ -10958,7 +10958,7 @@
       "id": "mn3",
       "group": "mn",
       "rank": 2,
-      "links": 4
+      "links": 5
     },
     {
       "id": "sn45.27",
@@ -35836,9 +35836,29 @@
       "rank": 4
     },
     {
-      "source": "mittlere.* Weg",
-      "target": "mn139",
+      "source": "mittlere.* übungsweg",
+      "target": "an3.156-162",
       "rank": 1
+    },
+    {
+      "source": "mittlere.* übungsweg",
+      "target": "mn3",
+      "rank": 2
+    },
+    {
+      "source": "mittlere.* übungsweg",
+      "target": "mn139",
+      "rank": 3
+    },
+    {
+      "source": "mittlere.* übungsweg",
+      "target": "sn56.11",
+      "rank": 4
+    },
+    {
+      "source": "mittlere.* übungsweg",
+      "target": "sn42.12",
+      "rank": 5
     },
     {
       "source": "mit ungezügeltem Sehvermögen",
