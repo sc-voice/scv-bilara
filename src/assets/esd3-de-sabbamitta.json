@@ -2018,7 +2018,7 @@
     {
       "id": "ihr solltet den Hausbesitzer",
       "group": "Examples",
-      "links": 4
+      "links": 2
     },
     {
       "id": "im Wünschen nach materiellem Besitz",
@@ -3153,7 +3153,7 @@
     {
       "id": "sind die Lebewesen von ih[mr] angezogen",
       "group": "Examples",
-      "links": 5
+      "links": 6
     },
     {
       "id": "Sittlichkeit und.* Weisheit",
@@ -3283,7 +3283,7 @@
     {
       "id": "Suche nach Befriedigung",
       "group": "Examples",
-      "links": 0
+      "links": 3
     },
     {
       "id": "süße Spitze",
@@ -5929,8 +5929,8 @@
     {
       "id": "sn35.16",
       "group": "sn",
-      "rank": 7,
-      "links": 2
+      "rank": 2,
+      "links": 3
     },
     {
       "id": "sn35.241",
@@ -9560,7 +9560,7 @@
       "id": "an8.22",
       "group": "an",
       "rank": 2,
-      "links": 6
+      "links": 5
     },
     {
       "id": "an7.56",
@@ -13049,12 +13049,6 @@
       "links": 1
     },
     {
-      "id": "an8.21",
-      "group": "an",
-      "rank": 1,
-      "links": 3
-    },
-    {
       "id": "an5.206",
       "group": "an",
       "rank": 10,
@@ -13297,8 +13291,8 @@
     {
       "id": "sn35.15",
       "group": "sn",
-      "rank": 6,
-      "links": 2
+      "rank": 3,
+      "links": 3
     },
     {
       "id": "sn10.7",
@@ -14401,8 +14395,8 @@
     {
       "id": "sn14.32",
       "group": "sn",
-      "rank": 5,
-      "links": 1
+      "rank": 1,
+      "links": 2
     },
     {
       "id": "sn22.27",
@@ -14654,6 +14648,12 @@
       "id": "sn22.89",
       "group": "sn",
       "rank": 2,
+      "links": 2
+    },
+    {
+      "id": "an8.21",
+      "group": "an",
+      "rank": 1,
       "links": 2
     },
     {
@@ -15743,9 +15743,15 @@
       "links": 1
     },
     {
+      "id": "an3.105",
+      "group": "an",
+      "rank": 5,
+      "links": 1
+    },
+    {
       "id": "sn14.33",
       "group": "sn",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
@@ -31626,16 +31632,6 @@
       "rank": 2
     },
     {
-      "source": "ihr solltet den Hausbesitzer",
-      "target": "an8.21",
-      "rank": 3
-    },
-    {
-      "source": "ihr solltet den Hausbesitzer",
-      "target": "an8.22",
-      "rank": 4
-    },
-    {
       "source": "im Wünschen nach materiellem Besitz",
       "target": "an8.77",
       "rank": 1
@@ -39062,8 +39058,13 @@
     },
     {
       "source": "sind die Lebewesen von ih[mr] angezogen",
-      "target": "sn14.33",
+      "target": "an3.105",
       "rank": 5
+    },
+    {
+      "source": "sind die Lebewesen von ih[mr] angezogen",
+      "target": "sn14.33",
+      "rank": 6
     },
     {
       "source": "Sittlichkeit und.* Weisheit",
@@ -39929,6 +39930,21 @@
       "source": "substanzialistische Ansicht",
       "target": "mn2",
       "rank": 22
+    },
+    {
+      "source": "Suche nach Befriedigung",
+      "target": "sn14.32",
+      "rank": 1
+    },
+    {
+      "source": "Suche nach Befriedigung",
+      "target": "sn35.16",
+      "rank": 2
+    },
+    {
+      "source": "Suche nach Befriedigung",
+      "target": "sn35.15",
+      "rank": 3
     },
     {
       "source": "süße Spitze",
