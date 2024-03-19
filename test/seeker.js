@@ -853,7 +853,7 @@ typeof describe === "function" &&
         matched: true,
       });
     });
-    it("find(...) => legacy suttas", async () => {
+    it("TESTTESTfind(...) => legacy suttas", async () => {
       var maxDoc = 3;
       var skr = await new Seeker({
         maxDoc,
@@ -2751,7 +2751,7 @@ typeof describe === "function" &&
       should(res.method).equal('phrase');
       should(res.bilaraPaths.length).equal(3);
     });
-    it("TESTTESTfind() mil2 Pali only", async () => {
+    it("find() mil2 Pali only", async () => {
       const msg = 'test.seeker.find()';
       const dbg = 1;
       let bilaraData = new BilaraData();
