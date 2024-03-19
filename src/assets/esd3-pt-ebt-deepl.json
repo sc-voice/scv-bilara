@@ -68,7 +68,7 @@
     {
       "id": "portas dos sentidos",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "queixa",
@@ -78,7 +78,7 @@
     {
       "id": "raiva",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "sem sinais",
@@ -88,7 +88,7 @@
     {
       "id": "serenidade e discernimento",
       "group": "Examples",
-      "links": 1
+      "links": 4
     },
     {
       "id": "três características",
@@ -152,9 +152,33 @@
       "links": 6
     },
     {
-      "id": "an1.219-234",
+      "id": "an2.163-179",
       "group": "an",
       "rank": 1,
+      "links": 2
+    },
+    {
+      "id": "an1.219-234",
+      "group": "an",
+      "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "an2.130-140",
+      "group": "an",
+      "rank": 1,
+      "links": 1
+    },
+    {
+      "id": "an2.310-479",
+      "group": "an",
+      "rank": 1,
+      "links": 1
+    },
+    {
+      "id": "an2.21-31",
+      "group": "an",
+      "rank": 3,
       "links": 1
     },
     {
@@ -238,8 +262,13 @@
     },
     {
       "source": "portas dos sentidos",
-      "target": "an1.219-234",
+      "target": "an2.163-179",
       "rank": 1
+    },
+    {
+      "source": "portas dos sentidos",
+      "target": "an1.219-234",
+      "rank": 2
     },
     {
       "source": "queixa",
@@ -248,8 +277,13 @@
     },
     {
       "source": "raiva",
-      "target": "an3.183-352",
+      "target": "an2.130-140",
       "rank": 1
+    },
+    {
+      "source": "raiva",
+      "target": "an3.183-352",
+      "rank": 2
     },
     {
       "source": "sem sinais",
@@ -258,8 +292,23 @@
     },
     {
       "source": "serenidade e discernimento",
-      "target": "sn41.6",
+      "target": "an2.310-479",
       "rank": 1
+    },
+    {
+      "source": "serenidade e discernimento",
+      "target": "sn41.6",
+      "rank": 2
+    },
+    {
+      "source": "serenidade e discernimento",
+      "target": "an2.21-31",
+      "rank": 3
+    },
+    {
+      "source": "serenidade e discernimento",
+      "target": "an2.163-179",
+      "rank": 4
     },
     {
       "source": "três características",

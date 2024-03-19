@@ -4,7 +4,10 @@ antilope
 antilopenhaut
 arm
 auge
+bader
+baderlehrling
 banyanbaum
+befriedigung
 beliebt
 beliebtheit
 besorgnis
