@@ -8,7 +8,7 @@
     {
       "id": "aber zum Erwachen entschlossen",
       "group": "Examples",
-      "links": 22
+      "links": 23
     },
     {
       "id": "abgefallen",
@@ -143,7 +143,7 @@
     {
       "id": "Ärger, Hass und Unmut",
       "group": "Examples",
-      "links": 10
+      "links": 11
     },
     {
       "id": "Arten der Einbildung",
@@ -203,7 +203,7 @@
     {
       "id": "aufgrund bloßen Vertrauens",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "Auflösen der Bindungen",
@@ -473,7 +473,7 @@
     {
       "id": "Dachsparren",
       "group": "Examples",
-      "links": 12
+      "links": 13
     },
     {
       "id": "da ist ein Entrinnen",
@@ -953,7 +953,7 @@
     {
       "id": "Dunkelheit.* und Licht",
       "group": "Examples",
-      "links": 9
+      "links": 10
     },
     {
       "id": "Dunklen, die für das Helle bestimmt",
@@ -1218,7 +1218,7 @@
     {
       "id": "entsprechend ihrer Taten wiedergeboren",
       "group": "Examples",
-      "links": 38
+      "links": 39
     },
     {
       "id": "entwickelt die Grundlage übersinnlicher Kraft",
@@ -1243,7 +1243,7 @@
     {
       "id": "ergreift.* nichts in der Welt",
       "group": "Examples",
-      "links": 11
+      "links": 12
     },
     {
       "id": "er hat soviel Verdienst geschaffen",
@@ -1633,7 +1633,7 @@
     {
       "id": "gepresster Zunge",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "gerechter und prinzipientreuer König",
@@ -1813,7 +1813,7 @@
     {
       "id": "gut genug",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "gut, Schwester",
@@ -1823,7 +1823,7 @@
     {
       "id": "Haare.* sträub",
       "group": "Examples",
-      "links": 24
+      "links": 25
     },
     {
       "id": "haarsträubend",
@@ -2168,7 +2168,7 @@
     {
       "id": "jammer.* und klag",
       "group": "Examples",
-      "links": 12
+      "links": 13
     },
     {
       "id": "jedes Bild, das man mit dem Auge sieht, unerwünscht",
@@ -2628,7 +2628,7 @@
     {
       "id": "mörderisch",
       "group": "Examples",
-      "links": 7
+      "links": 8
     },
     {
       "id": "muss aufgegeben werden",
@@ -2728,7 +2728,7 @@
     {
       "id": "nichts ist es wert, darauf zu bestehen",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "nicht zur Last",
@@ -2773,7 +2773,7 @@
     {
       "id": "nur einen Bissen",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "nur mir sollte man Gaben",
@@ -2783,7 +2783,7 @@
     {
       "id": "Nymphen",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "ob bei Tag oder bei Nacht",
@@ -2903,7 +2903,7 @@
     {
       "id": "Rosenapfel",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "roten Kapok-Wald",
@@ -3183,7 +3183,7 @@
     {
       "id": "solche Macht und Stärke",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "soll nach meinem Ende euer Lehrer sein",
@@ -4058,7 +4058,7 @@
     {
       "id": "Wiedergeburt in der Dimension",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "Wiedergeburt in der Gemeinschaft",
@@ -4497,6 +4497,12 @@
       "group": "mn",
       "rank": 1,
       "links": 22
+    },
+    {
+      "id": "mn36",
+      "group": "mn",
+      "rank": 1,
+      "links": 13
     },
     {
       "id": "an8.77",
@@ -9487,7 +9493,7 @@
     {
       "id": "snp3.11",
       "group": "snp",
-      "rank": 2,
+      "rank": 3,
       "links": 10
     },
     {
@@ -10465,7 +10471,7 @@
     {
       "id": "sn51.31",
       "group": "sn",
-      "rank": 3,
+      "rank": 4,
       "links": 2
     },
     {
@@ -10525,7 +10531,7 @@
     {
       "id": "sn51.32",
       "group": "sn",
-      "rank": 4,
+      "rank": 5,
       "links": 2
     },
     {
@@ -10611,6 +10617,12 @@
       "group": "an",
       "rank": 1,
       "links": 4
+    },
+    {
+      "id": "mn37",
+      "group": "mn",
+      "rank": 1,
+      "links": 5
     },
     {
       "id": "sn10.10",
@@ -14977,7 +14989,7 @@
     {
       "id": "sn35.80",
       "group": "sn",
-      "rank": 1,
+      "rank": 2,
       "links": 1
     },
     {
@@ -18002,6 +18014,11 @@
       "rank": 22
     },
     {
+      "source": "aber zum Erwachen entschlossen",
+      "target": "mn36",
+      "rank": 23
+    },
+    {
       "source": "abgefallen",
       "target": "an8.77",
       "rank": 1
@@ -18883,23 +18900,28 @@
     },
     {
       "source": "Ärger, Hass und Unmut",
-      "target": "dn24",
+      "target": "mn36",
       "rank": 7
     },
     {
       "source": "Ärger, Hass und Unmut",
-      "target": "an3.67",
+      "target": "dn24",
       "rank": 8
     },
     {
       "source": "Ärger, Hass und Unmut",
-      "target": "an8.10",
+      "target": "an3.67",
       "rank": 9
     },
     {
       "source": "Ärger, Hass und Unmut",
-      "target": "an8.14",
+      "target": "an8.10",
       "rank": 10
+    },
+    {
+      "source": "Ärger, Hass und Unmut",
+      "target": "an8.14",
+      "rank": 11
     },
     {
       "source": "Arten der Einbildung",
@@ -19113,13 +19135,18 @@
     },
     {
       "source": "aufgrund bloßen Vertrauens",
-      "target": "mn26",
+      "target": "mn36",
       "rank": 1
     },
     {
       "source": "aufgrund bloßen Vertrauens",
-      "target": "an6.55",
+      "target": "mn26",
       "rank": 2
+    },
+    {
+      "source": "aufgrund bloßen Vertrauens",
+      "target": "an6.55",
+      "rank": 3
     },
     {
       "source": "Auflösen der Bindungen",
@@ -21265,6 +21292,11 @@
       "source": "Dachsparren",
       "target": "mn12",
       "rank": 12
+    },
+    {
+      "source": "Dachsparren",
+      "target": "mn36",
+      "rank": 13
     },
     {
       "source": "da ist ein Entrinnen",
@@ -23923,13 +23955,18 @@
     },
     {
       "source": "Dunkelheit.* und Licht",
-      "target": "an6.62",
+      "target": "mn36",
       "rank": 8
     },
     {
       "source": "Dunkelheit.* und Licht",
-      "target": "dn21",
+      "target": "an6.62",
       "rank": 9
+    },
+    {
+      "source": "Dunkelheit.* und Licht",
+      "target": "dn21",
+      "rank": 10
     },
     {
       "source": "Dunklen, die für das Helle bestimmt",
@@ -26008,13 +26045,18 @@
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "mn60",
+      "target": "mn36",
       "rank": 37
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "dn34",
+      "target": "mn60",
       "rank": 38
+    },
+    {
+      "source": "entsprechend ihrer Taten wiedergeboren",
+      "target": "dn34",
+      "rank": 39
     },
     {
       "source": "entwickelt die Grundlage übersinnlicher Kraft",
@@ -26253,48 +26295,53 @@
     },
     {
       "source": "ergreift.* nichts in der Welt",
-      "target": "sn35.30",
+      "target": "mn37",
       "rank": 3
     },
     {
       "source": "ergreift.* nichts in der Welt",
-      "target": "sn35.31",
+      "target": "sn35.30",
       "rank": 4
     },
     {
       "source": "ergreift.* nichts in der Welt",
-      "target": "sn35.90",
+      "target": "sn35.31",
       "rank": 5
     },
     {
       "source": "ergreift.* nichts in der Welt",
-      "target": "sn35.91",
+      "target": "sn35.90",
       "rank": 6
     },
     {
       "source": "ergreift.* nichts in der Welt",
-      "target": "sn35.234",
+      "target": "sn35.91",
       "rank": 7
     },
     {
       "source": "ergreift.* nichts in der Welt",
-      "target": "an7.61",
+      "target": "sn35.234",
       "rank": 8
     },
     {
       "source": "ergreift.* nichts in der Welt",
-      "target": "sn12.51",
+      "target": "an7.61",
       "rank": 9
     },
     {
       "source": "ergreift.* nichts in der Welt",
-      "target": "dn15",
+      "target": "sn12.51",
       "rank": 10
     },
     {
       "source": "ergreift.* nichts in der Welt",
-      "target": "mn140",
+      "target": "dn15",
       "rank": 11
+    },
+    {
+      "source": "ergreift.* nichts in der Welt",
+      "target": "mn140",
+      "rank": 12
     },
     {
       "source": "er hat soviel Verdienst geschaffen",
@@ -29073,8 +29120,13 @@
     },
     {
       "source": "gepresster Zunge",
-      "target": "snp3.11",
+      "target": "mn36",
       "rank": 2
+    },
+    {
+      "source": "gepresster Zunge",
+      "target": "snp3.11",
+      "rank": 3
     },
     {
       "source": "gerechter und prinzipientreuer König",
@@ -30558,18 +30610,23 @@
     },
     {
       "source": "gut genug",
-      "target": "mn26",
+      "target": "mn36",
       "rank": 4
     },
     {
       "source": "gut genug",
-      "target": "an9.3",
+      "target": "mn26",
       "rank": 5
     },
     {
       "source": "gut genug",
-      "target": "ud4.1",
+      "target": "an9.3",
       "rank": 6
+    },
+    {
+      "source": "gut genug",
+      "target": "ud4.1",
+      "rank": 7
     },
     {
       "source": "gut, Schwester",
@@ -30678,28 +30735,33 @@
     },
     {
       "source": "Haare.* sträub",
-      "target": "mn35",
+      "target": "mn37",
       "rank": 20
     },
     {
       "source": "Haare.* sträub",
-      "target": "dn2",
+      "target": "mn35",
       "rank": 21
     },
     {
       "source": "Haare.* sträub",
-      "target": "dn19",
+      "target": "dn2",
       "rank": 22
     },
     {
       "source": "Haare.* sträub",
-      "target": "dn21",
+      "target": "dn19",
       "rank": 23
     },
     {
       "source": "Haare.* sträub",
-      "target": "dn24",
+      "target": "dn21",
       "rank": 24
+    },
+    {
+      "source": "Haare.* sträub",
+      "target": "dn24",
+      "rank": 25
     },
     {
       "source": "haarsträubend",
@@ -32493,8 +32555,13 @@
     },
     {
       "source": "jammer.* und klag",
-      "target": "an6.63",
+      "target": "mn36",
       "rank": 12
+    },
+    {
+      "source": "jammer.* und klag",
+      "target": "an6.63",
+      "rank": 13
     },
     {
       "source": "jedes Bild, das man mit dem Auge sieht, unerwünscht",
@@ -35947,6 +36014,11 @@
       "rank": 7
     },
     {
+      "source": "mörderisch",
+      "target": "mn36",
+      "rank": 8
+    },
+    {
       "source": "muss aufgegeben werden",
       "target": "sn35.24",
       "rank": 1
@@ -36538,13 +36610,18 @@
     },
     {
       "source": "nichts ist es wert, darauf zu bestehen",
-      "target": "sn35.80",
+      "target": "mn37",
       "rank": 1
     },
     {
       "source": "nichts ist es wert, darauf zu bestehen",
-      "target": "an7.61",
+      "target": "sn35.80",
       "rank": 2
+    },
+    {
+      "source": "nichts ist es wert, darauf zu bestehen",
+      "target": "an7.61",
+      "rank": 3
     },
     {
       "source": "nicht zur Last",
@@ -36737,6 +36814,11 @@
       "rank": 6
     },
     {
+      "source": "nur einen Bissen",
+      "target": "mn36",
+      "rank": 7
+    },
+    {
       "source": "Nymphen",
       "target": "ud3.2",
       "rank": 1
@@ -36763,8 +36845,13 @@
     },
     {
       "source": "Nymphen",
-      "target": "thag20.1",
+      "target": "mn37",
       "rank": 6
+    },
+    {
+      "source": "Nymphen",
+      "target": "thag20.1",
+      "rank": 7
     },
     {
       "source": "ob bei Tag oder bei Nacht",
@@ -37713,8 +37800,13 @@
     },
     {
       "source": "Rosenapfel",
-      "target": "dn16",
+      "target": "mn36",
       "rank": 3
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "dn16",
+      "rank": 4
     },
     {
       "source": "roten Kapok-Wald",
@@ -39268,23 +39360,28 @@
     },
     {
       "source": "solche Macht und Stärke",
-      "target": "sn51.31",
+      "target": "mn37",
       "rank": 3
     },
     {
       "source": "solche Macht und Stärke",
-      "target": "sn51.32",
+      "target": "sn51.31",
       "rank": 4
     },
     {
       "source": "solche Macht und Stärke",
-      "target": "sn51.14",
+      "target": "sn51.32",
       "rank": 5
     },
     {
       "source": "solche Macht und Stärke",
-      "target": "dn25",
+      "target": "sn51.14",
       "rank": 6
+    },
+    {
+      "source": "solche Macht und Stärke",
+      "target": "dn25",
+      "rank": 7
     },
     {
       "source": "soll nach meinem Ende euer Lehrer sein",
@@ -44868,8 +44965,13 @@
     },
     {
       "source": "Wiedergeburt in der Dimension",
-      "target": "mn26",
+      "target": "mn36",
       "rank": 1
+    },
+    {
+      "source": "Wiedergeburt in der Dimension",
+      "target": "mn26",
+      "rank": 2
     },
     {
       "source": "Wiedergeburt in der Gemeinschaft",
