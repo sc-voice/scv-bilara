@@ -93,7 +93,7 @@
     {
       "id": "três características",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "três espectros de prática",
@@ -185,6 +185,12 @@
       "id": "an3.47",
       "group": "an",
       "rank": 1,
+      "links": 1
+    },
+    {
+      "id": "an3.3",
+      "group": "an",
+      "rank": 2,
       "links": 1
     },
     {
@@ -314,6 +320,11 @@
       "source": "três características",
       "target": "an3.47",
       "rank": 1
+    },
+    {
+      "source": "três características",
+      "target": "an3.3",
+      "rank": 2
     },
     {
       "source": "três espectros de prática",
