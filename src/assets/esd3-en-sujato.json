@@ -4096,6 +4096,11 @@
       "links": 4
     },
     {
+      "id": "five kinds of people",
+      "group": "Examples",
+      "links": 9
+    },
+    {
       "id": "two things should be developed",
       "group": "Examples",
       "links": 2
@@ -11289,7 +11294,7 @@
       "id": "an5.190",
       "group": "an",
       "rank": 2,
-      "links": 5
+      "links": 6
     },
     {
       "id": "cp8",
@@ -12692,20 +12697,20 @@
     {
       "id": "an5.182",
       "group": "an",
-      "rank": 5,
-      "links": 2
+      "rank": 1,
+      "links": 3
     },
     {
       "id": "an5.183",
       "group": "an",
-      "rank": 6,
-      "links": 2
+      "rank": 2,
+      "links": 3
     },
     {
       "id": "an5.184",
       "group": "an",
-      "rank": 7,
-      "links": 2
+      "rank": 3,
+      "links": 3
     },
     {
       "id": "an6.114",
@@ -17698,6 +17703,36 @@
       "group": "iti",
       "rank": 3,
       "links": 2
+    },
+    {
+      "id": "an5.185",
+      "group": "an",
+      "rank": 5,
+      "links": 1
+    },
+    {
+      "id": "an5.186",
+      "group": "an",
+      "rank": 6,
+      "links": 1
+    },
+    {
+      "id": "an5.187",
+      "group": "an",
+      "rank": 7,
+      "links": 1
+    },
+    {
+      "id": "an5.188",
+      "group": "an",
+      "rank": 8,
+      "links": 1
+    },
+    {
+      "id": "an5.189",
+      "group": "an",
+      "rank": 9,
+      "links": 1
     },
     {
       "id": "sn11.22",
@@ -47820,6 +47855,51 @@
       "source": "two kinds of people",
       "target": "an2.32-41",
       "rank": 4
+    },
+    {
+      "source": "five kinds of people",
+      "target": "an5.182",
+      "rank": 1
+    },
+    {
+      "source": "five kinds of people",
+      "target": "an5.183",
+      "rank": 2
+    },
+    {
+      "source": "five kinds of people",
+      "target": "an5.184",
+      "rank": 3
+    },
+    {
+      "source": "five kinds of people",
+      "target": "an5.190",
+      "rank": 4
+    },
+    {
+      "source": "five kinds of people",
+      "target": "an5.185",
+      "rank": 5
+    },
+    {
+      "source": "five kinds of people",
+      "target": "an5.186",
+      "rank": 6
+    },
+    {
+      "source": "five kinds of people",
+      "target": "an5.187",
+      "rank": 7
+    },
+    {
+      "source": "five kinds of people",
+      "target": "an5.188",
+      "rank": 8
+    },
+    {
+      "source": "five kinds of people",
+      "target": "an5.189",
+      "rank": 9
     },
     {
       "source": "two things should be developed",
