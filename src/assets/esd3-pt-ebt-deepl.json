@@ -83,7 +83,7 @@
     {
       "id": "portas dos sentidos",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "quatro pessoas",
@@ -123,7 +123,7 @@
     {
       "id": "três pessoas",
       "group": "Examples",
-      "links": 1
+      "links": 5
     },
     {
       "id": "três processos",
@@ -201,15 +201,21 @@
       "links": 1
     },
     {
-      "id": "an2.163-179",
+      "id": "an3.16",
       "group": "an",
       "rank": 1,
+      "links": 1
+    },
+    {
+      "id": "an2.163-179",
+      "group": "an",
+      "rank": 2,
       "links": 2
     },
     {
       "id": "an1.219-234",
       "group": "an",
-      "rank": 2,
+      "rank": 3,
       "links": 1
     },
     {
@@ -237,9 +243,33 @@
       "links": 1
     },
     {
-      "id": "an3.13",
+      "id": "an3.21",
       "group": "an",
       "rank": 1,
+      "links": 1
+    },
+    {
+      "id": "an3.24",
+      "group": "an",
+      "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "an3.13",
+      "group": "an",
+      "rank": 3,
+      "links": 1
+    },
+    {
+      "id": "an3.23",
+      "group": "an",
+      "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "an3.22",
+      "group": "an",
+      "rank": 5,
       "links": 1
     },
     {
@@ -337,13 +367,18 @@
     },
     {
       "source": "portas dos sentidos",
-      "target": "an2.163-179",
+      "target": "an3.16",
       "rank": 1
     },
     {
       "source": "portas dos sentidos",
-      "target": "an1.219-234",
+      "target": "an2.163-179",
       "rank": 2
+    },
+    {
+      "source": "portas dos sentidos",
+      "target": "an1.219-234",
+      "rank": 3
     },
     {
       "source": "queixa",
@@ -402,8 +437,28 @@
     },
     {
       "source": "três pessoas",
-      "target": "an3.13",
+      "target": "an3.21",
       "rank": 1
+    },
+    {
+      "source": "três pessoas",
+      "target": "an3.24",
+      "rank": 2
+    },
+    {
+      "source": "três pessoas",
+      "target": "an3.13",
+      "rank": 3
+    },
+    {
+      "source": "três pessoas",
+      "target": "an3.23",
+      "rank": 4
+    },
+    {
+      "source": "três pessoas",
+      "target": "an3.22",
+      "rank": 5
     },
     {
       "source": "três processos",
