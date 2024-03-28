@@ -146,7 +146,7 @@
           return this;
         }
         sync = sync === undefined ? !(await this.isFresh()) : sync;
-        this.info(`initialize(sync:${sync})`);
+        this.debug(`initialize(sync:${sync})`);
         sync && (await this.syncEbtData());
         var { root } = this;
         var version = this.version();
