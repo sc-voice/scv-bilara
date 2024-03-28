@@ -853,7 +853,7 @@ typeof describe === "function" &&
         matched: true,
       });
     });
-    it("TESTTESTfind(...) => legacy suttas", async () => {
+    it("find(...) => legacy suttas", async () => {
       var maxDoc = 3;
       var skr = await new Seeker({
         maxDoc,
