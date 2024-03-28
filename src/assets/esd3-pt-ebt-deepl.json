@@ -1,6 +1,11 @@
 {
   "nodes": [
     {
+      "id": "cinco  pessoas",
+      "group": "Examples",
+      "links": 0
+    },
+    {
       "id": "coisas são úteis",
       "group": "Examples",
       "links": 1
@@ -29,6 +34,11 @@
       "id": "devem? ser abandonad.s?",
       "group": "Examples",
       "links": 2
+    },
+    {
+      "id": "duas pessoas",
+      "group": "Examples",
+      "links": 4
     },
     {
       "id": "em suportar",
@@ -66,9 +76,19 @@
       "links": 1
     },
     {
+      "id": "oito pessoas",
+      "group": "Examples",
+      "links": 0
+    },
+    {
       "id": "portas dos sentidos",
       "group": "Examples",
-      "links": 2
+      "links": 3
+    },
+    {
+      "id": "quatro pessoas",
+      "group": "Examples",
+      "links": 0
     },
     {
       "id": "queixa",
@@ -99,6 +119,11 @@
       "id": "três espectros de prática",
       "group": "Examples",
       "links": 1
+    },
+    {
+      "id": "três pessoas",
+      "group": "Examples",
+      "links": 10
     },
     {
       "id": "três processos",
@@ -152,21 +177,45 @@
       "links": 6
     },
     {
-      "id": "an2.163-179",
+      "id": "an2.118-129",
       "group": "an",
       "rank": 1,
-      "links": 2
-    },
-    {
-      "id": "an1.219-234",
-      "group": "an",
-      "rank": 2,
       "links": 1
     },
     {
       "id": "an2.130-140",
       "group": "an",
       "rank": 1,
+      "links": 2
+    },
+    {
+      "id": "an2.52-63",
+      "group": "an",
+      "rank": 3,
+      "links": 1
+    },
+    {
+      "id": "an2.32-41",
+      "group": "an",
+      "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "an3.16",
+      "group": "an",
+      "rank": 1,
+      "links": 1
+    },
+    {
+      "id": "an2.163-179",
+      "group": "an",
+      "rank": 2,
+      "links": 2
+    },
+    {
+      "id": "an1.219-234",
+      "group": "an",
+      "rank": 3,
       "links": 1
     },
     {
@@ -191,6 +240,66 @@
       "id": "an3.3",
       "group": "an",
       "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "an3.21",
+      "group": "an",
+      "rank": 1,
+      "links": 1
+    },
+    {
+      "id": "an3.24",
+      "group": "an",
+      "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "an3.13",
+      "group": "an",
+      "rank": 3,
+      "links": 1
+    },
+    {
+      "id": "an3.28",
+      "group": "an",
+      "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "an3.23",
+      "group": "an",
+      "rank": 5,
+      "links": 1
+    },
+    {
+      "id": "an3.22",
+      "group": "an",
+      "rank": 6,
+      "links": 1
+    },
+    {
+      "id": "an3.25",
+      "group": "an",
+      "rank": 7,
+      "links": 1
+    },
+    {
+      "id": "an3.26",
+      "group": "an",
+      "rank": 8,
+      "links": 1
+    },
+    {
+      "id": "an3.27",
+      "group": "an",
+      "rank": 9,
+      "links": 1
+    },
+    {
+      "id": "an3.29",
+      "group": "an",
+      "rank": 10,
       "links": 1
     },
     {
@@ -237,6 +346,26 @@
       "rank": 2
     },
     {
+      "source": "duas pessoas",
+      "target": "an2.118-129",
+      "rank": 1
+    },
+    {
+      "source": "duas pessoas",
+      "target": "an2.130-140",
+      "rank": 2
+    },
+    {
+      "source": "duas pessoas",
+      "target": "an2.52-63",
+      "rank": 3
+    },
+    {
+      "source": "duas pessoas",
+      "target": "an2.32-41",
+      "rank": 4
+    },
+    {
       "source": "escolhas como o eu",
       "target": "an4.200",
       "rank": 1
@@ -268,13 +397,18 @@
     },
     {
       "source": "portas dos sentidos",
-      "target": "an2.163-179",
+      "target": "an3.16",
       "rank": 1
     },
     {
       "source": "portas dos sentidos",
-      "target": "an1.219-234",
+      "target": "an2.163-179",
       "rank": 2
+    },
+    {
+      "source": "portas dos sentidos",
+      "target": "an1.219-234",
+      "rank": 3
     },
     {
       "source": "queixa",
@@ -330,6 +464,56 @@
       "source": "três espectros de prática",
       "target": "mn44",
       "rank": 1
+    },
+    {
+      "source": "três pessoas",
+      "target": "an3.21",
+      "rank": 1
+    },
+    {
+      "source": "três pessoas",
+      "target": "an3.24",
+      "rank": 2
+    },
+    {
+      "source": "três pessoas",
+      "target": "an3.13",
+      "rank": 3
+    },
+    {
+      "source": "três pessoas",
+      "target": "an3.28",
+      "rank": 4
+    },
+    {
+      "source": "três pessoas",
+      "target": "an3.23",
+      "rank": 5
+    },
+    {
+      "source": "três pessoas",
+      "target": "an3.22",
+      "rank": 6
+    },
+    {
+      "source": "três pessoas",
+      "target": "an3.25",
+      "rank": 7
+    },
+    {
+      "source": "três pessoas",
+      "target": "an3.26",
+      "rank": 8
+    },
+    {
+      "source": "três pessoas",
+      "target": "an3.27",
+      "rank": 9
+    },
+    {
+      "source": "três pessoas",
+      "target": "an3.29",
+      "rank": 10
     },
     {
       "source": "três processos",

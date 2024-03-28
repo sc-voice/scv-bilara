@@ -911,6 +911,11 @@
       "links": 12
     },
     {
+      "id": "drei Gleichnisse",
+      "group": "Examples",
+      "links": 1
+    },
+    {
       "id": "drei Grundlagen",
       "group": "Examples",
       "links": 4
@@ -1799,6 +1804,11 @@
       "id": "Grundlage der",
       "group": "Examples",
       "links": 6
+    },
+    {
+      "id": "Grundlage für die Versenkung",
+      "group": "Examples",
+      "links": 8
     },
     {
       "id": "gut befreit",
@@ -4502,7 +4512,7 @@
       "id": "mn36",
       "group": "mn",
       "rank": 1,
-      "links": 13
+      "links": 15
     },
     {
       "id": "an8.77",
@@ -4736,7 +4746,7 @@
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 114
+      "links": 115
     },
     {
       "id": "an4.189",
@@ -4748,7 +4758,7 @@
       "id": "dn34",
       "group": "dn",
       "rank": 1,
-      "links": 82
+      "links": 83
     },
     {
       "id": "an8.118",
@@ -7904,7 +7914,7 @@
       "id": "mn122",
       "group": "mn",
       "rank": 1,
-      "links": 13
+      "links": 14
     },
     {
       "id": "sn45.165",
@@ -12553,8 +12563,8 @@
     {
       "id": "an4.14",
       "group": "an",
-      "rank": 34,
-      "links": 1
+      "rank": 5,
+      "links": 2
     },
     {
       "id": "an3.40",
@@ -12573,6 +12583,24 @@
       "group": "sn",
       "rank": 1,
       "links": 4
+    },
+    {
+      "id": "an3.19",
+      "group": "an",
+      "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "an5.26",
+      "group": "an",
+      "rank": 2,
+      "links": 2
+    },
+    {
+      "id": "an6.28",
+      "group": "an",
+      "rank": 6,
+      "links": 2
     },
     {
       "id": "sn35.232",
@@ -14228,12 +14256,6 @@
       "id": "thag3.7",
       "group": "thag",
       "rank": 11,
-      "links": 1
-    },
-    {
-      "id": "an5.26",
-      "group": "an",
-      "rank": 2,
       "links": 1
     },
     {
@@ -16262,12 +16284,6 @@
       "id": "an6.27",
       "group": "an",
       "rank": 9,
-      "links": 1
-    },
-    {
-      "id": "an6.28",
-      "group": "an",
-      "rank": 10,
       "links": 1
     },
     {
@@ -23549,6 +23565,11 @@
       "rank": 12
     },
     {
+      "source": "drei Gleichnisse",
+      "target": "mn36",
+      "rank": 1
+    },
+    {
       "source": "drei Grundlagen",
       "target": "iti60",
       "rank": 1
@@ -30327,6 +30348,46 @@
       "source": "Grundlage der",
       "target": "sn47.10",
       "rank": 6
+    },
+    {
+      "source": "Grundlage für die Versenkung",
+      "target": "dn33",
+      "rank": 1
+    },
+    {
+      "source": "Grundlage für die Versenkung",
+      "target": "an3.19",
+      "rank": 2
+    },
+    {
+      "source": "Grundlage für die Versenkung",
+      "target": "an5.26",
+      "rank": 3
+    },
+    {
+      "source": "Grundlage für die Versenkung",
+      "target": "dn34",
+      "rank": 4
+    },
+    {
+      "source": "Grundlage für die Versenkung",
+      "target": "an4.14",
+      "rank": 5
+    },
+    {
+      "source": "Grundlage für die Versenkung",
+      "target": "an6.28",
+      "rank": 6
+    },
+    {
+      "source": "Grundlage für die Versenkung",
+      "target": "mn122",
+      "rank": 7
+    },
+    {
+      "source": "Grundlage für die Versenkung",
+      "target": "mn36",
+      "rank": 8
     },
     {
       "source": "gut befreit",
