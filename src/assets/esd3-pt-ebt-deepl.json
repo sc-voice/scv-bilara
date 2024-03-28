@@ -123,7 +123,7 @@
     {
       "id": "três pessoas",
       "group": "Examples",
-      "links": 10
+      "links": 11
     },
     {
       "id": "três processos",
@@ -300,6 +300,12 @@
       "id": "an3.29",
       "group": "an",
       "rank": 10,
+      "links": 1
+    },
+    {
+      "id": "an3.30",
+      "group": "an",
+      "rank": 11,
       "links": 1
     },
     {
@@ -514,6 +520,11 @@
       "source": "três pessoas",
       "target": "an3.29",
       "rank": 10
+    },
+    {
+      "source": "três pessoas",
+      "target": "an3.30",
+      "rank": 11
     },
     {
       "source": "três processos",
