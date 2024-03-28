@@ -123,7 +123,7 @@
     {
       "id": "três pessoas",
       "group": "Examples",
-      "links": 6
+      "links": 10
     },
     {
       "id": "três processos",
@@ -261,21 +261,45 @@
       "links": 1
     },
     {
-      "id": "an3.23",
+      "id": "an3.28",
       "group": "an",
       "rank": 4,
       "links": 1
     },
     {
-      "id": "an3.22",
+      "id": "an3.23",
       "group": "an",
       "rank": 5,
       "links": 1
     },
     {
-      "id": "an3.25",
+      "id": "an3.22",
       "group": "an",
       "rank": 6,
+      "links": 1
+    },
+    {
+      "id": "an3.25",
+      "group": "an",
+      "rank": 7,
+      "links": 1
+    },
+    {
+      "id": "an3.26",
+      "group": "an",
+      "rank": 8,
+      "links": 1
+    },
+    {
+      "id": "an3.27",
+      "group": "an",
+      "rank": 9,
+      "links": 1
+    },
+    {
+      "id": "an3.29",
+      "group": "an",
+      "rank": 10,
       "links": 1
     },
     {
@@ -458,18 +482,38 @@
     },
     {
       "source": "três pessoas",
-      "target": "an3.23",
+      "target": "an3.28",
       "rank": 4
     },
     {
       "source": "três pessoas",
-      "target": "an3.22",
+      "target": "an3.23",
       "rank": 5
     },
     {
       "source": "três pessoas",
-      "target": "an3.25",
+      "target": "an3.22",
       "rank": 6
+    },
+    {
+      "source": "três pessoas",
+      "target": "an3.25",
+      "rank": 7
+    },
+    {
+      "source": "três pessoas",
+      "target": "an3.26",
+      "rank": 8
+    },
+    {
+      "source": "três pessoas",
+      "target": "an3.27",
+      "rank": 9
+    },
+    {
+      "source": "três pessoas",
+      "target": "an3.29",
+      "rank": 10
     },
     {
       "source": "três processos",

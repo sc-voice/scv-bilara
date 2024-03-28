@@ -609,6 +609,7 @@
 	"an3.22": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
+		"translation/lt/piyadassi": "sutta/an/an3",
 		"translation/pt/ebt-deepl": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
@@ -636,23 +637,27 @@
 	"an3.26": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
+		"translation/pt/ebt-deepl": "sutta/an/an3",
 		"translation/pt/laera-quaresma": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.27": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
+		"translation/pt/ebt-deepl": "sutta/an/an3",
 		"translation/pt/laera-quaresma": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.28": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
+		"translation/pt/ebt-deepl": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.29": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
+		"translation/pt/ebt-deepl": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.30": {
@@ -3177,6 +3182,7 @@
 	"an5.29": {
 		"translation/de/sabbamitta": "sutta/an/an5",
 		"translation/en/sujato": "sutta/an/an5",
+		"translation/lt/piyadassi": "sutta/an/an5",
 		"root/pli/ms": "sutta/an/an5"
 	},
 	"an5.30": {
@@ -8531,21 +8537,25 @@
 	"iti42": {
 		"translation/de/sabbamitta": "sutta/kn/iti/vagga5",
 		"translation/en/sujato": "sutta/kn/iti/vagga5",
+		"translation/lt/piyadassi": "sutta/kn/iti/vagga5",
 		"root/pli/ms": "sutta/kn/iti/vagga5"
 	},
 	"iti43": {
 		"translation/de/sabbamitta": "sutta/kn/iti/vagga5",
 		"translation/en/sujato": "sutta/kn/iti/vagga5",
+		"translation/lt/piyadassi": "sutta/kn/iti/vagga5",
 		"root/pli/ms": "sutta/kn/iti/vagga5"
 	},
 	"iti44": {
 		"translation/de/sabbamitta": "sutta/kn/iti/vagga5",
 		"translation/en/sujato": "sutta/kn/iti/vagga5",
+		"translation/lt/piyadassi": "sutta/kn/iti/vagga5",
 		"root/pli/ms": "sutta/kn/iti/vagga5"
 	},
 	"iti45": {
 		"translation/de/sabbamitta": "sutta/kn/iti/vagga5",
 		"translation/en/sujato": "sutta/kn/iti/vagga5",
+		"translation/lt/piyadassi": "sutta/kn/iti/vagga5",
 		"root/pli/ms": "sutta/kn/iti/vagga5"
 	},
 	"iti46": {
