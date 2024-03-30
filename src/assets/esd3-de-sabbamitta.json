@@ -258,7 +258,7 @@
     {
       "id": "äußere.* Dinge",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "äußere.* Sinnesfelder",
@@ -443,7 +443,7 @@
     {
       "id": "Bodensatz",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "Bogenharfe",
@@ -613,7 +613,7 @@
     {
       "id": "das Stehlen auf",
       "group": "Examples",
-      "links": 19
+      "links": 21
     },
     {
       "id": "das unübertreffliche Rad des Dhamma",
@@ -1028,7 +1028,7 @@
     {
       "id": "ein abgebrühter Mörder",
       "group": "Examples",
-      "links": 5
+      "links": 7
     },
     {
       "id": "einäugige Schildkröte",
@@ -1073,7 +1073,7 @@
     {
       "id": "eine Himmelsrichtung mit einem Herzen voller Liebe",
       "group": "Examples",
-      "links": 23
+      "links": 24
     },
     {
       "id": "ein Embryo.* empfangen",
@@ -1408,7 +1408,7 @@
     {
       "id": "Filz",
       "group": "Examples",
-      "links": 15
+      "links": 16
     },
     {
       "id": "Fingerschnippen",
@@ -1433,7 +1433,7 @@
     {
       "id": "Fortziehen nicht vergeblich",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "Frausein",
@@ -1463,7 +1463,7 @@
     {
       "id": "Freude und Glück",
       "group": "Examples",
-      "links": 9
+      "links": 10
     },
     {
       "id": "Frieden finden",
@@ -1803,12 +1803,12 @@
     {
       "id": "Grundlage der",
       "group": "Examples",
-      "links": 6
+      "links": 5
     },
     {
       "id": "Grundlage für die Versenkung",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "gut befreit",
@@ -2048,7 +2048,7 @@
     {
       "id": "inbrünstige.* Bußübung",
       "group": "Examples",
-      "links": 23
+      "links": 24
     },
     {
       "id": "in den drei Zeiten",
@@ -2333,7 +2333,7 @@
     {
       "id": "Kräuter, Hirse",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "Kreislauf der Wiedergeburten",
@@ -2443,7 +2443,7 @@
     {
       "id": "lodert Freude auf",
       "group": "Examples",
-      "links": 10
+      "links": 11
     },
     {
       "id": "losgelöst",
@@ -2673,7 +2673,7 @@
     {
       "id": "nackt, wahrt den Anstand nicht",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "nährt das Entstehen",
@@ -2783,7 +2783,7 @@
     {
       "id": "nur einen Bissen",
       "group": "Examples",
-      "links": 7
+      "links": 8
     },
     {
       "id": "nur mir sollte man Gaben",
@@ -2908,7 +2908,7 @@
     {
       "id": "Roben aus Hanf",
       "group": "Examples",
-      "links": 7
+      "links": 8
     },
     {
       "id": "Rosenapfel",
@@ -3228,7 +3228,7 @@
     {
       "id": "Spenden haben keinen Sinn",
       "group": "Examples",
-      "links": 14
+      "links": 16
     },
     {
       "id": "Spiegelbild",
@@ -3263,7 +3263,7 @@
     {
       "id": "Stock und Schwert",
       "group": "Examples",
-      "links": 27
+      "links": 29
     },
     {
       "id": "Straße durch die Wüste",
@@ -3343,7 +3343,7 @@
     {
       "id": "Traurigkeit, die mit Gier, Hass und Täuschung",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "Traurigkeit, die mit Sinnlichkeit",
@@ -3433,7 +3433,7 @@
     {
       "id": "unbarmherzig",
       "group": "Examples",
-      "links": 15
+      "links": 17
     },
     {
       "id": "unbedingt",
@@ -5919,6 +5919,12 @@
       "links": 2
     },
     {
+      "id": "mn40",
+      "group": "mn",
+      "rank": 2,
+      "links": 6
+    },
+    {
       "id": "mn146",
       "group": "mn",
       "rank": 1,
@@ -8091,6 +8097,18 @@
       "links": 4
     },
     {
+      "id": "mn41",
+      "group": "mn",
+      "rank": 6,
+      "links": 5
+    },
+    {
+      "id": "mn42",
+      "group": "mn",
+      "rank": 7,
+      "links": 5
+    },
+    {
       "id": "an1.170-187",
       "group": "an",
       "rank": 1,
@@ -8207,7 +8225,7 @@
     {
       "id": "mn25",
       "group": "mn",
-      "rank": 4,
+      "rank": 5,
       "links": 3
     },
     {
@@ -10955,7 +10973,7 @@
     {
       "id": "sn56.35",
       "group": "sn",
-      "rank": 6,
+      "rank": 7,
       "links": 2
     },
     {
@@ -11387,19 +11405,19 @@
     {
       "id": "ud1.9",
       "group": "ud",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
       "id": "an5.294-302",
       "group": "an",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
       "id": "cp17",
       "group": "cp",
-      "rank": 9,
+      "rank": 10,
       "links": 1
     },
     {
@@ -11417,7 +11435,7 @@
     {
       "id": "cp22",
       "group": "cp",
-      "rank": 12,
+      "rank": 13,
       "links": 2
     },
     {
@@ -11583,9 +11601,15 @@
       "links": 3
     },
     {
+      "id": "mn46",
+      "group": "mn",
+      "rank": 1,
+      "links": 1
+    },
+    {
       "id": "an5.194",
       "group": "an",
-      "rank": 7,
+      "rank": 8,
       "links": 2
     },
     {
@@ -12563,7 +12587,7 @@
     {
       "id": "an4.14",
       "group": "an",
-      "rank": 5,
+      "rank": 6,
       "links": 2
     },
     {
@@ -12587,7 +12611,7 @@
     {
       "id": "an3.19",
       "group": "an",
-      "rank": 2,
+      "rank": 3,
       "links": 1
     },
     {
@@ -12599,7 +12623,7 @@
     {
       "id": "an6.28",
       "group": "an",
-      "rank": 6,
+      "rank": 7,
       "links": 2
     },
     {
@@ -13105,6 +13129,12 @@
       "group": "an",
       "rank": 11,
       "links": 2
+    },
+    {
+      "id": "mn45",
+      "group": "mn",
+      "rank": 2,
+      "links": 6
     },
     {
       "id": "sn35.189-191",
@@ -19465,6 +19495,11 @@
       "rank": 3
     },
     {
+      "source": "äußere.* Dinge",
+      "target": "mn40",
+      "rank": 4
+    },
+    {
       "source": "äußere.* Sinnesfelder",
       "target": "mn146",
       "rank": 1
@@ -20996,8 +21031,13 @@
     },
     {
       "source": "Bodensatz",
-      "target": "an4.20",
+      "target": "mn40",
       "rank": 2
+    },
+    {
+      "source": "Bodensatz",
+      "target": "an4.20",
+      "rank": 3
     },
     {
       "source": "Bogenharfe",
@@ -22131,33 +22171,43 @@
     },
     {
       "source": "das Stehlen auf",
-      "target": "an10.99",
+      "target": "mn41",
       "rank": 14
     },
     {
       "source": "das Stehlen auf",
-      "target": "mn27",
+      "target": "mn42",
       "rank": 15
     },
     {
       "source": "das Stehlen auf",
-      "target": "mn51",
+      "target": "an10.99",
       "rank": 16
     },
     {
       "source": "das Stehlen auf",
-      "target": "dn1",
+      "target": "mn27",
       "rank": 17
     },
     {
       "source": "das Stehlen auf",
-      "target": "dn2",
+      "target": "mn51",
       "rank": 18
     },
     {
       "source": "das Stehlen auf",
-      "target": "mn38",
+      "target": "dn1",
       "rank": 19
+    },
+    {
+      "source": "das Stehlen auf",
+      "target": "dn2",
+      "rank": 20
+    },
+    {
+      "source": "das Stehlen auf",
+      "target": "mn38",
+      "rank": 21
     },
     {
       "source": "das unübertreffliche Rad des Dhamma",
@@ -24425,6 +24475,16 @@
       "rank": 5
     },
     {
+      "source": "ein abgebrühter Mörder",
+      "target": "mn41",
+      "rank": 6
+    },
+    {
+      "source": "ein abgebrühter Mörder",
+      "target": "mn42",
+      "rank": 7
+    },
+    {
       "source": "einäugige Schildkröte",
       "target": "sn56.47",
       "rank": 1
@@ -24746,73 +24806,78 @@
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "mn52",
+      "target": "mn40",
       "rank": 10
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an3.63",
+      "target": "mn52",
       "rank": 11
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an3.66",
+      "target": "an3.63",
       "rank": 12
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "sn46.54",
+      "target": "an3.66",
       "rank": 13
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "sn42.8",
+      "target": "sn46.54",
       "rank": 14
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an3.65",
+      "target": "sn42.8",
       "rank": 15
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an5.192",
+      "target": "an3.65",
       "rank": 16
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "mn7",
+      "target": "an5.192",
       "rank": 17
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "mn43",
+      "target": "mn7",
       "rank": 18
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn13",
+      "target": "mn43",
       "rank": 19
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn26",
+      "target": "dn13",
       "rank": 20
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn17",
+      "target": "dn26",
       "rank": 21
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn19",
+      "target": "dn17",
       "rank": 22
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn33",
+      "target": "dn19",
       "rank": 23
+    },
+    {
+      "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
+      "target": "dn33",
+      "rank": 24
     },
     {
       "source": "ein Embryo.* empfangen",
@@ -27681,68 +27746,73 @@
     },
     {
       "source": "Filz",
-      "target": "dhp383-423",
+      "target": "mn40",
       "rank": 3
     },
     {
       "source": "Filz",
-      "target": "dn23",
+      "target": "dhp383-423",
       "rank": 4
     },
     {
       "source": "Filz",
-      "target": "ud1.9",
+      "target": "dn23",
       "rank": 5
     },
     {
       "source": "Filz",
-      "target": "ud6.2",
+      "target": "ud1.9",
       "rank": 6
     },
     {
       "source": "Filz",
-      "target": "sn3.11",
+      "target": "ud6.2",
       "rank": 7
     },
     {
       "source": "Filz",
-      "target": "an5.294-302",
+      "target": "sn3.11",
       "rank": 8
     },
     {
       "source": "Filz",
-      "target": "cp17",
+      "target": "an5.294-302",
       "rank": 9
     },
     {
       "source": "Filz",
-      "target": "thag6.1",
+      "target": "cp17",
       "rank": 10
     },
     {
       "source": "Filz",
-      "target": "sn4.21",
+      "target": "thag6.1",
       "rank": 11
     },
     {
       "source": "Filz",
-      "target": "cp22",
+      "target": "sn4.21",
       "rank": 12
     },
     {
       "source": "Filz",
-      "target": "dhp129-145",
+      "target": "cp22",
       "rank": 13
     },
     {
       "source": "Filz",
-      "target": "snp3.11",
+      "target": "dhp129-145",
       "rank": 14
     },
     {
       "source": "Filz",
-      "target": "mn38",
+      "target": "snp3.11",
       "rank": 15
+    },
+    {
+      "source": "Filz",
+      "target": "mn38",
+      "rank": 16
     },
     {
       "source": "Fingerschnippen",
@@ -28011,8 +28081,13 @@
     },
     {
       "source": "Fortziehen nicht vergeblich",
-      "target": "mn39",
+      "target": "mn40",
       "rank": 3
+    },
+    {
+      "source": "Fortziehen nicht vergeblich",
+      "target": "mn39",
+      "rank": 4
     },
     {
       "source": "Frausein",
@@ -28086,48 +28161,53 @@
     },
     {
       "source": "Freude und Glück",
-      "target": "mn39",
+      "target": "mn46",
       "rank": 1
     },
     {
       "source": "Freude und Glück",
-      "target": "dn10",
+      "target": "mn39",
       "rank": 2
     },
     {
       "source": "Freude und Glück",
-      "target": "dn2",
+      "target": "dn10",
       "rank": 3
     },
     {
       "source": "Freude und Glück",
-      "target": "an4.62",
+      "target": "dn2",
       "rank": 4
     },
     {
       "source": "Freude und Glück",
-      "target": "mn81",
+      "target": "an4.62",
       "rank": 5
     },
     {
       "source": "Freude und Glück",
-      "target": "sn56.35",
+      "target": "mn81",
       "rank": 6
     },
     {
       "source": "Freude und Glück",
-      "target": "an5.194",
+      "target": "sn56.35",
       "rank": 7
     },
     {
       "source": "Freude und Glück",
-      "target": "cp9",
+      "target": "an5.194",
       "rank": 8
     },
     {
       "source": "Freude und Glück",
-      "target": "dn9",
+      "target": "cp9",
       "rank": 9
+    },
+    {
+      "source": "Freude und Glück",
+      "target": "dn9",
+      "rank": 10
     },
     {
       "source": "Frieden finden",
@@ -30336,58 +30416,58 @@
     },
     {
       "source": "Grundlage der",
-      "target": "an3.102",
-      "rank": 4
-    },
-    {
-      "source": "Grundlage der",
       "target": "mn140",
-      "rank": 5
+      "rank": 4
     },
     {
       "source": "Grundlage der",
       "target": "sn47.10",
-      "rank": 6
-    },
-    {
-      "source": "Grundlage für die Versenkung",
-      "target": "dn33",
-      "rank": 1
-    },
-    {
-      "source": "Grundlage für die Versenkung",
-      "target": "an3.19",
-      "rank": 2
-    },
-    {
-      "source": "Grundlage für die Versenkung",
-      "target": "an5.26",
-      "rank": 3
-    },
-    {
-      "source": "Grundlage für die Versenkung",
-      "target": "dn34",
-      "rank": 4
-    },
-    {
-      "source": "Grundlage für die Versenkung",
-      "target": "an4.14",
       "rank": 5
     },
     {
       "source": "Grundlage für die Versenkung",
-      "target": "an6.28",
+      "target": "an3.102",
+      "rank": 1
+    },
+    {
+      "source": "Grundlage für die Versenkung",
+      "target": "dn33",
+      "rank": 2
+    },
+    {
+      "source": "Grundlage für die Versenkung",
+      "target": "an3.19",
+      "rank": 3
+    },
+    {
+      "source": "Grundlage für die Versenkung",
+      "target": "an5.26",
+      "rank": 4
+    },
+    {
+      "source": "Grundlage für die Versenkung",
+      "target": "dn34",
+      "rank": 5
+    },
+    {
+      "source": "Grundlage für die Versenkung",
+      "target": "an4.14",
       "rank": 6
     },
     {
       "source": "Grundlage für die Versenkung",
-      "target": "mn122",
+      "target": "an6.28",
       "rank": 7
     },
     {
       "source": "Grundlage für die Versenkung",
-      "target": "mn36",
+      "target": "mn122",
       "rank": 8
+    },
+    {
+      "source": "Grundlage für die Versenkung",
+      "target": "mn36",
+      "rank": 9
     },
     {
       "source": "gut befreit",
@@ -31871,33 +31951,38 @@
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn14",
+      "target": "mn45",
       "rank": 18
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "sn42.12",
+      "target": "mn14",
       "rank": 19
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn51",
+      "target": "sn42.12",
       "rank": 20
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn60",
+      "target": "mn51",
       "rank": 21
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "dn2",
+      "target": "mn60",
       "rank": 22
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "dn33",
+      "target": "dn2",
       "rank": 23
+    },
+    {
+      "source": "inbrünstige.* Bußübung",
+      "target": "dn33",
+      "rank": 24
     },
     {
       "source": "in den drei Zeiten",
@@ -34091,33 +34176,38 @@
     },
     {
       "source": "Kräuter, Hirse",
-      "target": "an4.198",
+      "target": "mn45",
       "rank": 3
     },
     {
       "source": "Kräuter, Hirse",
-      "target": "mn25",
+      "target": "an4.198",
       "rank": 4
     },
     {
       "source": "Kräuter, Hirse",
-      "target": "mn51",
+      "target": "mn25",
       "rank": 5
     },
     {
       "source": "Kräuter, Hirse",
-      "target": "dn8",
+      "target": "mn51",
       "rank": 6
     },
     {
       "source": "Kräuter, Hirse",
-      "target": "dn25",
+      "target": "dn8",
       "rank": 7
     },
     {
       "source": "Kräuter, Hirse",
-      "target": "mn12",
+      "target": "dn25",
       "rank": 8
+    },
+    {
+      "source": "Kräuter, Hirse",
+      "target": "mn12",
+      "rank": 9
     },
     {
       "source": "Kreislauf der Wiedergeburten",
@@ -34806,23 +34896,28 @@
     },
     {
       "source": "lodert Freude auf",
-      "target": "dn10",
+      "target": "mn40",
       "rank": 7
     },
     {
       "source": "lodert Freude auf",
-      "target": "dn13",
+      "target": "dn10",
       "rank": 8
     },
     {
       "source": "lodert Freude auf",
-      "target": "dn2",
+      "target": "dn13",
       "rank": 9
     },
     {
       "source": "lodert Freude auf",
-      "target": "dn9",
+      "target": "dn2",
       "rank": 10
+    },
+    {
+      "source": "lodert Freude auf",
+      "target": "dn9",
+      "rank": 11
     },
     {
       "source": "losgelöst",
@@ -36281,28 +36376,33 @@
     },
     {
       "source": "nackt, wahrt den Anstand nicht",
-      "target": "an4.198",
+      "target": "mn45",
       "rank": 2
     },
     {
       "source": "nackt, wahrt den Anstand nicht",
-      "target": "mn51",
+      "target": "an4.198",
       "rank": 3
     },
     {
       "source": "nackt, wahrt den Anstand nicht",
-      "target": "dn8",
+      "target": "mn51",
       "rank": 4
     },
     {
       "source": "nackt, wahrt den Anstand nicht",
-      "target": "dn25",
+      "target": "dn8",
       "rank": 5
     },
     {
       "source": "nackt, wahrt den Anstand nicht",
-      "target": "mn60",
+      "target": "dn25",
       "rank": 6
+    },
+    {
+      "source": "nackt, wahrt den Anstand nicht",
+      "target": "mn60",
+      "rank": 7
     },
     {
       "source": "nährt das Entstehen",
@@ -36851,33 +36951,38 @@
     },
     {
       "source": "nur einen Bissen",
-      "target": "an4.198",
+      "target": "mn45",
       "rank": 2
     },
     {
       "source": "nur einen Bissen",
-      "target": "mn51",
+      "target": "an4.198",
       "rank": 3
     },
     {
       "source": "nur einen Bissen",
-      "target": "dn8",
+      "target": "mn51",
       "rank": 4
     },
     {
       "source": "nur einen Bissen",
-      "target": "dn25",
+      "target": "dn8",
       "rank": 5
     },
     {
       "source": "nur einen Bissen",
-      "target": "mn12",
+      "target": "dn25",
       "rank": 6
     },
     {
       "source": "nur einen Bissen",
-      "target": "mn36",
+      "target": "mn12",
       "rank": 7
+    },
+    {
+      "source": "nur einen Bissen",
+      "target": "mn36",
+      "rank": 8
     },
     {
       "source": "Nymphen",
@@ -37826,28 +37931,33 @@
     },
     {
       "source": "Roben aus Hanf",
-      "target": "an4.198",
+      "target": "mn45",
       "rank": 3
     },
     {
       "source": "Roben aus Hanf",
-      "target": "mn51",
+      "target": "an4.198",
       "rank": 4
     },
     {
       "source": "Roben aus Hanf",
-      "target": "dn8",
+      "target": "mn51",
       "rank": 5
     },
     {
       "source": "Roben aus Hanf",
-      "target": "dn25",
+      "target": "dn8",
       "rank": 6
     },
     {
       "source": "Roben aus Hanf",
-      "target": "mn12",
+      "target": "dn25",
       "rank": 7
+    },
+    {
+      "source": "Roben aus Hanf",
+      "target": "mn12",
+      "rank": 8
     },
     {
       "source": "Rosenapfel",
@@ -39651,23 +39761,33 @@
     },
     {
       "source": "Spenden haben keinen Sinn",
-      "target": "mn60",
+      "target": "mn41",
       "rank": 11
     },
     {
       "source": "Spenden haben keinen Sinn",
-      "target": "dn2",
+      "target": "mn42",
       "rank": 12
     },
     {
       "source": "Spenden haben keinen Sinn",
-      "target": "dn33",
+      "target": "mn60",
       "rank": 13
     },
     {
       "source": "Spenden haben keinen Sinn",
-      "target": "dn34",
+      "target": "dn2",
       "rank": 14
+    },
+    {
+      "source": "Spenden haben keinen Sinn",
+      "target": "dn33",
+      "rank": 15
+    },
+    {
+      "source": "Spenden haben keinen Sinn",
+      "target": "dn34",
+      "rank": 16
     },
     {
       "source": "Spiegelbild",
@@ -39856,58 +39976,68 @@
     },
     {
       "source": "Stock und Schwert",
-      "target": "an10.99",
+      "target": "mn41",
       "rank": 17
     },
     {
       "source": "Stock und Schwert",
-      "target": "mn27",
+      "target": "mn42",
       "rank": 18
     },
     {
       "source": "Stock und Schwert",
-      "target": "mn51",
+      "target": "an10.99",
       "rank": 19
     },
     {
       "source": "Stock und Schwert",
-      "target": "dn8",
+      "target": "mn27",
       "rank": 20
     },
     {
       "source": "Stock und Schwert",
-      "target": "dn10",
+      "target": "mn51",
       "rank": 21
     },
     {
       "source": "Stock und Schwert",
-      "target": "mn60",
+      "target": "dn8",
       "rank": 22
     },
     {
       "source": "Stock und Schwert",
-      "target": "dn1",
+      "target": "dn10",
       "rank": 23
     },
     {
       "source": "Stock und Schwert",
-      "target": "dn2",
+      "target": "mn60",
       "rank": 24
     },
     {
       "source": "Stock und Schwert",
-      "target": "mn38",
+      "target": "dn1",
       "rank": 25
     },
     {
       "source": "Stock und Schwert",
-      "target": "dn30",
+      "target": "dn2",
       "rank": 26
     },
     {
       "source": "Stock und Schwert",
-      "target": "dn34",
+      "target": "mn38",
       "rank": 27
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "dn30",
+      "rank": 28
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "dn34",
+      "rank": 29
     },
     {
       "source": "Straße durch die Wüste",
@@ -40323,6 +40453,11 @@
       "source": "Traurigkeit, die mit Gier, Hass und Täuschung",
       "target": "an4.162",
       "rank": 1
+    },
+    {
+      "source": "Traurigkeit, die mit Gier, Hass und Täuschung",
+      "target": "mn45",
+      "rank": 2
     },
     {
       "source": "Traurigkeit, die mit Sinnlichkeit",
@@ -40956,18 +41091,28 @@
     },
     {
       "source": "unbarmherzig",
-      "target": "mn14",
+      "target": "mn41",
       "rank": 13
     },
     {
       "source": "unbarmherzig",
-      "target": "mn51",
+      "target": "mn42",
       "rank": 14
     },
     {
       "source": "unbarmherzig",
-      "target": "mn60",
+      "target": "mn14",
       "rank": 15
+    },
+    {
+      "source": "unbarmherzig",
+      "target": "mn51",
+      "rank": 16
+    },
+    {
+      "source": "unbarmherzig",
+      "target": "mn60",
+      "rank": 17
     },
     {
       "source": "unbedingt",
