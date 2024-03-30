@@ -3581,6 +3581,11 @@
       "links": 4
     },
     {
+      "id": "Vermögen und Besitz anderer",
+      "group": "Examples",
+      "links": 5
+    },
+    {
       "id": "vernünftiger erwachsener",
       "group": "Examples",
       "links": 2
@@ -8046,7 +8051,7 @@
       "id": "an10.211",
       "group": "an",
       "rank": 1,
-      "links": 6
+      "links": 7
     },
     {
       "id": "an10.212",
@@ -8087,8 +8092,8 @@
     {
       "id": "an10.176",
       "group": "an",
-      "rank": 5,
-      "links": 8
+      "rank": 3,
+      "links": 9
     },
     {
       "id": "sn42.8",
@@ -8099,14 +8104,14 @@
     {
       "id": "mn41",
       "group": "mn",
-      "rank": 6,
-      "links": 5
+      "rank": 4,
+      "links": 6
     },
     {
       "id": "mn42",
       "group": "mn",
-      "rank": 7,
-      "links": 5
+      "rank": 5,
+      "links": 6
     },
     {
       "id": "an1.170-187",
@@ -9743,8 +9748,8 @@
     {
       "id": "an10.217",
       "group": "an",
-      "rank": 3,
-      "links": 5
+      "rank": 2,
+      "links": 6
     },
     {
       "id": "sn56.47",
@@ -42013,6 +42018,31 @@
       "source": "verloren, wenn er stirbt",
       "target": "dn16",
       "rank": 4
+    },
+    {
+      "source": "Vermögen und Besitz anderer",
+      "target": "an10.211",
+      "rank": 1
+    },
+    {
+      "source": "Vermögen und Besitz anderer",
+      "target": "an10.217",
+      "rank": 2
+    },
+    {
+      "source": "Vermögen und Besitz anderer",
+      "target": "an10.176",
+      "rank": 3
+    },
+    {
+      "source": "Vermögen und Besitz anderer",
+      "target": "mn41",
+      "rank": 4
+    },
+    {
+      "source": "Vermögen und Besitz anderer",
+      "target": "mn42",
+      "rank": 5
     },
     {
       "source": "vernünftiger erwachsener",
