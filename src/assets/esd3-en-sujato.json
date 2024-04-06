@@ -1696,11 +1696,6 @@
       "links": 4
     },
     {
-      "id": "heavenly high and luxurious bed",
-      "group": "Examples",
-      "links": 1
-    },
-    {
       "id": "he has made so much merit",
       "group": "Examples",
       "links": 3
@@ -2311,9 +2306,9 @@
       "links": 7
     },
     {
-      "id": "like lightning",
+      "id": "lightning",
       "group": "Examples",
-      "links": 2
+      "links": 12
     },
     {
       "id": "like the moon",
@@ -2439,6 +2434,11 @@
       "id": "lump of foam",
       "group": "Examples",
       "links": 2
+    },
+    {
+      "id": "luxurious bed",
+      "group": "Examples",
+      "links": 19
     },
     {
       "id": "make a refuge for themselves",
@@ -4586,7 +4586,7 @@
       "id": "dn2",
       "group": "dn",
       "rank": 1,
-      "links": 66
+      "links": 67
     },
     {
       "id": "dn17",
@@ -4826,7 +4826,7 @@
       "id": "dn16",
       "group": "dn",
       "rank": 1,
-      "links": 68
+      "links": 69
     },
     {
       "id": "an3.138",
@@ -4886,7 +4886,7 @@
       "id": "mn38",
       "group": "mn",
       "rank": 1,
-      "links": 27
+      "links": 28
     },
     {
       "id": "sn12.34",
@@ -5054,7 +5054,7 @@
       "id": "dn1",
       "group": "dn",
       "rank": 1,
-      "links": 26
+      "links": 27
     },
     {
       "id": "an6.30",
@@ -5468,7 +5468,7 @@
       "id": "thag20.1",
       "group": "thag",
       "rank": 7,
-      "links": 11
+      "links": 12
     },
     {
       "id": "iti109",
@@ -5612,7 +5612,7 @@
       "id": "an9.18",
       "group": "an",
       "rank": 1,
-      "links": 6
+      "links": 7
     },
     {
       "id": "an4.125",
@@ -5762,43 +5762,43 @@
       "id": "an4.198",
       "group": "an",
       "rank": 1,
-      "links": 21
+      "links": 22
     },
     {
       "id": "an10.99",
       "group": "an",
       "rank": 1,
-      "links": 17
+      "links": 18
     },
     {
       "id": "mn112",
       "group": "mn",
       "rank": 1,
-      "links": 17
+      "links": 18
     },
     {
       "id": "mn27",
       "group": "mn",
       "rank": 4,
-      "links": 14
+      "links": 15
     },
     {
       "id": "mn51",
       "group": "mn",
       "rank": 1,
-      "links": 23
+      "links": 24
     },
     {
       "id": "mn94",
       "group": "mn",
       "rank": 1,
-      "links": 22
+      "links": 23
     },
     {
       "id": "mn101",
       "group": "mn",
       "rank": 2,
-      "links": 20
+      "links": 21
     },
     {
       "id": "dn31",
@@ -6349,7 +6349,7 @@
     {
       "id": "an3.25",
       "group": "an",
-      "rank": 1,
+      "rank": 2,
       "links": 4
     },
     {
@@ -6638,13 +6638,13 @@
       "id": "an8.41",
       "group": "an",
       "rank": 1,
-      "links": 6
+      "links": 7
     },
     {
       "id": "an3.70",
       "group": "an",
       "rank": 1,
-      "links": 8
+      "links": 9
     },
     {
       "id": "sn35.127",
@@ -6662,19 +6662,19 @@
       "id": "an8.45",
       "group": "an",
       "rank": 3,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an8.43",
       "group": "an",
       "rank": 3,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an8.42",
       "group": "an",
       "rank": 4,
-      "links": 4
+      "links": 5
     },
     {
       "id": "mn89",
@@ -7639,8 +7639,8 @@
     {
       "id": "sn17.6",
       "group": "sn",
-      "rank": 8,
-      "links": 1
+      "rank": 3,
+      "links": 2
     },
     {
       "id": "sn17.7",
@@ -8822,7 +8822,7 @@
       "id": "mn66",
       "group": "mn",
       "rank": 3,
-      "links": 6
+      "links": 7
     },
     {
       "id": "an2.230-279",
@@ -10694,7 +10694,7 @@
       "id": "sn3.24",
       "group": "sn",
       "rank": 6,
-      "links": 2
+      "links": 3
     },
     {
       "id": "an3.57",
@@ -12098,7 +12098,7 @@
       "id": "an5.31",
       "group": "an",
       "rank": 1,
-      "links": 2
+      "links": 3
     },
     {
       "id": "sn2.23",
@@ -12272,7 +12272,7 @@
       "id": "sn6.13",
       "group": "sn",
       "rank": 7,
-      "links": 2
+      "links": 3
     },
     {
       "id": "an8.20",
@@ -14291,6 +14291,24 @@
       "links": 1
     },
     {
+      "id": "thag1.41",
+      "group": "thag",
+      "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "thag1.50",
+      "group": "thag",
+      "rank": 5,
+      "links": 1
+    },
+    {
+      "id": "sn1.40",
+      "group": "sn",
+      "rank": 6,
+      "links": 1
+    },
+    {
       "id": "sn16.3",
       "group": "sn",
       "rank": 1,
@@ -14582,6 +14600,18 @@
       "id": "an5.219",
       "group": "an",
       "rank": 7,
+      "links": 1
+    },
+    {
+      "id": "sn56.82",
+      "group": "sn",
+      "rank": 10,
+      "links": 1
+    },
+    {
+      "id": "kp2",
+      "group": "kp",
+      "rank": 11,
       "links": 1
     },
     {
@@ -31687,11 +31717,6 @@
       "rank": 4
     },
     {
-      "source": "heavenly high and luxurious bed",
-      "target": "an3.63",
-      "rank": 1
-    },
-    {
       "source": "he has made so much merit",
       "target": "sn10.10",
       "rank": 1
@@ -35657,14 +35682,64 @@
       "rank": 7
     },
     {
-      "source": "like lightning",
-      "target": "an3.25",
+      "source": "lightning",
+      "target": "dn16",
       "rank": 1
     },
     {
-      "source": "like lightning",
-      "target": "sn4.6",
+      "source": "lightning",
+      "target": "an3.25",
       "rank": 2
+    },
+    {
+      "source": "lightning",
+      "target": "sn17.6",
+      "rank": 3
+    },
+    {
+      "source": "lightning",
+      "target": "thag1.41",
+      "rank": 4
+    },
+    {
+      "source": "lightning",
+      "target": "thag1.50",
+      "rank": 5
+    },
+    {
+      "source": "lightning",
+      "target": "sn1.40",
+      "rank": 6
+    },
+    {
+      "source": "lightning",
+      "target": "sn4.6",
+      "rank": 7
+    },
+    {
+      "source": "lightning",
+      "target": "sn6.13",
+      "rank": 8
+    },
+    {
+      "source": "lightning",
+      "target": "an5.31",
+      "rank": 9
+    },
+    {
+      "source": "lightning",
+      "target": "sn3.24",
+      "rank": 10
+    },
+    {
+      "source": "lightning",
+      "target": "mn66",
+      "rank": 11
+    },
+    {
+      "source": "lightning",
+      "target": "thag20.1",
+      "rank": 12
     },
     {
       "source": "like the moon",
@@ -36535,6 +36610,101 @@
       "source": "lump of foam",
       "target": "thig16.1",
       "rank": 2
+    },
+    {
+      "source": "luxurious bed",
+      "target": "an3.63",
+      "rank": 1
+    },
+    {
+      "source": "luxurious bed",
+      "target": "an9.18",
+      "rank": 2
+    },
+    {
+      "source": "luxurious bed",
+      "target": "an8.41",
+      "rank": 3
+    },
+    {
+      "source": "luxurious bed",
+      "target": "an8.45",
+      "rank": 4
+    },
+    {
+      "source": "luxurious bed",
+      "target": "an8.43",
+      "rank": 5
+    },
+    {
+      "source": "luxurious bed",
+      "target": "an8.42",
+      "rank": 6
+    },
+    {
+      "source": "luxurious bed",
+      "target": "an3.70",
+      "rank": 7
+    },
+    {
+      "source": "luxurious bed",
+      "target": "dn1",
+      "rank": 8
+    },
+    {
+      "source": "luxurious bed",
+      "target": "dn2",
+      "rank": 9
+    },
+    {
+      "source": "luxurious bed",
+      "target": "sn56.82",
+      "rank": 10
+    },
+    {
+      "source": "luxurious bed",
+      "target": "kp2",
+      "rank": 11
+    },
+    {
+      "source": "luxurious bed",
+      "target": "an4.198",
+      "rank": 12
+    },
+    {
+      "source": "luxurious bed",
+      "target": "an10.99",
+      "rank": 13
+    },
+    {
+      "source": "luxurious bed",
+      "target": "mn112",
+      "rank": 14
+    },
+    {
+      "source": "luxurious bed",
+      "target": "mn27",
+      "rank": 15
+    },
+    {
+      "source": "luxurious bed",
+      "target": "mn51",
+      "rank": 16
+    },
+    {
+      "source": "luxurious bed",
+      "target": "mn94",
+      "rank": 17
+    },
+    {
+      "source": "luxurious bed",
+      "target": "mn101",
+      "rank": 18
+    },
+    {
+      "source": "luxurious bed",
+      "target": "mn38",
+      "rank": 19
     },
     {
       "source": "make a refuge for themselves",

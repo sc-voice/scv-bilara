@@ -1921,11 +1921,6 @@
       "links": 8
     },
     {
-      "id": "himmlische hohe und üppige Bett",
-      "group": "Examples",
-      "links": 1
-    },
-    {
       "id": "Hindernisse auf.*, die Verunreinigungen des Herzens",
       "group": "Examples",
       "links": 17
@@ -3506,6 +3501,11 @@
       "links": 9
     },
     {
+      "id": "üppige[rn] schlafstelle",
+      "group": "Examples",
+      "links": 16
+    },
+    {
       "id": "Ursprung der Welt",
       "group": "Examples",
       "links": 11
@@ -4925,7 +4925,7 @@
       "id": "dn2",
       "group": "dn",
       "rank": 1,
-      "links": 65
+      "links": 66
     },
     {
       "id": "sn22.123",
@@ -6029,25 +6029,25 @@
       "id": "an4.198",
       "group": "an",
       "rank": 1,
-      "links": 19
+      "links": 20
     },
     {
       "id": "an10.99",
       "group": "an",
       "rank": 2,
-      "links": 16
+      "links": 17
     },
     {
       "id": "mn27",
       "group": "mn",
       "rank": 3,
-      "links": 14
+      "links": 15
     },
     {
       "id": "mn51",
       "group": "mn",
       "rank": 1,
-      "links": 23
+      "links": 24
     },
     {
       "id": "mn119",
@@ -6059,7 +6059,7 @@
       "id": "mn38",
       "group": "mn",
       "rank": 1,
-      "links": 26
+      "links": 27
     },
     {
       "id": "dn29",
@@ -6089,7 +6089,7 @@
       "id": "dn1",
       "group": "dn",
       "rank": 1,
-      "links": 26
+      "links": 27
     },
     {
       "id": "sn22.43",
@@ -8033,13 +8033,13 @@
       "id": "an8.41",
       "group": "an",
       "rank": 1,
-      "links": 5
+      "links": 6
     },
     {
       "id": "an3.70",
       "group": "an",
       "rank": 1,
-      "links": 6
+      "links": 7
     },
     {
       "id": "an8.39",
@@ -8369,19 +8369,19 @@
       "id": "an8.42",
       "group": "an",
       "rank": 2,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an8.43",
       "group": "an",
       "rank": 4,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an8.45",
       "group": "an",
       "rank": 3,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an10.46",
@@ -8417,7 +8417,7 @@
       "id": "an9.18",
       "group": "an",
       "rank": 1,
-      "links": 6
+      "links": 7
     },
     {
       "id": "ud5.8",
@@ -16349,6 +16349,18 @@
       "id": "sn56.10",
       "group": "sn",
       "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "sn56.82",
+      "group": "sn",
+      "rank": 8,
+      "links": 1
+    },
+    {
+      "id": "kp2",
+      "group": "kp",
+      "rank": 9,
       "links": 1
     },
     {
@@ -31360,11 +31372,6 @@
       "rank": 8
     },
     {
-      "source": "himmlische hohe und üppige Bett",
-      "target": "an3.63",
-      "rank": 1
-    },
-    {
       "source": "Hindernisse auf.*, die Verunreinigungen des Herzens",
       "target": "dn25",
       "rank": 1
@@ -41628,6 +41635,86 @@
       "source": "unwürdige Gespräche",
       "target": "dn9",
       "rank": 9
+    },
+    {
+      "source": "üppige[rn] schlafstelle",
+      "target": "an3.63",
+      "rank": 1
+    },
+    {
+      "source": "üppige[rn] schlafstelle",
+      "target": "an9.18",
+      "rank": 2
+    },
+    {
+      "source": "üppige[rn] schlafstelle",
+      "target": "an8.41",
+      "rank": 3
+    },
+    {
+      "source": "üppige[rn] schlafstelle",
+      "target": "an8.45",
+      "rank": 4
+    },
+    {
+      "source": "üppige[rn] schlafstelle",
+      "target": "an8.43",
+      "rank": 5
+    },
+    {
+      "source": "üppige[rn] schlafstelle",
+      "target": "an8.42",
+      "rank": 6
+    },
+    {
+      "source": "üppige[rn] schlafstelle",
+      "target": "an3.70",
+      "rank": 7
+    },
+    {
+      "source": "üppige[rn] schlafstelle",
+      "target": "sn56.82",
+      "rank": 8
+    },
+    {
+      "source": "üppige[rn] schlafstelle",
+      "target": "kp2",
+      "rank": 9
+    },
+    {
+      "source": "üppige[rn] schlafstelle",
+      "target": "an4.198",
+      "rank": 10
+    },
+    {
+      "source": "üppige[rn] schlafstelle",
+      "target": "an10.99",
+      "rank": 11
+    },
+    {
+      "source": "üppige[rn] schlafstelle",
+      "target": "mn27",
+      "rank": 12
+    },
+    {
+      "source": "üppige[rn] schlafstelle",
+      "target": "mn51",
+      "rank": 13
+    },
+    {
+      "source": "üppige[rn] schlafstelle",
+      "target": "dn1",
+      "rank": 14
+    },
+    {
+      "source": "üppige[rn] schlafstelle",
+      "target": "dn2",
+      "rank": 15
+    },
+    {
+      "source": "üppige[rn] schlafstelle",
+      "target": "mn38",
+      "rank": 16
     },
     {
       "source": "Ursprung der Welt",
