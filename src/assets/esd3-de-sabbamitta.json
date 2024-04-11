@@ -113,7 +113,7 @@
     {
       "id": "als ‚Teller‘, als ‚Schale‘, als ‚Häferl‘",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "als unbeständig erkennt",
@@ -288,7 +288,7 @@
     {
       "id": "Bauer",
       "group": "Examples",
-      "links": 14
+      "links": 15
     },
     {
       "id": "bedingte.* Erscheinungen",
@@ -763,7 +763,7 @@
     {
       "id": "die ausführliche Bedeutung",
       "group": "Examples",
-      "links": 32
+      "links": 34
     },
     {
       "id": "die bedingen könnten",
@@ -1073,7 +1073,7 @@
     {
       "id": "eine Himmelsrichtung mit einem Herzen voller Liebe",
       "group": "Examples",
-      "links": 24
+      "links": 25
     },
     {
       "id": "ein Embryo.* empfangen",
@@ -1138,7 +1138,7 @@
     {
       "id": "einfühlsam und gütig",
       "group": "Examples",
-      "links": 21
+      "links": 23
     },
     {
       "id": "eingeäschert",
@@ -1538,7 +1538,7 @@
     {
       "id": "Galaxie",
       "group": "Examples",
-      "links": 11
+      "links": 12
     },
     {
       "id": "ganz allein von dir begangen",
@@ -2043,7 +2043,7 @@
     {
       "id": "inbrünstige.* Bußübung",
       "group": "Examples",
-      "links": 24
+      "links": 25
     },
     {
       "id": "in den drei Zeiten",
@@ -2108,7 +2108,7 @@
     {
       "id": "in Leiden und Unbehagen",
       "group": "Examples",
-      "links": 2
+      "links": 1
     },
     {
       "id": "innere Dinge",
@@ -2163,7 +2163,7 @@
     {
       "id": "ist es wirklich wahr",
       "group": "Examples",
-      "links": 26
+      "links": 27
     },
     {
       "id": "ist etwas anderes",
@@ -2353,7 +2353,7 @@
     {
       "id": "Kuhhirt",
       "group": "Examples",
-      "links": 22
+      "links": 23
     },
     {
       "id": "kühl geworden, voller Seligkeit",
@@ -2478,7 +2478,7 @@
     {
       "id": "Maus",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "Meditation unterstützen",
@@ -2488,7 +2488,7 @@
     {
       "id": "meditier konzentrier",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "meine Form sei so",
@@ -2553,7 +2553,7 @@
     {
       "id": "mit einem Stock",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "mit einem Zauber besungen",
@@ -2568,7 +2568,7 @@
     {
       "id": "mit ganzem Herzen",
       "group": "Examples",
-      "links": 17
+      "links": 18
     },
     {
       "id": "mitgenommen, leidend, schwer krank",
@@ -2578,7 +2578,7 @@
     {
       "id": "mit hängenden Schultern",
       "group": "Examples",
-      "links": 10
+      "links": 11
     },
     {
       "id": "mithilfe eines Gleichnisses",
@@ -2788,7 +2788,7 @@
     {
       "id": "Nymphen",
       "group": "Examples",
-      "links": 7
+      "links": 8
     },
     {
       "id": "ob bei Tag oder bei Nacht",
@@ -2948,7 +2948,7 @@
     {
       "id": "schädlichen Irrglauben",
       "group": "Examples",
-      "links": 11
+      "links": 12
     },
     {
       "id": "Schale umdrehen",
@@ -3208,7 +3208,7 @@
     {
       "id": "sowohl öffentlich als insgeheim",
       "group": "Examples",
-      "links": 10
+      "links": 11
     },
     {
       "id": "Spaltung des Saṅgha herbei",
@@ -3388,7 +3388,7 @@
     {
       "id": "übersinnliche Kraft und Macht",
       "group": "Examples",
-      "links": 9
+      "links": 10
     },
     {
       "id": "Übertretung",
@@ -3448,7 +3448,7 @@
     {
       "id": "Unbeständigkeit aller Bedingungen beobachte",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "Unbeständigkeit von Bedingungen",
@@ -3808,7 +3808,7 @@
     {
       "id": "wahrhaftig erkennen und sehen",
       "group": "Examples",
-      "links": 7
+      "links": 8
     },
     {
       "id": "wahrhaftig versteht: ‚Das ist das Leiden‘",
@@ -3838,7 +3838,7 @@
     {
       "id": "warmherzige Eigenschaft",
       "group": "Examples",
-      "links": 13
+      "links": 14
     },
     {
       "id": "warum lebe ich nicht allein",
@@ -4108,7 +4108,7 @@
     {
       "id": "wie eine Kuh",
       "group": "Examples",
-      "links": 7
+      "links": 8
     },
     {
       "id": "wie ein Tautropfen",
@@ -4153,7 +4153,7 @@
     {
       "id": "wie ein.* Katze",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "wie Menschen ein Haus betreten oder verlassen",
@@ -5276,12 +5276,6 @@
       "links": 10
     },
     {
-      "id": "mn139",
-      "group": "mn",
-      "rank": 1,
-      "links": 7
-    },
-    {
       "id": "sn35.53",
       "group": "sn",
       "rank": 1,
@@ -5332,7 +5326,7 @@
     {
       "id": "an5.49",
       "group": "an",
-      "rank": 3,
+      "rank": 4,
       "links": 2
     },
     {
@@ -6158,6 +6152,12 @@
       "links": 1
     },
     {
+      "id": "mn50",
+      "group": "mn",
+      "rank": 1,
+      "links": 9
+    },
+    {
       "id": "sn7.12",
       "group": "sn",
       "rank": 1,
@@ -6166,7 +6166,7 @@
     {
       "id": "cp2",
       "group": "cp",
-      "rank": 12,
+      "rank": 13,
       "links": 2
     },
     {
@@ -6984,6 +6984,12 @@
       "group": "an",
       "rank": 10,
       "links": 2
+    },
+    {
+      "id": "mn139",
+      "group": "mn",
+      "rank": 1,
+      "links": 6
     },
     {
       "id": "an9.23",
@@ -8105,13 +8111,13 @@
       "id": "mn41",
       "group": "mn",
       "rank": 4,
-      "links": 6
+      "links": 8
     },
     {
       "id": "mn42",
       "group": "mn",
       "rank": 5,
-      "links": 6
+      "links": 8
     },
     {
       "id": "an1.170-187",
@@ -9874,7 +9880,7 @@
     {
       "id": "an4.125",
       "group": "an",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
@@ -10636,7 +10642,7 @@
     {
       "id": "an11.9",
       "group": "an",
-      "rank": 1,
+      "rank": 2,
       "links": 3
     },
     {
@@ -11874,6 +11880,12 @@
       "group": "an",
       "rank": 9,
       "links": 1
+    },
+    {
+      "id": "mn49",
+      "group": "mn",
+      "rank": 7,
+      "links": 5
     },
     {
       "id": "an6.52",
@@ -13340,15 +13352,9 @@
       "links": 1
     },
     {
-      "id": "ud4.5",
-      "group": "ud",
-      "rank": 1,
-      "links": 4
-    },
-    {
-      "id": "sn35.151",
+      "id": "sn3.23",
       "group": "sn",
-      "rank": 2,
+      "rank": 1,
       "links": 1
     },
     {
@@ -13460,9 +13466,15 @@
       "links": 3
     },
     {
+      "id": "mn48",
+      "group": "mn",
+      "rank": 1,
+      "links": 6
+    },
+    {
       "id": "sn12.32",
       "group": "sn",
-      "rank": 18,
+      "rank": 19,
       "links": 1
     },
     {
@@ -14110,43 +14122,43 @@
     {
       "id": "an11.30-69",
       "group": "an",
-      "rank": 10,
+      "rank": 11,
       "links": 1
     },
     {
       "id": "an11.70-117",
       "group": "an",
-      "rank": 11,
+      "rank": 12,
       "links": 1
     },
     {
       "id": "an11.118-165",
       "group": "an",
-      "rank": 12,
+      "rank": 13,
       "links": 1
     },
     {
       "id": "an11.166-213",
       "group": "an",
-      "rank": 13,
+      "rank": 14,
       "links": 1
     },
     {
       "id": "an11.214-261",
       "group": "an",
-      "rank": 14,
+      "rank": 15,
       "links": 1
     },
     {
       "id": "an11.262-309",
       "group": "an",
-      "rank": 15,
+      "rank": 16,
       "links": 1
     },
     {
       "id": "an11.310-357",
       "group": "an",
-      "rank": 16,
+      "rank": 17,
       "links": 1
     },
     {
@@ -14158,13 +14170,13 @@
     {
       "id": "an11.406-453",
       "group": "an",
-      "rank": 18,
+      "rank": 19,
       "links": 1
     },
     {
       "id": "an11.454-501",
       "group": "an",
-      "rank": 19,
+      "rank": 20,
       "links": 1
     },
     {
@@ -14440,7 +14452,7 @@
     {
       "id": "thag3.4",
       "group": "thag",
-      "rank": 3,
+      "rank": 4,
       "links": 1
     },
     {
@@ -14710,7 +14722,7 @@
     {
       "id": "an6.16",
       "group": "an",
-      "rank": 12,
+      "rank": 13,
       "links": 2
     },
     {
@@ -14950,7 +14962,7 @@
     {
       "id": "thag19.1",
       "group": "thag",
-      "rank": 2,
+      "rank": 3,
       "links": 8
     },
     {
@@ -15102,6 +15114,12 @@
       "group": "sn",
       "rank": 3,
       "links": 2
+    },
+    {
+      "id": "ud4.5",
+      "group": "ud",
+      "rank": 1,
+      "links": 3
     },
     {
       "id": "ud7.7",
@@ -15856,19 +15874,19 @@
     {
       "id": "an6.11",
       "group": "an",
-      "rank": 1,
+      "rank": 2,
       "links": 2
     },
     {
       "id": "an6.12",
       "group": "an",
-      "rank": 2,
+      "rank": 3,
       "links": 2
     },
     {
       "id": "an5.105",
       "group": "an",
-      "rank": 6,
+      "rank": 7,
       "links": 1
     },
     {
@@ -17002,25 +17020,25 @@
     {
       "id": "an6.14",
       "group": "an",
-      "rank": 6,
+      "rank": 7,
       "links": 1
     },
     {
       "id": "an6.15",
       "group": "an",
-      "rank": 7,
+      "rank": 8,
       "links": 1
     },
     {
       "id": "an6.18",
       "group": "an",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
       "id": "an6.17",
       "group": "an",
-      "rank": 11,
+      "rank": 12,
       "links": 1
     },
     {
@@ -18822,11 +18840,6 @@
       "rank": 5
     },
     {
-      "source": "als ‚Teller‘, als ‚Schale‘, als ‚Häferl‘",
-      "target": "mn139",
-      "rank": 1
-    },
-    {
       "source": "als unbeständig erkennt",
       "target": "sn35.53",
       "rank": 1
@@ -19783,28 +19796,33 @@
     },
     {
       "source": "Bauer",
-      "target": "dn16",
+      "target": "mn50",
       "rank": 10
     },
     {
       "source": "Bauer",
-      "target": "sn7.12",
+      "target": "dn16",
       "rank": 11
     },
     {
       "source": "Bauer",
-      "target": "cp2",
+      "target": "sn7.12",
       "rank": 12
     },
     {
       "source": "Bauer",
-      "target": "sn22.102",
+      "target": "cp2",
       "rank": 13
     },
     {
       "source": "Bauer",
-      "target": "thag10.1",
+      "target": "sn22.102",
       "rank": 14
+    },
+    {
+      "source": "Bauer",
+      "target": "thag10.1",
+      "rank": 15
     },
     {
       "source": "bedingte.* Erscheinungen",
@@ -23127,6 +23145,16 @@
       "rank": 32
     },
     {
+      "source": "die ausführliche Bedeutung",
+      "target": "mn41",
+      "rank": 33
+    },
+    {
+      "source": "die ausführliche Bedeutung",
+      "target": "mn42",
+      "rank": 34
+    },
+    {
       "source": "die bedingen könnten",
       "target": "an4.171",
       "rank": 1
@@ -24788,113 +24816,118 @@
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an4.126",
+      "target": "mn50",
       "rank": 3
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an9.18",
+      "target": "an4.126",
       "rank": 4
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an4.125",
+      "target": "an9.18",
       "rank": 5
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an4.190",
+      "target": "an4.125",
       "rank": 6
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an10.219",
+      "target": "an4.190",
       "rank": 7
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "sn41.7",
+      "target": "an10.219",
       "rank": 8
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an11.16",
+      "target": "sn41.7",
       "rank": 9
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "mn40",
+      "target": "an11.16",
       "rank": 10
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "mn52",
+      "target": "mn40",
       "rank": 11
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an3.63",
+      "target": "mn52",
       "rank": 12
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an3.66",
+      "target": "an3.63",
       "rank": 13
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "sn46.54",
+      "target": "an3.66",
       "rank": 14
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "sn42.8",
+      "target": "sn46.54",
       "rank": 15
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an3.65",
+      "target": "sn42.8",
       "rank": 16
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an5.192",
+      "target": "an3.65",
       "rank": 17
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "mn7",
+      "target": "an5.192",
       "rank": 18
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "mn43",
+      "target": "mn7",
       "rank": 19
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn13",
+      "target": "mn43",
       "rank": 20
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn26",
+      "target": "dn13",
       "rank": 21
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn17",
+      "target": "dn26",
       "rank": 22
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn19",
+      "target": "dn17",
       "rank": 23
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn33",
+      "target": "dn19",
       "rank": 24
+    },
+    {
+      "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
+      "target": "dn33",
+      "rank": 25
     },
     {
       "source": "ein Embryo.* empfangen",
@@ -25338,48 +25371,58 @@
     },
     {
       "source": "einfühlsam und gütig",
-      "target": "an10.99",
+      "target": "mn41",
       "rank": 13
     },
     {
       "source": "einfühlsam und gütig",
-      "target": "mn27",
+      "target": "mn42",
       "rank": 14
     },
     {
       "source": "einfühlsam und gütig",
-      "target": "mn51",
+      "target": "an10.99",
       "rank": 15
     },
     {
       "source": "einfühlsam und gütig",
-      "target": "dn8",
+      "target": "mn27",
       "rank": 16
     },
     {
       "source": "einfühlsam und gütig",
-      "target": "dn10",
+      "target": "mn51",
       "rank": 17
     },
     {
       "source": "einfühlsam und gütig",
-      "target": "dn1",
+      "target": "dn8",
       "rank": 18
     },
     {
       "source": "einfühlsam und gütig",
-      "target": "dn2",
+      "target": "dn10",
       "rank": 19
     },
     {
       "source": "einfühlsam und gütig",
-      "target": "mn38",
+      "target": "dn1",
       "rank": 20
     },
     {
       "source": "einfühlsam und gütig",
-      "target": "dn30",
+      "target": "dn2",
       "rank": 21
+    },
+    {
+      "source": "einfühlsam und gütig",
+      "target": "mn38",
+      "rank": 22
+    },
+    {
+      "source": "einfühlsam und gütig",
+      "target": "dn30",
+      "rank": 23
     },
     {
       "source": "eingeäschert",
@@ -28713,8 +28756,13 @@
     },
     {
       "source": "Galaxie",
-      "target": "dn1",
+      "target": "mn49",
       "rank": 11
+    },
+    {
+      "source": "Galaxie",
+      "target": "dn1",
+      "rank": 12
     },
     {
       "source": "ganz allein von dir begangen",
@@ -31973,28 +32021,33 @@
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "sn42.12",
+      "target": "mn49",
       "rank": 20
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn51",
+      "target": "sn42.12",
       "rank": 21
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn60",
+      "target": "mn51",
       "rank": 22
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "dn2",
+      "target": "mn60",
       "rank": 23
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "dn33",
+      "target": "dn2",
       "rank": 24
+    },
+    {
+      "source": "inbrünstige.* Bußübung",
+      "target": "dn33",
+      "rank": 25
     },
     {
       "source": "in den drei Zeiten",
@@ -32273,13 +32326,8 @@
     },
     {
       "source": "in Leiden und Unbehagen",
-      "target": "ud4.5",
+      "target": "sn3.23",
       "rank": 1
-    },
-    {
-      "source": "in Leiden und Unbehagen",
-      "target": "sn35.151",
-      "rank": 2
     },
     {
       "source": "innere Dinge",
@@ -32588,48 +32636,53 @@
     },
     {
       "source": "ist es wirklich wahr",
-      "target": "sn12.32",
+      "target": "mn48",
       "rank": 18
     },
     {
       "source": "ist es wirklich wahr",
-      "target": "sn12.70",
+      "target": "sn12.32",
       "rank": 19
     },
     {
       "source": "ist es wirklich wahr",
-      "target": "dn12",
+      "target": "sn12.70",
       "rank": 20
     },
     {
       "source": "ist es wirklich wahr",
-      "target": "mn21",
+      "target": "dn12",
       "rank": 21
     },
     {
       "source": "ist es wirklich wahr",
-      "target": "dn4",
+      "target": "mn21",
       "rank": 22
     },
     {
       "source": "ist es wirklich wahr",
-      "target": "dn5",
+      "target": "dn4",
       "rank": 23
     },
     {
       "source": "ist es wirklich wahr",
-      "target": "dn25",
+      "target": "dn5",
       "rank": 24
     },
     {
       "source": "ist es wirklich wahr",
-      "target": "dn9",
+      "target": "dn25",
       "rank": 25
     },
     {
       "source": "ist es wirklich wahr",
-      "target": "dn23",
+      "target": "dn9",
       "rank": 26
+    },
+    {
+      "source": "ist es wirklich wahr",
+      "target": "dn23",
+      "rank": 27
     },
     {
       "source": "ist etwas anderes",
@@ -34358,68 +34411,73 @@
     },
     {
       "source": "Kuhhirt",
-      "target": "an11.30-69",
+      "target": "mn50",
       "rank": 10
     },
     {
       "source": "Kuhhirt",
-      "target": "an11.70-117",
+      "target": "an11.30-69",
       "rank": 11
     },
     {
       "source": "Kuhhirt",
-      "target": "an11.118-165",
+      "target": "an11.70-117",
       "rank": 12
     },
     {
       "source": "Kuhhirt",
-      "target": "an11.166-213",
+      "target": "an11.118-165",
       "rank": 13
     },
     {
       "source": "Kuhhirt",
-      "target": "an11.214-261",
+      "target": "an11.166-213",
       "rank": 14
     },
     {
       "source": "Kuhhirt",
-      "target": "an11.262-309",
+      "target": "an11.214-261",
       "rank": 15
     },
     {
       "source": "Kuhhirt",
-      "target": "an11.310-357",
+      "target": "an11.262-309",
       "rank": 16
     },
     {
       "source": "Kuhhirt",
-      "target": "an11.358-405",
+      "target": "an11.310-357",
       "rank": 17
     },
     {
       "source": "Kuhhirt",
-      "target": "an11.406-453",
+      "target": "an11.358-405",
       "rank": 18
     },
     {
       "source": "Kuhhirt",
-      "target": "an11.454-501",
+      "target": "an11.406-453",
       "rank": 19
     },
     {
       "source": "Kuhhirt",
-      "target": "dhp129-145",
+      "target": "an11.454-501",
       "rank": 20
     },
     {
       "source": "Kuhhirt",
-      "target": "dhp1-20",
+      "target": "dhp129-145",
       "rank": 21
     },
     {
       "source": "Kuhhirt",
-      "target": "mn12",
+      "target": "dhp1-20",
       "rank": 22
+    },
+    {
+      "source": "Kuhhirt",
+      "target": "mn12",
+      "rank": 23
     },
     {
       "source": "kühl geworden, voller Seligkeit",
@@ -35163,8 +35221,13 @@
     },
     {
       "source": "Maus",
-      "target": "thag3.4",
+      "target": "mn50",
       "rank": 3
+    },
+    {
+      "source": "Maus",
+      "target": "thag3.4",
+      "rank": 4
     },
     {
       "source": "Meditation unterstützen",
@@ -35183,13 +35246,18 @@
     },
     {
       "source": "meditier konzentrier",
-      "target": "an11.9",
+      "target": "mn50",
       "rank": 1
     },
     {
       "source": "meditier konzentrier",
-      "target": "an6.46",
+      "target": "an11.9",
       "rank": 2
+    },
+    {
+      "source": "meditier konzentrier",
+      "target": "an6.46",
+      "rank": 3
     },
     {
       "source": "meine Form sei so",
@@ -35598,13 +35666,18 @@
     },
     {
       "source": "mit einem Stock",
-      "target": "mn21",
+      "target": "mn49",
       "rank": 7
     },
     {
       "source": "mit einem Stock",
-      "target": "mn35",
+      "target": "mn21",
       "rank": 8
+    },
+    {
+      "source": "mit einem Stock",
+      "target": "mn35",
+      "rank": 9
     },
     {
       "source": "mit einem Zauber besungen",
@@ -35763,8 +35836,13 @@
     },
     {
       "source": "mit ganzem Herzen",
-      "target": "mn134",
+      "target": "mn48",
       "rank": 17
+    },
+    {
+      "source": "mit ganzem Herzen",
+      "target": "mn134",
+      "rank": 18
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
@@ -35958,48 +36036,53 @@
     },
     {
       "source": "mit hängenden Schultern",
-      "target": "dn25",
+      "target": "mn50",
       "rank": 2
     },
     {
       "source": "mit hängenden Schultern",
-      "target": "an5.49",
+      "target": "dn25",
       "rank": 3
     },
     {
       "source": "mit hängenden Schultern",
-      "target": "an10.94",
+      "target": "an5.49",
       "rank": 4
     },
     {
       "source": "mit hängenden Schultern",
-      "target": "an10.93",
+      "target": "an10.94",
       "rank": 5
     },
     {
       "source": "mit hängenden Schultern",
-      "target": "sn4.25",
+      "target": "an10.93",
       "rank": 6
     },
     {
       "source": "mit hängenden Schultern",
-      "target": "mn35",
+      "target": "sn4.25",
       "rank": 7
     },
     {
       "source": "mit hängenden Schultern",
-      "target": "mn93",
+      "target": "mn35",
       "rank": 8
     },
     {
       "source": "mit hängenden Schultern",
-      "target": "mn22",
+      "target": "mn93",
       "rank": 9
     },
     {
       "source": "mit hängenden Schultern",
-      "target": "mn38",
+      "target": "mn22",
       "rank": 10
+    },
+    {
+      "source": "mit hängenden Schultern",
+      "target": "mn38",
+      "rank": 11
     },
     {
       "source": "mithilfe eines Gleichnisses",
@@ -37028,8 +37111,13 @@
     },
     {
       "source": "Nymphen",
-      "target": "thag20.1",
+      "target": "mn50",
       "rank": 7
+    },
+    {
+      "source": "Nymphen",
+      "target": "thag20.1",
+      "rank": 8
     },
     {
       "source": "ob bei Tag oder bei Nacht",
@@ -38273,8 +38361,13 @@
     },
     {
       "source": "schädlichen Irrglauben",
-      "target": "mn35",
+      "target": "mn49",
       "rank": 11
+    },
+    {
+      "source": "schädlichen Irrglauben",
+      "target": "mn35",
+      "rank": 12
     },
     {
       "source": "Schale umdrehen",
@@ -39618,53 +39711,58 @@
     },
     {
       "source": "sowohl öffentlich als insgeheim",
-      "target": "an6.11",
+      "target": "mn48",
       "rank": 1
     },
     {
       "source": "sowohl öffentlich als insgeheim",
-      "target": "an6.12",
+      "target": "an6.11",
       "rank": 2
     },
     {
       "source": "sowohl öffentlich als insgeheim",
-      "target": "dn34",
+      "target": "an6.12",
       "rank": 3
     },
     {
       "source": "sowohl öffentlich als insgeheim",
-      "target": "dn33",
+      "target": "dn34",
       "rank": 4
     },
     {
       "source": "sowohl öffentlich als insgeheim",
-      "target": "dn16",
+      "target": "dn33",
       "rank": 5
     },
     {
       "source": "sowohl öffentlich als insgeheim",
-      "target": "an5.105",
+      "target": "dn16",
       "rank": 6
     },
     {
       "source": "sowohl öffentlich als insgeheim",
-      "target": "an11.17",
+      "target": "an5.105",
       "rank": 7
     },
     {
       "source": "sowohl öffentlich als insgeheim",
-      "target": "mn33",
+      "target": "an11.17",
       "rank": 8
     },
     {
       "source": "sowohl öffentlich als insgeheim",
-      "target": "mn31",
+      "target": "mn33",
       "rank": 9
     },
     {
       "source": "sowohl öffentlich als insgeheim",
-      "target": "mn128",
+      "target": "mn31",
       "rank": 10
+    },
+    {
+      "source": "sowohl öffentlich als insgeheim",
+      "target": "mn128",
+      "rank": 11
     },
     {
       "source": "Spaltung des Saṅgha herbei",
@@ -40883,13 +40981,18 @@
     },
     {
       "source": "übersinnliche Kraft und Macht",
-      "target": "dn18",
+      "target": "mn49",
       "rank": 8
     },
     {
       "source": "übersinnliche Kraft und Macht",
-      "target": "dn14",
+      "target": "dn18",
       "rank": 9
+    },
+    {
+      "source": "übersinnliche Kraft und Macht",
+      "target": "dn14",
+      "rank": 10
     },
     {
       "source": "Übertretung",
@@ -41280,6 +41383,11 @@
       "source": "Unbeständigkeit aller Bedingungen beobachte",
       "target": "sn55.3",
       "rank": 2
+    },
+    {
+      "source": "Unbeständigkeit aller Bedingungen beobachte",
+      "target": "mn50",
+      "rank": 3
     },
     {
       "source": "Unbeständigkeit von Bedingungen",
@@ -43583,8 +43691,13 @@
     },
     {
       "source": "wahrhaftig erkennen und sehen",
-      "target": "dn34",
+      "target": "mn48",
       "rank": 7
+    },
+    {
+      "source": "wahrhaftig erkennen und sehen",
+      "target": "dn34",
+      "rank": 8
     },
     {
       "source": "wahrhaftig versteht: ‚Das ist das Leiden‘",
@@ -43843,63 +43956,68 @@
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "dn33",
+      "target": "mn48",
       "rank": 2
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "an6.12",
+      "target": "dn33",
       "rank": 3
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "dn34",
+      "target": "an6.12",
       "rank": 4
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "an6.11",
+      "target": "dn34",
       "rank": 5
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "an6.14",
+      "target": "an6.11",
       "rank": 6
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "an6.15",
+      "target": "an6.14",
       "rank": 7
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "an6.18",
+      "target": "an6.15",
       "rank": 8
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "an6.20",
+      "target": "an6.18",
       "rank": 9
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "an6.13",
+      "target": "an6.20",
       "rank": 10
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "an6.17",
+      "target": "an6.13",
       "rank": 11
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "an6.16",
+      "target": "an6.17",
       "rank": 12
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "an6.19",
+      "target": "an6.16",
       "rank": 13
+    },
+    {
+      "source": "warmherzige Eigenschaft",
+      "target": "an6.19",
+      "rank": 14
     },
     {
       "source": "warum lebe ich nicht allein",
@@ -45698,8 +45816,13 @@
     },
     {
       "source": "wie eine Kuh",
-      "target": "thag19.1",
+      "target": "mn48",
       "rank": 7
+    },
+    {
+      "source": "wie eine Kuh",
+      "target": "thag19.1",
+      "rank": 8
     },
     {
       "source": "wie ein Tautropfen",
@@ -46123,8 +46246,13 @@
     },
     {
       "source": "wie ein.* Katze",
-      "target": "thag19.1",
+      "target": "mn50",
       "rank": 2
+    },
+    {
+      "source": "wie ein.* Katze",
+      "target": "thag19.1",
+      "rank": 3
     },
     {
       "source": "wie Menschen ein Haus betreten oder verlassen",
