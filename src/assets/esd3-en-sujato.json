@@ -2201,6 +2201,11 @@
       "links": 2
     },
     {
+      "id": "lay people",
+      "group": "Examples",
+      "links": 11
+    },
+    {
       "id": "lead the mendicant",
       "group": "Examples",
       "links": 5
@@ -5732,7 +5737,7 @@
       "id": "mn99",
       "group": "mn",
       "rank": 4,
-      "links": 5
+      "links": 6
     },
     {
       "id": "dn26",
@@ -7238,7 +7243,7 @@
       "id": "an5.234",
       "group": "an",
       "rank": 3,
-      "links": 3
+      "links": 4
     },
     {
       "id": "an7.75",
@@ -8438,7 +8443,7 @@
       "id": "an6.57",
       "group": "an",
       "rank": 1,
-      "links": 5
+      "links": 6
     },
     {
       "id": "sn24.7",
@@ -9686,7 +9691,7 @@
       "id": "sn9.5",
       "group": "sn",
       "rank": 1,
-      "links": 1
+      "links": 2
     },
     {
       "id": "sn9.12",
@@ -9704,7 +9709,7 @@
       "id": "sn9.7",
       "group": "sn",
       "rank": 4,
-      "links": 1
+      "links": 2
     },
     {
       "id": "sn9.10",
@@ -11222,7 +11227,7 @@
       "id": "an8.23",
       "group": "an",
       "rank": 1,
-      "links": 3
+      "links": 4
     },
     {
       "id": "sn1.27",
@@ -11930,13 +11935,13 @@
       "id": "an8.88",
       "group": "an",
       "rank": 2,
-      "links": 1
+      "links": 2
     },
     {
       "id": "an8.89",
       "group": "an",
       "rank": 3,
-      "links": 1
+      "links": 2
     },
     {
       "id": "an4.157",
@@ -14109,6 +14114,24 @@
       "group": "iti",
       "rank": 5,
       "links": 2
+    },
+    {
+      "id": "an5.235",
+      "group": "an",
+      "rank": 1,
+      "links": 1
+    },
+    {
+      "id": "sn20.9",
+      "group": "sn",
+      "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "sn45.24",
+      "group": "sn",
+      "rank": 9,
+      "links": 1
     },
     {
       "id": "an5.100",
@@ -35136,6 +35159,61 @@
       "source": "law of nature persists",
       "target": "sn12.20",
       "rank": 2
+    },
+    {
+      "source": "lay people",
+      "target": "an5.235",
+      "rank": 1
+    },
+    {
+      "source": "lay people",
+      "target": "an8.88",
+      "rank": 2
+    },
+    {
+      "source": "lay people",
+      "target": "an8.89",
+      "rank": 3
+    },
+    {
+      "source": "lay people",
+      "target": "sn20.9",
+      "rank": 4
+    },
+    {
+      "source": "lay people",
+      "target": "an8.23",
+      "rank": 5
+    },
+    {
+      "source": "lay people",
+      "target": "sn9.5",
+      "rank": 6
+    },
+    {
+      "source": "lay people",
+      "target": "an5.234",
+      "rank": 7
+    },
+    {
+      "source": "lay people",
+      "target": "sn9.7",
+      "rank": 8
+    },
+    {
+      "source": "lay people",
+      "target": "sn45.24",
+      "rank": 9
+    },
+    {
+      "source": "lay people",
+      "target": "an6.57",
+      "rank": 10
+    },
+    {
+      "source": "lay people",
+      "target": "mn99",
+      "rank": 11
     },
     {
       "source": "lead the mendicant",
