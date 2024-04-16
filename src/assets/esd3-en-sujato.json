@@ -171,6 +171,11 @@
       "links": 5
     },
     {
+      "id": "an inquirer",
+      "group": "Examples",
+      "links": 2
+    },
+    {
       "id": "an obstacle for you alone",
       "group": "Examples",
       "links": 1
@@ -5047,7 +5052,7 @@
       "id": "mn115",
       "group": "mn",
       "rank": 1,
-      "links": 11
+      "links": 12
     },
     {
       "id": "mn75",
@@ -6212,6 +6217,12 @@
       "group": "sn",
       "rank": 5,
       "links": 3
+    },
+    {
+      "id": "mn47",
+      "group": "mn",
+      "rank": 1,
+      "links": 1
     },
     {
       "id": "sn12.54",
@@ -20389,6 +20400,16 @@
       "source": "angry at an angry person",
       "target": "sn11.5",
       "rank": 5
+    },
+    {
+      "source": "an inquirer",
+      "target": "mn47",
+      "rank": 1
+    },
+    {
+      "source": "an inquirer",
+      "target": "mn115",
+      "rank": 2
     },
     {
       "source": "an obstacle for you alone",

@@ -1191,6 +1191,11 @@
       "links": 2
     },
     {
+      "id": "ein Untersucher",
+      "group": "Examples",
+      "links": 1
+    },
+    {
       "id": "Elefant in der Wildnis",
       "group": "Examples",
       "links": 2
@@ -10253,6 +10258,12 @@
       "id": "iti19",
       "group": "iti",
       "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "mn47",
+      "group": "mn",
+      "rank": 1,
       "links": 1
     },
     {
@@ -25673,6 +25684,11 @@
       "source": "Eintracht geschaffen",
       "target": "iti19",
       "rank": 2
+    },
+    {
+      "source": "ein Untersucher",
+      "target": "mn47",
+      "rank": 1
     },
     {
       "source": "Elefant in der Wildnis",
