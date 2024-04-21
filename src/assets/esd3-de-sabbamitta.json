@@ -668,7 +668,7 @@
     {
       "id": "den Buddha nie persönlich getroffen",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "den Dhamma in kurzer Form",
@@ -693,7 +693,7 @@
     {
       "id": "den sicheren Pfad",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "der das Aufhören des Leidens sieht",
@@ -1708,7 +1708,7 @@
     {
       "id": "Gewissen und Zurückhaltung",
       "group": "Examples",
-      "links": 26
+      "links": 1
     },
     {
       "id": "gewürdigt, verehrt und wertgeschätzt",
@@ -4708,7 +4708,7 @@
       "id": "dn21",
       "group": "dn",
       "rank": 1,
-      "links": 24
+      "links": 23
     },
     {
       "id": "mn82",
@@ -4756,7 +4756,7 @@
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 115
+      "links": 114
     },
     {
       "id": "an4.189",
@@ -4768,7 +4768,7 @@
       "id": "dn34",
       "group": "dn",
       "rank": 1,
-      "links": 83
+      "links": 82
     },
     {
       "id": "an8.118",
@@ -4881,8 +4881,8 @@
     {
       "id": "an8.81",
       "group": "an",
-      "rank": 2,
-      "links": 3
+      "rank": 3,
+      "links": 2
     },
     {
       "id": "an8.9",
@@ -4924,7 +4924,7 @@
       "id": "mn39",
       "group": "mn",
       "rank": 1,
-      "links": 25
+      "links": 24
     },
     {
       "id": "dn2",
@@ -5463,7 +5463,7 @@
     {
       "id": "thag18.1",
       "group": "thag",
-      "rank": 4,
+      "rank": 1,
       "links": 4
     },
     {
@@ -8509,12 +8509,6 @@
       "links": 1
     },
     {
-      "id": "ud5.6",
-      "group": "ud",
-      "rank": 1,
-      "links": 2
-    },
-    {
       "id": "an4.257",
       "group": "an",
       "rank": 1,
@@ -8545,27 +8539,33 @@
       "links": 1
     },
     {
-      "id": "an5.151",
+      "id": "an6.101",
       "group": "an",
       "rank": 2,
       "links": 1
     },
     {
-      "id": "an5.152",
+      "id": "an5.151",
       "group": "an",
       "rank": 3,
       "links": 1
     },
     {
-      "id": "an5.153",
+      "id": "an5.152",
       "group": "an",
       "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "an5.153",
+      "group": "an",
+      "rank": 5,
       "links": 2
     },
     {
       "id": "an6.86",
       "group": "an",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
@@ -8577,13 +8577,13 @@
     {
       "id": "an6.88",
       "group": "an",
-      "rank": 7,
+      "rank": 8,
       "links": 1
     },
     {
       "id": "an3.22",
       "group": "an",
-      "rank": 8,
+      "rank": 9,
       "links": 2
     },
     {
@@ -8638,19 +8638,19 @@
       "id": "an7.5",
       "group": "an",
       "rank": 1,
-      "links": 2
+      "links": 1
     },
     {
       "id": "an7.7",
       "group": "an",
       "rank": 2,
-      "links": 2
+      "links": 1
     },
     {
       "id": "an7.6",
       "group": "an",
       "rank": 3,
-      "links": 3
+      "links": 2
     },
     {
       "id": "sn34.10",
@@ -10798,7 +10798,7 @@
       "id": "an7.4",
       "group": "an",
       "rank": 3,
-      "links": 5
+      "links": 4
     },
     {
       "id": "an10.50",
@@ -12196,7 +12196,7 @@
       "id": "sn16.11",
       "group": "sn",
       "rank": 1,
-      "links": 7
+      "links": 6
     },
     {
       "id": "an9.4",
@@ -12262,102 +12262,6 @@
       "id": "thag1.102",
       "group": "thag",
       "rank": 4,
-      "links": 1
-    },
-    {
-      "id": "an2.180-229",
-      "group": "an",
-      "rank": 3,
-      "links": 1
-    },
-    {
-      "id": "iti42",
-      "group": "iti",
-      "rank": 1,
-      "links": 2
-    },
-    {
-      "id": "an7.65",
-      "group": "an",
-      "rank": 3,
-      "links": 2
-    },
-    {
-      "id": "an8.2",
-      "group": "an",
-      "rank": 6,
-      "links": 3
-    },
-    {
-      "id": "sn46.30",
-      "group": "sn",
-      "rank": 5,
-      "links": 2
-    },
-    {
-      "id": "an4.73",
-      "group": "an",
-      "rank": 8,
-      "links": 1
-    },
-    {
-      "id": "an2.1-10",
-      "group": "an",
-      "rank": 1,
-      "links": 5
-    },
-    {
-      "id": "an2.230-279",
-      "group": "an",
-      "rank": 11,
-      "links": 1
-    },
-    {
-      "id": "an10.105",
-      "group": "an",
-      "rank": 12,
-      "links": 1
-    },
-    {
-      "id": "an7.2",
-      "group": "an",
-      "rank": 13,
-      "links": 1
-    },
-    {
-      "id": "an8.3",
-      "group": "an",
-      "rank": 14,
-      "links": 1
-    },
-    {
-      "id": "an7.3",
-      "group": "an",
-      "rank": 15,
-      "links": 2
-    },
-    {
-      "id": "iti40",
-      "group": "iti",
-      "rank": 17,
-      "links": 1
-    },
-    {
-      "id": "sn45.1",
-      "group": "sn",
-      "rank": 19,
-      "links": 1
-    },
-    {
-      "id": "an4.202",
-      "group": "an",
-      "rank": 20,
-      "links": 1
-    },
-    {
-      "id": "an2.87-97",
-      "group": "an",
-      "rank": 23,
       "links": 1
     },
     {
@@ -12877,6 +12781,18 @@
       "links": 3
     },
     {
+      "id": "iti42",
+      "group": "iti",
+      "rank": 1,
+      "links": 1
+    },
+    {
+      "id": "an2.1-10",
+      "group": "an",
+      "rank": 1,
+      "links": 4
+    },
+    {
       "id": "sn36.11",
       "group": "sn",
       "rank": 1,
@@ -12935,6 +12851,12 @@
       "group": "an",
       "rank": 6,
       "links": 1
+    },
+    {
+      "id": "an8.2",
+      "group": "an",
+      "rank": 7,
+      "links": 2
     },
     {
       "id": "an5.51",
@@ -14113,6 +14035,12 @@
       "links": 1
     },
     {
+      "id": "an7.3",
+      "group": "an",
+      "rank": 19,
+      "links": 1
+    },
+    {
       "id": "sn23.1",
       "group": "sn",
       "rank": 6,
@@ -14638,6 +14566,12 @@
       "id": "thag5.11",
       "group": "thag",
       "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "ud5.6",
+      "group": "ud",
+      "rank": 3,
       "links": 1
     },
     {
@@ -15893,6 +15827,12 @@
       "group": "sn",
       "rank": 2,
       "links": 3
+    },
+    {
+      "id": "sn46.30",
+      "group": "sn",
+      "rank": 5,
+      "links": 1
     },
     {
       "id": "sn22.101",
@@ -17512,6 +17452,12 @@
       "id": "an5.168",
       "group": "an",
       "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "an7.65",
+      "group": "an",
+      "rank": 3,
       "links": 1
     },
     {
@@ -22725,16 +22671,6 @@
       "rank": 1
     },
     {
-      "source": "den Buddha nie persönlich getroffen",
-      "target": "ud5.6",
-      "rank": 1
-    },
-    {
-      "source": "den Buddha nie persönlich getroffen",
-      "target": "dn21",
-      "rank": 2
-    },
-    {
       "source": "den Dhamma in kurzer Form",
       "target": "an4.257",
       "rank": 1
@@ -22801,38 +22737,43 @@
     },
     {
       "source": "den sicheren Pfad",
-      "target": "an5.151",
+      "target": "an6.101",
       "rank": 2
     },
     {
       "source": "den sicheren Pfad",
-      "target": "an5.152",
+      "target": "an5.151",
       "rank": 3
     },
     {
       "source": "den sicheren Pfad",
-      "target": "an5.153",
+      "target": "an5.152",
       "rank": 4
     },
     {
       "source": "den sicheren Pfad",
-      "target": "an6.86",
+      "target": "an5.153",
       "rank": 5
     },
     {
       "source": "den sicheren Pfad",
-      "target": "an6.87",
+      "target": "an6.86",
       "rank": 6
     },
     {
       "source": "den sicheren Pfad",
-      "target": "an6.88",
+      "target": "an6.87",
       "rank": 7
     },
     {
       "source": "den sicheren Pfad",
-      "target": "an3.22",
+      "target": "an6.88",
       "rank": 8
+    },
+    {
+      "source": "den sicheren Pfad",
+      "target": "an3.22",
+      "rank": 9
     },
     {
       "source": "der das Aufhören des Leidens sieht",
@@ -29656,133 +29597,8 @@
     },
     {
       "source": "Gewissen und Zurückhaltung",
-      "target": "mn39",
-      "rank": 1
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "an8.81",
-      "rank": 2
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "an2.180-229",
-      "rank": 3
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "iti42",
-      "rank": 4
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "an7.65",
-      "rank": 5
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "an8.2",
-      "rank": 6
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "sn46.30",
-      "rank": 7
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "an4.73",
-      "rank": 8
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "an2.1-10",
-      "rank": 9
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "dn34",
-      "rank": 10
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "an2.230-279",
-      "rank": 11
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "an10.105",
-      "rank": 12
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "an7.2",
-      "rank": 13
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "an8.3",
-      "rank": 14
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "an7.3",
-      "rank": 15
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "an7.5",
-      "rank": 16
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "iti40",
-      "rank": 17
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "an7.7",
-      "rank": 18
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "sn45.1",
-      "rank": 19
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "an4.202",
-      "rank": 20
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "an7.4",
-      "rank": 21
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "an7.6",
-      "rank": 22
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "an2.87-97",
-      "rank": 23
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "sn16.11",
-      "rank": 24
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
       "target": "thag18.1",
-      "rank": 25
-    },
-    {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "dn33",
-      "rank": 26
+      "rank": 1
     },
     {
       "source": "gewürdigt, verehrt und wertgeschätzt",
