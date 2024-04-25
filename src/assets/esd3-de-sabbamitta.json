@@ -408,7 +408,7 @@
     {
       "id": "bewacht.* die Tore der Sinne",
       "group": "Examples",
-      "links": 16
+      "links": 17
     },
     {
       "id": "bewerte",
@@ -973,7 +973,7 @@
     {
       "id": "Durchbruch",
       "group": "Examples",
-      "links": 15
+      "links": 16
     },
     {
       "id": "durch die Versenkung geläutert",
@@ -1133,7 +1133,7 @@
     {
       "id": "einen verletzenden als auch einen freundlichen Willen",
       "group": "Examples",
-      "links": 0
+      "links": 7
     },
     {
       "id": "einen Versenkungszustand",
@@ -1228,7 +1228,7 @@
     {
       "id": "entsprechend ihrer Taten wiedergeboren",
       "group": "Examples",
-      "links": 39
+      "links": 40
     },
     {
       "id": "entwickelt die Grundlage übersinnlicher Kraft",
@@ -1273,7 +1273,7 @@
     {
       "id": "Erkenntnis des Entstehens und Vergehens",
       "group": "Examples",
-      "links": 31
+      "links": 0
     },
     {
       "id": "erkläre mir das Leiden",
@@ -2458,7 +2458,7 @@
     {
       "id": "Macht über diese Willensbildungsprozesse",
       "group": "Examples",
-      "links": 0
+      "links": 1
     },
     {
       "id": "man das Auge ergreift",
@@ -3548,7 +3548,7 @@
     {
       "id": "Vergnügen an Willensbildungsprozessen",
       "group": "Examples",
-      "links": 0
+      "links": 3
     },
     {
       "id": "Verlangen aufgegeben",
@@ -3783,7 +3783,7 @@
     {
       "id": "vor langer Zeit getan oder gesagt",
       "group": "Examples",
-      "links": 13
+      "links": 14
     },
     {
       "id": "Wachstum erwarten",
@@ -3828,7 +3828,7 @@
     {
       "id": "warm gehalten und bebrütet",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "warmherzige Eigenschaft",
@@ -4168,12 +4168,12 @@
     {
       "id": "Willensbildungsprozesse als das Selbst",
       "group": "Examples",
-      "links": 0
+      "links": 16
     },
     {
       "id": "Willensbildungsprozesse sind Leiden",
       "group": "Examples",
-      "links": 0
+      "links": 3
     },
     {
       "id": "Winde wehen nicht",
@@ -4286,9 +4286,9 @@
       "links": 8
     },
     {
-      "id": "zum hohen Geist",
+      "id": "zum höheren Geist",
       "group": "Examples",
-      "links": 33
+      "links": 0
     },
     {
       "id": "zum Rückschritt",
@@ -4308,7 +4308,7 @@
     {
       "id": "Zustände seliger Meditation",
       "group": "Examples",
-      "links": 36
+      "links": 37
     },
     {
       "id": "zu quälen",
@@ -4744,7 +4744,7 @@
       "id": "an4.87",
       "group": "an",
       "rank": 3,
-      "links": 5
+      "links": 4
     },
     {
       "id": "an4.90",
@@ -4756,7 +4756,7 @@
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 114
+      "links": 113
     },
     {
       "id": "an4.189",
@@ -4768,7 +4768,7 @@
       "id": "dn34",
       "group": "dn",
       "rank": 1,
-      "links": 82
+      "links": 81
     },
     {
       "id": "an8.118",
@@ -4905,7 +4905,7 @@
     {
       "id": "sn47.8",
       "group": "sn",
-      "rank": 5,
+      "rank": 6,
       "links": 2
     },
     {
@@ -5116,13 +5116,13 @@
       "id": "mn109",
       "group": "mn",
       "rank": 1,
-      "links": 7
+      "links": 8
     },
     {
       "id": "sn22.82",
       "group": "sn",
       "rank": 3,
-      "links": 7
+      "links": 8
     },
     {
       "id": "dhp320-333",
@@ -5356,7 +5356,7 @@
       "id": "sn22.99",
       "group": "sn",
       "rank": 1,
-      "links": 4
+      "links": 5
     },
     {
       "id": "sn22.100",
@@ -5380,7 +5380,7 @@
       "id": "sn41.3",
       "group": "sn",
       "rank": 2,
-      "links": 5
+      "links": 6
     },
     {
       "id": "an3.64",
@@ -5692,37 +5692,37 @@
       "id": "an4.237",
       "group": "an",
       "rank": 1,
-      "links": 1
+      "links": 2
     },
     {
       "id": "an4.235",
       "group": "an",
       "rank": 2,
-      "links": 1
+      "links": 2
     },
     {
       "id": "an4.236",
       "group": "an",
       "rank": 3,
-      "links": 2
+      "links": 3
     },
     {
       "id": "an4.233",
       "group": "an",
       "rank": 4,
-      "links": 1
+      "links": 2
     },
     {
       "id": "an4.234",
       "group": "an",
       "rank": 5,
-      "links": 1
+      "links": 2
     },
     {
       "id": "an4.238",
       "group": "an",
-      "rank": 6,
-      "links": 1
+      "rank": 1,
+      "links": 2
     },
     {
       "id": "an4.232",
@@ -5800,7 +5800,7 @@
       "id": "dn28",
       "group": "dn",
       "rank": 1,
-      "links": 28
+      "links": 27
     },
     {
       "id": "an1.394-574",
@@ -6010,7 +6010,7 @@
       "id": "an10.98",
       "group": "an",
       "rank": 1,
-      "links": 6
+      "links": 5
     },
     {
       "id": "sn36.8",
@@ -6052,7 +6052,7 @@
       "id": "mn119",
       "group": "mn",
       "rank": 1,
-      "links": 16
+      "links": 15
     },
     {
       "id": "mn38",
@@ -6070,7 +6070,7 @@
       "id": "sn22.7",
       "group": "sn",
       "rank": 1,
-      "links": 2
+      "links": 3
     },
     {
       "id": "mn22",
@@ -6094,7 +6094,7 @@
       "id": "sn22.43",
       "group": "sn",
       "rank": 1,
-      "links": 4
+      "links": 5
     },
     {
       "id": "sn2.17",
@@ -6219,8 +6219,8 @@
     {
       "id": "mn35",
       "group": "mn",
-      "rank": 2,
-      "links": 10
+      "rank": 1,
+      "links": 11
     },
     {
       "id": "sn1.11",
@@ -6478,7 +6478,7 @@
       "id": "sn21.4",
       "group": "sn",
       "rank": 6,
-      "links": 5
+      "links": 4
     },
     {
       "id": "sn10.5",
@@ -6550,7 +6550,7 @@
       "id": "sn48.10",
       "group": "sn",
       "rank": 5,
-      "links": 5
+      "links": 4
     },
     {
       "id": "sn45.8",
@@ -6706,13 +6706,13 @@
       "id": "an10.17",
       "group": "an",
       "rank": 1,
-      "links": 5
+      "links": 4
     },
     {
       "id": "an10.18",
       "group": "an",
       "rank": 1,
-      "links": 7
+      "links": 6
     },
     {
       "id": "dhp157-166",
@@ -6742,7 +6742,7 @@
       "id": "an10.11",
       "group": "an",
       "rank": 5,
-      "links": 3
+      "links": 2
     },
     {
       "id": "an10.12",
@@ -6844,7 +6844,7 @@
       "id": "an5.106",
       "group": "an",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "dn5",
@@ -6943,6 +6943,12 @@
       "links": 2
     },
     {
+      "id": "mn53",
+      "group": "mn",
+      "rank": 1,
+      "links": 6
+    },
+    {
       "id": "an6.31",
       "group": "an",
       "rank": 3,
@@ -6981,7 +6987,7 @@
     {
       "id": "sn35.120",
       "group": "sn",
-      "rank": 12,
+      "rank": 13,
       "links": 1
     },
     {
@@ -7018,13 +7024,13 @@
       "id": "an7.76",
       "group": "an",
       "rank": 1,
-      "links": 5
+      "links": 4
     },
     {
       "id": "an7.80",
       "group": "an",
       "rank": 2,
-      "links": 5
+      "links": 4
     },
     {
       "id": "an8.52",
@@ -7419,7 +7425,7 @@
     {
       "id": "sn17.30",
       "group": "sn",
-      "rank": 21,
+      "rank": 22,
       "links": 2
     },
     {
@@ -7594,7 +7600,7 @@
       "id": "an10.30",
       "group": "an",
       "rank": 4,
-      "links": 7
+      "links": 6
     },
     {
       "id": "an2.118-129",
@@ -7960,7 +7966,7 @@
       "id": "sn22.85",
       "group": "sn",
       "rank": 1,
-      "links": 5
+      "links": 6
     },
     {
       "id": "sn35.142",
@@ -7984,7 +7990,7 @@
       "id": "sn22.55",
       "group": "sn",
       "rank": 4,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an7.68",
@@ -8229,8 +8235,8 @@
     {
       "id": "sn44.8",
       "group": "sn",
-      "rank": 6,
-      "links": 3
+      "rank": 5,
+      "links": 4
     },
     {
       "id": "sn44.7",
@@ -8487,14 +8493,14 @@
     {
       "id": "an8.49",
       "group": "an",
-      "rank": 22,
-      "links": 2
+      "rank": 26,
+      "links": 1
     },
     {
       "id": "an8.50",
       "group": "an",
-      "rank": 24,
-      "links": 2
+      "rank": 27,
+      "links": 1
     },
     {
       "id": "an8.46",
@@ -8650,7 +8656,7 @@
       "id": "an7.6",
       "group": "an",
       "rank": 3,
-      "links": 2
+      "links": 1
     },
     {
       "id": "sn34.10",
@@ -8733,8 +8739,8 @@
     {
       "id": "sn22.67",
       "group": "sn",
-      "rank": 3,
-      "links": 1
+      "rank": 1,
+      "links": 2
     },
     {
       "id": "sn22.68",
@@ -8908,19 +8914,19 @@
       "id": "an9.3",
       "group": "an",
       "rank": 1,
-      "links": 8
+      "links": 7
     },
     {
       "id": "ud4.1",
       "group": "ud",
       "rank": 2,
-      "links": 8
+      "links": 7
     },
     {
       "id": "an8.30",
       "group": "an",
       "rank": 1,
-      "links": 6
+      "links": 4
     },
     {
       "id": "an7.15",
@@ -9321,8 +9327,8 @@
     {
       "id": "an3.23",
       "group": "an",
-      "rank": 8,
-      "links": 1
+      "rank": 2,
+      "links": 2
     },
     {
       "id": "an3.116",
@@ -9783,8 +9789,8 @@
     {
       "id": "sn22.44",
       "group": "sn",
-      "rank": 3,
-      "links": 2
+      "rank": 2,
+      "links": 3
     },
     {
       "id": "sn22.52",
@@ -9796,7 +9802,7 @@
       "id": "sn22.47",
       "group": "sn",
       "rank": 4,
-      "links": 4
+      "links": 5
     },
     {
       "id": "sn22.49",
@@ -9868,7 +9874,7 @@
       "id": "an5.234",
       "group": "an",
       "rank": 3,
-      "links": 3
+      "links": 2
     },
     {
       "id": "iti107",
@@ -10108,7 +10114,7 @@
       "id": "mn6",
       "group": "mn",
       "rank": 2,
-      "links": 7
+      "links": 6
     },
     {
       "id": "sn16.9",
@@ -10216,13 +10222,13 @@
       "id": "sn48.9",
       "group": "sn",
       "rank": 2,
-      "links": 4
+      "links": 3
     },
     {
       "id": "sn48.11",
       "group": "sn",
       "rank": 4,
-      "links": 3
+      "links": 2
     },
     {
       "id": "an5.67",
@@ -10474,7 +10480,7 @@
       "id": "an8.57",
       "group": "an",
       "rank": 7,
-      "links": 4
+      "links": 3
     },
     {
       "id": "an10.21",
@@ -10492,7 +10498,7 @@
       "id": "an11.14",
       "group": "an",
       "rank": 4,
-      "links": 5
+      "links": 4
     },
     {
       "id": "mn16",
@@ -10685,108 +10691,6 @@
       "group": "sn",
       "rank": 2,
       "links": 1
-    },
-    {
-      "id": "an5.136",
-      "group": "an",
-      "rank": 1,
-      "links": 1
-    },
-    {
-      "id": "an5.135",
-      "group": "an",
-      "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "sn55.33",
-      "group": "sn",
-      "rank": 5,
-      "links": 1
-    },
-    {
-      "id": "an5.53",
-      "group": "an",
-      "rank": 1,
-      "links": 2
-    },
-    {
-      "id": "sn55.37",
-      "group": "sn",
-      "rank": 7,
-      "links": 1
-    },
-    {
-      "id": "sn55.43",
-      "group": "sn",
-      "rank": 8,
-      "links": 1
-    },
-    {
-      "id": "an5.2",
-      "group": "an",
-      "rank": 1,
-      "links": 3
-    },
-    {
-      "id": "an5.14",
-      "group": "an",
-      "rank": 2,
-      "links": 4
-    },
-    {
-      "id": "an5.134",
-      "group": "an",
-      "rank": 14,
-      "links": 1
-    },
-    {
-      "id": "an5.47",
-      "group": "an",
-      "rank": 15,
-      "links": 1
-    },
-    {
-      "id": "an9.1",
-      "group": "an",
-      "rank": 4,
-      "links": 5
-    },
-    {
-      "id": "an7.4",
-      "group": "an",
-      "rank": 3,
-      "links": 4
-    },
-    {
-      "id": "an10.50",
-      "group": "an",
-      "rank": 1,
-      "links": 5
-    },
-    {
-      "id": "an8.76",
-      "group": "an",
-      "rank": 3,
-      "links": 3
-    },
-    {
-      "id": "an8.55",
-      "group": "an",
-      "rank": 1,
-      "links": 4
-    },
-    {
-      "id": "an8.54",
-      "group": "an",
-      "rank": 2,
-      "links": 4
-    },
-    {
-      "id": "an7.67",
-      "group": "an",
-      "rank": 2,
-      "links": 4
     },
     {
       "id": "an8.87",
@@ -11218,7 +11122,7 @@
       "id": "an4.200",
       "group": "an",
       "rank": 5,
-      "links": 2
+      "links": 3
     },
     {
       "id": "dn27",
@@ -11554,25 +11458,25 @@
       "id": "sn22.81",
       "group": "sn",
       "rank": 1,
-      "links": 3
+      "links": 4
     },
     {
       "id": "sn22.117",
       "group": "sn",
-      "rank": 2,
-      "links": 1
+      "rank": 1,
+      "links": 2
     },
     {
       "id": "sn22.1",
       "group": "sn",
       "rank": 5,
-      "links": 2
+      "links": 3
     },
     {
       "id": "sn22.93",
       "group": "sn",
-      "rank": 17,
-      "links": 1
+      "rank": 13,
+      "links": 2
     },
     {
       "id": "sn12.22",
@@ -11974,7 +11878,7 @@
       "id": "an5.166",
       "group": "an",
       "rank": 5,
-      "links": 4
+      "links": 3
     },
     {
       "id": "an5.89",
@@ -12053,6 +11957,12 @@
       "group": "an",
       "rank": 4,
       "links": 3
+    },
+    {
+      "id": "an9.1",
+      "group": "an",
+      "rank": 4,
+      "links": 4
     },
     {
       "id": "an1.61-70",
@@ -12667,6 +12577,18 @@
       "links": 3
     },
     {
+      "id": "an8.55",
+      "group": "an",
+      "rank": 1,
+      "links": 3
+    },
+    {
+      "id": "an8.54",
+      "group": "an",
+      "rank": 2,
+      "links": 3
+    },
+    {
       "id": "an6.67",
       "group": "an",
       "rank": 2,
@@ -12677,6 +12599,12 @@
       "group": "sn",
       "rank": 8,
       "links": 1
+    },
+    {
+      "id": "an10.50",
+      "group": "an",
+      "rank": 1,
+      "links": 4
     },
     {
       "id": "an8.62",
@@ -12976,7 +12904,7 @@
       "id": "sn56.43",
       "group": "sn",
       "rank": 2,
-      "links": 2
+      "links": 3
     },
     {
       "id": "ud3.3",
@@ -13065,8 +12993,8 @@
     {
       "id": "an5.179",
       "group": "an",
-      "rank": 1,
-      "links": 3
+      "rank": 2,
+      "links": 2
     },
     {
       "id": "sn55.29",
@@ -13353,8 +13281,8 @@
     {
       "id": "sn56.46",
       "group": "sn",
-      "rank": 3,
-      "links": 1
+      "rank": 1,
+      "links": 2
     },
     {
       "id": "an4.247",
@@ -13969,6 +13897,24 @@
       "links": 2
     },
     {
+      "id": "an5.2",
+      "group": "an",
+      "rank": 1,
+      "links": 2
+    },
+    {
+      "id": "an5.14",
+      "group": "an",
+      "rank": 2,
+      "links": 3
+    },
+    {
+      "id": "an7.4",
+      "group": "an",
+      "rank": 3,
+      "links": 3
+    },
+    {
       "id": "an5.15",
       "group": "an",
       "rank": 6,
@@ -14164,7 +14110,7 @@
       "id": "an10.71",
       "group": "an",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "sn43.1",
@@ -14422,6 +14368,12 @@
       "id": "thag3.4",
       "group": "thag",
       "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "an5.53",
+      "group": "an",
+      "rank": 1,
       "links": 1
     },
     {
@@ -15487,6 +15439,12 @@
       "links": 2
     },
     {
+      "id": "an8.76",
+      "group": "an",
+      "rank": 3,
+      "links": 2
+    },
+    {
       "id": "an5.58",
       "group": "an",
       "rank": 5,
@@ -16363,6 +16321,12 @@
       "links": 1
     },
     {
+      "id": "sn56.42",
+      "group": "sn",
+      "rank": 3,
+      "links": 1
+    },
+    {
       "id": "sn46.26",
       "group": "sn",
       "rank": 1,
@@ -16774,7 +16738,7 @@
       "id": "an4.22",
       "group": "an",
       "rank": 1,
-      "links": 3
+      "links": 2
     },
     {
       "id": "an10.121",
@@ -16816,7 +16780,13 @@
       "id": "an4.35",
       "group": "an",
       "rank": 9,
-      "links": 4
+      "links": 3
+    },
+    {
+      "id": "an7.67",
+      "group": "an",
+      "rank": 3,
+      "links": 2
     },
     {
       "id": "an7.24",
@@ -16954,19 +16924,19 @@
       "id": "an5.104",
       "group": "an",
       "rank": 7,
-      "links": 3
+      "links": 2
     },
     {
       "id": "an10.8",
       "group": "an",
       "rank": 9,
-      "links": 3
+      "links": 2
     },
     {
       "id": "an8.71",
       "group": "an",
       "rank": 10,
-      "links": 3
+      "links": 2
     },
     {
       "id": "an5.180",
@@ -17014,25 +16984,25 @@
       "id": "an7.75",
       "group": "an",
       "rank": 4,
-      "links": 3
+      "links": 2
     },
     {
       "id": "an7.77",
       "group": "an",
       "rank": 6,
-      "links": 3
+      "links": 2
     },
     {
       "id": "an7.79",
       "group": "an",
       "rank": 8,
-      "links": 3
+      "links": 2
     },
     {
       "id": "an7.81",
       "group": "an",
       "rank": 10,
-      "links": 3
+      "links": 2
     },
     {
       "id": "sn10.9",
@@ -17713,6 +17683,18 @@
       "links": 1
     },
     {
+      "id": "sn22.16",
+      "group": "sn",
+      "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "sn22.19",
+      "group": "sn",
+      "rank": 3,
+      "links": 1
+    },
+    {
       "id": "an4.77",
       "group": "an",
       "rank": 1,
@@ -17827,42 +17809,6 @@
       "links": 1
     },
     {
-      "id": "an5.87",
-      "group": "an",
-      "rank": 4,
-      "links": 2
-    },
-    {
-      "id": "an5.109",
-      "group": "an",
-      "rank": 5,
-      "links": 2
-    },
-    {
-      "id": "an5.232",
-      "group": "an",
-      "rank": 6,
-      "links": 2
-    },
-    {
-      "id": "an5.233",
-      "group": "an",
-      "rank": 7,
-      "links": 2
-    },
-    {
-      "id": "an8.58",
-      "group": "an",
-      "rank": 16,
-      "links": 2
-    },
-    {
-      "id": "an5.110",
-      "group": "an",
-      "rank": 18,
-      "links": 2
-    },
-    {
       "id": "an4.264",
       "group": "an",
       "rank": 2,
@@ -17872,6 +17818,42 @@
       "id": "an3.163-182",
       "group": "an",
       "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "an5.87",
+      "group": "an",
+      "rank": 7,
+      "links": 1
+    },
+    {
+      "id": "an5.109",
+      "group": "an",
+      "rank": 8,
+      "links": 1
+    },
+    {
+      "id": "an5.232",
+      "group": "an",
+      "rank": 9,
+      "links": 1
+    },
+    {
+      "id": "an5.233",
+      "group": "an",
+      "rank": 10,
+      "links": 1
+    },
+    {
+      "id": "an8.58",
+      "group": "an",
+      "rank": 19,
+      "links": 1
+    },
+    {
+      "id": "an5.110",
+      "group": "an",
+      "rank": 21,
       "links": 1
     },
     {
@@ -20669,68 +20651,73 @@
     },
     {
       "source": "bewacht.* die Tore der Sinne",
-      "target": "dn10",
+      "target": "mn53",
       "rank": 4
     },
     {
       "source": "bewacht.* die Tore der Sinne",
-      "target": "dn2",
+      "target": "dn10",
       "rank": 5
     },
     {
       "source": "bewacht.* die Tore der Sinne",
-      "target": "an6.31",
+      "target": "dn2",
       "rank": 6
     },
     {
       "source": "bewacht.* die Tore der Sinne",
-      "target": "an6.117",
+      "target": "an6.31",
       "rank": 7
     },
     {
       "source": "bewacht.* die Tore der Sinne",
-      "target": "an8.79",
+      "target": "an6.117",
       "rank": 8
     },
     {
       "source": "bewacht.* die Tore der Sinne",
-      "target": "an7.28",
+      "target": "an8.79",
       "rank": 9
     },
     {
       "source": "bewacht.* die Tore der Sinne",
-      "target": "an5.150",
+      "target": "an7.28",
       "rank": 10
     },
     {
       "source": "bewacht.* die Tore der Sinne",
-      "target": "an3.16",
+      "target": "an5.150",
       "rank": 11
     },
     {
       "source": "bewacht.* die Tore der Sinne",
-      "target": "sn35.120",
+      "target": "an3.16",
       "rank": 12
     },
     {
       "source": "bewacht.* die Tore der Sinne",
-      "target": "an8.9",
+      "target": "sn35.120",
       "rank": 13
     },
     {
       "source": "bewacht.* die Tore der Sinne",
-      "target": "an6.118",
+      "target": "an8.9",
       "rank": 14
     },
     {
       "source": "bewacht.* die Tore der Sinne",
-      "target": "dn8",
+      "target": "an6.118",
       "rank": 15
     },
     {
       "source": "bewacht.* die Tore der Sinne",
-      "target": "dn28",
+      "target": "dn8",
       "rank": 16
+    },
+    {
+      "source": "bewacht.* die Tore der Sinne",
+      "target": "dn28",
+      "rank": 17
     },
     {
       "source": "bewerte",
@@ -24114,73 +24101,78 @@
     },
     {
       "source": "Durchbruch",
-      "target": "an8.11",
+      "target": "mn53",
       "rank": 2
     },
     {
       "source": "Durchbruch",
-      "target": "an4.179",
+      "target": "an8.11",
       "rank": 3
     },
     {
       "source": "Durchbruch",
-      "target": "an6.71",
+      "target": "an4.179",
       "rank": 4
     },
     {
       "source": "Durchbruch",
-      "target": "thig5.4",
+      "target": "an6.71",
       "rank": 5
     },
     {
       "source": "Durchbruch",
-      "target": "iti41",
+      "target": "thig5.4",
       "rank": 6
     },
     {
       "source": "Durchbruch",
-      "target": "iti93",
+      "target": "iti41",
       "rank": 7
     },
     {
       "source": "Durchbruch",
-      "target": "thag10.3",
+      "target": "iti93",
       "rank": 8
     },
     {
       "source": "Durchbruch",
-      "target": "an8.20",
+      "target": "thag10.3",
       "rank": 9
     },
     {
       "source": "Durchbruch",
-      "target": "an8.19",
+      "target": "an8.20",
       "rank": 10
     },
     {
       "source": "Durchbruch",
-      "target": "an9.36",
+      "target": "an8.19",
       "rank": 11
     },
     {
       "source": "Durchbruch",
-      "target": "ud5.5",
+      "target": "an9.36",
       "rank": 12
     },
     {
       "source": "Durchbruch",
-      "target": "snp3.11",
+      "target": "ud5.5",
       "rank": 13
     },
     {
       "source": "Durchbruch",
-      "target": "dn33",
+      "target": "snp3.11",
       "rank": 14
     },
     {
       "source": "Durchbruch",
-      "target": "dn34",
+      "target": "dn33",
       "rank": 15
+    },
+    {
+      "source": "Durchbruch",
+      "target": "dn34",
+      "rank": 16
     },
     {
       "source": "durch die Versenkung geläutert",
@@ -25253,6 +25245,41 @@
       "rank": 2
     },
     {
+      "source": "einen verletzenden als auch einen freundlichen Willen",
+      "target": "an4.238",
+      "rank": 1
+    },
+    {
+      "source": "einen verletzenden als auch einen freundlichen Willen",
+      "target": "an3.23",
+      "rank": 2
+    },
+    {
+      "source": "einen verletzenden als auch einen freundlichen Willen",
+      "target": "an4.237",
+      "rank": 3
+    },
+    {
+      "source": "einen verletzenden als auch einen freundlichen Willen",
+      "target": "an4.235",
+      "rank": 4
+    },
+    {
+      "source": "einen verletzenden als auch einen freundlichen Willen",
+      "target": "an4.236",
+      "rank": 5
+    },
+    {
+      "source": "einen verletzenden als auch einen freundlichen Willen",
+      "target": "an4.233",
+      "rank": 6
+    },
+    {
+      "source": "einen verletzenden als auch einen freundlichen Willen",
+      "target": "an4.234",
+      "rank": 7
+    },
+    {
       "source": "einen Versenkungszustand",
       "target": "an11.7",
       "rank": 1
@@ -26059,63 +26086,68 @@
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "mn19",
+      "target": "mn53",
       "rank": 28
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "mn4",
+      "target": "mn19",
       "rank": 29
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "mn27",
+      "target": "mn4",
       "rank": 30
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "mn51",
+      "target": "mn27",
       "rank": 31
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "mn119",
+      "target": "mn51",
       "rank": 32
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "dn10",
+      "target": "mn119",
       "rank": 33
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "dn28",
+      "target": "dn10",
       "rank": 34
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "dn25",
+      "target": "dn28",
       "rank": 35
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "mn12",
+      "target": "dn25",
       "rank": 36
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "mn36",
+      "target": "mn12",
       "rank": 37
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "mn60",
+      "target": "mn36",
       "rank": 38
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "dn34",
+      "target": "mn60",
       "rank": 39
+    },
+    {
+      "source": "entsprechend ihrer Taten wiedergeboren",
+      "target": "dn34",
+      "rank": 40
     },
     {
       "source": "entwickelt die Grundlage übersinnlicher Kraft",
@@ -26451,161 +26483,6 @@
       "source": "Erkenntnis der sechs Sinnesfelder",
       "target": "sn12.33",
       "rank": 1
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "an5.136",
-      "rank": 1
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "an5.135",
-      "rank": 2
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "dn33",
-      "rank": 3
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "dn34",
-      "rank": 4
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "sn55.33",
-      "rank": 5
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "an5.53",
-      "rank": 6
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "sn55.37",
-      "rank": 7
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "sn55.43",
-      "rank": 8
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "an10.11",
-      "rank": 9
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "sn48.9",
-      "rank": 10
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "sn48.11",
-      "rank": 11
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "an5.2",
-      "rank": 12
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "an5.14",
-      "rank": 13
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "an5.134",
-      "rank": 14
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "an5.47",
-      "rank": 15
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "an9.1",
-      "rank": 16
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "an7.4",
-      "rank": 17
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "an7.6",
-      "rank": 18
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "an10.17",
-      "rank": 19
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "sn48.10",
-      "rank": 20
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "an10.50",
-      "rank": 21
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "an8.49",
-      "rank": 22
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "an8.76",
-      "rank": 23
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "an8.50",
-      "rank": 24
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "an10.18",
-      "rank": 25
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "an9.3",
-      "rank": 26
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "an8.55",
-      "rank": 27
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "an8.54",
-      "rank": 28
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "ud4.1",
-      "rank": 29
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "an7.67",
-      "rank": 30
-    },
-    {
-      "source": "Erkenntnis des Entstehens und Vergehens",
-      "target": "an8.30",
-      "rank": 31
     },
     {
       "source": "erkläre mir das Leiden",
@@ -34788,6 +34665,11 @@
       "rank": 1
     },
     {
+      "source": "Macht über diese Willensbildungsprozesse",
+      "target": "mn35",
+      "rank": 1
+    },
+    {
       "source": "man das Auge ergreift",
       "target": "sn35.108",
       "rank": 1
@@ -41788,6 +41670,21 @@
       "rank": 1
     },
     {
+      "source": "Vergnügen an Willensbildungsprozessen",
+      "target": "sn56.46",
+      "rank": 1
+    },
+    {
+      "source": "Vergnügen an Willensbildungsprozessen",
+      "target": "sn56.43",
+      "rank": 2
+    },
+    {
+      "source": "Vergnügen an Willensbildungsprozessen",
+      "target": "sn56.42",
+      "rank": 3
+    },
+    {
       "source": "Verlangen aufgegeben",
       "target": "sn46.26",
       "rank": 1
@@ -43229,13 +43126,18 @@
     },
     {
       "source": "vor langer Zeit getan oder gesagt",
-      "target": "an8.30",
+      "target": "mn53",
       "rank": 12
     },
     {
       "source": "vor langer Zeit getan oder gesagt",
-      "target": "dn33",
+      "target": "an8.30",
       "rank": 13
+    },
+    {
+      "source": "vor langer Zeit getan oder gesagt",
+      "target": "dn33",
+      "rank": 14
     },
     {
       "source": "Wachstum erwarten",
@@ -43701,6 +43603,11 @@
       "source": "warm gehalten und bebrütet",
       "target": "an8.11",
       "rank": 4
+    },
+    {
+      "source": "warm gehalten und bebrütet",
+      "target": "mn53",
+      "rank": 5
     },
     {
       "source": "warmherzige Eigenschaft",
@@ -46058,6 +45965,101 @@
       "rank": 6
     },
     {
+      "source": "Willensbildungsprozesse als das Selbst",
+      "target": "sn22.117",
+      "rank": 1
+    },
+    {
+      "source": "Willensbildungsprozesse als das Selbst",
+      "target": "sn22.44",
+      "rank": 2
+    },
+    {
+      "source": "Willensbildungsprozesse als das Selbst",
+      "target": "sn22.99",
+      "rank": 3
+    },
+    {
+      "source": "Willensbildungsprozesse als das Selbst",
+      "target": "sn22.7",
+      "rank": 4
+    },
+    {
+      "source": "Willensbildungsprozesse als das Selbst",
+      "target": "sn44.8",
+      "rank": 5
+    },
+    {
+      "source": "Willensbildungsprozesse als das Selbst",
+      "target": "sn41.3",
+      "rank": 6
+    },
+    {
+      "source": "Willensbildungsprozesse als das Selbst",
+      "target": "sn22.55",
+      "rank": 7
+    },
+    {
+      "source": "Willensbildungsprozesse als das Selbst",
+      "target": "an4.200",
+      "rank": 8
+    },
+    {
+      "source": "Willensbildungsprozesse als das Selbst",
+      "target": "sn22.1",
+      "rank": 9
+    },
+    {
+      "source": "Willensbildungsprozesse als das Selbst",
+      "target": "mn109",
+      "rank": 10
+    },
+    {
+      "source": "Willensbildungsprozesse als das Selbst",
+      "target": "sn22.82",
+      "rank": 11
+    },
+    {
+      "source": "Willensbildungsprozesse als das Selbst",
+      "target": "sn22.85",
+      "rank": 12
+    },
+    {
+      "source": "Willensbildungsprozesse als das Selbst",
+      "target": "sn22.93",
+      "rank": 13
+    },
+    {
+      "source": "Willensbildungsprozesse als das Selbst",
+      "target": "sn22.43",
+      "rank": 14
+    },
+    {
+      "source": "Willensbildungsprozesse als das Selbst",
+      "target": "sn22.47",
+      "rank": 15
+    },
+    {
+      "source": "Willensbildungsprozesse als das Selbst",
+      "target": "sn22.81",
+      "rank": 16
+    },
+    {
+      "source": "Willensbildungsprozesse sind Leiden",
+      "target": "sn22.67",
+      "rank": 1
+    },
+    {
+      "source": "Willensbildungsprozesse sind Leiden",
+      "target": "sn22.16",
+      "rank": 2
+    },
+    {
+      "source": "Willensbildungsprozesse sind Leiden",
+      "target": "sn22.19",
+      "rank": 3
+    },
+    {
       "source": "Winde wehen nicht",
       "target": "sn24.19",
       "rank": 1
@@ -46478,171 +46480,6 @@
       "rank": 8
     },
     {
-      "source": "zum hohen Geist",
-      "target": "an5.179",
-      "rank": 1
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an7.67",
-      "rank": 2
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an5.106",
-      "rank": 3
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an5.87",
-      "rank": 4
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an5.109",
-      "rank": 5
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an5.232",
-      "rank": 6
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an5.233",
-      "rank": 7
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an5.234",
-      "rank": 8
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an7.75",
-      "rank": 9
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an7.76",
-      "rank": 10
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an7.77",
-      "rank": 11
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an7.79",
-      "rank": 12
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an7.80",
-      "rank": 13
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an7.81",
-      "rank": 14
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an8.57",
-      "rank": 15
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an8.58",
-      "rank": 16
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an10.98",
-      "rank": 17
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an5.110",
-      "rank": 18
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an5.104",
-      "rank": 19
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an10.71",
-      "rank": 20
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an10.8",
-      "rank": 21
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an8.71",
-      "rank": 22
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "sn21.4",
-      "rank": 23
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an4.87",
-      "rank": 24
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an4.22",
-      "rank": 25
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an10.30",
-      "rank": 26
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "mn6",
-      "rank": 27
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an11.14",
-      "rank": 28
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an4.35",
-      "rank": 29
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an5.166",
-      "rank": 30
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "an8.30",
-      "rank": 31
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "mn119",
-      "rank": 32
-    },
-    {
-      "source": "zum hohen Geist",
-      "target": "dn28",
-      "rank": 33
-    },
-    {
       "source": "zum Rückschritt",
       "target": "dn34",
       "rank": 1
@@ -46709,183 +46546,188 @@
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an5.179",
+      "target": "mn53",
       "rank": 1
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an7.67",
+      "target": "an5.179",
       "rank": 2
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "mn8",
+      "target": "an7.67",
       "rank": 3
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an5.106",
+      "target": "mn8",
       "rank": 4
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "sn47.8",
+      "target": "an5.106",
       "rank": 5
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an5.87",
+      "target": "sn47.8",
       "rank": 6
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an5.109",
+      "target": "an5.87",
       "rank": 7
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an5.232",
+      "target": "an5.109",
       "rank": 8
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an5.233",
+      "target": "an5.232",
       "rank": 9
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an5.234",
+      "target": "an5.233",
       "rank": 10
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an7.75",
+      "target": "an5.234",
       "rank": 11
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an7.76",
+      "target": "an7.75",
       "rank": 12
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an7.77",
+      "target": "an7.76",
       "rank": 13
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an7.79",
+      "target": "an7.77",
       "rank": 14
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an7.80",
+      "target": "an7.79",
       "rank": 15
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an7.81",
+      "target": "an7.80",
       "rank": 16
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an8.57",
+      "target": "an7.81",
       "rank": 17
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an8.58",
+      "target": "an8.57",
       "rank": 18
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an10.98",
+      "target": "an8.58",
       "rank": 19
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an5.110",
+      "target": "an10.98",
       "rank": 20
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "sn17.30",
+      "target": "an5.110",
       "rank": 21
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an5.104",
+      "target": "sn17.30",
       "rank": 22
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an10.71",
+      "target": "an5.104",
       "rank": 23
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an10.8",
+      "target": "an10.71",
       "rank": 24
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an8.71",
+      "target": "an10.8",
       "rank": 25
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "sn21.4",
+      "target": "an8.71",
       "rank": 26
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an4.87",
+      "target": "sn21.4",
       "rank": 27
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an4.22",
+      "target": "an4.87",
       "rank": 28
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an10.30",
+      "target": "an4.22",
       "rank": 29
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "mn6",
+      "target": "an10.30",
       "rank": 30
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an11.14",
+      "target": "mn6",
       "rank": 31
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an4.35",
+      "target": "an11.14",
       "rank": 32
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an5.166",
+      "target": "an4.35",
       "rank": 33
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "an8.30",
+      "target": "an5.166",
       "rank": 34
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "mn119",
+      "target": "an8.30",
       "rank": 35
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "dn28",
+      "target": "mn119",
       "rank": 36
+    },
+    {
+      "source": "Zustände seliger Meditation",
+      "target": "dn28",
+      "rank": 37
     },
     {
       "source": "zu quälen",
