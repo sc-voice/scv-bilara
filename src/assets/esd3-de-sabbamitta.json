@@ -1131,6 +1131,11 @@
       "links": 2
     },
     {
+      "id": "einen verletzenden als auch einen freundlichen Willen",
+      "group": "Examples",
+      "links": 0
+    },
+    {
       "id": "einen Versenkungszustand",
       "group": "Examples",
       "links": 11
@@ -1219,16 +1224,6 @@
       "id": "Ende des Körpers nahen",
       "group": "Examples",
       "links": 7
-    },
-    {
-      "id": "Entscheidungen als",
-      "group": "Examples",
-      "links": 17
-    },
-    {
-      "id": "Entscheidungen sind Leiden",
-      "group": "Examples",
-      "links": 3
     },
     {
       "id": "entsprechend ihrer Taten wiedergeboren",
@@ -2461,9 +2456,9 @@
       "links": 1
     },
     {
-      "id": "Macht über diese Entscheidungen",
+      "id": "Macht über diese Willensbildungsprozesse",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "man das Auge ergreift",
@@ -2984,11 +2979,6 @@
       "id": "schleichend",
       "group": "Examples",
       "links": 2
-    },
-    {
-      "id": "schmerzhafte erfreuliche Entscheidungen",
-      "group": "Examples",
-      "links": 0
     },
     {
       "id": "Schmuckstück aus Beryll von natürlicher",
@@ -3556,9 +3546,9 @@
       "links": 1
     },
     {
-      "id": "Vergnügen an Entscheidungen",
+      "id": "Vergnügen an Willensbildungsprozessen",
       "group": "Examples",
-      "links": 3
+      "links": 0
     },
     {
       "id": "Verlangen aufgegeben",
@@ -4174,6 +4164,16 @@
       "id": "wilde[sn] Fohlen",
       "group": "Examples",
       "links": 6
+    },
+    {
+      "id": "Willensbildungsprozesse als das Selbst",
+      "group": "Examples",
+      "links": 0
+    },
+    {
+      "id": "Willensbildungsprozesse sind Leiden",
+      "group": "Examples",
+      "links": 0
     },
     {
       "id": "Winde wehen nicht",
@@ -5116,13 +5116,13 @@
       "id": "mn109",
       "group": "mn",
       "rank": 1,
-      "links": 8
+      "links": 7
     },
     {
       "id": "sn22.82",
       "group": "sn",
       "rank": 3,
-      "links": 8
+      "links": 7
     },
     {
       "id": "dhp320-333",
@@ -5356,7 +5356,7 @@
       "id": "sn22.99",
       "group": "sn",
       "rank": 1,
-      "links": 5
+      "links": 4
     },
     {
       "id": "sn22.100",
@@ -5380,7 +5380,7 @@
       "id": "sn41.3",
       "group": "sn",
       "rank": 2,
-      "links": 6
+      "links": 5
     },
     {
       "id": "an3.64",
@@ -6070,7 +6070,7 @@
       "id": "sn22.7",
       "group": "sn",
       "rank": 1,
-      "links": 3
+      "links": 2
     },
     {
       "id": "mn22",
@@ -6094,7 +6094,7 @@
       "id": "sn22.43",
       "group": "sn",
       "rank": 1,
-      "links": 5
+      "links": 4
     },
     {
       "id": "sn2.17",
@@ -6219,8 +6219,8 @@
     {
       "id": "mn35",
       "group": "mn",
-      "rank": 1,
-      "links": 11
+      "rank": 2,
+      "links": 10
     },
     {
       "id": "sn1.11",
@@ -6796,7 +6796,7 @@
       "id": "an4.16",
       "group": "an",
       "rank": 3,
-      "links": 2
+      "links": 1
     },
     {
       "id": "sn3.12",
@@ -7960,7 +7960,7 @@
       "id": "sn22.85",
       "group": "sn",
       "rank": 1,
-      "links": 6
+      "links": 5
     },
     {
       "id": "sn35.142",
@@ -7984,7 +7984,7 @@
       "id": "sn22.55",
       "group": "sn",
       "rank": 4,
-      "links": 5
+      "links": 4
     },
     {
       "id": "an7.68",
@@ -8229,8 +8229,8 @@
     {
       "id": "sn44.8",
       "group": "sn",
-      "rank": 5,
-      "links": 4
+      "rank": 6,
+      "links": 3
     },
     {
       "id": "sn44.7",
@@ -8733,8 +8733,8 @@
     {
       "id": "sn22.67",
       "group": "sn",
-      "rank": 1,
-      "links": 2
+      "rank": 3,
+      "links": 1
     },
     {
       "id": "sn22.68",
@@ -9783,8 +9783,8 @@
     {
       "id": "sn22.44",
       "group": "sn",
-      "rank": 2,
-      "links": 3
+      "rank": 3,
+      "links": 2
     },
     {
       "id": "sn22.52",
@@ -9796,7 +9796,7 @@
       "id": "sn22.47",
       "group": "sn",
       "rank": 4,
-      "links": 5
+      "links": 4
     },
     {
       "id": "sn22.49",
@@ -10445,48 +10445,6 @@
       "group": "an",
       "rank": 2,
       "links": 5
-    },
-    {
-      "id": "sn22.117",
-      "group": "sn",
-      "rank": 1,
-      "links": 2
-    },
-    {
-      "id": "an4.200",
-      "group": "an",
-      "rank": 5,
-      "links": 3
-    },
-    {
-      "id": "sn22.1",
-      "group": "sn",
-      "rank": 5,
-      "links": 3
-    },
-    {
-      "id": "sn22.93",
-      "group": "sn",
-      "rank": 13,
-      "links": 2
-    },
-    {
-      "id": "sn22.81",
-      "group": "sn",
-      "rank": 1,
-      "links": 4
-    },
-    {
-      "id": "sn22.16",
-      "group": "sn",
-      "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "sn22.19",
-      "group": "sn",
-      "rank": 3,
-      "links": 1
     },
     {
       "id": "sn52.23",
@@ -11257,6 +11215,12 @@
       "links": 5
     },
     {
+      "id": "an4.200",
+      "group": "an",
+      "rank": 5,
+      "links": 2
+    },
+    {
       "id": "dn27",
       "group": "dn",
       "rank": 1,
@@ -11585,6 +11549,30 @@
       "group": "dn",
       "rank": 1,
       "links": 6
+    },
+    {
+      "id": "sn22.81",
+      "group": "sn",
+      "rank": 1,
+      "links": 3
+    },
+    {
+      "id": "sn22.117",
+      "group": "sn",
+      "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "sn22.1",
+      "group": "sn",
+      "rank": 5,
+      "links": 2
+    },
+    {
+      "id": "sn22.93",
+      "group": "sn",
+      "rank": 17,
+      "links": 1
     },
     {
       "id": "sn12.22",
@@ -12988,7 +12976,7 @@
       "id": "sn56.43",
       "group": "sn",
       "rank": 2,
-      "links": 3
+      "links": 2
     },
     {
       "id": "ud3.3",
@@ -13365,8 +13353,8 @@
     {
       "id": "sn56.46",
       "group": "sn",
-      "rank": 1,
-      "links": 2
+      "rank": 3,
+      "links": 1
     },
     {
       "id": "an4.247",
@@ -16372,12 +16360,6 @@
       "id": "thag4.4",
       "group": "thag",
       "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "sn56.42",
-      "group": "sn",
-      "rank": 3,
       "links": 1
     },
     {
@@ -25941,106 +25923,6 @@
       "rank": 7
     },
     {
-      "source": "Entscheidungen als",
-      "target": "sn22.117",
-      "rank": 1
-    },
-    {
-      "source": "Entscheidungen als",
-      "target": "sn22.44",
-      "rank": 2
-    },
-    {
-      "source": "Entscheidungen als",
-      "target": "sn22.99",
-      "rank": 3
-    },
-    {
-      "source": "Entscheidungen als",
-      "target": "sn22.7",
-      "rank": 4
-    },
-    {
-      "source": "Entscheidungen als",
-      "target": "sn44.8",
-      "rank": 5
-    },
-    {
-      "source": "Entscheidungen als",
-      "target": "sn41.3",
-      "rank": 6
-    },
-    {
-      "source": "Entscheidungen als",
-      "target": "sn22.55",
-      "rank": 7
-    },
-    {
-      "source": "Entscheidungen als",
-      "target": "an4.200",
-      "rank": 8
-    },
-    {
-      "source": "Entscheidungen als",
-      "target": "sn22.1",
-      "rank": 9
-    },
-    {
-      "source": "Entscheidungen als",
-      "target": "mn109",
-      "rank": 10
-    },
-    {
-      "source": "Entscheidungen als",
-      "target": "sn22.82",
-      "rank": 11
-    },
-    {
-      "source": "Entscheidungen als",
-      "target": "sn22.85",
-      "rank": 12
-    },
-    {
-      "source": "Entscheidungen als",
-      "target": "sn22.93",
-      "rank": 13
-    },
-    {
-      "source": "Entscheidungen als",
-      "target": "an4.16",
-      "rank": 14
-    },
-    {
-      "source": "Entscheidungen als",
-      "target": "sn22.43",
-      "rank": 15
-    },
-    {
-      "source": "Entscheidungen als",
-      "target": "sn22.47",
-      "rank": 16
-    },
-    {
-      "source": "Entscheidungen als",
-      "target": "sn22.81",
-      "rank": 17
-    },
-    {
-      "source": "Entscheidungen sind Leiden",
-      "target": "sn22.67",
-      "rank": 1
-    },
-    {
-      "source": "Entscheidungen sind Leiden",
-      "target": "sn22.16",
-      "rank": 2
-    },
-    {
-      "source": "Entscheidungen sind Leiden",
-      "target": "sn22.19",
-      "rank": 3
-    },
-    {
       "source": "entsprechend ihrer Taten wiedergeboren",
       "target": "an6.70",
       "rank": 1
@@ -34906,11 +34788,6 @@
       "rank": 1
     },
     {
-      "source": "Macht über diese Entscheidungen",
-      "target": "mn35",
-      "rank": 1
-    },
-    {
       "source": "man das Auge ergreift",
       "target": "sn35.108",
       "rank": 1
@@ -41909,21 +41786,6 @@
       "source": "Vergehen der Erscheinungen",
       "target": "an5.122",
       "rank": 1
-    },
-    {
-      "source": "Vergnügen an Entscheidungen",
-      "target": "sn56.46",
-      "rank": 1
-    },
-    {
-      "source": "Vergnügen an Entscheidungen",
-      "target": "sn56.43",
-      "rank": 2
-    },
-    {
-      "source": "Vergnügen an Entscheidungen",
-      "target": "sn56.42",
-      "rank": 3
     },
     {
       "source": "Verlangen aufgegeben",
