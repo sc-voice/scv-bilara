@@ -979,33 +979,32 @@
       fs.existsSync(indexLock) && fs.unlinkSync(indexLock);
     }});
     it("loadSuttaplexJson(...)=>an3.47", async()=>{
-      //TODO
-        await bd.initialize();
-        var suid = 'an3.47';
-        var lang = 'de';
-        var lang_name = "Deutsch";
-        var author = "Sabbamitta";
-        var author_short = "sabbamitta";
-        var author_uid = 'sabbamitta';
-        var title = 'Kennzeichen des Bedingten ';
+      await bd.initialize();
+      var suid = 'an3.47';
+      var lang = 'de';
+      var lang_name = "Deutsch";
+      var author = "Sabbamitta";
+      var author_short = "sabbamitta";
+      var author_uid = 'sabbamitta';
+      var title = 'Kennzeichen des Bedingten ';
 
-        var json = await bd.loadSuttaplexJson(suid, lang, author_uid);
-        should(json.acronym).equal(`AN 3.47`);
-        should(json.original_title).equal('Saṅkhatalakkhaṇasutta');
-        should.deepEqual(json.translations, [{
-            author,
-            author_short,
-            author_uid,
-            has_comment: false,
-            is_root: false,
-            lang,
-            lang_name,
-            segmented: true,
-            publication_date: null,
-            id: `${suid}_translation-${lang}-${author_uid}`,
-            title,
-            volpage: null,
-        }]);
+      var json = await bd.loadSuttaplexJson(suid, lang, author_uid);
+      should(json.acronym).equal(`AN 3.47`);
+      should(json.original_title).equal('Saṅkhatalakkhaṇasutta');
+      should.deepEqual(json.translations, [{
+          author,
+          author_short,
+          author_uid,
+          has_comment: false,
+          is_root: false,
+          lang,
+          lang_name,
+          segmented: true,
+          publication_date: "2019",
+          id: `${suid}_translation-${lang}-${author_uid}`,
+          title,
+          volpage: null,
+      }]);
     });
     it("loadSuttaplexJson(...)=>thig3.8 de", async()=>{
       if (!TEST_UNPUBLISHED) { return; }

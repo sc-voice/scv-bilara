@@ -1065,9 +1065,10 @@ typeof describe === "function" &&
       // search files
       should.deepEqual(res.suttaRefs.slice(0, 3), [
         "mn9/de/sabbamitta",
+        "mn46/de/sabbamitta",
         //"dn33/de/sabbamitta",
         "an6.63/de/sabbamitta",
-        "an3.156-162/de/sabbamitta",
+        //"an3.156-162/de/sabbamitta",
         //"mn51/de/sabbamitta",
         //"an4.198/de/sabbamitta",
         //"an4.198/de/sabbamitta",
@@ -1077,7 +1078,7 @@ typeof describe === "function" &&
       // is what we should get
       should.deepEqual(
         res.mlDocs.map((mld) => mld.score), [
-          50.214, 25.176, 23.28, // 20.105
+          50.214, 48.273, 25.176, // 23.28, 20.105
         ],
       );
     });
