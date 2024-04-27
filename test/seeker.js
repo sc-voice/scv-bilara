@@ -702,28 +702,35 @@ typeof describe === "function" &&
         ["thag1.10"]
       );
     });
-    it("TESTTESTfind(...) orders sutta references found", async () => {
+    it("TESTTESTfind(...) sutta list", async () => {
       var skr = await new Seeker().initialize();
+      let suttas = [
+        "thig1.1/en/soma",
+        "thig1.2/en/soma",
+        "thig1.3/en/soma",
+      ];
 
       var res = await skr.find({
-        pattern: "sn29.9-999",
+        pattern: suttas.join(', '),
         matchHighlight: false,
       });
       should(res.method).equal("sutta_uid");
-      should.deepEqual(res.suttaRefs, [
-        "sn29.9/en",
-        "sn29.10/en",
-        "sn29.11-20/en",
-        "sn29.21-50/en",
-      ]);
+      should.deepEqual(res.suttaRefs, suttas);
+      let { mlDocs } = res;
+      should.deepEqual( mlDocs.map((mld) => mld.score), [0, 0, 0]);
       should.deepEqual(
-        res.mlDocs.map((mld) => mld.score),
-        [0, 0, 0, 0]
+        mlDocs.map(mld=>{
+          let { sutta_uid, lang, author_uid } = mld;
+          return [sutta_uid,lang,author_uid].join('/');
+        }),
+        suttas
       );
-      should.deepEqual(
-        res.mlDocs.map((mld) => mld.suid),
-        ["sn29.9", "sn29.10", "sn29.11-20", "sn29.21-50"]
-      );
+      should(mlDocs[0].segMap['thig1.1:0.3'].en)
+      .equal('Verses of a Certain Unknown Elder ');
+      should(mlDocs[1].segMap['thig1.2:0.3'].en)
+      .equal('Verses of the Elder Muttā ');
+      should(mlDocs[2].segMap['thig1.3:0.3'].en)
+      .equal('Verses of the Elder Puṇṇā ');
     });
     it("find(...) orders sutta references found", async () => {
       var skr = await new Seeker().initialize();
