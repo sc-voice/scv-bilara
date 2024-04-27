@@ -151,9 +151,10 @@ typeof describe === "function" &&
       });
       should.deepEqual(res.slice(0, 4), [
         `${de_sab}mn/mn9_translation-de-sabbamitta.json:50`,
+        `${de_sab}mn/mn46_translation-de-sabbamitta.json:48`,
         `${de_sab}dn/dn25_translation-de-sabbamitta.json:48`,
         `${de_sab}dn/dn8_translation-de-sabbamitta.json:29`,
-        `${de_sab}an/an6/an6.63_translation-de-sabbamitta.json:25`,
+        //`${de_sab}an/an6/an6.63_translation-de-sabbamitta.json:25`,
         //`${de_sab}an/an3/an3.156-162_translation-de-sabbamitta.json:24`,
         //`${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:17`,
         //`${de_sab}dn/dn33_translation-de-sabbamitta.json:15`,
@@ -391,7 +392,8 @@ typeof describe === "function" &&
           `${de_sab}an/an2/an2.32-41_translation-de-sabbamitta.json:2`,
           `${de_sab}an/an5/an5.41_translation-de-sabbamitta.json:2`,
           `${de_sab}an/an9/an9.20_translation-de-sabbamitta.json:2`,
-          `${de_sab}an/an1/an1.248-257_translation-de-sabbamitta.json:1`,
+          `${de_sab}mn/mn42_translation-de-sabbamitta.json:2`,
+          //`${de_sab}an/an1/an1.248-257_translation-de-sabbamitta.json:1`,
           //`${de_sab}an/an10/an10.91_translation-de-sabbamitta.json:1`,
           //`${de_sab}an/an10/an10.92_translation-de-sabbamitta.json:1`,
           //`${de_sab}an/an3/an3.109_translation-de-sabbamitta.json:1`,
@@ -596,8 +598,9 @@ typeof describe === "function" &&
       var linesUber = [
         //`${de_sab}dn/dn33_translation-de-sabbamitta.json:25`,
         `${de_sab}mn/mn9_translation-de-sabbamitta.json:50`,  
+        `${de_sab}mn/mn46_translation-de-sabbamitta.json:48`,  
         `${de_sab}an/an6/an6.63_translation-de-sabbamitta.json:25`,
-        `${de_sab}an/an3/an3.156-162_translation-de-sabbamitta.json:23`,
+        //`${de_sab}an/an3/an3.156-162_translation-de-sabbamitta.json:23`,
         //`${de_sab}mn/mn51_translation-de-sabbamitta.json:20`,
         //`${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:17`,
         //`${de_sab}an/an4/an4.163_translation-de-sabbamitta.json:15`,
@@ -697,6 +700,29 @@ typeof describe === "function" &&
       should.deepEqual(
         res.mlDocs.map((mld) => mld.suid),
         ["thag1.10"]
+      );
+    });
+    it("TESTTESTfind(...) orders sutta references found", async () => {
+      var skr = await new Seeker().initialize();
+
+      var res = await skr.find({
+        pattern: "sn29.9-999",
+        matchHighlight: false,
+      });
+      should(res.method).equal("sutta_uid");
+      should.deepEqual(res.suttaRefs, [
+        "sn29.9/en",
+        "sn29.10/en",
+        "sn29.11-20/en",
+        "sn29.21-50/en",
+      ]);
+      should.deepEqual(
+        res.mlDocs.map((mld) => mld.score),
+        [0, 0, 0, 0]
+      );
+      should.deepEqual(
+        res.mlDocs.map((mld) => mld.suid),
+        ["sn29.9", "sn29.10", "sn29.11-20", "sn29.21-50"]
       );
     });
     it("find(...) orders sutta references found", async () => {
@@ -1864,7 +1890,7 @@ typeof describe === "function" &&
       should(data.method).equal("phrase");
       should(data.mlDocs.length).above(36).below(60);
       var mld0 = data.mlDocs[0];
-      should(mld0.bilaraPaths[0]).match(/sn35/);
+      should(mld0.bilaraPaths[0]).match(/mn53/);
     });
     it("find(...) finds 'thig3.8' de unpublished", async () => {
       if (!TEST_UNPUBLISHED) { return; }
