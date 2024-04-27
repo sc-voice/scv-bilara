@@ -171,6 +171,11 @@
       "links": 5
     },
     {
+      "id": "an inquirer",
+      "group": "Examples",
+      "links": 2
+    },
+    {
       "id": "an obstacle for you alone",
       "group": "Examples",
       "links": 1
@@ -878,7 +883,7 @@
     {
       "id": "does a realized one exist",
       "group": "Examples",
-      "links": 5
+      "links": 7
     },
     {
       "id": "does immersion come first",
@@ -1696,11 +1701,6 @@
       "links": 4
     },
     {
-      "id": "heavenly high and luxurious bed",
-      "group": "Examples",
-      "links": 1
-    },
-    {
       "id": "he has made so much merit",
       "group": "Examples",
       "links": 3
@@ -2206,6 +2206,11 @@
       "links": 2
     },
     {
+      "id": "lay people",
+      "group": "Examples",
+      "links": 11
+    },
+    {
       "id": "lead the mendicant",
       "group": "Examples",
       "links": 5
@@ -2311,9 +2316,9 @@
       "links": 7
     },
     {
-      "id": "like lightning",
+      "id": "lightning",
       "group": "Examples",
-      "links": 2
+      "links": 12
     },
     {
       "id": "like the moon",
@@ -2439,6 +2444,11 @@
       "id": "lump of foam",
       "group": "Examples",
       "links": 2
+    },
+    {
+      "id": "luxurious bed",
+      "group": "Examples",
+      "links": 19
     },
     {
       "id": "make a refuge for themselves",
@@ -4586,7 +4596,7 @@
       "id": "dn2",
       "group": "dn",
       "rank": 1,
-      "links": 66
+      "links": 67
     },
     {
       "id": "dn17",
@@ -4826,7 +4836,7 @@
       "id": "dn16",
       "group": "dn",
       "rank": 1,
-      "links": 68
+      "links": 69
     },
     {
       "id": "an3.138",
@@ -4886,7 +4896,7 @@
       "id": "mn38",
       "group": "mn",
       "rank": 1,
-      "links": 27
+      "links": 28
     },
     {
       "id": "sn12.34",
@@ -5042,7 +5052,7 @@
       "id": "mn115",
       "group": "mn",
       "rank": 1,
-      "links": 11
+      "links": 12
     },
     {
       "id": "mn75",
@@ -5054,7 +5064,7 @@
       "id": "dn1",
       "group": "dn",
       "rank": 1,
-      "links": 26
+      "links": 27
     },
     {
       "id": "an6.30",
@@ -5468,7 +5478,7 @@
       "id": "thag20.1",
       "group": "thag",
       "rank": 7,
-      "links": 11
+      "links": 12
     },
     {
       "id": "iti109",
@@ -5612,7 +5622,7 @@
       "id": "an9.18",
       "group": "an",
       "rank": 1,
-      "links": 6
+      "links": 7
     },
     {
       "id": "an4.125",
@@ -5732,7 +5742,7 @@
       "id": "mn99",
       "group": "mn",
       "rank": 4,
-      "links": 5
+      "links": 6
     },
     {
       "id": "dn26",
@@ -5762,43 +5772,43 @@
       "id": "an4.198",
       "group": "an",
       "rank": 1,
-      "links": 21
+      "links": 22
     },
     {
       "id": "an10.99",
       "group": "an",
       "rank": 1,
-      "links": 17
+      "links": 18
     },
     {
       "id": "mn112",
       "group": "mn",
       "rank": 1,
-      "links": 17
+      "links": 18
     },
     {
       "id": "mn27",
       "group": "mn",
       "rank": 4,
-      "links": 14
+      "links": 15
     },
     {
       "id": "mn51",
       "group": "mn",
       "rank": 1,
-      "links": 23
+      "links": 24
     },
     {
       "id": "mn94",
       "group": "mn",
       "rank": 1,
-      "links": 22
+      "links": 23
     },
     {
       "id": "mn101",
       "group": "mn",
       "rank": 2,
-      "links": 20
+      "links": 21
     },
     {
       "id": "dn31",
@@ -6209,6 +6219,12 @@
       "links": 3
     },
     {
+      "id": "mn47",
+      "group": "mn",
+      "rank": 1,
+      "links": 1
+    },
+    {
       "id": "sn12.54",
       "group": "sn",
       "rank": 1,
@@ -6349,7 +6365,7 @@
     {
       "id": "an3.25",
       "group": "an",
-      "rank": 1,
+      "rank": 2,
       "links": 4
     },
     {
@@ -6638,13 +6654,13 @@
       "id": "an8.41",
       "group": "an",
       "rank": 1,
-      "links": 6
+      "links": 7
     },
     {
       "id": "an3.70",
       "group": "an",
       "rank": 1,
-      "links": 8
+      "links": 9
     },
     {
       "id": "sn35.127",
@@ -6662,19 +6678,19 @@
       "id": "an8.45",
       "group": "an",
       "rank": 3,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an8.43",
       "group": "an",
       "rank": 3,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an8.42",
       "group": "an",
       "rank": 4,
-      "links": 4
+      "links": 5
     },
     {
       "id": "mn89",
@@ -7238,7 +7254,7 @@
       "id": "an5.234",
       "group": "an",
       "rank": 3,
-      "links": 3
+      "links": 4
     },
     {
       "id": "an7.75",
@@ -7639,8 +7655,8 @@
     {
       "id": "sn17.6",
       "group": "sn",
-      "rank": 8,
-      "links": 1
+      "rank": 3,
+      "links": 2
     },
     {
       "id": "sn17.7",
@@ -8438,7 +8454,7 @@
       "id": "an6.57",
       "group": "an",
       "rank": 1,
-      "links": 5
+      "links": 6
     },
     {
       "id": "sn24.7",
@@ -8822,7 +8838,7 @@
       "id": "mn66",
       "group": "mn",
       "rank": 3,
-      "links": 6
+      "links": 7
     },
     {
       "id": "an2.230-279",
@@ -9589,7 +9605,7 @@
     {
       "id": "sn44.6",
       "group": "sn",
-      "rank": 3,
+      "rank": 6,
       "links": 3
     },
     {
@@ -9686,7 +9702,7 @@
       "id": "sn9.5",
       "group": "sn",
       "rank": 1,
-      "links": 1
+      "links": 2
     },
     {
       "id": "sn9.12",
@@ -9704,7 +9720,7 @@
       "id": "sn9.7",
       "group": "sn",
       "rank": 4,
-      "links": 1
+      "links": 2
     },
     {
       "id": "sn9.10",
@@ -10034,6 +10050,18 @@
       "id": "sn44.11",
       "group": "sn",
       "rank": 1,
+      "links": 3
+    },
+    {
+      "id": "an7.54",
+      "group": "an",
+      "rank": 5,
+      "links": 1
+    },
+    {
+      "id": "sn44.4",
+      "group": "sn",
+      "rank": 4,
       "links": 3
     },
     {
@@ -10694,7 +10722,7 @@
       "id": "sn3.24",
       "group": "sn",
       "rank": 6,
-      "links": 2
+      "links": 3
     },
     {
       "id": "an3.57",
@@ -11210,7 +11238,7 @@
       "id": "an8.23",
       "group": "an",
       "rank": 1,
-      "links": 3
+      "links": 4
     },
     {
       "id": "sn1.27",
@@ -11918,13 +11946,13 @@
       "id": "an8.88",
       "group": "an",
       "rank": 2,
-      "links": 1
+      "links": 2
     },
     {
       "id": "an8.89",
       "group": "an",
       "rank": 3,
-      "links": 1
+      "links": 2
     },
     {
       "id": "an4.157",
@@ -12098,7 +12126,7 @@
       "id": "an5.31",
       "group": "an",
       "rank": 1,
-      "links": 2
+      "links": 3
     },
     {
       "id": "sn2.23",
@@ -12272,7 +12300,7 @@
       "id": "sn6.13",
       "group": "sn",
       "rank": 7,
-      "links": 2
+      "links": 3
     },
     {
       "id": "an8.20",
@@ -12663,12 +12691,6 @@
       "group": "sn",
       "rank": 9,
       "links": 1
-    },
-    {
-      "id": "sn44.4",
-      "group": "sn",
-      "rank": 4,
-      "links": 2
     },
     {
       "id": "sn44.8",
@@ -14105,6 +14127,24 @@
       "links": 2
     },
     {
+      "id": "an5.235",
+      "group": "an",
+      "rank": 1,
+      "links": 1
+    },
+    {
+      "id": "sn20.9",
+      "group": "sn",
+      "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "sn45.24",
+      "group": "sn",
+      "rank": 9,
+      "links": 1
+    },
+    {
       "id": "an5.100",
       "group": "an",
       "rank": 4,
@@ -14288,6 +14328,24 @@
       "id": "thag6.14",
       "group": "thag",
       "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "thag1.41",
+      "group": "thag",
+      "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "thag1.50",
+      "group": "thag",
+      "rank": 5,
+      "links": 1
+    },
+    {
+      "id": "sn1.40",
+      "group": "sn",
+      "rank": 6,
       "links": 1
     },
     {
@@ -14582,6 +14640,18 @@
       "id": "an5.219",
       "group": "an",
       "rank": 7,
+      "links": 1
+    },
+    {
+      "id": "sn56.82",
+      "group": "sn",
+      "rank": 10,
+      "links": 1
+    },
+    {
+      "id": "kp2",
+      "group": "kp",
+      "rank": 11,
       "links": 1
     },
     {
@@ -20332,6 +20402,16 @@
       "rank": 5
     },
     {
+      "source": "an inquirer",
+      "target": "mn47",
+      "rank": 1
+    },
+    {
+      "source": "an inquirer",
+      "target": "mn115",
+      "rank": 2
+    },
+    {
       "source": "an obstacle for you alone",
       "target": "dn1",
       "rank": 1
@@ -25548,18 +25628,28 @@
     },
     {
       "source": "does a realized one exist",
-      "target": "sn44.6",
+      "target": "sn44.11",
       "rank": 3
     },
     {
       "source": "does a realized one exist",
-      "target": "sn44.11",
+      "target": "sn44.1",
       "rank": 4
     },
     {
       "source": "does a realized one exist",
-      "target": "sn44.1",
+      "target": "an7.54",
       "rank": 5
+    },
+    {
+      "source": "does a realized one exist",
+      "target": "sn44.4",
+      "rank": 6
+    },
+    {
+      "source": "does a realized one exist",
+      "target": "sn44.6",
+      "rank": 7
     },
     {
       "source": "does immersion come first",
@@ -31687,11 +31777,6 @@
       "rank": 4
     },
     {
-      "source": "heavenly high and luxurious bed",
-      "target": "an3.63",
-      "rank": 1
-    },
-    {
       "source": "he has made so much merit",
       "target": "sn10.10",
       "rank": 1
@@ -35097,6 +35182,61 @@
       "rank": 2
     },
     {
+      "source": "lay people",
+      "target": "an5.235",
+      "rank": 1
+    },
+    {
+      "source": "lay people",
+      "target": "an8.88",
+      "rank": 2
+    },
+    {
+      "source": "lay people",
+      "target": "an8.89",
+      "rank": 3
+    },
+    {
+      "source": "lay people",
+      "target": "sn20.9",
+      "rank": 4
+    },
+    {
+      "source": "lay people",
+      "target": "an8.23",
+      "rank": 5
+    },
+    {
+      "source": "lay people",
+      "target": "sn9.5",
+      "rank": 6
+    },
+    {
+      "source": "lay people",
+      "target": "an5.234",
+      "rank": 7
+    },
+    {
+      "source": "lay people",
+      "target": "sn9.7",
+      "rank": 8
+    },
+    {
+      "source": "lay people",
+      "target": "sn45.24",
+      "rank": 9
+    },
+    {
+      "source": "lay people",
+      "target": "an6.57",
+      "rank": 10
+    },
+    {
+      "source": "lay people",
+      "target": "mn99",
+      "rank": 11
+    },
+    {
       "source": "lead the mendicant",
       "target": "mn67",
       "rank": 1
@@ -35657,14 +35797,64 @@
       "rank": 7
     },
     {
-      "source": "like lightning",
-      "target": "an3.25",
+      "source": "lightning",
+      "target": "dn16",
       "rank": 1
     },
     {
-      "source": "like lightning",
-      "target": "sn4.6",
+      "source": "lightning",
+      "target": "an3.25",
       "rank": 2
+    },
+    {
+      "source": "lightning",
+      "target": "sn17.6",
+      "rank": 3
+    },
+    {
+      "source": "lightning",
+      "target": "thag1.41",
+      "rank": 4
+    },
+    {
+      "source": "lightning",
+      "target": "thag1.50",
+      "rank": 5
+    },
+    {
+      "source": "lightning",
+      "target": "sn1.40",
+      "rank": 6
+    },
+    {
+      "source": "lightning",
+      "target": "sn4.6",
+      "rank": 7
+    },
+    {
+      "source": "lightning",
+      "target": "sn6.13",
+      "rank": 8
+    },
+    {
+      "source": "lightning",
+      "target": "an5.31",
+      "rank": 9
+    },
+    {
+      "source": "lightning",
+      "target": "sn3.24",
+      "rank": 10
+    },
+    {
+      "source": "lightning",
+      "target": "mn66",
+      "rank": 11
+    },
+    {
+      "source": "lightning",
+      "target": "thag20.1",
+      "rank": 12
     },
     {
       "source": "like the moon",
@@ -36535,6 +36725,101 @@
       "source": "lump of foam",
       "target": "thig16.1",
       "rank": 2
+    },
+    {
+      "source": "luxurious bed",
+      "target": "an3.63",
+      "rank": 1
+    },
+    {
+      "source": "luxurious bed",
+      "target": "an9.18",
+      "rank": 2
+    },
+    {
+      "source": "luxurious bed",
+      "target": "an8.41",
+      "rank": 3
+    },
+    {
+      "source": "luxurious bed",
+      "target": "an8.45",
+      "rank": 4
+    },
+    {
+      "source": "luxurious bed",
+      "target": "an8.43",
+      "rank": 5
+    },
+    {
+      "source": "luxurious bed",
+      "target": "an8.42",
+      "rank": 6
+    },
+    {
+      "source": "luxurious bed",
+      "target": "an3.70",
+      "rank": 7
+    },
+    {
+      "source": "luxurious bed",
+      "target": "dn1",
+      "rank": 8
+    },
+    {
+      "source": "luxurious bed",
+      "target": "dn2",
+      "rank": 9
+    },
+    {
+      "source": "luxurious bed",
+      "target": "sn56.82",
+      "rank": 10
+    },
+    {
+      "source": "luxurious bed",
+      "target": "kp2",
+      "rank": 11
+    },
+    {
+      "source": "luxurious bed",
+      "target": "an4.198",
+      "rank": 12
+    },
+    {
+      "source": "luxurious bed",
+      "target": "an10.99",
+      "rank": 13
+    },
+    {
+      "source": "luxurious bed",
+      "target": "mn112",
+      "rank": 14
+    },
+    {
+      "source": "luxurious bed",
+      "target": "mn27",
+      "rank": 15
+    },
+    {
+      "source": "luxurious bed",
+      "target": "mn51",
+      "rank": 16
+    },
+    {
+      "source": "luxurious bed",
+      "target": "mn94",
+      "rank": 17
+    },
+    {
+      "source": "luxurious bed",
+      "target": "mn101",
+      "rank": 18
+    },
+    {
+      "source": "luxurious bed",
+      "target": "mn38",
+      "rank": 19
     },
     {
       "source": "make a refuge for themselves",

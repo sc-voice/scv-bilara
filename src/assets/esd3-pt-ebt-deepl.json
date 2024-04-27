@@ -8,7 +8,7 @@
     {
       "id": "coisas são úteis",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "como é que um bhikkhu",
@@ -18,7 +18,7 @@
     {
       "id": "conceito",
       "group": "Examples",
-      "links": 3
+      "links": 0
     },
     {
       "id": "dardo do anseio",
@@ -28,17 +28,17 @@
     {
       "id": "desenvolver estes três",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "devem? ser abandonad.s?",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "duas pessoas",
       "group": "Examples",
-      "links": 4
+      "links": 0
     },
     {
       "id": "em suportar",
@@ -48,22 +48,22 @@
     {
       "id": "escolhas como o eu",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "esta é outra forma",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "este nobre caminho óctuplo",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "forma como o eu",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "incondicional",
@@ -73,7 +73,7 @@
     {
       "id": "não dirigida",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "oito pessoas",
@@ -83,7 +83,7 @@
     {
       "id": "portas dos sentidos",
       "group": "Examples",
-      "links": 3
+      "links": 0
     },
     {
       "id": "quatro pessoas",
@@ -93,42 +93,42 @@
     {
       "id": "queixa",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "raiva",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "sem sinais",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "serenidade e discernimento",
       "group": "Examples",
-      "links": 4
+      "links": 0
     },
     {
       "id": "três características",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "três espectros de prática",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "três pessoas",
       "group": "Examples",
-      "links": 10
+      "links": 0
     },
     {
       "id": "três processos",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "vêm do tolo",
@@ -138,402 +138,8 @@
     {
       "id": "visão substancialista",
       "group": "Examples",
-      "links": 2
-    },
-    {
-      "id": "sn41.6",
-      "group": "sn",
-      "rank": 1,
-      "links": 3
-    },
-    {
-      "id": "an4.200",
-      "group": "an",
-      "rank": 1,
-      "links": 3
-    },
-    {
-      "id": "an1.575-615",
-      "group": "an",
-      "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "an3.183-352",
-      "group": "an",
-      "rank": 1,
-      "links": 5
-    },
-    {
-      "id": "an4.188",
-      "group": "an",
-      "rank": 1,
-      "links": 3
-    },
-    {
-      "id": "mn44",
-      "group": "mn",
-      "rank": 1,
-      "links": 6
-    },
-    {
-      "id": "an2.118-129",
-      "group": "an",
-      "rank": 1,
-      "links": 1
-    },
-    {
-      "id": "an2.130-140",
-      "group": "an",
-      "rank": 1,
-      "links": 2
-    },
-    {
-      "id": "an2.52-63",
-      "group": "an",
-      "rank": 3,
-      "links": 1
-    },
-    {
-      "id": "an2.32-41",
-      "group": "an",
-      "rank": 4,
-      "links": 1
-    },
-    {
-      "id": "an3.16",
-      "group": "an",
-      "rank": 1,
-      "links": 1
-    },
-    {
-      "id": "an2.163-179",
-      "group": "an",
-      "rank": 2,
-      "links": 2
-    },
-    {
-      "id": "an1.219-234",
-      "group": "an",
-      "rank": 3,
-      "links": 1
-    },
-    {
-      "id": "an2.310-479",
-      "group": "an",
-      "rank": 1,
-      "links": 1
-    },
-    {
-      "id": "an2.21-31",
-      "group": "an",
-      "rank": 3,
-      "links": 1
-    },
-    {
-      "id": "an3.47",
-      "group": "an",
-      "rank": 1,
-      "links": 1
-    },
-    {
-      "id": "an3.3",
-      "group": "an",
-      "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "an3.21",
-      "group": "an",
-      "rank": 1,
-      "links": 1
-    },
-    {
-      "id": "an3.24",
-      "group": "an",
-      "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "an3.13",
-      "group": "an",
-      "rank": 3,
-      "links": 1
-    },
-    {
-      "id": "an3.28",
-      "group": "an",
-      "rank": 4,
-      "links": 1
-    },
-    {
-      "id": "an3.23",
-      "group": "an",
-      "rank": 5,
-      "links": 1
-    },
-    {
-      "id": "an3.22",
-      "group": "an",
-      "rank": 6,
-      "links": 1
-    },
-    {
-      "id": "an3.25",
-      "group": "an",
-      "rank": 7,
-      "links": 1
-    },
-    {
-      "id": "an3.26",
-      "group": "an",
-      "rank": 8,
-      "links": 1
-    },
-    {
-      "id": "an3.27",
-      "group": "an",
-      "rank": 9,
-      "links": 1
-    },
-    {
-      "id": "an3.29",
-      "group": "an",
-      "rank": 10,
-      "links": 1
-    },
-    {
-      "id": "an3.94",
-      "group": "an",
-      "rank": 2,
-      "links": 1
+      "links": 0
     }
   ],
-  "links": [
-    {
-      "source": "coisas são úteis",
-      "target": "sn41.6",
-      "rank": 1
-    },
-    {
-      "source": "conceito",
-      "target": "an4.200",
-      "rank": 1
-    },
-    {
-      "source": "conceito",
-      "target": "an1.575-615",
-      "rank": 2
-    },
-    {
-      "source": "conceito",
-      "target": "an3.183-352",
-      "rank": 3
-    },
-    {
-      "source": "desenvolver estes três",
-      "target": "an3.183-352",
-      "rank": 1
-    },
-    {
-      "source": "devem? ser abandonad.s?",
-      "target": "an4.188",
-      "rank": 1
-    },
-    {
-      "source": "devem? ser abandonad.s?",
-      "target": "mn44",
-      "rank": 2
-    },
-    {
-      "source": "duas pessoas",
-      "target": "an2.118-129",
-      "rank": 1
-    },
-    {
-      "source": "duas pessoas",
-      "target": "an2.130-140",
-      "rank": 2
-    },
-    {
-      "source": "duas pessoas",
-      "target": "an2.52-63",
-      "rank": 3
-    },
-    {
-      "source": "duas pessoas",
-      "target": "an2.32-41",
-      "rank": 4
-    },
-    {
-      "source": "escolhas como o eu",
-      "target": "an4.200",
-      "rank": 1
-    },
-    {
-      "source": "esta é outra forma",
-      "target": "an4.188",
-      "rank": 1
-    },
-    {
-      "source": "este nobre caminho óctuplo",
-      "target": "mn44",
-      "rank": 1
-    },
-    {
-      "source": "forma como o eu",
-      "target": "an4.200",
-      "rank": 1
-    },
-    {
-      "source": "forma como o eu",
-      "target": "mn44",
-      "rank": 2
-    },
-    {
-      "source": "não dirigida",
-      "target": "an3.183-352",
-      "rank": 1
-    },
-    {
-      "source": "portas dos sentidos",
-      "target": "an3.16",
-      "rank": 1
-    },
-    {
-      "source": "portas dos sentidos",
-      "target": "an2.163-179",
-      "rank": 2
-    },
-    {
-      "source": "portas dos sentidos",
-      "target": "an1.219-234",
-      "rank": 3
-    },
-    {
-      "source": "queixa",
-      "target": "an4.188",
-      "rank": 1
-    },
-    {
-      "source": "raiva",
-      "target": "an2.130-140",
-      "rank": 1
-    },
-    {
-      "source": "raiva",
-      "target": "an3.183-352",
-      "rank": 2
-    },
-    {
-      "source": "sem sinais",
-      "target": "an3.183-352",
-      "rank": 1
-    },
-    {
-      "source": "serenidade e discernimento",
-      "target": "an2.310-479",
-      "rank": 1
-    },
-    {
-      "source": "serenidade e discernimento",
-      "target": "sn41.6",
-      "rank": 2
-    },
-    {
-      "source": "serenidade e discernimento",
-      "target": "an2.21-31",
-      "rank": 3
-    },
-    {
-      "source": "serenidade e discernimento",
-      "target": "an2.163-179",
-      "rank": 4
-    },
-    {
-      "source": "três características",
-      "target": "an3.47",
-      "rank": 1
-    },
-    {
-      "source": "três características",
-      "target": "an3.3",
-      "rank": 2
-    },
-    {
-      "source": "três espectros de prática",
-      "target": "mn44",
-      "rank": 1
-    },
-    {
-      "source": "três pessoas",
-      "target": "an3.21",
-      "rank": 1
-    },
-    {
-      "source": "três pessoas",
-      "target": "an3.24",
-      "rank": 2
-    },
-    {
-      "source": "três pessoas",
-      "target": "an3.13",
-      "rank": 3
-    },
-    {
-      "source": "três pessoas",
-      "target": "an3.28",
-      "rank": 4
-    },
-    {
-      "source": "três pessoas",
-      "target": "an3.23",
-      "rank": 5
-    },
-    {
-      "source": "três pessoas",
-      "target": "an3.22",
-      "rank": 6
-    },
-    {
-      "source": "três pessoas",
-      "target": "an3.25",
-      "rank": 7
-    },
-    {
-      "source": "três pessoas",
-      "target": "an3.26",
-      "rank": 8
-    },
-    {
-      "source": "três pessoas",
-      "target": "an3.27",
-      "rank": 9
-    },
-    {
-      "source": "três pessoas",
-      "target": "an3.29",
-      "rank": 10
-    },
-    {
-      "source": "três processos",
-      "target": "sn41.6",
-      "rank": 1
-    },
-    {
-      "source": "três processos",
-      "target": "mn44",
-      "rank": 2
-    },
-    {
-      "source": "visão substancialista",
-      "target": "mn44",
-      "rank": 1
-    },
-    {
-      "source": "visão substancialista",
-      "target": "an3.94",
-      "rank": 2
-    }
-  ]
+  "links": []
 }
