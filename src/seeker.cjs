@@ -21,6 +21,7 @@
   const TRANSLATION_PATH = path.join(BILARA_PATH, "translation");
   const MAXBUFFER = 10 * 1024 * 1024;
   const TCMAP = require("./seeker-tcmap.json");
+  const MAX_DOC = 50; // Hard limit for reasonable use of resources
 
   const { 
     DBG_SEEKER, DBG_GREP, DBG_FINDARGS, DBG_TRILINGUAL, 
@@ -71,7 +72,7 @@
           : "";
       this.matchWordEnd = opts.matchWordEnd;
       this.maxResults = opts.maxResults == null ? 1000 : opts.maxResults;
-      this.maxDoc = opts.maxDoc == null ? 50 : opts.maxDoc;
+      this.maxDoc = opts.maxDoc == null ? MAX_DOC : opts.maxDoc;
       this.minLang = opts.minLang || 2;
       this.trilingual = opts.trilingual || false;
     }
@@ -663,12 +664,19 @@
       lang && !languages.includes(lang) && languages.push(lang);
       refLang === searchLang && 
         !languages.includes('ref') && languages.push('ref');
+      let isSuttaRef = SuttaCentralId.test(pattern);
       maxResults = Number(maxResults == null 
         ? this.maxResults : maxResults);
       if (isNaN(maxResults)) {
         throw new Error("maxResults must be a number");
       }
-      maxDoc = Number(maxDoc == null ? this.maxDoc : maxDoc);
+      maxDoc = isSuttaRef
+        ? MAX_DOC
+        : Number(maxDoc == null ? this.maxDoc : maxDoc);
+      if (isNaN(maxDoc)) {
+        throw new Error("maxDoc must be a number");
+      }
+
       matchHighlight == null && (matchHighlight = this.matchHighlight);
       if (!author) {
         author = searchLang && AuthorsV2.langAuthor(searchLang, {
@@ -678,7 +686,6 @@
       if (!author) {
         author = this.author;
       }
-      let isSuttaRef = SuttaCentralId.test(pattern);
       if (trilingual) {
         if (isSuttaRef) {
           let [ patSuid, patLang, patAuthor ] = pattern.split('/');

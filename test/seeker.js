@@ -703,20 +703,27 @@ typeof describe === "function" &&
       );
     });
     it("TESTTESTfind(...) sutta list", async () => {
-      var skr = await new Seeker().initialize();
-      let suttas = [
-        "thig1.1/en/soma",
-        "thig1.2/en/soma",
-        "thig1.3/en/soma",
-      ];
+      let msg = 'test.seeker@706';
+      var maxDoc = 2;
+      let skr = await new Seeker({maxDoc}).initialize();
+      let dbg = 0;
+      let suids = ['thig1.1', 'thig1.2', 'thig1.3'];
+      let patAuthor = 'soma';
+      let patLang = 'en';
+      let suttas = suids.map(suid=>`${suid}/${patLang}/${patAuthor}`);
+      let pattern = `-dl en -da soma ` + suids.join(', ');
 
       var res = await skr.find({
-        pattern: suttas.join(', '),
+        pattern,
         matchHighlight: false,
       });
       should(res.method).equal("sutta_uid");
-      should.deepEqual(res.suttaRefs, suttas);
-      let { mlDocs } = res;
+      let { mlDocs, suttaRefs } = res;
+      dbg && console.log(msg, '[1]mlDocs[0]', mlDocs[0]);
+      dbg && console.log(msg, '[2]suttaRefs', suttaRefs);
+      dbg && console.log(msg, '[3]pattern', pattern);
+
+      should.deepEqual(suttaRefs, suids);
       should.deepEqual( mlDocs.map((mld) => mld.score), [0, 0, 0]);
       should.deepEqual(
         mlDocs.map(mld=>{
@@ -842,11 +849,15 @@ typeof describe === "function" &&
       var [mld0] = res.mlDocs;
       should(res.method).equal("sutta_uid");
       should(res.maxResults).equal(maxResults);
+
+      // Ignore maxDoc for sutta lists
       should.deepEqual(res.suttaRefs, [
         "thig1.1/en/soma", "thig1.2/en/soma", "thig1.3/en/soma"]);
-      should(res.mlDocs.length).equal(2); // maxdDoc limit
-      should.deepEqual(res.mlDocs.map(md=>md.suid), ["thig1.1", "thig1.2"]);
-      should.deepEqual(res.mlDocs.map(md=>md.author_uid), ["soma", "soma"]);
+      should(res.mlDocs.length).equal(3); // maxdDoc limit
+      should.deepEqual(res.mlDocs.map(md=>md.suid), 
+        ["thig1.1", "thig1.2", "thig1.3"]);
+      should.deepEqual(res.mlDocs.map(md=>md.author_uid), 
+        ["soma", "soma", "soma"]);
     });
     it("find(...) finds an1.2", async () => {
       var maxResults = 3;
@@ -901,7 +912,7 @@ typeof describe === "function" &&
         lang,
       });
       should(res.method).equal("sutta_uid");
-      should(res.maxDoc).equal(maxDoc);
+      should(res.maxDoc).equal(50); // Hard limit for sutta lists
       should.deepEqual(res.suttaRefs, [`mn1/en/bodhi`]);
       should(res.resultPattern).equal(pattern);
       should(res.lang).equal("en");
