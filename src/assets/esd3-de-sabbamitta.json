@@ -613,7 +613,7 @@
     {
       "id": "das Stehlen auf",
       "group": "Examples",
-      "links": 21
+      "links": 22
     },
     {
       "id": "das unübertreffliche Rad des Dhamma",
@@ -1228,7 +1228,7 @@
     {
       "id": "entsprechend ihrer Taten wiedergeboren",
       "group": "Examples",
-      "links": 40
+      "links": 41
     },
     {
       "id": "entwickelt die Grundlage übersinnlicher Kraft",
@@ -1358,7 +1358,7 @@
     {
       "id": "essen g[ei]b",
       "group": "Examples",
-      "links": 7
+      "links": 8
     },
     {
       "id": "es war der Besinnungstag",
@@ -2173,7 +2173,7 @@
     {
       "id": "ist etwas anderes",
       "group": "Examples",
-      "links": 5
+      "links": 6
     },
     {
       "id": "jammer.* und klag",
@@ -3658,7 +3658,7 @@
     {
       "id": "viel Leiden und Bedrängnis",
       "group": "Examples",
-      "links": 5
+      "links": 6
     },
     {
       "id": "vier.* Arten der Suche",
@@ -4288,7 +4288,7 @@
     {
       "id": "zum höheren Geist",
       "group": "Examples",
-      "links": 0
+      "links": 33
     },
     {
       "id": "zum Rückschritt",
@@ -4744,7 +4744,7 @@
       "id": "an4.87",
       "group": "an",
       "rank": 3,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an4.90",
@@ -5800,7 +5800,7 @@
       "id": "dn28",
       "group": "dn",
       "rank": 1,
-      "links": 27
+      "links": 28
     },
     {
       "id": "an1.394-574",
@@ -6010,7 +6010,7 @@
       "id": "an10.98",
       "group": "an",
       "rank": 1,
-      "links": 5
+      "links": 6
     },
     {
       "id": "sn36.8",
@@ -6052,7 +6052,7 @@
       "id": "mn119",
       "group": "mn",
       "rank": 1,
-      "links": 15
+      "links": 16
     },
     {
       "id": "mn38",
@@ -6478,7 +6478,7 @@
       "id": "sn21.4",
       "group": "sn",
       "rank": 6,
-      "links": 4
+      "links": 5
     },
     {
       "id": "sn10.5",
@@ -6844,7 +6844,7 @@
       "id": "an5.106",
       "group": "an",
       "rank": 1,
-      "links": 3
+      "links": 4
     },
     {
       "id": "dn5",
@@ -6946,7 +6946,7 @@
       "id": "mn53",
       "group": "mn",
       "rank": 1,
-      "links": 6
+      "links": 7
     },
     {
       "id": "an6.31",
@@ -7024,13 +7024,13 @@
       "id": "an7.76",
       "group": "an",
       "rank": 1,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an7.80",
       "group": "an",
       "rank": 2,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an8.52",
@@ -7600,7 +7600,7 @@
       "id": "an10.30",
       "group": "an",
       "rank": 4,
-      "links": 6
+      "links": 7
     },
     {
       "id": "an2.118-129",
@@ -8053,6 +8053,12 @@
       "links": 6
     },
     {
+      "id": "mn54",
+      "group": "mn",
+      "rank": 1,
+      "links": 5
+    },
+    {
       "id": "an3.70",
       "group": "an",
       "rank": 1,
@@ -8061,7 +8067,7 @@
     {
       "id": "an8.39",
       "group": "an",
-      "rank": 3,
+      "rank": 4,
       "links": 1
     },
     {
@@ -8079,7 +8085,7 @@
     {
       "id": "an10.168",
       "group": "an",
-      "rank": 6,
+      "rank": 7,
       "links": 1
     },
     {
@@ -8091,7 +8097,7 @@
     {
       "id": "an5.178",
       "group": "an",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
@@ -8926,7 +8932,7 @@
       "id": "an8.30",
       "group": "an",
       "rank": 1,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an7.15",
@@ -9874,7 +9880,7 @@
       "id": "an5.234",
       "group": "an",
       "rank": 3,
-      "links": 2
+      "links": 3
     },
     {
       "id": "iti107",
@@ -10114,7 +10120,7 @@
       "id": "mn6",
       "group": "mn",
       "rank": 2,
-      "links": 6
+      "links": 7
     },
     {
       "id": "sn16.9",
@@ -10480,7 +10486,7 @@
       "id": "an8.57",
       "group": "an",
       "rank": 7,
-      "links": 3
+      "links": 4
     },
     {
       "id": "an10.21",
@@ -10498,7 +10504,7 @@
       "id": "an11.14",
       "group": "an",
       "rank": 4,
-      "links": 4
+      "links": 5
     },
     {
       "id": "mn16",
@@ -11139,13 +11145,13 @@
     {
       "id": "thag1.82",
       "group": "thag",
-      "rank": 3,
+      "rank": 4,
       "links": 1
     },
     {
       "id": "sn1.42",
       "group": "sn",
-      "rank": 4,
+      "rank": 5,
       "links": 1
     },
     {
@@ -11787,7 +11793,7 @@
     {
       "id": "an5.76",
       "group": "an",
-      "rank": 2,
+      "rank": 3,
       "links": 3
     },
     {
@@ -11878,7 +11884,7 @@
       "id": "an5.166",
       "group": "an",
       "rank": 5,
-      "links": 3
+      "links": 4
     },
     {
       "id": "an5.89",
@@ -12993,8 +12999,8 @@
     {
       "id": "an5.179",
       "group": "an",
-      "rank": 2,
-      "links": 2
+      "rank": 1,
+      "links": 3
     },
     {
       "id": "sn55.29",
@@ -14110,7 +14116,7 @@
       "id": "an10.71",
       "group": "an",
       "rank": 1,
-      "links": 3
+      "links": 4
     },
     {
       "id": "sn43.1",
@@ -16738,7 +16744,7 @@
       "id": "an4.22",
       "group": "an",
       "rank": 1,
-      "links": 2
+      "links": 3
     },
     {
       "id": "an10.121",
@@ -16780,13 +16786,13 @@
       "id": "an4.35",
       "group": "an",
       "rank": 9,
-      "links": 3
+      "links": 4
     },
     {
       "id": "an7.67",
       "group": "an",
       "rank": 3,
-      "links": 2
+      "links": 3
     },
     {
       "id": "an7.24",
@@ -16924,19 +16930,19 @@
       "id": "an5.104",
       "group": "an",
       "rank": 7,
-      "links": 2
+      "links": 3
     },
     {
       "id": "an10.8",
       "group": "an",
       "rank": 9,
-      "links": 2
+      "links": 3
     },
     {
       "id": "an8.71",
       "group": "an",
       "rank": 10,
-      "links": 2
+      "links": 3
     },
     {
       "id": "an5.180",
@@ -16984,25 +16990,25 @@
       "id": "an7.75",
       "group": "an",
       "rank": 4,
-      "links": 2
+      "links": 3
     },
     {
       "id": "an7.77",
       "group": "an",
       "rank": 6,
-      "links": 2
+      "links": 3
     },
     {
       "id": "an7.79",
       "group": "an",
       "rank": 8,
-      "links": 2
+      "links": 3
     },
     {
       "id": "an7.81",
       "group": "an",
       "rank": 10,
-      "links": 2
+      "links": 3
     },
     {
       "id": "sn10.9",
@@ -17809,6 +17815,36 @@
       "links": 1
     },
     {
+      "id": "an5.87",
+      "group": "an",
+      "rank": 5,
+      "links": 2
+    },
+    {
+      "id": "an5.109",
+      "group": "an",
+      "rank": 6,
+      "links": 2
+    },
+    {
+      "id": "an5.232",
+      "group": "an",
+      "rank": 7,
+      "links": 2
+    },
+    {
+      "id": "an5.233",
+      "group": "an",
+      "rank": 8,
+      "links": 2
+    },
+    {
+      "id": "an8.58",
+      "group": "an",
+      "rank": 17,
+      "links": 2
+    },
+    {
       "id": "an4.264",
       "group": "an",
       "rank": 2,
@@ -17818,36 +17854,6 @@
       "id": "an3.163-182",
       "group": "an",
       "rank": 4,
-      "links": 1
-    },
-    {
-      "id": "an5.87",
-      "group": "an",
-      "rank": 7,
-      "links": 1
-    },
-    {
-      "id": "an5.109",
-      "group": "an",
-      "rank": 8,
-      "links": 1
-    },
-    {
-      "id": "an5.232",
-      "group": "an",
-      "rank": 9,
-      "links": 1
-    },
-    {
-      "id": "an5.233",
-      "group": "an",
-      "rank": 10,
-      "links": 1
-    },
-    {
-      "id": "an8.58",
-      "group": "an",
-      "rank": 19,
       "links": 1
     },
     {
@@ -22096,103 +22102,108 @@
     },
     {
       "source": "das Stehlen auf",
-      "target": "an3.70",
+      "target": "mn54",
       "rank": 2
     },
     {
       "source": "das Stehlen auf",
-      "target": "an8.39",
+      "target": "an3.70",
       "rank": 3
     },
     {
       "source": "das Stehlen auf",
-      "target": "an10.211",
+      "target": "an8.39",
       "rank": 4
     },
     {
       "source": "das Stehlen auf",
-      "target": "an10.212",
+      "target": "an10.211",
       "rank": 5
     },
     {
       "source": "das Stehlen auf",
-      "target": "an10.168",
+      "target": "an10.212",
       "rank": 6
     },
     {
       "source": "das Stehlen auf",
-      "target": "an10.167",
+      "target": "an10.168",
       "rank": 7
     },
     {
       "source": "das Stehlen auf",
-      "target": "an5.178",
+      "target": "an10.167",
       "rank": 8
     },
     {
       "source": "das Stehlen auf",
-      "target": "an10.216",
+      "target": "an5.178",
       "rank": 9
     },
     {
       "source": "das Stehlen auf",
-      "target": "sn55.7",
+      "target": "an10.216",
       "rank": 10
     },
     {
       "source": "das Stehlen auf",
-      "target": "an10.176",
+      "target": "sn55.7",
       "rank": 11
     },
     {
       "source": "das Stehlen auf",
-      "target": "sn42.8",
+      "target": "an10.176",
       "rank": 12
     },
     {
       "source": "das Stehlen auf",
-      "target": "an4.198",
+      "target": "sn42.8",
       "rank": 13
     },
     {
       "source": "das Stehlen auf",
-      "target": "mn41",
+      "target": "an4.198",
       "rank": 14
     },
     {
       "source": "das Stehlen auf",
-      "target": "mn42",
+      "target": "mn41",
       "rank": 15
     },
     {
       "source": "das Stehlen auf",
-      "target": "an10.99",
+      "target": "mn42",
       "rank": 16
     },
     {
       "source": "das Stehlen auf",
-      "target": "mn27",
+      "target": "an10.99",
       "rank": 17
     },
     {
       "source": "das Stehlen auf",
-      "target": "mn51",
+      "target": "mn27",
       "rank": 18
     },
     {
       "source": "das Stehlen auf",
-      "target": "dn1",
+      "target": "mn51",
       "rank": 19
     },
     {
       "source": "das Stehlen auf",
-      "target": "dn2",
+      "target": "dn1",
       "rank": 20
     },
     {
       "source": "das Stehlen auf",
-      "target": "mn38",
+      "target": "dn2",
       "rank": 21
+    },
+    {
+      "source": "das Stehlen auf",
+      "target": "mn38",
+      "rank": 22
     },
     {
       "source": "das unübertreffliche Rad des Dhamma",
@@ -26111,43 +26122,48 @@
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "mn119",
+      "target": "mn54",
       "rank": 33
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "dn10",
+      "target": "mn119",
       "rank": 34
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "dn28",
+      "target": "dn10",
       "rank": 35
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "dn25",
+      "target": "dn28",
       "rank": 36
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "mn12",
+      "target": "dn25",
       "rank": 37
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "mn36",
+      "target": "mn12",
       "rank": 38
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "mn60",
+      "target": "mn36",
       "rank": 39
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "dn34",
+      "target": "mn60",
       "rank": 40
+    },
+    {
+      "source": "entsprechend ihrer Taten wiedergeboren",
+      "target": "dn34",
+      "rank": 41
     },
     {
       "source": "entwickelt die Grundlage übersinnlicher Kraft",
@@ -27221,28 +27237,33 @@
     },
     {
       "source": "essen g[ei]b",
-      "target": "thag1.82",
+      "target": "mn54",
       "rank": 3
     },
     {
       "source": "essen g[ei]b",
-      "target": "sn1.42",
+      "target": "thag1.82",
       "rank": 4
     },
     {
       "source": "essen g[ei]b",
-      "target": "an4.59",
+      "target": "sn1.42",
       "rank": 5
     },
     {
       "source": "essen g[ei]b",
-      "target": "an4.58",
+      "target": "an4.59",
       "rank": 6
     },
     {
       "source": "essen g[ei]b",
-      "target": "an5.78",
+      "target": "an4.58",
       "rank": 7
+    },
+    {
+      "source": "essen g[ei]b",
+      "target": "an5.78",
+      "rank": 8
     },
     {
       "source": "es war der Besinnungstag",
@@ -32373,6 +32394,11 @@
       "source": "ist etwas anderes",
       "target": "an10.176",
       "rank": 5
+    },
+    {
+      "source": "ist etwas anderes",
+      "target": "mn54",
+      "rank": 6
     },
     {
       "source": "jammer.* und klag",
@@ -42401,28 +42427,33 @@
     },
     {
       "source": "viel Leiden und Bedrängnis",
-      "target": "mn22",
+      "target": "mn54",
       "rank": 1
     },
     {
       "source": "viel Leiden und Bedrängnis",
-      "target": "an5.76",
+      "target": "mn22",
       "rank": 2
     },
     {
       "source": "viel Leiden und Bedrängnis",
-      "target": "sn1.20",
+      "target": "an5.76",
       "rank": 3
     },
     {
       "source": "viel Leiden und Bedrängnis",
-      "target": "mn14",
+      "target": "sn1.20",
       "rank": 4
     },
     {
       "source": "viel Leiden und Bedrängnis",
-      "target": "sn4.21",
+      "target": "mn14",
       "rank": 5
+    },
+    {
+      "source": "viel Leiden und Bedrängnis",
+      "target": "sn4.21",
+      "rank": 6
     },
     {
       "source": "vier.* Arten der Suche",
@@ -46478,6 +46509,171 @@
       "source": "zu meinem langanhaltenden Nutzen",
       "target": "dn30",
       "rank": 8
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an5.179",
+      "rank": 1
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "mn53",
+      "rank": 2
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an7.67",
+      "rank": 3
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an5.106",
+      "rank": 4
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an5.87",
+      "rank": 5
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an5.109",
+      "rank": 6
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an5.232",
+      "rank": 7
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an5.233",
+      "rank": 8
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an5.234",
+      "rank": 9
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an7.75",
+      "rank": 10
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an7.76",
+      "rank": 11
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an7.77",
+      "rank": 12
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an7.79",
+      "rank": 13
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an7.80",
+      "rank": 14
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an7.81",
+      "rank": 15
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an8.57",
+      "rank": 16
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an8.58",
+      "rank": 17
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an10.98",
+      "rank": 18
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an5.104",
+      "rank": 19
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an10.71",
+      "rank": 20
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an10.8",
+      "rank": 21
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an8.71",
+      "rank": 22
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "sn21.4",
+      "rank": 23
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an4.87",
+      "rank": 24
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an4.22",
+      "rank": 25
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an10.30",
+      "rank": 26
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "mn6",
+      "rank": 27
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an11.14",
+      "rank": 28
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an4.35",
+      "rank": 29
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an5.166",
+      "rank": 30
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "an8.30",
+      "rank": 31
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "mn119",
+      "rank": 32
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "dn28",
+      "rank": 33
     },
     {
       "source": "zum Rückschritt",
