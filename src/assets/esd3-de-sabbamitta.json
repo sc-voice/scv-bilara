@@ -1581,9 +1581,9 @@
       "links": 6
     },
     {
-      "id": "gegründeter Gleichmut",
+      "id": "gegründete[nr] Gleichmut",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "geheimen und öffentlichen",
@@ -3316,6 +3316,11 @@
       "links": 8
     },
     {
+      "id": "tödlichem Schmerz",
+      "group": "Examples",
+      "links": 13
+    },
+    {
       "id": "Tor zur Unsterblichkeit",
       "group": "Examples",
       "links": 11
@@ -4492,7 +4497,7 @@
       "id": "mn14",
       "group": "mn",
       "rank": 1,
-      "links": 10
+      "links": 11
     },
     {
       "id": "an9.41",
@@ -6076,7 +6081,7 @@
       "id": "mn22",
       "group": "mn",
       "rank": 1,
-      "links": 17
+      "links": 18
     },
     {
       "id": "sn22.8",
@@ -8056,7 +8061,7 @@
       "id": "mn54",
       "group": "mn",
       "rank": 1,
-      "links": 5
+      "links": 7
     },
     {
       "id": "an3.70",
@@ -8944,7 +8949,7 @@
       "id": "sn12.63",
       "group": "sn",
       "rank": 2,
-      "links": 4
+      "links": 5
     },
     {
       "id": "sn5.10",
@@ -10432,7 +10437,7 @@
       "id": "iti109",
       "group": "iti",
       "rank": 2,
-      "links": 5
+      "links": 6
     },
     {
       "id": "an4.46",
@@ -11115,8 +11120,8 @@
     {
       "id": "an7.72",
       "group": "an",
-      "rank": 2,
-      "links": 2
+      "rank": 1,
+      "links": 3
     },
     {
       "id": "an5.78",
@@ -11566,7 +11571,7 @@
       "id": "mn46",
       "group": "mn",
       "rank": 1,
-      "links": 1
+      "links": 2
     },
     {
       "id": "an5.194",
@@ -12232,7 +12237,7 @@
       "id": "sn35.244",
       "group": "sn",
       "rank": 11,
-      "links": 2
+      "links": 3
     },
     {
       "id": "sn35.243",
@@ -13389,8 +13394,8 @@
     {
       "id": "mn13",
       "group": "mn",
-      "rank": 11,
-      "links": 2
+      "rank": 5,
+      "links": 3
     },
     {
       "id": "an3.133",
@@ -13990,7 +13995,7 @@
       "id": "ud6.8",
       "group": "ud",
       "rank": 4,
-      "links": 1
+      "links": 2
     },
     {
       "id": "cp14",
@@ -14362,7 +14367,7 @@
       "id": "sn20.10",
       "group": "sn",
       "rank": 1,
-      "links": 1
+      "links": 2
     },
     {
       "id": "an4.107",
@@ -16045,6 +16050,18 @@
       "links": 1
     },
     {
+      "id": "sn20.9",
+      "group": "sn",
+      "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "sn12.66",
+      "group": "sn",
+      "rank": 1,
+      "links": 2
+    },
+    {
       "id": "sn12.49",
       "group": "sn",
       "rank": 4,
@@ -17703,12 +17720,6 @@
     {
       "id": "an4.77",
       "group": "an",
-      "rank": 1,
-      "links": 1
-    },
-    {
-      "id": "sn12.66",
-      "group": "sn",
       "rank": 1,
       "links": 1
     },
@@ -28711,9 +28722,14 @@
       "rank": 6
     },
     {
-      "source": "gegründeter Gleichmut",
+      "source": "gegründete[nr] Gleichmut",
       "target": "mn28",
       "rank": 1
+    },
+    {
+      "source": "gegründete[nr] Gleichmut",
+      "target": "mn54",
+      "rank": 2
     },
     {
       "source": "geheimen und öffentlichen",
@@ -40164,6 +40180,71 @@
       "source": "Textanalyse",
       "target": "an4.140",
       "rank": 8
+    },
+    {
+      "source": "tödlichem Schmerz",
+      "target": "an7.72",
+      "rank": 1
+    },
+    {
+      "source": "tödlichem Schmerz",
+      "target": "sn20.9",
+      "rank": 2
+    },
+    {
+      "source": "tödlichem Schmerz",
+      "target": "sn12.66",
+      "rank": 3
+    },
+    {
+      "source": "tödlichem Schmerz",
+      "target": "mn14",
+      "rank": 4
+    },
+    {
+      "source": "tödlichem Schmerz",
+      "target": "mn13",
+      "rank": 5
+    },
+    {
+      "source": "tödlichem Schmerz",
+      "target": "mn46",
+      "rank": 6
+    },
+    {
+      "source": "tödlichem Schmerz",
+      "target": "mn54",
+      "rank": 7
+    },
+    {
+      "source": "tödlichem Schmerz",
+      "target": "sn20.10",
+      "rank": 8
+    },
+    {
+      "source": "tödlichem Schmerz",
+      "target": "mn22",
+      "rank": 9
+    },
+    {
+      "source": "tödlichem Schmerz",
+      "target": "ud6.8",
+      "rank": 10
+    },
+    {
+      "source": "tödlichem Schmerz",
+      "target": "iti109",
+      "rank": 11
+    },
+    {
+      "source": "tödlichem Schmerz",
+      "target": "sn35.244",
+      "rank": 12
+    },
+    {
+      "source": "tödlichem Schmerz",
+      "target": "sn12.63",
+      "rank": 13
     },
     {
       "source": "Tor zur Unsterblichkeit",
