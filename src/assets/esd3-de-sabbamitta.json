@@ -308,7 +308,7 @@
     {
       "id": "Begehren, Abneigung, Dummheit",
       "group": "Examples",
-      "links": 12
+      "links": 0
     },
     {
       "id": "begrenzte Versenkung und Weisheit",
@@ -1078,7 +1078,7 @@
     {
       "id": "eine Himmelsrichtung mit einem Herzen voller Liebe",
       "group": "Examples",
-      "links": 25
+      "links": 26
     },
     {
       "id": "ein Embryo.* empfangen",
@@ -1793,7 +1793,7 @@
     {
       "id": "grausam",
       "group": "Examples",
-      "links": 50
+      "links": 51
     },
     {
       "id": "grenzenlose Versenkung des Herzens",
@@ -2158,7 +2158,7 @@
     {
       "id": "isst wissentlich Fleisch",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "ist Augenkontakt beständig",
@@ -2343,7 +2343,7 @@
     {
       "id": "Kriechtieren abzuhalten",
       "group": "Examples",
-      "links": 3
+      "links": 0
     },
     {
       "id": "krittelige[nm] Geist",
@@ -3573,7 +3573,7 @@
     {
       "id": "verlasse.* darauf",
       "group": "Examples",
-      "links": 14
+      "links": 15
     },
     {
       "id": "verloren, wenn er stirbt",
@@ -3783,7 +3783,7 @@
     {
       "id": "voreingenommen",
       "group": "Examples",
-      "links": 5
+      "links": 12
     },
     {
       "id": "vor langer Zeit getan oder gesagt",
@@ -4761,7 +4761,7 @@
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 113
+      "links": 112
     },
     {
       "id": "an4.189",
@@ -5619,13 +5619,13 @@
       "id": "mn2",
       "group": "mn",
       "rank": 1,
-      "links": 6
+      "links": 5
     },
     {
       "id": "an6.58",
       "group": "an",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "an10.23",
@@ -6069,7 +6069,7 @@
       "id": "dn29",
       "group": "dn",
       "rank": 1,
-      "links": 15
+      "links": 14
     },
     {
       "id": "sn22.7",
@@ -6256,60 +6256,6 @@
       "group": "an",
       "rank": 1,
       "links": 12
-    },
-    {
-      "id": "an5.272",
-      "group": "an",
-      "rank": 1,
-      "links": 3
-    },
-    {
-      "id": "an4.20",
-      "group": "an",
-      "rank": 2,
-      "links": 5
-    },
-    {
-      "id": "an4.19",
-      "group": "an",
-      "rank": 1,
-      "links": 5
-    },
-    {
-      "id": "an2.42-51",
-      "group": "an",
-      "rank": 1,
-      "links": 13
-    },
-    {
-      "id": "an8.33",
-      "group": "an",
-      "rank": 2,
-      "links": 6
-    },
-    {
-      "id": "an4.17",
-      "group": "an",
-      "rank": 1,
-      "links": 5
-    },
-    {
-      "id": "an4.18",
-      "group": "an",
-      "rank": 3,
-      "links": 5
-    },
-    {
-      "id": "an9.7",
-      "group": "an",
-      "rank": 2,
-      "links": 5
-    },
-    {
-      "id": "an5.273-285",
-      "group": "an",
-      "rank": 10,
-      "links": 3
     },
     {
       "id": "an9.12",
@@ -7110,6 +7056,12 @@
       "links": 2
     },
     {
+      "id": "an9.7",
+      "group": "an",
+      "rank": 2,
+      "links": 5
+    },
+    {
       "id": "an9.8",
       "group": "an",
       "rank": 3,
@@ -7228,6 +7180,18 @@
       "group": "an",
       "rank": 1,
       "links": 10
+    },
+    {
+      "id": "an2.42-51",
+      "group": "an",
+      "rank": 1,
+      "links": 13
+    },
+    {
+      "id": "an4.20",
+      "group": "an",
+      "rank": 2,
+      "links": 4
     },
     {
       "id": "sn35.246",
@@ -8970,6 +8934,12 @@
       "links": 2
     },
     {
+      "id": "an8.33",
+      "group": "an",
+      "rank": 2,
+      "links": 6
+    },
+    {
       "id": "an8.31",
       "group": "an",
       "rank": 1,
@@ -9480,6 +9450,30 @@
       "links": 5
     },
     {
+      "id": "an4.19",
+      "group": "an",
+      "rank": 1,
+      "links": 4
+    },
+    {
+      "id": "an5.272",
+      "group": "an",
+      "rank": 3,
+      "links": 3
+    },
+    {
+      "id": "an4.17",
+      "group": "an",
+      "rank": 2,
+      "links": 4
+    },
+    {
+      "id": "an4.18",
+      "group": "an",
+      "rank": 4,
+      "links": 4
+    },
+    {
       "id": "an5.182",
       "group": "an",
       "rank": 7,
@@ -9520,6 +9514,12 @@
       "group": "an",
       "rank": 2,
       "links": 5
+    },
+    {
+      "id": "an5.273-285",
+      "group": "an",
+      "rank": 10,
+      "links": 3
     },
     {
       "id": "iti99",
@@ -9982,6 +9982,12 @@
       "group": "an",
       "rank": 1,
       "links": 5
+    },
+    {
+      "id": "mn55",
+      "group": "mn",
+      "rank": 2,
+      "links": 4
     },
     {
       "id": "dn19",
@@ -16406,7 +16412,7 @@
     {
       "id": "sn22.2",
       "group": "sn",
-      "rank": 11,
+      "rank": 12,
       "links": 1
     },
     {
@@ -19890,66 +19896,6 @@
       "source": "Bedingungen sind unbeständig",
       "target": "dn17",
       "rank": 13
-    },
-    {
-      "source": "Begehren, Abneigung, Dummheit",
-      "target": "an5.272",
-      "rank": 1
-    },
-    {
-      "source": "Begehren, Abneigung, Dummheit",
-      "target": "an4.20",
-      "rank": 2
-    },
-    {
-      "source": "Begehren, Abneigung, Dummheit",
-      "target": "an4.19",
-      "rank": 3
-    },
-    {
-      "source": "Begehren, Abneigung, Dummheit",
-      "target": "an2.42-51",
-      "rank": 4
-    },
-    {
-      "source": "Begehren, Abneigung, Dummheit",
-      "target": "dn31",
-      "rank": 5
-    },
-    {
-      "source": "Begehren, Abneigung, Dummheit",
-      "target": "an8.33",
-      "rank": 6
-    },
-    {
-      "source": "Begehren, Abneigung, Dummheit",
-      "target": "an4.17",
-      "rank": 7
-    },
-    {
-      "source": "Begehren, Abneigung, Dummheit",
-      "target": "an4.18",
-      "rank": 8
-    },
-    {
-      "source": "Begehren, Abneigung, Dummheit",
-      "target": "an9.7",
-      "rank": 9
-    },
-    {
-      "source": "Begehren, Abneigung, Dummheit",
-      "target": "an5.273-285",
-      "rank": 10
-    },
-    {
-      "source": "Begehren, Abneigung, Dummheit",
-      "target": "dn29",
-      "rank": 11
-    },
-    {
-      "source": "Begehren, Abneigung, Dummheit",
-      "target": "dn33",
-      "rank": 12
     },
     {
       "source": "begrenzte Versenkung und Weisheit",
@@ -24893,63 +24839,68 @@
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an3.66",
+      "target": "mn55",
       "rank": 14
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "sn46.54",
+      "target": "an3.66",
       "rank": 15
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "sn42.8",
+      "target": "sn46.54",
       "rank": 16
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an3.65",
+      "target": "sn42.8",
       "rank": 17
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an5.192",
+      "target": "an3.65",
       "rank": 18
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "mn7",
+      "target": "an5.192",
       "rank": 19
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "mn43",
+      "target": "mn7",
       "rank": 20
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn13",
+      "target": "mn43",
       "rank": 21
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn26",
+      "target": "dn13",
       "rank": 22
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn17",
+      "target": "dn26",
       "rank": 23
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn19",
+      "target": "dn17",
       "rank": 24
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn33",
+      "target": "dn19",
       "rank": 25
+    },
+    {
+      "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
+      "target": "dn33",
+      "rank": 26
     },
     {
       "source": "ein Embryo.* empfangen",
@@ -30098,48 +30049,53 @@
     },
     {
       "source": "grausam",
-      "target": "sn22.80",
+      "target": "mn55",
       "rank": 42
     },
     {
       "source": "grausam",
-      "target": "thag16.8",
+      "target": "sn22.80",
       "rank": 43
     },
     {
       "source": "grausam",
-      "target": "mn2",
+      "target": "thag16.8",
       "rank": 44
     },
     {
       "source": "grausam",
-      "target": "mn62",
+      "target": "mn2",
       "rank": 45
     },
     {
       "source": "grausam",
-      "target": "mn7",
+      "target": "mn62",
       "rank": 46
     },
     {
       "source": "grausam",
-      "target": "mn122",
+      "target": "mn7",
       "rank": 47
     },
     {
       "source": "grausam",
-      "target": "dhp383-423",
+      "target": "mn122",
       "rank": 48
     },
     {
       "source": "grausam",
-      "target": "dn17",
+      "target": "dhp383-423",
       "rank": 49
     },
     {
       "source": "grausam",
-      "target": "dn32",
+      "target": "dn17",
       "rank": 50
+    },
+    {
+      "source": "grausam",
+      "target": "dn32",
+      "rank": 51
     },
     {
       "source": "grenzenlose Versenkung des Herzens",
@@ -32242,6 +32198,11 @@
       "rank": 1
     },
     {
+      "source": "isst wissentlich Fleisch",
+      "target": "mn55",
+      "rank": 2
+    },
+    {
       "source": "ist Augenkontakt beständig",
       "target": "sn18.4",
       "rank": 1
@@ -34015,21 +33976,6 @@
       "source": "Kreislauf der Wiedergeburten",
       "target": "mn22",
       "rank": 7
-    },
-    {
-      "source": "Kriechtieren abzuhalten",
-      "target": "an6.58",
-      "rank": 1
-    },
-    {
-      "source": "Kriechtieren abzuhalten",
-      "target": "mn2",
-      "rank": 2
-    },
-    {
-      "source": "Kriechtieren abzuhalten",
-      "target": "dn29",
-      "rank": 3
     },
     {
       "source": "krittelige[nm] Geist",
@@ -41928,28 +41874,33 @@
     },
     {
       "source": "verlasse.* darauf",
-      "target": "an4.193",
+      "target": "mn55",
       "rank": 10
     },
     {
       "source": "verlasse.* darauf",
-      "target": "sn22.2",
+      "target": "an4.193",
       "rank": 11
     },
     {
       "source": "verlasse.* darauf",
-      "target": "an8.12",
+      "target": "sn22.2",
       "rank": 12
     },
     {
       "source": "verlasse.* darauf",
-      "target": "dn28",
+      "target": "an8.12",
       "rank": 13
     },
     {
       "source": "verlasse.* darauf",
-      "target": "dn23",
+      "target": "dn28",
       "rank": 14
+    },
+    {
+      "source": "verlasse.* darauf",
+      "target": "dn23",
+      "rank": 15
     },
     {
       "source": "verloren, wenn er stirbt",
@@ -43158,28 +43109,63 @@
     },
     {
       "source": "voreingenommen",
-      "target": "an4.17",
+      "target": "an4.19",
       "rank": 1
     },
     {
       "source": "voreingenommen",
-      "target": "an4.19",
+      "target": "an4.17",
       "rank": 2
     },
     {
       "source": "voreingenommen",
-      "target": "an4.18",
+      "target": "an5.272",
       "rank": 3
     },
     {
       "source": "voreingenommen",
-      "target": "an4.20",
+      "target": "an4.18",
       "rank": 4
     },
     {
       "source": "voreingenommen",
-      "target": "dn33",
+      "target": "an4.20",
       "rank": 5
+    },
+    {
+      "source": "voreingenommen",
+      "target": "an2.42-51",
+      "rank": 6
+    },
+    {
+      "source": "voreingenommen",
+      "target": "dn31",
+      "rank": 7
+    },
+    {
+      "source": "voreingenommen",
+      "target": "dn33",
+      "rank": 8
+    },
+    {
+      "source": "voreingenommen",
+      "target": "an8.33",
+      "rank": 9
+    },
+    {
+      "source": "voreingenommen",
+      "target": "an9.7",
+      "rank": 10
+    },
+    {
+      "source": "voreingenommen",
+      "target": "an5.273-285",
+      "rank": 11
+    },
+    {
+      "source": "voreingenommen",
+      "target": "dn29",
+      "rank": 12
     },
     {
       "source": "vor langer Zeit getan oder gesagt",
