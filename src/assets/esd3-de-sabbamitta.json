@@ -33,7 +33,7 @@
     {
       "id": "abwägen, bevor du handelst",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "ach!",
@@ -213,7 +213,7 @@
     {
       "id": "Auflösung der Taten",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "Auflösung des Verlangens ist Erlöschen",
@@ -273,7 +273,7 @@
     {
       "id": "ausgeh.* und zurückkomm",
       "group": "Examples",
-      "links": 20
+      "links": 21
     },
     {
       "id": "aus meiner unmittelbaren Einsicht heraus gelehrt",
@@ -458,7 +458,7 @@
     {
       "id": "brach in Tränen aus",
       "group": "Examples",
-      "links": 5
+      "links": 6
     },
     {
       "id": "brutal",
@@ -633,7 +633,7 @@
     {
       "id": "das Weltall ist ewig",
       "group": "Examples",
-      "links": 16
+      "links": 17
     },
     {
       "id": "das Widerwärtige in dem wahrn.*, was nicht widerwärtig",
@@ -1103,7 +1103,7 @@
     {
       "id": "einfältige.* Mann",
       "group": "Examples",
-      "links": 13
+      "links": 14
     },
     {
       "id": "ein hasserfüllter Mensch",
@@ -1133,7 +1133,7 @@
     {
       "id": "einen verletzenden als auch einen freundlichen Willen",
       "group": "Examples",
-      "links": 7
+      "links": 8
     },
     {
       "id": "einen Versenkungszustand",
@@ -1288,7 +1288,7 @@
     {
       "id": "erlesenste",
       "group": "Examples",
-      "links": 28
+      "links": 29
     },
     {
       "id": "erlöschen, bevor ich nicht Nonnenschülerinnen",
@@ -1808,7 +1808,7 @@
     {
       "id": "Grundlage der",
       "group": "Examples",
-      "links": 5
+      "links": 6
     },
     {
       "id": "Grundlage für die Versenkung",
@@ -2048,7 +2048,7 @@
     {
       "id": "inbrünstige.* Bußübung",
       "group": "Examples",
-      "links": 25
+      "links": 26
     },
     {
       "id": "in den drei Zeiten",
@@ -2173,7 +2173,7 @@
     {
       "id": "ist etwas anderes",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "jammer.* und klag",
@@ -2578,7 +2578,7 @@
     {
       "id": "mitgenommen, leidend, schwer krank",
       "group": "Examples",
-      "links": 37
+      "links": 38
     },
     {
       "id": "mit hängenden Schultern",
@@ -2588,7 +2588,7 @@
     {
       "id": "mithilfe eines Gleichnisses",
       "group": "Examples",
-      "links": 7
+      "links": 8
     },
     {
       "id": "mit ihrem Geist erfasst",
@@ -2903,7 +2903,7 @@
     {
       "id": "Riese",
       "group": "Examples",
-      "links": 16
+      "links": 17
     },
     {
       "id": "Roben aus Hanf",
@@ -3848,7 +3848,7 @@
     {
       "id": "was einen Anfang hat, hat auch ein Ende",
       "group": "Examples",
-      "links": 12
+      "links": 13
     },
     {
       "id": "was ein Verstoß ist",
@@ -4108,7 +4108,7 @@
     {
       "id": "wie eine Kuh",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "wie ein Tautropfen",
@@ -4636,6 +4636,12 @@
       "group": "dhp",
       "rank": 1,
       "links": 5
+    },
+    {
+      "id": "mn56",
+      "group": "mn",
+      "rank": 1,
+      "links": 9
     },
     {
       "id": "an8.12",
@@ -5594,7 +5600,7 @@
     {
       "id": "sn11.4",
       "group": "sn",
-      "rank": 3,
+      "rank": 4,
       "links": 2
     },
     {
@@ -5724,6 +5730,12 @@
       "links": 2
     },
     {
+      "id": "mn57",
+      "group": "mn",
+      "rank": 1,
+      "links": 5
+    },
+    {
       "id": "an4.238",
       "group": "an",
       "rank": 1,
@@ -5732,7 +5744,7 @@
     {
       "id": "an4.232",
       "group": "an",
-      "rank": 7,
+      "rank": 8,
       "links": 1
     },
     {
@@ -7244,13 +7256,13 @@
     {
       "id": "sn42.3",
       "group": "sn",
-      "rank": 1,
+      "rank": 2,
       "links": 2
     },
     {
       "id": "sn42.2",
       "group": "sn",
-      "rank": 2,
+      "rank": 3,
       "links": 2
     },
     {
@@ -8178,27 +8190,33 @@
       "links": 2
     },
     {
-      "id": "sn56.8",
-      "group": "sn",
-      "rank": 6,
-      "links": 1
+      "id": "mn63",
+      "group": "mn",
+      "rank": 2,
+      "links": 2
     },
     {
-      "id": "sn33.1",
+      "id": "sn56.8",
       "group": "sn",
       "rank": 7,
       "links": 1
     },
     {
-      "id": "sn33.2",
+      "id": "sn33.1",
       "group": "sn",
       "rank": 8,
       "links": 1
     },
     {
+      "id": "sn33.2",
+      "group": "sn",
+      "rank": 9,
+      "links": 1
+    },
+    {
       "id": "an4.38",
       "group": "an",
-      "rank": 9,
+      "rank": 10,
       "links": 1
     },
     {
@@ -10760,7 +10778,7 @@
     {
       "id": "cp8",
       "group": "cp",
-      "rank": 19,
+      "rank": 20,
       "links": 1
     },
     {
@@ -13040,13 +13058,13 @@
     {
       "id": "an5.206",
       "group": "an",
-      "rank": 10,
+      "rank": 11,
       "links": 1
     },
     {
       "id": "an9.72",
       "group": "an",
-      "rank": 12,
+      "rank": 13,
       "links": 1
     },
     {
@@ -14654,7 +14672,7 @@
     {
       "id": "an5.162",
       "group": "an",
-      "rank": 4,
+      "rank": 5,
       "links": 3
     },
     {
@@ -17588,7 +17606,7 @@
     {
       "id": "an3.82",
       "group": "an",
-      "rank": 1,
+      "rank": 2,
       "links": 1
     },
     {
@@ -18159,8 +18177,13 @@
     },
     {
       "source": "abwägen, bevor du handelst",
-      "target": "an8.12",
+      "target": "mn56",
       "rank": 1
+    },
+    {
+      "source": "abwägen, bevor du handelst",
+      "target": "an8.12",
+      "rank": 2
     },
     {
       "source": "ach!",
@@ -19244,18 +19267,23 @@
     },
     {
       "source": "Auflösung der Taten",
-      "target": "an4.238",
+      "target": "mn57",
       "rank": 6
     },
     {
       "source": "Auflösung der Taten",
-      "target": "an4.232",
+      "target": "an4.238",
       "rank": 7
     },
     {
       "source": "Auflösung der Taten",
-      "target": "dn33",
+      "target": "an4.232",
       "rank": 8
+    },
+    {
+      "source": "Auflösung der Taten",
+      "target": "dn33",
+      "rank": 9
     },
     {
       "source": "Auflösung des Verlangens ist Erlöschen",
@@ -19649,23 +19677,28 @@
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "dn2",
+      "target": "mn56",
       "rank": 17
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "dn22",
+      "target": "dn2",
       "rank": 18
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "mn38",
+      "target": "dn22",
       "rank": 19
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "dn16",
+      "target": "mn38",
       "rank": 20
+    },
+    {
+      "source": "ausgeh.* und zurückkomm",
+      "target": "dn16",
+      "rank": 21
     },
     {
       "source": "aus meiner unmittelbaren Einsicht heraus gelehrt",
@@ -21049,28 +21082,33 @@
     },
     {
       "source": "brach in Tränen aus",
-      "target": "sn42.3",
+      "target": "mn57",
       "rank": 1
     },
     {
       "source": "brach in Tränen aus",
-      "target": "sn42.2",
+      "target": "sn42.3",
       "rank": 2
     },
     {
       "source": "brach in Tränen aus",
-      "target": "mn143",
+      "target": "sn42.2",
       "rank": 3
     },
     {
       "source": "brach in Tränen aus",
-      "target": "thig16.1",
+      "target": "mn143",
       "rank": 4
     },
     {
       "source": "brach in Tränen aus",
-      "target": "dn17",
+      "target": "thig16.1",
       "rank": 5
+    },
+    {
+      "source": "brach in Tränen aus",
+      "target": "dn17",
+      "rank": 6
     },
     {
       "source": "brutal",
@@ -22254,78 +22292,83 @@
     },
     {
       "source": "das Weltall ist ewig",
-      "target": "sn41.3",
+      "target": "mn63",
       "rank": 2
     },
     {
       "source": "das Weltall ist ewig",
-      "target": "an10.96",
+      "target": "sn41.3",
       "rank": 3
     },
     {
       "source": "das Weltall ist ewig",
-      "target": "an10.93",
+      "target": "an10.96",
       "rank": 4
     },
     {
       "source": "das Weltall ist ewig",
-      "target": "dn9",
+      "target": "an10.93",
       "rank": 5
     },
     {
       "source": "das Weltall ist ewig",
-      "target": "sn56.8",
+      "target": "dn9",
       "rank": 6
     },
     {
       "source": "das Weltall ist ewig",
-      "target": "sn33.1",
+      "target": "sn56.8",
       "rank": 7
     },
     {
       "source": "das Weltall ist ewig",
-      "target": "sn33.2",
+      "target": "sn33.1",
       "rank": 8
     },
     {
       "source": "das Weltall ist ewig",
-      "target": "an4.38",
+      "target": "sn33.2",
       "rank": 9
     },
     {
       "source": "das Weltall ist ewig",
-      "target": "sn56.41",
+      "target": "an4.38",
       "rank": 10
     },
     {
       "source": "das Weltall ist ewig",
-      "target": "an10.20",
+      "target": "sn56.41",
       "rank": 11
     },
     {
       "source": "das Weltall ist ewig",
-      "target": "an10.95",
+      "target": "an10.20",
       "rank": 12
     },
     {
       "source": "das Weltall ist ewig",
-      "target": "sn44.8",
+      "target": "an10.95",
       "rank": 13
     },
     {
       "source": "das Weltall ist ewig",
-      "target": "sn44.7",
+      "target": "sn44.8",
       "rank": 14
     },
     {
       "source": "das Weltall ist ewig",
-      "target": "ud6.4",
+      "target": "sn44.7",
       "rank": 15
     },
     {
       "source": "das Weltall ist ewig",
-      "target": "mn25",
+      "target": "ud6.4",
       "rank": 16
+    },
+    {
+      "source": "das Weltall ist ewig",
+      "target": "mn25",
+      "rank": 17
     },
     {
       "source": "das Widerwärtige in dem wahrn.*, was nicht widerwärtig",
@@ -25044,8 +25087,13 @@
     },
     {
       "source": "einfältige.* Mann",
-      "target": "mn12",
+      "target": "mn63",
       "rank": 13
+    },
+    {
+      "source": "einfältige.* Mann",
+      "target": "mn12",
+      "rank": 14
     },
     {
       "source": "ein hasserfüllter Mensch",
@@ -25251,6 +25299,11 @@
       "source": "einen verletzenden als auch einen freundlichen Willen",
       "target": "an4.234",
       "rank": 7
+    },
+    {
+      "source": "einen verletzenden als auch einen freundlichen Willen",
+      "target": "mn57",
+      "rank": 8
     },
     {
       "source": "einen Versenkungszustand",
@@ -26529,98 +26582,103 @@
     },
     {
       "source": "erlesenste",
-      "target": "dn9",
+      "target": "mn56",
       "rank": 10
     },
     {
       "source": "erlesenste",
-      "target": "dn14",
+      "target": "dn9",
       "rank": 11
     },
     {
       "source": "erlesenste",
-      "target": "sn17.22",
+      "target": "dn14",
       "rank": 12
     },
     {
       "source": "erlesenste",
-      "target": "an5.181",
+      "target": "sn17.22",
       "rank": 13
     },
     {
       "source": "erlesenste",
-      "target": "sn34.1",
+      "target": "an5.181",
       "rank": 14
     },
     {
       "source": "erlesenste",
-      "target": "sn34.2",
+      "target": "sn34.1",
       "rank": 15
     },
     {
       "source": "erlesenste",
-      "target": "an5.190",
+      "target": "sn34.2",
       "rank": 16
     },
     {
       "source": "erlesenste",
-      "target": "an4.95",
+      "target": "an5.190",
       "rank": 17
     },
     {
       "source": "erlesenste",
-      "target": "sn34.55",
+      "target": "an4.95",
       "rank": 18
     },
     {
       "source": "erlesenste",
-      "target": "cp8",
+      "target": "sn34.55",
       "rank": 19
     },
     {
       "source": "erlesenste",
-      "target": "an10.91",
+      "target": "cp8",
       "rank": 20
     },
     {
       "source": "erlesenste",
-      "target": "an5.50",
+      "target": "an10.91",
       "rank": 21
     },
     {
       "source": "erlesenste",
-      "target": "an3.60",
+      "target": "an5.50",
       "rank": 22
     },
     {
       "source": "erlesenste",
-      "target": "sn17.13-20",
+      "target": "an3.60",
       "rank": 23
     },
     {
       "source": "erlesenste",
-      "target": "dhp320-333",
+      "target": "sn17.13-20",
       "rank": 24
     },
     {
       "source": "erlesenste",
-      "target": "thig13.3",
+      "target": "dhp320-333",
       "rank": 25
     },
     {
       "source": "erlesenste",
-      "target": "mn81",
+      "target": "thig13.3",
       "rank": 26
     },
     {
       "source": "erlesenste",
-      "target": "dn21",
+      "target": "mn81",
       "rank": 27
     },
     {
       "source": "erlesenste",
-      "target": "mn82",
+      "target": "dn21",
       "rank": 28
+    },
+    {
+      "source": "erlesenste",
+      "target": "mn82",
+      "rank": 29
     },
     {
       "source": "erlöschen, bevor ich nicht Nonnenschülerinnen",
@@ -30139,13 +30197,18 @@
     },
     {
       "source": "Grundlage der",
-      "target": "mn140",
+      "target": "mn56",
       "rank": 4
     },
     {
       "source": "Grundlage der",
-      "target": "sn47.10",
+      "target": "mn140",
       "rank": 5
+    },
+    {
+      "source": "Grundlage der",
+      "target": "sn47.10",
+      "rank": 6
     },
     {
       "source": "Grundlage für die Versenkung",
@@ -31629,83 +31692,88 @@
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "an5.206",
+      "target": "mn57",
       "rank": 10
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "an3.74",
+      "target": "an5.206",
       "rank": 11
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "an9.72",
+      "target": "an3.74",
       "rank": 12
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "an7.50",
+      "target": "an9.72",
       "rank": 13
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "sn24.8",
+      "target": "an7.50",
       "rank": 14
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "sn35.241",
+      "target": "sn24.8",
       "rank": 15
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "sn2.30",
+      "target": "sn35.241",
       "rank": 16
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "an3.156-162",
+      "target": "sn2.30",
       "rank": 17
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn45",
+      "target": "an3.156-162",
       "rank": 18
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn14",
+      "target": "mn45",
       "rank": 19
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn49",
+      "target": "mn14",
       "rank": 20
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "sn42.12",
+      "target": "mn49",
       "rank": 21
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn51",
+      "target": "sn42.12",
       "rank": 22
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn60",
+      "target": "mn51",
       "rank": 23
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "dn2",
+      "target": "mn60",
       "rank": 24
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "dn33",
+      "target": "dn2",
       "rank": 25
+    },
+    {
+      "source": "inbrünstige.* Bußübung",
+      "target": "dn33",
+      "rank": 26
     },
     {
       "source": "in den drei Zeiten",
@@ -32369,13 +32437,18 @@
     },
     {
       "source": "ist etwas anderes",
-      "target": "an10.176",
+      "target": "mn56",
       "rank": 5
     },
     {
       "source": "ist etwas anderes",
-      "target": "mn54",
+      "target": "an10.176",
       "rank": 6
+    },
+    {
+      "source": "ist etwas anderes",
+      "target": "mn54",
+      "rank": 7
     },
     {
       "source": "jammer.* und klag",
@@ -35674,13 +35747,18 @@
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "dn2",
+      "target": "mn56",
       "rank": 36
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "dn14",
+      "target": "dn2",
       "rank": 37
+    },
+    {
+      "source": "mitgenommen, leidend, schwer krank",
+      "target": "dn14",
+      "rank": 38
     },
     {
       "source": "mit hängenden Schultern",
@@ -35771,6 +35849,11 @@
       "source": "mithilfe eines Gleichnisses",
       "target": "mn43",
       "rank": 7
+    },
+    {
+      "source": "mithilfe eines Gleichnisses",
+      "target": "mn56",
+      "rank": 8
     },
     {
       "source": "mit Keuschheit als fünfter",
@@ -37671,6 +37754,11 @@
       "source": "Riese",
       "target": "dn20",
       "rank": 16
+    },
+    {
+      "source": "Riese",
+      "target": "mn56",
+      "rank": 17
     },
     {
       "source": "Roben aus Hanf",
@@ -43844,13 +43932,18 @@
     },
     {
       "source": "was einen Anfang hat, hat auch ein Ende",
-      "target": "dn3",
+      "target": "mn56",
       "rank": 11
     },
     {
       "source": "was einen Anfang hat, hat auch ein Ende",
-      "target": "dn21",
+      "target": "dn3",
       "rank": 12
+    },
+    {
+      "source": "was einen Anfang hat, hat auch ein Ende",
+      "target": "dn21",
+      "rank": 13
     },
     {
       "source": "was ein Verstoß ist",
@@ -45544,43 +45637,48 @@
     },
     {
       "source": "wie eine Kuh",
-      "target": "an3.82",
+      "target": "mn57",
       "rank": 1
     },
     {
       "source": "wie eine Kuh",
-      "target": "an7.74",
+      "target": "an3.82",
       "rank": 2
     },
     {
       "source": "wie eine Kuh",
-      "target": "sn11.4",
+      "target": "an7.74",
       "rank": 3
     },
     {
       "source": "wie eine Kuh",
-      "target": "an5.162",
+      "target": "sn11.4",
       "rank": 4
     },
     {
       "source": "wie eine Kuh",
-      "target": "sn11.5",
+      "target": "an5.162",
       "rank": 5
     },
     {
       "source": "wie eine Kuh",
-      "target": "sn12.63",
+      "target": "sn11.5",
       "rank": 6
     },
     {
       "source": "wie eine Kuh",
-      "target": "mn48",
+      "target": "sn12.63",
       "rank": 7
     },
     {
       "source": "wie eine Kuh",
-      "target": "thag19.1",
+      "target": "mn48",
       "rank": 8
+    },
+    {
+      "source": "wie eine Kuh",
+      "target": "thag19.1",
+      "rank": 9
     },
     {
       "source": "wie ein Tautropfen",
