@@ -596,6 +596,11 @@
       "links": 7
     },
     {
+      "id": "das Problem",
+      "group": "Examples",
+      "links": 2
+    },
+    {
       "id": "das rechte Maß",
       "group": "Examples",
       "links": 9
@@ -2786,9 +2791,9 @@
       "links": 8
     },
     {
-      "id": "nur mir sollte man Gaben",
+      "id": "nur mir soll man Gaben geben",
       "group": "Examples",
-      "links": 0
+      "links": 3
     },
     {
       "id": "Nymphen",
@@ -4111,6 +4116,11 @@
       "links": 9
     },
     {
+      "id": "wie ein Hund",
+      "group": "Examples",
+      "links": 5
+    },
+    {
       "id": "wie ein Tautropfen",
       "group": "Examples",
       "links": 1
@@ -4641,13 +4651,13 @@
       "id": "mn56",
       "group": "mn",
       "rank": 1,
-      "links": 9
+      "links": 11
     },
     {
       "id": "an8.12",
       "group": "an",
       "rank": 1,
-      "links": 6
+      "links": 7
     },
     {
       "id": "mn5",
@@ -5367,13 +5377,13 @@
       "id": "sn22.99",
       "group": "sn",
       "rank": 1,
-      "links": 5
+      "links": 6
     },
     {
       "id": "sn22.100",
       "group": "sn",
       "rank": 2,
-      "links": 2
+      "links": 3
     },
     {
       "id": "sn35.247",
@@ -5433,7 +5443,7 @@
       "id": "dn24",
       "group": "dn",
       "rank": 1,
-      "links": 18
+      "links": 19
     },
     {
       "id": "an3.67",
@@ -5733,7 +5743,7 @@
       "id": "mn57",
       "group": "mn",
       "rank": 1,
-      "links": 5
+      "links": 6
     },
     {
       "id": "an4.238",
@@ -6147,7 +6157,7 @@
       "id": "dn23",
       "group": "dn",
       "rank": 1,
-      "links": 19
+      "links": 20
     },
     {
       "id": "an3.83",
@@ -7275,7 +7285,7 @@
       "id": "thig16.1",
       "group": "thig",
       "rank": 2,
-      "links": 6
+      "links": 7
     },
     {
       "id": "sn17.21",
@@ -9369,7 +9379,7 @@
       "id": "an3.57",
       "group": "an",
       "rank": 1,
-      "links": 3
+      "links": 4
     },
     {
       "id": "an3.30",
@@ -22019,6 +22029,16 @@
       "source": "das ohne Selbst ist",
       "target": "sn22.82",
       "rank": 7
+    },
+    {
+      "source": "das Problem",
+      "target": "mn56",
+      "rank": 1
+    },
+    {
+      "source": "das Problem",
+      "target": "dn23",
+      "rank": 2
     },
     {
       "source": "das rechte Maß",
@@ -36816,6 +36836,21 @@
       "rank": 8
     },
     {
+      "source": "nur mir soll man Gaben geben",
+      "target": "an3.57",
+      "rank": 1
+    },
+    {
+      "source": "nur mir soll man Gaben geben",
+      "target": "an8.12",
+      "rank": 2
+    },
+    {
+      "source": "nur mir soll man Gaben geben",
+      "target": "mn56",
+      "rank": 3
+    },
+    {
       "source": "Nymphen",
       "target": "ud3.2",
       "rank": 1
@@ -45679,6 +45714,31 @@
       "source": "wie eine Kuh",
       "target": "thag19.1",
       "rank": 9
+    },
+    {
+      "source": "wie ein Hund",
+      "target": "mn57",
+      "rank": 1
+    },
+    {
+      "source": "wie ein Hund",
+      "target": "sn22.99",
+      "rank": 2
+    },
+    {
+      "source": "wie ein Hund",
+      "target": "sn22.100",
+      "rank": 3
+    },
+    {
+      "source": "wie ein Hund",
+      "target": "thig16.1",
+      "rank": 4
+    },
+    {
+      "source": "wie ein Hund",
+      "target": "dn24",
+      "rank": 5
     },
     {
       "source": "wie ein Tautropfen",
