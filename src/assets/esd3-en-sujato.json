@@ -1313,7 +1313,7 @@
     {
       "id": "foundation of immersion",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "fourfold constraint",
@@ -5334,7 +5334,7 @@
       "id": "mn122",
       "group": "mn",
       "rank": 1,
-      "links": 15
+      "links": 16
     },
     {
       "id": "thig16.1",
@@ -28953,8 +28953,13 @@
     },
     {
       "source": "foundation of immersion",
-      "target": "mn36",
+      "target": "mn122",
       "rank": 8
+    },
+    {
+      "source": "foundation of immersion",
+      "target": "mn36",
+      "rank": 9
     },
     {
       "source": "fourfold constraint",
