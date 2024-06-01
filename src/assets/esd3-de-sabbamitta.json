@@ -2261,6 +2261,11 @@
       "links": 13
     },
     {
+      "id": "kleine Maß an Vertrauen und Zuneigung",
+      "group": "Examples",
+      "links": 1
+    },
+    {
       "id": "klug, fähig, verständig und gelehrt",
       "group": "Examples",
       "links": 1
@@ -2294,6 +2299,11 @@
       "id": "Knoten",
       "group": "Examples",
       "links": 27
+    },
+    {
+      "id": "Konzept",
+      "group": "Examples",
+      "links": 0
     },
     {
       "id": "Kopfhaare, Körperhaare",
@@ -4276,6 +4286,11 @@
       "links": 3
     },
     {
+      "id": "zu erkennen oder zu sehen oder",
+      "group": "Examples",
+      "links": 6
+    },
+    {
       "id": "zu ertragen",
       "group": "Examples",
       "links": 5
@@ -5407,7 +5422,7 @@
       "id": "mn65",
       "group": "mn",
       "rank": 1,
-      "links": 8
+      "links": 9
     },
     {
       "id": "an3.64",
@@ -6673,7 +6688,7 @@
       "id": "mn64",
       "group": "mn",
       "rank": 2,
-      "links": 6
+      "links": 7
     },
     {
       "id": "an10.63",
@@ -8875,7 +8890,7 @@
       "id": "sn35.116",
       "group": "sn",
       "rank": 1,
-      "links": 5
+      "links": 6
     },
     {
       "id": "mn133",
@@ -10453,19 +10468,19 @@
       "id": "an9.38",
       "group": "an",
       "rank": 1,
-      "links": 5
+      "links": 6
     },
     {
       "id": "sn2.26",
       "group": "sn",
       "rank": 1,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an4.45",
       "group": "an",
       "rank": 2,
-      "links": 4
+      "links": 5
     },
     {
       "id": "sn35.228",
@@ -10482,8 +10497,8 @@
     {
       "id": "an4.46",
       "group": "an",
-      "rank": 7,
-      "links": 1
+      "rank": 5,
+      "links": 2
     },
     {
       "id": "an4.5",
@@ -33323,6 +33338,11 @@
       "rank": 13
     },
     {
+      "source": "kleine Maß an Vertrauen und Zuneigung",
+      "target": "mn65",
+      "rank": 1
+    },
+    {
       "source": "klug, fähig, verständig und gelehrt",
       "target": "sn44.1",
       "rank": 1
@@ -46711,6 +46731,36 @@
       "source": "zu Erhabenheit",
       "target": "an6.71",
       "rank": 3
+    },
+    {
+      "source": "zu erkennen oder zu sehen oder",
+      "target": "sn35.116",
+      "rank": 1
+    },
+    {
+      "source": "zu erkennen oder zu sehen oder",
+      "target": "sn2.26",
+      "rank": 2
+    },
+    {
+      "source": "zu erkennen oder zu sehen oder",
+      "target": "an4.45",
+      "rank": 3
+    },
+    {
+      "source": "zu erkennen oder zu sehen oder",
+      "target": "mn64",
+      "rank": 4
+    },
+    {
+      "source": "zu erkennen oder zu sehen oder",
+      "target": "an4.46",
+      "rank": 5
+    },
+    {
+      "source": "zu erkennen oder zu sehen oder",
+      "target": "an9.38",
+      "rank": 6
     },
     {
       "source": "zu ertragen",
