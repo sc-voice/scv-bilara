@@ -1078,7 +1078,7 @@
     {
       "id": "eternal truth",
       "group": "Examples",
-      "links": 6
+      "links": 10
     },
     {
       "id": "ethics and wisdom",
@@ -1213,7 +1213,7 @@
     {
       "id": "fear and terror",
       "group": "Examples",
-      "links": 2
+      "links": 1
     },
     {
       "id": "feel it detached",
@@ -1313,7 +1313,7 @@
     {
       "id": "foundation of immersion",
       "group": "Examples",
-      "links": 9
+      "links": 0
     },
     {
       "id": "fourfold constraint",
@@ -3653,7 +3653,7 @@
     {
       "id": "the foundation of",
       "group": "Examples",
-      "links": 5
+      "links": 6
     },
     {
       "id": "the fuel for craving",
@@ -3938,7 +3938,7 @@
     {
       "id": "three foundations",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "three kinds of demonstration",
@@ -4488,7 +4488,7 @@
     {
       "id": "without placing the mind, but just keeping it connected",
       "group": "Examples",
-      "links": 6
+      "links": 0
     },
     {
       "id": "with suffering as outcome",
@@ -4650,7 +4650,7 @@
       "id": "mn140",
       "group": "mn",
       "rank": 1,
-      "links": 21
+      "links": 22
     },
     {
       "id": "dn25",
@@ -4830,7 +4830,7 @@
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 100
+      "links": 98
     },
     {
       "id": "dn16",
@@ -5334,7 +5334,7 @@
       "id": "mn122",
       "group": "mn",
       "rank": 1,
-      "links": 16
+      "links": 15
     },
     {
       "id": "thig16.1",
@@ -6384,7 +6384,7 @@
       "id": "mn36",
       "group": "mn",
       "rank": 1,
-      "links": 15
+      "links": 14
     },
     {
       "id": "an8.10",
@@ -7062,7 +7062,7 @@
       "id": "dn34",
       "group": "dn",
       "rank": 1,
-      "links": 85
+      "links": 83
     },
     {
       "id": "sn56.29",
@@ -7488,7 +7488,7 @@
       "id": "ud6.4",
       "group": "ud",
       "rank": 2,
-      "links": 3
+      "links": 4
     },
     {
       "id": "sn47.8",
@@ -7859,14 +7859,14 @@
     {
       "id": "mn4",
       "group": "mn",
-      "rank": 2,
-      "links": 11
+      "rank": 3,
+      "links": 10
     },
     {
       "id": "mn128",
       "group": "mn",
       "rank": 1,
-      "links": 16
+      "links": 13
     },
     {
       "id": "mn100",
@@ -7956,7 +7956,7 @@
       "id": "an10.95",
       "group": "an",
       "rank": 1,
-      "links": 11
+      "links": 12
     },
     {
       "id": "an8.8",
@@ -8598,7 +8598,7 @@
       "id": "mn102",
       "group": "mn",
       "rank": 2,
-      "links": 9
+      "links": 10
     },
     {
       "id": "sn14.11",
@@ -9042,7 +9042,7 @@
       "id": "dn29",
       "group": "dn",
       "rank": 2,
-      "links": 17
+      "links": 18
     },
     {
       "id": "ud4.3",
@@ -9078,7 +9078,7 @@
       "id": "dhp1-20",
       "group": "dhp",
       "rank": 1,
-      "links": 6
+      "links": 5
     },
     {
       "id": "ud1.10",
@@ -9324,7 +9324,7 @@
       "id": "thag21.1",
       "group": "thag",
       "rank": 2,
-      "links": 11
+      "links": 10
     },
     {
       "id": "dn4",
@@ -9533,8 +9533,8 @@
     {
       "id": "an4.14",
       "group": "an",
-      "rank": 6,
-      "links": 2
+      "rank": 40,
+      "links": 1
     },
     {
       "id": "an3.101",
@@ -10187,14 +10187,14 @@
     {
       "id": "an10.93",
       "group": "an",
-      "rank": 5,
-      "links": 5
+      "rank": 2,
+      "links": 6
     },
     {
       "id": "dn9",
       "group": "dn",
       "rank": 1,
-      "links": 15
+      "links": 16
     },
     {
       "id": "sn1.22",
@@ -10422,7 +10422,7 @@
       "id": "sn43.12",
       "group": "sn",
       "rank": 1,
-      "links": 6
+      "links": 5
     },
     {
       "id": "sn43.1",
@@ -10743,22 +10743,28 @@
       "links": 4
     },
     {
-      "id": "sn8.5",
-      "group": "sn",
+      "id": "an10.96",
+      "group": "an",
       "rank": 1,
-      "links": 2
+      "links": 3
     },
     {
-      "id": "snp3.3",
-      "group": "snp",
+      "id": "mn72",
+      "group": "mn",
+      "rank": 1,
+      "links": 6
+    },
+    {
+      "id": "ud6.5",
+      "group": "ud",
+      "rank": 1,
+      "links": 3
+    },
+    {
+      "id": "ud6.6",
+      "group": "ud",
       "rank": 2,
-      "links": 2
-    },
-    {
-      "id": "sn1.32",
-      "group": "sn",
-      "rank": 3,
-      "links": 1
+      "links": 3
     },
     {
       "id": "dhp221-234",
@@ -10859,8 +10865,8 @@
     {
       "id": "sn51.14",
       "group": "sn",
-      "rank": 6,
-      "links": 2
+      "rank": 4,
+      "links": 3
     },
     {
       "id": "sn46.52",
@@ -11502,7 +11508,7 @@
       "id": "sn46.2",
       "group": "sn",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "mn23",
@@ -11532,7 +11538,7 @@
       "id": "sn46.51",
       "group": "sn",
       "rank": 2,
-      "links": 4
+      "links": 3
     },
     {
       "id": "mn151",
@@ -11717,8 +11723,8 @@
     {
       "id": "an8.63",
       "group": "an",
-      "rank": 1,
-      "links": 5
+      "rank": 2,
+      "links": 4
     },
     {
       "id": "an10.121",
@@ -11778,30 +11784,6 @@
       "id": "ud8.7",
       "group": "ud",
       "rank": 1,
-      "links": 1
-    },
-    {
-      "id": "an3.102",
-      "group": "an",
-      "rank": 1,
-      "links": 4
-    },
-    {
-      "id": "an3.19",
-      "group": "an",
-      "rank": 3,
-      "links": 1
-    },
-    {
-      "id": "an5.26",
-      "group": "an",
-      "rank": 2,
-      "links": 2
-    },
-    {
-      "id": "an6.28",
-      "group": "an",
-      "rank": 7,
       "links": 1
     },
     {
@@ -12163,6 +12145,12 @@
       "group": "an",
       "rank": 2,
       "links": 2
+    },
+    {
+      "id": "an3.102",
+      "group": "an",
+      "rank": 1,
+      "links": 1
     },
     {
       "id": "an5.23",
@@ -12601,12 +12589,6 @@
       "group": "dhp",
       "rank": 13,
       "links": 1
-    },
-    {
-      "id": "mn72",
-      "group": "mn",
-      "rank": 1,
-      "links": 5
     },
     {
       "id": "sn6.5",
@@ -13311,6 +13293,18 @@
       "links": 2
     },
     {
+      "id": "sn8.5",
+      "group": "sn",
+      "rank": 7,
+      "links": 1
+    },
+    {
+      "id": "snp3.3",
+      "group": "snp",
+      "rank": 8,
+      "links": 1
+    },
+    {
       "id": "sn35.88",
       "group": "sn",
       "rank": 1,
@@ -13921,6 +13915,12 @@
       "group": "an",
       "rank": 10,
       "links": 2
+    },
+    {
+      "id": "an5.26",
+      "group": "an",
+      "rank": 2,
+      "links": 1
     },
     {
       "id": "sn35.97",
@@ -14796,7 +14796,7 @@
       "id": "sn22.55",
       "group": "sn",
       "rank": 4,
-      "links": 2
+      "links": 3
     },
     {
       "id": "ud7.8",
@@ -15583,18 +15583,6 @@
       "group": "an",
       "rank": 5,
       "links": 1
-    },
-    {
-      "id": "ud6.5",
-      "group": "ud",
-      "rank": 1,
-      "links": 2
-    },
-    {
-      "id": "ud6.6",
-      "group": "ud",
-      "rank": 2,
-      "links": 2
     },
     {
       "id": "an4.246",
@@ -16923,12 +16911,6 @@
       "links": 2
     },
     {
-      "id": "an10.96",
-      "group": "an",
-      "rank": 4,
-      "links": 2
-    },
-    {
       "id": "sn56.8",
       "group": "sn",
       "rank": 7,
@@ -17076,6 +17058,18 @@
       "id": "sn35.93",
       "group": "sn",
       "rank": 7,
+      "links": 1
+    },
+    {
+      "id": "sn22.53",
+      "group": "sn",
+      "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "sn22.54",
+      "group": "sn",
+      "rank": 3,
       "links": 1
     },
     {
@@ -17843,8 +17837,8 @@
     {
       "id": "sn43.3",
       "group": "sn",
-      "rank": 2,
-      "links": 2
+      "rank": 7,
+      "links": 1
     },
     {
       "id": "sn43.5",
@@ -26868,33 +26862,53 @@
     },
     {
       "source": "eternal truth",
-      "target": "sn8.5",
+      "target": "an10.96",
       "rank": 1
     },
     {
       "source": "eternal truth",
-      "target": "snp3.3",
+      "target": "an10.93",
       "rank": 2
     },
     {
       "source": "eternal truth",
-      "target": "sn1.32",
+      "target": "an10.95",
       "rank": 3
     },
     {
       "source": "eternal truth",
-      "target": "dhp1-20",
+      "target": "mn72",
       "rank": 4
     },
     {
       "source": "eternal truth",
-      "target": "mn128",
+      "target": "dn9",
       "rank": 5
     },
     {
       "source": "eternal truth",
-      "target": "thag21.1",
+      "target": "ud6.5",
       "rank": 6
+    },
+    {
+      "source": "eternal truth",
+      "target": "ud6.6",
+      "rank": 7
+    },
+    {
+      "source": "eternal truth",
+      "target": "ud6.4",
+      "rank": 8
+    },
+    {
+      "source": "eternal truth",
+      "target": "mn102",
+      "rank": 9
+    },
+    {
+      "source": "eternal truth",
+      "target": "dn29",
+      "rank": 10
     },
     {
       "source": "ethics and wisdom",
@@ -27912,11 +27926,6 @@
       "rank": 1
     },
     {
-      "source": "fear and terror",
-      "target": "mn4",
-      "rank": 2
-    },
-    {
       "source": "feel it detached",
       "target": "sn22.88",
       "rank": 1
@@ -28915,51 +28924,6 @@
       "source": "fork in the road",
       "target": "sn22.84",
       "rank": 2
-    },
-    {
-      "source": "foundation of immersion",
-      "target": "an3.102",
-      "rank": 1
-    },
-    {
-      "source": "foundation of immersion",
-      "target": "dn33",
-      "rank": 2
-    },
-    {
-      "source": "foundation of immersion",
-      "target": "an3.19",
-      "rank": 3
-    },
-    {
-      "source": "foundation of immersion",
-      "target": "an5.26",
-      "rank": 4
-    },
-    {
-      "source": "foundation of immersion",
-      "target": "dn34",
-      "rank": 5
-    },
-    {
-      "source": "foundation of immersion",
-      "target": "an4.14",
-      "rank": 6
-    },
-    {
-      "source": "foundation of immersion",
-      "target": "an6.28",
-      "rank": 7
-    },
-    {
-      "source": "foundation of immersion",
-      "target": "mn122",
-      "rank": 8
-    },
-    {
-      "source": "foundation of immersion",
-      "target": "mn36",
-      "rank": 9
     },
     {
       "source": "fourfold constraint",
@@ -45213,28 +45177,33 @@
     },
     {
       "source": "the foundation of",
-      "target": "an3.102",
+      "target": "mn140",
       "rank": 1
     },
     {
       "source": "the foundation of",
-      "target": "sn46.51",
+      "target": "sn22.53",
       "rank": 2
     },
     {
       "source": "the foundation of",
-      "target": "mn128",
+      "target": "sn22.54",
       "rank": 3
     },
     {
       "source": "the foundation of",
-      "target": "sn46.2",
+      "target": "sn51.14",
       "rank": 4
     },
     {
       "source": "the foundation of",
-      "target": "dn33",
+      "target": "sn22.55",
       "rank": 5
+    },
+    {
+      "source": "the foundation of",
+      "target": "dn33",
+      "rank": 6
     },
     {
       "source": "the fuel for craving",
@@ -47090,11 +47059,6 @@
       "source": "three examples",
       "target": "mn85",
       "rank": 3
-    },
-    {
-      "source": "three foundations",
-      "target": "an3.102",
-      "rank": 1
     },
     {
       "source": "three kinds of demonstration",
@@ -51235,36 +51199,6 @@
       "source": "without learning",
       "target": "an6.68",
       "rank": 1
-    },
-    {
-      "source": "without placing the mind, but just keeping it connected",
-      "target": "an8.63",
-      "rank": 1
-    },
-    {
-      "source": "without placing the mind, but just keeping it connected",
-      "target": "sn43.3",
-      "rank": 2
-    },
-    {
-      "source": "without placing the mind, but just keeping it connected",
-      "target": "sn43.12",
-      "rank": 3
-    },
-    {
-      "source": "without placing the mind, but just keeping it connected",
-      "target": "mn128",
-      "rank": 4
-    },
-    {
-      "source": "without placing the mind, but just keeping it connected",
-      "target": "dn33",
-      "rank": 5
-    },
-    {
-      "source": "without placing the mind, but just keeping it connected",
-      "target": "dn34",
-      "rank": 6
     },
     {
       "source": "with suffering as outcome",
