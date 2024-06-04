@@ -14,6 +14,7 @@
   const { BilaraPath, Authors, AuthorsV2 } = require("scv-esm");
   const { SuttaCentralId, SuttaRef } = require("scv-esm");
   const {
+    DBG,
     DBG_BD_INIT,
   } = require('./defines.cjs');
   const BilaraPathMap = require("./bilara-path-map");
@@ -528,8 +529,9 @@
       return new MLDoc(mldOpts).load(this.root);
     }
 
-    trilingualDoc(suttaRef, opts={}) {
+    async trilingualDoc(suttaRef, opts={}) {
       const msg = "BilaraData.trilingualDoc() ";
+      const dbg = DBG.TRILINGUALDOC;
       let { bilaraPathMap: bpm, root } = this;
       suttaRef = SuttaRef.create(suttaRef); 
       let {
@@ -560,7 +562,6 @@
         throw new Error(`${msg} ${suttaRef} not found`);
       }
       let mldOpts = {
-        logLevel,
         lang: docLang || refLang,
         author_uid: docAuthor || refAuthor,
         sutta_uid: suid,
@@ -571,8 +572,16 @@
         docLang,
         trilingual:true,
       };
-      this.debug(msg, { mldOpts });
-      let mld =  new MLDoc(mldOpts).load(root);
+      logLevel && (mldOpts.logLevel = logLevel);
+      dbg && console.log(msg, '[1]mldOpts', mldOpts);
+      let mld = await new MLDoc(mldOpts).load(root);
+      dbg && console.log(msg, 'mld=>', {
+        docLang: mld?.docLang,
+        docAuthor: mld?.docAuthor,
+        bilaraPaths: mld?.bilaraPaths,
+        langSegs: mld?.langSegs,
+        '...': '...',
+      });
       return mld;
     }
 
@@ -843,6 +852,8 @@
     }
 
     expandRange(suttaRef) {
+      const msg = "BilaraData.expandRange";
+      const dbg = DBG.SUTTA_UIDSEARCH;
       suttaRef = suttaRef.split(":")[0];
       var reCollection = new RegExp("[0-9].*", "u");
       var collName = suttaRef.replace(reCollection, "");
@@ -875,14 +886,18 @@
         if (dpLast === 0) {
           // e.g. SN50
           var prefix = `${sref}.`;
-          var first = rangeParts.length === 1 ? 1 : Number(rangeParts[0]);
-          var last = rangeParts.length === 1 ? 999 : Number(rangeParts[1]);
+          var first = rangeParts.length === 1 
+            ? 1 : Number(rangeParts[0]);
+          var last = rangeParts.length === 1 
+            ? 999 : Number(rangeParts[1]);
+          dbg && console.log(msg, '[1]dpLast0', {prefix, first, last});
         } else {
           var prefix = `${collName}${dotParts.slice(0,dpLast).join('.')}.`;
           var first = Number(dotParts[dpLast]);
           var last = rangeParts.length === 1 
             ? first
             : Number(rangeParts[1]);
+          dbg && console.log(msg, '[2]!dpLast0', {prefix, first, last});
         }
         if (isNaN(first) || isNaN(last)) {
           throw new Error(`Invalid sutta reference: ${suttaRef} [E1]`);
@@ -917,10 +932,13 @@
         var lastItem = `${collName}${last}`;
         var endUid = this.sutta_uidSuccessor(lastItem);
         var iEnd = endUid ? this.suttaIndex(endUid) : iCur + 1;
+        dbg && console.log(msg, '[3]MN_DN', {prefix, first, last});
         for (var i = iCur; i < iEnd; i++) {
           result.push(`${this.suttaIds[i]}${suffix}`);
         }
       }
+
+      dbg && console.log(msg, '=>', result);
       return result;
     }
 
@@ -934,6 +952,7 @@
 
     sutta_uidSearch(pattern, maxResults = 5) {
       const msg = 'BilaraData.sutta_uidSearch() ';
+      const dbg = DBG.SUTTA_UIDSEARCH;
       var method = "sutta_uid";
       var uids = this.suttaList(pattern).slice(0, maxResults);
       var lang = undefined;
@@ -948,12 +967,16 @@
           : refLang ? `${uid}/${refLang}` : uid;
       });
 
-      return {
+      let result = {
         method,
         uids,
         suttaRefs,
         lang,
       };
+
+      dbg && console.log(msg, pattern, '=>', result);
+
+      return result;
     }
 
     version() {

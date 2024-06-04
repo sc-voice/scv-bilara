@@ -9,7 +9,8 @@
   const { SuttaCentralId } = require('scv-esm');
   const BILARA_PATH = path.join(Files.LOCAL_DIR, 'bilara-data');
   const { 
-    DBG_MLD, DBG_VERBOSE,
+    DBG,
+    DBG_MLD, 
   } = require("./defines.cjs");
 
   class MLDoc {
@@ -312,7 +313,7 @@
     filterSegments(...args) {
       const msg = "MLDoc.filterSegments()";
       const dbg = DBG_MLD;
-      const dbgv = DBG_VERBOSE && dbg;
+      const dbgv = DBG.VERBOSE && dbg;
       if (typeof args[0] === 'string') {
         var opts = {
           resultPattern: args[0],

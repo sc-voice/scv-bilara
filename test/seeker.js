@@ -702,7 +702,7 @@ typeof describe === "function" &&
         ["thag1.10"]
       );
     });
-    it("TESTTESTfind(...) sutta list", async () => {
+    it("find(...) sutta list", async () => {
       let msg = 'test.seeker@706';
       var maxDoc = 2;
       let skr = await new Seeker({maxDoc}).initialize();
@@ -1708,14 +1708,24 @@ typeof describe === "function" &&
       }
 
       // valid
-      should(skr.tipitakaRegExp("an").toString()).equal("/(\\/an\\/)/iu");
-      should(skr.tipitakaRegExp("an1").toString()).equal("/(\\/an1\\/)/iu");
-      should(skr.tipitakaRegExp("an11").toString()).equal("/(\\/an11\\/)/iu");
-      should(skr.tipitakaRegExp("sn5").toString()).equal("/(\\/sn5\\/)/iu");
-      should(skr.tipitakaRegExp("sn56").toString()).equal("/(\\/sn56\\/)/iu");
-      should(skr.tipitakaRegExp("su").toString()).equal("/(\\/sutta\\/)/iu");
-      should(skr.tipitakaRegExp().toString()).equal("/(\\/sutta\\/)/iu");
-      should(skr.tipitakaRegExp("bi,pj").toString()).equal("/(-bi-|-pj)/iu");
+      should(skr.tipitakaRegExp("tha-ap").toString())
+      .equal("/(\\/tha-ap\\/)/iu");
+      should(skr.tipitakaRegExp("an").toString())
+      .equal("/(\\/an\\/)/iu");
+      should(skr.tipitakaRegExp("an1").toString())
+      .equal("/(\\/an1\\/)/iu");
+      should(skr.tipitakaRegExp("an11").toString())
+      .equal("/(\\/an11\\/)/iu");
+      should(skr.tipitakaRegExp("sn5").toString())
+      .equal("/(\\/sn5\\/)/iu");
+      should(skr.tipitakaRegExp("sn56").toString())
+      .equal("/(\\/sn56\\/)/iu");
+      should(skr.tipitakaRegExp("su").toString())
+      .equal("/(\\/sutta\\/)/iu");
+      should(skr.tipitakaRegExp().toString())
+      .equal("/(\\/sutta\\/)/iu");
+      should(skr.tipitakaRegExp("bi,pj").toString())
+      .equal("/(-bi-|-pj)/iu");
     });
     it("find(...) finds an1.1 all types", async () => {
       var skr = await new Seeker().initialize();
@@ -1894,7 +1904,7 @@ typeof describe === "function" &&
       var mld0 = data.mlDocs[0];
       should(mld0.bilaraPaths[0]).match(/ud6.4/);
     });
-    it("TESTTESTfind(...) finds Deutsch 'rat'", async () => {
+    it("find(...) finds Deutsch 'rat'", async () => {
       let enWords = await English.wordSet({ source: "file" });
       var bilaraData = await bd.initialize();
       var skr = await new Seeker({
@@ -2824,5 +2834,31 @@ typeof describe === "function" &&
         pli: '<b>Pubbayogo</b>ti tesaṁ pubbakammaṁ. ',
         matched: true,
       });
+    });
+    it("TESTTESTfind(...) tha-ap34", async () => {
+      let msg = 'test.seeker@2829';
+      var maxDoc = 2;
+      let skr = await new Seeker({maxDoc}).initialize();
+      let dbg = 0;
+      let suid = 'tha-ap34';
+      let docLang = "en";
+      let docAuthor = "sujato";
+      let minLang = 1;
+      let pattern = [ 
+        suid, 
+        '-dl', docLang, 
+        '-da', docAuthor, 
+        '-ml', minLang, 
+      ].join(' ');
+
+      var res = await skr.find({
+        pattern,
+        matchHighlight: false,
+      });
+      should(res.method).equal("sutta_uid");
+      let { mlDocs, suttaRefs } = res;
+      let segs = mlDocs[0].segments();
+
+      console.log(msg, segs[segs.length-1]);
     });
   });

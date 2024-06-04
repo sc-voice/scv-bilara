@@ -24,8 +24,8 @@
   const MAX_DOC = 50; // Hard limit for reasonable use of resources
 
   const { 
-    DBG_SEEKER, DBG_GREP, DBG_FINDARGS, DBG_TRILINGUAL, 
-    DBG_VERBOSE,
+    DBG,
+    DBG_GREP, 
   } = require("./defines.cjs");
   
   var wscount = 0;
@@ -33,7 +33,7 @@
   class Seeker {
     constructor(opts = {}) {
       const msg = "Seeker.ctor()";
-      const dbg = DBG_SEEKER;
+      const dbg = DBG.SEEKER;
       (opts.logger || logger).logInstance(this, opts);
       let bilaraData =
         (this.bilaraData = opts.bilaraData || new BilaraData(opts));
@@ -531,7 +531,8 @@
 
     findArgs(args) {
       const msg = "Seeker.findArgs() ";
-      const dbg = DBG_SEEKER || DBG_FINDARGS;
+      const dbg = DBG.SEEKER || DBG.FINDARGS;
+      const dbgv = DBG.VERBOSE;
       if (!(args instanceof Array)) {
         throw new Error("findArgs(?ARRAY-OF-ARGS?)");
       }
@@ -648,11 +649,11 @@
           case 'de':
           case 'en':
             searchLang = this.patternLanguage(pattern, lang) 
-            dbg && console.log(msg, '[1]searchLang', searchLang);
+            dbgv && console.log(msg, '[1]searchLang', searchLang);
             break;
           default:
             searchLang = docLang;
-            dbg && console.log(msg, '[2]searchLangDoc', searchLang);
+            dbgv && console.log(msg, '[2]searchLangDoc', searchLang);
             break;
         }
       }
@@ -751,7 +752,7 @@
         trilingual,
         types,
       };
-      dbg && console.log(msg, '[4]', result);
+      dbg && console.log(msg, '[4]=>', result);
       return result;
     }
 
@@ -766,6 +767,7 @@
 
     find(...args) {
       const msg = "Seeker.find() ";
+      let dbg = DBG.FIND;
       var { findMemo, memoizer } = this;
       var findArgs = this.findArgs(args);
       var that = this;
@@ -776,8 +778,12 @@
       //var pattern =  typeof args === 'string'
       //? args
       //: args[0].pattern;
-      var pattern = findArgs.pattern;
+      let { pattern, trilingual } = findArgs;
       if (this.isExample(pattern)) {
+        dbg && console.log(msg, '[1]example', {
+          trilingual,
+          pattern,
+        });
         if (findMemo == null) {
           that.findMemo = 
           findMemo = memoizer.memoize(callSlowFind, Seeker);
@@ -786,6 +792,10 @@
         this.debug(`${msg} example:${pattern}`);
       } else {
         this.info(`${msg} non-example:${pattern}`);
+        dbg && console.log(msg, '[2]!example', {
+          trilingual,
+          pattern,
+        });
         var promise = callSlowFind(findArgs);
       }
       return promise;
@@ -793,6 +803,8 @@
 
     slowFindId(opts={}) {
       const msg = "Seeker.slowFindId() ";
+      const dbg = DBG.SEEKER || DBG.SLOWFIND || DBG.SLOWFINDID;
+      const dbgv = DBG.VERBOSE && dbg;
       let { 
         lang='en', 
         languages=['pli','en'], 
@@ -811,6 +823,7 @@
       let method, uids, suttaRefs;
 
       if (!SuttaCentralId.test(pattern)) {
+        dbg && console.log(msg, '[1]!sutta-id', ({pattern}));
         this.debug(msg, 'not sutta id', {pattern});
         return undefined;
       }
@@ -829,6 +842,7 @@
         pattern = pattern.replace(/\/[-a-z0-9.]*/ig, '');
       }
       let res = bd.sutta_uidSearch(pattern, maxResults);
+      dbgv && console.log(msg, '[2]sutta_uidSearch', res);
       method = res.method;
       uids = res.uids;
       suttaRefs = res.suttaRefs;
@@ -836,7 +850,7 @@
       if (!languages.includes(lang)) {
         languages = [...languages.filter((l) => l !== "en"), lang];
       }
-      return {
+      let result = {
         lang,
         maxResults,
         pattern,
@@ -850,15 +864,23 @@
         refAuthor,
         trilingual,
       };
+      dbg && console.log(msg, '=>', result);
+      return result;
     }
 
     async slowFind(findArgs) {
       const msg = "Seeker.slowFind() ";
+      const dbg = DBG.SLOWFIND;
       try {
         var msStart = Date.now();
-        let result = findArgs.trilingual
-          ? this.slowFindTrilingual(findArgs)
-          : this.slowFindLegacy(findArgs);
+        let result;
+        if (findArgs.trilingual) {
+          dbg && console.log(msg, "[1]slowFind", findArgs.pattern);
+          result = this.slowFindTrilingual(findArgs)
+        } else {
+          dbg && console.log(msg, "[2]slowFindLegacy", findArgs.pattern);
+          result = this.slowFindLegacy(findArgs);
+        }
         var msElapsed = Date.now() - msStart;
         let secs = `${(msElapsed/1000).toFixed(3)}s`;
         logger.info(msg, findArgs.pattern, secs);
@@ -871,6 +893,7 @@
 
     async slowFindLegacy(findArgs) {
       const msg = "Seeker.slowFindLegacy() ";
+      const dbg = DBG.SEEKER || DBG.SLOWFIND;
       var msStart = Date.now();
       var {
         author,
@@ -905,6 +928,7 @@
       }
 
       if (isSuidPattern) {
+        dbg && console.log(msg, '[1]slowFindId', pattern);
         let res = this.slowFindId({ 
           author, lang, languages, maxResults, pattern,
           docLang, docAuthor, refLang, refAuthor, trilingual,
@@ -917,6 +941,7 @@
         languages = res.languages;
         scoreDoc = false;
       } else {
+        dbg && console.log(msg, '[2]slowFindPhrase', pattern);
         let res = await this.slowFindPhrase({
           author,
           lang,
@@ -1062,8 +1087,8 @@
 
     async slowFindTrilingual(findArgs) {
       const msg = "Seeker.slowFindTrilingual()";
-      const dbg = DBG_SEEKER || DBG_TRILINGUAL;
-      const dbgv = DBG_VERBOSE && dbg;
+      const dbg = DBG.SEEKER || DBG.SLOWFIND || DBG.SLOWFINDID;
+      const dbgv = DBG.VERBOSE && dbg;
       var msStart = Date.now();
       var {
         author,
@@ -1133,6 +1158,7 @@
       var bilaraPaths = [];
       var matchingRefs = [];
       var msStart = Date.now();
+      dbg && console.log(msg, '[3]suttaRefs', suttaRefs);
       for (var i = 0; i < suttaRefs.length; i++) {
         let suttaRef = suttaRefs[i];
         let [suid, srLang, authorId] = suttaRef.split("/");
@@ -1149,6 +1175,7 @@
           includeUnpublished,
         });
         let mld;
+
         if (isBilDoc) {
           let mldOpts = {
             refLang,
@@ -1158,12 +1185,13 @@
             trilingual,
           }
           mld = await bd.trilingualDoc(suttaRef, mldOpts);
-          dbg && console.log(msg, '[3]trilingualDoc', suttaRef, !!mld);
+          dbg && console.log(msg, '[3]trilingualDoc', suttaRef, {
+            score: mld?.score,
+            langSegs: mld?.langSegs,
+          });
           var mldBilaraPaths = mld.bilaraPaths.sort();
           if (mldBilaraPaths.length < minLang) {
-            //console.log(msg, `skipping ${mld.suid} ${mld.title}`);
-            this.debug(
-              `skipping ${mld.suid} minLang`,
+            dbg && console.log(msg, '[4]!minLang', mld.suid,
               `${mldBilaraPaths.length}<${minLang} [${languages}]`
             );
             continue;
@@ -1250,7 +1278,7 @@
 
     async slowFindPhrase(args = {}) {
       const msg = "Seeker.slowFindPhrase() ";
-      const dbg = DBG_SEEKER;
+      const dbg = DBG.SEEKER;
       let {
         author,
         lang,

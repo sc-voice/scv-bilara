@@ -16,9 +16,7 @@ const {
     Verse,
 
 } = require('../../index');
-const {
-  DBG_SEARCH, DBG_VERBOSE,
-} = require('../../src/defines.cjs');
+const { DBG, } = require('../../src/defines.cjs');
 const { 
   AuthorsV2,
   BilaraPath, 
@@ -714,8 +712,8 @@ logger.logLevel = logLevel;
 
 (async function() { try {
     const msg = "js/search() ";
-    const dbg = DBG_SEARCH;
-    const dbgv = DBG_VERBOSE && dbg;
+    const dbg = DBG.SEARCH_SCRIPT;
+    const dbgv = DBG.VERBOSE && dbg;
     logger.info(msg, `creating BilaraData ${bdName} ${branch}`);
     let localRoot = path.join(process.cwd(), 'local', bdName);
     let libRoot = path.join(Files.LOCAL_DIR, bdName);
