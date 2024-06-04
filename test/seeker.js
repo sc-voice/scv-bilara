@@ -1894,7 +1894,7 @@ typeof describe === "function" &&
       var mld0 = data.mlDocs[0];
       should(mld0.bilaraPaths[0]).match(/ud6.4/);
     });
-    it("find(...) finds Deutsch 'rat'", async () => {
+    it("TESTTESTfind(...) finds Deutsch 'rat'", async () => {
       let enWords = await English.wordSet({ source: "file" });
       var bilaraData = await bd.initialize();
       var skr = await new Seeker({
@@ -1909,7 +1909,8 @@ typeof describe === "function" &&
       should(data.method).equal("phrase");
       should(data.mlDocs.length).above(36).below(60);
       var mld0 = data.mlDocs[0];
-      should(mld0.bilaraPaths[0]).match(/mn53/);
+      should(mld0.bilaraPaths[0]).match(/mn56_root/);
+      should(mld0.bilaraPaths[1]).match(/mn56_translation/);
     });
     it("find(...) finds 'thig3.8' de unpublished", async () => {
       if (!TEST_UNPUBLISHED) { return; }
