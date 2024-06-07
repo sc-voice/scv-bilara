@@ -731,9 +731,9 @@
       "links": 7
     },
     {
-      "id": "damn this thing",
+      "id": "damn",
       "group": "Examples",
-      "links": 1
+      "links": 5
     },
     {
       "id": "dark bound for light",
@@ -1939,6 +1939,11 @@
       "id": "infer to the past and future",
       "group": "Examples",
       "links": 2
+    },
+    {
+      "id": "inflict",
+      "group": "Examples",
+      "links": 5
     },
     {
       "id": "back to the past",
@@ -4890,7 +4895,7 @@
       "id": "dn3",
       "group": "dn",
       "rank": 2,
-      "links": 9
+      "links": 10
     },
     {
       "id": "mn38",
@@ -5477,8 +5482,8 @@
     {
       "id": "thag20.1",
       "group": "thag",
-      "rank": 7,
-      "links": 12
+      "rank": 4,
+      "links": 13
     },
     {
       "id": "iti109",
@@ -5610,7 +5615,7 @@
       "id": "sn42.13",
       "group": "sn",
       "rank": 1,
-      "links": 6
+      "links": 7
     },
     {
       "id": "an4.126",
@@ -7482,7 +7487,7 @@
       "id": "dn23",
       "group": "dn",
       "rank": 1,
-      "links": 19
+      "links": 20
     },
     {
       "id": "ud6.4",
@@ -8310,7 +8315,7 @@
       "id": "mn129",
       "group": "mn",
       "rank": 1,
-      "links": 10
+      "links": 11
     },
     {
       "id": "thag1.106",
@@ -8838,7 +8843,7 @@
       "id": "mn66",
       "group": "mn",
       "rank": 3,
-      "links": 7
+      "links": 8
     },
     {
       "id": "an2.230-279",
@@ -9609,6 +9614,12 @@
       "links": 3
     },
     {
+      "id": "thag4.4",
+      "group": "thag",
+      "rank": 2,
+      "links": 1
+    },
+    {
       "id": "an4.85",
       "group": "an",
       "rank": 1,
@@ -9642,7 +9653,7 @@
       "id": "mn105",
       "group": "mn",
       "rank": 1,
-      "links": 6
+      "links": 7
     },
     {
       "id": "sn1.66",
@@ -12066,7 +12077,7 @@
       "id": "sn55.7",
       "group": "sn",
       "rank": 1,
-      "links": 3
+      "links": 4
     },
     {
       "id": "an5.147",
@@ -24876,9 +24887,29 @@
       "rank": 7
     },
     {
-      "source": "damn this thing",
+      "source": "damn",
       "target": "dn14",
       "rank": 1
+    },
+    {
+      "source": "damn",
+      "target": "thag4.4",
+      "rank": 2
+    },
+    {
+      "source": "damn",
+      "target": "mn66",
+      "rank": 3
+    },
+    {
+      "source": "damn",
+      "target": "thag20.1",
+      "rank": 4
+    },
+    {
+      "source": "damn",
+      "target": "dn23",
+      "rank": 5
     },
     {
       "source": "dark bound for light",
@@ -33294,6 +33325,31 @@
       "source": "infer to the past and future",
       "target": "sn42.11",
       "rank": 2
+    },
+    {
+      "source": "inflict",
+      "target": "sn55.7",
+      "rank": 1
+    },
+    {
+      "source": "inflict",
+      "target": "mn105",
+      "rank": 2
+    },
+    {
+      "source": "inflict",
+      "target": "sn42.13",
+      "rank": 3
+    },
+    {
+      "source": "inflict",
+      "target": "mn129",
+      "rank": 4
+    },
+    {
+      "source": "inflict",
+      "target": "dn3",
+      "rank": 5
     },
     {
       "source": "back to the past",
