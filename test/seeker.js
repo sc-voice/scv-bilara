@@ -592,6 +592,7 @@ typeof describe === "function" &&
         `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
         `${de_sab}mn/mn1_translation-de-sabbamitta.json:2`,
         `${de_sab}sn/sn56/sn56.21_translation-de-sabbamitta.json:1`,
+        `${de_sab}mn/mn66_translation-de-sabbamitta.json:1`,
         `${de_sab}mn/mn116_translation-de-sabbamitta.json:1`,
         `${de_sab}dn/dn16_translation-de-sabbamitta.json:1`,
       ];
@@ -960,6 +961,7 @@ typeof describe === "function" &&
         "sn42.11/en/sujato",
         "mn1/en/sujato",
         "sn56.21/en/sujato",
+        "mn66/en/sujato",
         "mn116/en/sujato",
         "dn16/en/sujato",
       ]);
@@ -1158,6 +1160,7 @@ typeof describe === "function" &&
         "dn34/de/sabbamitta",
         "mn116/de/sabbamitta",
         "dn16/de/sabbamitta",
+        "mn66/de/sabbamitta",
         "sn56.21/de/sabbamitta",
       ]);
       var [mld0] = res.mlDocs;
@@ -1763,6 +1766,7 @@ typeof describe === "function" &&
         "sn42.11/en/sujato",
         "mn1/en/sujato",
         "sn56.21/en/sujato",
+        "mn66/en/sujato",
         "mn116/en/sujato",
         "dn16/en/sujato",
       ]);
@@ -2835,7 +2839,7 @@ typeof describe === "function" &&
         matched: true,
       });
     });
-    it("TESTTESTfind(...) tha-ap34", async () => {
+    it("find(...) tha-ap34", async () => {
       let msg = 'test.seeker@2829';
       var maxDoc = 2;
       let skr = await new Seeker({maxDoc}).initialize();

@@ -67,8 +67,9 @@ const bilaraData = deExamples.bilaraData;
     let lang = 'de';
     let es = await new ExampleV2({lang}).initialize();
     let res = await es.exampleSuttas('wurzel des leidens');
-    should.deepEqual(res.map(s=>s.sutta_uid), 
-      ['sn42.11', 'mn1', 'sn56.21', 'mn116', 'dn16']);
+    should.deepEqual(res.map(s=>s.sutta_uid), [
+      'sn42.11', 'mn1', 'sn56.21', 'mn116', 'mn66', 'dn16',
+    ]);
   });
   it("suttasOfExamples()", async()=>{
     let lang = 'de';
@@ -79,7 +80,9 @@ const bilaraData = deExamples.bilaraData;
     let res = await deExamples.suttasOfExamples(examples);
     should.deepEqual(res, {
       'ein schlectes Beispeil': [],
-      'wurzel des leidens': ['sn42.11', 'mn1', 'sn56.21', 'mn116', 'dn16'],
+      'wurzel des leidens': [
+        'sn42.11', 'mn1', 'sn56.21', 'mn116', 'mn66', 'dn16'
+      ],
     });
   });
   it("langAuthorPath()", async ()=>{
