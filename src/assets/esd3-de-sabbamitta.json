@@ -441,6 +441,11 @@
       "links": 8
     },
     {
+      "id": "Blitz",
+      "group": "Examples",
+      "links": 15
+    },
+    {
       "id": "Bodensatz",
       "group": "Examples",
       "links": 3
@@ -1706,9 +1711,9 @@
       "links": 6
     },
     {
-      "id": "Gewissen und Zurückhaltung",
+      "id": "Gewissen und Besonnenheit",
       "group": "Examples",
-      "links": 1
+      "links": 25
     },
     {
       "id": "gewürdigt, verehrt und wertgeschätzt",
@@ -3661,9 +3666,9 @@
       "links": 4
     },
     {
-      "id": "vertrauensvolle Hausbesitzer",
+      "id": "vertrauensvollen Hausbesitzer",
       "group": "Examples",
-      "links": 1
+      "links": 6
     },
     {
       "id": "Vervollkommnung de[sr]",
@@ -4116,11 +4121,6 @@
       "links": 33
     },
     {
-      "id": "wie ein Blitz",
-      "group": "Examples",
-      "links": 1
-    },
-    {
       "id": "wie eine Kuh",
       "group": "Examples",
       "links": 9
@@ -4522,7 +4522,7 @@
       "id": "mn14",
       "group": "mn",
       "rank": 1,
-      "links": 11
+      "links": 12
     },
     {
       "id": "an9.41",
@@ -4732,7 +4732,7 @@
       "id": "thag20.1",
       "group": "thag",
       "rank": 4,
-      "links": 12
+      "links": 13
     },
     {
       "id": "dn17",
@@ -4762,7 +4762,7 @@
       "id": "dn16",
       "group": "dn",
       "rank": 1,
-      "links": 66
+      "links": 67
     },
     {
       "id": "an4.89",
@@ -4792,7 +4792,7 @@
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 112
+      "links": 113
     },
     {
       "id": "an4.189",
@@ -4804,7 +4804,7 @@
       "id": "dn34",
       "group": "dn",
       "rank": 1,
-      "links": 81
+      "links": 82
     },
     {
       "id": "an8.118",
@@ -4917,8 +4917,8 @@
     {
       "id": "an8.81",
       "group": "an",
-      "rank": 3,
-      "links": 2
+      "rank": 2,
+      "links": 3
     },
     {
       "id": "an8.9",
@@ -4960,7 +4960,7 @@
       "id": "mn39",
       "group": "mn",
       "rank": 1,
-      "links": 24
+      "links": 25
     },
     {
       "id": "dn2",
@@ -5433,7 +5433,7 @@
     {
       "id": "an3.25",
       "group": "an",
-      "rank": 1,
+      "rank": 2,
       "links": 4
     },
     {
@@ -5505,8 +5505,8 @@
     {
       "id": "thag18.1",
       "group": "thag",
-      "rank": 1,
-      "links": 4
+      "rank": 4,
+      "links": 3
     },
     {
       "id": "mn12",
@@ -5734,7 +5734,7 @@
       "id": "mn66",
       "group": "mn",
       "rank": 1,
-      "links": 7
+      "links": 10
     },
     {
       "id": "an4.237",
@@ -7237,6 +7237,66 @@
       "links": 11
     },
     {
+      "id": "sn17.6",
+      "group": "sn",
+      "rank": 3,
+      "links": 2
+    },
+    {
+      "id": "mn13",
+      "group": "mn",
+      "rank": 5,
+      "links": 4
+    },
+    {
+      "id": "thag1.41",
+      "group": "thag",
+      "rank": 6,
+      "links": 1
+    },
+    {
+      "id": "thag1.50",
+      "group": "thag",
+      "rank": 7,
+      "links": 1
+    },
+    {
+      "id": "sn1.40",
+      "group": "sn",
+      "rank": 8,
+      "links": 1
+    },
+    {
+      "id": "sn4.6",
+      "group": "sn",
+      "rank": 3,
+      "links": 5
+    },
+    {
+      "id": "sn6.13",
+      "group": "sn",
+      "rank": 7,
+      "links": 2
+    },
+    {
+      "id": "an5.31",
+      "group": "an",
+      "rank": 9,
+      "links": 2
+    },
+    {
+      "id": "sn3.24",
+      "group": "sn",
+      "rank": 10,
+      "links": 2
+    },
+    {
+      "id": "dn20",
+      "group": "dn",
+      "rank": 1,
+      "links": 7
+    },
+    {
       "id": "an2.42-51",
       "group": "an",
       "rank": 1,
@@ -7363,12 +7423,6 @@
       "links": 1
     },
     {
-      "id": "sn17.6",
-      "group": "sn",
-      "rank": 8,
-      "links": 1
-    },
-    {
       "id": "sn17.7",
       "group": "sn",
       "rank": 9,
@@ -7462,7 +7516,7 @@
       "id": "an6.45",
       "group": "an",
       "rank": 1,
-      "links": 5
+      "links": 4
     },
     {
       "id": "ud3.2",
@@ -8680,19 +8734,19 @@
       "id": "an7.5",
       "group": "an",
       "rank": 1,
-      "links": 1
+      "links": 2
     },
     {
       "id": "an7.7",
       "group": "an",
       "rank": 2,
-      "links": 1
+      "links": 2
     },
     {
       "id": "an7.6",
       "group": "an",
       "rank": 3,
-      "links": 1
+      "links": 2
     },
     {
       "id": "sn34.10",
@@ -11521,12 +11575,6 @@
       "links": 6
     },
     {
-      "id": "dn20",
-      "group": "dn",
-      "rank": 1,
-      "links": 6
-    },
-    {
       "id": "sn22.81",
       "group": "sn",
       "rank": 1,
@@ -12166,7 +12214,7 @@
       "id": "sn16.11",
       "group": "sn",
       "rank": 1,
-      "links": 6
+      "links": 7
     },
     {
       "id": "an9.4",
@@ -12232,6 +12280,102 @@
       "id": "thag1.102",
       "group": "thag",
       "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "an7.65",
+      "group": "an",
+      "rank": 3,
+      "links": 2
+    },
+    {
+      "id": "an2.180-229",
+      "group": "an",
+      "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "iti42",
+      "group": "iti",
+      "rank": 1,
+      "links": 2
+    },
+    {
+      "id": "an8.2",
+      "group": "an",
+      "rank": 6,
+      "links": 3
+    },
+    {
+      "id": "sn46.30",
+      "group": "sn",
+      "rank": 5,
+      "links": 2
+    },
+    {
+      "id": "an4.73",
+      "group": "an",
+      "rank": 8,
+      "links": 1
+    },
+    {
+      "id": "an2.1-10",
+      "group": "an",
+      "rank": 1,
+      "links": 5
+    },
+    {
+      "id": "an2.230-279",
+      "group": "an",
+      "rank": 12,
+      "links": 1
+    },
+    {
+      "id": "an10.105",
+      "group": "an",
+      "rank": 13,
+      "links": 1
+    },
+    {
+      "id": "an7.2",
+      "group": "an",
+      "rank": 14,
+      "links": 1
+    },
+    {
+      "id": "an8.3",
+      "group": "an",
+      "rank": 15,
+      "links": 1
+    },
+    {
+      "id": "an7.3",
+      "group": "an",
+      "rank": 16,
+      "links": 2
+    },
+    {
+      "id": "iti40",
+      "group": "iti",
+      "rank": 18,
+      "links": 1
+    },
+    {
+      "id": "sn45.1",
+      "group": "sn",
+      "rank": 20,
+      "links": 1
+    },
+    {
+      "id": "an7.4",
+      "group": "an",
+      "rank": 3,
+      "links": 4
+    },
+    {
+      "id": "an2.87-97",
+      "group": "an",
+      "rank": 23,
       "links": 1
     },
     {
@@ -12652,13 +12796,13 @@
       "id": "an8.55",
       "group": "an",
       "rank": 1,
-      "links": 3
+      "links": 4
     },
     {
       "id": "an8.54",
       "group": "an",
       "rank": 2,
-      "links": 3
+      "links": 4
     },
     {
       "id": "an6.67",
@@ -12751,12 +12895,6 @@
       "links": 2
     },
     {
-      "id": "sn4.6",
-      "group": "sn",
-      "rank": 3,
-      "links": 4
-    },
-    {
       "id": "sn7.9",
       "group": "sn",
       "rank": 4,
@@ -12767,18 +12905,6 @@
       "group": "thag",
       "rank": 8,
       "links": 3
-    },
-    {
-      "id": "iti42",
-      "group": "iti",
-      "rank": 1,
-      "links": 1
-    },
-    {
-      "id": "an2.1-10",
-      "group": "an",
-      "rank": 1,
-      "links": 4
     },
     {
       "id": "sn36.11",
@@ -12839,12 +12965,6 @@
       "group": "an",
       "rank": 6,
       "links": 1
-    },
-    {
-      "id": "an8.2",
-      "group": "an",
-      "rank": 7,
-      "links": 2
     },
     {
       "id": "an5.51",
@@ -13237,12 +13357,6 @@
       "links": 1
     },
     {
-      "id": "sn6.13",
-      "group": "sn",
-      "rank": 7,
-      "links": 1
-    },
-    {
       "id": "ud5.3",
       "group": "ud",
       "rank": 1,
@@ -13360,7 +13474,7 @@
       "id": "an4.122",
       "group": "an",
       "rank": 1,
-      "links": 2
+      "links": 3
     },
     {
       "id": "sn56.46",
@@ -13439,12 +13553,6 @@
       "group": "sn",
       "rank": 1,
       "links": 2
-    },
-    {
-      "id": "mn13",
-      "group": "mn",
-      "rank": 5,
-      "links": 3
     },
     {
       "id": "an3.133",
@@ -13975,12 +14083,6 @@
       "links": 3
     },
     {
-      "id": "an7.4",
-      "group": "an",
-      "rank": 3,
-      "links": 3
-    },
-    {
       "id": "an5.15",
       "group": "an",
       "rank": 6,
@@ -14032,12 +14134,6 @@
       "id": "an5.1",
       "group": "an",
       "rank": 17,
-      "links": 1
-    },
-    {
-      "id": "an7.3",
-      "group": "an",
-      "rank": 19,
       "links": 1
     },
     {
@@ -15367,18 +15463,6 @@
       "links": 1
     },
     {
-      "id": "an5.31",
-      "group": "an",
-      "rank": 9,
-      "links": 1
-    },
-    {
-      "id": "sn3.24",
-      "group": "sn",
-      "rank": 10,
-      "links": 1
-    },
-    {
       "id": "sn20.6",
       "group": "sn",
       "rank": 1,
@@ -15519,8 +15603,8 @@
     {
       "id": "an8.76",
       "group": "an",
-      "rank": 3,
-      "links": 2
+      "rank": 2,
+      "links": 3
     },
     {
       "id": "an5.58",
@@ -15851,12 +15935,6 @@
       "group": "sn",
       "rank": 2,
       "links": 3
-    },
-    {
-      "id": "sn46.30",
-      "group": "sn",
-      "rank": 5,
-      "links": 1
     },
     {
       "id": "sn22.101",
@@ -16555,6 +16633,12 @@
       "links": 1
     },
     {
+      "id": "an8.75",
+      "group": "an",
+      "rank": 1,
+      "links": 2
+    },
+    {
       "id": "sn45.78-82",
       "group": "sn",
       "rank": 11,
@@ -16672,12 +16756,6 @@
       "id": "an5.92",
       "group": "an",
       "rank": 35,
-      "links": 1
-    },
-    {
-      "id": "an8.75",
-      "group": "an",
-      "rank": 36,
       "links": 1
     },
     {
@@ -17494,12 +17572,6 @@
       "id": "an5.168",
       "group": "an",
       "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "an7.65",
-      "group": "an",
-      "rank": 3,
       "links": 1
     },
     {
@@ -21067,6 +21139,81 @@
       "source": "blau Seerosen",
       "target": "dn14",
       "rank": 8
+    },
+    {
+      "source": "Blitz",
+      "target": "dn16",
+      "rank": 1
+    },
+    {
+      "source": "Blitz",
+      "target": "an3.25",
+      "rank": 2
+    },
+    {
+      "source": "Blitz",
+      "target": "sn17.6",
+      "rank": 3
+    },
+    {
+      "source": "Blitz",
+      "target": "mn14",
+      "rank": 4
+    },
+    {
+      "source": "Blitz",
+      "target": "mn13",
+      "rank": 5
+    },
+    {
+      "source": "Blitz",
+      "target": "thag1.41",
+      "rank": 6
+    },
+    {
+      "source": "Blitz",
+      "target": "thag1.50",
+      "rank": 7
+    },
+    {
+      "source": "Blitz",
+      "target": "sn1.40",
+      "rank": 8
+    },
+    {
+      "source": "Blitz",
+      "target": "sn4.6",
+      "rank": 9
+    },
+    {
+      "source": "Blitz",
+      "target": "sn6.13",
+      "rank": 10
+    },
+    {
+      "source": "Blitz",
+      "target": "an5.31",
+      "rank": 11
+    },
+    {
+      "source": "Blitz",
+      "target": "sn3.24",
+      "rank": 12
+    },
+    {
+      "source": "Blitz",
+      "target": "mn66",
+      "rank": 13
+    },
+    {
+      "source": "Blitz",
+      "target": "dn20",
+      "rank": 14
+    },
+    {
+      "source": "Blitz",
+      "target": "thag20.1",
+      "rank": 15
     },
     {
       "source": "Bodensatz",
@@ -29499,9 +29646,129 @@
       "rank": 6
     },
     {
-      "source": "Gewissen und Zurückhaltung",
-      "target": "thag18.1",
+      "source": "Gewissen und Besonnenheit",
+      "target": "mn39",
       "rank": 1
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "an8.81",
+      "rank": 2
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "an7.65",
+      "rank": 3
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "an2.180-229",
+      "rank": 4
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "iti42",
+      "rank": 5
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "an8.2",
+      "rank": 6
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "sn46.30",
+      "rank": 7
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "an4.73",
+      "rank": 8
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "an2.1-10",
+      "rank": 9
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "mn66",
+      "rank": 10
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "dn34",
+      "rank": 11
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "an2.230-279",
+      "rank": 12
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "an10.105",
+      "rank": 13
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "an7.2",
+      "rank": 14
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "an8.3",
+      "rank": 15
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "an7.3",
+      "rank": 16
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "an7.5",
+      "rank": 17
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "iti40",
+      "rank": 18
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "an7.7",
+      "rank": 19
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "sn45.1",
+      "rank": 20
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "an7.4",
+      "rank": 21
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "an7.6",
+      "rank": 22
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "an2.87-97",
+      "rank": 23
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "sn16.11",
+      "rank": 24
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "dn33",
+      "rank": 25
     },
     {
       "source": "gewürdigt, verehrt und wertgeschätzt",
@@ -42374,9 +42641,34 @@
       "rank": 4
     },
     {
-      "source": "vertrauensvolle Hausbesitzer",
-      "target": "an6.45",
+      "source": "vertrauensvollen Hausbesitzer",
+      "target": "an8.75",
       "rank": 1
+    },
+    {
+      "source": "vertrauensvollen Hausbesitzer",
+      "target": "an8.76",
+      "rank": 2
+    },
+    {
+      "source": "vertrauensvollen Hausbesitzer",
+      "target": "an4.122",
+      "rank": 3
+    },
+    {
+      "source": "vertrauensvollen Hausbesitzer",
+      "target": "an8.55",
+      "rank": 4
+    },
+    {
+      "source": "vertrauensvollen Hausbesitzer",
+      "target": "an8.54",
+      "rank": 5
+    },
+    {
+      "source": "vertrauensvollen Hausbesitzer",
+      "target": "mn66",
+      "rank": 6
     },
     {
       "source": "Vervollkommnung de[sr]",
@@ -45797,11 +46089,6 @@
       "source": "wieder und wieder",
       "target": "dn33",
       "rank": 33
-    },
-    {
-      "source": "wie ein Blitz",
-      "target": "an3.25",
-      "rank": 1
     },
     {
       "source": "wie eine Kuh",
