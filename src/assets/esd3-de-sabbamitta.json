@@ -208,7 +208,7 @@
     {
       "id": "Auflösen der Bindungen",
       "group": "Examples",
-      "links": 5
+      "links": 6
     },
     {
       "id": "Auflösung der Taten",
@@ -1108,7 +1108,7 @@
     {
       "id": "einfältige.* Mann",
       "group": "Examples",
-      "links": 14
+      "links": 15
     },
     {
       "id": "ein hasserfüllter Mensch",
@@ -1763,7 +1763,7 @@
     {
       "id": "Glück der Entsagung",
       "group": "Examples",
-      "links": 7
+      "links": 8
     },
     {
       "id": "Glück und Schmerz sind ewig",
@@ -2153,7 +2153,7 @@
     {
       "id": "isolierte.* Buddha",
       "group": "Examples",
-      "links": 12
+      "links": 0
     },
     {
       "id": "isst, was nicht zu tadeln ist",
@@ -2298,12 +2298,12 @@
     {
       "id": "Knoten",
       "group": "Examples",
-      "links": 27
+      "links": 28
     },
     {
       "id": "Konzept",
       "group": "Examples",
-      "links": 0
+      "links": 3
     },
     {
       "id": "Kopfhaare, Körperhaare",
@@ -2418,7 +2418,7 @@
     {
       "id": "Leiden bringen",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "Leiden vieler Menschen",
@@ -2658,7 +2658,7 @@
     {
       "id": "muss aufgegeben werden",
       "group": "Examples",
-      "links": 7
+      "links": 8
     },
     {
       "id": "müssen erzeugt werden",
@@ -3548,7 +3548,7 @@
     {
       "id": "verdammt",
       "group": "Examples",
-      "links": 5
+      "links": 6
     },
     {
       "id": "veredelt und nährt den Geist",
@@ -4238,7 +4238,7 @@
     {
       "id": "Wurzel des Leidens",
       "group": "Examples",
-      "links": 5
+      "links": 6
     },
     {
       "id": "wo würde er auftreffen",
@@ -4731,7 +4731,7 @@
     {
       "id": "thag20.1",
       "group": "thag",
-      "rank": 3,
+      "rank": 4,
       "links": 12
     },
     {
@@ -4762,7 +4762,7 @@
       "id": "dn16",
       "group": "dn",
       "rank": 1,
-      "links": 67
+      "links": 66
     },
     {
       "id": "an4.89",
@@ -5211,7 +5211,7 @@
     {
       "id": "iti8",
       "group": "iti",
-      "rank": 8,
+      "rank": 9,
       "links": 2
     },
     {
@@ -5422,7 +5422,7 @@
       "id": "mn65",
       "group": "mn",
       "rank": 1,
-      "links": 9
+      "links": 10
     },
     {
       "id": "an3.64",
@@ -5729,6 +5729,12 @@
       "group": "iti",
       "rank": 1,
       "links": 4
+    },
+    {
+      "id": "mn66",
+      "group": "mn",
+      "rank": 1,
+      "links": 7
     },
     {
       "id": "an4.237",
@@ -6687,8 +6693,8 @@
     {
       "id": "mn64",
       "group": "mn",
-      "rank": 2,
-      "links": 7
+      "rank": 1,
+      "links": 8
     },
     {
       "id": "an10.63",
@@ -6724,7 +6730,7 @@
       "id": "an10.16",
       "group": "an",
       "rank": 4,
-      "links": 5
+      "links": 4
     },
     {
       "id": "an10.19",
@@ -7012,13 +7018,13 @@
       "id": "sn6.7",
       "group": "sn",
       "rank": 4,
-      "links": 2
+      "links": 1
     },
     {
       "id": "sn6.8",
       "group": "sn",
       "rank": 5,
-      "links": 2
+      "links": 1
     },
     {
       "id": "an7.76",
@@ -7683,7 +7689,7 @@
     {
       "id": "sn45.174",
       "group": "sn",
-      "rank": 1,
+      "rank": 2,
       "links": 2
     },
     {
@@ -11187,8 +11193,8 @@
     {
       "id": "an4.200",
       "group": "an",
-      "rank": 5,
-      "links": 3
+      "rank": 2,
+      "links": 4
     },
     {
       "id": "dn27",
@@ -11248,7 +11254,7 @@
       "id": "an9.20",
       "group": "an",
       "rank": 2,
-      "links": 6
+      "links": 5
     },
     {
       "id": "sn8.5",
@@ -11841,7 +11847,7 @@
     {
       "id": "thag10.5",
       "group": "thag",
-      "rank": 19,
+      "rank": 20,
       "links": 2
     },
     {
@@ -12639,8 +12645,8 @@
     {
       "id": "mn116",
       "group": "mn",
-      "rank": 1,
-      "links": 3
+      "rank": 4,
+      "links": 2
     },
     {
       "id": "an8.55",
@@ -12952,7 +12958,7 @@
       "id": "sn3.20",
       "group": "sn",
       "rank": 1,
-      "links": 3
+      "links": 2
     },
     {
       "id": "sn1.39",
@@ -13240,7 +13246,7 @@
       "id": "ud5.3",
       "group": "ud",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "an5.74",
@@ -13361,30 +13367,6 @@
       "group": "sn",
       "rank": 1,
       "links": 2
-    },
-    {
-      "id": "an4.247",
-      "group": "an",
-      "rank": 4,
-      "links": 2
-    },
-    {
-      "id": "sn6.6",
-      "group": "sn",
-      "rank": 2,
-      "links": 2
-    },
-    {
-      "id": "kp8",
-      "group": "kp",
-      "rank": 11,
-      "links": 3
-    },
-    {
-      "id": "an2.52-63",
-      "group": "an",
-      "rank": 1,
-      "links": 5
     },
     {
       "id": "an6.43",
@@ -13827,25 +13809,25 @@
     {
       "id": "sn1.25",
       "group": "sn",
-      "rank": 3,
+      "rank": 4,
       "links": 1
     },
     {
       "id": "thag1.72",
       "group": "thag",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
       "id": "thag1.89",
       "group": "thag",
-      "rank": 6,
+      "rank": 7,
       "links": 1
     },
     {
       "id": "sn48.169-178",
       "group": "sn",
-      "rank": 7,
+      "rank": 8,
       "links": 2
     },
     {
@@ -13863,7 +13845,7 @@
     {
       "id": "sn3.10",
       "group": "sn",
-      "rank": 12,
+      "rank": 13,
       "links": 1
     },
     {
@@ -13887,14 +13869,20 @@
     {
       "id": "dhp209-220",
       "group": "dhp",
-      "rank": 21,
+      "rank": 22,
       "links": 1
     },
     {
       "id": "snp2.12",
       "group": "snp",
-      "rank": 22,
+      "rank": 23,
       "links": 2
+    },
+    {
+      "id": "an4.199",
+      "group": "an",
+      "rank": 1,
+      "links": 3
     },
     {
       "id": "kp3",
@@ -14217,13 +14205,13 @@
     {
       "id": "sn1.24",
       "group": "sn",
-      "rank": 1,
+      "rank": 2,
       "links": 2
     },
     {
       "id": "thag14.2",
       "group": "thag",
-      "rank": 2,
+      "rank": 3,
       "links": 2
     },
     {
@@ -15235,6 +15223,18 @@
       "links": 1
     },
     {
+      "id": "an2.52-63",
+      "group": "an",
+      "rank": 1,
+      "links": 4
+    },
+    {
+      "id": "an4.247",
+      "group": "an",
+      "rank": 18,
+      "links": 1
+    },
+    {
       "id": "sn46.45",
       "group": "sn",
       "rank": 19,
@@ -15286,6 +15286,12 @@
       "id": "sn46.50",
       "group": "sn",
       "rank": 26,
+      "links": 2
+    },
+    {
+      "id": "kp8",
+      "group": "kp",
+      "rank": 34,
       "links": 2
     },
     {
@@ -16216,6 +16222,12 @@
       "id": "ud7.9",
       "group": "ud",
       "rank": 1,
+      "links": 1
+    },
+    {
+      "id": "sn6.6",
+      "group": "sn",
+      "rank": 2,
       "links": 1
     },
     {
@@ -17189,12 +17201,6 @@
       "group": "sn",
       "rank": 15,
       "links": 1
-    },
-    {
-      "id": "an4.199",
-      "group": "an",
-      "rank": 1,
-      "links": 2
     },
     {
       "id": "thag2.21",
@@ -19281,6 +19287,11 @@
       "source": "Auflösen der Bindungen",
       "target": "iti27",
       "rank": 5
+    },
+    {
+      "source": "Auflösen der Bindungen",
+      "target": "mn66",
+      "rank": 6
     },
     {
       "source": "Auflösung der Taten",
@@ -25169,8 +25180,13 @@
     },
     {
       "source": "einfältige.* Mann",
-      "target": "mn12",
+      "target": "mn65",
       "rank": 14
+    },
+    {
+      "source": "einfältige.* Mann",
+      "target": "mn12",
+      "rank": 15
     },
     {
       "source": "ein hasserfüllter Mensch",
@@ -29818,6 +29834,11 @@
       "rank": 7
     },
     {
+      "source": "Glück der Entsagung",
+      "target": "mn66",
+      "rank": 8
+    },
+    {
       "source": "Glück und Schmerz sind ewig",
       "target": "ud6.5",
       "rank": 1
@@ -32273,66 +32294,6 @@
       "rank": 3
     },
     {
-      "source": "isolierte.* Buddha",
-      "target": "mn116",
-      "rank": 1
-    },
-    {
-      "source": "isolierte.* Buddha",
-      "target": "dn16",
-      "rank": 2
-    },
-    {
-      "source": "isolierte.* Buddha",
-      "target": "an9.20",
-      "rank": 3
-    },
-    {
-      "source": "isolierte.* Buddha",
-      "target": "an4.247",
-      "rank": 4
-    },
-    {
-      "source": "isolierte.* Buddha",
-      "target": "an10.16",
-      "rank": 5
-    },
-    {
-      "source": "isolierte.* Buddha",
-      "target": "sn6.7",
-      "rank": 6
-    },
-    {
-      "source": "isolierte.* Buddha",
-      "target": "sn6.8",
-      "rank": 7
-    },
-    {
-      "source": "isolierte.* Buddha",
-      "target": "sn6.6",
-      "rank": 8
-    },
-    {
-      "source": "isolierte.* Buddha",
-      "target": "sn3.20",
-      "rank": 9
-    },
-    {
-      "source": "isolierte.* Buddha",
-      "target": "ud5.3",
-      "rank": 10
-    },
-    {
-      "source": "isolierte.* Buddha",
-      "target": "kp8",
-      "rank": 11
-    },
-    {
-      "source": "isolierte.* Buddha",
-      "target": "an2.52-63",
-      "rank": 12
-    },
-    {
       "source": "isst, was nicht zu tadeln ist",
       "target": "thag15.2",
       "rank": 1
@@ -33464,138 +33425,158 @@
     },
     {
       "source": "Knoten",
-      "target": "sn45.174",
+      "target": "mn66",
       "rank": 1
     },
     {
       "source": "Knoten",
-      "target": "dn2",
+      "target": "sn45.174",
       "rank": 2
     },
     {
       "source": "Knoten",
-      "target": "sn1.25",
+      "target": "dn2",
       "rank": 3
     },
     {
       "source": "Knoten",
-      "target": "dn25",
+      "target": "sn1.25",
       "rank": 4
     },
     {
       "source": "Knoten",
-      "target": "thag1.72",
+      "target": "dn25",
       "rank": 5
     },
     {
       "source": "Knoten",
-      "target": "thag1.89",
+      "target": "thag1.72",
       "rank": 6
     },
     {
       "source": "Knoten",
-      "target": "sn48.169-178",
+      "target": "thag1.89",
       "rank": 7
     },
     {
       "source": "Knoten",
-      "target": "iti8",
+      "target": "sn48.169-178",
       "rank": 8
     },
     {
       "source": "Knoten",
-      "target": "sn48.115-124",
+      "target": "iti8",
       "rank": 9
     },
     {
       "source": "Knoten",
-      "target": "sn50.99-108",
+      "target": "sn48.115-124",
       "rank": 10
     },
     {
       "source": "Knoten",
-      "target": "sn49.45-54",
+      "target": "sn50.99-108",
       "rank": 11
     },
     {
       "source": "Knoten",
-      "target": "sn3.10",
+      "target": "sn49.45-54",
       "rank": 12
     },
     {
       "source": "Knoten",
-      "target": "sn51.77-86",
+      "target": "sn3.10",
       "rank": 13
     },
     {
       "source": "Knoten",
-      "target": "sn53.45-54",
+      "target": "sn51.77-86",
       "rank": 14
     },
     {
       "source": "Knoten",
-      "target": "sn47.95-104",
+      "target": "sn53.45-54",
       "rank": 15
     },
     {
       "source": "Knoten",
-      "target": "thig5.9",
+      "target": "sn47.95-104",
       "rank": 16
     },
     {
       "source": "Knoten",
-      "target": "sn22.54",
+      "target": "thig5.9",
       "rank": 17
     },
     {
       "source": "Knoten",
-      "target": "sn24.8",
+      "target": "sn22.54",
       "rank": 18
     },
     {
       "source": "Knoten",
-      "target": "thag10.5",
+      "target": "sn24.8",
       "rank": 19
     },
     {
       "source": "Knoten",
-      "target": "sn35.247",
+      "target": "thag10.5",
       "rank": 20
     },
     {
       "source": "Knoten",
-      "target": "dhp209-220",
+      "target": "sn35.247",
       "rank": 21
     },
     {
       "source": "Knoten",
-      "target": "snp2.12",
+      "target": "dhp209-220",
       "rank": 22
     },
     {
       "source": "Knoten",
-      "target": "thag16.3",
+      "target": "snp2.12",
       "rank": 23
     },
     {
       "source": "Knoten",
-      "target": "dhp334-359",
+      "target": "thag16.3",
       "rank": 24
     },
     {
       "source": "Knoten",
-      "target": "thag21.1",
+      "target": "dhp334-359",
       "rank": 25
     },
     {
       "source": "Knoten",
-      "target": "dn1",
+      "target": "thag21.1",
       "rank": 26
     },
     {
       "source": "Knoten",
-      "target": "dn33",
+      "target": "dn1",
       "rank": 27
+    },
+    {
+      "source": "Knoten",
+      "target": "dn33",
+      "rank": 28
+    },
+    {
+      "source": "Konzept",
+      "target": "mn64",
+      "rank": 1
+    },
+    {
+      "source": "Konzept",
+      "target": "an4.200",
+      "rank": 2
+    },
+    {
+      "source": "Konzept",
+      "target": "an4.199",
+      "rank": 3
     },
     {
       "source": "Kopfhaare, Körperhaare",
@@ -34524,18 +34505,23 @@
     },
     {
       "source": "Leiden bringen",
-      "target": "sn1.24",
+      "target": "mn66",
       "rank": 1
     },
     {
       "source": "Leiden bringen",
-      "target": "thag14.2",
+      "target": "sn1.24",
       "rank": 2
     },
     {
       "source": "Leiden bringen",
-      "target": "dhp179-196",
+      "target": "thag14.2",
       "rank": 3
+    },
+    {
+      "source": "Leiden bringen",
+      "target": "dhp179-196",
+      "rank": 4
     },
     {
       "source": "Leiden vieler Menschen",
@@ -36136,6 +36122,11 @@
       "source": "muss aufgegeben werden",
       "target": "sn56.11",
       "rank": 7
+    },
+    {
+      "source": "muss aufgegeben werden",
+      "target": "mn66",
+      "rank": 8
     },
     {
       "source": "müssen erzeugt werden",
@@ -41884,18 +41875,23 @@
     },
     {
       "source": "verdammt",
-      "target": "thag20.1",
+      "target": "mn66",
       "rank": 3
     },
     {
       "source": "verdammt",
-      "target": "dn3",
+      "target": "thag20.1",
       "rank": 4
     },
     {
       "source": "verdammt",
-      "target": "dn23",
+      "target": "dn3",
       "rank": 5
+    },
+    {
+      "source": "verdammt",
+      "target": "dn23",
+      "rank": 6
     },
     {
       "source": "veredelt und nährt den Geist",
@@ -46604,8 +46600,13 @@
     },
     {
       "source": "Wurzel des Leidens",
-      "target": "dn16",
+      "target": "mn66",
       "rank": 5
+    },
+    {
+      "source": "Wurzel des Leidens",
+      "target": "dn16",
+      "rank": 6
     },
     {
       "source": "wo würde er auftreffen",
