@@ -73,7 +73,7 @@
     {
       "id": "raiva",
       "group": "Examples",
-      "links": 15
+      "links": 16
     },
     {
       "id": "sem sinais",
@@ -195,39 +195,45 @@
       "links": 1
     },
     {
+      "id": "an2.1-10",
+      "group": "an",
+      "rank": 9,
+      "links": 1
+    },
+    {
       "id": "mn119",
       "group": "mn",
-      "rank": 9,
+      "rank": 10,
       "links": 1
     },
     {
       "id": "an2.230-279",
       "group": "an",
-      "rank": 10,
+      "rank": 11,
       "links": 1
     },
     {
       "id": "sn1.77",
       "group": "sn",
-      "rank": 11,
+      "rank": 12,
       "links": 1
     },
     {
       "id": "sn1.36",
       "group": "sn",
-      "rank": 12,
+      "rank": 13,
       "links": 1
     },
     {
       "id": "an3.36",
       "group": "an",
-      "rank": 14,
+      "rank": 15,
       "links": 1
     },
     {
       "id": "mn118",
       "group": "mn",
-      "rank": 15,
+      "rank": 16,
       "links": 1
     },
     {
@@ -322,38 +328,43 @@
     },
     {
       "source": "raiva",
-      "target": "mn119",
+      "target": "an2.1-10",
       "rank": 9
     },
     {
       "source": "raiva",
-      "target": "an2.230-279",
+      "target": "mn119",
       "rank": 10
     },
     {
       "source": "raiva",
-      "target": "sn1.77",
+      "target": "an2.230-279",
       "rank": 11
     },
     {
       "source": "raiva",
-      "target": "sn1.36",
+      "target": "sn1.77",
       "rank": 12
     },
     {
       "source": "raiva",
-      "target": "an3.63",
+      "target": "sn1.36",
       "rank": 13
     },
     {
       "source": "raiva",
-      "target": "an3.36",
+      "target": "an3.63",
       "rank": 14
     },
     {
       "source": "raiva",
-      "target": "mn118",
+      "target": "an3.36",
       "rank": 15
+    },
+    {
+      "source": "raiva",
+      "target": "mn118",
+      "rank": 16
     },
     {
       "source": "três características",
