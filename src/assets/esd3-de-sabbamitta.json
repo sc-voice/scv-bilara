@@ -1626,6 +1626,11 @@
       "links": 8
     },
     {
+      "id": "genas",
+      "group": "Examples",
+      "links": 2
+    },
+    {
       "id": "genießt.*Arbeit",
       "group": "Examples",
       "links": 12
@@ -6034,7 +6039,7 @@
       "id": "an10.60",
       "group": "an",
       "rank": 2,
-      "links": 10
+      "links": 11
     },
     {
       "id": "an2.32-41",
@@ -12001,6 +12006,12 @@
       "links": 4
     },
     {
+      "id": "an6.16",
+      "group": "an",
+      "rank": 1,
+      "links": 3
+    },
+    {
       "id": "an5.89",
       "group": "an",
       "rank": 1,
@@ -14801,12 +14812,6 @@
       "group": "an",
       "rank": 5,
       "links": 3
-    },
-    {
-      "id": "an6.16",
-      "group": "an",
-      "rank": 13,
-      "links": 2
     },
     {
       "id": "sn22.89",
@@ -29094,6 +29099,16 @@
       "source": "genährt und unterhalten",
       "target": "sn12.60",
       "rank": 8
+    },
+    {
+      "source": "genas",
+      "target": "an6.16",
+      "rank": 1
+    },
+    {
+      "source": "genas",
+      "target": "an10.60",
+      "rank": 2
     },
     {
       "source": "genießt.*Arbeit",
