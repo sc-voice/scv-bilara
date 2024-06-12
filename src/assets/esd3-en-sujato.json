@@ -1848,7 +1848,7 @@
     {
       "id": "if others criticize",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "if they abuse",
@@ -1953,7 +1953,7 @@
     {
       "id": "for the future",
       "group": "Examples",
-      "links": 8
+      "links": 4
     },
     {
       "id": "incinerated",
@@ -13321,6 +13321,12 @@
       "links": 1
     },
     {
+      "id": "thag2.20",
+      "group": "thag",
+      "rank": 3,
+      "links": 1
+    },
+    {
       "id": "sn35.88",
       "group": "sn",
       "rank": 1,
@@ -13462,36 +13468,36 @@
       "id": "mn133",
       "group": "mn",
       "rank": 1,
-      "links": 5
+      "links": 4
     },
     {
       "id": "mn131",
       "group": "mn",
       "rank": 1,
-      "links": 5
-    },
-    {
-      "id": "mn134",
-      "group": "mn",
-      "rank": 1,
-      "links": 5
+      "links": 4
     },
     {
       "id": "mn132",
       "group": "mn",
       "rank": 2,
-      "links": 3
+      "links": 2
+    },
+    {
+      "id": "mn134",
+      "group": "mn",
+      "rank": 1,
+      "links": 4
     },
     {
       "id": "sn1.10",
       "group": "sn",
-      "rank": 3,
+      "rank": 1,
       "links": 1
     },
     {
       "id": "thag10.3",
       "group": "thag",
-      "rank": 4,
+      "rank": 2,
       "links": 4
     },
     {
@@ -32969,6 +32975,11 @@
       "rank": 2
     },
     {
+      "source": "if others criticize",
+      "target": "thag2.20",
+      "rank": 3
+    },
+    {
       "source": "if they abuse",
       "target": "sn35.88",
       "rank": 1
@@ -33385,17 +33396,17 @@
     },
     {
       "source": "back to the past",
-      "target": "mn134",
+      "target": "mn132",
       "rank": 3
     },
     {
       "source": "back to the past",
-      "target": "sn12.20",
+      "target": "mn134",
       "rank": 4
     },
     {
       "source": "back to the past",
-      "target": "mn132",
+      "target": "sn12.20",
       "rank": 5
     },
     {
@@ -33405,43 +33416,23 @@
     },
     {
       "source": "for the future",
-      "target": "mn133",
+      "target": "sn1.10",
       "rank": 1
     },
     {
       "source": "for the future",
-      "target": "mn131",
+      "target": "thag10.3",
       "rank": 2
     },
     {
       "source": "for the future",
-      "target": "sn1.10",
+      "target": "mn14",
       "rank": 3
     },
     {
       "source": "for the future",
-      "target": "mn134",
-      "rank": 4
-    },
-    {
-      "source": "for the future",
-      "target": "thag10.3",
-      "rank": 5
-    },
-    {
-      "source": "for the future",
-      "target": "mn132",
-      "rank": 6
-    },
-    {
-      "source": "for the future",
-      "target": "mn14",
-      "rank": 7
-    },
-    {
-      "source": "for the future",
       "target": "mn101",
-      "rank": 8
+      "rank": 4
     },
     {
       "source": "incinerated",
