@@ -933,7 +933,7 @@
     {
       "id": "drei Grundlagen",
       "group": "Examples",
-      "links": 4
+      "links": 3
     },
     {
       "id": "drei Kennzeichen",
@@ -1388,7 +1388,7 @@
     {
       "id": "ewige Wahrheit",
       "group": "Examples",
-      "links": 5
+      "links": 0
     },
     {
       "id": "Fähigkeit des Gleichmuts",
@@ -1628,7 +1628,7 @@
     {
       "id": "genas",
       "group": "Examples",
-      "links": 2
+      "links": 6
     },
     {
       "id": "genießt.*Arbeit",
@@ -1828,7 +1828,7 @@
     {
       "id": "Grundlage für die Versenkung",
       "group": "Examples",
-      "links": 8
+      "links": 1
     },
     {
       "id": "gut befreit",
@@ -1853,7 +1853,7 @@
     {
       "id": "Haare.* sträub",
       "group": "Examples",
-      "links": 25
+      "links": 26
     },
     {
       "id": "haarsträubend",
@@ -1983,7 +1983,7 @@
     {
       "id": "Höllenlärm",
       "group": "Examples",
-      "links": 12
+      "links": 13
     },
     {
       "id": "hörte mit",
@@ -2153,7 +2153,7 @@
     {
       "id": "ins Leiden verstrickt",
       "group": "Examples",
-      "links": 7
+      "links": 8
     },
     {
       "id": "interstellaren Raumes",
@@ -2658,7 +2658,7 @@
     {
       "id": "Mönche und Nonnen leiten",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "mörderisch",
@@ -3298,7 +3298,7 @@
     {
       "id": "Strudel",
       "group": "Examples",
-      "links": 7
+      "links": 8
     },
     {
       "id": "stufenweise Schulung",
@@ -3598,7 +3598,7 @@
     {
       "id": "verlasse.* darauf",
       "group": "Examples",
-      "links": 15
+      "links": 12
     },
     {
       "id": "verloren, wenn er stirbt",
@@ -3673,7 +3673,7 @@
     {
       "id": "vertrauensvollen Hausbesitzer",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "Vervollkommnung de[sr]",
@@ -4545,7 +4545,7 @@
       "id": "mn128",
       "group": "mn",
       "rank": 1,
-      "links": 13
+      "links": 12
     },
     {
       "id": "mn26",
@@ -4557,7 +4557,7 @@
       "id": "mn36",
       "group": "mn",
       "rank": 1,
-      "links": 15
+      "links": 14
     },
     {
       "id": "an8.77",
@@ -4665,7 +4665,7 @@
       "id": "dhp1-20",
       "group": "dhp",
       "rank": 1,
-      "links": 5
+      "links": 4
     },
     {
       "id": "mn56",
@@ -4677,7 +4677,7 @@
       "id": "an8.12",
       "group": "an",
       "rank": 1,
-      "links": 7
+      "links": 6
     },
     {
       "id": "mn5",
@@ -4797,7 +4797,7 @@
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 113
+      "links": 112
     },
     {
       "id": "an4.189",
@@ -4809,7 +4809,7 @@
       "id": "dn34",
       "group": "dn",
       "rank": 1,
-      "links": 82
+      "links": 81
     },
     {
       "id": "an8.118",
@@ -5505,7 +5505,7 @@
       "id": "thag21.1",
       "group": "thag",
       "rank": 1,
-      "links": 15
+      "links": 14
     },
     {
       "id": "thag18.1",
@@ -5517,7 +5517,7 @@
       "id": "mn12",
       "group": "mn",
       "rank": 1,
-      "links": 16
+      "links": 17
     },
     {
       "id": "dn12",
@@ -7953,7 +7953,7 @@
       "id": "an4.193",
       "group": "an",
       "rank": 2,
-      "links": 4
+      "links": 3
     },
     {
       "id": "an2.64-76",
@@ -8936,7 +8936,7 @@
     {
       "id": "an7.63",
       "group": "an",
-      "rank": 8,
+      "rank": 9,
       "links": 2
     },
     {
@@ -9366,15 +9366,9 @@
       "links": 2
     },
     {
-      "id": "an3.102",
-      "group": "an",
-      "rank": 1,
-      "links": 3
-    },
-    {
       "id": "an8.36",
       "group": "an",
-      "rank": 3,
+      "rank": 2,
       "links": 1
     },
     {
@@ -10101,7 +10095,7 @@
       "id": "mn55",
       "group": "mn",
       "rank": 2,
-      "links": 4
+      "links": 3
     },
     {
       "id": "dn19",
@@ -10148,7 +10142,7 @@
     {
       "id": "an5.100",
       "group": "an",
-      "rank": 2,
+      "rank": 3,
       "links": 3
     },
     {
@@ -10550,7 +10544,7 @@
     {
       "id": "sn35.228",
       "group": "sn",
-      "rank": 3,
+      "rank": 4,
       "links": 3
     },
     {
@@ -11316,18 +11310,6 @@
       "links": 5
     },
     {
-      "id": "sn8.5",
-      "group": "sn",
-      "rank": 1,
-      "links": 2
-    },
-    {
-      "id": "sn1.32",
-      "group": "sn",
-      "rank": 2,
-      "links": 2
-    },
-    {
       "id": "sn48.40",
       "group": "sn",
       "rank": 1,
@@ -12006,9 +11988,33 @@
       "links": 4
     },
     {
+      "id": "sn46.16",
+      "group": "sn",
+      "rank": 1,
+      "links": 2
+    },
+    {
+      "id": "ud1.6",
+      "group": "ud",
+      "rank": 2,
+      "links": 2
+    },
+    {
+      "id": "sn46.14",
+      "group": "sn",
+      "rank": 3,
+      "links": 2
+    },
+    {
+      "id": "sn46.15",
+      "group": "sn",
+      "rank": 4,
+      "links": 2
+    },
+    {
       "id": "an6.16",
       "group": "an",
-      "rank": 1,
+      "rank": 5,
       "links": 3
     },
     {
@@ -12492,6 +12498,12 @@
       "links": 4
     },
     {
+      "id": "an3.102",
+      "group": "an",
+      "rank": 1,
+      "links": 2
+    },
+    {
       "id": "thig15.1",
       "group": "thig",
       "rank": 4,
@@ -12686,8 +12698,14 @@
     {
       "id": "an4.14",
       "group": "an",
-      "rank": 5,
-      "links": 2
+      "rank": 34,
+      "links": 1
+    },
+    {
+      "id": "sn1.32",
+      "group": "sn",
+      "rank": 37,
+      "links": 1
     },
     {
       "id": "an3.40",
@@ -12706,24 +12724,6 @@
       "group": "sn",
       "rank": 1,
       "links": 4
-    },
-    {
-      "id": "an3.19",
-      "group": "an",
-      "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "an5.26",
-      "group": "an",
-      "rank": 2,
-      "links": 2
-    },
-    {
-      "id": "an6.28",
-      "group": "an",
-      "rank": 6,
-      "links": 2
     },
     {
       "id": "sn35.232",
@@ -13116,15 +13116,21 @@
       "links": 2
     },
     {
+      "id": "mn67",
+      "group": "mn",
+      "rank": 1,
+      "links": 5
+    },
+    {
       "id": "an10.116",
       "group": "an",
-      "rank": 2,
+      "rank": 3,
       "links": 1
     },
     {
       "id": "an10.72",
       "group": "an",
-      "rank": 4,
+      "rank": 5,
       "links": 1
     },
     {
@@ -13476,16 +13482,16 @@
       "links": 3
     },
     {
-      "id": "sn10.7",
-      "group": "sn",
-      "rank": 5,
-      "links": 2
-    },
-    {
       "id": "an4.122",
       "group": "an",
       "rank": 1,
       "links": 3
+    },
+    {
+      "id": "sn10.7",
+      "group": "sn",
+      "rank": 7,
+      "links": 2
     },
     {
       "id": "sn56.46",
@@ -14394,6 +14400,12 @@
       "links": 1
     },
     {
+      "id": "an5.26",
+      "group": "an",
+      "rank": 2,
+      "links": 1
+    },
+    {
       "id": "ud4.4",
       "group": "ud",
       "rank": 1,
@@ -14670,6 +14682,12 @@
       "links": 2
     },
     {
+      "id": "sn8.5",
+      "group": "sn",
+      "rank": 6,
+      "links": 1
+    },
+    {
       "id": "an4.191",
       "group": "an",
       "rank": 1,
@@ -14745,30 +14763,6 @@
       "id": "sn55.26",
       "group": "sn",
       "rank": 11,
-      "links": 1
-    },
-    {
-      "id": "sn46.16",
-      "group": "sn",
-      "rank": 13,
-      "links": 1
-    },
-    {
-      "id": "ud1.6",
-      "group": "ud",
-      "rank": 14,
-      "links": 1
-    },
-    {
-      "id": "sn46.14",
-      "group": "sn",
-      "rank": 15,
-      "links": 1
-    },
-    {
-      "id": "sn46.15",
-      "group": "sn",
-      "rank": 16,
       "links": 1
     },
     {
@@ -16076,13 +16070,13 @@
     {
       "id": "iti69",
       "group": "iti",
-      "rank": 4,
+      "rank": 5,
       "links": 2
     },
     {
       "id": "sn1.44",
       "group": "sn",
-      "rank": 6,
+      "rank": 7,
       "links": 2
     },
     {
@@ -16446,6 +16440,12 @@
       "links": 1
     },
     {
+      "id": "an6.28",
+      "group": "an",
+      "rank": 10,
+      "links": 1
+    },
+    {
       "id": "sn12.3",
       "group": "sn",
       "rank": 5,
@@ -16562,7 +16562,7 @@
     {
       "id": "sn22.2",
       "group": "sn",
-      "rank": 12,
+      "rank": 10,
       "links": 1
     },
     {
@@ -23907,18 +23907,13 @@
     },
     {
       "source": "drei Grundlagen",
-      "target": "an3.102",
+      "target": "an8.36",
       "rank": 2
     },
     {
       "source": "drei Grundlagen",
-      "target": "an8.36",
-      "rank": 3
-    },
-    {
-      "source": "drei Grundlagen",
       "target": "dn33",
-      "rank": 4
+      "rank": 3
     },
     {
       "source": "drei Kennzeichen",
@@ -27621,31 +27616,6 @@
       "rank": 2
     },
     {
-      "source": "ewige Wahrheit",
-      "target": "sn8.5",
-      "rank": 1
-    },
-    {
-      "source": "ewige Wahrheit",
-      "target": "sn1.32",
-      "rank": 2
-    },
-    {
-      "source": "ewige Wahrheit",
-      "target": "dhp1-20",
-      "rank": 3
-    },
-    {
-      "source": "ewige Wahrheit",
-      "target": "mn128",
-      "rank": 4
-    },
-    {
-      "source": "ewige Wahrheit",
-      "target": "thag21.1",
-      "rank": 5
-    },
-    {
       "source": "Fähigkeit des Gleichmuts",
       "target": "sn48.40",
       "rank": 1
@@ -29102,13 +29072,33 @@
     },
     {
       "source": "genas",
-      "target": "an6.16",
+      "target": "sn46.16",
       "rank": 1
     },
     {
       "source": "genas",
-      "target": "an10.60",
+      "target": "ud1.6",
       "rank": 2
+    },
+    {
+      "source": "genas",
+      "target": "sn46.14",
+      "rank": 3
+    },
+    {
+      "source": "genas",
+      "target": "sn46.15",
+      "rank": 4
+    },
+    {
+      "source": "genas",
+      "target": "an6.16",
+      "rank": 5
+    },
+    {
+      "source": "genas",
+      "target": "an10.60",
+      "rank": 6
     },
     {
       "source": "genießt.*Arbeit",
@@ -30567,17 +30557,17 @@
     },
     {
       "source": "Grundlage der",
-      "target": "dn33",
+      "target": "an8.80",
       "rank": 1
     },
     {
       "source": "Grundlage der",
-      "target": "an8.80",
+      "target": "dn34",
       "rank": 2
     },
     {
       "source": "Grundlage der",
-      "target": "dn34",
+      "target": "dn33",
       "rank": 3
     },
     {
@@ -30597,43 +30587,8 @@
     },
     {
       "source": "Grundlage für die Versenkung",
-      "target": "dn33",
-      "rank": 1
-    },
-    {
-      "source": "Grundlage für die Versenkung",
-      "target": "an3.19",
-      "rank": 2
-    },
-    {
-      "source": "Grundlage für die Versenkung",
-      "target": "an5.26",
-      "rank": 3
-    },
-    {
-      "source": "Grundlage für die Versenkung",
-      "target": "dn34",
-      "rank": 4
-    },
-    {
-      "source": "Grundlage für die Versenkung",
-      "target": "an4.14",
-      "rank": 5
-    },
-    {
-      "source": "Grundlage für die Versenkung",
-      "target": "an6.28",
-      "rank": 6
-    },
-    {
-      "source": "Grundlage für die Versenkung",
       "target": "mn122",
-      "rank": 7
-    },
-    {
-      "source": "Grundlage für die Versenkung",
-      "target": "mn36",
-      "rank": 8
+      "rank": 1
     },
     {
       "source": "gut befreit",
@@ -31052,23 +31007,28 @@
     },
     {
       "source": "Haare.* sträub",
-      "target": "dn2",
+      "target": "mn12",
       "rank": 22
     },
     {
       "source": "Haare.* sträub",
-      "target": "dn19",
+      "target": "dn2",
       "rank": 23
     },
     {
       "source": "Haare.* sträub",
-      "target": "dn21",
+      "target": "dn19",
       "rank": 24
     },
     {
       "source": "Haare.* sträub",
-      "target": "dn24",
+      "target": "dn21",
       "rank": 25
+    },
+    {
+      "source": "Haare.* sträub",
+      "target": "dn24",
+      "rank": 26
     },
     {
       "source": "haarsträubend",
@@ -31737,58 +31697,63 @@
     },
     {
       "source": "Höllenlärm",
-      "target": "an10.116",
+      "target": "mn67",
       "rank": 2
     },
     {
       "source": "Höllenlärm",
-      "target": "dn25",
+      "target": "an10.116",
       "rank": 3
     },
     {
       "source": "Höllenlärm",
-      "target": "an10.72",
+      "target": "dn25",
       "rank": 4
     },
     {
       "source": "Höllenlärm",
-      "target": "an5.30",
+      "target": "an10.72",
       "rank": 5
     },
     {
       "source": "Höllenlärm",
-      "target": "an6.42",
+      "target": "an5.30",
       "rank": 6
     },
     {
       "source": "Höllenlärm",
-      "target": "an8.86",
+      "target": "an6.42",
       "rank": 7
     },
     {
       "source": "Höllenlärm",
-      "target": "an7.63",
+      "target": "an8.86",
       "rank": 8
     },
     {
       "source": "Höllenlärm",
-      "target": "an10.94",
+      "target": "an7.63",
       "rank": 9
     },
     {
       "source": "Höllenlärm",
-      "target": "sn35.132",
+      "target": "an10.94",
       "rank": 10
     },
     {
       "source": "Höllenlärm",
-      "target": "an10.93",
+      "target": "sn35.132",
       "rank": 11
     },
     {
       "source": "Höllenlärm",
-      "target": "dn9",
+      "target": "an10.93",
       "rank": 12
+    },
+    {
+      "source": "Höllenlärm",
+      "target": "dn9",
+      "rank": 13
     },
     {
       "source": "hörte mit",
@@ -32532,33 +32497,38 @@
     },
     {
       "source": "ins Leiden verstrickt",
-      "target": "an3.40",
+      "target": "an4.122",
       "rank": 2
     },
     {
       "source": "ins Leiden verstrickt",
-      "target": "mn29",
+      "target": "mn67",
       "rank": 3
     },
     {
       "source": "ins Leiden verstrickt",
-      "target": "iti91",
+      "target": "an3.40",
       "rank": 4
     },
     {
       "source": "ins Leiden verstrickt",
-      "target": "sn10.7",
+      "target": "mn29",
       "rank": 5
     },
     {
       "source": "ins Leiden verstrickt",
-      "target": "an4.122",
+      "target": "iti91",
       "rank": 6
     },
     {
       "source": "ins Leiden verstrickt",
-      "target": "sn22.80",
+      "target": "sn10.7",
       "rank": 7
+    },
+    {
+      "source": "ins Leiden verstrickt",
+      "target": "sn22.80",
+      "rank": 8
     },
     {
       "source": "interstellaren Raumes",
@@ -36317,18 +36287,23 @@
     },
     {
       "source": "Mönche und Nonnen leiten",
-      "target": "sn47.9",
+      "target": "mn67",
       "rank": 1
     },
     {
       "source": "Mönche und Nonnen leiten",
-      "target": "an5.100",
+      "target": "sn47.9",
       "rank": 2
     },
     {
       "source": "Mönche und Nonnen leiten",
-      "target": "dn16",
+      "target": "an5.100",
       "rank": 3
+    },
+    {
+      "source": "Mönche und Nonnen leiten",
+      "target": "dn16",
+      "rank": 4
     },
     {
       "source": "mörderisch",
@@ -40317,28 +40292,33 @@
     },
     {
       "source": "Strudel",
-      "target": "sn35.228",
+      "target": "mn67",
       "rank": 3
     },
     {
       "source": "Strudel",
-      "target": "iti69",
+      "target": "sn35.228",
       "rank": 4
     },
     {
       "source": "Strudel",
-      "target": "iti109",
+      "target": "iti69",
       "rank": 5
     },
     {
       "source": "Strudel",
-      "target": "sn1.44",
+      "target": "iti109",
       "rank": 6
     },
     {
       "source": "Strudel",
-      "target": "sn35.242",
+      "target": "sn1.44",
       "rank": 7
+    },
+    {
+      "source": "Strudel",
+      "target": "sn35.242",
+      "rank": 8
     },
     {
       "source": "stufenweise Schulung",
@@ -42372,33 +42352,18 @@
     },
     {
       "source": "verlasse.* darauf",
-      "target": "mn55",
+      "target": "sn22.2",
       "rank": 10
     },
     {
       "source": "verlasse.* darauf",
-      "target": "an4.193",
+      "target": "dn28",
       "rank": 11
     },
     {
       "source": "verlasse.* darauf",
-      "target": "sn22.2",
-      "rank": 12
-    },
-    {
-      "source": "verlasse.* darauf",
-      "target": "an8.12",
-      "rank": 13
-    },
-    {
-      "source": "verlasse.* darauf",
-      "target": "dn28",
-      "rank": 14
-    },
-    {
-      "source": "verlasse.* darauf",
       "target": "dn23",
-      "rank": 15
+      "rank": 12
     },
     {
       "source": "verloren, wenn er stirbt",
@@ -42682,8 +42647,13 @@
     },
     {
       "source": "vertrauensvollen Hausbesitzer",
-      "target": "mn66",
+      "target": "mn67",
       "rank": 6
+    },
+    {
+      "source": "vertrauensvollen Hausbesitzer",
+      "target": "mn66",
+      "rank": 7
     },
     {
       "source": "Vervollkommnung de[sr]",
