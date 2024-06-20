@@ -496,9 +496,9 @@
       "links": 13
     },
     {
-      "id": "dankbar und erkenntlich",
+      "id": "dankbar",
       "group": "Examples",
-      "links": 12
+      "links": 15
     },
     {
       "id": "daraus jedes Gefäß herstellen",
@@ -3871,9 +3871,9 @@
       "links": 3
     },
     {
-      "id": "was einen Anfang hat, hat auch ein Ende",
+      "id": "was einen Anfang hat",
       "group": "Examples",
-      "links": 13
+      "links": 14
     },
     {
       "id": "was ein Verstoß ist",
@@ -7638,6 +7638,12 @@
       "links": 7
     },
     {
+      "id": "sn20.12",
+      "group": "sn",
+      "rank": 1,
+      "links": 2
+    },
+    {
       "id": "an3.114",
       "group": "an",
       "rank": 4,
@@ -7646,20 +7652,14 @@
     {
       "id": "an4.223",
       "group": "an",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
       "id": "an4.213",
       "group": "an",
-      "rank": 6,
+      "rank": 7,
       "links": 1
-    },
-    {
-      "id": "sn20.12",
-      "group": "sn",
-      "rank": 1,
-      "links": 2
     },
     {
       "id": "an5.195",
@@ -7684,6 +7684,24 @@
       "group": "an",
       "rank": 4,
       "links": 7
+    },
+    {
+      "id": "kp5",
+      "group": "kp",
+      "rank": 12,
+      "links": 1
+    },
+    {
+      "id": "kp7",
+      "group": "kp",
+      "rank": 13,
+      "links": 1
+    },
+    {
+      "id": "snp2.4",
+      "group": "snp",
+      "rank": 14,
+      "links": 1
     },
     {
       "id": "an2.118-129",
@@ -10791,7 +10809,7 @@
       "id": "sn35.245",
       "group": "sn",
       "rank": 3,
-      "links": 5
+      "links": 6
     },
     {
       "id": "an6.63",
@@ -21636,64 +21654,79 @@
       "rank": 13
     },
     {
-      "source": "dankbar und erkenntlich",
+      "source": "dankbar",
       "target": "an2.32-41",
       "rank": 1
     },
     {
-      "source": "dankbar und erkenntlich",
+      "source": "dankbar",
       "target": "an5.264",
       "rank": 2
     },
     {
-      "source": "dankbar und erkenntlich",
+      "source": "dankbar",
       "target": "an5.265-271",
       "rank": 3
     },
     {
-      "source": "dankbar und erkenntlich",
-      "target": "an3.114",
+      "source": "dankbar",
+      "target": "sn20.12",
       "rank": 4
     },
     {
-      "source": "dankbar und erkenntlich",
-      "target": "an4.223",
+      "source": "dankbar",
+      "target": "an3.114",
       "rank": 5
     },
     {
-      "source": "dankbar und erkenntlich",
-      "target": "an4.213",
+      "source": "dankbar",
+      "target": "an4.223",
       "rank": 6
     },
     {
-      "source": "dankbar und erkenntlich",
-      "target": "sn20.12",
+      "source": "dankbar",
+      "target": "an4.213",
       "rank": 7
     },
     {
-      "source": "dankbar und erkenntlich",
+      "source": "dankbar",
       "target": "an5.195",
       "rank": 8
     },
     {
-      "source": "dankbar und erkenntlich",
+      "source": "dankbar",
       "target": "an5.39",
       "rank": 9
     },
     {
-      "source": "dankbar und erkenntlich",
+      "source": "dankbar",
       "target": "an5.143",
       "rank": 10
     },
     {
-      "source": "dankbar und erkenntlich",
+      "source": "dankbar",
       "target": "an10.30",
       "rank": 11
     },
     {
-      "source": "dankbar und erkenntlich",
-      "target": "an2.118-129",
+      "source": "dankbar",
+      "target": "kp5",
       "rank": 12
+    },
+    {
+      "source": "dankbar",
+      "target": "kp7",
+      "rank": 13
+    },
+    {
+      "source": "dankbar",
+      "target": "snp2.4",
+      "rank": 14
+    },
+    {
+      "source": "dankbar",
+      "target": "an2.118-129",
+      "rank": 15
     },
     {
       "source": "daraus jedes Gefäß herstellen",
@@ -44326,69 +44359,74 @@
       "rank": 3
     },
     {
-      "source": "was einen Anfang hat, hat auch ein Ende",
+      "source": "was einen Anfang hat",
       "target": "dn14",
       "rank": 1
     },
     {
-      "source": "was einen Anfang hat, hat auch ein Ende",
+      "source": "was einen Anfang hat",
       "target": "sn35.74",
       "rank": 2
     },
     {
-      "source": "was einen Anfang hat, hat auch ein Ende",
+      "source": "was einen Anfang hat",
       "target": "sn56.11",
       "rank": 3
     },
     {
-      "source": "was einen Anfang hat, hat auch ein Ende",
+      "source": "was einen Anfang hat",
       "target": "ud5.3",
       "rank": 4
     },
     {
-      "source": "was einen Anfang hat, hat auch ein Ende",
+      "source": "was einen Anfang hat",
       "target": "an8.21",
       "rank": 5
     },
     {
-      "source": "was einen Anfang hat, hat auch ein Ende",
+      "source": "was einen Anfang hat",
       "target": "an8.22",
       "rank": 6
     },
     {
-      "source": "was einen Anfang hat, hat auch ein Ende",
-      "target": "sn35.121",
+      "source": "was einen Anfang hat",
+      "target": "sn35.245",
       "rank": 7
     },
     {
-      "source": "was einen Anfang hat, hat auch ein Ende",
-      "target": "mn74",
+      "source": "was einen Anfang hat",
+      "target": "sn35.121",
       "rank": 8
     },
     {
-      "source": "was einen Anfang hat, hat auch ein Ende",
-      "target": "an8.12",
+      "source": "was einen Anfang hat",
+      "target": "mn74",
       "rank": 9
     },
     {
-      "source": "was einen Anfang hat, hat auch ein Ende",
-      "target": "dn5",
+      "source": "was einen Anfang hat",
+      "target": "an8.12",
       "rank": 10
     },
     {
-      "source": "was einen Anfang hat, hat auch ein Ende",
-      "target": "mn56",
+      "source": "was einen Anfang hat",
+      "target": "dn5",
       "rank": 11
     },
     {
-      "source": "was einen Anfang hat, hat auch ein Ende",
-      "target": "dn3",
+      "source": "was einen Anfang hat",
+      "target": "mn56",
       "rank": 12
     },
     {
-      "source": "was einen Anfang hat, hat auch ein Ende",
-      "target": "dn21",
+      "source": "was einen Anfang hat",
+      "target": "dn3",
       "rank": 13
+    },
+    {
+      "source": "was einen Anfang hat",
+      "target": "dn21",
+      "rank": 14
     },
     {
       "source": "was ein Verstoß ist",
