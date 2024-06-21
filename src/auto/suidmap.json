@@ -7874,12 +7874,14 @@
 	},
 	"dhp179-196": {
 		"translation/de/sabbamitta": "sutta/kn/dhp",
+		"translation/en/suddhaso": "sutta/kn/dhp",
 		"translation/en/sujato": "sutta/kn/dhp",
 		"translation/vi/phantuananh": "sutta/kn/dhp",
 		"root/pli/ms": "sutta/kn/dhp"
 	},
 	"dhp197-208": {
 		"translation/de/sabbamitta": "sutta/kn/dhp",
+		"translation/en/suddhaso": "sutta/kn/dhp",
 		"translation/en/sujato": "sutta/kn/dhp",
 		"translation/vi/phantuananh": "sutta/kn/dhp",
 		"root/pli/ms": "sutta/kn/dhp"
@@ -21345,6 +21347,7 @@
 		"root/pli/ms": "sutta/kn/snp/vagga4"
 	},
 	"snp4.3": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga4",
 		"translation/en/sujato": "sutta/kn/snp/vagga4",
 		"root/pli/ms": "sutta/kn/snp/vagga4"
 	},

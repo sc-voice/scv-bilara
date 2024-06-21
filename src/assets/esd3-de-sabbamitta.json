@@ -3293,7 +3293,7 @@
     {
       "id": "streitet man",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "Strudel",
@@ -16084,6 +16084,12 @@
       "group": "an",
       "rank": 2,
       "links": 2
+    },
+    {
+      "id": "snp4.3",
+      "group": "snp",
+      "rank": 2,
+      "links": 1
     },
     {
       "id": "iti69",
@@ -34265,12 +34271,12 @@
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "sn35.248",
+      "target": "an9.36",
       "rank": 1
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "an9.36",
+      "target": "sn35.248",
       "rank": 2
     },
     {
@@ -40312,6 +40318,11 @@
       "source": "streitet man",
       "target": "sn22.3",
       "rank": 1
+    },
+    {
+      "source": "streitet man",
+      "target": "snp4.3",
+      "rank": 2
     },
     {
       "source": "Strudel",
