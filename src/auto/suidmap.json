@@ -9164,6 +9164,7 @@
 		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
 		"translation/fr/noeismet": "sutta/mn",
+		"translation/hi/trush": "sutta/mn",
 		"translation/pl/hardao": "sutta/mn",
 		"translation/ru/sv": "sutta/mn",
 		"translation/sr/brankokovacevic": "sutta/mn",
@@ -11693,6 +11694,10 @@
 	"pli-tv-pvr21": {
 		"translation/en/brahmali": "vinaya/pli-tv-pvr",
 		"root/pli/ms": "vinaya/pli-tv-pvr"
+	},
+	"pv1": {
+		"translation/en/kovilo": "sutta/kn/pv",
+		"root/pli/ms": "sutta/kn/pv"
 	},
 	"sn1.1": {
 		"translation/de/sabbamitta": "sutta/sn/sn1",
@@ -26372,9 +26377,6 @@
 		"root/pli/ms": "sutta/kn/pv"
 	},
 	"pv19": {
-		"root/pli/ms": "sutta/kn/pv"
-	},
-	"pv1": {
 		"root/pli/ms": "sutta/kn/pv"
 	},
 	"pv20": {
