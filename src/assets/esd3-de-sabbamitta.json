@@ -1488,7 +1488,7 @@
     {
       "id": "friedvoller",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "friedvolle Meditationen",
@@ -2153,7 +2153,7 @@
     {
       "id": "ins Leiden verstrickt",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "interstellaren Raumes",
@@ -3088,7 +3088,7 @@
     {
       "id": "seelische.* Kargheit",
       "group": "Examples",
-      "links": 7
+      "links": 0
     },
     {
       "id": "Sehen der Gesetzmäßigkeiten",
@@ -3598,7 +3598,7 @@
     {
       "id": "verlasse.* darauf",
       "group": "Examples",
-      "links": 12
+      "links": 3
     },
     {
       "id": "verloren, wenn er stirbt",
@@ -4797,7 +4797,7 @@
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 112
+      "links": 111
     },
     {
       "id": "an4.189",
@@ -4809,7 +4809,7 @@
       "id": "dn34",
       "group": "dn",
       "rank": 1,
-      "links": 81
+      "links": 80
     },
     {
       "id": "an8.118",
@@ -5613,7 +5613,7 @@
       "id": "sn22.90",
       "group": "sn",
       "rank": 2,
-      "links": 8
+      "links": 7
     },
     {
       "id": "sn7.3",
@@ -5859,7 +5859,7 @@
       "id": "dn28",
       "group": "dn",
       "rank": 1,
-      "links": 28
+      "links": 27
     },
     {
       "id": "an1.394-574",
@@ -6189,7 +6189,7 @@
       "id": "dn23",
       "group": "dn",
       "rank": 1,
-      "links": 20
+      "links": 19
     },
     {
       "id": "an3.83",
@@ -6398,8 +6398,8 @@
     {
       "id": "an10.14",
       "group": "an",
-      "rank": 2,
-      "links": 6
+      "rank": 3,
+      "links": 5
     },
     {
       "id": "an6.84",
@@ -6788,7 +6788,7 @@
     {
       "id": "dhp360-382",
       "group": "dhp",
-      "rank": 3,
+      "rank": 4,
       "links": 8
     },
     {
@@ -7118,14 +7118,14 @@
     {
       "id": "an9.7",
       "group": "an",
-      "rank": 2,
-      "links": 5
+      "rank": 5,
+      "links": 4
     },
     {
       "id": "an9.8",
       "group": "an",
-      "rank": 3,
-      "links": 2
+      "rank": 6,
+      "links": 1
     },
     {
       "id": "sn3.7",
@@ -9483,7 +9483,7 @@
       "id": "an3.57",
       "group": "an",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "an3.30",
@@ -10514,7 +10514,7 @@
     {
       "id": "iti73",
       "group": "iti",
-      "rank": 2,
+      "rank": 3,
       "links": 2
     },
     {
@@ -10646,8 +10646,8 @@
     {
       "id": "mn16",
       "group": "mn",
-      "rank": 1,
-      "links": 4
+      "rank": 2,
+      "links": 3
     },
     {
       "id": "sn51.1",
@@ -11138,7 +11138,7 @@
     {
       "id": "sn45.5",
       "group": "sn",
-      "rank": 4,
+      "rank": 2,
       "links": 2
     },
     {
@@ -11694,6 +11694,12 @@
       "links": 2
     },
     {
+      "id": "mn68",
+      "group": "mn",
+      "rank": 2,
+      "links": 2
+    },
+    {
       "id": "an5.34",
       "group": "an",
       "rank": 1,
@@ -12129,7 +12135,7 @@
       "id": "an8.23",
       "group": "an",
       "rank": 1,
-      "links": 3
+      "links": 2
     },
     {
       "id": "an4.246",
@@ -13700,8 +13706,8 @@
     {
       "id": "sn42.10",
       "group": "sn",
-      "rank": 6,
-      "links": 2
+      "rank": 13,
+      "links": 1
     },
     {
       "id": "mn58",
@@ -15756,18 +15762,6 @@
       "links": 1
     },
     {
-      "id": "an5.205",
-      "group": "an",
-      "rank": 3,
-      "links": 1
-    },
-    {
-      "id": "an9.71",
-      "group": "an",
-      "rank": 4,
-      "links": 1
-    },
-    {
       "id": "sn12.24",
       "group": "sn",
       "rank": 3,
@@ -16574,19 +16568,7 @@
     {
       "id": "sn35.81",
       "group": "sn",
-      "rank": 5,
-      "links": 1
-    },
-    {
-      "id": "an5.44",
-      "group": "an",
-      "rank": 8,
-      "links": 1
-    },
-    {
-      "id": "sn22.2",
-      "group": "sn",
-      "rank": 10,
+      "rank": 3,
       "links": 1
     },
     {
@@ -28371,13 +28353,18 @@
     },
     {
       "source": "friedvoller",
-      "target": "iti73",
+      "target": "mn68",
       "rank": 2
     },
     {
       "source": "friedvoller",
-      "target": "dhp360-382",
+      "target": "iti73",
       "rank": 3
+    },
+    {
+      "source": "friedvoller",
+      "target": "dhp360-382",
+      "rank": 4
     },
     {
       "source": "friedvolle Meditationen",
@@ -32568,6 +32555,11 @@
       "source": "ins Leiden verstrickt",
       "target": "sn22.80",
       "rank": 8
+    },
+    {
+      "source": "ins Leiden verstrickt",
+      "target": "mn68",
+      "rank": 9
     },
     {
       "source": "interstellaren Raumes",
@@ -39070,41 +39062,6 @@
       "rank": 5
     },
     {
-      "source": "seelische.* Kargheit",
-      "target": "mn16",
-      "rank": 1
-    },
-    {
-      "source": "seelische.* Kargheit",
-      "target": "an10.14",
-      "rank": 2
-    },
-    {
-      "source": "seelische.* Kargheit",
-      "target": "an5.205",
-      "rank": 3
-    },
-    {
-      "source": "seelische.* Kargheit",
-      "target": "an9.71",
-      "rank": 4
-    },
-    {
-      "source": "seelische.* Kargheit",
-      "target": "dn33",
-      "rank": 5
-    },
-    {
-      "source": "seelische.* Kargheit",
-      "target": "dn34",
-      "rank": 6
-    },
-    {
-      "source": "seelische.* Kargheit",
-      "target": "sn22.90",
-      "rank": 7
-    },
-    {
       "source": "Sehen der Gesetzmäßigkeiten",
       "target": "an6.46",
       "rank": 1
@@ -42356,58 +42313,13 @@
     },
     {
       "source": "verlasse.* darauf",
-      "target": "an9.7",
+      "target": "sn45.5",
       "rank": 2
     },
     {
       "source": "verlasse.* darauf",
-      "target": "an9.8",
-      "rank": 3
-    },
-    {
-      "source": "verlasse.* darauf",
-      "target": "sn45.5",
-      "rank": 4
-    },
-    {
-      "source": "verlasse.* darauf",
       "target": "sn35.81",
-      "rank": 5
-    },
-    {
-      "source": "verlasse.* darauf",
-      "target": "sn42.10",
-      "rank": 6
-    },
-    {
-      "source": "verlasse.* darauf",
-      "target": "an8.23",
-      "rank": 7
-    },
-    {
-      "source": "verlasse.* darauf",
-      "target": "an5.44",
-      "rank": 8
-    },
-    {
-      "source": "verlasse.* darauf",
-      "target": "an3.57",
-      "rank": 9
-    },
-    {
-      "source": "verlasse.* darauf",
-      "target": "sn22.2",
-      "rank": 10
-    },
-    {
-      "source": "verlasse.* darauf",
-      "target": "dn28",
-      "rank": 11
-    },
-    {
-      "source": "verlasse.* darauf",
-      "target": "dn23",
-      "rank": 12
+      "rank": 3
     },
     {
       "source": "verloren, wenn er stirbt",
