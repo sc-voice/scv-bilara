@@ -6,9 +6,9 @@
       "links": 10
     },
     {
-      "id": "a ‘plate’, a ‘bowl’, a ‘cup’",
+      "id": "a ‘pot’, a ‘bowl’, a ‘jar’",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "accept my mistake",
@@ -4619,12 +4619,6 @@
       "group": "dn",
       "rank": 1,
       "links": 33
-    },
-    {
-      "id": "mn139",
-      "group": "mn",
-      "rank": 1,
-      "links": 6
     },
     {
       "id": "mn65",
@@ -13891,6 +13885,12 @@
       "links": 1
     },
     {
+      "id": "mn139",
+      "group": "mn",
+      "rank": 1,
+      "links": 5
+    },
+    {
       "id": "sn8.3",
       "group": "sn",
       "rank": 1,
@@ -18813,11 +18813,6 @@
       "source": "a beryl gem that was naturally beautiful",
       "target": "dn14",
       "rank": 10
-    },
-    {
-      "source": "a ‘plate’, a ‘bowl’, a ‘cup’",
-      "target": "mn139",
-      "rank": 1
     },
     {
       "source": "accept my mistake",
