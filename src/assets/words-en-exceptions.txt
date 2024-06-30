@@ -36,6 +36,8 @@ friedvoll
 friedvoller
 galaxis
 gerade
+gharial
+ghariale
 giftschlange
 glanzvoll
 goldschmied
@@ -71,6 +73,7 @@ puppe
 puppenstück
 quelle
 quellwasser
+rang
 rat
 redner
 rednerin
@@ -88,6 +91,7 @@ sieger
 skelett
 sonnenschirm
 sonnenschirm-Orchideenbaum
+soundso
 spender
 spenderin
 stamm
