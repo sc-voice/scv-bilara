@@ -113,7 +113,7 @@
     {
       "id": "als ‚Kelch‘, als ‚Schale‘, als ‚Krug‘",
       "group": "Examples",
-      "links": 0
+      "links": 1
     },
     {
       "id": "als unbeständig erkennt",
@@ -5322,6 +5322,12 @@
       "links": 10
     },
     {
+      "id": "mn139",
+      "group": "mn",
+      "rank": 1,
+      "links": 7
+    },
+    {
       "id": "sn35.53",
       "group": "sn",
       "rank": 1,
@@ -7006,12 +7012,6 @@
       "group": "an",
       "rank": 10,
       "links": 2
-    },
-    {
-      "id": "mn139",
-      "group": "mn",
-      "rank": 1,
-      "links": 6
     },
     {
       "id": "an9.23",
@@ -18955,6 +18955,11 @@
       "source": "alle tauglichen Eigenschaften",
       "target": "mn28",
       "rank": 5
+    },
+    {
+      "source": "als ‚Kelch‘, als ‚Schale‘, als ‚Krug‘",
+      "target": "mn139",
+      "rank": 1
     },
     {
       "source": "als unbeständig erkennt",
