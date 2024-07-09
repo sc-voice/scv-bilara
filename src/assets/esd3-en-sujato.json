@@ -8,7 +8,7 @@
     {
       "id": "a ‘pot’, a ‘bowl’, a ‘jar’",
       "group": "Examples",
-      "links": 0
+      "links": 1
     },
     {
       "id": "accept my mistake",
@@ -588,7 +588,7 @@
     {
       "id": "concept",
       "group": "Examples",
-      "links": 12
+      "links": 11
     },
     {
       "id": "conclude their path",
@@ -3173,7 +3173,7 @@
     {
       "id": "sacrificial post",
       "group": "Examples",
-      "links": 5
+      "links": 4
     },
     {
       "id": "sadness arises",
@@ -3343,7 +3343,7 @@
     {
       "id": "silly man",
       "group": "Examples",
-      "links": 14
+      "links": 15
     },
     {
       "id": "simile of the saw",
@@ -4619,6 +4619,12 @@
       "group": "dn",
       "rank": 1,
       "links": 33
+    },
+    {
+      "id": "mn139",
+      "group": "mn",
+      "rank": 1,
+      "links": 6
     },
     {
       "id": "mn65",
@@ -7017,8 +7023,8 @@
     {
       "id": "an4.195",
       "group": "an",
-      "rank": 2,
-      "links": 4
+      "rank": 3,
+      "links": 3
     },
     {
       "id": "sn12.51",
@@ -8217,8 +8223,8 @@
     {
       "id": "mn136",
       "group": "mn",
-      "rank": 6,
-      "links": 2
+      "rank": 2,
+      "links": 3
     },
     {
       "id": "an8.17",
@@ -8567,12 +8573,6 @@
       "group": "an",
       "rank": 1,
       "links": 4
-    },
-    {
-      "id": "an5.161",
-      "group": "an",
-      "rank": 3,
-      "links": 3
     },
     {
       "id": "mn141",
@@ -13885,12 +13885,6 @@
       "links": 1
     },
     {
-      "id": "mn139",
-      "group": "mn",
-      "rank": 1,
-      "links": 5
-    },
-    {
       "id": "sn8.3",
       "group": "sn",
       "rank": 1,
@@ -16063,6 +16057,12 @@
       "links": 1
     },
     {
+      "id": "an5.161",
+      "group": "an",
+      "rank": 3,
+      "links": 2
+    },
+    {
       "id": "an10.80",
       "group": "an",
       "rank": 4,
@@ -16149,7 +16149,7 @@
     {
       "id": "thag2.22",
       "group": "thag",
-      "rank": 4,
+      "rank": 3,
       "links": 1
     },
     {
@@ -16419,13 +16419,13 @@
     {
       "id": "an3.137",
       "group": "an",
-      "rank": 2,
+      "rank": 3,
       "links": 1
     },
     {
       "id": "an5.55",
       "group": "an",
-      "rank": 7,
+      "rank": 8,
       "links": 2
     },
     {
@@ -18813,6 +18813,11 @@
       "source": "a beryl gem that was naturally beautiful",
       "target": "dn14",
       "rank": 10
+    },
+    {
+      "source": "a ‘pot’, a ‘bowl’, a ‘jar’",
+      "target": "mn139",
+      "rank": 1
     },
     {
       "source": "accept my mistake",
@@ -23516,33 +23521,28 @@
     },
     {
       "source": "concept",
-      "target": "an5.161",
+      "target": "sn12.2",
       "rank": 7
     },
     {
       "source": "concept",
-      "target": "sn12.2",
+      "target": "thag16.4",
       "rank": 8
     },
     {
       "source": "concept",
-      "target": "thag16.4",
+      "target": "mn141",
       "rank": 9
     },
     {
       "source": "concept",
-      "target": "mn141",
+      "target": "mn9",
       "rank": 10
     },
     {
       "source": "concept",
-      "target": "mn9",
-      "rank": 11
-    },
-    {
-      "source": "concept",
       "target": "dn22",
-      "rank": 12
+      "rank": 11
     },
     {
       "source": "conclude their path",
@@ -41726,23 +41726,18 @@
     },
     {
       "source": "sacrificial post",
-      "target": "an4.195",
+      "target": "dn5",
       "rank": 2
     },
     {
       "source": "sacrificial post",
-      "target": "dn5",
+      "target": "thag2.22",
       "rank": 3
     },
     {
       "source": "sacrificial post",
-      "target": "thag2.22",
-      "rank": 4
-    },
-    {
-      "source": "sacrificial post",
       "target": "dn26",
-      "rank": 5
+      "rank": 4
     },
     {
       "source": "sadness arises",
@@ -43046,68 +43041,73 @@
     },
     {
       "source": "silly man",
-      "target": "an3.137",
+      "target": "mn136",
       "rank": 2
     },
     {
       "source": "silly man",
-      "target": "an1.316-332",
+      "target": "an3.137",
       "rank": 3
     },
     {
       "source": "silly man",
-      "target": "mn22",
+      "target": "an1.316-332",
       "rank": 4
     },
     {
       "source": "silly man",
-      "target": "mn38",
+      "target": "mn22",
       "rank": 5
     },
     {
       "source": "silly man",
-      "target": "an6.29",
+      "target": "mn38",
       "rank": 6
     },
     {
       "source": "silly man",
-      "target": "an5.55",
+      "target": "an6.29",
       "rank": 7
     },
     {
       "source": "silly man",
-      "target": "an9.11",
+      "target": "an5.55",
       "rank": 8
     },
     {
       "source": "silly man",
-      "target": "an8.20",
+      "target": "an9.11",
       "rank": 9
     },
     {
       "source": "silly man",
-      "target": "an5.100",
+      "target": "an8.20",
       "rank": 10
     },
     {
       "source": "silly man",
-      "target": "ud5.5",
+      "target": "an5.100",
       "rank": 11
     },
     {
       "source": "silly man",
-      "target": "mn63",
+      "target": "ud5.5",
       "rank": 12
     },
     {
       "source": "silly man",
-      "target": "mn65",
+      "target": "mn63",
       "rank": 13
     },
     {
       "source": "silly man",
-      "target": "mn12",
+      "target": "mn65",
       "rank": 14
+    },
+    {
+      "source": "silly man",
+      "target": "mn12",
+      "rank": 15
     },
     {
       "source": "simile of the saw",
