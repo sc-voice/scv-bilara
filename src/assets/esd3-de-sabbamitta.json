@@ -1003,12 +1003,12 @@
     {
       "id": "durch Vertrauen befreit",
       "group": "Examples",
-      "links": 9
+      "links": 10
     },
     {
       "id": "durch Weisheit befreit",
       "group": "Examples",
-      "links": 14
+      "links": 15
     },
     {
       "id": "eben da nahm ich beim Buddha",
@@ -1118,7 +1118,7 @@
     {
       "id": "ein hasserfüllter Mensch",
       "group": "Examples",
-      "links": 9
+      "links": 8
     },
     {
       "id": "Einheit des Geistes",
@@ -1203,7 +1203,7 @@
     {
       "id": "ein Rest",
       "group": "Examples",
-      "links": 16
+      "links": 17
     },
     {
       "id": "Eintracht geschaffen",
@@ -1253,7 +1253,7 @@
     {
       "id": "Erde, Wasser, Feuer und Luft",
       "group": "Examples",
-      "links": 12
+      "links": 13
     },
     {
       "id": "Ergebnis des Leidens",
@@ -2178,12 +2178,12 @@
     {
       "id": "ist Augenkontakt beständig",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "ist es wirklich wahr",
       "group": "Examples",
-      "links": 27
+      "links": 28
     },
     {
       "id": "ist etwas anderes",
@@ -2628,7 +2628,7 @@
     {
       "id": "mit menschlicher Stärke, Energie und Tatkraft",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "mittlere.* übungsweg",
@@ -2693,7 +2693,7 @@
     {
       "id": "Nachfolger durch Vertrauen",
       "group": "Examples",
-      "links": 26
+      "links": 27
     },
     {
       "id": "nackt, wahrt den Anstand nicht",
@@ -3303,7 +3303,7 @@
     {
       "id": "stufenweise Schulung",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "substanzialistische Ansicht",
@@ -3413,7 +3413,7 @@
     {
       "id": "überquer",
       "group": "Examples",
-      "links": 52
+      "links": 45
     },
     {
       "id": "übersinnliche Kraft und Macht",
@@ -3668,7 +3668,7 @@
     {
       "id": "Vertrauen und.* Liebe",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "vertrauensvollen Hausbesitzer",
@@ -3873,7 +3873,7 @@
     {
       "id": "was einen Anfang hat",
       "group": "Examples",
-      "links": 14
+      "links": 15
     },
     {
       "id": "was ein Verstoß ist",
@@ -4551,7 +4551,7 @@
       "id": "mn26",
       "group": "mn",
       "rank": 1,
-      "links": 22
+      "links": 21
     },
     {
       "id": "mn36",
@@ -5397,7 +5397,7 @@
       "id": "an9.39",
       "group": "an",
       "rank": 1,
-      "links": 3
+      "links": 2
     },
     {
       "id": "sn22.99",
@@ -6740,7 +6740,7 @@
     {
       "id": "an10.16",
       "group": "an",
-      "rank": 4,
+      "rank": 5,
       "links": 4
     },
     {
@@ -7881,7 +7881,7 @@
       "id": "an3.65",
       "group": "an",
       "rank": 2,
-      "links": 7
+      "links": 6
     },
     {
       "id": "an8.25",
@@ -8361,7 +8361,7 @@
       "id": "mn25",
       "group": "mn",
       "rank": 5,
-      "links": 3
+      "links": 2
     },
     {
       "id": "sn46.54",
@@ -8564,7 +8564,7 @@
     {
       "id": "an8.20",
       "group": "an",
-      "rank": 1,
+      "rank": 2,
       "links": 7
     },
     {
@@ -9309,7 +9309,7 @@
       "id": "dn11",
       "group": "dn",
       "rank": 1,
-      "links": 6
+      "links": 7
     },
     {
       "id": "an3.183-352",
@@ -9798,9 +9798,15 @@
       "links": 1
     },
     {
+      "id": "mn70",
+      "group": "mn",
+      "rank": 1,
+      "links": 8
+    },
+    {
       "id": "an7.14",
       "group": "an",
-      "rank": 3,
+      "rank": 4,
       "links": 3
     },
     {
@@ -10545,7 +10551,7 @@
       "id": "an9.38",
       "group": "an",
       "rank": 1,
-      "links": 6
+      "links": 5
     },
     {
       "id": "sn2.26",
@@ -10766,31 +10772,31 @@
     {
       "id": "sn55.17",
       "group": "sn",
-      "rank": 1,
+      "rank": 2,
       "links": 2
     },
     {
       "id": "an3.75",
       "group": "an",
-      "rank": 2,
+      "rank": 3,
       "links": 1
     },
     {
       "id": "sn14.30",
       "group": "sn",
-      "rank": 3,
+      "rank": 4,
       "links": 1
     },
     {
       "id": "sn14.37",
       "group": "sn",
-      "rank": 4,
+      "rank": 5,
       "links": 1
     },
     {
       "id": "sn14.38",
       "group": "sn",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
@@ -13077,7 +13083,7 @@
       "id": "sn4.12",
       "group": "sn",
       "rank": 3,
-      "links": 3
+      "links": 2
     },
     {
       "id": "sn36.10",
@@ -13539,6 +13545,12 @@
       "id": "sn35.121",
       "group": "sn",
       "rank": 2,
+      "links": 2
+    },
+    {
+      "id": "mn147",
+      "group": "mn",
+      "rank": 3,
       "links": 2
     },
     {
@@ -14097,7 +14109,7 @@
       "id": "sn1.35",
       "group": "sn",
       "rank": 6,
-      "links": 2
+      "links": 1
     },
     {
       "id": "an5.16",
@@ -14888,73 +14900,73 @@
     {
       "id": "sn48.12",
       "group": "sn",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
       "id": "sn48.15",
       "group": "sn",
-      "rank": 6,
+      "rank": 7,
       "links": 1
     },
     {
       "id": "sn48.24",
       "group": "sn",
-      "rank": 7,
+      "rank": 8,
       "links": 1
     },
     {
       "id": "sn48.13",
       "group": "sn",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
       "id": "sn48.16",
       "group": "sn",
-      "rank": 9,
+      "rank": 10,
       "links": 1
     },
     {
       "id": "sn48.14",
       "group": "sn",
-      "rank": 10,
+      "rank": 11,
       "links": 1
     },
     {
       "id": "sn48.17",
       "group": "sn",
-      "rank": 11,
+      "rank": 12,
       "links": 1
     },
     {
       "id": "sn25.3",
       "group": "sn",
-      "rank": 12,
+      "rank": 13,
       "links": 1
     },
     {
       "id": "sn25.4",
       "group": "sn",
-      "rank": 13,
+      "rank": 14,
       "links": 1
     },
     {
       "id": "sn25.5",
       "group": "sn",
-      "rank": 14,
+      "rank": 15,
       "links": 1
     },
     {
       "id": "sn25.6",
       "group": "sn",
-      "rank": 15,
+      "rank": 16,
       "links": 1
     },
     {
       "id": "sn25.7",
       "group": "sn",
-      "rank": 16,
+      "rank": 17,
       "links": 1
     },
     {
@@ -14966,19 +14978,19 @@
     {
       "id": "sn25.9",
       "group": "sn",
-      "rank": 18,
+      "rank": 19,
       "links": 1
     },
     {
       "id": "sn25.2",
       "group": "sn",
-      "rank": 20,
+      "rank": 21,
       "links": 1
     },
     {
       "id": "sn25.10",
       "group": "sn",
-      "rank": 21,
+      "rank": 22,
       "links": 1
     },
     {
@@ -16278,21 +16290,9 @@
       "links": 1
     },
     {
-      "id": "sn2.24",
-      "group": "sn",
-      "rank": 7,
-      "links": 1
-    },
-    {
-      "id": "sn1.50",
-      "group": "sn",
-      "rank": 8,
-      "links": 1
-    },
-    {
       "id": "thig1.10",
       "group": "thig",
-      "rank": 22,
+      "rank": 20,
       "links": 1
     },
     {
@@ -16302,15 +16302,21 @@
       "links": 2
     },
     {
-      "id": "sn2.18",
+      "id": "sn2.24",
       "group": "sn",
-      "rank": 31,
+      "rank": 34,
       "links": 1
     },
     {
       "id": "sn1.33",
       "group": "sn",
-      "rank": 40,
+      "rank": 35,
+      "links": 1
+    },
+    {
+      "id": "sn1.50",
+      "group": "sn",
+      "rank": 37,
       "links": 1
     },
     {
@@ -24518,43 +24524,48 @@
     },
     {
       "source": "durch Vertrauen befreit",
-      "target": "an2.42-51",
+      "target": "mn70",
       "rank": 2
     },
     {
       "source": "durch Vertrauen befreit",
-      "target": "mn65",
+      "target": "an2.42-51",
       "rank": 3
     },
     {
       "source": "durch Vertrauen befreit",
-      "target": "an7.14",
+      "target": "mn65",
       "rank": 4
     },
     {
       "source": "durch Vertrauen befreit",
-      "target": "an10.16",
+      "target": "an7.14",
       "rank": 5
     },
     {
       "source": "durch Vertrauen befreit",
-      "target": "an8.22",
+      "target": "an10.16",
       "rank": 6
     },
     {
       "source": "durch Vertrauen befreit",
-      "target": "an7.56",
+      "target": "an8.22",
       "rank": 7
     },
     {
       "source": "durch Vertrauen befreit",
-      "target": "dn28",
+      "target": "an7.56",
       "rank": 8
     },
     {
       "source": "durch Vertrauen befreit",
-      "target": "dn33",
+      "target": "dn28",
       "rank": 9
+    },
+    {
+      "source": "durch Vertrauen befreit",
+      "target": "dn33",
+      "rank": 10
     },
     {
       "source": "durch Weisheit befreit",
@@ -24568,63 +24579,68 @@
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "an7.56",
+      "target": "mn70",
       "rank": 3
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "an2.42-51",
+      "target": "an7.56",
       "rank": 4
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "sn12.70",
+      "target": "an2.42-51",
       "rank": 5
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "mn65",
+      "target": "sn12.70",
       "rank": 6
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "an7.14",
+      "target": "mn65",
       "rank": 7
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "an10.16",
+      "target": "an7.14",
       "rank": 8
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "sn8.7",
+      "target": "an10.16",
       "rank": 9
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "an8.22",
+      "target": "sn8.7",
       "rank": 10
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "mn64",
+      "target": "an8.22",
       "rank": 11
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "dn15",
+      "target": "mn64",
       "rank": 12
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "dn28",
+      "target": "dn15",
       "rank": 13
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "dn33",
+      "target": "dn28",
       "rank": 14
+    },
+    {
+      "source": "durch Weisheit befreit",
+      "target": "dn33",
+      "rank": 15
     },
     {
       "source": "eben das ist das Ende des Leidens",
@@ -25398,13 +25414,8 @@
     },
     {
       "source": "ein hasserfüllter Mensch",
-      "target": "an3.65",
-      "rank": 8
-    },
-    {
-      "source": "ein hasserfüllter Mensch",
       "target": "sn42.12",
-      "rank": 9
+      "rank": 8
     },
     {
       "source": "Einheit des Geistes",
@@ -25990,6 +26001,11 @@
       "source": "ein Rest",
       "target": "sn46.57",
       "rank": 16
+    },
+    {
+      "source": "ein Rest",
+      "target": "mn70",
+      "rank": 17
     },
     {
       "source": "Eintracht geschaffen",
@@ -26613,63 +26629,68 @@
     },
     {
       "source": "Erde, Wasser, Feuer und Luft",
-      "target": "sn55.17",
+      "target": "dn11",
       "rank": 1
     },
     {
       "source": "Erde, Wasser, Feuer und Luft",
-      "target": "an3.75",
+      "target": "sn55.17",
       "rank": 2
     },
     {
       "source": "Erde, Wasser, Feuer und Luft",
-      "target": "sn14.30",
+      "target": "an3.75",
       "rank": 3
     },
     {
       "source": "Erde, Wasser, Feuer und Luft",
-      "target": "sn14.37",
+      "target": "sn14.30",
       "rank": 4
     },
     {
       "source": "Erde, Wasser, Feuer und Luft",
-      "target": "sn14.38",
+      "target": "sn14.37",
       "rank": 5
     },
     {
       "source": "Erde, Wasser, Feuer und Luft",
-      "target": "sn24.8",
+      "target": "sn14.38",
       "rank": 6
     },
     {
       "source": "Erde, Wasser, Feuer und Luft",
-      "target": "an11.9",
+      "target": "sn24.8",
       "rank": 7
     },
     {
       "source": "Erde, Wasser, Feuer und Luft",
-      "target": "sn35.238",
+      "target": "an11.9",
       "rank": 8
     },
     {
       "source": "Erde, Wasser, Feuer und Luft",
-      "target": "sn35.245",
+      "target": "sn35.238",
       "rank": 9
     },
     {
       "source": "Erde, Wasser, Feuer und Luft",
-      "target": "mn28",
+      "target": "sn35.245",
       "rank": 10
     },
     {
       "source": "Erde, Wasser, Feuer und Luft",
-      "target": "dn2",
+      "target": "mn28",
       "rank": 11
     },
     {
       "source": "Erde, Wasser, Feuer und Luft",
-      "target": "dn33",
+      "target": "dn2",
       "rank": 12
+    },
+    {
+      "source": "Erde, Wasser, Feuer und Luft",
+      "target": "dn33",
+      "rank": 13
     },
     {
       "source": "Ergebnis des Leidens",
@@ -32612,6 +32633,11 @@
       "rank": 2
     },
     {
+      "source": "ist Augenkontakt beständig",
+      "target": "mn147",
+      "rank": 3
+    },
+    {
       "source": "ist es wirklich wahr",
       "target": "dn26",
       "rank": 1
@@ -32718,33 +32744,38 @@
     },
     {
       "source": "ist es wirklich wahr",
-      "target": "mn21",
+      "target": "mn70",
       "rank": 22
     },
     {
       "source": "ist es wirklich wahr",
-      "target": "dn4",
+      "target": "mn21",
       "rank": 23
     },
     {
       "source": "ist es wirklich wahr",
-      "target": "dn5",
+      "target": "dn4",
       "rank": 24
     },
     {
       "source": "ist es wirklich wahr",
-      "target": "dn25",
+      "target": "dn5",
       "rank": 25
     },
     {
       "source": "ist es wirklich wahr",
-      "target": "dn9",
+      "target": "dn25",
       "rank": 26
     },
     {
       "source": "ist es wirklich wahr",
-      "target": "dn23",
+      "target": "dn9",
       "rank": 27
+    },
+    {
+      "source": "ist es wirklich wahr",
+      "target": "dn23",
+      "rank": 28
     },
     {
       "source": "ist etwas anderes",
@@ -36257,6 +36288,11 @@
       "rank": 4
     },
     {
+      "source": "mit menschlicher Stärke, Energie und Tatkraft",
+      "target": "mn70",
+      "rank": 5
+    },
+    {
       "source": "mittlere.* übungsweg",
       "target": "an3.156-162",
       "rank": 1
@@ -36458,133 +36494,138 @@
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "an2.42-51",
+      "target": "mn70",
       "rank": 1
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "mn65",
+      "target": "an2.42-51",
       "rank": 2
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "an7.14",
+      "target": "mn65",
       "rank": 3
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "an10.16",
+      "target": "an7.14",
       "rank": 4
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "sn48.12",
+      "target": "an10.16",
       "rank": 5
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "sn48.15",
+      "target": "sn48.12",
       "rank": 6
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "sn48.24",
+      "target": "sn48.15",
       "rank": 7
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "sn48.13",
+      "target": "sn48.24",
       "rank": 8
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "sn48.16",
+      "target": "sn48.13",
       "rank": 9
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "sn48.14",
+      "target": "sn48.16",
       "rank": 10
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "sn48.17",
+      "target": "sn48.14",
       "rank": 11
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "sn25.3",
+      "target": "sn48.17",
       "rank": 12
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "sn25.4",
+      "target": "sn25.3",
       "rank": 13
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "sn25.5",
+      "target": "sn25.4",
       "rank": 14
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "sn25.6",
+      "target": "sn25.5",
       "rank": 15
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "sn25.7",
+      "target": "sn25.6",
       "rank": 16
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "sn25.8",
+      "target": "sn25.7",
       "rank": 17
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "sn25.9",
+      "target": "sn25.8",
       "rank": 18
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "sn25.1",
+      "target": "sn25.9",
       "rank": 19
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "sn25.2",
+      "target": "sn25.1",
       "rank": 20
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "sn25.10",
+      "target": "sn25.2",
       "rank": 21
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "mn34",
+      "target": "sn25.10",
       "rank": 22
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "an8.22",
+      "target": "mn34",
       "rank": 23
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "dn28",
+      "target": "an8.22",
       "rank": 24
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "mn22",
+      "target": "dn28",
       "rank": 25
     },
     {
       "source": "Nachfolger durch Vertrauen",
-      "target": "dn33",
+      "target": "mn22",
       "rank": 26
+    },
+    {
+      "source": "Nachfolger durch Vertrauen",
+      "target": "dn33",
+      "rank": 27
     },
     {
       "source": "nackt, wahrt den Anstand nicht",
@@ -40328,18 +40369,23 @@
     },
     {
       "source": "stufenweise Schulung",
-      "target": "an8.20",
+      "target": "mn70",
       "rank": 1
     },
     {
       "source": "stufenweise Schulung",
-      "target": "an8.19",
+      "target": "an8.20",
       "rank": 2
     },
     {
       "source": "stufenweise Schulung",
-      "target": "ud5.5",
+      "target": "an8.19",
       "rank": 3
+    },
+    {
+      "source": "stufenweise Schulung",
+      "target": "ud5.5",
+      "rank": 4
     },
     {
       "source": "substanzialistische Ansicht",
@@ -40913,233 +40959,198 @@
     },
     {
       "source": "überquer",
-      "target": "sn2.24",
+      "target": "snp1.10",
       "rank": 7
     },
     {
       "source": "überquer",
-      "target": "sn1.50",
+      "target": "sn10.12",
       "rank": 8
     },
     {
       "source": "überquer",
-      "target": "snp1.10",
+      "target": "sn1.5",
       "rank": 9
     },
     {
       "source": "überquer",
-      "target": "sn10.12",
+      "target": "ud7.1",
       "rank": 10
     },
     {
       "source": "überquer",
-      "target": "sn1.5",
+      "target": "sn2.15",
       "rank": 11
     },
     {
       "source": "überquer",
-      "target": "ud7.1",
+      "target": "sn10.3",
       "rank": 12
     },
     {
       "source": "überquer",
-      "target": "sn2.15",
+      "target": "snp2.5",
       "rank": 13
     },
     {
       "source": "überquer",
-      "target": "sn10.3",
+      "target": "ud8.6",
       "rank": 14
     },
     {
       "source": "überquer",
-      "target": "snp2.5",
+      "target": "thag16.9",
       "rank": 15
     },
     {
       "source": "überquer",
-      "target": "ud8.6",
+      "target": "mn65",
       "rank": 16
     },
     {
       "source": "überquer",
-      "target": "thag16.9",
+      "target": "thag21.1",
       "rank": 17
     },
     {
       "source": "überquer",
-      "target": "mn65",
+      "target": "dn16",
       "rank": 18
     },
     {
       "source": "überquer",
-      "target": "thag21.1",
+      "target": "sn1.44",
       "rank": 19
     },
     {
       "source": "überquer",
-      "target": "dn16",
+      "target": "thig1.10",
       "rank": 20
     },
     {
       "source": "überquer",
-      "target": "sn1.44",
+      "target": "thag1.15",
       "rank": 21
     },
     {
       "source": "überquer",
-      "target": "thig1.10",
+      "target": "ud7.8",
       "rank": 22
     },
     {
       "source": "überquer",
-      "target": "thag1.15",
+      "target": "ud7.3",
       "rank": 23
     },
     {
       "source": "überquer",
-      "target": "ud7.8",
+      "target": "an3.32",
       "rank": 24
     },
     {
       "source": "überquer",
-      "target": "ud7.3",
+      "target": "sn9.1",
       "rank": 25
     },
     {
       "source": "überquer",
-      "target": "sn4.12",
+      "target": "sn35.229",
       "rank": 26
     },
     {
       "source": "überquer",
-      "target": "an3.32",
+      "target": "iti107",
       "rank": 27
     },
     {
       "source": "überquer",
-      "target": "sn9.1",
+      "target": "an4.41",
       "rank": 28
     },
     {
       "source": "überquer",
-      "target": "sn35.229",
+      "target": "cp2",
       "rank": 29
     },
     {
       "source": "überquer",
-      "target": "iti107",
+      "target": "ud8.10",
       "rank": 30
     },
     {
       "source": "überquer",
-      "target": "sn2.18",
+      "target": "thag10.1",
       "rank": 31
     },
     {
       "source": "überquer",
-      "target": "an4.41",
+      "target": "thag10.3",
       "rank": 32
     },
     {
       "source": "überquer",
-      "target": "cp2",
+      "target": "sn8.8",
       "rank": 33
     },
     {
       "source": "überquer",
-      "target": "ud8.10",
+      "target": "sn2.24",
       "rank": 34
     },
     {
       "source": "überquer",
-      "target": "thag10.1",
+      "target": "sn1.33",
       "rank": 35
     },
     {
       "source": "überquer",
-      "target": "thag10.3",
+      "target": "ud3.2",
       "rank": 36
     },
     {
       "source": "überquer",
-      "target": "sn8.8",
+      "target": "sn1.50",
       "rank": 37
     },
     {
       "source": "überquer",
-      "target": "sn1.35",
+      "target": "thag13.1",
       "rank": 38
     },
     {
       "source": "überquer",
-      "target": "an9.39",
+      "target": "snp2.12",
       "rank": 39
     },
     {
       "source": "überquer",
-      "target": "sn1.33",
+      "target": "dhp360-382",
       "rank": 40
     },
     {
       "source": "überquer",
-      "target": "ud3.2",
+      "target": "snp5.19",
       "rank": 41
     },
     {
       "source": "überquer",
-      "target": "thag13.1",
+      "target": "snp3.11",
       "rank": 42
     },
     {
       "source": "überquer",
-      "target": "an9.38",
+      "target": "thag19.1",
       "rank": 43
     },
     {
       "source": "überquer",
-      "target": "snp2.12",
+      "target": "dn20",
       "rank": 44
     },
     {
       "source": "überquer",
-      "target": "dhp360-382",
-      "rank": 45
-    },
-    {
-      "source": "überquer",
-      "target": "snp5.19",
-      "rank": 46
-    },
-    {
-      "source": "überquer",
-      "target": "mn25",
-      "rank": 47
-    },
-    {
-      "source": "überquer",
-      "target": "snp3.11",
-      "rank": 48
-    },
-    {
-      "source": "überquer",
-      "target": "thag19.1",
-      "rank": 49
-    },
-    {
-      "source": "überquer",
-      "target": "dn20",
-      "rank": 50
-    },
-    {
-      "source": "überquer",
-      "target": "mn26",
-      "rank": 51
-    },
-    {
-      "source": "überquer",
       "target": "dn21",
-      "rank": 52
+      "rank": 45
     },
     {
       "source": "übersinnliche Kraft und Macht",
@@ -42578,8 +42589,13 @@
     },
     {
       "source": "Vertrauen und.* Liebe",
-      "target": "mn22",
+      "target": "mn70",
       "rank": 4
+    },
+    {
+      "source": "Vertrauen und.* Liebe",
+      "target": "mn22",
+      "rank": 5
     },
     {
       "source": "vertrauensvollen Hausbesitzer",
@@ -44333,28 +44349,33 @@
     },
     {
       "source": "was einen Anfang hat",
-      "target": "an8.12",
+      "target": "mn147",
       "rank": 10
     },
     {
       "source": "was einen Anfang hat",
-      "target": "dn5",
+      "target": "an8.12",
       "rank": 11
     },
     {
       "source": "was einen Anfang hat",
-      "target": "mn56",
+      "target": "dn5",
       "rank": 12
     },
     {
       "source": "was einen Anfang hat",
-      "target": "dn3",
+      "target": "mn56",
       "rank": 13
     },
     {
       "source": "was einen Anfang hat",
-      "target": "dn21",
+      "target": "dn3",
       "rank": 14
+    },
+    {
+      "source": "was einen Anfang hat",
+      "target": "dn21",
+      "rank": 15
     },
     {
       "source": "was ein Verstoß ist",
