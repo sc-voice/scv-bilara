@@ -886,6 +886,11 @@
       "links": 1
     },
     {
+      "id": "die Worte des Buddha wieder",
+      "group": "Examples",
+      "links": 18
+    },
+    {
       "id": "Dinge bei sich selbst",
       "group": "Examples",
       "links": 3
@@ -4677,7 +4682,7 @@
       "id": "an8.12",
       "group": "an",
       "rank": 1,
-      "links": 6
+      "links": 7
     },
     {
       "id": "mn5",
@@ -5013,7 +5018,7 @@
       "id": "dn8",
       "group": "dn",
       "rank": 1,
-      "links": 17
+      "links": 18
     },
     {
       "id": "dn10",
@@ -5865,7 +5870,7 @@
       "id": "dn28",
       "group": "dn",
       "rank": 1,
-      "links": 27
+      "links": 28
     },
     {
       "id": "an1.394-574",
@@ -7905,7 +7910,7 @@
       "id": "sn42.13",
       "group": "sn",
       "rank": 1,
-      "links": 6
+      "links": 7
     },
     {
       "id": "an4.207",
@@ -7977,7 +7982,7 @@
       "id": "an4.193",
       "group": "an",
       "rank": 2,
-      "links": 3
+      "links": 4
     },
     {
       "id": "an2.64-76",
@@ -9003,7 +9008,7 @@
       "id": "sn12.25",
       "group": "sn",
       "rank": 2,
-      "links": 3
+      "links": 4
     },
     {
       "id": "an6.10",
@@ -9264,6 +9269,78 @@
       "links": 1
     },
     {
+      "id": "mn71",
+      "group": "mn",
+      "rank": 1,
+      "links": 4
+    },
+    {
+      "id": "sn12.24",
+      "group": "sn",
+      "rank": 3,
+      "links": 3
+    },
+    {
+      "id": "sn45.5",
+      "group": "sn",
+      "rank": 2,
+      "links": 3
+    },
+    {
+      "id": "sn12.26",
+      "group": "sn",
+      "rank": 4,
+      "links": 2
+    },
+    {
+      "id": "sn35.81",
+      "group": "sn",
+      "rank": 3,
+      "links": 2
+    },
+    {
+      "id": "sn42.10",
+      "group": "sn",
+      "rank": 7,
+      "links": 2
+    },
+    {
+      "id": "an3.57",
+      "group": "an",
+      "rank": 1,
+      "links": 4
+    },
+    {
+      "id": "mn55",
+      "group": "mn",
+      "rank": 2,
+      "links": 4
+    },
+    {
+      "id": "sn22.86",
+      "group": "sn",
+      "rank": 10,
+      "links": 1
+    },
+    {
+      "id": "sn22.2",
+      "group": "sn",
+      "rank": 12,
+      "links": 1
+    },
+    {
+      "id": "sn44.2",
+      "group": "sn",
+      "rank": 13,
+      "links": 2
+    },
+    {
+      "id": "sn42.12",
+      "group": "sn",
+      "rank": 1,
+      "links": 10
+    },
+    {
       "id": "an5.167",
       "group": "an",
       "rank": 2,
@@ -9484,12 +9561,6 @@
       "group": "iti",
       "rank": 7,
       "links": 2
-    },
-    {
-      "id": "an3.57",
-      "group": "an",
-      "rank": 1,
-      "links": 3
     },
     {
       "id": "an3.30",
@@ -10122,12 +10193,6 @@
       "links": 5
     },
     {
-      "id": "mn55",
-      "group": "mn",
-      "rank": 2,
-      "links": 3
-    },
-    {
       "id": "dn19",
       "group": "dn",
       "rank": 2,
@@ -10216,12 +10281,6 @@
       "group": "an",
       "rank": 1,
       "links": 3
-    },
-    {
-      "id": "sn42.12",
-      "group": "sn",
-      "rank": 1,
-      "links": 9
     },
     {
       "id": "an7.45",
@@ -10654,12 +10713,6 @@
       "group": "an",
       "rank": 1,
       "links": 2
-    },
-    {
-      "id": "mn71",
-      "group": "mn",
-      "rank": 2,
-      "links": 3
     },
     {
       "id": "an11.14",
@@ -11110,12 +11163,6 @@
       "group": "sn",
       "rank": 13,
       "links": 1
-    },
-    {
-      "id": "sn45.5",
-      "group": "sn",
-      "rank": 2,
-      "links": 2
     },
     {
       "id": "sn51.29",
@@ -13626,12 +13673,6 @@
       "links": 3
     },
     {
-      "id": "sn44.2",
-      "group": "sn",
-      "rank": 22,
-      "links": 1
-    },
-    {
       "id": "thig13.1",
       "group": "thig",
       "rank": 1,
@@ -13695,12 +13736,6 @@
       "id": "an3.78",
       "group": "an",
       "rank": 12,
-      "links": 1
-    },
-    {
-      "id": "sn42.10",
-      "group": "sn",
-      "rank": 13,
       "links": 1
     },
     {
@@ -15768,18 +15803,6 @@
       "links": 1
     },
     {
-      "id": "sn12.24",
-      "group": "sn",
-      "rank": 3,
-      "links": 2
-    },
-    {
-      "id": "sn12.26",
-      "group": "sn",
-      "rank": 4,
-      "links": 1
-    },
-    {
       "id": "sn3.19",
       "group": "sn",
       "rank": 4,
@@ -16563,12 +16586,6 @@
       "id": "an7.96-614",
       "group": "an",
       "rank": 6,
-      "links": 1
-    },
-    {
-      "id": "sn35.81",
-      "group": "sn",
-      "rank": 3,
       "links": 1
     },
     {
@@ -23770,6 +23787,96 @@
       "source": "die Welt streitet mit mir",
       "target": "sn22.94",
       "rank": 1
+    },
+    {
+      "source": "die Worte des Buddha wieder",
+      "target": "mn71",
+      "rank": 1
+    },
+    {
+      "source": "die Worte des Buddha wieder",
+      "target": "sn12.25",
+      "rank": 2
+    },
+    {
+      "source": "die Worte des Buddha wieder",
+      "target": "sn12.24",
+      "rank": 3
+    },
+    {
+      "source": "die Worte des Buddha wieder",
+      "target": "sn45.5",
+      "rank": 4
+    },
+    {
+      "source": "die Worte des Buddha wieder",
+      "target": "sn12.26",
+      "rank": 5
+    },
+    {
+      "source": "die Worte des Buddha wieder",
+      "target": "sn35.81",
+      "rank": 6
+    },
+    {
+      "source": "die Worte des Buddha wieder",
+      "target": "sn42.10",
+      "rank": 7
+    },
+    {
+      "source": "die Worte des Buddha wieder",
+      "target": "an3.57",
+      "rank": 8
+    },
+    {
+      "source": "die Worte des Buddha wieder",
+      "target": "mn55",
+      "rank": 9
+    },
+    {
+      "source": "die Worte des Buddha wieder",
+      "target": "sn22.86",
+      "rank": 10
+    },
+    {
+      "source": "die Worte des Buddha wieder",
+      "target": "an4.193",
+      "rank": 11
+    },
+    {
+      "source": "die Worte des Buddha wieder",
+      "target": "sn22.2",
+      "rank": 12
+    },
+    {
+      "source": "die Worte des Buddha wieder",
+      "target": "sn44.2",
+      "rank": 13
+    },
+    {
+      "source": "die Worte des Buddha wieder",
+      "target": "an8.12",
+      "rank": 14
+    },
+    {
+      "source": "die Worte des Buddha wieder",
+      "target": "sn42.12",
+      "rank": 15
+    },
+    {
+      "source": "die Worte des Buddha wieder",
+      "target": "dn8",
+      "rank": 16
+    },
+    {
+      "source": "die Worte des Buddha wieder",
+      "target": "dn28",
+      "rank": 17
+    },
+    {
+      "source": "die Worte des Buddha wieder",
+      "target": "sn42.13",
+      "rank": 18
     },
     {
       "source": "Dinge bei sich selbst",
