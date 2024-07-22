@@ -948,7 +948,7 @@
     {
       "id": "earth, water, fire, and air",
       "group": "Examples",
-      "links": 9
+      "links": 10
     },
     {
       "id": "eats blameless things",
@@ -1013,7 +1013,7 @@
     {
       "id": "enchanted by a spell",
       "group": "Examples",
-      "links": 5
+      "links": 0
     },
     {
       "id": "encourage others to do the same",
@@ -2118,7 +2118,7 @@
     {
       "id": "judgment",
       "group": "Examples",
-      "links": 11
+      "links": 14
     },
     {
       "id": "just one mouthful",
@@ -3468,7 +3468,7 @@
     {
       "id": "substantial wealth",
       "group": "Examples",
-      "links": 4
+      "links": 0
     },
     {
       "id": "such form in the past",
@@ -4827,26 +4827,26 @@
     {
       "id": "an5.213",
       "group": "an",
-      "rank": 1,
-      "links": 3
+      "rank": 11,
+      "links": 2
     },
     {
       "id": "ud8.6",
       "group": "ud",
-      "rank": 2,
-      "links": 4
+      "rank": 3,
+      "links": 3
     },
     {
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 99
+      "links": 98
     },
     {
       "id": "dn16",
       "group": "dn",
       "rank": 1,
-      "links": 70
+      "links": 69
     },
     {
       "id": "an3.138",
@@ -5187,8 +5187,8 @@
     {
       "id": "snp3.4",
       "group": "snp",
-      "rank": 5,
-      "links": 4
+      "rank": 18,
+      "links": 3
     },
     {
       "id": "sn22.85",
@@ -6106,7 +6106,7 @@
       "id": "sn7.11",
       "group": "sn",
       "rank": 2,
-      "links": 3
+      "links": 2
     },
     {
       "id": "thig10.1",
@@ -6124,7 +6124,7 @@
       "id": "snp1.4",
       "group": "snp",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "dhp179-196",
@@ -8350,7 +8350,7 @@
       "id": "dn21",
       "group": "dn",
       "rank": 1,
-      "links": 22
+      "links": 23
     },
     {
       "id": "an5.83",
@@ -8542,7 +8542,7 @@
       "id": "snp4.11",
       "group": "snp",
       "rank": 1,
-      "links": 1
+      "links": 2
     },
     {
       "id": "mn3",
@@ -10225,21 +10225,27 @@
       "links": 3
     },
     {
-      "id": "sn14.30",
+      "id": "sn55.17",
       "group": "sn",
       "rank": 3,
-      "links": 1
+      "links": 2
     },
     {
-      "id": "sn14.37",
+      "id": "sn14.30",
       "group": "sn",
       "rank": 4,
       "links": 1
     },
     {
-      "id": "sn14.38",
+      "id": "sn14.37",
       "group": "sn",
       "rank": 5,
+      "links": 1
+    },
+    {
+      "id": "sn14.38",
+      "group": "sn",
+      "rank": 6,
       "links": 1
     },
     {
@@ -10511,18 +10517,6 @@
       "group": "mn",
       "rank": 1,
       "links": 4
-    },
-    {
-      "id": "sn7.8",
-      "group": "sn",
-      "rank": 1,
-      "links": 1
-    },
-    {
-      "id": "sn7.9",
-      "group": "sn",
-      "rank": 4,
-      "links": 1
     },
     {
       "id": "an8.25",
@@ -11296,7 +11290,7 @@
       "id": "snp4.14",
       "group": "snp",
       "rank": 4,
-      "links": 2
+      "links": 3
     },
     {
       "id": "sn1.74",
@@ -11847,7 +11841,7 @@
     {
       "id": "snp4.9",
       "group": "snp",
-      "rank": 8,
+      "rank": 9,
       "links": 4
     },
     {
@@ -13977,13 +13971,13 @@
     {
       "id": "ud7.7",
       "group": "ud",
-      "rank": 6,
+      "rank": 7,
       "links": 1
     },
     {
       "id": "dhp256-272",
       "group": "dhp",
-      "rank": 9,
+      "rank": 11,
       "links": 1
     },
     {
@@ -14557,21 +14551,15 @@
       "links": 1
     },
     {
-      "id": "cp4",
-      "group": "cp",
-      "rank": 4,
-      "links": 2
-    },
-    {
       "id": "sn3.16",
       "group": "sn",
-      "rank": 6,
+      "rank": 5,
       "links": 1
     },
     {
       "id": "an3.48",
       "group": "an",
-      "rank": 7,
+      "rank": 6,
       "links": 1
     },
     {
@@ -14583,8 +14571,14 @@
     {
       "id": "an5.40",
       "group": "an",
-      "rank": 9,
+      "rank": 8,
       "links": 1
+    },
+    {
+      "id": "cp4",
+      "group": "cp",
+      "rank": 9,
+      "links": 2
     },
     {
       "id": "cp22",
@@ -14889,19 +14883,19 @@
     {
       "id": "an4.67",
       "group": "an",
-      "rank": 2,
+      "rank": 3,
       "links": 2
     },
     {
       "id": "thag3.7",
       "group": "thag",
-      "rank": 4,
+      "rank": 5,
       "links": 1
     },
     {
       "id": "iti60",
       "group": "iti",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
@@ -16108,12 +16102,6 @@
       "id": "sn55.16",
       "group": "sn",
       "rank": 4,
-      "links": 1
-    },
-    {
-      "id": "sn55.17",
-      "group": "sn",
-      "rank": 5,
       "links": 1
     },
     {
@@ -26006,38 +25994,43 @@
     },
     {
       "source": "earth, water, fire, and air",
-      "target": "sn14.30",
+      "target": "sn55.17",
       "rank": 3
     },
     {
       "source": "earth, water, fire, and air",
-      "target": "sn14.37",
+      "target": "sn14.30",
       "rank": 4
     },
     {
       "source": "earth, water, fire, and air",
-      "target": "sn14.38",
+      "target": "sn14.37",
       "rank": 5
     },
     {
       "source": "earth, water, fire, and air",
-      "target": "sn35.238",
+      "target": "sn14.38",
       "rank": 6
     },
     {
       "source": "earth, water, fire, and air",
-      "target": "sn35.245",
+      "target": "sn35.238",
       "rank": 7
     },
     {
       "source": "earth, water, fire, and air",
-      "target": "mn28",
+      "target": "sn35.245",
       "rank": 8
     },
     {
       "source": "earth, water, fire, and air",
-      "target": "dn33",
+      "target": "mn28",
       "rank": 9
+    },
+    {
+      "source": "earth, water, fire, and air",
+      "target": "dn33",
+      "rank": 10
     },
     {
       "source": "eats blameless things",
@@ -26462,31 +26455,6 @@
     {
       "source": "empty mansion of Brahmā",
       "target": "an7.66",
-      "rank": 5
-    },
-    {
-      "source": "enchanted by a spell",
-      "target": "sn7.8",
-      "rank": 1
-    },
-    {
-      "source": "enchanted by a spell",
-      "target": "sn7.11",
-      "rank": 2
-    },
-    {
-      "source": "enchanted by a spell",
-      "target": "snp1.4",
-      "rank": 3
-    },
-    {
-      "source": "enchanted by a spell",
-      "target": "sn7.9",
-      "rank": 4
-    },
-    {
-      "source": "enchanted by a spell",
-      "target": "snp3.4",
       "rank": 5
     },
     {
@@ -34681,33 +34649,48 @@
     },
     {
       "source": "judgment",
-      "target": "ud7.7",
+      "target": "dn21",
       "rank": 6
     },
     {
       "source": "judgment",
-      "target": "dn1",
+      "target": "ud7.7",
       "rank": 7
     },
     {
       "source": "judgment",
-      "target": "snp4.9",
+      "target": "dn1",
       "rank": 8
     },
     {
       "source": "judgment",
-      "target": "dhp256-272",
+      "target": "snp4.9",
       "rank": 9
     },
     {
       "source": "judgment",
-      "target": "mn89",
+      "target": "snp4.11",
       "rank": 10
     },
     {
       "source": "judgment",
-      "target": "dn14",
+      "target": "dhp256-272",
       "rank": 11
+    },
+    {
+      "source": "judgment",
+      "target": "snp4.14",
+      "rank": 12
+    },
+    {
+      "source": "judgment",
+      "target": "mn89",
+      "rank": 13
+    },
+    {
+      "source": "judgment",
+      "target": "dn14",
+      "rank": 14
     },
     {
       "source": "just one mouthful",
@@ -36376,32 +36359,32 @@
     },
     {
       "source": "lord of the",
-      "target": "cp4",
+      "target": "mn128",
       "rank": 4
     },
     {
       "source": "lord of the",
-      "target": "mn128",
+      "target": "sn3.16",
       "rank": 5
     },
     {
       "source": "lord of the",
-      "target": "sn3.16",
+      "target": "an3.48",
       "rank": 6
     },
     {
       "source": "lord of the",
-      "target": "an3.48",
+      "target": "cp32",
       "rank": 7
     },
     {
       "source": "lord of the",
-      "target": "cp32",
+      "target": "an5.40",
       "rank": 8
     },
     {
       "source": "lord of the",
-      "target": "an5.40",
+      "target": "cp4",
       "rank": 9
     },
     {
@@ -37746,27 +37729,27 @@
     },
     {
       "source": "mind of love",
-      "target": "an4.67",
+      "target": "iti22",
       "rank": 2
     },
     {
       "source": "mind of love",
-      "target": "an7.62",
+      "target": "an4.67",
       "rank": 3
     },
     {
       "source": "mind of love",
-      "target": "thag3.7",
+      "target": "an7.62",
       "rank": 4
     },
     {
       "source": "mind of love",
-      "target": "iti60",
+      "target": "thag3.7",
       "rank": 5
     },
     {
       "source": "mind of love",
-      "target": "iti22",
+      "target": "iti60",
       "rank": 6
     },
     {
@@ -43963,26 +43946,6 @@
       "source": "substantialist view",
       "target": "mn2",
       "rank": 24
-    },
-    {
-      "source": "substantial wealth",
-      "target": "an5.213",
-      "rank": 1
-    },
-    {
-      "source": "substantial wealth",
-      "target": "ud8.6",
-      "rank": 2
-    },
-    {
-      "source": "substantial wealth",
-      "target": "dn33",
-      "rank": 3
-    },
-    {
-      "source": "substantial wealth",
-      "target": "dn16",
-      "rank": 4
     },
     {
       "source": "such form in the past",
