@@ -1813,7 +1813,7 @@
     {
       "id": "grausam",
       "group": "Examples",
-      "links": 51
+      "links": 52
     },
     {
       "id": "grenzenlose Versenkung des Herzens",
@@ -1993,7 +1993,7 @@
     {
       "id": "hörte mit",
       "group": "Examples",
-      "links": 2
+      "links": 1
     },
     {
       "id": "ich bin besser",
@@ -2333,7 +2333,7 @@
     {
       "id": "Kopf zu den Füßen des Buddha",
       "group": "Examples",
-      "links": 12
+      "links": 14
     },
     {
       "id": "Kosmologe",
@@ -2723,7 +2723,7 @@
     {
       "id": "Neigung zur Einbildung",
       "group": "Examples",
-      "links": 20
+      "links": 21
     },
     {
       "id": "neun Dinge.* entwickelt werden",
@@ -2863,7 +2863,7 @@
     {
       "id": "Opferpfahl",
       "group": "Examples",
-      "links": 5
+      "links": 4
     },
     {
       "id": "Ordenssatzungen",
@@ -7718,7 +7718,7 @@
       "id": "mn72",
       "group": "mn",
       "rank": 1,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an10.96",
@@ -8443,8 +8443,8 @@
     {
       "id": "sn35.113",
       "group": "sn",
-      "rank": 2,
-      "links": 2
+      "rank": 6,
+      "links": 1
     },
     {
       "id": "sn35.61",
@@ -10340,7 +10340,7 @@
       "id": "mn73",
       "group": "mn",
       "rank": 1,
-      "links": 6
+      "links": 7
     },
     {
       "id": "sn41.8",
@@ -10669,8 +10669,8 @@
     {
       "id": "an4.195",
       "group": "an",
-      "rank": 2,
-      "links": 5
+      "rank": 3,
+      "links": 4
     },
     {
       "id": "sn52.23",
@@ -11342,7 +11342,7 @@
       "id": "sn22.87",
       "group": "sn",
       "rank": 2,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an9.20",
@@ -12659,27 +12659,33 @@
       "links": 1
     },
     {
+      "id": "an5.200",
+      "group": "an",
+      "rank": 6,
+      "links": 2
+    },
+    {
       "id": "an4.11",
       "group": "an",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
       "id": "iti110",
       "group": "iti",
-      "rank": 9,
+      "rank": 10,
       "links": 1
     },
     {
       "id": "an6.74",
       "group": "an",
-      "rank": 14,
+      "rank": 15,
       "links": 1
     },
     {
       "id": "an4.138",
       "group": "an",
-      "rank": 15,
+      "rank": 16,
       "links": 1
     },
     {
@@ -12691,19 +12697,19 @@
     {
       "id": "an4.262",
       "group": "an",
-      "rank": 21,
+      "rank": 22,
       "links": 1
     },
     {
       "id": "an6.75",
       "group": "an",
-      "rank": 22,
+      "rank": 23,
       "links": 1
     },
     {
       "id": "sn56.7",
       "group": "sn",
-      "rank": 23,
+      "rank": 24,
       "links": 1
     },
     {
@@ -12715,13 +12721,13 @@
     {
       "id": "an4.165",
       "group": "an",
-      "rank": 26,
+      "rank": 27,
       "links": 1
     },
     {
       "id": "an4.164",
       "group": "an",
-      "rank": 27,
+      "rank": 28,
       "links": 1
     },
     {
@@ -12733,7 +12739,7 @@
     {
       "id": "iti87",
       "group": "iti",
-      "rank": 29,
+      "rank": 30,
       "links": 1
     },
     {
@@ -12751,19 +12757,19 @@
     {
       "id": "an3.123",
       "group": "an",
-      "rank": 32,
+      "rank": 33,
       "links": 1
     },
     {
       "id": "an4.14",
       "group": "an",
-      "rank": 34,
+      "rank": 35,
       "links": 1
     },
     {
       "id": "sn1.32",
       "group": "sn",
-      "rank": 37,
+      "rank": 38,
       "links": 1
     },
     {
@@ -12836,12 +12842,6 @@
       "id": "sn35.158",
       "group": "sn",
       "rank": 20,
-      "links": 1
-    },
-    {
-      "id": "an5.200",
-      "group": "an",
-      "rank": 23,
       "links": 1
     },
     {
@@ -15307,7 +15307,7 @@
     {
       "id": "thag2.22",
       "group": "thag",
-      "rank": 4,
+      "rank": 3,
       "links": 1
     },
     {
@@ -30425,233 +30425,238 @@
     },
     {
       "source": "grausam",
-      "target": "mn8",
+      "target": "an5.200",
       "rank": 6
     },
     {
       "source": "grausam",
-      "target": "sn14.12",
+      "target": "mn8",
       "rank": 7
     },
     {
       "source": "grausam",
-      "target": "an4.11",
+      "target": "sn14.12",
       "rank": 8
     },
     {
       "source": "grausam",
-      "target": "iti110",
+      "target": "an4.11",
       "rank": 9
     },
     {
       "source": "grausam",
-      "target": "an6.109",
+      "target": "iti110",
       "rank": 10
     },
     {
       "source": "grausam",
-      "target": "an6.110",
+      "target": "an6.109",
       "rank": 11
     },
     {
       "source": "grausam",
-      "target": "an6.111",
+      "target": "an6.110",
       "rank": 12
     },
     {
       "source": "grausam",
-      "target": "an6.113",
+      "target": "an6.111",
       "rank": 13
     },
     {
       "source": "grausam",
-      "target": "an6.74",
+      "target": "an6.113",
       "rank": 14
     },
     {
       "source": "grausam",
-      "target": "an4.138",
+      "target": "an6.74",
       "rank": 15
     },
     {
       "source": "grausam",
-      "target": "an3.124",
+      "target": "an4.138",
       "rank": 16
     },
     {
       "source": "grausam",
-      "target": "an9.3",
+      "target": "an3.124",
       "rank": 17
     },
     {
       "source": "grausam",
-      "target": "ud4.1",
+      "target": "an9.3",
       "rank": 18
     },
     {
       "source": "grausam",
-      "target": "an11.17",
+      "target": "ud4.1",
       "rank": 19
     },
     {
       "source": "grausam",
-      "target": "mn33",
+      "target": "an11.17",
       "rank": 20
     },
     {
       "source": "grausam",
-      "target": "an4.262",
+      "target": "mn33",
       "rank": 21
     },
     {
       "source": "grausam",
-      "target": "an6.75",
+      "target": "an4.262",
       "rank": 22
     },
     {
       "source": "grausam",
-      "target": "sn56.7",
+      "target": "an6.75",
       "rank": 23
     },
     {
       "source": "grausam",
-      "target": "sn9.11",
+      "target": "sn56.7",
       "rank": 24
     },
     {
       "source": "grausam",
-      "target": "an4.51",
+      "target": "sn9.11",
       "rank": 25
     },
     {
       "source": "grausam",
-      "target": "an4.165",
+      "target": "an4.51",
       "rank": 26
     },
     {
       "source": "grausam",
-      "target": "an4.164",
+      "target": "an4.165",
       "rank": 27
     },
     {
       "source": "grausam",
-      "target": "an5.45",
+      "target": "an4.164",
       "rank": 28
     },
     {
       "source": "grausam",
-      "target": "iti87",
+      "target": "an5.45",
       "rank": 29
     },
     {
       "source": "grausam",
-      "target": "sn55.41",
+      "target": "iti87",
       "rank": 30
     },
     {
       "source": "grausam",
-      "target": "sn55.42",
+      "target": "sn55.41",
       "rank": 31
     },
     {
       "source": "grausam",
-      "target": "an3.123",
+      "target": "sn55.42",
       "rank": 32
     },
     {
       "source": "grausam",
-      "target": "an4.114",
+      "target": "an3.123",
       "rank": 33
     },
     {
       "source": "grausam",
-      "target": "an4.14",
+      "target": "an4.114",
       "rank": 34
     },
     {
       "source": "grausam",
-      "target": "an3.101",
+      "target": "an4.14",
       "rank": 35
     },
     {
       "source": "grausam",
-      "target": "an10.20",
+      "target": "an3.101",
       "rank": 36
     },
     {
       "source": "grausam",
-      "target": "sn1.32",
+      "target": "an10.20",
       "rank": 37
     },
     {
       "source": "grausam",
-      "target": "an5.140",
+      "target": "sn1.32",
       "rank": 38
     },
     {
       "source": "grausam",
-      "target": "an6.58",
+      "target": "an5.140",
       "rank": 39
     },
     {
       "source": "grausam",
-      "target": "an3.40",
+      "target": "an6.58",
       "rank": 40
     },
     {
       "source": "grausam",
-      "target": "an10.60",
+      "target": "an3.40",
       "rank": 41
     },
     {
       "source": "grausam",
-      "target": "mn55",
+      "target": "an10.60",
       "rank": 42
     },
     {
       "source": "grausam",
-      "target": "sn22.80",
+      "target": "mn55",
       "rank": 43
     },
     {
       "source": "grausam",
-      "target": "thag16.8",
+      "target": "sn22.80",
       "rank": 44
     },
     {
       "source": "grausam",
-      "target": "mn2",
+      "target": "thag16.8",
       "rank": 45
     },
     {
       "source": "grausam",
-      "target": "mn62",
+      "target": "mn2",
       "rank": 46
     },
     {
       "source": "grausam",
-      "target": "mn7",
+      "target": "mn62",
       "rank": 47
     },
     {
       "source": "grausam",
-      "target": "mn122",
+      "target": "mn7",
       "rank": 48
     },
     {
       "source": "grausam",
-      "target": "dhp383-423",
+      "target": "mn122",
       "rank": 49
     },
     {
       "source": "grausam",
-      "target": "dn17",
+      "target": "dhp383-423",
       "rank": 50
     },
     {
       "source": "grausam",
-      "target": "dn32",
+      "target": "dn17",
       "rank": 51
+    },
+    {
+      "source": "grausam",
+      "target": "dn32",
+      "rank": 52
     },
     {
       "source": "grenzenlose Versenkung des Herzens",
@@ -31882,11 +31887,6 @@
       "source": "hörte mit",
       "target": "sn12.45",
       "rank": 1
-    },
-    {
-      "source": "hörte mit",
-      "target": "sn35.113",
-      "rank": 2
     },
     {
       "source": "ich bin besser",
@@ -34165,13 +34165,23 @@
     },
     {
       "source": "Kopf zu den Füßen des Buddha",
-      "target": "sn12.70",
+      "target": "mn73",
       "rank": 11
     },
     {
       "source": "Kopf zu den Füßen des Buddha",
-      "target": "mn140",
+      "target": "sn22.87",
       "rank": 12
+    },
+    {
+      "source": "Kopf zu den Füßen des Buddha",
+      "target": "sn12.70",
+      "rank": 13
+    },
+    {
+      "source": "Kopf zu den Füßen des Buddha",
+      "target": "mn140",
+      "rank": 14
     },
     {
       "source": "Kosmologe",
@@ -34780,17 +34790,17 @@
     },
     {
       "source": "leere.* Brahmāpalast",
-      "target": "dn1",
+      "target": "an7.62",
       "rank": 1
     },
     {
       "source": "leere.* Brahmāpalast",
-      "target": "dn24",
+      "target": "dn1",
       "rank": 2
     },
     {
       "source": "leere.* Brahmāpalast",
-      "target": "an7.62",
+      "target": "dn24",
       "rank": 3
     },
     {
@@ -36860,8 +36870,13 @@
     },
     {
       "source": "Neigung zur Einbildung",
-      "target": "thag21.1",
+      "target": "mn72",
       "rank": 20
+    },
+    {
+      "source": "Neigung zur Einbildung",
+      "target": "thag21.1",
+      "rank": 21
     },
     {
       "source": "neun Dinge.* entwickelt werden",
@@ -37630,23 +37645,18 @@
     },
     {
       "source": "Opferpfahl",
-      "target": "an4.195",
+      "target": "dn5",
       "rank": 2
     },
     {
       "source": "Opferpfahl",
-      "target": "dn5",
+      "target": "thag2.22",
       "rank": 3
     },
     {
       "source": "Opferpfahl",
-      "target": "thag2.22",
-      "rank": 4
-    },
-    {
-      "source": "Opferpfahl",
       "target": "dn26",
-      "rank": 5
+      "rank": 4
     },
     {
       "source": "Ordenssatzungen",
