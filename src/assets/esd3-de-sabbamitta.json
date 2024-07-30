@@ -2101,6 +2101,11 @@
       "links": 2
     },
     {
+      "id": "in dicken Tropfen auf einen Berggipfel regnen",
+      "group": "Examples",
+      "links": 6
+    },
+    {
       "id": "in die Pflicht",
       "group": "Examples",
       "links": 2
@@ -4169,11 +4174,6 @@
       "id": "wie meditiert ein Mönch",
       "group": "Examples",
       "links": 3
-    },
-    {
-      "id": "wie wenn auf einem Berggipfel der Regen",
-      "group": "Examples",
-      "links": 6
     },
     {
       "id": "wie ein Affe",
@@ -13457,6 +13457,24 @@
       "links": 3
     },
     {
+      "id": "sn55.38",
+      "group": "sn",
+      "rank": 3,
+      "links": 1
+    },
+    {
+      "id": "an4.147",
+      "group": "an",
+      "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "an3.95",
+      "group": "an",
+      "rank": 3,
+      "links": 4
+    },
+    {
       "id": "an9.43",
       "group": "an",
       "rank": 2,
@@ -14697,12 +14715,6 @@
       "group": "thig",
       "rank": 7,
       "links": 2
-    },
-    {
-      "id": "an3.95",
-      "group": "an",
-      "rank": 3,
-      "links": 4
     },
     {
       "id": "sn36.20",
@@ -17840,18 +17852,6 @@
       "id": "sn45.160",
       "group": "sn",
       "rank": 33,
-      "links": 1
-    },
-    {
-      "id": "sn55.38",
-      "group": "sn",
-      "rank": 3,
-      "links": 1
-    },
-    {
-      "id": "an4.147",
-      "group": "an",
-      "rank": 4,
       "links": 1
     },
     {
@@ -32424,6 +32424,36 @@
       "rank": 2
     },
     {
+      "source": "in dicken Tropfen auf einen Berggipfel regnen",
+      "target": "an10.61",
+      "rank": 1
+    },
+    {
+      "source": "in dicken Tropfen auf einen Berggipfel regnen",
+      "target": "an10.62",
+      "rank": 2
+    },
+    {
+      "source": "in dicken Tropfen auf einen Berggipfel regnen",
+      "target": "sn55.38",
+      "rank": 3
+    },
+    {
+      "source": "in dicken Tropfen auf einen Berggipfel regnen",
+      "target": "an4.147",
+      "rank": 4
+    },
+    {
+      "source": "in dicken Tropfen auf einen Berggipfel regnen",
+      "target": "an3.95",
+      "rank": 5
+    },
+    {
+      "source": "in dicken Tropfen auf einen Berggipfel regnen",
+      "target": "sn12.23",
+      "rank": 6
+    },
+    {
       "source": "in die Pflicht",
       "target": "an3.40",
       "rank": 1
@@ -46592,36 +46622,6 @@
       "source": "wie meditiert ein Mönch",
       "target": "sn51.20",
       "rank": 3
-    },
-    {
-      "source": "wie wenn auf einem Berggipfel der Regen",
-      "target": "an10.61",
-      "rank": 1
-    },
-    {
-      "source": "wie wenn auf einem Berggipfel der Regen",
-      "target": "an10.62",
-      "rank": 2
-    },
-    {
-      "source": "wie wenn auf einem Berggipfel der Regen",
-      "target": "sn55.38",
-      "rank": 3
-    },
-    {
-      "source": "wie wenn auf einem Berggipfel der Regen",
-      "target": "an4.147",
-      "rank": 4
-    },
-    {
-      "source": "wie wenn auf einem Berggipfel der Regen",
-      "target": "an3.95",
-      "rank": 5
-    },
-    {
-      "source": "wie wenn auf einem Berggipfel der Regen",
-      "target": "sn12.23",
-      "rank": 6
     },
     {
       "source": "wie ein Affe",
