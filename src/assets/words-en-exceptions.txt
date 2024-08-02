@@ -1,5 +1,8 @@
 abscheiden
 abscheidet
+alt
+alte
+alter
 antilope
 antilopenhaut
 arm
@@ -26,6 +29,8 @@ enthaltsamkeit
 enthusiasmus
 enthusiastisch
 feigheit
+feld
+felder
 fingernagel
 fingerschippen
 flamme
