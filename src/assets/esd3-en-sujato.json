@@ -2398,7 +2398,7 @@
     {
       "id": "lord of the",
       "group": "Examples",
-      "links": 15
+      "links": 19
     },
     {
       "id": "lost opportunit",
@@ -3153,7 +3153,7 @@
     {
       "id": "rose-apple",
       "group": "Examples",
-      "links": 6
+      "links": 0
     },
     {
       "id": "Royal Monastery",
@@ -4846,7 +4846,7 @@
       "id": "dn16",
       "group": "dn",
       "rank": 1,
-      "links": 67
+      "links": 66
     },
     {
       "id": "an3.138",
@@ -5512,7 +5512,7 @@
       "id": "mn85",
       "group": "mn",
       "rank": 2,
-      "links": 29
+      "links": 28
     },
     {
       "id": "mn86",
@@ -5860,13 +5860,13 @@
       "id": "mn92",
       "group": "mn",
       "rank": 5,
-      "links": 10
+      "links": 11
     },
     {
       "id": "snp3.7",
       "group": "snp",
       "rank": 6,
-      "links": 10
+      "links": 11
     },
     {
       "id": "dn18",
@@ -6171,7 +6171,7 @@
     {
       "id": "dn32",
       "group": "dn",
-      "rank": 3,
+      "rank": 4,
       "links": 4
     },
     {
@@ -6418,7 +6418,7 @@
       "id": "mn36",
       "group": "mn",
       "rank": 1,
-      "links": 13
+      "links": 12
     },
     {
       "id": "an8.10",
@@ -7942,7 +7942,7 @@
       "id": "mn100",
       "group": "mn",
       "rank": 2,
-      "links": 13
+      "links": 12
     },
     {
       "id": "an4.97",
@@ -8398,7 +8398,7 @@
       "id": "thag16.6",
       "group": "thag",
       "rank": 4,
-      "links": 8
+      "links": 9
     },
     {
       "id": "dn21",
@@ -8782,7 +8782,7 @@
       "id": "thag16.9",
       "group": "thag",
       "rank": 2,
-      "links": 5
+      "links": 6
     },
     {
       "id": "thag17.2",
@@ -9351,7 +9351,7 @@
     {
       "id": "dn20",
       "group": "dn",
-      "rank": 2,
+      "rank": 3,
       "links": 6
     },
     {
@@ -11001,8 +11001,8 @@
     {
       "id": "sn48.67",
       "group": "sn",
-      "rank": 1,
-      "links": 2
+      "rank": 5,
+      "links": 1
     },
     {
       "id": "sn48.68",
@@ -14535,13 +14535,13 @@
     {
       "id": "sn3.16",
       "group": "sn",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
       "id": "an3.48",
       "group": "an",
-      "rank": 6,
+      "rank": 7,
       "links": 1
     },
     {
@@ -14553,13 +14553,13 @@
     {
       "id": "an5.40",
       "group": "an",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
       "id": "cp4",
       "group": "cp",
-      "rank": 9,
+      "rank": 10,
       "links": 2
     },
     {
@@ -16069,12 +16069,6 @@
       "links": 2
     },
     {
-      "id": "thag4.11",
-      "group": "thag",
-      "rank": 2,
-      "links": 2
-    },
-    {
       "id": "sn55.11",
       "group": "sn",
       "rank": 1,
@@ -16552,6 +16546,12 @@
       "id": "sn20.6",
       "group": "sn",
       "rank": 1,
+      "links": 1
+    },
+    {
+      "id": "thag4.11",
+      "group": "thag",
+      "rank": 2,
       "links": 1
     },
     {
@@ -36269,47 +36269,47 @@
     },
     {
       "source": "lord of the",
-      "target": "dn20",
+      "target": "an7.62",
       "rank": 2
     },
     {
       "source": "lord of the",
-      "target": "dn32",
+      "target": "dn20",
       "rank": 3
     },
     {
       "source": "lord of the",
-      "target": "mn128",
+      "target": "dn32",
       "rank": 4
     },
     {
       "source": "lord of the",
-      "target": "sn3.16",
+      "target": "mn128",
       "rank": 5
     },
     {
       "source": "lord of the",
-      "target": "an3.48",
+      "target": "sn3.16",
       "rank": 6
     },
     {
       "source": "lord of the",
-      "target": "cp32",
+      "target": "an3.48",
       "rank": 7
     },
     {
       "source": "lord of the",
-      "target": "an5.40",
+      "target": "cp32",
       "rank": 8
     },
     {
       "source": "lord of the",
-      "target": "cp4",
+      "target": "an5.40",
       "rank": 9
     },
     {
       "source": "lord of the",
-      "target": "an7.62",
+      "target": "cp4",
       "rank": 10
     },
     {
@@ -36324,18 +36324,38 @@
     },
     {
       "source": "lord of the",
-      "target": "dn27",
+      "target": "thag16.6",
       "rank": 13
     },
     {
       "source": "lord of the",
-      "target": "dn19",
+      "target": "thag16.9",
       "rank": 14
     },
     {
       "source": "lord of the",
-      "target": "dn21",
+      "target": "mn92",
       "rank": 15
+    },
+    {
+      "source": "lord of the",
+      "target": "snp3.7",
+      "rank": 16
+    },
+    {
+      "source": "lord of the",
+      "target": "dn27",
+      "rank": 17
+    },
+    {
+      "source": "lord of the",
+      "target": "dn19",
+      "rank": 18
+    },
+    {
+      "source": "lord of the",
+      "target": "dn21",
+      "rank": 19
     },
     {
       "source": "lost opportunit",
@@ -41526,36 +41546,6 @@
       "source": "root of suffering",
       "target": "dn16",
       "rank": 7
-    },
-    {
-      "source": "rose-apple",
-      "target": "sn48.67",
-      "rank": 1
-    },
-    {
-      "source": "rose-apple",
-      "target": "thag4.11",
-      "rank": 2
-    },
-    {
-      "source": "rose-apple",
-      "target": "mn36",
-      "rank": 3
-    },
-    {
-      "source": "rose-apple",
-      "target": "mn100",
-      "rank": 4
-    },
-    {
-      "source": "rose-apple",
-      "target": "mn85",
-      "rank": 5
-    },
-    {
-      "source": "rose-apple",
-      "target": "dn16",
-      "rank": 6
     },
     {
       "source": "Royal Monastery",
