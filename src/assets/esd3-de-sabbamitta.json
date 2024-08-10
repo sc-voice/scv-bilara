@@ -398,7 +398,7 @@
     {
       "id": "beträchtliches Vermögen",
       "group": "Examples",
-      "links": 4
+      "links": 0
     },
     {
       "id": "Bevorzugen und Zurückweisen",
@@ -828,7 +828,7 @@
     {
       "id": "diese Versenkung",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "diese.* vier edlen Wahrheiten",
@@ -1708,7 +1708,7 @@
     {
       "id": "gesträubten Haare",
       "group": "Examples",
-      "links": 7
+      "links": 8
     },
     {
       "id": "Gesundheit ist",
@@ -2078,7 +2078,7 @@
     {
       "id": "in den Sinn, zu lehren",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "in der dunklen Nacht unter freiem Himmel",
@@ -2363,7 +2363,7 @@
     {
       "id": "Krankheit.* Eiterherd.* Pfeil",
       "group": "Examples",
-      "links": 13
+      "links": 14
     },
     {
       "id": "Kräuter, Hirse",
@@ -2563,7 +2563,7 @@
     {
       "id": "mir kommt etwas in den Sinn",
       "group": "Examples",
-      "links": 9
+      "links": 0
     },
     {
       "id": "mir selbst lieb",
@@ -2598,7 +2598,7 @@
     {
       "id": "mit einem Zauber besungen",
       "group": "Examples",
-      "links": 4
+      "links": 0
     },
     {
       "id": "mit freundlichen Augen",
@@ -2828,7 +2828,7 @@
     {
       "id": "Nymphen",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "ob bei Tag oder bei Nacht",
@@ -2858,7 +2858,7 @@
     {
       "id": "ohne Verlangen",
       "group": "Examples",
-      "links": 9
+      "links": 10
     },
     {
       "id": "ohne Wahrnehmung",
@@ -3598,7 +3598,7 @@
     {
       "id": "Verlangen nach Berührungen",
       "group": "Examples",
-      "links": 7
+      "links": 8
     },
     {
       "id": "Verlangen wird.* aufgegeben",
@@ -3773,7 +3773,7 @@
     {
       "id": "von Geburt an blind",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "von Groll los",
@@ -4772,7 +4772,7 @@
       "id": "dn16",
       "group": "dn",
       "rank": 1,
-      "links": 66
+      "links": 65
     },
     {
       "id": "an4.89",
@@ -4802,7 +4802,7 @@
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 110
+      "links": 109
     },
     {
       "id": "an4.189",
@@ -4981,7 +4981,7 @@
     {
       "id": "sn22.123",
       "group": "sn",
-      "rank": 7,
+      "rank": 8,
       "links": 2
     },
     {
@@ -5870,7 +5870,7 @@
       "id": "dn28",
       "group": "dn",
       "rank": 1,
-      "links": 28
+      "links": 29
     },
     {
       "id": "an1.394-574",
@@ -6182,13 +6182,13 @@
       "id": "snp1.4",
       "group": "snp",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "sn7.11",
       "group": "sn",
       "rank": 2,
-      "links": 3
+      "links": 2
     },
     {
       "id": "an3.92",
@@ -6824,7 +6824,7 @@
       "id": "sn3.12",
       "group": "sn",
       "rank": 4,
-      "links": 2
+      "links": 1
     },
     {
       "id": "an6.44",
@@ -6921,18 +6921,6 @@
       "group": "an",
       "rank": 4,
       "links": 3
-    },
-    {
-      "id": "an5.213",
-      "group": "an",
-      "rank": 1,
-      "links": 3
-    },
-    {
-      "id": "ud8.6",
-      "group": "ud",
-      "rank": 2,
-      "links": 5
     },
     {
       "id": "sn4.14",
@@ -7669,8 +7657,8 @@
     {
       "id": "an5.195",
       "group": "an",
-      "rank": 4,
-      "links": 3
+      "rank": 8,
+      "links": 2
     },
     {
       "id": "an5.39",
@@ -7765,7 +7753,7 @@
     {
       "id": "ud6.4",
       "group": "ud",
-      "rank": 2,
+      "rank": 3,
       "links": 3
     },
     {
@@ -8288,7 +8276,7 @@
       "id": "sn8.7",
       "group": "sn",
       "rank": 3,
-      "links": 7
+      "links": 6
     },
     {
       "id": "an8.70",
@@ -8798,7 +8786,7 @@
       "id": "sn8.9",
       "group": "sn",
       "rank": 1,
-      "links": 3
+      "links": 2
     },
     {
       "id": "an1.188-197",
@@ -9115,7 +9103,7 @@
     {
       "id": "sn54.7",
       "group": "sn",
-      "rank": 7,
+      "rank": 8,
       "links": 1
     },
     {
@@ -11543,6 +11531,12 @@
       "links": 1
     },
     {
+      "id": "ud8.6",
+      "group": "ud",
+      "rank": 2,
+      "links": 4
+    },
+    {
       "id": "sn1.1",
       "group": "sn",
       "rank": 1,
@@ -11594,7 +11588,7 @@
       "id": "sn8.8",
       "group": "sn",
       "rank": 6,
-      "links": 6
+      "links": 5
     },
     {
       "id": "thag16.9",
@@ -12329,6 +12323,12 @@
       "links": 1
     },
     {
+      "id": "mn75",
+      "group": "mn",
+      "rank": 1,
+      "links": 6
+    },
+    {
       "id": "an1.219-234",
       "group": "an",
       "rank": 1,
@@ -12967,8 +12967,8 @@
     {
       "id": "sn7.9",
       "group": "sn",
-      "rank": 4,
-      "links": 2
+      "rank": 19,
+      "links": 1
     },
     {
       "id": "thag16.1",
@@ -13412,18 +13412,6 @@
       "id": "sn22.11",
       "group": "sn",
       "rank": 19,
-      "links": 1
-    },
-    {
-      "id": "an10.83",
-      "group": "an",
-      "rank": 1,
-      "links": 1
-    },
-    {
-      "id": "an8.82",
-      "group": "an",
-      "rank": 2,
       "links": 1
     },
     {
@@ -14233,7 +14221,7 @@
     {
       "id": "sn23.1",
       "group": "sn",
-      "rank": 6,
+      "rank": 7,
       "links": 1
     },
     {
@@ -14741,30 +14729,6 @@
       "links": 3
     },
     {
-      "id": "sn8.11",
-      "group": "sn",
-      "rank": 1,
-      "links": 2
-    },
-    {
-      "id": "sn8.10",
-      "group": "sn",
-      "rank": 2,
-      "links": 2
-    },
-    {
-      "id": "sn8.6",
-      "group": "sn",
-      "rank": 4,
-      "links": 2
-    },
-    {
-      "id": "sn8.5",
-      "group": "sn",
-      "rank": 6,
-      "links": 1
-    },
-    {
       "id": "an4.191",
       "group": "an",
       "rank": 1,
@@ -14801,9 +14765,9 @@
       "links": 1
     },
     {
-      "id": "sn7.8",
+      "id": "sn8.6",
       "group": "sn",
-      "rank": 1,
+      "rank": 4,
       "links": 1
     },
     {
@@ -15247,7 +15211,7 @@
     {
       "id": "sn55.1",
       "group": "sn",
-      "rank": 4,
+      "rank": 5,
       "links": 2
     },
     {
@@ -16301,6 +16265,12 @@
       "links": 1
     },
     {
+      "id": "sn8.10",
+      "group": "sn",
+      "rank": 3,
+      "links": 1
+    },
+    {
       "id": "iti95",
       "group": "iti",
       "rank": 5,
@@ -16599,6 +16569,12 @@
       "group": "an",
       "rank": 6,
       "links": 1
+    },
+    {
+      "id": "an5.213",
+      "group": "an",
+      "rank": 1,
+      "links": 2
     },
     {
       "id": "an5.156",
@@ -17666,6 +17642,12 @@
       "id": "thig1.3",
       "group": "thig",
       "rank": 12,
+      "links": 1
+    },
+    {
+      "id": "sn8.11",
+      "group": "sn",
+      "rank": 15,
       "links": 1
     },
     {
@@ -20754,26 +20736,6 @@
       "rank": 4
     },
     {
-      "source": "beträchtliches Vermögen",
-      "target": "an5.213",
-      "rank": 1
-    },
-    {
-      "source": "beträchtliches Vermögen",
-      "target": "ud8.6",
-      "rank": 2
-    },
-    {
-      "source": "beträchtliches Vermögen",
-      "target": "dn33",
-      "rank": 3
-    },
-    {
-      "source": "beträchtliches Vermögen",
-      "target": "dn16",
-      "rank": 4
-    },
-    {
       "source": "Bevorzugen und Zurückweisen",
       "target": "mn38",
       "rank": 1
@@ -23590,18 +23552,23 @@
     },
     {
       "source": "diese Versenkung",
-      "target": "an3.101",
+      "target": "dn28",
       "rank": 6
     },
     {
       "source": "diese Versenkung",
-      "target": "sn54.7",
+      "target": "an3.101",
       "rank": 7
     },
     {
       "source": "diese Versenkung",
-      "target": "sn42.13",
+      "target": "sn54.7",
       "rank": 8
+    },
+    {
+      "source": "diese Versenkung",
+      "target": "sn42.13",
+      "rank": 9
     },
     {
       "source": "diese.* vier edlen Wahrheiten",
@@ -29734,6 +29701,11 @@
       "rank": 7
     },
     {
+      "source": "gesträubten Haare",
+      "target": "mn75",
+      "rank": 8
+    },
+    {
       "source": "Gesundheit ist",
       "target": "an1.219-234",
       "rank": 1
@@ -32339,16 +32311,6 @@
       "rank": 19
     },
     {
-      "source": "in den Sinn, zu lehren",
-      "target": "an10.83",
-      "rank": 1
-    },
-    {
-      "source": "in den Sinn, zu lehren",
-      "target": "an8.82",
-      "rank": 2
-    },
-    {
       "source": "in der dunklen Nacht unter freiem Himmel",
       "target": "sn4.11",
       "rank": 1
@@ -34425,53 +34387,58 @@
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "an4.124",
+      "target": "mn75",
       "rank": 4
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "an4.126",
+      "target": "an4.124",
       "rank": 5
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "sn23.1",
+      "target": "an4.126",
       "rank": 6
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "sn22.123",
+      "target": "sn23.1",
       "rank": 7
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "sn35.90",
+      "target": "sn22.123",
       "rank": 8
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "sn35.91",
+      "target": "sn35.90",
       "rank": 9
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "mn74",
+      "target": "sn35.91",
       "rank": 10
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "mn64",
+      "target": "mn74",
       "rank": 11
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "mn140",
+      "target": "mn64",
       "rank": 12
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "dn21",
+      "target": "mn140",
       "rank": 13
+    },
+    {
+      "source": "Krankheit.* Eiterherd.* Pfeil",
+      "target": "dn21",
+      "rank": 14
     },
     {
       "source": "Kräuter, Hirse",
@@ -35769,51 +35736,6 @@
       "rank": 2
     },
     {
-      "source": "mir kommt etwas in den Sinn",
-      "target": "sn8.11",
-      "rank": 1
-    },
-    {
-      "source": "mir kommt etwas in den Sinn",
-      "target": "sn8.10",
-      "rank": 2
-    },
-    {
-      "source": "mir kommt etwas in den Sinn",
-      "target": "sn8.9",
-      "rank": 3
-    },
-    {
-      "source": "mir kommt etwas in den Sinn",
-      "target": "an5.195",
-      "rank": 4
-    },
-    {
-      "source": "mir kommt etwas in den Sinn",
-      "target": "sn8.6",
-      "rank": 5
-    },
-    {
-      "source": "mir kommt etwas in den Sinn",
-      "target": "sn8.5",
-      "rank": 6
-    },
-    {
-      "source": "mir kommt etwas in den Sinn",
-      "target": "sn8.7",
-      "rank": 7
-    },
-    {
-      "source": "mir kommt etwas in den Sinn",
-      "target": "sn8.8",
-      "rank": 8
-    },
-    {
-      "source": "mir kommt etwas in den Sinn",
-      "target": "sn3.12",
-      "rank": 9
-    },
-    {
       "source": "mir selbst lieb",
       "target": "sn3.4",
       "rank": 1
@@ -35912,26 +35834,6 @@
       "source": "mit einem Stock",
       "target": "mn35",
       "rank": 9
-    },
-    {
-      "source": "mit einem Zauber besungen",
-      "target": "sn7.8",
-      "rank": 1
-    },
-    {
-      "source": "mit einem Zauber besungen",
-      "target": "sn7.11",
-      "rank": 2
-    },
-    {
-      "source": "mit einem Zauber besungen",
-      "target": "snp1.4",
-      "rank": 3
-    },
-    {
-      "source": "mit einem Zauber besungen",
-      "target": "sn7.9",
-      "rank": 4
     },
     {
       "source": "mit freundlichen Augen",
@@ -37390,33 +37292,38 @@
     },
     {
       "source": "Nymphen",
-      "target": "mn82",
+      "target": "mn75",
       "rank": 3
     },
     {
       "source": "Nymphen",
-      "target": "sn55.1",
+      "target": "mn82",
       "rank": 4
     },
     {
       "source": "Nymphen",
-      "target": "sn1.11",
+      "target": "sn55.1",
       "rank": 5
     },
     {
       "source": "Nymphen",
-      "target": "mn37",
+      "target": "sn1.11",
       "rank": 6
     },
     {
       "source": "Nymphen",
-      "target": "mn50",
+      "target": "mn37",
       "rank": 7
     },
     {
       "source": "Nymphen",
-      "target": "thag20.1",
+      "target": "mn50",
       "rank": 8
+    },
+    {
+      "source": "Nymphen",
+      "target": "thag20.1",
+      "rank": 9
     },
     {
       "source": "ob bei Tag oder bei Nacht",
@@ -37547,6 +37454,11 @@
       "source": "ohne Verlangen",
       "target": "thag16.8",
       "rank": 9
+    },
+    {
+      "source": "ohne Verlangen",
+      "target": "mn75",
+      "rank": 10
     },
     {
       "source": "ohne Wahrnehmung",
@@ -42435,8 +42347,13 @@
     },
     {
       "source": "Verlangen nach Berührungen",
-      "target": "dn22",
+      "target": "mn75",
       "rank": 7
+    },
+    {
+      "source": "Verlangen nach Berührungen",
+      "target": "dn22",
+      "rank": 8
     },
     {
       "source": "Verlangen wird.* aufgegeben",
@@ -43530,13 +43447,18 @@
     },
     {
       "source": "von Geburt an blind",
-      "target": "dn23",
+      "target": "mn75",
       "rank": 1
     },
     {
       "source": "von Geburt an blind",
-      "target": "ud6.4",
+      "target": "dn23",
       "rank": 2
+    },
+    {
+      "source": "von Geburt an blind",
+      "target": "ud6.4",
+      "rank": 3
     },
     {
       "source": "von Groll los",
