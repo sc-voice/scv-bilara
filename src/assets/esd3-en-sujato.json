@@ -2861,6 +2861,11 @@
       "links": 2
     },
     {
+      "id": "others will",
+      "group": "Examples",
+      "links": 3
+    },
+    {
       "id": "overcome by anger",
       "group": "Examples",
       "links": 4
@@ -5751,8 +5756,8 @@
     {
       "id": "mn99",
       "group": "mn",
-      "rank": 4,
-      "links": 6
+      "rank": 2,
+      "links": 7
     },
     {
       "id": "dn26",
@@ -5920,7 +5925,7 @@
       "id": "mn82",
       "group": "mn",
       "rank": 1,
-      "links": 12
+      "links": 13
     },
     {
       "id": "sn10.12",
@@ -5956,7 +5961,7 @@
       "id": "mn8",
       "group": "mn",
       "rank": 1,
-      "links": 8
+      "links": 9
     },
     {
       "id": "mn28",
@@ -39436,6 +39441,21 @@
       "source": "others' intentions",
       "target": "dn33",
       "rank": 2
+    },
+    {
+      "source": "others will",
+      "target": "mn8",
+      "rank": 1
+    },
+    {
+      "source": "others will",
+      "target": "mn99",
+      "rank": 2
+    },
+    {
+      "source": "others will",
+      "target": "mn82",
+      "rank": 3
     },
     {
       "source": "overcome by anger",
