@@ -5072,7 +5072,7 @@
     {
       "id": "mn75",
       "group": "mn",
-      "rank": 2,
+      "rank": 1,
       "links": 7
     },
     {
@@ -7562,7 +7562,7 @@
     {
       "id": "ud6.4",
       "group": "ud",
-      "rank": 2,
+      "rank": 3,
       "links": 4
     },
     {
@@ -21919,17 +21919,17 @@
     },
     {
       "source": "blind from birth",
-      "target": "dn23",
+      "target": "mn75",
       "rank": 1
     },
     {
       "source": "blind from birth",
-      "target": "ud6.4",
+      "target": "dn23",
       "rank": 2
     },
     {
       "source": "blind from birth",
-      "target": "mn75",
+      "target": "ud6.4",
       "rank": 3
     },
     {
