@@ -2813,7 +2813,7 @@ typeof describe === "function" &&
     });
     it("find() mil2 Pali only", async () => {
       const msg = 'test.seeker.find()';
-      const dbg = 1;
+      const dbg = 0;
       let bilaraData = new BilaraData();
       let skr = await new Seeker({ bilaraData, logger: bilaraData, })
         .initialize();
