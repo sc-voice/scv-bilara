@@ -1,6 +1,5 @@
 (typeof describe === 'function') && describe("english", function() {
     const should = require("should");
-    const Axios = require('axios');
     const { logger } = require('log-instance');
     const {
         English,
@@ -117,7 +116,7 @@
             member: false,
         });
     });
-    it("wordSet(...)=>latest word set", async()=>{
+    it("TESTTESTwordSet(...)=>latest word set", async()=>{
         //logger.logLevel = 'info';
         let longWait = 1500;
         let msStart = Date.now();
@@ -133,7 +132,7 @@
 
         // maxAge
         let maxAge = 0.05;
-        let fetch = url=>Axios.get(url);
+        let fetch = English.FETCH;
         await new Promise(r=>setTimeout(()=>r(),100));
         msStart = Date.now();
         enWords = await English.wordSet({fetch, maxAge});
@@ -144,5 +143,18 @@
             trace: 'unbusi',
             member: true,
         });
+    });
+    it("FETCH", async()=>{
+      const msg = "test.english@149";
+      const URL = [
+        "https://raw.githubusercontent.com",
+        "sc-voice/scv-bilara/main",
+        "package.json",
+      ].join('/');
+      let resFetch = await fetch(URL);
+      let json = await resFetch.json();
+
+      let { data } = await English.FETCH(URL);
+      should.deepEqual(data, json);
     });
 });

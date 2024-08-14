@@ -1,7 +1,6 @@
 (function (exports) {
   const fs = require("fs");
   const path = require("path");
-  const Axios = require("axios");
   const json5 = require("json5");
   const { readFile } = fs.promises;
   const { logger } = require("log-instance");

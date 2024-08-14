@@ -2,7 +2,6 @@
   const fs = require("fs");
   const path = require("path");
   const { logger } = require("log-instance");
-  const Axios = require("axios");
   const FuzzyWordSet = require("./fuzzy-word-set");
   const FWS_URL_BASE = "https://raw.githubusercontent.com/sc-voice/scv-bilara";
   const FWS_URL = `${FWS_URL_BASE}/master/src/assets/fws-en.json`;
@@ -14,10 +13,16 @@
       return pattern;
     }
 
+    static async FETCH(url, opts={}) {
+      let resFetch = await fetch(url);
+      let data = await resFetch.json();
+      return {data}
+    }
+
     static async wordSet(opts = {}) {
       let {
         source = "https",
-        fetch = (url) => Axios.get(url),
+        fetch = English.FETCH,
         maxAge = 3600,
       } = opts;
       if (source === "https") {

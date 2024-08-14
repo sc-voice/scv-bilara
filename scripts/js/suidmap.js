@@ -2,7 +2,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const Axios = require('axios');
 const { logger } = require('log-instance');
 const { Memoizer } = require('memo-again');
 const {
