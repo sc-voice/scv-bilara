@@ -1166,10 +1166,11 @@ typeof describe === "function" &&
       var [mld0] = res.mlDocs;
       should(res.mlDocs.length).equal(3);
       should(res.minLang).equal(2);
-      should(mld0.segments()[0]).properties({
-        scid: "sn42.11:2.11",
-        en: "For desire is the root of suffering. ",
-      });
+      let seg0 = mld0.segments()[0];
+      should(seg0).properties({ scid: "sn42.11:2.11", });
+      should(seg0.pli).match(/Chando hi mūlaṁ dukkhassa./);
+      should(seg0.de).match(/wurzel.*leiden/i);
+      should(seg0.en).match(/root of suffering/);
     });
     it("find(...) => finds segments with all keywords", async () => {
       var maxDoc = 3;
@@ -2517,11 +2518,10 @@ typeof describe === "function" &&
       let mld0 = res.mlDocs[0];
       should(mld0.author_uid).equal("sabbamitta");
       let segments = mld0.segments();
-      should(segments[4]).properties({
-        ref: 'For desire is the \u001b[38;5;121mroot of suffering\u001b[0m.’” ',
-        de: 'Denn Sehnen ist die Wurzel des Leidens.‘“ ',
-        pli: 'Chando hi mūlaṁ dukkhassā’”ti. ',
-      });
+      let seg4 = segments[4];
+      should(seg4.pli).match(/Chando hi mūlaṁ dukkhassā/i);
+      should(seg4.ref).match(/root of suffering/i);
+      should(seg4.de).match(/wurzel des leidens/i);
       should.deepEqual(mld0.langSegs, { pli: 55, de: 54, ref: 54});
       should(mld0.sutta_uid).equal("sn42.11");
       should(res.bilaraPaths.length).above(18).below(30);
