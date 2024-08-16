@@ -223,7 +223,7 @@
     {
       "id": "auf materiellen Besitz",
       "group": "Examples",
-      "links": 14
+      "links": 15
     },
     {
       "id": "auf Schönheit",
@@ -463,7 +463,7 @@
     {
       "id": "brach in Tränen aus",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "brutal",
@@ -948,7 +948,7 @@
     {
       "id": "drei Menschen",
       "group": "Examples",
-      "links": 23
+      "links": 21
     },
     {
       "id": "drei Monate in Klausur",
@@ -1118,7 +1118,7 @@
     {
       "id": "einfältige.* Mann",
       "group": "Examples",
-      "links": 15
+      "links": 0
     },
     {
       "id": "ein hasserfüllter Mensch",
@@ -1273,7 +1273,7 @@
     {
       "id": "er hat soviel Verdienst geschaffen",
       "group": "Examples",
-      "links": 3
+      "links": 0
     },
     {
       "id": "erkannt werden",
@@ -1688,7 +1688,7 @@
     {
       "id": "geschlossene Faust eines Lehrers",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "Gesetzmäßigkeiten klar",
@@ -1983,7 +1983,7 @@
     {
       "id": "Hölle mit Namen",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "Höllenlärm",
@@ -3953,7 +3953,7 @@
     {
       "id": "weder zustimmen noch.* ablehnen",
       "group": "Examples",
-      "links": 3
+      "links": 0
     },
     {
       "id": "Weggabelung",
@@ -4233,7 +4233,7 @@
     {
       "id": "Worte eines anderen",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "würde die Schnecken und Muscheln",
@@ -4383,12 +4383,12 @@
     {
       "id": "zwei Arten von",
       "group": "Examples",
-      "links": 13
+      "links": 6
     },
     {
       "id": "zwei Arten von Glück",
       "group": "Examples",
-      "links": 2
+      "links": 1
     },
     {
       "id": "zwei Menschen",
@@ -4772,7 +4772,7 @@
       "id": "dn16",
       "group": "dn",
       "rank": 1,
-      "links": 65
+      "links": 63
     },
     {
       "id": "an4.89",
@@ -5006,7 +5006,7 @@
       "id": "an6.29",
       "group": "an",
       "rank": 1,
-      "links": 10
+      "links": 9
     },
     {
       "id": "thag15.2",
@@ -5438,7 +5438,7 @@
       "id": "mn65",
       "group": "mn",
       "rank": 1,
-      "links": 10
+      "links": 9
     },
     {
       "id": "an3.64",
@@ -5480,7 +5480,7 @@
       "id": "dn24",
       "group": "dn",
       "rank": 1,
-      "links": 19
+      "links": 18
     },
     {
       "id": "an3.67",
@@ -5528,7 +5528,7 @@
       "id": "mn12",
       "group": "mn",
       "rank": 1,
-      "links": 17
+      "links": 16
     },
     {
       "id": "dn12",
@@ -5843,21 +5843,27 @@
       "links": 2
     },
     {
-      "id": "an5.254",
+      "id": "an2.42-51",
       "group": "an",
-      "rank": 9,
-      "links": 1
+      "rank": 1,
+      "links": 14
     },
     {
-      "id": "an5.255",
+      "id": "an5.254",
       "group": "an",
       "rank": 10,
       "links": 1
     },
     {
-      "id": "an9.69",
+      "id": "an5.255",
       "group": "an",
       "rank": 11,
+      "links": 1
+    },
+    {
+      "id": "an9.69",
+      "group": "an",
+      "rank": 12,
       "links": 1
     },
     {
@@ -5918,7 +5924,7 @@
       "id": "mn43",
       "group": "mn",
       "rank": 1,
-      "links": 11
+      "links": 10
     },
     {
       "id": "thig1.5",
@@ -6128,13 +6134,13 @@
       "id": "mn38",
       "group": "mn",
       "rank": 1,
-      "links": 27
+      "links": 26
     },
     {
       "id": "dn29",
       "group": "dn",
       "rank": 1,
-      "links": 14
+      "links": 13
     },
     {
       "id": "sn22.7",
@@ -6146,7 +6152,7 @@
       "id": "mn22",
       "group": "mn",
       "rank": 1,
-      "links": 18
+      "links": 17
     },
     {
       "id": "sn22.8",
@@ -6344,7 +6350,7 @@
       "id": "mn11",
       "group": "mn",
       "rank": 1,
-      "links": 3
+      "links": 2
     },
     {
       "id": "an4.95",
@@ -6362,7 +6368,7 @@
       "id": "sn22.80",
       "group": "sn",
       "rank": 5,
-      "links": 6
+      "links": 5
     },
     {
       "id": "thag1.9",
@@ -7154,7 +7160,7 @@
       "id": "an4.180",
       "group": "an",
       "rank": 1,
-      "links": 3
+      "links": 2
     },
     {
       "id": "mn32",
@@ -7295,12 +7301,6 @@
       "links": 7
     },
     {
-      "id": "an2.42-51",
-      "group": "an",
-      "rank": 1,
-      "links": 13
-    },
-    {
       "id": "an4.20",
       "group": "an",
       "rank": 2,
@@ -7355,15 +7355,21 @@
       "links": 4
     },
     {
-      "id": "sn42.3",
+      "id": "sn42.5",
       "group": "sn",
       "rank": 2,
       "links": 2
     },
     {
-      "id": "sn42.2",
+      "id": "sn42.3",
       "group": "sn",
       "rank": 3,
+      "links": 2
+    },
+    {
+      "id": "sn42.2",
+      "group": "sn",
+      "rank": 4,
       "links": 2
     },
     {
@@ -7477,8 +7483,8 @@
     {
       "id": "sn17.5",
       "group": "sn",
-      "rank": 6,
-      "links": 2
+      "rank": 21,
+      "links": 1
     },
     {
       "id": "sn17.10",
@@ -7639,8 +7645,8 @@
     {
       "id": "an3.114",
       "group": "an",
-      "rank": 4,
-      "links": 3
+      "rank": 5,
+      "links": 2
     },
     {
       "id": "an4.223",
@@ -7699,8 +7705,8 @@
     {
       "id": "an2.118-129",
       "group": "an",
-      "rank": 1,
-      "links": 4
+      "rank": 3,
+      "links": 3
     },
     {
       "id": "mn72",
@@ -7729,7 +7735,7 @@
     {
       "id": "mn74",
       "group": "mn",
-      "rank": 6,
+      "rank": 5,
       "links": 4
     },
     {
@@ -7976,7 +7982,7 @@
       "id": "an2.64-76",
       "group": "an",
       "rank": 1,
-      "links": 4
+      "links": 2
     },
     {
       "id": "sn45.2",
@@ -8035,7 +8041,7 @@
     {
       "id": "iti49",
       "group": "iti",
-      "rank": 6,
+      "rank": 4,
       "links": 3
     },
     {
@@ -8288,7 +8294,7 @@
       "id": "thig5.9",
       "group": "thig",
       "rank": 1,
-      "links": 3
+      "links": 2
     },
     {
       "id": "thag7.3",
@@ -8312,7 +8318,7 @@
       "id": "mn63",
       "group": "mn",
       "rank": 2,
-      "links": 2
+      "links": 1
     },
     {
       "id": "sn56.8",
@@ -8564,13 +8570,13 @@
       "id": "an8.20",
       "group": "an",
       "rank": 2,
-      "links": 7
+      "links": 6
     },
     {
       "id": "ud5.5",
       "group": "ud",
       "rank": 2,
-      "links": 9
+      "links": 8
     },
     {
       "id": "sn29.4",
@@ -8701,7 +8707,7 @@
     {
       "id": "an3.22",
       "group": "an",
-      "rank": 9,
+      "rank": 7,
       "links": 2
     },
     {
@@ -9491,21 +9497,15 @@
       "links": 2
     },
     {
-      "id": "an3.113",
-      "group": "an",
-      "rank": 5,
-      "links": 1
-    },
-    {
       "id": "an3.115",
       "group": "an",
-      "rank": 6,
+      "rank": 4,
       "links": 1
     },
     {
       "id": "an3.28",
       "group": "an",
-      "rank": 7,
+      "rank": 5,
       "links": 1
     },
     {
@@ -9517,7 +9517,7 @@
     {
       "id": "an3.116",
       "group": "an",
-      "rank": 11,
+      "rank": 9,
       "links": 1
     },
     {
@@ -9529,7 +9529,7 @@
     {
       "id": "an3.132",
       "group": "an",
-      "rank": 13,
+      "rank": 11,
       "links": 1
     },
     {
@@ -9962,7 +9962,7 @@
       "id": "sn47.9",
       "group": "sn",
       "rank": 1,
-      "links": 5
+      "links": 4
     },
     {
       "id": "sn22.50",
@@ -10197,36 +10197,6 @@
       "group": "sn",
       "rank": 1,
       "links": 6
-    },
-    {
-      "id": "an3.137",
-      "group": "an",
-      "rank": 4,
-      "links": 2
-    },
-    {
-      "id": "an1.316-332",
-      "group": "an",
-      "rank": 1,
-      "links": 3
-    },
-    {
-      "id": "an5.55",
-      "group": "an",
-      "rank": 8,
-      "links": 2
-    },
-    {
-      "id": "an9.11",
-      "group": "an",
-      "rank": 3,
-      "links": 3
-    },
-    {
-      "id": "an5.100",
-      "group": "an",
-      "rank": 3,
-      "links": 3
     },
     {
       "id": "iti88",
@@ -10839,18 +10809,6 @@
       "group": "mn",
       "rank": 1,
       "links": 5
-    },
-    {
-      "id": "sn10.10",
-      "group": "sn",
-      "rank": 1,
-      "links": 1
-    },
-    {
-      "id": "sn10.11",
-      "group": "sn",
-      "rank": 2,
-      "links": 1
     },
     {
       "id": "an8.87",
@@ -11517,6 +11475,12 @@
       "group": "dhp",
       "rank": 1,
       "links": 4
+    },
+    {
+      "id": "an1.316-332",
+      "group": "an",
+      "rank": 1,
+      "links": 2
     },
     {
       "id": "thig5.1",
@@ -12500,6 +12464,12 @@
       "id": "sn35.240",
       "group": "sn",
       "rank": 6,
+      "links": 1
+    },
+    {
+      "id": "an5.55",
+      "group": "an",
+      "rank": 9,
       "links": 1
     },
     {
@@ -14141,6 +14111,12 @@
       "links": 1
     },
     {
+      "id": "an9.11",
+      "group": "an",
+      "rank": 3,
+      "links": 2
+    },
+    {
       "id": "an5.16",
       "group": "an",
       "rank": 4,
@@ -14414,6 +14390,12 @@
       "id": "an6.36",
       "group": "an",
       "rank": 5,
+      "links": 1
+    },
+    {
+      "id": "an3.137",
+      "group": "an",
+      "rank": 7,
       "links": 1
     },
     {
@@ -14883,6 +14865,12 @@
       "group": "an",
       "rank": 1,
       "links": 4
+    },
+    {
+      "id": "an5.100",
+      "group": "an",
+      "rank": 3,
+      "links": 2
     },
     {
       "id": "cp20",
@@ -15362,7 +15350,7 @@
       "id": "an2.52-63",
       "group": "an",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "an4.247",
@@ -18047,27 +18035,9 @@
       "links": 1
     },
     {
-      "id": "an4.157",
-      "group": "an",
-      "rank": 5,
-      "links": 1
-    },
-    {
       "id": "sn16.5",
       "group": "sn",
-      "rank": 7,
-      "links": 1
-    },
-    {
-      "id": "an2.141-150",
-      "group": "an",
-      "rank": 8,
-      "links": 1
-    },
-    {
-      "id": "an2.151-162",
-      "group": "an",
-      "rank": 9,
+      "rank": 5,
       "links": 1
     },
     {
@@ -18079,7 +18049,7 @@
     {
       "id": "iti48",
       "group": "iti",
-      "rank": 8,
+      "rank": 6,
       "links": 1
     },
     {
@@ -19472,33 +19442,38 @@
     },
     {
       "source": "auf materiellen Besitz",
-      "target": "an5.254",
+      "target": "an2.42-51",
       "rank": 9
     },
     {
       "source": "auf materiellen Besitz",
-      "target": "an5.255",
+      "target": "an5.254",
       "rank": 10
     },
     {
       "source": "auf materiellen Besitz",
-      "target": "an9.69",
+      "target": "an5.255",
       "rank": 11
     },
     {
       "source": "auf materiellen Besitz",
-      "target": "mn113",
+      "target": "an9.69",
       "rank": 12
     },
     {
       "source": "auf materiellen Besitz",
-      "target": "dn28",
+      "target": "mn113",
       "rank": 13
     },
     {
       "source": "auf materiellen Besitz",
-      "target": "dn33",
+      "target": "dn28",
       "rank": 14
+    },
+    {
+      "source": "auf materiellen Besitz",
+      "target": "dn33",
+      "rank": 15
     },
     {
       "source": "auf Schönheit",
@@ -21292,28 +21267,33 @@
     },
     {
       "source": "brach in Tränen aus",
-      "target": "sn42.3",
+      "target": "sn42.5",
       "rank": 2
     },
     {
       "source": "brach in Tränen aus",
-      "target": "sn42.2",
+      "target": "sn42.3",
       "rank": 3
     },
     {
       "source": "brach in Tränen aus",
-      "target": "mn143",
+      "target": "sn42.2",
       "rank": 4
     },
     {
       "source": "brach in Tränen aus",
-      "target": "thig16.1",
+      "target": "mn143",
       "rank": 5
     },
     {
       "source": "brach in Tränen aus",
-      "target": "dn17",
+      "target": "thig16.1",
       "rank": 6
+    },
+    {
+      "source": "brach in Tränen aus",
+      "target": "dn17",
+      "rank": 7
     },
     {
       "source": "brutal",
@@ -24057,103 +24037,93 @@
     },
     {
       "source": "drei Menschen",
-      "target": "an3.114",
+      "target": "an3.115",
       "rank": 4
     },
     {
       "source": "drei Menschen",
-      "target": "an3.113",
+      "target": "an3.28",
       "rank": 5
     },
     {
       "source": "drei Menschen",
-      "target": "an3.115",
+      "target": "an3.23",
       "rank": 6
     },
     {
       "source": "drei Menschen",
-      "target": "an3.28",
+      "target": "an3.22",
       "rank": 7
     },
     {
       "source": "drei Menschen",
-      "target": "an3.23",
+      "target": "an3.25",
       "rank": 8
     },
     {
       "source": "drei Menschen",
-      "target": "an3.22",
+      "target": "an3.116",
       "rank": 9
     },
     {
       "source": "drei Menschen",
-      "target": "an3.25",
+      "target": "an3.26",
       "rank": 10
     },
     {
       "source": "drei Menschen",
-      "target": "an3.116",
+      "target": "an3.132",
       "rank": 11
     },
     {
       "source": "drei Menschen",
-      "target": "an3.26",
+      "target": "iti84",
       "rank": 12
     },
     {
       "source": "drei Menschen",
-      "target": "an3.132",
+      "target": "an3.27",
       "rank": 13
     },
     {
       "source": "drei Menschen",
-      "target": "iti84",
+      "target": "an3.29",
       "rank": 14
     },
     {
       "source": "drei Menschen",
-      "target": "an3.27",
+      "target": "iti75",
       "rank": 15
     },
     {
       "source": "drei Menschen",
-      "target": "an3.29",
+      "target": "an3.57",
       "rank": 16
     },
     {
       "source": "drei Menschen",
-      "target": "iti75",
+      "target": "an3.30",
       "rank": 17
     },
     {
       "source": "drei Menschen",
-      "target": "an3.57",
+      "target": "an6.62",
       "rank": 18
     },
     {
       "source": "drei Menschen",
-      "target": "an3.30",
+      "target": "mn51",
       "rank": 19
     },
     {
       "source": "drei Menschen",
-      "target": "an6.62",
+      "target": "cp9",
       "rank": 20
     },
     {
       "source": "drei Menschen",
-      "target": "mn51",
-      "rank": 21
-    },
-    {
-      "source": "drei Menschen",
-      "target": "cp9",
-      "rank": 22
-    },
-    {
-      "source": "drei Menschen",
       "target": "dn33",
-      "rank": 23
+      "rank": 21
     },
     {
       "source": "drei Monate in Klausur",
@@ -25379,81 +25349,6 @@
       "source": "eine Straße entlangwanderte",
       "target": "dn16",
       "rank": 5
-    },
-    {
-      "source": "einfältige.* Mann",
-      "target": "dn24",
-      "rank": 1
-    },
-    {
-      "source": "einfältige.* Mann",
-      "target": "mn22",
-      "rank": 2
-    },
-    {
-      "source": "einfältige.* Mann",
-      "target": "mn38",
-      "rank": 3
-    },
-    {
-      "source": "einfältige.* Mann",
-      "target": "an3.137",
-      "rank": 4
-    },
-    {
-      "source": "einfältige.* Mann",
-      "target": "an1.316-332",
-      "rank": 5
-    },
-    {
-      "source": "einfältige.* Mann",
-      "target": "sn17.5",
-      "rank": 6
-    },
-    {
-      "source": "einfältige.* Mann",
-      "target": "an6.29",
-      "rank": 7
-    },
-    {
-      "source": "einfältige.* Mann",
-      "target": "an5.55",
-      "rank": 8
-    },
-    {
-      "source": "einfältige.* Mann",
-      "target": "an9.11",
-      "rank": 9
-    },
-    {
-      "source": "einfältige.* Mann",
-      "target": "an8.20",
-      "rank": 10
-    },
-    {
-      "source": "einfältige.* Mann",
-      "target": "an5.100",
-      "rank": 11
-    },
-    {
-      "source": "einfältige.* Mann",
-      "target": "ud5.5",
-      "rank": 12
-    },
-    {
-      "source": "einfältige.* Mann",
-      "target": "mn63",
-      "rank": 13
-    },
-    {
-      "source": "einfältige.* Mann",
-      "target": "mn65",
-      "rank": 14
-    },
-    {
-      "source": "einfältige.* Mann",
-      "target": "mn12",
-      "rank": 15
     },
     {
       "source": "ein hasserfüllter Mensch",
@@ -26784,21 +26679,6 @@
       "source": "ergreift.* nichts in der Welt",
       "target": "mn140",
       "rank": 12
-    },
-    {
-      "source": "er hat soviel Verdienst geschaffen",
-      "target": "sn10.10",
-      "rank": 1
-    },
-    {
-      "source": "er hat soviel Verdienst geschaffen",
-      "target": "sn10.11",
-      "rank": 2
-    },
-    {
-      "source": "er hat soviel Verdienst geschaffen",
-      "target": "thig5.9",
-      "rank": 3
     },
     {
       "source": "erkannt werden",
@@ -29596,16 +29476,6 @@
       "rank": 2
     },
     {
-      "source": "geschlossene Faust eines Lehrers",
-      "target": "sn47.9",
-      "rank": 1
-    },
-    {
-      "source": "geschlossene Faust eines Lehrers",
-      "target": "dn16",
-      "rank": 2
-    },
-    {
       "source": "Gesetzmäßigkeiten klar",
       "target": "an9.4",
       "rank": 1
@@ -31782,13 +31652,18 @@
     },
     {
       "source": "Hölle mit Namen",
-      "target": "sn42.3",
+      "target": "sn42.5",
       "rank": 3
     },
     {
       "source": "Hölle mit Namen",
-      "target": "sn42.2",
+      "target": "sn42.3",
       "rank": 4
+    },
+    {
+      "source": "Hölle mit Namen",
+      "target": "sn42.2",
+      "rank": 5
     },
     {
       "source": "Höllenlärm",
@@ -44766,21 +44641,6 @@
       "rank": 4
     },
     {
-      "source": "weder zustimmen noch.* ablehnen",
-      "target": "an4.180",
-      "rank": 1
-    },
-    {
-      "source": "weder zustimmen noch.* ablehnen",
-      "target": "dn16",
-      "rank": 2
-    },
-    {
-      "source": "weder zustimmen noch.* ablehnen",
-      "target": "dn29",
-      "rank": 3
-    },
-    {
       "source": "Weggabelung",
       "target": "mn23",
       "rank": 1
@@ -46786,16 +46646,6 @@
       "rank": 2
     },
     {
-      "source": "Worte eines anderen",
-      "target": "an2.118-129",
-      "rank": 1
-    },
-    {
-      "source": "Worte eines anderen",
-      "target": "mn43",
-      "rank": 2
-    },
-    {
       "source": "würde die Schnecken und Muscheln",
       "target": "an1.41-50",
       "rank": 1
@@ -47707,63 +47557,23 @@
     },
     {
       "source": "zwei Arten von",
-      "target": "an2.64-76",
+      "target": "iti49",
       "rank": 4
     },
     {
       "source": "zwei Arten von",
-      "target": "an4.157",
+      "target": "sn16.5",
       "rank": 5
     },
     {
       "source": "zwei Arten von",
-      "target": "iti49",
-      "rank": 6
-    },
-    {
-      "source": "zwei Arten von",
-      "target": "sn16.5",
-      "rank": 7
-    },
-    {
-      "source": "zwei Arten von",
-      "target": "an2.141-150",
-      "rank": 8
-    },
-    {
-      "source": "zwei Arten von",
-      "target": "an2.151-162",
-      "rank": 9
-    },
-    {
-      "source": "zwei Arten von",
-      "target": "sn22.80",
-      "rank": 10
-    },
-    {
-      "source": "zwei Arten von",
-      "target": "an2.52-63",
-      "rank": 11
-    },
-    {
-      "source": "zwei Arten von",
-      "target": "mn11",
-      "rank": 12
-    },
-    {
-      "source": "zwei Arten von",
       "target": "mn19",
-      "rank": 13
-    },
-    {
-      "source": "zwei Arten von Glück",
-      "target": "an2.64-76",
-      "rank": 1
+      "rank": 6
     },
     {
       "source": "zwei Arten von Glück",
       "target": "dn21",
-      "rank": 2
+      "rank": 1
     },
     {
       "source": "zwei Menschen",
@@ -47787,32 +47597,32 @@
     },
     {
       "source": "zwei Menschen",
-      "target": "an2.52-63",
+      "target": "mn74",
       "rank": 5
     },
     {
       "source": "zwei Menschen",
-      "target": "mn74",
+      "target": "iti48",
       "rank": 6
     },
     {
       "source": "zwei Menschen",
-      "target": "an2.32-41",
+      "target": "an7.57",
       "rank": 7
     },
     {
       "source": "zwei Menschen",
-      "target": "iti48",
+      "target": "an2.52-63",
       "rank": 8
     },
     {
       "source": "zwei Menschen",
-      "target": "an7.57",
+      "target": "sn22.84",
       "rank": 9
     },
     {
       "source": "zwei Menschen",
-      "target": "sn22.84",
+      "target": "an2.32-41",
       "rank": 10
     },
     {
