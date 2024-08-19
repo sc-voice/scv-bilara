@@ -12732,26 +12732,31 @@
 	"sn4.1": {
 		"translation/de/sabbamitta": "sutta/sn/sn4",
 		"translation/en/sujato": "sutta/sn/sn4",
+		"translation/ru/sv": "sutta/sn/sn4",
 		"root/pli/ms": "sutta/sn/sn4"
 	},
 	"sn4.2": {
 		"translation/de/sabbamitta": "sutta/sn/sn4",
 		"translation/en/sujato": "sutta/sn/sn4",
+		"translation/ru/sv": "sutta/sn/sn4",
 		"root/pli/ms": "sutta/sn/sn4"
 	},
 	"sn4.3": {
 		"translation/de/sabbamitta": "sutta/sn/sn4",
 		"translation/en/sujato": "sutta/sn/sn4",
+		"translation/ru/sv": "sutta/sn/sn4",
 		"root/pli/ms": "sutta/sn/sn4"
 	},
 	"sn4.4": {
 		"translation/de/sabbamitta": "sutta/sn/sn4",
 		"translation/en/sujato": "sutta/sn/sn4",
+		"translation/ru/sv": "sutta/sn/sn4",
 		"root/pli/ms": "sutta/sn/sn4"
 	},
 	"sn4.5": {
 		"translation/de/sabbamitta": "sutta/sn/sn4",
 		"translation/en/sujato": "sutta/sn/sn4",
+		"translation/ru/sv": "sutta/sn/sn4",
 		"root/pli/ms": "sutta/sn/sn4"
 	},
 	"sn4.6": {
@@ -12772,6 +12777,7 @@
 	"sn4.9": {
 		"translation/de/sabbamitta": "sutta/sn/sn4",
 		"translation/en/sujato": "sutta/sn/sn4",
+		"translation/ru/sv": "sutta/sn/sn4",
 		"root/pli/ms": "sutta/sn/sn4"
 	},
 	"sn4.10": {
@@ -22062,326 +22068,391 @@
 	"thag1.56": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.57": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.58": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.59": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.60": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.61": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.62": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.63": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.64": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.65": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.66": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.67": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.68": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.69": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.70": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.71": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.72": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.73": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.74": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.75": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.76": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.77": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.78": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.79": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.80": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.81": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.82": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.83": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.84": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.85": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.86": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.87": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.88": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.89": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.90": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.91": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.92": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.93": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.94": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.95": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.96": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.97": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.98": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.99": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.100": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.101": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.102": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.103": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.104": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.105": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.106": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.107": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.108": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.109": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.110": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.111": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.112": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.113": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.114": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.115": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.116": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.117": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.118": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.119": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag1.120": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag2.1": {
@@ -22393,6 +22464,7 @@
 	"thag2.2": {
 		"translation/de/sabbamitta": "sutta/kn/thag",
 		"translation/en/sujato": "sutta/kn/thag",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thag",
 		"root/pli/ms": "sutta/kn/thag"
 	},
 	"thag2.3": {
