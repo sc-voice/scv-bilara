@@ -2948,7 +2948,7 @@
     {
       "id": "Rosenapfel",
       "group": "Examples",
-      "links": 4
+      "links": 23
     },
     {
       "id": "roten Kapok-Wald",
@@ -4053,7 +4053,7 @@
     {
       "id": "wenn sinnliches Begehren",
       "group": "Examples",
-      "links": 5
+      "links": 3
     },
     {
       "id": "wenn.* stirbt, fühlt",
@@ -4766,7 +4766,7 @@
       "id": "dn14",
       "group": "dn",
       "rank": 1,
-      "links": 31
+      "links": 32
     },
     {
       "id": "dn16",
@@ -5708,7 +5708,7 @@
       "id": "thag16.6",
       "group": "thag",
       "rank": 6,
-      "links": 8
+      "links": 9
     },
     {
       "id": "an6.55",
@@ -5918,7 +5918,7 @@
       "id": "an1.333-377",
       "group": "an",
       "rank": 1,
-      "links": 3
+      "links": 4
     },
     {
       "id": "mn43",
@@ -7088,7 +7088,7 @@
       "id": "dn30",
       "group": "dn",
       "rank": 1,
-      "links": 12
+      "links": 13
     },
     {
       "id": "mn61",
@@ -7154,7 +7154,7 @@
       "id": "dn26",
       "group": "dn",
       "rank": 1,
-      "links": 12
+      "links": 13
     },
     {
       "id": "an4.180",
@@ -7382,7 +7382,7 @@
       "id": "thig16.1",
       "group": "thig",
       "rank": 2,
-      "links": 7
+      "links": 8
     },
     {
       "id": "sn17.21",
@@ -10178,7 +10178,7 @@
       "id": "an3.63",
       "group": "an",
       "rank": 1,
-      "links": 5
+      "links": 6
     },
     {
       "id": "dn19",
@@ -10627,7 +10627,7 @@
     {
       "id": "an4.195",
       "group": "an",
-      "rank": 3,
+      "rank": 4,
       "links": 4
     },
     {
@@ -10910,7 +10910,7 @@
       "id": "an10.29",
       "group": "an",
       "rank": 1,
-      "links": 9
+      "links": 10
     },
     {
       "id": "sn20.3",
@@ -10994,7 +10994,7 @@
       "id": "sn15.1",
       "group": "sn",
       "rank": 3,
-      "links": 1
+      "links": 2
     },
     {
       "id": "sn15.9",
@@ -11353,7 +11353,7 @@
     {
       "id": "sn48.67",
       "group": "sn",
-      "rank": 1,
+      "rank": 2,
       "links": 2
     },
     {
@@ -11558,7 +11558,7 @@
       "id": "thag16.9",
       "group": "thag",
       "rank": 2,
-      "links": 6
+      "links": 7
     },
     {
       "id": "sn22.81",
@@ -11912,7 +11912,7 @@
       "id": "an3.80",
       "group": "an",
       "rank": 1,
-      "links": 3
+      "links": 4
     },
     {
       "id": "an3.130",
@@ -12206,7 +12206,7 @@
       "id": "an7.62",
       "group": "an",
       "rank": 1,
-      "links": 6
+      "links": 7
     },
     {
       "id": "sn45.9",
@@ -12608,13 +12608,13 @@
       "id": "kp9",
       "group": "kp",
       "rank": 2,
-      "links": 4
+      "links": 3
     },
     {
       "id": "snp1.8",
       "group": "snp",
       "rank": 3,
-      "links": 4
+      "links": 3
     },
     {
       "id": "thag14.1",
@@ -14324,7 +14324,7 @@
       "id": "sn2.29",
       "group": "sn",
       "rank": 1,
-      "links": 2
+      "links": 3
     },
     {
       "id": "an10.71",
@@ -15488,7 +15488,7 @@
       "id": "an5.42",
       "group": "an",
       "rank": 6,
-      "links": 1
+      "links": 2
     },
     {
       "id": "sn20.6",
@@ -15509,10 +15509,40 @@
       "links": 1
     },
     {
+      "id": "an9.21",
+      "group": "an",
+      "rank": 1,
+      "links": 1
+    },
+    {
+      "id": "sn56.36",
+      "group": "sn",
+      "rank": 3,
+      "links": 1
+    },
+    {
       "id": "thag4.11",
       "group": "thag",
-      "rank": 2,
+      "rank": 10,
       "links": 1
+    },
+    {
+      "id": "an4.28",
+      "group": "an",
+      "rank": 12,
+      "links": 1
+    },
+    {
+      "id": "an4.6",
+      "group": "an",
+      "rank": 1,
+      "links": 2
+    },
+    {
+      "id": "dhp221-234",
+      "group": "dhp",
+      "rank": 5,
+      "links": 2
     },
     {
       "id": "sn11.6",
@@ -15926,12 +15956,6 @@
       "id": "sn14.33",
       "group": "sn",
       "rank": 6,
-      "links": 1
-    },
-    {
-      "id": "dhp221-234",
-      "group": "dhp",
-      "rank": 5,
       "links": 1
     },
     {
@@ -16459,7 +16483,7 @@
     {
       "id": "sn12.3",
       "group": "sn",
-      "rank": 5,
+      "rank": 4,
       "links": 1
     },
     {
@@ -17306,12 +17330,6 @@
       "id": "sn35.63",
       "group": "sn",
       "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "an4.6",
-      "group": "an",
-      "rank": 1,
       "links": 1
     },
     {
@@ -38137,23 +38155,118 @@
     },
     {
       "source": "Rosenapfel",
-      "target": "sn48.67",
+      "target": "an9.21",
       "rank": 1
     },
     {
       "source": "Rosenapfel",
-      "target": "thag4.11",
+      "target": "sn48.67",
       "rank": 2
     },
     {
       "source": "Rosenapfel",
-      "target": "mn36",
+      "target": "sn56.36",
       "rank": 3
     },
     {
       "source": "Rosenapfel",
-      "target": "dn16",
+      "target": "sn15.1",
       "rank": 4
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "an3.80",
+      "rank": 5
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "an7.62",
+      "rank": 6
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "an1.333-377",
+      "rank": 7
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "dn26",
+      "rank": 8
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "dn16",
+      "rank": 9
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "thag4.11",
+      "rank": 10
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "an5.42",
+      "rank": 11
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "an4.28",
+      "rank": 12
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "an4.6",
+      "rank": 13
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "dhp221-234",
+      "rank": 14
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "sn2.29",
+      "rank": 15
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "an3.63",
+      "rank": 16
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "thag16.6",
+      "rank": 17
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "an10.29",
+      "rank": 18
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "thag16.9",
+      "rank": 19
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "mn36",
+      "rank": 20
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "thig16.1",
+      "rank": 21
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "dn14",
+      "rank": 22
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "dn30",
+      "rank": 23
     },
     {
       "source": "roten Kapok-Wald",
@@ -41667,112 +41780,112 @@
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "an4.195",
+      "target": "sn12.37",
       "rank": 3
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "sn12.37",
+      "target": "sn12.3",
       "rank": 4
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "sn12.3",
+      "target": "sn12.21",
       "rank": 5
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "sn12.21",
+      "target": "sn12.47",
       "rank": 6
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "sn12.47",
+      "target": "sn12.46",
       "rank": 7
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "sn12.46",
+      "target": "sn12.15",
       "rank": 8
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "sn12.15",
+      "target": "sn12.48",
       "rank": 9
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "sn12.48",
+      "target": "sn12.11",
       "rank": 10
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "sn12.11",
+      "target": "sn12.61",
       "rank": 11
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "sn12.61",
+      "target": "sn12.22",
       "rank": 12
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "sn12.22",
+      "target": "sn55.28",
       "rank": 13
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "sn55.28",
+      "target": "sn12.41",
       "rank": 14
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "sn12.41",
+      "target": "ud1.3",
       "rank": 15
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "ud1.3",
+      "target": "sn12.1",
       "rank": 16
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "sn12.1",
+      "target": "an10.92",
       "rank": 17
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "an10.92",
+      "target": "sn12.18",
       "rank": 18
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "sn12.18",
+      "target": "an4.171",
       "rank": 19
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "an4.171",
+      "target": "sn48.50",
       "rank": 20
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "sn48.50",
+      "target": "sn12.25",
       "rank": 21
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "sn12.25",
+      "target": "sn12.17",
       "rank": 22
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "sn12.17",
+      "target": "sn12.2",
       "rank": 23
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "sn12.2",
+      "target": "an4.195",
       "rank": 24
     },
     {
@@ -45022,23 +45135,13 @@
     },
     {
       "source": "wenn sinnliches Begehren",
-      "target": "kp9",
+      "target": "mn10",
       "rank": 2
     },
     {
       "source": "wenn sinnliches Begehren",
-      "target": "snp1.8",
-      "rank": 3
-    },
-    {
-      "source": "wenn sinnliches Begehren",
-      "target": "mn10",
-      "rank": 4
-    },
-    {
-      "source": "wenn sinnliches Begehren",
       "target": "dn22",
-      "rank": 5
+      "rank": 3
     },
     {
       "source": "wenn.* stirbt, fühlt",
