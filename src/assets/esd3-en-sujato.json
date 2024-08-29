@@ -873,7 +873,7 @@
     {
       "id": "divine meditation",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "divine punishment",
@@ -1008,7 +1008,7 @@
     {
       "id": "empty mansion of Brahmā",
       "group": "Examples",
-      "links": 5
+      "links": 0
     },
     {
       "id": "enchanted by a spell",
@@ -3063,7 +3063,7 @@
     {
       "id": "rebirth in the realm",
       "group": "Examples",
-      "links": 16
+      "links": 20
     },
     {
       "id": "reborn according to their deeds",
@@ -4538,7 +4538,7 @@
     {
       "id": "wrists",
       "group": "Examples",
-      "links": 6
+      "links": 0
     },
     {
       "id": "wrong immersion is blown away",
@@ -4617,7 +4617,7 @@
       "id": "dn17",
       "group": "dn",
       "rank": 5,
-      "links": 13
+      "links": 15
     },
     {
       "id": "dn14",
@@ -5079,7 +5079,7 @@
       "id": "dn1",
       "group": "dn",
       "rank": 1,
-      "links": 26
+      "links": 25
     },
     {
       "id": "an6.30",
@@ -5133,7 +5133,7 @@
       "id": "dn24",
       "group": "dn",
       "rank": 1,
-      "links": 17
+      "links": 16
     },
     {
       "id": "an9.2",
@@ -5289,7 +5289,7 @@
       "id": "an7.66",
       "group": "an",
       "rank": 1,
-      "links": 11
+      "links": 10
     },
     {
       "id": "mn130",
@@ -5733,7 +5733,7 @@
       "id": "mn83",
       "group": "mn",
       "rank": 1,
-      "links": 6
+      "links": 7
     },
     {
       "id": "mn43",
@@ -5769,7 +5769,7 @@
       "id": "dn19",
       "group": "dn",
       "rank": 2,
-      "links": 5
+      "links": 6
     },
     {
       "id": "an9.40",
@@ -5853,13 +5853,13 @@
       "id": "iti22",
       "group": "iti",
       "rank": 2,
-      "links": 5
+      "links": 4
     },
     {
       "id": "an7.62",
       "group": "an",
       "rank": 1,
-      "links": 6
+      "links": 5
     },
     {
       "id": "mn92",
@@ -7538,14 +7538,14 @@
     {
       "id": "sn35.87",
       "group": "sn",
-      "rank": 1,
-      "links": 4
+      "rank": 5,
+      "links": 3
     },
     {
       "id": "mn144",
       "group": "mn",
-      "rank": 2,
-      "links": 4
+      "rank": 7,
+      "links": 3
     },
     {
       "id": "mn2",
@@ -7557,7 +7557,7 @@
       "id": "dn23",
       "group": "dn",
       "rank": 1,
-      "links": 20
+      "links": 19
     },
     {
       "id": "ud6.4",
@@ -9897,7 +9897,7 @@
       "id": "sn54.9",
       "group": "sn",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "sn12.27",
@@ -11390,8 +11390,8 @@
     {
       "id": "thag6.6",
       "group": "thag",
-      "rank": 3,
-      "links": 2
+      "rank": 5,
+      "links": 1
     },
     {
       "id": "an9.68",
@@ -12507,7 +12507,7 @@
       "id": "snp1.7",
       "group": "snp",
       "rank": 1,
-      "links": 3
+      "links": 4
     },
     {
       "id": "snp1.3",
@@ -12591,7 +12591,7 @@
       "id": "sn4.23",
       "group": "sn",
       "rank": 5,
-      "links": 2
+      "links": 1
     },
     {
       "id": "thag7.2",
@@ -15668,7 +15668,7 @@
     {
       "id": "an10.13",
       "group": "an",
-      "rank": 4,
+      "rank": 5,
       "links": 3
     },
     {
@@ -15746,73 +15746,73 @@
     {
       "id": "an9.70",
       "group": "an",
-      "rank": 3,
+      "rank": 4,
       "links": 1
     },
     {
       "id": "sn50.45-54",
       "group": "sn",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
       "id": "an9.25",
       "group": "an",
-      "rank": 6,
+      "rank": 7,
       "links": 1
     },
     {
       "id": "sn48.169-178",
       "group": "sn",
-      "rank": 7,
+      "rank": 8,
       "links": 2
     },
     {
       "id": "sn48.115-124",
       "group": "sn",
-      "rank": 8,
+      "rank": 9,
       "links": 2
     },
     {
       "id": "sn50.99-108",
       "group": "sn",
-      "rank": 9,
+      "rank": 10,
       "links": 2
     },
     {
       "id": "sn49.45-54",
       "group": "sn",
-      "rank": 10,
+      "rank": 11,
       "links": 2
     },
     {
       "id": "sn46.130",
       "group": "sn",
-      "rank": 11,
+      "rank": 12,
       "links": 1
     },
     {
       "id": "sn51.77-86",
       "group": "sn",
-      "rank": 12,
+      "rank": 13,
       "links": 2
     },
     {
       "id": "sn53.45-54",
       "group": "sn",
-      "rank": 13,
+      "rank": 14,
       "links": 2
     },
     {
       "id": "sn47.95-104",
       "group": "sn",
-      "rank": 14,
+      "rank": 15,
       "links": 2
     },
     {
       "id": "an9.26",
       "group": "an",
-      "rank": 15,
+      "rank": 16,
       "links": 1
     },
     {
@@ -25638,8 +25638,13 @@
     },
     {
       "source": "divine meditation",
-      "target": "dn33",
+      "target": "dn17",
       "rank": 8
+    },
+    {
+      "source": "divine meditation",
+      "target": "dn33",
+      "rank": 9
     },
     {
       "source": "divine punishment",
@@ -26415,31 +26420,6 @@
       "source": "empty huts",
       "target": "mn32",
       "rank": 20
-    },
-    {
-      "source": "empty mansion of Brahmā",
-      "target": "an7.62",
-      "rank": 1
-    },
-    {
-      "source": "empty mansion of Brahmā",
-      "target": "dn1",
-      "rank": 2
-    },
-    {
-      "source": "empty mansion of Brahmā",
-      "target": "dn24",
-      "rank": 3
-    },
-    {
-      "source": "empty mansion of Brahmā",
-      "target": "iti22",
-      "rank": 4
-    },
-    {
-      "source": "empty mansion of Brahmā",
-      "target": "an7.66",
-      "rank": 5
     },
     {
       "source": "encourage others to do the same",
@@ -40623,73 +40603,93 @@
     },
     {
       "source": "rebirth in the realm",
-      "target": "an9.70",
+      "target": "dn19",
       "rank": 3
     },
     {
       "source": "rebirth in the realm",
-      "target": "an10.13",
+      "target": "an9.70",
       "rank": 4
     },
     {
       "source": "rebirth in the realm",
-      "target": "sn50.45-54",
+      "target": "an10.13",
       "rank": 5
     },
     {
       "source": "rebirth in the realm",
-      "target": "an9.25",
+      "target": "sn50.45-54",
       "rank": 6
     },
     {
       "source": "rebirth in the realm",
-      "target": "sn48.169-178",
+      "target": "an9.25",
       "rank": 7
     },
     {
       "source": "rebirth in the realm",
-      "target": "sn48.115-124",
+      "target": "sn48.169-178",
       "rank": 8
     },
     {
       "source": "rebirth in the realm",
-      "target": "sn50.99-108",
+      "target": "sn48.115-124",
       "rank": 9
     },
     {
       "source": "rebirth in the realm",
-      "target": "sn49.45-54",
+      "target": "sn50.99-108",
       "rank": 10
     },
     {
       "source": "rebirth in the realm",
-      "target": "sn46.130",
+      "target": "sn49.45-54",
       "rank": 11
     },
     {
       "source": "rebirth in the realm",
-      "target": "sn51.77-86",
+      "target": "sn46.130",
       "rank": 12
     },
     {
       "source": "rebirth in the realm",
-      "target": "sn53.45-54",
+      "target": "sn51.77-86",
       "rank": 13
     },
     {
       "source": "rebirth in the realm",
-      "target": "sn47.95-104",
+      "target": "sn53.45-54",
       "rank": 14
     },
     {
       "source": "rebirth in the realm",
-      "target": "an9.26",
+      "target": "sn47.95-104",
       "rank": 15
     },
     {
       "source": "rebirth in the realm",
-      "target": "dn33",
+      "target": "an9.26",
       "rank": 16
+    },
+    {
+      "source": "rebirth in the realm",
+      "target": "snp1.7",
+      "rank": 17
+    },
+    {
+      "source": "rebirth in the realm",
+      "target": "mn83",
+      "rank": 18
+    },
+    {
+      "source": "rebirth in the realm",
+      "target": "dn17",
+      "rank": 19
+    },
+    {
+      "source": "rebirth in the realm",
+      "target": "dn33",
+      "rank": 20
     },
     {
       "source": "reborn according to their deeds",
@@ -51220,36 +51220,6 @@
       "source": "wretched",
       "target": "mn130",
       "rank": 8
-    },
-    {
-      "source": "wrists",
-      "target": "sn35.87",
-      "rank": 1
-    },
-    {
-      "source": "wrists",
-      "target": "mn144",
-      "rank": 2
-    },
-    {
-      "source": "wrists",
-      "target": "thag6.6",
-      "rank": 3
-    },
-    {
-      "source": "wrists",
-      "target": "sn54.9",
-      "rank": 4
-    },
-    {
-      "source": "wrists",
-      "target": "sn4.23",
-      "rank": 5
-    },
-    {
-      "source": "wrists",
-      "target": "dn23",
-      "rank": 6
     },
     {
       "source": "wrong immersion is blown away",
