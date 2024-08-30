@@ -103,7 +103,7 @@
     {
       "id": "alles Leiden",
       "group": "Examples",
-      "links": 22
+      "links": 23
     },
     {
       "id": "alle tauglichen Eigenschaften",
@@ -373,7 +373,7 @@
     {
       "id": "Beschützer",
       "group": "Examples",
-      "links": 19
+      "links": 18
     },
     {
       "id": "besitzt vier Grundlagen",
@@ -613,7 +613,7 @@
     {
       "id": "das Selbst ist",
       "group": "Examples",
-      "links": 3
+      "links": 2
     },
     {
       "id": "dass ich nie sehe oder höre",
@@ -1558,7 +1558,7 @@
     {
       "id": "Galaxie",
       "group": "Examples",
-      "links": 12
+      "links": 14
     },
     {
       "id": "ganz allein von dir begangen",
@@ -1723,7 +1723,7 @@
     {
       "id": "Gewissen und Besonnenheit",
       "group": "Examples",
-      "links": 25
+      "links": 26
     },
     {
       "id": "gewürdigt, verehrt und wertgeschätzt",
@@ -1893,7 +1893,7 @@
     {
       "id": "Hausbesitzer.* aus Stadt und Land",
       "group": "Examples",
-      "links": 3
+      "links": 6
     },
     {
       "id": "Hausbesitzer von Bambustor",
@@ -2593,7 +2593,7 @@
     {
       "id": "mit einem Stock",
       "group": "Examples",
-      "links": 9
+      "links": 10
     },
     {
       "id": "mit einem Zauber besungen",
@@ -2893,7 +2893,7 @@
     {
       "id": "Pulsadern",
       "group": "Examples",
-      "links": 9
+      "links": 0
     },
     {
       "id": "Puppe",
@@ -2918,7 +2918,7 @@
     {
       "id": "Regenwolke",
       "group": "Examples",
-      "links": 13
+      "links": 12
     },
     {
       "id": "Renner",
@@ -4393,7 +4393,7 @@
     {
       "id": "zwei Menschen",
       "group": "Examples",
-      "links": 10
+      "links": 9
     },
     {
       "id": "zwei Dinge.* entwickelt werden",
@@ -4742,7 +4742,7 @@
       "id": "thag20.1",
       "group": "thag",
       "rank": 4,
-      "links": 13
+      "links": 14
     },
     {
       "id": "dn17",
@@ -5285,6 +5285,12 @@
       "links": 3
     },
     {
+      "id": "snp5.19",
+      "group": "snp",
+      "rank": 3,
+      "links": 7
+    },
+    {
       "id": "mn140",
       "group": "mn",
       "rank": 1,
@@ -5450,7 +5456,7 @@
       "id": "an3.25",
       "group": "an",
       "rank": 2,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an3.27",
@@ -5522,7 +5528,7 @@
       "id": "thag18.1",
       "group": "thag",
       "rank": 4,
-      "links": 3
+      "links": 4
     },
     {
       "id": "mn12",
@@ -6206,7 +6212,7 @@
       "id": "dn23",
       "group": "dn",
       "rank": 1,
-      "links": 19
+      "links": 18
     },
     {
       "id": "an3.83",
@@ -6743,12 +6749,6 @@
       "links": 6
     },
     {
-      "id": "dhp157-166",
-      "group": "dhp",
-      "rank": 3,
-      "links": 2
-    },
-    {
       "id": "an10.16",
       "group": "an",
       "rank": 5,
@@ -6775,13 +6775,13 @@
     {
       "id": "an10.12",
       "group": "an",
-      "rank": 11,
+      "rank": 10,
       "links": 1
     },
     {
       "id": "sn2.25",
       "group": "sn",
-      "rank": 13,
+      "rank": 12,
       "links": 1
     },
     {
@@ -7333,8 +7333,8 @@
     {
       "id": "sn4.23",
       "group": "sn",
-      "rank": 3,
-      "links": 2
+      "rank": 6,
+      "links": 1
     },
     {
       "id": "an5.249",
@@ -9098,7 +9098,7 @@
       "id": "sn54.9",
       "group": "sn",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "an3.101",
@@ -9925,8 +9925,8 @@
     {
       "id": "sn35.87",
       "group": "sn",
-      "rank": 1,
-      "links": 3
+      "rank": 5,
+      "links": 2
     },
     {
       "id": "ud1.10",
@@ -9937,8 +9937,8 @@
     {
       "id": "mn144",
       "group": "mn",
-      "rank": 2,
-      "links": 3
+      "rank": 7,
+      "links": 2
     },
     {
       "id": "sn12.51",
@@ -10250,7 +10250,7 @@
       "id": "thag6.6",
       "group": "thag",
       "rank": 4,
-      "links": 3
+      "links": 2
     },
     {
       "id": "sn52.14",
@@ -10617,12 +10617,6 @@
       "group": "an",
       "rank": 1,
       "links": 3
-    },
-    {
-      "id": "snp5.19",
-      "group": "snp",
-      "rank": 3,
-      "links": 6
     },
     {
       "id": "an4.195",
@@ -11288,7 +11282,7 @@
       "id": "sn22.87",
       "group": "sn",
       "rank": 2,
-      "links": 5
+      "links": 4
     },
     {
       "id": "an9.20",
@@ -11558,7 +11552,7 @@
       "id": "thag16.9",
       "group": "thag",
       "rank": 2,
-      "links": 7
+      "links": 8
     },
     {
       "id": "sn22.81",
@@ -11941,7 +11935,7 @@
     {
       "id": "mn49",
       "group": "mn",
-      "rank": 7,
+      "rank": 8,
       "links": 5
     },
     {
@@ -12506,19 +12500,19 @@
       "id": "an8.86",
       "group": "an",
       "rank": 1,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an5.30",
       "group": "an",
       "rank": 1,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an6.42",
       "group": "an",
       "rank": 2,
-      "links": 4
+      "links": 5
     },
     {
       "id": "sn24.8",
@@ -15074,7 +15068,7 @@
       "id": "thag19.1",
       "group": "thag",
       "rank": 3,
-      "links": 8
+      "links": 7
     },
     {
       "id": "sn35.101",
@@ -15308,18 +15302,6 @@
       "id": "thag8.3",
       "group": "thag",
       "rank": 6,
-      "links": 1
-    },
-    {
-      "id": "sn35.88",
-      "group": "sn",
-      "rank": 7,
-      "links": 1
-    },
-    {
-      "id": "mn145",
-      "group": "mn",
-      "rank": 8,
       "links": 1
     },
     {
@@ -18065,12 +18047,6 @@
       "links": 1
     },
     {
-      "id": "iti48",
-      "group": "iti",
-      "rank": 6,
-      "links": 1
-    },
-    {
       "id": "sn44.9",
       "group": "sn",
       "rank": 1,
@@ -18910,13 +18886,18 @@
     },
     {
       "source": "alles Leiden",
-      "target": "mn140",
+      "target": "snp5.19",
       "rank": 21
     },
     {
       "source": "alles Leiden",
-      "target": "dn32",
+      "target": "mn140",
       "rank": 22
+    },
+    {
+      "source": "alles Leiden",
+      "target": "dn32",
+      "rank": 23
     },
     {
       "source": "alle tauglichen Eigenschaften",
@@ -20530,78 +20511,73 @@
     },
     {
       "source": "Beschützer",
-      "target": "dhp157-166",
+      "target": "thig13.3",
       "rank": 5
     },
     {
       "source": "Beschützer",
-      "target": "thig13.3",
+      "target": "an10.16",
       "rank": 6
     },
     {
       "source": "Beschützer",
-      "target": "an10.16",
+      "target": "an10.19",
       "rank": 7
     },
     {
       "source": "Beschützer",
-      "target": "an10.19",
+      "target": "an10.13",
       "rank": 8
     },
     {
       "source": "Beschützer",
-      "target": "an10.13",
+      "target": "an10.11",
       "rank": 9
     },
     {
       "source": "Beschützer",
-      "target": "an10.11",
+      "target": "an10.12",
       "rank": 10
     },
     {
       "source": "Beschützer",
-      "target": "an10.12",
+      "target": "an10.15",
       "rank": 11
     },
     {
       "source": "Beschützer",
-      "target": "an10.15",
+      "target": "sn2.25",
       "rank": 12
     },
     {
       "source": "Beschützer",
-      "target": "sn2.25",
+      "target": "sn9.13",
       "rank": 13
     },
     {
       "source": "Beschützer",
-      "target": "sn9.13",
+      "target": "thig11.1",
       "rank": 14
     },
     {
       "source": "Beschützer",
-      "target": "thig11.1",
+      "target": "an10.14",
       "rank": 15
     },
     {
       "source": "Beschützer",
-      "target": "an10.14",
+      "target": "an10.20",
       "rank": 16
     },
     {
       "source": "Beschützer",
-      "target": "an10.20",
+      "target": "dhp360-382",
       "rank": 17
     },
     {
       "source": "Beschützer",
-      "target": "dhp360-382",
-      "rank": 18
-    },
-    {
-      "source": "Beschützer",
       "target": "thag16.10",
-      "rank": 19
+      "rank": 18
     },
     {
       "source": "besitzt vier Grundlagen",
@@ -22312,11 +22288,6 @@
       "source": "das Selbst ist",
       "target": "sn24.38",
       "rank": 2
-    },
-    {
-      "source": "das Selbst ist",
-      "target": "dhp157-166",
-      "rank": 3
     },
     {
       "source": "dass ich nie sehe oder höre",
@@ -28795,13 +28766,23 @@
     },
     {
       "source": "Galaxie",
-      "target": "mn49",
+      "target": "thag16.9",
       "rank": 11
     },
     {
       "source": "Galaxie",
-      "target": "dn1",
+      "target": "mn49",
       "rank": 12
+    },
+    {
+      "source": "Galaxie",
+      "target": "thag20.1",
+      "rank": 13
+    },
+    {
+      "source": "Galaxie",
+      "target": "dn1",
+      "rank": 14
     },
     {
       "source": "ganz allein von dir begangen",
@@ -29755,8 +29736,13 @@
     },
     {
       "source": "Gewissen und Besonnenheit",
-      "target": "dn33",
+      "target": "thag18.1",
       "rank": 25
+    },
+    {
+      "source": "Gewissen und Besonnenheit",
+      "target": "dn33",
+      "rank": 26
     },
     {
       "source": "gewürdigt, verehrt und wertgeschätzt",
@@ -31155,13 +31141,28 @@
     },
     {
       "source": "Hausbesitzer.* aus Stadt und Land",
-      "target": "dn5",
+      "target": "an5.30",
       "rank": 2
     },
     {
       "source": "Hausbesitzer.* aus Stadt und Land",
-      "target": "dn18",
+      "target": "an6.42",
       "rank": 3
+    },
+    {
+      "source": "Hausbesitzer.* aus Stadt und Land",
+      "target": "an8.86",
+      "rank": 4
+    },
+    {
+      "source": "Hausbesitzer.* aus Stadt und Land",
+      "target": "dn5",
+      "rank": 5
+    },
+    {
+      "source": "Hausbesitzer.* aus Stadt und Land",
+      "target": "dn18",
+      "rank": 6
     },
     {
       "source": "Hausbesitzer von Bambustor",
@@ -35700,33 +35701,38 @@
     },
     {
       "source": "mit einem Stock",
-      "target": "sn4.24",
+      "target": "an3.25",
       "rank": 4
     },
     {
       "source": "mit einem Stock",
-      "target": "thig13.3",
+      "target": "sn4.24",
       "rank": 5
     },
     {
       "source": "mit einem Stock",
-      "target": "sn4.25",
+      "target": "thig13.3",
       "rank": 6
     },
     {
       "source": "mit einem Stock",
-      "target": "mn49",
+      "target": "sn4.25",
       "rank": 7
     },
     {
       "source": "mit einem Stock",
-      "target": "mn21",
+      "target": "mn49",
       "rank": 8
     },
     {
       "source": "mit einem Stock",
-      "target": "mn35",
+      "target": "mn21",
       "rank": 9
+    },
+    {
+      "source": "mit einem Stock",
+      "target": "mn35",
+      "rank": 10
     },
     {
       "source": "mit freundlichen Augen",
@@ -37609,51 +37615,6 @@
       "rank": 1
     },
     {
-      "source": "Pulsadern",
-      "target": "sn35.87",
-      "rank": 1
-    },
-    {
-      "source": "Pulsadern",
-      "target": "mn144",
-      "rank": 2
-    },
-    {
-      "source": "Pulsadern",
-      "target": "sn4.23",
-      "rank": 3
-    },
-    {
-      "source": "Pulsadern",
-      "target": "sn54.9",
-      "rank": 4
-    },
-    {
-      "source": "Pulsadern",
-      "target": "sn22.87",
-      "rank": 5
-    },
-    {
-      "source": "Pulsadern",
-      "target": "thag6.6",
-      "rank": 6
-    },
-    {
-      "source": "Pulsadern",
-      "target": "sn35.88",
-      "rank": 7
-    },
-    {
-      "source": "Pulsadern",
-      "target": "mn145",
-      "rank": 8
-    },
-    {
-      "source": "Pulsadern",
-      "target": "dn23",
-      "rank": 9
-    },
-    {
       "source": "Puppe",
       "target": "sn5.9",
       "rank": 1
@@ -38000,13 +37961,8 @@
     },
     {
       "source": "Regenwolke",
-      "target": "thag19.1",
-      "rank": 12
-    },
-    {
-      "source": "Regenwolke",
       "target": "thag21.1",
-      "rank": 13
+      "rank": 12
     },
     {
       "source": "Renner",
@@ -47705,28 +47661,23 @@
     },
     {
       "source": "zwei Menschen",
-      "target": "iti48",
+      "target": "an7.57",
       "rank": 6
     },
     {
       "source": "zwei Menschen",
-      "target": "an7.57",
+      "target": "an2.52-63",
       "rank": 7
     },
     {
       "source": "zwei Menschen",
-      "target": "an2.52-63",
+      "target": "sn22.84",
       "rank": 8
     },
     {
       "source": "zwei Menschen",
-      "target": "sn22.84",
-      "rank": 9
-    },
-    {
-      "source": "zwei Menschen",
       "target": "an2.32-41",
-      "rank": 10
+      "rank": 9
     },
     {
       "source": "zwei Dinge.* entwickelt werden",
