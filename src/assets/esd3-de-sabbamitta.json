@@ -1423,7 +1423,7 @@
     {
       "id": "Feuerholz sammel",
       "group": "Examples",
-      "links": 2
+      "links": 1
     },
     {
       "id": "Filz",
@@ -1893,7 +1893,7 @@
     {
       "id": "Hausbesitzer.* aus Stadt und Land",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "Hausbesitzer von Bambustor",
@@ -6944,7 +6944,7 @@
       "id": "sn35.132",
       "group": "sn",
       "rank": 1,
-      "links": 6
+      "links": 5
     },
     {
       "id": "sn35.239",
@@ -7088,7 +7088,7 @@
       "id": "dn30",
       "group": "dn",
       "rank": 1,
-      "links": 13
+      "links": 14
     },
     {
       "id": "mn61",
@@ -27795,11 +27795,6 @@
       "rank": 1
     },
     {
-      "source": "Feuerholz sammel",
-      "target": "sn35.132",
-      "rank": 2
-    },
-    {
       "source": "Filz",
       "target": "sn7.6",
       "rank": 1
@@ -31136,33 +31131,38 @@
     },
     {
       "source": "Hausbesitzer.* aus Stadt und Land",
-      "target": "mn122",
+      "target": "dn30",
       "rank": 1
     },
     {
       "source": "Hausbesitzer.* aus Stadt und Land",
-      "target": "an5.30",
+      "target": "mn122",
       "rank": 2
     },
     {
       "source": "Hausbesitzer.* aus Stadt und Land",
-      "target": "an6.42",
+      "target": "dn5",
       "rank": 3
     },
     {
       "source": "Hausbesitzer.* aus Stadt und Land",
-      "target": "an8.86",
+      "target": "an5.30",
       "rank": 4
     },
     {
       "source": "Hausbesitzer.* aus Stadt und Land",
-      "target": "dn5",
+      "target": "an6.42",
       "rank": 5
     },
     {
       "source": "Hausbesitzer.* aus Stadt und Land",
-      "target": "dn18",
+      "target": "an8.86",
       "rank": 6
+    },
+    {
+      "source": "Hausbesitzer.* aus Stadt und Land",
+      "target": "dn18",
+      "rank": 7
     },
     {
       "source": "Hausbesitzer von Bambustor",
