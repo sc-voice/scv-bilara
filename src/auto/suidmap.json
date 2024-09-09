@@ -8839,6 +8839,82 @@
 		"translation/en/sujato": "sutta/kn/ja",
 		"root/pli/ms": "sutta/kn/ja"
 	},
+	"ja12": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
+	"ja13": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
+	"ja14": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
+	"ja15": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
+	"ja16": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
+	"ja17": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
+	"ja18": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
+	"ja19": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
+	"ja20": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
+	"ja21": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
+	"ja22": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
+	"ja23": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
+	"ja24": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
+	"ja25": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
+	"ja26": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
+	"ja27": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
+	"ja28": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
+	"ja29": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
+	"ja30": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
 	"kp1": {
 		"translation/de/sabbamitta": "sutta/kn/kp",
 		"translation/en/sujato": "sutta/kn/kp",
@@ -12947,60 +13023,70 @@
 		"translation/de/sabbamitta": "sutta/sn/sn5",
 		"translation/en/sujato": "sutta/sn/sn5",
 		"translation/pt/laera-quaresma": "sutta/sn/sn5",
+		"translation/ru/sv": "sutta/sn/sn5",
 		"translation/sr/brankokovacevic": "sutta/sn/sn5",
 		"root/pli/ms": "sutta/sn/sn5"
 	},
 	"sn5.2": {
 		"translation/de/sabbamitta": "sutta/sn/sn5",
 		"translation/en/sujato": "sutta/sn/sn5",
+		"translation/ru/sv": "sutta/sn/sn5",
 		"translation/sr/brankokovacevic": "sutta/sn/sn5",
 		"root/pli/ms": "sutta/sn/sn5"
 	},
 	"sn5.3": {
 		"translation/de/sabbamitta": "sutta/sn/sn5",
 		"translation/en/sujato": "sutta/sn/sn5",
+		"translation/ru/sv": "sutta/sn/sn5",
 		"translation/sr/brankokovacevic": "sutta/sn/sn5",
 		"root/pli/ms": "sutta/sn/sn5"
 	},
 	"sn5.4": {
 		"translation/de/sabbamitta": "sutta/sn/sn5",
 		"translation/en/sujato": "sutta/sn/sn5",
+		"translation/ru/sv": "sutta/sn/sn5",
 		"translation/sr/brankokovacevic": "sutta/sn/sn5",
 		"root/pli/ms": "sutta/sn/sn5"
 	},
 	"sn5.5": {
 		"translation/de/sabbamitta": "sutta/sn/sn5",
 		"translation/en/sujato": "sutta/sn/sn5",
+		"translation/ru/sv": "sutta/sn/sn5",
 		"translation/sr/brankokovacevic": "sutta/sn/sn5",
 		"root/pli/ms": "sutta/sn/sn5"
 	},
 	"sn5.6": {
 		"translation/de/sabbamitta": "sutta/sn/sn5",
 		"translation/en/sujato": "sutta/sn/sn5",
+		"translation/ru/sv": "sutta/sn/sn5",
 		"translation/sr/brankokovacevic": "sutta/sn/sn5",
 		"root/pli/ms": "sutta/sn/sn5"
 	},
 	"sn5.7": {
 		"translation/de/sabbamitta": "sutta/sn/sn5",
 		"translation/en/sujato": "sutta/sn/sn5",
+		"translation/ru/sv": "sutta/sn/sn5",
 		"translation/sr/brankokovacevic": "sutta/sn/sn5",
 		"root/pli/ms": "sutta/sn/sn5"
 	},
 	"sn5.8": {
 		"translation/de/sabbamitta": "sutta/sn/sn5",
 		"translation/en/sujato": "sutta/sn/sn5",
+		"translation/ru/sv": "sutta/sn/sn5",
 		"translation/sr/brankokovacevic": "sutta/sn/sn5",
 		"root/pli/ms": "sutta/sn/sn5"
 	},
 	"sn5.9": {
 		"translation/de/sabbamitta": "sutta/sn/sn5",
 		"translation/en/sujato": "sutta/sn/sn5",
+		"translation/ru/sv": "sutta/sn/sn5",
 		"translation/sr/brankokovacevic": "sutta/sn/sn5",
 		"root/pli/ms": "sutta/sn/sn5"
 	},
 	"sn5.10": {
 		"translation/de/sabbamitta": "sutta/sn/sn5",
 		"translation/en/sujato": "sutta/sn/sn5",
+		"translation/ru/sv": "sutta/sn/sn5",
 		"translation/sr/brankokovacevic": "sutta/sn/sn5",
 		"root/pli/ms": "sutta/sn/sn5"
 	},
@@ -24475,9 +24561,6 @@
 	"ja129": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
-	"ja12": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
 	"ja130": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
@@ -24506,9 +24589,6 @@
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja139": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
-	"ja13": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja140": {
@@ -24541,9 +24621,6 @@
 	"ja149": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
-	"ja14": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
 	"ja150": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
@@ -24572,9 +24649,6 @@
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja159": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
-	"ja15": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja160": {
@@ -24607,9 +24681,6 @@
 	"ja169": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
-	"ja16": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
 	"ja170": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
@@ -24638,9 +24709,6 @@
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja179": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
-	"ja17": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja180": {
@@ -24673,9 +24741,6 @@
 	"ja189": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
-	"ja18": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
 	"ja190": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
@@ -24704,9 +24769,6 @@
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja199": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
-	"ja19": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja200": {
@@ -24739,9 +24801,6 @@
 	"ja209": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
-	"ja20": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
 	"ja210": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
@@ -24770,9 +24829,6 @@
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja219": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
-	"ja21": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja220": {
@@ -24805,9 +24861,6 @@
 	"ja229": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
-	"ja22": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
 	"ja230": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
@@ -24836,9 +24889,6 @@
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja239": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
-	"ja23": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja240": {
@@ -24871,9 +24921,6 @@
 	"ja249": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
-	"ja24": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
 	"ja250": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
@@ -24902,9 +24949,6 @@
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja259": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
-	"ja25": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja260": {
@@ -24937,9 +24981,6 @@
 	"ja269": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
-	"ja26": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
 	"ja270": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
@@ -24968,9 +25009,6 @@
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja279": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
-	"ja27": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja280": {
@@ -25003,9 +25041,6 @@
 	"ja289": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
-	"ja28": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
 	"ja290": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
@@ -25036,9 +25071,6 @@
 	"ja299": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
-	"ja29": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
 	"ja300": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
@@ -25067,9 +25099,6 @@
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja309": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
-	"ja30": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja310": {

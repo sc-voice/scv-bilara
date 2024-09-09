@@ -733,7 +733,7 @@
     {
       "id": "damn",
       "group": "Examples",
-      "links": 5
+      "links": 2
     },
     {
       "id": "dark bound for light",
@@ -4623,7 +4623,7 @@
       "id": "dn14",
       "group": "dn",
       "rank": 1,
-      "links": 35
+      "links": 34
     },
     {
       "id": "mn139",
@@ -5492,8 +5492,8 @@
     {
       "id": "thag20.1",
       "group": "thag",
-      "rank": 4,
-      "links": 14
+      "rank": 7,
+      "links": 13
     },
     {
       "id": "iti109",
@@ -9646,12 +9646,6 @@
       "group": "sn",
       "rank": 6,
       "links": 3
-    },
-    {
-      "id": "thag4.4",
-      "group": "thag",
-      "rank": 2,
-      "links": 1
     },
     {
       "id": "an4.85",
@@ -24919,28 +24913,13 @@
     },
     {
       "source": "damn",
-      "target": "dn14",
+      "target": "mn66",
       "rank": 1
     },
     {
       "source": "damn",
-      "target": "thag4.4",
-      "rank": 2
-    },
-    {
-      "source": "damn",
-      "target": "mn66",
-      "rank": 3
-    },
-    {
-      "source": "damn",
-      "target": "thag20.1",
-      "rank": 4
-    },
-    {
-      "source": "damn",
       "target": "dn23",
-      "rank": 5
+      "rank": 2
     },
     {
       "source": "dark bound for light",
