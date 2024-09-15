@@ -1,5 +1,8 @@
 abscheiden
 abscheidet
+adlig
+adlige
+adliger
 alt
 alte
 alter
@@ -45,6 +48,7 @@ gharial
 ghariale
 giftschlange
 glanzvoll
+gold
 goldschmied
 grausam
 hindernis
@@ -97,6 +101,7 @@ skelett
 sonnenschirm
 sonnenschirm-Orchideenbaum
 soundso
+soviel
 spender
 spenderin
 stamm
