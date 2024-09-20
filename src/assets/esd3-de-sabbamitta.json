@@ -73,7 +73,7 @@
     {
       "id": "Achtsamkeit verankert",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "achtsam leben, der Situation bewusst",
@@ -243,7 +243,7 @@
     {
       "id": "Ausbauen der Versenkung",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "Ausdruck für Sinnenfreuden",
@@ -328,7 +328,7 @@
     {
       "id": "beim Einatmen Seligkeit",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "bei Tag oder Nacht",
@@ -1658,7 +1658,7 @@
     {
       "id": "gepflegt werden sollte, und",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "gepresster Zunge",
@@ -1698,7 +1698,7 @@
     {
       "id": "Gesetzmäßigkeiten mit Weisheit erforscht",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "gesichert",
@@ -3663,7 +3663,7 @@
     {
       "id": "Versenkung weiterzuentwickeln",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "verstecktem Hass",
@@ -3693,7 +3693,7 @@
     {
       "id": "verwirklicht werden",
       "group": "Examples",
-      "links": 25
+      "links": 23
     },
     {
       "id": "viel Leiden und Bedrängnis",
@@ -4158,7 +4158,7 @@
     {
       "id": "wie entwickelt ein Mönch",
       "group": "Examples",
-      "links": 35
+      "links": 1
     },
     {
       "id": "wie Garn",
@@ -4802,7 +4802,7 @@
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 109
+      "links": 108
     },
     {
       "id": "an4.189",
@@ -4946,7 +4946,7 @@
       "id": "an4.41",
       "group": "an",
       "rank": 1,
-      "links": 9
+      "links": 8
     },
     {
       "id": "an6.77",
@@ -5000,13 +5000,13 @@
       "id": "sn54.11",
       "group": "sn",
       "rank": 1,
-      "links": 5
+      "links": 4
     },
     {
       "id": "sn54.12",
       "group": "sn",
       "rank": 2,
-      "links": 7
+      "links": 6
     },
     {
       "id": "an6.29",
@@ -5039,6 +5039,12 @@
       "links": 2
     },
     {
+      "id": "sn54.16",
+      "group": "sn",
+      "rank": 2,
+      "links": 3
+    },
+    {
       "id": "sn54.13",
       "group": "sn",
       "rank": 2,
@@ -5059,7 +5065,7 @@
     {
       "id": "thig7.2",
       "group": "thig",
-      "rank": 5,
+      "rank": 6,
       "links": 2
     },
     {
@@ -5317,14 +5323,14 @@
     {
       "id": "sn45.139",
       "group": "sn",
-      "rank": 1,
-      "links": 3
+      "rank": 2,
+      "links": 2
     },
     {
       "id": "sn45.140",
       "group": "sn",
       "rank": 3,
-      "links": 2
+      "links": 1
     },
     {
       "id": "mn8",
@@ -5708,7 +5714,7 @@
       "id": "sn45.159",
       "group": "sn",
       "rank": 5,
-      "links": 5
+      "links": 4
     },
     {
       "id": "an4.188",
@@ -6620,7 +6626,7 @@
       "id": "sn49.23-34",
       "group": "sn",
       "rank": 17,
-      "links": 2
+      "links": 1
     },
     {
       "id": "sn49.35-44",
@@ -8000,13 +8006,13 @@
       "id": "sn45.2",
       "group": "sn",
       "rank": 1,
-      "links": 5
+      "links": 4
     },
     {
       "id": "sn3.18",
       "group": "sn",
       "rank": 1,
-      "links": 5
+      "links": 4
     },
     {
       "id": "an4.177",
@@ -8048,7 +8054,7 @@
       "id": "sn45.3",
       "group": "sn",
       "rank": 2,
-      "links": 4
+      "links": 3
     },
     {
       "id": "iti49",
@@ -9107,12 +9113,6 @@
       "links": 2
     },
     {
-      "id": "sn54.9",
-      "group": "sn",
-      "rank": 1,
-      "links": 3
-    },
-    {
       "id": "an3.101",
       "group": "an",
       "rank": 2,
@@ -9121,8 +9121,14 @@
     {
       "id": "sn54.7",
       "group": "sn",
-      "rank": 8,
+      "rank": 7,
       "links": 1
+    },
+    {
+      "id": "sn54.9",
+      "group": "sn",
+      "rank": 1,
+      "links": 3
     },
     {
       "id": "sn56.26",
@@ -10433,33 +10439,39 @@
       "links": 1
     },
     {
+      "id": "sn46.57",
+      "group": "sn",
+      "rank": 5,
+      "links": 1
+    },
+    {
       "id": "an10.59",
       "group": "an",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
       "id": "sn48.65",
       "group": "sn",
-      "rank": 9,
+      "rank": 10,
       "links": 1
     },
     {
       "id": "sn54.4",
       "group": "sn",
-      "rank": 10,
+      "rank": 11,
       "links": 1
     },
     {
       "id": "sn47.36",
       "group": "sn",
-      "rank": 11,
+      "rank": 12,
       "links": 1
     },
     {
       "id": "sn51.25",
       "group": "sn",
-      "rank": 12,
+      "rank": 13,
       "links": 1
     },
     {
@@ -10471,18 +10483,12 @@
     {
       "id": "iti46",
       "group": "iti",
-      "rank": 14,
+      "rank": 15,
       "links": 1
     },
     {
       "id": "iti47",
       "group": "iti",
-      "rank": 15,
-      "links": 1
-    },
-    {
-      "id": "sn46.57",
-      "group": "sn",
       "rank": 16,
       "links": 1
     },
@@ -10783,7 +10789,7 @@
     {
       "id": "sn51.20",
       "group": "sn",
-      "rank": 3,
+      "rank": 1,
       "links": 7
     },
     {
@@ -12177,18 +12183,6 @@
       "group": "thig",
       "rank": 2,
       "links": 4
-    },
-    {
-      "id": "an10.150",
-      "group": "an",
-      "rank": 1,
-      "links": 1
-    },
-    {
-      "id": "an10.194",
-      "group": "an",
-      "rank": 2,
-      "links": 1
     },
     {
       "id": "mn20",
@@ -15379,8 +15373,8 @@
     {
       "id": "sn46.49",
       "group": "sn",
-      "rank": 13,
-      "links": 2
+      "rank": 22,
+      "links": 1
     },
     {
       "id": "sn46.44",
@@ -15392,7 +15386,7 @@
       "id": "sn46.48",
       "group": "sn",
       "rank": 10,
-      "links": 3
+      "links": 2
     },
     {
       "id": "sn46.43",
@@ -15409,8 +15403,8 @@
     {
       "id": "sn46.50",
       "group": "sn",
-      "rank": 26,
-      "links": 2
+      "rank": 27,
+      "links": 1
     },
     {
       "id": "kp8",
@@ -16723,20 +16717,20 @@
     {
       "id": "sn45.69",
       "group": "sn",
-      "rank": 2,
-      "links": 2
+      "rank": 21,
+      "links": 1
     },
     {
       "id": "sn45.83",
       "group": "sn",
-      "rank": 3,
-      "links": 2
+      "rank": 22,
+      "links": 1
     },
     {
       "id": "sn45.55",
       "group": "sn",
       "rank": 3,
-      "links": 3
+      "links": 2
     },
     {
       "id": "sn45.50-54",
@@ -16748,19 +16742,19 @@
       "id": "sn45.62",
       "group": "sn",
       "rank": 11,
-      "links": 3
+      "links": 2
     },
     {
       "id": "sn45.76",
       "group": "sn",
-      "rank": 23,
-      "links": 2
+      "rank": 26,
+      "links": 1
     },
     {
       "id": "sn45.90",
       "group": "sn",
-      "rank": 24,
-      "links": 2
+      "rank": 27,
+      "links": 1
     },
     {
       "id": "an3.138",
@@ -16793,39 +16787,27 @@
       "links": 1
     },
     {
-      "id": "an10.154",
-      "group": "an",
-      "rank": 3,
-      "links": 1
-    },
-    {
-      "id": "an10.198",
-      "group": "an",
-      "rank": 4,
-      "links": 1
-    },
-    {
       "id": "sn27.1",
       "group": "sn",
-      "rank": 12,
+      "rank": 10,
       "links": 1
     },
     {
       "id": "sn27.2",
       "group": "sn",
-      "rank": 13,
+      "rank": 11,
       "links": 1
     },
     {
       "id": "sn27.3",
       "group": "sn",
-      "rank": 14,
+      "rank": 12,
       "links": 1
     },
     {
       "id": "sn27.10",
       "group": "sn",
-      "rank": 15,
+      "rank": 13,
       "links": 1
     },
     {
@@ -17024,25 +17006,25 @@
       "id": "sn45.56",
       "group": "sn",
       "rank": 4,
-      "links": 2
+      "links": 1
     },
     {
       "id": "sn45.49",
       "group": "sn",
       "rank": 6,
-      "links": 2
+      "links": 1
     },
     {
       "id": "sn46.12",
       "group": "sn",
       "rank": 8,
-      "links": 2
+      "links": 1
     },
     {
       "id": "sn46.13",
       "group": "sn",
       "rank": 9,
-      "links": 2
+      "links": 1
     },
     {
       "id": "an4.35",
@@ -17816,90 +17798,6 @@
       "id": "sn51.17",
       "group": "sn",
       "rank": 5,
-      "links": 1
-    },
-    {
-      "id": "sn45.84",
-      "group": "sn",
-      "rank": 4,
-      "links": 1
-    },
-    {
-      "id": "sn45.150",
-      "group": "sn",
-      "rank": 5,
-      "links": 1
-    },
-    {
-      "id": "sn45.158",
-      "group": "sn",
-      "rank": 6,
-      "links": 1
-    },
-    {
-      "id": "sn45.77",
-      "group": "sn",
-      "rank": 9,
-      "links": 1
-    },
-    {
-      "id": "sn45.151",
-      "group": "sn",
-      "rank": 10,
-      "links": 1
-    },
-    {
-      "id": "sn46.31",
-      "group": "sn",
-      "rank": 11,
-      "links": 1
-    },
-    {
-      "id": "sn46.32",
-      "group": "sn",
-      "rank": 12,
-      "links": 1
-    },
-    {
-      "id": "sn46.11",
-      "group": "sn",
-      "rank": 16,
-      "links": 1
-    },
-    {
-      "id": "sn45.63",
-      "group": "sn",
-      "rank": 20,
-      "links": 1
-    },
-    {
-      "id": "sn45.70",
-      "group": "sn",
-      "rank": 21,
-      "links": 1
-    },
-    {
-      "id": "sn46.1",
-      "group": "sn",
-      "rank": 27,
-      "links": 1
-    },
-    {
-      "id": "sn45.149",
-      "group": "sn",
-      "rank": 31,
-      "links": 1
-    },
-    {
-      "id": "sn52.8",
-      "group": "sn",
-      "rank": 32,
-      "links": 1
-    },
-    {
-      "id": "sn45.160",
-      "group": "sn",
-      "rank": 33,
       "links": 1
     },
     {
@@ -18699,28 +18597,33 @@
     },
     {
       "source": "Achtsamkeit verankert",
-      "target": "sn54.13",
+      "target": "sn54.16",
       "rank": 2
     },
     {
       "source": "Achtsamkeit verankert",
-      "target": "mn118",
+      "target": "sn54.13",
       "rank": 3
     },
     {
       "source": "Achtsamkeit verankert",
-      "target": "an7.23",
+      "target": "mn118",
       "rank": 4
     },
     {
       "source": "Achtsamkeit verankert",
-      "target": "thig7.2",
+      "target": "an7.23",
       "rank": 5
     },
     {
       "source": "Achtsamkeit verankert",
-      "target": "dn16",
+      "target": "thig7.2",
       "rank": 6
+    },
+    {
+      "source": "Achtsamkeit verankert",
+      "target": "dn16",
+      "rank": 7
     },
     {
       "source": "achtsam leben, der Situation bewusst",
@@ -19673,16 +19576,6 @@
       "rank": 6
     },
     {
-      "source": "Ausbauen der Versenkung",
-      "target": "sn54.11",
-      "rank": 1
-    },
-    {
-      "source": "Ausbauen der Versenkung",
-      "target": "sn54.12",
-      "rank": 2
-    },
-    {
       "source": "Ausdruck für Sinnenfreuden",
       "target": "an6.23",
       "rank": 1
@@ -20214,8 +20107,13 @@
     },
     {
       "source": "beim Einatmen Seligkeit",
-      "target": "mn62",
+      "target": "sn54.16",
       "rank": 6
+    },
+    {
+      "source": "beim Einatmen Seligkeit",
+      "target": "mn62",
+      "rank": 7
     },
     {
       "source": "bei Tag oder Nacht",
@@ -23639,22 +23537,22 @@
     },
     {
       "source": "diese Versenkung",
-      "target": "sn54.9",
+      "target": "dn28",
       "rank": 5
     },
     {
       "source": "diese Versenkung",
-      "target": "dn28",
+      "target": "an3.101",
       "rank": 6
     },
     {
       "source": "diese Versenkung",
-      "target": "an3.101",
+      "target": "sn54.7",
       "rank": 7
     },
     {
       "source": "diese Versenkung",
-      "target": "sn54.7",
+      "target": "sn54.9",
       "rank": 8
     },
     {
@@ -26044,62 +25942,62 @@
     },
     {
       "source": "ein Rest",
-      "target": "an9.12",
+      "target": "sn46.57",
       "rank": 5
     },
     {
       "source": "ein Rest",
-      "target": "mn10",
+      "target": "an9.12",
       "rank": 6
     },
     {
       "source": "ein Rest",
-      "target": "dn22",
+      "target": "mn10",
       "rank": 7
     },
     {
       "source": "ein Rest",
-      "target": "an10.59",
+      "target": "dn22",
       "rank": 8
     },
     {
       "source": "ein Rest",
-      "target": "sn48.65",
+      "target": "an10.59",
       "rank": 9
     },
     {
       "source": "ein Rest",
-      "target": "sn54.4",
+      "target": "sn48.65",
       "rank": 10
     },
     {
       "source": "ein Rest",
-      "target": "sn47.36",
+      "target": "sn54.4",
       "rank": 11
     },
     {
       "source": "ein Rest",
-      "target": "sn51.25",
+      "target": "sn47.36",
       "rank": 12
     },
     {
       "source": "ein Rest",
-      "target": "iti45",
+      "target": "sn51.25",
       "rank": 13
     },
     {
       "source": "ein Rest",
-      "target": "iti46",
+      "target": "iti45",
       "rank": 14
     },
     {
       "source": "ein Rest",
-      "target": "iti47",
+      "target": "iti46",
       "rank": 15
     },
     {
       "source": "ein Rest",
-      "target": "sn46.57",
+      "target": "iti47",
       "rank": 16
     },
     {
@@ -29483,16 +29381,6 @@
       "rank": 14
     },
     {
-      "source": "gepflegt werden sollte, und",
-      "target": "an10.150",
-      "rank": 1
-    },
-    {
-      "source": "gepflegt werden sollte, und",
-      "target": "an10.194",
-      "rank": 2
-    },
-    {
       "source": "gepresster Zunge",
       "target": "mn20",
       "rank": 1
@@ -29684,8 +29572,13 @@
     },
     {
       "source": "Gesetzmäßigkeiten mit Weisheit erforscht",
-      "target": "mn118",
+      "target": "sn54.16",
       "rank": 3
+    },
+    {
+      "source": "Gesetzmäßigkeiten mit Weisheit erforscht",
+      "target": "mn118",
+      "rank": 4
     },
     {
       "source": "gesichert",
@@ -42793,16 +42686,6 @@
       "rank": 3
     },
     {
-      "source": "Versenkung weiterzuentwickeln",
-      "target": "an4.41",
-      "rank": 1
-    },
-    {
-      "source": "Versenkung weiterzuentwickeln",
-      "target": "dn33",
-      "rank": 2
-    },
-    {
       "source": "verstecktem Hass",
       "target": "mn21",
       "rank": 1
@@ -43109,118 +42992,108 @@
     },
     {
       "source": "verwirklicht werden",
-      "target": "an10.154",
+      "target": "dn33",
       "rank": 3
     },
     {
       "source": "verwirklicht werden",
-      "target": "an10.198",
+      "target": "an6.71",
       "rank": 4
     },
     {
       "source": "verwirklicht werden",
-      "target": "dn33",
+      "target": "an5.28",
       "rank": 5
     },
     {
       "source": "verwirklicht werden",
-      "target": "an6.71",
+      "target": "mn119",
       "rank": 6
     },
     {
       "source": "verwirklicht werden",
-      "target": "an5.28",
+      "target": "an4.254",
       "rank": 7
     },
     {
       "source": "verwirklicht werden",
-      "target": "mn119",
+      "target": "sn45.159",
       "rank": 8
     },
     {
       "source": "verwirklicht werden",
-      "target": "an4.254",
+      "target": "sn56.29",
       "rank": 9
     },
     {
       "source": "verwirklicht werden",
-      "target": "sn45.159",
+      "target": "sn27.1",
       "rank": 10
     },
     {
       "source": "verwirklicht werden",
-      "target": "sn56.29",
+      "target": "sn27.2",
       "rank": 11
     },
     {
       "source": "verwirklicht werden",
-      "target": "sn27.1",
+      "target": "sn27.3",
       "rank": 12
     },
     {
       "source": "verwirklicht werden",
-      "target": "sn27.2",
+      "target": "sn27.10",
       "rank": 13
     },
     {
       "source": "verwirklicht werden",
-      "target": "sn27.3",
+      "target": "sn56.12",
       "rank": 14
     },
     {
       "source": "verwirklicht werden",
-      "target": "sn27.10",
+      "target": "an5.68",
       "rank": 15
     },
     {
       "source": "verwirklicht werden",
-      "target": "sn56.12",
+      "target": "an10.22",
       "rank": 16
     },
     {
       "source": "verwirklicht werden",
-      "target": "an5.68",
+      "target": "an3.102",
       "rank": 17
     },
     {
       "source": "verwirklicht werden",
-      "target": "an10.22",
+      "target": "sn35.43-51",
       "rank": 18
     },
     {
       "source": "verwirklicht werden",
-      "target": "an3.102",
+      "target": "an5.23",
       "rank": 19
     },
     {
       "source": "verwirklicht werden",
-      "target": "sn35.43-51",
+      "target": "an3.101",
       "rank": 20
     },
     {
       "source": "verwirklicht werden",
-      "target": "an5.23",
+      "target": "sn56.11",
       "rank": 21
     },
     {
       "source": "verwirklicht werden",
-      "target": "an3.101",
+      "target": "an9.35",
       "rank": 22
     },
     {
       "source": "verwirklicht werden",
-      "target": "sn56.11",
-      "rank": 23
-    },
-    {
-      "source": "verwirklicht werden",
-      "target": "an9.35",
-      "rank": 24
-    },
-    {
-      "source": "verwirklicht werden",
       "target": "thag20.1",
-      "rank": 25
+      "rank": 23
     },
     {
       "source": "viel Leiden und Bedrängnis",
@@ -46679,178 +46552,8 @@
     },
     {
       "source": "wie entwickelt ein Mönch",
-      "target": "sn45.139",
-      "rank": 1
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn45.69",
-      "rank": 2
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn45.83",
-      "rank": 3
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn45.84",
-      "rank": 4
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn45.150",
-      "rank": 5
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn45.158",
-      "rank": 6
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn45.55",
-      "rank": 7
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn45.56",
-      "rank": 8
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn45.77",
-      "rank": 9
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn45.151",
-      "rank": 10
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn46.31",
-      "rank": 11
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn46.32",
-      "rank": 12
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn46.49",
-      "rank": 13
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn45.49",
-      "rank": 14
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn45.140",
-      "rank": 15
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn46.11",
-      "rank": 16
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn46.12",
-      "rank": 17
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn46.13",
-      "rank": 18
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn46.48",
-      "rank": 19
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn45.63",
-      "rank": 20
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn45.70",
-      "rank": 21
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn45.62",
-      "rank": 22
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn45.76",
-      "rank": 23
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn45.90",
-      "rank": 24
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn45.3",
-      "rank": 25
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn46.50",
-      "rank": 26
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn46.1",
-      "rank": 27
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn49.23-34",
-      "rank": 28
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn45.2",
-      "rank": 29
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn45.159",
-      "rank": 30
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn45.149",
-      "rank": 31
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn52.8",
-      "rank": 32
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn45.160",
-      "rank": 33
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
-      "target": "sn3.18",
-      "rank": 34
-    },
-    {
-      "source": "wie entwickelt ein Mönch",
       "target": "sn51.20",
-      "rank": 35
+      "rank": 1
     },
     {
       "source": "wie Garn",
