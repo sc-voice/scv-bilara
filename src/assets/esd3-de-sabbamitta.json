@@ -348,7 +348,7 @@
     {
       "id": "bemüht.*, damit",
       "group": "Examples",
-      "links": 19
+      "links": 20
     },
     {
       "id": "Benommenheit aufgeben",
@@ -1813,7 +1813,7 @@
     {
       "id": "grausam",
       "group": "Examples",
-      "links": 52
+      "links": 53
     },
     {
       "id": "grenzenlose Versenkung des Herzens",
@@ -1988,7 +1988,7 @@
     {
       "id": "Höllenlärm",
       "group": "Examples",
-      "links": 15
+      "links": 16
     },
     {
       "id": "hörte mit",
@@ -2323,7 +2323,7 @@
     {
       "id": "Konzept",
       "group": "Examples",
-      "links": 5
+      "links": 6
     },
     {
       "id": "Kopfhaare, Körperhaare",
@@ -3533,7 +3533,7 @@
     {
       "id": "unwürdige Gespräche",
       "group": "Examples",
-      "links": 11
+      "links": 12
     },
     {
       "id": "üppige[rn] schlafstelle",
@@ -3568,7 +3568,7 @@
     {
       "id": "verdammt",
       "group": "Examples",
-      "links": 6
+      "links": 3
     },
     {
       "id": "veredelt und nährt den Geist",
@@ -3578,7 +3578,7 @@
     {
       "id": "verflucht sei",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "Vergehen der Erscheinungen",
@@ -3798,7 +3798,7 @@
     {
       "id": "von Sprache",
       "group": "Examples",
-      "links": 29
+      "links": 30
     },
     {
       "id": "von Zorn überwältigt",
@@ -4741,8 +4741,8 @@
     {
       "id": "thag20.1",
       "group": "thag",
-      "rank": 4,
-      "links": 14
+      "rank": 7,
+      "links": 13
     },
     {
       "id": "dn17",
@@ -5617,7 +5617,7 @@
     {
       "id": "sn12.15",
       "group": "sn",
-      "rank": 4,
+      "rank": 5,
       "links": 4
     },
     {
@@ -6569,21 +6569,27 @@
       "links": 2
     },
     {
-      "id": "an4.13",
-      "group": "an",
+      "id": "mn78",
+      "group": "mn",
       "rank": 3,
-      "links": 1
+      "links": 6
     },
     {
-      "id": "an9.73",
+      "id": "an4.13",
       "group": "an",
       "rank": 4,
       "links": 1
     },
     {
-      "id": "an4.69",
+      "id": "an9.73",
       "group": "an",
       "rank": 5,
+      "links": 1
+    },
+    {
+      "id": "an4.69",
+      "group": "an",
+      "rank": 6,
       "links": 1
     },
     {
@@ -6613,7 +6619,7 @@
     {
       "id": "an9.82",
       "group": "an",
-      "rank": 15,
+      "rank": 16,
       "links": 1
     },
     {
@@ -6625,7 +6631,7 @@
     {
       "id": "sn49.23-34",
       "group": "sn",
-      "rank": 17,
+      "rank": 18,
       "links": 1
     },
     {
@@ -6805,7 +6811,7 @@
     {
       "id": "thig11.1",
       "group": "thig",
-      "rank": 3,
+      "rank": 4,
       "links": 4
     },
     {
@@ -10795,13 +10801,13 @@
     {
       "id": "thig5.8",
       "group": "thig",
-      "rank": 1,
-      "links": 4
+      "rank": 5,
+      "links": 3
     },
     {
       "id": "sn48.41",
       "group": "sn",
-      "rank": 2,
+      "rank": 3,
       "links": 3
     },
     {
@@ -12673,19 +12679,19 @@
     {
       "id": "an4.262",
       "group": "an",
-      "rank": 22,
+      "rank": 23,
       "links": 1
     },
     {
       "id": "an6.75",
       "group": "an",
-      "rank": 23,
+      "rank": 24,
       "links": 1
     },
     {
       "id": "sn56.7",
       "group": "sn",
-      "rank": 24,
+      "rank": 25,
       "links": 1
     },
     {
@@ -12697,13 +12703,13 @@
     {
       "id": "an4.165",
       "group": "an",
-      "rank": 27,
+      "rank": 28,
       "links": 1
     },
     {
       "id": "an4.164",
       "group": "an",
-      "rank": 28,
+      "rank": 29,
       "links": 1
     },
     {
@@ -12715,7 +12721,7 @@
     {
       "id": "iti87",
       "group": "iti",
-      "rank": 30,
+      "rank": 31,
       "links": 1
     },
     {
@@ -12733,19 +12739,19 @@
     {
       "id": "an3.123",
       "group": "an",
-      "rank": 33,
+      "rank": 34,
       "links": 1
     },
     {
       "id": "an4.14",
       "group": "an",
-      "rank": 35,
+      "rank": 36,
       "links": 1
     },
     {
       "id": "sn1.32",
       "group": "sn",
-      "rank": 38,
+      "rank": 39,
       "links": 1
     },
     {
@@ -16523,8 +16529,8 @@
       "links": 1
     },
     {
-      "id": "thag4.4",
-      "group": "thag",
+      "id": "ja13",
+      "group": "ja",
       "rank": 2,
       "links": 1
     },
@@ -20272,88 +20278,93 @@
     },
     {
       "source": "bemüht.*, damit",
-      "target": "an4.13",
+      "target": "mn78",
       "rank": 3
     },
     {
       "source": "bemüht.*, damit",
-      "target": "an9.73",
+      "target": "an4.13",
       "rank": 4
     },
     {
       "source": "bemüht.*, damit",
-      "target": "an4.69",
+      "target": "an9.73",
       "rank": 5
     },
     {
       "source": "bemüht.*, damit",
-      "target": "sn48.10",
+      "target": "an4.69",
       "rank": 6
     },
     {
       "source": "bemüht.*, damit",
-      "target": "sn45.8",
+      "target": "sn48.10",
       "rank": 7
     },
     {
       "source": "bemüht.*, damit",
-      "target": "an3.156-162",
+      "target": "sn45.8",
       "rank": 8
     },
     {
       "source": "bemüht.*, damit",
-      "target": "mn141",
+      "target": "an3.156-162",
       "rank": 9
     },
     {
       "source": "bemüht.*, damit",
-      "target": "sn43.12",
+      "target": "mn141",
       "rank": 10
     },
     {
       "source": "bemüht.*, damit",
-      "target": "an1.394-574",
+      "target": "sn43.12",
       "rank": 11
     },
     {
       "source": "bemüht.*, damit",
-      "target": "mn77",
+      "target": "an1.394-574",
       "rank": 12
     },
     {
       "source": "bemüht.*, damit",
-      "target": "dn22",
+      "target": "mn77",
       "rank": 13
     },
     {
       "source": "bemüht.*, damit",
-      "target": "dn33",
+      "target": "dn22",
       "rank": 14
     },
     {
       "source": "bemüht.*, damit",
-      "target": "an9.82",
+      "target": "dn33",
       "rank": 15
     },
     {
       "source": "bemüht.*, damit",
-      "target": "an4.275",
+      "target": "an9.82",
       "rank": 16
     },
     {
       "source": "bemüht.*, damit",
-      "target": "sn49.23-34",
+      "target": "an4.275",
       "rank": 17
     },
     {
       "source": "bemüht.*, damit",
-      "target": "sn49.35-44",
+      "target": "sn49.23-34",
       "rank": 18
     },
     {
       "source": "bemüht.*, damit",
-      "target": "sn49.45-54",
+      "target": "sn49.35-44",
       "rank": 19
+    },
+    {
+      "source": "bemüht.*, damit",
+      "target": "sn49.45-54",
+      "rank": 20
     },
     {
       "source": "Benommenheit aufgeben",
@@ -30417,158 +30428,163 @@
     },
     {
       "source": "grausam",
-      "target": "an4.262",
+      "target": "mn78",
       "rank": 22
     },
     {
       "source": "grausam",
-      "target": "an6.75",
+      "target": "an4.262",
       "rank": 23
     },
     {
       "source": "grausam",
-      "target": "sn56.7",
+      "target": "an6.75",
       "rank": 24
     },
     {
       "source": "grausam",
-      "target": "sn9.11",
+      "target": "sn56.7",
       "rank": 25
     },
     {
       "source": "grausam",
-      "target": "an4.51",
+      "target": "sn9.11",
       "rank": 26
     },
     {
       "source": "grausam",
-      "target": "an4.165",
+      "target": "an4.51",
       "rank": 27
     },
     {
       "source": "grausam",
-      "target": "an4.164",
+      "target": "an4.165",
       "rank": 28
     },
     {
       "source": "grausam",
-      "target": "an5.45",
+      "target": "an4.164",
       "rank": 29
     },
     {
       "source": "grausam",
-      "target": "iti87",
+      "target": "an5.45",
       "rank": 30
     },
     {
       "source": "grausam",
-      "target": "sn55.41",
+      "target": "iti87",
       "rank": 31
     },
     {
       "source": "grausam",
-      "target": "sn55.42",
+      "target": "sn55.41",
       "rank": 32
     },
     {
       "source": "grausam",
-      "target": "an3.123",
+      "target": "sn55.42",
       "rank": 33
     },
     {
       "source": "grausam",
-      "target": "an4.114",
+      "target": "an3.123",
       "rank": 34
     },
     {
       "source": "grausam",
-      "target": "an4.14",
+      "target": "an4.114",
       "rank": 35
     },
     {
       "source": "grausam",
-      "target": "an3.101",
+      "target": "an4.14",
       "rank": 36
     },
     {
       "source": "grausam",
-      "target": "an10.20",
+      "target": "an3.101",
       "rank": 37
     },
     {
       "source": "grausam",
-      "target": "sn1.32",
+      "target": "an10.20",
       "rank": 38
     },
     {
       "source": "grausam",
-      "target": "an5.140",
+      "target": "sn1.32",
       "rank": 39
     },
     {
       "source": "grausam",
-      "target": "an6.58",
+      "target": "an5.140",
       "rank": 40
     },
     {
       "source": "grausam",
-      "target": "an3.40",
+      "target": "an6.58",
       "rank": 41
     },
     {
       "source": "grausam",
-      "target": "an10.60",
+      "target": "an3.40",
       "rank": 42
     },
     {
       "source": "grausam",
-      "target": "mn55",
+      "target": "an10.60",
       "rank": 43
     },
     {
       "source": "grausam",
-      "target": "sn22.80",
+      "target": "mn55",
       "rank": 44
     },
     {
       "source": "grausam",
-      "target": "thag16.8",
+      "target": "sn22.80",
       "rank": 45
     },
     {
       "source": "grausam",
-      "target": "mn2",
+      "target": "thag16.8",
       "rank": 46
     },
     {
       "source": "grausam",
-      "target": "mn62",
+      "target": "mn2",
       "rank": 47
     },
     {
       "source": "grausam",
-      "target": "mn7",
+      "target": "mn62",
       "rank": 48
     },
     {
       "source": "grausam",
-      "target": "mn122",
+      "target": "mn7",
       "rank": 49
     },
     {
       "source": "grausam",
-      "target": "dhp383-423",
+      "target": "mn122",
       "rank": 50
     },
     {
       "source": "grausam",
-      "target": "dn17",
+      "target": "dhp383-423",
       "rank": 51
     },
     {
       "source": "grausam",
-      "target": "dn32",
+      "target": "dn17",
       "rank": 52
+    },
+    {
+      "source": "grausam",
+      "target": "dn32",
+      "rank": 53
     },
     {
       "source": "grenzenlose Versenkung des Herzens",
@@ -31827,18 +31843,23 @@
     },
     {
       "source": "Höllenlärm",
-      "target": "mn76",
+      "target": "mn78",
       "rank": 13
     },
     {
       "source": "Höllenlärm",
-      "target": "mn77",
+      "target": "mn76",
       "rank": 14
     },
     {
       "source": "Höllenlärm",
-      "target": "dn9",
+      "target": "mn77",
       "rank": 15
+    },
+    {
+      "source": "Höllenlärm",
+      "target": "dn9",
+      "rank": 16
     },
     {
       "source": "hörte mit",
@@ -33952,18 +33973,23 @@
     },
     {
       "source": "Konzept",
-      "target": "an4.199",
+      "target": "mn78",
       "rank": 3
     },
     {
       "source": "Konzept",
-      "target": "sn12.15",
+      "target": "an4.199",
       "rank": 4
     },
     {
       "source": "Konzept",
-      "target": "sn22.90",
+      "target": "sn12.15",
       "rank": 5
+    },
+    {
+      "source": "Konzept",
+      "target": "sn22.90",
+      "rank": 6
     },
     {
       "source": "Kopfhaare, Körperhaare",
@@ -42052,28 +42078,33 @@
     },
     {
       "source": "unwürdige Gespräche",
-      "target": "mn76",
+      "target": "mn78",
       "rank": 7
     },
     {
       "source": "unwürdige Gespräche",
-      "target": "mn77",
+      "target": "mn76",
       "rank": 8
     },
     {
       "source": "unwürdige Gespräche",
-      "target": "dn1",
+      "target": "mn77",
       "rank": 9
     },
     {
       "source": "unwürdige Gespräche",
-      "target": "dn2",
+      "target": "dn1",
       "rank": 10
     },
     {
       "source": "unwürdige Gespräche",
-      "target": "dn9",
+      "target": "dn2",
       "rank": 11
+    },
+    {
+      "source": "unwürdige Gespräche",
+      "target": "dn9",
+      "rank": 12
     },
     {
       "source": "üppige[rn] schlafstelle",
@@ -42282,33 +42313,18 @@
     },
     {
       "source": "verdammt",
-      "target": "dn14",
+      "target": "mn66",
       "rank": 1
     },
     {
       "source": "verdammt",
-      "target": "thag4.4",
+      "target": "dn3",
       "rank": 2
     },
     {
       "source": "verdammt",
-      "target": "mn66",
-      "rank": 3
-    },
-    {
-      "source": "verdammt",
-      "target": "thag20.1",
-      "rank": 4
-    },
-    {
-      "source": "verdammt",
-      "target": "dn3",
-      "rank": 5
-    },
-    {
-      "source": "verdammt",
       "target": "dn23",
-      "rank": 6
+      "rank": 3
     },
     {
       "source": "veredelt und nährt den Geist",
@@ -42332,23 +42348,28 @@
     },
     {
       "source": "verflucht sei",
-      "target": "thig5.8",
+      "target": "dn14",
       "rank": 1
     },
     {
       "source": "verflucht sei",
-      "target": "sn48.41",
+      "target": "ja13",
       "rank": 2
     },
     {
       "source": "verflucht sei",
-      "target": "thig11.1",
+      "target": "sn48.41",
       "rank": 3
     },
     {
       "source": "verflucht sei",
-      "target": "thag19.1",
+      "target": "thig11.1",
       "rank": 4
+    },
+    {
+      "source": "verflucht sei",
+      "target": "thag19.1",
+      "rank": 5
     },
     {
       "source": "Vergehen der Erscheinungen",
@@ -43802,8 +43823,13 @@
     },
     {
       "source": "von Sprache",
-      "target": "cp9",
+      "target": "mn78",
       "rank": 29
+    },
+    {
+      "source": "von Sprache",
+      "target": "cp9",
+      "rank": 30
     },
     {
       "source": "von Zorn überwältigt",
