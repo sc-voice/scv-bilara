@@ -2771,6 +2771,11 @@
       "links": 3
     },
     {
+      "id": "nicht nur hundert",
+      "group": "Examples",
+      "links": 4
+    },
+    {
       "id": "nichts ist es wert, darauf zu bestehen",
       "group": "Examples",
       "links": 3
@@ -3494,6 +3499,11 @@
       "id": "und wenn ich daran sterben würde",
       "group": "Examples",
       "links": 3
+    },
+    {
+      "id": "unfehlbar",
+      "group": "Examples",
+      "links": 30
     },
     {
       "id": "ungerichtet",
@@ -4261,9 +4271,9 @@
       "links": 2
     },
     {
-      "id": "zehn allumfassende Dimensionen",
+      "id": "zehn allumfassende",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "zehn Dinge.* entwickelt werden",
@@ -4736,7 +4746,7 @@
       "id": "thag16.4",
       "group": "thag",
       "rank": 1,
-      "links": 4
+      "links": 5
     },
     {
       "id": "thag20.1",
@@ -4760,7 +4770,7 @@
       "id": "mn82",
       "group": "mn",
       "rank": 1,
-      "links": 8
+      "links": 9
     },
     {
       "id": "dn14",
@@ -4814,7 +4824,7 @@
       "id": "mn77",
       "group": "mn",
       "rank": 2,
-      "links": 28
+      "links": 29
     },
     {
       "id": "dn34",
@@ -4976,7 +4986,7 @@
       "id": "mn39",
       "group": "mn",
       "rank": 1,
-      "links": 24
+      "links": 25
     },
     {
       "id": "dn2",
@@ -7016,7 +7026,7 @@
       "id": "an3.16",
       "group": "an",
       "rank": 1,
-      "links": 2
+      "links": 3
     },
     {
       "id": "sn35.120",
@@ -7172,7 +7182,7 @@
       "id": "mn76",
       "group": "mn",
       "rank": 1,
-      "links": 20
+      "links": 21
     },
     {
       "id": "dn26",
@@ -7790,7 +7800,7 @@
       "id": "mn60",
       "group": "mn",
       "rank": 1,
-      "links": 17
+      "links": 18
     },
     {
       "id": "sn45.174",
@@ -7922,7 +7932,7 @@
       "id": "sn42.13",
       "group": "sn",
       "rank": 1,
-      "links": 7
+      "links": 8
     },
     {
       "id": "an8.26",
@@ -8546,7 +8556,7 @@
       "id": "an10.46",
       "group": "an",
       "rank": 6,
-      "links": 1
+      "links": 2
     },
     {
       "id": "an3.37",
@@ -9290,7 +9300,7 @@
       "id": "mn71",
       "group": "mn",
       "rank": 1,
-      "links": 4
+      "links": 5
     },
     {
       "id": "sn12.24",
@@ -9404,7 +9414,7 @@
       "id": "an3.60",
       "group": "an",
       "rank": 1,
-      "links": 5
+      "links": 6
     },
     {
       "id": "dn11",
@@ -10046,7 +10056,7 @@
       "id": "an10.217",
       "group": "an",
       "rank": 2,
-      "links": 6
+      "links": 7
     },
     {
       "id": "sn56.47",
@@ -10322,7 +10332,7 @@
       "id": "mn73",
       "group": "mn",
       "rank": 1,
-      "links": 7
+      "links": 8
     },
     {
       "id": "sn41.8",
@@ -12350,7 +12360,7 @@
       "id": "an4.73",
       "group": "an",
       "rank": 8,
-      "links": 1
+      "links": 2
     },
     {
       "id": "an2.1-10",
@@ -12374,7 +12384,7 @@
       "id": "ja6",
       "group": "ja",
       "rank": 14,
-      "links": 1
+      "links": 2
     },
     {
       "id": "an7.2",
@@ -16052,7 +16062,7 @@
       "id": "an3.118",
       "group": "an",
       "rank": 7,
-      "links": 2
+      "links": 3
     },
     {
       "id": "an5.193",
@@ -16460,6 +16470,120 @@
       "id": "thag9.1",
       "group": "thag",
       "rank": 21,
+      "links": 1
+    },
+    {
+      "id": "ja1",
+      "group": "ja",
+      "rank": 3,
+      "links": 1
+    },
+    {
+      "id": "an4.71",
+      "group": "an",
+      "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "an4.72",
+      "group": "an",
+      "rank": 5,
+      "links": 1
+    },
+    {
+      "id": "an7.92",
+      "group": "an",
+      "rank": 8,
+      "links": 1
+    },
+    {
+      "id": "an4.74",
+      "group": "an",
+      "rank": 11,
+      "links": 1
+    },
+    {
+      "id": "an4.75",
+      "group": "an",
+      "rank": 12,
+      "links": 1
+    },
+    {
+      "id": "ja2",
+      "group": "ja",
+      "rank": 13,
+      "links": 1
+    },
+    {
+      "id": "ja3",
+      "group": "ja",
+      "rank": 14,
+      "links": 1
+    },
+    {
+      "id": "ja4",
+      "group": "ja",
+      "rank": 15,
+      "links": 1
+    },
+    {
+      "id": "ja5",
+      "group": "ja",
+      "rank": 16,
+      "links": 1
+    },
+    {
+      "id": "ja7",
+      "group": "ja",
+      "rank": 18,
+      "links": 1
+    },
+    {
+      "id": "ja8",
+      "group": "ja",
+      "rank": 19,
+      "links": 1
+    },
+    {
+      "id": "ja9",
+      "group": "ja",
+      "rank": 20,
+      "links": 1
+    },
+    {
+      "id": "an4.77",
+      "group": "an",
+      "rank": 1,
+      "links": 2
+    },
+    {
+      "id": "ja10",
+      "group": "ja",
+      "rank": 22,
+      "links": 1
+    },
+    {
+      "id": "an4.80",
+      "group": "an",
+      "rank": 23,
+      "links": 1
+    },
+    {
+      "id": "an4.79",
+      "group": "an",
+      "rank": 24,
+      "links": 1
+    },
+    {
+      "id": "an4.78",
+      "group": "an",
+      "rank": 25,
+      "links": 1
+    },
+    {
+      "id": "an4.76",
+      "group": "an",
+      "rank": 26,
       "links": 1
     },
     {
@@ -17837,12 +17961,6 @@
       "links": 1
     },
     {
-      "id": "an4.77",
-      "group": "an",
-      "rank": 1,
-      "links": 1
-    },
-    {
       "id": "mn1",
       "group": "mn",
       "rank": 2,
@@ -17857,7 +17975,7 @@
     {
       "id": "an10.25",
       "group": "an",
-      "rank": 1,
+      "rank": 2,
       "links": 1
     },
     {
@@ -37097,6 +37215,26 @@
       "rank": 3
     },
     {
+      "source": "nicht nur hundert",
+      "target": "mn73",
+      "rank": 1
+    },
+    {
+      "source": "nicht nur hundert",
+      "target": "mn71",
+      "rank": 2
+    },
+    {
+      "source": "nicht nur hundert",
+      "target": "an3.60",
+      "rank": 3
+    },
+    {
+      "source": "nicht nur hundert",
+      "target": "mn76",
+      "rank": 4
+    },
+    {
       "source": "nichts ist es wert, darauf zu bestehen",
       "target": "mn37",
       "rank": 1
@@ -41755,6 +41893,156 @@
       "source": "und wenn ich daran sterben würde",
       "target": "an6.20",
       "rank": 3
+    },
+    {
+      "source": "unfehlbar",
+      "target": "mn60",
+      "rank": 1
+    },
+    {
+      "source": "unfehlbar",
+      "target": "sn42.13",
+      "rank": 2
+    },
+    {
+      "source": "unfehlbar",
+      "target": "ja1",
+      "rank": 3
+    },
+    {
+      "source": "unfehlbar",
+      "target": "an4.71",
+      "rank": 4
+    },
+    {
+      "source": "unfehlbar",
+      "target": "an4.72",
+      "rank": 5
+    },
+    {
+      "source": "unfehlbar",
+      "target": "an3.16",
+      "rank": 6
+    },
+    {
+      "source": "unfehlbar",
+      "target": "an3.118",
+      "rank": 7
+    },
+    {
+      "source": "unfehlbar",
+      "target": "an7.92",
+      "rank": 8
+    },
+    {
+      "source": "unfehlbar",
+      "target": "an10.217",
+      "rank": 9
+    },
+    {
+      "source": "unfehlbar",
+      "target": "an10.46",
+      "rank": 10
+    },
+    {
+      "source": "unfehlbar",
+      "target": "an4.74",
+      "rank": 11
+    },
+    {
+      "source": "unfehlbar",
+      "target": "an4.75",
+      "rank": 12
+    },
+    {
+      "source": "unfehlbar",
+      "target": "ja2",
+      "rank": 13
+    },
+    {
+      "source": "unfehlbar",
+      "target": "ja3",
+      "rank": 14
+    },
+    {
+      "source": "unfehlbar",
+      "target": "ja4",
+      "rank": 15
+    },
+    {
+      "source": "unfehlbar",
+      "target": "ja5",
+      "rank": 16
+    },
+    {
+      "source": "unfehlbar",
+      "target": "ja6",
+      "rank": 17
+    },
+    {
+      "source": "unfehlbar",
+      "target": "ja7",
+      "rank": 18
+    },
+    {
+      "source": "unfehlbar",
+      "target": "ja8",
+      "rank": 19
+    },
+    {
+      "source": "unfehlbar",
+      "target": "ja9",
+      "rank": 20
+    },
+    {
+      "source": "unfehlbar",
+      "target": "an4.77",
+      "rank": 21
+    },
+    {
+      "source": "unfehlbar",
+      "target": "ja10",
+      "rank": 22
+    },
+    {
+      "source": "unfehlbar",
+      "target": "an4.80",
+      "rank": 23
+    },
+    {
+      "source": "unfehlbar",
+      "target": "an4.79",
+      "rank": 24
+    },
+    {
+      "source": "unfehlbar",
+      "target": "an4.78",
+      "rank": 25
+    },
+    {
+      "source": "unfehlbar",
+      "target": "an4.76",
+      "rank": 26
+    },
+    {
+      "source": "unfehlbar",
+      "target": "an4.73",
+      "rank": 27
+    },
+    {
+      "source": "unfehlbar",
+      "target": "thag16.4",
+      "rank": 28
+    },
+    {
+      "source": "unfehlbar",
+      "target": "mn39",
+      "rank": 29
+    },
+    {
+      "source": "unfehlbar",
+      "target": "mn82",
+      "rank": 30
     },
     {
       "source": "ungerichtet",
@@ -46997,24 +47285,29 @@
       "rank": 2
     },
     {
-      "source": "zehn allumfassende Dimensionen",
-      "target": "an10.25",
+      "source": "zehn allumfassende",
+      "target": "an10.29",
       "rank": 1
     },
     {
-      "source": "zehn allumfassende Dimensionen",
-      "target": "an10.29",
+      "source": "zehn allumfassende",
+      "target": "an10.25",
       "rank": 2
     },
     {
-      "source": "zehn allumfassende Dimensionen",
-      "target": "dn33",
+      "source": "zehn allumfassende",
+      "target": "mn77",
       "rank": 3
     },
     {
-      "source": "zehn allumfassende Dimensionen",
-      "target": "dn34",
+      "source": "zehn allumfassende",
+      "target": "dn33",
       "rank": 4
+    },
+    {
+      "source": "zehn allumfassende",
+      "target": "dn34",
+      "rank": 5
     },
     {
       "source": "zehn Dinge.* entwickelt werden",
