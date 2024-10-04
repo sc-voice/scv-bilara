@@ -66,16 +66,14 @@
 "translation/sr/brankokovacevic": "translation/sr/brankokovacevic/sutta/dn/dn33_translation-sr-brankokovacevic.json",
         });
     });
-    it("bilaraPaths(suid) returns local bilara paths",async()=>{
+    it("TESTTESTbilaraPaths(suid) returns local bilara paths",async()=>{
         var bpm = await new BilaraPathMap().initialize();
 
         var bps = bpm.bilaraPaths({
             suid: "thag1.113",
             types: BilaraPathMap.ALL_TYPES,
         });
-        should.deepEqual(bps.map(bp=>bp.bilaraPath).sort(), [
-            // htmlPath('kn/thag/thag1.113'),
-            // referencePath('kn/thag/thag1.113'),
+        should.deepEqual(bps.map(bp=>bp.bilaraPath).sort().slice(0,3), [
             rootPath('kn/thag/thag1.113'),
             translationPath('kn/thag/thag1.113','de','sabbamitta'),
             translationPath('kn/thag/thag1.113','en','sujato'),

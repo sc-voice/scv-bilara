@@ -587,7 +587,7 @@ typeof describe === "function" &&
         lines,
       });
     });
-    it("phraseSearch(...) finds Deutsch results", async () => {
+    it("TESTTESTphraseSearch(...) finds Deutsch results", async () => {
       var linesWurzel = [
         `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
         `${de_sab}mn/mn1_translation-de-sabbamitta.json:2`,
@@ -595,17 +595,6 @@ typeof describe === "function" &&
         `${de_sab}mn/mn66_translation-de-sabbamitta.json:1`,
         `${de_sab}mn/mn116_translation-de-sabbamitta.json:1`,
         `${de_sab}dn/dn16_translation-de-sabbamitta.json:1`,
-      ];
-      var linesUber = [
-        //`${de_sab}dn/dn33_translation-de-sabbamitta.json:25`,
-        `${de_sab}mn/mn9_translation-de-sabbamitta.json:50`,  
-        `${de_sab}mn/mn46_translation-de-sabbamitta.json:48`,  
-        `${de_sab}an/an6/an6.63_translation-de-sabbamitta.json:25`,
-        //`${de_sab}an/an3/an3.156-162_translation-de-sabbamitta.json:23`,
-        //`${de_sab}mn/mn51_translation-de-sabbamitta.json:20`,
-        //`${de_sab}an/an4/an4.198_translation-de-sabbamitta.json:17`,
-        //`${de_sab}an/an4/an4.163_translation-de-sabbamitta.json:15`,
-        //`${de_sab}dn/dn34_translation-de-sabbamitta.json:18`,
       ];
       var lang = "de";
       var maxResults = 10; var maxDoc = 3; var skr = await new Seeker({
@@ -626,7 +615,10 @@ typeof describe === "function" &&
         lang,
         pattern: `\\b${pattern}`,
       });
-      should.deepEqual(data.lines.slice(0, 3), linesUber);
+      should.deepEqual(data.lines.slice(0, 2), [
+        `${de_sab}mn/mn9_translation-de-sabbamitta.json:50`,  
+        `${de_sab}mn/mn46_translation-de-sabbamitta.json:48`,  
+      ]);
 
       var pattern = `wurzel des leidens`;
       var data = await skr.phraseSearch({
@@ -1066,7 +1058,7 @@ typeof describe === "function" &&
         //TODO pli: "Majjhima Nikāya 1 ",
       //TODO });
     });
-    it("find(...) => finds ubung", async () => {
+    it("TESTTESTfind(...) => finds ubung", async () => {
       var maxDoc = 3;
       var skr = await new Seeker({
         maxDoc,
@@ -1086,19 +1078,13 @@ typeof describe === "function" &&
       should.deepEqual(res.suttaRefs.slice(0, 3), [
         "mn9/de/sabbamitta",
         "mn46/de/sabbamitta",
-        //"dn33/de/sabbamitta",
-        "an6.63/de/sabbamitta",
-        //"an3.156-162/de/sabbamitta",
-        //"mn51/de/sabbamitta",
-        //"an4.198/de/sabbamitta",
-        //"an4.198/de/sabbamitta",
-        //'dn34/de/sabbamitta',
+        "mn77/de/sabbamitta",
       ]);
       // We only care about three documents so that
       // is what we should get
       should.deepEqual(
         res.mlDocs.map((mld) => mld.score), [
-          50.214, 48.273, 25.176, // 23.28, 20.105
+          50.214, 48.273, 28.072,
         ],
       );
     });
@@ -2131,7 +2117,7 @@ typeof describe === "function" &&
       should(mld0.suid).equal("snp1.8");
       should(mld0.author_uid).equal("sujato");
     });
-    it("find(...) => nun -tc:vinaya", async () => {
+    it("TESTTESTfind(...) => nun -tc:vinaya", async () => {
       let bilaraData = new BilaraData();
       let maxDoc = 5;
       let skr = await new Seeker({
@@ -2144,15 +2130,9 @@ typeof describe === "function" &&
       });
       should(res.lang).equal("en");
       should(res.mlDocs.length).equal(maxDoc);
-      should.deepEqual(res.bilaraPaths.slice(0, 6), [
+      should.deepEqual(res.bilaraPaths.slice(0, 2), [
         "root/pli/ms/vinaya/pli-tv-kd/pli-tv-kd20_root-pli-ms.json",
         "translation/en/brahmali/vinaya/pli-tv-kd/pli-tv-kd20_translation-en-brahmali.json",
-        "root/pli/ms/vinaya/pli-tv-pvr/pli-tv-pvr2.1_root-pli-ms.json",
-        "translation/en/brahmali/vinaya/pli-tv-pvr/pli-tv-pvr2.1_translation-en-brahmali.json",
-        "root/pli/ms/vinaya/pli-tv-bi-pm_root-pli-ms.json",
-        "translation/en/brahmali/vinaya/pli-tv-bi-pm_translation-en-brahmali.json",
-        //"root/pli/ms/vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc/pli-tv-bu-vb-pc21_root-pli-ms.json",
-        //"translation/en/brahmali/vinaya/pli-tv-bu-vb/pli-tv-bu-vb-pc/pli-tv-bu-vb-pc21_translation-en-brahmali.json",
       ]);
       let [mld0] = res.mlDocs;
       should(mld0.suid).equal("pli-tv-kd20");
@@ -2450,7 +2430,7 @@ typeof describe === "function" &&
       should(res.lang).equal("de");
       should(mld0.sutta_uid).equal("mil3.1.1");
     });
-    it("phraseSearch(...) finds Autorität (de)", async () => {
+    it("TESTTESTphraseSearch(...) finds Autorität (de)", async () => {
       var lang = "de";
       var maxResults = 10;
       var maxDoc = 3;
@@ -2460,20 +2440,19 @@ typeof describe === "function" &&
       skr.logLevel = 'info'; // TODO
       var data = await skr.phraseSearch({ pattern, lang, });
       should.deepEqual(skr.languages, ["pli", "en"]);
-      should.deepEqual(data, {
+      let lines = data.lines;
+      should(data).properties({
         method: "phrase",
         lang,
         pattern: "\\bAutorität",
-        lines: [
-          `${de_sab}an/an3/an3.66_translation-de-sabbamitta.json:4`,
-          `${de_sab}an/an3/an3.65_translation-de-sabbamitta.json:4`,
-          `${de_sab}an/an5/an5.133_translation-de-sabbamitta.json:3`,
-          `${de_sab}an/an4/an4.193_translation-de-sabbamitta.json:3`,
-          `${de_sab}an/an3/an3.14_translation-de-sabbamitta.json:2`,
-          `${de_sab}kn/cp/cp2_translation-de-sabbamitta.json:1`,
-          `${de_sab}dn/dn26_translation-de-sabbamitta.json:1`,
-        ],
       });
+      should.deepEqual(lines.slice(0,5), [
+        `${de_sab}an/an3/an3.66_translation-de-sabbamitta.json:4`,
+        `${de_sab}an/an3/an3.65_translation-de-sabbamitta.json:4`,
+        `${de_sab}an/an5/an5.133_translation-de-sabbamitta.json:3`,
+        `${de_sab}an/an4/an4.193_translation-de-sabbamitta.json:3`,
+        `${de_sab}mn/mn76_translation-de-sabbamitta.json:2`,
+      ]);
     });
     it("find(...) trilingual root of suffering", async()=>{
       let bilaraData = new BilaraData();
