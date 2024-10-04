@@ -8,7 +8,7 @@
     {
       "id": "a ‘pot’, a ‘bowl’, a ‘jar’",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "accept my mistake",
@@ -673,7 +673,7 @@
     {
       "id": "crab",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "craving for touches",
@@ -1623,7 +1623,7 @@
     {
       "id": "harp",
       "group": "Examples",
-      "links": 11
+      "links": 12
     },
     {
       "id": "has a beginning has an end",
@@ -2318,7 +2318,7 @@
     {
       "id": "like a monkey",
       "group": "Examples",
-      "links": 7
+      "links": 4
     },
     {
       "id": "lightning",
@@ -3073,7 +3073,7 @@
     {
       "id": "red silk-cotton wood",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "references",
@@ -3733,7 +3733,7 @@
     {
       "id": "the outcomes of faith",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "the owner of",
@@ -3803,7 +3803,7 @@
     {
       "id": "the self is",
       "group": "Examples",
-      "links": 13
+      "links": 16
     },
     {
       "id": "the seventh kind of wealth",
@@ -4538,7 +4538,7 @@
     {
       "id": "wretched",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "wrists",
@@ -4629,12 +4629,6 @@
       "group": "dn",
       "rank": 1,
       "links": 34
-    },
-    {
-      "id": "mn139",
-      "group": "mn",
-      "rank": 1,
-      "links": 6
     },
     {
       "id": "mn65",
@@ -5348,7 +5342,7 @@
       "id": "dhp334-359",
       "group": "dhp",
       "rank": 1,
-      "links": 8
+      "links": 7
     },
     {
       "id": "mn122",
@@ -5437,8 +5431,8 @@
     {
       "id": "thag6.5",
       "group": "thag",
-      "rank": 1,
-      "links": 4
+      "rank": 2,
+      "links": 3
     },
     {
       "id": "an4.5",
@@ -6175,7 +6169,7 @@
     {
       "id": "thag19.1",
       "group": "thag",
-      "rank": 7,
+      "rank": 4,
       "links": 7
     },
     {
@@ -6925,7 +6919,7 @@
     {
       "id": "thig5.8",
       "group": "thig",
-      "rank": 4,
+      "rank": 5,
       "links": 3
     },
     {
@@ -7189,8 +7183,8 @@
     {
       "id": "an11.14",
       "group": "an",
-      "rank": 1,
-      "links": 6
+      "rank": 4,
+      "links": 5
     },
     {
       "id": "an4.127",
@@ -9091,7 +9085,7 @@
     {
       "id": "snp3.2",
       "group": "snp",
-      "rank": 9,
+      "rank": 10,
       "links": 2
     },
     {
@@ -9153,6 +9147,12 @@
       "group": "sn",
       "rank": 1,
       "links": 4
+    },
+    {
+      "id": "ja38",
+      "group": "ja",
+      "rank": 3,
+      "links": 1
     },
     {
       "id": "an11.358-405",
@@ -9349,7 +9349,7 @@
     {
       "id": "thag13.1",
       "group": "thag",
-      "rank": 8,
+      "rank": 9,
       "links": 2
     },
     {
@@ -12599,9 +12599,15 @@
       "links": 1
     },
     {
+      "id": "ja62",
+      "group": "ja",
+      "rank": 6,
+      "links": 1
+    },
+    {
       "id": "thag7.2",
       "group": "thag",
-      "rank": 6,
+      "rank": 7,
       "links": 1
     },
     {
@@ -13339,7 +13345,7 @@
     {
       "id": "sn12.61",
       "group": "sn",
-      "rank": 2,
+      "rank": 1,
       "links": 3
     },
     {
@@ -13859,6 +13865,12 @@
       "links": 1
     },
     {
+      "id": "mn139",
+      "group": "mn",
+      "rank": 1,
+      "links": 5
+    },
+    {
       "id": "sn8.3",
       "group": "sn",
       "rank": 1,
@@ -14323,13 +14335,7 @@
     {
       "id": "snp4.4",
       "group": "snp",
-      "rank": 3,
-      "links": 1
-    },
-    {
-      "id": "thag6.14",
-      "group": "thag",
-      "rank": 4,
+      "rank": 2,
       "links": 1
     },
     {
@@ -15857,9 +15863,15 @@
       "links": 3
     },
     {
+      "id": "ja31",
+      "group": "ja",
+      "rank": 1,
+      "links": 1
+    },
+    {
       "id": "sn11.6",
       "group": "sn",
-      "rank": 1,
+      "rank": 2,
       "links": 1
     },
     {
@@ -17273,15 +17285,27 @@
       "links": 2
     },
     {
-      "id": "sn24.41",
+      "id": "sn24.40",
       "group": "sn",
       "rank": 6,
       "links": 1
     },
     {
-      "id": "sn24.43",
+      "id": "sn24.41",
       "group": "sn",
       "rank": 7,
+      "links": 1
+    },
+    {
+      "id": "sn24.43",
+      "group": "sn",
+      "rank": 8,
+      "links": 1
+    },
+    {
+      "id": "sn24.39",
+      "group": "sn",
+      "rank": 9,
       "links": 1
     },
     {
@@ -17291,27 +17315,33 @@
       "links": 2
     },
     {
+      "id": "sn24.37",
+      "group": "sn",
+      "rank": 11,
+      "links": 2
+    },
+    {
       "id": "sn24.44",
       "group": "sn",
-      "rank": 9,
+      "rank": 12,
       "links": 1
     },
     {
       "id": "sn24.42",
       "group": "sn",
-      "rank": 10,
+      "rank": 13,
       "links": 1
     },
     {
       "id": "an6.49",
       "group": "an",
-      "rank": 11,
+      "rank": 14,
       "links": 1
     },
     {
       "id": "an3.72",
       "group": "an",
-      "rank": 12,
+      "rank": 15,
       "links": 1
     },
     {
@@ -18515,12 +18545,6 @@
       "links": 1
     },
     {
-      "id": "sn24.37",
-      "group": "sn",
-      "rank": 13,
-      "links": 1
-    },
-    {
       "id": "sn22.156",
       "group": "sn",
       "rank": 15,
@@ -18767,6 +18791,12 @@
       "links": 1
     },
     {
+      "id": "ja45",
+      "group": "ja",
+      "rank": 4,
+      "links": 1
+    },
+    {
       "id": "an10.110",
       "group": "an",
       "rank": 1,
@@ -18847,11 +18877,6 @@
       "source": "a beryl gem that was naturally beautiful",
       "target": "dn14",
       "rank": 10
-    },
-    {
-      "source": "a ‘pot’, a ‘bowl’, a ‘jar’",
-      "target": "mn139",
-      "rank": 1
     },
     {
       "source": "accept my mistake",
@@ -24312,6 +24337,11 @@
       "source": "crab",
       "target": "mn35",
       "rank": 2
+    },
+    {
+      "source": "crab",
+      "target": "ja38",
+      "rank": 3
     },
     {
       "source": "craving for touches",
@@ -31080,33 +31110,38 @@
     },
     {
       "source": "harp",
-      "target": "thag7.2",
+      "target": "ja62",
       "rank": 6
     },
     {
       "source": "harp",
-      "target": "an6.30",
+      "target": "thag7.2",
       "rank": 7
     },
     {
       "source": "harp",
-      "target": "thag13.1",
+      "target": "an6.30",
       "rank": 8
     },
     {
       "source": "harp",
-      "target": "snp3.2",
+      "target": "thag13.1",
       "rank": 9
     },
     {
       "source": "harp",
-      "target": "dn17",
+      "target": "snp3.2",
       "rank": 10
     },
     {
       "source": "harp",
-      "target": "dn16",
+      "target": "dn17",
       "rank": 11
+    },
+    {
+      "source": "harp",
+      "target": "dn16",
+      "rank": 12
     },
     {
       "source": "has a beginning has an end",
@@ -35820,38 +35855,23 @@
     },
     {
       "source": "like a monkey",
-      "target": "thag6.5",
+      "target": "sn12.61",
       "rank": 1
     },
     {
       "source": "like a monkey",
-      "target": "sn12.61",
+      "target": "snp4.4",
       "rank": 2
     },
     {
       "source": "like a monkey",
-      "target": "snp4.4",
+      "target": "thag18.1",
       "rank": 3
     },
     {
       "source": "like a monkey",
-      "target": "thag6.14",
-      "rank": 4
-    },
-    {
-      "source": "like a monkey",
-      "target": "dhp334-359",
-      "rank": 5
-    },
-    {
-      "source": "like a monkey",
-      "target": "thag18.1",
-      "rank": 6
-    },
-    {
-      "source": "like a monkey",
       "target": "thag19.1",
-      "rank": 7
+      "rank": 4
     },
     {
       "source": "lightning",
@@ -41060,8 +41080,13 @@
     },
     {
       "source": "red silk-cotton wood",
-      "target": "sn11.6",
+      "target": "ja31",
       "rank": 1
+    },
+    {
+      "source": "red silk-cotton wood",
+      "target": "sn11.6",
+      "rank": 2
     },
     {
       "source": "references",
@@ -41460,17 +41485,17 @@
     },
     {
       "source": "revered, venerated, and esteemed",
-      "target": "mn77",
+      "target": "ud1.10",
       "rank": 8
     },
     {
       "source": "revered, venerated, and esteemed",
-      "target": "ud1.10",
+      "target": "sn35.132",
       "rank": 9
     },
     {
       "source": "revered, venerated, and esteemed",
-      "target": "sn35.132",
+      "target": "mn77",
       "rank": 10
     },
     {
@@ -45479,11 +45504,6 @@
       "rank": 5
     },
     {
-      "source": "the outcomes of faith",
-      "target": "an11.14",
-      "rank": 1
-    },
-    {
       "source": "the owner of",
       "target": "an5.57",
       "rank": 1
@@ -46185,12 +46205,12 @@
     },
     {
       "source": "the self is",
-      "target": "mn102",
+      "target": "dn29",
       "rank": 3
     },
     {
       "source": "the self is",
-      "target": "dn29",
+      "target": "mn102",
       "rank": 4
     },
     {
@@ -46200,43 +46220,58 @@
     },
     {
       "source": "the self is",
-      "target": "sn24.41",
+      "target": "sn24.40",
       "rank": 6
     },
     {
       "source": "the self is",
-      "target": "sn24.43",
+      "target": "sn24.41",
       "rank": 7
     },
     {
       "source": "the self is",
-      "target": "sn24.38",
+      "target": "sn24.43",
       "rank": 8
     },
     {
       "source": "the self is",
-      "target": "sn24.44",
+      "target": "sn24.39",
       "rank": 9
     },
     {
       "source": "the self is",
-      "target": "sn24.42",
+      "target": "sn24.38",
       "rank": 10
     },
     {
       "source": "the self is",
-      "target": "an6.49",
+      "target": "sn24.37",
       "rank": 11
     },
     {
       "source": "the self is",
-      "target": "an3.72",
+      "target": "sn24.44",
       "rank": 12
     },
     {
       "source": "the self is",
-      "target": "dn9",
+      "target": "sn24.42",
       "rank": 13
+    },
+    {
+      "source": "the self is",
+      "target": "an6.49",
+      "rank": 14
+    },
+    {
+      "source": "the self is",
+      "target": "an3.72",
+      "rank": 15
+    },
+    {
+      "source": "the self is",
+      "target": "dn9",
+      "rank": 16
     },
     {
       "source": "the seventh kind of wealth",
@@ -51430,28 +51465,33 @@
     },
     {
       "source": "wretched",
-      "target": "thig5.8",
+      "target": "ja45",
       "rank": 4
     },
     {
       "source": "wretched",
-      "target": "sn48.41",
+      "target": "thig5.8",
       "rank": 5
     },
     {
       "source": "wretched",
-      "target": "sn2.30",
+      "target": "sn48.41",
       "rank": 6
     },
     {
       "source": "wretched",
-      "target": "an3.36",
+      "target": "sn2.30",
       "rank": 7
     },
     {
       "source": "wretched",
-      "target": "mn130",
+      "target": "an3.36",
       "rank": 8
+    },
+    {
+      "source": "wretched",
+      "target": "mn130",
+      "rank": 9
     },
     {
       "source": "wrong immersion is blown away",
