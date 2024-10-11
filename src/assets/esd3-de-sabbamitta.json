@@ -983,7 +983,7 @@
     {
       "id": "Dunklen, die für das Helle bestimmt",
       "group": "Examples",
-      "links": 3
+      "links": 2
     },
     {
       "id": "Durchbruch",
@@ -2048,7 +2048,7 @@
     {
       "id": "ihr solltet den Hausbesitzer",
       "group": "Examples",
-      "links": 2
+      "links": 1
     },
     {
       "id": "im Wünschen nach materiellem Besitz",
@@ -3588,7 +3588,7 @@
     {
       "id": "verflucht sei",
       "group": "Examples",
-      "links": 5
+      "links": 4
     },
     {
       "id": "Vergehen der Erscheinungen",
@@ -3858,7 +3858,7 @@
     {
       "id": "wahrhaftig versteht: ‚Das ist das Leiden‘",
       "group": "Examples",
-      "links": 3
+      "links": 2
     },
     {
       "id": "Wahrnehmung des Abstoßenden",
@@ -5478,7 +5478,7 @@
       "id": "an3.25",
       "group": "an",
       "rank": 2,
-      "links": 5
+      "links": 4
     },
     {
       "id": "an3.27",
@@ -6821,7 +6821,7 @@
     {
       "id": "thig11.1",
       "group": "thig",
-      "rank": 4,
+      "rank": 3,
       "links": 4
     },
     {
@@ -9771,12 +9771,6 @@
       "links": 6
     },
     {
-      "id": "an4.85",
-      "group": "an",
-      "rank": 1,
-      "links": 2
-    },
-    {
       "id": "sn3.21",
       "group": "sn",
       "rank": 1,
@@ -10817,8 +10811,8 @@
     {
       "id": "sn48.41",
       "group": "sn",
-      "rank": 3,
-      "links": 3
+      "rank": 4,
+      "links": 2
     },
     {
       "id": "sn2.30",
@@ -13281,12 +13275,6 @@
       "links": 1
     },
     {
-      "id": "an8.24",
-      "group": "an",
-      "rank": 2,
-      "links": 1
-    },
-    {
       "id": "an5.206",
       "group": "an",
       "rank": 12,
@@ -13637,7 +13625,7 @@
     {
       "id": "an3.133",
       "group": "an",
-      "rank": 3,
+      "rank": 2,
       "links": 2
     },
     {
@@ -15732,6 +15720,12 @@
       "id": "thag2.47",
       "group": "thag",
       "rank": 14,
+      "links": 1
+    },
+    {
+      "id": "an4.85",
+      "group": "an",
+      "rank": 16,
       "links": 1
     },
     {
@@ -24536,18 +24530,13 @@
     },
     {
       "source": "Dunklen, die für das Helle bestimmt",
-      "target": "an4.85",
+      "target": "sn3.21",
       "rank": 1
     },
     {
       "source": "Dunklen, die für das Helle bestimmt",
-      "target": "sn3.21",
-      "rank": 2
-    },
-    {
-      "source": "Dunklen, die für das Helle bestimmt",
       "target": "dn33",
-      "rank": 3
+      "rank": 2
     },
     {
       "source": "Durchbruch",
@@ -32173,11 +32162,6 @@
       "source": "ihr solltet den Hausbesitzer",
       "target": "an8.23",
       "rank": 1
-    },
-    {
-      "source": "ihr solltet den Hausbesitzer",
-      "target": "an8.24",
-      "rank": 2
     },
     {
       "source": "im Wünschen nach materiellem Besitz",
@@ -42646,18 +42630,13 @@
     },
     {
       "source": "verflucht sei",
-      "target": "sn48.41",
+      "target": "thig11.1",
       "rank": 3
     },
     {
       "source": "verflucht sei",
-      "target": "thig11.1",
-      "rank": 4
-    },
-    {
-      "source": "verflucht sei",
       "target": "thag19.1",
-      "rank": 5
+      "rank": 4
     },
     {
       "source": "Vergehen der Erscheinungen",
@@ -44566,13 +44545,8 @@
     },
     {
       "source": "wahrhaftig versteht: ‚Das ist das Leiden‘",
-      "target": "an3.25",
-      "rank": 2
-    },
-    {
-      "source": "wahrhaftig versteht: ‚Das ist das Leiden‘",
       "target": "an3.133",
-      "rank": 3
+      "rank": 2
     },
     {
       "source": "Wahrnehmung des Abstoßenden",
