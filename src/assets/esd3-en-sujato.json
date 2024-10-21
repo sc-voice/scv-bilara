@@ -4226,6 +4226,11 @@
       "links": 11
     },
     {
+      "id": "voice of another",
+      "group": "Examples",
+      "links": 3
+    },
+    {
       "id": "walking they know",
       "group": "Examples",
       "links": 3
@@ -4519,11 +4524,6 @@
       "id": "womanhood",
       "group": "Examples",
       "links": 2
-    },
-    {
-      "id": "words of another",
-      "group": "Examples",
-      "links": 0
     },
     {
       "id": "works without fail",
@@ -5738,7 +5738,7 @@
       "id": "mn43",
       "group": "mn",
       "rank": 1,
-      "links": 7
+      "links": 8
     },
     {
       "id": "dn13",
@@ -7201,8 +7201,8 @@
     {
       "id": "snp3.11",
       "group": "snp",
-      "rank": 5,
-      "links": 5
+      "rank": 3,
+      "links": 6
     },
     {
       "id": "sn22.28",
@@ -12379,8 +12379,8 @@
     {
       "id": "an2.118-129",
       "group": "an",
-      "rank": 9,
-      "links": 1
+      "rank": 1,
+      "links": 2
     },
     {
       "id": "an8.56",
@@ -49138,6 +49138,21 @@
       "source": "vital conditions",
       "target": "dn18",
       "rank": 11
+    },
+    {
+      "source": "voice of another",
+      "target": "an2.118-129",
+      "rank": 1
+    },
+    {
+      "source": "voice of another",
+      "target": "mn43",
+      "rank": 2
+    },
+    {
+      "source": "voice of another",
+      "target": "snp3.11",
+      "rank": 3
     },
     {
       "source": "walking they know",
