@@ -3143,12 +3143,12 @@
     {
       "id": "selbst göttliche oder menschliche",
       "group": "Examples",
-      "links": 4
+      "links": 0
     },
     {
       "id": "Selbstüberwindung",
       "group": "Examples",
-      "links": 13
+      "links": 12
     },
     {
       "id": "selbst und setz.* andere herab",
@@ -4093,7 +4093,7 @@
     {
       "id": "Wesen ohne Wahrnehmung",
       "group": "Examples",
-      "links": 6
+      "links": 3
     },
     {
       "id": "wesentliche.* Bedingungen",
@@ -4812,7 +4812,7 @@
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 109
+      "links": 108
     },
     {
       "id": "an4.189",
@@ -4830,7 +4830,7 @@
       "id": "dn34",
       "group": "dn",
       "rank": 1,
-      "links": 81
+      "links": 80
     },
     {
       "id": "an8.118",
@@ -5346,7 +5346,7 @@
       "id": "mn8",
       "group": "mn",
       "rank": 1,
-      "links": 8
+      "links": 7
     },
     {
       "id": "mn28",
@@ -11285,14 +11285,14 @@
     {
       "id": "an4.59",
       "group": "an",
-      "rank": 3,
-      "links": 2
+      "rank": 6,
+      "links": 1
     },
     {
       "id": "an4.58",
       "group": "an",
-      "rank": 4,
-      "links": 2
+      "rank": 7,
+      "links": 1
     },
     {
       "id": "an10.119",
@@ -12125,7 +12125,7 @@
     {
       "id": "an9.1",
       "group": "an",
-      "rank": 4,
+      "rank": 3,
       "links": 4
     },
     {
@@ -15269,8 +15269,8 @@
     {
       "id": "an9.24",
       "group": "an",
-      "rank": 1,
-      "links": 2
+      "rank": 11,
+      "links": 1
     },
     {
       "id": "an2.77-86",
@@ -15825,21 +15825,9 @@
       "links": 1
     },
     {
-      "id": "an5.37",
-      "group": "an",
-      "rank": 1,
-      "links": 1
-    },
-    {
-      "id": "an4.57",
-      "group": "an",
-      "rank": 2,
-      "links": 1
-    },
-    {
       "id": "an5.231",
       "group": "an",
-      "rank": 3,
+      "rank": 2,
       "links": 1
     },
     {
@@ -39586,89 +39574,64 @@
       "rank": 8
     },
     {
-      "source": "selbst göttliche oder menschliche",
-      "target": "an5.37",
-      "rank": 1
-    },
-    {
-      "source": "selbst göttliche oder menschliche",
-      "target": "an4.57",
-      "rank": 2
-    },
-    {
-      "source": "selbst göttliche oder menschliche",
-      "target": "an4.59",
-      "rank": 3
-    },
-    {
-      "source": "selbst göttliche oder menschliche",
-      "target": "an4.58",
-      "rank": 4
-    },
-    {
-      "source": "Selbstüberwindung",
-      "target": "mn8",
-      "rank": 1
-    },
-    {
       "source": "Selbstüberwindung",
       "target": "dn28",
-      "rank": 2
+      "rank": 1
     },
     {
       "source": "Selbstüberwindung",
       "target": "an5.231",
-      "rank": 3
+      "rank": 2
     },
     {
       "source": "Selbstüberwindung",
       "target": "an9.1",
-      "rank": 4
+      "rank": 3
     },
     {
       "source": "Selbstüberwindung",
       "target": "an5.90",
-      "rank": 5
+      "rank": 4
     },
     {
       "source": "Selbstüberwindung",
       "target": "an9.3",
-      "rank": 6
+      "rank": 5
     },
     {
       "source": "Selbstüberwindung",
       "target": "ud4.1",
-      "rank": 7
+      "rank": 6
     },
     {
       "source": "Selbstüberwindung",
       "target": "mn122",
-      "rank": 8
+      "rank": 7
     },
     {
       "source": "Selbstüberwindung",
       "target": "an5.181",
-      "rank": 9
+      "rank": 8
     },
     {
       "source": "Selbstüberwindung",
       "target": "an5.97",
-      "rank": 10
+      "rank": 9
     },
     {
       "source": "Selbstüberwindung",
       "target": "an5.190",
-      "rank": 11
+      "rank": 10
     },
     {
       "source": "Selbstüberwindung",
       "target": "an10.30",
-      "rank": 12
+      "rank": 11
     },
     {
       "source": "Selbstüberwindung",
       "target": "mn3",
-      "rank": 13
+      "rank": 12
     },
     {
       "source": "selbst und setz.* andere herab",
@@ -46057,33 +46020,18 @@
     },
     {
       "source": "Wesen ohne Wahrnehmung",
-      "target": "an9.24",
+      "target": "dn15",
       "rank": 1
     },
     {
       "source": "Wesen ohne Wahrnehmung",
-      "target": "dn15",
+      "target": "dn1",
       "rank": 2
     },
     {
       "source": "Wesen ohne Wahrnehmung",
-      "target": "dn1",
-      "rank": 3
-    },
-    {
-      "source": "Wesen ohne Wahrnehmung",
       "target": "dn24",
-      "rank": 4
-    },
-    {
-      "source": "Wesen ohne Wahrnehmung",
-      "target": "dn33",
-      "rank": 5
-    },
-    {
-      "source": "Wesen ohne Wahrnehmung",
-      "target": "dn34",
-      "rank": 6
+      "rank": 3
     },
     {
       "source": "wesentliche.* Bedingungen",
