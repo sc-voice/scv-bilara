@@ -9461,6 +9461,10 @@
 		"translation/en/kelly": "sutta/kn/mil",
 		"root/pli/ms": "sutta/kn/mil"
 	},
+	"mil3.7.6": {
+		"translation/en/kelly": "sutta/kn/mil",
+		"root/pli/ms": "sutta/kn/mil"
+	},
 	"mil3.7.8": {
 		"translation/en/kelly": "sutta/kn/mil",
 		"root/pli/ms": "sutta/kn/mil"
@@ -26261,9 +26265,6 @@
 		"root/pli/ms": "sutta/kn/mil"
 	},
 	"mil3.7.4": {
-		"root/pli/ms": "sutta/kn/mil"
-	},
-	"mil3.7.6": {
 		"root/pli/ms": "sutta/kn/mil"
 	},
 	"mil3.7.7": {
