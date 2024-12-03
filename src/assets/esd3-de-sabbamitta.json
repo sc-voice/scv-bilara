@@ -561,6 +561,11 @@
       "links": 2
     },
     {
+      "id": "das Hoheitsgebiet eurer Väter",
+      "group": "Examples",
+      "links": 3
+    },
+    {
       "id": "das innere Erdelement",
       "group": "Examples",
       "links": 4
@@ -7188,7 +7193,7 @@
       "id": "dn26",
       "group": "dn",
       "rank": 1,
-      "links": 13
+      "links": 14
     },
     {
       "id": "an4.180",
@@ -8029,6 +8034,18 @@
       "group": "sn",
       "rank": 1,
       "links": 4
+    },
+    {
+      "id": "sn47.6",
+      "group": "sn",
+      "rank": 2,
+      "links": 2
+    },
+    {
+      "id": "sn47.7",
+      "group": "sn",
+      "rank": 3,
+      "links": 2
     },
     {
       "id": "an4.177",
@@ -15159,18 +15176,6 @@
       "links": 1
     },
     {
-      "id": "sn47.6",
-      "group": "sn",
-      "rank": 15,
-      "links": 1
-    },
-    {
-      "id": "sn47.7",
-      "group": "sn",
-      "rank": 17,
-      "links": 1
-    },
-    {
       "id": "sn22.38",
       "group": "sn",
       "rank": 18,
@@ -22132,6 +22137,21 @@
       "source": "das halbe geistliche Leben",
       "target": "sn3.18",
       "rank": 2
+    },
+    {
+      "source": "das Hoheitsgebiet eurer Väter",
+      "target": "dn26",
+      "rank": 1
+    },
+    {
+      "source": "das Hoheitsgebiet eurer Väter",
+      "target": "sn47.6",
+      "rank": 2
+    },
+    {
+      "source": "das Hoheitsgebiet eurer Väter",
+      "target": "sn47.7",
+      "rank": 3
     },
     {
       "source": "das innere Erdelement",

@@ -3631,6 +3631,11 @@
       "links": 3
     },
     {
+      "id": "the domain of your fathers",
+      "group": "Examples",
+      "links": 3
+    },
+    {
       "id": "the doors to freedom from death",
       "group": "Examples",
       "links": 5
@@ -5762,7 +5767,7 @@
       "id": "dn26",
       "group": "dn",
       "rank": 1,
-      "links": 15
+      "links": 16
     },
     {
       "id": "dn19",
@@ -17054,6 +17059,18 @@
       "id": "mn42",
       "group": "mn",
       "rank": 36,
+      "links": 1
+    },
+    {
+      "id": "sn47.6",
+      "group": "sn",
+      "rank": 1,
+      "links": 1
+    },
+    {
+      "id": "sn47.7",
+      "group": "sn",
+      "rank": 3,
       "links": 1
     },
     {
@@ -45167,6 +45184,21 @@
     {
       "source": "the Dhamma in brief",
       "target": "an8.63",
+      "rank": 3
+    },
+    {
+      "source": "the domain of your fathers",
+      "target": "sn47.6",
+      "rank": 1
+    },
+    {
+      "source": "the domain of your fathers",
+      "target": "dn26",
+      "rank": 2
+    },
+    {
+      "source": "the domain of your fathers",
+      "target": "sn47.7",
       "rank": 3
     },
     {
