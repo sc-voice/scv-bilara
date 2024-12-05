@@ -3153,7 +3153,7 @@
     {
       "id": "Selbstüberwindung",
       "group": "Examples",
-      "links": 12
+      "links": 1
     },
     {
       "id": "selbst und setz.* andere herab",
@@ -5909,7 +5909,7 @@
       "id": "dn28",
       "group": "dn",
       "rank": 1,
-      "links": 29
+      "links": 28
     },
     {
       "id": "an1.394-574",
@@ -7720,7 +7720,7 @@
     {
       "id": "an10.30",
       "group": "an",
-      "rank": 4,
+      "rank": 1,
       "links": 7
     },
     {
@@ -8099,7 +8099,7 @@
       "id": "mn122",
       "group": "mn",
       "rank": 1,
-      "links": 14
+      "links": 13
     },
     {
       "id": "sn45.165",
@@ -9083,13 +9083,13 @@
       "id": "an9.3",
       "group": "an",
       "rank": 1,
-      "links": 7
+      "links": 6
     },
     {
       "id": "ud4.1",
       "group": "ud",
       "rank": 2,
-      "links": 7
+      "links": 6
     },
     {
       "id": "an8.30",
@@ -9749,7 +9749,7 @@
       "id": "an5.181",
       "group": "an",
       "rank": 1,
-      "links": 5
+      "links": 4
     },
     {
       "id": "an5.93",
@@ -9761,7 +9761,7 @@
       "id": "an5.190",
       "group": "an",
       "rank": 2,
-      "links": 5
+      "links": 4
     },
     {
       "id": "an5.273-285",
@@ -11081,7 +11081,7 @@
       "id": "mn3",
       "group": "mn",
       "rank": 2,
-      "links": 5
+      "links": 4
     },
     {
       "id": "sn45.27",
@@ -12101,7 +12101,7 @@
       "id": "an5.90",
       "group": "an",
       "rank": 3,
-      "links": 2
+      "links": 1
     },
     {
       "id": "an1.82-97",
@@ -12119,7 +12119,7 @@
       "id": "an5.97",
       "group": "an",
       "rank": 4,
-      "links": 3
+      "links": 2
     },
     {
       "id": "an1.378-393",
@@ -12142,8 +12142,8 @@
     {
       "id": "an9.1",
       "group": "an",
-      "rank": 3,
-      "links": 4
+      "rank": 10,
+      "links": 3
     },
     {
       "id": "an1.61-70",
@@ -15827,12 +15827,6 @@
       "id": "an5.227",
       "group": "an",
       "rank": 6,
-      "links": 1
-    },
-    {
-      "id": "an5.231",
-      "group": "an",
-      "rank": 2,
       "links": 1
     },
     {
@@ -39595,63 +39589,8 @@
     },
     {
       "source": "Selbstüberwindung",
-      "target": "dn28",
-      "rank": 1
-    },
-    {
-      "source": "Selbstüberwindung",
-      "target": "an5.231",
-      "rank": 2
-    },
-    {
-      "source": "Selbstüberwindung",
-      "target": "an9.1",
-      "rank": 3
-    },
-    {
-      "source": "Selbstüberwindung",
-      "target": "an5.90",
-      "rank": 4
-    },
-    {
-      "source": "Selbstüberwindung",
-      "target": "an9.3",
-      "rank": 5
-    },
-    {
-      "source": "Selbstüberwindung",
-      "target": "ud4.1",
-      "rank": 6
-    },
-    {
-      "source": "Selbstüberwindung",
-      "target": "mn122",
-      "rank": 7
-    },
-    {
-      "source": "Selbstüberwindung",
-      "target": "an5.181",
-      "rank": 8
-    },
-    {
-      "source": "Selbstüberwindung",
-      "target": "an5.97",
-      "rank": 9
-    },
-    {
-      "source": "Selbstüberwindung",
-      "target": "an5.190",
-      "rank": 10
-    },
-    {
-      "source": "Selbstüberwindung",
       "target": "an10.30",
-      "rank": 11
-    },
-    {
-      "source": "Selbstüberwindung",
-      "target": "mn3",
-      "rank": 12
+      "rank": 1
     },
     {
       "source": "selbst und setz.* andere herab",
