@@ -28,7 +28,7 @@
     {
       "id": "devem? ser abandonad.s?",
       "group": "Examples",
-      "links": 0
+      "links": 1
     },
     {
       "id": "em suportar",
@@ -43,7 +43,7 @@
     {
       "id": "esta é outra forma",
       "group": "Examples",
-      "links": 0
+      "links": 1
     },
     {
       "id": "este nobre caminho óctuplo",
@@ -68,12 +68,12 @@
     {
       "id": "queixa",
       "group": "Examples",
-      "links": 0
+      "links": 1
     },
     {
       "id": "raiva",
       "group": "Examples",
-      "links": 16
+      "links": 17
     },
     {
       "id": "sem sinais",
@@ -121,6 +121,12 @@
       "group": "sn",
       "rank": 1,
       "links": 1
+    },
+    {
+      "id": "an4.188",
+      "group": "an",
+      "rank": 1,
+      "links": 3
     },
     {
       "id": "an3.49",
@@ -213,27 +219,33 @@
       "links": 1
     },
     {
-      "id": "sn1.77",
+      "id": "sn1.23",
       "group": "sn",
       "rank": 12,
       "links": 1
     },
     {
-      "id": "sn1.36",
+      "id": "sn1.77",
       "group": "sn",
       "rank": 13,
       "links": 1
     },
     {
+      "id": "sn1.36",
+      "group": "sn",
+      "rank": 14,
+      "links": 1
+    },
+    {
       "id": "an3.36",
       "group": "an",
-      "rank": 15,
+      "rank": 16,
       "links": 1
     },
     {
       "id": "mn118",
       "group": "mn",
-      "rank": 16,
+      "rank": 17,
       "links": 1
     },
     {
@@ -267,8 +279,18 @@
       "rank": 1
     },
     {
+      "source": "devem? ser abandonad.s?",
+      "target": "an4.188",
+      "rank": 1
+    },
+    {
       "source": "em suportar",
       "target": "an3.49",
+      "rank": 1
+    },
+    {
+      "source": "esta é outra forma",
+      "target": "an4.188",
       "rank": 1
     },
     {
@@ -285,6 +307,11 @@
       "source": "forma como o eu",
       "target": "an3.64",
       "rank": 2
+    },
+    {
+      "source": "queixa",
+      "target": "an4.188",
+      "rank": 1
     },
     {
       "source": "raiva",
@@ -343,28 +370,33 @@
     },
     {
       "source": "raiva",
-      "target": "sn1.77",
+      "target": "sn1.23",
       "rank": 12
     },
     {
       "source": "raiva",
-      "target": "sn1.36",
+      "target": "sn1.77",
       "rank": 13
     },
     {
       "source": "raiva",
-      "target": "an3.63",
+      "target": "sn1.36",
       "rank": 14
     },
     {
       "source": "raiva",
-      "target": "an3.36",
+      "target": "an3.63",
       "rank": 15
     },
     {
       "source": "raiva",
-      "target": "mn118",
+      "target": "an3.36",
       "rank": 16
+    },
+    {
+      "source": "raiva",
+      "target": "mn118",
+      "rank": 17
     },
     {
       "source": "três características",
