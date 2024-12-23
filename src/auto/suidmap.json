@@ -7337,6 +7337,7 @@
 	"an10.219": {
 		"translation/de/sabbamitta": "sutta/an/an10",
 		"translation/en/sujato": "sutta/an/an10",
+		"translation/ru/sv": "sutta/an/an10",
 		"root/pli/ms": "sutta/an/an10"
 	},
 	"an10.220": {
@@ -21887,6 +21888,7 @@
 		"translation/de/sabbamitta": "sutta/kn/snp/vagga1",
 		"translation/en/sujato": "sutta/kn/snp/vagga1",
 		"translation/lt/piyadassi": "sutta/kn/snp/vagga1",
+		"translation/ru/sv": "sutta/kn/snp/vagga1",
 		"root/pli/ms": "sutta/kn/snp/vagga1"
 	},
 	"snp1.9": {
@@ -24101,66 +24103,77 @@
 		"translation/de/sabbamitta": "sutta/kn/thig",
 		"translation/en/soma": "sutta/kn/thig",
 		"translation/en/sujato": "sutta/kn/thig",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thig",
 		"root/pli/ms": "sutta/kn/thig"
 	},
 	"thig6.2": {
 		"translation/de/sabbamitta": "sutta/kn/thig",
 		"translation/en/soma": "sutta/kn/thig",
 		"translation/en/sujato": "sutta/kn/thig",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thig",
 		"root/pli/ms": "sutta/kn/thig"
 	},
 	"thig6.3": {
 		"translation/de/sabbamitta": "sutta/kn/thig",
 		"translation/en/soma": "sutta/kn/thig",
 		"translation/en/sujato": "sutta/kn/thig",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thig",
 		"root/pli/ms": "sutta/kn/thig"
 	},
 	"thig6.4": {
 		"translation/de/sabbamitta": "sutta/kn/thig",
 		"translation/en/soma": "sutta/kn/thig",
 		"translation/en/sujato": "sutta/kn/thig",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thig",
 		"root/pli/ms": "sutta/kn/thig"
 	},
 	"thig6.5": {
 		"translation/de/sabbamitta": "sutta/kn/thig",
 		"translation/en/soma": "sutta/kn/thig",
 		"translation/en/sujato": "sutta/kn/thig",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thig",
 		"root/pli/ms": "sutta/kn/thig"
 	},
 	"thig6.6": {
 		"translation/de/sabbamitta": "sutta/kn/thig",
 		"translation/en/soma": "sutta/kn/thig",
 		"translation/en/sujato": "sutta/kn/thig",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thig",
 		"root/pli/ms": "sutta/kn/thig"
 	},
 	"thig6.7": {
 		"translation/de/sabbamitta": "sutta/kn/thig",
 		"translation/en/soma": "sutta/kn/thig",
 		"translation/en/sujato": "sutta/kn/thig",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thig",
 		"root/pli/ms": "sutta/kn/thig"
 	},
 	"thig6.8": {
 		"translation/de/sabbamitta": "sutta/kn/thig",
 		"translation/en/soma": "sutta/kn/thig",
 		"translation/en/sujato": "sutta/kn/thig",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thig",
 		"root/pli/ms": "sutta/kn/thig"
 	},
 	"thig7.1": {
 		"translation/de/sabbamitta": "sutta/kn/thig",
 		"translation/en/soma": "sutta/kn/thig",
 		"translation/en/sujato": "sutta/kn/thig",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thig",
 		"root/pli/ms": "sutta/kn/thig"
 	},
 	"thig7.2": {
 		"translation/de/sabbamitta": "sutta/kn/thig",
 		"translation/en/soma": "sutta/kn/thig",
 		"translation/en/sujato": "sutta/kn/thig",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thig",
 		"root/pli/ms": "sutta/kn/thig"
 	},
 	"thig7.3": {
 		"translation/de/sabbamitta": "sutta/kn/thig",
 		"translation/en/soma": "sutta/kn/thig",
 		"translation/en/sujato": "sutta/kn/thig",
+		"translation/ru/narinyanievmenenko": "sutta/kn/thig",
 		"root/pli/ms": "sutta/kn/thig"
 	},
 	"thig8.1": {
