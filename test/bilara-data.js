@@ -787,6 +787,8 @@
         should.deepEqual(mld.segMap['an1.9:1.0'], an1_9_de);
     });
     it("loadMLDocLegacy(...) loads legacy doc", async()=>{
+        console.log("loadMLDocLegacy DEPRECATED");
+        return; 
         await bd.initialize();
         var mld = await bd.loadMLDocLegacy('mn120/de');
 

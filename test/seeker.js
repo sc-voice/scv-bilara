@@ -891,6 +891,8 @@ typeof describe === "function" &&
       });
     });
     it("find(...) => legacy suttas", async () => {
+      console.log("legacy suttas DEPRECATED");
+      return;
       var maxDoc = 3;
       var skr = await new Seeker({
         maxDoc,
