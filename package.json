@@ -15,13 +15,13 @@
     "log-instance": "^1.6.0",
     "memo-again": "^0.10.0",
     "merkle-json": "^2.2.0",
-    "scv-esm": "^1.110.397",
+    "scv-esm": "^1.111.0",
     "suttacentral-api": "^2.16.5",
     "tmp": "^0.2.3"
   },
   "devDependencies": {
     "eslint-plugin-html": "^4.0.5",
-    "mocha": "^10.2.0",
+    "mocha": "^11.0.1",
     "should": "^13.2.3"
   },
   "scripts": {
