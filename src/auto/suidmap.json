@@ -8908,6 +8908,7 @@
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja21": {
+		"translation/de/sabbamitta": "sutta/kn/ja",
 		"translation/en/sujato": "sutta/kn/ja",
 		"root/pli/ms": "sutta/kn/ja"
 	},
@@ -10060,11 +10061,13 @@
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn83": {
+		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
 		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn84": {
+		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
 		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
