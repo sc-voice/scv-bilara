@@ -8585,61 +8585,73 @@
 	"iti68": {
 		"translation/de/sabbamitta": "sutta/kn/iti/vagga7",
 		"translation/en/sujato": "sutta/kn/iti/vagga7",
+		"translation/lt/piyadassi": "sutta/kn/iti/vagga7",
 		"root/pli/ms": "sutta/kn/iti/vagga7"
 	},
 	"iti69": {
 		"translation/de/sabbamitta": "sutta/kn/iti/vagga7",
 		"translation/en/sujato": "sutta/kn/iti/vagga7",
+		"translation/lt/piyadassi": "sutta/kn/iti/vagga7",
 		"root/pli/ms": "sutta/kn/iti/vagga7"
 	},
 	"iti70": {
 		"translation/de/sabbamitta": "sutta/kn/iti/vagga8",
 		"translation/en/sujato": "sutta/kn/iti/vagga8",
+		"translation/lt/piyadassi": "sutta/kn/iti/vagga8",
 		"root/pli/ms": "sutta/kn/iti/vagga8"
 	},
 	"iti71": {
 		"translation/de/sabbamitta": "sutta/kn/iti/vagga8",
 		"translation/en/sujato": "sutta/kn/iti/vagga8",
+		"translation/lt/piyadassi": "sutta/kn/iti/vagga8",
 		"root/pli/ms": "sutta/kn/iti/vagga8"
 	},
 	"iti72": {
 		"translation/de/sabbamitta": "sutta/kn/iti/vagga8",
 		"translation/en/sujato": "sutta/kn/iti/vagga8",
+		"translation/lt/piyadassi": "sutta/kn/iti/vagga8",
 		"root/pli/ms": "sutta/kn/iti/vagga8"
 	},
 	"iti73": {
 		"translation/de/sabbamitta": "sutta/kn/iti/vagga8",
 		"translation/en/sujato": "sutta/kn/iti/vagga8",
+		"translation/lt/piyadassi": "sutta/kn/iti/vagga8",
 		"root/pli/ms": "sutta/kn/iti/vagga8"
 	},
 	"iti74": {
 		"translation/de/sabbamitta": "sutta/kn/iti/vagga8",
 		"translation/en/sujato": "sutta/kn/iti/vagga8",
+		"translation/lt/piyadassi": "sutta/kn/iti/vagga8",
 		"root/pli/ms": "sutta/kn/iti/vagga8"
 	},
 	"iti75": {
 		"translation/de/sabbamitta": "sutta/kn/iti/vagga8",
 		"translation/en/sujato": "sutta/kn/iti/vagga8",
+		"translation/lt/piyadassi": "sutta/kn/iti/vagga8",
 		"root/pli/ms": "sutta/kn/iti/vagga8"
 	},
 	"iti76": {
 		"translation/de/sabbamitta": "sutta/kn/iti/vagga8",
 		"translation/en/sujato": "sutta/kn/iti/vagga8",
+		"translation/lt/piyadassi": "sutta/kn/iti/vagga8",
 		"root/pli/ms": "sutta/kn/iti/vagga8"
 	},
 	"iti77": {
 		"translation/de/sabbamitta": "sutta/kn/iti/vagga8",
 		"translation/en/sujato": "sutta/kn/iti/vagga8",
+		"translation/lt/piyadassi": "sutta/kn/iti/vagga8",
 		"root/pli/ms": "sutta/kn/iti/vagga8"
 	},
 	"iti78": {
 		"translation/de/sabbamitta": "sutta/kn/iti/vagga8",
 		"translation/en/sujato": "sutta/kn/iti/vagga8",
+		"translation/lt/piyadassi": "sutta/kn/iti/vagga8",
 		"root/pli/ms": "sutta/kn/iti/vagga8"
 	},
 	"iti79": {
 		"translation/de/sabbamitta": "sutta/kn/iti/vagga8",
 		"translation/en/sujato": "sutta/kn/iti/vagga8",
+		"translation/lt/piyadassi": "sutta/kn/iti/vagga8",
 		"root/pli/ms": "sutta/kn/iti/vagga8"
 	},
 	"iti80": {
@@ -9125,6 +9137,22 @@
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja75": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
+	"ja76": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
+	"ja77": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
+	"ja78": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
+	"ja79": {
 		"translation/en/sujato": "sutta/kn/ja",
 		"root/pli/ms": "sutta/kn/ja"
 	},
@@ -26241,18 +26269,6 @@
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja547": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
-	"ja76": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
-	"ja77": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
-	"ja78": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
-	"ja79": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja80": {
