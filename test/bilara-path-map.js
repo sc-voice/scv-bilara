@@ -66,7 +66,7 @@
 "translation/sr/brankokovacevic": "translation/sr/brankokovacevic/sutta/dn/dn33_translation-sr-brankokovacevic.json",
         });
     });
-    it("TESTTESTbilaraPaths(suid) returns local bilara paths",async()=>{
+    it("bilaraPaths(suid) returns local bilara paths",async()=>{
         var bpm = await new BilaraPathMap().initialize();
 
         var bps = bpm.bilaraPaths({

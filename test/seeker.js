@@ -587,7 +587,7 @@ typeof describe === "function" &&
         lines,
       });
     });
-    it("TESTTESTphraseSearch(...) finds Deutsch results", async () => {
+    it("phraseSearch(...) finds Deutsch results", async () => {
       var linesWurzel = [
         `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
         `${de_sab}mn/mn1_translation-de-sabbamitta.json:2`,
@@ -1060,7 +1060,7 @@ typeof describe === "function" &&
         //TODO pli: "Majjhima Nikāya 1 ",
       //TODO });
     });
-    it("TESTTESTfind(...) => finds ubung", async () => {
+    it("find(...) => finds ubung", async () => {
       var maxDoc = 3;
       var skr = await new Seeker({
         maxDoc,
@@ -2119,7 +2119,7 @@ typeof describe === "function" &&
       should(mld0.suid).equal("snp1.8");
       should(mld0.author_uid).equal("sujato");
     });
-    it("TESTTESTfind(...) => nun -tc:vinaya", async () => {
+    it("find(...) => nun -tc:vinaya", async () => {
       let bilaraData = new BilaraData();
       let maxDoc = 5;
       let skr = await new Seeker({
@@ -2432,7 +2432,7 @@ typeof describe === "function" &&
       should(res.lang).equal("de");
       should(mld0.sutta_uid).equal("mil3.1.1");
     });
-    it("TESTTESTphraseSearch(...) finds Autorität (de)", async () => {
+    it("phraseSearch(...) finds Autorität (de)", async () => {
       var lang = "de";
       var maxResults = 10;
       var maxDoc = 3;

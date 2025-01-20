@@ -116,7 +116,7 @@
             member: false,
         });
     });
-    it("TESTTESTwordSet(...)=>latest word set", async()=>{
+    it("wordSet(...)=>latest word set", async()=>{
         //logger.logLevel = 'info';
         let longWait = 1500;
         let msStart = Date.now();
