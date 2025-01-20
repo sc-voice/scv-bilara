@@ -543,7 +543,7 @@
     {
       "id": "das Erste gibt",
       "group": "Examples",
-      "links": 4
+      "links": 3
     },
     {
       "id": "das Gleiche zu tun",
@@ -578,7 +578,7 @@
     {
       "id": "das ist eine andere Art",
       "group": "Examples",
-      "links": 9
+      "links": 10
     },
     {
       "id": "das ist friedvoll",
@@ -673,7 +673,7 @@
     {
       "id": "den Besinnungstag",
       "group": "Examples",
-      "links": 30
+      "links": 31
     },
     {
       "id": "den Buddha bezaubern",
@@ -1098,7 +1098,7 @@
     {
       "id": "eine Himmelsrichtung mit einem Herzen voller Liebe",
       "group": "Examples",
-      "links": 26
+      "links": 27
     },
     {
       "id": "ein Embryo.* empfangen",
@@ -1308,7 +1308,7 @@
     {
       "id": "erlesenste",
       "group": "Examples",
-      "links": 27
+      "links": 28
     },
     {
       "id": "erlöschen, bevor ich nicht Nonnenschülerinnen",
@@ -1358,7 +1358,7 @@
     {
       "id": "es ist einfach dieser edle achtfache Pfad",
       "group": "Examples",
-      "links": 40
+      "links": 42
     },
     {
       "id": "es ist mein Pech, mein Missgeschick",
@@ -1673,7 +1673,7 @@
     {
       "id": "gerechter und prinzipientreuer König",
       "group": "Examples",
-      "links": 13
+      "links": 14
     },
     {
       "id": "Gerstengranne",
@@ -1898,7 +1898,7 @@
     {
       "id": "Hausbesitzer.* aus Stadt und Land",
       "group": "Examples",
-      "links": 7
+      "links": 10
     },
     {
       "id": "Hausbesitzer von Bambustor",
@@ -3178,7 +3178,7 @@
     {
       "id": "sicher jemand anders",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "sicher nicht",
@@ -4762,7 +4762,7 @@
     {
       "id": "dn17",
       "group": "dn",
-      "rank": 4,
+      "rank": 5,
       "links": 13
     },
     {
@@ -5351,7 +5351,7 @@
       "id": "mn8",
       "group": "mn",
       "rank": 1,
-      "links": 7
+      "links": 6
     },
     {
       "id": "mn28",
@@ -7942,7 +7942,7 @@
     {
       "id": "sn42.13",
       "group": "sn",
-      "rank": 1,
+      "rank": 2,
       "links": 8
     },
     {
@@ -8094,6 +8094,12 @@
       "group": "sn",
       "rank": 2,
       "links": 3
+    },
+    {
+      "id": "mn84",
+      "group": "mn",
+      "rank": 10,
+      "links": 2
     },
     {
       "id": "iti49",
@@ -8338,14 +8344,14 @@
     {
       "id": "an3.14",
       "group": "an",
-      "rank": 2,
+      "rank": 3,
       "links": 3
     },
     {
       "id": "an5.133",
       "group": "an",
-      "rank": 1,
-      "links": 3
+      "rank": 2,
+      "links": 4
     },
     {
       "id": "an4.127",
@@ -8588,6 +8594,12 @@
       "links": 5
     },
     {
+      "id": "mn83",
+      "group": "mn",
+      "rank": 1,
+      "links": 6
+    },
+    {
       "id": "an8.45",
       "group": "an",
       "rank": 3,
@@ -8596,31 +8608,31 @@
     {
       "id": "an10.46",
       "group": "an",
-      "rank": 6,
+      "rank": 7,
       "links": 2
     },
     {
       "id": "an3.37",
       "group": "an",
-      "rank": 7,
+      "rank": 8,
       "links": 1
     },
     {
       "id": "sn29.3",
       "group": "sn",
-      "rank": 9,
+      "rank": 10,
       "links": 2
     },
     {
       "id": "sn29.6",
       "group": "sn",
-      "rank": 10,
+      "rank": 11,
       "links": 2
     },
     {
       "id": "an8.44",
       "group": "an",
-      "rank": 11,
+      "rank": 12,
       "links": 1
     },
     {
@@ -8632,13 +8644,13 @@
     {
       "id": "ud5.8",
       "group": "ud",
-      "rank": 13,
+      "rank": 14,
       "links": 1
     },
     {
       "id": "an3.38",
       "group": "an",
-      "rank": 14,
+      "rank": 15,
       "links": 1
     },
     {
@@ -8656,55 +8668,55 @@
     {
       "id": "sn29.4",
       "group": "sn",
-      "rank": 19,
+      "rank": 20,
       "links": 1
     },
     {
       "id": "sn29.5",
       "group": "sn",
-      "rank": 20,
+      "rank": 21,
       "links": 1
     },
     {
       "id": "thig2.7",
       "group": "thig",
-      "rank": 21,
+      "rank": 22,
       "links": 1
     },
     {
       "id": "an8.47",
       "group": "an",
-      "rank": 22,
+      "rank": 23,
       "links": 1
     },
     {
       "id": "an8.48",
       "group": "an",
-      "rank": 24,
+      "rank": 25,
       "links": 1
     },
     {
       "id": "an8.49",
       "group": "an",
-      "rank": 26,
+      "rank": 27,
       "links": 1
     },
     {
       "id": "an8.50",
       "group": "an",
-      "rank": 27,
+      "rank": 28,
       "links": 1
     },
     {
       "id": "an8.46",
       "group": "an",
-      "rank": 28,
+      "rank": 29,
       "links": 1
     },
     {
       "id": "cp10",
       "group": "cp",
-      "rank": 29,
+      "rank": 30,
       "links": 1
     },
     {
@@ -10216,7 +10228,7 @@
     {
       "id": "an4.125",
       "group": "an",
-      "rank": 6,
+      "rank": 7,
       "links": 1
     },
     {
@@ -10918,7 +10930,7 @@
     {
       "id": "mn81",
       "group": "mn",
-      "rank": 3,
+      "rank": 4,
       "links": 3
     },
     {
@@ -11096,105 +11108,111 @@
       "links": 1
     },
     {
-      "id": "sn45.35",
+      "id": "sn38.4",
       "group": "sn",
       "rank": 4,
       "links": 1
     },
     {
-      "id": "sn45.36",
+      "id": "sn45.35",
       "group": "sn",
       "rank": 5,
       "links": 1
     },
     {
-      "id": "sn45.37",
+      "id": "sn45.36",
       "group": "sn",
       "rank": 6,
       "links": 1
     },
     {
-      "id": "sn45.38",
+      "id": "sn45.37",
       "group": "sn",
       "rank": 7,
       "links": 1
     },
     {
-      "id": "sn45.39",
+      "id": "sn45.38",
       "group": "sn",
       "rank": 8,
       "links": 1
     },
     {
-      "id": "sn38.2",
+      "id": "sn45.39",
       "group": "sn",
       "rank": 9,
       "links": 1
     },
     {
-      "id": "sn38.3",
+      "id": "sn38.2",
       "group": "sn",
       "rank": 10,
       "links": 1
     },
     {
-      "id": "sn45.41",
+      "id": "sn38.3",
       "group": "sn",
       "rank": 11,
       "links": 1
     },
     {
-      "id": "sn38.1",
+      "id": "sn45.41",
       "group": "sn",
       "rank": 12,
       "links": 1
     },
     {
-      "id": "sn39.1-15",
+      "id": "sn38.1",
       "group": "sn",
       "rank": 13,
       "links": 1
     },
     {
-      "id": "sn51.29",
+      "id": "sn39.1-15",
       "group": "sn",
-      "rank": 15,
+      "rank": 14,
       "links": 1
     },
     {
-      "id": "sn22.104",
+      "id": "sn51.29",
       "group": "sn",
       "rank": 16,
       "links": 1
     },
     {
-      "id": "sn22.105",
+      "id": "sn22.104",
       "group": "sn",
       "rank": 17,
       "links": 1
     },
     {
-      "id": "sn45.40",
+      "id": "sn22.105",
       "group": "sn",
       "rank": 18,
       "links": 1
     },
     {
-      "id": "sn51.19",
+      "id": "sn45.40",
       "group": "sn",
-      "rank": 20,
+      "rank": 19,
       "links": 1
     },
     {
-      "id": "sn51.27",
+      "id": "sn51.19",
       "group": "sn",
       "rank": 21,
       "links": 1
     },
     {
-      "id": "sn51.28",
+      "id": "sn51.27",
       "group": "sn",
       "rank": 22,
+      "links": 1
+    },
+    {
+      "id": "sn51.28",
+      "group": "sn",
+      "rank": 23,
       "links": 1
     },
     {
@@ -11206,25 +11224,25 @@
     {
       "id": "sn51.30",
       "group": "sn",
-      "rank": 24,
+      "rank": 25,
       "links": 1
     },
     {
       "id": "sn56.13",
       "group": "sn",
-      "rank": 25,
+      "rank": 26,
       "links": 1
     },
     {
       "id": "sn22.103",
       "group": "sn",
-      "rank": 26,
+      "rank": 27,
       "links": 1
     },
     {
       "id": "sn47.40",
       "group": "sn",
-      "rank": 27,
+      "rank": 28,
       "links": 1
     },
     {
@@ -11236,7 +11254,7 @@
     {
       "id": "dn6",
       "group": "dn",
-      "rank": 34,
+      "rank": 35,
       "links": 1
     },
     {
@@ -12232,7 +12250,7 @@
     {
       "id": "sn41.10",
       "group": "sn",
-      "rank": 7,
+      "rank": 8,
       "links": 3
     },
     {
@@ -13014,6 +13032,12 @@
       "group": "an",
       "rank": 1,
       "links": 2
+    },
+    {
+      "id": "an4.70",
+      "group": "an",
+      "rank": 6,
+      "links": 1
     },
     {
       "id": "an7.22",
@@ -22021,13 +22045,8 @@
     },
     {
       "source": "das Erste gibt",
-      "target": "mn8",
-      "rank": 3
-    },
-    {
-      "source": "das Erste gibt",
       "target": "dn1",
-      "rank": 4
+      "rank": 3
     },
     {
       "source": "das Gleiche zu tun",
@@ -22243,6 +22262,11 @@
       "source": "das ist eine andere Art",
       "target": "sn3.18",
       "rank": 9
+    },
+    {
+      "source": "das ist eine andere Art",
+      "target": "mn84",
+      "rank": 10
     },
     {
       "source": "das ist friedvoll",
@@ -22916,133 +22940,138 @@
     },
     {
       "source": "den Besinnungstag",
-      "target": "an8.45",
+      "target": "mn83",
       "rank": 5
     },
     {
       "source": "den Besinnungstag",
-      "target": "an10.46",
+      "target": "an8.45",
       "rank": 6
     },
     {
       "source": "den Besinnungstag",
-      "target": "an3.37",
+      "target": "an10.46",
       "rank": 7
     },
     {
       "source": "den Besinnungstag",
-      "target": "dn30",
+      "target": "an3.37",
       "rank": 8
     },
     {
       "source": "den Besinnungstag",
-      "target": "sn29.3",
+      "target": "dn30",
       "rank": 9
     },
     {
       "source": "den Besinnungstag",
-      "target": "sn29.6",
+      "target": "sn29.3",
       "rank": 10
     },
     {
       "source": "den Besinnungstag",
-      "target": "an8.44",
+      "target": "sn29.6",
       "rank": 11
     },
     {
       "source": "den Besinnungstag",
-      "target": "an9.18",
+      "target": "an8.44",
       "rank": 12
     },
     {
       "source": "den Besinnungstag",
-      "target": "ud5.8",
+      "target": "an9.18",
       "rank": 13
     },
     {
       "source": "den Besinnungstag",
-      "target": "an3.38",
+      "target": "ud5.8",
       "rank": 14
     },
     {
       "source": "den Besinnungstag",
-      "target": "sn10.5",
+      "target": "an3.38",
       "rank": 15
     },
     {
       "source": "den Besinnungstag",
-      "target": "an8.20",
+      "target": "sn10.5",
       "rank": 16
     },
     {
       "source": "den Besinnungstag",
-      "target": "ud5.5",
+      "target": "an8.20",
       "rank": 17
     },
     {
       "source": "den Besinnungstag",
-      "target": "dn26",
+      "target": "ud5.5",
       "rank": 18
     },
     {
       "source": "den Besinnungstag",
-      "target": "sn29.4",
+      "target": "dn26",
       "rank": 19
     },
     {
       "source": "den Besinnungstag",
-      "target": "sn29.5",
+      "target": "sn29.4",
       "rank": 20
     },
     {
       "source": "den Besinnungstag",
-      "target": "thig2.7",
+      "target": "sn29.5",
       "rank": 21
     },
     {
       "source": "den Besinnungstag",
-      "target": "an8.47",
+      "target": "thig2.7",
       "rank": 22
     },
     {
       "source": "den Besinnungstag",
-      "target": "cp13",
+      "target": "an8.47",
       "rank": 23
     },
     {
       "source": "den Besinnungstag",
-      "target": "an8.48",
+      "target": "cp13",
       "rank": 24
     },
     {
       "source": "den Besinnungstag",
-      "target": "an7.74",
+      "target": "an8.48",
       "rank": 25
     },
     {
       "source": "den Besinnungstag",
-      "target": "an8.49",
+      "target": "an7.74",
       "rank": 26
     },
     {
       "source": "den Besinnungstag",
-      "target": "an8.50",
+      "target": "an8.49",
       "rank": 27
     },
     {
       "source": "den Besinnungstag",
-      "target": "an8.46",
+      "target": "an8.50",
       "rank": 28
     },
     {
       "source": "den Besinnungstag",
-      "target": "cp10",
+      "target": "an8.46",
       "rank": 29
     },
     {
       "source": "den Besinnungstag",
-      "target": "dn17",
+      "target": "cp10",
       "rank": 30
+    },
+    {
+      "source": "den Besinnungstag",
+      "target": "dn17",
+      "rank": 31
     },
     {
       "source": "den Buddha bezaubern",
@@ -25316,133 +25345,138 @@
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "sn42.13",
+      "target": "mn83",
       "rank": 1
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn25",
+      "target": "sn42.13",
       "rank": 2
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "mn50",
+      "target": "dn25",
       "rank": 3
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an4.126",
+      "target": "mn50",
       "rank": 4
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an9.18",
+      "target": "an4.126",
       "rank": 5
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an4.125",
+      "target": "an9.18",
       "rank": 6
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an4.190",
+      "target": "an4.125",
       "rank": 7
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an10.219",
+      "target": "an4.190",
       "rank": 8
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "sn41.7",
+      "target": "an10.219",
       "rank": 9
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an11.16",
+      "target": "sn41.7",
       "rank": 10
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "mn40",
+      "target": "an11.16",
       "rank": 11
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "mn52",
+      "target": "mn40",
       "rank": 12
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an3.63",
+      "target": "mn52",
       "rank": 13
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "mn55",
+      "target": "an3.63",
       "rank": 14
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an3.66",
+      "target": "mn55",
       "rank": 15
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "sn46.54",
+      "target": "an3.66",
       "rank": 16
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "sn42.8",
+      "target": "sn46.54",
       "rank": 17
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an3.65",
+      "target": "sn42.8",
       "rank": 18
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "an5.192",
+      "target": "an3.65",
       "rank": 19
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "mn7",
+      "target": "an5.192",
       "rank": 20
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "mn43",
+      "target": "mn7",
       "rank": 21
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn13",
+      "target": "mn43",
       "rank": 22
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn26",
+      "target": "dn13",
       "rank": 23
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn17",
+      "target": "dn26",
       "rank": 24
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn19",
+      "target": "dn17",
       "rank": 25
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn33",
+      "target": "dn19",
       "rank": 26
+    },
+    {
+      "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
+      "target": "dn33",
+      "rank": 27
     },
     {
       "source": "ein Embryo.* empfangen",
@@ -27056,18 +27090,23 @@
     },
     {
       "source": "erlesenste",
-      "target": "mn81",
+      "target": "mn84",
       "rank": 25
     },
     {
       "source": "erlesenste",
-      "target": "dn21",
+      "target": "mn81",
       "rank": 26
     },
     {
       "source": "erlesenste",
-      "target": "mn82",
+      "target": "dn21",
       "rank": 27
+    },
+    {
+      "source": "erlesenste",
+      "target": "mn82",
+      "rank": 28
     },
     {
       "source": "erlöschen, bevor ich nicht Nonnenschülerinnen",
@@ -27351,188 +27390,198 @@
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn45.35",
+      "target": "sn38.4",
       "rank": 4
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn45.36",
+      "target": "sn45.35",
       "rank": 5
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn45.37",
+      "target": "sn45.36",
       "rank": 6
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn45.38",
+      "target": "sn45.37",
       "rank": 7
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn45.39",
+      "target": "sn45.38",
       "rank": 8
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn38.2",
+      "target": "sn45.39",
       "rank": 9
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn38.3",
+      "target": "sn38.2",
       "rank": 10
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn45.41",
+      "target": "sn38.3",
       "rank": 11
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn38.1",
+      "target": "sn45.41",
       "rank": 12
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn39.1-15",
+      "target": "sn38.1",
       "rank": 13
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn45.5",
+      "target": "sn39.1-15",
       "rank": 14
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn51.29",
+      "target": "sn45.5",
       "rank": 15
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn22.104",
+      "target": "sn51.29",
       "rank": 16
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn22.105",
+      "target": "sn22.104",
       "rank": 17
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn45.40",
+      "target": "sn22.105",
       "rank": 18
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn45.48",
+      "target": "sn45.40",
       "rank": 19
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn51.19",
+      "target": "sn45.48",
       "rank": 20
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn51.27",
+      "target": "sn51.19",
       "rank": 21
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn51.28",
+      "target": "sn51.27",
       "rank": 22
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn35.146",
+      "target": "sn51.28",
       "rank": 23
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn51.30",
+      "target": "sn35.146",
       "rank": 24
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn56.13",
+      "target": "sn51.30",
       "rank": 25
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn22.103",
+      "target": "sn56.13",
       "rank": 26
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn47.40",
+      "target": "sn22.103",
       "rank": 27
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "an3.71",
+      "target": "sn47.40",
       "rank": 28
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "an3.62",
+      "target": "an3.71",
       "rank": 29
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn12.65",
+      "target": "an3.62",
       "rank": 30
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "an3.61",
+      "target": "sn12.65",
       "rank": 31
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "mn141",
+      "target": "an3.61",
       "rank": 32
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "mn44",
+      "target": "mn141",
       "rank": 33
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "dn6",
+      "target": "mn44",
       "rank": 34
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "sn42.12",
+      "target": "dn6",
       "rank": 35
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "mn139",
+      "target": "mn83",
       "rank": 36
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "dn8",
+      "target": "sn42.12",
       "rank": 37
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "mn9",
+      "target": "mn139",
       "rank": 38
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "dn19",
+      "target": "dn8",
       "rank": 39
     },
     {
       "source": "es ist einfach dieser edle achtfache Pfad",
-      "target": "dn22",
+      "target": "mn9",
       "rank": 40
+    },
+    {
+      "source": "es ist einfach dieser edle achtfache Pfad",
+      "target": "dn19",
+      "rank": 41
+    },
+    {
+      "source": "es ist einfach dieser edle achtfache Pfad",
+      "target": "dn22",
+      "rank": 42
     },
     {
       "source": "es ist mein Pech, mein Missgeschick",
@@ -29556,68 +29605,73 @@
     },
     {
       "source": "gerechter und prinzipientreuer König",
-      "target": "an5.133",
+      "target": "mn83",
       "rank": 1
     },
     {
       "source": "gerechter und prinzipientreuer König",
-      "target": "an3.14",
+      "target": "an5.133",
       "rank": 2
     },
     {
       "source": "gerechter und prinzipientreuer König",
-      "target": "dn26",
+      "target": "an3.14",
       "rank": 3
     },
     {
       "source": "gerechter und prinzipientreuer König",
-      "target": "dn30",
+      "target": "dn26",
       "rank": 4
     },
     {
       "source": "gerechter und prinzipientreuer König",
-      "target": "dn14",
+      "target": "dn30",
       "rank": 5
     },
     {
       "source": "gerechter und prinzipientreuer König",
-      "target": "iti22",
+      "target": "dn14",
       "rank": 6
     },
     {
       "source": "gerechter und prinzipientreuer König",
-      "target": "sn41.10",
+      "target": "iti22",
       "rank": 7
     },
     {
       "source": "gerechter und prinzipientreuer König",
-      "target": "an7.62",
+      "target": "sn41.10",
       "rank": 8
     },
     {
       "source": "gerechter und prinzipientreuer König",
-      "target": "an7.66",
+      "target": "an7.62",
       "rank": 9
     },
     {
       "source": "gerechter und prinzipientreuer König",
-      "target": "dn18",
+      "target": "an7.66",
       "rank": 10
     },
     {
       "source": "gerechter und prinzipientreuer König",
-      "target": "dn3",
+      "target": "dn18",
       "rank": 11
     },
     {
       "source": "gerechter und prinzipientreuer König",
-      "target": "dn17",
+      "target": "dn3",
       "rank": 12
     },
     {
       "source": "gerechter und prinzipientreuer König",
-      "target": "dn16",
+      "target": "dn17",
       "rank": 13
+    },
+    {
+      "source": "gerechter und prinzipientreuer König",
+      "target": "dn16",
+      "rank": 14
     },
     {
       "source": "Gerstengranne",
@@ -31371,33 +31425,48 @@
     },
     {
       "source": "Hausbesitzer.* aus Stadt und Land",
-      "target": "mn122",
+      "target": "mn83",
       "rank": 2
     },
     {
       "source": "Hausbesitzer.* aus Stadt und Land",
-      "target": "dn5",
+      "target": "mn122",
       "rank": 3
     },
     {
       "source": "Hausbesitzer.* aus Stadt und Land",
-      "target": "an5.30",
+      "target": "dn5",
       "rank": 4
     },
     {
       "source": "Hausbesitzer.* aus Stadt und Land",
-      "target": "an6.42",
+      "target": "an5.30",
       "rank": 5
     },
     {
       "source": "Hausbesitzer.* aus Stadt und Land",
-      "target": "an8.86",
+      "target": "an4.70",
       "rank": 6
     },
     {
       "source": "Hausbesitzer.* aus Stadt und Land",
-      "target": "dn18",
+      "target": "an6.42",
       "rank": 7
+    },
+    {
+      "source": "Hausbesitzer.* aus Stadt und Land",
+      "target": "an8.86",
+      "rank": 8
+    },
+    {
+      "source": "Hausbesitzer.* aus Stadt und Land",
+      "target": "an5.133",
+      "rank": 9
+    },
+    {
+      "source": "Hausbesitzer.* aus Stadt und Land",
+      "target": "dn18",
+      "rank": 10
     },
     {
       "source": "Hausbesitzer von Bambustor",
@@ -39736,13 +39805,18 @@
     },
     {
       "source": "sicher jemand anders",
-      "target": "mn81",
+      "target": "mn83",
       "rank": 3
     },
     {
       "source": "sicher jemand anders",
-      "target": "dn17",
+      "target": "mn81",
       "rank": 4
+    },
+    {
+      "source": "sicher jemand anders",
+      "target": "dn17",
+      "rank": 5
     },
     {
       "source": "sicher nicht",

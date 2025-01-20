@@ -1683,7 +1683,7 @@
     {
       "id": "health is",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "heart of love",
@@ -5077,7 +5077,7 @@
       "id": "mn75",
       "group": "mn",
       "rank": 1,
-      "links": 7
+      "links": 8
     },
     {
       "id": "dn1",
@@ -5478,7 +5478,7 @@
     {
       "id": "dhp146-156",
       "group": "dhp",
-      "rank": 5,
+      "rank": 4,
       "links": 4
     },
     {
@@ -6126,8 +6126,8 @@
     {
       "id": "an8.34",
       "group": "an",
-      "rank": 2,
-      "links": 2
+      "rank": 30,
+      "links": 1
     },
     {
       "id": "sn7.11",
@@ -12432,7 +12432,7 @@
     {
       "id": "an1.219-234",
       "group": "an",
-      "rank": 1,
+      "rank": 2,
       "links": 2
     },
     {
@@ -12805,6 +12805,12 @@
       "id": "sn4.9",
       "group": "sn",
       "rank": 13,
+      "links": 1
+    },
+    {
+      "id": "dhp197-208",
+      "group": "dhp",
+      "rank": 3,
       "links": 1
     },
     {
@@ -14250,7 +14256,7 @@
     {
       "id": "sn48.41",
       "group": "sn",
-      "rank": 4,
+      "rank": 3,
       "links": 4
     },
     {
@@ -14688,7 +14694,7 @@
     {
       "id": "thig14.1",
       "group": "thig",
-      "rank": 2,
+      "rank": 6,
       "links": 3
     },
     {
@@ -14754,43 +14760,43 @@
     {
       "id": "sn26.5",
       "group": "sn",
-      "rank": 20,
+      "rank": 21,
       "links": 1
     },
     {
       "id": "sn26.6",
       "group": "sn",
-      "rank": 21,
+      "rank": 22,
       "links": 1
     },
     {
       "id": "sn26.7",
       "group": "sn",
-      "rank": 22,
+      "rank": 23,
       "links": 1
     },
     {
       "id": "sn26.8",
       "group": "sn",
-      "rank": 23,
+      "rank": 24,
       "links": 1
     },
     {
       "id": "sn26.3",
       "group": "sn",
-      "rank": 24,
+      "rank": 25,
       "links": 1
     },
     {
       "id": "sn26.4",
       "group": "sn",
-      "rank": 25,
+      "rank": 26,
       "links": 1
     },
     {
       "id": "iti68",
       "group": "iti",
-      "rank": 26,
+      "rank": 27,
       "links": 1
     },
     {
@@ -31703,13 +31709,18 @@
     },
     {
       "source": "health is",
-      "target": "an1.219-234",
+      "target": "mn75",
       "rank": 1
     },
     {
       "source": "health is",
-      "target": "an8.34",
+      "target": "an1.219-234",
       "rank": 2
+    },
+    {
+      "source": "health is",
+      "target": "dhp197-208",
+      "rank": 3
     },
     {
       "source": "heart of love",
@@ -37213,67 +37224,67 @@
     },
     {
       "source": "manifestation",
-      "target": "snp3.7",
+      "target": "mn92",
       "rank": 17
     },
     {
       "source": "manifestation",
-      "target": "mn133",
+      "target": "snp3.7",
       "rank": 18
     },
     {
       "source": "manifestation",
-      "target": "mn129",
+      "target": "mn133",
       "rank": 19
     },
     {
       "source": "manifestation",
-      "target": "sn26.5",
+      "target": "mn129",
       "rank": 20
     },
     {
       "source": "manifestation",
-      "target": "sn26.6",
+      "target": "sn26.5",
       "rank": 21
     },
     {
       "source": "manifestation",
-      "target": "sn26.7",
+      "target": "sn26.6",
       "rank": 22
     },
     {
       "source": "manifestation",
-      "target": "sn26.8",
+      "target": "sn26.7",
       "rank": 23
     },
     {
       "source": "manifestation",
-      "target": "sn26.3",
+      "target": "sn26.8",
       "rank": 24
     },
     {
       "source": "manifestation",
-      "target": "sn26.4",
+      "target": "sn26.3",
       "rank": 25
     },
     {
       "source": "manifestation",
-      "target": "iti68",
+      "target": "sn26.4",
       "rank": 26
     },
     {
       "source": "manifestation",
-      "target": "sn12.2",
+      "target": "iti68",
       "rank": 27
     },
     {
       "source": "manifestation",
-      "target": "mn141",
+      "target": "sn12.2",
       "rank": 28
     },
     {
       "source": "manifestation",
-      "target": "mn92",
+      "target": "mn141",
       "rank": 29
     },
     {
@@ -40563,27 +40574,27 @@
     },
     {
       "source": "puppet",
-      "target": "thig14.1",
+      "target": "thag17.3",
       "rank": 2
     },
     {
       "source": "puppet",
-      "target": "thag17.3",
+      "target": "sn48.41",
       "rank": 3
     },
     {
       "source": "puppet",
-      "target": "sn48.41",
+      "target": "dhp146-156",
       "rank": 4
     },
     {
       "source": "puppet",
-      "target": "dhp146-156",
+      "target": "thag16.4",
       "rank": 5
     },
     {
       "source": "puppet",
-      "target": "thag16.4",
+      "target": "thig14.1",
       "rank": 6
     },
     {
