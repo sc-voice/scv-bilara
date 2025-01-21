@@ -67,70 +67,81 @@
         });
     });
     it("bilaraPaths(suid) returns local bilara paths",async()=>{
-        var bpm = await new BilaraPathMap().initialize();
+      const msg = 'TB11p.bilaraPaths:';
+      var bpm = await new BilaraPathMap().initialize();
 
-        var bps = bpm.bilaraPaths({
-            suid: "thag1.113",
-            types: BilaraPathMap.ALL_TYPES,
-        });
-        should.deepEqual(bps.map(bp=>bp.bilaraPath).sort().slice(0,3), [
-            rootPath('kn/thag/thag1.113'),
-            translationPath('kn/thag/thag1.113','de','sabbamitta'),
-            translationPath('kn/thag/thag1.113','en','sujato'),
-        ]);
+      var bps = bpm.bilaraPaths({
+          suid: "mn8",
+          types: BilaraPathMap.ALL_TYPES,
+      });
+      let wijayaratna = bps.filter(bp=>bp.author_uid === 'wijayaratna');
+      should(wijayaratna[0]).properties({
+        author_uid: 'wijayaratna',
+        lang: 'fr',
+      });
 
-        var bps = bpm.bilaraPaths({
-            suid: "an1.1-10",
-            lang: ['en','de'],
-            types: BilaraPathMap.ALL_TYPES,
-        });
-        let bilPaths = bps
-          .map(bp=>bp.bilaraPath)
-          .filter(bp=>/sabbamitta|sujato/.test(bp))
-          .sort();
-        should.deepEqual(bilPaths, [
-            translationPath('an/an1/an1.1-10','de','sabbamitta'),
-            translationPath('an/an1/an1.1-10','en','sujato'),
-        ]);
+      var bps = bpm.bilaraPaths({
+          suid: "thag1.113",
+          types: BilaraPathMap.ALL_TYPES,
+      });
+      should.deepEqual(bps.map(bp=>bp.bilaraPath).sort().slice(0,3), [
+          rootPath('kn/thag/thag1.113'),
+          translationPath('kn/thag/thag1.113','de','sabbamitta'),
+          translationPath('kn/thag/thag1.113','en','sujato'),
+      ]);
 
-        var bps = bpm.bilaraPaths({
-            suid: "an1.1-10",
-            lang: 'de',
-            types: BilaraPathMap.ALL_TYPES,
-        });
-        should.deepEqual(bps.map(bp=>bp.bilaraPath).sort(), [
-            //commentPath('an/an1/an1.1-10','de','sabbamitta'),
-            translationPath('an/an1/an1.1-10','de','sabbamitta'),
-        ]);
+      var bps = bpm.bilaraPaths({
+          suid: "an1.1-10",
+          lang: ['en','de'],
+          types: BilaraPathMap.ALL_TYPES,
+      });
+      let bilPaths = bps
+        .map(bp=>bp.bilaraPath)
+        .filter(bp=>/sabbamitta|sujato/.test(bp))
+        .sort();
+      should.deepEqual(bilPaths, [
+          translationPath('an/an1/an1.1-10','de','sabbamitta'),
+          translationPath('an/an1/an1.1-10','en','sujato'),
+      ]);
 
-        var bps = bpm.bilaraPaths({
-            suid: "an1.1-10",
-            lang: 'en',
-            types: BilaraPathMap.ALL_TYPES,
-        });
-        should.deepEqual(bps.map(bp=>bp.bilaraPath).filter(bp=>/sujato/.test(bp)), [
-            translationPath('an/an1/an1.1-10','en','sujato'),
-        ]);
+      var bps = bpm.bilaraPaths({
+          suid: "an1.1-10",
+          lang: 'de',
+          types: BilaraPathMap.ALL_TYPES,
+      });
+      should.deepEqual(bps.map(bp=>bp.bilaraPath).sort(), [
+          //commentPath('an/an1/an1.1-10','de','sabbamitta'),
+          translationPath('an/an1/an1.1-10','de','sabbamitta'),
+      ]);
 
-        var bps = bpm.bilaraPaths({
-            suid: "an1.1-10",
-            lang: 'de',
-            types: BilaraPathMap.ALL_TYPES,
-        });
-        should.deepEqual(bps.map(bp=>bp.bilaraPath), [
-            translationPath('an/an1/an1.1-10','de','sabbamitta'),
-            //commentPath('an/an1/an1.1-10','de','sabbamitta'),
-        ]);
+      var bps = bpm.bilaraPaths({
+          suid: "an1.1-10",
+          lang: 'en',
+          types: BilaraPathMap.ALL_TYPES,
+      });
+      should.deepEqual(bps.map(bp=>bp.bilaraPath).filter(bp=>/sujato/.test(bp)), [
+          translationPath('an/an1/an1.1-10','en','sujato'),
+      ]);
 
-        var bps = bpm.bilaraPaths({
-            suid: "an1.1-10",
-            author: 'sujato',
-            types: BilaraPathMap.ALL_TYPES,
-        });
-        should.deepEqual(bps.map(bp=>bp.bilaraPath), [
-            translationPath('an/an1/an1.1-10','en','sujato'),
-            //commentPath('an/an1/an1.1-10','en','sujato'),
-        ]);
+      var bps = bpm.bilaraPaths({
+          suid: "an1.1-10",
+          lang: 'de',
+          types: BilaraPathMap.ALL_TYPES,
+      });
+      should.deepEqual(bps.map(bp=>bp.bilaraPath), [
+          translationPath('an/an1/an1.1-10','de','sabbamitta'),
+          //commentPath('an/an1/an1.1-10','de','sabbamitta'),
+      ]);
+
+      var bps = bpm.bilaraPaths({
+          suid: "an1.1-10",
+          author: 'sujato',
+          types: BilaraPathMap.ALL_TYPES,
+      });
+      should.deepEqual(bps.map(bp=>bp.bilaraPath), [
+          translationPath('an/an1/an1.1-10','en','sujato'),
+          //commentPath('an/an1/an1.1-10','en','sujato'),
+      ]);
     });
     it("trilingualPaths(suid) sujato/soma",async()=>{
       var bpm = await new BilaraPathMap().initialize();

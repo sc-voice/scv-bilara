@@ -32,9 +32,12 @@ describe("TESTTESTmohan", function() {
 
   it("load-mn8-fr-wijayaratna", async()=>{
     const msg = 'Tm3n.load-mn8';
-    let mld = new MLDoc({ bilaraPaths: bilaraPaths_mn8 });
+    let trilingual = true;
+    let bilaraPaths = bilaraPaths_mn8;
+    let mld = new MLDoc({ bilaraPaths, trilingual});
     let res = await mld.load(BILARA_PATH);
     should(res).equal(mld);
+    should(mld.trilingual).equal(true);
     should(mld.title).equal('Majjhima Nikāya 8\n8. Le déracinement');
     let segMap = mld.segMap;
     let scid1_2 = 'mn8:1.2';
@@ -67,5 +70,26 @@ describe("TESTTESTmohan", function() {
     should(mld.author_uid).equal('wijayaratna');
     should(mld.footer).match(/Môhan.*Ismet/);
     should(mld.author).match(/Môhan Wijayaratna/);
+  });
+  it("bd-trilingualDoc-mn8", async() =>{
+    const msg = 'TM3n.loadMLDoc';
+    let name = 'ebt-data';
+    var bd = new BilaraData({name});
+    await bd.initialize();
+    let author = 'wijayaratna';
+    let suid = 'mn8';
+    let lang = 'fr';
+    let suttaRef = [suid,lang,author].join('/');
+    let refLang = 'fr';
+    let refAuthor = 'noeismet';
+    let mldOpts = { refLang, refAuthor,};
+    let mld = await bd.trilingualDoc(suttaRef);
+    should(mld.trilingual).equal(true);
+    should(mld.author).equal('Môhan Wijayaratna');
+    should(mld.docAuthorName).equal('Môhan Wijayaratna');
+    should(mld.author_uid).equal('wijayaratna');
+    should(mld.footer).match(/Wijaya.*Ismet/);
+    should(mld.bilaraPaths[0]).match(/mn8_root-pli-ms/);
+    should(mld.bilaraPaths[1]).match(/mn8_translation-fr-wijayaratna/);
   });
 })

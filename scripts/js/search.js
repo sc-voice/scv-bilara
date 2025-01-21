@@ -430,14 +430,18 @@ found     : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${ref
     );
   }
   mlDocs.forEach((mld,im) => {
-    let {suid, author_uid, lang} = mld;
+    let {suid, author, author_uid, lang} = mld;
     mld.segments().forEach((seg,i) => {
       var scid = seg.scid;
-      var sep = '-----------------------';
+      var sep = '---';
       if (i === 0) {
         let sm = mld.hasOwnProperty('segsMatched') ? mld.segsMatched : '';
         let score = mld.score.toFixed(3);
-        let title = `doc:${im+1}/${nDocs} ${suid}/${lang}/${author_uid} score:${score}`;
+        let title = [
+          `doc:${im+1}/${nDocs}`,
+          `${author} ${suid}/${lang}/${author_uid}`,
+          `score:${score}`
+        ].join(' ');
         console.log(`${sep} ${title} ${sep}`);
       }
       let scidText = [
@@ -550,13 +554,18 @@ function outLines(res, pattern, n=0) {
     var {
         lang,
         searchLang,
+        author,
         docLang, 
         docAuthor,
+        docAuthorName,
         refLang,
         refAuthor,
     } = res;
     console.log(
-      `---:pli/ms doc:${docLang}/${docAuthor} ref:${refLang}/${refAuthor}`);
+      `---:pli/ms`,
+      `doc:${docLang}/${docAuthor} ${docAuthorName}`,
+      `ref:${refLang}/${refAuthor}`
+    );
     n = Number(n);
     res.mlDocs.forEach(mld => {
         var suid = mld.suid;

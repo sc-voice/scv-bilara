@@ -12,12 +12,16 @@ const { DBG, DBG_MLD, } = require("./defines.cjs");
 
 class MLDoc {
   constructor(opts = {}) {
+    const msg = 'M3c.ctor:';
+    const dbg = DBG.MLD_CTOR;
+    dbg>1 && console.log(msg, '[1]opts', opts);
     (opts.logger || logger).logInstance(this, opts);
     var {
       author,
       author_uid,
       bilaraPaths,
       category = 'sutta',
+      docAuthorName,
       footer = MLDoc.SC_FOOTER,
       hyphen = "\u00ad",
       lang,
@@ -29,6 +33,7 @@ class MLDoc {
       segsMatched,
       sutta_uid,
       title,
+      trilingual,
       type = 'translation',
     } = opts;
     if (bilaraPaths == null) {
@@ -37,10 +42,15 @@ class MLDoc {
     lang = lang || MLDoc.bilaraPathLanguages(bilaraPaths, lang).pop();
     if (author == null) {
       let aInfo = AuthorsV2.authorInfo(author_uid);
-      author = aInfo?.name?.join(', ') || author_uid;
+      author = aInfo?.name?.join(', ');
+    }
+    if (author) {
+      this.author = author;
     }
 
     Object.assign(this, {
+      segMap, // For console debugging, this is first
+
       author,
       author_uid,
       bilaraPaths,
@@ -52,16 +62,18 @@ class MLDoc {
       maxWord,
       minWord,
       score,
-      segMap,
       segsMatched,
       sutta_uid,
       title,
       type,
     });
-    if (opts.trilingual) {
-      this.trilingual = true;
+    if (trilingual) {
+      this.trilingual = trilingual;
       this.docLang = opts.docLang;
       this.docAuthor = opts.docAuthor;
+      if (author) {
+        this.docAuthorName = docAuthorName || author;
+      }
       this.refLang = opts.refLang || 'en';
       this.refAuthor = opts.refAuthor || 'sujato';
     }
@@ -155,7 +167,7 @@ class MLDoc {
 
   titles(lang = this.lang) {
     const msg = 'M3c.titles:';
-    const dbg = DBG.MLD_LOAD;
+    const dbg = DBG.MLD_TITLES;
     let headSegs = this.segments().slice(0,4);
     dbg && console.log(msg, {lang, headSegs});
     var titles = headSegs.slice(0, 4).reduce((a, s, i) => {
@@ -264,6 +276,9 @@ class MLDoc {
             this.author = header.author;
             this.author_uid = header.author_uid;
             this.footer = header.footer;
+            if (trilingual) {
+              this.docAuthorName = this.author;
+            }
 
             dbg && console.log(msg, '[3]header', header);
           }

@@ -29,7 +29,7 @@
 
   class BilaraData {
     constructor(opts = {}) {
-      const msg = "BilaraData.ctor()";
+      const msg = "B8a.ctor()";
       const dbg = DBG_BD_INIT;
       (opts.logger || logger).logInstance(this, opts);
       this.name = opts.name || "bilara-data";
@@ -49,6 +49,7 @@
         opts.publication ||
         new Publication({
           includeUnpublished,
+          name: this.name,
           root: this.root,
         });
       this.bilaraPathMap = this.publication.bilaraPathMap;
@@ -101,7 +102,7 @@
       author,
       includeUnpublished = this.includeUnpublished,
     }) {
-      const msg = "BilaraData.isBilaraDoc() ";
+      const msg = "B8a.isBilaraDoc() ";
       let { bilaraPathMap: bpm, publication } = this;
       let sp = bpm.suidPaths(suid);
 
@@ -456,7 +457,7 @@
     }
 
     loadMLDoc(...args) {
-      const msg = "BilaraData.loadMLDoc() ";
+      const msg = "B8a.loadMLDoc() ";
       var loadArgs = this.loadArgs(args);
       var {
         suid: suidRef,
@@ -529,10 +530,9 @@
     }
 
     async trilingualDoc(suttaRef, opts={}) {
-      const msg = "BilaraData.trilingualDoc() ";
+      const msg = "B8a.trilingualDoc() ";
       const dbg = DBG.TRILINGUALDOC;
-      let { bilaraPathMap: bpm, root } = this;
-      suttaRef = SuttaRef.create(suttaRef); 
+      let { bilaraPathMap: bpm, root } = this; suttaRef = SuttaRef.create(suttaRef); 
       let {
         rootLang = 'pli',
         rootAuthor = 'ms',
@@ -574,18 +574,24 @@
       logLevel && (mldOpts.logLevel = logLevel);
       dbg && console.log(msg, '[1]mldOpts', mldOpts);
       let mld = await new MLDoc(mldOpts).load(root);
-      dbg && console.log(msg, 'mld=>', {
-        docLang: mld?.docLang,
-        docAuthor: mld?.docAuthor,
-        bilaraPaths: mld?.bilaraPaths,
-        langSegs: mld?.langSegs,
-        '...': '...',
-      });
+      if (dbg) {
+        let dbgOut = mld && {
+          author: mld.author,
+          docLang: mld.docLang,
+          docAuthor: mld.docAuthor,
+          docAuthorName: mld.docAuthorName,
+          trilingual: mld.trilingual,
+          bilaraPaths: mld.bilaraPaths,
+          langSegs: mld.langSegs,
+          '...': '...',
+        };
+        console.log(msg, '[2]mld', dbgOut);
+      } 
       return mld;
     }
 
     canonicalSuttaId(id, type="acro") {
-      const msg = 'BilaraData.canonicalSuttaId()';
+      const msg = 'B8a.canonicalSuttaId()';
       if (!this.initialized) {
         let emsg = `${msg}, initialize() required`;
         throw new Error(emsg);
@@ -808,7 +814,7 @@
     }
 
     expandRange(suttaRef) {
-      const msg = "BilaraData.expandRange";
+      const msg = "B8a.expandRange";
       const dbg = DBG.SUTTA_UIDSEARCH;
       suttaRef = suttaRef.split(":")[0];
       var reCollection = new RegExp("[0-9].*", "u");
@@ -907,7 +913,7 @@
     }
 
     sutta_uidSearch(pattern, maxResults = 5) {
-      const msg = 'BilaraData.sutta_uidSearch() ';
+      const msg = 'B8a.sutta_uidSearch() ';
       const dbg = DBG.SUTTA_UIDSEARCH;
       var method = "sutta_uid";
       var uids = this.suttaList(pattern).slice(0, maxResults);

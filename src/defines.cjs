@@ -6,7 +6,9 @@ module.exports.DBG_MLD        = 0;
 module.exports.DBG = {
   FIND: 0,
   FINDARGS: 0,
+  MLD_CTOR: 0,
   MLD_LOAD: 0,
+  MLD_TITLES: 0,
   SEEKER: 0,
   SEARCH_SCRIPT: 0, 
   SLOWFIND: 0,
