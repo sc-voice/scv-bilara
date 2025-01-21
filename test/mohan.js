@@ -31,12 +31,12 @@ describe("TESTTESTmohan", function() {
   ];
 
   it("load-mn8-fr-wijayaratna", async()=>{
-    const msg = 'Tm3n.mn8';
-    var mld = new MLDoc({ bilaraPaths: bilaraPaths_mn8 });
-    var res = await mld.load(BILARA_PATH);
+    const msg = 'Tm3n.load-mn8';
+    let mld = new MLDoc({ bilaraPaths: bilaraPaths_mn8 });
+    let res = await mld.load(BILARA_PATH);
     should(res).equal(mld);
     should(mld.title).equal('Majjhima Nikāya 8\n8. Le déracinement');
-    var segMap = mld.segMap;
+    let segMap = mld.segMap;
     let scid1_2 = 'mn8:1.2';
     should(segMap[scid1_2].pli).match(/ekaṁ samayaṁ bhagavā/);
     should(segMap[scid1_2].fr).match(/Ainsi ai-je entendu/);
@@ -47,5 +47,25 @@ describe("TESTTESTmohan", function() {
     should(mld.type).equal('translation');
     should(mld.author_uid).equal('wijayaratna');
     should(mld.footer).match(/Môhan.*Ismet/);
+    should(mld.author).match(/Môhan Wijayaratna/);
+  });
+  it("copy-mn8-fr-wijayaratna", async()=>{
+    const msg = 'Tm3n.copy-mn8';
+    let mldSrc = new MLDoc({ bilaraPaths: bilaraPaths_mn8 });
+    await mldSrc.load(BILARA_PATH);
+    let mld = new MLDoc(mldSrc);
+    should(mld.title).equal('Majjhima Nikāya 8\n8. Le déracinement');
+    let segMap = mld.segMap;
+    let scid1_2 = 'mn8:1.2';
+    should(segMap[scid1_2].pli).match(/ekaṁ samayaṁ bhagavā/);
+    should(segMap[scid1_2].fr).match(/Ainsi ai-je entendu/);
+    should(segMap[scid1_2].scid).equal(scid1_2);
+    should(mld.suid).equal('mn8');
+    should(mld.lang).equal('fr');
+    should(mld.sutta_uid).equal('mn8');
+    should(mld.type).equal('translation');
+    should(mld.author_uid).equal('wijayaratna');
+    should(mld.footer).match(/Môhan.*Ismet/);
+    should(mld.author).match(/Môhan Wijayaratna/);
   });
 })

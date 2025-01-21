@@ -1038,25 +1038,7 @@
               `${suid}/${refLang || lang}/${author}`
             );
           } else {
-            this.debug(`slowFind() -> loadMLDocLegacy(${suid}/${lang})`);
-            try {
-              mld = await bd.loadMLDocLegacy(suttaRef);
-              mlDocs.push(mld);
-              matchingRefs.push(suttaRef);
-              var resFilter = mld.filterSegments({
-                pattern,
-                resultPattern,
-                languages: [searchLang],
-                showMatchesOnly,
-              });
-              segsMatched += resFilter.matched;
-              mld.segsMatched = resFilter.matched;
-              if (matchHighlight) {
-                mld.highlightMatch(resultPattern, matchHighlight);
-              }
-            } catch (e) {
-              this.warn(`suid:${suid} =>`, e.message);
-            }
+            this.warn(`NOT SUPPORTED: legacy ${suid}`);
           }
         }
       }

@@ -11,6 +11,7 @@
         BilaraData,
     } = require("../index");
     const { BilaraPath } = require("scv-esm");
+    const MS_AUTHOR = 'The M.L. Maniratana Bunnag Dhamma Society Fund';
     this.timeout(5*1000);
     var logLevel = false;
     var bd = new BilaraData();
@@ -230,13 +231,12 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
             ['de', 'en', 'pt', 'pli'].sort(MLDoc.langCompare_pli_en), 
             ['pli', 'en', 'de', 'pt']);
     });
-    it("languages(...) => language list", ()=>{
-        var mld = new MLDoc({
-            bilaraPaths: bilaraPaths_an1_1_1,
-        });
+    it("bilaraPathLanguages(...) => language list", ()=>{
+        let bilaraPaths = bilaraPaths_an1_1_1;
 
         // languages are sorted in source order
-        should.deepEqual(mld.languages(), ['pli', 'en', 'de' ]);
+        should.deepEqual(MLDoc.bilaraPathLanguages(bilaraPaths), 
+          ['pli', 'en', 'de' ]);
     });
     it("lang => target language", () => {
         // default language is translation language (vs. source language)
@@ -474,7 +474,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
             done();
         } catch(e) { done(e); } })();
     });
-    it("load(...) loads tri-lingual", async()=>{
+    it("TESTTESTload(...) loads tri-lingual", async()=>{
       let mldOpts = {            
         lang: 'de',
         author_uid: 'ms',
@@ -492,8 +492,10 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
       let mldMeta = Object.assign({}, mld);
       delete mldMeta.segMap;
       should.deepEqual(mldMeta, Object.assign({
+        author: 'The M.L. Maniratana Bunnag Dhamma Society Fund',
         category: 'sutta',
         hyphen: '\u00ad',
+        footer: MLDoc.SC_FOOTER,
         langSegs: { de:54, en:54, pli:55 },
         maxWord: 30,
         minWord: 5,
@@ -508,7 +510,7 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
       should(seg1_2.de).match(/Da ging der Ortsvorsteher Bhadraka zum Buddha/);
       should(seg1_2.en).match(/Then Bhadraka the village chief went up to the Buddha/);
     });
-    it("load(...) loads thig1.1 sujato/soma", async()=>{
+    it("TESTTESTload(...) loads thig1.1 sujato/soma", async()=>{
       let mldOpts = {            
         lang: 'en',
         author_uid: 'ms',
@@ -527,7 +529,9 @@ de: 'Der Geschmack eines Mannes hält den Geist einer Frau gefangen.“ ',
       let mldMeta = Object.assign({}, mld);
       delete mldMeta.segMap;
       should.deepEqual(mldMeta, Object.assign({
+        author: MS_AUTHOR,
         category: 'sutta',
+        footer: MLDoc.SC_FOOTER,
         hyphen: '\u00ad',
         langSegs: { en:9, pli:9 },
         maxWord: 30,

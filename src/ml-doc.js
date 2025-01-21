@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const { logger } = require('log-instance');
 const { Files } = require('memo-again');
-const { BilaraPath } = require("scv-esm");
+const { AuthorsV2, BilaraPath } = require("scv-esm");
 const Unicode = require('./unicode');
 const Pali = require('./pali');
 const { SuttaCentralId } = require('scv-esm');
@@ -14,25 +14,50 @@ class MLDoc {
   constructor(opts = {}) {
     (opts.logger || logger).logInstance(this, opts);
     var {
+      author,
+      author_uid,
       bilaraPaths,
+      category = 'sutta',
+      footer = MLDoc.SC_FOOTER,
+      hyphen = "\u00ad",
+      lang,
+      langSegs,
+      maxWord = 30,
+      minWord = 5,
+      score = 0, // search relevance
+      segMap = {},
+      segsMatched,
+      sutta_uid,
+      title,
+      type = 'translation',
     } = opts;
     if (bilaraPaths == null) {
       throw new Error(`bilaraPaths is required`);
     }
-    this.bilaraPaths = bilaraPaths;
-    this.author_uid = opts.author_uid;
-    this.type = opts.type || 'translation';
-    this.category = opts.category || 'sutta';
-    this.sutta_uid = opts.sutta_uid;
-    this.lang = opts.lang || this.languages().pop();
-    this.segMap = opts.segMap || {};
-    this.score = opts.score || 0; // search relevance
-    this.hyphen = opts.hyphen || "\u00ad";
-    this.maxWord = opts.maxWord || 30;
-    this.minWord = opts.minWord || 5;
-    this.title = opts.title;
-    this.segsMatched = opts.segsMatched;
-    this.langSegs = opts.langSegs;
+    lang = lang || MLDoc.bilaraPathLanguages(bilaraPaths, lang).pop();
+    if (author == null) {
+      let aInfo = AuthorsV2.authorInfo(author_uid);
+      author = aInfo?.name?.join(', ') || author_uid;
+    }
+
+    Object.assign(this, {
+      author,
+      author_uid,
+      bilaraPaths,
+      category,
+      footer,
+      hyphen,
+      lang,
+      langSegs,
+      maxWord,
+      minWord,
+      score,
+      segMap,
+      segsMatched,
+      sutta_uid,
+      title,
+      type,
+    });
     if (opts.trilingual) {
       this.trilingual = true;
       this.docLang = opts.docLang;
@@ -43,6 +68,14 @@ class MLDoc {
     Object.defineProperty(this, "unicode", {
       value: opts.unicode || new Unicode(),
     });
+  }
+
+  static get SC_FOOTER() {
+    return [
+      '<a href="https://suttacentral.net/licensing">',
+      'Creative Commons Zero (CC0 1.0 Universal)',
+      '</a>',
+    ].join('');
   }
 
   static compare(m1, m2) {
@@ -149,11 +182,7 @@ class MLDoc {
     return result;
   }
 
-  languages() {
-    let {
-      bilaraPaths,
-      lang,
-    } = this;
+  static bilaraPathLanguages(bilaraPaths, lang='en') {
     return bilaraPaths.length
       ? Object.keys(bilaraPaths.reduce((a, bp) => {
         a[bp.split('/')[1]] = true;

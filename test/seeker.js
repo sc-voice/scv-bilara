@@ -890,31 +890,6 @@ typeof describe === "function" &&
         matched: true,
       });
     });
-    it("find(...) => legacy suttas", async () => {
-      console.log("legacy suttas DEPRECATED");
-      return;
-      var maxDoc = 3;
-      var skr = await new Seeker({
-        maxDoc,
-      }).initialize();
-
-      // lists of suttas with ranges
-      var lang = "de";
-      // The pattern resolves to 4 suttas, of which 3 are returned
-      var pattern = "mn1/en/bodhi";
-      var res = await skr.find({
-        pattern,
-        lang,
-      });
-      should(res.method).equal("sutta_uid");
-      should(res.maxDoc).equal(50); // Hard limit for sutta lists
-      should.deepEqual(res.suttaRefs, [`mn1/en/bodhi`]);
-      should(res.resultPattern).equal(pattern);
-      should(res.lang).equal("en");
-      should(res.mlDocs.length).equal(1);
-      let mld0 = res.mlDocs[0];
-      should(mld0.author_uid).equal("bodhi");
-    });
     it("find({minLang}) => minLang 2", async () => {
       var maxResults = 3;
       var skr = await new Seeker({

@@ -584,49 +584,6 @@
       return mld;
     }
 
-    async loadMLDocLegacy(suidRef) {
-      try {
-        let suidParts = suidRef.split("/");
-        let sutta = await this.scApi.loadLegacySutta.apply(
-          this.scApi,
-          suidParts
-        );
-        if (!sutta) {
-          let e = new Error(`loadMLDocLegacy() not found:${suidRef}`);
-          e.suidRef = suidRef;
-          throw e;
-        }
-        let {
-          lang,
-          author_uid,
-          sutta_uid,
-          segmented,
-          segments = [],
-          suttaplex,
-        } = sutta;
-        let segMap = {};
-        segments.forEach((seg) => {
-          segMap[seg.scid] = seg;
-        });
-        this.info(`loadMLDocLegacy(${suidRef})`);
-        return new MLDoc({
-          bilaraPaths: [], // legacy have no paths
-          lang,
-          author_uid,
-          segMap,
-          suttaplex,
-          segmented,
-          sutta_uid,
-          langSegs: {
-            [lang]: segments.length,
-          },
-        });
-      } catch (e) {
-        this.warn(`loadMLDocLegacy(${suidRef})`, e.message);
-        throw e;
-      }
-    }
-
     canonicalSuttaId(id, type="acro") {
       const msg = 'BilaraData.canonicalSuttaId()';
       if (!this.initialized) {

@@ -786,27 +786,6 @@
         });
         should.deepEqual(mld.segMap['an1.9:1.0'], an1_9_de);
     });
-    it("loadMLDocLegacy(...) loads legacy doc", async()=>{
-        console.log("loadMLDocLegacy DEPRECATED");
-        return; 
-        await bd.initialize();
-        var mld = await bd.loadMLDocLegacy('mn120/de');
-
-        should(mld.lang).equal('de');
-        should(mld.score).equal(0);
-        should(mld.suid).equal('mn120');
-        should(mld.hyphen).equal('\u00ad');
-        should(mld.maxWord).equal(30);
-        should(mld.minWord).equal(5);
-        should(mld.segsMatched).equal(undefined);
-        should.deepEqual(mld.langSegs, {
-            de: 50,
-        });
-        let segs = mld.segments();
-        should(segs[2].de).match(/So habe ich gehört/);
-        should(Object.keys(mld.segMap).length).equal(50);
-        should(mld.author_uid).equal('mettiko');
-    });
     it("loadMLDoc(...) loads trilingual doc", done=>{
         (async function() { try {
             await bd.initialize();
