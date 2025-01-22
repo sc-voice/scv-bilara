@@ -1,5 +1,5 @@
 (typeof describe === 'function') && 
-describe("TESTTESTmohan", function() {
+describe("mohan", function() {
   const should = require("should");
   const fs = require('fs');
   const path = require('path');
@@ -25,71 +25,69 @@ describe("TESTTESTmohan", function() {
       rootPath,
   } = BilaraPath;
 
-  var bilaraPaths_mn8 = [
+  var bilaraPaths_mn8_fr = [
       rootPath('mn/mn8'),
       translationPath('mn/mn8','fr','wijayaratna'),
   ];
 
-  it("load-mn8-fr-wijayaratna", async()=>{
-    const msg = 'Tm3n.load-mn8';
-    let trilingual = true;
-    let bilaraPaths = bilaraPaths_mn8;
-    let mld = new MLDoc({ bilaraPaths, trilingual});
-    let res = await mld.load(BILARA_PATH);
-    should(res).equal(mld);
-    should(mld.trilingual).equal(true);
-    should(mld.title).equal('Majjhima Nikāya 8\n8. Le déracinement');
-    let segMap = mld.segMap;
-    let scid1_2 = 'mn8:1.2';
-    should(segMap[scid1_2].pli).match(/ekaṁ samayaṁ bhagavā/);
-    should(segMap[scid1_2].fr).match(/Ainsi ai-je entendu/);
-    should(segMap[scid1_2].scid).equal(scid1_2);
-    should(mld.suid).equal('mn8');
-    should(mld.lang).equal('fr');
-    should(mld.sutta_uid).equal('mn8');
-    should(mld.type).equal('translation');
-    should(mld.author_uid).equal('wijayaratna');
-    should(mld.footer).match(/Môhan.*Ismet/);
-    should(mld.author).match(/Môhan Wijayaratna/);
-  });
-  it("copy-mn8-fr-wijayaratna", async()=>{
-    const msg = 'Tm3n.copy-mn8';
-    let mldSrc = new MLDoc({ bilaraPaths: bilaraPaths_mn8 });
-    await mldSrc.load(BILARA_PATH);
-    let mld = new MLDoc(mldSrc);
-    should(mld.title).equal('Majjhima Nikāya 8\n8. Le déracinement');
-    let segMap = mld.segMap;
-    let scid1_2 = 'mn8:1.2';
-    should(segMap[scid1_2].pli).match(/ekaṁ samayaṁ bhagavā/);
-    should(segMap[scid1_2].fr).match(/Ainsi ai-je entendu/);
-    should(segMap[scid1_2].scid).equal(scid1_2);
-    should(mld.suid).equal('mn8');
-    should(mld.lang).equal('fr');
-    should(mld.sutta_uid).equal('mn8');
-    should(mld.type).equal('translation');
-    should(mld.author_uid).equal('wijayaratna');
-    should(mld.footer).match(/Môhan.*Ismet/);
-    should(mld.author).match(/Môhan Wijayaratna/);
-  });
-  it("bd-trilingualDoc-mn8", async() =>{
-    const msg = 'TM3n.loadMLDoc';
-    let name = 'ebt-data';
-    var bd = new BilaraData({name});
+  var bilaraPaths_mn8_en = [
+      rootPath('mn/mn8'),
+      translationPath('mn/mn8','en','sujato'),
+  ];
+
+  it("trilingual-mn8-fr-ref", async()=>{
+    const msg = 'Tm3n.trilingual-mn8-fr-ref';
+    let dbg = 0;
+    var bd = new BilaraData({name:'ebt-data'});
     await bd.initialize();
-    let author = 'wijayaratna';
-    let suid = 'mn8';
-    let lang = 'fr';
-    let suttaRef = [suid,lang,author].join('/');
     let refLang = 'fr';
-    let refAuthor = 'noeismet';
-    let mldOpts = { refLang, refAuthor,};
-    let mld = await bd.trilingualDoc(suttaRef);
-    should(mld.trilingual).equal(true);
-    should(mld.author).equal('Môhan Wijayaratna');
-    should(mld.docAuthorName).equal('Môhan Wijayaratna');
-    should(mld.author_uid).equal('wijayaratna');
-    should(mld.footer).match(/Wijaya.*Ismet/);
-    should(mld.bilaraPaths[0]).match(/mn8_root-pli-ms/);
-    should(mld.bilaraPaths[1]).match(/mn8_translation-fr-wijayaratna/);
+    let refAuthor = 'wijayaratna';
+    let mld = await bd.trilingualDoc("mn8/en/sujato", 
+      { refLang, refAuthor, });
+    should(mld.title).equal('Middle Discourses 8\nSelf-Effacement');
+    let testScid = 'mn8:1.1';
+    let testSeg = mld.segMap[testScid];
+    dbg && console.log(msg, 'testSeg', testSeg);
+    should(testSeg.scid).equal(testScid);
+    should(testSeg.pli).match(/Evaṁ me sutaṁ/);
+    should(testSeg.en).match(/So I have heard/);
+    should(mld.suid).equal('mn8');
+    should(mld.lang).equal('en');
+    should(mld.sutta_uid).equal('mn8');
+    should(mld.type).equal('translation');
+    should(mld.docAuthor).equal('sujato');
+    should(mld.docFooter).match(/suttacentral.net/);
+    should(mld.docAuthorName).match(/Bhikkhu Sujato/);
+    should(mld.refAuthor).equal(refAuthor);
+    should(mld.refFooter).match(/Môhan.*Ismet/);
+    should(mld.refAuthorName).match(/Môhan Wijayaratna/);
+  });
+  it("trilingual-mn8-fr-doc", async()=>{
+    const msg = 'Tm3n.trilingual-mn8-fr-doc';
+    let dbg = 0;
+    var bd = new BilaraData({name:'ebt-data'});
+    await bd.initialize();
+    let refLang = 'en';
+    let refAuthor = 'sujato';
+    let mld = await bd.trilingualDoc("mn8/fr/wijayaratna", 
+      { refLang, refAuthor, });
+    should(mld.title).equal('Majjhima Nikāya 8\n8. Le déracinement');
+    let testScid = 'mn8:1.2';
+    let testSeg = mld.segMap[testScid];
+    dbg && console.log(msg, 'testSeg', testSeg);
+    should(testSeg.scid).equal(testScid);
+    should(testSeg.pli).match(/ekaṁ samayaṁ bhagavā/);
+    should(testSeg.ref).match(/At one time the Buddha/);
+    should(testSeg.fr).match(/>Ainsi ai-je entendu/);
+    should(mld.suid).equal('mn8');
+    should(mld.lang).equal('fr');
+    should(mld.sutta_uid).equal('mn8');
+    should(mld.type).equal('translation');
+    should(mld.refAuthor).equal('sujato');
+    should(mld.refFooter).match(/suttacentral.net/);
+    should(mld.refAuthorName).match(/Bhikkhu Sujato/);
+    should(mld.docAuthor).equal('wijayaratna');
+    should(mld.docFooter).match(/Môhan.*Ismet/);
+    should(mld.docAuthorName).match(/Môhan Wijayaratna/);
   });
 })

@@ -21,7 +21,6 @@ class MLDoc {
       author_uid,
       bilaraPaths,
       category = 'sutta',
-      docAuthorName,
       footer = MLDoc.SC_FOOTER,
       hyphen = "\u00ad",
       lang,
@@ -71,11 +70,20 @@ class MLDoc {
       this.trilingual = trilingual;
       this.docLang = opts.docLang;
       this.docAuthor = opts.docAuthor;
-      if (author) {
-        this.docAuthorName = docAuthorName || author;
+      this.docAuthorName = opts.docAuthorName;
+      let docInfo = AuthorsV2.authorInfo(this.docAuthor);
+      if (docInfo) {
+        this.docAuthorName = docInfo.name?.join(', ');
+        this.docFooter = MLDoc.SC_FOOTER;
       }
       this.refLang = opts.refLang || 'en';
       this.refAuthor = opts.refAuthor || 'sujato';
+      this.refAuthorName = opts.refAuthorName;
+      let refInfo = AuthorsV2.authorInfo(this.refAuthor);
+      if (refInfo) {
+        this.refAuthorName = refInfo.name?.join(', ');
+        this.refFooter = MLDoc.SC_FOOTER;
+      }
     }
     Object.defineProperty(this, "unicode", {
       value: opts.unicode || new Unicode(),
@@ -212,15 +220,17 @@ class MLDoc {
         bilaraPaths,
         docLang,
         docAuthor,
+        docAuthorName,
         refLang,
         refAuthor,
+        refAuthorName,
         trilingual,
       } = this;
       this.langSegs = {};
       let langMap = {};
       var p_bp = [];
       dbg && console.log(msg, '[1]', 
-        {bilaraPaths, lang, docAuthor, refAuthor});
+        {bilaraPaths, docLang, docAuthor, refLang, refAuthor});
 
       for (var ip = 0; ip < bilaraPaths.length; ip++) {
         var parts = BilaraPath.pathParts(bilaraPaths[ip]);
@@ -272,15 +282,34 @@ class MLDoc {
           header = strings.__header__;
           if (header) {
             delete strings.__header__;
+            let { refAuthor, docAuthor } = this;
             this.sutta_uid = header.suid;
-            this.author = header.author;
-            this.author_uid = header.author_uid;
-            this.footer = header.footer;
-            if (trilingual) {
-              this.docAuthorName = this.author;
+            this.lang = this.lang || header.lang;
+            if (refAuthor === header.author_uid) {
+              dbg && console.log(msg, 'ref');
+              this.refAuthorName = header.author;
+              this.refFooter = header.footer;
+            }
+            if (docAuthor === header.author_uid) {
+              this.docAuthorName = header.author;
+              this.docFooter = header.footer;
             }
 
-            dbg && console.log(msg, '[3]header', header);
+            if (dbg) {
+              let show = {
+                lang: this.lang,
+                docAuthor,
+                docAuthorName: this.docAuthorName,
+                docFooter: this.docFooter,
+                refAuthor,
+                refAuthorName: this.refAuthorName,
+                refFooter: this.refFooter,
+              }
+              if (dbg > 1) {
+                show.header = header;
+              }
+              console.log(msg, '[3]__header__', show);
+            }
           }
           fh.close();
           let keys = Object.keys(strings);

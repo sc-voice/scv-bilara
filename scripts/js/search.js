@@ -8,10 +8,7 @@ const {
     English,
     ExampleV2,
     ExecGitMock,
-    FuzzyWordSet,
-    Pali,
     Seeker,
-    SegDoc,
     SuttaCentralId,
     Verse,
 
@@ -430,7 +427,7 @@ found     : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${ref
     );
   }
   mlDocs.forEach((mld,im) => {
-    let {suid, author, author_uid, lang} = mld;
+    let {suid, docAuthor, docAuthorName, docFooter, lang} = mld;
     mld.segments().forEach((seg,i) => {
       var scid = seg.scid;
       var sep = '---';
@@ -439,7 +436,7 @@ found     : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${ref
         let score = mld.score.toFixed(3);
         let title = [
           `doc:${im+1}/${nDocs}`,
-          `${author} ${suid}/${lang}/${author_uid}`,
+          `${docAuthorName} ${suid}/${lang}/${docAuthor}`,
           `score:${score}`
         ].join(' ');
         console.log(`${sep} ${title} ${sep}`);
@@ -499,6 +496,9 @@ found     : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${ref
           break;
       }
     });
+    let footer = mld.docFooter
+      .replaceAll(/<[^>]*>/g, '');
+    console.log('\n', footer);
   });
 }
 

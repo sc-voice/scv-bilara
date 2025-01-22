@@ -532,14 +532,17 @@
     async trilingualDoc(suttaRef, opts={}) {
       const msg = "B8a.trilingualDoc() ";
       const dbg = DBG.TRILINGUALDOC;
-      let { bilaraPathMap: bpm, root } = this; suttaRef = SuttaRef.create(suttaRef); 
+      let { bilaraPathMap: bpm, root } = this; 
+      suttaRef = SuttaRef.create(suttaRef); 
       let {
         rootLang = 'pli',
         rootAuthor = 'ms',
         refLang,
         refAuthor = 'sujato',
+        refAuthorName,
         docLang = suttaRef.lang,
         docAuthor = suttaRef.author,
+        docAuthorName,
         logLevel,
       } = opts;
       let suid = suttaRef.sutta_uid;
@@ -548,6 +551,15 @@
         let msgData = JSON.stringify({ suidRef, suid });
         throw new Error(`${msg} no suttaInfo(${msgData})`);
       }
+      if (docAuthorName == null) {
+        let info = AuthorsV2.authorInfo(docAuthor);
+        docAuthorName = info?.name?.join(', ');
+      }
+      if (refAuthorName == null) {
+        let info = AuthorsV2.authorInfo(refAuthor);
+        refAuthorName = info?.name?.join(', ');
+      }
+
       let bilaraPaths = bpm.trilingualPaths({
         suid,
         rootLang,
@@ -567,16 +579,21 @@
         bilaraPaths,
         refAuthor,
         refLang,
+        refAuthorName,
         docAuthor,
+        docAuthorName,
         docLang,
         trilingual:true,
       };
       logLevel && (mldOpts.logLevel = logLevel);
-      dbg && console.log(msg, '[1]mldOpts', mldOpts);
+      dbg>1 && console.log(msg, '[1]mldOpts', mldOpts);
       let mld = await new MLDoc(mldOpts).load(root);
       if (dbg) {
         let dbgOut = mld && {
           author: mld.author,
+          refLang: mld.refLang,
+          refAuthor: mld.refAuthor,
+          refAuthorName: mld.refAuthorName,
           docLang: mld.docLang,
           docAuthor: mld.docAuthor,
           docAuthorName: mld.docAuthorName,
