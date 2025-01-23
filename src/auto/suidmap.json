@@ -9515,6 +9515,10 @@
 		"translation/en/kelly": "sutta/kn/mil",
 		"root/pli/ms": "sutta/kn/mil"
 	},
+	"mil3.7.4": {
+		"translation/en/kelly": "sutta/kn/mil",
+		"root/pli/ms": "sutta/kn/mil"
+	},
 	"mil3.7.5": {
 		"translation/en/kelly": "sutta/kn/mil",
 		"root/pli/ms": "sutta/kn/mil"
@@ -9524,6 +9528,14 @@
 		"root/pli/ms": "sutta/kn/mil"
 	},
 	"mil3.7.8": {
+		"translation/en/kelly": "sutta/kn/mil",
+		"root/pli/ms": "sutta/kn/mil"
+	},
+	"mil3.7.9": {
+		"translation/en/kelly": "sutta/kn/mil",
+		"root/pli/ms": "sutta/kn/mil"
+	},
+	"mil3.7.10": {
 		"translation/en/kelly": "sutta/kn/mil",
 		"root/pli/ms": "sutta/kn/mil"
 	},
@@ -26349,9 +26361,6 @@
 	"mil2": {
 		"root/pli/ms": "sutta/kn/mil"
 	},
-	"mil3.7.10": {
-		"root/pli/ms": "sutta/kn/mil"
-	},
 	"mil3.7.11": {
 		"root/pli/ms": "sutta/kn/mil"
 	},
@@ -26370,13 +26379,7 @@
 	"mil3.7.16": {
 		"root/pli/ms": "sutta/kn/mil"
 	},
-	"mil3.7.4": {
-		"root/pli/ms": "sutta/kn/mil"
-	},
 	"mil3.7.7": {
-		"root/pli/ms": "sutta/kn/mil"
-	},
-	"mil3.7.9": {
 		"root/pli/ms": "sutta/kn/mil"
 	},
 	"mil3.8": {
