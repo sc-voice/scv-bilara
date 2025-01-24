@@ -93,7 +93,7 @@ class MLDoc {
   static get SC_FOOTER() {
     return [
       '<a href="https://suttacentral.net/licensing">',
-      'Creative Commons Zero (CC0 1.0 Universal)',
+      'SuttaCentral',
       '</a>',
     ].join('');
   }
