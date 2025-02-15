@@ -9172,6 +9172,10 @@
 		"translation/en/sujato": "sutta/kn/ja",
 		"root/pli/ms": "sutta/kn/ja"
 	},
+	"ja159": {
+		"translation/en/sujato": "sutta/kn/ja",
+		"root/pli/ms": "sutta/kn/ja"
+	},
 	"kp1": {
 		"translation/de/sabbamitta": "sutta/kn/kp",
 		"translation/en/sujato": "sutta/kn/kp",
@@ -25161,9 +25165,6 @@
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja158": {
-		"root/pli/ms": "sutta/kn/ja"
-	},
-	"ja159": {
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja160": {

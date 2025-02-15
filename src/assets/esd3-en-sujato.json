@@ -128,7 +128,7 @@
     {
       "id": "all right, sir",
       "group": "Examples",
-      "links": 2
+      "links": 4
     },
     {
       "id": "all skillful qualities",
@@ -5944,6 +5944,18 @@
       "links": 4
     },
     {
+      "id": "sn22.88",
+      "group": "sn",
+      "rank": 1,
+      "links": 7
+    },
+    {
+      "id": "sn22.87",
+      "group": "sn",
+      "rank": 3,
+      "links": 5
+    },
+    {
       "id": "an10.15",
       "group": "an",
       "rank": 1,
@@ -6278,12 +6290,6 @@
       "group": "sn",
       "rank": 1,
       "links": 4
-    },
-    {
-      "id": "sn22.88",
-      "group": "sn",
-      "rank": 1,
-      "links": 6
     },
     {
       "id": "sn36.7",
@@ -12752,12 +12758,6 @@
       "group": "mn",
       "rank": 1,
       "links": 7
-    },
-    {
-      "id": "sn22.87",
-      "group": "sn",
-      "rank": 3,
-      "links": 4
     },
     {
       "id": "kp3",
@@ -20231,6 +20231,16 @@
       "source": "all right, sir",
       "target": "snp1.10",
       "rank": 2
+    },
+    {
+      "source": "all right, sir",
+      "target": "sn22.88",
+      "rank": 3
+    },
+    {
+      "source": "all right, sir",
+      "target": "sn22.87",
+      "rank": 4
     },
     {
       "source": "all skillful qualities",
