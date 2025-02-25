@@ -613,12 +613,12 @@ function outMarkdown(res, pattern, nLang=3) {
             var langText = (seg[res.lang] || '').trim();
             var scLink = suttacentralLink(scid, mld.lang, mld.author_uid);
             if (nLang > 1) {
-                console.log(`> ${scLink}: ${seg.pli}`);
+                console.log(`> ${scLink}: ${seg.pli}  `);
             }
             if (nLang > 2 && res.lang !== 'en') {
-                console.log(`> ${scLink}: ${seg.en}`);
+                console.log(`> ${scLink}: ${seg.en}  `);
             }
-            langText && console.log(`> ${scLink}: ${langText}`);
+            langText && console.log(`> ${scLink}: ${langText}  `);
         });
     });
 }
