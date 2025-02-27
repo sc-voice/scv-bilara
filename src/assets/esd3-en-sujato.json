@@ -248,7 +248,7 @@
     {
       "id": "assess",
       "group": "Examples",
-      "links": 4
+      "links": 3
     },
     {
       "id": "a state of immersion",
@@ -793,7 +793,7 @@
     {
       "id": "desire and love",
       "group": "Examples",
-      "links": 1
+      "links": 7
     },
     {
       "id": "desiring material possessions",
@@ -1243,7 +1243,7 @@
     {
       "id": "find no footing",
       "group": "Examples",
-      "links": 3
+      "links": 1
     },
     {
       "id": "find peace",
@@ -1433,7 +1433,7 @@
     {
       "id": "giant",
       "group": "Examples",
-      "links": 23
+      "links": 25
     },
     {
       "id": "gives to the best",
@@ -5185,7 +5185,7 @@
       "id": "sn1.20",
       "group": "sn",
       "rank": 2,
-      "links": 5
+      "links": 4
     },
     {
       "id": "mn49",
@@ -5472,7 +5472,7 @@
     {
       "id": "snp5.5",
       "group": "snp",
-      "rank": 13,
+      "rank": 14,
       "links": 3
     },
     {
@@ -5629,7 +5629,7 @@
       "id": "sn42.13",
       "group": "sn",
       "rank": 1,
-      "links": 7
+      "links": 8
     },
     {
       "id": "an4.126",
@@ -5659,7 +5659,7 @@
       "id": "an10.219",
       "group": "an",
       "rank": 4,
-      "links": 2
+      "links": 3
     },
     {
       "id": "sn41.7",
@@ -5707,13 +5707,13 @@
       "id": "sn42.8",
       "group": "sn",
       "rank": 1,
-      "links": 5
+      "links": 6
     },
     {
       "id": "an3.65",
       "group": "an",
       "rank": 2,
-      "links": 5
+      "links": 6
     },
     {
       "id": "an5.192",
@@ -5797,7 +5797,7 @@
       "id": "an10.99",
       "group": "an",
       "rank": 1,
-      "links": 18
+      "links": 19
     },
     {
       "id": "mn112",
@@ -5827,7 +5827,7 @@
       "id": "mn101",
       "group": "mn",
       "rank": 2,
-      "links": 21
+      "links": 22
     },
     {
       "id": "dn31",
@@ -5989,7 +5989,7 @@
       "id": "snp1.9",
       "group": "snp",
       "rank": 1,
-      "links": 3
+      "links": 4
     },
     {
       "id": "sn1.59",
@@ -6007,7 +6007,7 @@
       "id": "sn1.30",
       "group": "sn",
       "rank": 5,
-      "links": 1
+      "links": 2
     },
     {
       "id": "sn56.22",
@@ -6199,7 +6199,7 @@
       "id": "sn42.11",
       "group": "sn",
       "rank": 1,
-      "links": 5
+      "links": 4
     },
     {
       "id": "an9.41",
@@ -6241,7 +6241,7 @@
       "id": "an3.66",
       "group": "an",
       "rank": 1,
-      "links": 5
+      "links": 6
     },
     {
       "id": "sn7.3",
@@ -6829,7 +6829,7 @@
       "id": "dn11",
       "group": "dn",
       "rank": 1,
-      "links": 7
+      "links": 6
     },
     {
       "id": "an7.38",
@@ -9151,7 +9151,7 @@
       "id": "ud1.10",
       "group": "ud",
       "rank": 1,
-      "links": 8
+      "links": 7
     },
     {
       "id": "sn4.24",
@@ -9841,6 +9841,12 @@
       "id": "iti25",
       "group": "iti",
       "rank": 11,
+      "links": 1
+    },
+    {
+      "id": "an3.56",
+      "group": "an",
+      "rank": 3,
       "links": 1
     },
     {
@@ -11284,12 +11290,6 @@
       "links": 4
     },
     {
-      "id": "sn1.27",
-      "group": "sn",
-      "rank": 2,
-      "links": 1
-    },
-    {
       "id": "thig2.10",
       "group": "thig",
       "rank": 2,
@@ -12018,19 +12018,19 @@
     {
       "id": "snp5.13",
       "group": "snp",
-      "rank": 6,
+      "rank": 7,
       "links": 1
     },
     {
       "id": "thag4.6",
       "group": "thag",
-      "rank": 7,
+      "rank": 8,
       "links": 2
     },
     {
       "id": "sn1.37",
       "group": "sn",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
@@ -12042,7 +12042,7 @@
     {
       "id": "mn5",
       "group": "mn",
-      "rank": 19,
+      "rank": 21,
       "links": 2
     },
     {
@@ -18700,15 +18700,15 @@
       "links": 1
     },
     {
-      "id": "sn1.44",
-      "group": "sn",
+      "id": "iti69",
+      "group": "iti",
       "rank": 5,
       "links": 1
     },
     {
-      "id": "iti69",
-      "group": "iti",
-      "rank": 6,
+      "id": "sn1.44",
+      "group": "sn",
+      "rank": 7,
       "links": 1
     },
     {
@@ -21126,11 +21126,6 @@
       "source": "assess",
       "target": "sn1.34",
       "rank": 3
-    },
-    {
-      "source": "assess",
-      "target": "sn1.20",
-      "rank": 4
     },
     {
       "source": "a state of immersion",
@@ -25404,8 +25399,38 @@
     },
     {
       "source": "desire and love",
-      "target": "sn42.11",
+      "target": "sn42.13",
       "rank": 1
+    },
+    {
+      "source": "desire and love",
+      "target": "mn101",
+      "rank": 2
+    },
+    {
+      "source": "desire and love",
+      "target": "an3.56",
+      "rank": 3
+    },
+    {
+      "source": "desire and love",
+      "target": "an10.219",
+      "rank": 4
+    },
+    {
+      "source": "desire and love",
+      "target": "an3.66",
+      "rank": 5
+    },
+    {
+      "source": "desire and love",
+      "target": "sn42.8",
+      "rank": 6
+    },
+    {
+      "source": "desire and love",
+      "target": "an3.65",
+      "rank": 7
     },
     {
       "source": "destroyer of the sorrows of many",
@@ -28139,22 +28164,22 @@
     },
     {
       "source": "fervent mortification",
-      "target": "mn101",
+      "target": "sn1.38",
       "rank": 4
     },
     {
       "source": "fervent mortification",
-      "target": "mn12",
+      "target": "mn101",
       "rank": 5
     },
     {
       "source": "fervent mortification",
-      "target": "an3.74",
+      "target": "mn12",
       "rank": 6
     },
     {
       "source": "fervent mortification",
-      "target": "sn1.38",
+      "target": "an3.74",
       "rank": 7
     },
     {
@@ -28229,18 +28254,8 @@
     },
     {
       "source": "find no footing",
-      "target": "dn11",
+      "target": "an10.99",
       "rank": 1
-    },
-    {
-      "source": "find no footing",
-      "target": "sn1.27",
-      "rank": 2
-    },
-    {
-      "source": "find no footing",
-      "target": "ud1.10",
-      "rank": 3
     },
     {
       "source": "find peace",
@@ -29669,93 +29684,103 @@
     },
     {
       "source": "giant",
-      "target": "snp5.13",
+      "target": "sn1.30",
       "rank": 6
     },
     {
       "source": "giant",
-      "target": "thag4.6",
+      "target": "snp5.13",
       "rank": 7
     },
     {
       "source": "giant",
-      "target": "sn1.37",
+      "target": "thag4.6",
       "rank": 8
     },
     {
       "source": "giant",
-      "target": "sn21.3",
+      "target": "sn1.37",
       "rank": 9
     },
     {
       "source": "giant",
-      "target": "sn8.8",
+      "target": "sn21.3",
       "rank": 10
     },
     {
       "source": "giant",
-      "target": "ud4.4",
+      "target": "sn8.8",
       "rank": 11
     },
     {
       "source": "giant",
-      "target": "sn22.76",
+      "target": "ud4.4",
       "rank": 12
     },
     {
       "source": "giant",
-      "target": "snp5.5",
+      "target": "sn22.76",
       "rank": 13
     },
     {
       "source": "giant",
-      "target": "dhp320-333",
+      "target": "snp5.5",
       "rank": 14
     },
     {
       "source": "giant",
-      "target": "snp4.9",
+      "target": "dhp320-333",
       "rank": 15
     },
     {
       "source": "giant",
-      "target": "thag16.6",
+      "target": "snp4.9",
       "rank": 16
     },
     {
       "source": "giant",
-      "target": "mn24",
+      "target": "thag16.6",
       "rank": 17
     },
     {
       "source": "giant",
-      "target": "snp5.19",
+      "target": "mn24",
       "rank": 18
     },
     {
       "source": "giant",
-      "target": "mn5",
+      "target": "snp1.9",
       "rank": 19
     },
     {
       "source": "giant",
-      "target": "mn92",
+      "target": "snp5.19",
       "rank": 20
     },
     {
       "source": "giant",
-      "target": "snp3.7",
+      "target": "mn5",
       "rank": 21
     },
     {
       "source": "giant",
-      "target": "dn20",
+      "target": "mn92",
       "rank": 22
     },
     {
       "source": "giant",
-      "target": "mn56",
+      "target": "snp3.7",
       "rank": 23
+    },
+    {
+      "source": "giant",
+      "target": "dn20",
+      "rank": 24
+    },
+    {
+      "source": "giant",
+      "target": "mn56",
+      "rank": 25
     },
     {
       "source": "gives to the best",
@@ -50754,17 +50779,17 @@
     },
     {
       "source": "whirlpool",
-      "target": "sn1.44",
+      "target": "iti69",
       "rank": 5
     },
     {
       "source": "whirlpool",
-      "target": "iti69",
+      "target": "iti109",
       "rank": 6
     },
     {
       "source": "whirlpool",
-      "target": "iti109",
+      "target": "sn1.44",
       "rank": 7
     },
     {
