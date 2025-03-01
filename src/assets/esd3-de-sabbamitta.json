@@ -3278,7 +3278,7 @@
     {
       "id": "sprich, gutes Horn",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "Spuren seiner Finger",
@@ -6251,7 +6251,7 @@
       "id": "dn23",
       "group": "dn",
       "rank": 1,
-      "links": 18
+      "links": 17
     },
     {
       "id": "an3.83",
@@ -40618,11 +40618,6 @@
       "source": "Spiegelbild",
       "target": "dn2",
       "rank": 13
-    },
-    {
-      "source": "sprich, gutes Horn",
-      "target": "dn23",
-      "rank": 1
     },
     {
       "source": "Spuren seiner Finger",
