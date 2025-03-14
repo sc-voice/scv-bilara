@@ -92,7 +92,7 @@ class MLDoc {
 
   static get SC_FOOTER() {
     return [
-      '<a href="https://suttacentral.net/licensing">',
+      '<a href="https://suttacentral.net/licensing" target="_blank">',
       'SuttaCentral',
       '</a>',
     ].join('');
