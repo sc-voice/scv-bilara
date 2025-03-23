@@ -1958,7 +1958,7 @@
     {
       "id": "incinerated",
       "group": "Examples",
-      "links": 14
+      "links": 0
     },
     {
       "id": "independent Buddha",
@@ -3348,7 +3348,7 @@
     {
       "id": "silly man",
       "group": "Examples",
-      "links": 2
+      "links": 1
     },
     {
       "id": "simile of the saw",
@@ -4483,7 +4483,7 @@
     {
       "id": "with celibacy as the fifth",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "without informing his attendants",
@@ -5329,7 +5329,7 @@
       "id": "sn1.77",
       "group": "sn",
       "rank": 4,
-      "links": 2
+      "links": 1
     },
     {
       "id": "sn35.134",
@@ -11329,7 +11329,7 @@
       "id": "sn1.74",
       "group": "sn",
       "rank": 2,
-      "links": 2
+      "links": 1
     },
     {
       "id": "sn47.20",
@@ -11755,7 +11755,7 @@
       "id": "an8.22",
       "group": "an",
       "rank": 2,
-      "links": 7
+      "links": 6
     },
     {
       "id": "an8.63",
@@ -12631,7 +12631,7 @@
       "id": "an8.21",
       "group": "an",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "sn35.121",
@@ -12931,25 +12931,25 @@
       "id": "sn1.71",
       "group": "sn",
       "rank": 1,
-      "links": 3
+      "links": 2
     },
     {
       "id": "sn2.3",
       "group": "sn",
       "rank": 2,
-      "links": 3
+      "links": 2
     },
     {
       "id": "sn11.21",
       "group": "sn",
-      "rank": 2,
-      "links": 3
+      "rank": 3,
+      "links": 2
     },
     {
       "id": "sn7.1",
       "group": "sn",
       "rank": 3,
-      "links": 4
+      "links": 3
     },
     {
       "id": "mn150",
@@ -13484,54 +13484,6 @@
       "group": "thag",
       "rank": 2,
       "links": 3
-    },
-    {
-      "id": "sn1.72",
-      "group": "sn",
-      "rank": 5,
-      "links": 1
-    },
-    {
-      "id": "sn1.73",
-      "group": "sn",
-      "rank": 6,
-      "links": 1
-    },
-    {
-      "id": "sn1.78",
-      "group": "sn",
-      "rank": 7,
-      "links": 1
-    },
-    {
-      "id": "sn1.75",
-      "group": "sn",
-      "rank": 8,
-      "links": 1
-    },
-    {
-      "id": "sn1.79",
-      "group": "sn",
-      "rank": 10,
-      "links": 1
-    },
-    {
-      "id": "sn1.80",
-      "group": "sn",
-      "rank": 12,
-      "links": 1
-    },
-    {
-      "id": "sn1.81",
-      "group": "sn",
-      "rank": 13,
-      "links": 1
-    },
-    {
-      "id": "sn1.76",
-      "group": "sn",
-      "rank": 14,
-      "links": 1
     },
     {
       "id": "an4.247",
@@ -16432,12 +16384,6 @@
       "links": 3
     },
     {
-      "id": "an3.137",
-      "group": "an",
-      "rank": 2,
-      "links": 2
-    },
-    {
       "id": "an10.28",
       "group": "an",
       "rank": 6,
@@ -16698,6 +16644,12 @@
     {
       "id": "sn12.26",
       "group": "sn",
+      "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "an3.137",
+      "group": "an",
       "rank": 2,
       "links": 1
     },
@@ -33543,76 +33495,6 @@
       "rank": 4
     },
     {
-      "source": "incinerated",
-      "target": "sn1.71",
-      "rank": 1
-    },
-    {
-      "source": "incinerated",
-      "target": "sn11.21",
-      "rank": 2
-    },
-    {
-      "source": "incinerated",
-      "target": "sn2.3",
-      "rank": 3
-    },
-    {
-      "source": "incinerated",
-      "target": "sn7.1",
-      "rank": 4
-    },
-    {
-      "source": "incinerated",
-      "target": "sn1.72",
-      "rank": 5
-    },
-    {
-      "source": "incinerated",
-      "target": "sn1.73",
-      "rank": 6
-    },
-    {
-      "source": "incinerated",
-      "target": "sn1.78",
-      "rank": 7
-    },
-    {
-      "source": "incinerated",
-      "target": "sn1.75",
-      "rank": 8
-    },
-    {
-      "source": "incinerated",
-      "target": "sn1.74",
-      "rank": 9
-    },
-    {
-      "source": "incinerated",
-      "target": "sn1.79",
-      "rank": 10
-    },
-    {
-      "source": "incinerated",
-      "target": "sn1.77",
-      "rank": 11
-    },
-    {
-      "source": "incinerated",
-      "target": "sn1.80",
-      "rank": 12
-    },
-    {
-      "source": "incinerated",
-      "target": "sn1.81",
-      "rank": 13
-    },
-    {
-      "source": "incinerated",
-      "target": "sn1.76",
-      "rank": 14
-    },
-    {
       "source": "independent Buddha",
       "target": "mn116",
       "rank": 1
@@ -43203,11 +43085,6 @@
       "rank": 1
     },
     {
-      "source": "silly man",
-      "target": "an3.137",
-      "rank": 2
-    },
-    {
       "source": "simile of the saw",
       "target": "mn21",
       "rank": 1
@@ -51311,16 +51188,6 @@
       "source": "with a stick",
       "target": "mn35",
       "rank": 10
-    },
-    {
-      "source": "with celibacy as the fifth",
-      "target": "an8.21",
-      "rank": 1
-    },
-    {
-      "source": "with celibacy as the fifth",
-      "target": "an8.22",
-      "rank": 2
     },
     {
       "source": "without informing his attendants",
