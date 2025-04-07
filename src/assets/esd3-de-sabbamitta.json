@@ -4051,6 +4051,11 @@
       "links": 1
     },
     {
+      "id": "wenn er es prüft",
+      "group": "Examples",
+      "links": 1
+    },
+    {
       "id": "wenn ich diese Gabe gebe",
       "group": "Examples",
       "links": 0
@@ -7199,7 +7204,7 @@
       "id": "mn76",
       "group": "mn",
       "rank": 1,
-      "links": 21
+      "links": 22
     },
     {
       "id": "dn26",
@@ -45863,6 +45868,11 @@
     {
       "source": "wenn die Weisheit verschwindet",
       "target": "an5.6",
+      "rank": 1
+    },
+    {
+      "source": "wenn er es prüft",
+      "target": "mn76",
       "rank": 1
     },
     {
