@@ -1953,7 +1953,7 @@
     {
       "id": "for the future",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "incinerated",
@@ -2358,7 +2358,7 @@
     {
       "id": "little hut",
       "group": "Examples",
-      "links": 13
+      "links": 2
     },
     {
       "id": "little learning",
@@ -3238,7 +3238,7 @@
     {
       "id": "see people entering and leaving a house",
       "group": "Examples",
-      "links": 5
+      "links": 1
     },
     {
       "id": "see the clams and mussels",
@@ -4620,13 +4620,13 @@
       "id": "mn77",
       "group": "mn",
       "rank": 1,
-      "links": 30
+      "links": 29
     },
     {
       "id": "dn2",
       "group": "dn",
       "rank": 1,
-      "links": 67
+      "links": 66
     },
     {
       "id": "dn17",
@@ -5226,7 +5226,7 @@
       "id": "mn39",
       "group": "mn",
       "rank": 1,
-      "links": 25
+      "links": 24
     },
     {
       "id": "mn119",
@@ -5304,7 +5304,7 @@
       "id": "mn130",
       "group": "mn",
       "rank": 1,
-      "links": 11
+      "links": 10
     },
     {
       "id": "sn3.20",
@@ -5387,7 +5387,7 @@
     {
       "id": "thag2.3",
       "group": "thag",
-      "rank": 11,
+      "rank": 2,
       "links": 2
     },
     {
@@ -5502,7 +5502,7 @@
       "id": "thag20.1",
       "group": "thag",
       "rank": 7,
-      "links": 13
+      "links": 12
     },
     {
       "id": "iti109",
@@ -13491,6 +13491,12 @@
       "links": 3
     },
     {
+      "id": "ja466",
+      "group": "ja",
+      "rank": 3,
+      "links": 1
+    },
+    {
       "id": "an4.247",
       "group": "an",
       "rank": 5,
@@ -14389,66 +14395,6 @@
       "group": "sn",
       "rank": 1,
       "links": 1
-    },
-    {
-      "id": "thag5.3",
-      "group": "thag",
-      "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "thag1.56",
-      "group": "thag",
-      "rank": 3,
-      "links": 1
-    },
-    {
-      "id": "thag1.51",
-      "group": "thag",
-      "rank": 4,
-      "links": 1
-    },
-    {
-      "id": "thag1.52",
-      "group": "thag",
-      "rank": 5,
-      "links": 1
-    },
-    {
-      "id": "thag1.53",
-      "group": "thag",
-      "rank": 6,
-      "links": 1
-    },
-    {
-      "id": "thag1.54",
-      "group": "thag",
-      "rank": 7,
-      "links": 1
-    },
-    {
-      "id": "thag1.55",
-      "group": "thag",
-      "rank": 8,
-      "links": 1
-    },
-    {
-      "id": "thag1.58",
-      "group": "thag",
-      "rank": 9,
-      "links": 1
-    },
-    {
-      "id": "thag1.59",
-      "group": "thag",
-      "rank": 10,
-      "links": 1
-    },
-    {
-      "id": "thag1.1",
-      "group": "thag",
-      "rank": 12,
-      "links": 2
     },
     {
       "id": "an4.6",
@@ -18672,6 +18618,12 @@
       "id": "ud8.3",
       "group": "ud",
       "rank": 9,
+      "links": 1
+    },
+    {
+      "id": "thag1.1",
+      "group": "thag",
+      "rank": 13,
       "links": 1
     },
     {
@@ -33491,13 +33443,18 @@
     },
     {
       "source": "for the future",
-      "target": "mn14",
+      "target": "ja466",
       "rank": 3
     },
     {
       "source": "for the future",
-      "target": "mn101",
+      "target": "mn14",
       "rank": 4
+    },
+    {
+      "source": "for the future",
+      "target": "mn101",
+      "rank": 5
     },
     {
       "source": "independent Buddha",
@@ -36096,63 +36053,8 @@
     },
     {
       "source": "little hut",
-      "target": "thag5.3",
-      "rank": 2
-    },
-    {
-      "source": "little hut",
-      "target": "thag1.56",
-      "rank": 3
-    },
-    {
-      "source": "little hut",
-      "target": "thag1.51",
-      "rank": 4
-    },
-    {
-      "source": "little hut",
-      "target": "thag1.52",
-      "rank": 5
-    },
-    {
-      "source": "little hut",
-      "target": "thag1.53",
-      "rank": 6
-    },
-    {
-      "source": "little hut",
-      "target": "thag1.54",
-      "rank": 7
-    },
-    {
-      "source": "little hut",
-      "target": "thag1.55",
-      "rank": 8
-    },
-    {
-      "source": "little hut",
-      "target": "thag1.58",
-      "rank": 9
-    },
-    {
-      "source": "little hut",
-      "target": "thag1.59",
-      "rank": 10
-    },
-    {
-      "source": "little hut",
       "target": "thag2.3",
-      "rank": 11
-    },
-    {
-      "source": "little hut",
-      "target": "thag1.1",
-      "rank": 12
-    },
-    {
-      "source": "little hut",
-      "target": "thag20.1",
-      "rank": 13
+      "rank": 2
     },
     {
       "source": "little learning",
@@ -42096,28 +41998,8 @@
     },
     {
       "source": "see people entering and leaving a house",
-      "target": "mn39",
-      "rank": 1
-    },
-    {
-      "source": "see people entering and leaving a house",
-      "target": "mn130",
-      "rank": 2
-    },
-    {
-      "source": "see people entering and leaving a house",
       "target": "dn10",
-      "rank": 3
-    },
-    {
-      "source": "see people entering and leaving a house",
-      "target": "mn77",
-      "rank": 4
-    },
-    {
-      "source": "see people entering and leaving a house",
-      "target": "dn2",
-      "rank": 5
+      "rank": 1
     },
     {
       "source": "see the clams and mussels",

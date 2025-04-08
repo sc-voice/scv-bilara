@@ -1173,7 +1173,7 @@
     {
       "id": "eingeäschert",
       "group": "Examples",
-      "links": 4
+      "links": 0
     },
     {
       "id": "eingeschätzt",
@@ -5608,7 +5608,7 @@
       "id": "sn7.1",
       "group": "sn",
       "rank": 2,
-      "links": 4
+      "links": 3
     },
     {
       "id": "mn93",
@@ -10409,24 +10409,6 @@
       "group": "an",
       "rank": 7,
       "links": 1
-    },
-    {
-      "id": "sn1.71",
-      "group": "sn",
-      "rank": 1,
-      "links": 3
-    },
-    {
-      "id": "sn11.21",
-      "group": "sn",
-      "rank": 2,
-      "links": 3
-    },
-    {
-      "id": "sn2.3",
-      "group": "sn",
-      "rank": 2,
-      "links": 3
     },
     {
       "id": "ud2.5",
@@ -16235,6 +16217,24 @@
       "group": "thig",
       "rank": 20,
       "links": 1
+    },
+    {
+      "id": "sn1.71",
+      "group": "sn",
+      "rank": 1,
+      "links": 2
+    },
+    {
+      "id": "sn2.3",
+      "group": "sn",
+      "rank": 2,
+      "links": 2
+    },
+    {
+      "id": "sn11.21",
+      "group": "sn",
+      "rank": 3,
+      "links": 2
     },
     {
       "id": "sn47.21",
@@ -26049,26 +26049,6 @@
       "source": "einfühlsam und gütig",
       "target": "dn30",
       "rank": 23
-    },
-    {
-      "source": "eingeäschert",
-      "target": "sn1.71",
-      "rank": 1
-    },
-    {
-      "source": "eingeäschert",
-      "target": "sn11.21",
-      "rank": 2
-    },
-    {
-      "source": "eingeäschert",
-      "target": "sn2.3",
-      "rank": 3
-    },
-    {
-      "source": "eingeäschert",
-      "target": "sn7.1",
-      "rank": 4
     },
     {
       "source": "eingeschätzt",
