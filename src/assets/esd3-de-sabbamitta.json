@@ -1171,11 +1171,6 @@
       "links": 23
     },
     {
-      "id": "eingeäschert",
-      "group": "Examples",
-      "links": 0
-    },
-    {
       "id": "eingeschätzt",
       "group": "Examples",
       "links": 10
@@ -1339,6 +1334,11 @@
       "id": "erscheinen Gedanken",
       "group": "Examples",
       "links": 1
+    },
+    {
+      "id": "erschlagen",
+      "group": "Examples",
+      "links": 16
     },
     {
       "id": "Anfangspunkt",
@@ -4798,7 +4798,7 @@
       "id": "dn16",
       "group": "dn",
       "rank": 1,
-      "links": 63
+      "links": 64
     },
     {
       "id": "an4.89",
@@ -5608,7 +5608,7 @@
       "id": "sn7.1",
       "group": "sn",
       "rank": 2,
-      "links": 3
+      "links": 4
     },
     {
       "id": "mn93",
@@ -10894,7 +10894,7 @@
       "id": "sn1.74",
       "group": "sn",
       "rank": 1,
-      "links": 1
+      "links": 2
     },
     {
       "id": "sn47.20",
@@ -11032,6 +11032,84 @@
       "id": "an9.14",
       "group": "an",
       "rank": 1,
+      "links": 1
+    },
+    {
+      "id": "sn1.71",
+      "group": "sn",
+      "rank": 1,
+      "links": 3
+    },
+    {
+      "id": "sn11.21",
+      "group": "sn",
+      "rank": 2,
+      "links": 3
+    },
+    {
+      "id": "sn2.3",
+      "group": "sn",
+      "rank": 2,
+      "links": 3
+    },
+    {
+      "id": "dhp290-305",
+      "group": "dhp",
+      "rank": 5,
+      "links": 1
+    },
+    {
+      "id": "sn1.72",
+      "group": "sn",
+      "rank": 7,
+      "links": 1
+    },
+    {
+      "id": "sn1.73",
+      "group": "sn",
+      "rank": 8,
+      "links": 1
+    },
+    {
+      "id": "sn1.78",
+      "group": "sn",
+      "rank": 9,
+      "links": 1
+    },
+    {
+      "id": "sn1.75",
+      "group": "sn",
+      "rank": 10,
+      "links": 1
+    },
+    {
+      "id": "sn1.79",
+      "group": "sn",
+      "rank": 12,
+      "links": 1
+    },
+    {
+      "id": "sn1.77",
+      "group": "sn",
+      "rank": 7,
+      "links": 2
+    },
+    {
+      "id": "sn1.80",
+      "group": "sn",
+      "rank": 14,
+      "links": 1
+    },
+    {
+      "id": "sn1.81",
+      "group": "sn",
+      "rank": 15,
+      "links": 1
+    },
+    {
+      "id": "sn1.76",
+      "group": "sn",
+      "rank": 16,
       "links": 1
     },
     {
@@ -16219,24 +16297,6 @@
       "links": 1
     },
     {
-      "id": "sn1.71",
-      "group": "sn",
-      "rank": 1,
-      "links": 2
-    },
-    {
-      "id": "sn2.3",
-      "group": "sn",
-      "rank": 2,
-      "links": 2
-    },
-    {
-      "id": "sn11.21",
-      "group": "sn",
-      "rank": 3,
-      "links": 2
-    },
-    {
       "id": "sn47.21",
       "group": "sn",
       "rank": 1,
@@ -17897,12 +17957,6 @@
       "group": "iti",
       "rank": 1,
       "links": 3
-    },
-    {
-      "id": "sn1.77",
-      "group": "sn",
-      "rank": 7,
-      "links": 1
     },
     {
       "id": "sn35.134",
@@ -27349,6 +27403,86 @@
       "source": "erscheinen Gedanken",
       "target": "an9.14",
       "rank": 1
+    },
+    {
+      "source": "erschlagen",
+      "target": "sn1.71",
+      "rank": 1
+    },
+    {
+      "source": "erschlagen",
+      "target": "sn11.21",
+      "rank": 2
+    },
+    {
+      "source": "erschlagen",
+      "target": "sn2.3",
+      "rank": 3
+    },
+    {
+      "source": "erschlagen",
+      "target": "sn7.1",
+      "rank": 4
+    },
+    {
+      "source": "erschlagen",
+      "target": "dhp290-305",
+      "rank": 5
+    },
+    {
+      "source": "erschlagen",
+      "target": "dn16",
+      "rank": 6
+    },
+    {
+      "source": "erschlagen",
+      "target": "sn1.72",
+      "rank": 7
+    },
+    {
+      "source": "erschlagen",
+      "target": "sn1.73",
+      "rank": 8
+    },
+    {
+      "source": "erschlagen",
+      "target": "sn1.78",
+      "rank": 9
+    },
+    {
+      "source": "erschlagen",
+      "target": "sn1.75",
+      "rank": 10
+    },
+    {
+      "source": "erschlagen",
+      "target": "sn1.74",
+      "rank": 11
+    },
+    {
+      "source": "erschlagen",
+      "target": "sn1.79",
+      "rank": 12
+    },
+    {
+      "source": "erschlagen",
+      "target": "sn1.77",
+      "rank": 13
+    },
+    {
+      "source": "erschlagen",
+      "target": "sn1.80",
+      "rank": 14
+    },
+    {
+      "source": "erschlagen",
+      "target": "sn1.81",
+      "rank": 15
+    },
+    {
+      "source": "erschlagen",
+      "target": "sn1.76",
+      "rank": 16
     },
     {
       "source": "Anfangspunkt",
