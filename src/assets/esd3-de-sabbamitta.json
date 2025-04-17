@@ -143,7 +143,7 @@
     {
       "id": "Ärger, Hass und Unmut",
       "group": "Examples",
-      "links": 13
+      "links": 14
     },
     {
       "id": "Arten der Einbildung",
@@ -508,7 +508,7 @@
     {
       "id": "das allein ist die Wahrheit",
       "group": "Examples",
-      "links": 16
+      "links": 17
     },
     {
       "id": "das Auge brennt",
@@ -1053,7 +1053,7 @@
     {
       "id": "ein abgebrühter Mörder",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "einäugige Schildkröte",
@@ -1168,7 +1168,7 @@
     {
       "id": "einfühlsam und gütig",
       "group": "Examples",
-      "links": 23
+      "links": 24
     },
     {
       "id": "eingeschätzt",
@@ -1423,7 +1423,7 @@
     {
       "id": "Feigheit",
       "group": "Examples",
-      "links": 13
+      "links": 14
     },
     {
       "id": "Feuerholz sammel",
@@ -1648,7 +1648,7 @@
     {
       "id": "Genügsamkeit",
       "group": "Examples",
-      "links": 21
+      "links": 22
     },
     {
       "id": "Genussmensch",
@@ -2243,7 +2243,7 @@
     {
       "id": "kategorisch",
       "group": "Examples",
-      "links": 18
+      "links": 19
     },
     {
       "id": "keine Angst, Gutes zu tun",
@@ -2263,7 +2263,7 @@
     {
       "id": "keinen Halt",
       "group": "Examples",
-      "links": 7
+      "links": 4
     },
     {
       "id": "kennt mich",
@@ -2478,7 +2478,7 @@
     {
       "id": "liebevolle.* Herz",
       "group": "Examples",
-      "links": 16
+      "links": 17
     },
     {
       "id": "lodert Freude auf",
@@ -3303,7 +3303,7 @@
     {
       "id": "Stock und Schwert",
       "group": "Examples",
-      "links": 30
+      "links": 31
     },
     {
       "id": "Straße durch die Wüste",
@@ -3478,7 +3478,7 @@
     {
       "id": "unbarmherzig",
       "group": "Examples",
-      "links": 18
+      "links": 19
     },
     {
       "id": "unbedingt",
@@ -3663,12 +3663,12 @@
     {
       "id": "Versenkung besitzt",
       "group": "Examples",
-      "links": 9
+      "links": 8
     },
     {
       "id": "Versenkung des Herzens solcher Art",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "Versenkung mit fünf Faktoren",
@@ -4343,7 +4343,7 @@
     {
       "id": "zu meinem langanhaltenden Nutzen",
       "group": "Examples",
-      "links": 9
+      "links": 10
     },
     {
       "id": "zum höheren Geist",
@@ -4564,7 +4564,7 @@
       "id": "mn4",
       "group": "mn",
       "rank": 1,
-      "links": 7
+      "links": 10
     },
     {
       "id": "mn128",
@@ -4636,7 +4636,7 @@
       "id": "dn15",
       "group": "dn",
       "rank": 1,
-      "links": 15
+      "links": 14
     },
     {
       "id": "sn12.27",
@@ -5543,6 +5543,12 @@
       "group": "an",
       "rank": 1,
       "links": 3
+    },
+    {
+      "id": "mn135",
+      "group": "mn",
+      "rank": 4,
+      "links": 6
     },
     {
       "id": "mn79",
@@ -7777,15 +7783,21 @@
       "links": 5
     },
     {
+      "id": "mn136",
+      "group": "mn",
+      "rank": 3,
+      "links": 3
+    },
+    {
       "id": "an10.96",
       "group": "an",
-      "rank": 3,
+      "rank": 4,
       "links": 2
     },
     {
       "id": "an10.93",
       "group": "an",
-      "rank": 4,
+      "rank": 5,
       "links": 5
     },
     {
@@ -9490,7 +9502,7 @@
       "id": "dn11",
       "group": "dn",
       "rank": 1,
-      "links": 6
+      "links": 5
     },
     {
       "id": "an3.183-352",
@@ -10030,7 +10042,7 @@
       "id": "ud1.10",
       "group": "ud",
       "rank": 1,
-      "links": 7
+      "links": 6
     },
     {
       "id": "mn144",
@@ -11715,7 +11727,7 @@
     {
       "id": "sn22.1",
       "group": "sn",
-      "rank": 6,
+      "rank": 7,
       "links": 3
     },
     {
@@ -12159,8 +12171,8 @@
     {
       "id": "an6.16",
       "group": "an",
-      "rank": 5,
-      "links": 3
+      "rank": 3,
+      "links": 4
     },
     {
       "id": "an5.89",
@@ -13861,15 +13873,9 @@
       "links": 1
     },
     {
-      "id": "sn1.27",
-      "group": "sn",
-      "rank": 3,
-      "links": 1
-    },
-    {
       "id": "sn2.5",
       "group": "sn",
-      "rank": 4,
+      "rank": 2,
       "links": 1
     },
     {
@@ -16879,15 +16885,9 @@
       "links": 1
     },
     {
-      "id": "sn1.9",
-      "group": "sn",
-      "rank": 5,
-      "links": 1
-    },
-    {
       "id": "sn22.5",
       "group": "sn",
-      "rank": 8,
+      "rank": 7,
       "links": 1
     },
     {
@@ -17001,31 +17001,31 @@
     {
       "id": "an3.138",
       "group": "an",
-      "rank": 32,
+      "rank": 33,
       "links": 1
     },
     {
       "id": "an5.46",
       "group": "an",
-      "rank": 33,
+      "rank": 34,
       "links": 1
     },
     {
       "id": "an5.91",
       "group": "an",
-      "rank": 34,
+      "rank": 35,
       "links": 1
     },
     {
       "id": "an5.92",
       "group": "an",
-      "rank": 35,
+      "rank": 36,
       "links": 1
     },
     {
       "id": "iti111",
       "group": "iti",
-      "rank": 37,
+      "rank": 38,
       "links": 1
     },
     {
@@ -19316,8 +19316,13 @@
     },
     {
       "source": "Ärger, Hass und Unmut",
-      "target": "mn79",
+      "target": "mn135",
       "rank": 13
+    },
+    {
+      "source": "Ärger, Hass und Unmut",
+      "target": "mn79",
+      "rank": 14
     },
     {
       "source": "Arten der Einbildung",
@@ -21976,73 +21981,78 @@
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "an10.96",
+      "target": "mn136",
       "rank": 3
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "an10.93",
+      "target": "an10.96",
       "rank": 4
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "an10.95",
+      "target": "an10.93",
       "rank": 5
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "mn74",
+      "target": "an10.95",
       "rank": 6
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "dn9",
+      "target": "mn74",
       "rank": 7
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "ud6.5",
+      "target": "dn9",
       "rank": 8
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "ud6.6",
+      "target": "ud6.5",
       "rank": 9
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "ud6.4",
+      "target": "ud6.6",
       "rank": 10
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "an2.42-51",
+      "target": "ud6.4",
       "rank": 11
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "mn60",
+      "target": "an2.42-51",
       "rank": 12
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "sn45.174",
+      "target": "mn60",
       "rank": 13
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "mn139",
+      "target": "sn45.174",
       "rank": 14
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "dn21",
+      "target": "mn139",
       "rank": 15
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "dn33",
+      "target": "dn21",
       "rank": 16
+    },
+    {
+      "source": "das allein ist die Wahrheit",
+      "target": "dn33",
+      "rank": 17
     },
     {
       "source": "das Auge brennt",
@@ -25210,6 +25220,11 @@
       "rank": 8
     },
     {
+      "source": "ein abgebrühter Mörder",
+      "target": "mn135",
+      "rank": 9
+    },
+    {
       "source": "einäugige Schildkröte",
       "target": "sn56.47",
       "rank": 1
@@ -26066,43 +26081,48 @@
     },
     {
       "source": "einfühlsam und gütig",
-      "target": "mn27",
+      "target": "mn135",
       "rank": 16
     },
     {
       "source": "einfühlsam und gütig",
-      "target": "mn51",
+      "target": "mn27",
       "rank": 17
     },
     {
       "source": "einfühlsam und gütig",
-      "target": "dn8",
+      "target": "mn51",
       "rank": 18
     },
     {
       "source": "einfühlsam und gütig",
-      "target": "dn10",
+      "target": "dn8",
       "rank": 19
     },
     {
       "source": "einfühlsam und gütig",
-      "target": "dn1",
+      "target": "dn10",
       "rank": 20
     },
     {
       "source": "einfühlsam und gütig",
-      "target": "dn2",
+      "target": "dn1",
       "rank": 21
     },
     {
       "source": "einfühlsam und gütig",
-      "target": "mn38",
+      "target": "dn2",
       "rank": 22
     },
     {
       "source": "einfühlsam und gütig",
-      "target": "dn30",
+      "target": "mn38",
       "rank": 23
+    },
+    {
+      "source": "einfühlsam und gütig",
+      "target": "dn30",
+      "rank": 24
     },
     {
       "source": "eingeschätzt",
@@ -28251,13 +28271,18 @@
     },
     {
       "source": "Feigheit",
-      "target": "dn29",
+      "target": "mn4",
       "rank": 12
     },
     {
       "source": "Feigheit",
-      "target": "dn33",
+      "target": "dn29",
       "rank": 13
+    },
+    {
+      "source": "Feigheit",
+      "target": "dn33",
+      "rank": 14
     },
     {
       "source": "Feuerholz sammel",
@@ -29723,6 +29748,11 @@
       "source": "Genügsamkeit",
       "target": "mn24",
       "rank": 21
+    },
+    {
+      "source": "Genügsamkeit",
+      "target": "mn4",
+      "rank": 22
     },
     {
       "source": "Genussmensch",
@@ -33801,18 +33831,23 @@
     },
     {
       "source": "kategorisch",
-      "target": "sn42.12",
+      "target": "mn136",
       "rank": 16
     },
     {
       "source": "kategorisch",
-      "target": "dn24",
+      "target": "sn42.12",
       "rank": 17
     },
     {
       "source": "kategorisch",
-      "target": "dn33",
+      "target": "dn24",
       "rank": 18
+    },
+    {
+      "source": "kategorisch",
+      "target": "dn33",
+      "rank": 19
     },
     {
       "source": "keine Angst, Gutes zu tun",
@@ -33856,33 +33891,18 @@
     },
     {
       "source": "keinen Halt",
-      "target": "dn11",
+      "target": "sn2.5",
       "rank": 2
     },
     {
       "source": "keinen Halt",
-      "target": "sn1.27",
+      "target": "an6.16",
       "rank": 3
     },
     {
       "source": "keinen Halt",
-      "target": "sn2.5",
-      "rank": 4
-    },
-    {
-      "source": "keinen Halt",
-      "target": "ud1.10",
-      "rank": 5
-    },
-    {
-      "source": "keinen Halt",
       "target": "an10.99",
-      "rank": 6
-    },
-    {
-      "source": "keinen Halt",
-      "target": "dn15",
-      "rank": 7
+      "rank": 4
     },
     {
       "source": "kennt mich",
@@ -35686,8 +35706,13 @@
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "dn33",
+      "target": "mn4",
       "rank": 16
+    },
+    {
+      "source": "liebevolle.* Herz",
+      "target": "dn33",
+      "rank": 17
     },
     {
       "source": "lodert Freude auf",
@@ -40931,58 +40956,63 @@
     },
     {
       "source": "Stock und Schwert",
-      "target": "mn27",
+      "target": "mn135",
       "rank": 20
     },
     {
       "source": "Stock und Schwert",
-      "target": "mn51",
+      "target": "mn27",
       "rank": 21
     },
     {
       "source": "Stock und Schwert",
-      "target": "mn86",
+      "target": "mn51",
       "rank": 22
     },
     {
       "source": "Stock und Schwert",
-      "target": "dn8",
+      "target": "mn86",
       "rank": 23
     },
     {
       "source": "Stock und Schwert",
-      "target": "dn10",
+      "target": "dn8",
       "rank": 24
     },
     {
       "source": "Stock und Schwert",
-      "target": "mn60",
+      "target": "dn10",
       "rank": 25
     },
     {
       "source": "Stock und Schwert",
-      "target": "dn1",
+      "target": "mn60",
       "rank": 26
     },
     {
       "source": "Stock und Schwert",
-      "target": "dn2",
+      "target": "dn1",
       "rank": 27
     },
     {
       "source": "Stock und Schwert",
-      "target": "mn38",
+      "target": "dn2",
       "rank": 28
     },
     {
       "source": "Stock und Schwert",
-      "target": "dn30",
+      "target": "mn38",
       "rank": 29
     },
     {
       "source": "Stock und Schwert",
-      "target": "dn34",
+      "target": "dn30",
       "rank": 30
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "dn34",
+      "rank": 31
     },
     {
       "source": "Straße durch die Wüste",
@@ -42121,13 +42151,18 @@
     },
     {
       "source": "unbarmherzig",
-      "target": "mn51",
+      "target": "mn135",
       "rank": 17
     },
     {
       "source": "unbarmherzig",
-      "target": "mn60",
+      "target": "mn51",
       "rank": 18
+    },
+    {
+      "source": "unbarmherzig",
+      "target": "mn60",
+      "rank": 19
     },
     {
       "source": "unbedingt",
@@ -43341,28 +43376,23 @@
     },
     {
       "source": "Versenkung besitzt",
-      "target": "sn1.9",
+      "target": "an6.70",
       "rank": 5
     },
     {
       "source": "Versenkung besitzt",
-      "target": "an6.70",
+      "target": "sn1.38",
       "rank": 6
     },
     {
       "source": "Versenkung besitzt",
-      "target": "sn1.38",
+      "target": "sn22.5",
       "rank": 7
     },
     {
       "source": "Versenkung besitzt",
-      "target": "sn22.5",
-      "rank": 8
-    },
-    {
-      "source": "Versenkung besitzt",
       "target": "an4.196",
-      "rank": 9
+      "rank": 8
     },
     {
       "source": "Versenkung des Herzens solcher Art",
@@ -43376,8 +43406,13 @@
     },
     {
       "source": "Versenkung des Herzens solcher Art",
-      "target": "dn24",
+      "target": "mn136",
       "rank": 3
+    },
+    {
+      "source": "Versenkung des Herzens solcher Art",
+      "target": "dn24",
+      "rank": 4
     },
     {
       "source": "Versenkung mit fünf Faktoren",
@@ -43626,67 +43661,67 @@
     },
     {
       "source": "Vervollkommnung de[sr]",
-      "target": "dn33",
+      "target": "mn4",
       "rank": 30
     },
     {
       "source": "Vervollkommnung de[sr]",
-      "target": "dn16",
+      "target": "dn33",
       "rank": 31
     },
     {
       "source": "Vervollkommnung de[sr]",
-      "target": "an3.138",
+      "target": "dn16",
       "rank": 32
     },
     {
       "source": "Vervollkommnung de[sr]",
-      "target": "an5.46",
+      "target": "an3.138",
       "rank": 33
     },
     {
       "source": "Vervollkommnung de[sr]",
-      "target": "an5.91",
+      "target": "an5.46",
       "rank": 34
     },
     {
       "source": "Vervollkommnung de[sr]",
-      "target": "an5.92",
+      "target": "an5.91",
       "rank": 35
     },
     {
       "source": "Vervollkommnung de[sr]",
-      "target": "an8.75",
+      "target": "an5.92",
       "rank": 36
     },
     {
       "source": "Vervollkommnung de[sr]",
-      "target": "iti111",
+      "target": "an8.75",
       "rank": 37
     },
     {
       "source": "Vervollkommnung de[sr]",
-      "target": "kp8",
+      "target": "iti111",
       "rank": 38
     },
     {
       "source": "Vervollkommnung de[sr]",
-      "target": "thag15.2",
+      "target": "kp8",
       "rank": 39
     },
     {
       "source": "Vervollkommnung de[sr]",
-      "target": "an2.163-179",
+      "target": "thag15.2",
       "rank": 40
     },
     {
       "source": "Vervollkommnung de[sr]",
-      "target": "an6.43",
+      "target": "an2.163-179",
       "rank": 41
     },
     {
       "source": "Vervollkommnung de[sr]",
-      "target": "mn4",
+      "target": "an6.43",
       "rank": 42
     },
     {
@@ -47946,33 +47981,38 @@
     },
     {
       "source": "zu meinem langanhaltenden Nutzen",
-      "target": "mn85",
+      "target": "mn135",
       "rank": 4
     },
     {
       "source": "zu meinem langanhaltenden Nutzen",
-      "target": "sn16.11",
+      "target": "mn85",
       "rank": 5
     },
     {
       "source": "zu meinem langanhaltenden Nutzen",
-      "target": "sn22.1",
+      "target": "sn16.11",
       "rank": 6
     },
     {
       "source": "zu meinem langanhaltenden Nutzen",
-      "target": "dn26",
+      "target": "sn22.1",
       "rank": 7
     },
     {
       "source": "zu meinem langanhaltenden Nutzen",
-      "target": "dn23",
+      "target": "dn26",
       "rank": 8
     },
     {
       "source": "zu meinem langanhaltenden Nutzen",
-      "target": "dn30",
+      "target": "dn23",
       "rank": 9
+    },
+    {
+      "source": "zu meinem langanhaltenden Nutzen",
+      "target": "dn30",
+      "rank": 10
     },
     {
       "source": "zum höheren Geist",
