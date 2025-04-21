@@ -73,7 +73,7 @@
     {
       "id": "again and again",
       "group": "Examples",
-      "links": 33
+      "links": 36
     },
     {
       "id": "against the stream",
@@ -2118,7 +2118,7 @@
     {
       "id": "judgment",
       "group": "Examples",
-      "links": 14
+      "links": 12
     },
     {
       "id": "just one mouthful",
@@ -4638,7 +4638,7 @@
       "id": "dn14",
       "group": "dn",
       "rank": 1,
-      "links": 34
+      "links": 33
     },
     {
       "id": "mn65",
@@ -5439,6 +5439,12 @@
       "links": 5
     },
     {
+      "id": "sn3.17",
+      "group": "sn",
+      "rank": 23,
+      "links": 1
+    },
+    {
       "id": "thag6.5",
       "group": "thag",
       "rank": 2,
@@ -5453,7 +5459,13 @@
     {
       "id": "thig9.1",
       "group": "thig",
-      "rank": 25,
+      "rank": 26,
+      "links": 1
+    },
+    {
+      "id": "an5.43",
+      "group": "an",
+      "rank": 27,
       "links": 1
     },
     {
@@ -5473,6 +5485,12 @@
       "group": "iti",
       "rank": 5,
       "links": 2
+    },
+    {
+      "id": "sn3.18",
+      "group": "sn",
+      "rank": 1,
+      "links": 6
     },
     {
       "id": "snp5.5",
@@ -6750,7 +6768,7 @@
       "id": "mn89",
       "group": "mn",
       "rank": 1,
-      "links": 8
+      "links": 7
     },
     {
       "id": "an6.44",
@@ -9839,7 +9857,7 @@
     {
       "id": "sn3.7",
       "group": "sn",
-      "rank": 4,
+      "rank": 7,
       "links": 2
     },
     {
@@ -11913,12 +11931,6 @@
       "links": 5
     },
     {
-      "id": "sn3.18",
-      "group": "sn",
-      "rank": 1,
-      "links": 5
-    },
-    {
       "id": "an3.1",
       "group": "an",
       "rank": 1,
@@ -13931,13 +13943,13 @@
     {
       "id": "snp4.12",
       "group": "snp",
-      "rank": 5,
+      "rank": 4,
       "links": 1
     },
     {
       "id": "ud7.7",
       "group": "ud",
-      "rank": 7,
+      "rank": 6,
       "links": 1
     },
     {
@@ -19553,58 +19565,73 @@
     },
     {
       "source": "again and again",
-      "target": "thag6.5",
+      "target": "sn3.17",
       "rank": 23
     },
     {
       "source": "again and again",
-      "target": "an4.5",
+      "target": "thag6.5",
       "rank": 24
     },
     {
       "source": "again and again",
-      "target": "thig9.1",
+      "target": "an4.5",
       "rank": 25
     },
     {
       "source": "again and again",
-      "target": "an9.5",
+      "target": "thig9.1",
       "rank": 26
     },
     {
       "source": "again and again",
-      "target": "sn48.50",
+      "target": "an5.43",
       "rank": 27
     },
     {
       "source": "again and again",
-      "target": "iti83",
+      "target": "an9.5",
       "rank": 28
     },
     {
       "source": "again and again",
-      "target": "snp5.5",
+      "target": "sn48.50",
       "rank": 29
     },
     {
       "source": "again and again",
-      "target": "dhp146-156",
+      "target": "iti83",
       "rank": 30
     },
     {
       "source": "again and again",
-      "target": "dhp320-333",
+      "target": "sn3.18",
       "rank": 31
     },
     {
       "source": "again and again",
-      "target": "mn12",
+      "target": "snp5.5",
       "rank": 32
     },
     {
       "source": "again and again",
-      "target": "thag20.1",
+      "target": "dhp146-156",
       "rank": 33
+    },
+    {
+      "source": "again and again",
+      "target": "dhp320-333",
+      "rank": 34
+    },
+    {
+      "source": "again and again",
+      "target": "mn12",
+      "rank": 35
+    },
+    {
+      "source": "again and again",
+      "target": "thag20.1",
+      "rank": 36
     },
     {
       "source": "against the stream",
@@ -34628,22 +34655,22 @@
     },
     {
       "source": "judgment",
-      "target": "sn3.7",
+      "target": "snp4.12",
       "rank": 4
     },
     {
       "source": "judgment",
-      "target": "snp4.12",
+      "target": "dn21",
       "rank": 5
     },
     {
       "source": "judgment",
-      "target": "dn21",
+      "target": "ud7.7",
       "rank": 6
     },
     {
       "source": "judgment",
-      "target": "ud7.7",
+      "target": "sn3.7",
       "rank": 7
     },
     {
@@ -34670,16 +34697,6 @@
       "source": "judgment",
       "target": "snp4.14",
       "rank": 12
-    },
-    {
-      "source": "judgment",
-      "target": "mn89",
-      "rank": 13
-    },
-    {
-      "source": "judgment",
-      "target": "dn14",
-      "rank": 14
     },
     {
       "source": "just one mouthful",
