@@ -73,7 +73,7 @@
     {
       "id": "again and again",
       "group": "Examples",
-      "links": 36
+      "links": 35
     },
     {
       "id": "against the stream",
@@ -5427,12 +5427,6 @@
       "links": 1
     },
     {
-      "id": "sn4.13",
-      "group": "sn",
-      "rank": 14,
-      "links": 3
-    },
-    {
       "id": "sn8.4",
       "group": "sn",
       "rank": 3,
@@ -5441,7 +5435,7 @@
     {
       "id": "sn3.17",
       "group": "sn",
-      "rank": 23,
+      "rank": 22,
       "links": 1
     },
     {
@@ -5459,13 +5453,13 @@
     {
       "id": "thig9.1",
       "group": "thig",
-      "rank": 26,
+      "rank": 25,
       "links": 1
     },
     {
       "id": "an5.43",
       "group": "an",
-      "rank": 27,
+      "rank": 26,
       "links": 1
     },
     {
@@ -14067,6 +14061,12 @@
       "links": 1
     },
     {
+      "id": "sn4.13",
+      "group": "sn",
+      "rank": 14,
+      "links": 2
+    },
+    {
       "id": "sn4.20",
       "group": "sn",
       "rank": 15,
@@ -19555,83 +19555,78 @@
     },
     {
       "source": "again and again",
-      "target": "sn4.13",
+      "target": "sn8.4",
       "rank": 21
     },
     {
       "source": "again and again",
-      "target": "sn8.4",
+      "target": "sn3.17",
       "rank": 22
     },
     {
       "source": "again and again",
-      "target": "sn3.17",
+      "target": "thag6.5",
       "rank": 23
     },
     {
       "source": "again and again",
-      "target": "thag6.5",
+      "target": "an4.5",
       "rank": 24
     },
     {
       "source": "again and again",
-      "target": "an4.5",
+      "target": "thig9.1",
       "rank": 25
     },
     {
       "source": "again and again",
-      "target": "thig9.1",
+      "target": "an5.43",
       "rank": 26
     },
     {
       "source": "again and again",
-      "target": "an5.43",
+      "target": "an9.5",
       "rank": 27
     },
     {
       "source": "again and again",
-      "target": "an9.5",
+      "target": "sn48.50",
       "rank": 28
     },
     {
       "source": "again and again",
-      "target": "sn48.50",
+      "target": "iti83",
       "rank": 29
     },
     {
       "source": "again and again",
-      "target": "iti83",
+      "target": "sn3.18",
       "rank": 30
     },
     {
       "source": "again and again",
-      "target": "sn3.18",
+      "target": "snp5.5",
       "rank": 31
     },
     {
       "source": "again and again",
-      "target": "snp5.5",
+      "target": "dhp146-156",
       "rank": 32
     },
     {
       "source": "again and again",
-      "target": "dhp146-156",
+      "target": "dhp320-333",
       "rank": 33
     },
     {
       "source": "again and again",
-      "target": "dhp320-333",
+      "target": "mn12",
       "rank": 34
     },
     {
       "source": "again and again",
-      "target": "mn12",
-      "rank": 35
-    },
-    {
-      "source": "again and again",
       "target": "thag20.1",
-      "rank": 36
+      "rank": 35
     },
     {
       "source": "against the stream",
