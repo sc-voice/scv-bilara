@@ -493,7 +493,7 @@
     {
       "id": "damit zufrieden",
       "group": "Examples",
-      "links": 13
+      "links": 14
     },
     {
       "id": "dankbar",
@@ -578,7 +578,7 @@
     {
       "id": "das ist eine andere Art",
       "group": "Examples",
-      "links": 10
+      "links": 11
     },
     {
       "id": "das ist friedvoll",
@@ -893,7 +893,7 @@
     {
       "id": "die Worte des Buddha wieder",
       "group": "Examples",
-      "links": 18
+      "links": 19
     },
     {
       "id": "Dinge bei sich selbst",
@@ -1303,7 +1303,7 @@
     {
       "id": "erlesenste",
       "group": "Examples",
-      "links": 28
+      "links": 29
     },
     {
       "id": "erlöschen, bevor ich nicht Nonnenschülerinnen",
@@ -1488,7 +1488,7 @@
     {
       "id": "Freude und Glück",
       "group": "Examples",
-      "links": 10
+      "links": 11
     },
     {
       "id": "Frieden finden",
@@ -1543,7 +1543,7 @@
     {
       "id": "für dich zu Kummer",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "für mich eine Beschwerde",
@@ -1908,7 +1908,7 @@
     {
       "id": "Heiligtümer",
       "group": "Examples",
-      "links": 5
+      "links": 6
     },
     {
       "id": "Heimatdorf verließe und zu einem anderen",
@@ -2343,7 +2343,7 @@
     {
       "id": "Kopf zu den Füßen des Buddha",
       "group": "Examples",
-      "links": 14
+      "links": 15
     },
     {
       "id": "Kosmologe",
@@ -2528,7 +2528,7 @@
     {
       "id": "Meditation unterstützen",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "meditier konzentrier",
@@ -2558,7 +2558,7 @@
     {
       "id": "Milch und Wasser",
       "group": "Examples",
-      "links": 10
+      "links": 11
     },
     {
       "id": "mir hinterherzulaufen",
@@ -2608,7 +2608,7 @@
     {
       "id": "mit freundlichen Augen",
       "group": "Examples",
-      "links": 11
+      "links": 12
     },
     {
       "id": "mit ganzem Herzen",
@@ -3223,7 +3223,7 @@
     {
       "id": "solange sie leben",
       "group": "Examples",
-      "links": 7
+      "links": 8
     },
     {
       "id": "solche Form in der Vergangenheit",
@@ -3813,7 +3813,7 @@
     {
       "id": "von Sprache",
       "group": "Examples",
-      "links": 30
+      "links": 31
     },
     {
       "id": "von Zorn überwältigt",
@@ -3993,7 +3993,7 @@
     {
       "id": "weit weg von der tollen Menge",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "welche Fesseln binden Götter",
@@ -4328,7 +4328,7 @@
     {
       "id": "zu Gericht",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "zu hören und sich einzuprägen",
@@ -5337,7 +5337,7 @@
     {
       "id": "dn32",
       "group": "dn",
-      "rank": 4,
+      "rank": 5,
       "links": 3
     },
     {
@@ -7527,7 +7527,7 @@
     {
       "id": "sn17.9",
       "group": "sn",
-      "rank": 16,
+      "rank": 17,
       "links": 2
     },
     {
@@ -7673,6 +7673,12 @@
       "group": "mn",
       "rank": 2,
       "links": 4
+    },
+    {
+      "id": "mn90",
+      "group": "mn",
+      "rank": 2,
+      "links": 3
     },
     {
       "id": "an10.52",
@@ -8125,9 +8131,15 @@
       "links": 3
     },
     {
+      "id": "mn87",
+      "group": "mn",
+      "rank": 1,
+      "links": 3
+    },
+    {
       "id": "mn84",
       "group": "mn",
-      "rank": 10,
+      "rank": 11,
       "links": 2
     },
     {
@@ -10915,6 +10927,12 @@
       "links": 1
     },
     {
+      "id": "mn89",
+      "group": "mn",
+      "rank": 1,
+      "links": 8
+    },
+    {
       "id": "sn34.1",
       "group": "sn",
       "rank": 1,
@@ -10929,7 +10947,7 @@
     {
       "id": "cp8",
       "group": "cp",
-      "rank": 19,
+      "rank": 20,
       "links": 1
     },
     {
@@ -11823,7 +11841,7 @@
     {
       "id": "an5.194",
       "group": "an",
-      "rank": 8,
+      "rank": 9,
       "links": 2
     },
     {
@@ -13131,19 +13149,19 @@
     {
       "id": "an7.22",
       "group": "an",
-      "rank": 2,
+      "rank": 3,
       "links": 2
     },
     {
       "id": "sn11.15",
       "group": "sn",
-      "rank": 3,
+      "rank": 4,
       "links": 1
     },
     {
       "id": "an7.21",
       "group": "an",
-      "rank": 4,
+      "rank": 5,
       "links": 2
     },
     {
@@ -14757,7 +14775,7 @@
     {
       "id": "an5.53",
       "group": "an",
-      "rank": 2,
+      "rank": 3,
       "links": 1
     },
     {
@@ -17155,69 +17173,75 @@
       "links": 1
     },
     {
-      "id": "an4.148",
-      "group": "an",
+      "id": "mn88",
+      "group": "mn",
       "rank": 4,
       "links": 1
     },
     {
-      "id": "an4.149",
+      "id": "an4.148",
       "group": "an",
       "rank": 5,
       "links": 1
     },
     {
-      "id": "an5.104",
+      "id": "an4.149",
       "group": "an",
       "rank": 6,
+      "links": 1
+    },
+    {
+      "id": "an5.104",
+      "group": "an",
+      "rank": 7,
       "links": 4
     },
     {
       "id": "sn29.7",
       "group": "sn",
-      "rank": 13,
+      "rank": 14,
       "links": 1
     },
     {
       "id": "sn29.10",
       "group": "sn",
-      "rank": 14,
+      "rank": 15,
       "links": 1
     },
     {
       "id": "sn30.3",
       "group": "sn",
-      "rank": 15,
+      "rank": 16,
       "links": 1
     },
     {
       "id": "sn30.4-6",
       "group": "sn",
-      "rank": 17,
+      "rank": 18,
       "links": 1
     },
     {
       "id": "sn30.7-16",
       "group": "sn",
-      "rank": 18,
+      "rank": 19,
       "links": 1
     },
     {
       "id": "sn29.11-20",
       "group": "sn",
-      "rank": 20,
+      "rank": 21,
       "links": 1
     },
     {
       "id": "sn29.21-50",
       "group": "sn",
-      "rank": 21,
+      "rank": 22,
       "links": 1
     },
     {
       "id": "sn22.62",
       "group": "sn",
-      "rank": 23,
+      "rank": 24,
       "links": 1
     },
     {
@@ -21826,58 +21850,63 @@
     },
     {
       "source": "damit zufrieden",
-      "target": "mn28",
+      "target": "mn90",
       "rank": 3
     },
     {
       "source": "damit zufrieden",
-      "target": "dn10",
+      "target": "mn28",
       "rank": 4
     },
     {
       "source": "damit zufrieden",
-      "target": "dn25",
+      "target": "dn10",
       "rank": 5
     },
     {
       "source": "damit zufrieden",
-      "target": "an10.52",
+      "target": "dn25",
       "rank": 6
     },
     {
       "source": "damit zufrieden",
-      "target": "an10.51",
+      "target": "an10.52",
       "rank": 7
     },
     {
       "source": "damit zufrieden",
-      "target": "an10.53",
+      "target": "an10.51",
       "rank": 8
     },
     {
       "source": "damit zufrieden",
-      "target": "an10.55",
+      "target": "an10.53",
       "rank": 9
     },
     {
       "source": "damit zufrieden",
-      "target": "an10.54",
+      "target": "an10.55",
       "rank": 10
     },
     {
       "source": "damit zufrieden",
-      "target": "mn14",
+      "target": "an10.54",
       "rank": 11
     },
     {
       "source": "damit zufrieden",
-      "target": "mn15",
+      "target": "mn14",
       "rank": 12
     },
     {
       "source": "damit zufrieden",
-      "target": "dn21",
+      "target": "mn15",
       "rank": 13
+    },
+    {
+      "source": "damit zufrieden",
+      "target": "dn21",
+      "rank": 14
     },
     {
       "source": "dankbar",
@@ -22391,8 +22420,13 @@
     },
     {
       "source": "das ist eine andere Art",
-      "target": "mn84",
+      "target": "mn87",
       "rank": 10
+    },
+    {
+      "source": "das ist eine andere Art",
+      "target": "mn84",
+      "rank": 11
     },
     {
       "source": "das ist friedvoll",
@@ -24151,23 +24185,28 @@
     },
     {
       "source": "die Worte des Buddha wieder",
-      "target": "sn42.12",
+      "target": "mn90",
       "rank": 15
     },
     {
       "source": "die Worte des Buddha wieder",
-      "target": "dn8",
+      "target": "sn42.12",
       "rank": 16
     },
     {
       "source": "die Worte des Buddha wieder",
-      "target": "dn28",
+      "target": "dn8",
       "rank": 17
     },
     {
       "source": "die Worte des Buddha wieder",
-      "target": "sn42.13",
+      "target": "dn28",
       "rank": 18
+    },
+    {
+      "source": "die Worte des Buddha wieder",
+      "target": "sn42.13",
+      "rank": 19
     },
     {
       "source": "Dinge bei sich selbst",
@@ -27136,128 +27175,133 @@
     },
     {
       "source": "erlesenste",
-      "target": "dn13",
+      "target": "mn89",
       "rank": 4
     },
     {
       "source": "erlesenste",
-      "target": "dn16",
+      "target": "dn13",
       "rank": 5
     },
     {
       "source": "erlesenste",
-      "target": "ud3.2",
+      "target": "dn16",
       "rank": 6
     },
     {
       "source": "erlesenste",
-      "target": "mn80",
+      "target": "ud3.2",
       "rank": 7
     },
     {
       "source": "erlesenste",
-      "target": "mn5",
+      "target": "mn80",
       "rank": 8
     },
     {
       "source": "erlesenste",
-      "target": "mn79",
+      "target": "mn5",
       "rank": 9
     },
     {
       "source": "erlesenste",
-      "target": "mn56",
+      "target": "mn79",
       "rank": 10
     },
     {
       "source": "erlesenste",
-      "target": "dn9",
+      "target": "mn56",
       "rank": 11
     },
     {
       "source": "erlesenste",
-      "target": "dn14",
+      "target": "dn9",
       "rank": 12
     },
     {
       "source": "erlesenste",
-      "target": "sn17.22",
+      "target": "dn14",
       "rank": 13
     },
     {
       "source": "erlesenste",
-      "target": "an5.181",
+      "target": "sn17.22",
       "rank": 14
     },
     {
       "source": "erlesenste",
-      "target": "sn34.1",
+      "target": "an5.181",
       "rank": 15
     },
     {
       "source": "erlesenste",
-      "target": "sn34.2",
+      "target": "sn34.1",
       "rank": 16
     },
     {
       "source": "erlesenste",
-      "target": "an5.190",
+      "target": "sn34.2",
       "rank": 17
     },
     {
       "source": "erlesenste",
-      "target": "sn34.55",
+      "target": "an5.190",
       "rank": 18
     },
     {
       "source": "erlesenste",
-      "target": "cp8",
+      "target": "sn34.55",
       "rank": 19
     },
     {
       "source": "erlesenste",
-      "target": "an10.91",
+      "target": "cp8",
       "rank": 20
     },
     {
       "source": "erlesenste",
-      "target": "an5.50",
+      "target": "an10.91",
       "rank": 21
     },
     {
       "source": "erlesenste",
-      "target": "sn17.13-20",
+      "target": "an5.50",
       "rank": 22
     },
     {
       "source": "erlesenste",
-      "target": "dhp320-333",
+      "target": "sn17.13-20",
       "rank": 23
     },
     {
       "source": "erlesenste",
-      "target": "thig13.3",
+      "target": "dhp320-333",
       "rank": 24
     },
     {
       "source": "erlesenste",
-      "target": "mn84",
+      "target": "thig13.3",
       "rank": 25
     },
     {
       "source": "erlesenste",
-      "target": "mn81",
+      "target": "mn84",
       "rank": 26
     },
     {
       "source": "erlesenste",
-      "target": "dn21",
+      "target": "mn81",
       "rank": 27
     },
     {
       "source": "erlesenste",
-      "target": "mn82",
+      "target": "dn21",
       "rank": 28
+    },
+    {
+      "source": "erlesenste",
+      "target": "mn82",
+      "rank": 29
     },
     {
       "source": "erlöschen, bevor ich nicht Nonnenschülerinnen",
@@ -28746,23 +28790,28 @@
     },
     {
       "source": "Freude und Glück",
-      "target": "sn56.35",
+      "target": "mn87",
       "rank": 7
     },
     {
       "source": "Freude und Glück",
-      "target": "an5.194",
+      "target": "sn56.35",
       "rank": 8
     },
     {
       "source": "Freude und Glück",
-      "target": "cp9",
+      "target": "an5.194",
       "rank": 9
     },
     {
       "source": "Freude und Glück",
-      "target": "dn9",
+      "target": "cp9",
       "rank": 10
+    },
+    {
+      "source": "Freude und Glück",
+      "target": "dn9",
+      "rank": 11
     },
     {
       "source": "Frieden finden",
@@ -29181,8 +29230,13 @@
     },
     {
       "source": "für dich zu Kummer",
-      "target": "sn42.11",
+      "target": "mn87",
       "rank": 1
+    },
+    {
+      "source": "für dich zu Kummer",
+      "target": "sn42.11",
+      "rank": 2
     },
     {
       "source": "für mich eine Beschwerde",
@@ -31771,28 +31825,33 @@
     },
     {
       "source": "Heiligtümer",
-      "target": "dn16",
+      "target": "mn89",
       "rank": 1
     },
     {
       "source": "Heiligtümer",
-      "target": "an7.22",
+      "target": "dn16",
       "rank": 2
     },
     {
       "source": "Heiligtümer",
-      "target": "sn11.15",
+      "target": "an7.22",
       "rank": 3
     },
     {
       "source": "Heiligtümer",
-      "target": "an7.21",
+      "target": "sn11.15",
       "rank": 4
     },
     {
       "source": "Heiligtümer",
-      "target": "mn4",
+      "target": "an7.21",
       "rank": 5
+    },
+    {
+      "source": "Heiligtümer",
+      "target": "mn4",
+      "rank": 6
     },
     {
       "source": "Heimatdorf verließe und zu einem anderen",
@@ -34721,13 +34780,18 @@
     },
     {
       "source": "Kopf zu den Füßen des Buddha",
-      "target": "sn12.70",
+      "target": "mn89",
       "rank": 13
     },
     {
       "source": "Kopf zu den Füßen des Buddha",
-      "target": "mn140",
+      "target": "sn12.70",
       "rank": 14
+    },
+    {
+      "source": "Kopf zu den Füßen des Buddha",
+      "target": "mn140",
+      "rank": 15
     },
     {
       "source": "Kosmologe",
@@ -36016,18 +36080,23 @@
     },
     {
       "source": "Meditation unterstützen",
-      "target": "an5.53",
+      "target": "mn90",
       "rank": 2
     },
     {
       "source": "Meditation unterstützen",
-      "target": "dn33",
+      "target": "an5.53",
       "rank": 3
     },
     {
       "source": "Meditation unterstützen",
-      "target": "dn34",
+      "target": "dn33",
       "rank": 4
+    },
+    {
+      "source": "Meditation unterstützen",
+      "target": "dn34",
+      "rank": 5
     },
     {
       "source": "meditier konzentrier",
@@ -36310,6 +36379,11 @@
       "rank": 10
     },
     {
+      "source": "Milch und Wasser",
+      "target": "mn89",
+      "rank": 11
+    },
+    {
       "source": "mir hinterherzulaufen",
       "target": "sn47.3",
       "rank": 1
@@ -36478,6 +36552,11 @@
       "source": "mit freundlichen Augen",
       "target": "sn36.19",
       "rank": 11
+    },
+    {
+      "source": "mit freundlichen Augen",
+      "target": "mn89",
+      "rank": 12
     },
     {
       "source": "mit ganzem Herzen",
@@ -40460,6 +40539,11 @@
       "rank": 7
     },
     {
+      "source": "solange sie leben",
+      "target": "mn89",
+      "rank": 8
+    },
+    {
       "source": "solche Form in der Vergangenheit",
       "target": "mn131",
       "rank": 1
@@ -44421,138 +44505,143 @@
     },
     {
       "source": "von Sprache",
-      "target": "an4.148",
+      "target": "mn88",
       "rank": 4
     },
     {
       "source": "von Sprache",
-      "target": "an4.149",
+      "target": "an4.148",
       "rank": 5
     },
     {
       "source": "von Sprache",
-      "target": "an5.104",
+      "target": "an4.149",
       "rank": 6
     },
     {
       "source": "von Sprache",
-      "target": "an4.87",
+      "target": "an5.104",
       "rank": 7
     },
     {
       "source": "von Sprache",
-      "target": "an4.111",
+      "target": "an4.87",
       "rank": 8
     },
     {
       "source": "von Sprache",
-      "target": "an3.39",
+      "target": "an4.111",
       "rank": 9
     },
     {
       "source": "von Sprache",
-      "target": "an2.1-10",
+      "target": "an3.39",
       "rank": 10
     },
     {
       "source": "von Sprache",
-      "target": "sn29.3",
+      "target": "an2.1-10",
       "rank": 11
     },
     {
       "source": "von Sprache",
-      "target": "sn29.6",
+      "target": "sn29.3",
       "rank": 12
     },
     {
       "source": "von Sprache",
-      "target": "sn29.7",
+      "target": "sn29.6",
       "rank": 13
     },
     {
       "source": "von Sprache",
-      "target": "sn29.10",
+      "target": "sn29.7",
       "rank": 14
     },
     {
       "source": "von Sprache",
-      "target": "sn30.3",
+      "target": "sn29.10",
       "rank": 15
     },
     {
       "source": "von Sprache",
-      "target": "sn17.9",
+      "target": "sn30.3",
       "rank": 16
     },
     {
       "source": "von Sprache",
-      "target": "sn30.4-6",
+      "target": "sn17.9",
       "rank": 17
     },
     {
       "source": "von Sprache",
-      "target": "sn30.7-16",
+      "target": "sn30.4-6",
       "rank": 18
     },
     {
       "source": "von Sprache",
-      "target": "sn35.146",
+      "target": "sn30.7-16",
       "rank": 19
     },
     {
       "source": "von Sprache",
-      "target": "sn29.11-20",
+      "target": "sn35.146",
       "rank": 20
     },
     {
       "source": "von Sprache",
-      "target": "sn29.21-50",
+      "target": "sn29.11-20",
       "rank": 21
     },
     {
       "source": "von Sprache",
-      "target": "an8.13",
+      "target": "sn29.21-50",
       "rank": 22
     },
     {
       "source": "von Sprache",
-      "target": "sn22.62",
+      "target": "an8.13",
       "rank": 23
     },
     {
       "source": "von Sprache",
-      "target": "an3.101",
+      "target": "sn22.62",
       "rank": 24
     },
     {
       "source": "von Sprache",
-      "target": "an5.31",
+      "target": "an3.101",
       "rank": 25
     },
     {
       "source": "von Sprache",
-      "target": "an4.195",
+      "target": "an5.31",
       "rank": 26
     },
     {
       "source": "von Sprache",
-      "target": "mn45",
+      "target": "an4.195",
       "rank": 27
     },
     {
       "source": "von Sprache",
-      "target": "an7.64",
+      "target": "mn45",
       "rank": 28
     },
     {
       "source": "von Sprache",
-      "target": "mn78",
+      "target": "an7.64",
       "rank": 29
     },
     {
       "source": "von Sprache",
-      "target": "cp9",
+      "target": "mn78",
       "rank": 30
+    },
+    {
+      "source": "von Sprache",
+      "target": "cp9",
+      "rank": 31
     },
     {
       "source": "von Zorn überwältigt",
@@ -45826,8 +45915,13 @@
     },
     {
       "source": "weit weg von der tollen Menge",
-      "target": "dn32",
+      "target": "mn89",
       "rank": 4
+    },
+    {
+      "source": "weit weg von der tollen Menge",
+      "target": "dn32",
+      "rank": 5
     },
     {
       "source": "welche Fesseln binden Götter",
@@ -47896,8 +47990,13 @@
     },
     {
       "source": "zu Gericht",
-      "target": "dn14",
+      "target": "mn89",
       "rank": 2
+    },
+    {
+      "source": "zu Gericht",
+      "target": "dn14",
+      "rank": 3
     },
     {
       "source": "zum eigenen Nutzen",
