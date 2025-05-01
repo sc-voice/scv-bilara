@@ -198,7 +198,7 @@
     {
       "id": "aufgegeben werden m[uü]ss",
       "group": "Examples",
-      "links": 7
+      "links": 8
     },
     {
       "id": "aufgrund bloßen Vertrauens",
@@ -803,7 +803,7 @@
     {
       "id": "die ich liebe",
       "group": "Examples",
-      "links": 1
+      "links": 28
     },
     {
       "id": "die im Wasser",
@@ -968,7 +968,7 @@
     {
       "id": "drei Veden",
       "group": "Examples",
-      "links": 11
+      "links": 12
     },
     {
       "id": "drei Vorgänge",
@@ -1278,7 +1278,7 @@
     {
       "id": "erkannt werden",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "Erkenntnis der sechs Sinnesfelder",
@@ -1673,7 +1673,7 @@
     {
       "id": "gerechter und prinzipientreuer König",
       "group": "Examples",
-      "links": 14
+      "links": 15
     },
     {
       "id": "Gerstengranne",
@@ -2273,7 +2273,7 @@
     {
       "id": "Kennzeichen",
       "group": "Examples",
-      "links": 24
+      "links": 25
     },
     {
       "id": "Keuschen und die Unkeuschen",
@@ -2343,7 +2343,7 @@
     {
       "id": "Kopf zu den Füßen des Buddha",
       "group": "Examples",
-      "links": 15
+      "links": 16
     },
     {
       "id": "Kosmologe",
@@ -2553,7 +2553,7 @@
     {
       "id": "mich sehne und die ich liebe",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "Milch und Wasser",
@@ -2913,7 +2913,7 @@
     {
       "id": "Rad-drehend.* Herrscher",
       "group": "Examples",
-      "links": 38
+      "links": 39
     },
     {
       "id": "rascher Einsicht",
@@ -2948,7 +2948,7 @@
     {
       "id": "Riese",
       "group": "Examples",
-      "links": 17
+      "links": 18
     },
     {
       "id": "Roben aus Hanf",
@@ -3898,7 +3898,7 @@
     {
       "id": "was einen Anfang hat",
       "group": "Examples",
-      "links": 15
+      "links": 16
     },
     {
       "id": "was ein Verstoß ist",
@@ -4564,13 +4564,13 @@
       "id": "mn4",
       "group": "mn",
       "rank": 1,
-      "links": 10
+      "links": 11
     },
     {
       "id": "mn128",
       "group": "mn",
       "rank": 1,
-      "links": 12
+      "links": 13
     },
     {
       "id": "mn26",
@@ -4828,7 +4828,7 @@
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 108
+      "links": 109
     },
     {
       "id": "an4.189",
@@ -4840,13 +4840,13 @@
       "id": "mn77",
       "group": "mn",
       "rank": 2,
-      "links": 29
+      "links": 30
     },
     {
       "id": "dn34",
       "group": "dn",
       "rank": 1,
-      "links": 80
+      "links": 81
     },
     {
       "id": "an8.118",
@@ -5224,7 +5224,7 @@
       "id": "sn42.11",
       "group": "sn",
       "rank": 1,
-      "links": 8
+      "links": 6
     },
     {
       "id": "sn35.83",
@@ -5767,6 +5767,12 @@
       "links": 9
     },
     {
+      "id": "mn91",
+      "group": "mn",
+      "rank": 2,
+      "links": 9
+    },
+    {
       "id": "an6.55",
       "group": "an",
       "rank": 1,
@@ -6262,7 +6268,7 @@
       "id": "dn23",
       "group": "dn",
       "rank": 1,
-      "links": 17
+      "links": 18
     },
     {
       "id": "an3.83",
@@ -6388,7 +6394,7 @@
       "id": "an7.66",
       "group": "an",
       "rank": 1,
-      "links": 12
+      "links": 13
     },
     {
       "id": "an9.12",
@@ -6904,7 +6910,7 @@
       "id": "mn31",
       "group": "mn",
       "rank": 1,
-      "links": 4
+      "links": 5
     },
     {
       "id": "an4.24",
@@ -6940,7 +6946,7 @@
       "id": "dn3",
       "group": "dn",
       "rank": 2,
-      "links": 10
+      "links": 11
     },
     {
       "id": "sn44.3",
@@ -8494,7 +8500,7 @@
       "id": "sn46.54",
       "group": "sn",
       "rank": 1,
-      "links": 6
+      "links": 7
     },
     {
       "id": "an5.144",
@@ -8770,7 +8776,7 @@
       "id": "an8.63",
       "group": "an",
       "rank": 1,
-      "links": 5
+      "links": 6
     },
     {
       "id": "sn35.95",
@@ -9175,6 +9181,102 @@
       "links": 5
     },
     {
+      "id": "an4.67",
+      "group": "an",
+      "rank": 1,
+      "links": 3
+    },
+    {
+      "id": "an8.80",
+      "group": "an",
+      "rank": 1,
+      "links": 4
+    },
+    {
+      "id": "an4.184",
+      "group": "an",
+      "rank": 2,
+      "links": 3
+    },
+    {
+      "id": "an6.103",
+      "group": "an",
+      "rank": 7,
+      "links": 1
+    },
+    {
+      "id": "iti22",
+      "group": "iti",
+      "rank": 2,
+      "links": 6
+    },
+    {
+      "id": "an1.11-20",
+      "group": "an",
+      "rank": 10,
+      "links": 2
+    },
+    {
+      "id": "an6.25",
+      "group": "an",
+      "rank": 2,
+      "links": 4
+    },
+    {
+      "id": "an6.13",
+      "group": "an",
+      "rank": 3,
+      "links": 5
+    },
+    {
+      "id": "an3.101",
+      "group": "an",
+      "rank": 2,
+      "links": 11
+    },
+    {
+      "id": "sn16.9",
+      "group": "sn",
+      "rank": 1,
+      "links": 5
+    },
+    {
+      "id": "an11.13",
+      "group": "an",
+      "rank": 15,
+      "links": 1
+    },
+    {
+      "id": "an6.26",
+      "group": "an",
+      "rank": 3,
+      "links": 5
+    },
+    {
+      "id": "an3.63",
+      "group": "an",
+      "rank": 1,
+      "links": 7
+    },
+    {
+      "id": "an10.85",
+      "group": "an",
+      "rank": 19,
+      "links": 1
+    },
+    {
+      "id": "mn73",
+      "group": "mn",
+      "rank": 1,
+      "links": 9
+    },
+    {
+      "id": "mn81",
+      "group": "mn",
+      "rank": 4,
+      "links": 4
+    },
+    {
       "id": "an7.15",
       "group": "an",
       "rank": 1,
@@ -9221,12 +9323,6 @@
       "group": "an",
       "rank": 1,
       "links": 2
-    },
-    {
-      "id": "an3.101",
-      "group": "an",
-      "rank": 2,
-      "links": 10
     },
     {
       "id": "sn54.7",
@@ -10297,12 +10393,6 @@
       "links": 3
     },
     {
-      "id": "an3.63",
-      "group": "an",
-      "rank": 1,
-      "links": 6
-    },
-    {
       "id": "dn19",
       "group": "dn",
       "rank": 2,
@@ -10409,18 +10499,6 @@
       "group": "mn",
       "rank": 2,
       "links": 7
-    },
-    {
-      "id": "sn16.9",
-      "group": "sn",
-      "rank": 1,
-      "links": 4
-    },
-    {
-      "id": "mn73",
-      "group": "mn",
-      "rank": 1,
-      "links": 8
     },
     {
       "id": "sn41.8",
@@ -10957,12 +11035,6 @@
       "links": 5
     },
     {
-      "id": "mn81",
-      "group": "mn",
-      "rank": 4,
-      "links": 3
-    },
-    {
       "id": "ud6.1",
       "group": "ud",
       "rank": 1,
@@ -11005,12 +11077,6 @@
       "links": 1
     },
     {
-      "id": "an6.13",
-      "group": "an",
-      "rank": 3,
-      "links": 4
-    },
-    {
       "id": "an11.15",
       "group": "an",
       "rank": 8,
@@ -11020,12 +11086,6 @@
       "id": "sn20.5",
       "group": "sn",
       "rank": 9,
-      "links": 1
-    },
-    {
-      "id": "an1.11-20",
-      "group": "an",
-      "rank": 11,
       "links": 1
     },
     {
@@ -12133,18 +12193,6 @@
       "links": 1
     },
     {
-      "id": "an6.25",
-      "group": "an",
-      "rank": 2,
-      "links": 3
-    },
-    {
-      "id": "an6.26",
-      "group": "an",
-      "rank": 3,
-      "links": 4
-    },
-    {
       "id": "sn51.22",
       "group": "sn",
       "rank": 1,
@@ -12347,12 +12395,6 @@
       "group": "mn",
       "rank": 1,
       "links": 1
-    },
-    {
-      "id": "iti22",
-      "group": "iti",
-      "rank": 2,
-      "links": 5
     },
     {
       "id": "sn41.10",
@@ -12908,12 +12950,6 @@
     },
     {
       "id": "an3.40",
-      "group": "an",
-      "rank": 1,
-      "links": 3
-    },
-    {
-      "id": "an8.80",
       "group": "an",
       "rank": 1,
       "links": 3
@@ -13765,12 +13801,6 @@
       "links": 1
     },
     {
-      "id": "an4.184",
-      "group": "an",
-      "rank": 2,
-      "links": 2
-    },
-    {
       "id": "sn36.4",
       "group": "sn",
       "rank": 1,
@@ -13935,13 +13965,13 @@
     {
       "id": "thag1.106",
       "group": "thag",
-      "rank": 13,
+      "rank": 14,
       "links": 1
     },
     {
       "id": "an3.2",
       "group": "an",
-      "rank": 14,
+      "rank": 15,
       "links": 1
     },
     {
@@ -13953,7 +13983,7 @@
     {
       "id": "cp11",
       "group": "cp",
-      "rank": 16,
+      "rank": 17,
       "links": 1
     },
     {
@@ -14597,12 +14627,6 @@
       "group": "ud",
       "rank": 2,
       "links": 1
-    },
-    {
-      "id": "an4.67",
-      "group": "an",
-      "rank": 4,
-      "links": 2
     },
     {
       "id": "an5.198",
@@ -15643,15 +15667,21 @@
       "links": 1
     },
     {
+      "id": "sn1.30",
+      "group": "sn",
+      "rank": 2,
+      "links": 2
+    },
+    {
       "id": "thag4.6",
       "group": "thag",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
       "id": "sn1.37",
       "group": "sn",
-      "rank": 6,
+      "rank": 7,
       "links": 1
     },
     {
@@ -17110,12 +17140,6 @@
       "id": "sn1.59",
       "group": "sn",
       "rank": 1,
-      "links": 1
-    },
-    {
-      "id": "sn1.30",
-      "group": "sn",
-      "rank": 2,
       "links": 1
     },
     {
@@ -19557,6 +19581,11 @@
       "source": "aufgegeben werden m[uü]ss",
       "target": "thag16.6",
       "rank": 7
+    },
+    {
+      "source": "aufgegeben werden m[uü]ss",
+      "target": "mn91",
+      "rank": 8
     },
     {
       "source": "aufgrund bloßen Vertrauens",
@@ -23775,8 +23804,143 @@
     },
     {
       "source": "die ich liebe",
-      "target": "sn42.11",
+      "target": "an4.67",
       "rank": 1
+    },
+    {
+      "source": "die ich liebe",
+      "target": "dn34",
+      "rank": 2
+    },
+    {
+      "source": "die ich liebe",
+      "target": "dn33",
+      "rank": 3
+    },
+    {
+      "source": "die ich liebe",
+      "target": "an8.80",
+      "rank": 4
+    },
+    {
+      "source": "die ich liebe",
+      "target": "an4.184",
+      "rank": 5
+    },
+    {
+      "source": "die ich liebe",
+      "target": "mn4",
+      "rank": 6
+    },
+    {
+      "source": "die ich liebe",
+      "target": "an6.103",
+      "rank": 7
+    },
+    {
+      "source": "die ich liebe",
+      "target": "iti22",
+      "rank": 8
+    },
+    {
+      "source": "die ich liebe",
+      "target": "an8.63",
+      "rank": 9
+    },
+    {
+      "source": "die ich liebe",
+      "target": "an1.11-20",
+      "rank": 10
+    },
+    {
+      "source": "die ich liebe",
+      "target": "an6.25",
+      "rank": 11
+    },
+    {
+      "source": "die ich liebe",
+      "target": "an6.13",
+      "rank": 12
+    },
+    {
+      "source": "die ich liebe",
+      "target": "an3.101",
+      "rank": 13
+    },
+    {
+      "source": "die ich liebe",
+      "target": "sn16.9",
+      "rank": 14
+    },
+    {
+      "source": "die ich liebe",
+      "target": "an11.13",
+      "rank": 15
+    },
+    {
+      "source": "die ich liebe",
+      "target": "an6.26",
+      "rank": 16
+    },
+    {
+      "source": "die ich liebe",
+      "target": "an3.63",
+      "rank": 17
+    },
+    {
+      "source": "die ich liebe",
+      "target": "an7.66",
+      "rank": 18
+    },
+    {
+      "source": "die ich liebe",
+      "target": "an10.85",
+      "rank": 19
+    },
+    {
+      "source": "die ich liebe",
+      "target": "sn46.54",
+      "rank": 20
+    },
+    {
+      "source": "die ich liebe",
+      "target": "mn31",
+      "rank": 21
+    },
+    {
+      "source": "die ich liebe",
+      "target": "mn73",
+      "rank": 22
+    },
+    {
+      "source": "die ich liebe",
+      "target": "mn81",
+      "rank": 23
+    },
+    {
+      "source": "die ich liebe",
+      "target": "mn128",
+      "rank": 24
+    },
+    {
+      "source": "die ich liebe",
+      "target": "mn77",
+      "rank": 25
+    },
+    {
+      "source": "die ich liebe",
+      "target": "mn91",
+      "rank": 26
+    },
+    {
+      "source": "die ich liebe",
+      "target": "dn3",
+      "rank": 27
+    },
+    {
+      "source": "die ich liebe",
+      "target": "dn23",
+      "rank": 28
     },
     {
       "source": "die im Wasser",
@@ -24590,38 +24754,43 @@
     },
     {
       "source": "drei Veden",
-      "target": "dn3",
+      "target": "mn91",
       "rank": 5
     },
     {
       "source": "drei Veden",
-      "target": "dn5",
+      "target": "dn3",
       "rank": 6
     },
     {
       "source": "drei Veden",
-      "target": "an3.59",
+      "target": "dn5",
       "rank": 7
     },
     {
       "source": "drei Veden",
-      "target": "sn35.132",
+      "target": "an3.59",
       "rank": 8
     },
     {
       "source": "drei Veden",
-      "target": "an5.192",
+      "target": "sn35.132",
       "rank": 9
     },
     {
       "source": "drei Veden",
-      "target": "mn93",
+      "target": "an5.192",
       "rank": 10
     },
     {
       "source": "drei Veden",
-      "target": "thag20.1",
+      "target": "mn93",
       "rank": 11
+    },
+    {
+      "source": "drei Veden",
+      "target": "thag20.1",
+      "rank": 12
     },
     {
       "source": "drei Vorgänge",
@@ -27132,6 +27301,11 @@
       "source": "erkannt werden",
       "target": "thag16.6",
       "rank": 6
+    },
+    {
+      "source": "erkannt werden",
+      "target": "mn91",
+      "rank": 7
     },
     {
       "source": "Erkenntnis der sechs Sinnesfelder",
@@ -29980,18 +30154,23 @@
     },
     {
       "source": "gerechter und prinzipientreuer König",
-      "target": "dn3",
+      "target": "mn91",
       "rank": 12
     },
     {
       "source": "gerechter und prinzipientreuer König",
-      "target": "dn17",
+      "target": "dn3",
       "rank": 13
     },
     {
       "source": "gerechter und prinzipientreuer König",
-      "target": "dn16",
+      "target": "dn17",
       "rank": 14
+    },
+    {
+      "source": "gerechter und prinzipientreuer König",
+      "target": "dn16",
+      "rank": 15
     },
     {
       "source": "Gerstengranne",
@@ -34085,118 +34264,123 @@
     },
     {
       "source": "Kennzeichen",
-      "target": "dn3",
+      "target": "mn91",
       "rank": 2
     },
     {
       "source": "Kennzeichen",
-      "target": "an11.17",
+      "target": "dn3",
       "rank": 3
     },
     {
       "source": "Kennzeichen",
-      "target": "mn33",
+      "target": "an11.17",
       "rank": 4
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.47",
+      "target": "mn33",
       "rank": 5
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.3",
+      "target": "an3.47",
       "rank": 6
     },
     {
       "source": "Kennzeichen",
-      "target": "dn4",
+      "target": "an3.3",
       "rank": 7
     },
     {
       "source": "Kennzeichen",
-      "target": "dn14",
+      "target": "dn4",
       "rank": 8
     },
     {
       "source": "Kennzeichen",
-      "target": "mn27",
+      "target": "dn14",
       "rank": 9
     },
     {
       "source": "Kennzeichen",
-      "target": "dn5",
+      "target": "mn27",
       "rank": 10
     },
     {
       "source": "Kennzeichen",
-      "target": "dn1",
+      "target": "dn5",
       "rank": 11
     },
     {
       "source": "Kennzeichen",
-      "target": "dn2",
+      "target": "dn1",
       "rank": 12
     },
     {
       "source": "Kennzeichen",
-      "target": "thag1.106",
+      "target": "dn2",
       "rank": 13
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.2",
+      "target": "thag1.106",
       "rank": 14
     },
     {
       "source": "Kennzeichen",
-      "target": "an11.22-29",
+      "target": "an3.2",
       "rank": 15
     },
     {
       "source": "Kennzeichen",
-      "target": "cp11",
+      "target": "an11.22-29",
       "rank": 16
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.59",
+      "target": "cp11",
       "rank": 17
     },
     {
       "source": "Kennzeichen",
-      "target": "sn22.59",
+      "target": "an3.59",
       "rank": 18
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.58",
+      "target": "sn22.59",
       "rank": 19
     },
     {
       "source": "Kennzeichen",
-      "target": "thag16.6",
+      "target": "an3.58",
       "rank": 20
     },
     {
       "source": "Kennzeichen",
-      "target": "an5.192",
+      "target": "thag16.6",
       "rank": 21
     },
     {
       "source": "Kennzeichen",
-      "target": "thig14.1",
+      "target": "an5.192",
       "rank": 22
     },
     {
       "source": "Kennzeichen",
-      "target": "snp3.11",
+      "target": "thig14.1",
       "rank": 23
     },
     {
       "source": "Kennzeichen",
-      "target": "mn93",
+      "target": "snp3.11",
       "rank": 24
+    },
+    {
+      "source": "Kennzeichen",
+      "target": "mn93",
+      "rank": 25
     },
     {
       "source": "Keuschen und die Unkeuschen",
@@ -34792,6 +34976,11 @@
       "source": "Kopf zu den Füßen des Buddha",
       "target": "mn140",
       "rank": 15
+    },
+    {
+      "source": "Kopf zu den Füßen des Buddha",
+      "target": "mn91",
+      "rank": 16
     },
     {
       "source": "Kosmologe",
@@ -36322,11 +36511,6 @@
       "source": "merkmalslos",
       "target": "dn16",
       "rank": 23
-    },
-    {
-      "source": "mich sehne und die ich liebe",
-      "target": "sn42.11",
-      "rank": 1
     },
     {
       "source": "Milch und Wasser",
@@ -38645,13 +38829,18 @@
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "thag21.1",
+      "target": "mn91",
       "rank": 37
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "dn3",
+      "target": "thag21.1",
       "rank": 38
+    },
+    {
+      "source": "Rad-drehend.* Herrscher",
+      "target": "dn3",
+      "rank": 39
     },
     {
       "source": "rascher Einsicht",
@@ -38820,68 +39009,73 @@
     },
     {
       "source": "Riese",
-      "target": "thag4.6",
+      "target": "sn1.30",
       "rank": 5
     },
     {
       "source": "Riese",
-      "target": "sn1.37",
+      "target": "thag4.6",
       "rank": 6
     },
     {
       "source": "Riese",
-      "target": "ud4.5",
+      "target": "sn1.37",
       "rank": 7
     },
     {
       "source": "Riese",
-      "target": "sn21.3",
+      "target": "ud4.5",
       "rank": 8
     },
     {
       "source": "Riese",
-      "target": "sn8.8",
+      "target": "sn21.3",
       "rank": 9
     },
     {
       "source": "Riese",
-      "target": "ud4.4",
+      "target": "sn8.8",
       "rank": 10
     },
     {
       "source": "Riese",
-      "target": "sn22.76",
+      "target": "ud4.4",
       "rank": 11
     },
     {
       "source": "Riese",
-      "target": "thag16.6",
+      "target": "sn22.76",
       "rank": 12
     },
     {
       "source": "Riese",
-      "target": "mn24",
+      "target": "thag16.6",
       "rank": 13
     },
     {
       "source": "Riese",
-      "target": "snp5.19",
+      "target": "mn24",
       "rank": 14
     },
     {
       "source": "Riese",
-      "target": "mn5",
+      "target": "snp5.19",
       "rank": 15
     },
     {
       "source": "Riese",
-      "target": "dn20",
+      "target": "mn5",
       "rank": 16
     },
     {
       "source": "Riese",
-      "target": "mn56",
+      "target": "dn20",
       "rank": 17
+    },
+    {
+      "source": "Riese",
+      "target": "mn56",
+      "rank": 18
     },
     {
       "source": "Roben aus Hanf",
@@ -45490,13 +45684,18 @@
     },
     {
       "source": "was einen Anfang hat",
-      "target": "dn3",
+      "target": "mn91",
       "rank": 14
     },
     {
       "source": "was einen Anfang hat",
-      "target": "dn21",
+      "target": "dn3",
       "rank": 15
+    },
+    {
+      "source": "was einen Anfang hat",
+      "target": "dn21",
+      "rank": 16
     },
     {
       "source": "was ein Verstoß ist",
