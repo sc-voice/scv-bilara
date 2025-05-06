@@ -113,7 +113,7 @@
     {
       "id": "alas",
       "group": "Examples",
-      "links": 16
+      "links": 11
     },
     {
       "id": "a peril for",
@@ -5159,7 +5159,7 @@
     {
       "id": "sn6.4",
       "group": "sn",
-      "rank": 5,
+      "rank": 2,
       "links": 3
     },
     {
@@ -5196,7 +5196,7 @@
       "id": "mn49",
       "group": "mn",
       "rank": 2,
-      "links": 7
+      "links": 6
     },
     {
       "id": "snp3.4",
@@ -5526,19 +5526,19 @@
       "id": "sn6.1",
       "group": "sn",
       "rank": 1,
-      "links": 10
+      "links": 9
     },
     {
       "id": "mn26",
       "group": "mn",
       "rank": 1,
-      "links": 20
+      "links": 19
     },
     {
       "id": "mn85",
       "group": "mn",
       "rank": 2,
-      "links": 28
+      "links": 27
     },
     {
       "id": "mn86",
@@ -5907,15 +5907,9 @@
       "links": 11
     },
     {
-      "id": "sn21.2",
-      "group": "sn",
-      "rank": 2,
-      "links": 2
-    },
-    {
       "id": "snp4.6",
       "group": "snp",
-      "rank": 3,
+      "rank": 1,
       "links": 2
     },
     {
@@ -16767,6 +16761,12 @@
       "links": 1
     },
     {
+      "id": "sn21.2",
+      "group": "sn",
+      "rank": 17,
+      "links": 1
+    },
+    {
       "id": "sn35.69",
       "group": "sn",
       "rank": 1,
@@ -20055,83 +20055,58 @@
     },
     {
       "source": "alas",
-      "target": "dn14",
+      "target": "snp4.6",
       "rank": 1
     },
     {
       "source": "alas",
-      "target": "sn21.2",
+      "target": "sn6.4",
       "rank": 2
     },
     {
       "source": "alas",
-      "target": "snp4.6",
+      "target": "sn12.10",
       "rank": 3
     },
     {
       "source": "alas",
-      "target": "sn6.1",
+      "target": "sn12.65",
       "rank": 4
     },
     {
       "source": "alas",
-      "target": "sn6.4",
+      "target": "thag16.4",
       "rank": 5
     },
     {
       "source": "alas",
-      "target": "sn12.10",
+      "target": "sn4.25",
       "rank": 6
     },
     {
       "source": "alas",
-      "target": "sn12.65",
+      "target": "sn12.4",
       "rank": 7
     },
     {
       "source": "alas",
-      "target": "thag16.4",
+      "target": "snp3.10",
       "rank": 8
     },
     {
       "source": "alas",
-      "target": "sn4.25",
+      "target": "mn129",
       "rank": 9
     },
     {
       "source": "alas",
-      "target": "sn12.4",
+      "target": "mn82",
       "rank": 10
     },
     {
       "source": "alas",
-      "target": "snp3.10",
+      "target": "dn14",
       "rank": 11
-    },
-    {
-      "source": "alas",
-      "target": "mn49",
-      "rank": 12
-    },
-    {
-      "source": "alas",
-      "target": "mn26",
-      "rank": 13
-    },
-    {
-      "source": "alas",
-      "target": "mn129",
-      "rank": 14
-    },
-    {
-      "source": "alas",
-      "target": "mn82",
-      "rank": 15
-    },
-    {
-      "source": "alas",
-      "target": "mn85",
-      "rank": 16
     },
     {
       "source": "a peril for",
