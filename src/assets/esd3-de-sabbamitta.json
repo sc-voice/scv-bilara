@@ -263,7 +263,7 @@
     {
       "id": "äußere.* Sinnesfelder",
       "group": "Examples",
-      "links": 13
+      "links": 14
     },
     {
       "id": "äußerlich gefesselt",
@@ -1228,7 +1228,7 @@
     {
       "id": "Element de",
       "group": "Examples",
-      "links": 29
+      "links": 30
     },
     {
       "id": "Ende der Welt",
@@ -1818,7 +1818,7 @@
     {
       "id": "grausam",
       "group": "Examples",
-      "links": 54
+      "links": 55
     },
     {
       "id": "grenzenlose Versenkung des Herzens",
@@ -2913,7 +2913,7 @@
     {
       "id": "Rad-drehend.* Herrscher",
       "group": "Examples",
-      "links": 39
+      "links": 40
     },
     {
       "id": "rascher Einsicht",
@@ -3078,7 +3078,7 @@
     {
       "id": "schwer zu finden",
       "group": "Examples",
-      "links": 23
+      "links": 22
     },
     {
       "id": "schwer zu sehen",
@@ -3098,7 +3098,7 @@
     {
       "id": "sechs Elemente",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "sechs Gegenstände zur Besinnung",
@@ -3258,7 +3258,7 @@
     {
       "id": "Spaltung des Saṅgha herbei",
       "group": "Examples",
-      "links": 7
+      "links": 8
     },
     {
       "id": "Speisen genießen, die aus Vertrauen",
@@ -3483,7 +3483,7 @@
     {
       "id": "unbedingt",
       "group": "Examples",
-      "links": 24
+      "links": 25
     },
     {
       "id": "unbeschwert sein",
@@ -3543,7 +3543,7 @@
     {
       "id": "Unwissenheit schwindet",
       "group": "Examples",
-      "links": 28
+      "links": 29
     },
     {
       "id": "unwürdige Gespräche",
@@ -4043,7 +4043,7 @@
     {
       "id": "wenn dieses besteht, ist jenes",
       "group": "Examples",
-      "links": 14
+      "links": 15
     },
     {
       "id": "wenn die Weisheit verschwindet",
@@ -4068,7 +4068,7 @@
     {
       "id": "wenn Kontakt aufhört",
       "group": "Examples",
-      "links": 22
+      "links": 23
     },
     {
       "id": "wenn sinnliches Begehren",
@@ -5764,7 +5764,7 @@
       "id": "thag16.6",
       "group": "thag",
       "rank": 6,
-      "links": 9
+      "links": 8
     },
     {
       "id": "mn91",
@@ -6083,6 +6083,12 @@
       "group": "sn",
       "rank": 6,
       "links": 1
+    },
+    {
+      "id": "mn115",
+      "group": "mn",
+      "rank": 1,
+      "links": 10
     },
     {
       "id": "sn35.16",
@@ -9225,7 +9231,7 @@
     {
       "id": "an6.13",
       "group": "an",
-      "rank": 3,
+      "rank": 4,
       "links": 5
     },
     {
@@ -15525,37 +15531,37 @@
     {
       "id": "an4.247",
       "group": "an",
-      "rank": 18,
+      "rank": 19,
       "links": 1
     },
     {
       "id": "sn46.45",
       "group": "sn",
-      "rank": 19,
+      "rank": 20,
       "links": 1
     },
     {
       "id": "sn46.46",
       "group": "sn",
-      "rank": 20,
+      "rank": 21,
       "links": 1
     },
     {
       "id": "sn46.47",
       "group": "sn",
-      "rank": 21,
+      "rank": 22,
       "links": 1
     },
     {
       "id": "sn46.49",
       "group": "sn",
-      "rank": 22,
+      "rank": 23,
       "links": 1
     },
     {
       "id": "sn46.44",
       "group": "sn",
-      "rank": 23,
+      "rank": 24,
       "links": 1
     },
     {
@@ -15567,25 +15573,25 @@
     {
       "id": "sn46.43",
       "group": "sn",
-      "rank": 25,
+      "rank": 26,
       "links": 1
     },
     {
       "id": "sn46.41",
       "group": "sn",
-      "rank": 26,
+      "rank": 27,
       "links": 1
     },
     {
       "id": "sn46.50",
       "group": "sn",
-      "rank": 27,
+      "rank": 28,
       "links": 1
     },
     {
       "id": "kp8",
       "group": "kp",
-      "rank": 34,
+      "rank": 35,
       "links": 2
     },
     {
@@ -15891,25 +15897,25 @@
     {
       "id": "thag2.9",
       "group": "thag",
-      "rank": 13,
+      "rank": 12,
       "links": 1
     },
     {
       "id": "thag2.47",
       "group": "thag",
-      "rank": 14,
+      "rank": 13,
       "links": 1
     },
     {
       "id": "an4.85",
       "group": "an",
-      "rank": 16,
+      "rank": 15,
       "links": 1
     },
     {
       "id": "sn1.49",
       "group": "sn",
-      "rank": 17,
+      "rank": 16,
       "links": 1
     },
     {
@@ -16185,25 +16191,25 @@
     {
       "id": "an5.129",
       "group": "an",
-      "rank": 3,
+      "rank": 4,
       "links": 1
     },
     {
       "id": "an6.94",
       "group": "an",
-      "rank": 4,
+      "rank": 5,
       "links": 1
     },
     {
       "id": "an4.243",
       "group": "an",
-      "rank": 6,
+      "rank": 7,
       "links": 1
     },
     {
       "id": "sn35.235",
       "group": "sn",
-      "rank": 7,
+      "rank": 8,
       "links": 1
     },
     {
@@ -19949,38 +19955,43 @@
     },
     {
       "source": "äußere.* Sinnesfelder",
-      "target": "sn35.16",
+      "target": "mn115",
       "rank": 7
     },
     {
       "source": "äußere.* Sinnesfelder",
-      "target": "sn35.241",
+      "target": "sn35.16",
       "rank": 8
     },
     {
       "source": "äußere.* Sinnesfelder",
-      "target": "an6.61",
+      "target": "sn35.241",
       "rank": 9
     },
     {
       "source": "äußere.* Sinnesfelder",
-      "target": "sn35.238",
+      "target": "an6.61",
       "rank": 10
     },
     {
       "source": "äußere.* Sinnesfelder",
-      "target": "an10.60",
+      "target": "sn35.238",
       "rank": 11
     },
     {
       "source": "äußere.* Sinnesfelder",
-      "target": "dn28",
+      "target": "an10.60",
       "rank": 12
     },
     {
       "source": "äußere.* Sinnesfelder",
-      "target": "dn33",
+      "target": "dn28",
       "rank": 13
+    },
+    {
+      "source": "äußere.* Sinnesfelder",
+      "target": "dn33",
+      "rank": 14
     },
     {
       "source": "äußerlich gefesselt",
@@ -26719,8 +26730,13 @@
     },
     {
       "source": "Element de",
-      "target": "dn29",
+      "target": "mn115",
       "rank": 29
+    },
+    {
+      "source": "Element de",
+      "target": "dn29",
+      "rank": 30
     },
     {
       "source": "Ende der Welt",
@@ -31284,28 +31300,33 @@
     },
     {
       "source": "grausam",
-      "target": "mn122",
+      "target": "mn115",
       "rank": 50
     },
     {
       "source": "grausam",
-      "target": "mn86",
+      "target": "mn122",
       "rank": 51
     },
     {
       "source": "grausam",
-      "target": "dhp383-423",
+      "target": "mn86",
       "rank": 52
     },
     {
       "source": "grausam",
-      "target": "dn17",
+      "target": "dhp383-423",
       "rank": 53
     },
     {
       "source": "grausam",
-      "target": "dn32",
+      "target": "dn17",
       "rank": 54
+    },
+    {
+      "source": "grausam",
+      "target": "dn32",
+      "rank": 55
     },
     {
       "source": "grenzenlose Versenkung des Herzens",
@@ -38694,153 +38715,158 @@
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "dn17",
+      "target": "mn115",
       "rank": 10
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "an5.131",
+      "target": "dn17",
       "rank": 11
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "an5.132",
+      "target": "an5.131",
       "rank": 12
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "an5.133",
+      "target": "an5.132",
       "rank": 13
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn55.1",
+      "target": "an5.133",
       "rank": 14
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn8.7",
+      "target": "sn55.1",
       "rank": 15
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "an7.62",
+      "target": "sn8.7",
       "rank": 16
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "dn14",
+      "target": "an7.62",
       "rank": 17
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "an4.247",
+      "target": "dn14",
       "rank": 18
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn46.45",
+      "target": "an4.247",
       "rank": 19
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn46.46",
+      "target": "sn46.45",
       "rank": 20
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn46.47",
+      "target": "sn46.46",
       "rank": 21
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn46.49",
+      "target": "sn46.47",
       "rank": 22
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn46.44",
+      "target": "sn46.49",
       "rank": 23
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn46.48",
+      "target": "sn46.44",
       "rank": 24
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn46.43",
+      "target": "sn46.48",
       "rank": 25
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn46.41",
+      "target": "sn46.43",
       "rank": 26
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn46.50",
+      "target": "sn46.41",
       "rank": 27
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn45.141-145",
+      "target": "sn46.50",
       "rank": 28
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "an10.15",
+      "target": "sn45.141-145",
       "rank": 29
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "an6.53",
+      "target": "an10.15",
       "rank": 30
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "iti22",
+      "target": "an6.53",
       "rank": 31
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "cp4",
+      "target": "iti22",
       "rank": 32
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn22.102",
+      "target": "cp4",
       "rank": 33
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "kp8",
+      "target": "sn22.102",
       "rank": 34
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "an7.66",
+      "target": "kp8",
       "rank": 35
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "thag16.6",
+      "target": "an7.66",
       "rank": 36
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "mn91",
+      "target": "thag16.6",
       "rank": 37
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "thag21.1",
+      "target": "mn91",
       "rank": 38
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "dn3",
+      "target": "thag21.1",
       "rank": 39
+    },
+    {
+      "source": "Rad-drehend.* Herrscher",
+      "target": "dn3",
+      "rank": 40
     },
     {
       "source": "rascher Einsicht",
@@ -39859,63 +39885,58 @@
     },
     {
       "source": "schwer zu finden",
-      "target": "thag16.6",
+      "target": "thag2.9",
       "rank": 12
     },
     {
       "source": "schwer zu finden",
-      "target": "thag2.9",
+      "target": "thag2.47",
       "rank": 13
     },
     {
       "source": "schwer zu finden",
-      "target": "thag2.47",
+      "target": "sn2.6",
       "rank": 14
     },
     {
       "source": "schwer zu finden",
-      "target": "sn2.6",
+      "target": "an4.85",
       "rank": 15
     },
     {
       "source": "schwer zu finden",
-      "target": "an4.85",
+      "target": "sn1.49",
       "rank": 16
     },
     {
       "source": "schwer zu finden",
-      "target": "sn1.49",
+      "target": "an3.13",
       "rank": 17
     },
     {
       "source": "schwer zu finden",
-      "target": "an3.13",
+      "target": "an6.57",
       "rank": 18
     },
     {
       "source": "schwer zu finden",
-      "target": "an6.57",
+      "target": "an8.29",
       "rank": 19
     },
     {
       "source": "schwer zu finden",
-      "target": "an8.29",
+      "target": "an3.63",
       "rank": 20
     },
     {
       "source": "schwer zu finden",
-      "target": "an3.63",
+      "target": "thig16.1",
       "rank": 21
     },
     {
       "source": "schwer zu finden",
-      "target": "thig16.1",
-      "rank": 22
-    },
-    {
-      "source": "schwer zu finden",
       "target": "dn16",
-      "rank": 23
+      "rank": 22
     },
     {
       "source": "schwer zu sehen",
@@ -40064,33 +40085,38 @@
     },
     {
       "source": "sechs Elemente",
-      "target": "mn140",
+      "target": "mn115",
       "rank": 1
     },
     {
       "source": "sechs Elemente",
-      "target": "an3.61",
+      "target": "mn140",
       "rank": 2
     },
     {
       "source": "sechs Elemente",
-      "target": "an6.13",
+      "target": "an3.61",
       "rank": 3
     },
     {
       "source": "sechs Elemente",
-      "target": "dn33",
+      "target": "an6.13",
       "rank": 4
     },
     {
       "source": "sechs Elemente",
-      "target": "an10.28",
+      "target": "dn33",
       "rank": 5
     },
     {
       "source": "sechs Elemente",
-      "target": "dn34",
+      "target": "an10.28",
       "rank": 6
+    },
+    {
+      "source": "sechs Elemente",
+      "target": "dn34",
+      "rank": 7
     },
     {
       "source": "sechs Gegenstände zur Besinnung",
@@ -40904,28 +40930,33 @@
     },
     {
       "source": "Spaltung des Saṅgha herbei",
-      "target": "an5.129",
+      "target": "mn115",
       "rank": 3
     },
     {
       "source": "Spaltung des Saṅgha herbei",
-      "target": "an6.94",
+      "target": "an5.129",
       "rank": 4
     },
     {
       "source": "Spaltung des Saṅgha herbei",
-      "target": "an4.236",
+      "target": "an6.94",
       "rank": 5
     },
     {
       "source": "Spaltung des Saṅgha herbei",
-      "target": "an4.243",
+      "target": "an4.236",
       "rank": 6
     },
     {
       "source": "Spaltung des Saṅgha herbei",
-      "target": "sn35.235",
+      "target": "an4.243",
       "rank": 7
+    },
+    {
+      "source": "Spaltung des Saṅgha herbei",
+      "target": "sn35.235",
+      "rank": 8
     },
     {
       "source": "Speisen genießen, die aus Vertrauen",
@@ -42559,8 +42590,13 @@
     },
     {
       "source": "unbedingt",
-      "target": "dn34",
+      "target": "mn115",
       "rank": 24
+    },
+    {
+      "source": "unbedingt",
+      "target": "dn34",
+      "rank": 25
     },
     {
       "source": "unbeschwert sein",
@@ -43039,13 +43075,18 @@
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "mn43",
+      "target": "mn115",
       "rank": 27
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "mn38",
+      "target": "mn43",
       "rank": 28
+    },
+    {
+      "source": "Unwissenheit schwindet",
+      "target": "mn38",
+      "rank": 29
     },
     {
       "source": "unwürdige Gespräche",
@@ -46304,8 +46345,13 @@
     },
     {
       "source": "wenn dieses besteht, ist jenes",
-      "target": "mn38",
+      "target": "mn115",
       "rank": 14
+    },
+    {
+      "source": "wenn dieses besteht, ist jenes",
+      "target": "mn38",
+      "rank": 15
     },
     {
       "source": "wenn die Weisheit verschwindet",
@@ -46424,13 +46470,18 @@
     },
     {
       "source": "wenn Kontakt aufhört",
-      "target": "sn12.70",
+      "target": "mn115",
       "rank": 21
     },
     {
       "source": "wenn Kontakt aufhört",
-      "target": "mn9",
+      "target": "sn12.70",
       "rank": 22
+    },
+    {
+      "source": "wenn Kontakt aufhört",
+      "target": "mn9",
+      "rank": 23
     },
     {
       "source": "wenn sinnliches Begehren",
