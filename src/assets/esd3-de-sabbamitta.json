@@ -198,7 +198,7 @@
     {
       "id": "aufgegeben werden m[uü]ss",
       "group": "Examples",
-      "links": 8
+      "links": 10
     },
     {
       "id": "aufgrund bloßen Vertrauens",
@@ -633,7 +633,7 @@
     {
       "id": "das unübertreffliche Rad des Dhamma",
       "group": "Examples",
-      "links": 13
+      "links": 12
     },
     {
       "id": "das vollständige Verstehen aller Arten des Ergreifens",
@@ -968,7 +968,7 @@
     {
       "id": "drei Veden",
       "group": "Examples",
-      "links": 12
+      "links": 14
     },
     {
       "id": "drei Vorgänge",
@@ -1278,7 +1278,7 @@
     {
       "id": "erkannt werden",
       "group": "Examples",
-      "links": 7
+      "links": 9
     },
     {
       "id": "Erkenntnis der sechs Sinnesfelder",
@@ -1433,7 +1433,7 @@
     {
       "id": "Filz",
       "group": "Examples",
-      "links": 16
+      "links": 18
     },
     {
       "id": "Fingerschnippen",
@@ -1673,7 +1673,7 @@
     {
       "id": "gerechter und prinzipientreuer König",
       "group": "Examples",
-      "links": 15
+      "links": 17
     },
     {
       "id": "Gerstengranne",
@@ -2273,7 +2273,7 @@
     {
       "id": "Kennzeichen",
       "group": "Examples",
-      "links": 25
+      "links": 27
     },
     {
       "id": "Keuschen und die Unkeuschen",
@@ -2513,7 +2513,7 @@
     {
       "id": "Manifestation",
       "group": "Examples",
-      "links": 27
+      "links": 29
     },
     {
       "id": "Maßhalten beim Essen",
@@ -2913,7 +2913,7 @@
     {
       "id": "Rad-drehend.* Herrscher",
       "group": "Examples",
-      "links": 40
+      "links": 42
     },
     {
       "id": "rascher Einsicht",
@@ -2948,7 +2948,7 @@
     {
       "id": "Riese",
       "group": "Examples",
-      "links": 18
+      "links": 20
     },
     {
       "id": "Roben aus Hanf",
@@ -2958,7 +2958,7 @@
     {
       "id": "Rosenapfel",
       "group": "Examples",
-      "links": 24
+      "links": 26
     },
     {
       "id": "roten Kapok-Wald",
@@ -3078,7 +3078,7 @@
     {
       "id": "schwer zu finden",
       "group": "Examples",
-      "links": 22
+      "links": 24
     },
     {
       "id": "schwer zu sehen",
@@ -5764,7 +5764,19 @@
       "id": "thag16.6",
       "group": "thag",
       "rank": 6,
-      "links": 8
+      "links": 7
+    },
+    {
+      "id": "mn92",
+      "group": "mn",
+      "rank": 7,
+      "links": 11
+    },
+    {
+      "id": "snp3.7",
+      "group": "snp",
+      "rank": 8,
+      "links": 11
     },
     {
       "id": "mn91",
@@ -13971,13 +13983,13 @@
     {
       "id": "thag1.106",
       "group": "thag",
-      "rank": 14,
+      "rank": 16,
       "links": 1
     },
     {
       "id": "an3.2",
       "group": "an",
-      "rank": 15,
+      "rank": 17,
       "links": 1
     },
     {
@@ -13989,7 +14001,7 @@
     {
       "id": "cp11",
       "group": "cp",
-      "rank": 17,
+      "rank": 19,
       "links": 1
     },
     {
@@ -14745,31 +14757,31 @@
     {
       "id": "sn26.5",
       "group": "sn",
-      "rank": 18,
+      "rank": 20,
       "links": 1
     },
     {
       "id": "sn26.6",
       "group": "sn",
-      "rank": 19,
+      "rank": 21,
       "links": 1
     },
     {
       "id": "sn26.7",
       "group": "sn",
-      "rank": 20,
+      "rank": 22,
       "links": 1
     },
     {
       "id": "sn26.8",
       "group": "sn",
-      "rank": 21,
+      "rank": 23,
       "links": 1
     },
     {
       "id": "iti68",
       "group": "iti",
-      "rank": 22,
+      "rank": 24,
       "links": 1
     },
     {
@@ -15531,37 +15543,37 @@
     {
       "id": "an4.247",
       "group": "an",
-      "rank": 19,
+      "rank": 21,
       "links": 1
     },
     {
       "id": "sn46.45",
       "group": "sn",
-      "rank": 20,
+      "rank": 22,
       "links": 1
     },
     {
       "id": "sn46.46",
       "group": "sn",
-      "rank": 21,
+      "rank": 23,
       "links": 1
     },
     {
       "id": "sn46.47",
       "group": "sn",
-      "rank": 22,
+      "rank": 24,
       "links": 1
     },
     {
       "id": "sn46.49",
       "group": "sn",
-      "rank": 23,
+      "rank": 25,
       "links": 1
     },
     {
       "id": "sn46.44",
       "group": "sn",
-      "rank": 24,
+      "rank": 26,
       "links": 1
     },
     {
@@ -15573,25 +15585,25 @@
     {
       "id": "sn46.43",
       "group": "sn",
-      "rank": 26,
+      "rank": 28,
       "links": 1
     },
     {
       "id": "sn46.41",
       "group": "sn",
-      "rank": 27,
+      "rank": 29,
       "links": 1
     },
     {
       "id": "sn46.50",
       "group": "sn",
-      "rank": 28,
+      "rank": 30,
       "links": 1
     },
     {
       "id": "kp8",
       "group": "kp",
-      "rank": 35,
+      "rank": 37,
       "links": 2
     },
     {
@@ -19590,8 +19602,18 @@
     },
     {
       "source": "aufgegeben werden m[uü]ss",
-      "target": "mn91",
+      "target": "mn92",
       "rank": 8
+    },
+    {
+      "source": "aufgegeben werden m[uü]ss",
+      "target": "snp3.7",
+      "rank": 9
+    },
+    {
+      "source": "aufgegeben werden m[uü]ss",
+      "target": "mn91",
+      "rank": 10
     },
     {
       "source": "aufgrund bloßen Vertrauens",
@@ -22879,11 +22901,6 @@
       "rank": 12
     },
     {
-      "source": "das unübertreffliche Rad des Dhamma",
-      "target": "thag16.6",
-      "rank": 13
-    },
-    {
       "source": "das vollständige Verstehen aller Arten des Ergreifens",
       "target": "mn11",
       "rank": 1
@@ -24795,13 +24812,23 @@
     },
     {
       "source": "drei Veden",
-      "target": "mn93",
+      "target": "mn92",
       "rank": 11
     },
     {
       "source": "drei Veden",
-      "target": "thag20.1",
+      "target": "snp3.7",
       "rank": 12
+    },
+    {
+      "source": "drei Veden",
+      "target": "mn93",
+      "rank": 13
+    },
+    {
+      "source": "drei Veden",
+      "target": "thag20.1",
+      "rank": 14
     },
     {
       "source": "drei Vorgänge",
@@ -27320,8 +27347,18 @@
     },
     {
       "source": "erkannt werden",
-      "target": "mn91",
+      "target": "mn92",
       "rank": 7
+    },
+    {
+      "source": "erkannt werden",
+      "target": "snp3.7",
+      "rank": 8
+    },
+    {
+      "source": "erkannt werden",
+      "target": "mn91",
+      "rank": 9
     },
     {
       "source": "Erkenntnis der sechs Sinnesfelder",
@@ -28595,13 +28632,23 @@
     },
     {
       "source": "Filz",
-      "target": "snp3.11",
+      "target": "mn92",
       "rank": 15
     },
     {
       "source": "Filz",
-      "target": "mn38",
+      "target": "snp3.7",
       "rank": 16
+    },
+    {
+      "source": "Filz",
+      "target": "snp3.11",
+      "rank": 17
+    },
+    {
+      "source": "Filz",
+      "target": "mn38",
+      "rank": 18
     },
     {
       "source": "Fingerschnippen",
@@ -30165,28 +30212,38 @@
     },
     {
       "source": "gerechter und prinzipientreuer König",
-      "target": "dn18",
+      "target": "mn92",
       "rank": 11
     },
     {
       "source": "gerechter und prinzipientreuer König",
-      "target": "mn91",
+      "target": "snp3.7",
       "rank": 12
     },
     {
       "source": "gerechter und prinzipientreuer König",
-      "target": "dn3",
+      "target": "dn18",
       "rank": 13
     },
     {
       "source": "gerechter und prinzipientreuer König",
-      "target": "dn17",
+      "target": "mn91",
       "rank": 14
     },
     {
       "source": "gerechter und prinzipientreuer König",
-      "target": "dn16",
+      "target": "dn3",
       "rank": 15
+    },
+    {
+      "source": "gerechter und prinzipientreuer König",
+      "target": "dn17",
+      "rank": 16
+    },
+    {
+      "source": "gerechter und prinzipientreuer König",
+      "target": "dn16",
+      "rank": 17
     },
     {
       "source": "Gerstengranne",
@@ -34310,98 +34367,108 @@
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.3",
+      "target": "mn92",
       "rank": 7
     },
     {
       "source": "Kennzeichen",
-      "target": "dn4",
+      "target": "snp3.7",
       "rank": 8
     },
     {
       "source": "Kennzeichen",
-      "target": "dn14",
+      "target": "an3.3",
       "rank": 9
     },
     {
       "source": "Kennzeichen",
-      "target": "mn27",
+      "target": "dn4",
       "rank": 10
     },
     {
       "source": "Kennzeichen",
-      "target": "dn5",
+      "target": "dn14",
       "rank": 11
     },
     {
       "source": "Kennzeichen",
-      "target": "dn1",
+      "target": "mn27",
       "rank": 12
     },
     {
       "source": "Kennzeichen",
-      "target": "dn2",
+      "target": "dn5",
       "rank": 13
     },
     {
       "source": "Kennzeichen",
-      "target": "thag1.106",
+      "target": "dn1",
       "rank": 14
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.2",
+      "target": "dn2",
       "rank": 15
     },
     {
       "source": "Kennzeichen",
-      "target": "an11.22-29",
+      "target": "thag1.106",
       "rank": 16
     },
     {
       "source": "Kennzeichen",
-      "target": "cp11",
+      "target": "an3.2",
       "rank": 17
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.59",
+      "target": "an11.22-29",
       "rank": 18
     },
     {
       "source": "Kennzeichen",
-      "target": "sn22.59",
+      "target": "cp11",
       "rank": 19
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.58",
+      "target": "an3.59",
       "rank": 20
     },
     {
       "source": "Kennzeichen",
-      "target": "thag16.6",
+      "target": "sn22.59",
       "rank": 21
     },
     {
       "source": "Kennzeichen",
-      "target": "an5.192",
+      "target": "an3.58",
       "rank": 22
     },
     {
       "source": "Kennzeichen",
-      "target": "thig14.1",
+      "target": "thag16.6",
       "rank": 23
     },
     {
       "source": "Kennzeichen",
-      "target": "snp3.11",
+      "target": "an5.192",
       "rank": 24
     },
     {
       "source": "Kennzeichen",
-      "target": "mn93",
+      "target": "thig14.1",
       "rank": 25
+    },
+    {
+      "source": "Kennzeichen",
+      "target": "snp3.11",
+      "rank": 26
+    },
+    {
+      "source": "Kennzeichen",
+      "target": "mn93",
+      "rank": 27
     },
     {
       "source": "Keuschen und die Unkeuschen",
@@ -36180,58 +36247,68 @@
     },
     {
       "source": "Manifestation",
-      "target": "mn133",
+      "target": "mn92",
       "rank": 17
     },
     {
       "source": "Manifestation",
-      "target": "sn26.5",
+      "target": "snp3.7",
       "rank": 18
     },
     {
       "source": "Manifestation",
-      "target": "sn26.6",
+      "target": "mn133",
       "rank": 19
     },
     {
       "source": "Manifestation",
-      "target": "sn26.7",
+      "target": "sn26.5",
       "rank": 20
     },
     {
       "source": "Manifestation",
-      "target": "sn26.8",
+      "target": "sn26.6",
       "rank": 21
     },
     {
       "source": "Manifestation",
-      "target": "iti68",
+      "target": "sn26.7",
       "rank": 22
     },
     {
       "source": "Manifestation",
-      "target": "sn12.2",
+      "target": "sn26.8",
       "rank": 23
     },
     {
       "source": "Manifestation",
-      "target": "mn141",
+      "target": "iti68",
       "rank": 24
     },
     {
       "source": "Manifestation",
-      "target": "mn9",
+      "target": "sn12.2",
       "rank": 25
     },
     {
       "source": "Manifestation",
-      "target": "dn27",
+      "target": "mn141",
       "rank": 26
     },
     {
       "source": "Manifestation",
-      "target": "dn22",
+      "target": "mn9",
       "rank": 27
+    },
+    {
+      "source": "Manifestation",
+      "target": "dn27",
+      "rank": 28
+    },
+    {
+      "source": "Manifestation",
+      "target": "dn22",
+      "rank": 29
     },
     {
       "source": "Maßhalten beim Essen",
@@ -38755,118 +38832,128 @@
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "dn14",
+      "target": "mn92",
       "rank": 18
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "an4.247",
+      "target": "snp3.7",
       "rank": 19
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn46.45",
+      "target": "dn14",
       "rank": 20
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn46.46",
+      "target": "an4.247",
       "rank": 21
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn46.47",
+      "target": "sn46.45",
       "rank": 22
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn46.49",
+      "target": "sn46.46",
       "rank": 23
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn46.44",
+      "target": "sn46.47",
       "rank": 24
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn46.48",
+      "target": "sn46.49",
       "rank": 25
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn46.43",
+      "target": "sn46.44",
       "rank": 26
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn46.41",
+      "target": "sn46.48",
       "rank": 27
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn46.50",
+      "target": "sn46.43",
       "rank": 28
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn45.141-145",
+      "target": "sn46.41",
       "rank": 29
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "an10.15",
+      "target": "sn46.50",
       "rank": 30
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "an6.53",
+      "target": "sn45.141-145",
       "rank": 31
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "iti22",
+      "target": "an10.15",
       "rank": 32
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "cp4",
+      "target": "an6.53",
       "rank": 33
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "sn22.102",
+      "target": "iti22",
       "rank": 34
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "kp8",
+      "target": "cp4",
       "rank": 35
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "an7.66",
+      "target": "sn22.102",
       "rank": 36
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "thag16.6",
+      "target": "kp8",
       "rank": 37
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "mn91",
+      "target": "an7.66",
       "rank": 38
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "thag21.1",
+      "target": "thag16.6",
       "rank": 39
     },
     {
       "source": "Rad-drehend.* Herrscher",
-      "target": "dn3",
+      "target": "mn91",
       "rank": 40
+    },
+    {
+      "source": "Rad-drehend.* Herrscher",
+      "target": "thag21.1",
+      "rank": 41
+    },
+    {
+      "source": "Rad-drehend.* Herrscher",
+      "target": "dn3",
+      "rank": 42
     },
     {
       "source": "rascher Einsicht",
@@ -39095,13 +39182,23 @@
     },
     {
       "source": "Riese",
-      "target": "dn20",
+      "target": "mn92",
       "rank": 17
     },
     {
       "source": "Riese",
-      "target": "mn56",
+      "target": "snp3.7",
       "rank": 18
+    },
+    {
+      "source": "Riese",
+      "target": "dn20",
+      "rank": 19
+    },
+    {
+      "source": "Riese",
+      "target": "mn56",
+      "rank": 20
     },
     {
       "source": "Roben aus Hanf",
@@ -39240,28 +39337,38 @@
     },
     {
       "source": "Rosenapfel",
-      "target": "mn36",
+      "target": "mn92",
       "rank": 20
     },
     {
       "source": "Rosenapfel",
-      "target": "thig16.1",
+      "target": "snp3.7",
       "rank": 21
     },
     {
       "source": "Rosenapfel",
-      "target": "mn85",
+      "target": "mn36",
       "rank": 22
     },
     {
       "source": "Rosenapfel",
-      "target": "dn14",
+      "target": "thig16.1",
       "rank": 23
     },
     {
       "source": "Rosenapfel",
-      "target": "dn30",
+      "target": "mn85",
       "rank": 24
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "dn14",
+      "rank": 25
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "dn30",
+      "rank": 26
     },
     {
       "source": "roten Kapok-Wald",
@@ -39930,13 +40037,23 @@
     },
     {
       "source": "schwer zu finden",
-      "target": "thig16.1",
+      "target": "mn92",
       "rank": 21
     },
     {
       "source": "schwer zu finden",
-      "target": "dn16",
+      "target": "snp3.7",
       "rank": 22
+    },
+    {
+      "source": "schwer zu finden",
+      "target": "thig16.1",
+      "rank": 23
+    },
+    {
+      "source": "schwer zu finden",
+      "target": "dn16",
+      "rank": 24
     },
     {
       "source": "schwer zu sehen",
