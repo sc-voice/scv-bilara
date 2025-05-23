@@ -9548,10 +9548,12 @@
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja24": {
+		"translation/de/sabbamitta": "sutta/kn/ja",
 		"translation/en/sujato": "sutta/kn/ja",
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja25": {
+		"translation/de/sabbamitta": "sutta/kn/ja",
 		"translation/en/sujato": "sutta/kn/ja",
 		"root/pli/ms": "sutta/kn/ja"
 	},
@@ -18903,31 +18905,37 @@
 	"sn36.1": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.2": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.3": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.4": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.5": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.6": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"translation/es/maggatr": "sutta/sn/sn36",
 		"translation/lt/piyadassi": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
@@ -18935,127 +18943,152 @@
 	"sn36.7": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.8": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.9": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.10": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.11": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.12": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"translation/pl/hardao": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.13": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.14": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.15": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.16": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.17": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.18": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.19": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.20": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.21": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.22": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.23": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.24": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.25": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.26": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.27": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.28": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.29": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.30": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn36.31": {
 		"translation/de/sabbamitta": "sutta/sn/sn36",
 		"translation/en/sujato": "sutta/sn/sn36",
+		"translation/es/font": "sutta/sn/sn36",
 		"root/pli/ms": "sutta/sn/sn36"
 	},
 	"sn37.1": {

@@ -2283,7 +2283,7 @@
     {
       "id": "kleine.* Hütte",
       "group": "Examples",
-      "links": 13
+      "links": 2
     },
     {
       "id": "kleine Maß an Vertrauen und Zuneigung",
@@ -4768,7 +4768,7 @@
       "id": "thag20.1",
       "group": "thag",
       "rank": 7,
-      "links": 13
+      "links": 12
     },
     {
       "id": "dn17",
@@ -13630,7 +13630,7 @@
       "id": "thag1.1",
       "group": "thag",
       "rank": 3,
-      "links": 3
+      "links": 2
     },
     {
       "id": "sn55.38",
@@ -14023,63 +14023,9 @@
       "links": 1
     },
     {
-      "id": "thag5.3",
-      "group": "thag",
-      "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "thag1.56",
-      "group": "thag",
-      "rank": 3,
-      "links": 1
-    },
-    {
-      "id": "thag1.51",
-      "group": "thag",
-      "rank": 4,
-      "links": 1
-    },
-    {
-      "id": "thag1.52",
-      "group": "thag",
-      "rank": 5,
-      "links": 1
-    },
-    {
-      "id": "thag1.53",
-      "group": "thag",
-      "rank": 6,
-      "links": 1
-    },
-    {
-      "id": "thag1.54",
-      "group": "thag",
-      "rank": 7,
-      "links": 1
-    },
-    {
-      "id": "thag1.55",
-      "group": "thag",
-      "rank": 8,
-      "links": 1
-    },
-    {
-      "id": "thag1.58",
-      "group": "thag",
-      "rank": 9,
-      "links": 1
-    },
-    {
-      "id": "thag1.59",
-      "group": "thag",
-      "rank": 10,
-      "links": 1
-    },
-    {
       "id": "thag2.3",
       "group": "thag",
-      "rank": 11,
+      "rank": 2,
       "links": 2
     },
     {
@@ -34487,63 +34433,8 @@
     },
     {
       "source": "kleine.* Hütte",
-      "target": "thag5.3",
-      "rank": 2
-    },
-    {
-      "source": "kleine.* Hütte",
-      "target": "thag1.56",
-      "rank": 3
-    },
-    {
-      "source": "kleine.* Hütte",
-      "target": "thag1.51",
-      "rank": 4
-    },
-    {
-      "source": "kleine.* Hütte",
-      "target": "thag1.52",
-      "rank": 5
-    },
-    {
-      "source": "kleine.* Hütte",
-      "target": "thag1.53",
-      "rank": 6
-    },
-    {
-      "source": "kleine.* Hütte",
-      "target": "thag1.54",
-      "rank": 7
-    },
-    {
-      "source": "kleine.* Hütte",
-      "target": "thag1.55",
-      "rank": 8
-    },
-    {
-      "source": "kleine.* Hütte",
-      "target": "thag1.58",
-      "rank": 9
-    },
-    {
-      "source": "kleine.* Hütte",
-      "target": "thag1.59",
-      "rank": 10
-    },
-    {
-      "source": "kleine.* Hütte",
       "target": "thag2.3",
-      "rank": 11
-    },
-    {
-      "source": "kleine.* Hütte",
-      "target": "thag1.1",
-      "rank": 12
-    },
-    {
-      "source": "kleine.* Hütte",
-      "target": "thag20.1",
-      "rank": 13
+      "rank": 2
     },
     {
       "source": "kleine Maß an Vertrauen und Zuneigung",
