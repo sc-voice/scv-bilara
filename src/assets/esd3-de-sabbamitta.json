@@ -1253,7 +1253,7 @@
     {
       "id": "erbärmlich",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "Erde, Wasser, Feuer und Luft",
@@ -1338,7 +1338,7 @@
     {
       "id": "erschlagen",
       "group": "Examples",
-      "links": 16
+      "links": 17
     },
     {
       "id": "Anfangspunkt",
@@ -2273,7 +2273,7 @@
     {
       "id": "Kennzeichen",
       "group": "Examples",
-      "links": 27
+      "links": 28
     },
     {
       "id": "Keuschen und die Unkeuschen",
@@ -2353,7 +2353,7 @@
     {
       "id": "Krabbe",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "Kraft der Weisheit",
@@ -2963,7 +2963,7 @@
     {
       "id": "roten Kapok-Wald",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "rufe alle Mönche und Nonnen",
@@ -4153,7 +4153,7 @@
     {
       "id": "wieder und wieder",
       "group": "Examples",
-      "links": 33
+      "links": 36
     },
     {
       "id": "wie eine Kuh",
@@ -4403,12 +4403,12 @@
     {
       "id": "zwei Arten von",
       "group": "Examples",
-      "links": 6
+      "links": 9
     },
     {
       "id": "zwei Arten von Glück",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "zwei Menschen",
@@ -7359,7 +7359,7 @@
     {
       "id": "sn4.6",
       "group": "sn",
-      "rank": 3,
+      "rank": 4,
       "links": 5
     },
     {
@@ -7731,7 +7731,7 @@
     {
       "id": "an10.54",
       "group": "an",
-      "rank": 2,
+      "rank": 3,
       "links": 7
     },
     {
@@ -7803,7 +7803,7 @@
     {
       "id": "an2.118-129",
       "group": "an",
-      "rank": 3,
+      "rank": 1,
       "links": 3
     },
     {
@@ -7839,7 +7839,7 @@
     {
       "id": "mn74",
       "group": "mn",
-      "rank": 5,
+      "rank": 6,
       "links": 4
     },
     {
@@ -8086,7 +8086,7 @@
       "id": "an2.64-76",
       "group": "an",
       "rank": 1,
-      "links": 2
+      "links": 4
     },
     {
       "id": "sn45.2",
@@ -8098,7 +8098,7 @@
       "id": "sn3.18",
       "group": "sn",
       "rank": 1,
-      "links": 4
+      "links": 5
     },
     {
       "id": "sn47.6",
@@ -8169,7 +8169,7 @@
     {
       "id": "iti49",
       "group": "iti",
-      "rank": 4,
+      "rank": 7,
       "links": 3
     },
     {
@@ -10963,9 +10963,15 @@
       "links": 7
     },
     {
+      "id": "ja45",
+      "group": "ja",
+      "rank": 5,
+      "links": 1
+    },
+    {
       "id": "thig5.8",
       "group": "thig",
-      "rank": 5,
+      "rank": 6,
       "links": 3
     },
     {
@@ -11167,33 +11173,39 @@
       "links": 1
     },
     {
-      "id": "sn1.72",
-      "group": "sn",
+      "id": "ja44",
+      "group": "ja",
       "rank": 7,
       "links": 1
     },
     {
-      "id": "sn1.73",
+      "id": "sn1.72",
       "group": "sn",
       "rank": 8,
       "links": 1
     },
     {
-      "id": "sn1.78",
+      "id": "sn1.73",
       "group": "sn",
       "rank": 9,
       "links": 1
     },
     {
-      "id": "sn1.75",
+      "id": "sn1.78",
       "group": "sn",
       "rank": 10,
       "links": 1
     },
     {
+      "id": "sn1.75",
+      "group": "sn",
+      "rank": 11,
+      "links": 1
+    },
+    {
       "id": "sn1.79",
       "group": "sn",
-      "rank": 12,
+      "rank": 13,
       "links": 1
     },
     {
@@ -11205,19 +11217,19 @@
     {
       "id": "sn1.80",
       "group": "sn",
-      "rank": 14,
+      "rank": 15,
       "links": 1
     },
     {
       "id": "sn1.81",
       "group": "sn",
-      "rank": 15,
+      "rank": 16,
       "links": 1
     },
     {
       "id": "sn1.76",
       "group": "sn",
-      "rank": 16,
+      "rank": 17,
       "links": 1
     },
     {
@@ -13987,9 +13999,15 @@
       "links": 1
     },
     {
+      "id": "ja30",
+      "group": "ja",
+      "rank": 17,
+      "links": 1
+    },
+    {
       "id": "an3.2",
       "group": "an",
-      "rank": 17,
+      "rank": 18,
       "links": 1
     },
     {
@@ -14001,7 +14019,7 @@
     {
       "id": "cp11",
       "group": "cp",
-      "rank": 19,
+      "rank": 20,
       "links": 1
     },
     {
@@ -14279,6 +14297,12 @@
       "group": "an",
       "rank": 3,
       "links": 2
+    },
+    {
+      "id": "ja38",
+      "group": "ja",
+      "rank": 3,
+      "links": 1
     },
     {
       "id": "an5.16",
@@ -15484,7 +15508,7 @@
       "id": "an2.52-63",
       "group": "an",
       "rank": 1,
-      "links": 3
+      "links": 4
     },
     {
       "id": "an4.247",
@@ -15685,12 +15709,6 @@
       "links": 2
     },
     {
-      "id": "sn11.6",
-      "group": "sn",
-      "rank": 1,
-      "links": 1
-    },
-    {
       "id": "thag1.83",
       "group": "thag",
       "rank": 1,
@@ -15759,7 +15777,7 @@
     {
       "id": "an2.21-31",
       "group": "an",
-      "rank": 3,
+      "rank": 2,
       "links": 2
     },
     {
@@ -18019,15 +18037,27 @@
       "links": 1
     },
     {
+      "id": "sn3.17",
+      "group": "sn",
+      "rank": 23,
+      "links": 1
+    },
+    {
       "id": "thig9.1",
       "group": "thig",
-      "rank": 25,
+      "rank": 26,
+      "links": 1
+    },
+    {
+      "id": "an5.43",
+      "group": "an",
+      "rank": 27,
       "links": 1
     },
     {
       "id": "iti83",
       "group": "iti",
-      "rank": 28,
+      "rank": 30,
       "links": 1
     },
     {
@@ -18243,19 +18273,25 @@
     {
       "id": "an9.6",
       "group": "an",
-      "rank": 1,
+      "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "an2.141-150",
+      "group": "an",
+      "rank": 5,
       "links": 1
     },
     {
       "id": "sn16.5",
       "group": "sn",
-      "rank": 5,
+      "rank": 8,
       "links": 1
     },
     {
       "id": "an2.130-140",
       "group": "an",
-      "rank": 1,
+      "rank": 2,
       "links": 1
     },
     {
@@ -27178,23 +27214,28 @@
     },
     {
       "source": "erbärmlich",
-      "target": "thig5.8",
+      "target": "ja45",
       "rank": 5
     },
     {
       "source": "erbärmlich",
-      "target": "sn48.41",
+      "target": "thig5.8",
       "rank": 6
     },
     {
       "source": "erbärmlich",
-      "target": "sn2.30",
+      "target": "sn48.41",
       "rank": 7
     },
     {
       "source": "erbärmlich",
-      "target": "an3.36",
+      "target": "sn2.30",
       "rank": 8
+    },
+    {
+      "source": "erbärmlich",
+      "target": "an3.36",
+      "rank": 9
     },
     {
       "source": "Ergebnis des Leidens",
@@ -27673,53 +27714,58 @@
     },
     {
       "source": "erschlagen",
-      "target": "sn1.72",
+      "target": "ja44",
       "rank": 7
     },
     {
       "source": "erschlagen",
-      "target": "sn1.73",
+      "target": "sn1.72",
       "rank": 8
     },
     {
       "source": "erschlagen",
-      "target": "sn1.78",
+      "target": "sn1.73",
       "rank": 9
     },
     {
       "source": "erschlagen",
-      "target": "sn1.75",
+      "target": "sn1.78",
       "rank": 10
     },
     {
       "source": "erschlagen",
-      "target": "sn1.74",
+      "target": "sn1.75",
       "rank": 11
     },
     {
       "source": "erschlagen",
-      "target": "sn1.79",
+      "target": "sn1.74",
       "rank": 12
     },
     {
       "source": "erschlagen",
-      "target": "sn1.77",
+      "target": "sn1.79",
       "rank": 13
     },
     {
       "source": "erschlagen",
-      "target": "sn1.80",
+      "target": "sn1.77",
       "rank": 14
     },
     {
       "source": "erschlagen",
-      "target": "sn1.81",
+      "target": "sn1.80",
       "rank": 15
     },
     {
       "source": "erschlagen",
-      "target": "sn1.76",
+      "target": "sn1.81",
       "rank": 16
+    },
+    {
+      "source": "erschlagen",
+      "target": "sn1.76",
+      "rank": 17
     },
     {
       "source": "Anfangspunkt",
@@ -34363,58 +34409,63 @@
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.2",
+      "target": "ja30",
       "rank": 17
     },
     {
       "source": "Kennzeichen",
-      "target": "an11.22-29",
+      "target": "an3.2",
       "rank": 18
     },
     {
       "source": "Kennzeichen",
-      "target": "cp11",
+      "target": "an11.22-29",
       "rank": 19
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.59",
+      "target": "cp11",
       "rank": 20
     },
     {
       "source": "Kennzeichen",
-      "target": "sn22.59",
+      "target": "an3.59",
       "rank": 21
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.58",
+      "target": "sn22.59",
       "rank": 22
     },
     {
       "source": "Kennzeichen",
-      "target": "thag16.6",
+      "target": "an3.58",
       "rank": 23
     },
     {
       "source": "Kennzeichen",
-      "target": "an5.192",
+      "target": "thag16.6",
       "rank": 24
     },
     {
       "source": "Kennzeichen",
-      "target": "thig14.1",
+      "target": "an5.192",
       "rank": 25
     },
     {
       "source": "Kennzeichen",
-      "target": "snp3.11",
+      "target": "thig14.1",
       "rank": 26
     },
     {
       "source": "Kennzeichen",
-      "target": "mn93",
+      "target": "snp3.11",
       "rank": 27
+    },
+    {
+      "source": "Kennzeichen",
+      "target": "mn93",
+      "rank": 28
     },
     {
       "source": "Keuschen und die Unkeuschen",
@@ -34983,8 +35034,13 @@
     },
     {
       "source": "Krabbe",
-      "target": "sn4.6",
+      "target": "ja38",
       "rank": 3
+    },
+    {
+      "source": "Krabbe",
+      "target": "sn4.6",
+      "rank": 4
     },
     {
       "source": "Kraft der Weisheit",
@@ -39260,11 +39316,6 @@
       "source": "Rosenapfel",
       "target": "dn30",
       "rank": 26
-    },
-    {
-      "source": "roten Kapok-Wald",
-      "target": "sn11.6",
-      "rank": 1
     },
     {
       "source": "rufe alle Mönche und Nonnen",
@@ -47393,58 +47444,73 @@
     },
     {
       "source": "wieder und wieder",
-      "target": "thag6.5",
+      "target": "sn3.17",
       "rank": 23
     },
     {
       "source": "wieder und wieder",
-      "target": "an4.5",
+      "target": "thag6.5",
       "rank": 24
     },
     {
       "source": "wieder und wieder",
-      "target": "thig9.1",
+      "target": "an4.5",
       "rank": 25
     },
     {
       "source": "wieder und wieder",
-      "target": "an9.5",
+      "target": "thig9.1",
       "rank": 26
     },
     {
       "source": "wieder und wieder",
-      "target": "sn48.50",
+      "target": "an5.43",
       "rank": 27
     },
     {
       "source": "wieder und wieder",
-      "target": "iti83",
+      "target": "an9.5",
       "rank": 28
     },
     {
       "source": "wieder und wieder",
-      "target": "dhp146-156",
+      "target": "sn48.50",
       "rank": 29
     },
     {
       "source": "wieder und wieder",
-      "target": "dhp320-333",
+      "target": "iti83",
       "rank": 30
     },
     {
       "source": "wieder und wieder",
-      "target": "mn12",
+      "target": "sn3.18",
       "rank": 31
     },
     {
       "source": "wieder und wieder",
-      "target": "thag20.1",
+      "target": "dhp146-156",
       "rank": 32
     },
     {
       "source": "wieder und wieder",
-      "target": "dn33",
+      "target": "dhp320-333",
       "rank": 33
+    },
+    {
+      "source": "wieder und wieder",
+      "target": "mn12",
+      "rank": 34
+    },
+    {
+      "source": "wieder und wieder",
+      "target": "thag20.1",
+      "rank": 35
+    },
+    {
+      "source": "wieder und wieder",
+      "target": "dn33",
+      "rank": 36
     },
     {
       "source": "wie eine Kuh",
@@ -48883,72 +48949,92 @@
     },
     {
       "source": "zwei Arten von",
-      "target": "an9.6",
+      "target": "an2.64-76",
       "rank": 1
     },
     {
       "source": "zwei Arten von",
-      "target": "an10.54",
+      "target": "an9.6",
       "rank": 2
     },
     {
       "source": "zwei Arten von",
-      "target": "dn21",
+      "target": "an10.54",
       "rank": 3
     },
     {
       "source": "zwei Arten von",
-      "target": "iti49",
+      "target": "dn21",
       "rank": 4
     },
     {
       "source": "zwei Arten von",
-      "target": "sn16.5",
+      "target": "an2.141-150",
       "rank": 5
     },
     {
       "source": "zwei Arten von",
-      "target": "mn19",
+      "target": "an2.52-63",
       "rank": 6
+    },
+    {
+      "source": "zwei Arten von",
+      "target": "iti49",
+      "rank": 7
+    },
+    {
+      "source": "zwei Arten von",
+      "target": "sn16.5",
+      "rank": 8
+    },
+    {
+      "source": "zwei Arten von",
+      "target": "mn19",
+      "rank": 9
+    },
+    {
+      "source": "zwei Arten von Glück",
+      "target": "an2.64-76",
+      "rank": 1
     },
     {
       "source": "zwei Arten von Glück",
       "target": "dn21",
-      "rank": 1
-    },
-    {
-      "source": "zwei Menschen",
-      "target": "an2.130-140",
-      "rank": 1
-    },
-    {
-      "source": "zwei Menschen",
-      "target": "an7.68",
       "rank": 2
     },
     {
       "source": "zwei Menschen",
       "target": "an2.118-129",
+      "rank": 1
+    },
+    {
+      "source": "zwei Menschen",
+      "target": "an2.130-140",
+      "rank": 2
+    },
+    {
+      "source": "zwei Menschen",
+      "target": "an7.68",
       "rank": 3
     },
     {
       "source": "zwei Menschen",
-      "target": "mn5",
+      "target": "an2.52-63",
       "rank": 4
     },
     {
       "source": "zwei Menschen",
-      "target": "mn74",
+      "target": "mn5",
       "rank": 5
     },
     {
       "source": "zwei Menschen",
-      "target": "an7.57",
+      "target": "mn74",
       "rank": 6
     },
     {
       "source": "zwei Menschen",
-      "target": "an2.52-63",
+      "target": "an7.57",
       "rank": 7
     },
     {
@@ -49023,12 +49109,12 @@
     },
     {
       "source": "zwei Toren",
-      "target": "sn11.24",
+      "target": "an2.21-31",
       "rank": 2
     },
     {
       "source": "zwei Toren",
-      "target": "an2.21-31",
+      "target": "sn11.24",
       "rank": 3
     }
   ]
