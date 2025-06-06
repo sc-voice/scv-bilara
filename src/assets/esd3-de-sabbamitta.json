@@ -208,7 +208,7 @@
     {
       "id": "Auflösen der Bindungen",
       "group": "Examples",
-      "links": 6
+      "links": 8
     },
     {
       "id": "Auflösung der Taten",
@@ -5821,6 +5821,18 @@
       "links": 4
     },
     {
+      "id": "an4.23",
+      "group": "an",
+      "rank": 4,
+      "links": 4
+    },
+    {
+      "id": "iti112",
+      "group": "iti",
+      "rank": 5,
+      "links": 4
+    },
+    {
       "id": "mn66",
       "group": "mn",
       "rank": 1,
@@ -10751,18 +10763,6 @@
       "group": "an",
       "rank": 1,
       "links": 4
-    },
-    {
-      "id": "an4.23",
-      "group": "an",
-      "rank": 4,
-      "links": 3
-    },
-    {
-      "id": "iti112",
-      "group": "iti",
-      "rank": 5,
-      "links": 3
     },
     {
       "id": "ud8.5",
@@ -19644,8 +19644,18 @@
     },
     {
       "source": "Auflösen der Bindungen",
-      "target": "mn66",
+      "target": "an4.23",
       "rank": 6
+    },
+    {
+      "source": "Auflösen der Bindungen",
+      "target": "iti112",
+      "rank": 7
+    },
+    {
+      "source": "Auflösen der Bindungen",
+      "target": "mn66",
+      "rank": 8
     },
     {
       "source": "Auflösung der Taten",
