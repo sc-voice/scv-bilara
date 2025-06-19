@@ -6225,27 +6225,32 @@
 	"an8.46": {
 		"translation/de/sabbamitta": "sutta/an/an8",
 		"translation/en/sujato": "sutta/an/an8",
+		"translation/ru/sv": "sutta/an/an8",
 		"root/pli/ms": "sutta/an/an8"
 	},
 	"an8.47": {
 		"translation/de/sabbamitta": "sutta/an/an8",
 		"translation/en/sujato": "sutta/an/an8",
+		"translation/ru/sv": "sutta/an/an8",
 		"root/pli/ms": "sutta/an/an8"
 	},
 	"an8.48": {
 		"translation/de/sabbamitta": "sutta/an/an8",
 		"translation/en/sujato": "sutta/an/an8",
+		"translation/ru/sv": "sutta/an/an8",
 		"root/pli/ms": "sutta/an/an8"
 	},
 	"an8.49": {
 		"translation/de/sabbamitta": "sutta/an/an8",
 		"translation/en/sujato": "sutta/an/an8",
 		"translation/fr/noeismet": "sutta/an/an8",
+		"translation/ru/sv": "sutta/an/an8",
 		"root/pli/ms": "sutta/an/an8"
 	},
 	"an8.50": {
 		"translation/de/sabbamitta": "sutta/an/an8",
 		"translation/en/sujato": "sutta/an/an8",
+		"translation/ru/sv": "sutta/an/an8",
 		"root/pli/ms": "sutta/an/an8"
 	},
 	"an8.51": {
@@ -10962,12 +10967,14 @@
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn94": {
+		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
 		"translation/it/giovannizappa": "sutta/mn",
 		"translation/ru/sv": "sutta/mn",
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn95": {
+		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
 		"translation/fr/noeismet": "sutta/mn",
 		"translation/it/giovannizappa": "sutta/mn",
