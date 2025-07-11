@@ -1098,7 +1098,7 @@
     {
       "id": "eine Himmelsrichtung mit einem Herzen voller Liebe",
       "group": "Examples",
-      "links": 27
+      "links": 28
     },
     {
       "id": "ein Embryo.* empfangen",
@@ -2478,7 +2478,7 @@
     {
       "id": "liebevolle.* Herz",
       "group": "Examples",
-      "links": 17
+      "links": 18
     },
     {
       "id": "lodert Freude auf",
@@ -2618,7 +2618,7 @@
     {
       "id": "mitgenommen, leidend, schwer krank",
       "group": "Examples",
-      "links": 38
+      "links": 39
     },
     {
       "id": "mit hängenden Schultern",
@@ -7479,7 +7479,7 @@
     {
       "id": "mn143",
       "group": "mn",
-      "rank": 3,
+      "rank": 4,
       "links": 3
     },
     {
@@ -10435,6 +10435,12 @@
       "links": 3
     },
     {
+      "id": "mn97",
+      "group": "mn",
+      "rank": 1,
+      "links": 2
+    },
+    {
       "id": "dn19",
       "group": "dn",
       "rank": 2,
@@ -11559,7 +11565,7 @@
     {
       "id": "sn22.87",
       "group": "sn",
-      "rank": 2,
+      "rank": 3,
       "links": 4
     },
     {
@@ -14629,15 +14635,21 @@
       "links": 1
     },
     {
+      "id": "mn96",
+      "group": "mn",
+      "rank": 8,
+      "links": 1
+    },
+    {
       "id": "an5.198",
       "group": "an",
-      "rank": 9,
+      "rank": 10,
       "links": 1
     },
     {
       "id": "thag3.7",
       "group": "thag",
-      "rank": 11,
+      "rank": 12,
       "links": 1
     },
     {
@@ -14967,49 +14979,49 @@
     {
       "id": "sn47.29",
       "group": "sn",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
       "id": "sn55.27",
       "group": "sn",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
       "id": "sn55.26",
       "group": "sn",
-      "rank": 11,
+      "rank": 12,
       "links": 1
     },
     {
       "id": "sn11.23",
       "group": "sn",
-      "rank": 17,
+      "rank": 18,
       "links": 1
     },
     {
       "id": "sn52.10",
       "group": "sn",
-      "rank": 18,
+      "rank": 19,
       "links": 1
     },
     {
       "id": "sn47.30",
       "group": "sn",
-      "rank": 19,
+      "rank": 20,
       "links": 1
     },
     {
       "id": "sn6.9",
       "group": "sn",
-      "rank": 20,
+      "rank": 21,
       "links": 1
     },
     {
       "id": "sn35.75",
       "group": "sn",
-      "rank": 25,
+      "rank": 26,
       "links": 1
     },
     {
@@ -25911,23 +25923,28 @@
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn26",
+      "target": "mn97",
       "rank": 24
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn17",
+      "target": "dn26",
       "rank": 25
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn19",
+      "target": "dn17",
       "rank": 26
     },
     {
       "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
-      "target": "dn33",
+      "target": "dn19",
       "rank": 27
+    },
+    {
+      "source": "eine Himmelsrichtung mit einem Herzen voller Liebe",
+      "target": "dn33",
+      "rank": 28
     },
     {
       "source": "ein Embryo.* empfangen",
@@ -36091,53 +36108,58 @@
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "mn93",
+      "target": "mn96",
       "rank": 8
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "an5.198",
+      "target": "mn93",
       "rank": 9
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "sn20.4",
+      "target": "an5.198",
       "rank": 10
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "thag3.7",
+      "target": "sn20.4",
       "rank": 11
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "iti60",
+      "target": "thag3.7",
       "rank": 12
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "an10.44",
+      "target": "iti60",
       "rank": 13
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "an9.20",
+      "target": "an10.44",
       "rank": 14
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "thag14.1",
+      "target": "an9.20",
       "rank": 15
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "mn4",
+      "target": "thag14.1",
       "rank": 16
     },
     {
       "source": "liebevolle.* Herz",
-      "target": "dn33",
+      "target": "mn4",
       "rank": 17
+    },
+    {
+      "source": "liebevolle.* Herz",
+      "target": "dn33",
+      "rank": 18
     },
     {
       "source": "lodert Freude auf",
@@ -37021,193 +37043,198 @@
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "sn55.54",
+      "target": "mn97",
       "rank": 1
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "sn22.87",
+      "target": "sn55.54",
       "rank": 2
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "mn143",
+      "target": "sn22.87",
       "rank": 3
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "dn23",
+      "target": "mn143",
       "rank": 4
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "sn47.29",
+      "target": "dn23",
       "rank": 5
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "sn55.3",
+      "target": "sn47.29",
       "rank": 6
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "sn22.88",
+      "target": "sn55.3",
       "rank": 7
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "sn55.27",
+      "target": "sn22.88",
       "rank": 8
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "an6.56",
+      "target": "sn55.27",
       "rank": 9
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "an10.60",
+      "target": "an6.56",
       "rank": 10
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "sn55.26",
+      "target": "an10.60",
       "rank": 11
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "mn82",
+      "target": "sn55.26",
       "rank": 12
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "sn46.16",
+      "target": "mn82",
       "rank": 13
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "ud1.6",
+      "target": "sn46.16",
       "rank": 14
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "sn46.14",
+      "target": "ud1.6",
       "rank": 15
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "sn46.15",
+      "target": "sn46.14",
       "rank": 16
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "sn11.23",
+      "target": "sn46.15",
       "rank": 17
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "sn52.10",
+      "target": "sn11.23",
       "rank": 18
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "sn47.30",
+      "target": "sn52.10",
       "rank": 19
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "sn6.9",
+      "target": "sn47.30",
       "rank": 20
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "sn47.13",
+      "target": "sn6.9",
       "rank": 21
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "sn41.10",
+      "target": "sn47.13",
       "rank": 22
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "sn35.74",
+      "target": "sn41.10",
       "rank": 23
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "an5.194",
+      "target": "sn35.74",
       "rank": 24
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "sn35.75",
+      "target": "an5.194",
       "rank": 25
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "an4.159",
+      "target": "sn35.75",
       "rank": 26
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "an5.162",
+      "target": "an4.159",
       "rank": 27
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "an6.16",
+      "target": "an5.162",
       "rank": 28
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "sn35.87",
+      "target": "an6.16",
       "rank": 29
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "mn144",
+      "target": "sn35.87",
       "rank": 30
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "an3.36",
+      "target": "mn144",
       "rank": 31
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "sn22.89",
+      "target": "an3.36",
       "rank": 32
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "mn13",
+      "target": "sn22.89",
       "rank": 33
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "mn39",
+      "target": "mn13",
       "rank": 34
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "dn10",
+      "target": "mn39",
       "rank": 35
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "mn56",
+      "target": "dn10",
       "rank": 36
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "dn2",
+      "target": "mn56",
       "rank": 37
     },
     {
       "source": "mitgenommen, leidend, schwer krank",
-      "target": "dn14",
+      "target": "dn2",
       "rank": 38
+    },
+    {
+      "source": "mitgenommen, leidend, schwer krank",
+      "target": "dn14",
+      "rank": 39
     },
     {
       "source": "mit hängenden Schultern",
