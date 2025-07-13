@@ -3248,7 +3248,7 @@
     {
       "id": "seized by",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "self-effacement",
@@ -16125,6 +16125,12 @@
       "links": 3
     },
     {
+      "id": "sn10.5",
+      "group": "sn",
+      "rank": 5,
+      "links": 2
+    },
+    {
       "id": "an5.231",
       "group": "an",
       "rank": 3,
@@ -17160,12 +17166,6 @@
       "id": "an3.38",
       "group": "an",
       "rank": 18,
-      "links": 1
-    },
-    {
-      "id": "sn10.5",
-      "group": "sn",
-      "rank": 19,
       "links": 1
     },
     {
@@ -42050,13 +42050,18 @@
     },
     {
       "source": "seized by",
-      "target": "sn3.4",
+      "target": "sn10.5",
       "rank": 5
     },
     {
       "source": "seized by",
-      "target": "dhp273-289",
+      "target": "sn3.4",
       "rank": 6
+    },
+    {
+      "source": "seized by",
+      "target": "dhp273-289",
+      "rank": 7
     },
     {
       "source": "self-effacement",
