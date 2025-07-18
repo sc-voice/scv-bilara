@@ -10997,6 +10997,7 @@
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn98": {
+		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
 		"translation/it/giovannizappa": "sutta/mn",
 		"translation/ru/sv": "sutta/mn",
@@ -23156,6 +23157,7 @@
 		"root/pli/ms": "sutta/kn/snp/vagga3"
 	},
 	"snp3.9": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga3",
 		"translation/en/sujato": "sutta/kn/snp/vagga3",
 		"root/pli/ms": "sutta/kn/snp/vagga3"
 	},

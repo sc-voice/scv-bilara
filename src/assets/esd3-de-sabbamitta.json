@@ -283,12 +283,12 @@
     {
       "id": "Bangigkeit",
       "group": "Examples",
-      "links": 8
+      "links": 10
     },
     {
       "id": "Bauer",
       "group": "Examples",
-      "links": 16
+      "links": 18
     },
     {
       "id": "bedingte.* Erscheinungen",
@@ -968,7 +968,7 @@
     {
       "id": "drei Veden",
       "group": "Examples",
-      "links": 15
+      "links": 17
     },
     {
       "id": "drei Vorgänge",
@@ -1763,7 +1763,7 @@
     {
       "id": "glaubst du",
       "group": "Examples",
-      "links": 11
+      "links": 10
     },
     {
       "id": "Gleichmut und Versenkung",
@@ -2678,7 +2678,7 @@
     {
       "id": "mörderisch",
       "group": "Examples",
-      "links": 9
+      "links": 11
     },
     {
       "id": "muss aufgegeben werden",
@@ -3163,7 +3163,7 @@
     {
       "id": "selbst versteh",
       "group": "Examples",
-      "links": 5
+      "links": 7
     },
     {
       "id": "selbst wenn er fortgeschickt wird",
@@ -3608,7 +3608,7 @@
     {
       "id": "Verlangen aufgegeben",
       "group": "Examples",
-      "links": 11
+      "links": 13
     },
     {
       "id": "Verlangen nach Berührungen",
@@ -4123,7 +4123,7 @@
     {
       "id": "Wiedergeburt im Bereich",
       "group": "Examples",
-      "links": 17
+      "links": 19
     },
     {
       "id": "Wiedergeburt in der Dimension",
@@ -4358,7 +4358,7 @@
     {
       "id": "zum Töten",
       "group": "Examples",
-      "links": 10
+      "links": 12
     },
     {
       "id": "zur Einheit des Geistes",
@@ -5806,7 +5806,7 @@
       "id": "sn5.8",
       "group": "sn",
       "rank": 3,
-      "links": 3
+      "links": 2
     },
     {
       "id": "an8.1",
@@ -6283,6 +6283,18 @@
       "links": 8
     },
     {
+      "id": "mn98",
+      "group": "mn",
+      "rank": 6,
+      "links": 8
+    },
+    {
+      "id": "snp3.9",
+      "group": "snp",
+      "rank": 7,
+      "links": 8
+    },
+    {
       "id": "snp1.4",
       "group": "snp",
       "rank": 1,
@@ -6351,7 +6363,7 @@
     {
       "id": "cp2",
       "group": "cp",
-      "rank": 14,
+      "rank": 16,
       "links": 2
     },
     {
@@ -20197,6 +20209,16 @@
       "rank": 8
     },
     {
+      "source": "Bangigkeit",
+      "target": "mn98",
+      "rank": 9
+    },
+    {
+      "source": "Bangigkeit",
+      "target": "snp3.9",
+      "rank": 10
+    },
+    {
       "source": "Bauer",
       "target": "snp1.4",
       "rank": 1
@@ -20253,28 +20275,38 @@
     },
     {
       "source": "Bauer",
-      "target": "dn16",
+      "target": "mn98",
       "rank": 12
     },
     {
       "source": "Bauer",
-      "target": "sn7.12",
+      "target": "snp3.9",
       "rank": 13
     },
     {
       "source": "Bauer",
-      "target": "cp2",
+      "target": "dn16",
       "rank": 14
     },
     {
       "source": "Bauer",
-      "target": "sn22.102",
+      "target": "sn7.12",
       "rank": 15
     },
     {
       "source": "Bauer",
-      "target": "thag10.1",
+      "target": "cp2",
       "rank": 16
+    },
+    {
+      "source": "Bauer",
+      "target": "sn22.102",
+      "rank": 17
+    },
+    {
+      "source": "Bauer",
+      "target": "thag10.1",
+      "rank": 18
     },
     {
       "source": "bedingte.* Erscheinungen",
@@ -24873,8 +24905,18 @@
     },
     {
       "source": "drei Veden",
-      "target": "thag20.1",
+      "target": "mn98",
       "rank": 15
+    },
+    {
+      "source": "drei Veden",
+      "target": "snp3.9",
+      "rank": 16
+    },
+    {
+      "source": "drei Veden",
+      "target": "thag20.1",
+      "rank": 17
     },
     {
       "source": "drei Vorgänge",
@@ -30888,48 +30930,43 @@
     },
     {
       "source": "glaubst du",
-      "target": "sn5.8",
+      "target": "sn5.10",
       "rank": 3
     },
     {
       "source": "glaubst du",
-      "target": "sn5.10",
+      "target": "sn41.8",
       "rank": 4
     },
     {
       "source": "glaubst du",
-      "target": "sn41.8",
+      "target": "an5.166",
       "rank": 5
     },
     {
       "source": "glaubst du",
-      "target": "an5.166",
+      "target": "an10.176",
       "rank": 6
     },
     {
       "source": "glaubst du",
-      "target": "an10.176",
+      "target": "mn140",
       "rank": 7
     },
     {
       "source": "glaubst du",
-      "target": "mn140",
+      "target": "mn26",
       "rank": 8
     },
     {
       "source": "glaubst du",
-      "target": "mn26",
+      "target": "dn9",
       "rank": 9
     },
     {
       "source": "glaubst du",
-      "target": "dn9",
-      "rank": 10
-    },
-    {
-      "source": "glaubst du",
       "target": "mn85",
-      "rank": 11
+      "rank": 10
     },
     {
       "source": "Gleichmut und Versenkung",
@@ -37502,6 +37539,16 @@
       "rank": 9
     },
     {
+      "source": "mörderisch",
+      "target": "mn98",
+      "rank": 10
+    },
+    {
+      "source": "mörderisch",
+      "target": "snp3.9",
+      "rank": 11
+    },
+    {
       "source": "muss aufgegeben werden",
       "target": "sn35.24",
       "rank": 1
@@ -40662,6 +40709,16 @@
       "rank": 5
     },
     {
+      "source": "selbst versteh",
+      "target": "mn98",
+      "rank": 6
+    },
+    {
+      "source": "selbst versteh",
+      "target": "snp3.9",
+      "rank": 7
+    },
+    {
       "source": "selbst wenn er fortgeschickt wird",
       "target": "mn122",
       "rank": 1
@@ -43755,6 +43812,16 @@
       "source": "Verlangen aufgegeben",
       "target": "mn22",
       "rank": 11
+    },
+    {
+      "source": "Verlangen aufgegeben",
+      "target": "mn98",
+      "rank": 12
+    },
+    {
+      "source": "Verlangen aufgegeben",
+      "target": "snp3.9",
+      "rank": 13
     },
     {
       "source": "Verlangen nach Berührungen",
@@ -47318,8 +47385,18 @@
     },
     {
       "source": "Wiedergeburt im Bereich",
-      "target": "dn33",
+      "target": "mn98",
       "rank": 17
+    },
+    {
+      "source": "Wiedergeburt im Bereich",
+      "target": "snp3.9",
+      "rank": 18
+    },
+    {
+      "source": "Wiedergeburt im Bereich",
+      "target": "dn33",
+      "rank": 19
     },
     {
       "source": "Wiedergeburt in der Dimension",
@@ -48888,8 +48965,18 @@
     },
     {
       "source": "zum Töten",
-      "target": "dn2",
+      "target": "mn98",
       "rank": 10
+    },
+    {
+      "source": "zum Töten",
+      "target": "snp3.9",
+      "rank": 11
+    },
+    {
+      "source": "zum Töten",
+      "target": "dn2",
+      "rank": 12
     },
     {
       "source": "zur Einheit des Geistes",
