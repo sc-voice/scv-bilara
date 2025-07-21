@@ -243,7 +243,7 @@
             suid: 'thig3.8',
         });
     });
-    it("buildSuidMap() => [ suid ]", async()=>{
+    it("TESTTESTbuildSuidMap() => [ suid ]", async()=>{
         let bpm = await new BilaraPathMap().initialize();
         let suidMap = await bpm.buildSuidMap();
         let suids = Object.keys(suidMap);
@@ -253,6 +253,7 @@
             'translation/de/sabbamitta',
             'translation/en/suddhaso',
             'translation/en/sujato',
+            'translation/et/thitanana',
             'translation/vi/phantuananh',
             'root/pli/ms',
             //'html/pli/ms',
