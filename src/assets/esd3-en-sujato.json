@@ -3,7 +3,7 @@
     {
       "id": "a beryl gem that was naturally beautiful",
       "group": "Examples",
-      "links": 10
+      "links": 0
     },
     {
       "id": "a ‘pot’, a ‘bowl’, a ‘jar’",
@@ -448,7 +448,7 @@
     {
       "id": "can endure",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "can expect growth",
@@ -3838,7 +3838,7 @@
     {
       "id": "the sweetest of the sweet",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "the teaching, the training",
@@ -4023,7 +4023,7 @@
     {
       "id": "to endure",
       "group": "Examples",
-      "links": 3
+      "links": 2
     },
     {
       "id": "to go beyond suffering",
@@ -4581,66 +4581,6 @@
       "links": 2
     },
     {
-      "id": "sn2.29",
-      "group": "sn",
-      "rank": 1,
-      "links": 2
-    },
-    {
-      "id": "mn80",
-      "group": "mn",
-      "rank": 2,
-      "links": 3
-    },
-    {
-      "id": "mn123",
-      "group": "mn",
-      "rank": 1,
-      "links": 7
-    },
-    {
-      "id": "mn79",
-      "group": "mn",
-      "rank": 1,
-      "links": 10
-    },
-    {
-      "id": "mn120",
-      "group": "mn",
-      "rank": 1,
-      "links": 2
-    },
-    {
-      "id": "dn10",
-      "group": "dn",
-      "rank": 1,
-      "links": 41
-    },
-    {
-      "id": "mn77",
-      "group": "mn",
-      "rank": 1,
-      "links": 29
-    },
-    {
-      "id": "dn2",
-      "group": "dn",
-      "rank": 1,
-      "links": 65
-    },
-    {
-      "id": "dn17",
-      "group": "dn",
-      "rank": 5,
-      "links": 15
-    },
-    {
-      "id": "dn14",
-      "group": "dn",
-      "rank": 1,
-      "links": 33
-    },
-    {
       "id": "mn65",
       "group": "mn",
       "rank": 1,
@@ -4681,6 +4621,12 @@
       "group": "dn",
       "rank": 1,
       "links": 29
+    },
+    {
+      "id": "dn2",
+      "group": "dn",
+      "rank": 1,
+      "links": 64
     },
     {
       "id": "an8.55",
@@ -4935,6 +4881,12 @@
       "links": 14
     },
     {
+      "id": "dn14",
+      "group": "dn",
+      "rank": 1,
+      "links": 32
+    },
+    {
       "id": "sn12.53",
       "group": "sn",
       "rank": 2,
@@ -5106,7 +5058,7 @@
       "id": "mn56",
       "group": "mn",
       "rank": 1,
-      "links": 10
+      "links": 11
     },
     {
       "id": "mn60",
@@ -5136,7 +5088,7 @@
       "id": "mn21",
       "group": "mn",
       "rank": 1,
-      "links": 9
+      "links": 8
     },
     {
       "id": "dn24",
@@ -5233,6 +5185,18 @@
       "group": "mn",
       "rank": 1,
       "links": 19
+    },
+    {
+      "id": "dn10",
+      "group": "dn",
+      "rank": 1,
+      "links": 40
+    },
+    {
+      "id": "mn77",
+      "group": "mn",
+      "rank": 1,
+      "links": 28
     },
     {
       "id": "an7.52",
@@ -5787,6 +5751,12 @@
       "links": 16
     },
     {
+      "id": "dn17",
+      "group": "dn",
+      "rank": 5,
+      "links": 14
+    },
+    {
       "id": "dn19",
       "group": "dn",
       "rank": 2,
@@ -5946,13 +5916,13 @@
       "id": "sn10.12",
       "group": "sn",
       "rank": 1,
-      "links": 4
+      "links": 5
     },
     {
       "id": "snp1.10",
       "group": "snp",
       "rank": 1,
-      "links": 4
+      "links": 5
     },
     {
       "id": "sn22.88",
@@ -6187,6 +6157,12 @@
       "group": "dhp",
       "rank": 5,
       "links": 4
+    },
+    {
+      "id": "mn123",
+      "group": "mn",
+      "rank": 1,
+      "links": 6
     },
     {
       "id": "snp5.19",
@@ -6457,6 +6433,12 @@
       "group": "an",
       "rank": 1,
       "links": 3
+    },
+    {
+      "id": "mn79",
+      "group": "mn",
+      "rank": 1,
+      "links": 9
     },
     {
       "id": "mn15",
@@ -8129,43 +8111,43 @@
     {
       "id": "an6.5",
       "group": "an",
-      "rank": 2,
+      "rank": 3,
       "links": 1
     },
     {
       "id": "an6.6",
       "group": "an",
-      "rank": 3,
+      "rank": 4,
       "links": 1
     },
     {
       "id": "an6.7",
       "group": "an",
-      "rank": 4,
+      "rank": 5,
       "links": 1
     },
     {
       "id": "an5.85",
       "group": "an",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
       "id": "an5.113",
       "group": "an",
-      "rank": 6,
+      "rank": 7,
       "links": 1
     },
     {
       "id": "an5.123",
       "group": "an",
-      "rank": 7,
+      "rank": 8,
       "links": 2
     },
     {
       "id": "sn36.4",
       "group": "sn",
-      "rank": 8,
+      "rank": 9,
       "links": 2
     },
     {
@@ -11361,6 +11343,12 @@
       "links": 1
     },
     {
+      "id": "mn80",
+      "group": "mn",
+      "rank": 2,
+      "links": 2
+    },
+    {
       "id": "an5.181",
       "group": "an",
       "rank": 1,
@@ -11977,6 +11965,12 @@
       "group": "sn",
       "rank": 1,
       "links": 4
+    },
+    {
+      "id": "mn120",
+      "group": "mn",
+      "rank": 1,
+      "links": 1
     },
     {
       "id": "an3.80",
@@ -14109,6 +14103,12 @@
       "links": 2
     },
     {
+      "id": "sn2.29",
+      "group": "sn",
+      "rank": 7,
+      "links": 1
+    },
+    {
       "id": "an5.235",
       "group": "an",
       "rank": 1,
@@ -15473,8 +15473,8 @@
     {
       "id": "an6.60",
       "group": "an",
-      "rank": 1,
-      "links": 3
+      "rank": 2,
+      "links": 2
     },
     {
       "id": "sn35.119",
@@ -17331,6 +17331,12 @@
       "links": 1
     },
     {
+      "id": "sn1.73",
+      "group": "sn",
+      "rank": 1,
+      "links": 1
+    },
+    {
       "id": "sn35.189-191",
       "group": "sn",
       "rank": 1,
@@ -17604,12 +17610,6 @@
       "id": "an7.36",
       "group": "an",
       "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "sn1.17",
-      "group": "sn",
-      "rank": 3,
       "links": 1
     },
     {
@@ -18778,56 +18778,6 @@
     }
   ],
   "links": [
-    {
-      "source": "a beryl gem that was naturally beautiful",
-      "target": "sn2.29",
-      "rank": 1
-    },
-    {
-      "source": "a beryl gem that was naturally beautiful",
-      "target": "mn80",
-      "rank": 2
-    },
-    {
-      "source": "a beryl gem that was naturally beautiful",
-      "target": "mn123",
-      "rank": 3
-    },
-    {
-      "source": "a beryl gem that was naturally beautiful",
-      "target": "mn79",
-      "rank": 4
-    },
-    {
-      "source": "a beryl gem that was naturally beautiful",
-      "target": "mn120",
-      "rank": 5
-    },
-    {
-      "source": "a beryl gem that was naturally beautiful",
-      "target": "dn10",
-      "rank": 6
-    },
-    {
-      "source": "a beryl gem that was naturally beautiful",
-      "target": "mn77",
-      "rank": 7
-    },
-    {
-      "source": "a beryl gem that was naturally beautiful",
-      "target": "dn2",
-      "rank": 8
-    },
-    {
-      "source": "a beryl gem that was naturally beautiful",
-      "target": "dn17",
-      "rank": 9
-    },
-    {
-      "source": "a beryl gem that was naturally beautiful",
-      "target": "dn14",
-      "rank": 10
-    },
     {
       "source": "accept my mistake",
       "target": "mn65",
@@ -22935,38 +22885,43 @@
     },
     {
       "source": "can endure",
-      "target": "an6.5",
+      "target": "mn56",
       "rank": 2
     },
     {
       "source": "can endure",
-      "target": "an6.6",
+      "target": "an6.5",
       "rank": 3
     },
     {
       "source": "can endure",
-      "target": "an6.7",
+      "target": "an6.6",
       "rank": 4
     },
     {
       "source": "can endure",
-      "target": "an5.85",
+      "target": "an6.7",
       "rank": 5
     },
     {
       "source": "can endure",
-      "target": "an5.113",
+      "target": "an5.85",
       "rank": 6
     },
     {
       "source": "can endure",
-      "target": "an5.123",
+      "target": "an5.113",
       "rank": 7
     },
     {
       "source": "can endure",
-      "target": "sn36.4",
+      "target": "an5.123",
       "rank": 8
+    },
+    {
+      "source": "can endure",
+      "target": "sn36.4",
+      "rank": 9
     },
     {
       "source": "can expect growth",
@@ -46300,13 +46255,18 @@
     },
     {
       "source": "the sweetest of the sweet",
-      "target": "an6.60",
+      "target": "sn1.73",
       "rank": 1
     },
     {
       "source": "the sweetest of the sweet",
-      "target": "mn21",
+      "target": "snp1.10",
       "rank": 2
+    },
+    {
+      "source": "the sweetest of the sweet",
+      "target": "sn10.12",
+      "rank": 3
     },
     {
       "source": "the teaching, the training",
@@ -47492,11 +47452,6 @@
       "source": "to endure",
       "target": "an7.36",
       "rank": 2
-    },
-    {
-      "source": "to endure",
-      "target": "sn1.17",
-      "rank": 3
     },
     {
       "source": "to go beyond suffering",
