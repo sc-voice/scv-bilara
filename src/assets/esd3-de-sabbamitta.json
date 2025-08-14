@@ -1833,7 +1833,7 @@
     {
       "id": "Grundlage der",
       "group": "Examples",
-      "links": 6
+      "links": 3
     },
     {
       "id": "Grundlage für die Versenkung",
@@ -1908,7 +1908,7 @@
     {
       "id": "Heiligtümer",
       "group": "Examples",
-      "links": 6
+      "links": 8
     },
     {
       "id": "Heimatdorf verließe und zu einem anderen",
@@ -3958,7 +3958,7 @@
     {
       "id": "Weberin",
       "group": "Examples",
-      "links": 7
+      "links": 0
     },
     {
       "id": "weder sich noch andere zu kasteien",
@@ -4834,7 +4834,7 @@
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 109
+      "links": 108
     },
     {
       "id": "an4.189",
@@ -4852,7 +4852,7 @@
       "id": "dn34",
       "group": "dn",
       "rank": 1,
-      "links": 81
+      "links": 80
     },
     {
       "id": "an8.118",
@@ -5530,7 +5530,7 @@
       "id": "dn24",
       "group": "dn",
       "rank": 1,
-      "links": 18
+      "links": 19
     },
     {
       "id": "an3.67",
@@ -6429,8 +6429,8 @@
     {
       "id": "sn9.6",
       "group": "sn",
-      "rank": 4,
-      "links": 2
+      "rank": 5,
+      "links": 1
     },
     {
       "id": "thag15.1",
@@ -9250,7 +9250,7 @@
       "id": "an8.80",
       "group": "an",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "an4.184",
@@ -11854,7 +11854,7 @@
       "id": "thag16.9",
       "group": "thag",
       "rank": 2,
-      "links": 8
+      "links": 7
     },
     {
       "id": "sn22.81",
@@ -13257,7 +13257,7 @@
     {
       "id": "sn11.15",
       "group": "sn",
-      "rank": 4,
+      "rank": 5,
       "links": 1
     },
     {
@@ -13265,6 +13265,12 @@
       "group": "an",
       "rank": 5,
       "links": 2
+    },
+    {
+      "id": "dhp179-196",
+      "group": "dhp",
+      "rank": 3,
+      "links": 4
     },
     {
       "id": "an6.51",
@@ -14259,8 +14265,8 @@
     {
       "id": "an4.199",
       "group": "an",
-      "rank": 1,
-      "links": 3
+      "rank": 2,
+      "links": 2
     },
     {
       "id": "kp3",
@@ -14590,13 +14596,7 @@
       "id": "thag14.2",
       "group": "thag",
       "rank": 3,
-      "links": 2
-    },
-    {
-      "id": "dhp179-196",
-      "group": "dhp",
-      "rank": 3,
-      "links": 4
+      "links": 1
     },
     {
       "id": "an1.150-169",
@@ -17668,18 +17668,6 @@
       "id": "sn11.1",
       "group": "sn",
       "rank": 15,
-      "links": 1
-    },
-    {
-      "id": "thag2.21",
-      "group": "thag",
-      "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "sn4.7",
-      "group": "sn",
-      "rank": 3,
       "links": 1
     },
     {
@@ -31576,33 +31564,18 @@
     },
     {
       "source": "Grundlage der",
-      "target": "an8.80",
+      "target": "mn56",
       "rank": 1
     },
     {
       "source": "Grundlage der",
-      "target": "dn34",
+      "target": "mn140",
       "rank": 2
     },
     {
       "source": "Grundlage der",
-      "target": "dn33",
-      "rank": 3
-    },
-    {
-      "source": "Grundlage der",
-      "target": "mn56",
-      "rank": 4
-    },
-    {
-      "source": "Grundlage der",
-      "target": "mn140",
-      "rank": 5
-    },
-    {
-      "source": "Grundlage der",
       "target": "sn47.10",
-      "rank": 6
+      "rank": 3
     },
     {
       "source": "Grundlage für die Versenkung",
@@ -32261,18 +32234,28 @@
     },
     {
       "source": "Heiligtümer",
-      "target": "sn11.15",
+      "target": "dn24",
       "rank": 4
     },
     {
       "source": "Heiligtümer",
-      "target": "an7.21",
+      "target": "sn11.15",
       "rank": 5
     },
     {
       "source": "Heiligtümer",
-      "target": "mn4",
+      "target": "an7.21",
       "rank": 6
+    },
+    {
+      "source": "Heiligtümer",
+      "target": "dhp179-196",
+      "rank": 7
+    },
+    {
+      "source": "Heiligtümer",
+      "target": "mn4",
+      "rank": 8
     },
     {
       "source": "Heimatdorf verließe und zu einem anderen",
@@ -46398,41 +46381,6 @@
       "source": "Wasser, das trüb, dunkel und schmutzig ist",
       "target": "sn46.55",
       "rank": 2
-    },
-    {
-      "source": "Weberin",
-      "target": "an4.199",
-      "rank": 1
-    },
-    {
-      "source": "Weberin",
-      "target": "thag2.21",
-      "rank": 2
-    },
-    {
-      "source": "Weberin",
-      "target": "sn4.7",
-      "rank": 3
-    },
-    {
-      "source": "Weberin",
-      "target": "sn9.6",
-      "rank": 4
-    },
-    {
-      "source": "Weberin",
-      "target": "thag14.2",
-      "rank": 5
-    },
-    {
-      "source": "Weberin",
-      "target": "dhp179-196",
-      "rank": 6
-    },
-    {
-      "source": "Weberin",
-      "target": "thag16.9",
-      "rank": 7
     },
     {
       "source": "weder sich noch andere zu kasteien",
