@@ -440,17 +440,19 @@ typeof describe === "function" &&
       );
       should(mld0.score).equal(10.011);
     });
-    it("find(...) scores relevance: on fire", async () => {
+    it("TESTTESTfind(...) scores relevance: on fire", async () => {
       var skr = await new Seeker({
         lang: "en", // English default
       }).initialize();
 
       // Mixed Pali/Deutsch keywords initial cap
       var pattern = "on fire";
+      skr.clearMemo('find');
+      skr.clearMemo('grep');
       var data = await skr.find({
         pattern,
       });
-      should(data.resultPattern).equal("\\bon fire");
+      should(data.resultPattern).equal("\\bon\\sfire");
       should(data.method).equal("phrase");
       var [mld0, mld1] = data.mlDocs;
       should(mld1.bilaraPaths[0]).equal(
@@ -1106,11 +1108,13 @@ typeof describe === "function" &&
       });
       should(res.suttaRefs.length).equal(16);
     });
-    it("find(...) => finds keywords", async () => {
+    it("find() keywords: wurzel leidens", async () => {
       var maxDoc = 3;
       var skr = await new Seeker({
         maxDoc,
       }).initialize();
+      skr.clearMemo('find');
+      skr.clearMemo('grep');
 
       var pattern = "wurzel leidens";
       var res = await skr.find({
@@ -1763,9 +1767,11 @@ typeof describe === "function" &&
         bilaraData,
       }).initialize();
       var pattern = "alles leiden, das entsteht -ml3 -l de";
+      skr.clearMemo('find');
+      skr.clearMemo('grep');
 
       var data = await skr.find({ pattern });
-      should(data.resultPattern).equal("\\balles leiden, das entsteht");
+      should(data.resultPattern).equal("\\balles\\sleiden,\\sdas\\sentsteht");
       should(data.method).equal("phrase");
       should(data.mlDocs.length).equal(1);
       var mld0 = data.mlDocs[0];
@@ -1917,6 +1923,8 @@ typeof describe === "function" &&
         bilaraData,
       }).initialize();
       var pattern = "king pacetana";
+      skr.clearMemo('find');
+      skr.clearMemo('grep');
 
       var data = await skr.find({ pattern });
       should(data.searchLang).equal("en");
@@ -1925,7 +1933,7 @@ typeof describe === "function" &&
       var mld0 = data.mlDocs[0];
       should(mld0.bilaraPaths[0]).match(/an3.15/);
       should(mld0.score).equal(3.065);
-      should(data.resultPattern).equal("\\bking pacetana");
+      should(data.resultPattern).equal("\\bking\\spacetana");
     });
     it("find(...) is cached", async () => {
       var skr = await new Seeker({
@@ -2796,7 +2804,7 @@ typeof describe === "function" &&
       });
     });
     it("find(...) tha-ap34", async () => {
-      let msg = 'test.seeker@2829';
+      let msg = 'test.seeker@2799';
       var maxDoc = 2;
       let skr = await new Seeker({maxDoc}).initialize();
       let dbg = 0;
@@ -2820,5 +2828,37 @@ typeof describe === "function" &&
       let segs = mlDocs[0].segments();
 
       console.log(msg, segs[segs.length-1]);
+    });
+    it("slowFind() awakened after", async () => {
+      let msg = 'test.seeker@2825';
+      var maxDoc = 2;
+      let skr = await new Seeker({maxDoc}).initialize();
+      skr.clearMemo('grep');
+      skr.clearMemo('grep');
+      let dbg = 0;
+      let userPat = 'awakened after';
+      let docLang = "en";
+      let docAuthor = "sujato";
+      let minLang = 1;
+      let pattern = [ 
+        userPat, 
+        '-dl', docLang, 
+        '-da', docAuthor, 
+        '-ml', minLang, 
+      ].join(' ');
+      let findArgs = skr.findArgs([{
+        pattern,
+        matchHighlight: false,
+      }]);
+      var res = await skr.slowFind(findArgs);
+
+      should(res.method).equal("phrase");
+      let { mlDocs, suttaRefs } = res;
+      should.deepEqual(suttaRefs.sort(), [
+        'sn16.5/en/sujato',
+        'sn8.9/en/sujato',
+        'thag15.1/en/sujato',
+        'thag21.1/en/sujato',
+      ]);
     });
   });

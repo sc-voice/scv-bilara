@@ -25,15 +25,15 @@
 
   const { 
     DBG,
-    DBG_GREP, 
   } = require("./defines.cjs");
+  const { SEEKER } = DBG;
   
   var wscount = 0;
 
   class Seeker {
     constructor(opts = {}) {
       const msg = "Seeker.ctor()";
-      const dbg = DBG.SEEKER;
+      const dbg = SEEKER.CTOR;
       (opts.logger || logger).logInstance(this, opts);
       let bilaraData =
         (this.bilaraData = opts.bilaraData || new BilaraData(opts));
@@ -251,7 +251,7 @@
 
     grep(opts = {}) {
       const msg = "Seeker.grep() ";
-      const dbg = DBG_GREP;
+      const dbg = SEEKER.GREP;
       var {
         author,
         pattern,
@@ -270,6 +270,7 @@
       var reTipCat = this.tipitakaRegExp(tipitakaCategories);
       lang = lang || language || this.lang;
       var root = this.root.replace(`${Files.APP_DIR}/`, "");
+      dbg && console.log(msg, {root});
       var slowOpts = {
         author,
         pattern,
@@ -314,7 +315,7 @@
 
     static async slowGrep(opts) {
       const msg = "Seeker.slowGrep ";
-      const dbg = DBG_GREP;
+      const dbg = SEEKER.SLOWGREP;
       try {
         var {
           author,
@@ -327,6 +328,7 @@
           root,
           patPrimary,
         } = opts;
+        dbg && console.log(msg, JSON.stringify(opts, null, 2));
         if (!root.startsWith("/")) {
           root = `${Files.APP_DIR}/${root}`;
         }
@@ -379,7 +381,7 @@
         dbg && console.log(msg, {cmd, execOpts, lines, paths});
         return paths;
       } catch (e) {
-        logger.warn(`slowGrep()`, JSON.stringify(opts), e.message, cmd);
+        logger.warn(msg, JSON.stringify(opts), e.message, cmd);
         throw e;
       }
     }
@@ -531,7 +533,7 @@
 
     findArgs(args) {
       const msg = "Seeker.findArgs() ";
-      const dbg = DBG.SEEKER || DBG.FINDARGS;
+      const dbg = SEEKER.FINDARGS;
       const dbgv = DBG.VERBOSE;
       if (!(args instanceof Array)) {
         throw new Error("findArgs(?ARRAY-OF-ARGS?)");
@@ -803,7 +805,7 @@
 
     slowFindId(opts={}) {
       const msg = "Seeker.slowFindId() ";
-      const dbg = DBG.SEEKER || DBG.SLOWFIND || DBG.SLOWFINDID;
+      const dbg = SEEKER.SLOWFINDID;
       const dbgv = DBG.VERBOSE && dbg;
       let { 
         lang='en', 
@@ -870,7 +872,7 @@
 
     async slowFind(findArgs) {
       const msg = "Seeker.slowFind() ";
-      const dbg = DBG.SLOWFIND;
+      const dbg = SEEKER.SLOWFIND;
       try {
         var msStart = Date.now();
         let result;
@@ -893,7 +895,7 @@
 
     async slowFindLegacy(findArgs) {
       const msg = "Seeker.slowFindLegacy() ";
-      const dbg = DBG.SEEKER || DBG.SLOWFIND;
+      const dbg = SEEKER.SLOWFIND;
       var msStart = Date.now();
       var {
         author,
@@ -1069,7 +1071,7 @@
 
     async slowFindTrilingual(findArgs) {
       const msg = "Seeker.slowFindTrilingual()";
-      const dbg = DBG.SEEKER || DBG.SLOWFIND || DBG.SLOWFINDID;
+      const dbg = SEEKER.SLOWFIND || SEEKER.SLOWFINDID;
       const dbgv = DBG.VERBOSE && dbg;
       var msStart = Date.now();
       var {
@@ -1259,8 +1261,8 @@
     }
 
     async slowFindPhrase(args = {}) {
-      const msg = "Seeker.slowFindPhrase() ";
-      const dbg = DBG.SEEKER;
+      const msg = "S4R.slowFindPhrase:";
+      const dbg = SEEKER.SLOWFINDPHRASE;
       let {
         author,
         lang,
@@ -1275,6 +1277,7 @@
       author = author || AuthorsV2.langAuthor(searchLang, {
         category: tipitakaCategories,
       });
+      let phrasePat = pattern.replaceAll(/\s/mg, '\\s');
       try {
         let msStart = Date.now();
         let bd = this.bilaraData;
@@ -1285,7 +1288,7 @@
         let uids, suttaRefs;
         let searchOpts = {
           author,
-          pattern,
+          pattern: phrasePat,
           searchLang,
           maxResults,
           lang,
@@ -1297,11 +1300,13 @@
           searchOpts
         );
         if (lines.length) {
-          dbg && console.log(msg, {resultPattern, lines});
+          dbg && console.log(msg+'1.1', {resultPattern, lines});
           this.debug(msg, `phrase`, { 
             resultPattern, lines: lines.length });
         } else {
           method = "keywords";
+          searchOpts.pattern = pattern;
+          dbg && console.log(msg+'1.2', {resultPattern, lines});
           let data = await this.keywordSearch(searchOpts);
           var { lines, resultPattern } = data;
           this.debug(msg, `keywords`, {
@@ -1312,7 +1317,7 @@
         sortLines && lines.sort(sortLines);
         suttaRefs = 
           lines.map((line) => BilaraPath.pathParts(line).suttaRef);
-        dbg && console.log(msg, `suttaRefs`, suttaRefs);
+        dbg && console.log(msg+9, `suttaRefs`, suttaRefs);
         return {
           method,
           resultPattern,
