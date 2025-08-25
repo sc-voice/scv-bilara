@@ -468,7 +468,7 @@
     {
       "id": "brutal",
       "group": "Examples",
-      "links": 29
+      "links": 0
     },
     {
       "id": "Cousin des Buddha",
@@ -3478,7 +3478,7 @@
     {
       "id": "unbarmherzig",
       "group": "Examples",
-      "links": 20
+      "links": 0
     },
     {
       "id": "unbedingt",
@@ -4552,7 +4552,7 @@
       "id": "mn14",
       "group": "mn",
       "rank": 1,
-      "links": 12
+      "links": 11
     },
     {
       "id": "an9.41",
@@ -5554,7 +5554,7 @@
       "id": "mn135",
       "group": "mn",
       "rank": 4,
-      "links": 6
+      "links": 5
     },
     {
       "id": "mn79",
@@ -6202,7 +6202,7 @@
       "id": "an4.198",
       "group": "an",
       "rank": 1,
-      "links": 20
+      "links": 19
     },
     {
       "id": "an10.99",
@@ -6220,13 +6220,13 @@
       "id": "mn51",
       "group": "mn",
       "rank": 2,
-      "links": 24
+      "links": 23
     },
     {
       "id": "mn94",
       "group": "mn",
       "rank": 1,
-      "links": 23
+      "links": 22
     },
     {
       "id": "mn119",
@@ -6352,7 +6352,7 @@
       "id": "mn86",
       "group": "mn",
       "rank": 1,
-      "links": 15
+      "links": 14
     },
     {
       "id": "mn50",
@@ -7216,19 +7216,19 @@
       "id": "sn17.11",
       "group": "sn",
       "rank": 2,
-      "links": 2
+      "links": 1
     },
     {
       "id": "sn17.12",
       "group": "sn",
       "rank": 3,
-      "links": 2
+      "links": 1
     },
     {
       "id": "sn17.37",
       "group": "sn",
       "rank": 4,
-      "links": 2
+      "links": 1
     },
     {
       "id": "an9.7",
@@ -7252,13 +7252,13 @@
       "id": "sn17.13-20",
       "group": "sn",
       "rank": 8,
-      "links": 3
+      "links": 2
     },
     {
       "id": "sn17.38-43",
       "group": "sn",
       "rank": 9,
-      "links": 2
+      "links": 1
     },
     {
       "id": "iti25",
@@ -7366,7 +7366,7 @@
       "id": "sn17.6",
       "group": "sn",
       "rank": 3,
-      "links": 2
+      "links": 1
     },
     {
       "id": "mn13",
@@ -7505,144 +7505,6 @@
       "group": "thig",
       "rank": 2,
       "links": 8
-    },
-    {
-      "id": "sn17.21",
-      "group": "sn",
-      "rank": 1,
-      "links": 1
-    },
-    {
-      "id": "sn17.22",
-      "group": "sn",
-      "rank": 2,
-      "links": 2
-    },
-    {
-      "id": "sn17.28",
-      "group": "sn",
-      "rank": 3,
-      "links": 1
-    },
-    {
-      "id": "sn17.31",
-      "group": "sn",
-      "rank": 4,
-      "links": 1
-    },
-    {
-      "id": "sn17.32",
-      "group": "sn",
-      "rank": 5,
-      "links": 1
-    },
-    {
-      "id": "sn17.33",
-      "group": "sn",
-      "rank": 6,
-      "links": 1
-    },
-    {
-      "id": "sn17.34",
-      "group": "sn",
-      "rank": 7,
-      "links": 1
-    },
-    {
-      "id": "sn17.7",
-      "group": "sn",
-      "rank": 9,
-      "links": 1
-    },
-    {
-      "id": "sn17.4",
-      "group": "sn",
-      "rank": 12,
-      "links": 1
-    },
-    {
-      "id": "sn17.29",
-      "group": "sn",
-      "rank": 13,
-      "links": 1
-    },
-    {
-      "id": "sn17.1",
-      "group": "sn",
-      "rank": 14,
-      "links": 1
-    },
-    {
-      "id": "sn17.8",
-      "group": "sn",
-      "rank": 15,
-      "links": 1
-    },
-    {
-      "id": "sn17.2",
-      "group": "sn",
-      "rank": 17,
-      "links": 1
-    },
-    {
-      "id": "sn17.9",
-      "group": "sn",
-      "rank": 18,
-      "links": 2
-    },
-    {
-      "id": "sn17.23",
-      "group": "sn",
-      "rank": 19,
-      "links": 1
-    },
-    {
-      "id": "sn17.24",
-      "group": "sn",
-      "rank": 20,
-      "links": 1
-    },
-    {
-      "id": "sn17.5",
-      "group": "sn",
-      "rank": 21,
-      "links": 1
-    },
-    {
-      "id": "sn17.10",
-      "group": "sn",
-      "rank": 23,
-      "links": 1
-    },
-    {
-      "id": "sn17.3",
-      "group": "sn",
-      "rank": 24,
-      "links": 1
-    },
-    {
-      "id": "sn17.36",
-      "group": "sn",
-      "rank": 25,
-      "links": 1
-    },
-    {
-      "id": "sn17.30",
-      "group": "sn",
-      "rank": 22,
-      "links": 2
-    },
-    {
-      "id": "sn17.35",
-      "group": "sn",
-      "rank": 28,
-      "links": 1
-    },
-    {
-      "id": "an6.45",
-      "group": "an",
-      "rank": 1,
-      "links": 4
     },
     {
       "id": "ud3.2",
@@ -7912,7 +7774,7 @@
       "id": "mn60",
       "group": "mn",
       "rank": 1,
-      "links": 18
+      "links": 17
     },
     {
       "id": "sn45.174",
@@ -8368,13 +8230,13 @@
       "id": "an10.211",
       "group": "an",
       "rank": 1,
-      "links": 7
+      "links": 6
     },
     {
       "id": "an10.212",
       "group": "an",
       "rank": 3,
-      "links": 6
+      "links": 5
     },
     {
       "id": "an10.168",
@@ -8398,7 +8260,7 @@
       "id": "an10.216",
       "group": "an",
       "rank": 1,
-      "links": 7
+      "links": 6
     },
     {
       "id": "sn55.7",
@@ -8410,7 +8272,7 @@
       "id": "an10.176",
       "group": "an",
       "rank": 3,
-      "links": 9
+      "links": 8
     },
     {
       "id": "sn42.8",
@@ -8422,13 +8284,13 @@
       "id": "mn41",
       "group": "mn",
       "rank": 4,
-      "links": 8
+      "links": 7
     },
     {
       "id": "mn42",
       "group": "mn",
       "rank": 5,
-      "links": 8
+      "links": 7
     },
     {
       "id": "an1.170-187",
@@ -9256,7 +9118,7 @@
       "id": "an4.184",
       "group": "an",
       "rank": 2,
-      "links": 3
+      "links": 2
     },
     {
       "id": "an6.103",
@@ -10300,7 +10162,7 @@
       "id": "an10.217",
       "group": "an",
       "rank": 2,
-      "links": 7
+      "links": 6
     },
     {
       "id": "sn56.47",
@@ -11069,6 +10931,12 @@
       "group": "mn",
       "rank": 1,
       "links": 8
+    },
+    {
+      "id": "sn17.22",
+      "group": "sn",
+      "rank": 14,
+      "links": 1
     },
     {
       "id": "sn34.1",
@@ -12154,7 +12022,7 @@
       "id": "an6.57",
       "group": "an",
       "rank": 1,
-      "links": 5
+      "links": 4
     },
     {
       "id": "mn23",
@@ -12191,6 +12059,12 @@
       "group": "an",
       "rank": 2,
       "links": 4
+    },
+    {
+      "id": "an6.45",
+      "group": "an",
+      "rank": 1,
+      "links": 3
     },
     {
       "id": "an5.76",
@@ -16591,30 +16465,6 @@
       "links": 1
     },
     {
-      "id": "an5.216",
-      "group": "an",
-      "rank": 2,
-      "links": 2
-    },
-    {
-      "id": "an10.77",
-      "group": "an",
-      "rank": 4,
-      "links": 1
-    },
-    {
-      "id": "iti30",
-      "group": "iti",
-      "rank": 4,
-      "links": 2
-    },
-    {
-      "id": "iti31",
-      "group": "iti",
-      "rank": 5,
-      "links": 2
-    },
-    {
       "id": "sn43.5",
       "group": "sn",
       "rank": 10,
@@ -17263,6 +17113,12 @@
       "links": 1
     },
     {
+      "id": "sn17.9",
+      "group": "sn",
+      "rank": 18,
+      "links": 1
+    },
+    {
       "id": "sn30.4-6",
       "group": "sn",
       "rank": 19,
@@ -17746,6 +17602,12 @@
       "id": "an5.215",
       "group": "an",
       "rank": 1,
+      "links": 1
+    },
+    {
+      "id": "an5.216",
+      "group": "an",
+      "rank": 2,
       "links": 1
     },
     {
@@ -18283,6 +18145,12 @@
       "links": 1
     },
     {
+      "id": "sn17.30",
+      "group": "sn",
+      "rank": 22,
+      "links": 1
+    },
+    {
       "id": "an10.141",
       "group": "an",
       "rank": 1,
@@ -18292,6 +18160,18 @@
       "id": "an10.185",
       "group": "an",
       "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "iti30",
+      "group": "iti",
+      "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "iti31",
+      "group": "iti",
+      "rank": 5,
       "links": 1
     },
     {
@@ -21696,151 +21576,6 @@
       "source": "brach in Tränen aus",
       "target": "dn17",
       "rank": 7
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.21",
-      "rank": 1
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.22",
-      "rank": 2
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.28",
-      "rank": 3
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.31",
-      "rank": 4
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.32",
-      "rank": 5
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.33",
-      "rank": 6
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.34",
-      "rank": 7
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.6",
-      "rank": 8
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.7",
-      "rank": 9
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.11",
-      "rank": 10
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.12",
-      "rank": 11
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.4",
-      "rank": 12
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.29",
-      "rank": 13
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.1",
-      "rank": 14
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.8",
-      "rank": 15
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.37",
-      "rank": 16
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.2",
-      "rank": 17
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.9",
-      "rank": 18
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.23",
-      "rank": 19
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.24",
-      "rank": 20
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.5",
-      "rank": 21
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.38-43",
-      "rank": 22
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.10",
-      "rank": 23
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.3",
-      "rank": 24
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.36",
-      "rank": 25
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.30",
-      "rank": 26
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.13-20",
-      "rank": 27
-    },
-    {
-      "source": "brutal",
-      "target": "sn17.35",
-      "rank": 28
-    },
-    {
-      "source": "brutal",
-      "target": "an6.45",
-      "rank": 29
     },
     {
       "source": "Cousin des Buddha",
@@ -42706,106 +42441,6 @@
       "source": "unangebracht, zu einem",
       "target": "an5.157",
       "rank": 1
-    },
-    {
-      "source": "unbarmherzig",
-      "target": "mn86",
-      "rank": 1
-    },
-    {
-      "source": "unbarmherzig",
-      "target": "an4.184",
-      "rank": 2
-    },
-    {
-      "source": "unbarmherzig",
-      "target": "an5.216",
-      "rank": 3
-    },
-    {
-      "source": "unbarmherzig",
-      "target": "an10.77",
-      "rank": 4
-    },
-    {
-      "source": "unbarmherzig",
-      "target": "iti30",
-      "rank": 5
-    },
-    {
-      "source": "unbarmherzig",
-      "target": "iti31",
-      "rank": 6
-    },
-    {
-      "source": "unbarmherzig",
-      "target": "an10.211",
-      "rank": 7
-    },
-    {
-      "source": "unbarmherzig",
-      "target": "an10.212",
-      "rank": 8
-    },
-    {
-      "source": "unbarmherzig",
-      "target": "an10.217",
-      "rank": 9
-    },
-    {
-      "source": "unbarmherzig",
-      "target": "an6.57",
-      "rank": 10
-    },
-    {
-      "source": "unbarmherzig",
-      "target": "an10.216",
-      "rank": 11
-    },
-    {
-      "source": "unbarmherzig",
-      "target": "an10.176",
-      "rank": 12
-    },
-    {
-      "source": "unbarmherzig",
-      "target": "an4.198",
-      "rank": 13
-    },
-    {
-      "source": "unbarmherzig",
-      "target": "mn41",
-      "rank": 14
-    },
-    {
-      "source": "unbarmherzig",
-      "target": "mn42",
-      "rank": 15
-    },
-    {
-      "source": "unbarmherzig",
-      "target": "mn14",
-      "rank": 16
-    },
-    {
-      "source": "unbarmherzig",
-      "target": "mn135",
-      "rank": 17
-    },
-    {
-      "source": "unbarmherzig",
-      "target": "mn51",
-      "rank": 18
-    },
-    {
-      "source": "unbarmherzig",
-      "target": "mn94",
-      "rank": 19
-    },
-    {
-      "source": "unbarmherzig",
-      "target": "mn60",
-      "rank": 20
     },
     {
       "source": "unbedingt",
