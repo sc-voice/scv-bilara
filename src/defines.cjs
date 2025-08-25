@@ -3,12 +3,12 @@ module.exports.DBG_EXEC       = 0;
 module.exports.DBG_EXAMPLES   = 0;
 module.exports.DBG_MLD        = 0;
 module.exports.DBG = {
-  FIND: 0,
   MLD_CTOR: 0,
   MLD_LOAD: 0,
   MLD_TITLES: 0,
   SEEKER: {
     CTOR: 0,
+    FIND: 0,
     FINDARGS: 0,
     GREP: 0,
     SLOWGREP: 0,

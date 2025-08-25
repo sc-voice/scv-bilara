@@ -534,7 +534,6 @@
     findArgs(args) {
       const msg = "Seeker.findArgs() ";
       const dbg = SEEKER.FINDARGS;
-      const dbgv = DBG.VERBOSE;
       if (!(args instanceof Array)) {
         throw new Error("findArgs(?ARRAY-OF-ARGS?)");
       }
@@ -651,11 +650,11 @@
           case 'de':
           case 'en':
             searchLang = this.patternLanguage(pattern, lang) 
-            dbgv && console.log(msg, '[1]searchLang', searchLang);
+            dbg>1 && console.log(msg, '[1]searchLang', searchLang);
             break;
           default:
             searchLang = docLang;
-            dbgv && console.log(msg, '[2]searchLangDoc', searchLang);
+            dbg>1 && console.log(msg, '[2]searchLangDoc', searchLang);
             break;
         }
       }
@@ -769,9 +768,10 @@
 
     find(...args) {
       const msg = "Seeker.find() ";
-      let dbg = DBG.FIND;
+      let dbg = SEEKER.FIND;
       var { findMemo, memoizer } = this;
       var findArgs = this.findArgs(args);
+      dbg>1 && console.info(msg+'1.01', 'findArgs', findArgs);
       var that = this;
       var callSlowFind = (args) => {
         return that.slowFind.call(that, args);
@@ -871,16 +871,17 @@
     }
 
     async slowFind(findArgs) {
-      const msg = "Seeker.slowFind() ";
+      const msg = "S4r.slowFind:";
       const dbg = SEEKER.SLOWFIND;
       try {
         var msStart = Date.now();
         let result;
+        dbg>1 && console.log(msg+'1.01', 'findArgs', findArgs);
         if (findArgs.trilingual) {
-          dbg && console.log(msg, "[1]slowFind", findArgs.pattern);
+          dbg && console.log(msg+'1.1', "slowFindTrilingual", findArgs.pattern);
           result = this.slowFindTrilingual(findArgs)
         } else {
-          dbg && console.log(msg, "[2]slowFindLegacy", findArgs.pattern);
+          dbg && console.log(msg+'1.2', "slowFindLegacy", findArgs.pattern);
           result = this.slowFindLegacy(findArgs);
         }
         var msElapsed = Date.now() - msStart;
@@ -1071,8 +1072,7 @@
 
     async slowFindTrilingual(findArgs) {
       const msg = "Seeker.slowFindTrilingual()";
-      const dbg = SEEKER.SLOWFIND || SEEKER.SLOWFINDID;
-      const dbgv = DBG.VERBOSE && dbg;
+      const dbg = SEEKER.SLOWFINDTRILINGUAL;
       var msStart = Date.now();
       var {
         author,
@@ -1095,6 +1095,7 @@
         trilingual,
         types,
       } = findArgs;
+      dbg>1 && console.log(msg+'1.01', 'findArgs', findArgs);
       var bd = this.bilaraData;
       var examples = bd.examples;
       var resultPattern = pattern;
@@ -1103,7 +1104,9 @@
       let isSuidPattern = SuttaCentralId.test(pattern);
 
       if (examples[lang] && examples[lang].indexOf(pattern) >= 0) {
-        searchLang = lang;
+        // DEPRECATED: avoid overwriting assigned search language
+        // Following code has no tests so effect of removal is unknown
+        //searchLang = lang;
       }
 
       if (isSuidPattern) {
@@ -1296,6 +1299,7 @@
           tipitakaCategories,
         };
 
+        dbg>1 && console.info(msg+'1.01', 'phraseSearch', searchOpts);
         var { lines, pattern: resultPattern } = await this.phraseSearch(
           searchOpts
         );
