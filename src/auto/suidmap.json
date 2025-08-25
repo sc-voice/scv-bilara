@@ -11011,6 +11011,7 @@
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn100": {
+		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
 		"translation/it/giovannizappa": "sutta/mn",
 		"translation/ru/sv": "sutta/mn",
@@ -23076,6 +23077,7 @@
 		"root/pli/ms": "sutta/kn/snp/vagga2"
 	},
 	"snp2.2": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga2",
 		"translation/en/sujato": "sutta/kn/snp/vagga2",
 		"translation/sr/brankokovacevic": "sutta/kn/snp/vagga2",
 		"root/pli/ms": "sutta/kn/snp/vagga2"
@@ -23269,6 +23271,7 @@
 		"root/pli/ms": "sutta/kn/snp/vagga5"
 	},
 	"snp5.2": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga5",
 		"translation/en/sujato": "sutta/kn/snp/vagga5",
 		"translation/lt/piyadassi": "sutta/kn/snp/vagga5",
 		"root/pli/ms": "sutta/kn/snp/vagga5"
@@ -23326,6 +23329,7 @@
 		"root/pli/ms": "sutta/kn/snp/vagga5"
 	},
 	"snp5.15": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga5",
 		"translation/en/sujato": "sutta/kn/snp/vagga5",
 		"root/pli/ms": "sutta/kn/snp/vagga5"
 	},

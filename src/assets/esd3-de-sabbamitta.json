@@ -8,7 +8,7 @@
     {
       "id": "aber zum Erwachen entschlossen",
       "group": "Examples",
-      "links": 24
+      "links": 25
     },
     {
       "id": "abgefallen",
@@ -103,7 +103,7 @@
     {
       "id": "alles Leiden",
       "group": "Examples",
-      "links": 23
+      "links": 24
     },
     {
       "id": "alle tauglichen Eigenschaften",
@@ -203,7 +203,7 @@
     {
       "id": "aufgrund bloßen Vertrauens",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "Auflösen der Bindungen",
@@ -478,7 +478,7 @@
     {
       "id": "Dachsparren",
       "group": "Examples",
-      "links": 14
+      "links": 15
     },
     {
       "id": "da ist ein Entrinnen",
@@ -938,7 +938,7 @@
     {
       "id": "drei Gleichnisse",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "drei Grundlagen",
@@ -968,7 +968,7 @@
     {
       "id": "drei Veden",
       "group": "Examples",
-      "links": 17
+      "links": 18
     },
     {
       "id": "drei Vorgänge",
@@ -983,7 +983,7 @@
     {
       "id": "Dunkelheit.* und Licht",
       "group": "Examples",
-      "links": 11
+      "links": 12
     },
     {
       "id": "Dunklen, die für das Helle bestimmt",
@@ -1173,7 +1173,7 @@
     {
       "id": "eingeschätzt",
       "group": "Examples",
-      "links": 10
+      "links": 11
     },
     {
       "id": "ein Hindernis einzig für euch",
@@ -1243,7 +1243,7 @@
     {
       "id": "entsprechend ihrer Taten wiedergeboren",
       "group": "Examples",
-      "links": 49
+      "links": 50
     },
     {
       "id": "entwickelt die Grundlage übersinnlicher Kraft",
@@ -1658,7 +1658,7 @@
     {
       "id": "gepackt",
       "group": "Examples",
-      "links": 15
+      "links": 16
     },
     {
       "id": "gepflegt werden sollte, und",
@@ -1668,7 +1668,7 @@
     {
       "id": "gepresster Zunge",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "gerechter und prinzipientreuer König",
@@ -1818,7 +1818,7 @@
     {
       "id": "grausam",
       "group": "Examples",
-      "links": 55
+      "links": 57
     },
     {
       "id": "grenzenlose Versenkung des Herzens",
@@ -1853,7 +1853,7 @@
     {
       "id": "gut genug",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "gut, Schwester",
@@ -2243,7 +2243,7 @@
     {
       "id": "kategorisch",
       "group": "Examples",
-      "links": 20
+      "links": 21
     },
     {
       "id": "keine Angst, Gutes zu tun",
@@ -2273,7 +2273,7 @@
     {
       "id": "Kennzeichen",
       "group": "Examples",
-      "links": 29
+      "links": 30
     },
     {
       "id": "Keuschen und die Unkeuschen",
@@ -2323,7 +2323,7 @@
     {
       "id": "Knoten",
       "group": "Examples",
-      "links": 29
+      "links": 41
     },
     {
       "id": "Konzept",
@@ -2678,7 +2678,7 @@
     {
       "id": "mörderisch",
       "group": "Examples",
-      "links": 11
+      "links": 12
     },
     {
       "id": "muss aufgegeben werden",
@@ -2958,7 +2958,7 @@
     {
       "id": "Rosenapfel",
       "group": "Examples",
-      "links": 26
+      "links": 27
     },
     {
       "id": "roten Kapok-Wald",
@@ -3208,7 +3208,7 @@
     {
       "id": "Sittlichkeit und.* Weisheit",
       "group": "Examples",
-      "links": 5
+      "links": 6
     },
     {
       "id": "so hat der Buddha es erklärt",
@@ -3698,7 +3698,7 @@
     {
       "id": "vertrauensvollen Hausbesitzer",
       "group": "Examples",
-      "links": 7
+      "links": 3
     },
     {
       "id": "Vervollkommnung de[sr]",
@@ -3708,7 +3708,7 @@
     {
       "id": "verwirklicht werden",
       "group": "Examples",
-      "links": 23
+      "links": 25
     },
     {
       "id": "viel Leiden und Bedrängnis",
@@ -4128,7 +4128,7 @@
     {
       "id": "Wiedergeburt in der Dimension",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "Wiedergeburt in der Gemeinschaft",
@@ -4153,7 +4153,7 @@
     {
       "id": "wieder und wieder",
       "group": "Examples",
-      "links": 36
+      "links": 37
     },
     {
       "id": "wie eine Kuh",
@@ -4581,8 +4581,14 @@
     {
       "id": "mn36",
       "group": "mn",
-      "rank": 1,
+      "rank": 2,
       "links": 14
+    },
+    {
+      "id": "mn100",
+      "group": "mn",
+      "rank": 1,
+      "links": 15
     },
     {
       "id": "mn85",
@@ -4774,7 +4780,7 @@
       "id": "thag20.1",
       "group": "thag",
       "rank": 7,
-      "links": 12
+      "links": 13
     },
     {
       "id": "dn17",
@@ -4852,7 +4858,7 @@
       "id": "dn34",
       "group": "dn",
       "rank": 1,
-      "links": 80
+      "links": 81
     },
     {
       "id": "an8.118",
@@ -5251,6 +5257,12 @@
       "links": 1
     },
     {
+      "id": "snp2.2",
+      "group": "snp",
+      "rank": 6,
+      "links": 3
+    },
+    {
       "id": "dhp334-359",
       "group": "dhp",
       "rank": 1,
@@ -5259,25 +5271,25 @@
     {
       "id": "iti7",
       "group": "iti",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
       "id": "iti8",
       "group": "iti",
-      "rank": 9,
+      "rank": 10,
       "links": 2
     },
     {
       "id": "an5.35",
       "group": "an",
-      "rank": 10,
+      "rank": 11,
       "links": 1
     },
     {
       "id": "sn5.6",
       "group": "sn",
-      "rank": 11,
+      "rank": 12,
       "links": 2
     },
     {
@@ -5301,7 +5313,7 @@
     {
       "id": "an5.38",
       "group": "an",
-      "rank": 15,
+      "rank": 16,
       "links": 1
     },
     {
@@ -5830,13 +5842,13 @@
       "id": "an4.23",
       "group": "an",
       "rank": 4,
-      "links": 4
+      "links": 5
     },
     {
       "id": "iti112",
       "group": "iti",
       "rank": 5,
-      "links": 4
+      "links": 5
     },
     {
       "id": "mn66",
@@ -6628,13 +6640,13 @@
       "id": "sn21.4",
       "group": "sn",
       "rank": 6,
-      "links": 5
+      "links": 6
     },
     {
       "id": "sn10.5",
       "group": "sn",
-      "rank": 11,
-      "links": 2
+      "rank": 6,
+      "links": 3
     },
     {
       "id": "dhp146-156",
@@ -8902,7 +8914,7 @@
       "id": "sn1.20",
       "group": "sn",
       "rank": 1,
-      "links": 2
+      "links": 3
     },
     {
       "id": "sn22.66",
@@ -9148,7 +9160,7 @@
       "id": "an6.13",
       "group": "an",
       "rank": 4,
-      "links": 5
+      "links": 6
     },
     {
       "id": "an3.101",
@@ -9771,7 +9783,7 @@
     {
       "id": "sn11.18",
       "group": "sn",
-      "rank": 4,
+      "rank": 5,
       "links": 1
     },
     {
@@ -9939,7 +9951,7 @@
     {
       "id": "snp3.11",
       "group": "snp",
-      "rank": 4,
+      "rank": 5,
       "links": 10
     },
     {
@@ -10457,6 +10469,12 @@
       "group": "snp",
       "rank": 3,
       "links": 2
+    },
+    {
+      "id": "snp5.2",
+      "group": "snp",
+      "rank": 9,
+      "links": 1
     },
     {
       "id": "an7.73",
@@ -12051,7 +12069,7 @@
     {
       "id": "thag10.5",
       "group": "thag",
-      "rank": 21,
+      "rank": 25,
       "links": 2
     },
     {
@@ -12813,19 +12831,19 @@
     {
       "id": "an4.262",
       "group": "an",
-      "rank": 23,
+      "rank": 24,
       "links": 1
     },
     {
       "id": "an6.75",
       "group": "an",
-      "rank": 24,
+      "rank": 25,
       "links": 1
     },
     {
       "id": "sn56.7",
       "group": "sn",
-      "rank": 25,
+      "rank": 26,
       "links": 1
     },
     {
@@ -12837,13 +12855,13 @@
     {
       "id": "an4.165",
       "group": "an",
-      "rank": 28,
+      "rank": 29,
       "links": 1
     },
     {
       "id": "an4.164",
       "group": "an",
-      "rank": 29,
+      "rank": 30,
       "links": 1
     },
     {
@@ -12855,7 +12873,7 @@
     {
       "id": "iti87",
       "group": "iti",
-      "rank": 31,
+      "rank": 32,
       "links": 1
     },
     {
@@ -12873,19 +12891,19 @@
     {
       "id": "an3.123",
       "group": "an",
-      "rank": 34,
+      "rank": 35,
       "links": 1
     },
     {
       "id": "an4.14",
       "group": "an",
-      "rank": 36,
+      "rank": 37,
       "links": 1
     },
     {
       "id": "sn1.32",
       "group": "sn",
-      "rank": 39,
+      "rank": 40,
       "links": 1
     },
     {
@@ -12976,13 +12994,13 @@
       "id": "an8.55",
       "group": "an",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "an8.54",
       "group": "an",
       "rank": 2,
-      "links": 4
+      "links": 3
     },
     {
       "id": "an6.67",
@@ -13672,7 +13690,7 @@
       "id": "sn10.7",
       "group": "sn",
       "rank": 7,
-      "links": 2
+      "links": 3
     },
     {
       "id": "sn56.46",
@@ -14083,6 +14101,18 @@
       "links": 1
     },
     {
+      "id": "sn10.10",
+      "group": "sn",
+      "rank": 9,
+      "links": 1
+    },
+    {
+      "id": "sn10.2",
+      "group": "sn",
+      "rank": 10,
+      "links": 1
+    },
+    {
       "id": "sn48.169-178",
       "group": "sn",
       "rank": 8,
@@ -14101,9 +14131,15 @@
       "links": 3
     },
     {
+      "id": "thag4.6",
+      "group": "thag",
+      "rank": 6,
+      "links": 2
+    },
+    {
       "id": "sn3.10",
       "group": "sn",
-      "rank": 14,
+      "rank": 17,
       "links": 1
     },
     {
@@ -14125,15 +14161,33 @@
       "links": 2
     },
     {
+      "id": "iti102",
+      "group": "iti",
+      "rank": 16,
+      "links": 2
+    },
+    {
+      "id": "sn1.34",
+      "group": "sn",
+      "rank": 24,
+      "links": 1
+    },
+    {
+      "id": "dhp90-99",
+      "group": "dhp",
+      "rank": 9,
+      "links": 2
+    },
+    {
       "id": "dhp209-220",
       "group": "dhp",
-      "rank": 23,
+      "rank": 31,
       "links": 1
     },
     {
       "id": "snp2.12",
       "group": "snp",
-      "rank": 24,
+      "rank": 33,
       "links": 2
     },
     {
@@ -14753,12 +14807,6 @@
       "group": "an",
       "rank": 1,
       "links": 3
-    },
-    {
-      "id": "dhp90-99",
-      "group": "dhp",
-      "rank": 9,
-      "links": 1
     },
     {
       "id": "sn43.4",
@@ -15577,12 +15625,6 @@
       "links": 2
     },
     {
-      "id": "thag4.6",
-      "group": "thag",
-      "rank": 6,
-      "links": 1
-    },
-    {
       "id": "sn1.37",
       "group": "sn",
       "rank": 7,
@@ -15735,8 +15777,8 @@
     {
       "id": "an8.76",
       "group": "an",
-      "rank": 2,
-      "links": 3
+      "rank": 3,
+      "links": 2
     },
     {
       "id": "an5.58",
@@ -16819,12 +16861,6 @@
       "links": 1
     },
     {
-      "id": "an8.75",
-      "group": "an",
-      "rank": 1,
-      "links": 2
-    },
-    {
       "id": "sn45.78-82",
       "group": "sn",
       "rank": 11,
@@ -16942,6 +16978,12 @@
       "id": "an5.92",
       "group": "an",
       "rank": 36,
+      "links": 1
+    },
+    {
+      "id": "an8.75",
+      "group": "an",
+      "rank": 37,
       "links": 1
     },
     {
@@ -18334,8 +18376,13 @@
     },
     {
       "source": "aber zum Erwachen entschlossen",
-      "target": "mn85",
+      "target": "mn100",
       "rank": 24
+    },
+    {
+      "source": "aber zum Erwachen entschlossen",
+      "target": "mn85",
+      "rank": 25
     },
     {
       "source": "abgefallen",
@@ -18994,93 +19041,98 @@
     },
     {
       "source": "alles Leiden",
-      "target": "dhp334-359",
+      "target": "snp2.2",
       "rank": 6
     },
     {
       "source": "alles Leiden",
-      "target": "dn14",
+      "target": "dhp334-359",
       "rank": 7
     },
     {
       "source": "alles Leiden",
-      "target": "iti7",
+      "target": "dn14",
       "rank": 8
     },
     {
       "source": "alles Leiden",
-      "target": "iti8",
+      "target": "iti7",
       "rank": 9
     },
     {
       "source": "alles Leiden",
-      "target": "an5.35",
+      "target": "iti8",
       "rank": 10
     },
     {
       "source": "alles Leiden",
-      "target": "sn5.6",
+      "target": "an5.35",
       "rank": 11
     },
     {
       "source": "alles Leiden",
-      "target": "an3.74",
+      "target": "sn5.6",
       "rank": 12
     },
     {
       "source": "alles Leiden",
-      "target": "thig6.6",
+      "target": "an3.74",
       "rank": 13
     },
     {
       "source": "alles Leiden",
-      "target": "an6.23",
+      "target": "thig6.6",
       "rank": 14
     },
     {
       "source": "alles Leiden",
-      "target": "an5.38",
+      "target": "an6.23",
       "rank": 15
     },
     {
       "source": "alles Leiden",
-      "target": "an4.49",
+      "target": "an5.38",
       "rank": 16
     },
     {
       "source": "alles Leiden",
-      "target": "dhp320-333",
+      "target": "an4.49",
       "rank": 17
     },
     {
       "source": "alles Leiden",
-      "target": "thig13.3",
+      "target": "dhp320-333",
       "rank": 18
     },
     {
       "source": "alles Leiden",
-      "target": "an3.36",
+      "target": "thig13.3",
       "rank": 19
     },
     {
       "source": "alles Leiden",
-      "target": "thig13.4",
+      "target": "an3.36",
       "rank": 20
     },
     {
       "source": "alles Leiden",
-      "target": "snp5.19",
+      "target": "thig13.4",
       "rank": 21
     },
     {
       "source": "alles Leiden",
-      "target": "mn140",
+      "target": "snp5.19",
       "rank": 22
     },
     {
       "source": "alles Leiden",
-      "target": "dn32",
+      "target": "mn140",
       "rank": 23
+    },
+    {
+      "source": "alles Leiden",
+      "target": "dn32",
+      "rank": 24
     },
     {
       "source": "alle tauglichen Eigenschaften",
@@ -19514,23 +19566,28 @@
     },
     {
       "source": "aufgrund bloßen Vertrauens",
-      "target": "mn36",
+      "target": "mn100",
       "rank": 1
     },
     {
       "source": "aufgrund bloßen Vertrauens",
-      "target": "mn26",
+      "target": "mn36",
       "rank": 2
     },
     {
       "source": "aufgrund bloßen Vertrauens",
-      "target": "mn85",
+      "target": "mn26",
       "rank": 3
     },
     {
       "source": "aufgrund bloßen Vertrauens",
-      "target": "an6.55",
+      "target": "mn85",
       "rank": 4
+    },
+    {
+      "source": "aufgrund bloßen Vertrauens",
+      "target": "an6.55",
+      "rank": 5
     },
     {
       "source": "Auflösen der Bindungen",
@@ -21664,8 +21721,13 @@
     },
     {
       "source": "Dachsparren",
-      "target": "mn85",
+      "target": "mn100",
       "rank": 14
+    },
+    {
+      "source": "Dachsparren",
+      "target": "mn85",
+      "rank": 15
     },
     {
       "source": "da ist ein Entrinnen",
@@ -24364,13 +24426,18 @@
     },
     {
       "source": "drei Gleichnisse",
-      "target": "mn36",
+      "target": "mn100",
       "rank": 1
     },
     {
       "source": "drei Gleichnisse",
-      "target": "mn85",
+      "target": "mn36",
       "rank": 2
+    },
+    {
+      "source": "drei Gleichnisse",
+      "target": "mn85",
+      "rank": 3
     },
     {
       "source": "drei Grundlagen",
@@ -24584,73 +24651,78 @@
     },
     {
       "source": "drei Veden",
-      "target": "sn11.18",
+      "target": "mn100",
       "rank": 4
     },
     {
       "source": "drei Veden",
-      "target": "an3.58",
+      "target": "sn11.18",
       "rank": 5
     },
     {
       "source": "drei Veden",
-      "target": "mn91",
+      "target": "an3.58",
       "rank": 6
     },
     {
       "source": "drei Veden",
-      "target": "dn3",
+      "target": "mn91",
       "rank": 7
     },
     {
       "source": "drei Veden",
-      "target": "dn5",
+      "target": "dn3",
       "rank": 8
     },
     {
       "source": "drei Veden",
-      "target": "an3.59",
+      "target": "dn5",
       "rank": 9
     },
     {
       "source": "drei Veden",
-      "target": "sn35.132",
+      "target": "an3.59",
       "rank": 10
     },
     {
       "source": "drei Veden",
-      "target": "an5.192",
+      "target": "sn35.132",
       "rank": 11
     },
     {
       "source": "drei Veden",
-      "target": "mn92",
+      "target": "an5.192",
       "rank": 12
     },
     {
       "source": "drei Veden",
-      "target": "snp3.7",
+      "target": "mn92",
       "rank": 13
     },
     {
       "source": "drei Veden",
-      "target": "mn93",
+      "target": "snp3.7",
       "rank": 14
     },
     {
       "source": "drei Veden",
-      "target": "mn98",
+      "target": "mn93",
       "rank": 15
     },
     {
       "source": "drei Veden",
-      "target": "snp3.9",
+      "target": "mn98",
       "rank": 16
     },
     {
       "source": "drei Veden",
-      "target": "thag20.1",
+      "target": "snp3.9",
       "rank": 17
+    },
+    {
+      "source": "drei Veden",
+      "target": "thag20.1",
+      "rank": 18
     },
     {
       "source": "drei Vorgänge",
@@ -24794,23 +24866,28 @@
     },
     {
       "source": "Dunkelheit.* und Licht",
-      "target": "mn36",
+      "target": "mn100",
       "rank": 8
     },
     {
       "source": "Dunkelheit.* und Licht",
-      "target": "mn85",
+      "target": "mn36",
       "rank": 9
     },
     {
       "source": "Dunkelheit.* und Licht",
-      "target": "an6.62",
+      "target": "mn85",
       "rank": 10
     },
     {
       "source": "Dunkelheit.* und Licht",
-      "target": "dn21",
+      "target": "an6.62",
       "rank": 11
+    },
+    {
+      "source": "Dunkelheit.* und Licht",
+      "target": "dn21",
+      "rank": 12
     },
     {
       "source": "Dunklen, die für das Helle bestimmt",
@@ -26259,13 +26336,18 @@
     },
     {
       "source": "eingeschätzt",
-      "target": "sn36.6",
+      "target": "snp5.2",
       "rank": 9
     },
     {
       "source": "eingeschätzt",
-      "target": "dhp256-272",
+      "target": "sn36.6",
       "rank": 10
+    },
+    {
+      "source": "eingeschätzt",
+      "target": "dhp256-272",
+      "rank": 11
     },
     {
       "source": "ein Lehrer mit Namen Sunetta",
@@ -26934,13 +27016,18 @@
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "mn85",
+      "target": "mn100",
       "rank": 48
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "dn34",
+      "target": "mn85",
       "rank": 49
+    },
+    {
+      "source": "entsprechend ihrer Taten wiedergeboren",
+      "target": "dn34",
+      "rank": 50
     },
     {
       "source": "entwickelt die Grundlage übersinnlicher Kraft",
@@ -29974,53 +30061,58 @@
     },
     {
       "source": "gepackt",
-      "target": "sn3.4",
+      "target": "sn10.5",
       "rank": 6
     },
     {
       "source": "gepackt",
-      "target": "an8.20",
+      "target": "sn3.4",
       "rank": 7
     },
     {
       "source": "gepackt",
-      "target": "dhp273-289",
+      "target": "an8.20",
       "rank": 8
     },
     {
       "source": "gepackt",
-      "target": "snp4.15",
+      "target": "dhp273-289",
       "rank": 9
     },
     {
       "source": "gepackt",
-      "target": "ud5.5",
+      "target": "snp4.15",
       "rank": 10
     },
     {
       "source": "gepackt",
-      "target": "thig14.1",
+      "target": "ud5.5",
       "rank": 11
     },
     {
       "source": "gepackt",
-      "target": "mn86",
+      "target": "thig14.1",
       "rank": 12
     },
     {
       "source": "gepackt",
-      "target": "mn128",
+      "target": "mn86",
       "rank": 13
     },
     {
       "source": "gepackt",
-      "target": "dn2",
+      "target": "mn128",
       "rank": 14
     },
     {
       "source": "gepackt",
-      "target": "dn19",
+      "target": "dn2",
       "rank": 15
+    },
+    {
+      "source": "gepackt",
+      "target": "dn19",
+      "rank": 16
     },
     {
       "source": "gepresster Zunge",
@@ -30029,18 +30121,23 @@
     },
     {
       "source": "gepresster Zunge",
-      "target": "mn36",
+      "target": "mn100",
       "rank": 2
     },
     {
       "source": "gepresster Zunge",
-      "target": "mn85",
+      "target": "mn36",
       "rank": 3
     },
     {
       "source": "gepresster Zunge",
-      "target": "snp3.11",
+      "target": "mn85",
       "rank": 4
+    },
+    {
+      "source": "gepresster Zunge",
+      "target": "snp3.11",
+      "rank": 5
     },
     {
       "source": "gerechter und prinzipientreuer König",
@@ -31084,193 +31181,203 @@
     },
     {
       "source": "grausam",
-      "target": "an9.3",
+      "target": "an6.13",
       "rank": 18
     },
     {
       "source": "grausam",
-      "target": "ud4.1",
+      "target": "an9.3",
       "rank": 19
     },
     {
       "source": "grausam",
-      "target": "an11.17",
+      "target": "ud4.1",
       "rank": 20
     },
     {
       "source": "grausam",
-      "target": "mn33",
+      "target": "an11.17",
       "rank": 21
     },
     {
       "source": "grausam",
-      "target": "mn78",
+      "target": "mn33",
       "rank": 22
     },
     {
       "source": "grausam",
-      "target": "an4.262",
+      "target": "mn78",
       "rank": 23
     },
     {
       "source": "grausam",
-      "target": "an6.75",
+      "target": "an4.262",
       "rank": 24
     },
     {
       "source": "grausam",
-      "target": "sn56.7",
+      "target": "an6.75",
       "rank": 25
     },
     {
       "source": "grausam",
-      "target": "sn9.11",
+      "target": "sn56.7",
       "rank": 26
     },
     {
       "source": "grausam",
-      "target": "an4.51",
+      "target": "sn9.11",
       "rank": 27
     },
     {
       "source": "grausam",
-      "target": "an4.165",
+      "target": "an4.51",
       "rank": 28
     },
     {
       "source": "grausam",
-      "target": "an4.164",
+      "target": "an4.165",
       "rank": 29
     },
     {
       "source": "grausam",
-      "target": "an5.45",
+      "target": "an4.164",
       "rank": 30
     },
     {
       "source": "grausam",
-      "target": "iti87",
+      "target": "an5.45",
       "rank": 31
     },
     {
       "source": "grausam",
-      "target": "sn55.41",
+      "target": "iti87",
       "rank": 32
     },
     {
       "source": "grausam",
-      "target": "sn55.42",
+      "target": "sn55.41",
       "rank": 33
     },
     {
       "source": "grausam",
-      "target": "an3.123",
+      "target": "sn55.42",
       "rank": 34
     },
     {
       "source": "grausam",
-      "target": "an4.114",
+      "target": "an3.123",
       "rank": 35
     },
     {
       "source": "grausam",
-      "target": "an4.14",
+      "target": "an4.114",
       "rank": 36
     },
     {
       "source": "grausam",
-      "target": "an3.101",
+      "target": "an4.14",
       "rank": 37
     },
     {
       "source": "grausam",
-      "target": "an10.20",
+      "target": "an3.101",
       "rank": 38
     },
     {
       "source": "grausam",
-      "target": "sn1.32",
+      "target": "an10.20",
       "rank": 39
     },
     {
       "source": "grausam",
-      "target": "an5.140",
+      "target": "sn1.32",
       "rank": 40
     },
     {
       "source": "grausam",
-      "target": "an6.58",
+      "target": "an5.140",
       "rank": 41
     },
     {
       "source": "grausam",
-      "target": "an3.40",
+      "target": "an6.58",
       "rank": 42
     },
     {
       "source": "grausam",
-      "target": "an10.60",
+      "target": "snp2.2",
       "rank": 43
     },
     {
       "source": "grausam",
-      "target": "mn55",
+      "target": "an3.40",
       "rank": 44
     },
     {
       "source": "grausam",
-      "target": "sn22.80",
+      "target": "an10.60",
       "rank": 45
     },
     {
       "source": "grausam",
-      "target": "thag16.8",
+      "target": "mn55",
       "rank": 46
     },
     {
       "source": "grausam",
-      "target": "mn2",
+      "target": "sn22.80",
       "rank": 47
     },
     {
       "source": "grausam",
-      "target": "mn62",
+      "target": "thag16.8",
       "rank": 48
     },
     {
       "source": "grausam",
-      "target": "mn7",
+      "target": "mn2",
       "rank": 49
     },
     {
       "source": "grausam",
-      "target": "mn115",
+      "target": "mn62",
       "rank": 50
     },
     {
       "source": "grausam",
-      "target": "mn122",
+      "target": "mn7",
       "rank": 51
     },
     {
       "source": "grausam",
-      "target": "mn86",
+      "target": "mn115",
       "rank": 52
     },
     {
       "source": "grausam",
-      "target": "dhp383-423",
+      "target": "mn122",
       "rank": 53
     },
     {
       "source": "grausam",
-      "target": "dn17",
+      "target": "mn86",
       "rank": 54
     },
     {
       "source": "grausam",
-      "target": "dn32",
+      "target": "dhp383-423",
       "rank": 55
+    },
+    {
+      "source": "grausam",
+      "target": "dn17",
+      "rank": 56
+    },
+    {
+      "source": "grausam",
+      "target": "dn32",
+      "rank": 57
     },
     {
       "source": "grenzenlose Versenkung des Herzens",
@@ -31599,28 +31706,33 @@
     },
     {
       "source": "gut genug",
-      "target": "mn36",
+      "target": "mn100",
       "rank": 4
     },
     {
       "source": "gut genug",
-      "target": "mn26",
+      "target": "mn36",
       "rank": 5
     },
     {
       "source": "gut genug",
-      "target": "mn85",
+      "target": "mn26",
       "rank": 6
     },
     {
       "source": "gut genug",
-      "target": "an9.3",
+      "target": "mn85",
       "rank": 7
     },
     {
       "source": "gut genug",
-      "target": "ud4.1",
+      "target": "an9.3",
       "rank": 8
+    },
+    {
+      "source": "gut genug",
+      "target": "ud4.1",
+      "rank": 9
     },
     {
       "source": "gut, Schwester",
@@ -34064,13 +34176,18 @@
     },
     {
       "source": "kategorisch",
-      "target": "dn24",
+      "target": "mn100",
       "rank": 19
     },
     {
       "source": "kategorisch",
-      "target": "dn33",
+      "target": "dn24",
       "rank": 20
+    },
+    {
+      "source": "kategorisch",
+      "target": "dn33",
+      "rank": 21
     },
     {
       "source": "keine Angst, Gutes zu tun",
@@ -34388,6 +34505,11 @@
       "rank": 29
     },
     {
+      "source": "Kennzeichen",
+      "target": "mn100",
+      "rank": 30
+    },
+    {
       "source": "Keuschen und die Unkeuschen",
       "target": "an6.44",
       "rank": 1
@@ -34574,108 +34696,168 @@
     },
     {
       "source": "Knoten",
-      "target": "sn48.169-178",
+      "target": "sn10.10",
       "rank": 9
     },
     {
       "source": "Knoten",
-      "target": "iti8",
+      "target": "sn10.2",
       "rank": 10
     },
     {
       "source": "Knoten",
-      "target": "sn48.115-124",
+      "target": "sn48.169-178",
       "rank": 11
     },
     {
       "source": "Knoten",
-      "target": "sn50.99-108",
+      "target": "iti8",
       "rank": 12
     },
     {
       "source": "Knoten",
-      "target": "sn49.45-54",
+      "target": "sn48.115-124",
       "rank": 13
     },
     {
       "source": "Knoten",
-      "target": "sn3.10",
+      "target": "sn50.99-108",
       "rank": 14
     },
     {
       "source": "Knoten",
-      "target": "sn51.77-86",
+      "target": "sn49.45-54",
       "rank": 15
     },
     {
       "source": "Knoten",
-      "target": "sn53.45-54",
+      "target": "thag4.6",
       "rank": 16
     },
     {
       "source": "Knoten",
-      "target": "sn47.95-104",
+      "target": "sn3.10",
       "rank": 17
     },
     {
       "source": "Knoten",
-      "target": "thig5.9",
+      "target": "sn51.77-86",
       "rank": 18
     },
     {
       "source": "Knoten",
-      "target": "sn22.54",
+      "target": "sn53.45-54",
       "rank": 19
     },
     {
       "source": "Knoten",
-      "target": "sn24.8",
+      "target": "sn47.95-104",
       "rank": 20
     },
     {
       "source": "Knoten",
-      "target": "thag10.5",
+      "target": "thig5.9",
       "rank": 21
     },
     {
       "source": "Knoten",
-      "target": "sn35.247",
+      "target": "iti102",
       "rank": 22
     },
     {
       "source": "Knoten",
-      "target": "dhp209-220",
+      "target": "sn22.54",
       "rank": 23
     },
     {
       "source": "Knoten",
-      "target": "snp2.12",
+      "target": "sn1.34",
       "rank": 24
     },
     {
       "source": "Knoten",
-      "target": "thag16.3",
+      "target": "sn24.8",
       "rank": 25
     },
     {
       "source": "Knoten",
-      "target": "dhp334-359",
+      "target": "thag10.5",
       "rank": 26
     },
     {
       "source": "Knoten",
-      "target": "thag21.1",
+      "target": "sn10.7",
       "rank": 27
     },
     {
       "source": "Knoten",
-      "target": "dn1",
+      "target": "an4.23",
       "rank": 28
     },
     {
       "source": "Knoten",
-      "target": "dn33",
+      "target": "sn35.247",
       "rank": 29
+    },
+    {
+      "source": "Knoten",
+      "target": "dhp90-99",
+      "rank": 30
+    },
+    {
+      "source": "Knoten",
+      "target": "dhp209-220",
+      "rank": 31
+    },
+    {
+      "source": "Knoten",
+      "target": "iti112",
+      "rank": 32
+    },
+    {
+      "source": "Knoten",
+      "target": "snp2.12",
+      "rank": 33
+    },
+    {
+      "source": "Knoten",
+      "target": "thag16.3",
+      "rank": 34
+    },
+    {
+      "source": "Knoten",
+      "target": "sn1.20",
+      "rank": 35
+    },
+    {
+      "source": "Knoten",
+      "target": "dhp334-359",
+      "rank": 36
+    },
+    {
+      "source": "Knoten",
+      "target": "thag20.1",
+      "rank": 37
+    },
+    {
+      "source": "Knoten",
+      "target": "thag21.1",
+      "rank": 38
+    },
+    {
+      "source": "Knoten",
+      "target": "dn1",
+      "rank": 39
+    },
+    {
+      "source": "Knoten",
+      "target": "dn33",
+      "rank": 40
+    },
+    {
+      "source": "Knoten",
+      "target": "dn34",
+      "rank": 41
     },
     {
       "source": "Konzept",
@@ -37289,8 +37471,13 @@
     },
     {
       "source": "mörderisch",
-      "target": "snp3.9",
+      "target": "mn100",
       "rank": 11
+    },
+    {
+      "source": "mörderisch",
+      "target": "snp3.9",
+      "rank": 12
     },
     {
       "source": "muss aufgegeben werden",
@@ -39274,23 +39461,28 @@
     },
     {
       "source": "Rosenapfel",
-      "target": "thig16.1",
+      "target": "mn100",
       "rank": 23
     },
     {
       "source": "Rosenapfel",
-      "target": "mn85",
+      "target": "thig16.1",
       "rank": 24
     },
     {
       "source": "Rosenapfel",
-      "target": "dn14",
+      "target": "mn85",
       "rank": 25
     },
     {
       "source": "Rosenapfel",
-      "target": "dn30",
+      "target": "dn14",
       "rank": 26
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "dn30",
+      "rank": 27
     },
     {
       "source": "rufe alle Mönche und Nonnen",
@@ -40661,6 +40853,11 @@
       "source": "Sittlichkeit und.* Weisheit",
       "target": "dhp221-234",
       "rank": 5
+    },
+    {
+      "source": "Sittlichkeit und.* Weisheit",
+      "target": "mn100",
+      "rank": 6
     },
     {
       "source": "so hat der Buddha es erklärt",
@@ -43784,38 +43981,18 @@
     },
     {
       "source": "vertrauensvollen Hausbesitzer",
-      "target": "an8.75",
+      "target": "an4.122",
       "rank": 1
     },
     {
       "source": "vertrauensvollen Hausbesitzer",
-      "target": "an8.76",
+      "target": "mn67",
       "rank": 2
     },
     {
       "source": "vertrauensvollen Hausbesitzer",
-      "target": "an4.122",
-      "rank": 3
-    },
-    {
-      "source": "vertrauensvollen Hausbesitzer",
-      "target": "an8.55",
-      "rank": 4
-    },
-    {
-      "source": "vertrauensvollen Hausbesitzer",
-      "target": "an8.54",
-      "rank": 5
-    },
-    {
-      "source": "vertrauensvollen Hausbesitzer",
-      "target": "mn67",
-      "rank": 6
-    },
-    {
-      "source": "vertrauensvollen Hausbesitzer",
       "target": "mn66",
-      "rank": 7
+      "rank": 3
     },
     {
       "source": "Vervollkommnung de[sr]",
@@ -44104,43 +44281,53 @@
     },
     {
       "source": "verwirklicht werden",
-      "target": "an10.22",
+      "target": "iti102",
       "rank": 16
     },
     {
       "source": "verwirklicht werden",
-      "target": "an3.102",
+      "target": "sn21.4",
       "rank": 17
     },
     {
       "source": "verwirklicht werden",
-      "target": "sn35.43-51",
+      "target": "an10.22",
       "rank": 18
     },
     {
       "source": "verwirklicht werden",
-      "target": "an5.23",
+      "target": "an3.102",
       "rank": 19
     },
     {
       "source": "verwirklicht werden",
-      "target": "an3.101",
+      "target": "sn35.43-51",
       "rank": 20
     },
     {
       "source": "verwirklicht werden",
-      "target": "sn56.11",
+      "target": "an5.23",
       "rank": 21
     },
     {
       "source": "verwirklicht werden",
-      "target": "an9.35",
+      "target": "an3.101",
       "rank": 22
     },
     {
       "source": "verwirklicht werden",
-      "target": "thag20.1",
+      "target": "sn56.11",
       "rank": 23
+    },
+    {
+      "source": "verwirklicht werden",
+      "target": "an9.35",
+      "rank": 24
+    },
+    {
+      "source": "verwirklicht werden",
+      "target": "thag20.1",
+      "rank": 25
     },
     {
       "source": "viel Leiden und Bedrängnis",
@@ -47019,18 +47206,23 @@
     },
     {
       "source": "Wiedergeburt in der Dimension",
-      "target": "mn36",
+      "target": "mn100",
       "rank": 1
     },
     {
       "source": "Wiedergeburt in der Dimension",
-      "target": "mn26",
+      "target": "mn36",
       "rank": 2
     },
     {
       "source": "Wiedergeburt in der Dimension",
-      "target": "mn85",
+      "target": "mn26",
       "rank": 3
+    },
+    {
+      "source": "Wiedergeburt in der Dimension",
+      "target": "mn85",
+      "rank": 4
     },
     {
       "source": "Wiedergeburt in der Gemeinschaft",
@@ -47409,23 +47601,28 @@
     },
     {
       "source": "wieder und wieder",
-      "target": "dhp320-333",
+      "target": "snp2.2",
       "rank": 33
     },
     {
       "source": "wieder und wieder",
-      "target": "mn12",
+      "target": "dhp320-333",
       "rank": 34
     },
     {
       "source": "wieder und wieder",
-      "target": "thag20.1",
+      "target": "mn12",
       "rank": 35
     },
     {
       "source": "wieder und wieder",
-      "target": "dn33",
+      "target": "thag20.1",
       "rank": 36
+    },
+    {
+      "source": "wieder und wieder",
+      "target": "dn33",
+      "rank": 37
     },
     {
       "source": "wie eine Kuh",
