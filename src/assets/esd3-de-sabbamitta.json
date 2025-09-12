@@ -103,7 +103,7 @@
     {
       "id": "alles Leiden",
       "group": "Examples",
-      "links": 24
+      "links": 25
     },
     {
       "id": "alle tauglichen Eigenschaften",
@@ -273,7 +273,7 @@
     {
       "id": "ausgeh.* und zurückkomm",
       "group": "Examples",
-      "links": 22
+      "links": 23
     },
     {
       "id": "aus meiner unmittelbaren Einsicht heraus gelehrt",
@@ -333,7 +333,7 @@
     {
       "id": "bei Tag oder Nacht",
       "group": "Examples",
-      "links": 11
+      "links": 10
     },
     {
       "id": "bekäme wieder Appetit",
@@ -493,7 +493,7 @@
     {
       "id": "damit zufrieden",
       "group": "Examples",
-      "links": 15
+      "links": 16
     },
     {
       "id": "dankbar",
@@ -628,7 +628,7 @@
     {
       "id": "das Stehlen auf",
       "group": "Examples",
-      "links": 24
+      "links": 25
     },
     {
       "id": "das unübertreffliche Rad des Dhamma",
@@ -1083,7 +1083,7 @@
     {
       "id": "eine fleckenlose Seligkeit",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "eine große Herausforderung",
@@ -1168,7 +1168,7 @@
     {
       "id": "einfühlsam und gütig",
       "group": "Examples",
-      "links": 25
+      "links": 26
     },
     {
       "id": "eingeschätzt",
@@ -1243,7 +1243,7 @@
     {
       "id": "entsprechend ihrer Taten wiedergeboren",
       "group": "Examples",
-      "links": 50
+      "links": 51
     },
     {
       "id": "entwickelt die Grundlage übersinnlicher Kraft",
@@ -1533,7 +1533,7 @@
     {
       "id": "fünf Hindernisse",
       "group": "Examples",
-      "links": 44
+      "links": 45
     },
     {
       "id": "für das Ziel des Friedens",
@@ -1778,7 +1778,7 @@
     {
       "id": "Glück, das ohne Tadel ist",
       "group": "Examples",
-      "links": 9
+      "links": 10
     },
     {
       "id": "Glück der Entsagung",
@@ -1928,7 +1928,7 @@
     {
       "id": "Herr de[rs]",
       "group": "Examples",
-      "links": 17
+      "links": 16
     },
     {
       "id": "Herr.* des Waldes",
@@ -1938,7 +1938,7 @@
     {
       "id": "Herzen, das frei von Begehren",
       "group": "Examples",
-      "links": 12
+      "links": 13
     },
     {
       "id": "Herzenswunsch eines sittlichen Menschen",
@@ -1953,7 +1953,7 @@
     {
       "id": "Hindernisse auf.*, die Verunreinigungen des Herzens",
       "group": "Examples",
-      "links": 20
+      "links": 21
     },
     {
       "id": "Hindernisse sind durch und durch",
@@ -2073,7 +2073,7 @@
     {
       "id": "inbrünstige.* Bußübung",
       "group": "Examples",
-      "links": 29
+      "links": 30
     },
     {
       "id": "in den drei Zeiten",
@@ -2198,7 +2198,7 @@
     {
       "id": "ist es wirklich wahr",
       "group": "Examples",
-      "links": 29
+      "links": 30
     },
     {
       "id": "ist etwas anderes",
@@ -2468,7 +2468,7 @@
     {
       "id": "Licht wahr",
       "group": "Examples",
-      "links": 14
+      "links": 15
     },
     {
       "id": "lieber hast als dich selbst",
@@ -2678,7 +2678,7 @@
     {
       "id": "mörderisch",
       "group": "Examples",
-      "links": 12
+      "links": 13
     },
     {
       "id": "muss aufgegeben werden",
@@ -2758,7 +2758,7 @@
     {
       "id": "nicht auf mündliche Überlieferung",
       "group": "Examples",
-      "links": 3
+      "links": 0
     },
     {
       "id": "nicht beschämend",
@@ -2978,7 +2978,7 @@
     {
       "id": "sagt die Wahrheit",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "Sammlung als auch Klarsicht",
@@ -2993,7 +2993,7 @@
     {
       "id": "Sanfteste unter den Sanften",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "schädlichen Irrglauben",
@@ -3303,7 +3303,7 @@
     {
       "id": "Stock und Schwert",
       "group": "Examples",
-      "links": 32
+      "links": 33
     },
     {
       "id": "Straße durch die Wüste",
@@ -3553,7 +3553,7 @@
     {
       "id": "üppige[rn] schlafstelle",
       "group": "Examples",
-      "links": 17
+      "links": 18
     },
     {
       "id": "Ursprung der Welt",
@@ -4043,7 +4043,7 @@
     {
       "id": "wenn dieses besteht, ist jenes",
       "group": "Examples",
-      "links": 15
+      "links": 1
     },
     {
       "id": "wenn die Weisheit verschwindet",
@@ -4173,7 +4173,7 @@
     {
       "id": "wie ein Vogel",
       "group": "Examples",
-      "links": 29
+      "links": 30
     },
     {
       "id": "wie entwickelt ein Mönch",
@@ -5233,6 +5233,12 @@
       "links": 1
     },
     {
+      "id": "mn101",
+      "group": "mn",
+      "rank": 1,
+      "links": 19
+    },
+    {
       "id": "sn42.11",
       "group": "sn",
       "rank": 1,
@@ -5241,25 +5247,25 @@
     {
       "id": "sn35.83",
       "group": "sn",
-      "rank": 3,
+      "rank": 4,
       "links": 1
     },
     {
       "id": "sn56.22",
       "group": "sn",
-      "rank": 4,
+      "rank": 5,
       "links": 1
     },
     {
       "id": "iti103",
       "group": "iti",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
       "id": "snp2.2",
       "group": "snp",
-      "rank": 6,
+      "rank": 7,
       "links": 4
     },
     {
@@ -5271,25 +5277,25 @@
     {
       "id": "iti7",
       "group": "iti",
-      "rank": 9,
+      "rank": 10,
       "links": 1
     },
     {
       "id": "iti8",
       "group": "iti",
-      "rank": 10,
+      "rank": 11,
       "links": 2
     },
     {
       "id": "an5.35",
       "group": "an",
-      "rank": 11,
+      "rank": 12,
       "links": 1
     },
     {
       "id": "sn5.6",
       "group": "sn",
-      "rank": 12,
+      "rank": 13,
       "links": 2
     },
     {
@@ -5313,7 +5319,7 @@
     {
       "id": "an5.38",
       "group": "an",
-      "rank": 16,
+      "rank": 17,
       "links": 1
     },
     {
@@ -6130,7 +6136,7 @@
       "id": "mn115",
       "group": "mn",
       "rank": 1,
-      "links": 10
+      "links": 9
     },
     {
       "id": "sn35.16",
@@ -6250,7 +6256,7 @@
       "id": "mn38",
       "group": "mn",
       "rank": 1,
-      "links": 26
+      "links": 25
     },
     {
       "id": "dn29",
@@ -6593,12 +6599,6 @@
       "group": "cp",
       "rank": 10,
       "links": 2
-    },
-    {
-      "id": "mn16",
-      "group": "mn",
-      "rank": 1,
-      "links": 5
     },
     {
       "id": "sn11.22",
@@ -7726,7 +7726,7 @@
       "id": "an3.66",
       "group": "an",
       "rank": 1,
-      "links": 6
+      "links": 5
     },
     {
       "id": "mn7",
@@ -8044,7 +8044,7 @@
       "id": "an3.65",
       "group": "an",
       "rank": 2,
-      "links": 6
+      "links": 5
     },
     {
       "id": "an8.25",
@@ -8134,7 +8134,7 @@
       "id": "an4.193",
       "group": "an",
       "rank": 2,
-      "links": 4
+      "links": 3
     },
     {
       "id": "an2.64-76",
@@ -10921,6 +10921,12 @@
       "links": 5
     },
     {
+      "id": "mn16",
+      "group": "mn",
+      "rank": 1,
+      "links": 4
+    },
+    {
       "id": "sn51.1",
       "group": "sn",
       "rank": 3,
@@ -11902,7 +11908,7 @@
       "id": "sn12.22",
       "group": "sn",
       "rank": 1,
-      "links": 6
+      "links": 5
     },
     {
       "id": "sn5.2",
@@ -12790,7 +12796,7 @@
       "id": "mn21",
       "group": "mn",
       "rank": 1,
-      "links": 7
+      "links": 6
     },
     {
       "id": "an8.86",
@@ -13333,12 +13339,6 @@
       "links": 1
     },
     {
-      "id": "sn3.1",
-      "group": "sn",
-      "rank": 14,
-      "links": 1
-    },
-    {
       "id": "thag16.3",
       "group": "thag",
       "rank": 11,
@@ -13390,7 +13390,7 @@
       "id": "sn12.62",
       "group": "sn",
       "rank": 3,
-      "links": 2
+      "links": 1
     },
     {
       "id": "sn7.7",
@@ -13510,19 +13510,19 @@
       "id": "sn55.28",
       "group": "sn",
       "rank": 5,
-      "links": 4
+      "links": 3
     },
     {
       "id": "sn12.41",
       "group": "sn",
       "rank": 6,
-      "links": 3
+      "links": 2
     },
     {
       "id": "an10.92",
       "group": "an",
       "rank": 7,
-      "links": 4
+      "links": 3
     },
     {
       "id": "sn55.10",
@@ -13557,13 +13557,13 @@
     {
       "id": "an5.206",
       "group": "an",
-      "rank": 13,
+      "rank": 14,
       "links": 1
     },
     {
       "id": "an9.72",
       "group": "an",
-      "rank": 15,
+      "rank": 16,
       "links": 1
     },
     {
@@ -14931,8 +14931,8 @@
     {
       "id": "an6.60",
       "group": "an",
-      "rank": 1,
-      "links": 3
+      "rank": 2,
+      "links": 2
     },
     {
       "id": "sn43.4",
@@ -15411,8 +15411,8 @@
     {
       "id": "sn12.37",
       "group": "sn",
-      "rank": 2,
-      "links": 3
+      "rank": 3,
+      "links": 2
     },
     {
       "id": "sn22.37",
@@ -16150,7 +16150,7 @@
       "id": "ud1.1",
       "group": "ud",
       "rank": 4,
-      "links": 2
+      "links": 1
     },
     {
       "id": "ud1.2",
@@ -16162,7 +16162,7 @@
       "id": "ud1.3",
       "group": "ud",
       "rank": 6,
-      "links": 4
+      "links": 3
     },
     {
       "id": "ud3.7",
@@ -16204,7 +16204,7 @@
       "id": "sn12.21",
       "group": "sn",
       "rank": 3,
-      "links": 3
+      "links": 2
     },
     {
       "id": "sn22.101",
@@ -16486,13 +16486,13 @@
       "id": "sn12.49",
       "group": "sn",
       "rank": 4,
-      "links": 3
+      "links": 2
     },
     {
       "id": "sn12.50",
       "group": "sn",
       "rank": 5,
-      "links": 3
+      "links": 2
     },
     {
       "id": "an4.111",
@@ -16828,7 +16828,7 @@
       "id": "sn12.61",
       "group": "sn",
       "rank": 1,
-      "links": 3
+      "links": 2
     },
     {
       "id": "sn12.1",
@@ -19130,123 +19130,128 @@
     },
     {
       "source": "alles Leiden",
-      "target": "sn42.11",
+      "target": "mn101",
       "rank": 1
     },
     {
       "source": "alles Leiden",
-      "target": "mn14",
+      "target": "sn42.11",
       "rank": 2
     },
     {
       "source": "alles Leiden",
-      "target": "sn35.83",
+      "target": "mn14",
       "rank": 3
     },
     {
       "source": "alles Leiden",
-      "target": "sn56.22",
+      "target": "sn35.83",
       "rank": 4
     },
     {
       "source": "alles Leiden",
-      "target": "iti103",
+      "target": "sn56.22",
       "rank": 5
     },
     {
       "source": "alles Leiden",
-      "target": "snp2.2",
+      "target": "iti103",
       "rank": 6
     },
     {
       "source": "alles Leiden",
-      "target": "dhp334-359",
+      "target": "snp2.2",
       "rank": 7
     },
     {
       "source": "alles Leiden",
-      "target": "dn14",
+      "target": "dhp334-359",
       "rank": 8
     },
     {
       "source": "alles Leiden",
-      "target": "iti7",
+      "target": "dn14",
       "rank": 9
     },
     {
       "source": "alles Leiden",
-      "target": "iti8",
+      "target": "iti7",
       "rank": 10
     },
     {
       "source": "alles Leiden",
-      "target": "an5.35",
+      "target": "iti8",
       "rank": 11
     },
     {
       "source": "alles Leiden",
-      "target": "sn5.6",
+      "target": "an5.35",
       "rank": 12
     },
     {
       "source": "alles Leiden",
-      "target": "an3.74",
+      "target": "sn5.6",
       "rank": 13
     },
     {
       "source": "alles Leiden",
-      "target": "thig6.6",
+      "target": "an3.74",
       "rank": 14
     },
     {
       "source": "alles Leiden",
-      "target": "an6.23",
+      "target": "thig6.6",
       "rank": 15
     },
     {
       "source": "alles Leiden",
-      "target": "an5.38",
+      "target": "an6.23",
       "rank": 16
     },
     {
       "source": "alles Leiden",
-      "target": "an4.49",
+      "target": "an5.38",
       "rank": 17
     },
     {
       "source": "alles Leiden",
-      "target": "dhp320-333",
+      "target": "an4.49",
       "rank": 18
     },
     {
       "source": "alles Leiden",
-      "target": "thig13.3",
+      "target": "dhp320-333",
       "rank": 19
     },
     {
       "source": "alles Leiden",
-      "target": "an3.36",
+      "target": "thig13.3",
       "rank": 20
     },
     {
       "source": "alles Leiden",
-      "target": "thig13.4",
+      "target": "an3.36",
       "rank": 21
     },
     {
       "source": "alles Leiden",
-      "target": "snp5.19",
+      "target": "thig13.4",
       "rank": 22
     },
     {
       "source": "alles Leiden",
-      "target": "mn140",
+      "target": "snp5.19",
       "rank": 23
     },
     {
       "source": "alles Leiden",
-      "target": "dn32",
+      "target": "mn140",
       "rank": 24
+    },
+    {
+      "source": "alles Leiden",
+      "target": "dn32",
+      "rank": 25
     },
     {
       "source": "alle tauglichen Eigenschaften",
@@ -20190,23 +20195,28 @@
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "dn2",
+      "target": "mn101",
       "rank": 19
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "dn22",
+      "target": "dn2",
       "rank": 20
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "mn38",
+      "target": "dn22",
       "rank": 21
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "dn16",
+      "target": "mn38",
       "rank": 22
+    },
+    {
+      "source": "ausgeh.* und zurückkomm",
+      "target": "dn16",
+      "rank": 23
     },
     {
       "source": "aus meiner unmittelbaren Einsicht heraus gelehrt",
@@ -20607,11 +20617,6 @@
       "source": "bei Tag oder Nacht",
       "target": "cp4",
       "rank": 10
-    },
-    {
-      "source": "bei Tag oder Nacht",
-      "target": "mn16",
-      "rank": 11
     },
     {
       "source": "bekäme wieder Appetit",
@@ -22085,8 +22090,13 @@
     },
     {
       "source": "damit zufrieden",
-      "target": "dn21",
+      "target": "mn101",
       "rank": 15
+    },
+    {
+      "source": "damit zufrieden",
+      "target": "dn21",
+      "rank": 16
     },
     {
       "source": "dankbar",
@@ -22955,18 +22965,23 @@
     },
     {
       "source": "das Stehlen auf",
-      "target": "dn1",
+      "target": "mn101",
       "rank": 22
     },
     {
       "source": "das Stehlen auf",
-      "target": "dn2",
+      "target": "dn1",
       "rank": 23
     },
     {
       "source": "das Stehlen auf",
-      "target": "mn38",
+      "target": "dn2",
       "rank": 24
+    },
+    {
+      "source": "das Stehlen auf",
+      "target": "mn38",
+      "rank": 25
     },
     {
       "source": "das unübertreffliche Rad des Dhamma",
@@ -25780,13 +25795,18 @@
     },
     {
       "source": "eine fleckenlose Seligkeit",
-      "target": "dn2",
+      "target": "mn101",
       "rank": 7
     },
     {
       "source": "eine fleckenlose Seligkeit",
-      "target": "mn38",
+      "target": "dn2",
       "rank": 8
+    },
+    {
+      "source": "eine fleckenlose Seligkeit",
+      "target": "mn38",
+      "rank": 9
     },
     {
       "source": "eine große Herausforderung",
@@ -26540,23 +26560,28 @@
     },
     {
       "source": "einfühlsam und gütig",
-      "target": "dn1",
+      "target": "mn101",
       "rank": 22
     },
     {
       "source": "einfühlsam und gütig",
-      "target": "dn2",
+      "target": "dn1",
       "rank": 23
     },
     {
       "source": "einfühlsam und gütig",
-      "target": "mn38",
+      "target": "dn2",
       "rank": 24
     },
     {
       "source": "einfühlsam und gütig",
-      "target": "dn30",
+      "target": "mn38",
       "rank": 25
+    },
+    {
+      "source": "einfühlsam und gütig",
+      "target": "dn30",
+      "rank": 26
     },
     {
       "source": "eingeschätzt",
@@ -27285,13 +27310,18 @@
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "mn85",
+      "target": "mn101",
       "rank": 49
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "dn34",
+      "target": "mn85",
       "rank": 50
+    },
+    {
+      "source": "entsprechend ihrer Taten wiedergeboren",
+      "target": "dn34",
+      "rank": 51
     },
     {
       "source": "entwickelt die Grundlage übersinnlicher Kraft",
@@ -29675,23 +29705,28 @@
     },
     {
       "source": "fünf Hindernisse",
-      "target": "mn38",
+      "target": "mn101",
       "rank": 41
     },
     {
       "source": "fünf Hindernisse",
-      "target": "dn16",
+      "target": "mn38",
       "rank": 42
     },
     {
       "source": "fünf Hindernisse",
-      "target": "dn33",
+      "target": "dn16",
       "rank": 43
     },
     {
       "source": "fünf Hindernisse",
-      "target": "dn34",
+      "target": "dn33",
       "rank": 44
+    },
+    {
+      "source": "fünf Hindernisse",
+      "target": "dn34",
+      "rank": 45
     },
     {
       "source": "für das Ziel des Friedens",
@@ -31135,13 +31170,18 @@
     },
     {
       "source": "Glück, das ohne Tadel ist",
-      "target": "dn2",
+      "target": "mn101",
       "rank": 8
     },
     {
       "source": "Glück, das ohne Tadel ist",
-      "target": "mn38",
+      "target": "dn2",
       "rank": 9
+    },
+    {
+      "source": "Glück, das ohne Tadel ist",
+      "target": "mn38",
+      "rank": 10
     },
     {
       "source": "Glück der Entsagung",
@@ -32515,23 +32555,18 @@
     },
     {
       "source": "Herr de[rs]",
-      "target": "sn3.1",
+      "target": "thag16.3",
       "rank": 14
     },
     {
       "source": "Herr de[rs]",
-      "target": "thag16.3",
+      "target": "snp3.11",
       "rank": 15
     },
     {
       "source": "Herr de[rs]",
-      "target": "snp3.11",
-      "rank": 16
-    },
-    {
-      "source": "Herr de[rs]",
       "target": "dn27",
-      "rank": 17
+      "rank": 16
     },
     {
       "source": "Herr.* des Waldes",
@@ -32595,13 +32630,18 @@
     },
     {
       "source": "Herzen, das frei von Begehren",
-      "target": "dn2",
+      "target": "mn101",
       "rank": 11
     },
     {
       "source": "Herzen, das frei von Begehren",
-      "target": "mn38",
+      "target": "dn2",
       "rank": 12
+    },
+    {
+      "source": "Herzen, das frei von Begehren",
+      "target": "mn38",
+      "rank": 13
     },
     {
       "source": "Herzenswunsch eines sittlichen Menschen",
@@ -32745,13 +32785,18 @@
     },
     {
       "source": "Hindernisse auf.*, die Verunreinigungen des Herzens",
-      "target": "mn38",
+      "target": "mn101",
       "rank": 19
     },
     {
       "source": "Hindernisse auf.*, die Verunreinigungen des Herzens",
-      "target": "dn16",
+      "target": "mn38",
       "rank": 20
+    },
+    {
+      "source": "Hindernisse auf.*, die Verunreinigungen des Herzens",
+      "target": "dn16",
+      "rank": 21
     },
     {
       "source": "Hindernisse sind durch und durch",
@@ -33215,133 +33260,138 @@
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "an4.196",
+      "target": "mn101",
       "rank": 4
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "an8.12",
+      "target": "an4.196",
       "rank": 5
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn12",
+      "target": "an8.12",
       "rank": 6
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "sn1.38",
+      "target": "mn12",
       "rank": 7
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "an10.14",
+      "target": "sn1.38",
       "rank": 8
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn16",
+      "target": "an10.14",
       "rank": 9
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn57",
+      "target": "mn16",
       "rank": 10
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn79",
+      "target": "mn57",
       "rank": 11
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn76",
+      "target": "mn79",
       "rank": 12
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "an5.206",
+      "target": "mn76",
       "rank": 13
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "an3.74",
+      "target": "an5.206",
       "rank": 14
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "an9.72",
+      "target": "an3.74",
       "rank": 15
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "an7.50",
+      "target": "an9.72",
       "rank": 16
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "sn24.8",
+      "target": "an7.50",
       "rank": 17
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "sn35.241",
+      "target": "sn24.8",
       "rank": 18
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "sn2.30",
+      "target": "sn35.241",
       "rank": 19
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "an3.156-162",
+      "target": "sn2.30",
       "rank": 20
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn45",
+      "target": "an3.156-162",
       "rank": 21
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn14",
+      "target": "mn45",
       "rank": 22
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn49",
+      "target": "mn14",
       "rank": 23
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "sn42.12",
+      "target": "mn49",
       "rank": 24
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn51",
+      "target": "sn42.12",
       "rank": 25
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn94",
+      "target": "mn51",
       "rank": 26
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn60",
+      "target": "mn94",
       "rank": 27
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "dn2",
+      "target": "mn60",
       "rank": 28
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "dn33",
+      "target": "dn2",
       "rank": 29
+    },
+    {
+      "source": "inbrünstige.* Bußübung",
+      "target": "dn33",
+      "rank": 30
     },
     {
       "source": "in den drei Zeiten",
@@ -33965,13 +34015,18 @@
     },
     {
       "source": "ist es wirklich wahr",
-      "target": "dn9",
+      "target": "mn101",
       "rank": 28
     },
     {
       "source": "ist es wirklich wahr",
-      "target": "dn23",
+      "target": "dn9",
       "rank": 29
+    },
+    {
+      "source": "ist es wirklich wahr",
+      "target": "dn23",
+      "rank": 30
     },
     {
       "source": "ist etwas anderes",
@@ -36280,13 +36335,18 @@
     },
     {
       "source": "Licht wahr",
-      "target": "dn2",
+      "target": "mn101",
       "rank": 13
     },
     {
       "source": "Licht wahr",
-      "target": "mn38",
+      "target": "dn2",
       "rank": 14
+    },
+    {
+      "source": "Licht wahr",
+      "target": "mn38",
+      "rank": 15
     },
     {
       "source": "lieber hast als dich selbst",
@@ -37740,8 +37800,13 @@
     },
     {
       "source": "mörderisch",
-      "target": "snp3.9",
+      "target": "mn101",
       "rank": 12
+    },
+    {
+      "source": "mörderisch",
+      "target": "snp3.9",
+      "rank": 13
     },
     {
       "source": "muss aufgegeben werden",
@@ -38247,21 +38312,6 @@
       "source": "nicht auf Glauben",
       "target": "sn41.8",
       "rank": 2
-    },
-    {
-      "source": "nicht auf mündliche Überlieferung",
-      "target": "an3.66",
-      "rank": 1
-    },
-    {
-      "source": "nicht auf mündliche Überlieferung",
-      "target": "an4.193",
-      "rank": 2
-    },
-    {
-      "source": "nicht auf mündliche Überlieferung",
-      "target": "an3.65",
-      "rank": 3
     },
     {
       "source": "nicht euer",
@@ -39865,18 +39915,23 @@
     },
     {
       "source": "sagt die Wahrheit",
-      "target": "dn1",
+      "target": "mn101",
       "rank": 6
     },
     {
       "source": "sagt die Wahrheit",
-      "target": "dn2",
+      "target": "dn1",
       "rank": 7
     },
     {
       "source": "sagt die Wahrheit",
-      "target": "mn38",
+      "target": "dn2",
       "rank": 8
+    },
+    {
+      "source": "sagt die Wahrheit",
+      "target": "mn38",
+      "rank": 9
     },
     {
       "source": "Sammlung als auch Klarsicht",
@@ -39972,16 +40027,6 @@
       "source": "Sammlung und Klarsicht",
       "target": "dn34",
       "rank": 16
-    },
-    {
-      "source": "Sanfteste unter den Sanften",
-      "target": "an6.60",
-      "rank": 1
-    },
-    {
-      "source": "Sanfteste unter den Sanften",
-      "target": "mn21",
-      "rank": 2
     },
     {
       "source": "schädlichen Irrglauben",
@@ -41825,28 +41870,33 @@
     },
     {
       "source": "Stock und Schwert",
-      "target": "dn1",
+      "target": "mn101",
       "rank": 28
     },
     {
       "source": "Stock und Schwert",
-      "target": "dn2",
+      "target": "dn1",
       "rank": 29
     },
     {
       "source": "Stock und Schwert",
-      "target": "mn38",
+      "target": "dn2",
       "rank": 30
     },
     {
       "source": "Stock und Schwert",
-      "target": "dn30",
+      "target": "mn38",
       "rank": 31
     },
     {
       "source": "Stock und Schwert",
-      "target": "dn34",
+      "target": "dn30",
       "rank": 32
+    },
+    {
+      "source": "Stock und Schwert",
+      "target": "dn34",
+      "rank": 33
     },
     {
       "source": "Straße durch die Wüste",
@@ -43655,18 +43705,23 @@
     },
     {
       "source": "üppige[rn] schlafstelle",
-      "target": "dn1",
+      "target": "mn101",
       "rank": 15
     },
     {
       "source": "üppige[rn] schlafstelle",
-      "target": "dn2",
+      "target": "dn1",
       "rank": 16
     },
     {
       "source": "üppige[rn] schlafstelle",
-      "target": "mn38",
+      "target": "dn2",
       "rank": 17
+    },
+    {
+      "source": "üppige[rn] schlafstelle",
+      "target": "mn38",
+      "rank": 18
     },
     {
       "source": "Ursprung der Welt",
@@ -46699,76 +46754,6 @@
       "rank": 1
     },
     {
-      "source": "wenn dieses besteht, ist jenes",
-      "target": "sn12.37",
-      "rank": 2
-    },
-    {
-      "source": "wenn dieses besteht, ist jenes",
-      "target": "sn12.21",
-      "rank": 3
-    },
-    {
-      "source": "wenn dieses besteht, ist jenes",
-      "target": "ud1.1",
-      "rank": 4
-    },
-    {
-      "source": "wenn dieses besteht, ist jenes",
-      "target": "sn12.61",
-      "rank": 5
-    },
-    {
-      "source": "wenn dieses besteht, ist jenes",
-      "target": "sn12.22",
-      "rank": 6
-    },
-    {
-      "source": "wenn dieses besteht, ist jenes",
-      "target": "sn55.28",
-      "rank": 7
-    },
-    {
-      "source": "wenn dieses besteht, ist jenes",
-      "target": "sn12.62",
-      "rank": 8
-    },
-    {
-      "source": "wenn dieses besteht, ist jenes",
-      "target": "sn12.41",
-      "rank": 9
-    },
-    {
-      "source": "wenn dieses besteht, ist jenes",
-      "target": "ud1.3",
-      "rank": 10
-    },
-    {
-      "source": "wenn dieses besteht, ist jenes",
-      "target": "sn12.49",
-      "rank": 11
-    },
-    {
-      "source": "wenn dieses besteht, ist jenes",
-      "target": "an10.92",
-      "rank": 12
-    },
-    {
-      "source": "wenn dieses besteht, ist jenes",
-      "target": "sn12.50",
-      "rank": 13
-    },
-    {
-      "source": "wenn dieses besteht, ist jenes",
-      "target": "mn115",
-      "rank": 14
-    },
-    {
-      "source": "wenn dieses besteht, ist jenes",
-      "target": "mn38",
-      "rank": 15
-    },
-    {
       "source": "wenn die Weisheit verschwindet",
       "target": "an5.6",
       "rank": 1
@@ -48100,13 +48085,18 @@
     },
     {
       "source": "wie ein Vogel",
-      "target": "mn38",
+      "target": "mn101",
       "rank": 28
     },
     {
       "source": "wie ein Vogel",
-      "target": "dn34",
+      "target": "mn38",
       "rank": 29
+    },
+    {
+      "source": "wie ein Vogel",
+      "target": "dn34",
+      "rank": 30
     },
     {
       "source": "wie entwickelt ein Mönch",
