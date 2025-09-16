@@ -496,8 +496,8 @@ found     : segs:${segsMatched} by:${method} mlDocs:${nDocs} docs:${nRefs} ${ref
           break;
       }
     });
-    let footer = mld.docFooter
-      .replaceAll(/<[^>]*>/g, '');
+    let footer = mld.docFooter || '';
+    footer = footer.replaceAll(/<[^>]*>/g, '');
     console.log('\n', footer);
   });
 }
