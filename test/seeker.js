@@ -2432,10 +2432,10 @@ typeof describe === "function" &&
         pattern: "\\bAutorität",
       });
       should.deepEqual(lines.slice(0,5), [
+        `${de_sab}an/an4/an4.193_translation-de-sabbamitta.json:4`,
         `${de_sab}an/an3/an3.66_translation-de-sabbamitta.json:4`,
         `${de_sab}an/an3/an3.65_translation-de-sabbamitta.json:4`,
         `${de_sab}an/an5/an5.133_translation-de-sabbamitta.json:3`,
-        `${de_sab}an/an4/an4.193_translation-de-sabbamitta.json:3`,
         `${de_sab}mn/mn76_translation-de-sabbamitta.json:2`,
       ]);
     });
