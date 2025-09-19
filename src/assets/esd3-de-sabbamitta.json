@@ -3028,7 +3028,7 @@
     {
       "id": "Schmuckstück aus Beryll von natürlicher",
       "group": "Examples",
-      "links": 8
+      "links": 0
     },
     {
       "id": "Schneckenhornbläser",
@@ -4786,7 +4786,7 @@
       "id": "dn17",
       "group": "dn",
       "rank": 5,
-      "links": 13
+      "links": 12
     },
     {
       "id": "dn21",
@@ -4804,7 +4804,7 @@
       "id": "dn14",
       "group": "dn",
       "rank": 1,
-      "links": 32
+      "links": 31
     },
     {
       "id": "dn16",
@@ -4852,7 +4852,7 @@
       "id": "mn77",
       "group": "mn",
       "rank": 2,
-      "links": 30
+      "links": 29
     },
     {
       "id": "dn34",
@@ -5020,7 +5020,7 @@
       "id": "dn2",
       "group": "dn",
       "rank": 1,
-      "links": 64
+      "links": 63
     },
     {
       "id": "sn22.123",
@@ -5068,7 +5068,7 @@
       "id": "dn10",
       "group": "dn",
       "rank": 1,
-      "links": 40
+      "links": 39
     },
     {
       "id": "mn17",
@@ -5578,7 +5578,7 @@
       "id": "mn79",
       "group": "mn",
       "rank": 1,
-      "links": 11
+      "links": 10
     },
     {
       "id": "an6.106",
@@ -7738,7 +7738,7 @@
       "id": "mn80",
       "group": "mn",
       "rank": 2,
-      "links": 3
+      "links": 2
     },
     {
       "id": "mn29",
@@ -7863,7 +7863,7 @@
     {
       "id": "mn72",
       "group": "mn",
-      "rank": 1,
+      "rank": 2,
       "links": 5
     },
     {
@@ -8331,13 +8331,13 @@
     {
       "id": "sn24.40",
       "group": "sn",
-      "rank": 3,
+      "rank": 4,
       "links": 1
     },
     {
       "id": "sn24.39",
       "group": "sn",
-      "rank": 4,
+      "rank": 5,
       "links": 1
     },
     {
@@ -14607,8 +14607,8 @@
     {
       "id": "sn2.29",
       "group": "sn",
-      "rank": 1,
-      "links": 3
+      "rank": 5,
+      "links": 2
     },
     {
       "id": "an10.71",
@@ -22190,12 +22190,12 @@
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "mn72",
+      "target": "dn29",
       "rank": 1
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "dn29",
+      "target": "mn72",
       "rank": 2
     },
     {
@@ -22825,27 +22825,27 @@
     },
     {
       "source": "das Selbst ist",
-      "target": "dn1",
+      "target": "dn29",
       "rank": 2
     },
     {
       "source": "das Selbst ist",
-      "target": "sn24.40",
+      "target": "dn1",
       "rank": 3
     },
     {
       "source": "das Selbst ist",
-      "target": "sn24.39",
+      "target": "sn24.40",
       "rank": 4
     },
     {
       "source": "das Selbst ist",
-      "target": "sn24.38",
+      "target": "sn24.39",
       "rank": 5
     },
     {
       "source": "das Selbst ist",
-      "target": "dn29",
+      "target": "sn24.38",
       "rank": 6
     },
     {
@@ -38885,17 +38885,17 @@
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "dn9",
+      "target": "dn29",
       "rank": 5
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "mn76",
+      "target": "dn9",
       "rank": 6
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "dn29",
+      "target": "mn76",
       "rank": 7
     },
     {
@@ -40142,46 +40142,6 @@
       "source": "schleichend",
       "target": "an6.45",
       "rank": 2
-    },
-    {
-      "source": "Schmuckstück aus Beryll von natürlicher",
-      "target": "sn2.29",
-      "rank": 1
-    },
-    {
-      "source": "Schmuckstück aus Beryll von natürlicher",
-      "target": "mn80",
-      "rank": 2
-    },
-    {
-      "source": "Schmuckstück aus Beryll von natürlicher",
-      "target": "mn79",
-      "rank": 3
-    },
-    {
-      "source": "Schmuckstück aus Beryll von natürlicher",
-      "target": "dn10",
-      "rank": 4
-    },
-    {
-      "source": "Schmuckstück aus Beryll von natürlicher",
-      "target": "mn77",
-      "rank": 5
-    },
-    {
-      "source": "Schmuckstück aus Beryll von natürlicher",
-      "target": "dn2",
-      "rank": 6
-    },
-    {
-      "source": "Schmuckstück aus Beryll von natürlicher",
-      "target": "dn17",
-      "rank": 7
-    },
-    {
-      "source": "Schmuckstück aus Beryll von natürlicher",
-      "target": "dn14",
-      "rank": 8
     },
     {
       "source": "Schneckenhornbläser",
