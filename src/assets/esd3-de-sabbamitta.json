@@ -618,7 +618,7 @@
     {
       "id": "das Selbst ist",
       "group": "Examples",
-      "links": 6
+      "links": 2
     },
     {
       "id": "dass ich nie sehe oder höre",
@@ -2388,7 +2388,7 @@
     {
       "id": "krittelige[nm] Geist",
       "group": "Examples",
-      "links": 5
+      "links": 0
     },
     {
       "id": "Kuh.* das Leben",
@@ -3863,7 +3863,7 @@
     {
       "id": "wahrhaftig versteht: ‚Das ist das Leiden‘",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "Wahrnehmung des Abstoßenden",
@@ -4163,7 +4163,7 @@
     {
       "id": "wie ein Hund",
       "group": "Examples",
-      "links": 5
+      "links": 2
     },
     {
       "id": "wie ein Tautropfen",
@@ -5476,13 +5476,13 @@
       "id": "sn22.99",
       "group": "sn",
       "rank": 1,
-      "links": 6
+      "links": 5
     },
     {
       "id": "sn22.100",
       "group": "sn",
       "rank": 2,
-      "links": 3
+      "links": 2
     },
     {
       "id": "sn35.247",
@@ -6286,7 +6286,7 @@
       "id": "dn1",
       "group": "dn",
       "rank": 1,
-      "links": 27
+      "links": 26
     },
     {
       "id": "sn22.43",
@@ -7516,7 +7516,7 @@
       "id": "thig16.1",
       "group": "thig",
       "rank": 2,
-      "links": 8
+      "links": 7
     },
     {
       "id": "sn17.21",
@@ -8323,24 +8323,6 @@
       "links": 6
     },
     {
-      "id": "sn24.37",
-      "group": "sn",
-      "rank": 1,
-      "links": 2
-    },
-    {
-      "id": "sn24.40",
-      "group": "sn",
-      "rank": 4,
-      "links": 1
-    },
-    {
-      "id": "sn24.39",
-      "group": "sn",
-      "rank": 5,
-      "links": 1
-    },
-    {
       "id": "sn24.38",
       "group": "sn",
       "rank": 1,
@@ -8890,7 +8872,7 @@
       "id": "an5.153",
       "group": "an",
       "rank": 5,
-      "links": 2
+      "links": 1
     },
     {
       "id": "an6.86",
@@ -13899,8 +13881,8 @@
     {
       "id": "an3.133",
       "group": "an",
-      "rank": 2,
-      "links": 2
+      "rank": 13,
+      "links": 1
     },
     {
       "id": "an4.181",
@@ -14497,30 +14479,6 @@
       "links": 1
     },
     {
-      "id": "an10.76",
-      "group": "an",
-      "rank": 1,
-      "links": 3
-    },
-    {
-      "id": "thag5.10",
-      "group": "thag",
-      "rank": 2,
-      "links": 2
-    },
-    {
-      "id": "an7.29",
-      "group": "an",
-      "rank": 3,
-      "links": 1
-    },
-    {
-      "id": "an7.31",
-      "group": "an",
-      "rank": 4,
-      "links": 1
-    },
-    {
       "id": "ud4.3",
       "group": "ud",
       "rank": 1,
@@ -14740,6 +14698,12 @@
       "id": "sn35.105",
       "group": "sn",
       "rank": 2,
+      "links": 2
+    },
+    {
+      "id": "an10.76",
+      "group": "an",
+      "rank": 1,
       "links": 2
     },
     {
@@ -17455,12 +17419,6 @@
       "links": 1
     },
     {
-      "id": "sn56.40",
-      "group": "sn",
-      "rank": 1,
-      "links": 1
-    },
-    {
       "id": "sn46.67",
       "group": "sn",
       "rank": 4,
@@ -17875,6 +17833,12 @@
       "links": 1
     },
     {
+      "id": "sn24.37",
+      "group": "sn",
+      "rank": 13,
+      "links": 1
+    },
+    {
       "id": "sn22.156",
       "group": "sn",
       "rank": 15,
@@ -18028,6 +17992,12 @@
       "id": "sn11.17",
       "group": "sn",
       "rank": 17,
+      "links": 1
+    },
+    {
+      "id": "thag5.10",
+      "group": "thag",
+      "rank": 18,
       "links": 1
     },
     {
@@ -22820,33 +22790,13 @@
     },
     {
       "source": "das Selbst ist",
-      "target": "sn24.37",
+      "target": "sn24.38",
       "rank": 1
     },
     {
       "source": "das Selbst ist",
       "target": "dn29",
       "rank": 2
-    },
-    {
-      "source": "das Selbst ist",
-      "target": "dn1",
-      "rank": 3
-    },
-    {
-      "source": "das Selbst ist",
-      "target": "sn24.40",
-      "rank": 4
-    },
-    {
-      "source": "das Selbst ist",
-      "target": "sn24.39",
-      "rank": 5
-    },
-    {
-      "source": "das Selbst ist",
-      "target": "sn24.38",
-      "rank": 6
     },
     {
       "source": "dass ich nie sehe oder höre",
@@ -35799,31 +35749,6 @@
       "rank": 7
     },
     {
-      "source": "krittelige[nm] Geist",
-      "target": "an10.76",
-      "rank": 1
-    },
-    {
-      "source": "krittelige[nm] Geist",
-      "target": "thag5.10",
-      "rank": 2
-    },
-    {
-      "source": "krittelige[nm] Geist",
-      "target": "an7.29",
-      "rank": 3
-    },
-    {
-      "source": "krittelige[nm] Geist",
-      "target": "an7.31",
-      "rank": 4
-    },
-    {
-      "source": "krittelige[nm] Geist",
-      "target": "an5.153",
-      "rank": 5
-    },
-    {
       "source": "Kuh.* das Leben",
       "target": "ud5.3",
       "rank": 1
@@ -45779,16 +45704,6 @@
       "rank": 8
     },
     {
-      "source": "wahrhaftig versteht: ‚Das ist das Leiden‘",
-      "target": "sn56.40",
-      "rank": 1
-    },
-    {
-      "source": "wahrhaftig versteht: ‚Das ist das Leiden‘",
-      "target": "an3.133",
-      "rank": 2
-    },
-    {
       "source": "Wahrnehmung des Abstoßenden",
       "target": "an7.49",
       "rank": 1
@@ -47885,23 +47800,8 @@
     },
     {
       "source": "wie ein Hund",
-      "target": "sn22.99",
-      "rank": 2
-    },
-    {
-      "source": "wie ein Hund",
-      "target": "sn22.100",
-      "rank": 3
-    },
-    {
-      "source": "wie ein Hund",
-      "target": "thig16.1",
-      "rank": 4
-    },
-    {
-      "source": "wie ein Hund",
       "target": "dn24",
-      "rank": 5
+      "rank": 2
     },
     {
       "source": "wie ein Tautropfen",
