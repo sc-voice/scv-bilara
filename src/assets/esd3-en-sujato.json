@@ -38,7 +38,7 @@
     {
       "id": "actually",
       "group": "Examples",
-      "links": 20
+      "links": 15
     },
     {
       "id": "a deep lake fed by spring water",
@@ -248,7 +248,7 @@
     {
       "id": "assess",
       "group": "Examples",
-      "links": 3
+      "links": 2
     },
     {
       "id": "a state of immersion",
@@ -268,7 +268,7 @@
     {
       "id": "a Teacher called Sunetta",
       "group": "Examples",
-      "links": 3
+      "links": 0
     },
     {
       "id": "awakening factor of mindfulness in them",
@@ -403,7 +403,7 @@
     {
       "id": "bundles of reeds",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "burst out in tears",
@@ -973,7 +973,7 @@
     {
       "id": "eight people",
       "group": "Examples",
-      "links": 4
+      "links": 0
     },
     {
       "id": "eight things should be developed",
@@ -993,7 +993,7 @@
     {
       "id": "emancipated individual able to go",
       "group": "Examples",
-      "links": 3
+      "links": 0
     },
     {
       "id": "emotional barrenness",
@@ -1088,7 +1088,7 @@
     {
       "id": "even if sent away",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "experience an immersion",
@@ -1708,7 +1708,7 @@
     {
       "id": "hell called",
       "group": "Examples",
-      "links": 4
+      "links": 3
     },
     {
       "id": "hell of",
@@ -1943,12 +1943,12 @@
     {
       "id": "inflict",
       "group": "Examples",
-      "links": 6
+      "links": 11
     },
     {
       "id": "back to the past",
       "group": "Examples",
-      "links": 6
+      "links": 4
     },
     {
       "id": "for the future",
@@ -2063,7 +2063,7 @@
     {
       "id": "itch",
       "group": "Examples",
-      "links": 13
+      "links": 3
     },
     {
       "id": "I teach inaction",
@@ -2258,7 +2258,7 @@
     {
       "id": "let’s abandon our bundles",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "letting go of attachments",
@@ -2308,7 +2308,7 @@
     {
       "id": "like a dog",
       "group": "Examples",
-      "links": 3
+      "links": 2
     },
     {
       "id": "like a drop of dew",
@@ -2593,7 +2593,7 @@
     {
       "id": "modes of conceit",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "monastic codes",
@@ -2638,7 +2638,7 @@
     {
       "id": "neither approve nor dismiss",
       "group": "Examples",
-      "links": 4
+      "links": 0
     },
     {
       "id": "neither ashes nor soot",
@@ -2698,7 +2698,7 @@
     {
       "id": "no first point",
       "group": "Examples",
-      "links": 16
+      "links": 14
     },
     {
       "id": "no form at all",
@@ -3073,7 +3073,7 @@
     {
       "id": "reborn according to their deeds",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "red silk-cotton wood",
@@ -3433,7 +3433,7 @@
     {
       "id": "starting arguments",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "startled",
@@ -3678,7 +3678,7 @@
     {
       "id": "the foundation of",
       "group": "Examples",
-      "links": 6
+      "links": 3
     },
     {
       "id": "the fuel for craving",
@@ -4128,12 +4128,12 @@
     {
       "id": "two kinds of people",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "five kinds of people",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "two things should be developed",
@@ -4626,7 +4626,7 @@
       "id": "dn2",
       "group": "dn",
       "rank": 1,
-      "links": 63
+      "links": 62
     },
     {
       "id": "an8.55",
@@ -4806,7 +4806,7 @@
       "id": "dn16",
       "group": "dn",
       "rank": 1,
-      "links": 67
+      "links": 66
     },
     {
       "id": "an3.138",
@@ -4863,10 +4863,10 @@
       "links": 10
     },
     {
-      "id": "dn15",
+      "id": "dn1",
       "group": "dn",
       "rank": 1,
-      "links": 14
+      "links": 25
     },
     {
       "id": "an6.30",
@@ -4911,12 +4911,6 @@
       "links": 8
     },
     {
-      "id": "an3.61",
-      "group": "an",
-      "rank": 1,
-      "links": 10
-    },
-    {
       "id": "mn21",
       "group": "mn",
       "rank": 1,
@@ -4931,7 +4925,7 @@
     {
       "id": "an9.2",
       "group": "an",
-      "rank": 8,
+      "rank": 7,
       "links": 1
     },
     {
@@ -4961,20 +4955,8 @@
     {
       "id": "thig12.1",
       "group": "thig",
-      "rank": 13,
+      "rank": 12,
       "links": 1
-    },
-    {
-      "id": "sn22.86",
-      "group": "sn",
-      "rank": 14,
-      "links": 1
-    },
-    {
-      "id": "sn44.2",
-      "group": "sn",
-      "rank": 15,
-      "links": 2
     },
     {
       "id": "sn1.20",
@@ -4991,20 +4973,8 @@
     {
       "id": "snp3.4",
       "group": "snp",
-      "rank": 18,
+      "rank": 15,
       "links": 3
-    },
-    {
-      "id": "sn22.85",
-      "group": "sn",
-      "rank": 4,
-      "links": 5
-    },
-    {
-      "id": "mn22",
-      "group": "mn",
-      "rank": 1,
-      "links": 15
     },
     {
       "id": "an5.28",
@@ -5016,7 +4986,7 @@
       "id": "mn39",
       "group": "mn",
       "rank": 1,
-      "links": 23
+      "links": 22
     },
     {
       "id": "mn119",
@@ -5028,7 +4998,7 @@
       "id": "dn10",
       "group": "dn",
       "rank": 1,
-      "links": 39
+      "links": 38
     },
     {
       "id": "mn77",
@@ -5100,19 +5070,13 @@
       "id": "an7.66",
       "group": "an",
       "rank": 1,
-      "links": 10
+      "links": 9
     },
     {
       "id": "mn130",
       "group": "mn",
       "rank": 1,
       "links": 9
-    },
-    {
-      "id": "dn1",
-      "group": "dn",
-      "rank": 1,
-      "links": 24
     },
     {
       "id": "sn3.20",
@@ -5166,13 +5130,13 @@
       "id": "mn122",
       "group": "mn",
       "rank": 1,
-      "links": 14
+      "links": 13
     },
     {
       "id": "thig16.1",
       "group": "thig",
       "rank": 2,
-      "links": 7
+      "links": 6
     },
     {
       "id": "thag1.17",
@@ -5640,7 +5604,7 @@
       "id": "mn112",
       "group": "mn",
       "rank": 1,
-      "links": 18
+      "links": 17
     },
     {
       "id": "mn27",
@@ -5670,7 +5634,7 @@
       "id": "mn38",
       "group": "mn",
       "rank": 1,
-      "links": 26
+      "links": 25
     },
     {
       "id": "dn31",
@@ -6093,6 +6057,12 @@
       "links": 8
     },
     {
+      "id": "an3.61",
+      "group": "an",
+      "rank": 1,
+      "links": 9
+    },
+    {
       "id": "mn111",
       "group": "mn",
       "rank": 1,
@@ -6323,14 +6293,20 @@
     {
       "id": "mn79",
       "group": "mn",
-      "rank": 3,
-      "links": 6
+      "rank": 2,
+      "links": 7
     },
     {
       "id": "mn15",
       "group": "mn",
       "rank": 4,
       "links": 3
+    },
+    {
+      "id": "mn22",
+      "group": "mn",
+      "rank": 1,
+      "links": 14
     },
     {
       "id": "sn22.8",
@@ -6396,7 +6372,7 @@
       "id": "sn22.82",
       "group": "sn",
       "rank": 3,
-      "links": 7
+      "links": 6
     },
     {
       "id": "mn35",
@@ -6501,6 +6477,12 @@
       "links": 6
     },
     {
+      "id": "sn44.2",
+      "group": "sn",
+      "rank": 21,
+      "links": 1
+    },
+    {
       "id": "mn62",
       "group": "mn",
       "rank": 1,
@@ -6510,7 +6492,7 @@
       "id": "sn22.79",
       "group": "sn",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "an4.192",
@@ -6561,10 +6543,10 @@
       "links": 5
     },
     {
-      "id": "sn22.94",
-      "group": "sn",
+      "id": "mn18",
+      "group": "mn",
       "rank": 3,
-      "links": 1
+      "links": 7
     },
     {
       "id": "snp4.8",
@@ -6637,12 +6619,6 @@
       "group": "an",
       "rank": 1,
       "links": 5
-    },
-    {
-      "id": "sn1.34",
-      "group": "sn",
-      "rank": 3,
-      "links": 2
     },
     {
       "id": "an11.7",
@@ -6747,18 +6723,6 @@
       "links": 3
     },
     {
-      "id": "an7.73",
-      "group": "an",
-      "rank": 1,
-      "links": 3
-    },
-    {
-      "id": "an6.54",
-      "group": "an",
-      "rank": 2,
-      "links": 5
-    },
-    {
       "id": "mn10",
       "group": "mn",
       "rank": 1,
@@ -6846,7 +6810,7 @@
       "id": "sn22.76",
       "group": "sn",
       "rank": 8,
-      "links": 4
+      "links": 3
     },
     {
       "id": "thig13.1",
@@ -6954,7 +6918,7 @@
       "id": "mn17",
       "group": "mn",
       "rank": 1,
-      "links": 2
+      "links": 1
     },
     {
       "id": "sn12.64",
@@ -7365,6 +7329,12 @@
       "links": 3
     },
     {
+      "id": "dn15",
+      "group": "dn",
+      "rank": 1,
+      "links": 13
+    },
+    {
       "id": "dn5",
       "group": "dn",
       "rank": 1,
@@ -7446,7 +7416,7 @@
       "id": "dn23",
       "group": "dn",
       "rank": 1,
-      "links": 19
+      "links": 18
     },
     {
       "id": "ud6.4",
@@ -7536,7 +7506,7 @@
       "id": "sn22.80",
       "group": "sn",
       "rank": 6,
-      "links": 5
+      "links": 4
     },
     {
       "id": "an7.64",
@@ -7591,12 +7561,6 @@
       "group": "mn",
       "rank": 3,
       "links": 6
-    },
-    {
-      "id": "sn12.67",
-      "group": "sn",
-      "rank": 1,
-      "links": 2
     },
     {
       "id": "mn57",
@@ -7771,6 +7735,12 @@
       "group": "an",
       "rank": 1,
       "links": 13
+    },
+    {
+      "id": "sn12.67",
+      "group": "sn",
+      "rank": 4,
+      "links": 1
     },
     {
       "id": "an8.8",
@@ -8208,7 +8178,7 @@
       "id": "an10.54",
       "group": "an",
       "rank": 2,
-      "links": 9
+      "links": 8
     },
     {
       "id": "mn61",
@@ -8250,7 +8220,7 @@
       "id": "sn22.81",
       "group": "sn",
       "rank": 1,
-      "links": 5
+      "links": 4
     },
     {
       "id": "mn11",
@@ -8723,8 +8693,8 @@
     {
       "id": "thag18.1",
       "group": "thag",
-      "rank": 1,
-      "links": 5
+      "rank": 3,
+      "links": 4
     },
     {
       "id": "cp9",
@@ -8766,7 +8736,7 @@
       "id": "an4.180",
       "group": "an",
       "rank": 1,
-      "links": 3
+      "links": 2
     },
     {
       "id": "mn103",
@@ -8868,7 +8838,7 @@
       "id": "dn29",
       "group": "dn",
       "rank": 2,
-      "links": 19
+      "links": 18
     },
     {
       "id": "ud4.3",
@@ -9095,8 +9065,8 @@
     {
       "id": "snp4.1",
       "group": "snp",
-      "rank": 14,
-      "links": 1
+      "rank": 8,
+      "links": 2
     },
     {
       "id": "iti107",
@@ -9557,8 +9527,8 @@
     {
       "id": "sn9.2",
       "group": "sn",
-      "rank": 12,
-      "links": 1
+      "rank": 9,
+      "links": 2
     },
     {
       "id": "sn9.14",
@@ -10063,30 +10033,6 @@
       "group": "an",
       "rank": 7,
       "links": 2
-    },
-    {
-      "id": "an8.60",
-      "group": "an",
-      "rank": 1,
-      "links": 1
-    },
-    {
-      "id": "an8.59",
-      "group": "an",
-      "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "an8.77",
-      "group": "an",
-      "rank": 1,
-      "links": 3
-    },
-    {
-      "id": "an8.61",
-      "group": "an",
-      "rank": 2,
-      "links": 3
     },
     {
       "id": "an8.118",
@@ -10661,7 +10607,7 @@
     {
       "id": "sn51.14",
       "group": "sn",
-      "rank": 4,
+      "rank": 2,
       "links": 3
     },
     {
@@ -10855,6 +10801,18 @@
       "group": "sn",
       "rank": 15,
       "links": 1
+    },
+    {
+      "id": "an8.77",
+      "group": "an",
+      "rank": 1,
+      "links": 2
+    },
+    {
+      "id": "an8.61",
+      "group": "an",
+      "rank": 2,
+      "links": 2
     },
     {
       "id": "an4.2",
@@ -11129,8 +11087,8 @@
     {
       "id": "an5.190",
       "group": "an",
-      "rank": 1,
-      "links": 6
+      "rank": 2,
+      "links": 5
     },
     {
       "id": "cp8",
@@ -11262,13 +11220,13 @@
       "id": "an10.61",
       "group": "an",
       "rank": 1,
-      "links": 8
+      "links": 7
     },
     {
       "id": "an10.62",
       "group": "an",
       "rank": 1,
-      "links": 9
+      "links": 8
     },
     {
       "id": "an5.52",
@@ -12341,8 +12299,14 @@
     {
       "id": "dhp235-255",
       "group": "dhp",
-      "rank": 6,
+      "rank": 10,
       "links": 2
+    },
+    {
+      "id": "sn22.85",
+      "group": "sn",
+      "rank": 4,
+      "links": 4
     },
     {
       "id": "sn6.5",
@@ -12651,15 +12615,9 @@
       "links": 3
     },
     {
-      "id": "sn35.135",
-      "group": "sn",
-      "rank": 1,
-      "links": 2
-    },
-    {
       "id": "sn56.43",
       "group": "sn",
-      "rank": 2,
+      "rank": 1,
       "links": 3
     },
     {
@@ -13233,6 +13191,24 @@
       "links": 2
     },
     {
+      "id": "snp2.10",
+      "group": "snp",
+      "rank": 2,
+      "links": 2
+    },
+    {
+      "id": "snp5.17",
+      "group": "snp",
+      "rank": 7,
+      "links": 1
+    },
+    {
+      "id": "thag17.1",
+      "group": "thag",
+      "rank": 6,
+      "links": 2
+    },
+    {
       "id": "mn133",
       "group": "mn",
       "rank": 1,
@@ -13254,12 +13230,6 @@
       "id": "mn134",
       "group": "mn",
       "rank": 1,
-      "links": 4
-    },
-    {
-      "id": "sn12.20",
-      "group": "sn",
-      "rank": 2,
       "links": 4
     },
     {
@@ -13453,36 +13423,6 @@
       "group": "an",
       "rank": 3,
       "links": 2
-    },
-    {
-      "id": "sn22.75",
-      "group": "sn",
-      "rank": 3,
-      "links": 1
-    },
-    {
-      "id": "sn22.77",
-      "group": "sn",
-      "rank": 4,
-      "links": 1
-    },
-    {
-      "id": "sn22.73",
-      "group": "sn",
-      "rank": 5,
-      "links": 1
-    },
-    {
-      "id": "sn22.74",
-      "group": "sn",
-      "rank": 6,
-      "links": 1
-    },
-    {
-      "id": "sn22.78",
-      "group": "sn",
-      "rank": 4,
-      "links": 3
     },
     {
       "id": "sn45.27",
@@ -13719,12 +13659,6 @@
       "links": 4
     },
     {
-      "id": "mn18",
-      "group": "mn",
-      "rank": 3,
-      "links": 6
-    },
-    {
       "id": "snp4.12",
       "group": "snp",
       "rank": 4,
@@ -13887,6 +13821,12 @@
       "links": 1
     },
     {
+      "id": "an6.54",
+      "group": "an",
+      "rank": 2,
+      "links": 4
+    },
+    {
       "id": "sn55.71",
       "group": "sn",
       "rank": 3,
@@ -13905,27 +13845,33 @@
       "links": 1
     },
     {
+      "id": "sn12.20",
+      "group": "sn",
+      "rank": 2,
+      "links": 3
+    },
+    {
       "id": "an5.235",
       "group": "an",
       "rank": 1,
       "links": 1
     },
     {
+      "id": "sn20.9",
+      "group": "sn",
+      "rank": 2,
+      "links": 1
+    },
+    {
       "id": "an8.88",
       "group": "an",
-      "rank": 2,
+      "rank": 5,
       "links": 1
     },
     {
       "id": "an8.89",
       "group": "an",
-      "rank": 3,
-      "links": 1
-    },
-    {
-      "id": "sn20.9",
-      "group": "sn",
-      "rank": 4,
+      "rank": 6,
       "links": 1
     },
     {
@@ -14345,8 +14291,8 @@
     {
       "id": "an5.212",
       "group": "an",
-      "rank": 1,
-      "links": 2
+      "rank": 8,
+      "links": 1
     },
     {
       "id": "an4.88",
@@ -14538,7 +14484,7 @@
       "id": "sn22.55",
       "group": "sn",
       "rank": 4,
-      "links": 3
+      "links": 2
     },
     {
       "id": "ud7.8",
@@ -14694,12 +14640,6 @@
       "id": "thig1.5",
       "group": "thig",
       "rank": 1,
-      "links": 1
-    },
-    {
-      "id": "snp2.10",
-      "group": "snp",
-      "rank": 2,
       "links": 1
     },
     {
@@ -15492,6 +15432,12 @@
       "id": "an6.53",
       "group": "an",
       "rank": 9,
+      "links": 2
+    },
+    {
+      "id": "an7.73",
+      "group": "an",
+      "rank": 1,
       "links": 2
     },
     {
@@ -16383,6 +16329,12 @@
       "links": 1
     },
     {
+      "id": "sn22.78",
+      "group": "sn",
+      "rank": 4,
+      "links": 2
+    },
+    {
       "id": "sn12.24",
       "group": "sn",
       "rank": 1,
@@ -16824,18 +16776,6 @@
       "id": "sn35.93",
       "group": "sn",
       "rank": 7,
-      "links": 1
-    },
-    {
-      "id": "sn22.53",
-      "group": "sn",
-      "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "sn22.54",
-      "group": "sn",
-      "rank": 3,
       "links": 1
     },
     {
@@ -17397,6 +17337,12 @@
       "links": 1
     },
     {
+      "id": "sn1.34",
+      "group": "sn",
+      "rank": 18,
+      "links": 1
+    },
+    {
       "id": "snp2.12",
       "group": "snp",
       "rank": 28,
@@ -17519,8 +17465,8 @@
     {
       "id": "an9.6",
       "group": "an",
-      "rank": 1,
-      "links": 2
+      "rank": 6,
+      "links": 1
     },
     {
       "id": "iti98",
@@ -17934,6 +17880,12 @@
       "id": "sn6.3",
       "group": "sn",
       "rank": 29,
+      "links": 1
+    },
+    {
+      "id": "sn35.135",
+      "group": "sn",
+      "rank": 1,
       "links": 1
     },
     {
@@ -18489,12 +18441,6 @@
       "links": 1
     },
     {
-      "id": "thag17.1",
-      "group": "thag",
-      "rank": 6,
-      "links": 1
-    },
-    {
       "id": "an5.136",
       "group": "an",
       "rank": 1,
@@ -18841,7 +18787,7 @@
     },
     {
       "source": "a condition for old age and death",
-      "target": "dn15",
+      "target": "dn1",
       "rank": 1
     },
     {
@@ -18881,83 +18827,58 @@
     },
     {
       "source": "actually",
-      "target": "an3.61",
+      "target": "mn21",
       "rank": 5
     },
     {
       "source": "actually",
-      "target": "mn21",
+      "target": "dn24",
       "rank": 6
     },
     {
       "source": "actually",
-      "target": "dn24",
+      "target": "an9.2",
       "rank": 7
     },
     {
       "source": "actually",
-      "target": "an9.2",
+      "target": "mn75",
       "rank": 8
     },
     {
       "source": "actually",
-      "target": "mn75",
+      "target": "dn27",
       "rank": 9
     },
     {
       "source": "actually",
-      "target": "dn27",
+      "target": "sn6.4",
       "rank": 10
     },
     {
       "source": "actually",
-      "target": "sn6.4",
+      "target": "an10.177",
       "rank": 11
     },
     {
       "source": "actually",
-      "target": "an10.177",
+      "target": "thig12.1",
       "rank": 12
     },
     {
       "source": "actually",
-      "target": "thig12.1",
+      "target": "sn1.20",
       "rank": 13
     },
     {
       "source": "actually",
-      "target": "sn22.86",
+      "target": "mn49",
       "rank": 14
     },
     {
       "source": "actually",
-      "target": "sn44.2",
-      "rank": 15
-    },
-    {
-      "source": "actually",
-      "target": "sn1.20",
-      "rank": 16
-    },
-    {
-      "source": "actually",
-      "target": "mn49",
-      "rank": 17
-    },
-    {
-      "source": "actually",
       "target": "snp3.4",
-      "rank": 18
-    },
-    {
-      "source": "actually",
-      "target": "sn22.85",
-      "rank": 19
-    },
-    {
-      "source": "actually",
-      "target": "mn22",
-      "rank": 20
+      "rank": 15
     },
     {
       "source": "a deep lake fed by spring water",
@@ -20586,7 +20507,7 @@
     },
     {
       "source": "argue with",
-      "target": "sn22.94",
+      "target": "mn18",
       "rank": 3
     },
     {
@@ -20653,11 +20574,6 @@
       "source": "assess",
       "target": "an10.75",
       "rank": 2
-    },
-    {
-      "source": "assess",
-      "target": "sn1.34",
-      "rank": 3
     },
     {
       "source": "a state of immersion",
@@ -20753,21 +20669,6 @@
       "source": "astute, competent, clever, learned",
       "target": "mn84",
       "rank": 2
-    },
-    {
-      "source": "a Teacher called Sunetta",
-      "target": "an7.73",
-      "rank": 1
-    },
-    {
-      "source": "a Teacher called Sunetta",
-      "target": "an7.66",
-      "rank": 2
-    },
-    {
-      "source": "a Teacher called Sunetta",
-      "target": "an6.54",
-      "rank": 3
     },
     {
       "source": "awakening factor of mindfulness in them",
@@ -22063,11 +21964,6 @@
       "source": "breathing in heavily they know",
       "target": "dn22",
       "rank": 10
-    },
-    {
-      "source": "bundles of reeds",
-      "target": "sn12.67",
-      "rank": 1
     },
     {
       "source": "burst out in tears",
@@ -25590,26 +25486,6 @@
       "rank": 11
     },
     {
-      "source": "eight people",
-      "target": "an8.60",
-      "rank": 1
-    },
-    {
-      "source": "eight people",
-      "target": "an8.59",
-      "rank": 2
-    },
-    {
-      "source": "eight people",
-      "target": "an8.77",
-      "rank": 3
-    },
-    {
-      "source": "eight people",
-      "target": "an8.61",
-      "rank": 4
-    },
-    {
       "source": "eight things should be developed",
       "target": "an8.118",
       "rank": 1
@@ -25758,21 +25634,6 @@
       "source": "element of",
       "target": "dn29",
       "rank": 19
-    },
-    {
-      "source": "emancipated individual able to go",
-      "target": "mn39",
-      "rank": 1
-    },
-    {
-      "source": "emancipated individual able to go",
-      "target": "dn10",
-      "rank": 2
-    },
-    {
-      "source": "emancipated individual able to go",
-      "target": "dn2",
-      "rank": 3
     },
     {
       "source": "empty huts",
@@ -26348,16 +26209,6 @@
       "source": "ethics and wisdom",
       "target": "mn100",
       "rank": 6
-    },
-    {
-      "source": "even if sent away",
-      "target": "mn122",
-      "rank": 1
-    },
-    {
-      "source": "even if sent away",
-      "target": "mn17",
-      "rank": 2
     },
     {
       "source": "experience an immersion",
@@ -31156,23 +31007,18 @@
     },
     {
       "source": "hell called",
-      "target": "sn35.135",
+      "target": "sn56.43",
       "rank": 1
     },
     {
       "source": "hell called",
-      "target": "sn56.43",
+      "target": "sn42.3",
       "rank": 2
     },
     {
       "source": "hell called",
-      "target": "sn42.3",
-      "rank": 3
-    },
-    {
-      "source": "hell called",
       "target": "sn42.2",
-      "rank": 4
+      "rank": 3
     },
     {
       "source": "hell of",
@@ -32706,8 +32552,33 @@
     },
     {
       "source": "inflict",
-      "target": "dhp235-255",
+      "target": "snp2.10",
       "rank": 6
+    },
+    {
+      "source": "inflict",
+      "target": "snp5.17",
+      "rank": 7
+    },
+    {
+      "source": "inflict",
+      "target": "snp4.1",
+      "rank": 8
+    },
+    {
+      "source": "inflict",
+      "target": "sn9.2",
+      "rank": 9
+    },
+    {
+      "source": "inflict",
+      "target": "dhp235-255",
+      "rank": 10
+    },
+    {
+      "source": "inflict",
+      "target": "thag17.1",
+      "rank": 11
     },
     {
       "source": "back to the past",
@@ -32728,16 +32599,6 @@
       "source": "back to the past",
       "target": "mn134",
       "rank": 4
-    },
-    {
-      "source": "back to the past",
-      "target": "sn12.20",
-      "rank": 5
-    },
-    {
-      "source": "back to the past",
-      "target": "mn38",
-      "rank": 6
     },
     {
       "source": "for the future",
@@ -33416,68 +33277,18 @@
     },
     {
       "source": "itch",
-      "target": "sn22.79",
+      "target": "an9.40",
       "rank": 1
     },
     {
       "source": "itch",
-      "target": "an9.40",
+      "target": "an10.60",
       "rank": 2
     },
     {
       "source": "itch",
-      "target": "sn22.75",
-      "rank": 3
-    },
-    {
-      "source": "itch",
-      "target": "sn22.77",
-      "rank": 4
-    },
-    {
-      "source": "itch",
-      "target": "sn22.73",
-      "rank": 5
-    },
-    {
-      "source": "itch",
-      "target": "sn22.74",
-      "rank": 6
-    },
-    {
-      "source": "itch",
-      "target": "sn22.78",
-      "rank": 7
-    },
-    {
-      "source": "itch",
-      "target": "sn22.76",
-      "rank": 8
-    },
-    {
-      "source": "itch",
-      "target": "an10.60",
-      "rank": 9
-    },
-    {
-      "source": "itch",
-      "target": "sn22.80",
-      "rank": 10
-    },
-    {
-      "source": "itch",
-      "target": "sn22.82",
-      "rank": 11
-    },
-    {
-      "source": "itch",
-      "target": "sn22.81",
-      "rank": 12
-    },
-    {
-      "source": "itch",
       "target": "mn75",
-      "rank": 13
+      "rank": 3
     },
     {
       "source": "I teach inaction",
@@ -34456,27 +34267,27 @@
     },
     {
       "source": "lay people",
-      "target": "an8.88",
+      "target": "sn20.9",
       "rank": 2
     },
     {
       "source": "lay people",
-      "target": "an8.89",
+      "target": "an8.23",
       "rank": 3
     },
     {
       "source": "lay people",
-      "target": "sn20.9",
+      "target": "sn9.5",
       "rank": 4
     },
     {
       "source": "lay people",
-      "target": "an8.23",
+      "target": "an8.88",
       "rank": 5
     },
     {
       "source": "lay people",
-      "target": "sn9.5",
+      "target": "an8.89",
       "rank": 6
     },
     {
@@ -34618,11 +34429,6 @@
       "source": "let not two go",
       "target": "sn4.5",
       "rank": 2
-    },
-    {
-      "source": "let’s abandon our bundles",
-      "target": "dn23",
-      "rank": 1
     },
     {
       "source": "letting go of attachments",
@@ -35016,13 +34822,8 @@
     },
     {
       "source": "like a dog",
-      "target": "thig16.1",
-      "rank": 2
-    },
-    {
-      "source": "like a dog",
       "target": "dn24",
-      "rank": 3
+      "rank": 2
     },
     {
       "source": "like a drop of dew",
@@ -37405,11 +37206,6 @@
       "rank": 9
     },
     {
-      "source": "modes of conceit",
-      "target": "thag18.1",
-      "rank": 1
-    },
-    {
       "source": "monastic codes",
       "target": "an7.76",
       "rank": 1
@@ -37635,26 +37431,6 @@
       "rank": 10
     },
     {
-      "source": "neither approve nor dismiss",
-      "target": "an4.180",
-      "rank": 1
-    },
-    {
-      "source": "neither approve nor dismiss",
-      "target": "dn16",
-      "rank": 2
-    },
-    {
-      "source": "neither approve nor dismiss",
-      "target": "dn29",
-      "rank": 3
-    },
-    {
-      "source": "neither approve nor dismiss",
-      "target": "mn112",
-      "rank": 4
-    },
-    {
       "source": "neither ashes nor soot",
       "target": "ud8.10",
       "rank": 1
@@ -37876,18 +37652,8 @@
     },
     {
       "source": "no first point",
-      "target": "an10.61",
-      "rank": 14
-    },
-    {
-      "source": "no first point",
-      "target": "an10.62",
-      "rank": 15
-    },
-    {
-      "source": "no first point",
       "target": "sn15.20",
-      "rank": 16
+      "rank": 14
     },
     {
       "source": "no form at all",
@@ -39938,6 +39704,11 @@
       "source": "reborn according to their deeds",
       "target": "an5.28",
       "rank": 1
+    },
+    {
+      "source": "reborn according to their deeds",
+      "target": "mn79",
+      "rank": 2
     },
     {
       "source": "red silk-cotton wood",
@@ -42425,11 +42196,6 @@
       "rank": 3
     },
     {
-      "source": "starting arguments",
-      "target": "an5.212",
-      "rank": 1
-    },
-    {
       "source": "startled",
       "target": "an2.52-63",
       "rank": 1
@@ -44176,28 +43942,13 @@
     },
     {
       "source": "the foundation of",
-      "target": "sn22.53",
+      "target": "sn51.14",
       "rank": 2
     },
     {
       "source": "the foundation of",
-      "target": "sn22.54",
-      "rank": 3
-    },
-    {
-      "source": "the foundation of",
-      "target": "sn51.14",
-      "rank": 4
-    },
-    {
-      "source": "the foundation of",
-      "target": "sn22.55",
-      "rank": 5
-    },
-    {
-      "source": "the foundation of",
       "target": "dn33",
-      "rank": 6
+      "rank": 3
     },
     {
       "source": "the fuel for craving",
@@ -47043,21 +46794,6 @@
       "source": "two kinds of happiness",
       "target": "dn21",
       "rank": 2
-    },
-    {
-      "source": "two kinds of people",
-      "target": "an9.6",
-      "rank": 1
-    },
-    {
-      "source": "two kinds of people",
-      "target": "an10.54",
-      "rank": 2
-    },
-    {
-      "source": "five kinds of people",
-      "target": "an5.190",
-      "rank": 1
     },
     {
       "source": "two things should be developed",
