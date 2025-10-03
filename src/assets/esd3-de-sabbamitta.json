@@ -53,7 +53,7 @@
     {
       "id": "acht Menschen",
       "group": "Examples",
-      "links": 7
+      "links": 6
     },
     {
       "id": "Achtsamkeit auf den Tod",
@@ -73,7 +73,7 @@
     {
       "id": "Achtsamkeit verankert",
       "group": "Examples",
-      "links": 7
+      "links": 6
     },
     {
       "id": "achtsam leben, der Situation bewusst",
@@ -133,7 +133,7 @@
     {
       "id": "an einen festen Pfosten",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "Antwort auf diese Frage einfiel",
@@ -293,7 +293,7 @@
     {
       "id": "bedingte.* Erscheinungen",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "Bedingungen müssen vergehen",
@@ -508,7 +508,7 @@
     {
       "id": "das allein ist die Wahrheit",
       "group": "Examples",
-      "links": 18
+      "links": 19
     },
     {
       "id": "das Auge brennt",
@@ -583,7 +583,7 @@
     {
       "id": "das ist friedvoll",
       "group": "Examples",
-      "links": 14
+      "links": 15
     },
     {
       "id": "das ist zu eurem Wohl",
@@ -618,7 +618,7 @@
     {
       "id": "das Selbst ist",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "dass ich nie sehe oder höre",
@@ -953,7 +953,7 @@
     {
       "id": "drei Menschen",
       "group": "Examples",
-      "links": 21
+      "links": 20
     },
     {
       "id": "drei Monate in Klausur",
@@ -988,7 +988,7 @@
     {
       "id": "Dunklen, die für das Helle bestimmt",
       "group": "Examples",
-      "links": 2
+      "links": 1
     },
     {
       "id": "Durchbruch",
@@ -2368,7 +2368,7 @@
     {
       "id": "Krankheit.* Eiterherd.* Pfeil",
       "group": "Examples",
-      "links": 14
+      "links": 15
     },
     {
       "id": "Kräuter, Hirse",
@@ -2873,7 +2873,7 @@
     {
       "id": "ohne Wahrnehmung",
       "group": "Examples",
-      "links": 25
+      "links": 26
     },
     {
       "id": "Opferpfahl",
@@ -4163,7 +4163,7 @@
     {
       "id": "wie ein Hund",
       "group": "Examples",
-      "links": 2
+      "links": 5
     },
     {
       "id": "wie ein Tautropfen",
@@ -4810,7 +4810,7 @@
       "id": "dn16",
       "group": "dn",
       "rank": 1,
-      "links": 64
+      "links": 63
     },
     {
       "id": "an4.89",
@@ -4840,7 +4840,7 @@
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 108
+      "links": 105
     },
     {
       "id": "an4.189",
@@ -5025,7 +5025,7 @@
     {
       "id": "sn22.123",
       "group": "sn",
-      "rank": 8,
+      "rank": 9,
       "links": 2
     },
     {
@@ -5476,19 +5476,25 @@
       "id": "sn22.99",
       "group": "sn",
       "rank": 1,
-      "links": 5
+      "links": 6
     },
     {
       "id": "sn22.100",
       "group": "sn",
       "rank": 2,
-      "links": 2
+      "links": 3
     },
     {
       "id": "sn35.247",
       "group": "sn",
       "rank": 3,
       "links": 3
+    },
+    {
+      "id": "mn102",
+      "group": "mn",
+      "rank": 2,
+      "links": 8
     },
     {
       "id": "sn41.2",
@@ -6813,13 +6819,13 @@
     {
       "id": "an11.8",
       "group": "an",
-      "rank": 7,
+      "rank": 8,
       "links": 3
     },
     {
       "id": "an11.19",
       "group": "an",
-      "rank": 8,
+      "rank": 9,
       "links": 3
     },
     {
@@ -10281,7 +10287,7 @@
     {
       "id": "sn22.47",
       "group": "sn",
-      "rank": 4,
+      "rank": 5,
       "links": 5
     },
     {
@@ -10767,7 +10773,7 @@
     {
       "id": "thag3.14",
       "group": "thag",
-      "rank": 9,
+      "rank": 10,
       "links": 3
     },
     {
@@ -15477,19 +15483,19 @@
     {
       "id": "sn22.24",
       "group": "sn",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
       "id": "an9.24",
       "group": "an",
-      "rank": 11,
+      "rank": 12,
       "links": 1
     },
     {
       "id": "an2.77-86",
       "group": "an",
-      "rank": 12,
+      "rank": 13,
       "links": 1
     },
     {
@@ -18774,11 +18780,6 @@
       "rank": 6
     },
     {
-      "source": "acht Menschen",
-      "target": "dn33",
-      "rank": 7
-    },
-    {
       "source": "Achtsamkeit auf den Tod",
       "target": "an8.73",
       "rank": 1
@@ -18947,11 +18948,6 @@
       "source": "Achtsamkeit verankert",
       "target": "thig7.2",
       "rank": 6
-    },
-    {
-      "source": "Achtsamkeit verankert",
-      "target": "dn16",
-      "rank": 7
     },
     {
       "source": "achtsam leben, der Situation bewusst",
@@ -19347,6 +19343,11 @@
       "source": "an einen festen Pfosten",
       "target": "sn35.247",
       "rank": 3
+    },
+    {
+      "source": "an einen festen Pfosten",
+      "target": "mn102",
+      "rank": 4
     },
     {
       "source": "Antwort auf diese Frage einfiel",
@@ -20360,13 +20361,18 @@
     },
     {
       "source": "bedingte.* Erscheinungen",
-      "target": "dn17",
+      "target": "mn102",
       "rank": 5
     },
     {
       "source": "bedingte.* Erscheinungen",
-      "target": "dn14",
+      "target": "dn17",
       "rank": 6
+    },
+    {
+      "source": "bedingte.* Erscheinungen",
+      "target": "dn14",
+      "rank": 7
     },
     {
       "source": "Bedingungen müssen vergehen",
@@ -22190,63 +22196,68 @@
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "an10.95",
+      "target": "mn102",
       "rank": 7
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "mn74",
+      "target": "an10.95",
       "rank": 8
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "dn9",
+      "target": "mn74",
       "rank": 9
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "ud6.5",
+      "target": "dn9",
       "rank": 10
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "ud6.6",
+      "target": "ud6.5",
       "rank": 11
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "ud6.4",
+      "target": "ud6.6",
       "rank": 12
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "an2.42-51",
+      "target": "ud6.4",
       "rank": 13
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "mn60",
+      "target": "an2.42-51",
       "rank": 14
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "sn45.174",
+      "target": "mn60",
       "rank": 15
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "mn139",
+      "target": "sn45.174",
       "rank": 16
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "dn21",
+      "target": "mn139",
       "rank": 17
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "dn33",
+      "target": "dn21",
       "rank": 18
+    },
+    {
+      "source": "das allein ist die Wahrheit",
+      "target": "dn33",
+      "rank": 19
     },
     {
       "source": "das Auge brennt",
@@ -22355,17 +22366,17 @@
     },
     {
       "source": "das Erste gibt",
-      "target": "sn54.8",
+      "target": "dn1",
       "rank": 1
     },
     {
       "source": "das Erste gibt",
-      "target": "an3.65",
+      "target": "sn54.8",
       "rank": 2
     },
     {
       "source": "das Erste gibt",
-      "target": "dn1",
+      "target": "an3.65",
       "rank": 3
     },
     {
@@ -22600,68 +22611,73 @@
     },
     {
       "source": "das ist friedvoll",
-      "target": "an11.7",
+      "target": "mn102",
       "rank": 2
     },
     {
       "source": "das ist friedvoll",
-      "target": "an10.60",
+      "target": "an11.7",
       "rank": 3
     },
     {
       "source": "das ist friedvoll",
-      "target": "an10.6",
+      "target": "an10.60",
       "rank": 4
     },
     {
       "source": "das ist friedvoll",
-      "target": "an11.18",
+      "target": "an10.6",
       "rank": 5
     },
     {
       "source": "das ist friedvoll",
-      "target": "an11.20",
+      "target": "an11.18",
       "rank": 6
     },
     {
       "source": "das ist friedvoll",
-      "target": "an11.8",
+      "target": "an11.20",
       "rank": 7
     },
     {
       "source": "das ist friedvoll",
-      "target": "an11.19",
+      "target": "an11.8",
       "rank": 8
     },
     {
       "source": "das ist friedvoll",
-      "target": "an3.32",
+      "target": "an11.19",
       "rank": 9
     },
     {
       "source": "das ist friedvoll",
-      "target": "an11.21",
+      "target": "an3.32",
       "rank": 10
     },
     {
       "source": "das ist friedvoll",
-      "target": "iti49",
+      "target": "an11.21",
       "rank": 11
     },
     {
       "source": "das ist friedvoll",
-      "target": "mn64",
+      "target": "iti49",
       "rank": 12
     },
     {
       "source": "das ist friedvoll",
-      "target": "an10.99",
+      "target": "mn64",
       "rank": 13
     },
     {
       "source": "das ist friedvoll",
-      "target": "dn1",
+      "target": "an10.99",
       "rank": 14
+    },
+    {
+      "source": "das ist friedvoll",
+      "target": "dn1",
+      "rank": 15
     },
     {
       "source": "das ist zu eurem Wohl",
@@ -22795,8 +22811,13 @@
     },
     {
       "source": "das Selbst ist",
-      "target": "dn29",
+      "target": "mn102",
       "rank": 2
+    },
+    {
+      "source": "das Selbst ist",
+      "target": "dn29",
+      "rank": 3
     },
     {
       "source": "dass ich nie sehe oder höre",
@@ -24799,11 +24820,6 @@
       "rank": 20
     },
     {
-      "source": "drei Menschen",
-      "target": "dn33",
-      "rank": 21
-    },
-    {
       "source": "drei Monate in Klausur",
       "target": "sn45.12",
       "rank": 1
@@ -25122,11 +25138,6 @@
       "source": "Dunklen, die für das Helle bestimmt",
       "target": "sn3.21",
       "rank": 1
-    },
-    {
-      "source": "Dunklen, die für das Helle bestimmt",
-      "target": "dn33",
-      "rank": 2
     },
     {
       "source": "Durchbruch",
@@ -35630,38 +35641,43 @@
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "sn22.123",
+      "target": "mn102",
       "rank": 8
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "sn35.90",
+      "target": "sn22.123",
       "rank": 9
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "sn35.91",
+      "target": "sn35.90",
       "rank": 10
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "mn74",
+      "target": "sn35.91",
       "rank": 11
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "mn64",
+      "target": "mn74",
       "rank": 12
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "mn140",
+      "target": "mn64",
       "rank": 13
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "dn21",
+      "target": "mn140",
       "rank": 14
+    },
+    {
+      "source": "Krankheit.* Eiterherd.* Pfeil",
+      "target": "dn21",
+      "rank": 15
     },
     {
       "source": "Kräuter, Hirse",
@@ -38795,123 +38811,128 @@
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "sn35.248",
+      "target": "mn102",
       "rank": 2
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "sn45.139",
+      "target": "sn35.248",
       "rank": 3
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "sn22.47",
+      "target": "sn45.139",
       "rank": 4
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "dn29",
+      "target": "sn22.47",
       "rank": 5
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "dn9",
+      "target": "dn29",
       "rank": 6
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "mn76",
+      "target": "dn9",
       "rank": 7
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "sn22.24",
+      "target": "mn76",
       "rank": 8
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "thag3.14",
+      "target": "sn22.24",
       "rank": 9
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "an10.15",
+      "target": "thag3.14",
       "rank": 10
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "an9.24",
+      "target": "an10.15",
       "rank": 11
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "an2.77-86",
+      "target": "an9.24",
       "rank": 12
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "an4.34",
+      "target": "an2.77-86",
       "rank": 13
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "an9.37",
+      "target": "an4.34",
       "rank": 14
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "iti90",
+      "target": "an9.37",
       "rank": 15
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "sn24.8",
+      "target": "iti90",
       "rank": 16
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "an5.32",
+      "target": "sn24.8",
       "rank": 17
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "sn44.11",
+      "target": "an5.32",
       "rank": 18
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "dn15",
+      "target": "sn44.11",
       "rank": 19
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "dn28",
+      "target": "dn15",
       "rank": 20
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "mn140",
+      "target": "dn28",
       "rank": 21
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "dn2",
+      "target": "mn140",
       "rank": 22
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "dn24",
+      "target": "dn2",
       "rank": 23
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "dn33",
+      "target": "dn24",
       "rank": 24
     },
     {
       "source": "ohne Wahrnehmung",
-      "target": "dn34",
+      "target": "dn33",
       "rank": 25
+    },
+    {
+      "source": "ohne Wahrnehmung",
+      "target": "dn34",
+      "rank": 26
     },
     {
       "source": "Opferpfahl",
@@ -47800,8 +47821,23 @@
     },
     {
       "source": "wie ein Hund",
-      "target": "dn24",
+      "target": "sn22.99",
       "rank": 2
+    },
+    {
+      "source": "wie ein Hund",
+      "target": "sn22.100",
+      "rank": 3
+    },
+    {
+      "source": "wie ein Hund",
+      "target": "mn102",
+      "rank": 4
+    },
+    {
+      "source": "wie ein Hund",
+      "target": "dn24",
+      "rank": 5
     },
     {
       "source": "wie ein Tautropfen",
