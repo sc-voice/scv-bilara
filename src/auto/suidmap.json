@@ -9899,6 +9899,10 @@
 		"translation/pt/laera-quaresma": "sutta/kn/kp",
 		"root/pli/ms": "sutta/kn/kp"
 	},
+	"mil1": {
+		"translation/en/kelly": "sutta/kn/mil",
+		"root/pli/ms": "sutta/kn/mil"
+	},
 	"mil3.1.1": {
 		"translation/de/sabbamitta": "sutta/kn/mil",
 		"translation/en/kelly": "sutta/kn/mil",
@@ -27612,9 +27616,6 @@
 	},
 	"ja99": {
 		"root/pli/ms": "sutta/kn/ja"
-	},
-	"mil1": {
-		"root/pli/ms": "sutta/kn/mil"
 	},
 	"mil2": {
 		"root/pli/ms": "sutta/kn/mil"
