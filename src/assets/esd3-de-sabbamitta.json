@@ -1073,7 +1073,7 @@
     {
       "id": "eine Bedingung für Alter und Tod",
       "group": "Examples",
-      "links": 13
+      "links": 12
     },
     {
       "id": "eine erlesene Nacht",
@@ -2263,7 +2263,7 @@
     {
       "id": "keinen Halt",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "kennt mich",
@@ -3813,7 +3813,7 @@
     {
       "id": "von Sprache",
       "group": "Examples",
-      "links": 33
+      "links": 32
     },
     {
       "id": "von Zorn überwältigt",
@@ -4642,7 +4642,7 @@
       "id": "dn15",
       "group": "dn",
       "rank": 1,
-      "links": 14
+      "links": 13
     },
     {
       "id": "sn12.27",
@@ -4810,7 +4810,7 @@
       "id": "dn16",
       "group": "dn",
       "rank": 1,
-      "links": 62
+      "links": 63
     },
     {
       "id": "an4.89",
@@ -6298,7 +6298,7 @@
       "id": "an10.99",
       "group": "an",
       "rank": 2,
-      "links": 17
+      "links": 16
     },
     {
       "id": "mn27",
@@ -12189,8 +12189,8 @@
     {
       "id": "an6.16",
       "group": "an",
-      "rank": 3,
-      "links": 4
+      "rank": 5,
+      "links": 3
     },
     {
       "id": "an5.89",
@@ -13138,7 +13138,7 @@
       "id": "an7.22",
       "group": "an",
       "rank": 3,
-      "links": 2
+      "links": 3
     },
     {
       "id": "sn11.15",
@@ -13767,8 +13767,8 @@
     {
       "id": "sn36.4",
       "group": "sn",
-      "rank": 1,
-      "links": 2
+      "rank": 8,
+      "links": 1
     },
     {
       "id": "an3.133",
@@ -13849,10 +13849,22 @@
       "links": 1
     },
     {
-      "id": "sn2.5",
+      "id": "sn35.231",
       "group": "sn",
-      "rank": 2,
+      "rank": 1,
       "links": 1
+    },
+    {
+      "id": "an7.23",
+      "group": "an",
+      "rank": 3,
+      "links": 2
+    },
+    {
+      "id": "dhp90-99",
+      "group": "dhp",
+      "rank": 5,
+      "links": 3
     },
     {
       "id": "sn4.8",
@@ -14141,12 +14153,6 @@
       "group": "sn",
       "rank": 24,
       "links": 1
-    },
-    {
-      "id": "dhp90-99",
-      "group": "dhp",
-      "rank": 9,
-      "links": 2
     },
     {
       "id": "dhp209-220",
@@ -17173,12 +17179,6 @@
       "links": 1
     },
     {
-      "id": "sn22.62",
-      "group": "sn",
-      "rank": 26,
-      "links": 1
-    },
-    {
       "id": "iti12",
       "group": "iti",
       "rank": 3,
@@ -17243,12 +17243,6 @@
       "group": "an",
       "rank": 3,
       "links": 3
-    },
-    {
-      "id": "an7.23",
-      "group": "an",
-      "rank": 4,
-      "links": 1
     },
     {
       "id": "an7.24",
@@ -25510,38 +25504,33 @@
     },
     {
       "source": "eine Bedingung für Alter und Tod",
-      "target": "dn15",
+      "target": "dn14",
       "rank": 7
     },
     {
       "source": "eine Bedingung für Alter und Tod",
-      "target": "dn14",
+      "target": "sn12.36",
       "rank": 8
     },
     {
       "source": "eine Bedingung für Alter und Tod",
-      "target": "sn12.36",
+      "target": "sn12.35",
       "rank": 9
     },
     {
       "source": "eine Bedingung für Alter und Tod",
-      "target": "sn12.35",
+      "target": "sn12.67",
       "rank": 10
     },
     {
       "source": "eine Bedingung für Alter und Tod",
-      "target": "sn12.67",
+      "target": "sn12.70",
       "rank": 11
     },
     {
       "source": "eine Bedingung für Alter und Tod",
-      "target": "sn12.70",
-      "rank": 12
-    },
-    {
-      "source": "eine Bedingung für Alter und Tod",
       "target": "mn38",
-      "rank": 13
+      "rank": 12
     },
     {
       "source": "eine erlesene Nacht",
@@ -34070,23 +34059,28 @@
     },
     {
       "source": "keinen Halt",
-      "target": "sn36.4",
+      "target": "sn35.231",
       "rank": 1
     },
     {
       "source": "keinen Halt",
-      "target": "sn2.5",
+      "target": "dn16",
       "rank": 2
     },
     {
       "source": "keinen Halt",
-      "target": "an6.16",
+      "target": "an7.23",
       "rank": 3
     },
     {
       "source": "keinen Halt",
-      "target": "an10.99",
+      "target": "an7.22",
       "rank": 4
+    },
+    {
+      "source": "keinen Halt",
+      "target": "dhp90-99",
+      "rank": 5
     },
     {
       "source": "kennt mich",
@@ -44805,43 +44799,38 @@
     },
     {
       "source": "von Sprache",
-      "target": "sn22.62",
+      "target": "an3.101",
       "rank": 26
     },
     {
       "source": "von Sprache",
-      "target": "an3.101",
+      "target": "an5.31",
       "rank": 27
     },
     {
       "source": "von Sprache",
-      "target": "an5.31",
+      "target": "an4.195",
       "rank": 28
     },
     {
       "source": "von Sprache",
-      "target": "an4.195",
+      "target": "mn45",
       "rank": 29
     },
     {
       "source": "von Sprache",
-      "target": "mn45",
+      "target": "an7.64",
       "rank": 30
     },
     {
       "source": "von Sprache",
-      "target": "an7.64",
+      "target": "mn78",
       "rank": 31
     },
     {
       "source": "von Sprache",
-      "target": "mn78",
-      "rank": 32
-    },
-    {
-      "source": "von Sprache",
       "target": "cp9",
-      "rank": 33
+      "rank": 32
     },
     {
       "source": "von Zorn überwältigt",
