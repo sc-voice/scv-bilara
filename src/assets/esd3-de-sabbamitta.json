@@ -103,7 +103,7 @@
     {
       "id": "alles Leiden",
       "group": "Examples",
-      "links": 25
+      "links": 24
     },
     {
       "id": "alle tauglichen Eigenschaften",
@@ -1073,7 +1073,7 @@
     {
       "id": "eine Bedingung für Alter und Tod",
       "group": "Examples",
-      "links": 9
+      "links": 8
     },
     {
       "id": "eine erlesene Nacht",
@@ -1283,7 +1283,7 @@
     {
       "id": "Erkenntnis der sechs Sinnesfelder",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "Erkenntnis des Entstehens und Vergehens",
@@ -4423,7 +4423,7 @@
     {
       "id": "zweifach",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "zwei Gefühle",
@@ -4660,7 +4660,7 @@
       "id": "sn12.33",
       "group": "sn",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "sn12.2",
@@ -4858,7 +4858,7 @@
       "id": "dn34",
       "group": "dn",
       "rank": 1,
-      "links": 81
+      "links": 82
     },
     {
       "id": "an8.118",
@@ -5419,12 +5419,6 @@
       "links": 7
     },
     {
-      "id": "mn140",
-      "group": "mn",
-      "rank": 1,
-      "links": 23
-    },
-    {
       "id": "dn32",
       "group": "dn",
       "rank": 5,
@@ -5859,19 +5853,19 @@
     {
       "id": "thag16.6",
       "group": "thag",
-      "rank": 6,
+      "rank": 5,
       "links": 7
     },
     {
       "id": "mn92",
       "group": "mn",
-      "rank": 7,
+      "rank": 6,
       "links": 11
     },
     {
       "id": "snp3.7",
       "group": "snp",
-      "rank": 8,
+      "rank": 7,
       "links": 11
     },
     {
@@ -6991,6 +6985,12 @@
       "links": 2
     },
     {
+      "id": "mn140",
+      "group": "mn",
+      "rank": 1,
+      "links": 22
+    },
+    {
       "id": "mn30",
       "group": "mn",
       "rank": 1,
@@ -7023,7 +7023,7 @@
     {
       "id": "an10.22",
       "group": "an",
-      "rank": 3,
+      "rank": 2,
       "links": 3
     },
     {
@@ -8013,7 +8013,7 @@
     {
       "id": "sn35.43-51",
       "group": "sn",
-      "rank": 3,
+      "rank": 2,
       "links": 6
     },
     {
@@ -9334,7 +9334,7 @@
       "id": "sn12.20",
       "group": "sn",
       "rank": 2,
-      "links": 4
+      "links": 3
     },
     {
       "id": "an7.52",
@@ -10215,7 +10215,7 @@
     {
       "id": "sn12.68",
       "group": "sn",
-      "rank": 3,
+      "rank": 2,
       "links": 2
     },
     {
@@ -10419,7 +10419,7 @@
     {
       "id": "an7.45",
       "group": "an",
-      "rank": 3,
+      "rank": 2,
       "links": 2
     },
     {
@@ -12087,7 +12087,7 @@
     {
       "id": "sn12.23",
       "group": "sn",
-      "rank": 2,
+      "rank": 4,
       "links": 5
     },
     {
@@ -14959,15 +14959,15 @@
       "links": 2
     },
     {
-      "id": "an6.64",
-      "group": "an",
+      "id": "sn52.15",
+      "group": "sn",
       "rank": 1,
       "links": 1
     },
     {
-      "id": "sn52.15",
-      "group": "sn",
-      "rank": 2,
+      "id": "an6.64",
+      "group": "an",
+      "rank": 4,
       "links": 1
     },
     {
@@ -17811,7 +17811,7 @@
     {
       "id": "an10.4",
       "group": "an",
-      "rank": 4,
+      "rank": 3,
       "links": 1
     },
     {
@@ -19194,13 +19194,8 @@
     },
     {
       "source": "alles Leiden",
-      "target": "mn140",
-      "rank": 24
-    },
-    {
-      "source": "alles Leiden",
       "target": "dn32",
-      "rank": 25
+      "rank": 24
     },
     {
       "source": "alle tauglichen Eigenschaften",
@@ -25479,43 +25474,38 @@
     },
     {
       "source": "eine Bedingung für Alter und Tod",
-      "target": "sn12.20",
+      "target": "sn12.68",
       "rank": 2
     },
     {
       "source": "eine Bedingung für Alter und Tod",
-      "target": "sn12.68",
+      "target": "sn12.65",
       "rank": 3
     },
     {
       "source": "eine Bedingung für Alter und Tod",
-      "target": "sn12.65",
+      "target": "dn14",
       "rank": 4
     },
     {
       "source": "eine Bedingung für Alter und Tod",
-      "target": "dn14",
+      "target": "sn12.36",
       "rank": 5
     },
     {
       "source": "eine Bedingung für Alter und Tod",
-      "target": "sn12.36",
+      "target": "sn12.35",
       "rank": 6
     },
     {
       "source": "eine Bedingung für Alter und Tod",
-      "target": "sn12.35",
+      "target": "sn12.67",
       "rank": 7
     },
     {
       "source": "eine Bedingung für Alter und Tod",
-      "target": "sn12.67",
-      "rank": 8
-    },
-    {
-      "source": "eine Bedingung für Alter und Tod",
       "target": "sn12.70",
-      "rank": 9
+      "rank": 8
     },
     {
       "source": "eine erlesene Nacht",
@@ -27189,48 +27179,43 @@
     },
     {
       "source": "erkannt werden",
-      "target": "dn34",
+      "target": "an6.61",
       "rank": 2
     },
     {
       "source": "erkannt werden",
-      "target": "an6.61",
+      "target": "mn43",
       "rank": 3
     },
     {
       "source": "erkannt werden",
-      "target": "mn43",
+      "target": "sn35.43-51",
       "rank": 4
     },
     {
       "source": "erkannt werden",
-      "target": "sn35.43-51",
+      "target": "thag16.6",
       "rank": 5
     },
     {
       "source": "erkannt werden",
-      "target": "thag16.6",
+      "target": "mn92",
       "rank": 6
     },
     {
       "source": "erkannt werden",
-      "target": "mn92",
+      "target": "snp3.7",
       "rank": 7
     },
     {
       "source": "erkannt werden",
-      "target": "snp3.7",
+      "target": "mn91",
       "rank": 8
     },
     {
       "source": "erkannt werden",
-      "target": "mn91",
+      "target": "dn34",
       "rank": 9
-    },
-    {
-      "source": "Erkenntnis der sechs Sinnesfelder",
-      "target": "sn12.33",
-      "rank": 1
     },
     {
       "source": "erkläre mir das Leiden",
@@ -37179,22 +37164,22 @@
     },
     {
       "source": "Mögliche als möglich",
-      "target": "an6.64",
+      "target": "sn52.15",
       "rank": 1
     },
     {
       "source": "Mögliche als möglich",
-      "target": "sn52.15",
+      "target": "an10.22",
       "rank": 2
     },
     {
       "source": "Mögliche als möglich",
-      "target": "an10.22",
+      "target": "an10.21",
       "rank": 3
     },
     {
       "source": "Mögliche als möglich",
-      "target": "an10.21",
+      "target": "an6.64",
       "rank": 4
     },
     {
@@ -42754,17 +42739,17 @@
     },
     {
       "source": "unmittelbar erkannt werden",
-      "target": "dn34",
+      "target": "an6.61",
       "rank": 1
     },
     {
       "source": "unmittelbar erkannt werden",
-      "target": "an6.61",
+      "target": "sn35.43-51",
       "rank": 2
     },
     {
       "source": "unmittelbar erkannt werden",
-      "target": "sn35.43-51",
+      "target": "dn34",
       "rank": 3
     },
     {
@@ -46629,42 +46614,42 @@
     },
     {
       "source": "wesentliche.* Bedingungen",
-      "target": "sn12.23",
+      "target": "an7.45",
       "rank": 2
     },
     {
       "source": "wesentliche.* Bedingungen",
-      "target": "an7.45",
+      "target": "an10.4",
       "rank": 3
     },
     {
       "source": "wesentliche.* Bedingungen",
-      "target": "an10.4",
+      "target": "an10.3",
       "rank": 4
     },
     {
       "source": "wesentliche.* Bedingungen",
-      "target": "an10.3",
+      "target": "an10.5",
       "rank": 5
     },
     {
       "source": "wesentliche.* Bedingungen",
-      "target": "an10.5",
+      "target": "an11.3",
       "rank": 6
     },
     {
       "source": "wesentliche.* Bedingungen",
-      "target": "an11.3",
+      "target": "an11.5",
       "rank": 7
     },
     {
       "source": "wesentliche.* Bedingungen",
-      "target": "an11.5",
+      "target": "an11.4",
       "rank": 8
     },
     {
       "source": "wesentliche.* Bedingungen",
-      "target": "an11.4",
+      "target": "sn12.23",
       "rank": 9
     },
     {
@@ -48796,6 +48781,11 @@
       "source": "zweifach",
       "target": "sn46.52",
       "rank": 1
+    },
+    {
+      "source": "zweifach",
+      "target": "dn34",
+      "rank": 2
     },
     {
       "source": "zwei Gefühle",
