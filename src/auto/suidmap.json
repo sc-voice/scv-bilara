@@ -10290,6 +10290,10 @@
 		"translation/en/kelly": "sutta/kn/mil",
 		"root/pli/ms": "sutta/kn/mil"
 	},
+	"mil5.1.1": {
+		"translation/en/kelly": "sutta/kn/mil",
+		"root/pli/ms": "sutta/kn/mil"
+	},
 	"mn1": {
 		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
@@ -14129,12 +14133,14 @@
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.2": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.3": {
@@ -14143,132 +14149,154 @@
 		"translation/es/maggatr": "sutta/sn/sn3",
 		"translation/fr/noeismet": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.4": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.5": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.6": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.7": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.8": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.9": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.10": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.11": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.12": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.13": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.14": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.15": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.16": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.17": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.18": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.19": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.20": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.21": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.22": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.23": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.24": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn3.25": {
@@ -14277,6 +14305,7 @@
 		"translation/es/maggatr": "sutta/sn/sn3",
 		"translation/fr/noeismet": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
+		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
 	},
 	"sn4.1": {
@@ -27728,9 +27757,6 @@
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"mil5.1.10": {
-		"root/pli/ms": "sutta/kn/mil"
-	},
-	"mil5.1.1": {
 		"root/pli/ms": "sutta/kn/mil"
 	},
 	"mil5.1.2": {
