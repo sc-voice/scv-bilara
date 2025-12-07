@@ -208,7 +208,7 @@
     {
       "id": "Auflösen der Bindungen",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "Auflösung der Taten",
@@ -278,7 +278,7 @@
     {
       "id": "aus meiner unmittelbaren Einsicht heraus gelehrt",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "Bangigkeit",
@@ -718,7 +718,7 @@
     {
       "id": "der Eigentümer",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "der Hass",
@@ -908,7 +908,7 @@
     {
       "id": "disziplinarische Angelegenheit beizulegen",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "dort sah ich einen riesigen Berg",
@@ -1758,7 +1758,7 @@
     {
       "id": "Giftschlange",
       "group": "Examples",
-      "links": 17
+      "links": 18
     },
     {
       "id": "glaubst du",
@@ -2153,7 +2153,7 @@
     {
       "id": "inneren Sinnesfelder",
       "group": "Examples",
-      "links": 11
+      "links": 12
     },
     {
       "id": "in Schulden geraten",
@@ -2448,7 +2448,7 @@
     {
       "id": "Leiden vieler Menschen",
       "group": "Examples",
-      "links": 9
+      "links": 10
     },
     {
       "id": "lernbegierig",
@@ -2893,7 +2893,7 @@
     {
       "id": "Pfeil des Verlangens",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "polierte schwarze Schale",
@@ -2958,7 +2958,7 @@
     {
       "id": "Rosenapfel",
       "group": "Examples",
-      "links": 27
+      "links": 28
     },
     {
       "id": "roten Kapok-Wald",
@@ -3013,7 +3013,7 @@
     {
       "id": "Schilfbündel",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "Schlange Skorpion Tausendfüßler",
@@ -3253,7 +3253,7 @@
     {
       "id": "sowohl öffentlich als insgeheim",
       "group": "Examples",
-      "links": 11
+      "links": 12
     },
     {
       "id": "Spaltung des Saṅgha herbei",
@@ -3363,7 +3363,7 @@
     {
       "id": "tödlichem Schmerz",
       "group": "Examples",
-      "links": 13
+      "links": 14
     },
     {
       "id": "Tor zur Unsterblichkeit",
@@ -3888,7 +3888,7 @@
     {
       "id": "warmherzige Eigenschaft",
       "group": "Examples",
-      "links": 14
+      "links": 15
     },
     {
       "id": "warum lebe ich nicht allein",
@@ -4268,7 +4268,7 @@
     {
       "id": "Wurzel des Leidens",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "wo würde er auftreffen",
@@ -4278,7 +4278,7 @@
     {
       "id": "Zänker",
       "group": "Examples",
-      "links": 2
+      "links": 1
     },
     {
       "id": "zehn allumfassende",
@@ -4642,7 +4642,7 @@
       "id": "dn15",
       "group": "dn",
       "rank": 1,
-      "links": 14
+      "links": 15
     },
     {
       "id": "sn12.27",
@@ -5893,9 +5893,15 @@
       "links": 7
     },
     {
+      "id": "mn105",
+      "group": "mn",
+      "rank": 1,
+      "links": 6
+    },
+    {
       "id": "sn5.8",
       "group": "sn",
-      "rank": 3,
+      "rank": 4,
       "links": 2
     },
     {
@@ -6335,6 +6341,12 @@
       "group": "mn",
       "rank": 3,
       "links": 2
+    },
+    {
+      "id": "mn104",
+      "group": "mn",
+      "rank": 1,
+      "links": 5
     },
     {
       "id": "snp1.4",
@@ -11373,7 +11385,7 @@
     {
       "id": "an7.72",
       "group": "an",
-      "rank": 1,
+      "rank": 2,
       "links": 3
     },
     {
@@ -11637,7 +11649,7 @@
     {
       "id": "an1.316-332",
       "group": "an",
-      "rank": 1,
+      "rank": 2,
       "links": 2
     },
     {
@@ -12597,19 +12609,19 @@
     {
       "id": "sn35.242",
       "group": "sn",
-      "rank": 5,
+      "rank": 6,
       "links": 2
     },
     {
       "id": "sn35.240",
       "group": "sn",
-      "rank": 6,
+      "rank": 7,
       "links": 1
     },
     {
       "id": "an5.55",
       "group": "an",
-      "rank": 9,
+      "rank": 10,
       "links": 1
     },
     {
@@ -12627,7 +12639,7 @@
     {
       "id": "sn35.243",
       "group": "sn",
-      "rank": 15,
+      "rank": 16,
       "links": 1
     },
     {
@@ -12957,7 +12969,7 @@
     {
       "id": "mn116",
       "group": "mn",
-      "rank": 4,
+      "rank": 5,
       "links": 2
     },
     {
@@ -14487,25 +14499,25 @@
     {
       "id": "an5.88",
       "group": "an",
-      "rank": 4,
+      "rank": 5,
       "links": 1
     },
     {
       "id": "an6.36",
       "group": "an",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
       "id": "an3.137",
       "group": "an",
-      "rank": 7,
+      "rank": 8,
       "links": 1
     },
     {
       "id": "iti18",
       "group": "iti",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
@@ -14937,8 +14949,8 @@
     {
       "id": "sn12.67",
       "group": "sn",
-      "rank": 1,
-      "links": 2
+      "rank": 4,
+      "links": 1
     },
     {
       "id": "an8.21",
@@ -15381,31 +15393,31 @@
     {
       "id": "sn1.66",
       "group": "sn",
-      "rank": 1,
+      "rank": 2,
       "links": 1
     },
     {
       "id": "thag3.2",
       "group": "thag",
-      "rank": 2,
+      "rank": 3,
       "links": 1
     },
     {
       "id": "thag6.13",
       "group": "thag",
-      "rank": 3,
+      "rank": 4,
       "links": 1
     },
     {
       "id": "thag4.12",
       "group": "thag",
-      "rank": 4,
+      "rank": 5,
       "links": 1
     },
     {
       "id": "thag8.3",
       "group": "thag",
-      "rank": 6,
+      "rank": 7,
       "links": 1
     },
     {
@@ -15635,6 +15647,12 @@
       "group": "dhp",
       "rank": 5,
       "links": 2
+    },
+    {
+      "id": "mil3.1.1",
+      "group": "mil",
+      "rank": 18,
+      "links": 1
     },
     {
       "id": "thag1.83",
@@ -15909,7 +15927,7 @@
     {
       "id": "sn56.21",
       "group": "sn",
-      "rank": 3,
+      "rank": 4,
       "links": 2
     },
     {
@@ -16095,7 +16113,7 @@
     {
       "id": "an5.105",
       "group": "an",
-      "rank": 7,
+      "rank": 8,
       "links": 1
     },
     {
@@ -16341,7 +16359,7 @@
     {
       "id": "sn20.9",
       "group": "sn",
-      "rank": 2,
+      "rank": 3,
       "links": 1
     },
     {
@@ -17367,25 +17385,25 @@
     {
       "id": "an6.14",
       "group": "an",
-      "rank": 7,
+      "rank": 8,
       "links": 1
     },
     {
       "id": "an6.15",
       "group": "an",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
       "id": "an6.18",
       "group": "an",
-      "rank": 9,
+      "rank": 10,
       "links": 1
     },
     {
       "id": "an6.17",
       "group": "an",
-      "rank": 12,
+      "rank": 13,
       "links": 1
     },
     {
@@ -17655,8 +17673,8 @@
     {
       "id": "an5.212",
       "group": "an",
-      "rank": 1,
-      "links": 2
+      "rank": 8,
+      "links": 1
     },
     {
       "id": "an10.88",
@@ -18027,7 +18045,7 @@
     {
       "id": "mn1",
       "group": "mn",
-      "rank": 2,
+      "rank": 3,
       "links": 1
     },
     {
@@ -19669,33 +19687,38 @@
     },
     {
       "source": "Auflösen der Bindungen",
-      "target": "sn5.8",
+      "target": "mn105",
       "rank": 3
     },
     {
       "source": "Auflösen der Bindungen",
-      "target": "an8.1",
+      "target": "sn5.8",
       "rank": 4
     },
     {
       "source": "Auflösen der Bindungen",
-      "target": "iti27",
+      "target": "an8.1",
       "rank": 5
     },
     {
       "source": "Auflösen der Bindungen",
-      "target": "an4.23",
+      "target": "iti27",
       "rank": 6
     },
     {
       "source": "Auflösen der Bindungen",
-      "target": "iti112",
+      "target": "an4.23",
       "rank": 7
     },
     {
       "source": "Auflösen der Bindungen",
-      "target": "mn66",
+      "target": "iti112",
       "rank": 8
+    },
+    {
+      "source": "Auflösen der Bindungen",
+      "target": "mn66",
+      "rank": 9
     },
     {
       "source": "Auflösung der Taten",
@@ -20181,6 +20204,11 @@
       "source": "aus meiner unmittelbaren Einsicht heraus gelehrt",
       "target": "mn103",
       "rank": 3
+    },
+    {
+      "source": "aus meiner unmittelbaren Einsicht heraus gelehrt",
+      "target": "mn104",
+      "rank": 4
     },
     {
       "source": "Bauer",
@@ -23464,8 +23492,13 @@
     },
     {
       "source": "der Eigentümer",
-      "target": "dn5",
+      "target": "dn15",
       "rank": 4
+    },
+    {
+      "source": "der Eigentümer",
+      "target": "dn5",
+      "rank": 5
     },
     {
       "source": "der Hass",
@@ -24474,8 +24507,13 @@
     },
     {
       "source": "disziplinarische Angelegenheit beizulegen",
-      "target": "dn33",
+      "target": "mn104",
       "rank": 2
+    },
+    {
+      "source": "disziplinarische Angelegenheit beizulegen",
+      "target": "dn33",
+      "rank": 3
     },
     {
       "source": "dort sah ich einen riesigen Berg",
@@ -30564,68 +30602,73 @@
     },
     {
       "source": "Giftschlange",
-      "target": "sn35.242",
+      "target": "mn105",
       "rank": 5
     },
     {
       "source": "Giftschlange",
-      "target": "sn35.240",
+      "target": "sn35.242",
       "rank": 6
     },
     {
       "source": "Giftschlange",
-      "target": "sn35.239",
+      "target": "sn35.240",
       "rank": 7
     },
     {
       "source": "Giftschlange",
-      "target": "sn35.241",
+      "target": "sn35.239",
       "rank": 8
     },
     {
       "source": "Giftschlange",
-      "target": "an5.55",
+      "target": "sn35.241",
       "rank": 9
     },
     {
       "source": "Giftschlange",
-      "target": "sn35.247",
+      "target": "an5.55",
       "rank": 10
     },
     {
       "source": "Giftschlange",
-      "target": "sn35.244",
+      "target": "sn35.247",
       "rank": 11
     },
     {
       "source": "Giftschlange",
-      "target": "sn35.246",
+      "target": "sn35.244",
       "rank": 12
     },
     {
       "source": "Giftschlange",
-      "target": "sn35.248",
+      "target": "sn35.246",
       "rank": 13
     },
     {
       "source": "Giftschlange",
-      "target": "sn35.245",
+      "target": "sn35.248",
       "rank": 14
     },
     {
       "source": "Giftschlange",
-      "target": "sn35.243",
+      "target": "sn35.245",
       "rank": 15
     },
     {
       "source": "Giftschlange",
-      "target": "thig14.1",
+      "target": "sn35.243",
       "rank": 16
     },
     {
       "source": "Giftschlange",
-      "target": "mn35",
+      "target": "thig14.1",
       "rank": 17
+    },
+    {
+      "source": "Giftschlange",
+      "target": "mn35",
+      "rank": 18
     },
     {
       "source": "glaubst du",
@@ -33353,6 +33396,11 @@
       "rank": 11
     },
     {
+      "source": "inneren Sinnesfelder",
+      "target": "mn105",
+      "rank": 12
+    },
+    {
       "source": "in Schulden geraten",
       "target": "an6.45",
       "rank": 1
@@ -35689,48 +35737,53 @@
     },
     {
       "source": "Leiden vieler Menschen",
-      "target": "an1.316-332",
+      "target": "mn104",
       "rank": 1
     },
     {
       "source": "Leiden vieler Menschen",
-      "target": "an1.150-169",
+      "target": "an1.316-332",
       "rank": 2
     },
     {
       "source": "Leiden vieler Menschen",
-      "target": "an1.98-139",
+      "target": "an1.150-169",
       "rank": 3
     },
     {
       "source": "Leiden vieler Menschen",
-      "target": "an5.88",
+      "target": "an1.98-139",
       "rank": 4
     },
     {
       "source": "Leiden vieler Menschen",
-      "target": "an6.36",
+      "target": "an5.88",
       "rank": 5
     },
     {
       "source": "Leiden vieler Menschen",
-      "target": "an2.32-41",
+      "target": "an6.36",
       "rank": 6
     },
     {
       "source": "Leiden vieler Menschen",
-      "target": "an3.137",
+      "target": "an2.32-41",
       "rank": 7
     },
     {
       "source": "Leiden vieler Menschen",
-      "target": "iti18",
+      "target": "an3.137",
       "rank": 8
     },
     {
       "source": "Leiden vieler Menschen",
-      "target": "dn33",
+      "target": "iti18",
       "rank": 9
+    },
+    {
+      "source": "Leiden vieler Menschen",
+      "target": "dn33",
+      "rank": 10
     },
     {
       "source": "lernt die Hymnen",
@@ -38559,43 +38612,48 @@
     },
     {
       "source": "Pfeil des Verlangens",
-      "target": "sn1.66",
+      "target": "mn105",
       "rank": 1
     },
     {
       "source": "Pfeil des Verlangens",
-      "target": "thag3.2",
+      "target": "sn1.66",
       "rank": 2
     },
     {
       "source": "Pfeil des Verlangens",
-      "target": "thag6.13",
+      "target": "thag3.2",
       "rank": 3
     },
     {
       "source": "Pfeil des Verlangens",
-      "target": "thag4.12",
+      "target": "thag6.13",
       "rank": 4
     },
     {
       "source": "Pfeil des Verlangens",
-      "target": "sn8.7",
+      "target": "thag4.12",
       "rank": 5
     },
     {
       "source": "Pfeil des Verlangens",
-      "target": "thag8.3",
+      "target": "sn8.7",
       "rank": 6
     },
     {
       "source": "Pfeil des Verlangens",
-      "target": "thag21.1",
+      "target": "thag8.3",
       "rank": 7
     },
     {
       "source": "Pfeil des Verlangens",
-      "target": "dn21",
+      "target": "thag21.1",
       "rank": 8
+    },
+    {
+      "source": "Pfeil des Verlangens",
+      "target": "dn21",
+      "rank": 9
     },
     {
       "source": "polierte schwarze Schale",
@@ -39229,53 +39287,58 @@
     },
     {
       "source": "Rosenapfel",
-      "target": "an10.29",
+      "target": "mil3.1.1",
       "rank": 18
     },
     {
       "source": "Rosenapfel",
-      "target": "thag16.9",
+      "target": "an10.29",
       "rank": 19
     },
     {
       "source": "Rosenapfel",
-      "target": "mn92",
+      "target": "thag16.9",
       "rank": 20
     },
     {
       "source": "Rosenapfel",
-      "target": "snp3.7",
+      "target": "mn92",
       "rank": 21
     },
     {
       "source": "Rosenapfel",
-      "target": "mn36",
+      "target": "snp3.7",
       "rank": 22
     },
     {
       "source": "Rosenapfel",
-      "target": "mn100",
+      "target": "mn36",
       "rank": 23
     },
     {
       "source": "Rosenapfel",
-      "target": "thig16.1",
+      "target": "mn100",
       "rank": 24
     },
     {
       "source": "Rosenapfel",
-      "target": "mn85",
+      "target": "thig16.1",
       "rank": 25
     },
     {
       "source": "Rosenapfel",
-      "target": "dn14",
+      "target": "mn85",
       "rank": 26
     },
     {
       "source": "Rosenapfel",
-      "target": "dn30",
+      "target": "dn14",
       "rank": 27
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "dn30",
+      "rank": 28
     },
     {
       "source": "rufe alle Mönche und Nonnen",
@@ -39581,11 +39644,6 @@
       "source": "Schaumklumpen",
       "target": "thig16.1",
       "rank": 2
-    },
-    {
-      "source": "Schilfbündel",
-      "target": "sn12.67",
-      "rank": 1
     },
     {
       "source": "Schlange Skorpion Tausendfüßler",
@@ -40884,43 +40942,48 @@
     },
     {
       "source": "sowohl öffentlich als insgeheim",
-      "target": "dn34",
+      "target": "mn104",
       "rank": 4
     },
     {
       "source": "sowohl öffentlich als insgeheim",
-      "target": "dn33",
+      "target": "dn34",
       "rank": 5
     },
     {
       "source": "sowohl öffentlich als insgeheim",
-      "target": "dn16",
+      "target": "dn33",
       "rank": 6
     },
     {
       "source": "sowohl öffentlich als insgeheim",
-      "target": "an5.105",
+      "target": "dn16",
       "rank": 7
     },
     {
       "source": "sowohl öffentlich als insgeheim",
-      "target": "an11.17",
+      "target": "an5.105",
       "rank": 8
     },
     {
       "source": "sowohl öffentlich als insgeheim",
-      "target": "mn33",
+      "target": "an11.17",
       "rank": 9
     },
     {
       "source": "sowohl öffentlich als insgeheim",
-      "target": "mn31",
+      "target": "mn33",
       "rank": 10
     },
     {
       "source": "sowohl öffentlich als insgeheim",
-      "target": "mn128",
+      "target": "mn31",
       "rank": 11
+    },
+    {
+      "source": "sowohl öffentlich als insgeheim",
+      "target": "mn128",
+      "rank": 12
     },
     {
       "source": "Spaltung des Saṅgha herbei",
@@ -41694,68 +41757,73 @@
     },
     {
       "source": "tödlichem Schmerz",
-      "target": "an7.72",
+      "target": "mn105",
       "rank": 1
     },
     {
       "source": "tödlichem Schmerz",
-      "target": "sn20.9",
+      "target": "an7.72",
       "rank": 2
     },
     {
       "source": "tödlichem Schmerz",
-      "target": "sn12.66",
+      "target": "sn20.9",
       "rank": 3
     },
     {
       "source": "tödlichem Schmerz",
-      "target": "mn14",
+      "target": "sn12.66",
       "rank": 4
     },
     {
       "source": "tödlichem Schmerz",
-      "target": "mn13",
+      "target": "mn14",
       "rank": 5
     },
     {
       "source": "tödlichem Schmerz",
-      "target": "mn46",
+      "target": "mn13",
       "rank": 6
     },
     {
       "source": "tödlichem Schmerz",
-      "target": "mn54",
+      "target": "mn46",
       "rank": 7
     },
     {
       "source": "tödlichem Schmerz",
-      "target": "sn20.10",
+      "target": "mn54",
       "rank": 8
     },
     {
       "source": "tödlichem Schmerz",
-      "target": "mn22",
+      "target": "sn20.10",
       "rank": 9
     },
     {
       "source": "tödlichem Schmerz",
-      "target": "ud6.8",
+      "target": "mn22",
       "rank": 10
     },
     {
       "source": "tödlichem Schmerz",
-      "target": "iti109",
+      "target": "ud6.8",
       "rank": 11
     },
     {
       "source": "tödlichem Schmerz",
-      "target": "sn35.244",
+      "target": "iti109",
       "rank": 12
     },
     {
       "source": "tödlichem Schmerz",
-      "target": "sn12.63",
+      "target": "sn35.244",
       "rank": 13
+    },
+    {
+      "source": "tödlichem Schmerz",
+      "target": "sn12.63",
+      "rank": 14
     },
     {
       "source": "Tor zur Unsterblichkeit",
@@ -45454,68 +45522,73 @@
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "mn48",
+      "target": "dn33",
       "rank": 2
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "dn33",
+      "target": "mn48",
       "rank": 3
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "an6.12",
+      "target": "mn104",
       "rank": 4
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "dn34",
+      "target": "an6.12",
       "rank": 5
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "an6.11",
+      "target": "dn34",
       "rank": 6
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "an6.14",
+      "target": "an6.11",
       "rank": 7
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "an6.15",
+      "target": "an6.14",
       "rank": 8
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "an6.18",
+      "target": "an6.15",
       "rank": 9
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "an6.20",
+      "target": "an6.18",
       "rank": 10
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "an6.13",
+      "target": "an6.20",
       "rank": 11
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "an6.17",
+      "target": "an6.13",
       "rank": 12
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "an6.16",
+      "target": "an6.17",
       "rank": 13
     },
     {
       "source": "warmherzige Eigenschaft",
-      "target": "an6.19",
+      "target": "an6.16",
       "rank": 14
+    },
+    {
+      "source": "warmherzige Eigenschaft",
+      "target": "an6.19",
+      "rank": 15
     },
     {
       "source": "warum lebe ich nicht allein",
@@ -47834,28 +47907,33 @@
     },
     {
       "source": "Wurzel des Leidens",
-      "target": "mn1",
+      "target": "mn105",
       "rank": 2
     },
     {
       "source": "Wurzel des Leidens",
-      "target": "sn56.21",
+      "target": "mn1",
       "rank": 3
     },
     {
       "source": "Wurzel des Leidens",
-      "target": "mn116",
+      "target": "sn56.21",
       "rank": 4
     },
     {
       "source": "Wurzel des Leidens",
-      "target": "mn66",
+      "target": "mn116",
       "rank": 5
     },
     {
       "source": "Wurzel des Leidens",
-      "target": "dn16",
+      "target": "mn66",
       "rank": 6
+    },
+    {
+      "source": "Wurzel des Leidens",
+      "target": "dn16",
+      "rank": 7
     },
     {
       "source": "wo würde er auftreffen",
@@ -47869,13 +47947,8 @@
     },
     {
       "source": "Zänker",
-      "target": "an5.212",
-      "rank": 1
-    },
-    {
-      "source": "Zänker",
       "target": "dn31",
-      "rank": 2
+      "rank": 1
     },
     {
       "source": "zehn allumfassende",
