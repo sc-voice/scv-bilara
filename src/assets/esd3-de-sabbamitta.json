@@ -38,7 +38,7 @@
     {
       "id": "ach!",
       "group": "Examples",
-      "links": 18
+      "links": 14
     },
     {
       "id": "acht Befreiungen",
@@ -853,7 +853,7 @@
     {
       "id": "die Tore zur Unsterblichkeit",
       "group": "Examples",
-      "links": 5
+      "links": 0
     },
     {
       "id": "die Unbeständigkeit aller Bedingungen",
@@ -1228,7 +1228,7 @@
     {
       "id": "Element de",
       "group": "Examples",
-      "links": 31
+      "links": 28
     },
     {
       "id": "Ende der Welt",
@@ -3368,7 +3368,7 @@
     {
       "id": "Tor zur Unsterblichkeit",
       "group": "Examples",
-      "links": 12
+      "links": 0
     },
     {
       "id": "töte ich",
@@ -4576,7 +4576,7 @@
       "id": "mn26",
       "group": "mn",
       "rank": 1,
-      "links": 21
+      "links": 18
     },
     {
       "id": "mn36",
@@ -4594,7 +4594,7 @@
       "id": "mn85",
       "group": "mn",
       "rank": 1,
-      "links": 29
+      "links": 26
     },
     {
       "id": "an8.77",
@@ -4648,19 +4648,19 @@
       "id": "sn12.27",
       "group": "sn",
       "rank": 1,
-      "links": 2
+      "links": 1
     },
     {
       "id": "sn12.28",
       "group": "sn",
       "rank": 2,
-      "links": 2
+      "links": 1
     },
     {
       "id": "sn12.33",
       "group": "sn",
       "rank": 1,
-      "links": 3
+      "links": 2
     },
     {
       "id": "sn12.2",
@@ -4753,12 +4753,6 @@
       "links": 4
     },
     {
-      "id": "sn6.1",
-      "group": "sn",
-      "rank": 1,
-      "links": 9
-    },
-    {
       "id": "sn15.20",
       "group": "sn",
       "rank": 7,
@@ -4799,12 +4793,6 @@
       "group": "mn",
       "rank": 1,
       "links": 9
-    },
-    {
-      "id": "dn14",
-      "group": "dn",
-      "rank": 1,
-      "links": 31
     },
     {
       "id": "dn16",
@@ -5213,6 +5201,12 @@
       "group": "an",
       "rank": 4,
       "links": 3
+    },
+    {
+      "id": "dn14",
+      "group": "dn",
+      "rank": 1,
+      "links": 29
     },
     {
       "id": "an3.32",
@@ -6154,7 +6148,7 @@
       "id": "dn18",
       "group": "dn",
       "rank": 1,
-      "links": 10
+      "links": 9
     },
     {
       "id": "sn46.52",
@@ -6895,6 +6889,12 @@
       "links": 7
     },
     {
+      "id": "sn6.1",
+      "group": "sn",
+      "rank": 1,
+      "links": 6
+    },
+    {
       "id": "an5.140",
       "group": "an",
       "rank": 7,
@@ -6904,7 +6904,7 @@
       "id": "mn64",
       "group": "mn",
       "rank": 1,
-      "links": 9
+      "links": 8
     },
     {
       "id": "an10.63",
@@ -10335,14 +10335,14 @@
     {
       "id": "an11.16",
       "group": "an",
-      "rank": 9,
-      "links": 3
+      "rank": 11,
+      "links": 2
     },
     {
       "id": "mn52",
       "group": "mn",
-      "rank": 10,
-      "links": 3
+      "rank": 13,
+      "links": 2
     },
     {
       "id": "mn97",
@@ -10665,7 +10665,7 @@
     {
       "id": "iti51",
       "group": "iti",
-      "rank": 13,
+      "rank": 14,
       "links": 1
     },
     {
@@ -10691,18 +10691,6 @@
       "group": "sn",
       "rank": 19,
       "links": 1
-    },
-    {
-      "id": "iti73",
-      "group": "iti",
-      "rank": 3,
-      "links": 2
-    },
-    {
-      "id": "an6.46",
-      "group": "an",
-      "rank": 1,
-      "links": 4
     },
     {
       "id": "ud8.5",
@@ -11855,6 +11843,12 @@
       "group": "mn",
       "rank": 2,
       "links": 2
+    },
+    {
+      "id": "iti73",
+      "group": "iti",
+      "rank": 3,
+      "links": 1
     },
     {
       "id": "an5.34",
@@ -14368,7 +14362,7 @@
       "id": "mn34",
       "group": "mn",
       "rank": 4,
-      "links": 3
+      "links": 2
     },
     {
       "id": "an11.502-981",
@@ -14729,6 +14723,12 @@
       "group": "an",
       "rank": 2,
       "links": 2
+    },
+    {
+      "id": "an6.46",
+      "group": "an",
+      "rank": 1,
+      "links": 3
     },
     {
       "id": "sn48.21",
@@ -16369,24 +16369,6 @@
       "links": 2
     },
     {
-      "id": "iti84",
-      "group": "iti",
-      "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "sn12.49",
-      "group": "sn",
-      "rank": 4,
-      "links": 2
-    },
-    {
-      "id": "sn12.50",
-      "group": "sn",
-      "rank": 5,
-      "links": 2
-    },
-    {
       "id": "an4.111",
       "group": "an",
       "rank": 1,
@@ -16738,6 +16720,18 @@
       "id": "kp2",
       "group": "kp",
       "rank": 9,
+      "links": 1
+    },
+    {
+      "id": "sn12.49",
+      "group": "sn",
+      "rank": 9,
+      "links": 1
+    },
+    {
+      "id": "sn12.50",
+      "group": "sn",
+      "rank": 10,
       "links": 1
     },
     {
@@ -18522,63 +18516,43 @@
     },
     {
       "source": "ach!",
-      "target": "sn6.1",
+      "target": "sn15.20",
       "rank": 7
     },
     {
       "source": "ach!",
-      "target": "sn15.20",
+      "target": "thag16.4",
       "rank": 8
     },
     {
       "source": "ach!",
-      "target": "thag16.4",
+      "target": "mn99",
       "rank": 9
     },
     {
       "source": "ach!",
-      "target": "mn99",
+      "target": "thag20.1",
       "rank": 10
     },
     {
       "source": "ach!",
-      "target": "mn26",
+      "target": "dn17",
       "rank": 11
     },
     {
       "source": "ach!",
-      "target": "thag20.1",
+      "target": "dn21",
       "rank": 12
     },
     {
       "source": "ach!",
-      "target": "dn17",
+      "target": "mn82",
       "rank": 13
     },
     {
       "source": "ach!",
-      "target": "dn21",
-      "rank": 14
-    },
-    {
-      "source": "ach!",
-      "target": "mn82",
-      "rank": 15
-    },
-    {
-      "source": "ach!",
-      "target": "mn85",
-      "rank": 16
-    },
-    {
-      "source": "ach!",
-      "target": "dn14",
-      "rank": 17
-    },
-    {
-      "source": "ach!",
       "target": "dn16",
-      "rank": 18
+      "rank": 14
     },
     {
       "source": "acht Befreiungen",
@@ -24271,31 +24245,6 @@
       "rank": 2
     },
     {
-      "source": "die Tore zur Unsterblichkeit",
-      "target": "dn18",
-      "rank": 1
-    },
-    {
-      "source": "die Tore zur Unsterblichkeit",
-      "target": "sn6.1",
-      "rank": 2
-    },
-    {
-      "source": "die Tore zur Unsterblichkeit",
-      "target": "mn26",
-      "rank": 3
-    },
-    {
-      "source": "die Tore zur Unsterblichkeit",
-      "target": "mn85",
-      "rank": 4
-    },
-    {
-      "source": "die Tore zur Unsterblichkeit",
-      "target": "dn14",
-      "rank": 5
-    },
-    {
       "source": "die Unbeständigkeit aller Bedingungen",
       "target": "iti85",
       "rank": 1
@@ -26662,12 +26611,12 @@
     },
     {
       "source": "Element de",
-      "target": "iti51",
+      "target": "an6.111",
       "rank": 13
     },
     {
       "source": "Element de",
-      "target": "an6.111",
+      "target": "iti51",
       "rank": 14
     },
     {
@@ -26697,63 +26646,48 @@
     },
     {
       "source": "Element de",
-      "target": "iti73",
+      "target": "sn22.47",
       "rank": 20
     },
     {
       "source": "Element de",
-      "target": "an6.46",
+      "target": "an4.23",
       "rank": 21
     },
     {
       "source": "Element de",
-      "target": "sn22.47",
+      "target": "iti112",
       "rank": 22
     },
     {
       "source": "Element de",
-      "target": "an4.23",
+      "target": "an8.19",
       "rank": 23
     },
     {
       "source": "Element de",
-      "target": "iti112",
+      "target": "an8.70",
       "rank": 24
     },
     {
       "source": "Element de",
-      "target": "an8.19",
+      "target": "ud8.5",
       "rank": 25
     },
     {
       "source": "Element de",
-      "target": "an8.70",
+      "target": "ud5.5",
       "rank": 26
     },
     {
       "source": "Element de",
-      "target": "ud8.5",
+      "target": "mn115",
       "rank": 27
     },
     {
       "source": "Element de",
-      "target": "ud5.5",
-      "rank": 28
-    },
-    {
-      "source": "Element de",
-      "target": "mn64",
-      "rank": 29
-    },
-    {
-      "source": "Element de",
-      "target": "mn115",
-      "rank": 30
-    },
-    {
-      "source": "Element de",
       "target": "dn29",
-      "rank": 31
+      "rank": 28
     },
     {
       "source": "Ende der Welt",
@@ -41824,66 +41758,6 @@
       "source": "tödlichem Schmerz",
       "target": "sn12.63",
       "rank": 14
-    },
-    {
-      "source": "Tor zur Unsterblichkeit",
-      "target": "sn12.33",
-      "rank": 1
-    },
-    {
-      "source": "Tor zur Unsterblichkeit",
-      "target": "iti84",
-      "rank": 2
-    },
-    {
-      "source": "Tor zur Unsterblichkeit",
-      "target": "sn12.27",
-      "rank": 3
-    },
-    {
-      "source": "Tor zur Unsterblichkeit",
-      "target": "sn12.49",
-      "rank": 4
-    },
-    {
-      "source": "Tor zur Unsterblichkeit",
-      "target": "sn12.50",
-      "rank": 5
-    },
-    {
-      "source": "Tor zur Unsterblichkeit",
-      "target": "mn34",
-      "rank": 6
-    },
-    {
-      "source": "Tor zur Unsterblichkeit",
-      "target": "sn6.1",
-      "rank": 7
-    },
-    {
-      "source": "Tor zur Unsterblichkeit",
-      "target": "sn12.28",
-      "rank": 8
-    },
-    {
-      "source": "Tor zur Unsterblichkeit",
-      "target": "an11.16",
-      "rank": 9
-    },
-    {
-      "source": "Tor zur Unsterblichkeit",
-      "target": "mn52",
-      "rank": 10
-    },
-    {
-      "source": "Tor zur Unsterblichkeit",
-      "target": "mn26",
-      "rank": 11
-    },
-    {
-      "source": "Tor zur Unsterblichkeit",
-      "target": "mn85",
-      "rank": 12
     },
     {
       "source": "töte ich",
