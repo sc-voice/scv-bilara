@@ -54,6 +54,9 @@
       let { root } = bilaraData;
       author = author || AuthorsV2.langAuthor(lang);
       let authorInfo = AuthorsV2.authorInfo(author);
+      if (!authorInfo) {
+        return null;
+      }
       let { exampleVersion:egVer } = authorInfo;
       let pathDir = `${root}/examples`;
       let fname = [
@@ -68,6 +71,9 @@
 
     async examples() {
       let egPath = this.langAuthorPath();
+      if (egPath == null) {
+        return []
+      }
       let text = (await fs.promises.readFile(egPath)).toString();
       return text.split('\n');
     }
