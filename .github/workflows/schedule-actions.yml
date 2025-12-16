@@ -2,21 +2,21 @@ name: schedule-actions
 on: 
   schedule:
     - cron: 20 3,11,19 * * *
+  workflow_dispatch: # Allows manual trigger from Github UI
 jobs:
   build-job:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     permissions:
       id-token: write     # OIDC npm
-      content: read
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '20.x'
-          registry-url: 'https://registry.npmjs.org'
+          #registry-url: 'https://registry.npmjs.org'
       - run: scripts/install
       - run: git config --global user.name github-actions
       - run: git config --global user.email github-actions@github.com
       - run: npm run schedule-action
-        env: 
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
