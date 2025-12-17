@@ -592,6 +592,7 @@ typeof describe === "function" &&
     it("phraseSearch(...) finds Deutsch results", async () => {
       var linesWurzel = [
         `${de_sab}sn/sn42/sn42.11_translation-de-sabbamitta.json:5`,
+        `${de_sab}mn/mn105_translation-de-sabbamitta.json:3`,
         `${de_sab}mn/mn1_translation-de-sabbamitta.json:2`,
         `${de_sab}sn/sn56/sn56.21_translation-de-sabbamitta.json:1`,
         `${de_sab}mn/mn66_translation-de-sabbamitta.json:1`,
@@ -930,6 +931,7 @@ typeof describe === "function" &&
       var res = await skr.find({ pattern, lang, minLang });
       should.deepEqual(res.suttaRefs, [
         "sn42.11/en/sujato",
+        "mn105/en/sujato",
         "mn1/en/sujato",
         "sn56.21/en/sujato",
         "mn66/en/sujato",
@@ -1028,8 +1030,9 @@ typeof describe === "function" &&
       });
       should.deepEqual(mld1.segments()[0], {
         scid: "mn105:0.1",
-        en: "Middle Discourses 105 ",
         pli: "Majjhima Nikāya 105 ",
+        de: "Mittlere Lehrreden 105 ",
+        en: "Middle Discourses 105 ",
       });
       //TODO should.deepEqual(mld2.segments()[0], {
         //TODO scid: "mn1:0.1",
@@ -1125,6 +1128,7 @@ typeof describe === "function" &&
       should.deepEqual(res.suttaRefs, [
         "sn42.11/de/sabbamitta",
         "dn34/de/sabbamitta",
+        "mn105/de/sabbamitta",
         "mn116/de/sabbamitta",
         "dn16/de/sabbamitta",
         "mn66/de/sabbamitta",
@@ -1732,6 +1736,7 @@ typeof describe === "function" &&
       });
       should.deepEqual(res.suttaRefs, [
         "sn42.11/en/sujato",
+        "mn105/en/sujato",
         "mn1/en/sujato",
         "sn56.21/en/sujato",
         "mn66/en/sujato",

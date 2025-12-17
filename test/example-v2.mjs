@@ -63,12 +63,12 @@ const bilaraData = deExamples.bilaraData;
       trilingual: true,
     });
   });
-  it("exampleSuttas()", async()=>{
+  it("TESTTESTexampleSuttas()", async()=>{
     let lang = 'de';
     let es = await new ExampleV2({lang}).initialize();
     let res = await es.exampleSuttas('wurzel des leidens');
     should.deepEqual(res.map(s=>s.sutta_uid), [
-      'sn42.11', 'mn1', 'sn56.21', 'mn116', 'mn66', 'dn16',
+      'sn42.11', 'mn105', 'mn1', 'sn56.21', 'mn116', 'mn66', 'dn16',
     ]);
   });
   it("suttasOfExamples()", async()=>{
@@ -81,7 +81,7 @@ const bilaraData = deExamples.bilaraData;
     should.deepEqual(res, {
       'ein schlectes Beispeil': [],
       'wurzel des leidens': [
-        'sn42.11', 'mn1', 'sn56.21', 'mn116', 'mn66', 'dn16'
+        'sn42.11', 'mn105', 'mn1', 'sn56.21', 'mn116', 'mn66', 'dn16'
       ],
     });
   });
