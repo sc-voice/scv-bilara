@@ -70,3 +70,7 @@ When tests fail due to content changes:
 
 ### Example
 When `mn105/de/sabbamitta` content changed to include "Wurzel des Leidens", tests that search for that phrase now return mn105. Update test expectations to include mn105 in expected results.
+
+## Build Status
+
+- **v3.192.3**: Node v20 tests all passing (255 tests). All 7 failing tests were Content Bugs fixed by updating test expectations for mn105 German translations.
