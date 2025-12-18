@@ -35,7 +35,8 @@
     "version": "node -e \"console.log(require('./package.json').version);\""
   },
   "repository": {
-    "tag": "git"
+    "type": "git",
+    "url": "https://github.com/sc-voice/scv-bilara"
   },
   "keywords": [
     "SuttaCentral",
