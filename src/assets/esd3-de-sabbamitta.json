@@ -68,7 +68,7 @@
     {
       "id": "Achtsamkeit und Situationsbewusstsein",
       "group": "Examples",
-      "links": 21
+      "links": 22
     },
     {
       "id": "Achtsamkeit verankert",
@@ -343,7 +343,7 @@
     {
       "id": "beklag",
       "group": "Examples",
-      "links": 16
+      "links": 18
     },
     {
       "id": "bemüht.*, damit",
@@ -583,7 +583,7 @@
     {
       "id": "das ist friedvoll",
       "group": "Examples",
-      "links": 15
+      "links": 16
     },
     {
       "id": "das ist zu eurem Wohl",
@@ -1018,7 +1018,7 @@
     {
       "id": "durch Weisheit befreit",
       "group": "Examples",
-      "links": 15
+      "links": 16
     },
     {
       "id": "eben da nahm ich beim Buddha",
@@ -1448,7 +1448,7 @@
     {
       "id": "Flut.* überquer",
       "group": "Examples",
-      "links": 20
+      "links": 21
     },
     {
       "id": "Form als das Selbst",
@@ -2318,7 +2318,7 @@
     {
       "id": "könnte nicht mein sein",
       "group": "Examples",
-      "links": 7
+      "links": 8
     },
     {
       "id": "Knoten",
@@ -2438,7 +2438,7 @@
     {
       "id": "leere.* Hütten",
       "group": "Examples",
-      "links": 18
+      "links": 19
     },
     {
       "id": "Leiden bringen",
@@ -3433,7 +3433,7 @@
     {
       "id": "überquer",
       "group": "Examples",
-      "links": 45
+      "links": 46
     },
     {
       "id": "übersinnliche Kraft und Macht",
@@ -5074,7 +5074,7 @@
       "id": "an1.575-615",
       "group": "an",
       "rank": 4,
-      "links": 3
+      "links": 2
     },
     {
       "id": "an2.163-179",
@@ -5135,6 +5135,12 @@
       "group": "dn",
       "rank": 1,
       "links": 39
+    },
+    {
+      "id": "dn9",
+      "group": "dn",
+      "rank": 1,
+      "links": 17
     },
     {
       "id": "mn17",
@@ -6667,6 +6673,12 @@
       "links": 1
     },
     {
+      "id": "thig5.2",
+      "group": "thig",
+      "rank": 9,
+      "links": 1
+    },
+    {
       "id": "sn21.4",
       "group": "sn",
       "rank": 6,
@@ -6687,7 +6699,7 @@
     {
       "id": "an4.187",
       "group": "an",
-      "rank": 13,
+      "rank": 14,
       "links": 1
     },
     {
@@ -6707,6 +6719,12 @@
       "group": "sn",
       "rank": 2,
       "links": 3
+    },
+    {
+      "id": "mn106",
+      "group": "mn",
+      "rank": 1,
+      "links": 7
     },
     {
       "id": "sn49.1-12",
@@ -7925,12 +7943,6 @@
       "group": "mn",
       "rank": 9,
       "links": 3
-    },
-    {
-      "id": "dn9",
-      "group": "dn",
-      "rank": 1,
-      "links": 16
     },
     {
       "id": "ud6.5",
@@ -10071,13 +10083,13 @@
     {
       "id": "an9.44",
       "group": "an",
-      "rank": 1,
+      "rank": 2,
       "links": 2
     },
     {
       "id": "sn22.58",
       "group": "sn",
-      "rank": 2,
+      "rank": 3,
       "links": 1
     },
     {
@@ -10963,28 +10975,34 @@
       "links": 2
     },
     {
-      "id": "mn24",
-      "group": "mn",
+      "id": "sn22.115",
+      "group": "sn",
       "rank": 1,
-      "links": 6
+      "links": 1
     },
     {
-      "id": "sn45.48",
+      "id": "sn22.116",
       "group": "sn",
       "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "sn12.16",
+      "group": "sn",
+      "rank": 3,
+      "links": 1
+    },
+    {
+      "id": "sn35.155",
+      "group": "sn",
+      "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "sn12.67",
+      "group": "sn",
+      "rank": 4,
       "links": 2
-    },
-    {
-      "id": "an7.55",
-      "group": "an",
-      "rank": 1,
-      "links": 3
-    },
-    {
-      "id": "an10.29",
-      "group": "an",
-      "rank": 1,
-      "links": 10
     },
     {
       "id": "sn20.3",
@@ -11287,6 +11305,12 @@
       "links": 1
     },
     {
+      "id": "sn45.48",
+      "group": "sn",
+      "rank": 20,
+      "links": 1
+    },
+    {
       "id": "sn51.19",
       "group": "sn",
       "rank": 21,
@@ -11399,6 +11423,12 @@
       "group": "an",
       "rank": 4,
       "links": 3
+    },
+    {
+      "id": "an10.29",
+      "group": "an",
+      "rank": 1,
+      "links": 9
     },
     {
       "id": "thag1.82",
@@ -11679,25 +11709,25 @@
     {
       "id": "thag1.15",
       "group": "thag",
-      "rank": 5,
+      "rank": 6,
       "links": 2
     },
     {
       "id": "ud7.1",
       "group": "ud",
-      "rank": 6,
+      "rank": 7,
       "links": 2
     },
     {
       "id": "ud7.3",
       "group": "ud",
-      "rank": 7,
+      "rank": 8,
       "links": 2
     },
     {
       "id": "sn2.15",
       "group": "sn",
-      "rank": 8,
+      "rank": 9,
       "links": 2
     },
     {
@@ -12275,6 +12305,12 @@
       "group": "an",
       "rank": 1,
       "links": 2
+    },
+    {
+      "id": "mn24",
+      "group": "mn",
+      "rank": 1,
+      "links": 5
     },
     {
       "id": "an4.246",
@@ -14053,6 +14089,12 @@
       "links": 1
     },
     {
+      "id": "an7.55",
+      "group": "an",
+      "rank": 1,
+      "links": 2
+    },
+    {
       "id": "sn22.153",
       "group": "sn",
       "rank": 2,
@@ -14067,7 +14109,7 @@
     {
       "id": "ud7.8",
       "group": "ud",
-      "rank": 6,
+      "rank": 7,
       "links": 2
     },
     {
@@ -14945,12 +14987,6 @@
       "group": "sn",
       "rank": 2,
       "links": 2
-    },
-    {
-      "id": "sn12.67",
-      "group": "sn",
-      "rank": 4,
-      "links": 1
     },
     {
       "id": "an8.21",
@@ -16413,7 +16449,7 @@
     {
       "id": "thig1.10",
       "group": "thig",
-      "rank": 20,
+      "rank": 21,
       "links": 1
     },
     {
@@ -16425,19 +16461,19 @@
     {
       "id": "sn2.24",
       "group": "sn",
-      "rank": 34,
+      "rank": 35,
       "links": 1
     },
     {
       "id": "sn1.33",
       "group": "sn",
-      "rank": 35,
+      "rank": 36,
       "links": 1
     },
     {
       "id": "sn1.50",
       "group": "sn",
-      "rank": 37,
+      "rank": 38,
       "links": 1
     },
     {
@@ -18896,8 +18932,13 @@
     },
     {
       "source": "Achtsamkeit und Situationsbewusstsein",
-      "target": "dn34",
+      "target": "dn9",
       "rank": 21
+    },
+    {
+      "source": "Achtsamkeit und Situationsbewusstsein",
+      "target": "dn34",
+      "rank": 22
     },
     {
       "source": "Achtsamkeit verankert",
@@ -20581,43 +20622,53 @@
     },
     {
       "source": "beklag",
-      "target": "ud3.6",
+      "target": "thig5.2",
       "rank": 9
     },
     {
       "source": "beklag",
-      "target": "sn21.4",
+      "target": "ud3.6",
       "rank": 10
     },
     {
       "source": "beklag",
-      "target": "sn10.5",
+      "target": "sn21.4",
       "rank": 11
     },
     {
       "source": "beklag",
-      "target": "dhp146-156",
+      "target": "sn10.5",
       "rank": 12
     },
     {
       "source": "beklag",
-      "target": "an4.187",
+      "target": "dhp146-156",
       "rank": 13
     },
     {
       "source": "beklag",
-      "target": "ud4.8",
+      "target": "an4.187",
       "rank": 14
     },
     {
       "source": "beklag",
-      "target": "sn55.24",
+      "target": "ud4.8",
       "rank": 15
     },
     {
       "source": "beklag",
-      "target": "sn55.25",
+      "target": "sn55.24",
       "rank": 16
+    },
+    {
+      "source": "beklag",
+      "target": "sn55.25",
+      "rank": 17
+    },
+    {
+      "source": "beklag",
+      "target": "mn106",
+      "rank": 18
     },
     {
       "source": "bemüht.*, damit",
@@ -22556,58 +22607,63 @@
     },
     {
       "source": "das ist friedvoll",
-      "target": "an10.6",
+      "target": "mn106",
       "rank": 5
     },
     {
       "source": "das ist friedvoll",
-      "target": "an11.18",
+      "target": "an10.6",
       "rank": 6
     },
     {
       "source": "das ist friedvoll",
-      "target": "an11.20",
+      "target": "an11.18",
       "rank": 7
     },
     {
       "source": "das ist friedvoll",
-      "target": "an11.8",
+      "target": "an11.20",
       "rank": 8
     },
     {
       "source": "das ist friedvoll",
-      "target": "an11.19",
+      "target": "an11.8",
       "rank": 9
     },
     {
       "source": "das ist friedvoll",
-      "target": "an3.32",
+      "target": "an11.19",
       "rank": 10
     },
     {
       "source": "das ist friedvoll",
-      "target": "an11.21",
+      "target": "an3.32",
       "rank": 11
     },
     {
       "source": "das ist friedvoll",
-      "target": "iti49",
+      "target": "an11.21",
       "rank": 12
     },
     {
       "source": "das ist friedvoll",
-      "target": "mn64",
+      "target": "iti49",
       "rank": 13
     },
     {
       "source": "das ist friedvoll",
-      "target": "an10.99",
+      "target": "mn64",
       "rank": 14
     },
     {
       "source": "das ist friedvoll",
-      "target": "dn1",
+      "target": "an10.99",
       "rank": 15
+    },
+    {
+      "source": "das ist friedvoll",
+      "target": "dn1",
+      "rank": 16
     },
     {
       "source": "das ist zu eurem Wohl",
@@ -25166,78 +25222,83 @@
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "an9.44",
+      "target": "mn106",
       "rank": 1
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "sn22.58",
+      "target": "an9.44",
       "rank": 2
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "mn70",
+      "target": "sn22.58",
       "rank": 3
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "an7.56",
+      "target": "mn70",
       "rank": 4
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "an2.42-51",
+      "target": "an7.56",
       "rank": 5
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "sn12.70",
+      "target": "an2.42-51",
       "rank": 6
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "mn65",
+      "target": "sn12.70",
       "rank": 7
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "an7.14",
+      "target": "mn65",
       "rank": 8
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "an10.16",
+      "target": "an7.14",
       "rank": 9
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "sn8.7",
+      "target": "an10.16",
       "rank": 10
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "an8.22",
+      "target": "sn8.7",
       "rank": 11
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "mn64",
+      "target": "an8.22",
       "rank": 12
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "dn15",
+      "target": "mn64",
       "rank": 13
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "dn28",
+      "target": "dn15",
       "rank": 14
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "dn33",
+      "target": "dn28",
       "rank": 15
+    },
+    {
+      "source": "durch Weisheit befreit",
+      "target": "dn33",
+      "rank": 16
     },
     {
       "source": "eben das ist das Ende des Leidens",
@@ -27346,27 +27407,27 @@
     },
     {
       "source": "Erlöschen durch Nicht-Ergreifen",
-      "target": "mn24",
+      "target": "sn22.115",
       "rank": 1
     },
     {
       "source": "Erlöschen durch Nicht-Ergreifen",
-      "target": "sn45.48",
+      "target": "sn22.116",
       "rank": 2
     },
     {
       "source": "Erlöschen durch Nicht-Ergreifen",
-      "target": "an7.55",
+      "target": "sn12.16",
       "rank": 3
     },
     {
       "source": "Erlöschen durch Nicht-Ergreifen",
-      "target": "an1.575-615",
+      "target": "sn35.155",
       "rank": 4
     },
     {
       "source": "Erlöschen durch Nicht-Ergreifen",
-      "target": "an10.29",
+      "target": "sn12.67",
       "rank": 5
     },
     {
@@ -28521,83 +28582,88 @@
     },
     {
       "source": "Flut.* überquer",
-      "target": "thag1.15",
+      "target": "mn106",
       "rank": 5
     },
     {
       "source": "Flut.* überquer",
-      "target": "ud7.1",
+      "target": "thag1.15",
       "rank": 6
     },
     {
       "source": "Flut.* überquer",
-      "target": "ud7.3",
+      "target": "ud7.1",
       "rank": 7
     },
     {
       "source": "Flut.* überquer",
-      "target": "sn2.15",
+      "target": "ud7.3",
       "rank": 8
     },
     {
       "source": "Flut.* überquer",
-      "target": "iti107",
+      "target": "sn2.15",
       "rank": 9
     },
     {
       "source": "Flut.* überquer",
-      "target": "sn10.3",
+      "target": "iti107",
       "rank": 10
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp2.5",
+      "target": "sn10.3",
       "rank": 11
     },
     {
       "source": "Flut.* überquer",
-      "target": "ud8.10",
+      "target": "snp2.5",
       "rank": 12
     },
     {
       "source": "Flut.* überquer",
-      "target": "sn8.8",
+      "target": "ud8.10",
       "rank": 13
     },
     {
       "source": "Flut.* überquer",
-      "target": "thag13.1",
+      "target": "sn8.8",
       "rank": 14
     },
     {
       "source": "Flut.* überquer",
-      "target": "dhp360-382",
+      "target": "thag13.1",
       "rank": 15
     },
     {
       "source": "Flut.* überquer",
-      "target": "thag16.9",
+      "target": "dhp360-382",
       "rank": 16
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp5.19",
+      "target": "thag16.9",
       "rank": 17
     },
     {
       "source": "Flut.* überquer",
-      "target": "dn20",
+      "target": "snp5.19",
       "rank": 18
     },
     {
       "source": "Flut.* überquer",
-      "target": "thag21.1",
+      "target": "dn20",
       "rank": 19
     },
     {
       "source": "Flut.* überquer",
-      "target": "dn21",
+      "target": "thag21.1",
       "rank": 20
+    },
+    {
+      "source": "Flut.* überquer",
+      "target": "dn21",
+      "rank": 21
     },
     {
       "source": "Form als das Selbst",
@@ -34436,18 +34502,23 @@
     },
     {
       "source": "könnte nicht mein sein",
-      "target": "sn22.81",
+      "target": "mn106",
       "rank": 5
     },
     {
       "source": "könnte nicht mein sein",
-      "target": "ud7.8",
+      "target": "sn22.81",
       "rank": 6
     },
     {
       "source": "könnte nicht mein sein",
-      "target": "an10.29",
+      "target": "ud7.8",
       "rank": 7
+    },
+    {
+      "source": "könnte nicht mein sein",
+      "target": "an10.29",
+      "rank": 8
     },
     {
       "source": "Knoten",
@@ -35641,13 +35712,18 @@
     },
     {
       "source": "leere.* Hütten",
-      "target": "mn8",
+      "target": "mn106",
       "rank": 17
     },
     {
       "source": "leere.* Hütten",
-      "target": "mn32",
+      "target": "mn8",
       "rank": 18
+    },
+    {
+      "source": "leere.* Hütten",
+      "target": "mn32",
+      "rank": 19
     },
     {
       "source": "Leiden bringen",
@@ -41991,153 +42067,158 @@
     },
     {
       "source": "überquer",
-      "target": "mn65",
+      "target": "mn106",
       "rank": 16
     },
     {
       "source": "überquer",
-      "target": "thag21.1",
+      "target": "mn65",
       "rank": 17
     },
     {
       "source": "überquer",
-      "target": "dn16",
+      "target": "thag21.1",
       "rank": 18
     },
     {
       "source": "überquer",
-      "target": "sn1.44",
+      "target": "dn16",
       "rank": 19
     },
     {
       "source": "überquer",
-      "target": "thig1.10",
+      "target": "sn1.44",
       "rank": 20
     },
     {
       "source": "überquer",
-      "target": "thag1.15",
+      "target": "thig1.10",
       "rank": 21
     },
     {
       "source": "überquer",
-      "target": "ud7.8",
+      "target": "thag1.15",
       "rank": 22
     },
     {
       "source": "überquer",
-      "target": "ud7.3",
+      "target": "ud7.8",
       "rank": 23
     },
     {
       "source": "überquer",
-      "target": "an3.32",
+      "target": "ud7.3",
       "rank": 24
     },
     {
       "source": "überquer",
-      "target": "sn9.1",
+      "target": "an3.32",
       "rank": 25
     },
     {
       "source": "überquer",
-      "target": "sn35.229",
+      "target": "sn9.1",
       "rank": 26
     },
     {
       "source": "überquer",
-      "target": "iti107",
+      "target": "sn35.229",
       "rank": 27
     },
     {
       "source": "überquer",
-      "target": "an4.41",
+      "target": "iti107",
       "rank": 28
     },
     {
       "source": "überquer",
-      "target": "cp2",
+      "target": "an4.41",
       "rank": 29
     },
     {
       "source": "überquer",
-      "target": "ud8.10",
+      "target": "cp2",
       "rank": 30
     },
     {
       "source": "überquer",
-      "target": "thag10.1",
+      "target": "ud8.10",
       "rank": 31
     },
     {
       "source": "überquer",
-      "target": "thag10.3",
+      "target": "thag10.1",
       "rank": 32
     },
     {
       "source": "überquer",
-      "target": "sn8.8",
+      "target": "thag10.3",
       "rank": 33
     },
     {
       "source": "überquer",
-      "target": "sn2.24",
+      "target": "sn8.8",
       "rank": 34
     },
     {
       "source": "überquer",
-      "target": "sn1.33",
+      "target": "sn2.24",
       "rank": 35
     },
     {
       "source": "überquer",
-      "target": "ud3.2",
+      "target": "sn1.33",
       "rank": 36
     },
     {
       "source": "überquer",
-      "target": "sn1.50",
+      "target": "ud3.2",
       "rank": 37
     },
     {
       "source": "überquer",
-      "target": "thag13.1",
+      "target": "sn1.50",
       "rank": 38
     },
     {
       "source": "überquer",
-      "target": "snp2.12",
+      "target": "thag13.1",
       "rank": 39
     },
     {
       "source": "überquer",
-      "target": "dhp360-382",
+      "target": "snp2.12",
       "rank": 40
     },
     {
       "source": "überquer",
-      "target": "snp5.19",
+      "target": "dhp360-382",
       "rank": 41
     },
     {
       "source": "überquer",
-      "target": "snp3.11",
+      "target": "snp5.19",
       "rank": 42
     },
     {
       "source": "überquer",
-      "target": "thag19.1",
+      "target": "snp3.11",
       "rank": 43
     },
     {
       "source": "überquer",
-      "target": "dn20",
+      "target": "thag19.1",
       "rank": 44
     },
     {
       "source": "überquer",
-      "target": "dn21",
+      "target": "dn20",
       "rank": 45
+    },
+    {
+      "source": "überquer",
+      "target": "dn21",
+      "rank": 46
     },
     {
       "source": "übersinnliche Kraft und Macht",
