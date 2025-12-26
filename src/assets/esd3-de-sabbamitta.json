@@ -53,7 +53,7 @@
     {
       "id": "acht Menschen",
       "group": "Examples",
-      "links": 24
+      "links": 25
     },
     {
       "id": "Achtsamkeit auf den Tod",
@@ -68,7 +68,7 @@
     {
       "id": "Achtsamkeit und Situationsbewusstsein",
       "group": "Examples",
-      "links": 22
+      "links": 23
     },
     {
       "id": "Achtsamkeit verankert",
@@ -273,7 +273,7 @@
     {
       "id": "ausgeh.* und zurückkomm",
       "group": "Examples",
-      "links": 23
+      "links": 24
     },
     {
       "id": "aus meiner unmittelbaren Einsicht heraus gelehrt",
@@ -1533,7 +1533,7 @@
     {
       "id": "fünf Hindernisse",
       "group": "Examples",
-      "links": 45
+      "links": 46
     },
     {
       "id": "für das Ziel des Friedens",
@@ -1938,7 +1938,7 @@
     {
       "id": "Herzen, das frei von Begehren",
       "group": "Examples",
-      "links": 13
+      "links": 14
     },
     {
       "id": "Herzenswunsch eines sittlichen Menschen",
@@ -1953,7 +1953,7 @@
     {
       "id": "Hindernisse auf.*, die Verunreinigungen des Herzens",
       "group": "Examples",
-      "links": 21
+      "links": 22
     },
     {
       "id": "Hindernisse sind durch und durch",
@@ -2468,7 +2468,7 @@
     {
       "id": "Licht wahr",
       "group": "Examples",
-      "links": 15
+      "links": 16
     },
     {
       "id": "lieber hast als dich selbst",
@@ -3323,7 +3323,7 @@
     {
       "id": "stufenweise Schulung",
       "group": "Examples",
-      "links": 4
+      "links": 0
     },
     {
       "id": "substanzialistische Ansicht",
@@ -4293,7 +4293,7 @@
     {
       "id": "zeig.* den weg",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "Zombie",
@@ -4963,6 +4963,12 @@
       "links": 6
     },
     {
+      "id": "mn107",
+      "group": "mn",
+      "rank": 3,
+      "links": 8
+    },
+    {
       "id": "an3.36",
       "group": "an",
       "rank": 1,
@@ -5061,7 +5067,7 @@
     {
       "id": "an6.77",
       "group": "an",
-      "rank": 7,
+      "rank": 8,
       "links": 1
     },
     {
@@ -8764,13 +8770,13 @@
       "id": "an8.20",
       "group": "an",
       "rank": 2,
-      "links": 6
+      "links": 5
     },
     {
       "id": "ud5.5",
       "group": "ud",
       "rank": 2,
-      "links": 8
+      "links": 7
     },
     {
       "id": "sn29.4",
@@ -9553,12 +9559,6 @@
       "links": 4
     },
     {
-      "id": "sn12.24",
-      "group": "sn",
-      "rank": 3,
-      "links": 3
-    },
-    {
       "id": "sn45.5",
       "group": "sn",
       "rank": 2,
@@ -9579,7 +9579,7 @@
     {
       "id": "sn42.10",
       "group": "sn",
-      "rank": 7,
+      "rank": 6,
       "links": 2
     },
     {
@@ -9597,20 +9597,26 @@
     {
       "id": "sn22.86",
       "group": "sn",
-      "rank": 10,
+      "rank": 9,
       "links": 1
     },
     {
       "id": "sn22.2",
       "group": "sn",
-      "rank": 12,
+      "rank": 11,
       "links": 1
     },
     {
       "id": "sn44.2",
       "group": "sn",
-      "rank": 13,
+      "rank": 12,
       "links": 2
+    },
+    {
+      "id": "sn12.24",
+      "group": "sn",
+      "rank": 3,
+      "links": 3
     },
     {
       "id": "sn42.12",
@@ -9982,7 +9988,7 @@
       "id": "an8.19",
       "group": "an",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "snp3.11",
@@ -10060,7 +10066,7 @@
       "id": "mn70",
       "group": "mn",
       "rank": 1,
-      "links": 8
+      "links": 7
     },
     {
       "id": "an7.14",
@@ -18757,43 +18763,48 @@
     },
     {
       "source": "acht Menschen",
-      "target": "an3.36",
+      "target": "mn107",
       "rank": 17
     },
     {
       "source": "acht Menschen",
-      "target": "mn83",
+      "target": "an3.36",
       "rank": 18
     },
     {
       "source": "acht Menschen",
-      "target": "an3.70",
+      "target": "mn83",
       "rank": 19
     },
     {
       "source": "acht Menschen",
-      "target": "dn26",
+      "target": "an3.70",
       "rank": 20
     },
     {
       "source": "acht Menschen",
-      "target": "dn2",
+      "target": "dn26",
       "rank": 21
     },
     {
       "source": "acht Menschen",
-      "target": "dn17",
+      "target": "dn2",
       "rank": 22
     },
     {
       "source": "acht Menschen",
-      "target": "dn30",
+      "target": "dn17",
       "rank": 23
     },
     {
       "source": "acht Menschen",
-      "target": "dn34",
+      "target": "dn30",
       "rank": 24
+    },
+    {
+      "source": "acht Menschen",
+      "target": "dn34",
+      "rank": 25
     },
     {
       "source": "Achtsamkeit auf den Tod",
@@ -18862,83 +18873,88 @@
     },
     {
       "source": "Achtsamkeit und Situationsbewusstsein",
-      "target": "an6.77",
+      "target": "mn107",
       "rank": 7
     },
     {
       "source": "Achtsamkeit und Situationsbewusstsein",
-      "target": "sn47.8",
+      "target": "an6.77",
       "rank": 8
     },
     {
       "source": "Achtsamkeit und Situationsbewusstsein",
-      "target": "an1.575-615",
+      "target": "sn47.8",
       "rank": 9
     },
     {
       "source": "Achtsamkeit und Situationsbewusstsein",
-      "target": "an2.163-179",
+      "target": "an1.575-615",
       "rank": 10
     },
     {
       "source": "Achtsamkeit und Situationsbewusstsein",
-      "target": "mn39",
+      "target": "an2.163-179",
       "rank": 11
     },
     {
       "source": "Achtsamkeit und Situationsbewusstsein",
-      "target": "dn2",
+      "target": "mn39",
       "rank": 12
     },
     {
       "source": "Achtsamkeit und Situationsbewusstsein",
-      "target": "sn22.123",
+      "target": "dn2",
       "rank": 13
     },
     {
       "source": "Achtsamkeit und Situationsbewusstsein",
-      "target": "sn22.122",
+      "target": "sn22.123",
       "rank": 14
     },
     {
       "source": "Achtsamkeit und Situationsbewusstsein",
-      "target": "sn54.11",
+      "target": "sn22.122",
       "rank": 15
     },
     {
       "source": "Achtsamkeit und Situationsbewusstsein",
-      "target": "sn54.12",
+      "target": "sn54.11",
       "rank": 16
     },
     {
       "source": "Achtsamkeit und Situationsbewusstsein",
-      "target": "an6.29",
+      "target": "sn54.12",
       "rank": 17
     },
     {
       "source": "Achtsamkeit und Situationsbewusstsein",
-      "target": "thag15.2",
+      "target": "an6.29",
       "rank": 18
     },
     {
       "source": "Achtsamkeit und Situationsbewusstsein",
-      "target": "dn8",
+      "target": "thag15.2",
       "rank": 19
     },
     {
       "source": "Achtsamkeit und Situationsbewusstsein",
-      "target": "dn10",
+      "target": "dn8",
       "rank": 20
     },
     {
       "source": "Achtsamkeit und Situationsbewusstsein",
-      "target": "dn9",
+      "target": "dn10",
       "rank": 21
     },
     {
       "source": "Achtsamkeit und Situationsbewusstsein",
-      "target": "dn34",
+      "target": "dn9",
       "rank": 22
+    },
+    {
+      "source": "Achtsamkeit und Situationsbewusstsein",
+      "target": "dn34",
+      "rank": 23
     },
     {
       "source": "Achtsamkeit verankert",
@@ -20132,78 +20148,83 @@
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "an4.198",
+      "target": "mn107",
       "rank": 9
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "an10.99",
+      "target": "an4.198",
       "rank": 10
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "mn27",
+      "target": "an10.99",
       "rank": 11
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "mn39",
+      "target": "mn27",
       "rank": 12
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "mn51",
+      "target": "mn39",
       "rank": 13
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "mn94",
+      "target": "mn51",
       "rank": 14
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "mn119",
+      "target": "mn94",
       "rank": 15
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "dn10",
+      "target": "mn119",
       "rank": 16
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "mn10",
+      "target": "dn10",
       "rank": 17
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "mn56",
+      "target": "mn10",
       "rank": 18
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "mn101",
+      "target": "mn56",
       "rank": 19
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "dn2",
+      "target": "mn101",
       "rank": 20
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "dn22",
+      "target": "dn2",
       "rank": 21
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "mn38",
+      "target": "dn22",
       "rank": 22
     },
     {
       "source": "ausgeh.* und zurückkomm",
-      "target": "dn16",
+      "target": "mn38",
       "rank": 23
+    },
+    {
+      "source": "ausgeh.* und zurückkomm",
+      "target": "dn16",
+      "rank": 24
     },
     {
       "source": "aus meiner unmittelbaren Einsicht heraus gelehrt",
@@ -24397,57 +24418,57 @@
     },
     {
       "source": "die Worte des Buddha wieder",
-      "target": "sn12.24",
+      "target": "sn45.5",
       "rank": 3
     },
     {
       "source": "die Worte des Buddha wieder",
-      "target": "sn45.5",
+      "target": "sn12.26",
       "rank": 4
     },
     {
       "source": "die Worte des Buddha wieder",
-      "target": "sn12.26",
+      "target": "sn35.81",
       "rank": 5
     },
     {
       "source": "die Worte des Buddha wieder",
-      "target": "sn35.81",
+      "target": "sn42.10",
       "rank": 6
     },
     {
       "source": "die Worte des Buddha wieder",
-      "target": "sn42.10",
+      "target": "an3.57",
       "rank": 7
     },
     {
       "source": "die Worte des Buddha wieder",
-      "target": "an3.57",
+      "target": "mn55",
       "rank": 8
     },
     {
       "source": "die Worte des Buddha wieder",
-      "target": "mn55",
+      "target": "sn22.86",
       "rank": 9
     },
     {
       "source": "die Worte des Buddha wieder",
-      "target": "sn22.86",
+      "target": "an4.193",
       "rank": 10
     },
     {
       "source": "die Worte des Buddha wieder",
-      "target": "an4.193",
+      "target": "sn22.2",
       "rank": 11
     },
     {
       "source": "die Worte des Buddha wieder",
-      "target": "sn22.2",
+      "target": "sn44.2",
       "rank": 12
     },
     {
       "source": "die Worte des Buddha wieder",
-      "target": "sn44.2",
+      "target": "sn12.24",
       "rank": 13
     },
     {
@@ -29252,83 +29273,88 @@
     },
     {
       "source": "fünf Hindernisse",
-      "target": "sn46.51",
+      "target": "mn107",
       "rank": 30
     },
     {
       "source": "fünf Hindernisse",
-      "target": "an4.198",
+      "target": "sn46.51",
       "rank": 31
     },
     {
       "source": "fünf Hindernisse",
-      "target": "an5.76",
+      "target": "an4.198",
       "rank": 32
     },
     {
       "source": "fünf Hindernisse",
-      "target": "an10.99",
+      "target": "an5.76",
       "rank": 33
     },
     {
       "source": "fünf Hindernisse",
-      "target": "mn27",
+      "target": "an10.99",
       "rank": 34
     },
     {
       "source": "fünf Hindernisse",
-      "target": "mn51",
+      "target": "mn27",
       "rank": 35
     },
     {
       "source": "fünf Hindernisse",
-      "target": "mn79",
+      "target": "mn51",
       "rank": 36
     },
     {
       "source": "fünf Hindernisse",
-      "target": "mn94",
+      "target": "mn79",
       "rank": 37
     },
     {
       "source": "fünf Hindernisse",
-      "target": "dn28",
+      "target": "mn94",
       "rank": 38
     },
     {
       "source": "fünf Hindernisse",
-      "target": "mn76",
+      "target": "dn28",
       "rank": 39
     },
     {
       "source": "fünf Hindernisse",
-      "target": "mn60",
+      "target": "mn76",
       "rank": 40
     },
     {
       "source": "fünf Hindernisse",
-      "target": "mn101",
+      "target": "mn60",
       "rank": 41
     },
     {
       "source": "fünf Hindernisse",
-      "target": "mn38",
+      "target": "mn101",
       "rank": 42
     },
     {
       "source": "fünf Hindernisse",
-      "target": "dn16",
+      "target": "mn38",
       "rank": 43
     },
     {
       "source": "fünf Hindernisse",
-      "target": "dn33",
+      "target": "dn16",
       "rank": 44
     },
     {
       "source": "fünf Hindernisse",
-      "target": "dn34",
+      "target": "dn33",
       "rank": 45
+    },
+    {
+      "source": "fünf Hindernisse",
+      "target": "dn34",
+      "rank": 46
     },
     {
       "source": "für das Ziel des Friedens",
@@ -32197,58 +32223,63 @@
     },
     {
       "source": "Herzen, das frei von Begehren",
-      "target": "an4.198",
+      "target": "mn107",
       "rank": 3
     },
     {
       "source": "Herzen, das frei von Begehren",
-      "target": "an10.99",
+      "target": "an4.198",
       "rank": 4
     },
     {
       "source": "Herzen, das frei von Begehren",
-      "target": "mn27",
+      "target": "an10.99",
       "rank": 5
     },
     {
       "source": "Herzen, das frei von Begehren",
-      "target": "mn39",
+      "target": "mn27",
       "rank": 6
     },
     {
       "source": "Herzen, das frei von Begehren",
-      "target": "mn51",
+      "target": "mn39",
       "rank": 7
     },
     {
       "source": "Herzen, das frei von Begehren",
-      "target": "mn94",
+      "target": "mn51",
       "rank": 8
     },
     {
       "source": "Herzen, das frei von Begehren",
-      "target": "dn10",
+      "target": "mn94",
       "rank": 9
     },
     {
       "source": "Herzen, das frei von Begehren",
-      "target": "dn25",
+      "target": "dn10",
       "rank": 10
     },
     {
       "source": "Herzen, das frei von Begehren",
-      "target": "mn101",
+      "target": "dn25",
       "rank": 11
     },
     {
       "source": "Herzen, das frei von Begehren",
-      "target": "dn2",
+      "target": "mn101",
       "rank": 12
     },
     {
       "source": "Herzen, das frei von Begehren",
-      "target": "mn38",
+      "target": "dn2",
       "rank": 13
+    },
+    {
+      "source": "Herzen, das frei von Begehren",
+      "target": "mn38",
+      "rank": 14
     },
     {
       "source": "Herzenswunsch eines sittlichen Menschen",
@@ -32337,73 +32368,78 @@
     },
     {
       "source": "Hindernisse auf.*, die Verunreinigungen des Herzens",
-      "target": "an4.198",
+      "target": "mn107",
       "rank": 8
     },
     {
       "source": "Hindernisse auf.*, die Verunreinigungen des Herzens",
-      "target": "an5.76",
+      "target": "an4.198",
       "rank": 9
     },
     {
       "source": "Hindernisse auf.*, die Verunreinigungen des Herzens",
-      "target": "an10.99",
+      "target": "an5.76",
       "rank": 10
     },
     {
       "source": "Hindernisse auf.*, die Verunreinigungen des Herzens",
-      "target": "mn27",
+      "target": "an10.99",
       "rank": 11
     },
     {
       "source": "Hindernisse auf.*, die Verunreinigungen des Herzens",
-      "target": "mn39",
+      "target": "mn27",
       "rank": 12
     },
     {
       "source": "Hindernisse auf.*, die Verunreinigungen des Herzens",
-      "target": "mn51",
+      "target": "mn39",
       "rank": 13
     },
     {
       "source": "Hindernisse auf.*, die Verunreinigungen des Herzens",
-      "target": "mn79",
+      "target": "mn51",
       "rank": 14
     },
     {
       "source": "Hindernisse auf.*, die Verunreinigungen des Herzens",
-      "target": "mn94",
+      "target": "mn79",
       "rank": 15
     },
     {
       "source": "Hindernisse auf.*, die Verunreinigungen des Herzens",
-      "target": "dn28",
+      "target": "mn94",
       "rank": 16
     },
     {
       "source": "Hindernisse auf.*, die Verunreinigungen des Herzens",
-      "target": "mn76",
+      "target": "dn28",
       "rank": 17
     },
     {
       "source": "Hindernisse auf.*, die Verunreinigungen des Herzens",
-      "target": "mn60",
+      "target": "mn76",
       "rank": 18
     },
     {
       "source": "Hindernisse auf.*, die Verunreinigungen des Herzens",
-      "target": "mn101",
+      "target": "mn60",
       "rank": 19
     },
     {
       "source": "Hindernisse auf.*, die Verunreinigungen des Herzens",
-      "target": "mn38",
+      "target": "mn101",
       "rank": 20
     },
     {
       "source": "Hindernisse auf.*, die Verunreinigungen des Herzens",
-      "target": "dn16",
+      "target": "mn38",
       "rank": 21
+    },
+    {
+      "source": "Hindernisse auf.*, die Verunreinigungen des Herzens",
+      "target": "dn16",
+      "rank": 22
     },
     {
       "source": "Hindernisse sind durch und durch",
@@ -35832,58 +35868,63 @@
     },
     {
       "source": "Licht wahr",
-      "target": "an4.198",
+      "target": "mn107",
       "rank": 5
     },
     {
       "source": "Licht wahr",
-      "target": "an10.99",
+      "target": "an4.198",
       "rank": 6
     },
     {
       "source": "Licht wahr",
-      "target": "mn27",
+      "target": "an10.99",
       "rank": 7
     },
     {
       "source": "Licht wahr",
-      "target": "mn39",
+      "target": "mn27",
       "rank": 8
     },
     {
       "source": "Licht wahr",
-      "target": "mn51",
+      "target": "mn39",
       "rank": 9
     },
     {
       "source": "Licht wahr",
-      "target": "mn94",
+      "target": "mn51",
       "rank": 10
     },
     {
       "source": "Licht wahr",
-      "target": "dn10",
+      "target": "mn94",
       "rank": 11
     },
     {
       "source": "Licht wahr",
-      "target": "dn25",
+      "target": "dn10",
       "rank": 12
     },
     {
       "source": "Licht wahr",
-      "target": "mn101",
+      "target": "dn25",
       "rank": 13
     },
     {
       "source": "Licht wahr",
-      "target": "dn2",
+      "target": "mn101",
       "rank": 14
     },
     {
       "source": "Licht wahr",
-      "target": "mn38",
+      "target": "dn2",
       "rank": 15
+    },
+    {
+      "source": "Licht wahr",
+      "target": "mn38",
+      "rank": 16
     },
     {
       "source": "lieber hast als dich selbst",
@@ -41474,26 +41515,6 @@
       "source": "Strudel",
       "target": "sn35.242",
       "rank": 8
-    },
-    {
-      "source": "stufenweise Schulung",
-      "target": "mn70",
-      "rank": 1
-    },
-    {
-      "source": "stufenweise Schulung",
-      "target": "an8.20",
-      "rank": 2
-    },
-    {
-      "source": "stufenweise Schulung",
-      "target": "an8.19",
-      "rank": 3
-    },
-    {
-      "source": "stufenweise Schulung",
-      "target": "ud5.5",
-      "rank": 4
     },
     {
       "source": "substanzialistische Ansicht",
@@ -47972,13 +47993,18 @@
     },
     {
       "source": "zeig.* den weg",
-      "target": "mn76",
+      "target": "mn107",
       "rank": 3
     },
     {
       "source": "zeig.* den weg",
-      "target": "dn2",
+      "target": "mn76",
       "rank": 4
+    },
+    {
+      "source": "zeig.* den weg",
+      "target": "dn2",
+      "rank": 5
     },
     {
       "source": "Zombie",
