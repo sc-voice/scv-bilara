@@ -373,7 +373,7 @@
     {
       "id": "Beschützer",
       "group": "Examples",
-      "links": 18
+      "links": 19
     },
     {
       "id": "besitzt vier Grundlagen",
@@ -1143,7 +1143,7 @@
     {
       "id": "einen gierigen Geist",
       "group": "Examples",
-      "links": 19
+      "links": 20
     },
     {
       "id": "einen Schilfhalm aus seiner Scheide",
@@ -2533,7 +2533,7 @@
     {
       "id": "meditier konzentrier",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "meine Form sei so",
@@ -3443,7 +3443,7 @@
     {
       "id": "Übertretung",
       "group": "Examples",
-      "links": 3
+      "links": 10
     },
     {
       "id": "um die Wesen zu läutern",
@@ -3993,7 +3993,7 @@
     {
       "id": "weit weg von der tollen Menge",
       "group": "Examples",
-      "links": 5
+      "links": 6
     },
     {
       "id": "welche Fesseln binden Götter",
@@ -4173,7 +4173,7 @@
     {
       "id": "wie ein Vogel",
       "group": "Examples",
-      "links": 30
+      "links": 31
     },
     {
       "id": "wie entwickelt ein Mönch",
@@ -4348,7 +4348,7 @@
     {
       "id": "zum höheren Geist",
       "group": "Examples",
-      "links": 34
+      "links": 35
     },
     {
       "id": "zum Rückschritt",
@@ -4368,7 +4368,7 @@
     {
       "id": "Zustände seliger Meditation",
       "group": "Examples",
-      "links": 37
+      "links": 38
     },
     {
       "id": "zu quälen",
@@ -4918,7 +4918,7 @@
       "id": "mn76",
       "group": "mn",
       "rank": 1,
-      "links": 22
+      "links": 23
     },
     {
       "id": "an8.44",
@@ -5427,7 +5427,7 @@
     {
       "id": "dn32",
       "group": "dn",
-      "rank": 5,
+      "rank": 6,
       "links": 3
     },
     {
@@ -6340,7 +6340,7 @@
       "id": "dn29",
       "group": "dn",
       "rank": 1,
-      "links": 14
+      "links": 15
     },
     {
       "id": "mn103",
@@ -7021,6 +7021,12 @@
       "links": 2
     },
     {
+      "id": "mn108",
+      "group": "mn",
+      "rank": 2,
+      "links": 8
+    },
+    {
       "id": "mn140",
       "group": "mn",
       "rank": 1,
@@ -7311,14 +7317,14 @@
     {
       "id": "an9.7",
       "group": "an",
-      "rank": 5,
-      "links": 4
+      "rank": 2,
+      "links": 5
     },
     {
       "id": "an9.8",
       "group": "an",
-      "rank": 6,
-      "links": 1
+      "rank": 3,
+      "links": 2
     },
     {
       "id": "sn3.7",
@@ -7341,8 +7347,8 @@
     {
       "id": "iti25",
       "group": "iti",
-      "rank": 11,
-      "links": 1
+      "rank": 6,
+      "links": 2
     },
     {
       "id": "an4.180",
@@ -14769,7 +14775,7 @@
     {
       "id": "an11.9",
       "group": "an",
-      "rank": 2,
+      "rank": 3,
       "links": 2
     },
     {
@@ -16503,8 +16509,14 @@
     {
       "id": "sn11.24",
       "group": "sn",
-      "rank": 2,
+      "rank": 3,
       "links": 2
+    },
+    {
+      "id": "dhp167-178",
+      "group": "dhp",
+      "rank": 3,
+      "links": 4
     },
     {
       "id": "sn47.18",
@@ -17915,12 +17927,6 @@
       "group": "thag",
       "rank": 7,
       "links": 1
-    },
-    {
-      "id": "dhp167-178",
-      "group": "dhp",
-      "rank": 3,
-      "links": 3
     },
     {
       "id": "thig1.2",
@@ -21010,6 +21016,11 @@
       "source": "Beschützer",
       "target": "thag16.10",
       "rank": 18
+    },
+    {
+      "source": "Beschützer",
+      "target": "mn108",
+      "rank": 19
     },
     {
       "source": "besitzt vier Grundlagen",
@@ -26098,38 +26109,43 @@
     },
     {
       "source": "einen gierigen Geist",
-      "target": "sn12.70",
+      "target": "mn108",
       "rank": 13
     },
     {
       "source": "einen gierigen Geist",
-      "target": "dn10",
+      "target": "sn12.70",
       "rank": 14
     },
     {
       "source": "einen gierigen Geist",
-      "target": "mn10",
+      "target": "dn10",
       "rank": 15
     },
     {
       "source": "einen gierigen Geist",
-      "target": "mn12",
+      "target": "mn10",
       "rank": 16
     },
     {
       "source": "einen gierigen Geist",
-      "target": "mn77",
+      "target": "mn12",
       "rank": 17
     },
     {
       "source": "einen gierigen Geist",
-      "target": "dn2",
+      "target": "mn77",
       "rank": 18
     },
     {
       "source": "einen gierigen Geist",
-      "target": "dn22",
+      "target": "dn2",
       "rank": 19
+    },
+    {
+      "source": "einen gierigen Geist",
+      "target": "dn22",
+      "rank": 20
     },
     {
       "source": "einen Schilfhalm aus seiner Scheide",
@@ -36363,13 +36379,18 @@
     },
     {
       "source": "meditier konzentrier",
-      "target": "an11.9",
+      "target": "mn108",
       "rank": 2
     },
     {
       "source": "meditier konzentrier",
-      "target": "an6.46",
+      "target": "an11.9",
       "rank": 3
+    },
+    {
+      "source": "meditier konzentrier",
+      "target": "an6.46",
+      "rank": 4
     },
     {
       "source": "meine Form sei so",
@@ -42298,13 +42319,48 @@
     },
     {
       "source": "Übertretung",
-      "target": "sn11.24",
+      "target": "an9.7",
       "rank": 2
     },
     {
       "source": "Übertretung",
-      "target": "mn103",
+      "target": "an9.8",
       "rank": 3
+    },
+    {
+      "source": "Übertretung",
+      "target": "mn76",
+      "rank": 4
+    },
+    {
+      "source": "Übertretung",
+      "target": "dn29",
+      "rank": 5
+    },
+    {
+      "source": "Übertretung",
+      "target": "iti25",
+      "rank": 6
+    },
+    {
+      "source": "Übertretung",
+      "target": "sn11.24",
+      "rank": 7
+    },
+    {
+      "source": "Übertretung",
+      "target": "dhp167-178",
+      "rank": 8
+    },
+    {
+      "source": "Übertretung",
+      "target": "mn103",
+      "rank": 9
+    },
+    {
+      "source": "Übertretung",
+      "target": "mn108",
+      "rank": 10
     },
     {
       "source": "um die Wesen zu läutern",
@@ -46053,8 +46109,13 @@
     },
     {
       "source": "weit weg von der tollen Menge",
-      "target": "dn32",
+      "target": "mn108",
       "rank": 5
+    },
+    {
+      "source": "weit weg von der tollen Menge",
+      "target": "dn32",
+      "rank": 6
     },
     {
       "source": "welche Fesseln binden Götter",
@@ -47453,68 +47514,73 @@
     },
     {
       "source": "wie ein Vogel",
-      "target": "sn12.70",
+      "target": "mn108",
       "rank": 18
     },
     {
       "source": "wie ein Vogel",
-      "target": "snp5.19",
+      "target": "sn12.70",
       "rank": 19
     },
     {
       "source": "wie ein Vogel",
-      "target": "thag17.3",
+      "target": "snp5.19",
       "rank": 20
     },
     {
       "source": "wie ein Vogel",
-      "target": "dn11",
+      "target": "thag17.3",
       "rank": 21
     },
     {
       "source": "wie ein Vogel",
-      "target": "mn27",
+      "target": "dn11",
       "rank": 22
     },
     {
       "source": "wie ein Vogel",
-      "target": "mn51",
+      "target": "mn27",
       "rank": 23
     },
     {
       "source": "wie ein Vogel",
-      "target": "mn94",
+      "target": "mn51",
       "rank": 24
     },
     {
       "source": "wie ein Vogel",
-      "target": "dn28",
+      "target": "mn94",
       "rank": 25
     },
     {
       "source": "wie ein Vogel",
-      "target": "mn12",
+      "target": "dn28",
       "rank": 26
     },
     {
       "source": "wie ein Vogel",
-      "target": "mn77",
+      "target": "mn12",
       "rank": 27
     },
     {
       "source": "wie ein Vogel",
-      "target": "mn101",
+      "target": "mn77",
       "rank": 28
     },
     {
       "source": "wie ein Vogel",
-      "target": "mn38",
+      "target": "mn101",
       "rank": 29
     },
     {
       "source": "wie ein Vogel",
-      "target": "dn34",
+      "target": "mn38",
       "rank": 30
+    },
+    {
+      "source": "wie ein Vogel",
+      "target": "dn34",
+      "rank": 31
     },
     {
       "source": "wie entwickelt ein Mönch",
@@ -48393,13 +48459,18 @@
     },
     {
       "source": "zum höheren Geist",
-      "target": "mn119",
+      "target": "mn108",
       "rank": 33
     },
     {
       "source": "zum höheren Geist",
-      "target": "dn28",
+      "target": "mn119",
       "rank": 34
+    },
+    {
+      "source": "zum höheren Geist",
+      "target": "dn28",
+      "rank": 35
     },
     {
       "source": "zum Rückschritt",
@@ -48658,13 +48729,18 @@
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "mn119",
+      "target": "mn108",
       "rank": 36
     },
     {
       "source": "Zustände seliger Meditation",
-      "target": "dn28",
+      "target": "mn119",
       "rank": 37
+    },
+    {
+      "source": "Zustände seliger Meditation",
+      "target": "dn28",
+      "rank": 38
     },
     {
       "source": "zu quälen",
