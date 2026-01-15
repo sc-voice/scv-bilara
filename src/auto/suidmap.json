@@ -8546,6 +8546,7 @@
 	},
 	"dhp273-289": {
 		"translation/de/sabbamitta": "sutta/kn/dhp",
+		"translation/en/suddhaso": "sutta/kn/dhp",
 		"translation/en/sujato": "sutta/kn/dhp",
 		"translation/et/thitanana": "sutta/kn/dhp",
 		"translation/vi/phantuananh": "sutta/kn/dhp",
@@ -8553,6 +8554,7 @@
 	},
 	"dhp290-305": {
 		"translation/de/sabbamitta": "sutta/kn/dhp",
+		"translation/en/suddhaso": "sutta/kn/dhp",
 		"translation/en/sujato": "sutta/kn/dhp",
 		"translation/et/thitanana": "sutta/kn/dhp",
 		"translation/vi/phantuananh": "sutta/kn/dhp",
@@ -16755,61 +16757,73 @@
 	"sn21.1": {
 		"translation/de/sabbamitta": "sutta/sn/sn21",
 		"translation/en/sujato": "sutta/sn/sn21",
+		"translation/sr/brankokovacevic": "sutta/sn/sn21",
 		"root/pli/ms": "sutta/sn/sn21"
 	},
 	"sn21.2": {
 		"translation/de/sabbamitta": "sutta/sn/sn21",
 		"translation/en/sujato": "sutta/sn/sn21",
+		"translation/sr/brankokovacevic": "sutta/sn/sn21",
 		"root/pli/ms": "sutta/sn/sn21"
 	},
 	"sn21.3": {
 		"translation/de/sabbamitta": "sutta/sn/sn21",
 		"translation/en/sujato": "sutta/sn/sn21",
+		"translation/sr/brankokovacevic": "sutta/sn/sn21",
 		"root/pli/ms": "sutta/sn/sn21"
 	},
 	"sn21.4": {
 		"translation/de/sabbamitta": "sutta/sn/sn21",
 		"translation/en/sujato": "sutta/sn/sn21",
+		"translation/sr/brankokovacevic": "sutta/sn/sn21",
 		"root/pli/ms": "sutta/sn/sn21"
 	},
 	"sn21.5": {
 		"translation/de/sabbamitta": "sutta/sn/sn21",
 		"translation/en/sujato": "sutta/sn/sn21",
+		"translation/sr/brankokovacevic": "sutta/sn/sn21",
 		"root/pli/ms": "sutta/sn/sn21"
 	},
 	"sn21.6": {
 		"translation/de/sabbamitta": "sutta/sn/sn21",
 		"translation/en/sujato": "sutta/sn/sn21",
+		"translation/sr/brankokovacevic": "sutta/sn/sn21",
 		"root/pli/ms": "sutta/sn/sn21"
 	},
 	"sn21.7": {
 		"translation/de/sabbamitta": "sutta/sn/sn21",
 		"translation/en/sujato": "sutta/sn/sn21",
+		"translation/sr/brankokovacevic": "sutta/sn/sn21",
 		"root/pli/ms": "sutta/sn/sn21"
 	},
 	"sn21.8": {
 		"translation/de/sabbamitta": "sutta/sn/sn21",
 		"translation/en/sujato": "sutta/sn/sn21",
+		"translation/sr/brankokovacevic": "sutta/sn/sn21",
 		"root/pli/ms": "sutta/sn/sn21"
 	},
 	"sn21.9": {
 		"translation/de/sabbamitta": "sutta/sn/sn21",
 		"translation/en/sujato": "sutta/sn/sn21",
+		"translation/sr/brankokovacevic": "sutta/sn/sn21",
 		"root/pli/ms": "sutta/sn/sn21"
 	},
 	"sn21.10": {
 		"translation/de/sabbamitta": "sutta/sn/sn21",
 		"translation/en/sujato": "sutta/sn/sn21",
+		"translation/sr/brankokovacevic": "sutta/sn/sn21",
 		"root/pli/ms": "sutta/sn/sn21"
 	},
 	"sn21.11": {
 		"translation/de/sabbamitta": "sutta/sn/sn21",
 		"translation/en/sujato": "sutta/sn/sn21",
+		"translation/sr/brankokovacevic": "sutta/sn/sn21",
 		"root/pli/ms": "sutta/sn/sn21"
 	},
 	"sn21.12": {
 		"translation/de/sabbamitta": "sutta/sn/sn21",
 		"translation/en/sujato": "sutta/sn/sn21",
+		"translation/sr/brankokovacevic": "sutta/sn/sn21",
 		"root/pli/ms": "sutta/sn/sn21"
 	},
 	"sn22.1": {
