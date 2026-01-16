@@ -8562,6 +8562,7 @@
 	},
 	"dhp306-319": {
 		"translation/de/sabbamitta": "sutta/kn/dhp",
+		"translation/en/suddhaso": "sutta/kn/dhp",
 		"translation/en/sujato": "sutta/kn/dhp",
 		"translation/et/thitanana": "sutta/kn/dhp",
 		"translation/vi/phantuananh": "sutta/kn/dhp",
@@ -11252,6 +11253,7 @@
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn112": {
+		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
 		"translation/it/giovannizappa": "sutta/mn",
 		"translation/ru/sv": "sutta/mn",
@@ -11265,6 +11267,7 @@
 		"root/pli/ms": "sutta/mn"
 	},
 	"mn114": {
+		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
 		"translation/it/giovannizappa": "sutta/mn",
 		"translation/ru/sv": "sutta/mn",
