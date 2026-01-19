@@ -8601,6 +8601,7 @@
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
 		"translation/my/my-team": "sutta/dn",
+		"translation/ru/khantibalo": "sutta/dn",
 		"translation/ru/syrkin": "sutta/dn",
 		"translation/sr/brankokovacevic": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
@@ -8610,6 +8611,7 @@
 		"translation/en/sujato": "sutta/dn",
 		"translation/lt/piyadassi": "sutta/dn",
 		"translation/my/my-team": "sutta/dn",
+		"translation/ru/khantibalo": "sutta/dn",
 		"translation/ru/syrkin": "sutta/dn",
 		"translation/sr/brankokovacevic": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
@@ -8742,6 +8744,7 @@
 	"dn22": {
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
+		"translation/ru/khantibalo": "sutta/dn",
 		"translation/sr/brankokovacevic": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
@@ -8800,6 +8803,7 @@
 		"translation/fr/noeismet": "sutta/dn",
 		"translation/lt/piyadassi": "sutta/dn",
 		"translation/pl/hardao": "sutta/dn",
+		"translation/ru/khantibalo": "sutta/dn",
 		"translation/sr/brankokovacevic": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
@@ -16687,6 +16691,7 @@
 	"sn20.1": {
 		"translation/de/sabbamitta": "sutta/sn/sn20",
 		"translation/en/sujato": "sutta/sn/sn20",
+		"translation/ru/sv": "sutta/sn/sn20",
 		"translation/sr/brankokovacevic": "sutta/sn/sn20",
 		"root/pli/ms": "sutta/sn/sn20"
 	},
