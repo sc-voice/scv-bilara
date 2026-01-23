@@ -323,7 +323,8 @@
                 'translation/en/sujato': 'sutta/sn/sn12',
                 'translation/lt/piyadassi': 'sutta/sn/sn12',
         //        'translation/en/davis': 'sutta/sn/sn13',
-                'root/pli/ms': 'sutta/sn/sn12'
+                'root/pli/ms': 'sutta/sn/sn12',
+                'translation/sr/brankokovacevic': 'sutta/sn/sn12',
             }
         });
     });
