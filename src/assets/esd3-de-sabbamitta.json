@@ -1203,7 +1203,7 @@
     {
       "id": "Einswerden",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "ein Rest",
@@ -1243,7 +1243,7 @@
     {
       "id": "entsprechend ihrer Taten wiedergeboren",
       "group": "Examples",
-      "links": 21
+      "links": 20
     },
     {
       "id": "entwickelt die Grundlage übersinnlicher Kraft",
@@ -1408,7 +1408,7 @@
     {
       "id": "Fähigkeit der Weisheit",
       "group": "Examples",
-      "links": 22
+      "links": 23
     },
     {
       "id": "falsche Wendung",
@@ -1563,7 +1563,7 @@
     {
       "id": "Galaxie",
       "group": "Examples",
-      "links": 14
+      "links": 15
     },
     {
       "id": "ganz allein von dir begangen",
@@ -1818,7 +1818,7 @@
     {
       "id": "grausam",
       "group": "Examples",
-      "links": 58
+      "links": 59
     },
     {
       "id": "grenzenlose Versenkung des Herzens",
@@ -2358,7 +2358,7 @@
     {
       "id": "Kraft der Weisheit",
       "group": "Examples",
-      "links": 13
+      "links": 14
     },
     {
       "id": "Kraft des Vertrauens",
@@ -2368,7 +2368,7 @@
     {
       "id": "Krankheit.* Eiterherd.* Pfeil",
       "group": "Examples",
-      "links": 15
+      "links": 14
     },
     {
       "id": "Kräuter, Hirse",
@@ -2548,7 +2548,7 @@
     {
       "id": "merkmalslos",
       "group": "Examples",
-      "links": 23
+      "links": 24
     },
     {
       "id": "mich sehne und die ich liebe",
@@ -2958,7 +2958,7 @@
     {
       "id": "Rosenapfel",
       "group": "Examples",
-      "links": 28
+      "links": 29
     },
     {
       "id": "roten Kapok-Wald",
@@ -3028,7 +3028,7 @@
     {
       "id": "Schmuckstück aus Beryll von natürlicher",
       "group": "Examples",
-      "links": 0
+      "links": 1
     },
     {
       "id": "Schneckenhornbläser",
@@ -3268,7 +3268,7 @@
     {
       "id": "Spenden haben keinen Sinn",
       "group": "Examples",
-      "links": 19
+      "links": 20
     },
     {
       "id": "Spiegelbild",
@@ -3463,7 +3463,7 @@
     {
       "id": "um mehr materiellem Besitz",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "unabhängiger Mensch, der gehen könnte",
@@ -3813,7 +3813,7 @@
     {
       "id": "von Sprache",
       "group": "Examples",
-      "links": 32
+      "links": 33
     },
     {
       "id": "von Zorn überwältigt",
@@ -3913,7 +3913,7 @@
     {
       "id": "was ist rechte",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "was ist Unwissenheit",
@@ -4108,7 +4108,7 @@
     {
       "id": "wesentliche.* Bedingungen",
       "group": "Examples",
-      "links": 10
+      "links": 11
     },
     {
       "id": "wesentliche Bedingung für rechte",
@@ -4423,7 +4423,7 @@
     {
       "id": "zweifach",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "zwei Gefühle",
@@ -5097,8 +5097,8 @@
     {
       "id": "sn22.123",
       "group": "sn",
-      "rank": 9,
-      "links": 2
+      "rank": 14,
+      "links": 1
     },
     {
       "id": "sn22.122",
@@ -5608,7 +5608,7 @@
       "id": "mn12",
       "group": "mn",
       "rank": 1,
-      "links": 16
+      "links": 15
     },
     {
       "id": "dn12",
@@ -6711,7 +6711,7 @@
     {
       "id": "sn45.8",
       "group": "sn",
-      "rank": 1,
+      "rank": 2,
       "links": 2
     },
     {
@@ -10389,7 +10389,7 @@
     {
       "id": "an7.45",
       "group": "an",
-      "rank": 2,
+      "rank": 3,
       "links": 2
     },
     {
@@ -10535,6 +10535,12 @@
       "group": "sn",
       "rank": 4,
       "links": 2
+    },
+    {
+      "id": "mn117",
+      "group": "mn",
+      "rank": 1,
+      "links": 10
     },
     {
       "id": "an5.67",
@@ -12097,27 +12103,33 @@
       "links": 4
     },
     {
+      "id": "mn120",
+      "group": "mn",
+      "rank": 1,
+      "links": 3
+    },
+    {
       "id": "an3.130",
       "group": "an",
-      "rank": 4,
+      "rank": 5,
       "links": 1
     },
     {
       "id": "sn47.28",
       "group": "sn",
-      "rank": 7,
+      "rank": 8,
       "links": 1
     },
     {
       "id": "sn52.6",
       "group": "sn",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
       "id": "an3.125",
       "group": "an",
-      "rank": 9,
+      "rank": 10,
       "links": 1
     },
     {
@@ -14821,6 +14833,12 @@
       "links": 2
     },
     {
+      "id": "mn121",
+      "group": "mn",
+      "rank": 4,
+      "links": 1
+    },
+    {
       "id": "an6.60",
       "group": "an",
       "rank": 2,
@@ -14835,7 +14853,7 @@
     {
       "id": "thag1.92",
       "group": "thag",
-      "rank": 12,
+      "rank": 13,
       "links": 1
     },
     {
@@ -17853,7 +17871,7 @@
     {
       "id": "an10.4",
       "group": "an",
-      "rank": 3,
+      "rank": 4,
       "links": 1
     },
     {
@@ -26495,8 +26513,13 @@
     },
     {
       "source": "Einswerden",
-      "target": "dn18",
+      "target": "mn117",
       "rank": 8
+    },
+    {
+      "source": "Einswerden",
+      "target": "dn18",
+      "rank": 9
     },
     {
       "source": "ein Rest",
@@ -26915,18 +26938,13 @@
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "mn12",
+      "target": "mn77",
       "rank": 19
     },
     {
       "source": "entsprechend ihrer Taten wiedergeboren",
-      "target": "mn77",
-      "rank": 20
-    },
-    {
-      "source": "entsprechend ihrer Taten wiedergeboren",
       "target": "mn101",
-      "rank": 21
+      "rank": 20
     },
     {
       "source": "entwickelt die Grundlage übersinnlicher Kraft",
@@ -28305,8 +28323,13 @@
     },
     {
       "source": "Fähigkeit der Weisheit",
-      "target": "mn77",
+      "target": "mn117",
       "rank": 22
+    },
+    {
+      "source": "Fähigkeit der Weisheit",
+      "target": "mn77",
+      "rank": 23
     },
     {
       "source": "falsche Wendung",
@@ -29390,68 +29413,73 @@
     },
     {
       "source": "Galaxie",
-      "target": "mn32",
+      "target": "mn120",
       "rank": 2
     },
     {
       "source": "Galaxie",
-      "target": "an10.29",
+      "target": "mn32",
       "rank": 3
     },
     {
       "source": "Galaxie",
-      "target": "an3.130",
+      "target": "an10.29",
       "rank": 4
     },
     {
       "source": "Galaxie",
-      "target": "sn6.14",
+      "target": "an3.130",
       "rank": 5
     },
     {
       "source": "Galaxie",
-      "target": "dn14",
+      "target": "sn6.14",
       "rank": 6
     },
     {
       "source": "Galaxie",
-      "target": "sn47.28",
+      "target": "dn14",
       "rank": 7
     },
     {
       "source": "Galaxie",
-      "target": "sn52.6",
+      "target": "sn47.28",
       "rank": 8
     },
     {
       "source": "Galaxie",
-      "target": "an3.125",
+      "target": "sn52.6",
       "rank": 9
     },
     {
       "source": "Galaxie",
-      "target": "sn56.11",
+      "target": "an3.125",
       "rank": 10
     },
     {
       "source": "Galaxie",
-      "target": "thag16.9",
+      "target": "sn56.11",
       "rank": 11
     },
     {
       "source": "Galaxie",
-      "target": "mn49",
+      "target": "thag16.9",
       "rank": 12
     },
     {
       "source": "Galaxie",
-      "target": "thag20.1",
+      "target": "mn49",
       "rank": 13
     },
     {
       "source": "Galaxie",
-      "target": "dn1",
+      "target": "thag20.1",
       "rank": 14
+    },
+    {
+      "source": "Galaxie",
+      "target": "dn1",
+      "rank": 15
     },
     {
       "source": "ganz allein von dir begangen",
@@ -31280,33 +31308,38 @@
     },
     {
       "source": "grausam",
-      "target": "mn115",
+      "target": "mn117",
       "rank": 53
     },
     {
       "source": "grausam",
-      "target": "mn122",
+      "target": "mn115",
       "rank": 54
     },
     {
       "source": "grausam",
-      "target": "mn86",
+      "target": "mn122",
       "rank": 55
     },
     {
       "source": "grausam",
-      "target": "dhp383-423",
+      "target": "mn86",
       "rank": 56
     },
     {
       "source": "grausam",
-      "target": "dn17",
+      "target": "dhp383-423",
       "rank": 57
     },
     {
       "source": "grausam",
-      "target": "dn32",
+      "target": "dn17",
       "rank": 58
+    },
+    {
+      "source": "grausam",
+      "target": "dn32",
+      "rank": 59
     },
     {
       "source": "grenzenlose Versenkung des Herzens",
@@ -35100,8 +35133,13 @@
     },
     {
       "source": "Kraft der Weisheit",
-      "target": "mn77",
+      "target": "mn117",
       "rank": 13
+    },
+    {
+      "source": "Kraft der Weisheit",
+      "target": "mn77",
+      "rank": 14
     },
     {
       "source": "Kraft des Vertrauens",
@@ -35260,38 +35298,33 @@
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "sn22.123",
+      "target": "sn35.90",
       "rank": 9
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "sn35.90",
+      "target": "sn35.91",
       "rank": 10
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "sn35.91",
+      "target": "mn74",
       "rank": 11
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "mn74",
+      "target": "mn64",
       "rank": 12
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "mn64",
+      "target": "mn140",
       "rank": 13
     },
     {
       "source": "Krankheit.* Eiterherd.* Pfeil",
-      "target": "mn140",
-      "rank": 14
-    },
-    {
-      "source": "Krankheit.* Eiterherd.* Pfeil",
       "target": "dn21",
-      "rank": 15
+      "rank": 14
     },
     {
       "source": "Kräuter, Hirse",
@@ -36490,103 +36523,108 @@
     },
     {
       "source": "merkmalslos",
-      "target": "an7.56",
+      "target": "mn121",
       "rank": 4
     },
     {
       "source": "merkmalslos",
-      "target": "sn22.80",
+      "target": "an7.56",
       "rank": 5
     },
     {
       "source": "merkmalslos",
-      "target": "an6.60",
+      "target": "sn22.80",
       "rank": 6
     },
     {
       "source": "merkmalslos",
-      "target": "dn33",
+      "target": "an6.60",
       "rank": 7
     },
     {
       "source": "merkmalslos",
-      "target": "an6.13",
+      "target": "dn33",
       "rank": 8
     },
     {
       "source": "merkmalslos",
-      "target": "dhp90-99",
+      "target": "an6.13",
       "rank": 9
     },
     {
       "source": "merkmalslos",
-      "target": "dn34",
+      "target": "dhp90-99",
       "rank": 10
     },
     {
       "source": "merkmalslos",
-      "target": "sn43.4",
+      "target": "dn34",
       "rank": 11
     },
     {
       "source": "merkmalslos",
-      "target": "thag1.92",
+      "target": "sn43.4",
       "rank": 12
     },
     {
       "source": "merkmalslos",
-      "target": "thig2.1",
+      "target": "thag1.92",
       "rank": 13
     },
     {
       "source": "merkmalslos",
-      "target": "thig3.3",
+      "target": "thig2.1",
       "rank": 14
     },
     {
       "source": "merkmalslos",
-      "target": "thig5.8",
+      "target": "thig3.3",
       "rank": 15
     },
     {
       "source": "merkmalslos",
-      "target": "sn8.4",
+      "target": "thig5.8",
       "rank": 16
     },
     {
       "source": "merkmalslos",
-      "target": "sn47.9",
+      "target": "sn8.4",
       "rank": 17
     },
     {
       "source": "merkmalslos",
-      "target": "sn41.6",
+      "target": "sn47.9",
       "rank": 18
     },
     {
       "source": "merkmalslos",
-      "target": "an3.183-352",
+      "target": "sn41.6",
       "rank": 19
     },
     {
       "source": "merkmalslos",
-      "target": "sn43.12",
+      "target": "an3.183-352",
       "rank": 20
     },
     {
       "source": "merkmalslos",
-      "target": "mn44",
+      "target": "sn43.12",
       "rank": 21
     },
     {
       "source": "merkmalslos",
-      "target": "thag21.1",
+      "target": "mn44",
       "rank": 22
     },
     {
       "source": "merkmalslos",
-      "target": "dn16",
+      "target": "thag21.1",
       "rank": 23
+    },
+    {
+      "source": "merkmalslos",
+      "target": "dn16",
+      "rank": 24
     },
     {
       "source": "Milch und Wasser",
@@ -39370,38 +39408,43 @@
     },
     {
       "source": "Rosenapfel",
-      "target": "snp3.7",
+      "target": "mn120",
       "rank": 22
     },
     {
       "source": "Rosenapfel",
-      "target": "mn36",
+      "target": "snp3.7",
       "rank": 23
     },
     {
       "source": "Rosenapfel",
-      "target": "mn100",
+      "target": "mn36",
       "rank": 24
     },
     {
       "source": "Rosenapfel",
-      "target": "thig16.1",
+      "target": "mn100",
       "rank": 25
     },
     {
       "source": "Rosenapfel",
-      "target": "mn85",
+      "target": "thig16.1",
       "rank": 26
     },
     {
       "source": "Rosenapfel",
-      "target": "dn14",
+      "target": "mn85",
       "rank": 27
     },
     {
       "source": "Rosenapfel",
-      "target": "dn30",
+      "target": "dn14",
       "rank": 28
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "dn30",
+      "rank": 29
     },
     {
       "source": "rufe alle Mönche und Nonnen",
@@ -39742,6 +39785,11 @@
       "source": "schleichend",
       "target": "an6.45",
       "rank": 2
+    },
+    {
+      "source": "Schmuckstück aus Beryll von natürlicher",
+      "target": "mn120",
+      "rank": 1
     },
     {
       "source": "Schneckenhornbläser",
@@ -41155,28 +41203,33 @@
     },
     {
       "source": "Spenden haben keinen Sinn",
-      "target": "mn60",
+      "target": "mn117",
       "rank": 15
     },
     {
       "source": "Spenden haben keinen Sinn",
-      "target": "mn114",
+      "target": "mn60",
       "rank": 16
     },
     {
       "source": "Spenden haben keinen Sinn",
-      "target": "dn2",
+      "target": "mn114",
       "rank": 17
     },
     {
       "source": "Spenden haben keinen Sinn",
-      "target": "dn33",
+      "target": "dn2",
       "rank": 18
     },
     {
       "source": "Spenden haben keinen Sinn",
-      "target": "dn34",
+      "target": "dn33",
       "rank": 19
+    },
+    {
+      "source": "Spenden haben keinen Sinn",
+      "target": "dn34",
+      "rank": 20
     },
     {
       "source": "Spiegelbild",
@@ -42430,18 +42483,23 @@
     },
     {
       "source": "um mehr materiellem Besitz",
-      "target": "dn28",
+      "target": "mn117",
       "rank": 2
     },
     {
       "source": "um mehr materiellem Besitz",
-      "target": "dn1",
+      "target": "dn28",
       "rank": 3
     },
     {
       "source": "um mehr materiellem Besitz",
-      "target": "dn2",
+      "target": "dn1",
       "rank": 4
+    },
+    {
+      "source": "um mehr materiellem Besitz",
+      "target": "dn2",
+      "rank": 5
     },
     {
       "source": "unbedingt",
@@ -44830,13 +44888,18 @@
     },
     {
       "source": "von Sprache",
-      "target": "mn78",
+      "target": "mn117",
       "rank": 31
     },
     {
       "source": "von Sprache",
-      "target": "cp9",
+      "target": "mn78",
       "rank": 32
+    },
+    {
+      "source": "von Sprache",
+      "target": "cp9",
+      "rank": 33
     },
     {
       "source": "von Zorn überwältigt",
@@ -45715,18 +45778,23 @@
     },
     {
       "source": "was ist rechte",
-      "target": "sn45.8",
+      "target": "mn117",
       "rank": 1
     },
     {
       "source": "was ist rechte",
-      "target": "mn141",
+      "target": "sn45.8",
       "rank": 2
     },
     {
       "source": "was ist rechte",
-      "target": "dn22",
+      "target": "mn141",
       "rank": 3
+    },
+    {
+      "source": "was ist rechte",
+      "target": "dn22",
+      "rank": 4
     },
     {
       "source": "was ist Unwissenheit",
@@ -46655,48 +46723,53 @@
     },
     {
       "source": "wesentliche.* Bedingungen",
-      "target": "an7.45",
+      "target": "mn117",
       "rank": 2
     },
     {
       "source": "wesentliche.* Bedingungen",
-      "target": "an10.4",
+      "target": "an7.45",
       "rank": 3
     },
     {
       "source": "wesentliche.* Bedingungen",
-      "target": "an10.3",
+      "target": "an10.4",
       "rank": 4
     },
     {
       "source": "wesentliche.* Bedingungen",
-      "target": "an10.5",
+      "target": "an10.3",
       "rank": 5
     },
     {
       "source": "wesentliche.* Bedingungen",
-      "target": "an11.3",
+      "target": "an10.5",
       "rank": 6
     },
     {
       "source": "wesentliche.* Bedingungen",
-      "target": "an11.5",
+      "target": "an11.3",
       "rank": 7
     },
     {
       "source": "wesentliche.* Bedingungen",
-      "target": "an11.4",
+      "target": "an11.5",
       "rank": 8
     },
     {
       "source": "wesentliche.* Bedingungen",
-      "target": "sn12.23",
+      "target": "an11.4",
       "rank": 9
     },
     {
       "source": "wesentliche.* Bedingungen",
-      "target": "dn18",
+      "target": "sn12.23",
       "rank": 10
+    },
+    {
+      "source": "wesentliche.* Bedingungen",
+      "target": "dn18",
+      "rank": 11
     },
     {
       "source": "wesentliche Bedingung für rechte",
@@ -48855,8 +48928,13 @@
     },
     {
       "source": "zweifach",
-      "target": "dn34",
+      "target": "mn117",
       "rank": 2
+    },
+    {
+      "source": "zweifach",
+      "target": "dn34",
+      "rank": 3
     },
     {
       "source": "zwei Gefühle",
