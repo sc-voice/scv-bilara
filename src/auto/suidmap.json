@@ -8595,6 +8595,7 @@
 	},
 	"dhp383-423": {
 		"translation/de/sabbamitta": "sutta/kn/dhp",
+		"translation/en/suddhaso": "sutta/kn/dhp",
 		"translation/en/sujato": "sutta/kn/dhp",
 		"translation/et/thitanana": "sutta/kn/dhp",
 		"translation/vi/phantuananh": "sutta/kn/dhp",
@@ -17293,6 +17294,7 @@
 	"sn22.85": {
 		"translation/de/sabbamitta": "sutta/sn/sn22",
 		"translation/en/sujato": "sutta/sn/sn22",
+		"translation/fr/christelle": "sutta/sn/sn22",
 		"root/pli/ms": "sutta/sn/sn22"
 	},
 	"sn22.86": {
