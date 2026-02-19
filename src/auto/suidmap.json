@@ -9731,10 +9731,12 @@
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja48": {
+		"translation/de/sabbamitta": "sutta/kn/ja",
 		"translation/en/sujato": "sutta/kn/ja",
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"ja49": {
+		"translation/de/sabbamitta": "sutta/kn/ja",
 		"translation/en/sujato": "sutta/kn/ja",
 		"root/pli/ms": "sutta/kn/ja"
 	},
@@ -14392,6 +14394,7 @@
 	"sn3.18": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
+		"translation/fr/christelle": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
 		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
@@ -23714,17 +23717,20 @@
 		"root/pli/ms": "sutta/kn/snp/vagga1"
 	},
 	"snp1.5": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga1",
 		"translation/en/sujato": "sutta/kn/snp/vagga1",
 		"translation/sr/brankokovacevic": "sutta/kn/snp/vagga1",
 		"root/pli/ms": "sutta/kn/snp/vagga1"
 	},
 	"snp1.6": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga1",
 		"translation/en/sujato": "sutta/kn/snp/vagga1",
 		"translation/pl/hardao": "sutta/kn/snp/vagga1",
 		"translation/sr/brankokovacevic": "sutta/kn/snp/vagga1",
 		"root/pli/ms": "sutta/kn/snp/vagga1"
 	},
 	"snp1.7": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga1",
 		"translation/en/sujato": "sutta/kn/snp/vagga1",
 		"translation/sr/brankokovacevic": "sutta/kn/snp/vagga1",
 		"root/pli/ms": "sutta/kn/snp/vagga1"

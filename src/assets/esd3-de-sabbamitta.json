@@ -168,7 +168,7 @@
     {
       "id": "asozial",
       "group": "Examples",
-      "links": 3
+      "links": 0
     },
     {
       "id": "auf das Auge gedroschen",
@@ -2158,7 +2158,7 @@
     {
       "id": "in Schulden geraten",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "in seinem Herzen Liebe",
@@ -3078,7 +3078,7 @@
     {
       "id": "schwer zu finden",
       "group": "Examples",
-      "links": 25
+      "links": 26
     },
     {
       "id": "schwer zu sehen",
@@ -5641,24 +5641,6 @@
       "links": 1
     },
     {
-      "id": "ud3.6",
-      "group": "ud",
-      "rank": 1,
-      "links": 3
-    },
-    {
-      "id": "sn7.1",
-      "group": "sn",
-      "rank": 2,
-      "links": 4
-    },
-    {
-      "id": "mn93",
-      "group": "mn",
-      "rank": 1,
-      "links": 8
-    },
-    {
       "id": "sn35.248",
       "group": "sn",
       "rank": 1,
@@ -6647,6 +6629,12 @@
       "group": "thig",
       "rank": 9,
       "links": 1
+    },
+    {
+      "id": "ud3.6",
+      "group": "ud",
+      "rank": 8,
+      "links": 2
     },
     {
       "id": "sn21.4",
@@ -9859,6 +9847,12 @@
       "links": 5
     },
     {
+      "id": "mn93",
+      "group": "mn",
+      "rank": 1,
+      "links": 7
+    },
+    {
       "id": "an4.19",
       "group": "an",
       "rank": 1,
@@ -11122,6 +11116,12 @@
       "id": "sn2.3",
       "group": "sn",
       "rank": 2,
+      "links": 3
+    },
+    {
+      "id": "sn7.1",
+      "group": "sn",
+      "rank": 4,
       "links": 3
     },
     {
@@ -13811,6 +13811,12 @@
       "group": "sn",
       "rank": 3,
       "links": 3
+    },
+    {
+      "id": "snp1.7",
+      "group": "snp",
+      "rank": 2,
+      "links": 2
     },
     {
       "id": "an4.122",
@@ -19547,21 +19553,6 @@
       "source": "Asket des.* Lotus",
       "target": "dn33",
       "rank": 5
-    },
-    {
-      "source": "asozial",
-      "target": "ud3.6",
-      "rank": 1
-    },
-    {
-      "source": "asozial",
-      "target": "sn7.1",
-      "rank": 2
-    },
-    {
-      "source": "asozial",
-      "target": "mn93",
-      "rank": 3
     },
     {
       "source": "auf das Auge gedroschen",
@@ -33785,18 +33776,23 @@
     },
     {
       "source": "in Schulden geraten",
-      "target": "mn39",
+      "target": "snp1.7",
       "rank": 2
     },
     {
       "source": "in Schulden geraten",
-      "target": "dn10",
+      "target": "mn39",
       "rank": 3
     },
     {
       "source": "in Schulden geraten",
-      "target": "dn2",
+      "target": "dn10",
       "rank": 4
+    },
+    {
+      "source": "in Schulden geraten",
+      "target": "dn2",
+      "rank": 5
     },
     {
       "source": "in seinem Herzen Liebe",
@@ -40475,28 +40471,33 @@
     },
     {
       "source": "schwer zu finden",
-      "target": "mn92",
+      "target": "snp1.7",
       "rank": 21
     },
     {
       "source": "schwer zu finden",
-      "target": "snp3.7",
+      "target": "mn92",
       "rank": 22
     },
     {
       "source": "schwer zu finden",
-      "target": "mn129",
+      "target": "snp3.7",
       "rank": 23
     },
     {
       "source": "schwer zu finden",
-      "target": "thig16.1",
+      "target": "mn129",
       "rank": 24
     },
     {
       "source": "schwer zu finden",
-      "target": "dn16",
+      "target": "thig16.1",
       "rank": 25
+    },
+    {
+      "source": "schwer zu finden",
+      "target": "dn16",
+      "rank": 26
     },
     {
       "source": "schwer zu sehen",
