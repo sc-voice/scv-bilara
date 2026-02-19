@@ -4158,7 +4158,7 @@
     {
       "id": "unbound",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "unburdensome",
@@ -4178,7 +4178,7 @@
     {
       "id": "unfailing",
       "group": "Examples",
-      "links": 27
+      "links": 0
     },
     {
       "id": "undirected",
@@ -4656,7 +4656,7 @@
       "id": "an3.118",
       "group": "an",
       "rank": 5,
-      "links": 3
+      "links": 2
     },
     {
       "id": "an4.61",
@@ -4890,7 +4890,7 @@
       "id": "mn60",
       "group": "mn",
       "rank": 1,
-      "links": 16
+      "links": 15
     },
     {
       "id": "an9.37",
@@ -5340,7 +5340,7 @@
       "id": "an10.217",
       "group": "an",
       "rank": 2,
-      "links": 7
+      "links": 6
     },
     {
       "id": "an10.216",
@@ -5718,7 +5718,7 @@
       "id": "thag16.4",
       "group": "thag",
       "rank": 1,
-      "links": 6
+      "links": 5
     },
     {
       "id": "sn4.25",
@@ -5748,7 +5748,7 @@
       "id": "mn82",
       "group": "mn",
       "rank": 1,
-      "links": 14
+      "links": 13
     },
     {
       "id": "sn10.12",
@@ -7374,7 +7374,7 @@
       "id": "an3.16",
       "group": "an",
       "rank": 1,
-      "links": 6
+      "links": 5
     },
     {
       "id": "sn35.120",
@@ -8526,7 +8526,7 @@
       "id": "an4.73",
       "group": "an",
       "rank": 15,
-      "links": 2
+      "links": 1
     },
     {
       "id": "an2.87-97",
@@ -8555,8 +8555,8 @@
     {
       "id": "ja6",
       "group": "ja",
-      "rank": 14,
-      "links": 2
+      "rank": 22,
+      "links": 1
     },
     {
       "id": "an6.33",
@@ -11814,7 +11814,7 @@
       "id": "an4.77",
       "group": "an",
       "rank": 1,
-      "links": 2
+      "links": 1
     },
     {
       "id": "an11.6",
@@ -16853,8 +16853,8 @@
     {
       "id": "an10.46",
       "group": "an",
-      "rank": 7,
-      "links": 2
+      "rank": 8,
+      "links": 1
     },
     {
       "id": "an3.37",
@@ -17481,6 +17481,12 @@
       "links": 1
     },
     {
+      "id": "thag4.4",
+      "group": "thag",
+      "rank": 5,
+      "links": 1
+    },
+    {
       "id": "an5.96",
       "group": "an",
       "rank": 2,
@@ -17544,108 +17550,6 @@
       "id": "thag9.1",
       "group": "thag",
       "rank": 20,
-      "links": 1
-    },
-    {
-      "id": "ja1",
-      "group": "ja",
-      "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "an4.71",
-      "group": "an",
-      "rank": 3,
-      "links": 1
-    },
-    {
-      "id": "an4.72",
-      "group": "an",
-      "rank": 4,
-      "links": 1
-    },
-    {
-      "id": "an4.74",
-      "group": "an",
-      "rank": 8,
-      "links": 1
-    },
-    {
-      "id": "an4.75",
-      "group": "an",
-      "rank": 9,
-      "links": 1
-    },
-    {
-      "id": "ja2",
-      "group": "ja",
-      "rank": 10,
-      "links": 1
-    },
-    {
-      "id": "ja3",
-      "group": "ja",
-      "rank": 11,
-      "links": 1
-    },
-    {
-      "id": "ja4",
-      "group": "ja",
-      "rank": 12,
-      "links": 1
-    },
-    {
-      "id": "ja5",
-      "group": "ja",
-      "rank": 13,
-      "links": 1
-    },
-    {
-      "id": "ja7",
-      "group": "ja",
-      "rank": 15,
-      "links": 1
-    },
-    {
-      "id": "ja8",
-      "group": "ja",
-      "rank": 16,
-      "links": 1
-    },
-    {
-      "id": "ja9",
-      "group": "ja",
-      "rank": 17,
-      "links": 1
-    },
-    {
-      "id": "ja10",
-      "group": "ja",
-      "rank": 19,
-      "links": 1
-    },
-    {
-      "id": "an4.80",
-      "group": "an",
-      "rank": 20,
-      "links": 1
-    },
-    {
-      "id": "an4.79",
-      "group": "an",
-      "rank": 21,
-      "links": 1
-    },
-    {
-      "id": "an4.78",
-      "group": "an",
-      "rank": 22,
-      "links": 1
-    },
-    {
-      "id": "an4.76",
-      "group": "an",
-      "rank": 23,
       "links": 1
     },
     {
@@ -46776,6 +46680,11 @@
       "rank": 4
     },
     {
+      "source": "unbound",
+      "target": "thag4.4",
+      "rank": 5
+    },
+    {
       "source": "unburdensome",
       "target": "an8.53",
       "rank": 1
@@ -46944,141 +46853,6 @@
       "source": "understands the eye, sights, and the fetter",
       "target": "dn22",
       "rank": 2
-    },
-    {
-      "source": "unfailing",
-      "target": "mn60",
-      "rank": 1
-    },
-    {
-      "source": "unfailing",
-      "target": "ja1",
-      "rank": 2
-    },
-    {
-      "source": "unfailing",
-      "target": "an4.71",
-      "rank": 3
-    },
-    {
-      "source": "unfailing",
-      "target": "an4.72",
-      "rank": 4
-    },
-    {
-      "source": "unfailing",
-      "target": "an3.16",
-      "rank": 5
-    },
-    {
-      "source": "unfailing",
-      "target": "an3.118",
-      "rank": 6
-    },
-    {
-      "source": "unfailing",
-      "target": "an10.46",
-      "rank": 7
-    },
-    {
-      "source": "unfailing",
-      "target": "an4.74",
-      "rank": 8
-    },
-    {
-      "source": "unfailing",
-      "target": "an4.75",
-      "rank": 9
-    },
-    {
-      "source": "unfailing",
-      "target": "ja2",
-      "rank": 10
-    },
-    {
-      "source": "unfailing",
-      "target": "ja3",
-      "rank": 11
-    },
-    {
-      "source": "unfailing",
-      "target": "ja4",
-      "rank": 12
-    },
-    {
-      "source": "unfailing",
-      "target": "ja5",
-      "rank": 13
-    },
-    {
-      "source": "unfailing",
-      "target": "ja6",
-      "rank": 14
-    },
-    {
-      "source": "unfailing",
-      "target": "ja7",
-      "rank": 15
-    },
-    {
-      "source": "unfailing",
-      "target": "ja8",
-      "rank": 16
-    },
-    {
-      "source": "unfailing",
-      "target": "ja9",
-      "rank": 17
-    },
-    {
-      "source": "unfailing",
-      "target": "an4.77",
-      "rank": 18
-    },
-    {
-      "source": "unfailing",
-      "target": "ja10",
-      "rank": 19
-    },
-    {
-      "source": "unfailing",
-      "target": "an4.80",
-      "rank": 20
-    },
-    {
-      "source": "unfailing",
-      "target": "an4.79",
-      "rank": 21
-    },
-    {
-      "source": "unfailing",
-      "target": "an4.78",
-      "rank": 22
-    },
-    {
-      "source": "unfailing",
-      "target": "an4.76",
-      "rank": 23
-    },
-    {
-      "source": "unfailing",
-      "target": "an4.73",
-      "rank": 24
-    },
-    {
-      "source": "unfailing",
-      "target": "an10.217",
-      "rank": 25
-    },
-    {
-      "source": "unfailing",
-      "target": "thag16.4",
-      "rank": 26
-    },
-    {
-      "source": "unfailing",
-      "target": "mn82",
-      "rank": 27
     },
     {
       "source": "undirected",
