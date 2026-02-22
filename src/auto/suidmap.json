@@ -6,6 +6,7 @@
 		"translation/fr/sekha": "sutta/an/an1",
 		"translation/jpn/kaz": "sutta/an/an1",
 		"translation/pt/laera-quaresma": "sutta/an/an1",
+		"translation/ru/sv": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.11-20": {
@@ -14424,6 +14425,7 @@
 	"sn3.22": {
 		"translation/de/sabbamitta": "sutta/sn/sn3",
 		"translation/en/sujato": "sutta/sn/sn3",
+		"translation/fr/christelle": "sutta/sn/sn3",
 		"translation/ru/sv": "sutta/sn/sn3",
 		"translation/sr/brankokovacevic": "sutta/sn/sn3",
 		"root/pli/ms": "sutta/sn/sn3"
