@@ -63,7 +63,7 @@ const bilaraData = deExamples.bilaraData;
       trilingual: true,
     });
   });
-  it("TESTTESTexampleSuttas()", async()=>{
+  it("exampleSuttas()", async()=>{
     let lang = 'de';
     let es = await new ExampleV2({lang}).initialize();
     let res = await es.exampleSuttas('wurzel des leidens');

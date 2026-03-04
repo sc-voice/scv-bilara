@@ -165,7 +165,7 @@
             en: '2 ',
         });
     });
-    it("fillWordMap(...) can train a FuzzyWordSet", ()=>{
+    it("TESTTESTfillWordMap(...) can train a FuzzyWordSet", ()=>{
         var fws = new FuzzyWordSet();
         var dn33 = new SegDoc({
             bilaraPath: 'data/dn33.json',
@@ -177,11 +177,13 @@
         dn33pli.loadSync(__dirname);
 
         // Build wordmap 
-        var wordMap = {};
+        let wordMap = {}
+        //should(wordMap.should).equal(undefined); // should library object pollution!
         var wm = dn33.fillWordMap(wordMap, false); // English includes Pali
-        // Pali has no English, so that must come last
-        var wm = dn33pli.fillWordMap(wordMap, true, true); 
         should(wm).equal(wordMap);
+
+        // Pali has no English, so that must come last
+        dn33pli.fillWordMap(wordMap, true, true); 
         should(wm).properties({
             'ekam': true,
             'ekaṃ': true,
@@ -197,7 +199,8 @@
         should(fws.contains('anicca')).equal(true);
         should(fws.contains('radiance')).equal(false);
         should(fws.contains('ratti')).equal(true);
-        should(JSON.stringify(wordMap).length).equal(109070); // fat
+        let sWordMap = JSON.stringify(wordMap);
+        should(sWordMap.length).equal(109070); // fat
         should(JSON.stringify(fws).length).equal(27629); // skinny
         should(iterations).equal(6);
     });

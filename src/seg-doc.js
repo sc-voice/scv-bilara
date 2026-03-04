@@ -94,7 +94,7 @@
             scids.forEach(scid => {
                 var text = segMap[scid];
                 text.split(' ').forEach(t => {
-                    var w = unicode.stripSymbols(t.toLowerCase());
+                    let w = unicode.stripSymbols(t.toLowerCase());
                     wordMap[w] = isMember;
                     romanize && (wordMap[unicode.romanize(w)] = isMember);
                 });

@@ -8,6 +8,7 @@
     "test": "test"
   },
   "dependencies": {
+    "@sc-voice/vitest": "^4.0.1",
     "check-node-version": "^4.0.1",
     "js-ebt": "^1.3.0",
     "json5": "^2.1.3",
@@ -38,6 +39,8 @@
     "test:verbose": "scripts/clean-test; mocha --inline-diffs",
     "test:one": "scripts/clean-test; mocha --inline-diffs -g TESTTEST",
     "test:watch": "mocha -w --inline-diffs",
+    "vtest": "vitest run --config vtest/vitest.config.mjs --fileParallelism=false",
+    "vtest:test": "vitest --config vtest/vitest.config.mjs --fileParallelism=false",
     "version": "node -e \"console.log(require('./package.json').version);\""
   },
   "repository": {

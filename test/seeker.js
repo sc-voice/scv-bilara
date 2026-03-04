@@ -440,7 +440,7 @@ typeof describe === "function" &&
       );
       should(mld0.score).equal(10.011);
     });
-    it("TESTTESTfind(...) scores relevance: on fire", async () => {
+    it("find(...) scores relevance: on fire", async () => {
       var skr = await new Seeker({
         lang: "en", // English default
       }).initialize();
