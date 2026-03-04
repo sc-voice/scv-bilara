@@ -198,6 +198,7 @@
           'translation/en/sujato': 'translation/en/sujato/sutta/sn/sn22/sn22.56_translation-en-sujato.json',
           'translation/de/sabbamitta': 'translation/de/sabbamitta/sutta/sn/sn22/sn22.56_translation-de-sabbamitta.json',
           //'translation/en/davis': 'translation/en/davis/sutta/sn/sn22/sn22.56_translation-en-davis.json',
+          'translation/ru/o': 'translation/ru/o/sutta/sn/sn22/sn22.56_translation-ru-o.json',
           'root/pli/ms': 'root/pli/ms/sutta/sn/sn22/sn22.56_root-pli-ms.json'
         });
     });

@@ -9,13 +9,13 @@
   },
   "dependencies": {
     "check-node-version": "^4.0.1",
-    "js-ebt": "^1.0.1",
+    "js-ebt": "^1.3.0",
     "json5": "^2.1.3",
-    "log-instance": "^1.8.0",
-    "memo-again": "^0.11.0",
-    "merkle-json": "^2.13.0",
+    "log-instance": "^1.9.0",
+    "memo-again": "^0.12.0",
+    "merkle-json": "^2.15.0",
     "scv-esm": "^1.133.3",
-    "suttacentral-api": "^2.24.0",
+    "suttacentral-api": "^2.25.0",
     "tmp": "^0.2.3"
   },
   "devDependencies": {
