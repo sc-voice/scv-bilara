@@ -1,27 +1,29 @@
+import { describe, it, expect, beforeAll } from '@sc-voice/vitest';
 import PKG_INDEX from '../index.js';
 const {
   ExampleV2,
   BilaraData,
 } = PKG_INDEX;
-import should from 'should';
 import fs from 'fs';
 import path from 'path';
 
-const deExamples = await new ExampleV2({lang:'de'}).initialize();
-const bilaraData = deExamples.bilaraData;
+describe.sequential("example-v2", function () {
+  let deExamples;
+  let bilaraData;
 
-(typeof describe==='function') && describe("example-v2", function () {
+  beforeAll(async () => {
+    deExamples = await new ExampleV2({lang:'de'}).initialize();
+    bilaraData = deExamples.bilaraData;
+  });
   it("default ctor", ()=>{
     let es = new ExampleV2();
-    should(es).properties({
-      lang: 'en',
-      author: 'sujato',
-      category: 'sutta',
-      branch: 'published',
-      repository: 'ebt-data',
-      gitAccount: 'ebt-site',
-      memoize: true,
-    });
+    expect(es).toHaveProperty('lang', 'en');
+    expect(es).toHaveProperty('author', 'sujato');
+    expect(es).toHaveProperty('category', 'sutta');
+    expect(es).toHaveProperty('branch', 'published');
+    expect(es).toHaveProperty('repository', 'ebt-data');
+    expect(es).toHaveProperty('gitAccount', 'ebt-site');
+    expect(es).toHaveProperty('memoize', true);
   });
   it("custom ctor", ()=>{
     let bilaraData = new BilaraData();
@@ -32,42 +34,43 @@ const bilaraData = deExamples.bilaraData;
     let repository = 'bilara-data';
     let memoize = false;
     let es = new ExampleV2({
-      lang, author, category, gitAccount, repository, bilaraData, 
-      memoize,
-    });
-    should(es).properties({
       lang, author, category, gitAccount, repository, bilaraData,
       memoize,
     });
+    expect(es).toHaveProperty('lang', lang);
+    expect(es).toHaveProperty('author', author);
+    expect(es).toHaveProperty('category', category);
+    expect(es).toHaveProperty('gitAccount', gitAccount);
+    expect(es).toHaveProperty('repository', repository);
+    expect(es).toHaveProperty('bilaraData', bilaraData);
+    expect(es).toHaveProperty('memoize', memoize);
   });
   it("custom ctor de", async()=>{
     let lang = 'de';
     let es = new ExampleV2({lang});
-    should(es).properties({
-      lang,
-      author: 'sabbamitta',
-      category: 'sutta',
-      gitAccount: 'ebt-site',
-      repository: 'ebt-data', }); let { bilaraData } = es;
-    should(es.initialized).equal(false);
-    should(bilaraData.repo).equal(
+    expect(es).toHaveProperty('lang', lang);
+    expect(es).toHaveProperty('author', 'sabbamitta');
+    expect(es).toHaveProperty('category', 'sutta');
+    expect(es).toHaveProperty('gitAccount', 'ebt-site');
+    expect(es).toHaveProperty('repository', 'ebt-data');
+    let { bilaraData } = es;
+    expect(es.initialized).toBe(false);
+    expect(bilaraData.repo).toBe(
       'https://github.com/ebt-site/ebt-data.git');
 
-    should(await es.initialize()).equal(es);
-    should(es.initialized).equal(true);
+    expect(await es.initialize()).toBe(es);
+    expect(es.initialized).toBe(true);
     let { seeker } = es;
-    should(seeker).properties({
-      maxDoc: 100,
-      minLang: 2,
-      bilaraData: es.bilaraData,
-      trilingual: true,
-    });
+    expect(seeker).toHaveProperty('maxDoc', 100);
+    expect(seeker).toHaveProperty('minLang', 2);
+    expect(seeker).toHaveProperty('bilaraData', es.bilaraData);
+    expect(seeker).toHaveProperty('trilingual', true);
   });
   it("exampleSuttas()", async()=>{
     let lang = 'de';
     let es = await new ExampleV2({lang}).initialize();
     let res = await es.exampleSuttas('wurzel des leidens');
-    should.deepEqual(res.map(s=>s.sutta_uid), [
+    expect(res.map(s=>s.sutta_uid)).toEqual([
       'sn42.11', 'mn105', 'mn1', 'sn56.21', 'mn116', 'mn66', 'dn16',
     ]);
   });
@@ -78,7 +81,7 @@ const bilaraData = deExamples.bilaraData;
       'ein schlectes Beispeil',
     ];
     let res = await deExamples.suttasOfExamples(examples);
-    should.deepEqual(res, {
+    expect(res).toEqual({
       'ein schlectes Beispeil': [],
       'wurzel des leidens': [
         'sn42.11', 'mn105', 'mn1', 'sn56.21', 'mn116', 'mn66', 'dn16'
@@ -89,12 +92,12 @@ const bilaraData = deExamples.bilaraData;
     let egPath = deExamples.langAuthorPath();
     let text = (await fs.promises.readFile(egPath)).toString();
     let lines = text.split('\n');
-    should(lines[0]).equal('aber meine Dame');
-    should(lines[lines.length-2]).equal('zwei Toren');
+    expect(lines[0]).toBe('aber meine Dame');
+    expect(lines[lines.length-2]).toBe('zwei Toren');
   });
   it("examples()", async ()=>{
     let lines = await deExamples.examples();
-    should(lines[0]).equal('aber meine Dame');
-    should(lines[lines.length-2]).equal('zwei Toren');
+    expect(lines[0]).toBe('aber meine Dame');
+    expect(lines[lines.length-2]).toBe('zwei Toren');
   });
 });
