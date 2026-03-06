@@ -1,0 +1,69 @@
+{
+  "completedActions" : [
+    {
+      "name" : "Convert: find(...) is cached (lines 793-819) - Test memoization behavior",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Convert: RegExp knows about word boundaries (line 1172) - Regex word boundary test",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Convert: RegExp matches ubung (line 575) - Unicode regex handling",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Convert: tipitakaRegExp(tc) => regexp for paths (lines 541-574) - Tipitaka category patterns",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Convert: patternLanguage(...) => search language context (lines 302-340) - Pattern analysis",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Convert: find(...) ignores unpublished (lines 341-374) - Filtering behavior",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Convert: find(...) ignores translation stubs (lines 580-597) - Stub filtering",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Convert: find(...) ignores chinese (lines 598-606) - Chinese filtering",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Convert: find(...) scores relevance (lines 262-281) - Scoring logic",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Convert: find(...) scores relevance: on fire (lines 282-301) - Fire phrase scoring",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Convert: isExample (lines 820-841) - Example detection",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Convert: isExample (cached) (lines 842-865) - Cached example detection",
+      "test" : "update unit tests"
+    }
+  ],
+  "createdAt" : "2026-03-06T01:45:46Z",
+  "id" : "019CC0D2-7DF7-7000-B8CC-167FC309CAA5",
+  "name" : "Convert 12 core utility tests from s4r-tbd to s4r-core",
+  "plannedActions" : [
+
+  ],
+  "references" : [
+    {
+      "relevance" : 1,
+      "text" : "After each test passes in s4r-core.mjs, REMOVE the corresponding test from the commented block in vtest\/s4r-tbd.mjs. This keeps s4r-tbd.mjs clean and prevents duplicate tests. Only the DUMMY TEST should remain in s4r-tbd when done."
+    }
+  ],
+  "requiredTasks" : [
+
+  ],
+  "summary" : "Move and convert caching, regex, pattern language, filtering, scoring, and example tests from commented section of vtest\/s4r-tbd.mjs to vtest\/s4r-core.mjs. Convert should.js to @sc-voice\/vitest syntax. Use boring approach: ONE test at a time.",
+  "updatedAt" : "2026-03-06T02:26:23Z"
+}

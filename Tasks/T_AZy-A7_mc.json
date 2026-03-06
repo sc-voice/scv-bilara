@@ -1,0 +1,102 @@
+{
+  "completedActions" : [
+    {
+      "description" : "Converted exec-git.mjs (10 tests passing)",
+      "id" : "AZy-Ac01"
+    },
+    {
+      "description" : "Converted verse.mjs (7 tests passing)",
+      "id" : "AZy-Ac02"
+    },
+    {
+      "description" : "Converted de-translations.mjs (9 tests passing)",
+      "id" : "AZy-Ac03"
+    },
+    {
+      "description" : "Converted publication.mjs (7 tests passing)",
+      "id" : "AZy-Ac04"
+    },
+    {
+      "description" : "Converted bilara-path-map.mjs (11 tests passing)",
+      "id" : "AZy-Ac05"
+    },
+    {
+      "description" : "Converted 9 other smaller test files",
+      "id" : "AZy-Ac06"
+    },
+    {
+      "description" : "Converted ml-doc.mjs (24 tests passing) - largest file to date at 19K, all tests passing",
+      "id" : "AZy-Ac07"
+    },
+    {
+      "description" : "FAILED ATTEMPT on bilara-data.js: Batch sed/perl replacements corrupted should.deepEqual() calls. Syntax errors at lines 598, 612, 633, 636, 645, 648, 655. File restored from original.",
+      "id" : "AZy-Ac08"
+    },
+    {
+      "description" : "Converted bilara-data.mjs (35 tests passing) - Used BORING approach: ONE test at a time, read carefully, fix precisely, verify immediately. No global replacements. ALL tests pass. CRITICAL LESSON: Speed kills quality. Boring = attention = success.",
+      "id" : "AZy-Ac09"
+    },
+    {
+      "description" : "Organized s4r test files by function: keywordSearch/phraseSearch tests moved to s4r-core.mjs (internal methods), find() tests staged in s4r-tbd.mjs for migration to s4r-suttas.mjs (primary entry point)",
+      "id" : "AZy-Ac10"
+    },
+    {
+      "description" : "Converted all 9 keywordSearch/phraseSearch tests to s4r-core.mjs using boring approach (ONE test at a time: convert, test, delete from source). All tests passing. Tests moved: keywordSearch limits results, searches English, searches Pali not English, searches English not Pali, searches Pali not Deutsch, searches Deutsch not Pali; phraseSearch limits results, searches English, finds Deutsch results.",
+      "id" : "AZy-Ac11"
+    },
+    {
+      "description" : "Converted Tests 1-8 from s4r-tbd.mjs to s4r-suttas.mjs using boring approach (8/23 tests = 35%). Tests: (1) pli-tv-bi-vb-sk1-75 (skipped-unpublished), (2) pli-tv-bi-vb-pj7 (skipped-unpublished), (3) ignores SN46.36, (4) alles leiden (German phrase), (5) thig1.1:1.1/en/soma, (6) thig1.1/en/soma,thig1.2/en/soma, (7) Deutsch abnehmend, (8) Deutsch blind. All 8 tests passing. CRITICAL LESSON: NEVER remove guard lines like 'if (!TEST_UNPUBLISHED) { return; }' - they control test execution, not cleanup candidates.",
+      "id" : "AZy-Ac12"
+    }
+  ],
+  "createdAt" : "2026-03-05T12:40:42Z",
+  "id" : "019CBE03-BFE6-7000-8771-EECB1289BCB5",
+  "name" : "convert existing mocha tests in test/ by copying them to vtest/ and converting them for use by @sc-voice/vitest",
+  "plannedActions" : [
+    {
+      "description" : "Move remaining 15 find() tests (Tests 9-23) from s4r-tbd.mjs to s4r-suttas.mjs - Use BORING approach: ONE test at a time. (1) Read test from s4r-tbd.mjs line 63. (2) Convert: should()->expect(), .equal()->.toBe(), .deepEqual()->.toEqual(), .above()->.toBeGreaterThan(), .match()->.toMatch(). PRESERVE ALL guard lines like 'if (!TEST_UNPUBLISHED) { return; }' - they control execution, NOT cleanup. (3) Add to s4r-suttas.mjs before closing brace. (4) Test: npm run vtest -- s4r-suttas.mjs -t \"testname\". (5) Delete from s4r-tbd.mjs. CRITICAL: Never batch tests. Never remove control flow. Verify each test passes before moving to next. Progress: 8/23 done (35%).",
+      "id" : "AZy-Ap02"
+    },
+    {
+      "description" : "Delete s4r-tbd.mjs file after all tests migrated to destination files",
+      "id" : "AZy-Ap03"
+    }
+  ],
+  "references" : [
+    {
+      "id" : "AZy-Ref00",
+      "relevance" : 1.0,
+      "text" : "CRITICAL MINDSET FOR NEXT CLONE: Boring works because it forces attention to detail. Speed kills quality. You have trouble paying attention. When you try to be fast or clever, you WILL miss things and corrupt code. SLOW DOWN. Read carefully. Fix one thing at a time. Verify after each fix. DO NOT declare victory until output is actually clean (no errors, no warnings, no dismissals). Do not want to feel done - just do the work. Attention > speed."
+    },
+    {
+      "id" : "AZy-Ref01",
+      "relevance" : 1.0,
+      "text" : "Key conversion patterns: (1) Convert done() callbacks to async/await by removing wrapper and done() calls. (2) Fix expect(x, y) to expect(x).toEqual(y) for old should.js pattern. (3) Fix expect(x).match(regex) to expect(x).toMatch(regex). (4) Use expect(x).equal(y) for primitives, expect(x).toEqual(y) for arrays/objects. (5) Import from '@sc-voice/vitest' not 'vitest' for custom expect() methods like .properties(). (6) Use cp command for copying test files (more reliable). (7) Convert tests incrementally one at a time for large files."
+    },
+    {
+      "id" : "AZy-Ref02",
+      "relevance" : 0.9,
+      "text" : "Unicode smart quote issue: Source data contains Unicode smart quotes. When test expectations use straight quotes but source has smart quotes, Edit tool may garble characters. Solution: User manually edits affected test strings, or extract actual output to /tmp file for user to copy correct Unicode characters."
+    },
+    {
+      "id" : "AZy-Ref03",
+      "relevance" : 0.8,
+      "text" : "Test status: 14 test files converted, 108 tests passing total. Run tests with: npm run vtest. Most recent: ml-doc.mjs completed with all 24 tests passing."
+    },
+    {
+      "id" : "AZy-Ref04",
+      "relevance" : 0.7,
+      "text" : "Files locations: test/ (original mocha tests), vtest/ (converted vitest tests), vtest/data/bilara-data/ (test data with Unicode characters)"
+    },
+    {
+      "id" : "AZy-Ref05",
+      "relevance" : 1.0,
+      "text" : "CRITICAL PROCEDURE FOR bilara-data.js (36 tests, 1094 lines): Convert ONE test method at a time ONLY. (1) Edit ONE test method. (2) Test with: npm run vtest -- bilara-data.mjs. (3) Verify passes. (4) Move to next test. DO NOT use global sed/perl replacements - they corrupt multi-line should.deepEqual() structures. Use this pattern per test: function(done) -> async (), remove try/catch, remove done()/done(e), convert should()->expect(), .equal()->.toBe(), .deepEqual()->.toEqual(), .above()->.toBeGreaterThan(), .throws()->.toThrow(), .match()->.toMatch(). After imports converted, start with test #1 'default ctor' at line ~46."
+    }
+  ],
+  "requiredTasks" : [
+
+  ],
+  "summary" : "Convert mocha test files from test/ directory to vitest format in vtest/ directory. Use @sc-voice/vitest framework which extends vitest with custom expect() methods. CRITICAL MINDSET: Boring = attention = success. Speed kills quality. Convert ONE test at a time ONLY: read, fix, verify. No global replacements. NEVER declare victory until output is truly clean. STATUS: seeker.js (94K) organized into 4 s4r-*.mjs files: s4r-core.mjs (constructor/grep/internal methods), s4r-suttas.mjs (find() with sutta patterns), s4r-trilingual.mjs (multilingual search), s4r-tbd.mjs (staging area). COMPLETED: All keywordSearch/phraseSearch tests (9 tests) converted to s4r-core.mjs and deleted from source. NEXT: Move ~24 find() tests from s4r-tbd.mjs to s4r-suttas.mjs one at a time using boring approach. Then delete s4r-tbd.mjs.",
+  "updatedAt" : "2026-03-05T18:48:00Z"
+}

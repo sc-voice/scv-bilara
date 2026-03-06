@@ -1,0 +1,141 @@
+{
+  "completedActions" : [
+    {
+      "name" : "Remove duplicate: find(...) finds dhp2",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: find(...) finds cp35\/de",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: find(...) finds thag1.10",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: find(...) orders sutta references found",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: find(...) finds sutta references",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: find(...) finds mn1\/en\/sujato",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: find(maxdoc)",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: find(...) finds an1.2",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: find({minLang}) => minLang 2",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: find({minLang:3}) root of suffering",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: find({minLang:2}) root of suffering",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: find(...) => finds jhana",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: find(...) => finds phrase",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: find(...) => finds ubung",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: find(...) => finds searchLang phrase",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: find(...) => accepts embedded options",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: find(...) => finds all keywords",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: find() keywords: wurzel leidens",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: find(...) => finds segments with all keywords",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: RegExp knows about word boundaries",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: find(...) => de, Benares",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: find(...) => no first point",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: findArgs(...) => aggaḷaṃ,",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: findArgs(...) => thig1.1..., thig1.2...",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: findArgs(...) handls jpn",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: findArgs(...) handles German",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: findArgs(...) author",
+      "test" : "update unit tests"
+    },
+    {
+      "name" : "Remove duplicate: find(...) finds an1.1 all types",
+      "test" : "update unit tests"
+    }
+  ],
+  "createdAt" : "2026-03-06T00:56:10Z",
+  "id" : "019CC0A5-16EA-7000-A0AE-1A9F5EE58CF3",
+  "name" : "remove duplicates of s4r-suttas.mjs tests that are still commented out in sr4-tbd.mjs",
+  "plannedActions" : [
+
+  ],
+  "references" : [
+    {
+      "relevance" : 1,
+      "text" : "CONTEXT: s4r-tbd.mjs is a staging file (copy of test\/seeker.js). The 28 actions listed are tests already successfully converted to s4r-suttas.mjs. These duplicate tests must be removed from s4r-tbd.mjs."
+    },
+    {
+      "relevance" : 1,
+      "text" : "PROCESS: For each action, search s4r-tbd.mjs for the test name. Verify it exists (likely commented out in \/* *\/ block starting ~line 62). Delete the complete test function. Verify deletion. Never batch delete - one test at a time only."
+    },
+    {
+      "relevance" : 1,
+      "text" : "CRITICAL: Use boring approach - go slowly, verify carefully, one test at a time. Do NOT close eyes and just delete. Check each line before removal. This is how your previous clone succeeded with other files."
+    }
+  ],
+  "requiredTasks" : [
+
+  ],
+  "summary" : "",
+  "updatedAt" : "2026-03-06T01:24:46Z"
+}
