@@ -403,7 +403,7 @@
     {
       "id": "Bevorzugen und Zurückweisen",
       "group": "Examples",
-      "links": 5
+      "links": 6
     },
     {
       "id": "bewacht.* die Tore der Sinne",
@@ -458,7 +458,7 @@
     {
       "id": "bösartige Unholde",
       "group": "Examples",
-      "links": 3
+      "links": 0
     },
     {
       "id": "brach in Tränen aus",
@@ -708,7 +708,7 @@
     {
       "id": "den sicheren Pfad",
       "group": "Examples",
-      "links": 9
+      "links": 10
     },
     {
       "id": "der das Aufhören des Leidens sieht",
@@ -1338,7 +1338,7 @@
     {
       "id": "erschlagen",
       "group": "Examples",
-      "links": 17
+      "links": 18
     },
     {
       "id": "Anfangspunkt",
@@ -2548,7 +2548,7 @@
     {
       "id": "merkmalslos",
       "group": "Examples",
-      "links": 24
+      "links": 25
     },
     {
       "id": "mich sehne und die ich liebe",
@@ -2733,7 +2733,7 @@
     {
       "id": "Neigung zur Einbildung",
       "group": "Examples",
-      "links": 22
+      "links": 23
     },
     {
       "id": "neun Dinge.* entwickelt werden",
@@ -7105,6 +7105,12 @@
       "links": 5
     },
     {
+      "id": "snp2.13",
+      "group": "snp",
+      "rank": 6,
+      "links": 2
+    },
+    {
       "id": "sn35.132",
       "group": "sn",
       "rank": 1,
@@ -7493,24 +7499,6 @@
       "group": "sn",
       "rank": 6,
       "links": 1
-    },
-    {
-      "id": "an5.249",
-      "group": "an",
-      "rank": 1,
-      "links": 1
-    },
-    {
-      "id": "an3.56",
-      "group": "an",
-      "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "an5.77",
-      "group": "an",
-      "rank": 1,
-      "links": 4
     },
     {
       "id": "sn42.5",
@@ -11200,6 +11188,12 @@
       "id": "sn1.76",
       "group": "sn",
       "rank": 17,
+      "links": 1
+    },
+    {
+      "id": "snp2.7",
+      "group": "snp",
+      "rank": 18,
       "links": 1
     },
     {
@@ -14983,6 +14977,12 @@
       "links": 2
     },
     {
+      "id": "snp2.11",
+      "group": "snp",
+      "rank": 18,
+      "links": 2
+    },
+    {
       "id": "sn36.20",
       "group": "sn",
       "rank": 4,
@@ -15923,6 +15923,12 @@
       "group": "sn",
       "rank": 10,
       "links": 1
+    },
+    {
+      "id": "an5.77",
+      "group": "an",
+      "rank": 1,
+      "links": 3
     },
     {
       "id": "sn20.7",
@@ -21121,6 +21127,11 @@
       "rank": 5
     },
     {
+      "source": "Bevorzugen und Zurückweisen",
+      "target": "snp2.13",
+      "rank": 6
+    },
+    {
       "source": "bewacht.* die Tore der Sinne",
       "target": "sn35.132",
       "rank": 1
@@ -21654,21 +21665,6 @@
       "source": "Bogenharfe",
       "target": "dn16",
       "rank": 9
-    },
-    {
-      "source": "bösartige Unholde",
-      "target": "an5.249",
-      "rank": 1
-    },
-    {
-      "source": "bösartige Unholde",
-      "target": "an3.56",
-      "rank": 2
-    },
-    {
-      "source": "bösartige Unholde",
-      "target": "an5.77",
-      "rank": 3
     },
     {
       "source": "brach in Tränen aus",
@@ -23534,6 +23530,11 @@
       "source": "den sicheren Pfad",
       "target": "an3.22",
       "rank": 9
+    },
+    {
+      "source": "den sicheren Pfad",
+      "target": "snp2.13",
+      "rank": 10
     },
     {
       "source": "der das Aufhören des Leidens sieht",
@@ -27774,6 +27775,11 @@
       "source": "erschlagen",
       "target": "sn1.76",
       "rank": 17
+    },
+    {
+      "source": "erschlagen",
+      "target": "snp2.7",
+      "rank": 18
     },
     {
       "source": "Anfangspunkt",
@@ -36887,38 +36893,43 @@
     },
     {
       "source": "merkmalslos",
-      "target": "sn47.9",
+      "target": "snp2.11",
       "rank": 18
     },
     {
       "source": "merkmalslos",
-      "target": "sn41.6",
+      "target": "sn47.9",
       "rank": 19
     },
     {
       "source": "merkmalslos",
-      "target": "an3.183-352",
+      "target": "sn41.6",
       "rank": 20
     },
     {
       "source": "merkmalslos",
-      "target": "sn43.12",
+      "target": "an3.183-352",
       "rank": 21
     },
     {
       "source": "merkmalslos",
-      "target": "mn44",
+      "target": "sn43.12",
       "rank": 22
     },
     {
       "source": "merkmalslos",
-      "target": "thag21.1",
+      "target": "mn44",
       "rank": 23
     },
     {
       "source": "merkmalslos",
-      "target": "dn16",
+      "target": "thag21.1",
       "rank": 24
+    },
+    {
+      "source": "merkmalslos",
+      "target": "dn16",
+      "rank": 25
     },
     {
       "source": "Milch und Wasser",
@@ -38132,13 +38143,18 @@
     },
     {
       "source": "Neigung zur Einbildung",
-      "target": "mn72",
+      "target": "snp2.11",
       "rank": 21
     },
     {
       "source": "Neigung zur Einbildung",
-      "target": "thag21.1",
+      "target": "mn72",
       "rank": 22
+    },
+    {
+      "source": "Neigung zur Einbildung",
+      "target": "thag21.1",
+      "rank": 23
     },
     {
       "source": "neun Dinge.* entwickelt werden",
