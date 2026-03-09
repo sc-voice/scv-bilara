@@ -1298,7 +1298,7 @@
     {
       "id": "forerunner and precursor",
       "group": "Examples",
-      "links": 10
+      "links": 0
     },
     {
       "id": "for faith",
@@ -4023,7 +4023,7 @@
     {
       "id": "to endure",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "to go beyond suffering",
@@ -4703,55 +4703,55 @@
     {
       "id": "sn45.57-61",
       "group": "sn",
-      "rank": 5,
-      "links": 2
+      "rank": 13,
+      "links": 1
     },
     {
-      "id": "sn45.64-68",
+      "id": "sn45.50-54",
       "group": "sn",
       "rank": 14,
       "links": 1
     },
     {
-      "id": "sn45.71-75",
+      "id": "sn45.64-68",
       "group": "sn",
       "rank": 15,
       "links": 1
     },
     {
-      "id": "an5.65",
-      "group": "an",
+      "id": "sn45.71-75",
+      "group": "sn",
       "rank": 16,
       "links": 1
     },
     {
-      "id": "an5.66",
+      "id": "an5.65",
       "group": "an",
       "rank": 17,
       "links": 1
     },
     {
-      "id": "sn45.69",
-      "group": "sn",
+      "id": "an5.66",
+      "group": "an",
       "rank": 18,
-      "links": 2
+      "links": 1
     },
     {
-      "id": "sn45.83",
+      "id": "sn45.69",
       "group": "sn",
       "rank": 19,
       "links": 2
     },
     {
-      "id": "sn45.55",
+      "id": "sn45.83",
       "group": "sn",
-      "rank": 3,
-      "links": 3
+      "rank": 20,
+      "links": 2
     },
     {
-      "id": "sn45.50-54",
+      "id": "sn45.55",
       "group": "sn",
-      "rank": 7,
+      "rank": 21,
       "links": 2
     },
     {
@@ -11391,48 +11391,6 @@
       "links": 4
     },
     {
-      "id": "an10.121",
-      "group": "an",
-      "rank": 1,
-      "links": 1
-    },
-    {
-      "id": "sn56.37",
-      "group": "sn",
-      "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "sn45.56",
-      "group": "sn",
-      "rank": 4,
-      "links": 2
-    },
-    {
-      "id": "sn45.49",
-      "group": "sn",
-      "rank": 6,
-      "links": 2
-    },
-    {
-      "id": "sn46.12",
-      "group": "sn",
-      "rank": 8,
-      "links": 2
-    },
-    {
-      "id": "sn46.13",
-      "group": "sn",
-      "rank": 9,
-      "links": 2
-    },
-    {
-      "id": "sn46.48",
-      "group": "sn",
-      "rank": 10,
-      "links": 3
-    },
-    {
       "id": "sn12.23",
       "group": "sn",
       "rank": 2,
@@ -12681,6 +12639,12 @@
       "links": 1
     },
     {
+      "id": "sn45.56",
+      "group": "sn",
+      "rank": 36,
+      "links": 1
+    },
+    {
       "id": "sn45.77",
       "group": "sn",
       "rank": 37,
@@ -12717,6 +12681,12 @@
       "links": 1
     },
     {
+      "id": "sn45.49",
+      "group": "sn",
+      "rank": 43,
+      "links": 1
+    },
+    {
       "id": "sn45.152",
       "group": "sn",
       "rank": 45,
@@ -12726,6 +12696,24 @@
       "id": "sn46.11",
       "group": "sn",
       "rank": 3,
+      "links": 2
+    },
+    {
+      "id": "sn46.12",
+      "group": "sn",
+      "rank": 47,
+      "links": 1
+    },
+    {
+      "id": "sn46.13",
+      "group": "sn",
+      "rank": 48,
+      "links": 1
+    },
+    {
+      "id": "sn46.48",
+      "group": "sn",
+      "rank": 28,
       "links": 2
     },
     {
@@ -17343,6 +17331,12 @@
       "links": 1
     },
     {
+      "id": "sn1.17",
+      "group": "sn",
+      "rank": 3,
+      "links": 1
+    },
+    {
       "id": "an4.264",
       "group": "an",
       "rank": 5,
@@ -18531,42 +18525,42 @@
     },
     {
       "source": "accomplishment in",
-      "target": "sn45.64-68",
+      "target": "sn45.50-54",
       "rank": 14
     },
     {
       "source": "accomplishment in",
-      "target": "sn45.71-75",
+      "target": "sn45.64-68",
       "rank": 15
     },
     {
       "source": "accomplishment in",
-      "target": "an5.65",
+      "target": "sn45.71-75",
       "rank": 16
     },
     {
       "source": "accomplishment in",
-      "target": "an5.66",
+      "target": "an5.65",
       "rank": 17
     },
     {
       "source": "accomplishment in",
-      "target": "sn45.69",
+      "target": "an5.66",
       "rank": 18
     },
     {
       "source": "accomplishment in",
-      "target": "sn45.83",
+      "target": "sn45.69",
       "rank": 19
     },
     {
       "source": "accomplishment in",
-      "target": "sn45.55",
+      "target": "sn45.83",
       "rank": 20
     },
     {
       "source": "accomplishment in",
-      "target": "sn45.50-54",
+      "target": "sn45.55",
       "rank": 21
     },
     {
@@ -27903,56 +27897,6 @@
       "source": "food given in faith",
       "target": "dn10",
       "rank": 4
-    },
-    {
-      "source": "forerunner and precursor",
-      "target": "an10.121",
-      "rank": 1
-    },
-    {
-      "source": "forerunner and precursor",
-      "target": "sn56.37",
-      "rank": 2
-    },
-    {
-      "source": "forerunner and precursor",
-      "target": "sn45.55",
-      "rank": 3
-    },
-    {
-      "source": "forerunner and precursor",
-      "target": "sn45.56",
-      "rank": 4
-    },
-    {
-      "source": "forerunner and precursor",
-      "target": "sn45.57-61",
-      "rank": 5
-    },
-    {
-      "source": "forerunner and precursor",
-      "target": "sn45.49",
-      "rank": 6
-    },
-    {
-      "source": "forerunner and precursor",
-      "target": "sn45.50-54",
-      "rank": 7
-    },
-    {
-      "source": "forerunner and precursor",
-      "target": "sn46.12",
-      "rank": 8
-    },
-    {
-      "source": "forerunner and precursor",
-      "target": "sn46.13",
-      "rank": 9
-    },
-    {
-      "source": "forerunner and precursor",
-      "target": "sn46.48",
-      "rank": 10
     },
     {
       "source": "for faith",
@@ -46063,6 +46007,11 @@
       "source": "to endure",
       "target": "an7.36",
       "rank": 2
+    },
+    {
+      "source": "to endure",
+      "target": "sn1.17",
+      "rank": 3
     },
     {
       "source": "to go beyond suffering",
