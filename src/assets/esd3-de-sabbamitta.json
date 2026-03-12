@@ -258,7 +258,7 @@
     {
       "id": "äußere.* Dinge",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "äußere.* Sinnesfelder",
@@ -673,7 +673,7 @@
     {
       "id": "den Besinnungstag",
       "group": "Examples",
-      "links": 32
+      "links": 33
     },
     {
       "id": "den Buddha bezaubern",
@@ -2273,7 +2273,7 @@
     {
       "id": "Kennzeichen",
       "group": "Examples",
-      "links": 32
+      "links": 33
     },
     {
       "id": "Keuschen und die Unkeuschen",
@@ -6119,6 +6119,12 @@
       "group": "mn",
       "rank": 2,
       "links": 6
+    },
+    {
+      "id": "snp2.14",
+      "group": "snp",
+      "rank": 5,
+      "links": 2
     },
     {
       "id": "mn112",
@@ -14077,21 +14083,27 @@
       "links": 1
     },
     {
+      "id": "snp3.1",
+      "group": "snp",
+      "rank": 15,
+      "links": 1
+    },
+    {
       "id": "thag1.106",
       "group": "thag",
-      "rank": 19,
+      "rank": 20,
       "links": 1
     },
     {
       "id": "ja30",
       "group": "ja",
-      "rank": 20,
+      "rank": 21,
       "links": 1
     },
     {
       "id": "an3.2",
       "group": "an",
-      "rank": 21,
+      "rank": 22,
       "links": 1
     },
     {
@@ -14103,7 +14115,7 @@
     {
       "id": "cp11",
       "group": "cp",
-      "rank": 23,
+      "rank": 24,
       "links": 1
     },
     {
@@ -19982,6 +19994,11 @@
       "rank": 4
     },
     {
+      "source": "äußere.* Dinge",
+      "target": "snp2.14",
+      "rank": 5
+    },
+    {
       "source": "äußere.* Sinnesfelder",
       "target": "mn112",
       "rank": 1
@@ -23413,13 +23430,18 @@
     },
     {
       "source": "den Besinnungstag",
-      "target": "mn129",
+      "target": "snp2.14",
       "rank": 31
     },
     {
       "source": "den Besinnungstag",
-      "target": "dn17",
+      "target": "mn129",
       "rank": 32
+    },
+    {
+      "source": "den Besinnungstag",
+      "target": "dn17",
+      "rank": 33
     },
     {
       "source": "den Buddha bezaubern",
@@ -34628,93 +34650,98 @@
     },
     {
       "source": "Kennzeichen",
-      "target": "snp1.3",
+      "target": "snp3.1",
       "rank": 15
     },
     {
       "source": "Kennzeichen",
-      "target": "mn129",
+      "target": "snp1.3",
       "rank": 16
     },
     {
       "source": "Kennzeichen",
-      "target": "dn1",
+      "target": "mn129",
       "rank": 17
     },
     {
       "source": "Kennzeichen",
-      "target": "dn2",
+      "target": "dn1",
       "rank": 18
     },
     {
       "source": "Kennzeichen",
-      "target": "thag1.106",
+      "target": "dn2",
       "rank": 19
     },
     {
       "source": "Kennzeichen",
-      "target": "ja30",
+      "target": "thag1.106",
       "rank": 20
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.2",
+      "target": "ja30",
       "rank": 21
     },
     {
       "source": "Kennzeichen",
-      "target": "an11.22-29",
+      "target": "an3.2",
       "rank": 22
     },
     {
       "source": "Kennzeichen",
-      "target": "cp11",
+      "target": "an11.22-29",
       "rank": 23
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.59",
+      "target": "cp11",
       "rank": 24
     },
     {
       "source": "Kennzeichen",
-      "target": "sn22.59",
+      "target": "an3.59",
       "rank": 25
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.58",
+      "target": "sn22.59",
       "rank": 26
     },
     {
       "source": "Kennzeichen",
-      "target": "thag16.6",
+      "target": "an3.58",
       "rank": 27
     },
     {
       "source": "Kennzeichen",
-      "target": "an5.192",
+      "target": "thag16.6",
       "rank": 28
     },
     {
       "source": "Kennzeichen",
-      "target": "thig14.1",
+      "target": "an5.192",
       "rank": 29
     },
     {
       "source": "Kennzeichen",
-      "target": "snp3.11",
+      "target": "thig14.1",
       "rank": 30
     },
     {
       "source": "Kennzeichen",
-      "target": "mn93",
+      "target": "snp3.11",
       "rank": 31
     },
     {
       "source": "Kennzeichen",
-      "target": "mn100",
+      "target": "mn93",
       "rank": 32
+    },
+    {
+      "source": "Kennzeichen",
+      "target": "mn100",
+      "rank": 33
     },
     {
       "source": "Keuschen und die Unkeuschen",
