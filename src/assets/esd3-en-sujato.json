@@ -3398,7 +3398,7 @@
     {
       "id": "something left over",
       "group": "Examples",
-      "links": 16
+      "links": 0
     },
     {
       "id": "sorrow and wail",
@@ -4908,7 +4908,7 @@
       "id": "snp3.12",
       "group": "snp",
       "rank": 4,
-      "links": 8
+      "links": 7
     },
     {
       "id": "mn21",
@@ -6726,13 +6726,13 @@
       "id": "mn10",
       "group": "mn",
       "rank": 1,
-      "links": 26
+      "links": 25
     },
     {
       "id": "dn22",
       "group": "dn",
       "rank": 2,
-      "links": 36
+      "links": 35
     },
     {
       "id": "an7.49",
@@ -7722,7 +7722,7 @@
       "id": "mn70",
       "group": "mn",
       "rank": 1,
-      "links": 8
+      "links": 7
     },
     {
       "id": "sn41.1",
@@ -10110,7 +10110,7 @@
       "id": "iti45",
       "group": "iti",
       "rank": 8,
-      "links": 2
+      "links": 1
     },
     {
       "id": "an5.74",
@@ -15198,7 +15198,7 @@
       "id": "an5.122",
       "group": "an",
       "rank": 1,
-      "links": 2
+      "links": 1
     },
     {
       "id": "sn46.28",
@@ -16105,66 +16105,6 @@
       "group": "an",
       "rank": 2,
       "links": 2
-    },
-    {
-      "id": "an5.67",
-      "group": "an",
-      "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "sn46.76",
-      "group": "sn",
-      "rank": 3,
-      "links": 1
-    },
-    {
-      "id": "an10.59",
-      "group": "an",
-      "rank": 7,
-      "links": 1
-    },
-    {
-      "id": "sn48.65",
-      "group": "sn",
-      "rank": 8,
-      "links": 1
-    },
-    {
-      "id": "sn54.4",
-      "group": "sn",
-      "rank": 9,
-      "links": 1
-    },
-    {
-      "id": "sn47.36",
-      "group": "sn",
-      "rank": 10,
-      "links": 1
-    },
-    {
-      "id": "sn51.25",
-      "group": "sn",
-      "rank": 11,
-      "links": 1
-    },
-    {
-      "id": "iti46",
-      "group": "iti",
-      "rank": 13,
-      "links": 1
-    },
-    {
-      "id": "iti47",
-      "group": "iti",
-      "rank": 14,
-      "links": 1
-    },
-    {
-      "id": "sn46.57",
-      "group": "sn",
-      "rank": 15,
-      "links": 1
     },
     {
       "id": "an4.184",
@@ -41682,86 +41622,6 @@
       "source": "someone with confident heart goes for refuge",
       "target": "dn5",
       "rank": 1
-    },
-    {
-      "source": "something left over",
-      "target": "an5.122",
-      "rank": 1
-    },
-    {
-      "source": "something left over",
-      "target": "an5.67",
-      "rank": 2
-    },
-    {
-      "source": "something left over",
-      "target": "sn46.76",
-      "rank": 3
-    },
-    {
-      "source": "something left over",
-      "target": "mn10",
-      "rank": 4
-    },
-    {
-      "source": "something left over",
-      "target": "snp3.12",
-      "rank": 5
-    },
-    {
-      "source": "something left over",
-      "target": "dn22",
-      "rank": 6
-    },
-    {
-      "source": "something left over",
-      "target": "an10.59",
-      "rank": 7
-    },
-    {
-      "source": "something left over",
-      "target": "sn48.65",
-      "rank": 8
-    },
-    {
-      "source": "something left over",
-      "target": "sn54.4",
-      "rank": 9
-    },
-    {
-      "source": "something left over",
-      "target": "sn47.36",
-      "rank": 10
-    },
-    {
-      "source": "something left over",
-      "target": "sn51.25",
-      "rank": 11
-    },
-    {
-      "source": "something left over",
-      "target": "iti45",
-      "rank": 12
-    },
-    {
-      "source": "something left over",
-      "target": "iti46",
-      "rank": 13
-    },
-    {
-      "source": "something left over",
-      "target": "iti47",
-      "rank": 14
-    },
-    {
-      "source": "something left over",
-      "target": "sn46.57",
-      "rank": 15
-    },
-    {
-      "source": "something left over",
-      "target": "mn70",
-      "rank": 16
     },
     {
       "source": "sorrow and wail",
