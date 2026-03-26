@@ -53,7 +53,7 @@
     {
       "id": "acht Menschen",
       "group": "Examples",
-      "links": 26
+      "links": 27
     },
     {
       "id": "Achtsamkeit auf den Tod",
@@ -143,7 +143,7 @@
     {
       "id": "Ärger, Hass und Unmut",
       "group": "Examples",
-      "links": 14
+      "links": 15
     },
     {
       "id": "Arten der Einbildung",
@@ -258,7 +258,7 @@
     {
       "id": "äußere.* Dinge",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "äußere.* Sinnesfelder",
@@ -673,7 +673,7 @@
     {
       "id": "den Besinnungstag",
       "group": "Examples",
-      "links": 32
+      "links": 33
     },
     {
       "id": "den Buddha bezaubern",
@@ -1048,7 +1048,7 @@
     {
       "id": "eigene Insel",
       "group": "Examples",
-      "links": 15
+      "links": 16
     },
     {
       "id": "ein abgebrühter Mörder",
@@ -1423,7 +1423,7 @@
     {
       "id": "Feigheit",
       "group": "Examples",
-      "links": 14
+      "links": 15
     },
     {
       "id": "Feuerholz sammel",
@@ -1448,7 +1448,7 @@
     {
       "id": "Flut.* überquer",
       "group": "Examples",
-      "links": 23
+      "links": 26
     },
     {
       "id": "Form als das Selbst",
@@ -1833,7 +1833,7 @@
     {
       "id": "Grundlage der",
       "group": "Examples",
-      "links": 3
+      "links": 2
     },
     {
       "id": "Grundlage für die Versenkung",
@@ -2273,7 +2273,7 @@
     {
       "id": "Kennzeichen",
       "group": "Examples",
-      "links": 32
+      "links": 33
     },
     {
       "id": "Keuschen und die Unkeuschen",
@@ -2343,7 +2343,7 @@
     {
       "id": "Kopf zu den Füßen des Buddha",
       "group": "Examples",
-      "links": 16
+      "links": 17
     },
     {
       "id": "Kosmologe",
@@ -2948,7 +2948,7 @@
     {
       "id": "Riese",
       "group": "Examples",
-      "links": 21
+      "links": 22
     },
     {
       "id": "Roben aus Hanf",
@@ -3068,7 +3068,7 @@
     {
       "id": "schwer zu erfüllen",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "schwer.* zu erreichen",
@@ -3408,7 +3408,7 @@
     {
       "id": "über das Leiden hinaus",
       "group": "Examples",
-      "links": 8
+      "links": 9
     },
     {
       "id": "über die Lehre sprechen oder edles Schweigen bewahren",
@@ -3433,12 +3433,12 @@
     {
       "id": "überquer",
       "group": "Examples",
-      "links": 48
+      "links": 51
     },
     {
       "id": "übersinnliche Kraft und Macht",
       "group": "Examples",
-      "links": 11
+      "links": 12
     },
     {
       "id": "Übertretung",
@@ -3593,7 +3593,7 @@
     {
       "id": "verflucht sei",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "Vergehen der Erscheinungen",
@@ -4143,7 +4143,7 @@
     {
       "id": "wie der Mond",
       "group": "Examples",
-      "links": 26
+      "links": 28
     },
     {
       "id": "wie der Mond, der durch die Wolken bricht",
@@ -4413,7 +4413,7 @@
     {
       "id": "zwei Menschen",
       "group": "Examples",
-      "links": 2
+      "links": 3
     },
     {
       "id": "zwei Dinge.* entwickelt werden",
@@ -4915,6 +4915,12 @@
       "links": 3
     },
     {
+      "id": "snp3.5",
+      "group": "snp",
+      "rank": 1,
+      "links": 6
+    },
+    {
       "id": "mn76",
       "group": "mn",
       "rank": 1,
@@ -4923,7 +4929,7 @@
     {
       "id": "an8.44",
       "group": "an",
-      "rank": 9,
+      "rank": 10,
       "links": 2
     },
     {
@@ -5527,6 +5533,12 @@
       "links": 3
     },
     {
+      "id": "snp3.6",
+      "group": "snp",
+      "rank": 3,
+      "links": 7
+    },
+    {
       "id": "an3.25",
       "group": "an",
       "rank": 2,
@@ -5541,7 +5553,7 @@
     {
       "id": "an4.197",
       "group": "an",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
@@ -6087,7 +6099,7 @@
     {
       "id": "sn22.84",
       "group": "sn",
-      "rank": 2,
+      "rank": 3,
       "links": 5
     },
     {
@@ -6119,6 +6131,12 @@
       "group": "mn",
       "rank": 2,
       "links": 6
+    },
+    {
+      "id": "snp2.14",
+      "group": "snp",
+      "rank": 5,
+      "links": 2
     },
     {
       "id": "mn112",
@@ -11659,9 +11677,15 @@
       "links": 1
     },
     {
+      "id": "snp3.2",
+      "group": "snp",
+      "rank": 2,
+      "links": 3
+    },
+    {
       "id": "thag16.7",
       "group": "thag",
-      "rank": 11,
+      "rank": 12,
       "links": 1
     },
     {
@@ -11833,6 +11857,12 @@
       "links": 6
     },
     {
+      "id": "snp3.4",
+      "group": "snp",
+      "rank": 21,
+      "links": 3
+    },
+    {
       "id": "sn22.81",
       "group": "sn",
       "rank": 1,
@@ -11979,7 +12009,7 @@
     {
       "id": "an7.57",
       "group": "an",
-      "rank": 1,
+      "rank": 2,
       "links": 2
     },
     {
@@ -13013,12 +13043,6 @@
       "group": "an",
       "rank": 1,
       "links": 3
-    },
-    {
-      "id": "sn47.10",
-      "group": "sn",
-      "rank": 1,
-      "links": 4
     },
     {
       "id": "sn35.232",
@@ -14077,21 +14101,27 @@
       "links": 1
     },
     {
+      "id": "snp3.1",
+      "group": "snp",
+      "rank": 15,
+      "links": 1
+    },
+    {
       "id": "thag1.106",
       "group": "thag",
-      "rank": 19,
+      "rank": 20,
       "links": 1
     },
     {
       "id": "ja30",
       "group": "ja",
-      "rank": 20,
+      "rank": 21,
       "links": 1
     },
     {
       "id": "an3.2",
       "group": "an",
-      "rank": 21,
+      "rank": 22,
       "links": 1
     },
     {
@@ -14103,7 +14133,7 @@
     {
       "id": "cp11",
       "group": "cp",
-      "rank": 23,
+      "rank": 24,
       "links": 1
     },
     {
@@ -14295,7 +14325,7 @@
     {
       "id": "thag4.6",
       "group": "thag",
-      "rank": 6,
+      "rank": 7,
       "links": 2
     },
     {
@@ -14645,6 +14675,12 @@
       "group": "sn",
       "rank": 6,
       "links": 2
+    },
+    {
+      "id": "sn47.10",
+      "group": "sn",
+      "rank": 1,
+      "links": 3
     },
     {
       "id": "sn1.24",
@@ -15795,7 +15831,7 @@
     {
       "id": "sn1.37",
       "group": "sn",
-      "rank": 7,
+      "rank": 8,
       "links": 1
     },
     {
@@ -18718,98 +18754,103 @@
     },
     {
       "source": "acht Menschen",
-      "target": "mn76",
+      "target": "snp3.5",
       "rank": 8
     },
     {
       "source": "acht Menschen",
-      "target": "an8.44",
+      "target": "mn76",
       "rank": 9
     },
     {
       "source": "acht Menschen",
-      "target": "an4.127",
+      "target": "an8.44",
       "rank": 10
     },
     {
       "source": "acht Menschen",
-      "target": "an5.196",
+      "target": "an4.127",
       "rank": 11
     },
     {
       "source": "acht Menschen",
-      "target": "sn24.8",
+      "target": "an5.196",
       "rank": 12
     },
     {
       "source": "acht Menschen",
-      "target": "an8.45",
+      "target": "sn24.8",
       "rank": 13
     },
     {
       "source": "acht Menschen",
-      "target": "an5.167",
+      "target": "an8.45",
       "rank": 14
     },
     {
       "source": "acht Menschen",
-      "target": "an8.43",
+      "target": "an5.167",
       "rank": 15
     },
     {
       "source": "acht Menschen",
-      "target": "an8.42",
+      "target": "an8.43",
       "rank": 16
     },
     {
       "source": "acht Menschen",
-      "target": "mn107",
+      "target": "an8.42",
       "rank": 17
     },
     {
       "source": "acht Menschen",
-      "target": "an3.36",
+      "target": "mn107",
       "rank": 18
     },
     {
       "source": "acht Menschen",
-      "target": "mn83",
+      "target": "an3.36",
       "rank": 19
     },
     {
       "source": "acht Menschen",
-      "target": "mn130",
+      "target": "mn83",
       "rank": 20
     },
     {
       "source": "acht Menschen",
-      "target": "an3.70",
+      "target": "mn130",
       "rank": 21
     },
     {
       "source": "acht Menschen",
-      "target": "dn26",
+      "target": "an3.70",
       "rank": 22
     },
     {
       "source": "acht Menschen",
-      "target": "dn2",
+      "target": "dn26",
       "rank": 23
     },
     {
       "source": "acht Menschen",
-      "target": "dn17",
+      "target": "dn2",
       "rank": 24
     },
     {
       "source": "acht Menschen",
-      "target": "dn30",
+      "target": "dn17",
       "rank": 25
     },
     {
       "source": "acht Menschen",
-      "target": "dn34",
+      "target": "dn30",
       "rank": 26
+    },
+    {
+      "source": "acht Menschen",
+      "target": "dn34",
+      "rank": 27
     },
     {
       "source": "Achtsamkeit auf den Tod",
@@ -19353,63 +19394,68 @@
     },
     {
       "source": "Ärger, Hass und Unmut",
-      "target": "an3.25",
+      "target": "snp3.6",
       "rank": 3
     },
     {
       "source": "Ärger, Hass und Unmut",
-      "target": "an3.27",
+      "target": "an3.25",
       "rank": 4
     },
     {
       "source": "Ärger, Hass und Unmut",
-      "target": "an4.197",
+      "target": "an3.27",
       "rank": 5
     },
     {
       "source": "Ärger, Hass und Unmut",
-      "target": "an5.157",
+      "target": "an4.197",
       "rank": 6
     },
     {
       "source": "Ärger, Hass und Unmut",
-      "target": "mn15",
+      "target": "an5.157",
       "rank": 7
     },
     {
       "source": "Ärger, Hass und Unmut",
-      "target": "mn36",
+      "target": "mn15",
       "rank": 8
     },
     {
       "source": "Ärger, Hass und Unmut",
-      "target": "dn24",
+      "target": "mn36",
       "rank": 9
     },
     {
       "source": "Ärger, Hass und Unmut",
-      "target": "an3.67",
+      "target": "dn24",
       "rank": 10
     },
     {
       "source": "Ärger, Hass und Unmut",
-      "target": "an8.10",
+      "target": "an3.67",
       "rank": 11
     },
     {
       "source": "Ärger, Hass und Unmut",
-      "target": "an8.14",
+      "target": "an8.10",
       "rank": 12
     },
     {
       "source": "Ärger, Hass und Unmut",
-      "target": "mn135",
+      "target": "an8.14",
       "rank": 13
     },
     {
       "source": "Ärger, Hass und Unmut",
-      "target": "mn79",
+      "target": "mn135",
       "rank": 14
+    },
+    {
+      "source": "Ärger, Hass und Unmut",
+      "target": "mn79",
+      "rank": 15
     },
     {
       "source": "Arten der Einbildung",
@@ -19980,6 +20026,11 @@
       "source": "äußere.* Dinge",
       "target": "mn40",
       "rank": 4
+    },
+    {
+      "source": "äußere.* Dinge",
+      "target": "snp2.14",
+      "rank": 5
     },
     {
       "source": "äußere.* Sinnesfelder",
@@ -23413,13 +23464,18 @@
     },
     {
       "source": "den Besinnungstag",
-      "target": "mn129",
+      "target": "snp2.14",
       "rank": 31
     },
     {
       "source": "den Besinnungstag",
-      "target": "dn17",
+      "target": "mn129",
       "rank": 32
+    },
+    {
+      "source": "den Besinnungstag",
+      "target": "dn17",
+      "rank": 33
     },
     {
       "source": "den Buddha bezaubern",
@@ -25500,6 +25556,11 @@
       "source": "eigene Insel",
       "target": "sn22.49",
       "rank": 15
+    },
+    {
+      "source": "eigene Insel",
+      "target": "snp3.5",
+      "rank": 16
     },
     {
       "source": "ein abgebrühter Mörder",
@@ -28563,23 +28624,28 @@
     },
     {
       "source": "Feigheit",
-      "target": "thag16.7",
+      "target": "snp3.2",
       "rank": 11
     },
     {
       "source": "Feigheit",
-      "target": "mn4",
+      "target": "thag16.7",
       "rank": 12
     },
     {
       "source": "Feigheit",
-      "target": "dn29",
+      "target": "mn4",
       "rank": 13
     },
     {
       "source": "Feigheit",
-      "target": "dn33",
+      "target": "dn29",
       "rank": 14
+    },
+    {
+      "source": "Feigheit",
+      "target": "dn33",
+      "rank": 15
     },
     {
       "source": "Feuerholz sammel",
@@ -28828,28 +28894,43 @@
     },
     {
       "source": "Flut.* überquer",
-      "target": "thag16.9",
+      "target": "snp3.5",
       "rank": 19
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp5.19",
+      "target": "thag16.9",
       "rank": 20
     },
     {
       "source": "Flut.* überquer",
-      "target": "dn20",
+      "target": "snp3.4",
       "rank": 21
     },
     {
       "source": "Flut.* überquer",
-      "target": "thag21.1",
+      "target": "snp5.19",
       "rank": 22
     },
     {
       "source": "Flut.* überquer",
-      "target": "dn21",
+      "target": "snp3.6",
       "rank": 23
+    },
+    {
+      "source": "Flut.* überquer",
+      "target": "dn20",
+      "rank": 24
+    },
+    {
+      "source": "Flut.* überquer",
+      "target": "thag21.1",
+      "rank": 25
+    },
+    {
+      "source": "Flut.* überquer",
+      "target": "dn21",
+      "rank": 26
     },
     {
       "source": "Form als das Selbst",
@@ -31590,11 +31671,6 @@
       "source": "Grundlage der",
       "target": "mn140",
       "rank": 2
-    },
-    {
-      "source": "Grundlage der",
-      "target": "sn47.10",
-      "rank": 3
     },
     {
       "source": "Grundlage für die Versenkung",
@@ -34628,93 +34704,98 @@
     },
     {
       "source": "Kennzeichen",
-      "target": "snp1.3",
+      "target": "snp3.1",
       "rank": 15
     },
     {
       "source": "Kennzeichen",
-      "target": "mn129",
+      "target": "snp1.3",
       "rank": 16
     },
     {
       "source": "Kennzeichen",
-      "target": "dn1",
+      "target": "mn129",
       "rank": 17
     },
     {
       "source": "Kennzeichen",
-      "target": "dn2",
+      "target": "dn1",
       "rank": 18
     },
     {
       "source": "Kennzeichen",
-      "target": "thag1.106",
+      "target": "dn2",
       "rank": 19
     },
     {
       "source": "Kennzeichen",
-      "target": "ja30",
+      "target": "thag1.106",
       "rank": 20
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.2",
+      "target": "ja30",
       "rank": 21
     },
     {
       "source": "Kennzeichen",
-      "target": "an11.22-29",
+      "target": "an3.2",
       "rank": 22
     },
     {
       "source": "Kennzeichen",
-      "target": "cp11",
+      "target": "an11.22-29",
       "rank": 23
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.59",
+      "target": "cp11",
       "rank": 24
     },
     {
       "source": "Kennzeichen",
-      "target": "sn22.59",
+      "target": "an3.59",
       "rank": 25
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.58",
+      "target": "sn22.59",
       "rank": 26
     },
     {
       "source": "Kennzeichen",
-      "target": "thag16.6",
+      "target": "an3.58",
       "rank": 27
     },
     {
       "source": "Kennzeichen",
-      "target": "an5.192",
+      "target": "thag16.6",
       "rank": 28
     },
     {
       "source": "Kennzeichen",
-      "target": "thig14.1",
+      "target": "an5.192",
       "rank": 29
     },
     {
       "source": "Kennzeichen",
-      "target": "snp3.11",
+      "target": "thig14.1",
       "rank": 30
     },
     {
       "source": "Kennzeichen",
-      "target": "mn93",
+      "target": "snp3.11",
       "rank": 31
     },
     {
       "source": "Kennzeichen",
-      "target": "mn100",
+      "target": "mn93",
       "rank": 32
+    },
+    {
+      "source": "Kennzeichen",
+      "target": "mn100",
+      "rank": 33
     },
     {
       "source": "Keuschen und die Unkeuschen",
@@ -35328,8 +35409,13 @@
     },
     {
       "source": "Kopf zu den Füßen des Buddha",
-      "target": "mn91",
+      "target": "snp3.6",
       "rank": 16
+    },
+    {
+      "source": "Kopf zu den Füßen des Buddha",
+      "target": "mn91",
+      "rank": 17
     },
     {
       "source": "Kosmologe",
@@ -39513,93 +39599,98 @@
     },
     {
       "source": "Riese",
-      "target": "thag21.1",
+      "target": "snp3.6",
       "rank": 4
     },
     {
       "source": "Riese",
-      "target": "sn1.30",
+      "target": "thag21.1",
       "rank": 5
     },
     {
       "source": "Riese",
-      "target": "thag4.6",
+      "target": "sn1.30",
       "rank": 6
     },
     {
       "source": "Riese",
-      "target": "sn1.37",
+      "target": "thag4.6",
       "rank": 7
     },
     {
       "source": "Riese",
-      "target": "ud4.5",
+      "target": "sn1.37",
       "rank": 8
     },
     {
       "source": "Riese",
-      "target": "sn21.3",
+      "target": "ud4.5",
       "rank": 9
     },
     {
       "source": "Riese",
-      "target": "sn8.8",
+      "target": "sn21.3",
       "rank": 10
     },
     {
       "source": "Riese",
-      "target": "ud4.4",
+      "target": "sn8.8",
       "rank": 11
     },
     {
       "source": "Riese",
-      "target": "sn22.76",
+      "target": "ud4.4",
       "rank": 12
     },
     {
       "source": "Riese",
-      "target": "thag16.6",
+      "target": "sn22.76",
       "rank": 13
     },
     {
       "source": "Riese",
-      "target": "mn24",
+      "target": "thag16.6",
       "rank": 14
     },
     {
       "source": "Riese",
-      "target": "snp1.9",
+      "target": "mn24",
       "rank": 15
     },
     {
       "source": "Riese",
-      "target": "snp5.19",
+      "target": "snp1.9",
       "rank": 16
     },
     {
       "source": "Riese",
-      "target": "mn5",
+      "target": "snp5.19",
       "rank": 17
     },
     {
       "source": "Riese",
-      "target": "mn92",
+      "target": "mn5",
       "rank": 18
     },
     {
       "source": "Riese",
-      "target": "snp3.7",
+      "target": "mn92",
       "rank": 19
     },
     {
       "source": "Riese",
-      "target": "dn20",
+      "target": "snp3.7",
       "rank": 20
     },
     {
       "source": "Riese",
-      "target": "mn56",
+      "target": "dn20",
       "rank": 21
+    },
+    {
+      "source": "Riese",
+      "target": "mn56",
+      "rank": 22
     },
     {
       "source": "Roben aus Hanf",
@@ -40310,6 +40401,11 @@
       "source": "schwer zu erfüllen",
       "target": "an2.1-10",
       "rank": 1
+    },
+    {
+      "source": "schwer zu erfüllen",
+      "target": "snp3.2",
+      "rank": 2
     },
     {
       "source": "schwer.* zu erreichen",
@@ -42337,6 +42433,11 @@
       "rank": 8
     },
     {
+      "source": "über das Leiden hinaus",
+      "target": "snp3.6",
+      "rank": 9
+    },
+    {
       "source": "über die Lehre sprechen oder edles Schweigen bewahren",
       "target": "ud2.2",
       "rank": 1
@@ -42618,28 +42719,43 @@
     },
     {
       "source": "überquer",
-      "target": "snp5.19",
+      "target": "snp3.5",
       "rank": 44
     },
     {
       "source": "überquer",
-      "target": "snp3.11",
+      "target": "snp3.4",
       "rank": 45
     },
     {
       "source": "überquer",
-      "target": "thag19.1",
+      "target": "snp5.19",
       "rank": 46
     },
     {
       "source": "überquer",
-      "target": "dn20",
+      "target": "snp3.11",
       "rank": 47
     },
     {
       "source": "überquer",
-      "target": "dn21",
+      "target": "snp3.6",
       "rank": 48
+    },
+    {
+      "source": "überquer",
+      "target": "thag19.1",
+      "rank": 49
+    },
+    {
+      "source": "überquer",
+      "target": "dn20",
+      "rank": 50
+    },
+    {
+      "source": "überquer",
+      "target": "dn21",
+      "rank": 51
     },
     {
       "source": "übersinnliche Kraft und Macht",
@@ -42688,13 +42804,18 @@
     },
     {
       "source": "übersinnliche Kraft und Macht",
-      "target": "dn18",
+      "target": "snp3.6",
       "rank": 10
     },
     {
       "source": "übersinnliche Kraft und Macht",
-      "target": "dn14",
+      "target": "dn18",
       "rank": 11
+    },
+    {
+      "source": "übersinnliche Kraft und Macht",
+      "target": "dn14",
+      "rank": 12
     },
     {
       "source": "Übertretung",
@@ -43683,8 +43804,13 @@
     },
     {
       "source": "verflucht sei",
-      "target": "thag19.1",
+      "target": "snp3.2",
       "rank": 4
+    },
+    {
+      "source": "verflucht sei",
+      "target": "thag19.1",
+      "rank": 5
     },
     {
       "source": "Vergehen der Erscheinungen",
@@ -47413,18 +47539,28 @@
     },
     {
       "source": "wie der Mond",
-      "target": "snp3.11",
+      "target": "snp3.5",
       "rank": 24
     },
     {
       "source": "wie der Mond",
-      "target": "dn20",
+      "target": "snp3.4",
       "rank": 25
     },
     {
       "source": "wie der Mond",
-      "target": "thag21.1",
+      "target": "snp3.11",
       "rank": 26
+    },
+    {
+      "source": "wie der Mond",
+      "target": "dn20",
+      "rank": 27
+    },
+    {
+      "source": "wie der Mond",
+      "target": "thag21.1",
+      "rank": 28
     },
     {
       "source": "wie der Mond, der durch die Wolken bricht",
@@ -49193,13 +49329,18 @@
     },
     {
       "source": "zwei Menschen",
-      "target": "an7.57",
+      "target": "snp3.5",
       "rank": 1
     },
     {
       "source": "zwei Menschen",
-      "target": "sn22.84",
+      "target": "an7.57",
       "rank": 2
+    },
+    {
+      "source": "zwei Menschen",
+      "target": "sn22.84",
+      "rank": 3
     },
     {
       "source": "zwei Dinge.* entwickelt werden",

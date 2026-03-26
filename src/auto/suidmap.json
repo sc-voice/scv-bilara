@@ -17551,6 +17551,7 @@
 	"sn22.95": {
 		"translation/de/sabbamitta": "sutta/sn/sn22",
 		"translation/en/sujato": "sutta/sn/sn22",
+		"translation/fr/christelle": "sutta/sn/sn22",
 		"translation/lt/piyadassi": "sutta/sn/sn22",
 		"root/pli/ms": "sutta/sn/sn22"
 	},
@@ -24443,6 +24444,7 @@
 		"root/pli/ms": "sutta/kn/snp/vagga3"
 	},
 	"snp3.2": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga3",
 		"translation/en/sujato": "sutta/kn/snp/vagga3",
 		"root/pli/ms": "sutta/kn/snp/vagga3"
 	},
@@ -24452,14 +24454,17 @@
 		"root/pli/ms": "sutta/kn/snp/vagga3"
 	},
 	"snp3.4": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga3",
 		"translation/en/sujato": "sutta/kn/snp/vagga3",
 		"root/pli/ms": "sutta/kn/snp/vagga3"
 	},
 	"snp3.5": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga3",
 		"translation/en/sujato": "sutta/kn/snp/vagga3",
 		"root/pli/ms": "sutta/kn/snp/vagga3"
 	},
 	"snp3.6": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga3",
 		"translation/en/sujato": "sutta/kn/snp/vagga3",
 		"root/pli/ms": "sutta/kn/snp/vagga3"
 	},
