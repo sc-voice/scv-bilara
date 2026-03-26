@@ -1,6 +1,6 @@
 {
   "name": "scv-bilara",
-  "version": "3.201.61",
+  "version": "3.202.0",
   "description": "SuttaCentral bilara-data library",
   "main": "index.js",
   "directories": {
@@ -22,8 +22,7 @@
   "devDependencies": {
     "eslint-plugin-html": "^4.0.5"
   },
-  "overrides": {
-  },
+  "overrides": {},
   "scripts": {
     "schedule-action": "scripts/schedule-action",
     "push-action": "scripts/push-action",
