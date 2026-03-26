@@ -23,8 +23,6 @@
     "eslint-plugin-html": "^4.0.5"
   },
   "overrides": {
-    "minimatch": "10.2.2",
-    "diff": "^5.2.0"
   },
   "scripts": {
     "schedule-action": "scripts/schedule-action",
