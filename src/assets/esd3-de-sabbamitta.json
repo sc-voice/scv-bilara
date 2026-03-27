@@ -318,7 +318,7 @@
     {
       "id": "beide.* Enden",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "bei der besten angekommen",
@@ -343,7 +343,7 @@
     {
       "id": "beklag",
       "group": "Examples",
-      "links": 18
+      "links": 19
     },
     {
       "id": "bemüht.*, damit",
@@ -1983,7 +1983,7 @@
     {
       "id": "Hölle de[rs]",
       "group": "Examples",
-      "links": 5
+      "links": 6
     },
     {
       "id": "Hölle mit Namen",
@@ -3288,7 +3288,7 @@
     {
       "id": "Staub, der gegen den Wind",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "steckt nicht in der Mitte",
@@ -4158,7 +4158,7 @@
     {
       "id": "wie eine Kuh",
       "group": "Examples",
-      "links": 9
+      "links": 10
     },
     {
       "id": "wie ein Hund",
@@ -6517,6 +6517,12 @@
       "links": 5
     },
     {
+      "id": "snp3.8",
+      "group": "snp",
+      "rank": 5,
+      "links": 3
+    },
+    {
       "id": "thag1.9",
       "group": "thag",
       "rank": 1,
@@ -6633,19 +6639,19 @@
     {
       "id": "an8.27",
       "group": "an",
-      "rank": 7,
+      "rank": 8,
       "links": 1
     },
     {
       "id": "an5.209",
       "group": "an",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
       "id": "thig5.2",
       "group": "thig",
-      "rank": 9,
+      "rank": 10,
       "links": 1
     },
     {
@@ -6675,7 +6681,7 @@
     {
       "id": "an4.187",
       "group": "an",
-      "rank": 14,
+      "rank": 15,
       "links": 1
     },
     {
@@ -13405,15 +13411,21 @@
       "links": 1
     },
     {
+      "id": "snp3.10",
+      "group": "snp",
+      "rank": 1,
+      "links": 2
+    },
+    {
       "id": "sn6.10",
       "group": "sn",
-      "rank": 1,
+      "rank": 2,
       "links": 1
     },
     {
       "id": "an10.89",
       "group": "an",
-      "rank": 2,
+      "rank": 3,
       "links": 1
     },
     {
@@ -13425,7 +13437,7 @@
     {
       "id": "sn1.39",
       "group": "sn",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
@@ -20503,6 +20515,11 @@
       "rank": 4
     },
     {
+      "source": "beide.* Enden",
+      "target": "snp3.8",
+      "rank": 5
+    },
+    {
       "source": "bei der besten angekommen",
       "target": "thag1.9",
       "rank": 1
@@ -20649,68 +20666,73 @@
     },
     {
       "source": "beklag",
-      "target": "dn16",
+      "target": "snp3.8",
       "rank": 6
     },
     {
       "source": "beklag",
-      "target": "an8.27",
+      "target": "dn16",
       "rank": 7
     },
     {
       "source": "beklag",
-      "target": "an5.209",
+      "target": "an8.27",
       "rank": 8
     },
     {
       "source": "beklag",
-      "target": "thig5.2",
+      "target": "an5.209",
       "rank": 9
     },
     {
       "source": "beklag",
-      "target": "ud3.6",
+      "target": "thig5.2",
       "rank": 10
     },
     {
       "source": "beklag",
-      "target": "sn21.4",
+      "target": "ud3.6",
       "rank": 11
     },
     {
       "source": "beklag",
-      "target": "sn10.5",
+      "target": "sn21.4",
       "rank": 12
     },
     {
       "source": "beklag",
-      "target": "dhp146-156",
+      "target": "sn10.5",
       "rank": 13
     },
     {
       "source": "beklag",
-      "target": "an4.187",
+      "target": "dhp146-156",
       "rank": 14
     },
     {
       "source": "beklag",
-      "target": "ud4.8",
+      "target": "an4.187",
       "rank": 15
     },
     {
       "source": "beklag",
-      "target": "sn55.24",
+      "target": "ud4.8",
       "rank": 16
     },
     {
       "source": "beklag",
-      "target": "sn55.25",
+      "target": "sn55.24",
       "rank": 17
     },
     {
       "source": "beklag",
-      "target": "mn106",
+      "target": "sn55.25",
       "rank": 18
+    },
+    {
+      "source": "beklag",
+      "target": "mn106",
+      "rank": 19
     },
     {
       "source": "bemüht.*, damit",
@@ -32839,28 +32861,33 @@
     },
     {
       "source": "Hölle de[rs]",
-      "target": "sn6.10",
+      "target": "snp3.10",
       "rank": 1
     },
     {
       "source": "Hölle de[rs]",
-      "target": "an10.89",
+      "target": "sn6.10",
       "rank": 2
     },
     {
       "source": "Hölle de[rs]",
-      "target": "sn3.20",
+      "target": "an10.89",
       "rank": 3
     },
     {
       "source": "Hölle de[rs]",
-      "target": "mn130",
+      "target": "sn3.20",
       "rank": 4
     },
     {
       "source": "Hölle de[rs]",
-      "target": "sn1.39",
+      "target": "mn130",
       "rank": 5
+    },
+    {
+      "source": "Hölle de[rs]",
+      "target": "sn1.39",
+      "rank": 6
     },
     {
       "source": "Hölle mit Namen",
@@ -41773,6 +41800,11 @@
       "rank": 3
     },
     {
+      "source": "Staub, der gegen den Wind",
+      "target": "snp3.10",
+      "rank": 4
+    },
+    {
       "source": "steckt nicht in der Mitte",
       "target": "an6.61",
       "rank": 1
@@ -47814,13 +47846,18 @@
     },
     {
       "source": "wie eine Kuh",
-      "target": "mn48",
+      "target": "snp3.8",
       "rank": 8
     },
     {
       "source": "wie eine Kuh",
-      "target": "thag19.1",
+      "target": "mn48",
       "rank": 9
+    },
+    {
+      "source": "wie eine Kuh",
+      "target": "thag19.1",
+      "rank": 10
     },
     {
       "source": "wie ein Hund",
