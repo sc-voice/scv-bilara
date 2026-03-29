@@ -1628,7 +1628,7 @@
     {
       "id": "has a beginning has an end",
       "group": "Examples",
-      "links": 16
+      "links": 1
     },
     {
       "id": "has ceased",
@@ -1738,7 +1738,7 @@
     {
       "id": "honey tip",
       "group": "Examples",
-      "links": 4
+      "links": 0
     },
     {
       "id": "hopefully that’ll happen",
@@ -4860,7 +4860,7 @@
       "id": "dn3",
       "group": "dn",
       "rank": 2,
-      "links": 10
+      "links": 9
     },
     {
       "id": "dn1",
@@ -4878,13 +4878,13 @@
       "id": "an8.12",
       "group": "an",
       "rank": 1,
-      "links": 5
+      "links": 4
     },
     {
       "id": "mn56",
       "group": "mn",
       "rank": 1,
-      "links": 11
+      "links": 10
     },
     {
       "id": "mn60",
@@ -5316,7 +5316,7 @@
       "id": "dn14",
       "group": "dn",
       "rank": 1,
-      "links": 31
+      "links": 30
     },
     {
       "id": "mn86",
@@ -5694,7 +5694,7 @@
       "id": "mn91",
       "group": "mn",
       "rank": 1,
-      "links": 11
+      "links": 10
     },
     {
       "id": "snp4.6",
@@ -6222,7 +6222,7 @@
       "id": "sn56.11",
       "group": "sn",
       "rank": 1,
-      "links": 12
+      "links": 11
     },
     {
       "id": "sn22.56",
@@ -6540,7 +6540,7 @@
       "id": "mn74",
       "group": "mn",
       "rank": 1,
-      "links": 5
+      "links": 4
     },
     {
       "id": "mn18",
@@ -7338,7 +7338,7 @@
       "id": "dn5",
       "group": "dn",
       "rank": 1,
-      "links": 11
+      "links": 10
     },
     {
       "id": "an4.62",
@@ -7956,7 +7956,7 @@
       "id": "ud5.3",
       "group": "ud",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "an3.21",
@@ -8130,7 +8130,7 @@
       "id": "dn21",
       "group": "dn",
       "rank": 1,
-      "links": 23
+      "links": 22
     },
     {
       "id": "an5.193",
@@ -9924,7 +9924,7 @@
       "id": "sn35.245",
       "group": "sn",
       "rank": 1,
-      "links": 6
+      "links": 5
     },
     {
       "id": "thag15.2",
@@ -10427,8 +10427,8 @@
     {
       "id": "an6.42",
       "group": "an",
-      "rank": 2,
-      "links": 3
+      "rank": 1,
+      "links": 4
     },
     {
       "id": "an8.86",
@@ -11382,7 +11382,7 @@
       "id": "an8.22",
       "group": "an",
       "rank": 2,
-      "links": 6
+      "links": 5
     },
     {
       "id": "an8.63",
@@ -12225,30 +12225,6 @@
       "links": 1
     },
     {
-      "id": "sn35.74",
-      "group": "sn",
-      "rank": 1,
-      "links": 3
-    },
-    {
-      "id": "an8.21",
-      "group": "an",
-      "rank": 1,
-      "links": 3
-    },
-    {
-      "id": "sn35.121",
-      "group": "sn",
-      "rank": 8,
-      "links": 1
-    },
-    {
-      "id": "mn147",
-      "group": "mn",
-      "rank": 2,
-      "links": 2
-    },
-    {
       "id": "sn36.11",
       "group": "sn",
       "rank": 1,
@@ -12523,30 +12499,6 @@
       "group": "an",
       "rank": 1,
       "links": 1
-    },
-    {
-      "id": "sn1.71",
-      "group": "sn",
-      "rank": 1,
-      "links": 2
-    },
-    {
-      "id": "sn2.3",
-      "group": "sn",
-      "rank": 2,
-      "links": 2
-    },
-    {
-      "id": "sn11.21",
-      "group": "sn",
-      "rank": 3,
-      "links": 2
-    },
-    {
-      "id": "sn7.1",
-      "group": "sn",
-      "rank": 3,
-      "links": 3
     },
     {
       "id": "mn150",
@@ -13275,6 +13227,12 @@
       "links": 1
     },
     {
+      "id": "mn147",
+      "group": "mn",
+      "rank": 2,
+      "links": 1
+    },
+    {
       "id": "sn7.21",
       "group": "sn",
       "rank": 7,
@@ -13527,6 +13485,12 @@
       "links": 1
     },
     {
+      "id": "an8.21",
+      "group": "an",
+      "rank": 1,
+      "links": 2
+    },
+    {
       "id": "an6.59",
       "group": "an",
       "rank": 1,
@@ -13651,6 +13615,30 @@
       "group": "sn",
       "rank": 2,
       "links": 4
+    },
+    {
+      "id": "sn1.71",
+      "group": "sn",
+      "rank": 1,
+      "links": 1
+    },
+    {
+      "id": "sn2.3",
+      "group": "sn",
+      "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "sn11.21",
+      "group": "sn",
+      "rank": 3,
+      "links": 1
+    },
+    {
+      "id": "sn7.1",
+      "group": "sn",
+      "rank": 3,
+      "links": 2
     },
     {
       "id": "sn56.10",
@@ -14893,6 +14881,12 @@
       "group": "sn",
       "rank": 2,
       "links": 1
+    },
+    {
+      "id": "sn35.74",
+      "group": "sn",
+      "rank": 1,
+      "links": 2
     },
     {
       "id": "thag3.14",
@@ -29980,83 +29974,8 @@
     },
     {
       "source": "has a beginning has an end",
-      "target": "dn14",
+      "target": "an6.42",
       "rank": 1
-    },
-    {
-      "source": "has a beginning has an end",
-      "target": "sn35.74",
-      "rank": 2
-    },
-    {
-      "source": "has a beginning has an end",
-      "target": "sn56.11",
-      "rank": 3
-    },
-    {
-      "source": "has a beginning has an end",
-      "target": "ud5.3",
-      "rank": 4
-    },
-    {
-      "source": "has a beginning has an end",
-      "target": "an8.21",
-      "rank": 5
-    },
-    {
-      "source": "has a beginning has an end",
-      "target": "an8.22",
-      "rank": 6
-    },
-    {
-      "source": "has a beginning has an end",
-      "target": "sn35.245",
-      "rank": 7
-    },
-    {
-      "source": "has a beginning has an end",
-      "target": "sn35.121",
-      "rank": 8
-    },
-    {
-      "source": "has a beginning has an end",
-      "target": "mn74",
-      "rank": 9
-    },
-    {
-      "source": "has a beginning has an end",
-      "target": "mn147",
-      "rank": 10
-    },
-    {
-      "source": "has a beginning has an end",
-      "target": "an8.12",
-      "rank": 11
-    },
-    {
-      "source": "has a beginning has an end",
-      "target": "dn5",
-      "rank": 12
-    },
-    {
-      "source": "has a beginning has an end",
-      "target": "mn56",
-      "rank": 13
-    },
-    {
-      "source": "has a beginning has an end",
-      "target": "mn91",
-      "rank": 14
-    },
-    {
-      "source": "has a beginning has an end",
-      "target": "dn3",
-      "rank": 15
-    },
-    {
-      "source": "has a beginning has an end",
-      "target": "dn21",
-      "rank": 16
     },
     {
       "source": "has ceased",
@@ -30927,26 +30846,6 @@
       "source": "homage with joined palms",
       "target": "an9.33",
       "rank": 1
-    },
-    {
-      "source": "honey tip",
-      "target": "sn1.71",
-      "rank": 1
-    },
-    {
-      "source": "honey tip",
-      "target": "sn2.3",
-      "rank": 2
-    },
-    {
-      "source": "honey tip",
-      "target": "sn11.21",
-      "rank": 3
-    },
-    {
-      "source": "honey tip",
-      "target": "sn7.1",
-      "rank": 4
     },
     {
       "source": "hopefully that’ll happen",
