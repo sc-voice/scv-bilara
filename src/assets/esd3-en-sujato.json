@@ -1503,7 +1503,7 @@
     {
       "id": "going forth will not be wasted",
       "group": "Examples",
-      "links": 4
+      "links": 0
     },
     {
       "id": "goldsmith",
@@ -1828,7 +1828,7 @@
     {
       "id": "I don't rely on faith",
       "group": "Examples",
-      "links": 2
+      "links": 4
     },
     {
       "id": "I arrived at the best",
@@ -3288,7 +3288,7 @@
     {
       "id": "Shady Orchid Tree",
       "group": "Examples",
-      "links": 4
+      "links": 2
     },
     {
       "id": "shall be your Teacher after my passing",
@@ -4986,7 +4986,7 @@
       "id": "mn39",
       "group": "mn",
       "rank": 1,
-      "links": 22
+      "links": 21
     },
     {
       "id": "mn119",
@@ -5471,8 +5471,8 @@
     {
       "id": "mn40",
       "group": "mn",
-      "rank": 3,
-      "links": 4
+      "rank": 9,
+      "links": 3
     },
     {
       "id": "mn52",
@@ -6653,7 +6653,7 @@
     {
       "id": "sn41.8",
       "group": "sn",
-      "rank": 2,
+      "rank": 3,
       "links": 4
     },
     {
@@ -7703,8 +7703,8 @@
     {
       "id": "sn12.22",
       "group": "sn",
-      "rank": 1,
-      "links": 5
+      "rank": 2,
+      "links": 4
     },
     {
       "id": "an8.13",
@@ -9869,7 +9869,7 @@
     {
       "id": "sn48.44",
       "group": "sn",
-      "rank": 1,
+      "rank": 2,
       "links": 2
     },
     {
@@ -10655,8 +10655,8 @@
     {
       "id": "sn48.68",
       "group": "sn",
-      "rank": 2,
-      "links": 2
+      "rank": 6,
+      "links": 1
     },
     {
       "id": "sn48.70",
@@ -11514,7 +11514,7 @@
       "id": "an5.34",
       "group": "an",
       "rank": 1,
-      "links": 1
+      "links": 2
     },
     {
       "id": "iti26",
@@ -11525,8 +11525,8 @@
     {
       "id": "an7.57",
       "group": "an",
-      "rank": 3,
-      "links": 1
+      "rank": 2,
+      "links": 2
     },
     {
       "id": "thag1.102",
@@ -11743,12 +11743,6 @@
       "group": "mn",
       "rank": 2,
       "links": 5
-    },
-    {
-      "id": "an7.72",
-      "group": "an",
-      "rank": 2,
-      "links": 2
     },
     {
       "id": "an3.102",
@@ -12119,7 +12113,7 @@
     {
       "id": "snp1.3",
       "group": "snp",
-      "rank": 3,
+      "rank": 2,
       "links": 6
     },
     {
@@ -13098,7 +13092,7 @@
       "id": "mn134",
       "group": "mn",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "sn1.10",
@@ -13482,6 +13476,12 @@
       "id": "sn8.1",
       "group": "sn",
       "rank": 4,
+      "links": 1
+    },
+    {
+      "id": "an7.72",
+      "group": "an",
+      "rank": 2,
       "links": 1
     },
     {
@@ -28883,26 +28883,6 @@
       "rank": 7
     },
     {
-      "source": "going forth will not be wasted",
-      "target": "sn12.22",
-      "rank": 1
-    },
-    {
-      "source": "going forth will not be wasted",
-      "target": "an7.72",
-      "rank": 2
-    },
-    {
-      "source": "going forth will not be wasted",
-      "target": "mn40",
-      "rank": 3
-    },
-    {
-      "source": "going forth will not be wasted",
-      "target": "mn39",
-      "rank": 4
-    },
-    {
       "source": "goldsmith",
       "target": "an3.102",
       "rank": 1
@@ -31639,13 +31619,23 @@
     },
     {
       "source": "I don't rely on faith",
-      "target": "sn48.44",
+      "target": "an5.34",
       "rank": 1
     },
     {
       "source": "I don't rely on faith",
-      "target": "sn41.8",
+      "target": "an7.57",
       "rank": 2
+    },
+    {
+      "source": "I don't rely on faith",
+      "target": "sn48.44",
+      "rank": 3
+    },
+    {
+      "source": "I don't rely on faith",
+      "target": "sn41.8",
+      "rank": 4
     },
     {
       "source": "I arrived at the best",
@@ -40664,18 +40654,8 @@
     },
     {
       "source": "Shady Orchid Tree",
-      "target": "sn48.68",
-      "rank": 2
-    },
-    {
-      "source": "Shady Orchid Tree",
       "target": "snp1.3",
-      "rank": 3
-    },
-    {
-      "source": "Shady Orchid Tree",
-      "target": "mn134",
-      "rank": 4
+      "rank": 2
     },
     {
       "source": "shall be your Teacher after my passing",
