@@ -103,7 +103,7 @@
     {
       "id": "alles Leiden",
       "group": "Examples",
-      "links": 26
+      "links": 27
     },
     {
       "id": "alle tauglichen Eigenschaften",
@@ -318,7 +318,7 @@
     {
       "id": "beide.* Enden",
       "group": "Examples",
-      "links": 4
+      "links": 7
     },
     {
       "id": "bei der besten angekommen",
@@ -343,7 +343,7 @@
     {
       "id": "beklag",
       "group": "Examples",
-      "links": 18
+      "links": 19
     },
     {
       "id": "bemüht.*, damit",
@@ -543,7 +543,7 @@
     {
       "id": "das Erste gibt",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "das Gleiche zu tun",
@@ -1208,7 +1208,7 @@
     {
       "id": "ein Rest",
       "group": "Examples",
-      "links": 17
+      "links": 18
     },
     {
       "id": "Eintracht geschaffen",
@@ -1383,7 +1383,7 @@
     {
       "id": "es war der Besinnungstag",
       "group": "Examples",
-      "links": 13
+      "links": 14
     },
     {
       "id": "etwas nicht Geringes, das ich bereue",
@@ -1448,7 +1448,7 @@
     {
       "id": "Flut.* überquer",
       "group": "Examples",
-      "links": 26
+      "links": 27
     },
     {
       "id": "Form als das Selbst",
@@ -1498,7 +1498,7 @@
     {
       "id": "friedvoller",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "friedvolle Meditationen",
@@ -1983,7 +1983,7 @@
     {
       "id": "Hölle de[rs]",
       "group": "Examples",
-      "links": 5
+      "links": 6
     },
     {
       "id": "Hölle mit Namen",
@@ -2323,7 +2323,7 @@
     {
       "id": "Knoten",
       "group": "Examples",
-      "links": 42
+      "links": 44
     },
     {
       "id": "Konzept",
@@ -2868,7 +2868,7 @@
     {
       "id": "ohne Verlangen",
       "group": "Examples",
-      "links": 10
+      "links": 11
     },
     {
       "id": "ohne Wahrnehmung",
@@ -3288,7 +3288,7 @@
     {
       "id": "Staub, der gegen den Wind",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "steckt nicht in der Mitte",
@@ -3433,7 +3433,7 @@
     {
       "id": "überquer",
       "group": "Examples",
-      "links": 51
+      "links": 53
     },
     {
       "id": "übersinnliche Kraft und Macht",
@@ -3543,7 +3543,7 @@
     {
       "id": "Unwissenheit schwindet",
       "group": "Examples",
-      "links": 29
+      "links": 30
     },
     {
       "id": "unwürdige Gespräche",
@@ -4158,7 +4158,7 @@
     {
       "id": "wie eine Kuh",
       "group": "Examples",
-      "links": 9
+      "links": 10
     },
     {
       "id": "wie ein Hund",
@@ -4198,7 +4198,7 @@
     {
       "id": "wie ein Affe",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "wie ein.* Katze",
@@ -5251,9 +5251,15 @@
       "links": 1
     },
     {
+      "id": "snp3.12",
+      "group": "snp",
+      "rank": 1,
+      "links": 8
+    },
+    {
       "id": "mn101",
       "group": "mn",
-      "rank": 1,
+      "rank": 2,
       "links": 19
     },
     {
@@ -5265,25 +5271,25 @@
     {
       "id": "sn35.83",
       "group": "sn",
-      "rank": 4,
+      "rank": 5,
       "links": 1
     },
     {
       "id": "sn56.22",
       "group": "sn",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
       "id": "iti103",
       "group": "iti",
-      "rank": 6,
+      "rank": 7,
       "links": 1
     },
     {
       "id": "snp2.2",
       "group": "snp",
-      "rank": 7,
+      "rank": 8,
       "links": 4
     },
     {
@@ -5301,7 +5307,7 @@
     {
       "id": "iti7",
       "group": "iti",
-      "rank": 11,
+      "rank": 12,
       "links": 1
     },
     {
@@ -5313,7 +5319,7 @@
     {
       "id": "an5.35",
       "group": "an",
-      "rank": 13,
+      "rank": 14,
       "links": 1
     },
     {
@@ -5343,7 +5349,7 @@
     {
       "id": "an5.38",
       "group": "an",
-      "rank": 18,
+      "rank": 19,
       "links": 1
     },
     {
@@ -5625,7 +5631,7 @@
     {
       "id": "thag18.1",
       "group": "thag",
-      "rank": 2,
+      "rank": 3,
       "links": 4
     },
     {
@@ -6511,10 +6517,28 @@
       "links": 2
     },
     {
+      "id": "snp4.2",
+      "group": "snp",
+      "rank": 4,
+      "links": 3
+    },
+    {
+      "id": "snp4.5",
+      "group": "snp",
+      "rank": 5,
+      "links": 2
+    },
+    {
       "id": "sn22.80",
       "group": "sn",
-      "rank": 4,
+      "rank": 6,
       "links": 5
+    },
+    {
+      "id": "snp3.8",
+      "group": "snp",
+      "rank": 6,
+      "links": 3
     },
     {
       "id": "thag1.9",
@@ -6633,19 +6657,19 @@
     {
       "id": "an8.27",
       "group": "an",
-      "rank": 7,
+      "rank": 8,
       "links": 1
     },
     {
       "id": "an5.209",
       "group": "an",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
       "id": "thig5.2",
       "group": "thig",
-      "rank": 9,
+      "rank": 10,
       "links": 1
     },
     {
@@ -6675,7 +6699,7 @@
     {
       "id": "an4.187",
       "group": "an",
-      "rank": 14,
+      "rank": 15,
       "links": 1
     },
     {
@@ -6987,7 +7011,7 @@
     {
       "id": "dhp360-382",
       "group": "dhp",
-      "rank": 4,
+      "rank": 5,
       "links": 8
     },
     {
@@ -10653,31 +10677,31 @@
     {
       "id": "an10.59",
       "group": "an",
-      "rank": 9,
+      "rank": 10,
       "links": 1
     },
     {
       "id": "sn48.65",
       "group": "sn",
-      "rank": 10,
+      "rank": 11,
       "links": 1
     },
     {
       "id": "sn54.4",
       "group": "sn",
-      "rank": 11,
+      "rank": 12,
       "links": 1
     },
     {
       "id": "sn47.36",
       "group": "sn",
-      "rank": 12,
+      "rank": 13,
       "links": 1
     },
     {
       "id": "sn51.25",
       "group": "sn",
-      "rank": 13,
+      "rank": 14,
       "links": 1
     },
     {
@@ -10689,7 +10713,7 @@
     {
       "id": "iti46",
       "group": "iti",
-      "rank": 15,
+      "rank": 16,
       "links": 1
     },
     {
@@ -11859,7 +11883,7 @@
     {
       "id": "snp3.4",
       "group": "snp",
-      "rank": 21,
+      "rank": 22,
       "links": 3
     },
     {
@@ -13405,15 +13429,21 @@
       "links": 1
     },
     {
+      "id": "snp3.10",
+      "group": "snp",
+      "rank": 1,
+      "links": 2
+    },
+    {
       "id": "sn6.10",
       "group": "sn",
-      "rank": 1,
+      "rank": 2,
       "links": 1
     },
     {
       "id": "an10.89",
       "group": "an",
-      "rank": 2,
+      "rank": 3,
       "links": 1
     },
     {
@@ -13425,7 +13455,7 @@
     {
       "id": "sn1.39",
       "group": "sn",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
@@ -14359,21 +14389,27 @@
       "links": 2
     },
     {
+      "id": "snp4.4",
+      "group": "snp",
+      "rank": 2,
+      "links": 2
+    },
+    {
       "id": "sn1.34",
       "group": "sn",
-      "rank": 24,
+      "rank": 26,
       "links": 1
     },
     {
       "id": "dhp209-220",
       "group": "dhp",
-      "rank": 31,
+      "rank": 33,
       "links": 1
     },
     {
       "id": "snp2.12",
       "group": "snp",
-      "rank": 34,
+      "rank": 36,
       "links": 2
     },
     {
@@ -16609,21 +16645,27 @@
       "links": 2
     },
     {
+      "id": "snp4.1",
+      "group": "snp",
+      "rank": 29,
+      "links": 1
+    },
+    {
       "id": "sn2.24",
       "group": "sn",
-      "rank": 36,
+      "rank": 38,
       "links": 1
     },
     {
       "id": "sn1.33",
       "group": "sn",
-      "rank": 37,
+      "rank": 39,
       "links": 1
     },
     {
       "id": "sn1.50",
       "group": "sn",
-      "rank": 39,
+      "rank": 41,
       "links": 1
     },
     {
@@ -18003,30 +18045,24 @@
     {
       "id": "thag1.17",
       "group": "thag",
-      "rank": 11,
+      "rank": 12,
       "links": 1
     },
     {
       "id": "thag1.101",
       "group": "thag",
-      "rank": 12,
+      "rank": 13,
       "links": 1
     },
     {
       "id": "thag2.1",
       "group": "thag",
-      "rank": 13,
+      "rank": 14,
       "links": 1
     },
     {
       "id": "thag2.16",
       "group": "thag",
-      "rank": 15,
-      "links": 1
-    },
-    {
-      "id": "sn36.2",
-      "group": "sn",
       "rank": 16,
       "links": 1
     },
@@ -19114,133 +19150,138 @@
     },
     {
       "source": "alles Leiden",
-      "target": "mn101",
+      "target": "snp3.12",
       "rank": 1
     },
     {
       "source": "alles Leiden",
-      "target": "sn42.11",
+      "target": "mn101",
       "rank": 2
     },
     {
       "source": "alles Leiden",
-      "target": "mn14",
+      "target": "sn42.11",
       "rank": 3
     },
     {
       "source": "alles Leiden",
-      "target": "sn35.83",
+      "target": "mn14",
       "rank": 4
     },
     {
       "source": "alles Leiden",
-      "target": "sn56.22",
+      "target": "sn35.83",
       "rank": 5
     },
     {
       "source": "alles Leiden",
-      "target": "iti103",
+      "target": "sn56.22",
       "rank": 6
     },
     {
       "source": "alles Leiden",
-      "target": "snp2.2",
+      "target": "iti103",
       "rank": 7
     },
     {
       "source": "alles Leiden",
-      "target": "mn123",
+      "target": "snp2.2",
       "rank": 8
     },
     {
       "source": "alles Leiden",
-      "target": "dhp334-359",
+      "target": "mn123",
       "rank": 9
     },
     {
       "source": "alles Leiden",
-      "target": "dn14",
+      "target": "dhp334-359",
       "rank": 10
     },
     {
       "source": "alles Leiden",
-      "target": "iti7",
+      "target": "dn14",
       "rank": 11
     },
     {
       "source": "alles Leiden",
-      "target": "iti8",
+      "target": "iti7",
       "rank": 12
     },
     {
       "source": "alles Leiden",
-      "target": "an5.35",
+      "target": "iti8",
       "rank": 13
     },
     {
       "source": "alles Leiden",
-      "target": "sn5.6",
+      "target": "an5.35",
       "rank": 14
     },
     {
       "source": "alles Leiden",
-      "target": "an3.74",
+      "target": "sn5.6",
       "rank": 15
     },
     {
       "source": "alles Leiden",
-      "target": "thig6.6",
+      "target": "an3.74",
       "rank": 16
     },
     {
       "source": "alles Leiden",
-      "target": "an6.23",
+      "target": "thig6.6",
       "rank": 17
     },
     {
       "source": "alles Leiden",
-      "target": "an5.38",
+      "target": "an6.23",
       "rank": 18
     },
     {
       "source": "alles Leiden",
-      "target": "an4.49",
+      "target": "an5.38",
       "rank": 19
     },
     {
       "source": "alles Leiden",
-      "target": "dhp320-333",
+      "target": "an4.49",
       "rank": 20
     },
     {
       "source": "alles Leiden",
-      "target": "thig13.3",
+      "target": "dhp320-333",
       "rank": 21
     },
     {
       "source": "alles Leiden",
-      "target": "an3.36",
+      "target": "thig13.3",
       "rank": 22
     },
     {
       "source": "alles Leiden",
-      "target": "thig13.4",
+      "target": "an3.36",
       "rank": 23
     },
     {
       "source": "alles Leiden",
-      "target": "snp5.19",
+      "target": "thig13.4",
       "rank": 24
     },
     {
       "source": "alles Leiden",
-      "target": "mn130",
+      "target": "snp5.19",
       "rank": 25
     },
     {
       "source": "alles Leiden",
-      "target": "dn32",
+      "target": "mn130",
       "rank": 26
+    },
+    {
+      "source": "alles Leiden",
+      "target": "dn32",
+      "rank": 27
     },
     {
       "source": "alle tauglichen Eigenschaften",
@@ -20499,8 +20540,23 @@
     },
     {
       "source": "beide.* Enden",
-      "target": "sn22.80",
+      "target": "snp4.2",
       "rank": 4
+    },
+    {
+      "source": "beide.* Enden",
+      "target": "snp4.5",
+      "rank": 5
+    },
+    {
+      "source": "beide.* Enden",
+      "target": "sn22.80",
+      "rank": 6
+    },
+    {
+      "source": "beide.* Enden",
+      "target": "snp3.8",
+      "rank": 7
     },
     {
       "source": "bei der besten angekommen",
@@ -20649,68 +20705,73 @@
     },
     {
       "source": "beklag",
-      "target": "dn16",
+      "target": "snp3.8",
       "rank": 6
     },
     {
       "source": "beklag",
-      "target": "an8.27",
+      "target": "dn16",
       "rank": 7
     },
     {
       "source": "beklag",
-      "target": "an5.209",
+      "target": "an8.27",
       "rank": 8
     },
     {
       "source": "beklag",
-      "target": "thig5.2",
+      "target": "an5.209",
       "rank": 9
     },
     {
       "source": "beklag",
-      "target": "ud3.6",
+      "target": "thig5.2",
       "rank": 10
     },
     {
       "source": "beklag",
-      "target": "sn21.4",
+      "target": "ud3.6",
       "rank": 11
     },
     {
       "source": "beklag",
-      "target": "sn10.5",
+      "target": "sn21.4",
       "rank": 12
     },
     {
       "source": "beklag",
-      "target": "dhp146-156",
+      "target": "sn10.5",
       "rank": 13
     },
     {
       "source": "beklag",
-      "target": "an4.187",
+      "target": "dhp146-156",
       "rank": 14
     },
     {
       "source": "beklag",
-      "target": "ud4.8",
+      "target": "an4.187",
       "rank": 15
     },
     {
       "source": "beklag",
-      "target": "sn55.24",
+      "target": "ud4.8",
       "rank": 16
     },
     {
       "source": "beklag",
-      "target": "sn55.25",
+      "target": "sn55.24",
       "rank": 17
     },
     {
       "source": "beklag",
-      "target": "mn106",
+      "target": "sn55.25",
       "rank": 18
+    },
+    {
+      "source": "beklag",
+      "target": "mn106",
+      "rank": 19
     },
     {
       "source": "bemüht.*, damit",
@@ -22401,6 +22462,11 @@
       "source": "das Erste gibt",
       "target": "an3.65",
       "rank": 3
+    },
+    {
+      "source": "das Erste gibt",
+      "target": "snp3.12",
+      "rank": 4
     },
     {
       "source": "das Gleiche zu tun",
@@ -26734,53 +26800,58 @@
     },
     {
       "source": "ein Rest",
-      "target": "dn22",
+      "target": "snp3.12",
       "rank": 8
     },
     {
       "source": "ein Rest",
-      "target": "an10.59",
+      "target": "dn22",
       "rank": 9
     },
     {
       "source": "ein Rest",
-      "target": "sn48.65",
+      "target": "an10.59",
       "rank": 10
     },
     {
       "source": "ein Rest",
-      "target": "sn54.4",
+      "target": "sn48.65",
       "rank": 11
     },
     {
       "source": "ein Rest",
-      "target": "sn47.36",
+      "target": "sn54.4",
       "rank": 12
     },
     {
       "source": "ein Rest",
-      "target": "sn51.25",
+      "target": "sn47.36",
       "rank": 13
     },
     {
       "source": "ein Rest",
-      "target": "iti45",
+      "target": "sn51.25",
       "rank": 14
     },
     {
       "source": "ein Rest",
-      "target": "iti46",
+      "target": "iti45",
       "rank": 15
     },
     {
       "source": "ein Rest",
-      "target": "iti47",
+      "target": "iti46",
       "rank": 16
     },
     {
       "source": "ein Rest",
-      "target": "mn70",
+      "target": "iti47",
       "rank": 17
+    },
+    {
+      "source": "ein Rest",
+      "target": "mn70",
+      "rank": 18
     },
     {
       "source": "Eintracht geschaffen",
@@ -28364,8 +28435,13 @@
     },
     {
       "source": "es war der Besinnungstag",
-      "target": "dn2",
+      "target": "snp3.12",
       "rank": 13
+    },
+    {
+      "source": "es war der Besinnungstag",
+      "target": "dn2",
+      "rank": 14
     },
     {
       "source": "etwas nicht Geringes, das ich bereue",
@@ -28864,73 +28940,78 @@
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp2.5",
+      "target": "snp4.2",
       "rank": 13
     },
     {
       "source": "Flut.* überquer",
-      "target": "ud8.10",
+      "target": "snp2.5",
       "rank": 14
     },
     {
       "source": "Flut.* überquer",
-      "target": "sn8.8",
+      "target": "ud8.10",
       "rank": 15
     },
     {
       "source": "Flut.* überquer",
-      "target": "thag13.1",
+      "target": "sn8.8",
       "rank": 16
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp1.12",
+      "target": "thag13.1",
       "rank": 17
     },
     {
       "source": "Flut.* überquer",
-      "target": "dhp360-382",
+      "target": "snp1.12",
       "rank": 18
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp3.5",
+      "target": "dhp360-382",
       "rank": 19
     },
     {
       "source": "Flut.* überquer",
-      "target": "thag16.9",
+      "target": "snp3.5",
       "rank": 20
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp3.4",
+      "target": "thag16.9",
       "rank": 21
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp5.19",
+      "target": "snp3.4",
       "rank": 22
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp3.6",
+      "target": "snp5.19",
       "rank": 23
     },
     {
       "source": "Flut.* überquer",
-      "target": "dn20",
+      "target": "snp3.6",
       "rank": 24
     },
     {
       "source": "Flut.* überquer",
-      "target": "thag21.1",
+      "target": "dn20",
       "rank": 25
     },
     {
       "source": "Flut.* überquer",
-      "target": "dn21",
+      "target": "thag21.1",
       "rank": 26
+    },
+    {
+      "source": "Flut.* überquer",
+      "target": "dn21",
+      "rank": 27
     },
     {
       "source": "Form als das Selbst",
@@ -29199,8 +29280,13 @@
     },
     {
       "source": "friedvoller",
-      "target": "dhp360-382",
+      "target": "snp3.12",
       "rank": 4
+    },
+    {
+      "source": "friedvoller",
+      "target": "dhp360-382",
+      "rank": 5
     },
     {
       "source": "friedvolle Meditationen",
@@ -32839,28 +32925,33 @@
     },
     {
       "source": "Hölle de[rs]",
-      "target": "sn6.10",
+      "target": "snp3.10",
       "rank": 1
     },
     {
       "source": "Hölle de[rs]",
-      "target": "an10.89",
+      "target": "sn6.10",
       "rank": 2
     },
     {
       "source": "Hölle de[rs]",
-      "target": "sn3.20",
+      "target": "an10.89",
       "rank": 3
     },
     {
       "source": "Hölle de[rs]",
-      "target": "mn130",
+      "target": "sn3.20",
       "rank": 4
     },
     {
       "source": "Hölle de[rs]",
-      "target": "sn1.39",
+      "target": "mn130",
       "rank": 5
+    },
+    {
+      "source": "Hölle de[rs]",
+      "target": "sn1.39",
+      "rank": 6
     },
     {
       "source": "Hölle mit Namen",
@@ -35064,98 +35155,108 @@
     },
     {
       "source": "Knoten",
-      "target": "sn1.34",
+      "target": "snp4.4",
       "rank": 24
     },
     {
       "source": "Knoten",
-      "target": "sn24.8",
+      "target": "snp4.5",
       "rank": 25
     },
     {
       "source": "Knoten",
-      "target": "thag10.5",
+      "target": "sn1.34",
       "rank": 26
     },
     {
       "source": "Knoten",
-      "target": "sn10.7",
+      "target": "sn24.8",
       "rank": 27
     },
     {
       "source": "Knoten",
-      "target": "an4.23",
+      "target": "thag10.5",
       "rank": 28
     },
     {
       "source": "Knoten",
-      "target": "sn35.247",
+      "target": "sn10.7",
       "rank": 29
     },
     {
       "source": "Knoten",
-      "target": "dhp90-99",
+      "target": "an4.23",
       "rank": 30
     },
     {
       "source": "Knoten",
-      "target": "dhp209-220",
+      "target": "sn35.247",
       "rank": 31
     },
     {
       "source": "Knoten",
-      "target": "iti112",
+      "target": "dhp90-99",
       "rank": 32
     },
     {
       "source": "Knoten",
-      "target": "snp1.12",
+      "target": "dhp209-220",
       "rank": 33
     },
     {
       "source": "Knoten",
-      "target": "snp2.12",
+      "target": "iti112",
       "rank": 34
     },
     {
       "source": "Knoten",
-      "target": "thag16.3",
+      "target": "snp1.12",
       "rank": 35
     },
     {
       "source": "Knoten",
-      "target": "sn1.20",
+      "target": "snp2.12",
       "rank": 36
     },
     {
       "source": "Knoten",
-      "target": "dhp334-359",
+      "target": "thag16.3",
       "rank": 37
     },
     {
       "source": "Knoten",
-      "target": "thag20.1",
+      "target": "sn1.20",
       "rank": 38
     },
     {
       "source": "Knoten",
-      "target": "thag21.1",
+      "target": "dhp334-359",
       "rank": 39
     },
     {
       "source": "Knoten",
-      "target": "dn1",
+      "target": "thag20.1",
       "rank": 40
     },
     {
       "source": "Knoten",
-      "target": "dn33",
+      "target": "thag21.1",
       "rank": 41
     },
     {
       "source": "Knoten",
-      "target": "dn34",
+      "target": "dn1",
       "rank": 42
+    },
+    {
+      "source": "Knoten",
+      "target": "dn33",
+      "rank": 43
+    },
+    {
+      "source": "Knoten",
+      "target": "dn34",
+      "rank": 44
     },
     {
       "source": "Konzept",
@@ -38913,6 +39014,11 @@
       "rank": 10
     },
     {
+      "source": "ohne Verlangen",
+      "target": "snp3.12",
+      "rank": 11
+    },
+    {
       "source": "ohne Wahrnehmung",
       "target": "dn1",
       "rank": 1
@@ -41773,6 +41879,11 @@
       "rank": 3
     },
     {
+      "source": "Staub, der gegen den Wind",
+      "target": "snp3.10",
+      "rank": 4
+    },
+    {
       "source": "steckt nicht in der Mitte",
       "target": "an6.61",
       "rank": 1
@@ -42644,118 +42755,128 @@
     },
     {
       "source": "überquer",
-      "target": "iti107",
+      "target": "snp4.1",
       "rank": 29
     },
     {
       "source": "überquer",
-      "target": "an4.41",
+      "target": "iti107",
       "rank": 30
     },
     {
       "source": "überquer",
-      "target": "cp2",
+      "target": "snp4.2",
       "rank": 31
     },
     {
       "source": "überquer",
-      "target": "ud8.10",
+      "target": "an4.41",
       "rank": 32
     },
     {
       "source": "überquer",
-      "target": "thag10.1",
+      "target": "cp2",
       "rank": 33
     },
     {
       "source": "überquer",
-      "target": "thag10.3",
+      "target": "ud8.10",
       "rank": 34
     },
     {
       "source": "überquer",
-      "target": "sn8.8",
+      "target": "thag10.1",
       "rank": 35
     },
     {
       "source": "überquer",
-      "target": "sn2.24",
+      "target": "thag10.3",
       "rank": 36
     },
     {
       "source": "überquer",
-      "target": "sn1.33",
+      "target": "sn8.8",
       "rank": 37
     },
     {
       "source": "überquer",
-      "target": "ud3.2",
+      "target": "sn2.24",
       "rank": 38
     },
     {
       "source": "überquer",
-      "target": "sn1.50",
+      "target": "sn1.33",
       "rank": 39
     },
     {
       "source": "überquer",
-      "target": "thag13.1",
+      "target": "ud3.2",
       "rank": 40
     },
     {
       "source": "überquer",
-      "target": "snp1.12",
+      "target": "sn1.50",
       "rank": 41
     },
     {
       "source": "überquer",
-      "target": "snp2.12",
+      "target": "thag13.1",
       "rank": 42
     },
     {
       "source": "überquer",
-      "target": "dhp360-382",
+      "target": "snp1.12",
       "rank": 43
     },
     {
       "source": "überquer",
-      "target": "snp3.5",
+      "target": "snp2.12",
       "rank": 44
     },
     {
       "source": "überquer",
-      "target": "snp3.4",
+      "target": "dhp360-382",
       "rank": 45
     },
     {
       "source": "überquer",
-      "target": "snp5.19",
+      "target": "snp3.5",
       "rank": 46
     },
     {
       "source": "überquer",
-      "target": "snp3.11",
+      "target": "snp3.4",
       "rank": 47
     },
     {
       "source": "überquer",
-      "target": "snp3.6",
+      "target": "snp5.19",
       "rank": 48
     },
     {
       "source": "überquer",
-      "target": "thag19.1",
+      "target": "snp3.11",
       "rank": 49
     },
     {
       "source": "überquer",
-      "target": "dn20",
+      "target": "snp3.6",
       "rank": 50
     },
     {
       "source": "überquer",
-      "target": "dn21",
+      "target": "thag19.1",
       "rank": 51
+    },
+    {
+      "source": "überquer",
+      "target": "dn20",
+      "rank": 52
+    },
+    {
+      "source": "überquer",
+      "target": "dn21",
+      "rank": 53
     },
     {
       "source": "übersinnliche Kraft und Macht",
@@ -43474,8 +43595,13 @@
     },
     {
       "source": "Unwissenheit schwindet",
-      "target": "mn38",
+      "target": "snp3.12",
       "rank": 29
+    },
+    {
+      "source": "Unwissenheit schwindet",
+      "target": "mn38",
+      "rank": 30
     },
     {
       "source": "unwürdige Gespräche",
@@ -47644,32 +47770,32 @@
     },
     {
       "source": "wieder und wieder",
-      "target": "thag1.17",
+      "target": "snp3.12",
       "rank": 11
     },
     {
       "source": "wieder und wieder",
-      "target": "thag1.101",
+      "target": "thag1.17",
       "rank": 12
     },
     {
       "source": "wieder und wieder",
-      "target": "thag2.1",
+      "target": "thag1.101",
       "rank": 13
     },
     {
       "source": "wieder und wieder",
-      "target": "thag2.3",
+      "target": "thag2.1",
       "rank": 14
     },
     {
       "source": "wieder und wieder",
-      "target": "thag2.16",
+      "target": "thag2.3",
       "rank": 15
     },
     {
       "source": "wieder und wieder",
-      "target": "sn36.2",
+      "target": "thag2.16",
       "rank": 16
     },
     {
@@ -47814,13 +47940,18 @@
     },
     {
       "source": "wie eine Kuh",
-      "target": "mn48",
+      "target": "snp3.8",
       "rank": 8
     },
     {
       "source": "wie eine Kuh",
-      "target": "thag19.1",
+      "target": "mn48",
       "rank": 9
+    },
+    {
+      "source": "wie eine Kuh",
+      "target": "thag19.1",
+      "rank": 10
     },
     {
       "source": "wie ein Hund",
@@ -48074,13 +48205,18 @@
     },
     {
       "source": "wie ein Affe",
-      "target": "thag18.1",
+      "target": "snp4.4",
       "rank": 2
     },
     {
       "source": "wie ein Affe",
-      "target": "thag19.1",
+      "target": "thag18.1",
       "rank": 3
+    },
+    {
+      "source": "wie ein Affe",
+      "target": "thag19.1",
+      "rank": 4
     },
     {
       "source": "wie ein.* Katze",
