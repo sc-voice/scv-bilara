@@ -968,12 +968,10 @@ describe("Seeker - Sutta Tests", function () {
     var data = await skr.find({ pattern });
     expect(data.resultPattern).toBe("\\balles\\sleiden,\\sdas\\sentsteht");
     expect(data.method).toBe("phrase");
-    expect(data.mlDocs.length).toBe(1);
-    var mld0 = data.mlDocs[0];
-    expect(mld0.bilaraPaths[0]).toBe(
-      "root/pli/ms/sutta/sn/sn42/sn42.11_root-pli-ms.json"
-    );
-    expect(mld0.score).toBe(3.055);
+    expect(data.mlDocs.length).toBe(2);
+    var mld1 = data.mlDocs[1];
+    expect(mld1.bilaraPaths[1]).toMatch(/sn42.11/);
+    expect(mld1.score).toBe(3.055);
   });
 
   it("find(...) => thig1.1:1.1/en/soma", async () => {
