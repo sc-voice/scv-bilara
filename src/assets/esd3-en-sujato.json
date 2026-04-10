@@ -1163,7 +1163,7 @@
     {
       "id": "faith and love",
       "group": "Examples",
-      "links": 6
+      "links": 3
     },
     {
       "id": "faith as partner",
@@ -1573,7 +1573,7 @@
     {
       "id": "guaranteed",
       "group": "Examples",
-      "links": 2
+      "links": 1
     },
     {
       "id": "guard the sense doors",
@@ -1733,7 +1733,7 @@
     {
       "id": "homage with joined palms",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "honey tip",
@@ -4872,7 +4872,7 @@
       "id": "an6.30",
       "group": "an",
       "rank": 1,
-      "links": 6
+      "links": 5
     },
     {
       "id": "an8.12",
@@ -7722,7 +7722,7 @@
       "id": "mn70",
       "group": "mn",
       "rank": 1,
-      "links": 7
+      "links": 6
     },
     {
       "id": "sn41.1",
@@ -8298,12 +8298,12 @@
       "id": "sn55.24",
       "group": "sn",
       "rank": 1,
-      "links": 3
+      "links": 2
     },
     {
       "id": "sn55.25",
       "group": "sn",
-      "rank": 2,
+      "rank": 1,
       "links": 3
     },
     {
@@ -11979,12 +11979,6 @@
       "links": 2
     },
     {
-      "id": "sn55.30",
-      "group": "sn",
-      "rank": 2,
-      "links": 1
-    },
-    {
       "id": "mn69",
       "group": "mn",
       "rank": 3,
@@ -12487,12 +12481,6 @@
       "group": "sn",
       "rank": 2,
       "links": 2
-    },
-    {
-      "id": "an9.33",
-      "group": "an",
-      "rank": 1,
-      "links": 1
     },
     {
       "id": "mn150",
@@ -26589,7 +26577,7 @@
     },
     {
       "source": "faith and love",
-      "target": "an6.30",
+      "target": "sn55.25",
       "rank": 1
     },
     {
@@ -26599,23 +26587,8 @@
     },
     {
       "source": "faith and love",
-      "target": "sn55.24",
-      "rank": 3
-    },
-    {
-      "source": "faith and love",
-      "target": "sn55.25",
-      "rank": 4
-    },
-    {
-      "source": "faith and love",
-      "target": "mn70",
-      "rank": 5
-    },
-    {
-      "source": "faith and love",
       "target": "mn22",
-      "rank": 6
+      "rank": 3
     },
     {
       "source": "faith as partner",
@@ -29413,11 +29386,6 @@
       "rank": 1
     },
     {
-      "source": "guaranteed",
-      "target": "sn55.30",
-      "rank": 2
-    },
-    {
       "source": "guard the sense doors",
       "target": "sn35.132",
       "rank": 1
@@ -30821,11 +30789,6 @@
       "source": "hindrances, corruptions of the heart",
       "target": "dn16",
       "rank": 25
-    },
-    {
-      "source": "homage with joined palms",
-      "target": "an9.33",
-      "rank": 1
     },
     {
       "source": "hopefully that’ll happen",
