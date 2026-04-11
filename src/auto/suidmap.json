@@ -23,6 +23,7 @@
 		"translation/en/sujato": "sutta/an/an1",
 		"translation/fr/sekha": "sutta/an/an1",
 		"translation/jpn/kaz": "sutta/an/an1",
+		"translation/ru/sv": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.31-40": {
@@ -30,6 +31,7 @@
 		"translation/en/sujato": "sutta/an/an1",
 		"translation/fr/sekha": "sutta/an/an1",
 		"translation/jpn/kaz": "sutta/an/an1",
+		"translation/ru/sv": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.41-50": {
@@ -21556,6 +21558,7 @@
 	"sn46.53": {
 		"translation/de/sabbamitta": "sutta/sn/sn46",
 		"translation/en/sujato": "sutta/sn/sn46",
+		"translation/fr/christelle": "sutta/sn/sn46",
 		"root/pli/ms": "sutta/sn/sn46"
 	},
 	"sn46.54": {
@@ -24533,30 +24536,37 @@
 		"root/pli/ms": "sutta/kn/snp/vagga4"
 	},
 	"snp4.7": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga4",
 		"translation/en/sujato": "sutta/kn/snp/vagga4",
 		"root/pli/ms": "sutta/kn/snp/vagga4"
 	},
 	"snp4.8": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga4",
 		"translation/en/sujato": "sutta/kn/snp/vagga4",
 		"root/pli/ms": "sutta/kn/snp/vagga4"
 	},
 	"snp4.9": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga4",
 		"translation/en/sujato": "sutta/kn/snp/vagga4",
 		"root/pli/ms": "sutta/kn/snp/vagga4"
 	},
 	"snp4.10": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga4",
 		"translation/en/sujato": "sutta/kn/snp/vagga4",
 		"root/pli/ms": "sutta/kn/snp/vagga4"
 	},
 	"snp4.11": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga4",
 		"translation/en/sujato": "sutta/kn/snp/vagga4",
 		"root/pli/ms": "sutta/kn/snp/vagga4"
 	},
 	"snp4.12": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga4",
 		"translation/en/sujato": "sutta/kn/snp/vagga4",
 		"root/pli/ms": "sutta/kn/snp/vagga4"
 	},
 	"snp4.13": {
+		"translation/de/sabbamitta": "sutta/kn/snp/vagga4",
 		"translation/en/sujato": "sutta/kn/snp/vagga4",
 		"root/pli/ms": "sutta/kn/snp/vagga4"
 	},

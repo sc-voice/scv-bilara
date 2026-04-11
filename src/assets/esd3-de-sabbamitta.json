@@ -98,7 +98,7 @@
     {
       "id": "allein zu wandern",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "alles Leiden",
@@ -413,7 +413,7 @@
     {
       "id": "bewerte",
       "group": "Examples",
-      "links": 21
+      "links": 22
     },
     {
       "id": "bewusste Lüge",
@@ -508,7 +508,7 @@
     {
       "id": "das allein ist die Wahrheit",
       "group": "Examples",
-      "links": 19
+      "links": 21
     },
     {
       "id": "das Auge brennt",
@@ -978,7 +978,7 @@
     {
       "id": "Dummheit",
       "group": "Examples",
-      "links": 19
+      "links": 20
     },
     {
       "id": "Dunkelheit.* und Licht",
@@ -1018,7 +1018,7 @@
     {
       "id": "durch Weisheit befreit",
       "group": "Examples",
-      "links": 16
+      "links": 17
     },
     {
       "id": "eben da nahm ich beim Buddha",
@@ -1448,7 +1448,7 @@
     {
       "id": "Flut.* überquer",
       "group": "Examples",
-      "links": 27
+      "links": 28
     },
     {
       "id": "Form als das Selbst",
@@ -2323,7 +2323,7 @@
     {
       "id": "Knoten",
       "group": "Examples",
-      "links": 44
+      "links": 47
     },
     {
       "id": "Konzept",
@@ -2868,7 +2868,7 @@
     {
       "id": "ohne Verlangen",
       "group": "Examples",
-      "links": 11
+      "links": 12
     },
     {
       "id": "ohne Wahrnehmung",
@@ -2948,7 +2948,7 @@
     {
       "id": "Riese",
       "group": "Examples",
-      "links": 22
+      "links": 23
     },
     {
       "id": "Roben aus Hanf",
@@ -3433,7 +3433,7 @@
     {
       "id": "überquer",
       "group": "Examples",
-      "links": 53
+      "links": 54
     },
     {
       "id": "übersinnliche Kraft und Macht",
@@ -3563,7 +3563,7 @@
     {
       "id": "Urteile",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "Urteil über Menschen",
@@ -5239,6 +5239,12 @@
       "links": 29
     },
     {
+      "id": "snp4.7",
+      "group": "snp",
+      "rank": 1,
+      "links": 3
+    },
+    {
       "id": "dhp320-333",
       "group": "dhp",
       "rank": 1,
@@ -5247,7 +5253,7 @@
     {
       "id": "dhp60-75",
       "group": "dhp",
-      "rank": 2,
+      "rank": 3,
       "links": 1
     },
     {
@@ -7297,6 +7303,12 @@
       "links": 5
     },
     {
+      "id": "snp4.12",
+      "group": "snp",
+      "rank": 17,
+      "links": 1
+    },
+    {
       "id": "dhp256-272",
       "group": "dhp",
       "rank": 7,
@@ -7978,6 +7990,18 @@
       "id": "sn45.174",
       "group": "sn",
       "rank": 2,
+      "links": 2
+    },
+    {
+      "id": "snp4.8",
+      "group": "snp",
+      "rank": 17,
+      "links": 1
+    },
+    {
+      "id": "snp4.13",
+      "group": "snp",
+      "rank": 18,
       "links": 2
     },
     {
@@ -9913,6 +9937,12 @@
       "links": 4
     },
     {
+      "id": "snp4.9",
+      "group": "snp",
+      "rank": 7,
+      "links": 4
+    },
+    {
       "id": "an5.182",
       "group": "an",
       "rank": 7,
@@ -9933,7 +9963,7 @@
     {
       "id": "an5.165",
       "group": "an",
-      "rank": 12,
+      "rank": 13,
       "links": 1
     },
     {
@@ -9945,7 +9975,7 @@
     {
       "id": "an5.93",
       "group": "an",
-      "rank": 14,
+      "rank": 15,
       "links": 1
     },
     {
@@ -11883,7 +11913,7 @@
     {
       "id": "snp3.4",
       "group": "snp",
-      "rank": 22,
+      "rank": 23,
       "links": 3
     },
     {
@@ -14401,15 +14431,21 @@
       "links": 1
     },
     {
+      "id": "snp4.10",
+      "group": "snp",
+      "rank": 9,
+      "links": 2
+    },
+    {
       "id": "dhp209-220",
       "group": "dhp",
-      "rank": 33,
+      "rank": 34,
       "links": 1
     },
     {
       "id": "snp2.12",
       "group": "snp",
-      "rank": 36,
+      "rank": 38,
       "links": 2
     },
     {
@@ -16653,19 +16689,19 @@
     {
       "id": "sn2.24",
       "group": "sn",
-      "rank": 38,
+      "rank": 39,
       "links": 1
     },
     {
       "id": "sn1.33",
       "group": "sn",
-      "rank": 39,
+      "rank": 40,
       "links": 1
     },
     {
       "id": "sn1.50",
       "group": "sn",
-      "rank": 41,
+      "rank": 42,
       "links": 1
     },
     {
@@ -16864,6 +16900,12 @@
       "id": "sn12.50",
       "group": "sn",
       "rank": 10,
+      "links": 1
+    },
+    {
+      "id": "snp4.11",
+      "group": "snp",
+      "rank": 5,
       "links": 1
     },
     {
@@ -19135,18 +19177,23 @@
     },
     {
       "source": "allein zu wandern",
-      "target": "dhp320-333",
+      "target": "snp4.7",
       "rank": 1
     },
     {
       "source": "allein zu wandern",
-      "target": "dhp60-75",
+      "target": "dhp320-333",
       "rank": 2
     },
     {
       "source": "allein zu wandern",
-      "target": "mn128",
+      "target": "dhp60-75",
       "rank": 3
+    },
+    {
+      "source": "allein zu wandern",
+      "target": "mn128",
+      "rank": 4
     },
     {
       "source": "alles Leiden",
@@ -21410,28 +21457,33 @@
     },
     {
       "source": "bewerte",
-      "target": "dhp256-272",
+      "target": "snp4.12",
       "rank": 17
     },
     {
       "source": "bewerte",
-      "target": "sn35.132",
+      "target": "dhp256-272",
       "rank": 18
     },
     {
       "source": "bewerte",
-      "target": "an5.50",
+      "target": "sn35.132",
       "rank": 19
     },
     {
       "source": "bewerte",
-      "target": "dn30",
+      "target": "an5.50",
       "rank": 20
     },
     {
       "source": "bewerte",
-      "target": "dn34",
+      "target": "dn30",
       "rank": 21
+    },
+    {
+      "source": "bewerte",
+      "target": "dn34",
+      "rank": 22
     },
     {
       "source": "bewusste Lüge",
@@ -22330,18 +22382,28 @@
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "mn139",
+      "target": "snp4.8",
       "rank": 17
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "dn21",
+      "target": "snp4.13",
       "rank": 18
     },
     {
       "source": "das allein ist die Wahrheit",
-      "target": "dn33",
+      "target": "mn139",
       "rank": 19
+    },
+    {
+      "source": "das allein ist die Wahrheit",
+      "target": "dn21",
+      "rank": 20
+    },
+    {
+      "source": "das allein ist die Wahrheit",
+      "target": "dn33",
+      "rank": 21
     },
     {
       "source": "das Auge brennt",
@@ -25070,68 +25132,73 @@
     },
     {
       "source": "Dummheit",
-      "target": "an2.42-51",
+      "target": "snp4.9",
       "rank": 7
     },
     {
       "source": "Dummheit",
-      "target": "an5.182",
+      "target": "an2.42-51",
       "rank": 8
     },
     {
       "source": "Dummheit",
-      "target": "an5.183",
+      "target": "an5.182",
       "rank": 9
     },
     {
       "source": "Dummheit",
-      "target": "an5.184",
+      "target": "an5.183",
       "rank": 10
     },
     {
       "source": "Dummheit",
-      "target": "an8.33",
+      "target": "an5.184",
       "rank": 11
     },
     {
       "source": "Dummheit",
-      "target": "an5.165",
+      "target": "an8.33",
       "rank": 12
     },
     {
       "source": "Dummheit",
-      "target": "an5.181",
+      "target": "an5.165",
       "rank": 13
     },
     {
       "source": "Dummheit",
-      "target": "an5.93",
+      "target": "an5.181",
       "rank": 14
     },
     {
       "source": "Dummheit",
-      "target": "an5.190",
+      "target": "an5.93",
       "rank": 15
     },
     {
       "source": "Dummheit",
-      "target": "an9.7",
+      "target": "an5.190",
       "rank": 16
     },
     {
       "source": "Dummheit",
-      "target": "an5.273-285",
+      "target": "an9.7",
       "rank": 17
     },
     {
       "source": "Dummheit",
-      "target": "dn29",
+      "target": "an5.273-285",
       "rank": 18
     },
     {
       "source": "Dummheit",
-      "target": "dn33",
+      "target": "dn29",
       "rank": 19
+    },
+    {
+      "source": "Dummheit",
+      "target": "dn33",
+      "rank": 20
     },
     {
       "source": "Dunkelheit.* und Licht",
@@ -25460,28 +25527,33 @@
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "an8.22",
+      "target": "snp4.9",
       "rank": 12
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "mn64",
+      "target": "an8.22",
       "rank": 13
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "dn15",
+      "target": "mn64",
       "rank": 14
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "dn28",
+      "target": "dn15",
       "rank": 15
     },
     {
       "source": "durch Weisheit befreit",
-      "target": "dn33",
+      "target": "dn28",
       "rank": 16
+    },
+    {
+      "source": "durch Weisheit befreit",
+      "target": "dn33",
+      "rank": 17
     },
     {
       "source": "eben das ist das Ende des Leidens",
@@ -28955,63 +29027,68 @@
     },
     {
       "source": "Flut.* überquer",
-      "target": "sn8.8",
+      "target": "snp4.7",
       "rank": 16
     },
     {
       "source": "Flut.* überquer",
-      "target": "thag13.1",
+      "target": "sn8.8",
       "rank": 17
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp1.12",
+      "target": "thag13.1",
       "rank": 18
     },
     {
       "source": "Flut.* überquer",
-      "target": "dhp360-382",
+      "target": "snp1.12",
       "rank": 19
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp3.5",
+      "target": "dhp360-382",
       "rank": 20
     },
     {
       "source": "Flut.* überquer",
-      "target": "thag16.9",
+      "target": "snp3.5",
       "rank": 21
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp3.4",
+      "target": "thag16.9",
       "rank": 22
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp5.19",
+      "target": "snp3.4",
       "rank": 23
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp3.6",
+      "target": "snp5.19",
       "rank": 24
     },
     {
       "source": "Flut.* überquer",
-      "target": "dn20",
+      "target": "snp3.6",
       "rank": 25
     },
     {
       "source": "Flut.* überquer",
-      "target": "thag21.1",
+      "target": "dn20",
       "rank": 26
     },
     {
       "source": "Flut.* überquer",
-      "target": "dn21",
+      "target": "thag21.1",
       "rank": 27
+    },
+    {
+      "source": "Flut.* überquer",
+      "target": "dn21",
+      "rank": 28
     },
     {
       "source": "Form als das Selbst",
@@ -35200,63 +35277,78 @@
     },
     {
       "source": "Knoten",
-      "target": "dhp209-220",
+      "target": "snp4.10",
       "rank": 33
     },
     {
       "source": "Knoten",
-      "target": "iti112",
+      "target": "dhp209-220",
       "rank": 34
     },
     {
       "source": "Knoten",
-      "target": "snp1.12",
+      "target": "snp4.9",
       "rank": 35
     },
     {
       "source": "Knoten",
-      "target": "snp2.12",
+      "target": "iti112",
       "rank": 36
     },
     {
       "source": "Knoten",
-      "target": "thag16.3",
+      "target": "snp1.12",
       "rank": 37
     },
     {
       "source": "Knoten",
-      "target": "sn1.20",
+      "target": "snp2.12",
       "rank": 38
     },
     {
       "source": "Knoten",
-      "target": "dhp334-359",
+      "target": "snp4.13",
       "rank": 39
     },
     {
       "source": "Knoten",
-      "target": "thag20.1",
+      "target": "thag16.3",
       "rank": 40
     },
     {
       "source": "Knoten",
-      "target": "thag21.1",
+      "target": "sn1.20",
       "rank": 41
     },
     {
       "source": "Knoten",
-      "target": "dn1",
+      "target": "dhp334-359",
       "rank": 42
     },
     {
       "source": "Knoten",
-      "target": "dn33",
+      "target": "thag20.1",
       "rank": 43
     },
     {
       "source": "Knoten",
-      "target": "dn34",
+      "target": "thag21.1",
       "rank": 44
+    },
+    {
+      "source": "Knoten",
+      "target": "dn1",
+      "rank": 45
+    },
+    {
+      "source": "Knoten",
+      "target": "dn33",
+      "rank": 46
+    },
+    {
+      "source": "Knoten",
+      "target": "dn34",
+      "rank": 47
     },
     {
       "source": "Konzept",
@@ -39005,18 +39097,23 @@
     },
     {
       "source": "ohne Verlangen",
-      "target": "thag16.8",
+      "target": "snp4.10",
       "rank": 9
     },
     {
       "source": "ohne Verlangen",
-      "target": "mn75",
+      "target": "thag16.8",
       "rank": 10
     },
     {
       "source": "ohne Verlangen",
-      "target": "snp3.12",
+      "target": "mn75",
       "rank": 11
+    },
+    {
+      "source": "ohne Verlangen",
+      "target": "snp3.12",
+      "rank": 12
     },
     {
       "source": "ohne Wahrnehmung",
@@ -39755,48 +39852,53 @@
     },
     {
       "source": "Riese",
-      "target": "thag16.6",
+      "target": "snp4.9",
       "rank": 14
     },
     {
       "source": "Riese",
-      "target": "mn24",
+      "target": "thag16.6",
       "rank": 15
     },
     {
       "source": "Riese",
-      "target": "snp1.9",
+      "target": "mn24",
       "rank": 16
     },
     {
       "source": "Riese",
-      "target": "snp5.19",
+      "target": "snp1.9",
       "rank": 17
     },
     {
       "source": "Riese",
-      "target": "mn5",
+      "target": "snp5.19",
       "rank": 18
     },
     {
       "source": "Riese",
-      "target": "mn92",
+      "target": "mn5",
       "rank": 19
     },
     {
       "source": "Riese",
-      "target": "snp3.7",
+      "target": "mn92",
       "rank": 20
     },
     {
       "source": "Riese",
-      "target": "dn20",
+      "target": "snp3.7",
       "rank": 21
     },
     {
       "source": "Riese",
-      "target": "mn56",
+      "target": "dn20",
       "rank": 22
+    },
+    {
+      "source": "Riese",
+      "target": "mn56",
+      "rank": 23
     },
     {
       "source": "Roben aus Hanf",
@@ -42785,98 +42887,103 @@
     },
     {
       "source": "überquer",
-      "target": "thag10.1",
+      "target": "snp4.7",
       "rank": 35
     },
     {
       "source": "überquer",
-      "target": "thag10.3",
+      "target": "thag10.1",
       "rank": 36
     },
     {
       "source": "überquer",
-      "target": "sn8.8",
+      "target": "thag10.3",
       "rank": 37
     },
     {
       "source": "überquer",
-      "target": "sn2.24",
+      "target": "sn8.8",
       "rank": 38
     },
     {
       "source": "überquer",
-      "target": "sn1.33",
+      "target": "sn2.24",
       "rank": 39
     },
     {
       "source": "überquer",
-      "target": "ud3.2",
+      "target": "sn1.33",
       "rank": 40
     },
     {
       "source": "überquer",
-      "target": "sn1.50",
+      "target": "ud3.2",
       "rank": 41
     },
     {
       "source": "überquer",
-      "target": "thag13.1",
+      "target": "sn1.50",
       "rank": 42
     },
     {
       "source": "überquer",
-      "target": "snp1.12",
+      "target": "thag13.1",
       "rank": 43
     },
     {
       "source": "überquer",
-      "target": "snp2.12",
+      "target": "snp1.12",
       "rank": 44
     },
     {
       "source": "überquer",
-      "target": "dhp360-382",
+      "target": "snp2.12",
       "rank": 45
     },
     {
       "source": "überquer",
-      "target": "snp3.5",
+      "target": "dhp360-382",
       "rank": 46
     },
     {
       "source": "überquer",
-      "target": "snp3.4",
+      "target": "snp3.5",
       "rank": 47
     },
     {
       "source": "überquer",
-      "target": "snp5.19",
+      "target": "snp3.4",
       "rank": 48
     },
     {
       "source": "überquer",
-      "target": "snp3.11",
+      "target": "snp5.19",
       "rank": 49
     },
     {
       "source": "überquer",
-      "target": "snp3.6",
+      "target": "snp3.11",
       "rank": 50
     },
     {
       "source": "überquer",
-      "target": "thag19.1",
+      "target": "snp3.6",
       "rank": 51
     },
     {
       "source": "überquer",
-      "target": "dn20",
+      "target": "thag19.1",
       "rank": 52
     },
     {
       "source": "überquer",
-      "target": "dn21",
+      "target": "dn20",
       "rank": 53
+    },
+    {
+      "source": "überquer",
+      "target": "dn21",
+      "rank": 54
     },
     {
       "source": "übersinnliche Kraft und Macht",
@@ -43837,6 +43944,11 @@
       "source": "Urteile",
       "target": "sn3.7",
       "rank": 4
+    },
+    {
+      "source": "Urteile",
+      "target": "snp4.11",
+      "rank": 5
     },
     {
       "source": "Verantwortung",
