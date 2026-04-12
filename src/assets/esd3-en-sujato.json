@@ -2073,7 +2073,7 @@
     {
       "id": "it is simply this noble eightfold path",
       "group": "Examples",
-      "links": 41
+      "links": 42
     },
     {
       "id": "it's my loss, my misfortune",
@@ -13176,7 +13176,7 @@
       "id": "sn56.14",
       "group": "sn",
       "rank": 4,
-      "links": 2
+      "links": 3
     },
     {
       "id": "kp4",
@@ -13421,13 +13421,13 @@
     {
       "id": "sn22.103",
       "group": "sn",
-      "rank": 26,
+      "rank": 27,
       "links": 1
     },
     {
       "id": "sn47.40",
       "group": "sn",
-      "rank": 27,
+      "rank": 28,
       "links": 1
     },
     {
@@ -13439,7 +13439,7 @@
     {
       "id": "dn6",
       "group": "dn",
-      "rank": 34,
+      "rank": 35,
       "links": 1
     },
     {
@@ -32982,83 +32982,88 @@
     },
     {
       "source": "it is simply this noble eightfold path",
-      "target": "sn22.103",
+      "target": "sn56.14",
       "rank": 26
     },
     {
       "source": "it is simply this noble eightfold path",
-      "target": "sn47.40",
+      "target": "sn22.103",
       "rank": 27
     },
     {
       "source": "it is simply this noble eightfold path",
-      "target": "an3.71",
+      "target": "sn47.40",
       "rank": 28
     },
     {
       "source": "it is simply this noble eightfold path",
-      "target": "an3.62",
+      "target": "an3.71",
       "rank": 29
     },
     {
       "source": "it is simply this noble eightfold path",
-      "target": "sn12.65",
+      "target": "an3.62",
       "rank": 30
     },
     {
       "source": "it is simply this noble eightfold path",
-      "target": "an3.61",
+      "target": "sn12.65",
       "rank": 31
     },
     {
       "source": "it is simply this noble eightfold path",
-      "target": "mn141",
+      "target": "an3.61",
       "rank": 32
     },
     {
       "source": "it is simply this noble eightfold path",
-      "target": "mn44",
+      "target": "mn141",
       "rank": 33
     },
     {
       "source": "it is simply this noble eightfold path",
-      "target": "dn6",
+      "target": "mn44",
       "rank": 34
     },
     {
       "source": "it is simply this noble eightfold path",
-      "target": "mn83",
+      "target": "dn6",
       "rank": 35
     },
     {
       "source": "it is simply this noble eightfold path",
-      "target": "sn42.12",
+      "target": "mn83",
       "rank": 36
     },
     {
       "source": "it is simply this noble eightfold path",
-      "target": "mn139",
+      "target": "sn42.12",
       "rank": 37
     },
     {
       "source": "it is simply this noble eightfold path",
-      "target": "dn8",
+      "target": "mn139",
       "rank": 38
     },
     {
       "source": "it is simply this noble eightfold path",
-      "target": "mn9",
+      "target": "dn8",
       "rank": 39
     },
     {
       "source": "it is simply this noble eightfold path",
-      "target": "dn19",
+      "target": "mn9",
       "rank": 40
     },
     {
       "source": "it is simply this noble eightfold path",
-      "target": "dn22",
+      "target": "dn19",
       "rank": 41
+    },
+    {
+      "source": "it is simply this noble eightfold path",
+      "target": "dn22",
+      "rank": 42
     },
     {
       "source": "it's my loss, my misfortune",
