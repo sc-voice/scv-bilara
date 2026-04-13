@@ -39,6 +39,7 @@
 		"translation/en/sujato": "sutta/an/an1",
 		"translation/fr/sekha": "sutta/an/an1",
 		"translation/jpn/kaz": "sutta/an/an1",
+		"translation/ru/sv": "sutta/an/an1",
 		"root/pli/ms": "sutta/an/an1"
 	},
 	"an1.51-60": {
@@ -21304,6 +21305,7 @@
 	"sn46.3": {
 		"translation/de/sabbamitta": "sutta/sn/sn46",
 		"translation/en/sujato": "sutta/sn/sn46",
+		"translation/fr/christelle": "sutta/sn/sn46",
 		"translation/lt/piyadassi": "sutta/sn/sn46",
 		"root/pli/ms": "sutta/sn/sn46"
 	},
