@@ -208,7 +208,7 @@
     {
       "id": "Auflösen der Bindungen",
       "group": "Examples",
-      "links": 9
+      "links": 10
     },
     {
       "id": "Auflösung der Taten",
@@ -343,7 +343,7 @@
     {
       "id": "beklag",
       "group": "Examples",
-      "links": 19
+      "links": 20
     },
     {
       "id": "bemüht.*, damit",
@@ -373,7 +373,7 @@
     {
       "id": "Beschützer",
       "group": "Examples",
-      "links": 19
+      "links": 20
     },
     {
       "id": "besitzt vier Grundlagen",
@@ -948,7 +948,7 @@
     {
       "id": "drei Kennzeichen",
       "group": "Examples",
-      "links": 4
+      "links": 5
     },
     {
       "id": "drei Menschen",
@@ -968,7 +968,7 @@
     {
       "id": "drei Veden",
       "group": "Examples",
-      "links": 18
+      "links": 19
     },
     {
       "id": "drei Vorgänge",
@@ -1493,7 +1493,7 @@
     {
       "id": "Frieden finden",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "friedvoller",
@@ -1843,7 +1843,7 @@
     {
       "id": "gut befreit",
       "group": "Examples",
-      "links": 34
+      "links": 35
     },
     {
       "id": "gute Freunde, Genossen und Gefährt",
@@ -2273,7 +2273,7 @@
     {
       "id": "Kennzeichen",
       "group": "Examples",
-      "links": 33
+      "links": 34
     },
     {
       "id": "Keuschen und die Unkeuschen",
@@ -3078,7 +3078,7 @@
     {
       "id": "schwer zu finden",
       "group": "Examples",
-      "links": 26
+      "links": 27
     },
     {
       "id": "schwer zu sehen",
@@ -3563,7 +3563,7 @@
     {
       "id": "Urteile",
       "group": "Examples",
-      "links": 5
+      "links": 6
     },
     {
       "id": "Urteil über Menschen",
@@ -4143,7 +4143,7 @@
     {
       "id": "wie der Mond",
       "group": "Examples",
-      "links": 28
+      "links": 29
     },
     {
       "id": "wie der Mond, der durch die Wolken bricht",
@@ -5893,6 +5893,12 @@
       "links": 10
     },
     {
+      "id": "snp5.1",
+      "group": "snp",
+      "rank": 5,
+      "links": 7
+    },
+    {
       "id": "an4.237",
       "group": "an",
       "rank": 1,
@@ -6725,6 +6731,12 @@
       "group": "sn",
       "rank": 2,
       "links": 3
+    },
+    {
+      "id": "snp4.16",
+      "group": "snp",
+      "rank": 19,
+      "links": 2
     },
     {
       "id": "mn106",
@@ -12037,6 +12049,12 @@
       "links": 2
     },
     {
+      "id": "snp4.14",
+      "group": "snp",
+      "rank": 2,
+      "links": 2
+    },
+    {
       "id": "mn68",
       "group": "mn",
       "rank": 2,
@@ -14163,25 +14181,25 @@
     {
       "id": "snp3.1",
       "group": "snp",
-      "rank": 15,
+      "rank": 16,
       "links": 1
     },
     {
       "id": "thag1.106",
       "group": "thag",
-      "rank": 20,
+      "rank": 21,
       "links": 1
     },
     {
       "id": "ja30",
       "group": "ja",
-      "rank": 21,
+      "rank": 22,
       "links": 1
     },
     {
       "id": "an3.2",
       "group": "an",
-      "rank": 22,
+      "rank": 23,
       "links": 1
     },
     {
@@ -14193,7 +14211,7 @@
     {
       "id": "cp11",
       "group": "cp",
-      "rank": 24,
+      "rank": 25,
       "links": 1
     },
     {
@@ -19831,6 +19849,11 @@
       "rank": 9
     },
     {
+      "source": "Auflösen der Bindungen",
+      "target": "snp5.1",
+      "rank": 10
+    },
+    {
       "source": "Auflösung der Taten",
       "target": "an4.237",
       "rank": 1
@@ -20817,8 +20840,13 @@
     },
     {
       "source": "beklag",
-      "target": "mn106",
+      "target": "snp4.16",
       "rank": 19
+    },
+    {
+      "source": "beklag",
+      "target": "mn106",
+      "rank": 20
     },
     {
       "source": "bemüht.*, damit",
@@ -21144,6 +21172,11 @@
       "source": "Beschützer",
       "target": "mn108",
       "rank": 19
+    },
+    {
+      "source": "Beschützer",
+      "target": "snp5.1",
+      "rank": 20
     },
     {
       "source": "besitzt vier Grundlagen",
@@ -24936,6 +24969,11 @@
       "rank": 4
     },
     {
+      "source": "drei Kennzeichen",
+      "target": "snp5.1",
+      "rank": 5
+    },
+    {
       "source": "drei Menschen",
       "target": "cp9",
       "rank": 1
@@ -25077,18 +25115,23 @@
     },
     {
       "source": "drei Veden",
-      "target": "mn98",
+      "target": "snp5.1",
       "rank": 16
     },
     {
       "source": "drei Veden",
-      "target": "snp3.9",
+      "target": "mn98",
       "rank": 17
     },
     {
       "source": "drei Veden",
-      "target": "thag20.1",
+      "target": "snp3.9",
       "rank": 18
+    },
+    {
+      "source": "drei Veden",
+      "target": "thag20.1",
+      "rank": 19
     },
     {
       "source": "drei Vorgänge",
@@ -29341,6 +29384,11 @@
       "rank": 1
     },
     {
+      "source": "Frieden finden",
+      "target": "snp4.14",
+      "rank": 2
+    },
+    {
       "source": "friedvoller",
       "target": "mn14",
       "rank": 1
@@ -32002,13 +32050,18 @@
     },
     {
       "source": "gut befreit",
-      "target": "dhp1-20",
+      "target": "snp4.16",
       "rank": 33
     },
     {
       "source": "gut befreit",
-      "target": "sn4.25",
+      "target": "dhp1-20",
       "rank": 34
+    },
+    {
+      "source": "gut befreit",
+      "target": "sn4.25",
+      "rank": 35
     },
     {
       "source": "gute Freunde, Genossen und Gefährt",
@@ -34827,143 +34880,148 @@
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.47",
+      "target": "snp5.1",
       "rank": 6
     },
     {
       "source": "Kennzeichen",
-      "target": "mn92",
+      "target": "an3.47",
       "rank": 7
     },
     {
       "source": "Kennzeichen",
-      "target": "snp3.7",
+      "target": "mn92",
       "rank": 8
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.3",
+      "target": "snp3.7",
       "rank": 9
     },
     {
       "source": "Kennzeichen",
-      "target": "dn4",
+      "target": "an3.3",
       "rank": 10
     },
     {
       "source": "Kennzeichen",
-      "target": "dn14",
+      "target": "dn4",
       "rank": 11
     },
     {
       "source": "Kennzeichen",
-      "target": "mn27",
+      "target": "dn14",
       "rank": 12
     },
     {
       "source": "Kennzeichen",
-      "target": "mn95",
+      "target": "mn27",
       "rank": 13
     },
     {
       "source": "Kennzeichen",
-      "target": "dn5",
+      "target": "mn95",
       "rank": 14
     },
     {
       "source": "Kennzeichen",
-      "target": "snp3.1",
+      "target": "dn5",
       "rank": 15
     },
     {
       "source": "Kennzeichen",
-      "target": "snp1.3",
+      "target": "snp3.1",
       "rank": 16
     },
     {
       "source": "Kennzeichen",
-      "target": "mn129",
+      "target": "snp1.3",
       "rank": 17
     },
     {
       "source": "Kennzeichen",
-      "target": "dn1",
+      "target": "mn129",
       "rank": 18
     },
     {
       "source": "Kennzeichen",
-      "target": "dn2",
+      "target": "dn1",
       "rank": 19
     },
     {
       "source": "Kennzeichen",
-      "target": "thag1.106",
+      "target": "dn2",
       "rank": 20
     },
     {
       "source": "Kennzeichen",
-      "target": "ja30",
+      "target": "thag1.106",
       "rank": 21
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.2",
+      "target": "ja30",
       "rank": 22
     },
     {
       "source": "Kennzeichen",
-      "target": "an11.22-29",
+      "target": "an3.2",
       "rank": 23
     },
     {
       "source": "Kennzeichen",
-      "target": "cp11",
+      "target": "an11.22-29",
       "rank": 24
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.59",
+      "target": "cp11",
       "rank": 25
     },
     {
       "source": "Kennzeichen",
-      "target": "sn22.59",
+      "target": "an3.59",
       "rank": 26
     },
     {
       "source": "Kennzeichen",
-      "target": "an3.58",
+      "target": "sn22.59",
       "rank": 27
     },
     {
       "source": "Kennzeichen",
-      "target": "thag16.6",
+      "target": "an3.58",
       "rank": 28
     },
     {
       "source": "Kennzeichen",
-      "target": "an5.192",
+      "target": "thag16.6",
       "rank": 29
     },
     {
       "source": "Kennzeichen",
-      "target": "thig14.1",
+      "target": "an5.192",
       "rank": 30
     },
     {
       "source": "Kennzeichen",
-      "target": "snp3.11",
+      "target": "thig14.1",
       "rank": 31
     },
     {
       "source": "Kennzeichen",
-      "target": "mn93",
+      "target": "snp3.11",
       "rank": 32
     },
     {
       "source": "Kennzeichen",
-      "target": "mn100",
+      "target": "mn93",
       "rank": 33
+    },
+    {
+      "source": "Kennzeichen",
+      "target": "mn100",
+      "rank": 34
     },
     {
       "source": "Keuschen und die Unkeuschen",
@@ -40752,18 +40810,23 @@
     },
     {
       "source": "schwer zu finden",
-      "target": "mn129",
+      "target": "snp5.1",
       "rank": 24
     },
     {
       "source": "schwer zu finden",
-      "target": "thig16.1",
+      "target": "mn129",
       "rank": 25
     },
     {
       "source": "schwer zu finden",
-      "target": "dn16",
+      "target": "thig16.1",
       "rank": 26
+    },
+    {
+      "source": "schwer zu finden",
+      "target": "dn16",
+      "rank": 27
     },
     {
       "source": "schwer zu sehen",
@@ -43949,6 +44012,11 @@
       "source": "Urteile",
       "target": "snp4.11",
       "rank": 5
+    },
+    {
+      "source": "Urteile",
+      "target": "snp4.14",
+      "rank": 6
     },
     {
       "source": "Verantwortung",
@@ -47792,13 +47860,18 @@
     },
     {
       "source": "wie der Mond",
-      "target": "dn20",
+      "target": "snp5.1",
       "rank": 27
     },
     {
       "source": "wie der Mond",
-      "target": "thag21.1",
+      "target": "dn20",
       "rank": 28
+    },
+    {
+      "source": "wie der Mond",
+      "target": "thag21.1",
+      "rank": 29
     },
     {
       "source": "wie der Mond, der durch die Wolken bricht",
