@@ -318,7 +318,7 @@
     {
       "id": "beide.* Enden",
       "group": "Examples",
-      "links": 7
+      "links": 8
     },
     {
       "id": "bei der besten angekommen",
@@ -1448,7 +1448,7 @@
     {
       "id": "Flut.* überquer",
       "group": "Examples",
-      "links": 28
+      "links": 33
     },
     {
       "id": "Form als das Selbst",
@@ -2328,7 +2328,7 @@
     {
       "id": "Konzept",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "Kopfhaare, Körperhaare",
@@ -2703,7 +2703,7 @@
     {
       "id": "nach der Mitte greifst",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "Nachfolger durch Vertrauen",
@@ -2868,7 +2868,7 @@
     {
       "id": "ohne Verlangen",
       "group": "Examples",
-      "links": 12
+      "links": 14
     },
     {
       "id": "ohne Wahrnehmung",
@@ -2948,7 +2948,7 @@
     {
       "id": "Riese",
       "group": "Examples",
-      "links": 23
+      "links": 25
     },
     {
       "id": "Roben aus Hanf",
@@ -3293,7 +3293,7 @@
     {
       "id": "steckt nicht in der Mitte",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "stets wirkt und nie versagt",
@@ -3433,7 +3433,7 @@
     {
       "id": "überquer",
       "group": "Examples",
-      "links": 54
+      "links": 59
     },
     {
       "id": "übersinnliche Kraft und Macht",
@@ -3978,7 +3978,7 @@
     {
       "id": "Weg zum anderen Ufer",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "Weisheit auf dem Schoß",
@@ -3993,7 +3993,7 @@
     {
       "id": "weit weg von der tollen Menge",
       "group": "Examples",
-      "links": 6
+      "links": 0
     },
     {
       "id": "welche Fesseln binden Götter",
@@ -4153,7 +4153,7 @@
     {
       "id": "wieder und wieder",
       "group": "Examples",
-      "links": 37
+      "links": 38
     },
     {
       "id": "wie eine Kuh",
@@ -5379,14 +5379,14 @@
     {
       "id": "snp5.19",
       "group": "snp",
-      "rank": 3,
+      "rank": 4,
       "links": 7
     },
     {
       "id": "dn32",
       "group": "dn",
-      "rank": 6,
-      "links": 3
+      "rank": 27,
+      "links": 2
     },
     {
       "id": "an10.15",
@@ -6517,27 +6517,33 @@
       "links": 2
     },
     {
+      "id": "snp5.3",
+      "group": "snp",
+      "rank": 1,
+      "links": 3
+    },
+    {
       "id": "an4.95",
       "group": "an",
-      "rank": 2,
+      "rank": 3,
       "links": 3
     },
     {
       "id": "iti91",
       "group": "iti",
-      "rank": 3,
+      "rank": 4,
       "links": 2
     },
     {
       "id": "snp4.2",
       "group": "snp",
-      "rank": 4,
+      "rank": 5,
       "links": 3
     },
     {
       "id": "snp4.5",
       "group": "snp",
-      "rank": 5,
+      "rank": 6,
       "links": 2
     },
     {
@@ -6838,7 +6844,7 @@
       "id": "an7.61",
       "group": "an",
       "rank": 1,
-      "links": 7
+      "links": 6
     },
     {
       "id": "an9.35",
@@ -7042,7 +7048,7 @@
       "id": "mn108",
       "group": "mn",
       "rank": 2,
-      "links": 8
+      "links": 7
     },
     {
       "id": "mn140",
@@ -7102,7 +7108,7 @@
       "id": "dn25",
       "group": "dn",
       "rank": 1,
-      "links": 31
+      "links": 30
     },
     {
       "id": "dn3",
@@ -10605,7 +10611,7 @@
     {
       "id": "snp5.4",
       "group": "snp",
-      "rank": 3,
+      "rank": 4,
       "links": 2
     },
     {
@@ -11062,7 +11068,7 @@
       "id": "mn89",
       "group": "mn",
       "rank": 1,
-      "links": 8
+      "links": 7
     },
     {
       "id": "sn34.1",
@@ -11869,9 +11875,15 @@
       "links": 5
     },
     {
+      "id": "snp5.8",
+      "group": "snp",
+      "rank": 2,
+      "links": 2
+    },
+    {
       "id": "sn1.5",
       "group": "sn",
-      "rank": 3,
+      "rank": 4,
       "links": 2
     },
     {
@@ -11883,25 +11895,43 @@
     {
       "id": "thag1.15",
       "group": "thag",
-      "rank": 7,
+      "rank": 8,
       "links": 2
     },
     {
       "id": "ud7.1",
       "group": "ud",
-      "rank": 8,
+      "rank": 9,
       "links": 2
     },
     {
       "id": "ud7.3",
       "group": "ud",
-      "rank": 9,
+      "rank": 10,
       "links": 2
     },
     {
       "id": "sn2.15",
       "group": "sn",
-      "rank": 10,
+      "rank": 11,
+      "links": 2
+    },
+    {
+      "id": "snp5.13",
+      "group": "snp",
+      "rank": 7,
+      "links": 4
+    },
+    {
+      "id": "snp5.6",
+      "group": "snp",
+      "rank": 17,
+      "links": 2
+    },
+    {
+      "id": "snp5.7",
+      "group": "snp",
+      "rank": 17,
       "links": 2
     },
     {
@@ -11917,6 +11947,12 @@
       "links": 5
     },
     {
+      "id": "snp5.5",
+      "group": "snp",
+      "rank": 9,
+      "links": 4
+    },
+    {
       "id": "thag16.9",
       "group": "thag",
       "rank": 2,
@@ -11925,7 +11961,7 @@
     {
       "id": "snp3.4",
       "group": "snp",
-      "rank": 23,
+      "rank": 25,
       "links": 3
     },
     {
@@ -14403,7 +14439,7 @@
     {
       "id": "thag4.6",
       "group": "thag",
-      "rank": 7,
+      "rank": 8,
       "links": 2
     },
     {
@@ -14451,7 +14487,7 @@
     {
       "id": "snp4.10",
       "group": "snp",
-      "rank": 9,
+      "rank": 11,
       "links": 2
     },
     {
@@ -15319,6 +15355,12 @@
       "links": 3
     },
     {
+      "id": "snp5.12",
+      "group": "snp",
+      "rank": 1,
+      "links": 2
+    },
+    {
       "id": "sn48.12",
       "group": "sn",
       "rank": 6,
@@ -15417,7 +15459,7 @@
     {
       "id": "an3.33",
       "group": "an",
-      "rank": 5,
+      "rank": 6,
       "links": 2
     },
     {
@@ -15669,7 +15711,7 @@
     {
       "id": "iti105",
       "group": "iti",
-      "rank": 7,
+      "rank": 8,
       "links": 1
     },
     {
@@ -15921,7 +15963,7 @@
     {
       "id": "sn1.37",
       "group": "sn",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
@@ -16689,7 +16731,7 @@
     {
       "id": "thig1.10",
       "group": "thig",
-      "rank": 22,
+      "rank": 25,
       "links": 1
     },
     {
@@ -16701,25 +16743,25 @@
     {
       "id": "snp4.1",
       "group": "snp",
-      "rank": 29,
+      "rank": 33,
       "links": 1
     },
     {
       "id": "sn2.24",
       "group": "sn",
-      "rank": 39,
+      "rank": 44,
       "links": 1
     },
     {
       "id": "sn1.33",
       "group": "sn",
-      "rank": 40,
+      "rank": 45,
       "links": 1
     },
     {
       "id": "sn1.50",
       "group": "sn",
-      "rank": 42,
+      "rank": 47,
       "links": 1
     },
     {
@@ -17737,9 +17779,9 @@
       "links": 1
     },
     {
-      "id": "sn35.63",
-      "group": "sn",
-      "rank": 2,
+      "id": "snp5.18",
+      "group": "snp",
+      "rank": 1,
       "links": 1
     },
     {
@@ -20595,38 +20637,43 @@
     },
     {
       "source": "beide.* Enden",
-      "target": "an6.61",
+      "target": "snp5.3",
       "rank": 1
     },
     {
       "source": "beide.* Enden",
-      "target": "an4.95",
+      "target": "an6.61",
       "rank": 2
     },
     {
       "source": "beide.* Enden",
-      "target": "iti91",
+      "target": "an4.95",
       "rank": 3
     },
     {
       "source": "beide.* Enden",
-      "target": "snp4.2",
+      "target": "iti91",
       "rank": 4
     },
     {
       "source": "beide.* Enden",
-      "target": "snp4.5",
+      "target": "snp4.2",
       "rank": 5
     },
     {
       "source": "beide.* Enden",
-      "target": "sn22.80",
+      "target": "snp4.5",
       "rank": 6
     },
     {
       "source": "beide.* Enden",
-      "target": "snp3.8",
+      "target": "sn22.80",
       "rank": 7
+    },
+    {
+      "source": "beide.* Enden",
+      "target": "snp3.8",
+      "rank": 8
     },
     {
       "source": "bei der besten angekommen",
@@ -29005,133 +29052,158 @@
     },
     {
       "source": "Flut.* überquer",
-      "target": "sn1.5",
+      "target": "snp5.8",
       "rank": 3
     },
     {
       "source": "Flut.* überquer",
-      "target": "sn4.25",
+      "target": "sn1.5",
       "rank": 4
     },
     {
       "source": "Flut.* überquer",
-      "target": "mn106",
+      "target": "sn4.25",
       "rank": 5
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp1.9",
+      "target": "mn106",
       "rank": 6
     },
     {
       "source": "Flut.* überquer",
-      "target": "thag1.15",
+      "target": "snp1.9",
       "rank": 7
     },
     {
       "source": "Flut.* überquer",
-      "target": "ud7.1",
+      "target": "thag1.15",
       "rank": 8
     },
     {
       "source": "Flut.* überquer",
-      "target": "ud7.3",
+      "target": "ud7.1",
       "rank": 9
     },
     {
       "source": "Flut.* überquer",
-      "target": "sn2.15",
+      "target": "ud7.3",
       "rank": 10
     },
     {
       "source": "Flut.* überquer",
-      "target": "iti107",
+      "target": "sn2.15",
       "rank": 11
     },
     {
       "source": "Flut.* überquer",
-      "target": "sn10.3",
+      "target": "snp5.13",
       "rank": 12
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp4.2",
+      "target": "iti107",
       "rank": 13
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp2.5",
+      "target": "sn10.3",
       "rank": 14
     },
     {
       "source": "Flut.* überquer",
-      "target": "ud8.10",
+      "target": "snp4.2",
       "rank": 15
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp4.7",
+      "target": "snp2.5",
       "rank": 16
     },
     {
       "source": "Flut.* überquer",
-      "target": "sn8.8",
+      "target": "snp5.6",
       "rank": 17
     },
     {
       "source": "Flut.* überquer",
-      "target": "thag13.1",
+      "target": "snp5.7",
       "rank": 18
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp1.12",
+      "target": "ud8.10",
       "rank": 19
     },
     {
       "source": "Flut.* überquer",
-      "target": "dhp360-382",
+      "target": "snp4.7",
       "rank": 20
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp3.5",
+      "target": "sn8.8",
       "rank": 21
     },
     {
       "source": "Flut.* überquer",
-      "target": "thag16.9",
+      "target": "snp5.5",
       "rank": 22
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp3.4",
+      "target": "thag13.1",
       "rank": 23
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp5.19",
+      "target": "snp1.12",
       "rank": 24
     },
     {
       "source": "Flut.* überquer",
-      "target": "snp3.6",
+      "target": "dhp360-382",
       "rank": 25
     },
     {
       "source": "Flut.* überquer",
-      "target": "dn20",
+      "target": "snp3.5",
       "rank": 26
     },
     {
       "source": "Flut.* überquer",
-      "target": "thag21.1",
+      "target": "thag16.9",
       "rank": 27
     },
     {
       "source": "Flut.* überquer",
-      "target": "dn21",
+      "target": "snp3.4",
       "rank": 28
+    },
+    {
+      "source": "Flut.* überquer",
+      "target": "snp5.19",
+      "rank": 29
+    },
+    {
+      "source": "Flut.* überquer",
+      "target": "snp3.6",
+      "rank": 30
+    },
+    {
+      "source": "Flut.* überquer",
+      "target": "dn20",
+      "rank": 31
+    },
+    {
+      "source": "Flut.* überquer",
+      "target": "thag21.1",
+      "rank": 32
+    },
+    {
+      "source": "Flut.* überquer",
+      "target": "dn21",
+      "rank": 33
     },
     {
       "source": "Form als das Selbst",
@@ -35439,6 +35511,11 @@
       "rank": 6
     },
     {
+      "source": "Konzept",
+      "target": "snp5.13",
+      "rank": 7
+    },
+    {
       "source": "Kopfhaare, Körperhaare",
       "target": "kp3",
       "rank": 1
@@ -38170,8 +38247,13 @@
     },
     {
       "source": "nach der Mitte greifst",
-      "target": "snp4.15",
+      "target": "snp5.12",
       "rank": 1
+    },
+    {
+      "source": "nach der Mitte greifst",
+      "target": "snp4.15",
+      "rank": 2
     },
     {
       "source": "Nachfolger durch Vertrauen",
@@ -39140,38 +39222,48 @@
     },
     {
       "source": "ohne Verlangen",
-      "target": "iti58",
+      "target": "snp5.3",
       "rank": 6
     },
     {
       "source": "ohne Verlangen",
-      "target": "iti105",
+      "target": "iti58",
       "rank": 7
     },
     {
       "source": "ohne Verlangen",
-      "target": "iti49",
+      "target": "iti105",
       "rank": 8
     },
     {
       "source": "ohne Verlangen",
-      "target": "snp4.10",
+      "target": "snp5.12",
       "rank": 9
     },
     {
       "source": "ohne Verlangen",
-      "target": "thag16.8",
+      "target": "iti49",
       "rank": 10
     },
     {
       "source": "ohne Verlangen",
-      "target": "mn75",
+      "target": "snp4.10",
       "rank": 11
     },
     {
       "source": "ohne Verlangen",
-      "target": "snp3.12",
+      "target": "thag16.8",
       "rank": 12
+    },
+    {
+      "source": "ohne Verlangen",
+      "target": "mn75",
+      "rank": 13
+    },
+    {
+      "source": "ohne Verlangen",
+      "target": "snp3.12",
+      "rank": 14
     },
     {
       "source": "ohne Wahrnehmung",
@@ -39875,88 +39967,98 @@
     },
     {
       "source": "Riese",
-      "target": "thag4.6",
+      "target": "snp5.13",
       "rank": 7
     },
     {
       "source": "Riese",
-      "target": "sn1.37",
+      "target": "thag4.6",
       "rank": 8
     },
     {
       "source": "Riese",
-      "target": "ud4.5",
+      "target": "sn1.37",
       "rank": 9
     },
     {
       "source": "Riese",
-      "target": "sn21.3",
+      "target": "ud4.5",
       "rank": 10
     },
     {
       "source": "Riese",
-      "target": "sn8.8",
+      "target": "sn21.3",
       "rank": 11
     },
     {
       "source": "Riese",
-      "target": "ud4.4",
+      "target": "sn8.8",
       "rank": 12
     },
     {
       "source": "Riese",
-      "target": "sn22.76",
+      "target": "ud4.4",
       "rank": 13
     },
     {
       "source": "Riese",
-      "target": "snp4.9",
+      "target": "sn22.76",
       "rank": 14
     },
     {
       "source": "Riese",
-      "target": "thag16.6",
+      "target": "snp5.5",
       "rank": 15
     },
     {
       "source": "Riese",
-      "target": "mn24",
+      "target": "snp4.9",
       "rank": 16
     },
     {
       "source": "Riese",
-      "target": "snp1.9",
+      "target": "thag16.6",
       "rank": 17
     },
     {
       "source": "Riese",
-      "target": "snp5.19",
+      "target": "mn24",
       "rank": 18
     },
     {
       "source": "Riese",
-      "target": "mn5",
+      "target": "snp1.9",
       "rank": 19
     },
     {
       "source": "Riese",
-      "target": "mn92",
+      "target": "snp5.19",
       "rank": 20
     },
     {
       "source": "Riese",
-      "target": "snp3.7",
+      "target": "mn5",
       "rank": 21
     },
     {
       "source": "Riese",
-      "target": "dn20",
+      "target": "mn92",
       "rank": 22
     },
     {
       "source": "Riese",
-      "target": "mn56",
+      "target": "snp3.7",
       "rank": 23
+    },
+    {
+      "source": "Riese",
+      "target": "dn20",
+      "rank": 24
+    },
+    {
+      "source": "Riese",
+      "target": "mn56",
+      "rank": 25
     },
     {
       "source": "Roben aus Hanf",
@@ -42050,8 +42152,13 @@
     },
     {
       "source": "steckt nicht in der Mitte",
-      "target": "an6.61",
+      "target": "snp5.3",
       "rank": 1
+    },
+    {
+      "source": "steckt nicht in der Mitte",
+      "target": "an6.61",
+      "rank": 2
     },
     {
       "source": "stets wirkt und nie versagt",
@@ -42785,268 +42892,293 @@
     },
     {
       "source": "überquer",
-      "target": "sn1.1",
+      "target": "snp5.8",
       "rank": 2
     },
     {
       "source": "überquer",
-      "target": "snp5.4",
+      "target": "sn1.1",
       "rank": 3
     },
     {
       "source": "überquer",
-      "target": "sn4.25",
+      "target": "snp5.4",
       "rank": 4
     },
     {
       "source": "überquer",
-      "target": "snp1.9",
+      "target": "sn4.25",
       "rank": 5
     },
     {
       "source": "überquer",
-      "target": "sn35.228",
+      "target": "snp1.9",
       "rank": 6
     },
     {
       "source": "überquer",
-      "target": "iti69",
+      "target": "sn35.228",
       "rank": 7
     },
     {
       "source": "überquer",
-      "target": "snp1.10",
+      "target": "iti69",
       "rank": 8
     },
     {
       "source": "überquer",
-      "target": "sn10.12",
+      "target": "snp5.5",
       "rank": 9
     },
     {
       "source": "überquer",
-      "target": "sn1.5",
+      "target": "snp1.10",
       "rank": 10
     },
     {
       "source": "überquer",
-      "target": "ud7.1",
+      "target": "sn10.12",
       "rank": 11
     },
     {
       "source": "überquer",
-      "target": "sn2.15",
+      "target": "sn1.5",
       "rank": 12
     },
     {
       "source": "überquer",
-      "target": "sn10.3",
+      "target": "ud7.1",
       "rank": 13
     },
     {
       "source": "überquer",
-      "target": "snp2.5",
+      "target": "sn2.15",
       "rank": 14
     },
     {
       "source": "überquer",
-      "target": "ud8.6",
+      "target": "sn10.3",
       "rank": 15
     },
     {
       "source": "überquer",
-      "target": "thag16.9",
+      "target": "snp2.5",
       "rank": 16
     },
     {
       "source": "überquer",
-      "target": "mn106",
+      "target": "snp5.7",
       "rank": 17
     },
     {
       "source": "überquer",
-      "target": "mn65",
+      "target": "ud8.6",
       "rank": 18
     },
     {
       "source": "überquer",
-      "target": "thag21.1",
+      "target": "thag16.9",
       "rank": 19
     },
     {
       "source": "überquer",
-      "target": "dn16",
+      "target": "mn106",
       "rank": 20
     },
     {
       "source": "überquer",
-      "target": "sn1.44",
+      "target": "mn65",
       "rank": 21
     },
     {
       "source": "überquer",
-      "target": "thig1.10",
+      "target": "thag21.1",
       "rank": 22
     },
     {
       "source": "überquer",
-      "target": "thag1.15",
+      "target": "dn16",
       "rank": 23
     },
     {
       "source": "überquer",
-      "target": "ud7.8",
+      "target": "sn1.44",
       "rank": 24
     },
     {
       "source": "überquer",
-      "target": "ud7.3",
+      "target": "thig1.10",
       "rank": 25
     },
     {
       "source": "überquer",
-      "target": "an3.32",
+      "target": "thag1.15",
       "rank": 26
     },
     {
       "source": "überquer",
-      "target": "sn9.1",
+      "target": "ud7.8",
       "rank": 27
     },
     {
       "source": "überquer",
-      "target": "sn35.229",
+      "target": "ud7.3",
       "rank": 28
     },
     {
       "source": "überquer",
-      "target": "snp4.1",
+      "target": "an3.32",
       "rank": 29
     },
     {
       "source": "überquer",
-      "target": "iti107",
+      "target": "sn9.1",
       "rank": 30
     },
     {
       "source": "überquer",
-      "target": "snp4.2",
+      "target": "sn35.229",
       "rank": 31
     },
     {
       "source": "überquer",
-      "target": "an4.41",
+      "target": "snp5.13",
       "rank": 32
     },
     {
       "source": "überquer",
-      "target": "cp2",
+      "target": "snp4.1",
       "rank": 33
     },
     {
       "source": "überquer",
-      "target": "ud8.10",
+      "target": "iti107",
       "rank": 34
     },
     {
       "source": "überquer",
-      "target": "snp4.7",
+      "target": "snp4.2",
       "rank": 35
     },
     {
       "source": "überquer",
-      "target": "thag10.1",
+      "target": "an4.41",
       "rank": 36
     },
     {
       "source": "überquer",
-      "target": "thag10.3",
+      "target": "snp5.6",
       "rank": 37
     },
     {
       "source": "überquer",
-      "target": "sn8.8",
+      "target": "cp2",
       "rank": 38
     },
     {
       "source": "überquer",
-      "target": "sn2.24",
+      "target": "ud8.10",
       "rank": 39
     },
     {
       "source": "überquer",
-      "target": "sn1.33",
+      "target": "snp4.7",
       "rank": 40
     },
     {
       "source": "überquer",
-      "target": "ud3.2",
+      "target": "thag10.1",
       "rank": 41
     },
     {
       "source": "überquer",
-      "target": "sn1.50",
+      "target": "thag10.3",
       "rank": 42
     },
     {
       "source": "überquer",
-      "target": "thag13.1",
+      "target": "sn8.8",
       "rank": 43
     },
     {
       "source": "überquer",
-      "target": "snp1.12",
+      "target": "sn2.24",
       "rank": 44
     },
     {
       "source": "überquer",
-      "target": "snp2.12",
+      "target": "sn1.33",
       "rank": 45
     },
     {
       "source": "überquer",
-      "target": "dhp360-382",
+      "target": "ud3.2",
       "rank": 46
     },
     {
       "source": "überquer",
-      "target": "snp3.5",
+      "target": "sn1.50",
       "rank": 47
     },
     {
       "source": "überquer",
-      "target": "snp3.4",
+      "target": "thag13.1",
       "rank": 48
     },
     {
       "source": "überquer",
-      "target": "snp5.19",
+      "target": "snp1.12",
       "rank": 49
     },
     {
       "source": "überquer",
-      "target": "snp3.11",
+      "target": "snp2.12",
       "rank": 50
     },
     {
       "source": "überquer",
-      "target": "snp3.6",
+      "target": "dhp360-382",
       "rank": 51
     },
     {
       "source": "überquer",
-      "target": "thag19.1",
+      "target": "snp3.5",
       "rank": 52
     },
     {
       "source": "überquer",
-      "target": "dn20",
+      "target": "snp3.4",
       "rank": 53
     },
     {
       "source": "überquer",
-      "target": "dn21",
+      "target": "snp5.19",
       "rank": 54
+    },
+    {
+      "source": "überquer",
+      "target": "snp3.11",
+      "rank": 55
+    },
+    {
+      "source": "überquer",
+      "target": "snp3.6",
+      "rank": 56
+    },
+    {
+      "source": "überquer",
+      "target": "thag19.1",
+      "rank": 57
+    },
+    {
+      "source": "überquer",
+      "target": "dn20",
+      "rank": 58
+    },
+    {
+      "source": "überquer",
+      "target": "dn21",
+      "rank": 59
     },
     {
       "source": "übersinnliche Kraft und Macht",
@@ -46755,33 +46887,38 @@
     },
     {
       "source": "Weg zum anderen Ufer",
-      "target": "an6.61",
+      "target": "snp5.18",
       "rank": 1
     },
     {
       "source": "Weg zum anderen Ufer",
-      "target": "sn12.31",
+      "target": "an6.61",
       "rank": 2
     },
     {
       "source": "Weg zum anderen Ufer",
-      "target": "snp5.19",
+      "target": "sn12.31",
       "rank": 3
     },
     {
       "source": "Weg zum anderen Ufer",
-      "target": "an3.32",
+      "target": "snp5.19",
       "rank": 4
     },
     {
       "source": "Weg zum anderen Ufer",
-      "target": "an3.33",
+      "target": "an3.32",
       "rank": 5
     },
     {
       "source": "Weg zum anderen Ufer",
-      "target": "an4.41",
+      "target": "an3.33",
       "rank": 6
+    },
+    {
+      "source": "Weg zum anderen Ufer",
+      "target": "an4.41",
+      "rank": 7
     },
     {
       "source": "Weisheit auf dem Schoß",
@@ -46797,36 +46934,6 @@
       "source": "Weisheit viel besser als Reichtum",
       "target": "mn82",
       "rank": 2
-    },
-    {
-      "source": "weit weg von der tollen Menge",
-      "target": "dn25",
-      "rank": 1
-    },
-    {
-      "source": "weit weg von der tollen Menge",
-      "target": "sn35.63",
-      "rank": 2
-    },
-    {
-      "source": "weit weg von der tollen Menge",
-      "target": "an7.61",
-      "rank": 3
-    },
-    {
-      "source": "weit weg von der tollen Menge",
-      "target": "mn89",
-      "rank": 4
-    },
-    {
-      "source": "weit weg von der tollen Menge",
-      "target": "mn108",
-      "rank": 5
-    },
-    {
-      "source": "weit weg von der tollen Menge",
-      "target": "dn32",
-      "rank": 6
     },
     {
       "source": "welche Fesseln binden Götter",
@@ -48060,33 +48167,38 @@
     },
     {
       "source": "wieder und wieder",
-      "target": "dhp146-156",
+      "target": "snp5.5",
       "rank": 32
     },
     {
       "source": "wieder und wieder",
-      "target": "snp2.2",
+      "target": "dhp146-156",
       "rank": 33
     },
     {
       "source": "wieder und wieder",
-      "target": "dhp320-333",
+      "target": "snp2.2",
       "rank": 34
     },
     {
       "source": "wieder und wieder",
-      "target": "mn12",
+      "target": "dhp320-333",
       "rank": 35
     },
     {
       "source": "wieder und wieder",
-      "target": "thag20.1",
+      "target": "mn12",
       "rank": 36
     },
     {
       "source": "wieder und wieder",
-      "target": "dn33",
+      "target": "thag20.1",
       "rank": 37
+    },
+    {
+      "source": "wieder und wieder",
+      "target": "dn33",
+      "rank": 38
     },
     {
       "source": "wie eine Kuh",
