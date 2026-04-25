@@ -318,7 +318,7 @@ describe.sequential("bilara-path-map", { timeout: 5*1000 }, function() {
             suidMapFile,
             validatePath,
         }).initialize();
-        console.log('reading suidMapFile', suidMapFile);
+        //console.log('reading suidMapFile', suidMapFile);
         let json = JSON.parse(await fs.promises.readFile(suidMapFile));
         expect(json, {
             'sn12.23': {

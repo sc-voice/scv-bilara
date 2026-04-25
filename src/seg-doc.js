@@ -30,7 +30,7 @@
                 bilaraPath,
             } = this;
             var spath = path.join(root, bilaraPath);
-            this.log(`loadSync(${spath})`);
+            //this.log(`loadSync(${spath})`);
             this.segMap = JSON.parse(fs.readFileSync(spath));
             return this;
         }
@@ -74,7 +74,7 @@
                 }
                 return acc;
             }, root);
-            this.log(`import(${spath})`);
+            //this.log(`import(${spath})`);
             var json = JSON.stringify(this.segMap, null, 2);
             fs.writeFileSync(spath, json);
             return this;

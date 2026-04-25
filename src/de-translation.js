@@ -23,7 +23,7 @@
                 source,
             } = this;
             var spath = path.join(root, source);
-            this.log(`loadSync(${root}) source:"${source}"`);
+            //this.log(`loadSync(${root}) source:"${source}"`);
             this.lines = fs.readFileSync(spath).toString().split('\n');
             var segStart = true;
             this.ready = true;
@@ -136,7 +136,7 @@
                 } else {
                     segMap[scid] = dstText;
                 }
-                this.excertpSize && this.log(`${scid} `+
+                this.excerptSize && this.log(`${scid} `+
                     `${this.excerpt(srcText)}`+ 
                     ` => ${this.excerpt(segMap[scid])}`);
             });

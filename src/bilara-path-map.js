@@ -55,7 +55,7 @@
             }
         } 
         if (!suidMap) {
-            this.info(`initialize() building ${suidMapFile}`);
+            //this.info(`initialize() building ${suidMapFile}`);
             suidMap = this.buildSuidMap();
         }
         this.suidMap = await suidMap;
@@ -96,7 +96,7 @@
         while (pathStack.length) {
             let dirPath = pathStack.pop();
             if (reExclude.test(dirPath)) {
-                this.info(`tipitakaPaths() exclude:`, dirPath);
+                //this.info(`tipitakaPaths() exclude:`, dirPath);
                 continue;
             }
             var dirKids = fs.readdirSync(dirPath, readOpts);
@@ -386,7 +386,7 @@
       loadVariant && await this._loadPaths("variant/pli/ms"); 
       let { suidMapFile } = this;
       await fs.promises.writeFile(suidMapFile, JSON.stringify(suidMap, null, '\t'));
-      this.info(`buildSuidMap() ${suidMapFile} ${Date.now()-msStart}ms`);
+      //this.info(`buildSuidMap() ${suidMapFile} ${Date.now()-msStart}ms`);
       return suidMap;
     }
   }
