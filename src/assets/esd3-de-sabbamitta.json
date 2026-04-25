@@ -3033,7 +3033,7 @@
     {
       "id": "Schneckenhornbläser",
       "group": "Examples",
-      "links": 5
+      "links": 6
     },
     {
       "id": "schönen Worten",
@@ -16097,6 +16097,12 @@
       "group": "an",
       "rank": 1,
       "links": 3
+    },
+    {
+      "id": "ja60",
+      "group": "ja",
+      "rank": 5,
+      "links": 1
     },
     {
       "id": "sn20.7",
@@ -40627,8 +40633,13 @@
     },
     {
       "source": "Schneckenhornbläser",
-      "target": "mn77",
+      "target": "ja60",
       "rank": 5
+    },
+    {
+      "source": "Schneckenhornbläser",
+      "target": "mn77",
+      "rank": 6
     },
     {
       "source": "schönen Worten",
