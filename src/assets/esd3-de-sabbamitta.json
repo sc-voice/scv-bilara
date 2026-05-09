@@ -2958,7 +2958,7 @@
     {
       "id": "Rosenapfel",
       "group": "Examples",
-      "links": 29
+      "links": 30
     },
     {
       "id": "roten Kapok-Wald",
@@ -3593,7 +3593,7 @@
     {
       "id": "verflucht sei",
       "group": "Examples",
-      "links": 5
+      "links": 6
     },
     {
       "id": "Vergehen der Erscheinungen",
@@ -7023,7 +7023,7 @@
     {
       "id": "thig11.1",
       "group": "thig",
-      "rank": 3,
+      "rank": 4,
       "links": 4
     },
     {
@@ -15997,15 +15997,21 @@
       "links": 2
     },
     {
+      "id": "ja466",
+      "group": "ja",
+      "rank": 14,
+      "links": 1
+    },
+    {
       "id": "dhp221-234",
       "group": "dhp",
-      "rank": 14,
+      "rank": 15,
       "links": 1
     },
     {
       "id": "mil3.1.1",
       "group": "mil",
-      "rank": 18,
+      "rank": 19,
       "links": 1
     },
     {
@@ -16984,6 +16990,12 @@
       "id": "ja13",
       "group": "ja",
       "rank": 2,
+      "links": 1
+    },
+    {
+      "id": "ja69",
+      "group": "ja",
+      "rank": 3,
       "links": 1
     },
     {
@@ -40178,83 +40190,88 @@
     },
     {
       "source": "Rosenapfel",
-      "target": "dhp221-234",
+      "target": "ja466",
       "rank": 14
     },
     {
       "source": "Rosenapfel",
-      "target": "sn2.29",
+      "target": "dhp221-234",
       "rank": 15
     },
     {
       "source": "Rosenapfel",
-      "target": "an3.63",
+      "target": "sn2.29",
       "rank": 16
     },
     {
       "source": "Rosenapfel",
-      "target": "thag16.6",
+      "target": "an3.63",
       "rank": 17
     },
     {
       "source": "Rosenapfel",
-      "target": "mil3.1.1",
+      "target": "thag16.6",
       "rank": 18
     },
     {
       "source": "Rosenapfel",
-      "target": "an10.29",
+      "target": "mil3.1.1",
       "rank": 19
     },
     {
       "source": "Rosenapfel",
-      "target": "thag16.9",
+      "target": "an10.29",
       "rank": 20
     },
     {
       "source": "Rosenapfel",
-      "target": "mn92",
+      "target": "thag16.9",
       "rank": 21
     },
     {
       "source": "Rosenapfel",
-      "target": "mn120",
+      "target": "mn92",
       "rank": 22
     },
     {
       "source": "Rosenapfel",
-      "target": "snp3.7",
+      "target": "mn120",
       "rank": 23
     },
     {
       "source": "Rosenapfel",
-      "target": "mn36",
+      "target": "snp3.7",
       "rank": 24
     },
     {
       "source": "Rosenapfel",
-      "target": "mn100",
+      "target": "mn36",
       "rank": 25
     },
     {
       "source": "Rosenapfel",
-      "target": "thig16.1",
+      "target": "mn100",
       "rank": 26
     },
     {
       "source": "Rosenapfel",
-      "target": "mn85",
+      "target": "thig16.1",
       "rank": 27
     },
     {
       "source": "Rosenapfel",
-      "target": "dn14",
+      "target": "mn85",
       "rank": 28
     },
     {
       "source": "Rosenapfel",
-      "target": "dn30",
+      "target": "dn14",
       "rank": 29
+    },
+    {
+      "source": "Rosenapfel",
+      "target": "dn30",
+      "rank": 30
     },
     {
       "source": "rufe alle Mönche und Nonnen",
@@ -44248,18 +44265,23 @@
     },
     {
       "source": "verflucht sei",
-      "target": "thig11.1",
+      "target": "ja69",
       "rank": 3
     },
     {
       "source": "verflucht sei",
-      "target": "snp3.2",
+      "target": "thig11.1",
       "rank": 4
     },
     {
       "source": "verflucht sei",
-      "target": "thag19.1",
+      "target": "snp3.2",
       "rank": 5
+    },
+    {
+      "source": "verflucht sei",
+      "target": "thag19.1",
+      "rank": 6
     },
     {
       "source": "Vergehen der Erscheinungen",
