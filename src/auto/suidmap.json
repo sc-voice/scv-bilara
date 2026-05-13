@@ -8863,6 +8863,7 @@
 		"translation/de/sabbamitta": "sutta/dn",
 		"translation/en/sujato": "sutta/dn",
 		"translation/fr/noeismet": "sutta/dn",
+		"translation/ru/khantibalo": "sutta/dn",
 		"translation/sr/brankokovacevic": "sutta/dn",
 		"root/pli/ms": "sutta/dn"
 	},
@@ -10732,6 +10733,7 @@
 	},
 	"mn20": {
 		"translation/de/sabbamitta": "sutta/mn",
+		"translation/en/suddhaso": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
 		"translation/fr/noeismet": "sutta/mn",
 		"translation/it/giovannizappa": "sutta/mn",
