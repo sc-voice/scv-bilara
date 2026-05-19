@@ -803,7 +803,7 @@
     {
       "id": "die ich liebe",
       "group": "Examples",
-      "links": 29
+      "links": 30
     },
     {
       "id": "die im Wasser",
@@ -1723,7 +1723,7 @@
     {
       "id": "Gewinn und Verlust",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "Gewissen und Besonnenheit",
@@ -1868,7 +1868,7 @@
     {
       "id": "haarsträubend",
       "group": "Examples",
-      "links": 10
+      "links": 11
     },
     {
       "id": "haltlos werden",
@@ -9403,6 +9403,12 @@
       "links": 5
     },
     {
+      "id": "cp35",
+      "group": "cp",
+      "rank": 5,
+      "links": 3
+    },
+    {
       "id": "an3.63",
       "group": "an",
       "rank": 1,
@@ -9411,7 +9417,7 @@
     {
       "id": "an10.85",
       "group": "an",
-      "rank": 19,
+      "rank": 20,
       "links": 1
     },
     {
@@ -13365,7 +13371,7 @@
     {
       "id": "thag16.1",
       "group": "thag",
-      "rank": 8,
+      "rank": 9,
       "links": 2
     },
     {
@@ -24345,68 +24351,73 @@
     },
     {
       "source": "die ich liebe",
-      "target": "an3.63",
+      "target": "cp35",
       "rank": 17
     },
     {
       "source": "die ich liebe",
-      "target": "an7.66",
+      "target": "an3.63",
       "rank": 18
     },
     {
       "source": "die ich liebe",
-      "target": "an10.85",
+      "target": "an7.66",
       "rank": 19
     },
     {
       "source": "die ich liebe",
-      "target": "sn46.54",
+      "target": "an10.85",
       "rank": 20
     },
     {
       "source": "die ich liebe",
-      "target": "mn31",
+      "target": "sn46.54",
       "rank": 21
     },
     {
       "source": "die ich liebe",
-      "target": "mn73",
+      "target": "mn31",
       "rank": 22
     },
     {
       "source": "die ich liebe",
-      "target": "mn81",
+      "target": "mn73",
       "rank": 23
     },
     {
       "source": "die ich liebe",
-      "target": "mn130",
+      "target": "mn81",
       "rank": 24
     },
     {
       "source": "die ich liebe",
-      "target": "mn128",
+      "target": "mn130",
       "rank": 25
     },
     {
       "source": "die ich liebe",
-      "target": "mn77",
+      "target": "mn128",
       "rank": 26
     },
     {
       "source": "die ich liebe",
-      "target": "mn91",
+      "target": "mn77",
       "rank": 27
     },
     {
       "source": "die ich liebe",
-      "target": "dn3",
+      "target": "mn91",
       "rank": 28
     },
     {
       "source": "die ich liebe",
-      "target": "dn23",
+      "target": "dn3",
       "rank": 29
+    },
+    {
+      "source": "die ich liebe",
+      "target": "dn23",
+      "rank": 30
     },
     {
       "source": "die im Wasser",
@@ -30960,13 +30971,18 @@
     },
     {
       "source": "Gewinn und Verlust",
-      "target": "dn33",
+      "target": "cp35",
       "rank": 5
     },
     {
       "source": "Gewinn und Verlust",
-      "target": "dn34",
+      "target": "dn33",
       "rank": 6
+    },
+    {
+      "source": "Gewinn und Verlust",
+      "target": "dn34",
+      "rank": 7
     },
     {
       "source": "Gewissen und Besonnenheit",
@@ -32470,23 +32486,28 @@
     },
     {
       "source": "haarsträubend",
-      "target": "sn51.10",
+      "target": "cp35",
       "rank": 7
     },
     {
       "source": "haarsträubend",
-      "target": "thag16.1",
+      "target": "sn51.10",
       "rank": 8
     },
     {
       "source": "haarsträubend",
-      "target": "mn4",
+      "target": "thag16.1",
       "rank": 9
     },
     {
       "source": "haarsträubend",
-      "target": "mn12",
+      "target": "mn4",
       "rank": 10
+    },
+    {
+      "source": "haarsträubend",
+      "target": "mn12",
+      "rank": 11
     },
     {
       "source": "haltlos werden",
