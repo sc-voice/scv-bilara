@@ -73,7 +73,7 @@
     {
       "id": "again and again",
       "group": "Examples",
-      "links": 35
+      "links": 34
     },
     {
       "id": "against the stream",
@@ -1318,7 +1318,7 @@
     {
       "id": "fourfold constraint",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "four foundations",
@@ -1998,7 +1998,7 @@
     {
       "id": "intense enthusiasm",
       "group": "Examples",
-      "links": 3
+      "links": 0
     },
     {
       "id": "intention shapes",
@@ -2668,7 +2668,7 @@
     {
       "id": "noble cycle",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "noble meditation",
@@ -3723,7 +3723,7 @@
     {
       "id": "the known",
       "group": "Examples",
-      "links": 4
+      "links": 3
     },
     {
       "id": "the lion, king of beasts, emerges",
@@ -3983,7 +3983,7 @@
     {
       "id": "three practice categories",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "three processes",
@@ -4263,7 +4263,7 @@
     {
       "id": "water overgrown with moss",
       "group": "Examples",
-      "links": 2
+      "links": 1
     },
     {
       "id": "water stirred by the wind",
@@ -4884,7 +4884,7 @@
       "id": "mn56",
       "group": "mn",
       "rank": 1,
-      "links": 10
+      "links": 11
     },
     {
       "id": "mn60",
@@ -5175,15 +5175,9 @@
       "links": 2
     },
     {
-      "id": "sn36.2",
-      "group": "sn",
-      "rank": 17,
-      "links": 2
-    },
-    {
       "id": "thag3.13",
       "group": "thag",
-      "rank": 18,
+      "rank": 17,
       "links": 1
     },
     {
@@ -5195,7 +5189,7 @@
     {
       "id": "thag5.9",
       "group": "thag",
-      "rank": 20,
+      "rank": 19,
       "links": 1
     },
     {
@@ -5207,7 +5201,7 @@
     {
       "id": "sn3.17",
       "group": "sn",
-      "rank": 22,
+      "rank": 21,
       "links": 1
     },
     {
@@ -5225,13 +5219,13 @@
     {
       "id": "thig9.1",
       "group": "thig",
-      "rank": 25,
+      "rank": 24,
       "links": 1
     },
     {
       "id": "an5.43",
       "group": "an",
-      "rank": 26,
+      "rank": 25,
       "links": 1
     },
     {
@@ -5604,7 +5598,7 @@
       "id": "mn112",
       "group": "mn",
       "rank": 1,
-      "links": 18
+      "links": 17
     },
     {
       "id": "mn27",
@@ -7590,7 +7584,7 @@
       "id": "mn44",
       "group": "mn",
       "rank": 1,
-      "links": 10
+      "links": 9
     },
     {
       "id": "an5.196",
@@ -8142,7 +8136,7 @@
       "id": "sn46.55",
       "group": "sn",
       "rank": 2,
-      "links": 6
+      "links": 5
     },
     {
       "id": "an10.52",
@@ -8159,8 +8153,8 @@
     {
       "id": "an10.53",
       "group": "an",
-      "rank": 2,
-      "links": 5
+      "rank": 5,
+      "links": 4
     },
     {
       "id": "sn22.83",
@@ -8172,13 +8166,13 @@
       "id": "an10.55",
       "group": "an",
       "rank": 1,
-      "links": 7
+      "links": 6
     },
     {
       "id": "an10.54",
       "group": "an",
       "rank": 2,
-      "links": 8
+      "links": 7
     },
     {
       "id": "mn61",
@@ -10463,7 +10457,7 @@
     {
       "id": "mn138",
       "group": "mn",
-      "rank": 4,
+      "rank": 2,
       "links": 4
     },
     {
@@ -10491,6 +10485,12 @@
       "links": 2
     },
     {
+      "id": "iti94",
+      "group": "iti",
+      "rank": 28,
+      "links": 1
+    },
+    {
       "id": "sn51.31",
       "group": "sn",
       "rank": 4,
@@ -10515,9 +10515,9 @@
       "links": 2
     },
     {
-      "id": "iti94",
-      "group": "iti",
-      "rank": 45,
+      "id": "sn36.2",
+      "group": "sn",
+      "rank": 46,
       "links": 1
     },
     {
@@ -12821,8 +12821,8 @@
     {
       "id": "an10.92",
       "group": "an",
-      "rank": 1,
-      "links": 4
+      "rank": 7,
+      "links": 3
     },
     {
       "id": "sn55.10",
@@ -18872,98 +18872,93 @@
     },
     {
       "source": "again and again",
-      "target": "sn36.2",
+      "target": "thag3.13",
       "rank": 17
     },
     {
       "source": "again and again",
-      "target": "thag3.13",
+      "target": "an10.69",
       "rank": 18
     },
     {
       "source": "again and again",
-      "target": "an10.69",
+      "target": "thag5.9",
       "rank": 19
     },
     {
       "source": "again and again",
-      "target": "thag5.9",
+      "target": "sn8.4",
       "rank": 20
     },
     {
       "source": "again and again",
-      "target": "sn8.4",
+      "target": "sn3.17",
       "rank": 21
     },
     {
       "source": "again and again",
-      "target": "sn3.17",
+      "target": "thag6.5",
       "rank": 22
     },
     {
       "source": "again and again",
-      "target": "thag6.5",
+      "target": "an4.5",
       "rank": 23
     },
     {
       "source": "again and again",
-      "target": "an4.5",
+      "target": "thig9.1",
       "rank": 24
     },
     {
       "source": "again and again",
-      "target": "thig9.1",
+      "target": "an5.43",
       "rank": 25
     },
     {
       "source": "again and again",
-      "target": "an5.43",
+      "target": "an9.5",
       "rank": 26
     },
     {
       "source": "again and again",
-      "target": "an9.5",
+      "target": "sn48.50",
       "rank": 27
     },
     {
       "source": "again and again",
-      "target": "sn48.50",
+      "target": "iti83",
       "rank": 28
     },
     {
       "source": "again and again",
-      "target": "iti83",
+      "target": "sn3.18",
       "rank": 29
     },
     {
       "source": "again and again",
-      "target": "sn3.18",
+      "target": "snp5.5",
       "rank": 30
     },
     {
       "source": "again and again",
-      "target": "snp5.5",
+      "target": "dhp146-156",
       "rank": 31
     },
     {
       "source": "again and again",
-      "target": "dhp146-156",
+      "target": "dhp320-333",
       "rank": 32
     },
     {
       "source": "again and again",
-      "target": "dhp320-333",
+      "target": "mn12",
       "rank": 33
     },
     {
       "source": "again and again",
-      "target": "mn12",
-      "rank": 34
-    },
-    {
-      "source": "again and again",
       "target": "thag20.1",
-      "rank": 35
+      "rank": 34
     },
     {
       "source": "against the stream",
@@ -26097,17 +26092,17 @@
     },
     {
       "source": "externally",
-      "target": "mn77",
+      "target": "mn138",
       "rank": 2
     },
     {
       "source": "externally",
-      "target": "dn16",
+      "target": "mn77",
       "rank": 3
     },
     {
       "source": "externally",
-      "target": "mn138",
+      "target": "dn16",
       "rank": 4
     },
     {
@@ -26227,92 +26222,92 @@
     },
     {
       "source": "externally",
-      "target": "sn22.92",
+      "target": "iti94",
       "rank": 28
     },
     {
       "source": "externally",
-      "target": "sn22.125",
+      "target": "sn22.92",
       "rank": 29
     },
     {
       "source": "externally",
-      "target": "sn18.22",
+      "target": "sn22.125",
       "rank": 30
     },
     {
       "source": "externally",
-      "target": "sn22.72",
+      "target": "sn18.22",
       "rank": 31
     },
     {
       "source": "externally",
-      "target": "sn51.12",
+      "target": "sn22.72",
       "rank": 32
     },
     {
       "source": "externally",
-      "target": "sn51.31",
+      "target": "sn51.12",
       "rank": 33
     },
     {
       "source": "externally",
-      "target": "an3.33",
+      "target": "sn51.31",
       "rank": 34
     },
     {
       "source": "externally",
-      "target": "sn51.21",
+      "target": "an3.33",
       "rank": 35
     },
     {
       "source": "externally",
-      "target": "sn51.32",
+      "target": "sn51.21",
       "rank": 36
     },
     {
       "source": "externally",
-      "target": "sn51.11",
+      "target": "sn51.32",
       "rank": 37
     },
     {
       "source": "externally",
-      "target": "mn109",
+      "target": "sn51.11",
       "rank": 38
     },
     {
       "source": "externally",
-      "target": "sn22.82",
+      "target": "mn109",
       "rank": 39
     },
     {
       "source": "externally",
-      "target": "mn112",
+      "target": "sn22.82",
       "rank": 40
     },
     {
       "source": "externally",
-      "target": "an8.120",
+      "target": "mn112",
       "rank": 41
     },
     {
       "source": "externally",
-      "target": "thag2.26",
+      "target": "an8.120",
       "rank": 42
     },
     {
       "source": "externally",
-      "target": "an7.38",
+      "target": "thag2.26",
       "rank": 43
     },
     {
       "source": "externally",
-      "target": "an7.39",
+      "target": "an7.38",
       "rank": 44
     },
     {
       "source": "externally",
-      "target": "iti94",
+      "target": "an7.39",
       "rank": 45
     },
     {
@@ -27851,6 +27846,11 @@
       "rank": 3
     },
     {
+      "source": "fourfold constraint",
+      "target": "mn56",
+      "rank": 4
+    },
+    {
       "source": "four foundations",
       "target": "mn140",
       "rank": 1
@@ -29187,22 +29187,22 @@
     },
     {
       "source": "gradual training",
-      "target": "mn70",
+      "target": "mn107",
       "rank": 1
     },
     {
       "source": "gradual training",
-      "target": "an8.20",
+      "target": "mn70",
       "rank": 2
     },
     {
       "source": "gradual training",
-      "target": "an8.19",
+      "target": "an8.20",
       "rank": 3
     },
     {
       "source": "gradual training",
-      "target": "mn107",
+      "target": "an8.19",
       "rank": 4
     },
     {
@@ -32384,21 +32384,6 @@
       "source": "in suffering and discomfort",
       "target": "sn35.151",
       "rank": 2
-    },
-    {
-      "source": "intense enthusiasm",
-      "target": "an10.55",
-      "rank": 1
-    },
-    {
-      "source": "intense enthusiasm",
-      "target": "an10.53",
-      "rank": 2
-    },
-    {
-      "source": "intense enthusiasm",
-      "target": "an10.54",
-      "rank": 3
     },
     {
       "source": "intention shapes",
@@ -37074,11 +37059,6 @@
       "source": "nine things should be developed",
       "target": "dn34",
       "rank": 5
-    },
-    {
-      "source": "noble cycle",
-      "target": "an10.92",
-      "rank": 1
     },
     {
       "source": "noble meditation",
@@ -43487,13 +43467,8 @@
     },
     {
       "source": "the known",
-      "target": "mn112",
-      "rank": 3
-    },
-    {
-      "source": "the known",
       "target": "sn35.95",
-      "rank": 4
+      "rank": 3
     },
     {
       "source": "the lion, king of beasts, emerges",
@@ -45298,11 +45273,6 @@
     {
       "source": "three kinds of people",
       "target": "sn42.12",
-      "rank": 1
-    },
-    {
-      "source": "three practice categories",
-      "target": "mn44",
       "rank": 1
     },
     {
@@ -47179,11 +47149,6 @@
       "source": "water overgrown with moss",
       "target": "an5.193",
       "rank": 1
-    },
-    {
-      "source": "water overgrown with moss",
-      "target": "sn46.55",
-      "rank": 2
     },
     {
       "source": "water stirred by the wind",
