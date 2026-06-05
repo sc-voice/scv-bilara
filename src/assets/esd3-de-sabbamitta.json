@@ -3168,7 +3168,7 @@
     {
       "id": "selbst wenn er fortgeschickt wird",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "sich eine Zuflucht bereiten",
@@ -5170,7 +5170,7 @@
       "id": "mn17",
       "group": "mn",
       "rank": 1,
-      "links": 2
+      "links": 1
     },
     {
       "id": "sn54.16",
@@ -8332,7 +8332,7 @@
       "id": "mn122",
       "group": "mn",
       "rank": 1,
-      "links": 13
+      "links": 12
     },
     {
       "id": "sn45.165",
@@ -41478,16 +41478,6 @@
       "source": "selbst versteh",
       "target": "snp3.9",
       "rank": 7
-    },
-    {
-      "source": "selbst wenn er fortgeschickt wird",
-      "target": "mn122",
-      "rank": 1
-    },
-    {
-      "source": "selbst wenn er fortgeschickt wird",
-      "target": "mn17",
-      "rank": 2
     },
     {
       "source": "sich eine Zuflucht bereiten",
