@@ -104,6 +104,7 @@ describe("Seeker - Sutta Tests", function () {
       matched: true,
       pli: "“Susāne seyyaṁ kappemi, ",
       ref: "“I made my bed in a charnel ground, ",
+      de: "„Ich bereitete mein Bett auf einem Leichenfeld ",
     });
   });
 

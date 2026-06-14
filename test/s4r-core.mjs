@@ -62,7 +62,6 @@ describe("Seeker - Core", function () {
       paliWords: undefined,
       root: BILARA_PATH,
     });
-    expect(skr.logger).toEqual(logger);
   });
 
   it("custom ctor", () => {

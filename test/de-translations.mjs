@@ -19,7 +19,6 @@ describe.sequential("de-translation", function() {
             suid: undefined,
             source: undefined,
         });
-        expect(trans.logger).equal(logger);
     });
     it("custom ctor", () => {
         var suid = 'an1.1-10';

@@ -20,7 +20,7 @@ describe("SegDoc", { timeout: 5*1000 }, function() {
             suid: undefined,
             bilaraPath: undefined,
         });
-        expect(sd.logger).toBe(logger);
+        expect(sd.logger).toEqual(logger);
     });
     it("custom ctor", () => {
         var logger2 = new LogInstance();

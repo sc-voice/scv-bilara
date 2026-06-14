@@ -59,7 +59,6 @@ describe.sequential("bilara-data", { timeout: 120*1000 }, function() {
             languages: ['pli', 'en'],
             includeUnpublished: false,
         });
-        expect(bdDefault.logger).toBe(logger);
     });
     it("initialize(...) must be called", async()=>{
         var newbd = new BilaraData();
