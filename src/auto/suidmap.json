@@ -630,17 +630,20 @@
 	"an3.28": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
+		"translation/ru/sv": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.29": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
+		"translation/ru/sv": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.30": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
 		"translation/fr/sekha": "sutta/an/an3",
+		"translation/ru/sv": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.31": {
@@ -648,23 +651,27 @@
 		"translation/en/sujato": "sutta/an/an3",
 		"translation/fr/sekha": "sutta/an/an3",
 		"translation/pt/laera-quaresma": "sutta/an/an3",
+		"translation/ru/sv": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.32": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
+		"translation/ru/sv": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.33": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
 		"translation/pt/laera-quaresma": "sutta/an/an3",
+		"translation/ru/sv": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.34": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
 		"translation/fr/sekha": "sutta/an/an3",
+		"translation/ru/sv": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.35": {
@@ -673,6 +680,7 @@
 		"translation/es/maggatr": "sutta/an/an3",
 		"translation/fr/noeismet": "sutta/an/an3",
 		"translation/fr/sekha": "sutta/an/an3",
+		"translation/ru/sv": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.36": {
@@ -680,18 +688,21 @@
 		"translation/en/sujato": "sutta/an/an3",
 		"translation/es/maggatr": "sutta/an/an3",
 		"translation/pt/laera-quaresma": "sutta/an/an3",
+		"translation/ru/sv": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.37": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
 		"translation/pt/laera-quaresma": "sutta/an/an3",
+		"translation/ru/sv": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.38": {
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
 		"translation/pt/laera-quaresma": "sutta/an/an3",
+		"translation/ru/sv": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.39": {
@@ -700,6 +711,7 @@
 		"translation/fr/sekha": "sutta/an/an3",
 		"translation/jpn/kaz": "sutta/an/an3",
 		"translation/lt/piyadassi": "sutta/an/an3",
+		"translation/ru/sv": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.40": {
@@ -707,6 +719,7 @@
 		"translation/en/sujato": "sutta/an/an3",
 		"translation/fr/sekha": "sutta/an/an3",
 		"translation/pt/laera-quaresma": "sutta/an/an3",
+		"translation/ru/sv": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.41": {
@@ -15427,6 +15440,7 @@
 	"sn10.6": {
 		"translation/de/sabbamitta": "sutta/sn/sn10",
 		"translation/en/sujato": "sutta/sn/sn10",
+		"translation/ru/sv": "sutta/sn/sn10",
 		"translation/sr/brankokovacevic": "sutta/sn/sn10",
 		"root/pli/ms": "sutta/sn/sn10"
 	},
