@@ -899,7 +899,7 @@ describe.sequential("bilara-data", { timeout: 120*1000 }, function() {
       await syncPromise;
       expect(resolved).toBe(true);
     } finally{
-      fs.existsSync(indexLock) && fs.unlinkSync(indexLock);
+      indexLock && fs.existsSync(indexLock) && fs.unlinkSync(indexLock);
     }});
     it("loadSuttaplexJson(...)=>an3.47", async()=>{
       await bd.initialize();

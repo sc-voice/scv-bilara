@@ -136,7 +136,7 @@ describe.sequential("exec-git", function() {
       expect(resolved).toBe(true);
       logger.logLevel = logLevel;
     } finally {
-      fs.existsSync(indexLock) &&  fs.unlinkSync(indexLock);
+      indexLock && fs.existsSync(indexLock) &&  fs.unlinkSync(indexLock);
     }
   });
 
