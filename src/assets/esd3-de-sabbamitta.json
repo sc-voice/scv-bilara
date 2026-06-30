@@ -28,7 +28,7 @@
     {
       "id": "Absicht formt",
       "group": "Examples",
-      "links": 2
+      "links": 1
     },
     {
       "id": "abwägen, bevor du handelst",
@@ -2068,7 +2068,7 @@
     {
       "id": "in bester Absicht",
       "group": "Examples",
-      "links": 3
+      "links": 0
     },
     {
       "id": "inbrünstige.* Bußübung",
@@ -2948,7 +2948,7 @@
     {
       "id": "Riese",
       "group": "Examples",
-      "links": 25
+      "links": 26
     },
     {
       "id": "Roben aus Hanf",
@@ -4697,12 +4697,6 @@
       "group": "an",
       "rank": 1,
       "links": 3
-    },
-    {
-      "id": "dhp1-20",
-      "group": "dhp",
-      "rank": 1,
-      "links": 4
     },
     {
       "id": "mn56",
@@ -8999,6 +8993,12 @@
       "group": "an",
       "rank": 3,
       "links": 2
+    },
+    {
+      "id": "dhp1-20",
+      "group": "dhp",
+      "rank": 1,
+      "links": 3
     },
     {
       "id": "an10.3",
@@ -13699,24 +13699,6 @@
       "links": 1
     },
     {
-      "id": "sn3.21",
-      "group": "sn",
-      "rank": 1,
-      "links": 2
-    },
-    {
-      "id": "an3.29",
-      "group": "an",
-      "rank": 2,
-      "links": 1
-    },
-    {
-      "id": "an3.30",
-      "group": "an",
-      "rank": 1,
-      "links": 2
-    },
-    {
       "id": "an5.206",
       "group": "an",
       "rank": 14,
@@ -15967,9 +15949,15 @@
       "links": 2
     },
     {
+      "id": "an8.85",
+      "group": "an",
+      "rank": 9,
+      "links": 1
+    },
+    {
       "id": "sn1.37",
       "group": "sn",
-      "rank": 9,
+      "rank": 10,
       "links": 1
     },
     {
@@ -16192,6 +16180,12 @@
       "id": "an5.60",
       "group": "an",
       "rank": 7,
+      "links": 1
+    },
+    {
+      "id": "sn3.21",
+      "group": "sn",
+      "rank": 11,
       "links": 1
     },
     {
@@ -17809,6 +17803,12 @@
       "links": 1
     },
     {
+      "id": "an3.30",
+      "group": "an",
+      "rank": 1,
+      "links": 1
+    },
+    {
       "id": "an5.158",
       "group": "an",
       "rank": 4,
@@ -18708,11 +18708,6 @@
       "source": "Absicht formt",
       "target": "an1.51-60",
       "rank": 1
-    },
-    {
-      "source": "Absicht formt",
-      "target": "dhp1-20",
-      "rank": 2
     },
     {
       "source": "abwägen, bevor du handelst",
@@ -33580,21 +33575,6 @@
       "rank": 1
     },
     {
-      "source": "in bester Absicht",
-      "target": "sn3.21",
-      "rank": 1
-    },
-    {
-      "source": "in bester Absicht",
-      "target": "an3.29",
-      "rank": 2
-    },
-    {
-      "source": "in bester Absicht",
-      "target": "an3.30",
-      "rank": 3
-    },
-    {
       "source": "inbrünstige.* Bußübung",
       "target": "dn8",
       "rank": 1
@@ -40016,88 +39996,93 @@
     },
     {
       "source": "Riese",
-      "target": "sn1.37",
+      "target": "an8.85",
       "rank": 9
     },
     {
       "source": "Riese",
-      "target": "ud4.5",
+      "target": "sn1.37",
       "rank": 10
     },
     {
       "source": "Riese",
-      "target": "sn21.3",
+      "target": "ud4.5",
       "rank": 11
     },
     {
       "source": "Riese",
-      "target": "sn8.8",
+      "target": "sn21.3",
       "rank": 12
     },
     {
       "source": "Riese",
-      "target": "ud4.4",
+      "target": "sn8.8",
       "rank": 13
     },
     {
       "source": "Riese",
-      "target": "sn22.76",
+      "target": "ud4.4",
       "rank": 14
     },
     {
       "source": "Riese",
-      "target": "snp5.5",
+      "target": "sn22.76",
       "rank": 15
     },
     {
       "source": "Riese",
-      "target": "snp4.9",
+      "target": "snp5.5",
       "rank": 16
     },
     {
       "source": "Riese",
-      "target": "thag16.6",
+      "target": "snp4.9",
       "rank": 17
     },
     {
       "source": "Riese",
-      "target": "mn24",
+      "target": "thag16.6",
       "rank": 18
     },
     {
       "source": "Riese",
-      "target": "snp1.9",
+      "target": "mn24",
       "rank": 19
     },
     {
       "source": "Riese",
-      "target": "snp5.19",
+      "target": "snp1.9",
       "rank": 20
     },
     {
       "source": "Riese",
-      "target": "mn5",
+      "target": "snp5.19",
       "rank": 21
     },
     {
       "source": "Riese",
-      "target": "mn92",
+      "target": "mn5",
       "rank": 22
     },
     {
       "source": "Riese",
-      "target": "snp3.7",
+      "target": "mn92",
       "rank": 23
     },
     {
       "source": "Riese",
-      "target": "dn20",
+      "target": "snp3.7",
       "rank": 24
     },
     {
       "source": "Riese",
-      "target": "mn56",
+      "target": "dn20",
       "rank": 25
+    },
+    {
+      "source": "Riese",
+      "target": "mn56",
+      "rank": 26
     },
     {
       "source": "Roben aus Hanf",
