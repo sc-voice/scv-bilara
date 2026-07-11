@@ -1173,7 +1173,7 @@
     {
       "id": "eingeschätzt",
       "group": "Examples",
-      "links": 13
+      "links": 14
     },
     {
       "id": "ein Hindernis einzig für euch",
@@ -1433,7 +1433,7 @@
     {
       "id": "Filz",
       "group": "Examples",
-      "links": 18
+      "links": 17
     },
     {
       "id": "Fingerschnippen",
@@ -5248,7 +5248,7 @@
       "id": "dhp60-75",
       "group": "dhp",
       "rank": 3,
-      "links": 1
+      "links": 2
     },
     {
       "id": "snp3.12",
@@ -11839,12 +11839,6 @@
       "links": 2
     },
     {
-      "id": "dhp129-145",
-      "group": "dhp",
-      "rank": 1,
-      "links": 4
-    },
-    {
       "id": "an1.316-332",
       "group": "an",
       "rank": 2,
@@ -14747,6 +14741,12 @@
       "group": "an",
       "rank": 21,
       "links": 1
+    },
+    {
+      "id": "dhp129-145",
+      "group": "dhp",
+      "rank": 1,
+      "links": 3
     },
     {
       "id": "sn55.71",
@@ -26826,8 +26826,13 @@
     },
     {
       "source": "eingeschätzt",
-      "target": "snp1.3",
+      "target": "dhp60-75",
       "rank": 13
+    },
+    {
+      "source": "eingeschätzt",
+      "target": "snp1.3",
+      "rank": 14
     },
     {
       "source": "ein Lehrer mit Namen Sunetta",
@@ -28981,28 +28986,23 @@
     },
     {
       "source": "Filz",
-      "target": "dhp129-145",
+      "target": "mn92",
       "rank": 14
     },
     {
       "source": "Filz",
-      "target": "mn92",
+      "target": "snp3.7",
       "rank": 15
     },
     {
       "source": "Filz",
-      "target": "snp3.7",
+      "target": "snp3.11",
       "rank": 16
     },
     {
       "source": "Filz",
-      "target": "snp3.11",
-      "rank": 17
-    },
-    {
-      "source": "Filz",
       "target": "mn38",
-      "rank": 18
+      "rank": 17
     },
     {
       "source": "Fingerschnippen",
