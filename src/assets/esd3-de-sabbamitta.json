@@ -783,7 +783,7 @@
     {
       "id": "die bedingen könnten",
       "group": "Examples",
-      "links": 2
+      "links": 1
     },
     {
       "id": "die Besinnung auf",
@@ -9283,12 +9283,6 @@
       "links": 3
     },
     {
-      "id": "sn12.25",
-      "group": "sn",
-      "rank": 2,
-      "links": 4
-    },
-    {
       "id": "an6.10",
       "group": "an",
       "rank": 2,
@@ -9635,6 +9629,12 @@
       "group": "mn",
       "rank": 1,
       "links": 4
+    },
+    {
+      "id": "sn12.25",
+      "group": "sn",
+      "rank": 2,
+      "links": 3
     },
     {
       "id": "sn45.5",
@@ -24198,11 +24198,6 @@
       "source": "die bedingen könnten",
       "target": "an4.171",
       "rank": 1
-    },
-    {
-      "source": "die bedingen könnten",
-      "target": "sn12.25",
-      "rank": 2
     },
     {
       "source": "die Besinnung auf",
