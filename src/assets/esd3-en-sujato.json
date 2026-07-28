@@ -128,7 +128,7 @@
     {
       "id": "all right, sir",
       "group": "Examples",
-      "links": 4
+      "links": 2
     },
     {
       "id": "all skillful qualities",
@@ -263,7 +263,7 @@
     {
       "id": "astute, competent, clever, learned",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "a Teacher called Sunetta",
@@ -883,7 +883,7 @@
     {
       "id": "does a realized one exist",
       "group": "Examples",
-      "links": 12
+      "links": 7
     },
     {
       "id": "does immersion come first",
@@ -988,7 +988,7 @@
     {
       "id": "element of",
       "group": "Examples",
-      "links": 19
+      "links": 18
     },
     {
       "id": "emancipated individual able to go",
@@ -1023,7 +1023,7 @@
     {
       "id": "ending of attachments",
       "group": "Examples",
-      "links": 9
+      "links": 10
     },
     {
       "id": "ending of craving is extinguishment",
@@ -1668,7 +1668,7 @@
     {
       "id": "head at the Buddha’s feet",
       "group": "Examples",
-      "links": 17
+      "links": 1
     },
     {
       "id": "head hair, body hair",
@@ -2118,7 +2118,7 @@
     {
       "id": "judgment",
       "group": "Examples",
-      "links": 12
+      "links": 14
     },
     {
       "id": "just one mouthful",
@@ -3013,7 +3013,7 @@
     {
       "id": "principles for the settlement",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "protector",
@@ -3073,7 +3073,7 @@
     {
       "id": "reborn according to their deeds",
       "group": "Examples",
-      "links": 27
+      "links": 1
     },
     {
       "id": "red silk-cotton wood",
@@ -3343,7 +3343,7 @@
     {
       "id": "sick, suffering, gravely ill",
       "group": "Examples",
-      "links": 38
+      "links": 39
     },
     {
       "id": "signless",
@@ -3783,7 +3783,7 @@
     {
       "id": "there I saw a huge mountain",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "there will come a time",
@@ -3873,7 +3873,7 @@
     {
       "id": "thief",
       "group": "Examples",
-      "links": 9
+      "links": 8
     },
     {
       "id": "things are helpful",
@@ -4023,7 +4023,7 @@
     {
       "id": "to endure",
       "group": "Examples",
-      "links": 3
+      "links": 4
     },
     {
       "id": "to go beyond suffering",
@@ -4033,7 +4033,7 @@
     {
       "id": "to kill",
       "group": "Examples",
-      "links": 18
+      "links": 17
     },
     {
       "id": "to one’s own spiritual companions",
@@ -4098,7 +4098,7 @@
     {
       "id": "trust that",
       "group": "Examples",
-      "links": 10
+      "links": 6
     },
     {
       "id": "tusker in the wild",
@@ -4493,7 +4493,7 @@
     {
       "id": "without informing his attendants",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "with the end of greed",
@@ -4596,7 +4596,7 @@
       "id": "an9.11",
       "group": "an",
       "rank": 3,
-      "links": 2
+      "links": 1
     },
     {
       "id": "an4.159",
@@ -4608,25 +4608,25 @@
       "id": "sn12.70",
       "group": "sn",
       "rank": 2,
-      "links": 12
+      "links": 10
     },
     {
       "id": "mn140",
       "group": "mn",
       "rank": 1,
-      "links": 22
+      "links": 21
     },
     {
       "id": "dn25",
       "group": "dn",
       "rank": 1,
-      "links": 29
+      "links": 28
     },
     {
       "id": "dn2",
       "group": "dn",
       "rank": 1,
-      "links": 62
+      "links": 60
     },
     {
       "id": "an8.55",
@@ -4800,7 +4800,7 @@
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 97
+      "links": 96
     },
     {
       "id": "dn16",
@@ -4847,7 +4847,7 @@
     {
       "id": "kp8",
       "group": "kp",
-      "rank": 9,
+      "rank": 8,
       "links": 5
     },
     {
@@ -4962,7 +4962,7 @@
       "id": "sn1.20",
       "group": "sn",
       "rank": 2,
-      "links": 4
+      "links": 5
     },
     {
       "id": "mn49",
@@ -4986,7 +4986,7 @@
       "id": "mn39",
       "group": "mn",
       "rank": 1,
-      "links": 21
+      "links": 22
     },
     {
       "id": "mn119",
@@ -4998,13 +4998,13 @@
       "id": "dn10",
       "group": "dn",
       "rank": 1,
-      "links": 39
+      "links": 38
     },
     {
       "id": "mn77",
       "group": "mn",
       "rank": 1,
-      "links": 27
+      "links": 26
     },
     {
       "id": "an7.52",
@@ -5274,7 +5274,7 @@
       "id": "mn12",
       "group": "mn",
       "rank": 1,
-      "links": 17
+      "links": 16
     },
     {
       "id": "thag20.1",
@@ -5484,7 +5484,7 @@
       "id": "mn55",
       "group": "mn",
       "rank": 2,
-      "links": 4
+      "links": 3
     },
     {
       "id": "sn46.54",
@@ -5544,7 +5544,7 @@
       "id": "mn97",
       "group": "mn",
       "rank": 1,
-      "links": 3
+      "links": 2
     },
     {
       "id": "mn99",
@@ -5610,19 +5610,19 @@
       "id": "mn51",
       "group": "mn",
       "rank": 1,
-      "links": 23
+      "links": 22
     },
     {
       "id": "mn94",
       "group": "mn",
       "rank": 2,
-      "links": 21
+      "links": 20
     },
     {
       "id": "mn101",
       "group": "mn",
       "rank": 2,
-      "links": 21
+      "links": 20
     },
     {
       "id": "mn38",
@@ -5688,7 +5688,7 @@
       "id": "mn91",
       "group": "mn",
       "rank": 1,
-      "links": 10
+      "links": 9
     },
     {
       "id": "snp4.6",
@@ -5754,18 +5754,6 @@
       "id": "snp1.10",
       "group": "snp",
       "rank": 1,
-      "links": 5
-    },
-    {
-      "id": "sn22.88",
-      "group": "sn",
-      "rank": 1,
-      "links": 6
-    },
-    {
-      "id": "sn22.87",
-      "group": "sn",
-      "rank": 3,
       "links": 5
     },
     {
@@ -5970,7 +5958,7 @@
       "id": "snp1.4",
       "group": "snp",
       "rank": 1,
-      "links": 3
+      "links": 2
     },
     {
       "id": "thig13.3",
@@ -6129,6 +6117,12 @@
       "links": 3
     },
     {
+      "id": "sn22.88",
+      "group": "sn",
+      "rank": 1,
+      "links": 5
+    },
+    {
       "id": "sn36.7",
       "group": "sn",
       "rank": 2,
@@ -6246,7 +6240,7 @@
       "id": "snp3.6",
       "group": "snp",
       "rank": 3,
-      "links": 4
+      "links": 3
     },
     {
       "id": "an3.25",
@@ -6269,7 +6263,7 @@
     {
       "id": "mn36",
       "group": "mn",
-      "rank": 1,
+      "rank": 2,
       "links": 10
     },
     {
@@ -6288,7 +6282,7 @@
       "id": "mn79",
       "group": "mn",
       "rank": 3,
-      "links": 7
+      "links": 6
     },
     {
       "id": "mn15",
@@ -6335,7 +6329,7 @@
     {
       "id": "dhp383-423",
       "group": "dhp",
-      "rank": 5,
+      "rank": 6,
       "links": 4
     },
     {
@@ -6600,7 +6594,7 @@
       "id": "mn89",
       "group": "mn",
       "rank": 1,
-      "links": 7
+      "links": 6
     },
     {
       "id": "an6.44",
@@ -6703,18 +6697,6 @@
       "group": "an",
       "rank": 1,
       "links": 5
-    },
-    {
-      "id": "sn44.1",
-      "group": "sn",
-      "rank": 1,
-      "links": 4
-    },
-    {
-      "id": "mn84",
-      "group": "mn",
-      "rank": 2,
-      "links": 3
     },
     {
       "id": "mn10",
@@ -7032,7 +7014,7 @@
       "id": "an11.14",
       "group": "an",
       "rank": 4,
-      "links": 5
+      "links": 4
     },
     {
       "id": "an4.127",
@@ -7235,14 +7217,14 @@
     {
       "id": "an10.30",
       "group": "an",
-      "rank": 3,
-      "links": 6
+      "rank": 6,
+      "links": 4
     },
     {
       "id": "mn6",
       "group": "mn",
       "rank": 2,
-      "links": 7
+      "links": 6
     },
     {
       "id": "an4.35",
@@ -7272,7 +7254,7 @@
       "id": "dn28",
       "group": "dn",
       "rank": 1,
-      "links": 26
+      "links": 25
     },
     {
       "id": "sn3.21",
@@ -7434,7 +7416,7 @@
       "id": "sn8.9",
       "group": "sn",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "thag21.1",
@@ -7512,7 +7494,7 @@
       "id": "an8.11",
       "group": "an",
       "rank": 2,
-      "links": 5
+      "links": 4
     },
     {
       "id": "an2.32-41",
@@ -7577,7 +7559,7 @@
     {
       "id": "mn143",
       "group": "mn",
-      "rank": 3,
+      "rank": 4,
       "links": 3
     },
     {
@@ -7620,7 +7602,7 @@
       "id": "sn51.11",
       "group": "sn",
       "rank": 6,
-      "links": 7
+      "links": 6
     },
     {
       "id": "sn35.117",
@@ -7638,7 +7620,7 @@
       "id": "mn4",
       "group": "mn",
       "rank": 3,
-      "links": 9
+      "links": 8
     },
     {
       "id": "mn128",
@@ -7649,7 +7631,7 @@
     {
       "id": "mn100",
       "group": "mn",
-      "rank": 2,
+      "rank": 1,
       "links": 10
     },
     {
@@ -7728,7 +7710,7 @@
       "id": "an10.95",
       "group": "an",
       "rank": 1,
-      "links": 13
+      "links": 12
     },
     {
       "id": "sn12.67",
@@ -8214,7 +8196,7 @@
       "id": "sn22.81",
       "group": "sn",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "mn11",
@@ -8598,7 +8580,7 @@
       "id": "sn16.11",
       "group": "sn",
       "rank": 1,
-      "links": 7
+      "links": 6
     },
     {
       "id": "an6.45",
@@ -8754,7 +8736,7 @@
       "id": "dn29",
       "group": "dn",
       "rank": 2,
-      "links": 18
+      "links": 17
     },
     {
       "id": "ud4.3",
@@ -8796,7 +8778,7 @@
       "id": "ud1.10",
       "group": "ud",
       "rank": 1,
-      "links": 7
+      "links": 6
     },
     {
       "id": "sn4.24",
@@ -9246,7 +9228,7 @@
       "id": "an3.101",
       "group": "an",
       "rank": 2,
-      "links": 7
+      "links": 6
     },
     {
       "id": "an10.20",
@@ -9324,7 +9306,7 @@
       "id": "sn10.8",
       "group": "sn",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "mn105",
@@ -9348,7 +9330,7 @@
       "id": "thag6.13",
       "group": "thag",
       "rank": 4,
-      "links": 2
+      "links": 1
     },
     {
       "id": "thag4.12",
@@ -9771,22 +9753,16 @@
       "links": 3
     },
     {
+      "id": "sn44.1",
+      "group": "sn",
+      "rank": 2,
+      "links": 3
+    },
+    {
       "id": "an7.54",
       "group": "an",
-      "rank": 6,
+      "rank": 5,
       "links": 1
-    },
-    {
-      "id": "an10.96",
-      "group": "an",
-      "rank": 1,
-      "links": 4
-    },
-    {
-      "id": "an10.93",
-      "group": "an",
-      "rank": 2,
-      "links": 6
     },
     {
       "id": "sn44.4",
@@ -9822,7 +9798,7 @@
       "id": "mn146",
       "group": "mn",
       "rank": 1,
-      "links": 7
+      "links": 6
     },
     {
       "id": "an3.4",
@@ -9834,7 +9810,7 @@
       "id": "an4.193",
       "group": "an",
       "rank": 2,
-      "links": 5
+      "links": 4
     },
     {
       "id": "iti84",
@@ -10029,15 +10005,9 @@
       "links": 1
     },
     {
-      "id": "iti51",
-      "group": "iti",
-      "rank": 10,
-      "links": 1
-    },
-    {
       "id": "sn14.13",
       "group": "sn",
-      "rank": 11,
+      "rank": 10,
       "links": 1
     },
     {
@@ -10050,7 +10020,7 @@
       "id": "an4.23",
       "group": "an",
       "rank": 4,
-      "links": 4
+      "links": 5
     },
     {
       "id": "iti112",
@@ -10307,7 +10277,7 @@
     {
       "id": "an3.26",
       "group": "an",
-      "rank": 3,
+      "rank": 4,
       "links": 1
     },
     {
@@ -10374,7 +10344,7 @@
       "id": "an3.57",
       "group": "an",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "sn45.4",
@@ -10387,6 +10357,18 @@
       "group": "an",
       "rank": 1,
       "links": 4
+    },
+    {
+      "id": "an10.96",
+      "group": "an",
+      "rank": 1,
+      "links": 3
+    },
+    {
+      "id": "an10.93",
+      "group": "an",
+      "rank": 2,
+      "links": 5
     },
     {
       "id": "mn72",
@@ -11031,6 +11013,12 @@
       "links": 6
     },
     {
+      "id": "mn84",
+      "group": "mn",
+      "rank": 7,
+      "links": 2
+    },
+    {
       "id": "mn81",
       "group": "mn",
       "rank": 4,
@@ -11477,7 +11465,7 @@
     {
       "id": "snp4.9",
       "group": "snp",
-      "rank": 9,
+      "rank": 10,
       "links": 4
     },
     {
@@ -11622,7 +11610,7 @@
       "id": "ud4.5",
       "group": "ud",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "snp5.13",
@@ -11778,7 +11766,7 @@
       "id": "an5.23",
       "group": "an",
       "rank": 3,
-      "links": 4
+      "links": 3
     },
     {
       "id": "thig15.1",
@@ -11831,8 +11819,8 @@
     {
       "id": "an10.97",
       "group": "an",
-      "rank": 2,
-      "links": 5
+      "rank": 4,
+      "links": 4
     },
     {
       "id": "an7.53",
@@ -12337,18 +12325,6 @@
       "group": "an",
       "rank": 11,
       "links": 1
-    },
-    {
-      "id": "sn7.15",
-      "group": "sn",
-      "rank": 4,
-      "links": 1
-    },
-    {
-      "id": "mn73",
-      "group": "mn",
-      "rank": 1,
-      "links": 7
     },
     {
       "id": "kp3",
@@ -12870,7 +12846,7 @@
       "id": "sn3.25",
       "group": "sn",
       "rank": 1,
-      "links": 3
+      "links": 2
     },
     {
       "id": "thag1.9",
@@ -13302,7 +13278,7 @@
       "id": "an3.58",
       "group": "an",
       "rank": 2,
-      "links": 4
+      "links": 3
     },
     {
       "id": "an10.119",
@@ -13575,9 +13551,15 @@
       "links": 1
     },
     {
+      "id": "sn1.34",
+      "group": "sn",
+      "rank": 9,
+      "links": 2
+    },
+    {
       "id": "dhp256-272",
       "group": "dhp",
-      "rank": 11,
+      "rank": 12,
       "links": 1
     },
     {
@@ -13961,20 +13943,26 @@
     {
       "id": "an6.2",
       "group": "an",
-      "rank": 1,
-      "links": 4
+      "rank": 3,
+      "links": 3
     },
     {
       "id": "sn16.9",
       "group": "sn",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "dhp167-178",
       "group": "dhp",
       "rank": 4,
       "links": 3
+    },
+    {
+      "id": "mn73",
+      "group": "mn",
+      "rank": 1,
+      "links": 5
     },
     {
       "id": "an3.82",
@@ -14907,6 +14895,12 @@
       "links": 2
     },
     {
+      "id": "sn22.87",
+      "group": "sn",
+      "rank": 3,
+      "links": 3
+    },
+    {
       "id": "thag3.14",
       "group": "thag",
       "rank": 7,
@@ -14940,7 +14934,7 @@
       "id": "mn71",
       "group": "mn",
       "rank": 2,
-      "links": 3
+      "links": 2
     },
     {
       "id": "iti31",
@@ -15321,12 +15315,6 @@
       "links": 2
     },
     {
-      "id": "an7.84",
-      "group": "an",
-      "rank": 1,
-      "links": 1
-    },
-    {
       "id": "an10.13",
       "group": "an",
       "rank": 5,
@@ -15481,18 +15469,6 @@
       "group": "an",
       "rank": 16,
       "links": 1
-    },
-    {
-      "id": "iti99",
-      "group": "iti",
-      "rank": 3,
-      "links": 1
-    },
-    {
-      "id": "an10.21",
-      "group": "an",
-      "rank": 2,
-      "links": 3
     },
     {
       "id": "ja31",
@@ -15959,19 +15935,19 @@
     {
       "id": "sn47.29",
       "group": "sn",
-      "rank": 5,
+      "rank": 6,
       "links": 1
     },
     {
       "id": "sn55.27",
       "group": "sn",
-      "rank": 8,
+      "rank": 9,
       "links": 1
     },
     {
       "id": "sn55.26",
       "group": "sn",
-      "rank": 10,
+      "rank": 11,
       "links": 1
     },
     {
@@ -16731,6 +16707,12 @@
       "links": 1
     },
     {
+      "id": "an10.21",
+      "group": "an",
+      "rank": 2,
+      "links": 2
+    },
+    {
       "id": "an4.33",
       "group": "an",
       "rank": 3,
@@ -17259,12 +17241,6 @@
       "links": 1
     },
     {
-      "id": "sn1.34",
-      "group": "sn",
-      "rank": 18,
-      "links": 1
-    },
-    {
       "id": "snp2.12",
       "group": "snp",
       "rank": 28,
@@ -17289,9 +17265,15 @@
       "links": 1
     },
     {
+      "id": "an3.135",
+      "group": "an",
+      "rank": 3,
+      "links": 1
+    },
+    {
       "id": "sn1.17",
       "group": "sn",
-      "rank": 3,
+      "rank": 4,
       "links": 1
     },
     {
@@ -19507,16 +19489,6 @@
       "rank": 2
     },
     {
-      "source": "all right, sir",
-      "target": "sn22.88",
-      "rank": 3
-    },
-    {
-      "source": "all right, sir",
-      "target": "sn22.87",
-      "rank": 4
-    },
-    {
       "source": "all skillful qualities",
       "target": "an10.15",
       "rank": 1
@@ -20480,16 +20452,6 @@
       "source": "as they arise",
       "target": "an4.41",
       "rank": 6
-    },
-    {
-      "source": "astute, competent, clever, learned",
-      "target": "sn44.1",
-      "rank": 1
-    },
-    {
-      "source": "astute, competent, clever, learned",
-      "target": "mn84",
-      "rank": 2
     },
     {
       "source": "awakening factor of mindfulness in them",
@@ -24893,43 +24855,18 @@
     },
     {
       "source": "does a realized one exist",
-      "target": "dn29",
+      "target": "an7.54",
       "rank": 5
     },
     {
       "source": "does a realized one exist",
-      "target": "an7.54",
+      "target": "sn44.4",
       "rank": 6
     },
     {
       "source": "does a realized one exist",
-      "target": "an10.96",
-      "rank": 7
-    },
-    {
-      "source": "does a realized one exist",
-      "target": "an10.93",
-      "rank": 8
-    },
-    {
-      "source": "does a realized one exist",
-      "target": "sn44.4",
-      "rank": 9
-    },
-    {
-      "source": "does a realized one exist",
       "target": "sn44.6",
-      "rank": 10
-    },
-    {
-      "source": "does a realized one exist",
-      "target": "an10.95",
-      "rank": 11
-    },
-    {
-      "source": "does a realized one exist",
-      "target": "dn2",
-      "rank": 12
+      "rank": 7
     },
     {
       "source": "does immersion come first",
@@ -25363,53 +25300,48 @@
     },
     {
       "source": "element of",
-      "target": "iti51",
+      "target": "sn14.13",
       "rank": 10
     },
     {
       "source": "element of",
-      "target": "sn14.13",
+      "target": "sn22.47",
       "rank": 11
     },
     {
       "source": "element of",
-      "target": "sn22.47",
+      "target": "an4.23",
       "rank": 12
     },
     {
       "source": "element of",
-      "target": "an4.23",
+      "target": "iti112",
       "rank": 13
     },
     {
       "source": "element of",
-      "target": "iti112",
+      "target": "an8.19",
       "rank": 14
     },
     {
       "source": "element of",
-      "target": "an8.19",
+      "target": "an8.70",
       "rank": 15
     },
     {
       "source": "element of",
-      "target": "an8.70",
+      "target": "ud8.5",
       "rank": 16
     },
     {
       "source": "element of",
-      "target": "ud8.5",
+      "target": "ud5.5",
       "rank": 17
     },
     {
       "source": "element of",
-      "target": "ud5.5",
-      "rank": 18
-    },
-    {
-      "source": "element of",
       "target": "dn29",
-      "rank": 19
+      "rank": 18
     },
     {
       "source": "empty huts",
@@ -25603,18 +25535,23 @@
     },
     {
       "source": "ending of attachments",
-      "target": "iti112",
+      "target": "an4.23",
       "rank": 7
     },
     {
       "source": "ending of attachments",
-      "target": "mn66",
+      "target": "iti112",
       "rank": 8
     },
     {
       "source": "ending of attachments",
-      "target": "snp5.1",
+      "target": "mn66",
       "rank": 9
+    },
+    {
+      "source": "ending of attachments",
+      "target": "snp5.1",
+      "rank": 10
     },
     {
       "source": "ending of craving is extinguishment",
@@ -25753,12 +25690,12 @@
     },
     {
       "source": "entire spectrum",
-      "target": "an3.26",
+      "target": "an4.21",
       "rank": 3
     },
     {
       "source": "entire spectrum",
-      "target": "an4.21",
+      "target": "an3.26",
       "rank": 4
     },
     {
@@ -29348,52 +29285,52 @@
     },
     {
       "source": "grueling",
-      "target": "an8.56",
+      "target": "mn85",
       "rank": 3
     },
     {
       "source": "grueling",
-      "target": "mn14",
+      "target": "an8.56",
       "rank": 4
     },
     {
       "source": "grueling",
-      "target": "dhp383-423",
+      "target": "mn14",
       "rank": 5
     },
     {
       "source": "grueling",
-      "target": "mn12",
+      "target": "dhp383-423",
       "rank": 6
     },
     {
       "source": "grueling",
-      "target": "mn36",
+      "target": "mn12",
       "rank": 7
     },
     {
       "source": "grueling",
-      "target": "mn98",
+      "target": "mn36",
       "rank": 8
     },
     {
       "source": "grueling",
-      "target": "mn100",
+      "target": "mn98",
       "rank": 9
     },
     {
       "source": "grueling",
-      "target": "mn101",
+      "target": "mn100",
       "rank": 10
     },
     {
       "source": "grueling",
-      "target": "snp3.9",
+      "target": "mn101",
       "rank": 11
     },
     {
       "source": "grueling",
-      "target": "mn85",
+      "target": "snp3.9",
       "rank": 12
     },
     {
@@ -30173,88 +30110,8 @@
     },
     {
       "source": "head at the Buddha’s feet",
-      "target": "sn8.9",
-      "rank": 1
-    },
-    {
-      "source": "head at the Buddha’s feet",
       "target": "dn16",
-      "rank": 2
-    },
-    {
-      "source": "head at the Buddha’s feet",
-      "target": "an10.30",
-      "rank": 3
-    },
-    {
-      "source": "head at the Buddha’s feet",
-      "target": "sn7.15",
-      "rank": 4
-    },
-    {
-      "source": "head at the Buddha’s feet",
-      "target": "an9.11",
-      "rank": 5
-    },
-    {
-      "source": "head at the Buddha’s feet",
-      "target": "sn10.8",
-      "rank": 6
-    },
-    {
-      "source": "head at the Buddha’s feet",
-      "target": "snp1.4",
-      "rank": 7
-    },
-    {
-      "source": "head at the Buddha’s feet",
-      "target": "sn16.11",
-      "rank": 8
-    },
-    {
-      "source": "head at the Buddha’s feet",
-      "target": "ud1.10",
-      "rank": 9
-    },
-    {
-      "source": "head at the Buddha’s feet",
-      "target": "mn73",
-      "rank": 10
-    },
-    {
-      "source": "head at the Buddha’s feet",
-      "target": "sn22.87",
-      "rank": 11
-    },
-    {
-      "source": "head at the Buddha’s feet",
-      "target": "mn89",
-      "rank": 12
-    },
-    {
-      "source": "head at the Buddha’s feet",
-      "target": "sn12.70",
-      "rank": 13
-    },
-    {
-      "source": "head at the Buddha’s feet",
-      "target": "mn97",
-      "rank": 14
-    },
-    {
-      "source": "head at the Buddha’s feet",
-      "target": "mn140",
-      "rank": 15
-    },
-    {
-      "source": "head at the Buddha’s feet",
-      "target": "snp3.6",
-      "rank": 16
-    },
-    {
-      "source": "head at the Buddha’s feet",
-      "target": "mn91",
-      "rank": 17
+      "rank": 1
     },
     {
       "source": "head hair, body hair",
@@ -33298,23 +33155,33 @@
     },
     {
       "source": "judgment",
-      "target": "snp4.9",
+      "target": "sn1.34",
       "rank": 9
     },
     {
       "source": "judgment",
-      "target": "snp4.11",
+      "target": "snp4.9",
       "rank": 10
     },
     {
       "source": "judgment",
-      "target": "dhp256-272",
+      "target": "snp4.11",
       "rank": 11
     },
     {
       "source": "judgment",
-      "target": "snp4.14",
+      "target": "dhp256-272",
       "rank": 12
+    },
+    {
+      "source": "judgment",
+      "target": "snp4.14",
+      "rank": 13
+    },
+    {
+      "source": "judgment",
+      "target": "sn1.20",
+      "rank": 14
     },
     {
       "source": "just one mouthful",
@@ -38038,27 +37905,27 @@
     },
     {
       "source": "own island",
-      "target": "dn26",
+      "target": "sn22.43",
       "rank": 1
     },
     {
       "source": "own island",
-      "target": "sn22.43",
+      "target": "sn47.14",
       "rank": 2
     },
     {
       "source": "own island",
-      "target": "sn47.14",
+      "target": "sn47.13",
       "rank": 3
     },
     {
       "source": "own island",
-      "target": "sn47.13",
+      "target": "sn47.9",
       "rank": 4
     },
     {
       "source": "own island",
-      "target": "sn47.9",
+      "target": "dn26",
       "rank": 5
     },
     {
@@ -38762,16 +38629,6 @@
       "rank": 1
     },
     {
-      "source": "principles for the settlement",
-      "target": "an7.84",
-      "rank": 1
-    },
-    {
-      "source": "principles for the settlement",
-      "target": "dn33",
-      "rank": 2
-    },
-    {
       "source": "protector",
       "target": "an10.17",
       "rank": 1
@@ -39133,22 +38990,22 @@
     },
     {
       "source": "rebirth in the dimension",
-      "target": "mn36",
+      "target": "mn100",
       "rank": 1
     },
     {
       "source": "rebirth in the dimension",
-      "target": "mn26",
+      "target": "mn36",
       "rank": 2
     },
     {
       "source": "rebirth in the dimension",
-      "target": "mn85",
+      "target": "mn26",
       "rank": 3
     },
     {
       "source": "rebirth in the dimension",
-      "target": "mn100",
+      "target": "mn85",
       "rank": 4
     },
     {
@@ -39253,138 +39110,8 @@
     },
     {
       "source": "reborn according to their deeds",
-      "target": "an6.2",
-      "rank": 1
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "an10.97",
-      "rank": 2
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "iti99",
-      "rank": 3
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "an10.21",
-      "rank": 4
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "an5.23",
-      "rank": 5
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "an10.30",
-      "rank": 6
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "mn6",
-      "rank": 7
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "an3.101",
-      "rank": 8
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "an11.14",
-      "rank": 9
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "sn16.9",
-      "rank": 10
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "sn51.11",
-      "rank": 11
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "an3.58",
-      "rank": 12
-    },
-    {
-      "source": "reborn according to their deeds",
       "target": "an5.28",
-      "rank": 13
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "an8.11",
-      "rank": 14
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "mn73",
-      "rank": 15
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "mn4",
-      "rank": 16
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "sn12.70",
-      "rank": 17
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "mn51",
-      "rank": 18
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "mn79",
-      "rank": 19
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "mn94",
-      "rank": 20
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "dn10",
-      "rank": 21
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "dn28",
-      "rank": 22
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "dn25",
-      "rank": 23
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "mn12",
-      "rank": 24
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "mn77",
-      "rank": 25
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "mn101",
-      "rank": 26
-    },
-    {
-      "source": "reborn according to their deeds",
-      "target": "dn2",
-      "rank": 27
+      "rank": 1
     },
     {
       "source": "red silk-cotton wood",
@@ -41118,47 +40845,47 @@
     },
     {
       "source": "sick, suffering, gravely ill",
-      "target": "mn143",
+      "target": "sn22.87",
       "rank": 3
     },
     {
       "source": "sick, suffering, gravely ill",
-      "target": "dn23",
+      "target": "mn143",
       "rank": 4
     },
     {
       "source": "sick, suffering, gravely ill",
-      "target": "sn47.29",
+      "target": "dn23",
       "rank": 5
     },
     {
       "source": "sick, suffering, gravely ill",
-      "target": "sn55.3",
+      "target": "sn47.29",
       "rank": 6
     },
     {
       "source": "sick, suffering, gravely ill",
-      "target": "sn22.88",
+      "target": "sn55.3",
       "rank": 7
     },
     {
       "source": "sick, suffering, gravely ill",
-      "target": "sn55.27",
+      "target": "sn22.88",
       "rank": 8
     },
     {
       "source": "sick, suffering, gravely ill",
-      "target": "an10.60",
+      "target": "sn55.27",
       "rank": 9
     },
     {
       "source": "sick, suffering, gravely ill",
-      "target": "sn55.26",
+      "target": "an10.60",
       "rank": 10
     },
     {
       "source": "sick, suffering, gravely ill",
-      "target": "sn22.87",
+      "target": "sn55.26",
       "rank": 11
     },
     {
@@ -41273,28 +41000,33 @@
     },
     {
       "source": "sick, suffering, gravely ill",
-      "target": "mn130",
+      "target": "mn39",
       "rank": 34
     },
     {
       "source": "sick, suffering, gravely ill",
-      "target": "dn10",
+      "target": "mn130",
       "rank": 35
     },
     {
       "source": "sick, suffering, gravely ill",
-      "target": "mn56",
+      "target": "dn10",
       "rank": 36
     },
     {
       "source": "sick, suffering, gravely ill",
-      "target": "dn2",
+      "target": "mn56",
       "rank": 37
     },
     {
       "source": "sick, suffering, gravely ill",
-      "target": "dn14",
+      "target": "dn2",
       "rank": 38
+    },
+    {
+      "source": "sick, suffering, gravely ill",
+      "target": "dn14",
+      "rank": 39
     },
     {
       "source": "signless",
@@ -43922,11 +43654,6 @@
       "rank": 13
     },
     {
-      "source": "there I saw a huge mountain",
-      "target": "sn3.25",
-      "rank": 1
-    },
-    {
       "source": "there will come a time",
       "target": "an5.78",
       "rank": 1
@@ -44933,13 +44660,8 @@
     },
     {
       "source": "thief",
-      "target": "thag6.13",
-      "rank": 8
-    },
-    {
-      "source": "thief",
       "target": "kp8",
-      "rank": 9
+      "rank": 8
     },
     {
       "source": "things are helpful",
@@ -45828,8 +45550,13 @@
     },
     {
       "source": "to endure",
-      "target": "sn1.17",
+      "target": "an3.135",
       "rank": 3
+    },
+    {
+      "source": "to endure",
+      "target": "sn1.17",
+      "rank": 4
     },
     {
       "source": "to go beyond suffering",
@@ -45918,13 +45645,8 @@
     },
     {
       "source": "to kill",
-      "target": "mn146",
-      "rank": 17
-    },
-    {
-      "source": "to kill",
       "target": "dn22",
-      "rank": 18
+      "rank": 17
     },
     {
       "source": "to one’s own spiritual companions",
@@ -46218,38 +45940,18 @@
     },
     {
       "source": "trust that",
-      "target": "mn71",
+      "target": "an8.23",
       "rank": 4
     },
     {
       "source": "trust that",
-      "target": "an8.23",
+      "target": "mn126",
       "rank": 5
     },
     {
       "source": "trust that",
-      "target": "an3.57",
-      "rank": 6
-    },
-    {
-      "source": "trust that",
-      "target": "mn55",
-      "rank": 7
-    },
-    {
-      "source": "trust that",
-      "target": "an4.193",
-      "rank": 8
-    },
-    {
-      "source": "trust that",
-      "target": "mn126",
-      "rank": 9
-    },
-    {
-      "source": "trust that",
       "target": "dn28",
-      "rank": 10
+      "rank": 6
     },
     {
       "source": "tusker in the wild",
@@ -49205,16 +48907,6 @@
       "source": "with a stick",
       "target": "mn35",
       "rank": 10
-    },
-    {
-      "source": "without informing his attendants",
-      "target": "ud4.5",
-      "rank": 1
-    },
-    {
-      "source": "without informing his attendants",
-      "target": "sn22.81",
-      "rank": 2
     },
     {
       "source": "with the end of greed",
