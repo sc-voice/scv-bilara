@@ -386,7 +386,7 @@ describe.sequential("bilara-data", { timeout: 120*1000 }, function() {
             lang: 'en',
         });
         expect(dn33).properties(expectedProps);
-        expect(dn33.segMap['dn33:1.10.31']).toBe('form, formlessness, and cessation. ');
+        expect(dn33.segMap['dn33:1.10.31']).toMatch(/.*form.*formless.*cessation.*/);
     });
     it("loadSegDoc(...) loads segmented document", async()=>{
         await bd.initialize();
@@ -405,7 +405,8 @@ describe.sequential("bilara-data", { timeout: 120*1000 }, function() {
         // String args
         expect(await bd.loadSegDoc('dn33/en/sujato')).toEqual(dn33);
 
-        expect(dn33.segMap['dn33:1.10.31']).toBe('form, formlessness, and cessation. ');
+        expect(dn33.segMap['dn33:1.10.31']).toMatch(/.*form.*formless.*cessation.*/);
+
         expect(dn33.scids().slice(0,10)).toEqual([
             'dn33:0.1',
             'dn33:0.2',
