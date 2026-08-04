@@ -28,7 +28,7 @@
     {
       "id": "Absicht formt",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "abwägen, bevor du handelst",
@@ -783,7 +783,7 @@
     {
       "id": "die bedingen könnten",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "die Besinnung auf",
@@ -2518,7 +2518,7 @@
     {
       "id": "Maßhalten beim Essen",
       "group": "Examples",
-      "links": 6
+      "links": 4
     },
     {
       "id": "Maus",
@@ -4699,6 +4699,12 @@
       "links": 3
     },
     {
+      "id": "dhp1-20",
+      "group": "dhp",
+      "rank": 1,
+      "links": 4
+    },
+    {
       "id": "mn56",
       "group": "mn",
       "rank": 1,
@@ -4822,7 +4828,7 @@
       "id": "dn33",
       "group": "dn",
       "rank": 1,
-      "links": 103
+      "links": 102
     },
     {
       "id": "an4.189",
@@ -5092,7 +5098,7 @@
       "id": "an2.163-179",
       "group": "an",
       "rank": 1,
-      "links": 6
+      "links": 5
     },
     {
       "id": "mn39",
@@ -8995,12 +9001,6 @@
       "links": 2
     },
     {
-      "id": "dhp1-20",
-      "group": "dhp",
-      "rank": 1,
-      "links": 3
-    },
-    {
       "id": "an10.3",
       "group": "an",
       "rank": 1,
@@ -9112,7 +9112,7 @@
       "id": "an4.171",
       "group": "an",
       "rank": 1,
-      "links": 4
+      "links": 3
     },
     {
       "id": "dhp76-89",
@@ -12861,7 +12861,7 @@
     {
       "id": "cp31",
       "group": "cp",
-      "rank": 4,
+      "rank": 3,
       "links": 1
     },
     {
@@ -13425,7 +13425,7 @@
     {
       "id": "dhp179-196",
       "group": "dhp",
-      "rank": 4,
+      "rank": 3,
       "links": 4
     },
     {
@@ -18708,6 +18708,11 @@
       "source": "Absicht formt",
       "target": "an1.51-60",
       "rank": 1
+    },
+    {
+      "source": "Absicht formt",
+      "target": "dhp1-20",
+      "rank": 2
     },
     {
       "source": "abwägen, bevor du handelst",
@@ -24193,11 +24198,6 @@
       "source": "die ausführliche Bedeutung",
       "target": "mn42",
       "rank": 36
-    },
-    {
-      "source": "die bedingen könnten",
-      "target": "an4.171",
-      "rank": 1
     },
     {
       "source": "die Besinnung auf",
@@ -31226,12 +31226,12 @@
     },
     {
       "source": "Giftschlange",
-      "target": "sn35.69",
+      "target": "cp31",
       "rank": 3
     },
     {
       "source": "Giftschlange",
-      "target": "cp31",
+      "target": "sn35.69",
       "rank": 4
     },
     {
@@ -37056,23 +37056,13 @@
     },
     {
       "source": "Maßhalten beim Essen",
-      "target": "an2.163-179",
+      "target": "dhp179-196",
       "rank": 3
     },
     {
       "source": "Maßhalten beim Essen",
-      "target": "dhp179-196",
-      "rank": 4
-    },
-    {
-      "source": "Maßhalten beim Essen",
       "target": "dn14",
-      "rank": 5
-    },
-    {
-      "source": "Maßhalten beim Essen",
-      "target": "dn33",
-      "rank": 6
+      "rank": 4
     },
     {
       "source": "Maus",
