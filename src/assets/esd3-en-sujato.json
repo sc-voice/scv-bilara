@@ -8699,7 +8699,7 @@
     {
       "id": "an4.18",
       "group": "an",
-      "rank": 6,
+      "rank": 5,
       "links": 5
     },
     {
@@ -41700,27 +41700,27 @@
     },
     {
       "source": "stupidity",
-      "target": "an4.20",
+      "target": "dn31",
       "rank": 2
     },
     {
       "source": "stupidity",
-      "target": "dn31",
+      "target": "an5.272",
       "rank": 3
     },
     {
       "source": "stupidity",
-      "target": "an5.272",
+      "target": "an4.17",
       "rank": 4
     },
     {
       "source": "stupidity",
-      "target": "an4.17",
+      "target": "an4.18",
       "rank": 5
     },
     {
       "source": "stupidity",
-      "target": "an4.18",
+      "target": "an4.20",
       "rank": 6
     },
     {
