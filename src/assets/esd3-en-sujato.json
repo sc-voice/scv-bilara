@@ -1248,7 +1248,7 @@
     {
       "id": "find peace",
       "group": "Examples",
-      "links": 8
+      "links": 7
     },
     {
       "id": "finest",
@@ -10935,12 +10935,6 @@
       "links": 2
     },
     {
-      "id": "snp4.14",
-      "group": "snp",
-      "rank": 4,
-      "links": 3
-    },
-    {
       "id": "sn1.74",
       "group": "sn",
       "rank": 2,
@@ -13561,6 +13555,12 @@
       "group": "dhp",
       "rank": 12,
       "links": 1
+    },
+    {
+      "id": "snp4.14",
+      "group": "snp",
+      "rank": 4,
+      "links": 2
     },
     {
       "id": "sn35.71",
@@ -27022,11 +27022,6 @@
       "source": "find peace",
       "target": "snp3.8",
       "rank": 7
-    },
-    {
-      "source": "find peace",
-      "target": "snp4.14",
-      "rank": 8
     },
     {
       "source": "finest",
