@@ -1248,7 +1248,7 @@
     {
       "id": "find peace",
       "group": "Examples",
-      "links": 8
+      "links": 7
     },
     {
       "id": "finest",
@@ -2003,7 +2003,7 @@
     {
       "id": "intention shapes",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "interior sense fields",
@@ -8699,7 +8699,7 @@
     {
       "id": "an4.18",
       "group": "an",
-      "rank": 6,
+      "rank": 5,
       "links": 5
     },
     {
@@ -8772,7 +8772,7 @@
       "id": "dhp1-20",
       "group": "dhp",
       "rank": 1,
-      "links": 6
+      "links": 5
     },
     {
       "id": "ud1.10",
@@ -10935,12 +10935,6 @@
       "links": 2
     },
     {
-      "id": "snp4.14",
-      "group": "snp",
-      "rank": 4,
-      "links": 3
-    },
-    {
       "id": "sn1.74",
       "group": "sn",
       "rank": 2,
@@ -11028,7 +11022,7 @@
       "id": "an1.51-60",
       "group": "an",
       "rank": 1,
-      "links": 3
+      "links": 2
     },
     {
       "id": "an1.316-332",
@@ -13561,6 +13555,12 @@
       "group": "dhp",
       "rank": 12,
       "links": 1
+    },
+    {
+      "id": "snp4.14",
+      "group": "snp",
+      "rank": 4,
+      "links": 2
     },
     {
       "id": "sn35.71",
@@ -27024,11 +27024,6 @@
       "rank": 7
     },
     {
-      "source": "find peace",
-      "target": "snp4.14",
-      "rank": 8
-    },
-    {
       "source": "finest",
       "target": "an3.21",
       "rank": 1
@@ -32259,16 +32254,6 @@
       "rank": 2
     },
     {
-      "source": "intention shapes",
-      "target": "an1.51-60",
-      "rank": 1
-    },
-    {
-      "source": "intention shapes",
-      "target": "dhp1-20",
-      "rank": 2
-    },
-    {
       "source": "interior sense fields",
       "target": "mn146",
       "rank": 1
@@ -35970,67 +35955,67 @@
     },
     {
       "source": "mindfulness and situational awareness",
-      "target": "dn16",
+      "target": "mn39",
       "rank": 11
     },
     {
       "source": "mindfulness and situational awareness",
-      "target": "sn22.123",
+      "target": "dn16",
       "rank": 12
     },
     {
       "source": "mindfulness and situational awareness",
-      "target": "sn22.122",
+      "target": "sn22.123",
       "rank": 13
     },
     {
       "source": "mindfulness and situational awareness",
-      "target": "sn4.13",
+      "target": "sn22.122",
       "rank": 14
     },
     {
       "source": "mindfulness and situational awareness",
-      "target": "sn47.9",
+      "target": "sn4.13",
       "rank": 15
     },
     {
       "source": "mindfulness and situational awareness",
-      "target": "an6.29",
+      "target": "sn47.9",
       "rank": 16
     },
     {
       "source": "mindfulness and situational awareness",
-      "target": "an2.163-179",
+      "target": "an6.29",
       "rank": 17
     },
     {
       "source": "mindfulness and situational awareness",
-      "target": "ud8.5",
+      "target": "an2.163-179",
       "rank": 18
     },
     {
       "source": "mindfulness and situational awareness",
-      "target": "an4.198",
+      "target": "ud8.5",
       "rank": 19
     },
     {
       "source": "mindfulness and situational awareness",
-      "target": "an10.99",
+      "target": "an4.198",
       "rank": 20
     },
     {
       "source": "mindfulness and situational awareness",
-      "target": "mn112",
+      "target": "an10.99",
       "rank": 21
     },
     {
       "source": "mindfulness and situational awareness",
-      "target": "mn27",
+      "target": "mn112",
       "rank": 22
     },
     {
       "source": "mindfulness and situational awareness",
-      "target": "mn39",
+      "target": "mn27",
       "rank": 23
     },
     {
@@ -41700,27 +41685,27 @@
     },
     {
       "source": "stupidity",
-      "target": "an4.20",
+      "target": "dn31",
       "rank": 2
     },
     {
       "source": "stupidity",
-      "target": "dn31",
+      "target": "an5.272",
       "rank": 3
     },
     {
       "source": "stupidity",
-      "target": "an5.272",
+      "target": "an4.17",
       "rank": 4
     },
     {
       "source": "stupidity",
-      "target": "an4.17",
+      "target": "an4.18",
       "rank": 5
     },
     {
       "source": "stupidity",
-      "target": "an4.18",
+      "target": "an4.20",
       "rank": 6
     },
     {
