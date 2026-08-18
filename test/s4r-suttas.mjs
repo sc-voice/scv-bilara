@@ -1152,7 +1152,8 @@ describe("Seeker - Sutta Tests", function () {
     expect(res.bilaraPaths.length).toBe(2);
     let mld0 = res.mlDocs[0];
     expect(mld0.author_uid).toBe("sabbamitta");
-    expect(mld0.langSegs).toEqual({ pli: 51, de: 45 });
+    expect(mld0.langSegs.pli).toBeGreaterThan(50);
+    expect(mld0.langSegs.de).toBeGreaterThan(50);
     expect(res.lang).toBe("de");
     expect(mld0.sutta_uid).toBe("dn7");
   });

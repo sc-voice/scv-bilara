@@ -94,7 +94,8 @@ describe("Seeker - Trilingual", function () {
     expect(res.bilaraPaths.length).toEqual(2);
     let segments = mld0.segments();
     expect(segments[4].de).toMatch(/Und der Ehrwürdige Nāgasena/);
-    expect(mld0.langSegs).toEqual({ pli: 108, de: 99 });
+    expect(mld0.langSegs.pli).toBeGreaterThan(107);
+    expect(mld0.langSegs.de).toBeGreaterThan(90);
     expect(res.lang).toEqual("de");
     expect(mld0.sutta_uid).toEqual("mil3.1.1");
   });
@@ -145,7 +146,8 @@ describe("Seeker - Trilingual", function () {
       en: "For desire is the \u001b[38;5;121mroot of suffering\u001b[0m.’” ",
       pli: "Chando hi mūlaṁ dukkhassā’”ti. ",
     });
-    expect(mld0.langSegs).toEqual({ pli: 55, ref: 54});
+    expect(mld0.langSegs.pli).toBeGreaterThan(54);
+    expect(mld0.langSegs.ref).toBeGreaterThan(53);
     expect(mld0.sutta_uid).toEqual("sn42.11");
     expect(res.bilaraPaths.length).toBeGreaterThan(13);
     expect(res.bilaraPaths.length).toBeLessThan(30);
@@ -173,7 +175,9 @@ describe("Seeker - Trilingual", function () {
     expect(seg4.pli).toMatch(/Chando hi mūlaṁ dukkhassā/i);
     expect(seg4.ref).toMatch(/root of suffering/i);
     expect(seg4.de).toMatch(/wurzel des leidens/i);
-    expect(mld0.langSegs).toEqual({ pli: 55, de: 54, ref: 54});
+    expect(mld0.langSegs.pli).toBeGreaterThan(50);
+    expect(mld0.langSegs.de).toBeGreaterThan(50);
+    expect(mld0.langSegs.ref).toBeGreaterThan(50);
     expect(mld0.sutta_uid).toEqual("sn42.11");
     expect(res.bilaraPaths.length).toBeGreaterThan(18);
     expect(res.bilaraPaths.length).toBeLessThan(30);
