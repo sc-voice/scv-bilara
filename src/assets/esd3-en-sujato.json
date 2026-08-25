@@ -2548,7 +2548,7 @@
     {
       "id": "mindfulness of death",
       "group": "Examples",
-      "links": 5
+      "links": 6
     },
     {
       "id": "mind-made body",
@@ -9558,7 +9558,7 @@
       "id": "an1.394-574",
       "group": "an",
       "rank": 1,
-      "links": 11
+      "links": 12
     },
     {
       "id": "sn54.9",
@@ -36092,6 +36092,11 @@
       "source": "mindfulness of death",
       "target": "an1.296-305",
       "rank": 5
+    },
+    {
+      "source": "mindfulness of death",
+      "target": "an1.394-574",
+      "rank": 6
     },
     {
       "source": "mind-made body",
