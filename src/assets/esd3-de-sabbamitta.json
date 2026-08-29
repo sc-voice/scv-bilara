@@ -28,7 +28,7 @@
     {
       "id": "Absicht formt",
       "group": "Examples",
-      "links": 2
+      "links": 0
     },
     {
       "id": "abwägen, bevor du handelst",
@@ -4693,18 +4693,6 @@
       "links": 29
     },
     {
-      "id": "an1.51-60",
-      "group": "an",
-      "rank": 1,
-      "links": 3
-    },
-    {
-      "id": "dhp1-20",
-      "group": "dhp",
-      "rank": 1,
-      "links": 4
-    },
-    {
       "id": "mn56",
       "group": "mn",
       "rank": 1,
@@ -9001,6 +8989,12 @@
       "links": 2
     },
     {
+      "id": "dhp1-20",
+      "group": "dhp",
+      "rank": 1,
+      "links": 3
+    },
+    {
       "id": "an10.3",
       "group": "an",
       "rank": 1,
@@ -11836,6 +11830,12 @@
       "id": "cp22",
       "group": "cp",
       "rank": 13,
+      "links": 2
+    },
+    {
+      "id": "an1.51-60",
+      "group": "an",
+      "rank": 2,
       "links": 2
     },
     {
@@ -18661,16 +18661,6 @@
       "source": "abnehmend",
       "target": "dn22",
       "rank": 8
-    },
-    {
-      "source": "Absicht formt",
-      "target": "an1.51-60",
-      "rank": 1
-    },
-    {
-      "source": "Absicht formt",
-      "target": "dhp1-20",
-      "rank": 2
     },
     {
       "source": "abwägen, bevor du handelst",
