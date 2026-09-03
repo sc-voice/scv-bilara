@@ -1,4 +1,5 @@
 ssl/
+.codegraph
 *.wiki
 local/
 archive
