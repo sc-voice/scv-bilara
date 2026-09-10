@@ -520,9 +520,10 @@ describe("Seeker - Sutta Tests", function () {
     expect(res.suttaRefs).toEqual([
       "sn42.11/de/sabbamitta",
       "dn34/de/sabbamitta",
-      "mn105/de/sabbamitta",
-      "mn116/de/sabbamitta",
       "dn16/de/sabbamitta",
+      "mn105/de/sabbamitta",
+      "mn1/de/sabbamitta",
+      "mn116/de/sabbamitta",
       "mn66/de/sabbamitta",
       "sn56.21/de/sabbamitta",
     ]);
