@@ -1283,7 +1283,7 @@
     {
       "id": "Erkenntnis der sechs Sinnesfelder",
       "group": "Examples",
-      "links": 0
+      "links": 1
     },
     {
       "id": "Erkenntnis des Entstehens und Vergehens",
@@ -4423,7 +4423,7 @@
     {
       "id": "zweifach",
       "group": "Examples",
-      "links": 3
+      "links": 2
     },
     {
       "id": "zwei Gefühle",
@@ -4660,7 +4660,7 @@
       "id": "sn12.33",
       "group": "sn",
       "rank": 1,
-      "links": 2
+      "links": 3
     },
     {
       "id": "sn12.2",
@@ -4834,7 +4834,7 @@
       "id": "dn34",
       "group": "dn",
       "rank": 1,
-      "links": 81
+      "links": 80
     },
     {
       "id": "an8.118",
@@ -27638,6 +27638,11 @@
       "rank": 9
     },
     {
+      "source": "Erkenntnis der sechs Sinnesfelder",
+      "target": "sn12.33",
+      "rank": 1
+    },
+    {
       "source": "erkläre mir das Leiden",
       "target": "sn12.17",
       "rank": 1
@@ -49691,11 +49696,6 @@
       "source": "zweifach",
       "target": "mn117",
       "rank": 2
-    },
-    {
-      "source": "zweifach",
-      "target": "dn34",
-      "rank": 3
     },
     {
       "source": "zwei Gefühle",
