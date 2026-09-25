@@ -548,7 +548,7 @@
     {
       "id": "das Gleiche zu tun",
       "group": "Examples",
-      "links": 20
+      "links": 11
     },
     {
       "id": "das Glück der Versenkung",
@@ -4358,7 +4358,7 @@
     {
       "id": "zum Töten",
       "group": "Examples",
-      "links": 12
+      "links": 10
     },
     {
       "id": "zur Einheit des Geistes",
@@ -5853,7 +5853,7 @@
     {
       "id": "an8.1",
       "group": "an",
-      "rank": 4,
+      "rank": 3,
       "links": 3
     },
     {
@@ -8155,63 +8155,9 @@
       "links": 3
     },
     {
-      "id": "an4.207",
-      "group": "an",
-      "rank": 10,
-      "links": 1
-    },
-    {
-      "id": "an4.209",
-      "group": "an",
-      "rank": 11,
-      "links": 1
-    },
-    {
-      "id": "an4.204",
-      "group": "an",
-      "rank": 12,
-      "links": 1
-    },
-    {
-      "id": "an4.201",
-      "group": "an",
-      "rank": 13,
-      "links": 1
-    },
-    {
-      "id": "an10.222",
-      "group": "an",
-      "rank": 14,
-      "links": 1
-    },
-    {
-      "id": "an10.223",
-      "group": "an",
-      "rank": 15,
-      "links": 1
-    },
-    {
-      "id": "an10.224",
-      "group": "an",
-      "rank": 16,
-      "links": 1
-    },
-    {
-      "id": "an4.203",
-      "group": "an",
-      "rank": 17,
-      "links": 1
-    },
-    {
       "id": "an4.96",
       "group": "an",
       "rank": 2,
-      "links": 2
-    },
-    {
-      "id": "an4.99",
-      "group": "an",
-      "rank": 3,
       "links": 2
     },
     {
@@ -18307,6 +18253,12 @@
       "links": 1
     },
     {
+      "id": "an4.99",
+      "group": "an",
+      "rank": 3,
+      "links": 1
+    },
+    {
       "id": "an4.98",
       "group": "an",
       "rank": 5,
@@ -18383,18 +18335,6 @@
       "group": "an",
       "rank": 23,
       "links": 2
-    },
-    {
-      "id": "an4.264",
-      "group": "an",
-      "rank": 3,
-      "links": 1
-    },
-    {
-      "id": "an3.163-182",
-      "group": "an",
-      "rank": 5,
-      "links": 1
     },
     {
       "id": "an10.141",
@@ -22629,58 +22569,13 @@
     },
     {
       "source": "das Gleiche zu tun",
-      "target": "an4.207",
+      "target": "an4.96",
       "rank": 10
     },
     {
       "source": "das Gleiche zu tun",
-      "target": "an4.209",
-      "rank": 11
-    },
-    {
-      "source": "das Gleiche zu tun",
-      "target": "an4.204",
-      "rank": 12
-    },
-    {
-      "source": "das Gleiche zu tun",
-      "target": "an4.201",
-      "rank": 13
-    },
-    {
-      "source": "das Gleiche zu tun",
-      "target": "an10.222",
-      "rank": 14
-    },
-    {
-      "source": "das Gleiche zu tun",
-      "target": "an10.223",
-      "rank": 15
-    },
-    {
-      "source": "das Gleiche zu tun",
-      "target": "an10.224",
-      "rank": 16
-    },
-    {
-      "source": "das Gleiche zu tun",
-      "target": "an4.203",
-      "rank": 17
-    },
-    {
-      "source": "das Gleiche zu tun",
-      "target": "an4.96",
-      "rank": 18
-    },
-    {
-      "source": "das Gleiche zu tun",
-      "target": "an4.99",
-      "rank": 19
-    },
-    {
-      "source": "das Gleiche zu tun",
       "target": "an4.193",
-      "rank": 20
+      "rank": 11
     },
     {
       "source": "das Glück der Versenkung",
@@ -49274,53 +49169,43 @@
     },
     {
       "source": "zum Töten",
-      "target": "an4.264",
+      "target": "an8.1",
       "rank": 3
     },
     {
       "source": "zum Töten",
-      "target": "an8.1",
+      "target": "iti27",
       "rank": 4
     },
     {
       "source": "zum Töten",
-      "target": "an3.163-182",
+      "target": "snp3.11",
       "rank": 5
     },
     {
       "source": "zum Töten",
-      "target": "iti27",
+      "target": "dhp383-423",
       "rank": 6
     },
     {
       "source": "zum Töten",
-      "target": "snp3.11",
+      "target": "dn25",
       "rank": 7
     },
     {
       "source": "zum Töten",
-      "target": "dhp383-423",
+      "target": "mn98",
       "rank": 8
     },
     {
       "source": "zum Töten",
-      "target": "dn25",
+      "target": "snp3.9",
       "rank": 9
     },
     {
       "source": "zum Töten",
-      "target": "mn98",
-      "rank": 10
-    },
-    {
-      "source": "zum Töten",
-      "target": "snp3.9",
-      "rank": 11
-    },
-    {
-      "source": "zum Töten",
       "target": "dn2",
-      "rank": 12
+      "rank": 10
     },
     {
       "source": "Zustände seliger Meditation",
