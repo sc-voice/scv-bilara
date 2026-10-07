@@ -421,6 +421,7 @@ describe("Seeker - Core", function () {
     var pattern = "wrong livelihood";
     var res = await skr.find({
       pattern,
+      bilaraData: 'ebt-data',
     });
     expect(res.bilaraPaths.length).toEqual(158);
   });
