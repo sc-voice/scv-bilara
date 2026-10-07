@@ -691,6 +691,7 @@
 		"translation/es/maggatr": "sutta/an/an3",
 		"translation/pt/laera-quaresma": "sutta/an/an3",
 		"translation/ru/sv": "sutta/an/an3",
+		"translation/th/dhiranandi": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.37": {
@@ -10624,6 +10625,14 @@
 		"root/pli/ms": "sutta/kn/mil"
 	},
 	"mil5.1.5": {
+		"translation/en/kelly": "sutta/kn/mil",
+		"root/pli/ms": "sutta/kn/mil"
+	},
+	"mil5.1.6": {
+		"translation/en/kelly": "sutta/kn/mil",
+		"root/pli/ms": "sutta/kn/mil"
+	},
+	"mil5.1.7": {
 		"translation/en/kelly": "sutta/kn/mil",
 		"root/pli/ms": "sutta/kn/mil"
 	},
@@ -29453,12 +29462,6 @@
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"mil5.1.10": {
-		"root/pli/ms": "sutta/kn/mil"
-	},
-	"mil5.1.6": {
-		"root/pli/ms": "sutta/kn/mil"
-	},
-	"mil5.1.7": {
 		"root/pli/ms": "sutta/kn/mil"
 	},
 	"mil5.1.8": {
