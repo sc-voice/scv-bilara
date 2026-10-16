@@ -33,7 +33,7 @@
     {
       "id": "abwägen, bevor du handelst",
       "group": "Examples",
-      "links": 2
+      "links": 1
     },
     {
       "id": "ach!",
@@ -543,7 +543,7 @@
     {
       "id": "das Erste gibt",
       "group": "Examples",
-      "links": 4
+      "links": 3
     },
     {
       "id": "das Gleiche zu tun",
@@ -1173,7 +1173,7 @@
     {
       "id": "eingeschätzt",
       "group": "Examples",
-      "links": 14
+      "links": 13
     },
     {
       "id": "ein Hindernis einzig für euch",
@@ -1708,7 +1708,7 @@
     {
       "id": "gesichert",
       "group": "Examples",
-      "links": 1
+      "links": 2
     },
     {
       "id": "gesträubten Haare",
@@ -2053,7 +2053,7 @@
     {
       "id": "ihr solltet den Hausbesitzer",
       "group": "Examples",
-      "links": 1
+      "links": 0
     },
     {
       "id": "im Wünschen nach materiellem Besitz",
@@ -2113,7 +2113,7 @@
     {
       "id": "in die Pflicht",
       "group": "Examples",
-      "links": 2
+      "links": 1
     },
     {
       "id": "in einem eingeschränkten Sinn",
@@ -2168,7 +2168,7 @@
     {
       "id": "ins Leiden verstrickt",
       "group": "Examples",
-      "links": 9
+      "links": 0
     },
     {
       "id": "interstellaren Raumes",
@@ -3663,7 +3663,7 @@
     {
       "id": "Versenkung besitzt",
       "group": "Examples",
-      "links": 9
+      "links": 10
     },
     {
       "id": "Versenkung des Herzens solcher Art",
@@ -4522,7 +4522,7 @@
       "id": "sn54.8",
       "group": "sn",
       "rank": 1,
-      "links": 9
+      "links": 8
     },
     {
       "id": "sn35.117",
@@ -4697,12 +4697,6 @@
       "group": "mn",
       "rank": 1,
       "links": 12
-    },
-    {
-      "id": "an8.12",
-      "group": "an",
-      "rank": 1,
-      "links": 7
     },
     {
       "id": "mn5",
@@ -5770,7 +5764,7 @@
       "id": "an10.23",
       "group": "an",
       "rank": 3,
-      "links": 3
+      "links": 4
     },
     {
       "id": "mn149",
@@ -6520,7 +6514,7 @@
       "id": "iti91",
       "group": "iti",
       "rank": 4,
-      "links": 2
+      "links": 1
     },
     {
       "id": "snp4.2",
@@ -6538,7 +6532,7 @@
       "id": "sn22.80",
       "group": "sn",
       "rank": 6,
-      "links": 5
+      "links": 4
     },
     {
       "id": "snp3.8",
@@ -7048,7 +7042,7 @@
       "id": "mn30",
       "group": "mn",
       "rank": 1,
-      "links": 5
+      "links": 4
     },
     {
       "id": "an4.16",
@@ -7816,7 +7810,7 @@
       "id": "mn29",
       "group": "mn",
       "rank": 2,
-      "links": 4
+      "links": 3
     },
     {
       "id": "mn90",
@@ -9141,8 +9135,8 @@
     {
       "id": "an7.70",
       "group": "an",
-      "rank": 2,
-      "links": 2
+      "rank": 15,
+      "links": 1
     },
     {
       "id": "sn12.70",
@@ -9635,6 +9629,12 @@
       "group": "sn",
       "rank": 3,
       "links": 3
+    },
+    {
+      "id": "an8.12",
+      "group": "an",
+      "rank": 1,
+      "links": 6
     },
     {
       "id": "mn126",
@@ -10522,7 +10522,7 @@
       "id": "mn6",
       "group": "mn",
       "rank": 2,
-      "links": 5
+      "links": 6
     },
     {
       "id": "an3.23",
@@ -10545,13 +10545,13 @@
     {
       "id": "ud2.5",
       "group": "ud",
-      "rank": 4,
+      "rank": 3,
       "links": 1
     },
     {
       "id": "sn7.20",
       "group": "sn",
-      "rank": 5,
+      "rank": 4,
       "links": 1
     },
     {
@@ -10563,13 +10563,13 @@
     {
       "id": "snp5.2",
       "group": "snp",
-      "rank": 9,
+      "rank": 8,
       "links": 1
     },
     {
       "id": "snp1.12",
       "group": "snp",
-      "rank": 11,
+      "rank": 10,
       "links": 4
     },
     {
@@ -12052,7 +12052,7 @@
       "id": "mn68",
       "group": "mn",
       "rank": 2,
-      "links": 2
+      "links": 1
     },
     {
       "id": "an5.34",
@@ -12489,8 +12489,8 @@
     {
       "id": "an8.23",
       "group": "an",
-      "rank": 1,
-      "links": 2
+      "rank": 18,
+      "links": 1
     },
     {
       "id": "mn24",
@@ -13101,8 +13101,8 @@
     {
       "id": "an3.40",
       "group": "an",
-      "rank": 1,
-      "links": 3
+      "rank": 46,
+      "links": 1
     },
     {
       "id": "sn35.232",
@@ -13516,7 +13516,7 @@
       "id": "mn67",
       "group": "mn",
       "rank": 1,
-      "links": 5
+      "links": 4
     },
     {
       "id": "an10.116",
@@ -13901,18 +13901,6 @@
       "group": "snp",
       "rank": 2,
       "links": 2
-    },
-    {
-      "id": "an4.122",
-      "group": "an",
-      "rank": 1,
-      "links": 3
-    },
-    {
-      "id": "sn10.7",
-      "group": "sn",
-      "rank": 7,
-      "links": 3
     },
     {
       "id": "sn56.46",
@@ -14417,6 +14405,12 @@
       "group": "sn",
       "rank": 26,
       "links": 1
+    },
+    {
+      "id": "sn10.7",
+      "group": "sn",
+      "rank": 15,
+      "links": 2
     },
     {
       "id": "snp4.10",
@@ -16469,6 +16463,12 @@
       "group": "snp",
       "rank": 2,
       "links": 1
+    },
+    {
+      "id": "an4.122",
+      "group": "an",
+      "rank": 1,
+      "links": 2
     },
     {
       "id": "iti69",
@@ -18606,11 +18606,6 @@
       "source": "abwägen, bevor du handelst",
       "target": "mn56",
       "rank": 1
-    },
-    {
-      "source": "abwägen, bevor du handelst",
-      "target": "an8.12",
-      "rank": 2
     },
     {
       "source": "ach!",
@@ -22509,18 +22504,13 @@
     },
     {
       "source": "das Erste gibt",
-      "target": "sn54.8",
+      "target": "an3.65",
       "rank": 2
     },
     {
       "source": "das Erste gibt",
-      "target": "an3.65",
-      "rank": 3
-    },
-    {
-      "source": "das Erste gibt",
       "target": "snp3.12",
-      "rank": 4
+      "rank": 3
     },
     {
       "source": "das Gleiche zu tun",
@@ -26609,68 +26599,63 @@
     },
     {
       "source": "eingeschätzt",
-      "target": "an7.70",
+      "target": "dn19",
       "rank": 2
     },
     {
       "source": "eingeschätzt",
-      "target": "dn19",
+      "target": "ud2.5",
       "rank": 3
     },
     {
       "source": "eingeschätzt",
-      "target": "ud2.5",
+      "target": "sn7.20",
       "rank": 4
     },
     {
       "source": "eingeschätzt",
-      "target": "sn7.20",
+      "target": "an3.32",
       "rank": 5
     },
     {
       "source": "eingeschätzt",
-      "target": "an3.32",
+      "target": "an4.41",
       "rank": 6
     },
     {
       "source": "eingeschätzt",
-      "target": "an4.41",
+      "target": "snp5.4",
       "rank": 7
     },
     {
       "source": "eingeschätzt",
-      "target": "snp5.4",
+      "target": "snp5.2",
       "rank": 8
     },
     {
       "source": "eingeschätzt",
-      "target": "snp5.2",
+      "target": "sn36.6",
       "rank": 9
     },
     {
       "source": "eingeschätzt",
-      "target": "sn36.6",
+      "target": "snp1.12",
       "rank": 10
     },
     {
       "source": "eingeschätzt",
-      "target": "snp1.12",
+      "target": "dhp256-272",
       "rank": 11
     },
     {
       "source": "eingeschätzt",
-      "target": "dhp256-272",
+      "target": "dhp60-75",
       "rank": 12
     },
     {
       "source": "eingeschätzt",
-      "target": "dhp60-75",
-      "rank": 13
-    },
-    {
-      "source": "eingeschätzt",
       "target": "snp1.3",
-      "rank": 14
+      "rank": 13
     },
     {
       "source": "ein Lehrer mit Namen Sunetta",
@@ -30743,6 +30728,11 @@
       "rank": 1
     },
     {
+      "source": "gesichert",
+      "target": "mn6",
+      "rank": 2
+    },
+    {
       "source": "gesträubten Haare",
       "target": "sn11.3",
       "rank": 1
@@ -33413,11 +33403,6 @@
       "rank": 2
     },
     {
-      "source": "ihr solltet den Hausbesitzer",
-      "target": "an8.23",
-      "rank": 1
-    },
-    {
       "source": "im Wünschen nach materiellem Besitz",
       "target": "an8.77",
       "rank": 1
@@ -33459,32 +33444,32 @@
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "an8.12",
+      "target": "mn12",
       "rank": 6
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn12",
+      "target": "sn1.38",
       "rank": 7
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "sn1.38",
+      "target": "an10.14",
       "rank": 8
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "an10.14",
+      "target": "mn16",
       "rank": 9
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn16",
+      "target": "mn57",
       "rank": 10
     },
     {
       "source": "inbrünstige.* Bußübung",
-      "target": "mn57",
+      "target": "an8.12",
       "rank": 11
     },
     {
@@ -33784,13 +33769,8 @@
     },
     {
       "source": "in die Pflicht",
-      "target": "an3.40",
-      "rank": 1
-    },
-    {
-      "source": "in die Pflicht",
       "target": "dn33",
-      "rank": 2
+      "rank": 1
     },
     {
       "source": "in einem eingeschränkten Sinn",
@@ -33986,51 +33966,6 @@
       "source": "in seinem Herzen Liebe",
       "target": "dn12",
       "rank": 1
-    },
-    {
-      "source": "ins Leiden verstrickt",
-      "target": "mn30",
-      "rank": 1
-    },
-    {
-      "source": "ins Leiden verstrickt",
-      "target": "an4.122",
-      "rank": 2
-    },
-    {
-      "source": "ins Leiden verstrickt",
-      "target": "mn67",
-      "rank": 3
-    },
-    {
-      "source": "ins Leiden verstrickt",
-      "target": "an3.40",
-      "rank": 4
-    },
-    {
-      "source": "ins Leiden verstrickt",
-      "target": "mn29",
-      "rank": 5
-    },
-    {
-      "source": "ins Leiden verstrickt",
-      "target": "iti91",
-      "rank": 6
-    },
-    {
-      "source": "ins Leiden verstrickt",
-      "target": "sn10.7",
-      "rank": 7
-    },
-    {
-      "source": "ins Leiden verstrickt",
-      "target": "sn22.80",
-      "rank": 8
-    },
-    {
-      "source": "ins Leiden verstrickt",
-      "target": "mn68",
-      "rank": 9
     },
     {
       "source": "interstellaren Raumes",
@@ -44366,6 +44301,11 @@
       "source": "Versenkung besitzt",
       "target": "an4.196",
       "rank": 9
+    },
+    {
+      "source": "Versenkung besitzt",
+      "target": "an10.23",
+      "rank": 10
     },
     {
       "source": "Versenkung des Herzens solcher Art",
