@@ -10645,6 +10645,10 @@
 		"translation/en/kelly": "sutta/kn/mil",
 		"root/pli/ms": "sutta/kn/mil"
 	},
+	"mil5.1.9": {
+		"translation/en/kelly": "sutta/kn/mil",
+		"root/pli/ms": "sutta/kn/mil"
+	},
 	"mn1": {
 		"translation/de/sabbamitta": "sutta/mn",
 		"translation/en/sujato": "sutta/mn",
@@ -14891,6 +14895,7 @@
 	"sn4.15": {
 		"translation/de/sabbamitta": "sutta/sn/sn4",
 		"translation/en/sujato": "sutta/sn/sn4",
+		"translation/pl/hardao": "sutta/sn/sn4",
 		"translation/ru/sv": "sutta/sn/sn4",
 		"translation/sr/brankokovacevic": "sutta/sn/sn4",
 		"root/pli/ms": "sutta/sn/sn4"
@@ -29495,9 +29500,6 @@
 		"root/pli/ms": "sutta/kn/ja"
 	},
 	"mil5.1.10": {
-		"root/pli/ms": "sutta/kn/mil"
-	},
-	"mil5.1.9": {
 		"root/pli/ms": "sutta/kn/mil"
 	},
 	"mil5.2.1": {
