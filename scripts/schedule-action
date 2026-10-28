@@ -9,5 +9,6 @@ npm install --verbose --save suttacentral-api@latest
 npm install --verbose --save log-instance@latest
 npm install --verbose --save memo-again@latest
 npm install --verbose --save merkle-json@latest
+npm install --verbose --save js-ebt@latest
 $DIR/js/suidmap.js
 $DIR/examples PUSH
