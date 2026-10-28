@@ -1,4 +1,4 @@
-import { describe, it, expect } from '@sc-voice/vitest';
+import { describe, it, expect } from 'vitest';
 import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
@@ -12,7 +12,7 @@ const TEST_REPOPATH = path.join(Files.LOCAL_DIR, 'test-repo');
 const TEST_UNPUBLISHED = false;
 const logLevel = false;
 
-describe.sequential("exec-git", function() {
+describe("exec-git", function() {
   it("default ctor", () => {
     var egit = new ExecGit();
     expect(egit.repo).toBe('https://github.com/suttacentral/bilara-data.git');

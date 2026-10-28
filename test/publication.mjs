@@ -1,4 +1,4 @@
-import { describe, it, expect } from '@sc-voice/vitest';
+import { describe, it, expect } from 'vitest';
 import path from 'path';
 import fs from 'fs';
 import PKG_INDEX from '../index.js';
@@ -8,7 +8,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-describe.sequential("publication", function() {
+describe("publication", function() {
     function ROOTPATH(mid,category='sutta') {
         var lang = 'pli';
         var auth = 'ms';

@@ -1,4 +1,4 @@
-import { describe, it, expect } from '@sc-voice/vitest';
+import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import tmp from 'tmp';
@@ -18,7 +18,7 @@ const __dirname = path.dirname(__filename);
 
 const MS_AUTHOR = 'The M.L. Maniratana Bunnag Dhamma Society Fund';
 
-describe.sequential("ml-doc", { timeout: 5*1000 }, function() {
+describe("ml-doc", { timeout: 5*1000 }, function() {
     var logLevel = false;
     var bd = new BilaraData();
     const BILARA_PATH = path.join(__dirname, '../test/data/bilara-data');

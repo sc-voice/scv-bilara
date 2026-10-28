@@ -1,4 +1,4 @@
-import { describe, it, expect } from '@sc-voice/vitest';
+import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import tmp from 'tmp';
@@ -8,7 +8,7 @@ const { DETranslation, SegDoc } = PKG_INDEX;
 
 const logLevel = false;
 
-describe.sequential("de-translation", function() {
+describe("de-translation", function() {
 
     it("default ctor", () => {
         var trans = new DETranslation();

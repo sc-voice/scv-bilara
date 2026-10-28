@@ -1,4 +1,4 @@
-import { describe, it, expect } from '@sc-voice/vitest';
+import { describe, it, expect } from 'vitest';
 import path from 'path';
 import fs from 'fs';
 import PKG_INDEX from '../index.js';
@@ -18,7 +18,7 @@ const {
     htmlPath,
 } = BilaraPath;
 
-describe.sequential("bilara-path-map", { timeout: 5*1000 }, function() {
+describe("bilara-path-map", { timeout: 5*1000 }, function() {
     function ROOTPATH(mid,category='sutta') {
         var lang = 'pli';
         var auth = 'ms';

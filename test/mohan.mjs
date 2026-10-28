@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeAll } from '@sc-voice/vitest';
+import { describe, it, expect, beforeAll } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import tmp from 'tmp';
@@ -36,7 +36,7 @@ var bilaraPaths_mn8_en = [
     translationPath('mn/mn8','en','sujato'),
 ];
 
-describe.sequential("mohan", { timeout: 5*1000 }, function() {
+describe("mohan", { timeout: 5*1000 }, function() {
   it("trilingual-mn8-fr-ref", { timeout: 5*1000 }, async()=>{
     const msg = 'Tm3n.trilingual-mn8-fr-ref';
     let dbg = 0;

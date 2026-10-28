@@ -1,4 +1,4 @@
-import { describe, it, expect } from '@sc-voice/vitest';
+import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { logger, LogInstance } from 'log-instance';
@@ -22,7 +22,7 @@ const LOCAL_DIR = path.join(__dirname, '..', 'local');
 const TEST_UNPUBLISHED = false;
 logger.logLevel = 'warn';
 
-describe.sequential("bilara-data", { timeout: 120*1000 }, function() {
+describe("bilara-data", { timeout: 120*1000 }, function() {
     var bd = new BilaraData(); 
     function ROOTPATH(mid,category='sutta') {
         var lang = 'pli';

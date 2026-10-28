@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeAll } from '@sc-voice/vitest';
+import { describe, it, expect, beforeAll } from 'vitest';
 import PKG_INDEX from '../index.js';
 const {
   ExampleV2,
@@ -7,7 +7,7 @@ const {
 import fs from 'fs';
 import path from 'path';
 
-describe.sequential("example-v2", function () {
+describe("example-v2", function () {
   let deExamples;
   let bilaraData;
 

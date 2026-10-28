@@ -1,4 +1,4 @@
-import { describe, it, expect } from '@sc-voice/vitest';
+import { describe, it, expect } from 'vitest';
 import { logger } from 'log-instance';
 import PKG from '../index.js';
 const { English } = PKG;
