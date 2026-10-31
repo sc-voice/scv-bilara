@@ -3563,7 +3563,7 @@
     {
       "id": "Urteile",
       "group": "Examples",
-      "links": 6
+      "links": 7
     },
     {
       "id": "Urteil über Menschen",
@@ -3858,7 +3858,7 @@
     {
       "id": "wahrhaftig erkennen und sehen",
       "group": "Examples",
-      "links": 8
+      "links": 0
     },
     {
       "id": "wahrhaftig versteht: ‚Das ist das Leiden‘",
@@ -4828,7 +4828,7 @@
       "id": "dn34",
       "group": "dn",
       "rank": 1,
-      "links": 80
+      "links": 79
     },
     {
       "id": "an8.118",
@@ -9058,7 +9058,7 @@
       "id": "sn1.20",
       "group": "sn",
       "rank": 2,
-      "links": 3
+      "links": 4
     },
     {
       "id": "sn22.66",
@@ -12022,13 +12022,13 @@
       "id": "an11.2",
       "group": "an",
       "rank": 1,
-      "links": 2
+      "links": 1
     },
     {
       "id": "an10.2",
       "group": "an",
       "rank": 2,
-      "links": 2
+      "links": 1
     },
     {
       "id": "mn46",
@@ -12286,7 +12286,7 @@
       "id": "sn12.23",
       "group": "sn",
       "rank": 4,
-      "links": 5
+      "links": 4
     },
     {
       "id": "an3.80",
@@ -13966,7 +13966,7 @@
       "id": "mn48",
       "group": "mn",
       "rank": 1,
-      "links": 6
+      "links": 5
     },
     {
       "id": "sn12.32",
@@ -15615,8 +15615,8 @@
     {
       "id": "sn46.56",
       "group": "sn",
-      "rank": 3,
-      "links": 2
+      "rank": 7,
+      "links": 1
     },
     {
       "id": "ud7.7",
@@ -16420,13 +16420,13 @@
       "id": "an5.193",
       "group": "an",
       "rank": 1,
-      "links": 7
+      "links": 6
     },
     {
       "id": "sn46.55",
       "group": "sn",
       "rank": 2,
-      "links": 7
+      "links": 6
     },
     {
       "id": "an7.71",
@@ -43878,6 +43878,11 @@
       "rank": 6
     },
     {
+      "source": "Urteile",
+      "target": "sn1.20",
+      "rank": 7
+    },
+    {
       "source": "Verantwortung",
       "target": "an4.258",
       "rank": 1
@@ -45881,46 +45886,6 @@
       "source": "während sie aufkommen",
       "target": "an4.41",
       "rank": 6
-    },
-    {
-      "source": "wahrhaftig erkennen und sehen",
-      "target": "an5.193",
-      "rank": 1
-    },
-    {
-      "source": "wahrhaftig erkennen und sehen",
-      "target": "sn46.55",
-      "rank": 2
-    },
-    {
-      "source": "wahrhaftig erkennen und sehen",
-      "target": "sn46.56",
-      "rank": 3
-    },
-    {
-      "source": "wahrhaftig erkennen und sehen",
-      "target": "an11.2",
-      "rank": 4
-    },
-    {
-      "source": "wahrhaftig erkennen und sehen",
-      "target": "an10.2",
-      "rank": 5
-    },
-    {
-      "source": "wahrhaftig erkennen und sehen",
-      "target": "sn12.23",
-      "rank": 6
-    },
-    {
-      "source": "wahrhaftig erkennen und sehen",
-      "target": "mn48",
-      "rank": 7
-    },
-    {
-      "source": "wahrhaftig erkennen und sehen",
-      "target": "dn34",
-      "rank": 8
     },
     {
       "source": "Wahrnehmung des Abstoßenden",
