@@ -1302,6 +1302,7 @@
 		"translation/de/sabbamitta": "sutta/an/an3",
 		"translation/en/sujato": "sutta/an/an3",
 		"translation/fr/sekha": "sutta/an/an3",
+		"translation/lt/piyadassi": "sutta/an/an3",
 		"root/pli/ms": "sutta/an/an3"
 	},
 	"an3.131": {
@@ -3641,6 +3642,7 @@
 	"an5.78": {
 		"translation/de/sabbamitta": "sutta/an/an5",
 		"translation/en/sujato": "sutta/an/an5",
+		"translation/lt/piyadassi": "sutta/an/an5",
 		"translation/ru/sv": "sutta/an/an5",
 		"root/pli/ms": "sutta/an/an5"
 	},
@@ -9695,21 +9697,25 @@
 	"iti100": {
 		"translation/de/sabbamitta": "sutta/kn/iti/vagga11",
 		"translation/en/sujato": "sutta/kn/iti/vagga11",
+		"translation/lt/piyadassi": "sutta/kn/iti/vagga11",
 		"root/pli/ms": "sutta/kn/iti/vagga11"
 	},
 	"iti101": {
 		"translation/de/sabbamitta": "sutta/kn/iti/vagga11",
 		"translation/en/sujato": "sutta/kn/iti/vagga11",
+		"translation/lt/piyadassi": "sutta/kn/iti/vagga11",
 		"root/pli/ms": "sutta/kn/iti/vagga11"
 	},
 	"iti102": {
 		"translation/de/sabbamitta": "sutta/kn/iti/vagga11",
 		"translation/en/sujato": "sutta/kn/iti/vagga11",
+		"translation/lt/piyadassi": "sutta/kn/iti/vagga11",
 		"root/pli/ms": "sutta/kn/iti/vagga11"
 	},
 	"iti103": {
 		"translation/de/sabbamitta": "sutta/kn/iti/vagga11",
 		"translation/en/sujato": "sutta/kn/iti/vagga11",
+		"translation/lt/piyadassi": "sutta/kn/iti/vagga11",
 		"root/pli/ms": "sutta/kn/iti/vagga11"
 	},
 	"iti104": {
@@ -10658,6 +10664,10 @@
 		"root/pli/ms": "sutta/kn/mil"
 	},
 	"mil5.2.2": {
+		"translation/en/kelly": "sutta/kn/mil",
+		"root/pli/ms": "sutta/kn/mil"
+	},
+	"mil5.2.3": {
 		"translation/en/kelly": "sutta/kn/mil",
 		"root/pli/ms": "sutta/kn/mil"
 	},
@@ -15846,6 +15856,7 @@
 	"sn12.12": {
 		"translation/de/sabbamitta": "sutta/sn/sn12",
 		"translation/en/sujato": "sutta/sn/sn12",
+		"translation/lt/piyadassi": "sutta/sn/sn12",
 		"translation/ru/sv": "sutta/sn/sn12",
 		"translation/sr/brankokovacevic": "sutta/sn/sn12",
 		"root/pli/ms": "sutta/sn/sn12"
@@ -29525,9 +29536,6 @@
 	},
 	"ja99": {
 		"root/pli/ms": "sutta/kn/ja"
-	},
-	"mil5.2.3": {
-		"root/pli/ms": "sutta/kn/mil"
 	},
 	"mil5.2.4": {
 		"root/pli/ms": "sutta/kn/mil"
